@@ -1,0 +1,146 @@
+{
+ "disease": "Biotinidase deficiency",
+ "omim": "253260",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Biotinidase deficiency",
+  "omim": "253260",
+  "summary": "An autosomal-recessive disorder of vitamin recycling caused by loss-of-function mutations in BTD, which encodes biotinidase (chr3p25.1) -- the enzyme that liberates free biotin from biocytin (and from small biotinylated peptides) during the normal turnover of the biotin-dependent carboxylases, and that releases protein-bound biotin from dietary protein. When biotinidase fails, biotin is not recycled (and is lost in urine as biocytin), the free-biotin pool falls, and the four biotin-dependent carboxylases (pyruvate carboxylase, propionyl-CoA carboxylase, 3-methylcrotonyl-CoA carboxylase, acetyl-CoA carboxylase) are progressively under-charged -- a late-onset MULTIPLE CARBOXYLASE DEFICIENCY. Untreated, profound deficiency (<10% residual activity) produces seizures, hypotonia, ataxia, developmental delay, a skin rash and alopecia, sensorineural hearing loss and optic atrophy; partial deficiency (10-30%) is milder. The kit reads this as the free-biotin-availability / carboxylase-throughput axis driven DOWN (an enzyme LOF -> pathway throughput falls, the upstream substrate biocytin accumulates). Correction is, beautifully, the simplest possible REPLACE: oral biotin (vitamin B7) supplies the exact free cofactor the broken recycler would have liberated, FLOODING the free-biotin pool and re-charging the carboxylases -- bypassing the recycling defect entirely. This is one of the most treatable inborn errors of metabolism: identified by newborn screening and treated lifelong with inexpensive oral biotin, pre-symptomatic patients have a normal, symptom-free course. IMPORTANT HONESTY: the corrective DIRECTION (replace the missing cofactor) is forced [F]; the realised MAGNITUDE is [O] and TIMING-limited -- biotin almost completely PREVENTS disease when started before symptoms, but established neurological damage (sensorineural hearing loss, optic atrophy) frequently does NOT reverse once present, and the partial-vs-profound dose is [O]. The BTD coding lesions sit outside the promoter firewall; the gamma read is of the BTD promoter switch STRUCTURE (chr3, gamma 1.3560). Magnitude [O].",
+  "emergent_axis": "free-biotin availability / biotin-dependent carboxylase throughput -- biotinidase recycles biotin from biocytin during carboxylase turnover and releases dietary protein-bound biotin. LOF lowers the free-biotin pool and under-charges the four carboxylases (axis DOWN, multiple carboxylase deficiency). A cofactor-recycling enzyme LOF whose corrective is to flood the missing cofactor",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "BTD",
+    "gamma": 1.356,
+    "spinodal_h_sp": 0.60777,
+    "barrier": 0.45968,
+    "dwell_relative_size": 1.43548,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000003.12",
+     "gene_start": 15601360,
+     "gene_end": 15722515,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "biotinidase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "BTD encodes biotinidase, the hydrolase that liberates free biotin from biocytin and small biotinyl-peptides (recycling biotin from carboxylase turnover) and releases protein-bound biotin from food. LOF -> free biotin is lost as urinary biocytin, the carboxylases are under-charged (late-onset multiple carboxylase deficiency). Profound <10% vs partial 10-30% residual activity. chr3p25.1. autosomal recessive. NCBI official symbol BTD. OMIM 253260.",
+    "src": "Wolf 1983 J Pediatr 103:233 (biotinidase deficiency defined); Cole 1994 J Biol Chem 269:6566 (BTD cloning); Wolf 2010 (GeneReviews, Biotinidase Deficiency)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "BTD",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "76aa9e7094c9"
+ },
+ "treatment_A_switch": {
+  "disease": "Biotinidase deficiency",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "BTD",
+    "push_direction": "supply free biotin directly (oral vitamin B7) -> re-charge the four biotin-dependent carboxylases by flooding the free-biotin pool, bypassing the recycling defect -> restore carboxylase throughput (axis UP toward normal)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "oral biotin (vitamin B7) cofactor replacement -- the established standard of care",
+    "status": "approved",
+    "mechanism_grade": "[O] MAGNITUDE / reversibility OPEN -- dramatic, likely complete PREVENTION if started pre-symptomatically (newborn-screened), but established sensorineural hearing loss / optic atrophy often do NOT reverse once present (a TIMING-limited rescue); partial-vs-profound dose [O]. Direction (replace the missing cofactor) forced [F].",
+    "src": "Wolf 2010 (GeneReviews; lifelong oral biotin, excellent prognosis if pre-symptomatic); Strovel 2017 Genet Med 19 (newborn-screening recommendations); standard of care since Wolf 1983"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "BTD",
+   "push_direction": "supply free biotin directly (oral vitamin B7) -> re-charge the four biotin-dependent carboxylases by flooding the free-biotin pool, bypassing the recycling defect -> restore carboxylase throughput (axis UP toward normal)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "oral biotin (vitamin B7) cofactor replacement -- the established standard of care",
+   "status": "approved",
+   "mechanism_grade": "[O] MAGNITUDE / reversibility OPEN -- dramatic, likely complete PREVENTION if started pre-symptomatically (newborn-screened), but established sensorineural hearing loss / optic atrophy often do NOT reverse once present (a TIMING-limited rescue); partial-vs-profound dose [O]. Direction (replace the missing cofactor) forced [F].",
+   "src": "Wolf 2010 (GeneReviews; lifelong oral biotin, excellent prognosis if pre-symptomatic); Strovel 2017 Genet Med 19 (newborn-screening recommendations); standard of care since Wolf 1983"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.43548,
+   "dwell_disease": 0.92884,
+   "dwell_treated": 1.17838,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "315bcf4b6d17"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "BTD LOF moves the free-biotin / carboxylase-throughput axis DOWN (the recycler fails, the carboxylases are under-charged)",
+   "falsifier": "a BTD loss-of-function allele that INCREASED free-biotin availability or carboxylase activity would refute the throughput-down read",
+   "measurable_by": "plasma free-biotin / urinary biocytin and carboxylase (e.g. propionyl-CoA carboxylase) activity in BTD-deficient patients vs controls"
+  },
+  {
+   "claim": "REPLACING biotin is the CORRECTIVE direction",
+   "falsifier": "if oral biotin failed to raise carboxylase activity / failed to prevent the biochemical phenotype in pre-symptomatic biotinidase deficiency, the replace lever sign is wrong",
+   "measurable_by": "carboxylase activity and clinical / biochemical outcome on oral biotin in newborn-screened biotinidase-deficient infants"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Biotinidase deficiency": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "356248a93b85"
+ },
+ "determinism_sha": "5b873c11435d"
+}

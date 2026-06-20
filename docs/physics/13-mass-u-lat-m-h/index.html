@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mass: U_lat→ m_H/mₚ/mₑ — VP Theory §13 | Jamming Physics</title>
+<meta name="description" content="One energy feeds all masses — defined once, referenced everywhere. Mass is resistance; the type may never be switched after results.">
+<link rel="canonical" href="https://jamming-physics.org/physics/13-mass-u-lat-m-h/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Mass: U_lat→ m_H/mₚ/mₑ — VP Theory §13 | Jamming Physics"><meta property="og:description" content="One energy feeds all masses — defined once, referenced everywhere. Mass is resistance; the type may never be switched after results."><meta property="og:url" content="https://jamming-physics.org/physics/13-mass-u-lat-m-h/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Mass: U_lat→ m_H/mₚ/mₑ — VP Theory §13 | Jamming Physics"><meta name="twitter:description" content="One energy feeds all masses — defined once, referenced everywhere. Mass is resistance; the type may never be switched after results.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Mass: U_lat→ m_H/mₚ/mₑ",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"13",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§13 Mass: U_lat→ m_H/mₚ/mₑ"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §13</nav></header>
+<main>
+<h1>Mass: $U_lat→ m_H/mₚ/mₑ$</h1>
+<p class="answer">Mass: U_lat→ m_H/mₚ/mₑ: One energy feeds all masses — defined once, referenced everywhere. The bracket 2π is α/δ — derived, with the old π² confusion on record. This chapter derives the mass scales m_H,mₚ,mₑ from the lattice unit energy U_lat in the main body. Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">One energy feeds all masses — defined once, referenced everywhere. The bracket 2π is α/δ — derived, with the old π² confusion on record.</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/13-mass-u-lat-m-h/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="nu-p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a></aside>
+<aside class="vp-card" data-locked="anchor"><b>λ_anchor = 632.99 nm</b> — Single empirical anchor (DOF = 1); the only measured length input to the framework. <b>[F]</b> forced. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a></aside>
+<span id="hub:mass"></span>
+<h2>Purpose (promotion to the main text)</h2>
+<p>This chapter derives the mass scales m_H,mₚ,mₑ from the lattice unit energy U_lat <strong>in the main body</strong>.  
+Mass-related derivations that were previously dispersed into appendices (E/P/M/R, etc.)—electron mass, proton mass, Higgs mass, and ratio cross-checks—are <strong>promoted</strong> into the main text so that the definition–derivation–verification (Gate) flow closes consistently inside the main body without duplication.</p>
+<h2>Deliverables (definitions/derivations/verification items)</h2>
+<p>The deliverables of this chapter are fixed as the following five bundles.</p>
+<ol>
+<li> Definition of U_lat and its realization locks (linked to the Chapter 11 realization values a,Δ t).
+<li> Operational definition of mass (geometric resistance / effective cross-section / integral coefficients) and type-specific mass formulas.
+<li> Derivation of m_H (including the coefficient 5π) and numerical evaluation.
+<li> Derivation of mₚ (including the link to core radius Rₚ and λ_C) and numerical evaluation.
+<li> Derivation of mₑ (including the electron canonical event rate / radius rₑ) and numerical evaluation.
+</ol>
+<p>For each deliverable, the main text explicitly records (i) which LOCK items it depends on, (ii) which closure(s) are used, and (iii) which Gate(s) must be passed to grant conclusion status.</p>
+<h2>Inputs (LOCK) and prohibitions (no external justification)</h2>
+<p>The derivations in this chapter use only the following inputs.</p>
+<ol>
+<li> Realization length a and realization time step Δ t (locked in Chapter 11).
+<li> Core radius Rₚ and selected length L_q=λ_C (locked in Chapter 6).
+<li> Stationary constants α,δ (locked in Chapter 5) and canonical event rates (locked in Chapter 9).
+<li> PASS-qualified outputs of the 82+7 discrete structure verification (Chapter 8).
+</ol>
+<p>This chapter does <em>not</em> use external texts (equations from other theories, external constant definitions, or external justifications) as grounds for mass derivations. Comparisons to external numerical values are recorded <strong>only as Gate metrics</strong>; they are not used to justify definitions or derivations.</p>
+<h2>Scope of promoted missing-gap reinforcements (declaration)</h2>
+<p>The following missing-gap reinforcements are promoted into the main text in this chapter.</p>
+<ol>
+<li> <strong>Electron-mass derivation</strong>: a derivation that links the electron canonical event rate ν_e,can=1 and the definition of rₑ to the mass coefficient.
+<li> <strong>Proton-mass derivation</strong>: a derivation that computes the mass scale from an integral coefficient coupled to Rₚ and core invariants (4/π, etc.).
+<li> <strong>Higgs-mass derivation</strong>: a derivation that computes m_H from U_lat and the effective cross-section coefficient (5π).
+<li> <strong>Ratio cross-checks</strong>: a section that defines dimensionless ratio invariants such as m_H/mₚ, mₚ/mₑ, and verifies them using RCROSS and a Gate stack.
+</ol>
+<p>These items are no longer split into appendices; each closes by definition–derivation–verification in the main text.</p>
+<h2>Gate structure (conditions for conclusion status in this chapter)</h2>
+<p>All numerical conclusions in this chapter (m_H,mₚ,mₑ and ratios) require <code>PASS</code> of the following Gate stack.</p>
+<ol>
+<li> G-SYM: no symbol/unit/diameter–radius meaning conflicts.
+<li> G-LOCK: consistent input <code>lock_id</code> and snapshot sealing.
+<li> G-REG: regime consistency (realization regime / canonical-event-rate regime).
+<li> G-STR: structural inputs (82+7, cancellation–survival) are in <code>PASS</code> state.
+<li> G-RCROSS: realization cross-consistency of a,Δ t is <code>PASS</code> (required).
+<li> G-REP: reproducibility package reproduces the same results.
+<li> G-NT: no violation of the no-post-tuning rule.
+</ol>
+<p>If a Gate is not <code>PASS</code>, the result is not promoted to a main-text conclusion; only a limited conclusion (CT-LIM) is permitted.</p>
+<h2>13.1 Definition of Uₗat=hc/a=1958.7GeV (single source of truth)</h2>
+<span id="hub:Ulat"></span>
+<aside class="claim-strip vps" data-vps="13.1" data-cards="VP-C-014"><span class="g">SSOT definition</span><span class="io">in: $h,c_ref,a$ / out: $U_lat=hc/a=1958.7$ GeV (redefinition forbidden)</span><q class="one">One energy feeds all masses — defined once, referenced everywhere.</q><span class="cards">VP-C-014</span></aside>
+<em> Concept links: U_lat feeds the Higgs mass m_H=U_lat/(5π) in <a href="#hub:higgs" class="xref" data-ref="hub:higgs">§13.3</a>; full mass chain <a href="#hub:mass" class="xref" data-ref="hub:mass">§13</a>.</em>
+<h3>13.1.1 Purpose (single-source declaration)</h3>
+<p>This section fixes the lattice unit energy U_lat <strong>as a definition</strong> and provides the unique source of truth (SSOT) of U_lat for the whole document.  
+Redefining or re-deriving U_lat outside this section is forbidden. Outside this section, only <strong>referencing</strong> <a href="#eq:S13_01_Ulat_def" class="xref" data-ref="eq:S13_01_Ulat_def">(S13_01_Ulat_def)</a> is allowed.</p>
+<h3>13.1.2 Inputs (LOCK): h, c_ref, a, and unit-conversion constants</h3>
+<p>U_lat is defined only when the following four inputs are locked.</p>
+<h4>13.1.2.1 Action-unit constant h (locked)</h4>
+<figure class="eq" id="eq:S13_01_h_lock"><img src="/physics/eq/physics/phy-13-000.svg" data-eq="phy-13-000" width="230" height="18" loading="lazy" alt="\begin{equation} h = 6.62607015\times 10^{-34}\ \mathrm{J\cdot s}. \end{equation}"></figure>
+<p>h is the action-unit constant used in this document's unit system; its value/unit must be locked in <code>canon_lock</code>.</p>
+<h4>13.1.2.2 Reference speed constant c_ref (operational anchor, locked)</h4>
+<figure class="eq" id="eq:S13_01_cref_lock"><img src="/physics/eq/physics/phy-13-001.svg" data-eq="phy-13-001" width="182" height="19" loading="lazy" alt="\begin{equation} c_{\mathrm{ref}} = 299\,792\,458\ \mathrm{m/s}. \end{equation}"></figure>
+<p>c_ref is the operational-anchor constant locked in §11.1; it must be locked in <code>realization_lock</code> together with its channel/scope/protocol.</p>
+<h4>13.1.2.3 Realization length a (VP diameter, locked)</h4>
+<figure class="eq" id="eq:S13_01_a_lock"><img src="/physics/eq/physics/phy-13-002.svg" data-eq="phy-13-002" width="317" height="18" loading="lazy" alt="\begin{equation} a = 6.3299121257859865746\times 10^{-19}\ \mathrm{m}. \end{equation}"></figure>
+<p>a is the realization length locked in §11.2 and must be locked together with <code>geometry_meaning</code>=<code>diameter</code>.</p>
+<h4>13.1.2.4 Energy-unit conversion constant (locked)</h4>
+<p>To use GeV as the reporting unit, this section locks the following conversion constant.</p>
+<figure class="eq" id="eq:S13_01_GeV_to_J"><img src="/physics/eq/physics/phy-13-003.svg" data-eq="phy-13-003" width="259" height="18" loading="lazy" alt="\begin{equation} 1\ \mathrm{GeV} = 1.602176634\times 10^{-10}\ \mathrm{J}. \end{equation}"></figure>
+<p>Equation <a href="#eq:S13_01_GeV_to_J" class="xref" data-ref="eq:S13_01_GeV_to_J">(S13_01_GeV_to_J)</a> is a unit-conversion convention; its value/unit must be locked in <code>protocol_lock</code>.</p>
+<h3>13.1.3 Definition: Uₗat (lattice unit energy)</h3>
+<p>Define the lattice unit energy U_lat as</p>
+<figure class="eq" id="eq:S13_01_Ulat_def"><img src="/physics/eq/physics/phy-13-004.svg" data-eq="phy-13-004" width="117" height="48" loading="lazy" alt="\begin{equation} \boxed{ U_{\mathrm{lat}} := \frac{h\,c_{\mathrm{ref}}}{a} } \end{equation}"></figure>
+<p>In the definition <a href="#eq:S13_01_Ulat_def" class="xref" data-ref="eq:S13_01_Ulat_def">(S13_01_Ulat_def)</a>, h has dimension J· s, c_ref has dimension m/s, and a has dimension m, hence</p>
+<figure class="eq" id="eq:S13_01_dim_check"><img src="/physics/eq/physics/phy-13-005.svg" data-eq="phy-13-005" width="244" height="19" loading="lazy" alt="\begin{equation} [h\,c_{\mathrm{ref}}/a] = (\mathrm{J\cdot s})(\mathrm{m/s})/\mathrm{m} = \mathrm{J} \end{equation}"></figure>
+<p>and the dimension of U_lat is fixed as energy.</p>
+<h3>13.1.4 Numerical evaluation: J→GeV</h3>
+<h4>13.1.4.1 Computing hc_ref</h4>
+<p>From <a href="#eq:S13_01_h_lock" class="xref" data-ref="eq:S13_01_h_lock">(S13_01_h_lock)</a> and <a href="#eq:S13_01_cref_lock" class="xref" data-ref="eq:S13_01_cref_lock">(S13_01_cref_lock)</a>,</p>
+<figure class="eq" id="eq:S13_01_hc_value"><img src="/physics/eq/physics/phy-13-006.svg" data-eq="phy-13-006" width="414" height="50" loading="lazy" alt="\begin{align} h\,c_{\mathrm{ref}} &amp;= \left(6.62607015\times 10^{-34}\ \mathrm{J\cdot s}\right) \left(299\,792\,458\ \mathrm{m/s}\right) \notag\\ &amp;= 1.9864458571489286\times 10^{-25}\ \mathrm{J\cdot m}. \end{align}"></figure>
+<h4>13.1.4.2 The J value of Uₗat</h4>
+<p>Substituting <a href="#eq:S13_01_hc_value" class="xref" data-ref="eq:S13_01_hc_value">(S13_01_hc_value)</a> and <a href="#eq:S13_01_a_lock" class="xref" data-ref="eq:S13_01_a_lock">(S13_01_a_lock)</a> into <a href="#eq:S13_01_Ulat_def" class="xref" data-ref="eq:S13_01_Ulat_def">(S13_01_Ulat_def)</a>,</p>
+<figure class="eq" id="eq:S13_01_Ulat_J"><img src="/physics/eq/physics/phy-13-007.svg" data-eq="phy-13-007" width="339" height="71" loading="lazy" alt="\begin{align} U_{\mathrm{lat}} &amp;= \frac{1.9864458571489286\times 10^{-25}\ \mathrm{J\cdot m}} {6.3299121257859865746\times 10^{-19}\ \mathrm{m}} \notag\\ &amp;= 3.138188678886709\times 10^{-7}\ \mathrm{J}. \end{align}"></figure>
+<h4>13.1.4.3 The GeV value of Uₗat</h4>
+<p>From <a href="#eq:S13_01_GeV_to_J" class="xref" data-ref="eq:S13_01_GeV_to_J">(S13_01_GeV_to_J)</a>,</p>
+<figure class="eq" id="eq:S13_01_convert_to_GeV"><img src="/physics/eq/physics/phy-13-008.svg" data-eq="phy-13-008" width="339" height="47" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}}[\mathrm{GeV}] = \frac{U_{\mathrm{lat}}[\mathrm{J}]}{1.602176634\times 10^{-10}\ \mathrm{J/GeV}}. \end{equation}"></figure>
+<p>Substituting <a href="#eq:S13_01_Ulat_J" class="xref" data-ref="eq:S13_01_Ulat_J">(S13_01_Ulat_J)</a> into <a href="#eq:S13_01_convert_to_GeV" class="xref" data-ref="eq:S13_01_convert_to_GeV">(S13_01_convert_to_GeV)</a>,</p>
+<figure class="eq" id="eq:S13_01_Ulat_GeV"><img src="/physics/eq/physics/phy-13-009.svg" data-eq="phy-13-009" width="290" height="73" loading="lazy" alt="\begin{align} U_{\mathrm{lat}} &amp;= \frac{3.138188678886709\times 10^{-7}\ \mathrm{J}} {1.602176634\times 10^{-10}\ \mathrm{J/GeV}} \notag\\ &amp;= 1958.7033116641428\ \mathrm{GeV}. \end{align}"></figure>
+<p>If the significant-figure (rounding) convention is locked, the reported value is fixed as</p>
+<figure class="eq" id="eq:S13_01_Ulat_GeV_round"><img src="/physics/eq/physics/phy-13-010.svg" data-eq="phy-13-010" width="157" height="26" loading="lazy" alt="\begin{equation} \boxed{ U_{\mathrm{lat}}\approx 1958.7\ \mathrm{GeV} } \end{equation}"></figure>
+<h3>13.1.5 Prohibitions on derived manipulation (no redefinition/absorption/post-tuning)</h3>
+<p>Fix the following prohibitions for U_lat.</p>
+<ol>
+<li> <strong>No redefinition</strong>: do not define U_lat by another formula outside this section, and do not swap symbols while keeping the same meaning.
+<li> <strong>No re-derivation</strong>: do not repeatedly expand <a href="#eq:S13_01_Ulat_def" class="xref" data-ref="eq:S13_01_Ulat_def">(S13_01_Ulat_def)</a> in “derivation” form outside this section (only referencing is allowed).
+<li> <strong>No absorption</strong>: do not absorb coefficients or geometric terms in downstream mass/force derivations into the definition of U_lat so as to change the definition structure.
+<li> <strong>No post-tuning</strong>: do not post-hoc modify the values of a, c_ref, h, or <a href="#eq:S13_01_GeV_to_J" class="xref" data-ref="eq:S13_01_GeV_to_J">(S13_01_GeV_to_J)</a> to match target numbers. Changes are allowed only via versioning.
+<li> <strong>No substitute constants</strong>: do not substitute a different speed constant for c_ref, or a different action constant for h (within the same version).
+</ol>
+<p>If any violation is detected, U_lat and all derived conclusions that use it lose conclusion status.</p>
+<h2>13.2 Mass = resistance (σₑff): axiom/definition</h2>
+<aside class="claim-strip vps" data-vps="13.2" data-cards="VP-C-035"><span class="g">operational axiom</span><span class="io">in: $U_lat$ / out: $m=U_lat/σ_eff$; locked types T1/T2/T3</span><q class="one">Mass is resistance; the type may never be switched after results.</q><span class="cards">VP-C-035</span></aside>
+<h3>13.2.1 Purpose</h3>
+<p>This section gives an operational definition of “mass” in the form of <strong>resistance (effective cross-section) σ_eff</strong> without external justification, and fixes the mass-computation/measurement procedure as a <strong>loggable protocol</strong>.  
+The outputs of this section are: (i) the mass–resistance axiom, (ii) the standard-form mass definition, (iii) a recipe for computing σ_eff, and (iv) Gate criteria.</p>
+<h3>13.2.2 [A] Mass = resistance axiom (operational axiom)</h3>
+<p>In this document, mass is fixed as “the resistance encountered when the lattice unit energy U_lat passes through a given structure.”</p>
+<h3>[A-13.2-1] Mass–resistance correspondence axiom</h3>
+<p>For an object O, the mass scale m(O) is fixed to satisfy</p>
+<figure class="eq" id="eq:S13_02_mass_axiom"><img src="/physics/eq/physics/phy-13-011.svg" data-eq="phy-13-011" width="140" height="43" loading="lazy" alt="\begin{equation} m(\mathcal{O}) = \frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(\mathcal{O})}. \end{equation}"></figure>
+<p>Here U_lat is the lattice unit energy locked as SSOT in §13.1, and σ_eff(O) is the effective cross-section (resistance) of O.</p>
+<h4>Meaning of the axiom (formal)</h4>
+<p>Equation <a href="#eq:S13_02_mass_axiom" class="xref" data-ref="eq:S13_02_mass_axiom">(S13_02_mass_axiom)</a> does not introduce “mass” as an independent substance; it fixes mass as an operational quantity defined by the ratio of U_lat and σ_eff. This axiom does not rely on external doctrine; once σ_eff is closed for each object in later sections, the mass is determined.</p>
+<h3>13.2.3 [D] Definition of σₑff (type classification)</h3>
+<p>Because the effective cross-section can be defined differently depending on the object type, this section classifies σ_eff into the following three types. The type choice must be locked in <code>analysis_lock</code> and cannot be swapped after seeing results.</p>
+<h3>(T1) Geometric</h3>
+<p>The geometric type adopts a “geometric cross-section” as the effective cross-section.</p>
+<figure class="eq" id="eq:S13_02_sigma_geom_type"><img src="/physics/eq/physics/phy-13-012.svg" data-eq="phy-13-012" width="314" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(\mathcal{O}) :=\sigma_{\mathrm{geom}}(\mathcal{O}) \quad\text{(geometric type)}. \end{equation}"></figure>
+<p>The definition of σ_geom is locked per object (e.g., π Rₚ² for a core radius Rₚ).</p>
+<h3>(T2) Path-aggregate</h3>
+<p>The path-aggregate type reduces resistance arising from propagation/path/throat aggregation to an effective cross-section.</p>
+<figure class="eq" id="eq:S13_02_sigma_path_type"><img src="/physics/eq/physics/phy-13-013.svg" data-eq="phy-13-013" width="355" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(\mathcal{O}) := \Sigma_{\mathrm{path}}(\mathcal{O}) \quad\text{(path-aggregate type)}. \end{equation}"></figure>
+<p>Σ_path is defined in connection with percolation/backbone/path closures (Chapter 10) and must be locked in <code>analysis_lock</code>.</p>
+<h3>(T3) Discrete-cancellation</h3>
+<p>The discrete-cancellation type reduces the residual of a “cancellation–survival” discrete structure to resistance.</p>
+<figure class="eq" id="eq:S13_02_sigma_disc_type"><img src="/physics/eq/physics/phy-13-014.svg" data-eq="phy-13-014" width="394" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(\mathcal{O}) := \Sigma_{\mathrm{disc}}(\mathcal{O}) \quad\text{(discrete-cancellation type)}. \end{equation}"></figure>
+<p>Σ_disc depends on the 82+7 structure verification (Chapter 8), the 3-sector integerization (Chapter 7), and event rates (Chapter 9); its definition must be locked in <code>analysis_lock</code>.</p>
+<h3>13.2.4 [D] Standard form of mass (units/dimensions/realization link)</h3>
+<h4>13.2.4.1 Dimension of mass</h4>
+<p>By <a href="#eq:S13_02_mass_axiom" class="xref" data-ref="eq:S13_02_mass_axiom">(S13_02_mass_axiom)</a>, the dimension of m is determined by dividing the dimension of U_lat (energy) by the dimension of σ_eff. Since this document reports masses in GeV (or subunits), σ_eff may be defined as a dimensionless “resistance coefficient” (types T2, T3). Therefore we fix the following convention.</p>
+<h4>[D-13.2-2] Dimensionless-resistance convention</h4>
+<p>When reporting masses in GeV in this chapter, the effective cross-section must be locked as one of the following.</p>
+<ol>
+<li> Dimensionless cross-section: σ_eff itself is dimensionless (a resistance coefficient), yielding a mass with the same dimension as U_lat.
+<li> Normalized cross-section: if σ_eff has dimension length², it must be normalized by a² or L_q² to become dimensionless before use.
+</ol>
+<p>The choice of normalization scheme must be locked in <code>analysis_lock</code> and cannot be changed after seeing outcomes.</p>
+<h4>13.2.4.2 Standard formula for the normalized-cross-section type</h4>
+<p>When using a geometric cross-section with dimension length², fix the following standard reduction to a dimensionless resistance.</p>
+<figure class="eq" id="eq:S13_02_sigma_tilde_def"><img src="/physics/eq/physics/phy-13-015.svg" data-eq="phy-13-015" width="170" height="49" loading="lazy" alt="\begin{equation} \tilde{\sigma}_{\mathrm{eff}}(\mathcal{O}) :=\frac{\sigma_{\mathrm{geom}}(\mathcal{O})}{L_{\mathrm{ref}}^{2}}, \end{equation}"></figure>
+<p>where L_ref is the normalization length (e.g., L_q or a) locked in <code>analysis_lock</code>. Then the mass is</p>
+<figure class="eq" id="eq:S13_02_mass_from_sigma_tilde"><img src="/physics/eq/physics/phy-13-016.svg" data-eq="phy-13-016" width="140" height="43" loading="lazy" alt="\begin{equation} m(\mathcal{O}) = \frac{U_{\mathrm{lat}}}{\tilde{\sigma}_{\mathrm{eff}}(\mathcal{O})}. \end{equation}"></figure>
+<p>Equation <a href="#eq:S13_02_mass_from_sigma_tilde" class="xref" data-ref="eq:S13_02_mass_from_sigma_tilde">(S13_02_mass_from_sigma_tilde)</a> is the standard mass formula for the <strong>normalized-cross-section type</strong>.</p>
+<h3>13.2.5 Procedure to compute σₑff (operational recipe)</h3>
+<p>This section fixes a common procedure for computing σ_eff. For an object O, σ_eff must follow the flow “definition→aggregation→Gate.”</p>
+<h4>13.2.5.1 Input log</h4>
+<p>Computing σ_eff requires the following input logs.</p>
+<ol>
+<li> Object identifiers: <code>object_id</code> and <code>object_instance_id</code>.
+<li> Geometry/coordinates: Rₚ, L_q, a, and required coordinate sets (e.g., X₈₂, S₇).
+<li> Graph/path data: contact graph, throat graph, backbone (if applicable).
+<li> Event logs: event sets / tick windows / required phases (if applicable).
+</ol>
+<p>Input logs must be sealed by <code>manifest+checksums</code>.</p>
+<h4>13.2.5.2 Calculation recipe (by type)</h4>
+<h4>(T1) Geometric type</h4>
+<ol>
+<li> Compute the object radius or geometric boundary under the locked convention (e.g., core radius Rₚ).
+<li> Compute the geometric cross-section by its defining equation (e.g., σ_geom=π Rₚ²).
+<li> If normalization is required, make it dimensionless using <a href="#eq:S13_02_sigma_tilde_def" class="xref" data-ref="eq:S13_02_sigma_tilde_def">(S13_02_sigma_tilde_def)</a>.
+</ol>
+<h4>(T2) Path-aggregate type</h4>
+<ol>
+<li> Using the percolation closure (§10.2), compute the effective threshold δ_eff and the backbone E_bb.
+<li> On the backbone, define a path-resistance aggregation (e.g., bottleneck-based sums, max/mean ratios; the definition is locked in <code>analysis_lock</code>).
+<li> Reduce the aggregation to a dimensionless resistance σ_eff (normalization-length choice locked).
+</ol>
+<h4>(T3) Discrete-cancellation type</h4>
+<ol>
+<li> From 7-shell verification (§8.3) <code>PASS</code>, compute the survival vector V_surv and its partition structure.
+<li> From 3-sector integerization (Chapter 7), compute residual directions and label-axis projections (if needed).
+<li> Apply the closure Σ_disc that maps residual magnitude/direction to a resistance coefficient (definition locked in <code>analysis_lock</code>).
+</ol>
+<h4>13.2.5.3 Mass computation</h4>
+<p>Using σ_eff(O) or σ_eff(O) computed by the selected type, compute the mass by <a href="#eq:S13_02_mass_axiom" class="xref" data-ref="eq:S13_02_mass_axiom">(S13_02_mass_axiom)</a> or <a href="#eq:S13_02_mass_from_sigma_tilde" class="xref" data-ref="eq:S13_02_mass_from_sigma_tilde">(S13_02_mass_from_sigma_tilde)</a>. The computation log must be sealed; unsealed computations do not receive conclusion status.</p>
+<h3>13.2.6 Gate (admissibility judgment) and FAIL conditions</h3>
+<p>σ_eff and m(O) require <code>PASS</code> of the following Gate stack.</p>
+<ol>
+<li> G-SYM: no symbol/unit/normalization-length meaning conflicts.
+<li> G-LOCK: consistent <code>lock_id</code> for the input log and seals.
+<li> G-REG: consistency of the applied regime (object/path/discrete-structure regime).
+<li> G-STR: structural verification (e.g., <code>G-SHELL7-6C1S</code>) is <code>PASS</code> (if applicable).
+<li> G-NUM: numerical stability (estimator convergence, iteration agreement).
+<li> G-REP: reproducibility.
+<li> G-NT: no post-hoc changes/selection bias.
+</ol>
+<p>The following violations are immediate <code>FAIL</code>.</p>
+<ol>
+<li> Switching the σ_eff type (T1/T2/T3) after seeing results.
+<li> Modifying κ_vp or the normalization length L_ref after seeing results.
+<li> Reporting mass using U_lat or σ_eff without seals.
+</ol>
+<h2>13.3 Deriving the 5π coefficient → m_H=Uₗat/(5π)</h2>
+<span id="hub:higgs"></span>
+<aside class="claim-strip vps" data-vps="13.3" data-cards="VP-C-015, VP-C-028"><span class="g">[F] coefficient</span><span class="io">in: 6 faces $-$ 1 gauge / out: $σ_eff(H)=5π$; $m_H=124.695$ GeV ($-0.40%$)</span><q class="one">Five channels of $π$ each; the residual is published, not migrated.</q><span class="cards">VP-C-015, VP-C-028</span></aside>
+<em> Concept links: input U_lat comes from <a href="#hub:Ulat" class="xref" data-ref="hub:Ulat">§13.1</a>; full mass chain <a href="#hub:mass" class="xref" data-ref="hub:mass">§13</a>.</em>
+<h3>13.3.1 Target and symbol fixing</h3>
+<p>The target of this section is to derive the canonical effective cross-section (resistance)</p>
+<figure class="eq" id="eq:S13_03_sigmaeff_goal"><img src="/physics/eq/physics/phy-13-017.svg" data-eq="phy-13-017" width="102" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(H)=5\pi \end{equation}"></figure>
+<p>so that, by the mass–resistance axiom of §13.2,</p>
+<figure class="eq" id="eq:S13_03_mass_axiom_ref"><img src="/physics/eq/physics/phy-13-018.svg" data-eq="phy-13-018" width="134" height="43" loading="lazy" alt="\begin{equation} m(\mathcal{O})=\frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(\mathcal{O})} \end{equation}"></figure>
+<p>we close</p>
+<figure class="eq" id="eq:S13_03_mH_goal"><img src="/physics/eq/physics/phy-13-019.svg" data-eq="phy-13-019" width="97" height="38" loading="lazy" alt="\begin{equation} m_H=\frac{U_{\mathrm{lat}}}{5\pi}. \end{equation}"></figure>
+<p>Here H is an object label for the “Stone direct-oscillation mode defined inside the canonical cell (Anchor Cell).” No external justification is used. All numerical values for H are computed only from the internal definition of U_lat and σ_eff(H).</p>
+<h3>13.3.2 Construction principle of σₑff (channel-sum definition)</h3>
+<p>This section locks the resistance (effective cross-section) of H by defining it as “a sum of independent constraint channels.”</p>
+<h4>[D-13.3-1] Channel set and channel count</h4>
+<p>Define the H mode to be described by the set of constraint channels on the canonical-cell boundary K_H.</p>
+<figure class="eq" id="eq:S13_03_KH_def"><img src="/physics/eq/physics/phy-13-020.svg" data-eq="phy-13-020" width="310" height="19" loading="lazy" alt="\begin{equation} \mathcal{K}_H:=\{1,2,\ldots,\kappa_H\}, \qquad \kappa_H:=|\mathcal{K}_H|. \end{equation}"></figure>
+<p>κ_H is the “number of independent constraint channels,” and this section derives κ_H=5 (§13.3.4).</p>
+<h4>[D-13.3-2] Dimensionless cross-section per channel σ₀</h4>
+<p>For each channel k∈K_H, one may define a geometric channel area σ_geom^((k)). This section defines the dimensionless cross-section per channel by normalizing the channel area by the length scale a as</p>
+<figure class="eq" id="eq:S13_03_sigma0_def"><img src="/physics/eq/physics/phy-13-021.svg" data-eq="phy-13-021" width="127" height="47" loading="lazy" alt="\begin{equation} \sigma_{0}^{(k)} := \frac{4\,\sigma_{\mathrm{geom}}^{(k)}}{a^2}. \end{equation}"></figure>
+<p>In <a href="#eq:S13_03_sigma0_def" class="xref" data-ref="eq:S13_03_sigma0_def">(S13_03_sigma0_def)</a>, a is the VP diameter (realization length) with <code>diameter</code> meaning. Hence a/2 is the derived VP radius.</p>
+<h4>[D-13.3-3] Composite definition of the effective cross-section</h4>
+<p>Define the effective cross-section (resistance) σ_eff(H) as</p>
+<figure class="eq" id="eq:S13_03_sigmaeff_sum"><img src="/physics/eq/physics/phy-13-022.svg" data-eq="phy-13-022" width="160" height="44" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(H) := \sum_{k\in\mathcal{K}_H}\sigma_{0}^{(k)}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S13_03_sigmaeff_sum" class="xref" data-ref="eq:S13_03_sigmaeff_sum">(S13_03_sigmaeff_sum)</a> is the composition convention that “independent channel contributions accumulate by summation”; it cannot be swapped to multiplication/max/other aggregation within the same version.</p>
+<h3>13.3.3 Deriving the π geometric factor (canonical form of channel area)</h3>
+<p>This section defines each independent channel of the H mode as an isotropic channel that closes with the same canonical cross-section.</p>
+<h4>[D-13.3-4] Canonical channel area (disk)</h4>
+<p>Define the geometric area of each channel k as a disk of VP radius a/2.</p>
+<figure class="eq" id="eq:S13_03_sigma_geom_channel"><img src="/physics/eq/physics/phy-13-023.svg" data-eq="phy-13-023" width="197" height="38" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{geom}}^{(k)} := \pi\left(\frac{a}{2}\right)^2 = \frac{\pi}{4}a^2. \end{equation}"></figure>
+<p>Definition <a href="#eq:S13_03_sigma_geom_channel" class="xref" data-ref="eq:S13_03_sigma_geom_channel">(S13_03_sigma_geom_channel)</a> is the canonical channel-area form; it cannot be swapped to another shape post hoc. If the shape is changed, σ_geom^((k)) itself must be changed by versioning.</p>
+<h4>[D-13.3-5] Value of the dimensionless cross-section per channel</h4>
+<p>Substituting <a href="#eq:S13_03_sigma_geom_channel" class="xref" data-ref="eq:S13_03_sigma_geom_channel">(S13_03_sigma_geom_channel)</a> into <a href="#eq:S13_03_sigma0_def" class="xref" data-ref="eq:S13_03_sigma0_def">(S13_03_sigma0_def)</a>,</p>
+<figure class="eq" id="eq:S13_03_sigma0_pi"><img src="/physics/eq/physics/phy-13-024.svg" data-eq="phy-13-024" width="179" height="39" loading="lazy" alt="\begin{align} \sigma_{0}^{(k)} &amp;=\frac{4}{a^2}\left(\frac{\pi}{4}a^2\right) =\pi. \end{align}"></figure>
+<p>Therefore for all channels,</p>
+<figure class="eq" id="eq:S13_03_sigma0_all"><img src="/physics/eq/physics/phy-13-025.svg" data-eq="phy-13-025" width="176" height="25" loading="lazy" alt="\begin{equation} \sigma_{0}^{(k)}=\pi \qquad (k\in\mathcal{K}_H) \end{equation}"></figure>
+<p>holds.</p>
+<h3>13.3.4 Deriving the factor 5 (number of independent constraint channels κ_H=5)</h3>
+<p>This section derives κ_H from the number of boundary channels of the canonical cell (<code>CELL-CUBE</code>).</p>
+<h4>[D-13.3-6] Elements of cube-boundary channels</h4>
+<p>Since the canonical cell is a cube, define the basic candidate set of boundary channels by the six faces:</p>
+<figure class="eq" id="eq:S13_03_faceset"><img src="/physics/eq/physics/phy-13-026.svg" data-eq="phy-13-026" width="359" height="19" loading="lazy" alt="\begin{equation} \mathcal{F} := \{+x,-x,+y,-y,+z,-z\}, \qquad |\mathcal{F}|=6. \end{equation}"></figure>
+<p>For each face f∈F, define that a “channel state variable” (e.g., phase/displacement/update count) is recorded as a real number u_f.</p>
+<figure class="eq" id="eq:S13_03_uvec"><img src="/physics/eq/physics/phy-13-027.svg" data-eq="phy-13-027" width="153" height="22" loading="lazy" alt="\begin{equation} \mathbf{u}:=(u_f)_{f\in\mathcal{F}}\in\mathbb{R}^{6}. \end{equation}"></figure>
+<h4>[D-13.3-7] Removing a global-reference (gauge) degree of freedom</h4>
+<p>Inside the canonical cell, an “absolute reference shift” must be treated as observationally invariant. Define the following equivalence relation.</p>
+<figure class="eq" id="eq:S13_03_gauge_equiv"><img src="/physics/eq/physics/phy-13-028.svg" data-eq="phy-13-028" width="541" height="20" loading="lazy" alt="\begin{equation} \mathbf{u}\sim \mathbf{u}&#x27; \quad\Longleftrightarrow\quad \exists c\in\mathbb{R}\ \text{s.t.}\ \mathbf{u}&#x27;=\mathbf{u}+c\,\mathbf{1}_6, \qquad \mathbf{1}_6:=(1,1,1,1,1,1). \end{equation}"></figure>
+<p>That is, adding the same constant c to all face-channel states is a “global reference shift” and does not increase the number of independent constraint channels of the H mode.</p>
+<h4>[T-13.3-1] Proposition: the number of independent channels</h4>
+<p>Under the equivalence relation <a href="#eq:S13_03_gauge_equiv" class="xref" data-ref="eq:S13_03_gauge_equiv">(S13_03_gauge_equiv)</a>, the dimension of the independent channel space is 5.</p>
+<figure class="eq" id="eq:S13_03_dim5"><img src="/physics/eq/physics/phy-13-029.svg" data-eq="phy-13-029" width="195" height="23" loading="lazy" alt="\begin{equation} \dim\left(\mathbb{R}^6 / \mathrm{span}\{\mathbf{1}_6\}\right)=5. \end{equation}"></figure>
+<h4>Proof</h4>
+<p>Since span1₆ is a 1-dimensional subspace of R⁶,</p>
+<figure class="eq" id="eq:S13_03_dim5_proof"><img src="/physics/eq/physics/phy-13-030.svg" data-eq="phy-13-030" width="499" height="23" loading="lazy" alt="\begin{equation} \dim\left(\mathbb{R}^6 / \mathrm{span}\{\mathbf{1}_6\}\right) = \dim(\mathbb{R}^6)-\dim\left(\mathrm{span}\{\mathbf{1}_6\}\right) =6-1=5. \end{equation}"></figure>
+<p>square</p>
+<em>Shared-lemma note.</em> The count <a href="#eq:S13_03_dim5" class="xref" data-ref="eq:S13_03_dim5">(S13_03_dim5)</a> is one instance of the gauge-removal lemma dim(R^N/spanmathbf 1_N)=N-1 (<a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon_integral" class="xref" data-ref="hub:nucleon_integral">§8.0.6(D)</a>, eq. <a href="/physics/08-discrete-proton-structure-82-7/#eq:S08_06_gauge_lemma" class="xref" data-ref="eq:S08_06_gauge_lemma">(S08_06_gauge_lemma)</a>): here N=6 faces → 5. The <em>same</em> forced lemma fixes the nucleon exponent (n sectors → n-1, <a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>) and the αₑₘ sign-microstate count (7 shells → 2⁶, <a href="/physics/14-force-lattice-tension-1-r2/#hub:alphaem" class="xref" data-ref="hub:alphaem">§14.5.3</a>). The factor 5 is therefore not a Higgs-specific choice.
+<h4>[D-13.3-8] Definition of κ_H (independent channel count)</h4>
+<p>By <a href="#eq:S13_03_dim5" class="xref" data-ref="eq:S13_03_dim5">(S13_03_dim5)</a>, lock the number of independent constraint channels of the H mode as</p>
+<figure class="eq" id="eq:S13_03_kappaH_5"><img src="/physics/eq/physics/phy-13-031.svg" data-eq="phy-13-031" width="68" height="15" loading="lazy" alt="\begin{equation} \kappa_H:=5. \end{equation}"></figure>
+<p>Definition <a href="#eq:S13_03_kappaH_5" class="xref" data-ref="eq:S13_03_kappaH_5">(S13_03_kappaH_5)</a> is determined by combining the canonical-cell boundary channel candidates (six faces) with the global-reference-removal convention <a href="#eq:S13_03_gauge_equiv" class="xref" data-ref="eq:S13_03_gauge_equiv">(S13_03_gauge_equiv)</a>; it does not change within the same version.</p>
+<h3>13.3.5 Closing σₑff(H)=5π</h3>
+<p>Combine <a href="#eq:S13_03_sigmaeff_sum" class="xref" data-ref="eq:S13_03_sigmaeff_sum">(S13_03_sigmaeff_sum)</a> with <a href="#eq:S13_03_sigma0_all" class="xref" data-ref="eq:S13_03_sigma0_all">(S13_03_sigma0_all)</a> and <a href="#eq:S13_03_kappaH_5" class="xref" data-ref="eq:S13_03_kappaH_5">(S13_03_kappaH_5)</a>.</p>
+<figure class="eq" id="eq:S13_03_sigmaeff_5pi"><img src="/physics/eq/physics/phy-13-032.svg" data-eq="phy-13-032" width="327" height="54" loading="lazy" alt="\begin{align} \sigma_{\mathrm{eff}}(H) &amp;=\sum_{k\in\mathcal{K}_H}\sigma_{0}^{(k)} =\sum_{k=1}^{\kappa_H}\pi =\kappa_H\,\pi =5\pi. \end{align}"></figure>
+<p>Hence <a href="#eq:S13_03_sigmaeff_goal" class="xref" data-ref="eq:S13_03_sigmaeff_goal">(S13_03_sigmaeff_goal)</a> holds.</p>
+<h3>13.3.6 Closing m_H=Uₗat/(5π)</h3>
+<p>Substitute O=H into the mass–resistance axiom <a href="#eq:S13_03_mass_axiom_ref" class="xref" data-ref="eq:S13_03_mass_axiom_ref">(S13_03_mass_axiom_ref)</a> and use <a href="#eq:S13_03_sigmaeff_5pi" class="xref" data-ref="eq:S13_03_sigmaeff_5pi">(S13_03_sigmaeff_5pi)</a>.</p>
+<figure class="eq" id="eq:S13_03_mH_final"><img src="/physics/eq/physics/phy-13-033.svg" data-eq="phy-13-033" width="188" height="43" loading="lazy" alt="\begin{align} m_H &amp;=\frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(H)} =\frac{U_{\mathrm{lat}}}{5\pi}. \end{align}"></figure>
+<p>Equation <a href="#eq:S13_03_mH_final" class="xref" data-ref="eq:S13_03_mH_final">(S13_03_mH_final)</a> is the conclusion of this section.</p>
+<h3>13.3.7 Numerical substitution (using defined inputs)</h3>
+<p>If U_lat is locked in §13.1 as</p>
+<figure class="eq" id="eq:S13_03_Ulat_value"><img src="/physics/eq/physics/phy-13-034.svg" data-eq="phy-13-034" width="258" height="16" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}}=1958.7033116641428\ \mathrm{GeV} \end{equation}"></figure>
+<p>then from <a href="#eq:S13_03_mH_final" class="xref" data-ref="eq:S13_03_mH_final">(S13_03_mH_final)</a>,</p>
+<figure class="eq" id="eq:S13_03_mH_numeric"><img src="/physics/eq/physics/phy-13-035.svg" data-eq="phy-13-035" width="496" height="38" loading="lazy" alt="\begin{equation} m_H = \frac{1958.7033116641428}{5\pi}\ \mathrm{GeV} = 124.69492564072544\ \mathrm{GeV} \end{equation}"></figure>
+<p>The reporting convention (significant figures) is locked in <code>analysis_lock</code>.</p>
+<h4>Measured value comparison and residual (added v0.2.0).</h4>
+<p>The PDG-tabulated Higgs boson mass is m_H^exp=125.20± 0.11GeV (CODATA/PDG 2024). Comparing with <a href="#eq:S13_03_mH_numeric" class="xref" data-ref="eq:S13_03_mH_numeric">(S13_03_mH_numeric)</a>:</p>
+<figure class="eq" id="eq:S13_03_mH_residual"><img src="/physics/eq/physics/phy-13-036.svg" data-eq="phy-13-036" width="490" height="49" loading="lazy" alt="\begin{equation} \frac{m_H - m_H^{\mathrm{exp}}}{m_H^{\mathrm{exp}}} = \frac{124.695 - 125.20}{125.20} \approx -4.0\times 10^{-3}\quad (-0.40\%). \end{equation}"></figure>
+<strong>Grade:</strong> [F]{} for the geometric factor 5π (from canonical 6-face boundary minus global-reference convention); [H]{} for closing the coefficient at the -0.40% level under the single anchor λ_ref=632.99nm.
+<h4>No-tuning fingerprint.</h4>
+<p>If this paper were tuning numbers, the closure could have been forced to zero by writing m_H=U_lat/(4.98π). We do not. The factor is the clean integer-and-π form 5π, and the residual -0.40% is reported openly: the residual itself is part of the deliverable, not an embarrassment. The same pattern holds for mₚ/mₑ=6π⁵≈ 1836.12 (residual -19ppm from measured 1836.15) and for the predicted proton radius rₚ=D_anch/(6π⁶) (−0.018% vs CODATA 0.8414 fm). (The Coulomb -0.43% is no longer cited here: it was reclassified as overfit in §14.2.) A tuning workflow would never accept a 5π that misses by 0.40%; it would migrate to 4.98π. This refusal to migrate is a structural signature distinguishing geometric derivation from coincidence-fitting (see §1.8 No-Tuning Audit).</p>
+<h2>13.4 Deriving the proton mass integral (Sₚ)</h2>
+<aside class="claim-strip vps" data-vps="13.4" data-cards="VP-C-016"><span class="g">[F] prediction</span><span class="io">in: $λ_C=(π/2)rₚ$ / out: $Sₚ=λ_C/a=2087.476$; $mₚ=hc/λ_C=0.93831$ GeV ($a$ cancels)</span><q class="one">The integral is bookkeeping; the physics is a derived Compton length.</q><span class="cards">VP-C-016</span></aside>
+<strong>Status note: the proton mass is a prediction, not a calibration.</strong>
+The single mass-scale <em>calibration</em> node is the electron: mₑc²=2hc/D_anch is the Compton relation that fixes the absolute scale (§13.5.4). The proton mass is <em>not</em> a second calibration. Under LOCK-NU-N (<a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>) the proton radius is the <em>derived prediction</em> rₚ=D_anch/(6π⁶), hence λ_C=(π/2)rₚ=D_anch/(12π⁵) and
+<figure class="eq"><img src="/physics/eq/physics/phy-13-131.svg" data-eq="phy-13-131" width="328" height="41" loading="lazy" alt="m_pc^{2}=\frac{hc}{\lambda_C}=12\pi^{5}\,\frac{hc}{D_{\mathrm{anch}}}=6\pi^{5}\,(m_ec^{2}),"></figure>
+<p>so mₚ follows from the <em>single</em> anchor D_anch times forced geometry, and the ratio mₚ/mₑ=6π⁵ carries no anchor at all. The resistance integral Sₚ derived below evaluates to the trivial layer count Sₚ=λ_C/a; the realization scale a therefore cancels in mₚ=U_lat/Sₚ=hc/λ_C and plays no physical role here. The integral is bookkeeping, and the physical content is the Compton relation with λ_C <em>derived</em> (not an input). The locked value rₚ=0.8412 fm used numerically below is the +61 ppm cross-check of the LOCK-NU-N prediction (§9.4), retained for arithmetic continuity.</p>
+<h3>13.4.1 Inputs (LOCK) and purpose</h3>
+<p>This section assumes the following items are locked.</p>
+<ol>
+<li> Realization length (VP diameter): a (locked in <code>realization_lock</code> in §11.2).
+<li> Core radius rₚ — under LOCK-NU-N (§8.0.5) a <em>derived prediction</em> rₚ=D_anch/(6π⁶), not a free input; the value held in <code>canon_lock</code> (§2.2) is its +61 ppm cross-check.
+<li> π (dimensionless constant, locked in <code>canon_lock</code>).
+<li> Lattice unit energy: U_lat:=dfrachc_refa (SSOT in §13.1).
+<li> Core phase-completion length: λ_C (a length defined in §6.1 and referenceable in <code>canon_lock</code> within the same version).
+</ol>
+<p>The purpose of this section is to derive the dimensionless resistance integral (effective cross-section) Sₚ by an internal definition, so as to close the proton mass as</p>
+<figure class="eq" id="eq:S13_04_goal"><img src="/physics/eq/physics/phy-13-037.svg" data-eq="phy-13-037" width="87" height="43" loading="lazy" alt="\begin{equation} m_p=\frac{U_{\mathrm{lat}}}{S_p} \end{equation}"></figure>
+<p>In addition, by the requested condition, the expansion includes λ_C=(π/2)rₚ.</p>
+<h3>13.4.2 Deriving λ_C=(π/2)rₚ (an algebraic consequence of locked continuum results)</h3>
+<h4>[D-13.4-1] Symbol consistency</h4>
+<p>In this section the core radius is denoted by rₚ (the derived radius of §8.0.5; see the status note above), and the core-radius symbol Rₚ used in the continuum-core model is treated as the same meaning.</p>
+<figure class="eq" id="eq:S13_04_Rp_rp"><img src="/physics/eq/physics/phy-13-038.svg" data-eq="phy-13-038" width="69" height="18" loading="lazy" alt="\begin{equation} R_p \equiv r_p. \end{equation}"></figure>
+<h4>[LOCK-reference] Continuum length-selection result</h4>
+<p>From the continuum result of §6.2 (locked within the same version),</p>
+<figure class="eq" id="eq:S13_04_Rp_over_Lq"><img src="/physics/eq/physics/phy-13-039.svg" data-eq="phy-13-039" width="79" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\frac{2}{\pi}, \end{equation}"></figure>
+<p>and from the identification lock of §6.1,</p>
+<figure class="eq" id="eq:S13_04_Lq_eq_lC"><img src="/physics/eq/physics/phy-13-040.svg" data-eq="phy-13-040" width="72" height="18" loading="lazy" alt="\begin{equation} L_q=\lambda_C. \end{equation}"></figure>
+<p>Substituting <a href="#eq:S13_04_Lq_eq_lC" class="xref" data-ref="eq:S13_04_Lq_eq_lC">(S13_04_Lq_eq_lC)</a> into <a href="#eq:S13_04_Rp_over_Lq" class="xref" data-ref="eq:S13_04_Rp_over_Lq">(S13_04_Rp_over_Lq)</a>,</p>
+<figure class="eq" id="eq:S13_04_Rp_over_lC"><img src="/physics/eq/physics/phy-13-041.svg" data-eq="phy-13-041" width="79" height="42" loading="lazy" alt="\begin{equation} \frac{R_p}{\lambda_C}=\frac{2}{\pi}. \end{equation}"></figure>
+<p>Solving <a href="#eq:S13_04_Rp_over_lC" class="xref" data-ref="eq:S13_04_Rp_over_lC">(S13_04_Rp_over_lC)</a> for λ_C gives</p>
+<figure class="eq" id="eq:S13_04_lC_from_Rp"><img src="/physics/eq/physics/phy-13-042.svg" data-eq="phy-13-042" width="93" height="33" loading="lazy" alt="\begin{equation} \lambda_C=\frac{\pi}{2}R_p. \end{equation}"></figure>
+<p>Finally, substituting <a href="#eq:S13_04_Rp_rp" class="xref" data-ref="eq:S13_04_Rp_rp">(S13_04_Rp_rp)</a> into <a href="#eq:S13_04_lC_from_Rp" class="xref" data-ref="eq:S13_04_lC_from_Rp">(S13_04_lC_from_Rp)</a>,</p>
+<figure class="eq" id="eq:S13_04_lC_from_rp"><img src="/physics/eq/physics/phy-13-043.svg" data-eq="phy-13-043" width="95" height="43" loading="lazy" alt="\begin{equation} \boxed{ \lambda_C=\frac{\pi}{2}\,r_p } \end{equation}"></figure>
+<p>Equation <a href="#eq:S13_04_lC_from_rp" class="xref" data-ref="eq:S13_04_lC_from_rp">(S13_04_lC_from_rp)</a> is an algebraic consequence of locked continuum results; no additional assumption is introduced in this section.</p>
+<h3>13.4.3 [D] Operational definition of the proton resistance integral Sₚ (length–layer integral)</h3>
+<p>In this section, Sₚ is defined as “the number of layers (accumulated resistance) obtained by decomposing the core phase-completion length λ_C by the VP diameter a.”</p>
+<h4>13.4.3.1 Radial accumulated layer count</h4>
+<p>Define the radial coordinate R on 0≤ R≤ λ_C. Fix one layer thickness to the VP diameter a; then the number of layers (dimensionless) contained in an infinitesimal interval dR is defined as</p>
+<figure class="eq" id="eq:S13_04_dN"><img src="/physics/eq/physics/phy-13-044.svg" data-eq="phy-13-044" width="116" height="38" loading="lazy" alt="\begin{equation} dN(R):=\frac{dR}{a} \end{equation}"></figure>
+<h4>13.4.3.2 Resistance integral (accumulated layer count) Sₚ</h4>
+<p>Define the proton resistance integral (effective cross-section) Sₚ by</p>
+<figure class="eq" id="eq:S13_04_Sp_int"><img src="/physics/eq/physics/phy-13-045.svg" data-eq="phy-13-045" width="130" height="56" loading="lazy" alt="\begin{equation} \boxed{ S_p := \int_{0}^{\lambda_C}\frac{dR}{a} } \end{equation}"></figure>
+<p>Since a is locked as a constant (realization length) within the same version, the integral evaluates immediately:</p>
+<figure class="eq" id="eq:S13_04_Sp_eval"><img src="/physics/eq/physics/phy-13-046.svg" data-eq="phy-13-046" width="376" height="46" loading="lazy" alt="\begin{align} S_p &amp;=\int_{0}^{\lambda_C}\frac{dR}{a} =\frac{1}{a}\int_{0}^{\lambda_C} dR =\frac{1}{a}\Bigl[ R \Bigr]_{0}^{\lambda_C} =\frac{\lambda_C}{a}. \end{align}"></figure>
+<p>Hence</p>
+<figure class="eq" id="eq:S13_04_Sp_lC_over_a"><img src="/physics/eq/physics/phy-13-047.svg" data-eq="phy-13-047" width="85" height="48" loading="lazy" alt="\begin{equation} \boxed{ S_p=\frac{\lambda_C}{a} } \end{equation}"></figure>
+<p>holds.</p>
+<h4>13.4.3.3 Inserting λ_C=(π/2)rₚ</h4>
+<p>Substituting <a href="#eq:S13_04_lC_from_rp" class="xref" data-ref="eq:S13_04_lC_from_rp">(S13_04_lC_from_rp)</a> into <a href="#eq:S13_04_Sp_lC_over_a" class="xref" data-ref="eq:S13_04_Sp_lC_over_a">(S13_04_Sp_lC_over_a)</a>,</p>
+<figure class="eq" id="eq:S13_04_Sp_rp_over_a"><img src="/physics/eq/physics/phy-13-048.svg" data-eq="phy-13-048" width="247" height="41" loading="lazy" alt="\begin{align} S_p &amp;=\frac{\lambda_C}{a} =\frac{(\pi/2)\,r_p}{a} =\frac{\pi}{2}\,\frac{r_p}{a}. \end{align}"></figure>
+<p>That is,</p>
+<figure class="eq" id="eq:S13_04_Sp_final"><img src="/physics/eq/physics/phy-13-049.svg" data-eq="phy-13-049" width="101" height="45" loading="lazy" alt="\begin{equation} \boxed{ S_p=\frac{\pi}{2}\,\frac{r_p}{a} } \end{equation}"></figure>
+<p>is fixed.</p>
+<h3>13.4.4 Full expansion of mₚ=Uₗat/Sₚ (definition–substitution–cancellation)</h3>
+<p>By the mass=resistance axiom/definition of §13.2 (locked within the same version), define</p>
+<figure class="eq" id="eq:S13_04_mp_def"><img src="/physics/eq/physics/phy-13-050.svg" data-eq="phy-13-050" width="97" height="43" loading="lazy" alt="\begin{equation} m_p:=\frac{U_{\mathrm{lat}}}{S_p}. \end{equation}"></figure>
+<p>By the SSOT definition of §13.1,</p>
+<figure class="eq" id="eq:S13_04_Ulat_def"><img src="/physics/eq/physics/phy-13-051.svg" data-eq="phy-13-051" width="112" height="38" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}}:=\frac{h\,c_{\mathrm{ref}}}{a}. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S13_04_Sp_lC_over_a" class="xref" data-ref="eq:S13_04_Sp_lC_over_a">(S13_04_Sp_lC_over_a)</a> into <a href="#eq:S13_04_mp_def" class="xref" data-ref="eq:S13_04_mp_def">(S13_04_mp_def)</a> and expand using <a href="#eq:S13_04_Ulat_def" class="xref" data-ref="eq:S13_04_Ulat_def">(S13_04_Ulat_def)</a>.</p>
+<figure class="eq" id="eq:S13_04_mp_hc_over_lC"><img src="/physics/eq/physics/phy-13-052.svg" data-eq="phy-13-052" width="360" height="84" loading="lazy" alt="\begin{align} m_p &amp;=\frac{U_{\mathrm{lat}}}{S_p} =\frac{\dfrac{h\,c_{\mathrm{ref}}}{a}}{\dfrac{\lambda_C}{a}} =\frac{h\,c_{\mathrm{ref}}}{a}\cdot\frac{a}{\lambda_C} =\frac{h\,c_{\mathrm{ref}}}{\lambda_C}. \end{align}"></figure>
+<p>Thus a cancels algebraically in <a href="#eq:S13_04_mp_hc_over_lC" class="xref" data-ref="eq:S13_04_mp_hc_over_lC">(S13_04_mp_hc_over_lC)</a>, and within the same version,</p>
+<figure class="eq" id="eq:S13_04_mp_closed_lC"><img src="/physics/eq/physics/phy-13-053.svg" data-eq="phy-13-053" width="106" height="51" loading="lazy" alt="\begin{equation} \boxed{ m_p=\frac{h\,c_{\mathrm{ref}}}{\lambda_C} } \end{equation}"></figure>
+<p>holds.</p>
+<p>Substituting <a href="#eq:S13_04_lC_from_rp" class="xref" data-ref="eq:S13_04_lC_from_rp">(S13_04_lC_from_rp)</a> into <a href="#eq:S13_04_mp_closed_lC" class="xref" data-ref="eq:S13_04_mp_closed_lC">(S13_04_mp_closed_lC)</a> to express it in terms of rₚ,</p>
+<figure class="eq" id="eq:S13_04_mp_closed_rp"><img src="/physics/eq/physics/phy-13-054.svg" data-eq="phy-13-054" width="220" height="44" loading="lazy" alt="\begin{align} m_p &amp;=\frac{h\,c_{\mathrm{ref}}}{(\pi/2)\,r_p} =\frac{2}{\pi}\,\frac{h\,c_{\mathrm{ref}}}{r_p}. \end{align}"></figure>
+<p>Therefore the final conclusion is equivalently given by the following forms.</p>
+<figure class="eq" id="eq:S13_04_mp_final_forms"><img src="/physics/eq/physics/phy-13-055.svg" data-eq="phy-13-055" width="263" height="53" loading="lazy" alt="\begin{equation} \boxed{ m_p=\frac{U_{\mathrm{lat}}}{S_p} =\frac{h\,c_{\mathrm{ref}}}{\lambda_C} =\frac{2}{\pi}\,\frac{h\,c_{\mathrm{ref}}}{r_p} } \end{equation}"></figure>
+<h3>13.4.5 Numerical substitution (using locked values)</h3>
+<p>All numerical substitutions in this section use only locked values (LOCK).</p>
+<h4>13.4.5.1 Numerical value of λ_C (from rₚ)</h4>
+<p>Using the canonical input</p>
+<figure class="eq" id="eq:S13_04_rp_value"><img src="/physics/eq/physics/phy-13-056.svg" data-eq="phy-13-056" width="179" height="22" loading="lazy" alt="\begin{equation} r_p=0.8412\times 10^{-15}\ \mathrm{m} \end{equation}"></figure>
+<p>we obtain from <a href="#eq:S13_04_lC_from_rp" class="xref" data-ref="eq:S13_04_lC_from_rp">(S13_04_lC_from_rp)</a></p>
+<figure class="eq" id="eq:S13_04_lC_value"><img src="/physics/eq/physics/phy-13-057.svg" data-eq="phy-13-057" width="301" height="60" loading="lazy" alt="\begin{align} \lambda_C &amp;=\frac{\pi}{2}\,r_p =\frac{\pi}{2}\times 0.8412\times 10^{-15}\ \mathrm{m} \notag\\ &amp;=1.3213538700998668\times 10^{-15}\ \mathrm{m}. \end{align}"></figure>
+<h4>13.4.5.2 Numerical value of Sₚ</h4>
+<p>Using the realization length</p>
+<figure class="eq" id="eq:S13_04_a_value"><img src="/physics/eq/physics/phy-13-058.svg" data-eq="phy-13-058" width="310" height="18" loading="lazy" alt="\begin{equation} a=\aVP \end{equation}"></figure>
+<p>we obtain from <a href="#eq:S13_04_Sp_lC_over_a" class="xref" data-ref="eq:S13_04_Sp_lC_over_a">(S13_04_Sp_lC_over_a)</a></p>
+<figure class="eq" id="eq:S13_04_Sp_value"><img src="/physics/eq/physics/phy-13-059.svg" data-eq="phy-13-059" width="364" height="68" loading="lazy" alt="\begin{align} S_p &amp;=\frac{\lambda_C}{a} =\frac{1.3213538700998668\times 10^{-15}}{6.3299121257859865746\times 10^{-19}} \notag\\ &amp;=2087.4758509160097\ldots \end{align}"></figure>
+<p>The reporting convention (significant figures/rounding) is locked in <code>analysis_lock</code>.</p>
+<h4>13.4.5.3 Numerical value of mₚ (using Uₗat)</h4>
+<p>Let the locked value (reporting unit <code>GeV</code>) from §13.1 be</p>
+<figure class="eq" id="eq:S13_04_Ulat_value"><img src="/physics/eq/physics/phy-13-060.svg" data-eq="phy-13-060" width="264" height="16" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}}=1958.7033116641428\ \mathrm{GeV}. \end{equation}"></figure>
+<p>From <a href="#eq:S13_04_mp_def" class="xref" data-ref="eq:S13_04_mp_def">(S13_04_mp_def)</a> and <a href="#eq:S13_04_Sp_value" class="xref" data-ref="eq:S13_04_Sp_value">(S13_04_Sp_value)</a>,</p>
+<figure class="eq" id="eq:S13_04_mp_value"><img src="/physics/eq/physics/phy-13-061.svg" data-eq="phy-13-061" width="324" height="67" loading="lazy" alt="\begin{align} m_p &amp;=\frac{U_{\mathrm{lat}}}{S_p} =\frac{1958.7033116641428}{2087.4758509160097}\ \mathrm{GeV} \notag\\ &amp;=0.9383118424122799\ldots\ \mathrm{GeV}. \end{align}"></figure>
+<h3>13.4.6 Error / LOCK link (sensitivity)</h3>
+<p>Since Sₚ=λ_C/a and mₚ=hc_ref/λ_C, sensitivities summarize as follows.</p>
+<h4>13.4.6.1 Relative sensitivity of Sₚ</h4>
+<figure class="eq" id="eq:S13_04_Sp_sens"><img src="/physics/eq/physics/phy-13-062.svg" data-eq="phy-13-062" width="310" height="45" loading="lazy" alt="\begin{equation} S_p=\frac{\lambda_C}{a} \quad\Longrightarrow\quad \frac{dS_p}{S_p} = \frac{d\lambda_C}{\lambda_C} -\frac{da}{a}. \end{equation}"></figure>
+<p>Since λ_C=(π/2)rₚ,</p>
+<figure class="eq" id="eq:S13_04_lC_sens"><img src="/physics/eq/physics/phy-13-063.svg" data-eq="phy-13-063" width="104" height="45" loading="lazy" alt="\begin{equation} \frac{d\lambda_C}{\lambda_C}=\frac{dr_p}{r_p}. \end{equation}"></figure>
+<p>Therefore</p>
+<figure class="eq" id="eq:S13_04_Sp_sens2"><img src="/physics/eq/physics/phy-13-064.svg" data-eq="phy-13-064" width="152" height="45" loading="lazy" alt="\begin{equation} \frac{dS_p}{S_p}=\frac{dr_p}{r_p}-\frac{da}{a}. \end{equation}"></figure>
+<h4>13.4.6.2 Relative sensitivity of mₚ (realization a cancels)</h4>
+<p>From <a href="#eq:S13_04_mp_closed_lC" class="xref" data-ref="eq:S13_04_mp_closed_lC">(S13_04_mp_closed_lC)</a>,</p>
+<figure class="eq" id="eq:S13_04_mp_sens"><img src="/physics/eq/physics/phy-13-065.svg" data-eq="phy-13-065" width="375" height="45" loading="lazy" alt="\begin{equation} m_p=\frac{h\,c_{\mathrm{ref}}}{\lambda_C} \quad\Longrightarrow\quad \frac{dm_p}{m_p} = -\frac{d\lambda_C}{\lambda_C} =-\frac{dr_p}{r_p}. \end{equation}"></figure>
+<p>That is, when h,c_ref,π are locked within the same version, mₚ is sensitive only to the locked value of rₚ, and a cancels algebraically so it does not enter mₚ directly (<a href="#eq:S13_04_mp_hc_over_lC" class="xref" data-ref="eq:S13_04_mp_hc_over_lC">(S13_04_mp_hc_over_lC)</a>).</p>
+<h2>13.5 Deriving the electron mass integral (S) + mₚ/mₑ=2π· νₚ</h2>
+<span id="hub:mpme"></span>
+<aside class="claim-strip vps" data-vps="13.5" data-cards="VP-C-013, VP-C-009, VP-C-011"><span class="g">[F] identity</span><span class="io">in: two Compton lengths / out: $mₚ/mₑ=2πνₚ=6π⁵=1836.118$ ($-19$ ppm)</span><q class="one">The bracket $2π$ is $α/δ$ — derived, with the old $π²$ confusion on record.</q><span class="cards">VP-C-013, VP-C-009, VP-C-011</span></aside>
+<em> Concept links: the π-powers here follow the π/2 decoder <a href="/physics/05-geometric-rectification-constants-single-source/#hub:decoder" class="xref" data-ref="hub:decoder">§5.0</a>; νₚ is the canonical rate of <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a>; mass chain <a href="#hub:mass" class="xref" data-ref="hub:mass">§13</a>. This ratio is a kill-criterion in <a href="/physics/01-governance-no-tuning-lock-gate/#hub:falsify" class="xref" data-ref="hub:falsify">§1.10</a>.</em>
+<h3>13.5.1 Inputs (LOCK) and targets</h3>
+<p>This section assumes the following inputs are locked.</p>
+<ol>
+<li> Realization length a (VP diameter, <code>realization_lock</code>).
+<li> Canonical cell length D_anch (canonical input, <code>canon_lock</code>).
+<li> Stationary coefficient δ (locked as δ=1/π² in the universal regime).
+<li> Electron canonical event rate ν_e,can:=1 (locked in §9.3).
+<li> Proton canonical event rate ν_p,can (locked as a value or expression in §9.4).
+<li> Lattice unit energy U_lat (SSOT in §13.1).
+<li> Proton resistance integral Sₚ (derived in §13.4).
+</ol>
+<p>The targets of this section are:</p>
+<ol>
+<li> Derive, by an <strong>internal definition</strong>, the dimensionless resistance integral S that closes the electron mass as
+<figure class="eq" id="eq:S13_05_goal_me"><img src="/physics/eq/physics/phy-13-066.svg" data-eq="phy-13-066" width="86" height="38" loading="lazy" alt="\begin{equation} m_e=\frac{U_{\mathrm{lat}}}{S} \end{equation}"></figure>
+<li> Fix, as a <strong>proposition</strong>, the following correspondence in the same locked version:
+<figure class="eq" id="eq:S13_05_goal_ratio"><img src="/physics/eq/physics/phy-13-067.svg" data-eq="phy-13-067" width="136" height="38" loading="lazy" alt="\begin{equation} \frac{m_p}{m_e}=2\pi\cdot \nu_{p,\mathrm{can}}. \end{equation}"></figure>
+</ol>
+<h3>13.5.2 Locked result for the electron radius rₑ (reference to S9.3)</h3>
+<p>From the electron canonical construction in §9.3, the electron radius is locked as</p>
+<figure class="eq" id="eq:S13_05_re_lock"><img src="/physics/eq/physics/phy-13-068.svg" data-eq="phy-13-068" width="109" height="38" loading="lazy" alt="\begin{equation} r_e=\frac{D_{\mathrm{anch}}}{2}\,\delta. \end{equation}"></figure>
+<p>If δ=1/π² is applied in the universal regime,</p>
+<figure class="eq" id="eq:S13_05_re_univ"><img src="/physics/eq/physics/phy-13-069.svg" data-eq="phy-13-069" width="98" height="39" loading="lazy" alt="\begin{equation} r_e=\frac{D_{\mathrm{anch}}}{2\pi^2}. \end{equation}"></figure>
+<p>This section does not re-derive <a href="#eq:S13_05_re_lock" class="xref" data-ref="eq:S13_05_re_lock">(S13_05_re_lock)</a> or <a href="#eq:S13_05_re_univ" class="xref" data-ref="eq:S13_05_re_univ">(S13_05_re_univ)</a>; it only references them.</p>
+<h3>13.5.3 [D] Operational definition of the electron resistance integral S (radial integral)</h3>
+<p>This section defines the electron resistance integral S as “the number of VP layers (accumulated resistance) up to the electron radius rₑ.”</p>
+<h4>13.5.3.1 Radial accumulated layer count</h4>
+<p>Define the radial coordinate R on 0≤ R≤ rₑ. Using the VP diameter a as one layer thickness, define the number of layers (dimensionless) contained in an infinitesimal interval dR as</p>
+<figure class="eq" id="eq:S13_05_dN"><img src="/physics/eq/physics/phy-13-070.svg" data-eq="phy-13-070" width="122" height="38" loading="lazy" alt="\begin{equation} dN(R):=\frac{dR}{a}. \end{equation}"></figure>
+<h4>13.5.3.2 Electron resistance integral S</h4>
+<p>Define the electron resistance integral S by</p>
+<figure class="eq" id="eq:S13_05_S_def_int"><img src="/physics/eq/physics/phy-13-071.svg" data-eq="phy-13-071" width="118" height="53" loading="lazy" alt="\begin{equation} \boxed{ S := \int_{0}^{r_e}\frac{dR}{a} } \end{equation}"></figure>
+<p>Since a is locked as a constant (realization length), the integral evaluates immediately:</p>
+<figure class="eq" id="eq:S13_05_S_eval"><img src="/physics/eq/physics/phy-13-072.svg" data-eq="phy-13-072" width="349" height="43" loading="lazy" alt="\begin{align} S &amp;=\int_{0}^{r_e}\frac{dR}{a} =\frac{1}{a}\int_{0}^{r_e} dR =\frac{1}{a}\Bigl[ R \Bigr]_{0}^{r_e} =\frac{r_e}{a}. \end{align}"></figure>
+<p>Hence</p>
+<figure class="eq" id="eq:S13_05_S_re_over_a"><img src="/physics/eq/physics/phy-13-073.svg" data-eq="phy-13-073" width="71" height="44" loading="lazy" alt="\begin{equation} \boxed{ S=\frac{r_e}{a} } \end{equation}"></figure>
+<p>holds.</p>
+<h4>13.5.3.3 Inserting rₑ (canonical cell × stationary coefficient)</h4>
+<p>Substituting <a href="#eq:S13_05_re_lock" class="xref" data-ref="eq:S13_05_re_lock">(S13_05_re_lock)</a> into <a href="#eq:S13_05_S_re_over_a" class="xref" data-ref="eq:S13_05_S_re_over_a">(S13_05_S_re_over_a)</a>,</p>
+<figure class="eq" id="eq:S13_05_S_final_general"><img src="/physics/eq/physics/phy-13-074.svg" data-eq="phy-13-074" width="257" height="55" loading="lazy" alt="\begin{align} S &amp;=\frac{r_e}{a} =\frac{\left(\frac{D_{\mathrm{anch}}}{2}\delta\right)}{a} =\frac{D_{\mathrm{anch}}}{2a}\,\delta. \end{align}"></figure>
+<p>In the universal regime, substituting δ=1/π² gives</p>
+<figure class="eq" id="eq:S13_05_S_final_univ"><img src="/physics/eq/physics/phy-13-075.svg" data-eq="phy-13-075" width="104" height="49" loading="lazy" alt="\begin{equation} \boxed{ S=\frac{D_{\mathrm{anch}}}{2a\pi^2} }. \end{equation}"></figure>
+<h3>13.5.4 The calibration node: fixing the mass scale through the electron Compton length</h3>
+<aside class="claim-strip vps" data-vps="13.5.4" data-cards="VP-C-017, VP-C-046, VP-C-025"><span class="g">calibration node</span><span class="io">in: $D_anch$ / out: $mₑc²=2hc/D=0.511$ MeV (anchor, NOT prediction); $rₑ$ role-restricted</span><q class="one">The mass sector spends its one calibration here — and says so.</q><span class="cards">VP-C-017, VP-C-046, VP-C-025</span></aside>
+<strong>This subsection calibrates, it does not predict.</strong> The relation mₑc²=2hc/D=hc/λ_(C,e) is the Compton relation, true by construction once D is the electron diameter, and it reproduces 0.511 MeV for that reason. It is the single <em>calibration node</em> of the mass sector—an anchor, not evidence. The <em>predictive</em> mass results are the dimensionless ratio mₚ/mₑ=6π⁵ (which carries no anchor) and the length-in/mass-out Higgs (W.5); this line is where the framework honestly spends its one mass-scale calibration.
+By the mass=resistance axiom (definition) of §13.2, define the electron mass as
+<figure class="eq" id="eq:S13_05_me_def"><img src="/physics/eq/physics/phy-13-076.svg" data-eq="phy-13-076" width="97" height="38" loading="lazy" alt="\begin{equation} m_e:=\frac{U_{\mathrm{lat}}}{S}. \end{equation}"></figure>
+<h4>The mass-bearing length is the Compton length, not the event-rate radius.</h4>
+<p>The mass principle m=hc/λ_C requires the <em>Compton length</em>, which for the electron is</p>
+<figure class="eq" id="eq:S13_05_lCe_def"><img src="/physics/eq/physics/phy-13-077.svg" data-eq="phy-13-077" width="155" height="38" loading="lazy" alt="\begin{equation} \lambda_{C,e}:=r_0=\frac{D_{\mathrm{anch}}}{2} \end{equation}"></figure>
+<p>(the same identification as the multi-path route D=2λ_(C,e) of §3.4). The event-rate radius rₑ=r₀δ of §9.3 governs <em>only</em> the electron event rate νₑ=1 (via sₑ=r₀/rₑ=1/δ); it is <em>not</em> the mass-bearing length. Earlier drafts conflated the two, inserting a spurious factor δ=1/π² into mₑ. Running the mass resistance integral to the Compton length, S=λ_(C,e)/a=r₀/a, gives</p>
+<figure class="eq" id="eq:S13_05_me_a_over_re"><img src="/physics/eq/physics/phy-13-078.svg" data-eq="phy-13-078" width="327" height="45" loading="lazy" alt="\begin{align} m_e &amp;=\frac{U_{\mathrm{lat}}}{S} =\frac{h\,c_{\mathrm{ref}}/a}{r_0/a} =\frac{h\,c_{\mathrm{ref}}}{\lambda_{C,e}} =\frac{h\,c_{\mathrm{ref}}}{r_0}. \end{align}"></figure>
+<p>Therefore within the same locked version,</p>
+<figure class="eq" id="eq:S13_05_me_closed"><img src="/physics/eq/physics/phy-13-079.svg" data-eq="phy-13-079" width="259" height="53" loading="lazy" alt="\begin{equation} \boxed{ m_e=\frac{h\,c_{\mathrm{ref}}}{\lambda_{C,e}}=\frac{h\,c_{\mathrm{ref}}}{r_0}=\frac{2h\,c_{\mathrm{ref}}}{D_{\mathrm{anch}}} } \end{equation}"></figure>
+<p>holds, giving mₑ c²=2hc/D=0.511MeV — matching the decoder form mₑc²=2hc/D and the measured electron rest energy.</p>
+<h3>13.5.5 Deriving the ratio mₚ/mₑ (fixing the correspondence)</h3>
+<p>From §13.4, the proton mass closes as</p>
+<figure class="eq" id="eq:S13_05_mp_hc_over_lC"><img src="/physics/eq/physics/phy-13-080.svg" data-eq="phy-13-080" width="97" height="41" loading="lazy" alt="\begin{equation} m_p=\frac{h\,c_{\mathrm{ref}}}{\lambda_C} \end{equation}"></figure>
+<p>Dividing <a href="#eq:S13_05_mp_hc_over_lC" class="xref" data-ref="eq:S13_05_mp_hc_over_lC">(S13_05_mp_hc_over_lC)</a> by the corrected electron mass <a href="#eq:S13_05_me_closed" class="xref" data-ref="eq:S13_05_me_closed">(S13_05_me_closed)</a> (both through their Compton lengths),</p>
+<figure class="eq" id="eq:S13_05_ratio_re_over_lC"><img src="/physics/eq/physics/phy-13-081.svg" data-eq="phy-13-081" width="272" height="46" loading="lazy" alt="\begin{align} \frac{m_p}{m_e} &amp;=\frac{h\,c_{\mathrm{ref}}/\lambda_{C,p}}{h\,c_{\mathrm{ref}}/\lambda_{C,e}} =\frac{\lambda_{C,e}}{\lambda_{C,p}} =\frac{r_0}{\lambda_C}. \end{align}"></figure>
+<p>where λ_(C,p)≡λ_C=(π/2)rₚ and λ_(C,e)=r₀=D_anch/2. Hence the mass ratio reduces to the ratio of two Compton lengths. Now substitute the locked expressions.</p>
+<h4>13.5.5.1 Linking λ_C and rₚ</h4>
+<p>In §13.4 and §6.3,</p>
+<figure class="eq" id="eq:S13_05_lC_from_rp"><img src="/physics/eq/physics/phy-13-082.svg" data-eq="phy-13-082" width="85" height="33" loading="lazy" alt="\begin{equation} \lambda_C=\frac{\pi}{2}\,r_p \end{equation}"></figure>
+<p>is locked.</p>
+<h4>13.5.5.2 Linking rₑ and Dₐnch</h4>
+<p>In §9.3,</p>
+<figure class="eq" id="eq:S13_05_re_from_D"><img src="/physics/eq/physics/phy-13-083.svg" data-eq="phy-13-083" width="104" height="38" loading="lazy" alt="\begin{equation} r_e=\frac{D_{\mathrm{anch}}}{2}\,\delta \end{equation}"></figure>
+<p>is locked.</p>
+<h4>13.5.5.3 Closed form of the proton canonical event rate νₚ,can</h4>
+<p>In §9.4, the proton canonical event rate is locked as</p>
+<figure class="eq" id="eq:S13_05_nup_closed"><img src="/physics/eq/physics/phy-13-084.svg" data-eq="phy-13-084" width="295" height="45" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}} = \left(\frac{D_{\mathrm{anch}}}{2r_p}\right)\left(\frac{1}{\pi^2}\right) = \frac{D_{\mathrm{anch}}}{2r_p}\,\delta. \end{equation}"></figure>
+<h4>13.5.5.4 Reducing r₀/λ_C to νₚ,can (derived 2π=α/δ)</h4>
+<p>Substitute λ_(C,e)=r₀=D_anch/2 and λ_C=(π/2)rₚ <a href="#eq:S13_05_lC_from_rp" class="xref" data-ref="eq:S13_05_lC_from_rp">(S13_05_lC_from_rp)</a> into <a href="#eq:S13_05_ratio_re_over_lC" class="xref" data-ref="eq:S13_05_ratio_re_over_lC">(S13_05_ratio_re_over_lC)</a>:</p>
+<figure class="eq" id="eq:S13_05_ratio_expand"><img src="/physics/eq/physics/phy-13-085.svg" data-eq="phy-13-085" width="264" height="63" loading="lazy" alt="\begin{align} \frac{m_p}{m_e} =\frac{r_0}{\lambda_C} &amp;= \frac{\left(\frac{D_{\mathrm{anch}}}{2}\right)}{\left(\frac{\pi}{2}r_p\right)} =\frac{D_{\mathrm{anch}}}{\pi r_p}. \end{align}"></figure>
+<p>From the canonical event rate ν_p,can=fracD_anch2rₚδ <a href="#eq:S13_05_nup_closed" class="xref" data-ref="eq:S13_05_nup_closed">(S13_05_nup_closed)</a>,</p>
+<figure class="eq" id="eq:S13_05_Ddelta_over_rp"><img src="/physics/eq/physics/phy-13-086.svg" data-eq="phy-13-086" width="240" height="44" loading="lazy" alt="\begin{equation} \frac{D_{\mathrm{anch}}}{r_p}=\frac{2\,\nu_{p,\mathrm{can}}}{\delta}=2\pi^{2}\,\nu_{p,\mathrm{can}}. \end{equation}"></figure>
+<p>Substituting <a href="#eq:S13_05_Ddelta_over_rp" class="xref" data-ref="eq:S13_05_Ddelta_over_rp">(S13_05_Ddelta_over_rp)</a> into <a href="#eq:S13_05_ratio_expand" class="xref" data-ref="eq:S13_05_ratio_expand">(S13_05_ratio_expand)</a>,</p>
+<figure class="eq" id="eq:S13_05_ratio_2overpi_nup"><img src="/physics/eq/physics/phy-13-087.svg" data-eq="phy-13-087" width="470" height="45" loading="lazy" alt="\begin{align} \frac{m_p}{m_e} &amp;= \frac{1}{\pi}\left(\frac{D_{\mathrm{anch}}}{r_p}\right) = \frac{1}{\pi}\bigl(2\pi^{2}\,\nu_{p,\mathrm{can}}\bigr) = 2\pi\,\nu_{p,\mathrm{can}} = \frac{\alpha}{\delta}\,\nu_{p,\mathrm{can}}. \end{align}"></figure>
+<p>Thus the proportionality coefficient is the <em>derived</em> ratio of the two rectification constants, 2π=α/δ=(2/π)/(1/π²) — not a convention. (This is the supplement v8 bedrock identity; see the convergence trail in Part II.)</p>
+<h4>[D-13.5-R] Mass ratio as a derived identity</h4>
+<p>With the corrected Compton-length electron mass <a href="#eq:S13_05_me_closed" class="xref" data-ref="eq:S13_05_me_closed">(S13_05_me_closed)</a>, the mass ratio is the <em>derived</em> identity</p>
+<figure class="eq" id="eq:S13_05_ratio_definition"><img src="/physics/eq/physics/phy-13-088.svg" data-eq="phy-13-088" width="230" height="48" loading="lazy" alt="\begin{equation} \boxed{ \frac{m_p}{m_e} = 2\pi\cdot \nu_{p,\mathrm{can}} = \frac{\alpha}{\delta}\,\nu_{p,\mathrm{can}} } \end{equation}"></figure>
+<p>Earlier drafts stated <a href="#eq:S13_05_ratio_definition" class="xref" data-ref="eq:S13_05_ratio_definition">(S13_05_ratio_definition)</a> as a “reporting convention” carrying an unexplained factor of π² relative to <a href="#eq:S13_05_ratio_2overpi_nup" class="xref" data-ref="eq:S13_05_ratio_2overpi_nup">(S13_05_ratio_2overpi_nup)</a>; that factor was an artifact of using the event-rate radius rₑ=r₀δ (rather than the Compton length λ_(C,e)=r₀) in the electron mass. With the §13.5.4 correction the two equations <em>coincide</em> and no convention is needed. The single canonical value of ν_p,can is fixed by <strong>[LOCK-NU-N]</strong> in <a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a> as ν_p,can=3π⁴, whence</p>
+<figure class="eq" id="eq:S13_05_6pi5"><img src="/physics/eq/physics/phy-13-089.svg" data-eq="phy-13-089" width="555" height="38" loading="lazy" alt="\begin{equation} \frac{m_p}{m_e}=2\pi\cdot 3\pi^{4}=6\pi^{5}=1836.118\quad({-}19\ \mathrm{ppm}\ \text{vs measured }1836.153). \end{equation}"></figure>
+<h3>13.5.6 Numerical check</h3>
+<p>With the canonical ν_p,can=3π⁴ locked by [LOCK-NU-N] (<a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>),</p>
+<figure class="eq" id="eq:S13_05_nup_value"><img src="/physics/eq/physics/phy-13-090.svg" data-eq="phy-13-090" width="214" height="22" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}=3\pi^{4}\approx 292.227\ \mathrm{s^{-1}}, \end{equation}"></figure>
+<p>the derived identity <a href="#eq:S13_05_ratio_definition" class="xref" data-ref="eq:S13_05_ratio_definition">(S13_05_ratio_definition)</a> gives</p>
+<figure class="eq" id="eq:S13_05_ratio_numeric"><img src="/physics/eq/physics/phy-13-091.svg" data-eq="phy-13-091" width="574" height="38" loading="lazy" alt="\begin{equation} \frac{m_p}{m_e} =2\pi\cdot 3\pi^{4} =6\pi^{5} \approx 1836.118 \qquad({-}19\ \mathrm{ppm}\ \text{vs measured }1836.153). \end{equation}"></figure>
+<em>Length cross-check.</em> The earlier length-anchored value ν_p,can=fracD_anch2rₚδ≈ 292.245 (§9.4) corresponds to 2πνₚ≈ 1836.23 (+42 ppm vs measured 1836.15) and to the locked rₚ=0.8412fm; the LOCK-NU-N prediction rₚ=D_anch/(6π⁶)=0.84125fm differs by +61 ppm, within the proton-radius measurement spread. Under SSOT the geometric value 3π⁴ is canonical and rₚ is a derived prediction; the length value is retained only as this cross-check.
+<h2>13.6 Summary of mass unification</h2>
+<aside class="claim-strip vps" data-vps="13.6" data-cards="VP-C-035"><span class="g">theorem</span><span class="io">in: locked $σ$&#x27;s / out: $m_H(5π)=mₚSₚ=mₑS=U_lat$</span><q class="one">One energy, three masses, products identically recovering $U_lat$.</q><span class="cards">VP-C-035</span></aside>
+<h3>13.6.1 Locked inputs and standard definitions (single source)</h3>
+<h4>[D-13.6-1] Lattice unit energy</h4>
+<p>When the realization length a, the operational anchor c_ref, and the action-unit constant h are locked, define the lattice unit energy (single source) as</p>
+<figure class="eq" id="eq:S13_06_Ulat_def"><img src="/physics/eq/physics/phy-13-092.svg" data-eq="phy-13-092" width="112" height="38" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}} := \frac{h\,c_{\mathrm{ref}}}{a}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S13_06_Ulat_def" class="xref" data-ref="eq:S13_06_Ulat_def">(S13_06_Ulat_def)</a> is not re-derived in this section; redefinition or “substitution-derivation mixing” is forbidden within the same version.</p>
+<h4>[A-13.6-1] Mass = resistance axiom (operational axiom)</h4>
+<p>Fix the mass scale of an object O as “lattice unit energy” divided by a “dimensionless resistance (effective cross-section coefficient).”</p>
+<figure class="eq" id="eq:S13_06_mass_axiom"><img src="/physics/eq/physics/phy-13-093.svg" data-eq="phy-13-093" width="140" height="43" loading="lazy" alt="\begin{equation} m(\mathcal{O}) = \frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(\mathcal{O})}. \end{equation}"></figure>
+<p>Here σ_eff(O) is the dimensionless resistance (effective cross-section coefficient) for O, and its definition/computation procedure is locked in <code>analysis_lock</code>.</p>
+<h3>13.6.2 Resistance coefficients for the three masses (unique definition for each)</h3>
+<p>Fix the resistance coefficients for I:=H,p,e by the following three items.</p>
+<h4>13.6.2.1 H-resistance coefficient (canonical-cell boundary channels)</h4>
+<p>The effective cross-section coefficient of the H mode is fixed by the number of independent channels κ_H=5 (six faces minus one global reference degree of freedom) of the canonical cell (<code>CELL-CUBE</code>) and by the canonical channel-area form (disk) as</p>
+<figure class="eq" id="eq:S13_06_sigmaH"><img src="/physics/eq/physics/phy-13-094.svg" data-eq="phy-13-094" width="113" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(H):=5\pi. \end{equation}"></figure>
+<h4>13.6.2.2 p-resistance coefficient (integral of the core phase-completion length)</h4>
+<p>When the core phase-completion length λ_C and the realization length a are locked, define the proton resistance integral (dimensionless resistance) as</p>
+<figure class="eq" id="eq:S13_06_Sp"><img src="/physics/eq/physics/phy-13-095.svg" data-eq="phy-13-095" width="181" height="46" loading="lazy" alt="\begin{equation} S_p := \int_{0}^{\lambda_C}\frac{dR}{a} = \frac{\lambda_C}{a}. \end{equation}"></figure>
+<p>Therefore fix</p>
+<figure class="eq" id="eq:S13_06_sigmap"><img src="/physics/eq/physics/phy-13-096.svg" data-eq="phy-13-096" width="100" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(p):=S_p \end{equation}"></figure>
+<p>(Within the same version, if λ_C=(π/2)rₚ is locked, then Sₚ=(π/2)(rₚ/a) is an equivalent expression; however, this section uses only the definition <a href="#eq:S13_06_Sp" class="xref" data-ref="eq:S13_06_Sp">(S13_06_Sp)</a> as the unique source of Sₚ.)</p>
+<h4>13.6.2.3 e-resistance coefficient (electron-radius integral)</h4>
+<p>When the electron radius rₑ and the realization length a are locked, define the electron resistance integral (dimensionless resistance) as</p>
+<figure class="eq" id="eq:S13_06_Se"><img src="/physics/eq/physics/phy-13-097.svg" data-eq="phy-13-097" width="163" height="43" loading="lazy" alt="\begin{equation} S := \int_{0}^{r_e}\frac{dR}{a} = \frac{r_e}{a}. \end{equation}"></figure>
+<p>Therefore fix</p>
+<figure class="eq" id="eq:S13_06_sigmae"><img src="/physics/eq/physics/phy-13-098.svg" data-eq="phy-13-098" width="92" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(e):=S \end{equation}"></figure>
+<h3>13.6.3 Theorem (mass unification)</h3>
+<h4>[T-13.6-1] Mass unification theorem</h4>
+<p>When <a href="#eq:S13_06_Ulat_def" class="xref" data-ref="eq:S13_06_Ulat_def">(S13_06_Ulat_def)</a>, <a href="#eq:S13_06_mass_axiom" class="xref" data-ref="eq:S13_06_mass_axiom">(S13_06_mass_axiom)</a>, and <a href="#eq:S13_06_sigmaH" class="xref" data-ref="eq:S13_06_sigmaH">(S13_06_sigmaH)</a>–<a href="#eq:S13_06_sigmae" class="xref" data-ref="eq:S13_06_sigmae">(S13_06_sigmae)</a> are locked within the same version, the following holds for I=H,p,e.</p>
+<figure class="eq" id="eq:S13_06_unification_main"><img src="/physics/eq/physics/phy-13-099.svg" data-eq="phy-13-099" width="274" height="53" loading="lazy" alt="\begin{equation} \boxed{ \forall X\in\{H,p,e\},\quad m_X = \frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(X)} } \end{equation}"></figure>
+<p>In particular, the following three equations hold simultaneously:</p>
+<figure class="eq" id="eq:S13_06_mH"><img src="/physics/eq/physics/phy-13-100.svg" data-eq="phy-13-100" width="171" height="136" loading="lazy" alt="\begin{align} m_H&amp;=\frac{U_{\mathrm{lat}}}{5\pi}, \\ m_p&amp;=\frac{U_{\mathrm{lat}}}{S_p}=\frac{U_{\mathrm{lat}}}{\lambda_C/a}, \\ m_e&amp;=\frac{U_{\mathrm{lat}}}{S}=\frac{U_{\mathrm{lat}}}{r_e/a}. \end{align}"></figure>
+<p>Thus each mass is unified as the outcome of a single lattice energy U_lat differentiated by the object-specific resistance coefficient σ_eff.</p>
+<h4>Proof</h4>
+<p>Substituting O=H,p,e into <a href="#eq:S13_06_mass_axiom" class="xref" data-ref="eq:S13_06_mass_axiom">(S13_06_mass_axiom)</a> yields</p>
+<figure class="eq" id="eq:S13_06_proof1"><img src="/physics/eq/physics/phy-13-101.svg" data-eq="phy-13-101" width="394" height="43" loading="lazy" alt="\begin{equation} m_H=\frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(H)},\quad m_p=\frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(p)},\quad m_e=\frac{U_{\mathrm{lat}}}{\sigma_{\mathrm{eff}}(e)}. \end{equation}"></figure>
+<p>Since σ_eff(H)=5π is locked by <a href="#eq:S13_06_sigmaH" class="xref" data-ref="eq:S13_06_sigmaH">(S13_06_sigmaH)</a>, σ_eff(p)=Sₚ is locked by <a href="#eq:S13_06_sigmap" class="xref" data-ref="eq:S13_06_sigmap">(S13_06_sigmap)</a>, and σ_eff(e)=S is locked by <a href="#eq:S13_06_sigmae" class="xref" data-ref="eq:S13_06_sigmae">(S13_06_sigmae)</a>, <a href="#eq:S13_06_proof1" class="xref" data-ref="eq:S13_06_proof1">(S13_06_proof1)</a> reduces to <a href="#eq:S13_06_mH" class="xref" data-ref="eq:S13_06_mH">(S13_06_mH)</a>–<a class="xref" data-ref="eq:S13_06_me">(S13_06_me)</a>. square</p>
+<h3>13.6.4 Corollary (energy–resistance invariant form)</h3>
+<p>From Theorem <a href="#eq:S13_06_unification_main" class="xref" data-ref="eq:S13_06_unification_main">(S13_06_unification_main)</a>, the following invariant form holds immediately.</p>
+<figure class="eq" id="eq:S13_06_invariant_products"><img src="/physics/eq/physics/phy-13-102.svg" data-eq="phy-13-102" width="416" height="29" loading="lazy" alt="\begin{equation} \boxed{ m_H\,(5\pi)=U_{\mathrm{lat}}, \qquad m_p\,S_p=U_{\mathrm{lat}}, \qquad m_e\,S=U_{\mathrm{lat}} } \end{equation}"></figure>
+<p>That is, within the same version, U_lat is identically recovered from the product of each mass and its resistance coefficient. This is an equivalent expression of “the mass set m_H,mₚ,mₑ is unified as a differentiation of a single lattice energy U_lat.”</p>
+<h2>13.7 Cross-checks (ratio invariants) + error reporting</h2>
+<aside class="claim-strip vps" data-vps="13.7" data-cards="VP-C-035"><span class="g">gate spec</span><span class="io">in: masses / out: nine ratio invariants (target 1); G-RATIO-*</span><q class="one">Every closure is re-checked as an invariant equal to one.</q><span class="cards">VP-C-035</span></aside>
+<h3>13.7.1 Inputs (LOCK) and symbols</h3>
+<p>This section assumes that, within the same version (a lock_id combination), the following items are defined.</p>
+<ol>
+<li> Lattice unit energy:
+<figure class="eq" id="eq:S13_07_Ulat"><img src="/physics/eq/physics/phy-13-103.svg" data-eq="phy-13-103" width="168" height="19" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}} \quad(\text{single source}). \end{equation}"></figure>
+<li> Mass scales:
+<figure class="eq" id="eq:S13_07_masses"><img src="/physics/eq/physics/phy-13-104.svg" data-eq="phy-13-104" width="137" height="14" loading="lazy" alt="\begin{equation} m_H,\quad m_p,\quad m_e. \end{equation}"></figure>
+<li> (Dimensionless) resistance coefficients:
+<figure class="eq" id="eq:S13_07_sigmas"><img src="/physics/eq/physics/phy-13-105.svg" data-eq="phy-13-105" width="230" height="19" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{eff}}(H)=5\pi,\qquad S_p,\qquad S. \end{equation}"></figure>
+<li> Proton canonical event rate:
+<figure class="eq" id="eq:S13_07_nup"><img src="/physics/eq/physics/phy-13-106.svg" data-eq="phy-13-106" width="46" height="14" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}. \end{equation}"></figure>
+</ol>
+<p>All cross-checks in this section are fixed to the construction of <strong>ratio invariants</strong> that combine the above items along two different routes, and the Gate judgment checks whether the invariant equals 1 (or a locked target value).</p>
+<h3>13.7.2 Ratio invariants (definition)</h3>
+<p>Each invariant Iₖ is dimensionless and the target value is fixed as 1.</p>
+<figure class="eq" id="eq:S13_07_Ik_def"><img src="/physics/eq/physics/phy-13-107.svg" data-eq="phy-13-107" width="283" height="42" loading="lazy" alt="\begin{equation} I_k := \frac{\text{route A output}}{\text{route B output}}, \qquad I_k^{\star}:=1. \end{equation}"></figure>
+<p>The list of invariants used in this section is fixed as follows (each definition is completed in §13.7.5).</p>
+<figure class="eq" id="eq:S13_07_Iset"><img src="/physics/eq/physics/phy-13-108.svg" data-eq="phy-13-108" width="371" height="19" loading="lazy" alt="\begin{equation} \mathcal{I} := \left\{ I_{UH},I_{Up},I_{Ue},I_{Hp},I_{He},I_{pe},I_{pe\nu},I_{Sp},I_{Se} \right\}. \end{equation}"></figure>
+<h3>13.7.3 Deviations (dev) and error budgets (reporting convention)</h3>
+<h4>13.7.3.1 Definition of deviation (dev)</h4>
+<p>For each invariant Iₖ, define the deviation as</p>
+<figure class="eq" id="eq:S13_07_dev_def"><img src="/physics/eq/physics/phy-13-109.svg" data-eq="phy-13-109" width="131" height="19" loading="lazy" alt="\begin{equation} \mathrm{dev}_k := \left| I_k-1 \right|. \end{equation}"></figure>
+<p>A relative deviation may also be defined (optional) to match reporting units.</p>
+<figure class="eq" id="eq:S13_07_rdev_def"><img src="/physics/eq/physics/phy-13-110.svg" data-eq="phy-13-110" width="232" height="41" loading="lazy" alt="\begin{equation} \mathrm{rdev}_k := \left|\frac{I_k-1}{1}\right| = \left| I_k-1 \right|. \end{equation}"></figure>
+<p>This section locks <a href="#eq:S13_07_dev_def" class="xref" data-ref="eq:S13_07_dev_def">(S13_07_dev_def)</a> as the standard dev; other definitions (e.g., log deviations) are not permitted without versioning.</p>
+<h4>13.7.3.2 Error-budget convention (locking the choice)</h4>
+<p>The error budget is locked by one of the following two modes.</p>
+<ol>
+<li> <strong>Upper-bound mode (worst-case)</strong>:
+  if
+<figure class="eq" id="eq:S13_07_I_product"><img src="/physics/eq/physics/phy-13-111.svg" data-eq="phy-13-111" width="86" height="57" loading="lazy" alt="\begin{equation} I=\prod_{j=1}^{J} x_j^{\alpha_j} \end{equation}"></figure>
+<p>then</p>
+<figure class="eq" id="eq:S13_07_err_worst"><img src="/physics/eq/physics/phy-13-112.svg" data-eq="phy-13-112" width="191" height="57" loading="lazy" alt="\begin{equation} \left|\frac{\Delta I}{I}\right| \le \sum_{j=1}^{J} |\alpha_j|\left|\frac{\Delta x_j}{x_j}\right|. \end{equation}"></figure>
+<li> <strong>Root-sum-square mode (RSS)</strong>:
+<figure class="eq" id="eq:S13_07_err_rss"><img src="/physics/eq/physics/phy-13-113.svg" data-eq="phy-13-113" width="214" height="57" loading="lazy" alt="\begin{equation} \left(\frac{\sigma_I}{|I|}\right)^2 = \sum_{j=1}^{J} \alpha_j^2\left(\frac{\sigma_{x_j}}{|x_j|}\right)^2. \end{equation}"></figure>
+</ol>
+<p>Which mode is used must be locked as <code>analysis_lock.error_budget_mode</code>. If it is not locked, error reporting is <code>INCONCLUSIVE</code>.</p>
+<h4>13.7.3.3 PASS condition with error (optional)</h4>
+<p>When using an error budget, lock one of the following two conditions in <code>analysis_lock</code> (choose one).</p>
+<ol>
+<li> <strong>Fixed-threshold judgment</strong>:
+<figure class="eq" id="eq:S13_07_pass_fixed"><img src="/physics/eq/physics/phy-13-114.svg" data-eq="phy-13-114" width="131" height="18" loading="lazy" alt="\begin{equation} \mathrm{dev}_k\le \mathrm{dev}_{\max,k}. \end{equation}"></figure>
+<li> <strong>Error-normalized judgment</strong>:
+<figure class="eq" id="eq:S13_07_pass_sigma"><img src="/physics/eq/physics/phy-13-115.svg" data-eq="phy-13-115" width="333" height="19" loading="lazy" alt="\begin{equation} \mathrm{dev}_k\le z_{\max,k}\,\sigma_{I_k}, \qquad z_{\max,k}&gt;0\ \text{(locked)}. \end{equation}"></figure>
+</ol>
+<p>dev_(max,k) or z_(max,k) must be pre-registered in <code>gate_lock</code>; post-hoc changes are forbidden.</p>
+<h3>13.7.4 Ratio Gate template (three-tier judgment)</h3>
+<p>Each invariant Iₖ is judged by Gate using the same template.</p>
+<h4>13.7.4.1 Tier-1: definition/lock completeness</h4>
+<code>Tier1</code> is <code>PASS</code> iff all of the following are satisfied.
+<ol>
+<li> All required inputs for Iₖ (U_lat,m_*,S_*,ν_p,can, etc.) exist.
+<li> They belong to the same <code>lock_id</code> combination (or a pre-registered allowed combination).
+<li> Outputs and logs are sealed by <code>manifest+checksums+registry_snapshot</code>.
+</ol>
+<p>If anything is missing, judge <code>INCONCLUSIVE</code>. If post-hoc changes or lock mixing is detected, judge <code>FAIL</code>.</p>
+<h4>13.7.4.2 Tier-2: deviation threshold</h4>
+<p>When <code>Tier1=PASS</code> and dev is definable, judge Tier-2 as</p>
+<figure class="eq" id="eq:S13_07_tier2_rule"><img src="/physics/eq/physics/phy-13-116.svg" data-eq="phy-13-116" width="367" height="45" loading="lazy" alt="\begin{equation} \texttt{Tier2}= \begin{cases} \texttt{PASS}, &amp; \mathrm{dev}_k\le \mathrm{dev}_{\max,k}\ \text{(or }\ \eqref{eq:S13_07_pass_sigma}\text{)},\\ \texttt{FAIL}, &amp; \text{otherwise}. \end{cases} \end{equation}"></figure>
+<h4>13.7.4.3 Tier-3: robustness (rerun/window-splitting) consistency</h4>
+<p>Perform Tier-3 only when a rerun set Rₖ=r₁,…,r_K is locked. Let the invariant in each rerun be Iₖ^((j)) and define</p>
+<figure class="eq" id="eq:S13_07_dev_rob"><img src="/physics/eq/physics/phy-13-117.svg" data-eq="phy-13-117" width="204" height="36" loading="lazy" alt="\begin{equation} \mathrm{dev}^{(\mathrm{rob})}_k := \max_{j} \left|I_k^{(j)}-1\right|. \end{equation}"></figure>
+<p>The robust threshold dev^(rob)_(max,k) is locked in <code>gate_lock</code>.</p>
+<figure class="eq" id="eq:S13_07_tier3_rule"><img src="/physics/eq/physics/phy-13-118.svg" data-eq="phy-13-118" width="305" height="56" loading="lazy" alt="\begin{equation} \texttt{Tier3}= \begin{cases} \texttt{PASS}, &amp; \mathrm{dev}^{(\mathrm{rob})}_k\le \mathrm{dev}^{(\mathrm{rob})}_{\max,k},\\ \texttt{FAIL}, &amp; \text{otherwise}. \end{cases} \end{equation}"></figure>
+<p>If the rerun set is not locked, Tier-3 is <code>INCONCLUSIVE</code>.</p>
+<h4>13.7.4.4 Final Gate combination</h4>
+<p>Define the final Gate for each invariant Iₖ as</p>
+<figure class="eq" id="eq:S13_07_gate_final"><img src="/physics/eq/physics/phy-13-119.svg" data-eq="phy-13-119" width="765" height="19" loading="lazy" alt="\begin{equation} \texttt{G-RATIO-}k=\texttt{PASS} \Longleftrightarrow (\texttt{Tier1}=\texttt{PASS})\wedge(\texttt{Tier2}=\texttt{PASS})\wedge(\texttt{Tier3}\in\{\texttt{PASS},\texttt{INCONCLUSIVE}\}). \end{equation}"></figure>
+<h3>13.7.5 Ratio list (invariants) and Gate definitions</h3>
+<h4>13.7.5.1 Fixing invariant definitions (route A / route B)</h4>
+<p>Fix the following invariants by definition.</p>
+<h4>(ItextsubscriptUH) Uₗat–m_H cross-check</h4>
+<figure class="eq" id="eq:S13_07_IUH"><img src="/physics/eq/physics/phy-13-120.svg" data-eq="phy-13-120" width="138" height="43" loading="lazy" alt="\begin{equation} I_{UH} := \frac{m_H(5\pi)}{U_{\mathrm{lat}}}. \end{equation}"></figure>
+<h4>(ItextsubscriptUp) Uₗat–mₚ cross-check</h4>
+<figure class="eq" id="eq:S13_07_IUp"><img src="/physics/eq/physics/phy-13-121.svg" data-eq="phy-13-121" width="114" height="43" loading="lazy" alt="\begin{equation} I_{Up} := \frac{m_p S_p}{U_{\mathrm{lat}}}. \end{equation}"></figure>
+<h4>(ItextsubscriptUe) Uₗat–mₑ cross-check</h4>
+<figure class="eq" id="eq:S13_07_IUe"><img src="/physics/eq/physics/phy-13-122.svg" data-eq="phy-13-122" width="105" height="41" loading="lazy" alt="\begin{equation} I_{Ue} := \frac{m_e S}{U_{\mathrm{lat}}}. \end{equation}"></figure>
+<h4>(ItextsubscriptHp) m_H/mₚ resistance-form cross-check</h4>
+<figure class="eq" id="eq:S13_07_IHp"><img src="/physics/eq/physics/phy-13-123.svg" data-eq="phy-13-123" width="136" height="97" loading="lazy" alt="\begin{equation} I_{Hp} := \frac{\left(\dfrac{m_H}{m_p}\right)}{\left(\dfrac{S_p}{5\pi}\right)}. \end{equation}"></figure>
+<h4>(ItextsubscriptHe) m_H/mₑ resistance-form cross-check</h4>
+<figure class="eq" id="eq:S13_07_IHe"><img src="/physics/eq/physics/phy-13-124.svg" data-eq="phy-13-124" width="136" height="97" loading="lazy" alt="\begin{equation} I_{He} := \frac{\left(\dfrac{m_H}{m_e}\right)}{\left(\dfrac{S}{5\pi}\right)}. \end{equation}"></figure>
+<h4>(Itextsubscriptpe) mₚ/mₑ resistance-form cross-check</h4>
+<figure class="eq" id="eq:S13_07_Ipe"><img src="/physics/eq/physics/phy-13-125.svg" data-eq="phy-13-125" width="126" height="97" loading="lazy" alt="\begin{equation} I_{pe} := \frac{\left(\dfrac{m_p}{m_e}\right)}{\left(\dfrac{S}{S_p}\right)}. \end{equation}"></figure>
+<h4>(Itextsubscriptpeν) mₚ/mₑ event-rate correspondence cross-check</h4>
+<p>By the correspondence convention (locked standard form), define</p>
+<figure class="eq" id="eq:S13_07_mpmenu"><img src="/physics/eq/physics/phy-13-126.svg" data-eq="phy-13-126" width="172" height="45" loading="lazy" alt="\begin{equation} \left(\frac{m_p}{m_e}\right)_{\nu} :=2\pi\cdot \nu_{p,\mathrm{can}} \end{equation}"></figure>
+<p>and</p>
+<figure class="eq" id="eq:S13_07_Ipenu"><img src="/physics/eq/physics/phy-13-127.svg" data-eq="phy-13-127" width="161" height="72" loading="lazy" alt="\begin{equation} I_{pe\nu} := \frac{\left(\dfrac{m_p}{m_e}\right)}{\left(2\pi\cdot \nu_{p,\mathrm{can}}\right)}. \end{equation}"></figure>
+<h4>(ItextsubscriptSp) direct-form cross-check for Sₚ (optional)</h4>
+<p>When the core-length link is locked within the same version (e.g., λ_C=(π/2)rₚ), define</p>
+<figure class="eq" id="eq:S13_07_ISp"><img src="/physics/eq/physics/phy-13-128.svg" data-eq="phy-13-128" width="126" height="71" loading="lazy" alt="\begin{equation} I_{Sp} := \frac{S_p}{\left(\dfrac{\lambda_C}{a}\right)}. \end{equation}"></figure>
+<h4>(ItextsubscriptSe) direct-form cross-check for S (optional)</h4>
+<p>When the electron-radius link is locked within the same version (e.g., S=rₑ/a), define</p>
+<figure class="eq" id="eq:S13_07_ISe"><img src="/physics/eq/physics/phy-13-129.svg" data-eq="phy-13-129" width="114" height="59" loading="lazy" alt="\begin{equation} I_{Se} := \frac{S}{\left(\dfrac{r_e}{a}\right)}. \end{equation}"></figure>
+<h4>13.7.5.2 Gate-ID list (per invariant)</h4>
+<p>Each invariant is judged under the following Gate IDs.</p>
+<figure class="eq" id="eq:S13_07_gate_ids"><img src="/physics/eq/physics/phy-13-130.svg" data-eq="phy-13-130" width="1004" height="16" loading="lazy" alt="\begin{equation} \texttt{G-RATIO-UH},\ \texttt{G-RATIO-Up},\ \texttt{G-RATIO-Ue},\ \texttt{G-RATIO-Hp},\ \texttt{G-RATIO-He},\ \texttt{G-RATIO-pe},\ \texttt{G-RATIO-peNU},\ \texttt{G-RATIO-Sp},\ \texttt{G-RATIO-Se}. \end{equation}"></figure>
+<p>Each Gate follows the template <a href="#eq:S13_07_gate_final" class="xref" data-ref="eq:S13_07_gate_final">(S13_07_gate_final)</a>. The individual thresholds dev_(max,k) and (optional) dev^(rob)_(max,k) must be pre-registered in <code>gate_lock</code>.</p>
+<h3>13.7.6 Standard FAIL/INCONCLUSIVE labels</h3>
+<p>Ratio judgments use the following label system.
+<div class="c"></p>
+<table><tr><td>Label</td><td>Meaning</td></tr><tr><td>INCON-RATIO-MISSING</td><td>missing required inputs (mass/resistance/event rate/energy)</td></tr><tr><td>INCON-RATIO-UNSEALED</td><td>missing seals (manifest/checksums/registry_snapshot)</td></tr><tr><td>FAIL-RATIO-LOCKMIX</td><td>mixing different <code>lock_id</code> combinations</td></tr><tr><td>FAIL-RATIO-DEV</td><td>devₖ>dev_(max,k)</td></tr><tr><td>FAIL-RATIO-ROB</td><td>robust-threshold violation</td></tr><tr><td>FAIL-RATIO-RETRO</td><td>post-hoc modifications detected (threshold/definition/estimator/correspondence convention)</td></tr></table>
+</div>
+<h3>13.7.7 Error-report record (to be sealed)</h3>
+<p>For each invariant, generate and seal the following record.</p>
+<pre class="vb">
+ratio_report:
+  - ratio_id: (unique)
+    name: I_UH | I_Up | I_Ue | I_Hp | I_He | I_pe | I_peNU | I_Sp | I_Se
+    value: (I_k)
+    dev: (abs(I_k-1))
+    method: fixed_threshold | sigma_normalized
+    thresholds:
+      dev_max: ...
+      dev_rob_max: ...
+      z_max: ...
+    error_budget:
+      mode: worst_case | rss
+      sigma_I: ...
+      components: { ... }      # optional (relative-error terms per input)
+    tiers:
+      tier1: PASS|FAIL|INCONCLUSIVE
+      tier2: PASS|FAIL|INCONCLUSIVE
+      tier3: PASS|FAIL|INCONCLUSIVE
+    verdict: PASS|FAIL|INCONCLUSIVE
+    labels: [...]
+    lock_refs:
+      canon_lock_id: ...
+      realization_lock_id: ...
+      analysis_lock_id: ...
+      gate_lock_id: ...
+      protocol_lock_id: ...
+    snapshot_refs:
+      manifest_ref: ...
+      checksums_ref: ...
+      registry_snapshot_ref: ...
+</pre>
+<p>If <code>snapshot_refs</code> is missing, the result is not granted conclusion status.</p>
+<nav class="pn"><a rel="prev" href="/physics/11-realization-units-t-rcross/">← §11</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/15-quantum-mechanics-mapping-completion-note/">§15 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

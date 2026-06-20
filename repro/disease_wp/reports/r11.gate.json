@@ -1,0 +1,217 @@
+{
+  "phase": "R11",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 3 (PMC-OA dominant-sequela join) — severity lift that order-locks Marfan",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "ad58b80beb23"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "f206b7f988ab"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "d596ffcd0830"
+    },
+    "litcurate3_join_csv": {
+      "path": "methodology/severity_litcurate3_join.csv",
+      "sha12": "36cc460b0f8d"
+    },
+    "litcurate3_excluded_csv": {
+      "path": "methodology/severity_litcurate3_excluded.csv",
+      "sha12": "b272074bfc73"
+    },
+    "litcurate_fetch_log_r11": {
+      "path": "data/raw/litcurate/_fetch_log_r11.json",
+      "sha12": "ff1da8071975"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 1,
+    "S_excluded_recorded": 2
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 9,
+      "[H]": 5
+    },
+    "S": {
+      "[L]": 4,
+      "[H]": 20,
+      "[O]": 11
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate3_join": [
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axis": "S",
+      "pmcid": "PMC13239629",
+      "pmid": "42229999",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Introduction Marfan syndrome (MFS) is a systemic connective-tissue disorder caused by pathogenic variants in FBN1 , predisposing to progressive dilation of the aortic root, valvular dysfunction and life-threatening aortic dissection.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    }
+  ],
+  "litcurate3_excluded": [
+    {
+      "entity": "Gaucher disease type I",
+      "cui": "C1961835",
+      "axis": "S",
+      "considered_pmcid": "PMC13254898",
+      "considered_pmid": "42293157",
+      "decline_class": "comparative",
+      "considered_statement": "GD is typically subdivided into three types, with type 1 (GD1) being most common and having the least severe manifestations.",
+      "exclusion_reason": "the only retrievable OA disease-level severity framing for Gaucher disease type 1 (C1961835) places it as the LEAST severe of the three GD types ('type 1 (GD1) being most common and having the least severe manifestations'); although the frozen R3 severity function pattern-matches 'severe' inside 'least severe' to tier 0.75, the statement is COMPARATIVE -- it characterises GD1 as the mild, non-neuronopathic end of the GD spectrum relative to the neuronopathic types 2/3 -- not a clean disease-level severe magnitude for GD1's own dominant untreated sequela; S left [H], not lifted"
+    },
+    {
+      "entity": "Gaucher disease",
+      "cui": "C0017205",
+      "axis": "S",
+      "considered_pmcid": "PMC13045098",
+      "considered_pmid": "41821052",
+      "decline_class": "comparative",
+      "considered_statement": "Background Gaucher disease (GD) in children is highly heterogeneous, severe, and particularly devastating in GD type 3 (GD3), which has systemic and neurological involvement.",
+      "exclusion_reason": "the retrievable OA 'devastating' severity magnitude is explicitly attributed to GD TYPE 3 ('highly heterogeneous, severe, and particularly devastating in GD type 3 (GD3)'), the neuronopathic form, not to the Gaucher disease umbrella entity's (C0017205) own dominant untreated sequela; although the frozen R3 severity function maps 'devastating' to tier 1.0 and the heterogeneity wording does not trip the spectrum_S override, the magnitude is COMPARATIVE (it singles out GD3) and the umbrella spans non-neuronopathic-to-neuronopathic forms, so a clean disease-level umbrella severity tier is not defensibly isolable; S left [H], not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Marfan syndrome",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axes_scored": 4
+    }
+  ],
+  "registry_set_sha12": "32cf48334233",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r10->r11 chain registry-set sha 32cf48334233 == 32cf48334233"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r10",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2', 'R11_litcurate3']"
+    },
+    {
+      "name": "litcurate3_join_anchored_cited",
+      "pass": true,
+      "detail": "1 round-3 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate3_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-3 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate3_excluded_recorded",
+      "pass": true,
+      "detail": "2 round-3 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R10 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R10; S/P changed only for the 1 round-3 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "new_order_lock_is_marfan",
+      "pass": true,
+      "detail": "order-lock set grows 3 -> 4; the single added lock is EXACTLY Marfan syndrome ['Marfan syndrome'] via S [H]->[L] (onset/progression/mortality already [L]); no lock removed"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate3_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 3 round-3 cited sources open-access + sha-pinned; every round-3 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "prior_round_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 + R10 recorded join/excluded CSVs byte-identical to their digests (0 modified) -- R11 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

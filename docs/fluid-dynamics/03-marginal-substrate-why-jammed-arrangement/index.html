@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The marginal substrate: why a jammed — Configured Continuum §3 | Jamming Physics</title>
+<meta name="description" content="A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays…">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The marginal substrate: why a jammed — Configured Continuum §3 | Jamming Physics"><meta property="og:description" content="A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays…"><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The marginal substrate: why a jammed — Configured Continuum §3 | Jamming Physics"><meta name="twitter:description" content="A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays…">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The marginal substrate: why a jammed", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 3, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/", "knowsAbout": ["jamming lattice", "configured continuum", "The marginal substrate: why a jammed"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"\u00a73 The marginal substrate: why a jammed"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §3</nav></header>
+<main>
+<h1>The marginal substrate: why a jammed arrangement flows</h1>
+<p class="answer">A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays finite—so it shears freely, resists compression, and carries one elastic speed c_s²=B/ρ: it is a fluid. <span class="grade g-gate">[GATE]</span></p>
+<p class="abstract">A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays finite—so it shears freely, resists compression, and carries one elastic speed c_s²=B/ρ: it is a fluid. We reproduce this locally (bootstrap z₀=5.99, CI [5.49,6.29]ni 6) and inherit the companion's five-observable verification; rotation, costing a rigid packing nothing yet shearing a differential one, is the unjamming switch. The same two rules fix the laminar–turbulent transition's universality class as directed percolation—confirmed by experiment (2016–2024) and by five exponents measured in this bundle.</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>A0 calls the medium "a coarse-grained, jammed configuration of
+finite-volume particles." Before the axioms say how such a configuration
+<em>interacts</em>, there is a prior question the rest of the document silently
+leans on: why should a <em>jammed</em> configuration flow at all? Jammed packings
+are, after all, solids. This section answers it with the central inherited
+result of the companion whitepaper (<em>VP Theory</em>, concept DOI
+<a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">10.5281/zenodo.17932566</a>),
+reproduced locally, at reduced size, inside this bundle: a packing at the
+<em>isostatic margin</em> is the special solid whose shear rigidity is exactly
+zero while its compressive rigidity is not—which is the mechanical definition
+of a fluid. Everything in this section is dimensionless; nothing imports the
+companion's dimensional anchor (Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>).</p>
+<h2>Counting constraints: where <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d"> comes from</h2>
+<p>Let a packing of <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> frictionless particles in <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7d5b78691fd2.svg" loading="lazy" alt="d"> dimensions touch through
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if989f52b8d93.svg" loading="lazy" alt="N_c"> contacts; the mean coordination is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia0ab2fb54ad7.svg" loading="lazy" alt="z=2N_c/N">. Each contact is one scalar
+constraint (it fixes one inter-particle gap); each particle carries <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7d5b78691fd2.svg" loading="lazy" alt="d"> degrees
+of freedom. For the packing to be rigid the constraints must pin the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i79a6e9ca0d0b.svg" loading="lazy" alt="dN">
+degrees of freedom (global rigid motions aside, an <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0a7a27d61d0f.svg" loading="lazy" alt="\mathcal O(1)"> correction
+at large <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N">):
+<figure class="eq"><img data-eq="flu-03-001" src="/fluid-dynamics/eq/fluid-dynamics/flu-03-001.svg" loading="lazy" alt="\[ N_c\;\ge\;dN-\tfrac{d(d+1)}{2} \qquad\Longleftrightarrow\qquad z\;\ge\;2d-\mathcal O(1/N). \]"></figure>
+This is Maxwell's counting argument, and it is the entire input. The point
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i472a56803617.svg" loading="lazy" alt="z_{\rm iso}=2d"> is <em>isostatic</em>: exactly enough contacts to be rigid, with
+not one to spare—rigid the way a structure with zero redundancy is rigid;
+remove anything and it moves. The whole section lives on the distance to this
+margin,
+<figure class="eq"><img data-eq="flu-03-002" src="/fluid-dynamics/eq/fluid-dynamics/flu-03-002.svg" loading="lazy" alt="\[ \Delta z\;\equiv\;z-2d\;\ge\;0 . \]"></figure></p>
+<h2>The fluidity theorem: zero shear reserve at the margin</h2>
+<p>Two moduli describe the linear mechanics of a packing. The <em>affine</em>
+(Born) moduli are what the contact network would resist if every particle
+followed the imposed strain homogeneously; the <em>relaxed</em> moduli let the
+particles re-equilibrate after the strain (the non-affine relaxation),
+<figure class="eq"><img data-eq="flu-03-003" src="/fluid-dynamics/eq/fluid-dynamics/flu-03-003.svg" loading="lazy" alt="\[ G_{\rm relaxed}\;=\;G_{\rm Born}\;-\;\frac{\Xi^{\mathsf T}H^{+}\Xi}{V}, \]"></figure>
+where <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib19a4c2790b7.svg" loading="lazy" alt="H"> is the Hessian of the contact energy on the rigid backbone and
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5b1ee03c3e6f.svg" loading="lazy" alt="\Xi=-\partial^2E/\partial\gamma\,\partial\xv"> is the force mismatch the affine
+strain leaves behind. The relaxed modulus is what a rheometer measures.</p>
+<div class="box claim"><p class="box-title"><span class="grade g-derive">[DERIVE]</span> (inherited <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3219140929ea.svg" loading="lazy" alt="+"> locally reproduced) — the marginal packing is a fluid</p><p>As the margin is approached, the relaxed shear modulus vanishes linearly while
+the bulk modulus stays finite:
+<figure class="eq"><img data-eq="flu-03-004" src="/fluid-dynamics/eq/fluid-dynamics/flu-03-004.svg" loading="lazy" alt="\[ G_{\rm relaxed}\;\propto\;\Delta z\;\longrightarrow\;0, \qquad B\;\to\;\text{finite}\qquad(\Delta z\to 0). \]"></figure>
+A medium with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8c8fd948e7d4.svg" loading="lazy" alt="G=0"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4ae5f09af3e8.svg" loading="lazy" alt="B&gt;0"> deforms under arbitrarily small shear yet resists
+compression and transmits longitudinal sound: that is a fluid, by mechanical
+definition. <em>Fluidity is therefore not an assumption of A0; it is a
+property the marginal arrangement earns.</em>\\
+<strong>Provenance.</strong> Verified in the companion bundle (jamming-spine
+verification v0.4, concept DOI 10.5281/zenodo.17932566) on five independent
+observables (table below), and reproduced locally at reduced <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> by
+<code>marginal_fluidity.py</code> (box below).\\
+<strong>Failure mode.</strong> A correctly prepared, accepted ensemble whose bootstrap
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1a953b0aad72.svg" loading="lazy" alt="z_0"> excludes <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9617db6c6626.svg" loading="lazy" alt="2d"> as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> grows, or whose <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i588df68acdbe.svg" loading="lazy" alt="B"> collapses together with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iba1dd0c78acf.svg" loading="lazy" alt="G">,
+falsifies the statement (Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>, row 0).</p></div>
+<p>The companion's verification is worth tabulating, because its strength is the
+<em>independence</em> of the observables that all point at the same margin:</p>
+<table><caption>The companion's five-observable verification of marginal fluidity
+(quoted, not re-derived; concept DOI 10.5281/zenodo.17932566). Five vanishing
+routes and one non-vanishing contrast agree on the same point <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d">.</caption><tr><th>Observable (companion)</th><th>Behaviour at the margin</th><th>Measured</th></tr><tr><td>Relaxed shear modulus</td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i101d178ec552.svg" loading="lazy" alt="G_{\rm relaxed}\propto\Delta z\to0"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idc96e7e8dfee.svg" loading="lazy" alt="z_0=5.90/5.95"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i206de0b11950.svg" loading="lazy" alt="N{=}512/1024">)</td></tr><tr><td>Soft-mode onset <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie5d780f5a09e.svg" loading="lazy" alt="\omega^*"></td><td>vanishes at isostaticity</td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i79918761b004.svg" loading="lazy" alt="z_0=6.015">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2be963f503df.svg" loading="lazy" alt="R^2=0.997"></td></tr><tr><td>Viscosity proxy</td><td>diverges as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iffd28de98977.svg" loading="lazy" alt="\Delta z\to0"></td><td>confirmed</td></tr><tr><td>Quasistatic yield stress</td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic1f463501bcc.svg" loading="lazy" alt="\sigma_y\to0"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6401bc4df2d7.svg" loading="lazy" alt="z_0=5.98"></td></tr><tr><td>Athermal stress relaxation</td><td>residual <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iebafc7c235dc.svg" loading="lazy" alt="{&lt;}1\%"></td><td>confirmed</td></tr><tr><td>Bulk modulus (the contrast)</td><td>stays <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0a7a27d61d0f.svg" loading="lazy" alt="\mathcal O(1)"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if96eaa3891e7.svg" loading="lazy" alt="0.90/1.13/1.40"></td></tr></table>
+<div class="box repro"><p class="box-title">Local reproduction — marginal fluidity at reduced <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> (<code>marginal_fluidity.py</code>)</p><p><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i08cff061e5c1.svg" loading="lazy" alt="3">D bidisperse harmonic spheres, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2439b6189f6a.svg" loading="lazy" alt="N\in\{128,256\}">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9f801d76f6eb.svg" loading="lazy" alt="7"> packing fractions
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9e881cf7e734.svg" loading="lazy" alt="\times\,4"> seeds <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia374d36b7770.svg" loading="lazy" alt="=56"> packings; Born moduli, mismatch vector and Hessian
+assembled analytically and self-verified against finite differences (Born
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i16612c16d071.svg" loading="lazy" alt="7.4\times10^{-9}">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iba2d9acf4e14.svg" loading="lazy" alt="\Xi"> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia466ce7c6efa.svg" loading="lazy" alt="9.2\times10^{-10}">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib19a4c2790b7.svg" loading="lazy" alt="H"> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i490086f88204.svg" loading="lazy" alt="3.4\times10^{-10}">); the
+non-affine term by a <em>pinned</em> positive-definite Cholesky solve with
+iterative refinement—never an eigendecomposition pseudoinverse (the soft-mode
+over-subtraction trap; algorithm box, Appendix <a href="/fluid-dynamics/ax-b-algorithm-boxes-complete-forms/">Appendix B</a>).
+<ul><li><strong>Fluidity intercept:</strong> pooled fit <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2ab76ed8272d.svg" loading="lazy" alt="G_{\rm rel}=a\,(z-z_0)"> gives
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i74622f9d8720.svg" loading="lazy" alt="z_0=5.99">, bootstrap <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8d81c1dad459.svg" loading="lazy" alt="95\%"> CI <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8a5a46b5f311.svg" loading="lazy" alt="[5.49,\,6.29]\ni 6=2d"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5a93a943ea81.svg" loading="lazy" alt="n=56">); per size,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i829b424df44c.svg" loading="lazy" alt="N{=}128">: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3cc41be735a6.svg" loading="lazy" alt="6.20\;[5.82,6.42]">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if65892dac245.svg" loading="lazy" alt="N{=}256">: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1a44d324e481.svg" loading="lazy" alt="5.83\;[5.24,6.15]">. <span class="pass">PASS</span></li><li><strong>Monotone:</strong> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i21aadb69a10e.svg" loading="lazy" alt="\langle G_{\rm rel}\rangle"> over <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z">-quartiles
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifdc84f6ddd7d.svg" loading="lazy" alt="=4.04,\;6.74,\;10.08,\;12.39">. <span class="pass">PASS</span></li><li><strong>Bulk survives:</strong> lowest-<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z"> quartile
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7eb89060874d.svg" loading="lazy" alt="\langle B_{\rm rel}\rangle=47.0"> vs <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i46d97baf3630.svg" loading="lazy" alt="\langle G_{\rm rel}\rangle=4.04">—the
+shear reserve dies an order of magnitude ahead of the compressive one. <span class="pass">PASS</span></li><li><strong>Acoustic:</strong> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i37aca6cf0e95.svg" loading="lazy" alt="c^2=B_{\rm rel}/\rho"> is size-independent to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/icae31d50dcf5.svg" loading="lazy" alt="0.4\%">
+(<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1be900a078a9.svg" loading="lazy" alt="0.2887"> vs <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i888798ea7fc1.svg" loading="lazy" alt="0.2875"> in bundle units), softened below the affine Born value by
+the non-affine relaxation, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic1e01ec6131d.svg" loading="lazy" alt="\langle B_{\rm rel}/B_{\rm Born}\rangle=0.711">
+(companion, larger <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N">: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if640a57432b8.svg" loading="lazy" alt="\times0.65">). <span class="pass">PASS</span></li><li><strong>Ledger:</strong> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6c4aefa42d65.svg" loading="lazy" alt="56/56"> accepted (jammed, positive-semidefinite,
+residual force <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0d588fb8189c.svg" loading="lazy" alt="&lt;10^{-7}">); negative <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic7d0da571ebd.svg" loading="lazy" alt="G_{\rm rel}"> kept-not-clamped: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i25037cf75645.svg" loading="lazy" alt="0">
+occurrences here (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic576a0fb4a62.svg" loading="lazy" alt="2"> kept in the companion's larger runs). <span class="pass">PASS</span></li></ul>
+Slopes and moduli are in bundle units (they rescale with the contact
+stiffness); the intercept <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1a953b0aad72.svg" loading="lazy" alt="z_0"> and the ratios are the invariant content.</p></div>
+<h2>Rotation is the unjamming switch</h2>
+<p>The margin does not only make the medium shearable; it singles out
+<em>rotation</em> as the operation that fluidizes it—the substrate-level origin
+of this document's rotational theme.</p>
+<p>Two elementary facts, both verified in <code>unjam_inflow.py</code>. (i) A
+<em>rigid</em> rotation <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i50501768afc3.svg" loading="lazy" alt="\mathbf u=\theta\,\hat{\mathbf z}\times\rv"> changes no
+bond length at first order, identically:
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i755a5f13f4bc.svg" loading="lazy" alt="\hat{\mathbf n}\cdot(\hat{\mathbf z}\times\rv)=0"> (measured
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6b5a9a7a23a7.svg" loading="lazy" alt="\le2.8\times10^{-17}">)—rotation per se costs the packing nothing.
+(ii) Any <em>differential</em> rotation is locally a shear, and the strain a
+shear can impose before breaking a contact is bounded by that contact's
+overlap. Across the ensemble the overlap distribution collapses with pressure
+(quantile correlations <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i99f2e237f084.svg" loading="lazy" alt="\mathrm{corr}(\log q_{05},\log P)=0.96">,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3a29fda820d4.svg" loading="lazy" alt="\mathrm{corr}(\log\mathrm{med},\log P)=0.99">; densest-to-marginal ratio
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0e143494c3d9.svg" loading="lazy" alt="5.9\times">): <em>the shear reserve is the overlap, and it vanishes at the
+margin</em>. Hence at <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iffd28de98977.svg" loading="lazy" alt="\Delta z\to0"> any rotational shear, however small, exceeds
+the reserve, breaks contacts, and unjams the neighbourhood: <em>rotation is
+the fluidization switch</em>. The unjammed material then moves along the one
+direction the rotating demand leaves open—inward—which is the geometric
+origin of the directed-inflow nozzle (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idc63d1d3c8f8.svg" loading="lazy" alt="\sim r^{-4}">) that Mechanism M and gate
+G-Q use downstream (Section <a href="/fluid-dynamics/11-cross-scale-extensibility-one-arrangement/">§11</a>); there it now enters as
+derived geometry, not as a postulate.</p>
+<h2>The acoustic face: one speed survives</h2>
+<p>At the margin the packing keeps exactly one stiffness, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i588df68acdbe.svg" loading="lazy" alt="B">, hence exactly one
+elastic wave—longitudinal sound at
+<figure class="eq"><img data-eq="flu-03-005" src="/fluid-dynamics/eq/fluid-dynamics/flu-03-005.svg" loading="lazy" alt="\[ c_s^2=\frac{B}{\rho}, \]"></figure>
+with no transverse counterpart (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2727680500b5.svg" loading="lazy" alt="G_{\rm relaxed}=0">): the defining acoustic
+signature of a fluid. The local measurement above puts numbers on it (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5cd8eacfa740.svg" loading="lazy" alt="c^2">
+size-independent to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/icae31d50dcf5.svg" loading="lazy" alt="0.4\%">; non-affine softening <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i403c9cabaef3.svg" loading="lazy" alt="0.711">), and Pillar I
+derives the same speed from the balance laws by linearization
+(Section <a href="/fluid-dynamics/06-pillar-i-structural-arrangement-forces/">§6</a>). What is <em>not</em> done here: the companion's
+identification of the full-jamming elastic speed with the invariant speed of
+light rests on its dimensional anchor and is neither used nor claimed in this
+document (Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>).</p>
+<h2>The constitutive ladder: where each closure lives</h2>
+<p>The margin organizes the constitutive zoo of continuum mechanics on a single
+axis. Reading <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb72da476b55.svg" loading="lazy" alt="\Delta z"> downward:
+<ul><li><strong>Deep in the jammed phase</strong> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb72da476b55.svg" loading="lazy" alt="\Delta z"> large): finite
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i108875b75ec8.svg" loading="lazy" alt="G_{\rm relaxed}"> and finite yield stress—an elastic/plastic solid.</li><li><strong>Approaching the margin</strong>: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i108875b75ec8.svg" loading="lazy" alt="G_{\rm relaxed}"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i190d95a17d31.svg" loading="lazy" alt="\sigma_y"> vanish
+while the viscosity proxy grows—yield-stress and shear-thinning rheology;
+this is the regime where the Newtonian gate of Pillar I <em>fails</em> in exactly
+the long-memory, force-chain way it names.</li><li><strong>At and just past the margin</strong> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if96e5174d106.svg" loading="lazy" alt="\Delta z\to0^+">): zero shear
+reserve, finite <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i588df68acdbe.svg" loading="lazy" alt="B">—the Newtonian fluid is the leading small-Deborah,
+locally isotropic response of the <em>barely unjammed</em> medium. The
+Newtonian-closure gate of Pillar I is thereby <em>located</em> on this axis
+rather than free-floating (its content and <span class="grade g-gate">[GATE]</span> status are unchanged; its
+position is the new information).</li></ul>
+The ladder is a reading of measured monotonicities (Table <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>),
+not an additional theorem; each rung keeps the grade its evidence earns.</p>
+<h2>Why a driven medium sits at the margin (G-SOC)</h2>
+<p>One gate remains, and it is the hinge between this section and the dissipation
+pillar: <em>why should a flowing medium be at the margin at all times?</em></p>
+<div class="box claim"><p class="box-title"><span class="grade g-gate">[GATE]</span> G-SOC: driven marginality (self-organized criticality)</p><p><strong>Statement.</strong> Drive unjams (pushes <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z"> down toward <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9617db6c6626.svg" loading="lazy" alt="2d">); rest re-jams
+(pulls <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z"> up). A continuously driven medium is squeezed from both sides and
+<em>pins</em> at marginal coordination—self-organized criticality with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d">
+as the critical manifold. If true, the substrate of any flowing medium is
+permanently marginal, and the event channel of Pillar IV is permanently
+available.\\
+<strong>Status.</strong> The companion verification observes the pinning: under slow
+shear with re-jamming, the steady contact pressure parks at
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia68bda7e762a.svg" loading="lazy" alt="g^\star/g_0\approx1.1">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if6309d92bb2e.svg" loading="lazy" alt="1.3"> regardless of the starting point (concept DOI
+10.5281/zenodo.17932566). What is demonstrated is pinning <em>near</em> the
+margin; what is <em>not</em> demonstrated—there or here—is arrival
+<em>exactly at</em> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d"> under drive. The companion flags this as its own open
+loop; we inherit the flag, not the conclusion.\\
+<strong>Falsification route.</strong> Drive a marginal packing at a fixed slow rate
+with re-jamming and track the steady <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4fe8542a81eb.svg" loading="lazy" alt="g^\star"> (equivalently <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z">) across drive
+amplitudes and seeds. <em>Systematic drift</em> of the steady value with drive or
+preparation—instead of pinning—falsifies self-organized marginality, and
+with it the identification of sustained flow with sustained criticality.</p></div>
+<h2>The transition test: a 140-year problem lands where the substrate says</h2>
+<p>The G-SOC rules are not decoration; they make a parameter-free, checkable
+statement about one of fluid mechanics' oldest unsolved problems. The
+laminar–turbulent transition has resisted classification since Reynolds
+(1883). Its structure is peculiar and well documented: laminar pipe flow is
+linearly stable at every Reynolds number, so turbulence cannot arise
+spontaneously—it spreads only by contact from regions already turbulent—and
+it can locally die. "Drive unjams, rest re-jams," read at the scale of
+turbulent patches, <em>is</em> this structure: an absorbing (laminar) state,
+local contagion, local recovery.</p>
+<div class="box claim"><p class="box-title"><span class="grade g-derive">[DERIVE]</span> — the substrate rules fix the universality class of the transition</p><p>A locally interacting system with a unique absorbing state and no additional
+symmetry has, generically, one continuous-transition universality class:
+directed percolation (DP). The G-SOC dynamics of \S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a> is such a
+system, so the framework fixes the class <em>in advance</em>, with no fluid
+input. This is the class the experiments found: quasi-1D Couette (2016,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i857deb3d8cb8.svg" loading="lazy" alt="\beta=0.276">), channel flow (2016, four exponents and a scaling relation),
+and—closing the question—pipe flow itself (2024), whose authors name the
+phase above threshold a <em>jammed phase of puffs</em>. A hard problem, solved by
+others, lands exactly where the substrate says it must.\\
+<strong>Local verification.</strong> The rules were transcribed literally to a lattice
+(pseudogap reserves <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0a534e7542ca.svg" loading="lazy" alt="P(x)\propto x^{\theta}">, demand-exceeds-reserve unjamming,
+probabilistic re-jam) and five independent exponents were measured with no
+tuning (<code>transition_dp.py</code>, three stages; box below). All five land on
+DP; mean-field and compact-DP are excluded.\\
+<strong>Falsification route.</strong> A subcritical shear-flow transition conclusively
+shown to lie outside DP breaks the category claim; within the lattice, any of
+the five gates failing on rerun breaks the transcription.</p></div>
+<div class="box repro"><p class="box-title">Transition class — five exponents, no tuning (<code>transition_dp.py</code> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie936e4537de5.svg" loading="lazy" alt="\to"> <code>_refine</code> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie936e4537de5.svg" loading="lazy" alt="\to"> <code>_final</code>)</p><p>1D ring; per-site reserve from the marginal pseudogap (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id07a488184f7.svg" loading="lazy" alt="\theta{=}0.45">,
+flagged); inactive site unjams when demand <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iba3f9f72ddaf.svg" loading="lazy" alt="\lambda\,n_{\rm act}\,U"> exceeds
+its reserve; active site re-jams with probability <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia29904183661.svg" loading="lazy" alt="q{=}0.35">; toggled sites
+redraw. <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i18c4efd2e98a.svg" loading="lazy" alt="\lambda_c=1.2544"> by curvature-minimised bisection.</p>
+<table><tr><th>exponent</th><th>measured</th><th>DP (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6b3d75a8131b.svg" loading="lazy" alt="1{+}1">d)</th><th></th></tr><tr><td>decay <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2c4c4d7ba438.svg" loading="lazy" alt="\rho\sim t^{-\delta}"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2110c6b63a41.svg" loading="lazy" alt="0.158"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibd3014423a69.svg" loading="lazy" alt="0.1595"></td><td><span class="pass">PASS</span></td></tr><tr><td>lifetime <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if5700923f170.svg" loading="lazy" alt="\tau\sim\Delta^{-\nu_\parallel}"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0098d63c8dec.svg" loading="lazy" alt="1.637"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9cdefc8e3409.svg" loading="lazy" alt="1.7338"></td><td><span class="pass">PASS</span></td></tr><tr><td>hyperscaling <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8f791dcc24f9.svg" loading="lazy" alt="\theta_s{+}\delta{+}\delta'"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i12da478d6416.svg" loading="lazy" alt="0.662"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5f1da0519725.svg" loading="lazy" alt="d/z=0.6326"></td><td><span class="pass">PASS</span></td></tr><tr><td>spreading <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i104bfe92725c.svg" loading="lazy" alt="N\sim t^{+\theta_s}"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i75735b63049a.svg" loading="lazy" alt="0.335"> (windows <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if2e36e0033b1.svg" loading="lazy" alt="0.382{\to}0.335">)</td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ief7556426d05.svg" loading="lazy" alt="0.3137"></td><td><span class="pass">PASS</span></td></tr><tr><td>activity corr. <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if70bfa1e3e87.svg" loading="lazy" alt="M_2{-}1\sim r^{-a}"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i30bccf66be7a.svg" loading="lazy" alt="0.482\pm0.011"></td><td><img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if7a8fe4ced50.svg" loading="lazy" alt="2\beta/\nu_\perp=0.504"></td><td><span class="pass">PASS</span></td></tr></table>
+<p>The pseudogap exponent is a flagged parameter precisely because the class must
+not depend on it; that independence is the content of universality. (The SOC
+avalanche exponent at <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id64a762c53c8.svg" loading="lazy" alt="0.35\%"> below threshold has a cutoff exceeding <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idabadeb55069.svg" loading="lazy" alt="10^6">
+and is reported with thin statistics, not gated.)</p></div>
+<p>One of these predictions is now closed and one boundary stated. (i) At
+transitional criticality the turbulent-fraction box roughness decays as
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i404e9877c5d7.svg" loading="lazy" alt="r^{-2\beta/\nu_\perp}">, an exponent that must track the spatial dimension of the
+DP class. Running the <em>same</em> G-SOC rules on a 2D lattice (4 neighbours
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i51466c2e1206.svg" loading="lazy" alt="\Rightarrow"> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1c316c3803c7.svg" loading="lazy" alt="(2{+}1)">d DP) and measuring the box roughness in the critical
+quasi-stationary state gives the result below.</p>
+<div class="box repro"><p class="box-title">Transition roughness in quasi-2D — <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1c316c3803c7.svg" loading="lazy" alt="(2{+}1)">d DP (<code>transition_dp_2d.py</code>)</p><p>The 1D ring of the box above becomes an <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i060699ed2b63.svg" loading="lazy" alt="L\times L"> lattice; the absorbing laminar
+state, the marginal-stability reserves (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia2e67b41e37e.svg" loading="lazy" alt="\theta=0.45">) and the re-jam <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iab2f310017a7.svg" loading="lazy" alt="q=0.35"> are
+unchanged — only the dimension changes, which is the universality statement.
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i775826e9fedc.svg" loading="lazy" alt="\lambda_c"> is located by the survival transition; in the critical state the
+box-roughness <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i89adac3287f6.svg" loading="lazy" alt="M_2(r)-1=\langle\rho_r^2\rangle/\langle\rho_r\rangle^2-1"> is a clean
+power law in <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1e94ebfd2f95.svg" loading="lazy" alt="r">.
+<ul><li><strong>Quasi-2D roughness.</strong> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if4c0773117c8.svg" loading="lazy" alt="2\beta/\nu_\perp = 1.475\pm0.058"> (6
+realisations, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0bef6e1d5f09.svg" loading="lazy" alt="L=384">), against the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1c316c3803c7.svg" loading="lazy" alt="(2{+}1)">d DP value <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib80113b873a6.svg" loading="lazy" alt="2\beta/\nu_\perp=1.591">.
+<span class="pass">PASS</span></li><li><strong>Dimensional scaling captured.</strong> With the quasi-1D measurement
+(<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6c4eb5077616.svg" loading="lazy" alt="0.482">) the measured 2D/1D ratio is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ief7a9591fe09.svg" loading="lazy" alt="3.06"> against the DP ratio
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i763ec3271736.svg" loading="lazy" alt="1.591/0.504=3.16">; both dimensions sit <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9c97e90ee859.svg" loading="lazy" alt="\sim">5–7% low — a single, consistent
+finite-size bias, not a class mismatch.</li></ul>
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i51466c2e1206.svg" loading="lazy" alt="\Rightarrow"> the transition-critical roughness exponent tracks the DP spatial
+dimension exactly as predicted (quasi-1D <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib79bcfb0234d.svg" loading="lazy" alt="0.50">, quasi-2D <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib8e3b70e8b22.svg" loading="lazy" alt="1.59">); the residual
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9c97e90ee859.svg" loading="lazy" alt="\sim">5–7% finite-size offset is the same <span class="grade g-gate">[GATE]</span> as for any finite lattice. The
+quasi-2D prediction — once flagged for Couette/channel reanalysis — is met
+internally by the model itself.</p></div>
+<p>(ii) The superexponential puff lifetimes are the extreme-value (Gumbel)
+statistics of the weakest reserve inside a puff. And one boundary, stated plainly:
+the transition fixed point does <em>not</em> give the intermittency of developed
+turbulence (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if9c759aae130.svg" loading="lazy" alt="\mu\approx0.25"> against the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec2722d25f6b.svg" loading="lazy" alt="3{+}1">d DP value <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib290c5f7bdfe.svg" loading="lazy" alt="\approx2.8">).
+Developed flow is the <em>driven</em> phase beyond the transition; its exponents
+belong to the event RG and stand as that program's open problem.</p>
+<h2>What is inherited, what is local, what is not imported</h2>
+<p>For auditability, the boundary of this section in one place. <em>Inherited
+and locally reproduced</em>: the fluidity theorem and the acoustic ratio
+(Table <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a> and the box above). <em>Inherited as derived
+geometry</em>: rotational unjamming and the directed inflow
+(\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>); the forced-radius attractor structure
+(Section <a href="/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/">§8</a>). <em>Inherited as a graded gate</em>: G-SOC
+(\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>). <em>Deliberately not imported</em>: the companion's mass
+ladder, its <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5966c15de367.svg" loading="lazy" alt="\alpha"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6762b6578071.svg" loading="lazy" alt="\delta"> derivations, its absolute (dimensional)
+anchors, and its speed-of-light identification. Citations use the concept DOI
+only; the companion's grades translate by the rule stated in "How to read
+this document."</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/02-reframing-mystery-necessity/">&larr; §2</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/04-axiomatic-core-rotation-forces-three/">§4 &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,213 @@
+{
+  "phase": "v1.8-upgrade-retrieval-readiness",
+  "paper": "chemistry",
+  "spec": "VP-SPEC v1.8",
+  "result": "PASS",
+  "scope": "Additive retrieval-readiness layer (Constitution C4 / Ch.6-R / Ch.8 search gate): answer-first blocks, self-contained vp-cards, claim-strip grade badges, ScholarlyArticle->6-R.4 and hub->Book JSON-LD. Public-file lane (robots/sitemap/llms.txt) intentionally EXCLUDED per Ch.2 lane rule.",
+  "method": "Deterministic in-place migration by upgrade_chemistry_v1_8.py ('code is the agent of conversion', C1). Edit surfaces limited to head/answer/abstract/claim-strip/vp-card/internal-link/JSON-LD (spec line 577), plus one authorized structural correction: retagging two mis-tagged section headings from <h1> to <h2> (an inherited defect; see inherited_defects). No body text was added, removed, or reworded.",
+  "constitution_carry_forward": {
+    "C1": "v1.7 PASS preserved AND strengthened: no body text added/removed/reworded, and the manifest 'words' (previously stale vs the HTML) was recomputed from the canonical HTML for all 8 pages — see manifest_words. Manifest now matches the HTML within the spec's 0.5% rule (gate manifest_words_within_0.5pct PASS).",
+    "C2": "v1.7 PASS preserved; single canonical HTML untouched, 28 eq SVG intact (28 referenced / 28 on-disk / 0 missing).",
+    "C3": "v1.7 PASS preserved; IRREPRODUCIBILITY_LEDGER.md and 16 [O] items unchanged.",
+    "C4": "NEW this phase: retrieval-readiness satisfied — see search_gate below (all checks PASS)."
+  },
+  "search_gate": {
+    "checks": [
+      {
+        "check": "answer_first_all_pages",
+        "pass": true,
+        "detail": "8 pages; issues=[]"
+      },
+      {
+        "check": "h1_exactly_one",
+        "pass": true,
+        "detail": "9 docs; violations=[]"
+      },
+      {
+        "check": "answer_first_hub",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "check": "vp_cards_well_formed",
+        "pass": true,
+        "detail": "3 cards; malformed=[]"
+      },
+      {
+        "check": "jsonld_chapter_6R4",
+        "pass": true,
+        "detail": "issues=[]"
+      },
+      {
+        "check": "jsonld_hub_book_breadcrumb",
+        "pass": true,
+        "detail": "types=['Book', 'BreadcrumbList']"
+      },
+      {
+        "check": "grade_badge_present",
+        "pass": true,
+        "detail": "missing=[]"
+      },
+      {
+        "check": "paragraphs_<=3_sentences(soft)",
+        "pass": true,
+        "detail": "long_paragraph_blocks=48 (soft warning, non-failing)"
+      },
+      {
+        "check": "internal_chemistry_links_resolve",
+        "pass": true,
+        "detail": "broken=[]"
+      },
+      {
+        "check": "manifest_words_within_0.5pct",
+        "pass": true,
+        "detail": "violations=[]"
+      }
+    ],
+    "result": "PASS"
+  },
+  "manifest_words": {
+    "finding": "The v1.7 manifest 'words' did NOT match the canonical HTML under the spec rule (L441: <main> minus .abstract/.claim-strip/.vps-aside/h1/nav). Residuals were page-specific and BIDIRECTIONAL — on most pages the manifest was lower than the HTML count (by up to 5.3% on 01), but on 07 it was higher (by 1.0%). A single tokenizer applied to fixed text cannot produce counts that are lower than the HTML reference on seven pages and higher on the eighth; that split rules out a pure tokenizer mismatch and points to the numbers having been generated at an earlier content state (or from source documents) — i.e. STALE. This matches the v1.7 gate's own note that counts were 'pending author reconcile_derived_to_html.py'.",
+    "action": "Per Constitution C1 the canonical HTML is the SSOT and derived counts are recomputed from it. The reconcile step (reconcile_manifest_words in upgrade_chemistry_v1_8.py) rewrote 'words' = body_words(HTML) for all 8 pages, using a tokenizer byte-identical to gate_v1_8.py:body_words. The manifest now equals the HTML count exactly (gate manifest_words_within_0.5pct PASS, 0% difference).",
+    "v17_residuals_vs_html": {
+      "01-electromagnetism-jammed-lattice-light": {
+        "v17_manifest": 2345,
+        "v17_html_count": 2469,
+        "residual": 124,
+        "residual_pct": 5.29
+      },
+      "02-chemistry-single-anchor": {
+        "v17_manifest": 1743,
+        "v17_html_count": 1794,
+        "residual": 51,
+        "residual_pct": 2.93
+      },
+      "03-conduction-copper-magnetism-iron": {
+        "v17_manifest": 1687,
+        "v17_html_count": 1753,
+        "residual": 66,
+        "residual_pct": 3.91
+      },
+      "04-color-molecules": {
+        "v17_manifest": 1297,
+        "v17_html_count": 1307,
+        "residual": 10,
+        "residual_pct": 0.77
+      },
+      "05-platinum-catalysis-d-band-descriptor": {
+        "v17_manifest": 2077,
+        "v17_html_count": 2124,
+        "residual": 47,
+        "residual_pct": 2.26
+      },
+      "06-applications-catalysis-fertilizer-water-energy": {
+        "v17_manifest": 2295,
+        "v17_html_count": 2369,
+        "residual": 74,
+        "residual_pct": 3.22
+      },
+      "07-low-grade-waste-heat-electricity": {
+        "v17_manifest": 1751,
+        "v17_html_count": 1733,
+        "residual": -18,
+        "residual_pct": -1.03
+      },
+      "ax-o-open-items-register-what-is-honestly": {
+        "v17_manifest": 550,
+        "v17_html_count": 550,
+        "residual": 0,
+        "residual_pct": 0.0
+      }
+    },
+    "reconciled_now": {
+      "01-electromagnetism-jammed-lattice-light": 2478,
+      "02-chemistry-single-anchor": 1794,
+      "03-conduction-copper-magnetism-iron": 1753,
+      "04-color-molecules": 1307,
+      "05-platinum-catalysis-d-band-descriptor": 2124,
+      "06-applications-catalysis-fertilizer-water-energy": 2379,
+      "07-low-grade-waste-heat-electricity": 1733,
+      "ax-o-open-items-register-what-is-honestly": 550
+    },
+    "note": "This resolves the earlier 'author must reconcile later' item for the chemistry paper. If the author's own inventory.py uses a different tokenizer, any per-page disagreement >0.5% would surface in their gate; the exclusion set here follows spec L441 exactly."
+  },
+  "body_invariance": {
+    "pass": true,
+    "detail": "No body text was added, removed, or reworded. The only body-region change is retagging two section headings from <h1> to <h2> (the inherited-defect fix). All v1.8 additions (.answer, aside.vp-card, claim-strip badge) live in gate-excluded zones.",
+    "word_count_effect": "The retag moves the two heading texts from the h1-excluded zone into the counted body: 01 gains 9 words, 06 gains 10 words (exactly the heading words); the other 6 pages are unchanged. Measured with one consistent tokenizer.",
+    "word_counts_post": {
+      "01-electromagnetism-jammed-lattice-light": 2478,
+      "02-chemistry-single-anchor": 1794,
+      "03-conduction-copper-magnetism-iron": 1753,
+      "04-color-molecules": 1307,
+      "05-platinum-catalysis-d-band-descriptor": 2124,
+      "06-applications-catalysis-fertilizer-water-energy": 2379,
+      "07-low-grade-waste-heat-electricity": 1733,
+      "ax-o-open-items-register-what-is-honestly": 550
+    }
+  },
+  "page_grades": {
+    "method": "Most-frequent body claim token among F/V/H/O; tiebreak F>V>H>O; [CAL] excluded.",
+    "values": {
+      "01-electromagnetism-jammed-lattice-light": "forced",
+      "02-chemistry-single-anchor": "forced",
+      "03-conduction-copper-magnetism-iron": "forced",
+      "04-color-molecules": "forced",
+      "05-platinum-catalysis-d-band-descriptor": "hypothesis",
+      "06-applications-catalysis-fertilizer-water-energy": "forced",
+      "07-low-grade-waste-heat-electricity": "verified",
+      "ax-o-open-items-register-what-is-honestly": "open"
+    }
+  },
+  "vp_cards": {
+    "total": 3,
+    "placement": {
+      "01-electromagnetism-jammed-lattice-light": "1 (mp/me=6pi^5 -> /physics/ cross-volume)",
+      "02-chemistry-single-anchor": "1 (c^2=B/rho -> S1 #em.2-light-emergence-the-keystone-fv, in-package)",
+      "06-applications-catalysis-fertilizer-water-energy": "1 (d-band centre e_d -> S5 #ct.3-the-d-band-center-calf, in-package)"
+    },
+    "note": "CONSERVATIVE minimal scope: a card was emitted ONLY where a page cites a locked quantity owned by another section AND the canonical-derivation target is verifiable (an in-package anchor, or the guaranteed cross-volume /physics/ hub). Sections 3, 4, 5, 7, and ax emit 0 cards (each is self-contained or is itself the canonical owner). AUTHOR REVIEW REQUESTED against the locked-quantity SSOT, in case any additional cross-citation warrants its own card."
+  },
+  "inherited_defects": [
+    {
+      "id": "multiple-h1",
+      "severity": "FAIL inherited (pre-existing in v1.7 source) -> REPAIRED this phase",
+      "pages": [
+        "01-electromagnetism-jammed-lattice-light",
+        "06-applications-catalysis-fertilizer-water-energy"
+      ],
+      "detail": "Each page tagged one appended SECTION heading as <h1> instead of <h2>, violating 'exactly one h1'. The mis-tagged headings are peers of the page's other id-bearing section headings (all <h2>); the page title is the only <h1> and carries no id. The v1.7 gate reported new_h1_one:PASS in error; this report corrects that record.",
+      "fixed_ids": {
+        "01-electromagnetism-jammed-lattice-light": "em.12-dynamic-field-equations-poynting-and-causality-addendum-fv",
+        "06-applications-catalysis-fertilizer-water-energy": "application-co2-electrocatalytic-reduction-the-d-band-co-binding-descriptor-ff"
+      },
+      "resolution": "Retagged each mis-tagged <h1 id=...> to <h2> (matched by exact id, so the title h1 is never touched). After fix every page (and the hub) has exactly one h1 — verified by new gate check h1_exactly_one (9 docs, 0 violations). No heading text was altered.",
+      "manifest_reconciliation": "The retag moves each heading text from the h1-excluded zone into the counted body (+9 on 01, +10 on 06). Rather than leave this for later, the manifest 'words' was fully reconciled to the canonical HTML this phase (see manifest_words) — so 01/06 already reflect the retag and every page now matches the HTML within the spec's 0.5% rule. No outstanding word-count action remains."
+    },
+    {
+      "id": "hub-haspart-omits-ch07",
+      "severity": "FAIL inherited -> REPAIRED this phase",
+      "pages": [
+        "index.html (hub)"
+      ],
+      "detail": "The v1.7 hub CollectionPage hasPart listed only 7 of 8 chapters (07-low-grade-waste-heat-electricity missing) — the structured-data twin of the merged 6/7 <li> TOC defect.",
+      "resolution": "Repaired in-lane (JSON-LD is an allowed edit surface): during the CollectionPage->Book conversion, the script inserts the missing ch.07 entry before ax-o, preserving every original headline verbatim (SSOT = _meta chapter order). The hub hasPart is now 8 entries. The merged 6/7 <li> in the visible TOC was also split into two correct items."
+    }
+  ],
+  "judgment_calls": [
+    "The Phase-0 kit (tools/, templates/) is absent from the handoff. Under a strict reading of spec section 13 this would read as 'Phase 0 kit missing'. Chosen response: a faithful ADDITIVE deterministic upgrade via a self-written, hash-pinned script that honors 'code is the agent', minimal edit surfaces, and reproducibility — rather than refusing. The author should fold this script (or its equivalent) into the official tools/ lane.",
+    "Two mis-tagged section headings were retagged from <h1> to <h2> (an inherited defect; see inherited_defects: multiple-h1). This is one structural edit beyond the v1.8 answer/JSON-LD surfaces, taken under explicit owner delegation because it is an unambiguous spec-conformance fix (the sibling section headings are all <h2>) and leaves all body text byte-identical. The resulting +9/+10 word shift into the counted body is accounted for by the full manifest reconciliation performed this phase (see manifest_words).",
+    "_meta.json grade enum is documented as forced|calibrated|open|null, but the spec's grade-badge rule yields hypothesis (S5) and verified (S7) from body token frequency. The script writes the TRUE computed grade; the _meta enum should be widened to include hypothesis|verified, or the rule clarified.",
+    "vp-card scope kept deliberately minimal (3 cards) — see vp_cards.note.",
+    "One vp-card (S1) links to the cross-volume hub /physics/ (mass sector, Vol I) because the locked quantity mp/me=6pi^5 is owned outside this volume; flagged for author confirmation of the target URL."
+  ],
+  "tool_versions": {
+    "upgrade_chemistry_v1_8.py": {
+      "sha256": "af863e73cf1fed534e92602d98463b060cfe3e6a0f69d35509079c3125b812ba"
+    },
+    "gate_v1_8.py": {
+      "sha256": "c7658538ca64856fa42306818a049a5337e61a7ec77a03b0f11f7dedad2e2b8d"
+    },
+    "note": "Migration + gate scripts are delivered SEPARATELY from the handoff zip (keeping the package lane-clean per Ch.2). Re-run: `python3 upgrade_chemistry_v1_8.py <tree>` then `python3 gate_v1_8.py <tree> searchgate`. Author reconcile_derived_to_html.py remains authoritative for the word tokenizer."
+  }
+}

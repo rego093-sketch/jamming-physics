@@ -1,0 +1,182 @@
+{
+  "LCT_human": {
+    "material": {
+      "gamma": 1.3153,
+      "gc": 0.4206,
+      "cpg_oe": 0.335,
+      "cpg_oe_local_max": 0.8825,
+      "len": 2501
+    },
+    "switch": {
+      "spinodal": 0.5806
+    },
+    "provenance": "NC_000002.12:135836683-135839183 (GRCh38, TSS-2000..+500, minus)",
+    "role": "lactase master; age-silenced switch",
+    "structure": {
+      "_source": "structure_signals.py (repro/dna/10; deterministic, seed=7, n=300; 0 drift vs these values -> C1 wired, no longer a frozen constant)",
+      "helical_acf_10_11": 0.1168,
+      "helical_shuffle_mean": 0.007,
+      "helical_percentile": 100.0,
+      "poly_at_density": 0.1056,
+      "ctcf_core_candidates": {
+        "fwd_candidates": 0,
+        "rev_candidates": 0
+      }
+    }
+  },
+  "LCT_mouse": {
+    "material": {
+      "gamma": 1.3496,
+      "gc": 0.455,
+      "cpg_oe": 0.1323,
+      "cpg_oe_local_max": 0.4931,
+      "len": 2501
+    },
+    "switch": {
+      "spinodal": 0.6035
+    },
+    "provenance": "NC_000067.7:128255554-128258054 (GRCm39, TSS-2000..+500, minus)",
+    "role": "lactase master (cross-species same-material check)",
+    "structure": {
+      "helical_acf_10_11": 0.0465,
+      "helical_shuffle_mean": 0.0079,
+      "helical_percentile": 98.3,
+      "poly_at_density": 0.0616,
+      "ctcf_core_candidates": {
+        "fwd_candidates": 0,
+        "rev_candidates": 0
+      }
+    }
+  },
+  "MCM6_enh_human": {
+    "material": {
+      "gamma": 1.2581,
+      "gc": 0.3707,
+      "cpg_oe": 0.2912,
+      "cpg_oe_local_max": 0.9259,
+      "len": 2501
+    },
+    "switch": {
+      "spinodal": 0.5432
+    },
+    "provenance": "NC_000002.12:135849933-135852433 (GRCh38, ~14kb upstream of LCT TSS)",
+    "role": "lactase-persistence cis enhancer (-13910 cluster)",
+    "structure": {
+      "helical_acf_10_11": 0.0144,
+      "helical_shuffle_mean": 0.0048,
+      "helical_percentile": 67.0,
+      "poly_at_density": 0.0896,
+      "ctcf_core_candidates": {
+        "fwd_candidates": 0,
+        "rev_candidates": 0
+      }
+    }
+  },
+  "_meta": {
+    "organism": "Homo sapiens / Mus musculus (lactase locus, chr2 / chr1)",
+    "pipeline": "gamma = -mean(SantaLucia 1998 NN dG); CpG O/E = Gardiner-Garden & Frommer; READ-ONLY",
+    "provenance": "NCBI efetch live 2026-06-15 (eutils), GRCh38.p14 / GRCm39; coords from gene esummary",
+    "n": 3,
+    "note": "Workstream A (methylation layer) validation case. gamma/cpg are measured; methylation STATE (beta) and absolute age are Layer-2 [O] (see ledger).",
+    "layers": "gamma (material) -> M (methylation substrate) -> E (structure: helical accessibility + looping)",
+    "structure_pipeline": "helical = WW-dinucleotide ACF(lag10-11) vs 300 composition-matched shuffles (seed 7); poly(dA:dT) density; CTCF-core candidate proxy. READ-ONLY."
+  },
+  "_joined_unit": {
+    "members": [
+      "LCT_human",
+      "MCM6_enh_human"
+    ],
+    "linear_separation_bp": 14000,
+    "combined_methylation_substrate_localmax": 0.8224,
+    "rationale": "within typical loop/TAD range (<1Mb); known LCT regulatory pair -> read as ONE unit",
+    "actual_contact": "[O] needs Hi-C/micro-C"
+  },
+  "_external_validation": {
+    "source": "UCSC Genome Browser REST API (api.genome.ucsc.edu), hg38, fetched 2026-06-15",
+    "LCT_promoter_methylation": {
+      "small_intestine_ON": 0.004,
+      "nonexpressing_OFF": 0.8369,
+      "delta": 0.8329,
+      "grade": "L",
+      "claim": "LCT promoter hypomethylated in small-intestine epithelium (lactase ON) vs methylated in non-expressing tissues -> tissue-specific methylation pattern (measured); CONSISTENT WITH the M-layer direction. The gating itself is the framework R19 [F] result, not asserted from this measurement.",
+      "track": "Loyfer et al. 2023 DNA methylation atlas (literature; NOT standard UCSC-API-fetchable -> [L], not [V])"
+    },
+    "MCM6_enhancer_methylation": {
+      "small_intestine_ON": 0.9245,
+      "nonexpressing_OFF": 0.9217,
+      "delta": -0.0028,
+      "grade": "refined",
+      "claim": "MCM6 enhancer is methylated across ALL tissues (delta ~0) -> the methylation SWITCH is at the PROMOTER; the enhancer acts via the -13910 genetic variant/age, NOT bulk tissue methylation"
+    },
+    "LCT_promoter_accessibility": {
+      "dnase_cluster_scores": [
+        69,
+        88,
+        30,
+        83
+      ],
+      "grade": "V",
+      "claim": "LCT promoter overlaps ENCODE DNase clusters (open chromatin) -> accessible, as E1 requires",
+      "track": "wgEncodeRegDnaseClustered"
+    },
+    "ENCODE_cCRE": {
+      "LCT_promoter": {
+        "coord": "135837048-135837383",
+        "type": "prom",
+        "grade": "V"
+      },
+      "MCM6_enhancer": {
+        "coord": "135850993-135851671",
+        "type": "enhD (distal enhancer)",
+        "grade": "V",
+        "claim": "MCM6 -13910 region is an ENCODE-annotated DISTAL ENHANCER -> E2 premise externally confirmed"
+      },
+      "track": "encodeCcreCombined"
+    },
+    "enhancer_gene_link": {
+      "grade": "V",
+      "track": "geneHancerInteractionsDoubleElite",
+      "claim": "LCT is enhancer-regulated (GeneHancer links to LCT TSS); the specific -13910->LCT regulatory link is established by functional genetics"
+    },
+    "still_open_O": {
+      "actual_HiC_loop_minus13910_to_LCT": "[O] Hi-C matrix not fetchable via this API; regulatory link established functionally, physical contact unmeasured here",
+      "age_dependence_of_LCT_methylation": "[O] atlas is tissue- not age-stratified; needs aging WGBS (Labrie-type) to confirm age-driven methylation gain"
+    }
+  },
+  "_literature_established": {
+    "note": "peer-reviewed measurements establishing the [O] items; cited, not re-derived in-package (grade [L])",
+    "age_dynamics": {
+      "grade": "L",
+      "claim": "LCT promoter methylation INCREASES with age in lactase-non-persistent (-13910 CC) individuals; the -13910*T allele prevents age-dependent methylation, maintaining lactase",
+      "specific_CpG": "cg20242066 (LCT promoter; methylation tracks -13910 genotype, persistence phenotype, and lactase enzymatic activity)",
+      "refs": [
+        "Labrie et al. 2016 Nat Struct Mol Biol 23:566 (DNA-variation-dependent epigenetic aging)",
+        "Leseva/Oh et al. 2018 Sci Rep 8:5649 (HM450 differentially methylated position in LCT promoter)"
+      ]
+    },
+    "physical_loop": {
+      "grade": "L",
+      "claim": "the MCM6 intron-13 (-13910) enhancer physically contacts the LCT promoter via CHROMATIN LOOPING; in persistence, TFs (Oct-1, GATA-6, HNF-3A) bound at the enhancer recruit TET demethylases to the LCT promoter, keeping it demethylated",
+      "significance": "closes E2's physical-loop [O]: the -13910<->LCT loop is established, and it is the mechanism COUPLING E2 (looping) -> M (promoter methylation) exactly as the three-layer model posits",
+      "refs": [
+        "Misceo et al. 2024 (review: LCT-MCM6 methylation-altering TFs via chromatin looping)",
+        "Labrie et al. 2016"
+      ]
+    },
+    "accessibility_magnitude": {
+      "grade": "V",
+      "dnase_cluster_scores": [
+        69,
+        88,
+        30,
+        83
+      ],
+      "claim": "LCT promoter ENCODE DNase cluster peak scores (open-chromatin magnitude)"
+    }
+  },
+  "_boundary_items": {
+    "note": "these are [O] BY CONSTRUCTION -- framework category boundaries, NOT empirical gaps",
+    "rate_magnitudes": "Layer-2 illustrative parameters (kappa,lambda,H_BASE): the deliberate Layer-1/Layer-2 boundary; direction is anchored ([L] age-dynamics: non-persistence kappa>persistence), magnitudes are not 'read' quantities",
+    "above_dna_plasticity": "microbiome/physiological tolerance: explicitly ABOVE the DNA layer; a category boundary, not a gap in the DNA interpretation"
+  }
+}

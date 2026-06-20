@@ -1,0 +1,273 @@
+{
+ "title": "Burden-weighted schizophrenia TARGET prioritisation (cited tiers + declared weights)",
+ "inherited_from": "analgesic_threshold_logic v2.0 M10 (DOI 10.5281/zenodo.20733420)",
+ "weights_declared": {
+  "B": 0.4,
+  "U": 0.35,
+  "G": 0.25
+ },
+ "scale": "B/U/G cited on 1..5; score = 0.40*B + 0.35*U + 0.25*G (range 1..5)",
+ "principle": "ranks READS/TARGETS, not drugs. B/U/G are CITED tiers; the weights are a declared editorial choice -> the ranking is [F] from tiers+weights, NOT a [V] engine output. gamma-|h_sp| is carried ALONGSIDE as structural context and is NEVER folded into the score (firewall: a promoter-stiffness read is not a clinical magnitude). efficacy=0; no molecule, dose, or patient is ranked. SUBSTANTIVE FINDING: because the established D2-antagonist route is saturated and leaves a large treatment-resistant + negative/cognitive remainder, the unmet-need tier pushes the GLUTAMATERGIC (L1/NMDA) mechanisms ABOVE the established dopamine D2 route -- the L1+L3 co-dominant lever map made into a priority order, with the unmet-need axis breaking the L1/L3 symmetry in L1's favour.",
+ "substantive_finding": {
+  "leading_glutamatergic_gene": "GRIN2A",
+  "glutamatergic_rank": 1,
+  "established_dopamine_gene": "DRD2",
+  "dopamine_rank": 3,
+  "reading": "the leading glutamatergic L1 gene GRIN2A ranks #1, ABOVE the established dopamine D2 gene DRD2 at #3 -- the unmet-need tier surfaces the NMDA route as the higher-leverage direction precisely because the D2 route is already the established one and leaves the negative/cognitive remainder. This does NOT assert efficacy; it ranks where the unmet mechanistic need is greatest."
+ },
+ "decoupling_witness": {
+  "stiffest_promoter_gene": "SLC6A3",
+  "stiffest_promoter_priority_rank": 12,
+  "top_priority_gene": "GRIN2A",
+  "top_priority_h_sp_rank_stiffest_first": 6,
+  "reading": "the stiffest promoter read (SLC6A3, the dopamine transporter -- not a clean direction) sits LOW on priority while the top-priority gene (GRIN2A) has a MID-RANGE read -- if promoter stiffness drove the ranking neither could sit where it does. The decoupling is the firewall made visible."
+ },
+ "top_actionable_genes": [
+  "GRIN2A",
+  "GRIN2B",
+  "DRD2",
+  "GRIN1",
+  "GRIA3",
+  "TH"
+ ],
+ "ranking": [
+  {
+   "gene": "GRIN2A",
+   "lever": "L1",
+   "channel_or_protein": "NMDA-R GluN2A (glutamate, Ca2+-permeable)",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "G_genetic_druggability": 5,
+   "priority_score": 4.6,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.469712,
+    "spinodal_h_sp": 0.685798,
+    "h_sp_rank_stiffest_first": 6
+   },
+   "cite": "one of the few genes with BOTH genome-wide common-variant and exome rare-variant evidence (Trubetskoy 2022; Singh 2022 SCHEMA); the glutamatergic/NMDA route addresses the treatment-resistant + negative/cognitive remainder the dopamine route misses",
+   "rank": 1
+  },
+  {
+   "gene": "GRIN2B",
+   "lever": "L1",
+   "channel_or_protein": "NMDA-R GluN2B (glutamate, Ca2+-permeable)",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "G_genetic_druggability": 4,
+   "priority_score": 4.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.360756,
+    "spinodal_h_sp": 0.610968,
+    "h_sp_rank_stiffest_first": 11
+   },
+   "cite": "the principal NMDA-modulator subunit; the NMDA-hypofunction route is the leading non-dopaminergic mechanism for the remainder (Olney 1995; Trubetskoy 2022)",
+   "rank": 2
+  },
+  {
+   "gene": "DRD2",
+   "lever": "L3",
+   "channel_or_protein": "dopamine D2 receptor (DRD2; Gi-coupled GPCR; the antipsychotic target)",
+   "B_burden": 5,
+   "U_unmet": 2,
+   "G_genetic_druggability": 5,
+   "priority_score": 3.95,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.480632,
+    "spinodal_h_sp": 0.693456,
+    "h_sp_rank_stiffest_first": 5
+   },
+   "cite": "the dopamine D2 receptor; the single most established target (every licensed agent is a D2 antagonist/partial agonist) and a GWAS locus -- HIGHEST burden but LOW unmet (the established route already addresses it) (Seeman 1976; Howes 2009; Trubetskoy 2022)",
+   "rank": 3
+  },
+  {
+   "gene": "GRIN1",
+   "lever": "L1",
+   "channel_or_protein": "NMDA-R GluN1 (obligate NMDA subunit, glycine-binding)",
+   "B_burden": 3,
+   "U_unmet": 5,
+   "G_genetic_druggability": 4,
+   "priority_score": 3.95,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.571864,
+    "spinodal_h_sp": 0.758526,
+    "h_sp_rank_stiffest_first": 3
+   },
+   "cite": "the obligate NMDA subunit and the glycine-site node; the NMDA-hypofunction direction (sign-subtle: PV-interneuron hypofunction -> downstream disinhibition) (Javitt 1991; Olney 1995)",
+   "rank": 4
+  },
+  {
+   "gene": "CACNA1C",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V1.2 (L-type Ca2+)",
+   "B_burden": 4,
+   "U_unmet": 3,
+   "G_genetic_druggability": 4,
+   "priority_score": 3.65,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.261496,
+    "spinodal_h_sp": 0.545352,
+    "h_sp_rank_stiffest_first": 13
+   },
+   "cite": "the most-replicated cross-disorder calcium locus; a set-point gene shared across five disorders, NOT a clean schizophrenia-selective direction (Cross-Disorder PGC 2013; Ripke 2014)",
+   "rank": 5
+  },
+  {
+   "gene": "GRIA3",
+   "lever": "L1",
+   "channel_or_protein": "AMPA-R GluA3 (glutamate, fast excitatory)",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.398548,
+    "spinodal_h_sp": 0.636596,
+    "h_sp_rank_stiffest_first": 10
+   },
+   "cite": "an AMPA-receptor subunit downstream of the NMDA node; the fast-excitatory sub-route of the glutamatergic axis (Trubetskoy 2022)",
+   "rank": 6
+  },
+  {
+   "gene": "TH",
+   "lever": "L3",
+   "channel_or_protein": "tyrosine hydroxylase (TH; catecholamine-synthesis rate-limiting enzyme)",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.538216,
+    "spinodal_h_sp": 0.734301,
+    "h_sp_rank_stiffest_first": 4
+   },
+   "cite": "tyrosine hydroxylase; the elevated presynaptic striatal dopamine-SYNTHESIS capacity is the most-replicated imaging abnormality, distinct from the post-synaptic D2 route (Howes 2012)",
+   "rank": 7
+  },
+  {
+   "gene": "HTR2A",
+   "lever": "L3",
+   "channel_or_protein": "serotonin receptor 5-HT2A (HTR2A; GPCR)",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "G_genetic_druggability": 4,
+   "priority_score": 3.25,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.320772,
+    "spinodal_h_sp": 0.584238,
+    "h_sp_rank_stiffest_first": 12
+   },
+   "cite": "the 5-HT2A receptor; the serotonin-dopamine atypical axis (non-monotone direction) (Meltzer 1989)",
+   "rank": 8
+  },
+  {
+   "gene": "CACNB2",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V beta-2 auxiliary subunit (CACNB2)",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.0,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.451184,
+    "spinodal_h_sp": 0.672871,
+    "h_sp_rank_stiffest_first": 8
+   },
+   "cite": "the Ca_V beta-2 auxiliary subunit; a GWAS calcium-channel locus but a set-point modifier, not a clean direction (Cross-Disorder PGC 2013)",
+   "rank": 9
+  },
+  {
+   "gene": "GABRA1",
+   "lever": "L2",
+   "channel_or_protein": "GABA-A receptor alpha1 (Cl-)",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.0,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.246408,
+    "spinodal_h_sp": 0.535597,
+    "h_sp_rank_stiffest_first": 14
+   },
+   "cite": "GABA-A alpha1; the parvalbumin-interneuron restore route addressing the cortical disinhibition mechanism (Lewis 2005)",
+   "rank": 10
+  },
+  {
+   "gene": "COMT",
+   "lever": "L3",
+   "channel_or_protein": "catechol-O-methyltransferase (COMT; catecholamine-catabolic enzyme; 22q11.2)",
+   "B_burden": 2,
+   "U_unmet": 3,
+   "G_genetic_druggability": 3,
+   "priority_score": 2.6,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.465684,
+    "spinodal_h_sp": 0.682981,
+    "h_sp_rank_stiffest_first": 7
+   },
+   "cite": "catechol-O-methyltransferase; the prefrontal catecholamine Val158Met set-point modifier (Egan 2001)",
+   "rank": 11
+  },
+  {
+   "gene": "SLC6A3",
+   "lever": "L3",
+   "channel_or_protein": "dopamine transporter DAT (SLC6A3)",
+   "B_burden": 3,
+   "U_unmet": 2,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.4,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.59822,
+    "spinodal_h_sp": 0.777684,
+    "h_sp_rank_stiffest_first": 1
+   },
+   "cite": "the dopamine transporter (DAT); NOT a clean direction -- DAT blockade RAISES dopamine (the amphetamine/stimulant direction that worsens psychosis) -- note: STIFFEST promoter read yet LOW priority (decoupling) (Laruelle 1996)",
+   "rank": 12
+  },
+  {
+   "gene": "GABRB3",
+   "lever": "L2",
+   "channel_or_protein": "GABA-A receptor beta3 (Cl-)",
+   "B_burden": 2,
+   "U_unmet": 3,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.35,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.408952,
+    "spinodal_h_sp": 0.643713,
+    "h_sp_rank_stiffest_first": 9
+   },
+   "cite": "GABA-A beta3 (15q11-13); the interneuron-restore sub-route, exploratory (Lewis 2005)",
+   "rank": 13
+  },
+  {
+   "gene": "DRD4",
+   "lever": "L3",
+   "channel_or_protein": "dopamine D4 receptor (DRD4; Gi-coupled GPCR)",
+   "B_burden": 2,
+   "U_unmet": 2,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.0,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.577104,
+    "spinodal_h_sp": 0.762322,
+    "h_sp_rank_stiffest_first": 2
+   },
+   "cite": "the dopamine D4 receptor; high clozapine affinity made it a candidate, but a clean D4-selective direction is exploratory (Van Tol 1991)",
+   "rank": 14
+  }
+ ]
+}

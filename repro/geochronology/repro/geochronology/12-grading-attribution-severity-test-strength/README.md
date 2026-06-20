@@ -1,0 +1,3 @@
+# 12-grading-attribution-severity-test-strength
+
+Grading attribution severity (Table: the A1-A4 test-strength scale). Methodology: grade each date by how hard its ATTRIBUTION was tested (A1 anchored -> A4 untested + incentivised), not by precision. States the detection asymmetry (young-biasing artefacts have clean signatures, old-biasing ones do not) and a falsification design (sign of the screened-minus-anchor residual in anchor-controlled deep-time cases). Conceptual; the A1 exemplar is exercised under 07-demonstration-ii-zircon-u-pb/ and the competing 658.8 ka datum is documented in 09-documented-cases-mechanism-real-chronologies/.

@@ -1,0 +1,1255 @@
+{
+ "_what": "Hemodynamic Homeostasis -- emerge nodes from measured gamma, transduce via the sensory layer, circulate the fast/slow setpoint loops, map the interactions, and read fundamental-vs-symptomatic therapy. MAP is owned by no single organ.",
+ "calibration": {
+  "_what": "[CAL] absolute-scale track: explicit cited anchors propagated through the locked [V] relations and validated against independent references; first-principles derivation stays [O]. Calibration is not derivation.",
+  "all_calibrations_pass": true,
+  "anchors": {
+   "CO_rest_L_min": {
+    "grade": "[CAL]",
+    "source": "resting cardiac output, Guyton & Hall, Textbook of Medical Physiology",
+    "unit": "L/min",
+    "value": 5.0
+   },
+   "CVP_rest_mmHg": {
+    "grade": "[CAL]",
+    "source": "resting central venous pressure, Guyton & Hall",
+    "unit": "mmHg",
+    "value": 4.0
+   },
+   "GFR_norm_mL_min": {
+    "grade": "[CAL]",
+    "source": "normal whole-kidney GFR ~120 mL/min, Guyton & Hall",
+    "unit": "mL/min",
+    "value": 120.0
+   },
+   "MD_NaCl_op_mM": {
+    "grade": "[CAL]",
+    "source": "macula-densa luminal NaCl operating point ~30-60 mM (renal physiology)",
+    "unit": "mM",
+    "value": 30.0
+   },
+   "SVR_rest_WU": {
+    "grade": "[CAL]",
+    "source": "resting systemic vascular resistance (hybrid/Wood units), Guyton & Hall",
+    "unit": "mmHg.min/L (Wood units)",
+    "value": 17.8
+   },
+   "baroreceptor_Fmax_Hz": {
+    "grade": "[CAL]",
+    "source": "peak single-fiber carotid/aortic baroreceptor afferent rate, order ~100 Hz (electrophysiology)",
+    "unit": "Hz",
+    "value": 100.0
+   },
+   "baroreflex_gain": {
+    "grade": "[CAL]",
+    "source": "arterial baroreflex open-loop gain ~2-4 (classic baroreflex physiology)",
+    "unit": "dimensionless (open-loop)",
+    "value": 3.0
+   },
+   "perfusion_floor_MAP_mmHg": {
+    "grade": "[CAL]",
+    "source": "organ-perfusion MAP target >=65 mmHg (Surviving Sepsis Campaign)",
+    "unit": "mmHg",
+    "value": 65.0
+   }
+  },
+  "honesty": "[CAL] = calibrated (anchor cited + propagated + cross-checked); [O] (first-principles) preserved; residual-open items not forced into a pass",
+  "n_residual_open_items": 5,
+  "n_scales_closed": 7,
+  "n_total": 7,
+  "suites": {
+   "CAL1": {
+    "anchors_used": [
+     "CO_rest_L_min",
+     "SVR_rest_WU",
+     "CVP_rest_mmHg"
+    ],
+    "grade": "[O](first-principles) -> [CAL](calibrated)",
+    "id": "CAL1",
+    "independent_check": {
+     "results": {
+      "CO_in_normal": true,
+      "CVP_in_normal": true,
+      "MAP_pred_in_normal": true,
+      "SVR_in_normal": true
+     },
+     "targets": {
+      "MAP": [
+       70.0,
+       105.0
+      ],
+      "SVR_WU": [
+       8.0,
+       20.0
+      ]
+     }
+    },
+    "kind": "consistency calibration (seam constants are clinically inter-dependent)",
+    "note": "the locked hydraulic identity, fed the three cited resting seam constants, fixes the absolute mmHg scale and places all four hemodynamic quantities inside their independent clinical bands at once (SVR at the upper edge); this is calibration/consistency, not derivation -- first-principles absolute mmHg remains [O]",
+    "passed": true,
+    "propagated": {
+     "MAP_pred_mmHg": 93.0,
+     "SVR_dyn_s_cm5": 1424.0
+    },
+    "residual_open": [],
+    "title": "absolute arterial pressure scale (mmHg)"
+   },
+   "CAL2": {
+    "anchors_used": [
+     "baroreflex_gain"
+    ],
+    "grade": "[O]/[L] -> [CAL]",
+    "id": "CAL2",
+    "independent_check": {
+     "results": {
+      "buffered_in_physio": true,
+      "gain_in_physio": true,
+      "residual_plausible": true
+     },
+     "targets": {
+      "buffered": [
+       0.6,
+       0.8
+      ],
+      "gain": [
+       1.5,
+       4.0
+      ]
+     }
+    },
+    "kind": "anchor->observable propagation",
+    "note": "the cited open-loop gain G=3 propagates through the closed-loop control law to a 75% buffered fraction and a 5 mmHg steady residual for a 20 mmHg step (CAL1 scale); both sit inside the cited arterial-baroreflex range; absolute latency stays cited [L]",
+    "passed": true,
+    "propagated": {
+     "buffered_fraction": 0.75,
+     "residual_mmHg": 5.0,
+     "step_mmHg": 20.0
+    },
+    "residual_open": [],
+    "title": "absolute baroreflex gain + buffered step (mmHg)"
+   },
+   "CAL3": {
+    "anchors_used": [
+     "baroreceptor_Fmax_Hz"
+    ],
+    "grade": "[O] -> [CAL]",
+    "id": "CAL3",
+    "independent_check": {
+     "results": {
+      "Fmax_in_physio": true,
+      "discrete_R19_spikes": true,
+      "onset_pressure_cited": true,
+      "operating_point_midrange": true,
+      "saturate_pressure_cited": true
+     },
+     "targets": {
+      "onset": [
+       40.0,
+       75.0
+      ],
+      "saturate": [
+       140.0,
+       200.0
+      ]
+     }
+    },
+    "kind": "one anchor -> full curve (operating-point + onset/saturation cross-checked)",
+    "note": "one cited peak-rate anchor (~100 Hz) calibrates the substrate-shaped curve to absolute Hz: the afferent fires ~50 Hz at the resting setpoint (mid-range, reserve in both directions) and saturates ~96 Hz near 170 mmHg, with firing onset ~50 mmHg -- all matching the cited electrophysiology window; the discrete R19 spike code is [V]",
+    "passed": true,
+    "propagated": {
+     "Fmax_Hz": 100.0,
+     "hz_at_saturation": 96.115,
+     "hz_at_setpoint": 50.0,
+     "onset_mmHg": 50.0,
+     "saturate_mmHg": 170.0
+    },
+    "residual_open": [],
+    "title": "absolute baroreceptor firing rate (Hz)"
+   },
+   "CAL4": {
+    "anchors_used": [
+     "MD_NaCl_op_mM",
+     "GFR_norm_mL_min"
+    ],
+    "grade": "[O] -> [CAL] (order-of-magnitude)",
+    "id": "CAL4",
+    "independent_check": {
+     "results": {
+      "GFR_in_normal": true,
+      "NaCl_op_in_range": true,
+      "TGF_halfmax_order": true,
+      "sglt2i_raises_NaCl": true
+     },
+     "targets": {
+      "GFR": [
+       90.0,
+       140.0
+      ],
+      "NaCl": [
+       10.0,
+       60.0
+      ],
+      "TGF_halfmax_cited": 30.0
+     }
+    },
+    "kind": "order-of-magnitude calibration (honest 2x note on K_m)",
+    "note": "anchoring the operating luminal NaCl (~30 mM) and whole-kidney GFR (~120 mL/min) recovers the MD scale to within an order of magnitude; the model TGF half-max sits at 15 mM vs the cited ~30 mM (within 2x, reported not tuned); SGLT2i raises delivered NaCl (direction); the exact K_m and single-nephron GFR stay [O]",
+    "passed": true,
+    "propagated": {
+     "GFR_mL_min": 120.0,
+     "NaCl_operating_mM": 30.0,
+     "TGF_halfmax_mM": 15.0,
+     "sglt2i_NaCl_shift_mM": [
+      30.0,
+      48.0
+     ]
+    },
+    "residual_open": [
+     "absolute single-nephron GFR and the exact NKCC2 K_m (need micropuncture calibration)"
+    ],
+    "title": "absolute macula-densa NaCl set + GFR scale"
+   },
+   "CAL5": {
+    "anchors_used": [
+     "pulse-pressure relation (cited, circulatory sibling)"
+    ],
+    "grade": "[O] -> [CAL]; absolute incidence [O]",
+    "id": "CAL5",
+    "independent_check": {
+     "results": {
+      "defended_SBP_hypertensive": true,
+      "reset_band_plausible": true
+     },
+     "targets": {
+      "stage1_SBP": 130.0
+     }
+    },
+    "kind": "reset magnitude -> clinical category",
+    "note": "the +20 mmHg MAP reset is a +20 mmHg SBP level shift (fixed pulse pressure), moving a normotensive ~115 mmHg SBP to ~135 mmHg = ACC/AHA stage-1 hypertension (>=130); the reset magnitude is clinically consistent, but the absolute incidence rate stays [O]",
+    "passed": true,
+    "propagated": {
+     "defended_SBP_after_mmHg": 135.0,
+     "reset_MAP_mmHg": 20.0
+    },
+    "residual_open": [
+     "absolute hypertension incidence rate (needs epidemiological cohort calibration)"
+    ],
+    "title": "hypertension setpoint reset in clinical SBP (mmHg)"
+   },
+   "CAL6": {
+    "anchors_used": [
+     "RDN_office_dSBP_mmHg (GSR-DEFINE)",
+     "PROMISE/PARADIGM-HF mortality signs"
+    ],
+    "grade": "[O]/[L] -> [CAL]; absolute HR/NNT [O]",
+    "id": "CAL6",
+    "independent_check": {
+     "results": {
+      "HF_sign_matches_mortality": true,
+      "RDN_within_30pct": true
+     },
+     "targets": {
+      "RDN_cited": 20.0,
+      "mortality_signs": "milrinone +28% / ARNI -16%"
+     }
+    },
+    "kind": "magnitude (RDN) + directional-sign (HF) match",
+    "note": "the model renal-reference-reset durable drop (17 mmHg) matches the cited RDN office SBP (~-20 mmHg @3yr) within 15%; the sign of d(barrier margin) matches the sign of cited mortality in both HF arms (inotrope harm, four-pillar benefit); absolute HR/NNT stay [O]",
+    "passed": true,
+    "propagated": {
+     "RDN_cited_dSBP_mmHg": 20.0,
+     "RDN_model_dSBP_mmHg": 17.0,
+     "dMargin_four_pillars": 0.18,
+     "dMargin_inotrope": -0.139,
+     "rel_err": 0.15
+    },
+    "residual_open": [
+     "absolute clinical effect sizes (hazard ratios, NNT) -- the model has no event-time axis"
+    ],
+    "title": "absolute therapy effect sizes (RDN dSBP; HF margin sign)"
+   },
+   "CAL7": {
+    "anchors_used": [
+     "perfusion_floor_MAP_mmHg (Surviving Sepsis)",
+     "orthostatic dSBP consensus"
+    ],
+    "grade": "[O] -> [CAL]; shock incidence / per-taxon / clade [O]",
+    "id": "CAL7",
+    "independent_check": {
+     "results": {
+      "orthostatic_meets_consensus": true,
+      "perfusion_floor_clinical": true
+     },
+     "targets": {
+      "floor_band": [
+       55.0,
+       70.0
+      ],
+      "orthostatic_dSBP": 20.0
+     }
+    },
+    "kind": "clinical-threshold calibration",
+    "note": "the clinical organ-perfusion MAP floor (>=65 mmHg) anchors the RP8 vasoplegic floor, and the consensus orthostatic threshold (dSBP>=20 mmHg) matches the RP6 downward step that the autonomic-failure loop passes un-buffered; absolute shock incidence, per-taxon pressures, and the exact phylogenetic transition clade stay [O]",
+    "passed": true,
+    "propagated": {
+     "failed_loop_passes_full_drop": true,
+     "orthostatic_step_mmHg": 20.0,
+     "perfusion_floor_MAP_mmHg": 65.0
+    },
+    "residual_open": [
+     "absolute shock incidence and mortality (cohort)",
+     "absolute per-taxon arterial pressures and the exact phylogenetic transition clade (comparative physiology)"
+    ],
+    "title": "perfusion-floor MAP + orthostatic threshold (mmHg)"
+   }
+  }
+ },
+ "comparative": {
+  "absolute_per_taxon_grade": "[O]",
+  "defended_requires_all_three": true,
+  "emergence_grade": "[V]",
+  "ladder": [
+   {
+    "circuit": false,
+    "effector": false,
+    "grade": "diffusion_only",
+    "integrator": false,
+    "note": "transport by diffusion + body-wall contraction; NO pressure variable exists",
+    "regime": "incidental",
+    "residual_mmHg": 20.0,
+    "restoration_fraction": 0.0,
+    "taxa": "sponges, cnidarians, flatworms"
+   },
+   {
+    "circuit": false,
+    "effector": false,
+    "grade": "open_system",
+    "integrator": false,
+    "note": "hemolymph in a hemocoel; ostiate/tubular heart; low INCIDENTAL pressure; no closed loop, no arteriolar SVR effector, no renal pressure-natriuresis; PIEZO exists for proprioception but is not wired to a pressure reflex",
+    "regime": "incidental",
+    "residual_mmHg": 20.0,
+    "restoration_fraction": 0.0,
+    "taxa": "most arthropods and molluscs"
+   },
+   {
+    "circuit": true,
+    "effector": true,
+    "grade": "closed_single_low_P",
+    "integrator": false,
+    "note": "true vessels and pressure, but a gill circuit in series drops systemic pressure; branchial baro-like reflexes give FAST (proportional) regulation; RAS present, but the full integral pressure-natriuresis loop is not yet the dominant defender",
+    "regime": "error_regulated",
+    "residual_mmHg": 5.0,
+    "restoration_fraction": 0.75,
+    "taxa": "fish (teleosts)"
+   },
+   {
+    "circuit": true,
+    "effector": true,
+    "grade": "closed_transitional",
+    "integrator": true,
+    "note": "incomplete ventricular separation; baroreflex + RAAS maturing toward a defended setpoint",
+    "regime": "defended",
+    "residual_mmHg": 0.0,
+    "restoration_fraction": 1.0,
+    "taxa": "amphibians, reptiles"
+   },
+   {
+    "circuit": true,
+    "effector": true,
+    "grade": "closed_double_high_P",
+    "integrator": true,
+    "note": "complete double circuit, high pressure; full baroreflex (carotid sinus + aortic arch) + full renal pressure-natriuresis (Guyton) -> the DEFENDED MAP modelled by this package",
+    "regime": "defended",
+    "residual_mmHg": 0.0,
+    "restoration_fraction": 1.0,
+    "taxa": "birds, mammals"
+   }
+  ],
+  "phylogeny_anchor_grade": "[L]",
+  "qualitative_jump_ordered": true,
+  "thesis": "a defended arterial-pressure setpoint is EMERGENT: it appears only when a closed circuit, an arteriolar effector and a renal integrator co-exist on the same MAP = CVP + CO x SVR core. Lower organisms lack one or more legs, so pressure is incidental (open systems) or merely error-regulated (single-circuit fast reflex); the mammalian defended MAP is the top rung of loop accretion, not a different substrate"
+ },
+ "deferred": "absolute scales now CALIBRATED [O]->[CAL] (CAL1-CAL7: pressure mmHg / baroreflex gain / firing Hz / macula-densa NaCl+GFR / hypertension reset in clinical SBP / therapy effect sizes / perfusion-floor+orthostatic) by explicit cited anchors -- first-principles derivation stays [O]; residual-open: absolute disease incidence, single-nephron GFR / NKCC2 K_m, trial HR/NNT, per-taxon pressures, the exact phylogenetic transition clade. No master-gene gamma remains to measure (REN [V]).",
+ "dynamics_status": "EMERGED: sensory transduction + RP1-RP5 closed loops + interaction map + fundamental therapy read + hypotension node-decomposition (RP6-RP9) + cross-organism setpoint emergence + the comfort-logic intervention layer (analgesic three-lever technique, ported) all run deterministically under one hash.",
+ "hypotension": {
+  "RP6_orthostatic": {
+   "absolute_mmHg_grade": "[O]",
+   "anchor": "autonomic failure / baroreflex loss -> orthostatic hypotension; mirror of the labile PIEZO1/2 double-KO (Zeng 2018) -- the buffer fails in BOTH directions [L]",
+   "autonomic_failure_is_orthostatic": true,
+   "failed_buffered_fraction": 0.0,
+   "failed_residual_mmHg": -25.0,
+   "gain_latency_grade": "[L]",
+   "intact_buffered_fraction": 0.75,
+   "intact_buffers_majority": true,
+   "intact_residual_mmHg": -6.25,
+   "postural_step_mmHg": -25.0,
+   "shape_grade": "[V]",
+   "symmetric_with_rp2": true
+  },
+  "RP7_adrenal_reference_loss": {
+   "absolute_grade": "[O]",
+   "attractor_moved_down": true,
+   "bolus_opposed_back": true,
+   "bolus_peak_mmHg": 113.0,
+   "bolus_steady_mmHg": 73.0,
+   "clinical_anchor_grade": "[L]",
+   "defended_P_low": 73.0,
+   "defended_P_normal": 93.0,
+   "mirror": "exact mirror of RP4: an integral controller defends a reset reference; here it is reset DOWN (lost RAAS/aldosterone reference). Fluids are opposed back; restoring the reference (mineralocorticoid) is durable -- the symmetric counterpart of antihypertensive durability",
+   "reference_restore_durable": true,
+   "reset_shift_mmHg": -20.0,
+   "shape_grade": "[V]"
+  },
+  "RP8_distributive_svr_collapse": {
+   "MAP_inotrope_only": 57.4,
+   "MAP_vasopressor": 93.0,
+   "absolute_grade": "[O]",
+   "baseline_MAP": 93.0,
+   "clinical_anchor_grade": "[L]",
+   "failure_node": "resistance effector (SVR), distinct from RP5 cardiac-output basin",
+   "principle": "distributive shock is an SVR-arm collapse -> the corrective is to restore SVR (vasopressor); raising CO alone cannot lift MAP above the perfusion floor [V]; norepinephrine first-line in septic shock [L]",
+   "shape_grade": "[V]",
+   "svr_sweep": [
+    {
+     "MAP_doubled_CO": 182.0,
+     "MAP_resting_CO": 93.0,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 17.8,
+     "svr_frac": 1.0
+    },
+    {
+     "MAP_doubled_CO": 173.1,
+     "MAP_resting_CO": 88.55,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 16.91,
+     "svr_frac": 0.95
+    },
+    {
+     "MAP_doubled_CO": 164.2,
+     "MAP_resting_CO": 84.1,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 16.02,
+     "svr_frac": 0.9
+    },
+    {
+     "MAP_doubled_CO": 155.3,
+     "MAP_resting_CO": 79.65,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 15.13,
+     "svr_frac": 0.85
+    },
+    {
+     "MAP_doubled_CO": 146.4,
+     "MAP_resting_CO": 75.2,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 14.24,
+     "svr_frac": 0.8
+    },
+    {
+     "MAP_doubled_CO": 137.5,
+     "MAP_resting_CO": 70.75,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 13.35,
+     "svr_frac": 0.75
+    },
+    {
+     "MAP_doubled_CO": 128.6,
+     "MAP_resting_CO": 66.3,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 12.46,
+     "svr_frac": 0.7
+    },
+    {
+     "MAP_doubled_CO": 119.7,
+     "MAP_resting_CO": 61.85,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 11.57,
+     "svr_frac": 0.65
+    },
+    {
+     "MAP_doubled_CO": 110.8,
+     "MAP_resting_CO": 57.4,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 10.68,
+     "svr_frac": 0.6
+    },
+    {
+     "MAP_doubled_CO": 101.9,
+     "MAP_resting_CO": 52.95,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 9.79,
+     "svr_frac": 0.55
+    },
+    {
+     "MAP_doubled_CO": 93.0,
+     "MAP_resting_CO": 48.5,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 8.9,
+     "svr_frac": 0.5
+    },
+    {
+     "MAP_doubled_CO": 84.1,
+     "MAP_resting_CO": 44.05,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 8.01,
+     "svr_frac": 0.45
+    },
+    {
+     "MAP_doubled_CO": 75.2,
+     "MAP_resting_CO": 39.6,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 7.12,
+     "svr_frac": 0.4
+    },
+    {
+     "MAP_doubled_CO": 66.3,
+     "MAP_resting_CO": 35.15,
+     "hypotensive_even_with_doubled_CO": false,
+     "svr": 6.23,
+     "svr_frac": 0.35
+    },
+    {
+     "MAP_doubled_CO": 57.4,
+     "MAP_resting_CO": 30.7,
+     "hypotensive_even_with_doubled_CO": true,
+     "svr": 5.34,
+     "svr_frac": 0.3
+    },
+    {
+     "MAP_doubled_CO": 48.5,
+     "MAP_resting_CO": 26.25,
+     "hypotensive_even_with_doubled_CO": true,
+     "svr": 4.45,
+     "svr_frac": 0.25
+    }
+   ],
+   "vasoplegia_floor_svr": 5.34,
+   "vasopressor_beats_inotrope": true
+  },
+  "RP9_hypovolemic_substrate_fold": {
+   "absolute_grade": "[O]",
+   "asymmetry": "renal natriuresis is excrete-only: a volume EXCESS self-corrects (RP3 perfect adaptation) but a volume DEFICIT cannot be self-corrected -- the kidney does not make blood. Hypovolemia is therefore a SUBSTRATE fold requiring external volume",
+   "clinical_anchor_grade": "[L]",
+   "deficit_is_uncorrected_fold": true,
+   "excess_self_corrects": true,
+   "failure_node": "volume substrate (blood volume), distinct from reference (RP4/RP7) and effector (RP5/RP8)",
+   "principle": "treat hypovolemic shock with VOLUME (transfusion/resuscitation), not vasopressor or inotrope alone [V]; the fast baroreflex (SVR/HR up) only buys time [L]",
+   "shape_grade": "[V]",
+   "steady_P_after_deficit": 53.0,
+   "steady_P_after_excess": 93.0,
+   "steady_P_after_transfusion": 93.0,
+   "steady_P_baseline": 93.0,
+   "transfusion_restores": true
+  },
+  "T3_node_specific_therapy": {
+   "absolute_effect_grade": "[O]",
+   "adrenal": {
+    "fix": "REPLACE the reference (mineralocorticoid); fluids alone are opposed back to the low reference -- mirror of antihypertensive durability (RP7)",
+    "grade": "[V]/[L]",
+    "node": "integrator reference"
+   },
+   "cardiogenic": {
+    "fix": "TEMPORARY inotrope / mechanical support to hold perfusion -- opposite of chronic-HF inotrope harm, by timescale",
+    "grade": "[V]/[L]",
+    "node": "cardiac effector"
+   },
+   "clinical_grade": "[L]",
+   "direction_grade": "[V]",
+   "distributive": {
+    "fix": "VASOPRESSOR to restore SVR (norepinephrine); inotrope/fluid alone cannot lift MAP above the perfusion floor (RP8)",
+    "grade": "[V]/[L]",
+    "node": "resistance effector"
+   },
+   "hypovolemic": {
+    "fix": "VOLUME (transfusion/resuscitation); the kidney cannot replace a deficit (RP9); vasopressor only buys time",
+    "grade": "[V]/[L]",
+    "node": "volume substrate"
+   },
+   "orthostatic_autonomic": {
+    "fix": "restore the buffer: volume expansion, compression, sympathomimetic / midodrine; not a reference change",
+    "grade": "[L]",
+    "node": "fast buffer"
+   },
+   "principle": "match the corrective to the FAILED NODE; the loop structure forbids a one-size pressor -- the wrong node's drug is rejected or insufficient"
+  },
+  "cardiogenic": {
+   "collapse_kappa": 1.6,
+   "grade": "[V] fold / [L] clinical timescale / [O] absolute",
+   "is_rp5_extreme": true,
+   "timescale_distinction": "chronic HF (T2): inotrope shrinks the barrier margin -> harm (PROMISE). acute cardiogenic shock: temporary inotrope / mechanical support is needed to maintain perfusion while the collapsed basin is recovered -- opposite sign by timescale, same R19 fold"
+  },
+  "thesis": "hypotension is not one disease but a NODE DECOMPOSITION of the defended-pressure loop: fast buffer (RP6), integrator reference (RP7), resistance effector (RP8), volume substrate (RP9), cardiac effector (cardiogenic). Each is computed on the SAME MAP = CVP + CO x SVR engine with the existing primitives -- a sharper test than the single hypertension reset."
+ },
+ "interaction_map": {
+  "cited_seams_not_re_emerged": "carotid-body chemoreceptors (O2/CO2/pH) and cardiopulmonary volume receptors are cited afferent seams owned by the cardioresp sibling; SSOT -> referenced, not re-emerged here",
+  "edges": [
+   {
+    "dst": "baroreceptor",
+    "grade": "[L]",
+    "mechanism": "arterial wall stretch ~ pressure; PIEZO1/2 transduction (Zeng 2018)",
+    "sign": "0",
+    "src": "MAP"
+   },
+   {
+    "dst": "macula_densa",
+    "grade": "[L]",
+    "mechanism": "distal NaCl delivery ~ GFR ~ pressure; NKCC2 chemosensing (slow)",
+    "sign": "0",
+    "src": "MAP"
+   },
+   {
+    "dst": "baroreflex",
+    "grade": "[L]",
+    "mechanism": "afferent firing -> NTS -> autonomic outflow set",
+    "sign": "+",
+    "src": "baroreceptor"
+   },
+   {
+    "dst": "vascular_resistance",
+    "grade": "[V]",
+    "mechanism": "fast negative feedback: pressure up -> sympathetic withdrawal -> SVR down (RP2)",
+    "sign": "-",
+    "src": "baroreflex"
+   },
+   {
+    "dst": "MAP",
+    "grade": "[V]",
+    "mechanism": "net fast buffering of a pressure step, residual ~ step/(1+G) (RP2)",
+    "sign": "-",
+    "src": "baroreflex"
+   },
+   {
+    "dst": "raas_endocrine",
+    "grade": "[L]",
+    "mechanism": "high luminal NaCl -> renin DOWN (inverse); low NaCl -> renin UP",
+    "sign": "-",
+    "src": "macula_densa"
+   },
+   {
+    "dst": "kidney_volume_integrator",
+    "grade": "[V]",
+    "mechanism": "tubuloglomerular feedback: high NaCl -> afferent constriction -> GFR down",
+    "sign": "+",
+    "src": "macula_densa"
+   },
+   {
+    "dst": "vascular_resistance",
+    "grade": "[L]",
+    "mechanism": "AngII vasoconstriction raises SVR",
+    "sign": "+",
+    "src": "raas_endocrine"
+   },
+   {
+    "dst": "kidney_volume_integrator",
+    "grade": "[L]",
+    "mechanism": "aldosterone/AngII raise Na/volume retention -> raises the defended reference",
+    "sign": "+",
+    "src": "raas_endocrine"
+   },
+   {
+    "dst": "MAP",
+    "grade": "[V]",
+    "mechanism": "integral (pressure-natriuresis) control sets the slow defended MAP reference (RP3, Guyton infinite gain)",
+    "sign": "+",
+    "src": "kidney_volume_integrator"
+   },
+   {
+    "dst": "MAP",
+    "grade": "[V]",
+    "mechanism": "Ohm hydraulic: MAP = CVP + CO x SVR (RP1)",
+    "sign": "+",
+    "src": "vascular_resistance"
+   }
+  ],
+  "fast_loop": "MAP -> baroreceptor(PIEZO) -> baroreflex -(-)-> SVR/HR -> MAP  (seconds; RP2)",
+  "grade": "edges [L] identity / [V] reproduced loop shape",
+  "n_fast_edges": 3,
+  "n_slow_edges": 5,
+  "nodes": [
+   {
+    "dyn_class": "fast-buffer",
+    "gamma_state": "diffuse",
+    "id": "baroreflex",
+    "kind": "control",
+    "role": "autonomic fast pressure buffer (cite cardioresp/neuro)"
+   },
+   {
+    "dyn_class": "setpoint-loop",
+    "gamma_state": "vendored",
+    "id": "kidney_volume_integrator",
+    "kind": "control",
+    "role": "pressure-natriuresis + RAAS volume control (the slow integrator)"
+   },
+   {
+    "dyn_class": "slow-loop",
+    "gamma_state": "vendored",
+    "id": "raas_endocrine",
+    "kind": "control",
+    "role": "renin-angiotensin-aldosterone slow pressure/volume control"
+   },
+   {
+    "dyn_class": "effector",
+    "gamma_state": "diffuse",
+    "id": "vascular_resistance",
+    "kind": "control",
+    "role": "SVR / Windkessel tone (cite circulatory vessels)"
+   },
+   {
+    "id": "MAP",
+    "kind": "regulated_variable",
+    "role": "mean arterial pressure -- the defended output, owned by no single organ"
+   },
+   {
+    "grade": "[L]",
+    "id": "baroreceptor",
+    "kind": "sensory",
+    "loop": "fast",
+    "modality": "arterial-wall stretch (proportional to pressure)",
+    "transducer": "PIEZO1/PIEZO2 (mechanically activated cation channel)"
+   },
+   {
+    "grade": "[L]",
+    "id": "macula_densa",
+    "kind": "sensory",
+    "loop": "slow",
+    "modality": "luminal NaCl (proportional to distal delivery / GFR)",
+    "transducer": "NKCC2 (apical Na-K-2Cl cotransporter; furosemide-sensitive)"
+   }
+  ],
+  "reset_axis": "essential hypertension = rightward reset of the kidney integral reference (RP4); chronic heart failure = collapse of the cardiac high-output basin (RP5)",
+  "slow_loop": "MAP -> macula_densa(NKCC2) -> renin(-)/TGF(+) -> RAAS/kidney integrator -> volume -> MAP  (hours-days; RP3)"
+ },
+ "intervention": {
+  "all_gates_pass": true,
+  "claim_scan": {
+   "overall": "PASS",
+   "safety_not_suppressed_ok": true,
+   "selftest_fired": true
+  },
+  "comfort_map": {
+   "axes_by_lever": {
+    "H1": [
+     "renal_sympathetic",
+     "raas_ren",
+     "sodium_volume_reference"
+    ],
+    "H1-like (HF)": [
+     "hf_margin_fourpillar"
+    ],
+    "H2": [
+     "baroreflex_piezo"
+    ],
+    "H3": [
+     "svr_effector"
+    ]
+   },
+   "dna_grounded_axes": [
+    "raas_ren",
+    "sodium_volume_reference"
+   ],
+   "levers": [
+    "renal_sympathetic:H1",
+    "raas_ren:H1",
+    "sodium_volume_reference:H1",
+    "baroreflex_piezo:H2",
+    "svr_effector:H3",
+    "hf_margin_fourpillar:H1-like (HF)"
+   ],
+   "n_axes": 6,
+   "order": [
+    "renal_sympathetic",
+    "raas_ren",
+    "sodium_volume_reference",
+    "baroreflex_piezo",
+    "svr_effector",
+    "hf_margin_fourpillar"
+   ],
+   "proven_loop_anchors": {
+    "hf_fourpillar_margin_grows": true,
+    "hf_inotrope_margin_shrinks": true,
+    "operating_point_durable_drop_mmHg": 0.0,
+    "operating_point_opposed_back": true,
+    "reference_reset_durable": true,
+    "reference_reset_durable_drop_mmHg": 17.0
+   }
+  },
+  "counterreg_honesty": {
+   "failures": [],
+   "overall": "PASS"
+  },
+  "falsification": {
+   "n": 8,
+   "overall": "PASS"
+  },
+  "imported_from": "analgesic_threshold_logic v2.0 (Zenodo concept DOI 10.5281/zenodo.20733420)",
+  "prioritisation": {
+   "n_axes": 6,
+   "order": [
+    "raas_ren",
+    "sodium_volume_reference",
+    "hf_margin_fourpillar",
+    "renal_sympathetic",
+    "baroreflex_piezo",
+    "svr_effector"
+   ]
+  },
+  "title": "Hemodynamic comfort-logic layer (analgesic three-lever technique, ported)"
+ },
+ "loops": {
+  "RP1_map_product": {
+   "MAP_mmHg": 93.0,
+   "abs_err_mmHg": 0.0,
+   "absolute_scale_grade": "[O]",
+   "co_L_min": 5.0,
+   "cvp_mmHg": 4.0,
+   "numeric_grade": "[L]",
+   "owned_by_single_organ": false,
+   "relation": "MAP = CVP + CO x SVR (hydraulic Ohm's law)",
+   "relation_grade": "[V]",
+   "resting_target_mmHg": 93.0,
+   "seam_partition_share": 1.0,
+   "svr_mmHg_min_L": 17.8
+  },
+  "RP2_baroreflex": {
+   "anchor": "PIEZO1/2 are the baroreceptor mechanosensors; double-KO abolishes the baroreflex and gives labile hypertension (Zeng et al., Science 2018) [L]",
+   "intact": {
+    "buffered_fraction": 0.75,
+    "closed_loop_tau_s": 0.5,
+    "gain_latency_grade": "[L]",
+    "open_loop_gain": 3.0,
+    "predicted_residual_frac": 0.25,
+    "residual_mmHg": 5.0,
+    "settling_time_s": 1.35,
+    "shape_grade": "[V]",
+    "step_mmHg": 20.0,
+    "transduction": 1.0
+   },
+   "intact_buffers_majority": true,
+   "ko_is_labile": true,
+   "piezo_double_ko": {
+    "buffered_fraction": 0.0,
+    "closed_loop_tau_s": 2.0,
+    "gain_latency_grade": "[L]",
+    "open_loop_gain": 3.0,
+    "predicted_residual_frac": 1.0,
+    "residual_mmHg": 20.0,
+    "settling_time_s": 0.0,
+    "shape_grade": "[V]",
+    "step_mmHg": 20.0,
+    "transduction": 0.0
+   }
+  },
+  "RP3_pressure_natriuresis": {
+   "absolute_setpoint_grade": "[O]",
+   "anchor_grade": "[L]",
+   "integral_gain_signature": "steady error -> 0 for any constant disturbance (Guyton infinite gain)",
+   "load_independent_spread_mmHg": 0.0,
+   "model": "renal integral controller dV/dt = intake - k(P - Pset)",
+   "perfect_adaptation": true,
+   "setpoint": 93.0,
+   "shape_grade": "[V]",
+   "steady_P_big_load": 93.0,
+   "steady_P_no_load": 93.0,
+   "steady_P_small_load": 93.0
+  },
+  "RP4_setpoint_reset": {
+   "absolute_incidence_grade": "[O]",
+   "attractor_moved_up": true,
+   "defended_P_normal": 93.0,
+   "defended_P_reset": 113.0,
+   "drug_nadir_mmHg": 98.0,
+   "drug_steady_mmHg": 113.0,
+   "drug_transient_drop_mmHg": 15.0,
+   "opposed_back": true,
+   "parallel": "exact parallel of the lipostat reset in obesity: an integral controller defends a RESET reference; operating-point pushes are rejected back",
+   "reset_shift_mmHg": 20.0,
+   "risk_anchor_grade": "[L]",
+   "shape_grade": "[V]"
+  },
+  "RP5_basin_collapse": {
+   "absolute_grade": "[O]",
+   "collapse_kappa": 1.6,
+   "fold_grade": "[V]",
+   "is_fold_not_reset": true,
+   "load": 0.8,
+   "note": "high-output fixed point ANNIHILATES at the spinodal (saddle-node); distinct from RP4 reference reset",
+   "progression_marker_grade": "[L]",
+   "spinodal_at_collapse": 0.778983,
+   "sweep_kappa_high_to_low": [
+    {
+     "barrier_margin": 0.455978,
+     "high_output_basin": true,
+     "kappa": 2.2,
+     "output_state": 1.248741
+    },
+    {
+     "barrier_margin": 0.371324,
+     "high_output_basin": true,
+     "kappa": 2.1,
+     "output_state": 1.196375
+    },
+    {
+     "barrier_margin": 0.288662,
+     "high_output_basin": true,
+     "kappa": 2.0,
+     "output_state": 1.139186
+    },
+    {
+     "barrier_margin": 0.208042,
+     "high_output_basin": true,
+     "kappa": 1.9,
+     "output_state": 1.07513
+    },
+    {
+     "barrier_margin": 0.129516,
+     "high_output_basin": true,
+     "kappa": 1.8,
+     "output_state": 1.0
+    },
+    {
+     "barrier_margin": 0.053142,
+     "high_output_basin": true,
+     "kappa": 1.7,
+     "output_state": 0.901363
+    },
+    {
+     "barrier_margin": -0.021017,
+     "high_output_basin": false,
+     "kappa": 1.6,
+     "output_state": -1.464955
+    },
+    {
+     "barrier_margin": -0.092893,
+     "high_output_basin": false,
+     "kappa": 1.5,
+     "output_state": -1.434468
+    },
+    {
+     "barrier_margin": -0.162412,
+     "high_output_basin": false,
+     "kappa": 1.4,
+     "output_state": -1.40356
+    },
+    {
+     "barrier_margin": -0.22949,
+     "high_output_basin": false,
+     "kappa": 1.3,
+     "output_state": -1.372223
+    },
+    {
+     "barrier_margin": -0.294036,
+     "high_output_basin": false,
+     "kappa": 1.2,
+     "output_state": -1.340453
+    },
+    {
+     "barrier_margin": -0.355945,
+     "high_output_basin": false,
+     "kappa": 1.1,
+     "output_state": -1.308245
+    },
+    {
+     "barrier_margin": -0.4151,
+     "high_output_basin": false,
+     "kappa": 1.0,
+     "output_state": -1.2756
+    },
+    {
+     "barrier_margin": -0.471366,
+     "high_output_basin": false,
+     "kappa": 0.9,
+     "output_state": -1.242519
+    },
+    {
+     "barrier_margin": -0.524588,
+     "high_output_basin": false,
+     "kappa": 0.8,
+     "output_state": -1.209008
+    },
+    {
+     "barrier_margin": -0.574579,
+     "high_output_basin": false,
+     "kappa": 0.7,
+     "output_state": -1.175077
+    },
+    {
+     "barrier_margin": -0.621115,
+     "high_output_basin": false,
+     "kappa": 0.6,
+     "output_state": -1.140744
+    }
+   ]
+  }
+ },
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "raas_endocrine",
+   "kidney_volume_integrator"
+  ],
+  "order_grade": "[V] order is a gamma readout over MEASURED nodes; SIGN to validate vs cited timing",
+  "organs": [
+   {
+    "dyn_class": "setpoint-loop",
+    "functional_spinodal": 0.746784,
+    "gamma": 1.5556,
+    "gamma_state": "vendored",
+    "master": "SIX2",
+    "organ": "kidney_volume_integrator",
+    "rel_size_dwell": 1.76382,
+    "role": "pressure-natriuresis + RAAS volume control (the slow integrator)"
+   },
+   {
+    "dyn_class": "slow-loop",
+    "functional_spinodal": 0.61275,
+    "gamma": 1.3634,
+    "gamma_state": "vendored",
+    "master": "REN",
+    "organ": "raas_endocrine",
+    "rel_size_dwell": 1.447246,
+    "role": "renin-angiotensin-aldosterone slow pressure/volume control"
+   },
+   {
+    "dyn_class": "fast-buffer",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(baroreflex_arc)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "baroreflex",
+    "role": "autonomic fast pressure buffer (cite cardioresp/neuro)"
+   },
+   {
+    "dyn_class": "effector",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(vascular_tone)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "vascular_resistance",
+    "role": "SVR / Windkessel tone (cite circulatory vessels)"
+   }
+  ]
+ },
+ "oscillators": {},
+ "sensory": {
+  "baroreceptor": {
+   "absolute_rate_grade": "[O]",
+   "anchor": "Zeng W-Z et al., 'PIEZOs mediate neuronal sensing of blood pressure and the baroreceptor reflex', Science 362:464-467 (2018); identity strong but contested (J Neurophysiol 122:13-15, 2019)",
+   "curve_grade": "[V]",
+   "feeds": "fast baroreflex buffer (RP2) -> autonomic effector",
+   "intact_curve": {
+    "firing_rate_arb": [
+     0.0,
+     0.0,
+     20.181322,
+     27.721201,
+     36.779996,
+     46.879063,
+     57.240411,
+     67.003278,
+     75.491499,
+     82.370688,
+     87.635247,
+     91.490095,
+     94.222384,
+     96.114667,
+     97.404264
+    ],
+    "monotone_nondecreasing": true,
+    "pressures_mmHg": [
+     40,
+     50,
+     60,
+     70,
+     80,
+     90,
+     100,
+     110,
+     120,
+     130,
+     140,
+     150,
+     160,
+     170,
+     180
+    ],
+    "saturate_mmHg": 170.0,
+    "setpoint_mmHg": 93.0,
+    "threshold_mmHg": 50.0
+   },
+   "intact_pressure_sensitive": true,
+   "ko_flat_no_afferent": true,
+   "ko_phenotype": "loss of the transducer flattens the curve -> no pressure afferent -> labile hypertension",
+   "molecular_identity_grade": "[L]",
+   "piezo_double_ko_curve": {
+    "firing_rate_arb": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "monotone_nondecreasing": true,
+    "pressures_mmHg": [
+     40,
+     50,
+     60,
+     70,
+     80,
+     90,
+     100,
+     110,
+     120,
+     130,
+     140,
+     150,
+     160,
+     170,
+     180
+    ],
+    "saturate_mmHg": 170.0,
+    "setpoint_mmHg": 93.0,
+    "threshold_mmHg": 50.0
+   },
+   "sensory_cell": "arterial baroreceptor (carotid sinus / aortic arch mechanoreceptor neuron)",
+   "substrate_spikes": {
+    "all_or_none_R19": true,
+    "drive": 0.3,
+    "spikes": 87
+   },
+   "transducer": "PIEZO1 + PIEZO2 mechanically activated ion channels"
+  },
+  "macula_densa": {
+   "absolute_grade": "[O]",
+   "anchor": "macula-densa NaCl sensing via NKCC2 -> TGF + renin (JASN/AJP reviews); SGLT2i act via raised MD NaCl delivery / TGF",
+   "both_transductions_monotone": true,
+   "curves": {
+    "nacl_mM": [
+     10.0,
+     15.0,
+     20.0,
+     25.0,
+     30.0,
+     35.0,
+     40.0,
+     45.0,
+     50.0,
+     55.0,
+     60.0
+    ],
+    "renin_arb": [
+     0.6,
+     0.5,
+     0.428571,
+     0.375,
+     0.333333,
+     0.3,
+     0.272727,
+     0.25,
+     0.230769,
+     0.214286,
+     0.2
+    ],
+    "renin_decreasing_in_nacl": true,
+    "tgf_constriction_arb": [
+     0.4,
+     0.5,
+     0.571429,
+     0.625,
+     0.666667,
+     0.7,
+     0.727273,
+     0.75,
+     0.769231,
+     0.785714,
+     0.8
+    ],
+    "tgf_increasing_in_nacl": true
+   },
+   "identity_grade": "[L]",
+   "sensory_cell": "macula densa (JGA plaque of ~15-20 modified thick-ascending-limb cells)",
+   "sets": "the RENAL reference the integral controller defends (RP3/RP4) via renin/RAAS + TGF",
+   "sglt2i": {
+    "link": "raised macula-densa NaCl delivery restores TGF and damps hyperfiltration -- a leading account of SGLT2i renal/CV benefit [L]",
+    "nacl_baseline_mM": 30.0,
+    "nacl_on_sglt2i_mM": 48.0,
+    "tgf_baseline": 0.666667,
+    "tgf_on_sglt2i": 0.761905,
+    "tgf_restored": true
+   },
+   "shape_grade": "[V]",
+   "transducer": "apical Na-K-2Cl cotransporter NKCC2 (furosemide-sensitive)"
+  },
+  "note": "sensory cells transduce the regulated variables (PIEZO1/2 mechano; NKCC2 NaCl chemo); afferent firing is a shared-R19 spike train (see baroreceptor.substrate_spikes)"
+ },
+ "therapy": {
+  "heart_failure": {
+   "absolute_grade": "[O]",
+   "anchors": "PROMISE milrinone +28% mortality despite better hemodynamics (Packer 1991); four pillars mortality benefit ARNI/BB/MRA/SGLT2i (PARADIGM-HF, CIBIS-II/MERIT-HF, RALES/EMPHASIS, DAPA-HF/EMPEROR-Reduced) [L]",
+   "baseline": {
+    "high_output_basin": true,
+    "kappa": 1.85,
+    "load": 0.55,
+    "margin": 0.418514,
+    "output": 1.175661
+   },
+   "clinical_mortality_grade": "[L]",
+   "direction_grade": "[V]",
+   "inotrope_flog": {
+    "d_margin": -0.138773,
+    "high_output_basin": true,
+    "kappa": 2.05,
+    "load": 0.85,
+    "margin": 0.279741,
+    "margin_shrinks": true,
+    "output": 1.142935,
+    "verdict": "symptomatic/harmful: acute output up but margin shrinks -> accelerated collapse"
+   },
+   "load_reduce_cycle_break": {
+    "d_margin": 0.18,
+    "high_output_basin": true,
+    "kappa": 1.85,
+    "load": 0.37,
+    "margin": 0.598514,
+    "margin_grows": true,
+    "output": 1.246237,
+    "verdict": "fundamental: margin grows -> high-output basin restored"
+   },
+   "prediction": "mortality benefit tracks margin (load reduction + cycle interruption); effector flogging shrinks the margin",
+   "sensory_link": "SGLT2i arm acts via macula-densa NaCl delivery -> TGF -> diuresis/unload (slow-loop sensor -> basin-restoring therapy)"
+  },
+  "hypertension": {
+   "absolute_effect_grade": "[O]",
+   "anchors": "renal denervation durable & time-increasing (GSR-DEFINE ~ -20.5 mmHg @3yr; FDA-approved 2023); diuretic/renal backbone required for durable control [L]",
+   "clinical_durability_grade": "[L]",
+   "defended_P_hypertensive": 113.0,
+   "defended_P_normal": 93.0,
+   "direction_grade": "[V]",
+   "operating_point_drug": {
+    "durable_drop_mmHg": 0.0,
+    "nadir_mmHg": 98.0,
+    "opposed_back": true,
+    "steady_mmHg": 113.0,
+    "transient_drop_mmHg": 15.0,
+    "verdict": "symptomatic: rejected back toward the high reference; not durable alone"
+   },
+   "prediction": "durability of BP reduction tracks RENAL-REFERENCE reset, not operating-point push",
+   "reference_reset": {
+    "durable": true,
+    "durable_drop_mmHg": 17.0,
+    "steady_mmHg": 96.0,
+    "verdict": "fundamental: moves the defended pressure DOWN and holds"
+   }
+  },
+  "principle": "treat the SETPOINT/BASIN (reference reset; load reduction + cycle interruption), not the operating point / effector"
+ }
+}

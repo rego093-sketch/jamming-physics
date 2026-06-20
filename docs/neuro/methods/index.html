@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methods and reproducibility — Neural Emergence | Jamming Physics</title>
+<meta name="description" content="How the Neural Emergence Chain is built: one R19 substrate, measured promoter gamma (never fitted), deterministic regeneration (seed-fixed, 2x sha256), HTML-code drift 0, honest [V]/[F]/[L]/[O] grading, and the analgesic firewall.">
+<link rel="canonical" href="https://jamming-physics.org/neuro/methods/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Methods and reproducibility — Neural Emergence | Jamming Physics"><meta property="og:description" content="How the Neural Emergence Chain is built: one R19 substrate, measured promoter gamma (never fitted), deterministic regeneration (seed-fixed, 2x sha256), HTML-code drift 0, honest [V]/[F]/[L]/[O] grading, and the analgesic firewall."><meta property="og:url" content="https://jamming-physics.org/neuro/methods/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Methods and reproducibility — Neural Emergence | Jamming Physics"><meta name="twitter:description" content="How the Neural Emergence Chain is built: one R19 substrate, measured promoter gamma (never fitted), deterministic regeneration (seed-fixed, 2x sha256), HTML-code drift 0, honest [V]/[F]/[L]/[O] grading, and the analgesic firewall.">
+<link rel="stylesheet" href="/neuro/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Methods and reproducibility — Neural Emergence Chain","isPartOf":{"@type":"CreativeWorkSeries","name":"Neural Emergence","identifier":"10.5281/zenodo.17979015"},"sameAs":"https://doi.org/10.5281/zenodo.17979015","author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/neuro/">Neural Emergence</a> › Methods</nav></header>
+<main>
+<h1>Methods and reproducibility</h1>
+<p class="answer">Every quantity in this volume is either a measured input (locked and cited) or derived from the locked R19 forms; nothing is fitted to a target. The displayed numbers are regenerated deterministically (seed-fixed, 2×sha256 identical) and a gate confirms the canonical HTML matches the regenerated values with drift 0. Claims are graded [V] simulation-verified, [F] forced, [L] measured anchor, or [O] open with a stated obstacle.</p>
+<h2>One substrate, measured γ</h2>
+<p>The shared primitive is the R19 bistable switch ds/dt = g s − s³ + h, with the locked forms spinodal(g) = 2(g/3)^1.5 and barrier(g) = g²/4. A neuron is that switch plus a slow FitzHugh–Nagumo recovery. The material parameter γ is the measured promoter stacking stiffness γ = −mean(NN stacking ΔG, SantaLucia 1998), read read-only from human promoters on the same window/NN table as the <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DNA volume</a> gene-clock (form ← γ). γ is never fitted.</p>
+<h2>Determinism and drift 0</h2>
+<p>The reproduction harness (<code>repro/neuro/run_all.py</code>) runs every module twice and requires identical stdout sha256 (determinism), compares each module hash to a frozen set, and confirms every number the canonical chapters display is reproduced by some module (HTML↔code drift 0). The package-level <code>verify_all.py</code> additionally runs the per-chapter C1 gates and the v1.11 analgesic-inheritance gate.</p>
+<h2>The analgesic inheritance (§21–§23)</h2>
+<p>The 27-target analgesic firing-threshold map is INHERITED from analgesic_threshold_logic v2.0 (DOI 10.5281/zenodo.20733420) and re-derived on this volume\u2019s own engine. The inheritance is principled because that sibling was built on this very engine: <code>repro/neuro/_engine/vp_neuro_engine.py</code> is byte-identical to the engine the frozen sibling map was built on, asserted in-module by sha256. Re-deriving all 27 reads on it reproduces the inherited |h_sp| and barrier at the frozen precision, with identical order — drift 0.</p>
+<h2>Grading and firewall</h2>
+<p>[V] simulation-verified · [F] forced by the locked forms · [L] measured/cited anchor · [O] open (with a stated obstacle, collected in the irreproducibility ledger). The analgesic firewall is binding: γ reads promoter switch-threshold STRUCTURE only — never a channel voltage, drug potency, dose, in-vivo selectivity, or clinical effect (all [O]); the felt/affective pain is the <a href="/mind/">Felt Cognition</a> volume\u2019s; monogenic pain channelopathies are gene-key entities owned by disease_wp. No molecule is designed and nothing prescribes.</p>
+<nav class="pn"><a href="/neuro/">paper contents</a></nav>
+</main>
+<footer><p>Young Jae Lee · ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> · DOI: <a href="https://doi.org/10.5281/zenodo.17979015" rel="noopener">10.5281/zenodo.17979015</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a></p></footer>
+</body>
+</html>

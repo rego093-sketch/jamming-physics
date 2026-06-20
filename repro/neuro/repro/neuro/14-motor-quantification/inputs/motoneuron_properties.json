@@ -1,0 +1,32 @@
+{
+ "_meta": {
+  "title": "Cat alpha-motoneuron electrical properties (measured) — locked input for the §14 size-principle derivation",
+  "what": "LOCKED MEASURED inputs (cited, not tuned) used to (a) DERIVE the recruitment order from Ohm's law and (b) VALIDATE its magnitude against measured rheobase. Nothing here is fitted to a target; the values are population statistics quoted from the cited papers.",
+  "ohms_law": "A motoneuron fires at its rheobase I_rh = dVth / R_in = dVth * G_in (Ohm's law; dVth = threshold depolarisation, R_in = input resistance, G_in = input conductance = 1/R_in). Order: G rises as R falls (larger cells) -> I_rh rises -> larger cells recruited later -> Henneman's size principle.",
+  "validated_claim": "the recruitment ORDER (size principle) is derived from Ohm's law and matches measured orderly recruitment (Henneman 1965); the rheobase-vs-input-conductance correlation and the rheobase-range/conductance-range excess match Gustafsson & Pinter 1984; pure-Ohm derived rheobases fall WITHIN the measured Fleshman 1981 range (containment).",
+  "open_O": "the absolute newton force scale; the measured dVth-rises-with-rheobase drift and per-cell dVth (near-threshold inward conductance; Gustafsson & Pinter 1984b; Caillet et al. 2022 eLife); precise per-cell constants and absolute unit counts.",
+  "payload_sha256_note": "sha256 over canonical json.dumps(measured, sort_keys=True, separators=(',',':')); the engine recomputes and checks this on every run (locks the data).",
+  "payload_sha256": "46c3109589aff550e11fea651bbb353beac2177b4e918ee727693e94ea859732"
+ },
+ "measured": {
+  "fleshman1981": {
+   "cite": "Fleshman JW, Munson JB, Sypert GW, Friedman WA (1981) Rheobase, input resistance, and motor-unit type in medial gastrocnemius motoneurons in the cat. J Neurophysiol 46:1326-1338. doi:10.1152/jn.1981.46.6.1326",
+   "preparation": "anaesthetised cat, medial gastrocnemius alpha-motoneurons, intracellular recording",
+   "rheobase_nA_range": [0.8, 17.1],
+   "input_resistance_Mohm_range": [0.8, 5.1],
+   "verbatim": "rheobase 0.8-17.1 nA, input resistance 0.8-5.1 Mohm (cat MG motoneuron population ranges)"
+  },
+  "gustafsson_pinter1984": {
+   "cite": "Gustafsson B, Pinter MJ (1984) An investigation of threshold properties among cat spinal alpha-motoneurones. J Physiol 357:453-483. doi:10.1113/jphysiol.1984.sp015511",
+   "preparation": "anaesthetised cat, lumbar spinal alpha-motoneurons, intracellular recording",
+   "rheobase_correlates_with_input_conductance": true,
+   "rheobase_range_over_conductance_range_excess_factor": 2.0,
+   "threshold_depolarisation_rises_with_rheobase": true,
+   "verbatim": "rheobase was strongly correlated with the input conductance and with the inverse of the membrane time constant; however the range of rheobase current exceeded that of input conductance by almost a factor of 2, part of this discrepancy because threshold depolarisation tended to increase with rheobase current"
+  },
+  "recruitment": {
+   "cite": "Henneman E (1957) Relation between size of neurons and their susceptibility to discharge. Science 126:1345-1347; Henneman E, Somjen G, Carpenter DO (1965) Functional significance of cell size in spinal motoneurons. J Neurophysiol 28:560-580",
+   "order": "small-first (orderly recruitment by increasing motoneuron size / decreasing input resistance)"
+  }
+ }
+}

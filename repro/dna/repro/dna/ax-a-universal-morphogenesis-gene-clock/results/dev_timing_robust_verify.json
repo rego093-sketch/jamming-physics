@@ -1,0 +1,33 @@
+{
+  "1 STAGE +/-1 ROBUST (no flip; min perm p >= Bonferroni alpha)": {
+    "pass_": true,
+    "msg": "20 +/-1 perturbations: any_flip=False, min_perm_p=0.1190 >= alpha_bonf 0.00833; max|rho|=0.566; stable=True"
+  },
+  "2 JACKKNIFE ROBUST (no single feature flips it; folds retain power)": {
+    "pass_": true,
+    "msg": "10 folds (n=9): any_flip=False, all_powered=True; best predictor tata rho in [+0.393,+0.830] (still not significant); robust=True"
+  },
+  "3 NON-BLIND CONTROL (synthetic comonotone DOES flip -> true negative)": {
+    "pass_": true,
+    "msg": "synthetic comonotone predictor (rho=+1.000, perm_p=0.00000) flips to [V] at n=10=True and in all folds=True => no-flip above is a true negative"
+  },
+  "4 LOCKED INPUTS (exact n=10 inputs; shas frozen; predictors bit-identical)": {
+    "pass_": true,
+    "msg": "orig7_unchanged=True, predictors_bit_identical=True, base_stage_vector_locked=True, stage_shas_frozen=True"
+  },
+  "5 DETERMINISM (2x run identical)": {
+    "pass_": true,
+    "msg": "result sha f9b2385611==f9b2385611 (True)"
+  },
+  "overall": "5/5",
+  "headline": {
+    "stage_pm1_stable": true,
+    "jackknife_robust": true,
+    "min_perm_p_pm1": 0.11904761904761904,
+    "tata_rho_range": [
+      0.3930001940742179,
+      0.8296670763789042
+    ],
+    "all_folds_powered": true
+  }
+}

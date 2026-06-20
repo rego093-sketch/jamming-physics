@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The dissipation-avalanche module — Configured Continuum Appendix T | Jamming Physics</title>
+<meta name="description" content=")} Tests the prediction that the dissipation events of developed turbulence are marginal-stability avalanches (ledger row IV/size law). On the validated…">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/ax-t-dissipation-avalanche-module-textttdissipation-avalanche/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The dissipation-avalanche module — Configured Continuum Appendix T | Jamming Physics"><meta property="og:description" content=")} Tests the prediction that the dissipation events of developed turbulence are marginal-stability avalanches (ledger row IV/size law). On the validated…"><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/ax-t-dissipation-avalanche-module-textttdissipation-avalanche/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The dissipation-avalanche module — Configured Continuum Appendix T | Jamming Physics"><meta name="twitter:description" content=")} Tests the prediction that the dissipation events of developed turbulence are marginal-stability avalanches (ledger row IV/size law). On the validated…">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The dissipation-avalanche module", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 34, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/", "knowsAbout": ["jamming lattice", "configured continuum", "The dissipation-avalanche module"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"Appendix T The dissipation-avalanche module"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; Appendix T</nav></header>
+<main>
+<h1>The dissipation-avalanche module (dissipation_avalanche.py)</h1>
+<p class="answer">Tests the prediction that the dissipation events of developed turbulence are marginal-stability avalanches (ledger row IV/size law). On the validated ns3d.py field it computes the full-resolution dissipation ε(xv)=2ν S_ijS_ij from spectral strain, thresholds it at h⟨ε⟩, and labels the connected high-dissipation structures with periodic boundaries (6-connectivity plus a union–find merge across the three periodic face pairs).</p>
+<p class="abstract">)} Tests the prediction that the dissipation events of developed turbulence are marginal-stability avalanches (ledger row IV/size law). On the validated ns3d.py field it computes the full-resolution dissipation ε(xv)=2ν S_ijS_ij from spectral strain, thresholds it at h⟨ε⟩, and labels the connected high-dissipation structures with periodic boundaries (6-connectivity plus a union–find merge across the three periodic face pairs).</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>)}
+Tests the prediction that the dissipation events of developed turbulence are
+marginal-stability avalanches (ledger row IV/size law). On the validated
+<code>ns3d.py</code> field it computes the full-resolution dissipation
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic648123a14bf.svg" loading="lazy" alt="\eps(\xv)=2\nu S_{ij}S_{ij}"> from spectral strain, thresholds it at
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic28ad344c34d.svg" loading="lazy" alt="h\langle\eps\rangle">, and labels the connected high-dissipation structures with
+<em>periodic</em> boundaries (6-connectivity plus a union–find merge across the
+three periodic face pairs). The pooled volume distribution <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i27d3343a0117.svg" loading="lazy" alt="P(s)"> is fitted by a
+discrete maximum-likelihood estimator with a KS-selected lower cutoff, and
+cross-checked by logarithmic-bin regression; the structure fractal dimension
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3d2cbbf9697a.svg" loading="lazy" alt="d_f"> is measured from gyration-radius–volume scaling on non-wrapping
+components, and a log-likelihood ratio tests the power law against a fitted
+exponential. The pre-registered Lin–Wyart band is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i91e0b547f615.svg" loading="lazy" alt="\tau\in[1.4,1.5]">. Across
+resolution the measured exponent is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i475a6b1a5a38.svg" loading="lazy" alt="\tau=1.60\pm0.01"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id48e49491fe7.svg" loading="lazy" alt="N=64">) and
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iecd4bf221bec.svg" loading="lazy" alt="\tau=1.46\pm0.01"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i52ae462fd14d.svg" loading="lazy" alt="N=96">), with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2d0e45217e74.svg" loading="lazy" alt="d_f\approx2.0">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic29c021b99c1.svg" loading="lazy" alt="2.2">, power-law form
+(<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8d85889a1d9a.svg" loading="lazy" alt="R^2\approx0.97">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if421b8a4c477.svg" loading="lazy" alt="0.99">) confirmed and the exponential rejected at every
+threshold. A checkpointed driver (<code>dev64.py</code>, <code>embed96.py</code>,
+<code>analyze.py</code>, <code>consolidate_p4.py</code>) reproduces the two-resolution
+trend; captured output ships with the module.</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/ax-s-transition-class-module-texttttransition-dp/">&larr; Appendix S</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/ax-u-non-equilibrium-dissipation-module-textttnonequilibrium/">Appendix U &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

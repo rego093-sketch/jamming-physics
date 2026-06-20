@@ -1,0 +1,234 @@
+{
+  "DISCRIMINANT_three_way": {
+    "O_pac_down_ignition_normal": true,
+    "THREE_WAY_SEPARATION": true,
+    "T_pac_down_ignition_raised": true,
+    "W_unique_zero_pac_change": true,
+    "_what": "(delta-PAC, ignition-threshold) uniquely identifies each fault.",
+    "delta_pac": {
+      "O": -0.006215634,
+      "T": -0.002828422,
+      "W": 0.0
+    },
+    "ignition_splits_O_from_T": true,
+    "ignition_threshold": {
+      "O": 0.395,
+      "T": 0.645,
+      "W": 0.395
+    },
+    "table": {
+      "O_output": {
+        "delta_PAC": "< 0",
+        "ignition": "normal",
+        "integration": "down"
+      },
+      "T_threshold": {
+        "delta_PAC": "< 0",
+        "ignition": "RAISED",
+        "integration": "down"
+      },
+      "W_wiring": {
+        "delta_PAC": "== 0 (exact)",
+        "ignition": "normal",
+        "integration": "down"
+      }
+    }
+  },
+  "OWED": {
+    "O_vs_T_in_vivo": "OWED -- O and T are degenerate at the coupling level (both scale kappa); they separate only at the fold/ignition level, so distinguishing them in vivo needs an excitability/ignition (e.g. TMS-EEG threshold) measure.",
+    "which_fault_is_real_autism": "OWED [O] -- requires per-individual external data (connectome + spectral + genetics); the model asserts only the fingerprints and reversibility, NOT which fault any individual's autism is."
+  },
+  "O_output_weak_fault": {
+    "R": 0.35403,
+    "R_below_health": true,
+    "dvm_multiplier": 0.4,
+    "fingerprint_reproduced": true,
+    "ignition_normal": true,
+    "ignition_threshold": 0.395,
+    "kappa_effective": 0.21984,
+    "model": "single switch dVm down 60% (kappa NUMERATOR down); fold crossed as usual -- 'output low'",
+    "pac": 0.001045563,
+    "pac_reduced": true
+  },
+  "RX_drug_threshold_gain_restoration": {
+    "O_partially_helps": {
+      "R_after": 0.357384,
+      "R_before": 0.35403,
+      "raises_via_denominator": true
+    },
+    "RX_DRUG_discriminative": true,
+    "T_fully_reverses": {
+      "R": 0.389615,
+      "R_back_to_health": true,
+      "ignition_after": 0.395,
+      "ignition_back_to_normal": true,
+      "verdict": true
+    },
+    "W_cannot_correct": {
+      "R_after_brute_gain": 0.376941,
+      "R_before": 0.340292,
+      "locality_after": 0.842216,
+      "locality_before": 0.842216,
+      "note": "scalar gain cannot re-route geometry; the local-over/long-range-under imbalance persists -> masking, not correction",
+      "topology_invariant_under_uniform_gain": true
+    },
+    "_what": "uniform threshold-lowering (gain-restoring) intervention -- the class catecholaminergic stimulants act through MECHANISTICALLY. NOT a claim that ADHD medication treats autism (efficacy=0; see LOCKs).",
+    "reading": "drug-responsiveness of the coupling deficit implicates a GAIN fault (output/threshold), NOT a pure wiring fault -- the user's 'ADHD-med relief = evidence' reasoning. Completeness further splits T (full) from O (partial).",
+    "threshold_lowering_fraction": 0.4
+  },
+  "RX_supply_exogenous_theta": {
+    "RX_SUPPLY_rescues_all": true,
+    "R_vs_injection_O": [
+      0.35403,
+      0.50083,
+      0.560312,
+      0.652213,
+      0.720643
+    ],
+    "R_vs_injection_T": [
+      0.36632,
+      0.534784,
+      0.580982,
+      0.686453,
+      0.727268
+    ],
+    "R_vs_injection_W": [
+      0.340292,
+      0.543763,
+      0.585993,
+      0.695259,
+      0.729624
+    ],
+    "_what": "an exogenous 4-8 Hz theta carrier added to every node (interference supply), bypassing the routing. EXPERIMENTAL analogue; efficacy=0.",
+    "injection_grid": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.9
+    ],
+    "over_supply_over_synchronises_past_health": true,
+    "reading": "the supply rescues ALL three (incl. the WIRING fault the drug cannot correct) but OVER-synchronises if over-supplied (R past health) -- a dosing window. A deficit rescued by supply but NOT corrected by the drug => WIRING.",
+    "supply_rescues_output": true,
+    "supply_rescues_threshold": true,
+    "supply_rescues_wiring": true
+  },
+  "SLEEP_opposite_sign": {
+    "SLEEP_OPPOSITE_SIGN": true,
+    "_what": "the SAME theta supply that RAISES coupling/arousal (helpful DIRECTION for the autism coupling deficit) is the ANTI-sleep direction (sleep needs arousal DOWN / spindle-delta). Opposite therapeutic sign. Sign-only.",
+    "coupling_R_base": 0.35403,
+    "coupling_R_with_supply": 0.652213,
+    "same_push_is_anti_sleep": true,
+    "supply_raises_arousal_helpful_for_ASD": true
+  },
+  "T_threshold_high_fault": {
+    "R": 0.36632,
+    "R_below_health": true,
+    "fingerprint_reproduced": true,
+    "fold_spinodal": 0.3849,
+    "ignition_raised": true,
+    "ignition_threshold": 0.645,
+    "inhibitory_bias": -0.25,
+    "kappa_effective": 0.43968,
+    "model": "single switch hypo-excitable (tonic inhibitory bias raises R19 fold; kappa DENOMINATOR up) -- 'threshold high'",
+    "pac": 0.004432775,
+    "pac_reduced": true
+  },
+  "VEG_vegetative_limit": {
+    "VEG_reproduced": true,
+    "_what": "the THRESHOLD fault at its extreme: the raised fold exceeds the MEASURED ephaptic ceiling kappa, so no neighbour can re-ignite the switch (never self-recovers). Only exogenous drive ABOVE the fold crosses it. Crossing the fold is the ignition MECHANISM -- NOT a return of experience.",
+    "axis_A_firewall": "ignition != experience; consciousness_claim stays 0",
+    "endogenous_ceiling_kappa": 0.5496,
+    "healthy_switch_recovers_endogenously": true,
+    "rows": [
+      {
+        "endogenous_ceiling_kappa": 0.5496,
+        "exogenous_drive_can_cross": true,
+        "fold_crossing_drive": 0.645,
+        "inhibitory_bias": -0.25,
+        "min_exogenous_drive_to_cross": 0.65,
+        "never_self_ignites_vegetative": true
+      },
+      {
+        "endogenous_ceiling_kappa": 0.5496,
+        "exogenous_drive_can_cross": true,
+        "fold_crossing_drive": 0.845,
+        "inhibitory_bias": -0.45,
+        "min_exogenous_drive_to_cross": 0.85,
+        "never_self_ignites_vegetative": true
+      },
+      {
+        "endogenous_ceiling_kappa": 0.5496,
+        "exogenous_drive_can_cross": true,
+        "fold_crossing_drive": 1.045,
+        "inhibitory_bias": -0.65,
+        "min_exogenous_drive_to_cross": 1.05,
+        "never_self_ignites_vegetative": true
+      }
+    ]
+  },
+  "W_wiring_fault": {
+    "R": 0.340292,
+    "R_below_health": true,
+    "fingerprint_reproduced": true,
+    "ignition_normal": true,
+    "ignition_threshold": 0.395,
+    "locality": 0.842216,
+    "locality_elevated": true,
+    "long_range_attenuation": 0.3,
+    "model": "long-range 1/r^3 edges attenuated (geometry broken); per-node kappa and fold NORMAL -- 'circuit fault'",
+    "pac": 0.007261197,
+    "pac_delta_exactly_zero": true
+  },
+  "_what": "Autism mechanism sub-discriminant (D8): WITHIN the D7 coupling axis (kappa), is the theta(4-8Hz)->gamma deficit a WIRING fault, an OUTPUT-WEAK switch, or a THRESHOLD-HIGH switch? Each leaves a DIFFERENT (delta-PAC, ignition) fingerprint; a gain/threshold drug reverses gain faults but cannot correct wiring; an exogenous 4-8Hz supply rescues all (incl. wiring) but over-synchronises if over-dosed; the vegetative limit is the threshold fault past the ephaptic ceiling. MECHANISM only -- NOT felt, NOT efficacy, NOT medical advice.",
+  "baseline_health": {
+    "R_health": 0.389615,
+    "ignition_threshold_health_spinodal": 0.395,
+    "kappa_measured": 0.5496,
+    "locality_health": 0.793949,
+    "median_distance_mni": 31.4174,
+    "pac_health": 0.007261197
+  },
+  "carriers": {
+    "gamma_fast_hz": 40.0,
+    "theta_in_4_8_band": true,
+    "theta_slow_hz": 7.0
+  },
+  "cited_and_locked": {
+    "ADHD_med_reality_LOCK": "stimulants help CO-OCCURRING ADHD symptoms in a SUBSET (lower response, more side-effects than ADHD); do NOT treat core ASD features; ASD-approved drugs (risperidone/aripiprazole) target irritability. Mechanistically catecholaminergic -> gain/excitability axis",
+    "ASD_polygenic_LOCK": "idiopathic ASD is POLYGENIC + heterogeneous (SFARI/SPARK, hundreds of loci); the 'single switch' case is the MONOGENIC/syndromic subclass -- NOT a claim that autism is monogenic",
+    "EI_excitation_axis": "Rubenstein & Merzenich 2003",
+    "S1_PAC_down": "Khan 2013; Berman 2015 (theta-gamma PAC reduced in ASD)",
+    "S3_longrange_underconnectivity": "Just 2004; Belmonte 2004",
+    "monogenic_genes_converge_on_gain": "SCN2A / SHANK3 / FMR1 etc. converge on synaptic GAIN / E-I (the OUTPUT/excitability axis) -- consistent with the gain-fault reading of the PAC deficit",
+    "therapy_experimental_LOCK": "tACS/neurofeedback theta and disorders-of-consciousness stimulation are EXPERIMENTAL; nothing here is medical advice"
+  },
+  "grounding": {
+    "_what": "the PAC replica reproduces the engine's emitted M9.6 pac_modulation_index (non-circular); GEOMETRY does not enter PAC.",
+    "engine_pac_at_kappa": 0.0072611969,
+    "pac_replica_grounded": true,
+    "replica_pac_at_kappa": 0.0072611969
+  },
+  "honesty_ledger": {
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0
+  },
+  "invariants": {
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true
+  },
+  "overall": {
+    "drug_discriminative": true,
+    "is_full_module": true,
+    "sleep_opposite_sign": true,
+    "supply_rescues_all_incl_wiring": true,
+    "three_faults_reproduced": true,
+    "three_way_separation": true,
+    "vegetative_limit_reproduced": true,
+    "verdict": "the theta(4-8Hz)->gamma coupling deficit is mechanistically THREE distinguishable faults -- WIRING (PAC unchanged, drug cannot correct), OUTPUT-weak (PAC down, fold normal, drug partial), THRESHOLD-high (PAC down, fold raised, drug full; vegetative at the extreme). Which one a given autism is, is OWED."
+  }
+}

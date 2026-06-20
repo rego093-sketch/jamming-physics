@@ -1,0 +1,188 @@
+{
+ "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency)",
+ "omim": "236200",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency)",
+  "omim": "236200",
+  "summary": "A single-gene CBS loss-of-function. CBS encodes cystathionine-beta-synthase, the pyridoxal-5'-phosphate (vitamin-B6)-dependent enzyme that commits homocysteine to the TRANSSULFURATION pathway by condensing it with serine to form cystathionine (en route to cysteine). CBS LOF lowers transsulfuration throughput, so HOMOCYSTEINE ACCUMULATES (and methionine rises) -> classical homocystinuria: ectopia lentis (downward lens dislocation), a marfanoid skeletal habitus, osteoporosis, thromboembolism (the major cause of morbidity/mortality) and variable intellectual disability. The transsulfuration axis is driven DOWN, with the toxic substrate homocysteine accumulating upstream of the block. This OPENS A NEW SULFUR-AMINO-ACID (methionine-homocysteine transsulfuration) metabolic axis for the kit -- the contrast to phenylketonuria's AROMATIC-amino-acid axis (PAH): both are amino-acid enzyme/LOF reads with an accumulating toxic substrate, on different amino-acid pathways. The kit re-derives the approved corrective arms on the existing engine: (i) LOWER the accumulated homocysteine by an ALTERNATIVE remethylation route -- betaine (anhydrous betaine), a methyl donor that drives the betaine-homocysteine methyltransferase (BHMT) reaction to remethylate homocysteine back to methionine, reducing the toxic homocysteine pool (the approved lead); (ii) supply the CBS COFACTOR -- pyridoxine (vitamin B6) -- which restores residual CBS activity in the substantial B6-RESPONSIVE subset (the cofactor-restore arm, analogous to BH4/sapropterin in PKU); plus a methionine-restricted diet (lower the upstream substrate) and folate/B12 to support remethylation. The gamma read is of the CBS locus switch STRUCTURE; the disease lesions are coding/missense (notably the B6-responsive p.Ile278Thr and the B6-non-responsive p.Gly307Ser), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "transsulfuration throughput / homocysteine handling (cystathionine-beta-synthase commitment of homocysteine to cysteine synthesis; LOF -> transsulfuration down, homocysteine + methionine accumulate) -- a sulfur-amino-acid metabolic axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CBS",
+    "gamma": 1.4403,
+    "spinodal_h_sp": 0.66532,
+    "barrier": 0.51862,
+    "dwell_relative_size": 1.5714,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000021.9",
+     "gene_start": 43053190,
+     "gene_end": 43076872,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "cystathionine beta-synthase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "CBS encodes cystathionine-beta-synthase, the B6 (pyridoxal-5'-phosphate)-dependent enzyme that condenses homocysteine with serine to cystathionine -- the committed first step of transsulfuration (homocysteine -> cysteine). LOF lowers transsulfuration throughput -> homocysteine accumulates (and methionine rises) -> classical homocystinuria. As a deficient ENZYME the pathway throughput goes DOWN with upstream substrate (homocysteine) accumulation, so the corrective levers LOWER the accumulated metabolite and/or RESTORE residual enzyme via cofactor. Autosomal recessive, 21q22.3 (OMIM 613381). NCBI official symbol CBS. The promoter gamma reads the locus switch STRUCTURE only; the coding/missense lesions (e.g. the B6-responsive p.Ile278Thr, the B6-non-responsive p.Gly307Ser) are outside the promoter firewall.",
+    "src": "Mudd 1964 Science 143:1443 (cystathionine synthase deficiency in homocystinuria); Kraus 1999 Hum Mutat 13:362 (CBS mutation spectrum / B6 responsiveness)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CBS",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "e6de0c233fd4"
+ },
+ "treatment_A_switch": {
+  "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "correct",
+    "target_gene": "CBS",
+    "push_direction": "supply the CBS cofactor pyridoxal-5'-phosphate (vitamin B6) to restore residual cystathionine-beta-synthase activity in B6-responsive genotypes -> re-open transsulfuration",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme-cofactor supplementation (pyridoxine / vitamin B6)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of residual-CBS reactivation / B6 responsiveness not derived from sequence",
+    "src": "Barber & Spaeth 1969 J Pediatr 75:463 (pyridoxine-responsive homocystinuria); Mudd 1985 (B6 responsiveness in CBS deficiency)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "BHMT",
+    "push_direction": "remethylate the accumulated homocysteine to methionine via the betaine/BHMT route (a methyl-donor bypass of the deficient CBS) -> lower the toxic homocysteine pool (axis corrected toward healthy)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "WORSENS",
+    "agent_class": "methyl-donor remethylation agent (anhydrous betaine)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of homocysteine lowering not derived from sequence",
+    "src": "Wilcken 1983 NEJM 309:448 (betaine lowers plasma homocysteine in homocystinuria); anhydrous betaine (Cystadane) FDA 1996 / EMA"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 1,
+  "lead_corrective_lever": {
+   "lever": "correct",
+   "target_gene": "CBS",
+   "push_direction": "supply the CBS cofactor pyridoxal-5'-phosphate (vitamin B6) to restore residual cystathionine-beta-synthase activity in B6-responsive genotypes -> re-open transsulfuration",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme-cofactor supplementation (pyridoxine / vitamin B6)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of residual-CBS reactivation / B6 responsiveness not derived from sequence",
+   "src": "Barber & Spaeth 1969 J Pediatr 75:463 (pyridoxine-responsive homocystinuria); Mudd 1985 (B6 responsiveness in CBS deficiency)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.5714,
+   "dwell_disease": 1.01679,
+   "dwell_treated": 1.28996,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "145c0f0f7515"
+ },
+ "treatment_B_chem": {
+  "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "methionine-restricted diet (lower upstream substrate)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "restrict dietary methionine -> reduce the homocysteine precursor load entering the blocked step -> lower homocysteine accumulation; pathway-B reports DIRECTION only",
+    "rationale": "an upstream substrate-restriction direction (the dietary backbone of management); measured thermodynamics not supplied here -> [O] (no number -> hold it). Feasibility/clinical-management direction, not the switch-restoring lever.",
+    "status": "clinical",
+    "src": "Walter 1998 Eur J Pediatr 157 Suppl 2:S71 (methionine-restricted diet in homocystinuria)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "5dcbdb566388"
+ },
+ "falsifiers": [
+  {
+   "claim": "CBS LOF lowers transsulfuration throughput (homocysteine + methionine accumulate)",
+   "falsifier": "a CBS LOF allele that LOWERED plasma homocysteine / RAISED cystathionine output would refute the throughput-down + substrate-accumulation direction",
+   "measurable_by": "plasma total homocysteine, methionine and cystathionine in CBS-deficient patients vs controls"
+  },
+  {
+   "claim": "lowering homocysteine (betaine remethylation; B6 cofactor restore) is the CORRECTIVE direction",
+   "falsifier": "if betaine or pyridoxine RAISED plasma homocysteine or worsened the thromboembolic/ocular outcomes, the restrain/correct lever sign is wrong",
+   "measurable_by": "plasma total homocysteine response and thromboembolic-event / lens-stability outcomes on betaine and on pyridoxine in homocystinuria"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Classical homocystinuria (cystathionine-beta-synthase deficiency)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "0872e971af79"
+ },
+ "determinism_sha": "222a48fb700a"
+}

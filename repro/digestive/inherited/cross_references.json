@@ -1,0 +1,51 @@
+{
+  "_doc": "Cross-volume SEAMS WIRED by digestive_vp_site (v0.11.0). Single source of truth (SSOT) for the physiological quantities that touch this package's digestive/metabolic organs but are OWNED by a sibling volume. Per the MASTER MAP ownership contract and the neuro<->mind PROJECT_BOUNDARY discipline, the wiring is CITATION/POINTER-ONLY: digestive records a VENDORED SNAPSHOT of each sibling-owned quantity (verified once at vendoring time against the sibling engine, with the exact source function named), CONSUMES that snapshot in the seam layer (repro/_seams/seam_wiring.py), and NEVER imports a sibling's code. Each package re-establishes its entire trusted state from its own single zip with the siblings ABSENT; the firewall is enforced by an architectural lock (zero sibling imports) exactly as mind enforces it neuro-side. The siblings are the SSOT for the OUT-seams they declare; digestive is the consumer. DOIs: circulatory concept 10.5281/zenodo.20754354 ; mind concept 10.5281/zenodo.20694404.",
+  "_grade_legend": "[V] sibling-owned quantity with a cited DOI + the exact source function, vendored faithfully (verified against the sibling engine at vendoring time) and consumed here; [F] a forced architectural identity (the firewall: zero sibling imports, the metabolic state takes no felt/HPA input); [O] the digestive-side HANDLING that rests on the consumed delivery substrate but is itself unmodelled here (no lipid primitive; felt experience owned by mind), each with a stated obstacle in IRREPRODUCIBILITY_LEDGER.md.",
+
+  "circulatory_hepatic_interface": {
+    "seam": "circulatory -> digestive : hepatic first-pass / perfusion (the delivery substrate)",
+    "owner_volume": "circulatory_vp_site",
+    "owner_is_ssot": true,
+    "ownership_clause": "circulatory CHARTER 'Seams OUT': 'hepatic clearance kinetics -> digestive_vp_site (first-pass seam)' -- circulatory emerges the liver (HHEX) and owns hepatic blood flow + first-pass clearance; digestive cites/consumes, never re-emerges (SSOT).",
+    "owner_concept_doi": "10.5281/zenodo.20754354",
+    "source_function": "hepatic_clearance() in repro/_engine/vp_cir_engine.py (well-stirred model: E = CL_int*fu/(Q_H + CL_int*fu), F = F_abs*(1-E))",
+    "vendored_snapshot": {
+      "Q_H_ml_min": 1500.0,
+      "extraction_ratio_E": 0.75,
+      "oral_bioavailability_F": 0.25,
+      "hepatic_clearance_CL_H_ml_min": 1124.9994,
+      "tracer": "propranolol (high-extraction exemplar)",
+      "verified_against_circulatory_engine_at_vendoring": true
+    },
+    "consumed_by": ["digestive section 06 first-pass (already cited; now wired)", "digestive section 24 NAFLD/MASLD lipid-deposition delivery", "digestive section 25 bile cholesterol-delivery"],
+    "seam_to_digestive": "The hepatic perfusion Q_H and the first-pass extraction E/F are the DELIVERY SUBSTRATE on which digestive's hepatic-facing readings sit: section 24's NAFLD/MASLD lipid load and section 25's biliary cholesterol arrive via the SAME liver circulatory emerges and clears. Digestive places its lipid-load and cholesterol-saturation readings ON this consumed perfusion; it does not re-derive hepatic flow or clearance.",
+    "digestive_side_open": "the lipid-HANDLING (hepatic triglyceride accumulation, NASH-fibrosis progression) and the cholesterol-SECRETION dynamics that set the bile saturation index are NOT modelled in digestive (no lipid/secretion primitive) -- [O], handed across the firewall to circulatory; only the perfusion/clearance substrate is consumed here.",
+    "grade": "[V] sibling-owned hepatic interface (cited DOI + named function, vendored faithfully) consumed as the delivery substrate; [O] the digestive-side lipid/cholesterol handling that rests on it"
+  },
+
+  "circulatory_lipid_and_cholesterol_delivery": {
+    "seam": "circulatory -> digestive : NAFLD/MASLD lipid-deposition (sec 24) + bile cholesterol-delivery (sec 25)",
+    "owner_volume": "circulatory_vp_site",
+    "owner_concept_doi": "10.5281/zenodo.20754354",
+    "rests_on": "circulatory_hepatic_interface (Q_H / E / F)",
+    "section_24_reading": "NAFLD/MASLD: the insulin-resistance CORE is the digestive section-12 type-2 gain-loss homeostat REUSED unchanged (digestive-owned, [V]); the lipid-DEPOSITION layer (hepatic triglyceride, fibrosis) is delivered on the consumed hepatic perfusion and its handling is circulatory's -- [O] here, not re-emerged.",
+    "section_25_reading": "Cholelithiasis: the nucleation barrier and dissolution hysteresis are digestive-owned ([V]/[F]); the biliary cholesterol DELIVERY that sets the saturation-index bias arrives via the consumed hepatic secretion/perfusion and its absolute scale is circulatory's -- [O] here.",
+    "seam_to_digestive": "Both Tier-3 hepatobiliary readings consume the circulatory_hepatic_interface snapshot as their delivery substrate; the digestive sections keep only the metabolic homeostat (sec 24) and the crystallisation thermodynamics (sec 25), handing the lipid/cholesterol handling across the firewall.",
+    "grade": "[V] the section-12 homeostat reuse and the crystallisation thermodynamics, delivered on the consumed circulatory perfusion; [O] the lipid-handling / cholesterol-delivery magnitude (circulatory's, no primitive here)"
+  },
+
+  "mind_felt_symptom_firewall": {
+    "seam": "digestive -> mind : felt-symptom forward-defer (visceral pain sec 18, biliary colic sec 25)",
+    "owner_volume": "mind",
+    "owner_concept_doi": "10.5281/zenodo.20694404",
+    "direction": "one-way pointer (digestive -> mind); the felt interpretation is mind's, and NOTHING from mind's felt/HPA re-enters digestive's metabolic state (firewall).",
+    "boundary_clause": "neuro<->mind PROJECT_BOUNDARY: a forward-defer pointer is NOT a dependency; the package states WHERE the open item travels and stops. Mind owns felt cognition; digestive owns the peripheral mechanism. Verified by the architectural lock (zero sibling imports both ways) exactly as mind verifies neuro-side.",
+    "what_crosses": {
+      "from_section_18": "the PERIPHERAL visceral afferent term only -- afferent_signal(g,b,stim) (the R19-derived susceptibility chi = 1/k). The peripheral signal is digestive's [V]; the FELT pain / affect is mind's [O].",
+      "from_section_25": "the MECHANICAL biliary-colic trigger only -- a nucleated/obstructing stone as a mechanical event ([V]); the FELT colic is mind's [O]."
+    },
+    "mind_side_endpoint": "mind's M18 interoception layer: visceral vagal/spinal afferents -> nucleus tractus solitarius (NTS) -> parabrachial -> hypothalamus / insula / cingulate (Saper 2002, Annu Rev Neurosci 25:433), the route the affect literature (James-Lange; Damasio somatic-marker; Barrett constructed-emotion; Critchley & Garfinkel interoceptive predictive coding) treats as constitutive of felt visceral sensation. Mind consumes the peripheral afferent into THIS route; digestive does not re-emerge interoception or affect.",
+    "firewall_invariant": "digestive's engine (vp_dig_engine) and metabolic-state path take NO mind/HPA/felt input: the glucose-insulin-glucagon loop, slow-wave pacemaker, and barrier kernel are computed with zero reference to a mind quantity. The metabolic state does NOT re-enter mind's HPA either; the only crossing is the peripheral afferent/mechanical trigger pointer OUT.",
+    "grade": "[V] the peripheral afferent term + the mechanical biliary-colic trigger (digestive-owned); [F] the firewall (zero sibling imports; metabolic state takes no felt/HPA input); [O] the felt pain / affect (mind-owned, deferred by pointer)"
+  }
+}

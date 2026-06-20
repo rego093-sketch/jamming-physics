@@ -1,0 +1,181 @@
+{
+  "_method": {
+    "d_gamma": "gamma_obs - mean(gamma of permuted window) = dinucleotide-order term at fixed composition",
+    "permutations_per_window": 60,
+    "prediction": "CpG depletion removes stiff CG steps (dG -2.17) -> d_gamma POSITIVE where CpG O/E high (corr(d_gamma, cpg_oe) > 0)",
+    "seed": 19,
+    "window_bp": 2000
+  },
+  "_pins": {
+    "clade_reader_engine.py": "61f32837ec56578ecaf87cba7a8b39edf3a0aee4793709b80440e543123da481",
+    "dna_interpreter.py": "4929932d9032179009e9b6cf5b0abd6d390a03f09867f0d06d8e9fd7e83f2cd0"
+  },
+  "_question": "Is the part of gamma NOT explained by GC just noise, or is it the CpG/methylation fingerprint? (sharpening U1 'gamma = GC-restatement')",
+  "boundary_plasmodium": {
+    "note": "at GC~20% (AT-rich, barely methylates) the d_gamma residual INVERTS its CpG relationship (within_corr_dgamma_cpgoe < 0) and is instead driven by TA-step structure (within_corr_dgamma_ta_step strongly negative). The 'gamma-beyond-GC = CpG fingerprint' mapping is itself clade/GC-dependent -- parallel to U3's 'read the methylation substrate in the clade's context'.",
+    "within_corr_dgamma_cpgoe": -0.2903,
+    "within_corr_dgamma_ta_step": -0.6024
+  },
+  "grade": "REFINED: gamma = GC + a measurable, CpG-correlated dinucleotide term. The settled 'gamma is a GC-restatement' is right that gamma adds no INDEPENDENT axis, but the gamma-beyond-GC residual is not noise: it tracks CpG O/E with the predicted sign (pooled r=0.572), quantifying section 11's qualitative 'two projections of one history' payoff. Within-genome corr(gamma,GC) = 0.993 (mean), so GC still dominates locally, but the dinucleotide term is real and CpG-shaped.",
+  "per_organism": {
+    "arabidopsis": {
+      "abs_dgamma_median": 0.00741,
+      "dgamma_mean": 0.00728,
+      "dgamma_std": 0.00494,
+      "gamma_obs_mean": 1.2291,
+      "gamma_obs_std": 0.0459,
+      "gc_mean": 0.3375,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.4038,
+      "within_corr_dgamma_ta_step": 0.0603,
+      "within_corr_gamma_gc": 0.9949
+    },
+    "chicken": {
+      "abs_dgamma_median": 0.00388,
+      "dgamma_mean": 0.0012,
+      "dgamma_std": 0.00535,
+      "gamma_obs_mean": 1.324,
+      "gamma_obs_std": 0.0639,
+      "gc_mean": 0.4273,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.4268,
+      "within_corr_dgamma_ta_step": -0.0037,
+      "within_corr_gamma_gc": 0.9965
+    },
+    "fly": {
+      "abs_dgamma_median": 0.01487,
+      "dgamma_mean": 0.0139,
+      "dgamma_std": 0.00591,
+      "gamma_obs_mean": 1.3701,
+      "gamma_obs_std": 0.0536,
+      "gc_mean": 0.4566,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.5959,
+      "within_corr_dgamma_ta_step": 0.4063,
+      "within_corr_gamma_gc": 0.9957
+    },
+    "frog": {
+      "abs_dgamma_median": 0.00358,
+      "dgamma_mean": 0.0034,
+      "dgamma_std": 0.00503,
+      "gamma_obs_mean": 1.2892,
+      "gamma_obs_std": 0.0328,
+      "gc_mean": 0.395,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.4997,
+      "within_corr_dgamma_ta_step": -0.3115,
+      "within_corr_gamma_gc": 0.9867
+    },
+    "human": {
+      "abs_dgamma_median": 0.00359,
+      "dgamma_mean": -0.00214,
+      "dgamma_std": 0.00447,
+      "gamma_obs_mean": 1.2584,
+      "gamma_obs_std": 0.036,
+      "gc_mean": 0.3723,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.3674,
+      "within_corr_dgamma_ta_step": 0.1123,
+      "within_corr_gamma_gc": 0.9937
+    },
+    "maize": {
+      "abs_dgamma_median": 0.00565,
+      "dgamma_mean": 0.00289,
+      "dgamma_std": 0.00607,
+      "gamma_obs_mean": 1.3363,
+      "gamma_obs_std": 0.0563,
+      "gc_mean": 0.4369,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.6209,
+      "within_corr_dgamma_ta_step": -0.2088,
+      "within_corr_gamma_gc": 0.9945
+    },
+    "mouse": {
+      "abs_dgamma_median": 0.00509,
+      "dgamma_mean": -0.00582,
+      "dgamma_std": 0.0055,
+      "gamma_obs_mean": 1.3145,
+      "gamma_obs_std": 0.0338,
+      "gc_mean": 0.4255,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.4591,
+      "within_corr_dgamma_ta_step": 0.0312,
+      "within_corr_gamma_gc": 0.9873
+    },
+    "plasmodium": {
+      "abs_dgamma_median": 0.00436,
+      "dgamma_mean": 0.00227,
+      "dgamma_std": 0.00599,
+      "gamma_obs_mean": 1.0797,
+      "gamma_obs_std": 0.0635,
+      "gc_mean": 0.2041,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": -0.2903,
+      "within_corr_dgamma_ta_step": -0.6024,
+      "within_corr_gamma_gc": 0.9958
+    },
+    "rice": {
+      "abs_dgamma_median": 0.00446,
+      "dgamma_mean": 0.00417,
+      "dgamma_std": 0.00621,
+      "gamma_obs_mean": 1.3463,
+      "gamma_obs_std": 0.0855,
+      "gc_mean": 0.444,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.3197,
+      "within_corr_dgamma_ta_step": -0.053,
+      "within_corr_gamma_gc": 0.9975
+    },
+    "worm": {
+      "abs_dgamma_median": 0.01773,
+      "dgamma_mean": 0.01868,
+      "dgamma_std": 0.00435,
+      "gamma_obs_mean": 1.2584,
+      "gamma_obs_std": 0.029,
+      "gc_mean": 0.3539,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.462,
+      "within_corr_dgamma_ta_step": 0.1449,
+      "within_corr_gamma_gc": 0.9917
+    },
+    "yeast": {
+      "abs_dgamma_median": 0.00829,
+      "dgamma_mean": 0.00786,
+      "dgamma_std": 0.00387,
+      "gamma_obs_mean": 1.2798,
+      "gamma_obs_std": 0.0345,
+      "gc_mean": 0.3823,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.3639,
+      "within_corr_dgamma_ta_step": -0.3813,
+      "within_corr_gamma_gc": 0.9937
+    },
+    "zebrafish": {
+      "abs_dgamma_median": 0.01082,
+      "dgamma_mean": 0.00635,
+      "dgamma_std": 0.01608,
+      "gamma_obs_mean": 1.2323,
+      "gamma_obs_std": 0.0654,
+      "gc_mean": 0.3411,
+      "n_windows": 60,
+      "within_corr_dgamma_cpgoe": 0.1593,
+      "within_corr_dgamma_ta_step": -0.9404,
+      "within_corr_gamma_gc": 0.9888
+    }
+  },
+  "pooled": {
+    "corr_dgamma_cg_step_excess": 0.5762,
+    "corr_dgamma_cpgoe_pooled": 0.5718,
+    "corr_gamma_gc_pooled": 0.9949,
+    "cross_genome_gamma_range_sec11": 0.29,
+    "frac_gamma_variance_dinucleotide": 0.0107,
+    "median_abs_dgamma": 0.00668,
+    "median_abs_dgamma_as_frac_of_cross_genome_range": 0.023,
+    "n_windows": 720,
+    "partial_corr_dgamma_cpgoe_given_gc": 0.5723,
+    "structure_verdict": "STRUCTURED + SIGN AS PREDICTED",
+    "var_composition_part_iid": 0.008085,
+    "var_dinucleotide_part": 8.7e-05,
+    "var_total_gamma": 0.008169
+  }
+}

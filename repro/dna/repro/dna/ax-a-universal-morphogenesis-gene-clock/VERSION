@@ -1,0 +1,305 @@
+12.4 (FINALIZATION 2026-06-17 -- VP-SPEC v1.8 precision closeout, DOCUMENTATION-ONLY)
+
+VP-SPEC v1.8 precision closeout (정밀 마감). DOC-ONLY: science version stays v12.4; NO engine edits,
+NO change to any code/*.py, code/*.json, the canonical docs/dna/index.html body, the measured inputs,
+or any dated session gate.json/CHANGELOG record. Independent full re-verification reproduced
+OVERALL: PASS 20/20 (12 morpho gates 5/5 + 5 emergence gates 7/7·6/6·7/7·8/8·8/8) and the
+source-integrity pin at 87 governed files, drift 0; emergence fingerprints and 12 morpho fidelity
+baselines matched the frozen baseline leaf-for-leaf. Two LIVING documents had lagged behind the
+emergence fold-in + Phase 7 and were corrected to the verified live state (permitted under C0
+"fixing wrong content", and both are non-pinned files so the bit-for-bit set is untouched -- 87 files,
+drift 0 re-confirmed AFTER the edits):
+  (1) REPRODUCE.md   -- was "OVERALL: PASS (11/11 checks), 9 gates, 54 governed files" (pre-merge v5.1);
+                        now states 20/20, 12 morpho + 5 emergence gates, 87 governed files, with the
+                        3 morpho gates (organ_timing/organ_anatomy/heart_substages) and 5 emergence
+                        gates that were missing from its listing, plus the decomposed-freeze runtime note.
+  (2) IRREPRODUCIBILITY_LEDGER.md §2 -- verify-state line was "PASS 14/14 ... 69 governed files"
+                        (appendix-merge era); now "PASS 20/20 ... 87 governed files" with the five
+                        emergence gates and five emergence fingerprints named.
+Scope boundary (named, not fabricated): site-level common files (docs/index.html top-level,
+sitemap.xml, robots.txt, llms.txt) are intentionally absent -- under VP-SPEC §1 lane rules + §4 session
+matrix they belong to the full-site Phase 5/6 assembly, not this single-paper integrated lane. Package
+SHA256 of the pre-finalization input verified against its sidecar and the Phase-7 report §7
+(0d1698c3...238dafd5, OK). See FINALIZATION_VPSPEC_v1_8_CLOSEOUT.md for the full audit.
+
+---
+
+12.4
+
+universal_morphogenesis_geneclock v12.4 (DNA whitepaper v1.9.1 -- Phase 7 morphogen length-scale cross-validation fold-in)
+Built on v12.3 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v12.4 (this release), add-only, NO engine edits and NO edit to any existing code/*.py, code/*.json,
+or whitepaper section 1-13. Folds the Phase 7 morphogen length-scale cross-validation into
+code/emergence_v2/: THREE new files (morphogen_lengths.json [locked measured-input],
+emergence_morphogen_validation.py [engine], verify_emergence_morphogen.py [gate]) + LEDGER +
+CHANGELOG. The gate is wired into single-entry verify_all.py via EMERGENCE_GATES (add-only, one line):
+OVERALL: PASS 20/20 (was 19/19, +1 check). expected_sha256.json pins 87 files (was 84; +1
+measured-input json, +2 code), drift 0; the existing 84 pins and all 12 morpho fidelity baselines are
+byte-identical; emergence_gate_baseline.json now freezes 5 gates (added emergence_morphogen 8/8 sha
+01b0b6ea8b10 / band sha 4ea1c7b4111c).
+  RESULT: the Phase-3 trajectory ledger's QUALITATIVE aside -- that the DB's D-range maps to
+  lambda in [19,190] um "bracketing real morphogen gradients" -- is promoted [F] -> [L]-grounded by a
+  falsifiable measurement test. The model's first-principles length band lambda = sqrt(D*tau) =
+  [18.97,189.74] um (central 60 um), derived PURELY from param_db generic biophysics (D in [0.1,10]
+  um^2/s, tau ~ 60 min) and NEVER from any morphogen's measured gradient (NON-FIT asserted), is
+  confronted with six directly-measured gradient decay lengths from primary literature: Bicoid 100
+  (Gregor 2007), Nodal 80 (Mueller 2012), Fgf8 50 (Yu 2009), Dpp 20 (Kicheva 2007), Shh 20
+  (Chamberlain 2008/Zagorski 2017), Wingless 6 um (Kicheva 2007). geom-mean(measured)=31.41 um vs
+  central 60 -> factor 1.91 (< 3 tol); 5/6 in band; robust to +-30% per-lambda jitter (worst factor
+  2.47). NON-CIRCULARITY guard: the three morphogens whose studies did NOT set the DB biophysics
+  (Bicoid/Nodal/Shh, informs_db=false) are 3/3 in band -- a generic biophysical band fixed from OTHER
+  morphogens generalises to independent gradients. grade==evidence held: per-morphogen exact band
+  membership stays [F] (edge-sensitive; Dpp/Shh ~20 um are boundary-adjacent to the 18.97 um edge);
+  the realized curved 3-D form stays [O] (Phase-3 residual, data/compute-blocked).
+  RESIDUAL (named, kept): Wingless (~6 um, shortest-range) falls BELOW the band and is reported as a
+  band miss, NOT excluded -- the claim is REGIME-level, not that every morphogen lands inside. No
+  shape claim is made here. Narrative grade promoted in README claim-strip and cross-referenced in
+  code/emergence_v2/LEDGER_emergence_trajectory.md (the qualitative bracketing line now points to the
+  gated [L]-grounded check). The locked engines, the measured gamma/Carnegie tables, and every null
+  value are unchanged.
+  Freeze method (honest disclosure): full verify_all.py exceeds the single-process runtime budget
+  (dev_timing_wide alone ~261 s), so the baseline was frozen DECOMPOSED -- every gate run individually
+  to completion, cached, and the canonical freeze() driven against that cache (deterministic gates ->
+  cached output byte-identical to inline -> pins identical to literal --freeze); drift-0 re-confirmed
+  against a pre-freeze snapshot.
+  DOI of record 10.5281/zenodo.20471407 maintained; this is a new living-version snapshot.
+
+----------------------------------------------------------------------------------------------------
+
+12.3
+
+universal_morphogenesis_geneclock v12.3 (documentation tidy -- docs/ reorganization, NO code/pin change)
+Built on v12.2 (VP-SPEC C3 no-tuning governance).
+
+v12.3 (this release) is a DOCUMENTATION-ONLY tidy. The ~28 scattered package-root documents were
+filed under docs/: docs/changelogs/ (10), docs/handoffs/ (4), docs/ledgers/ (12 root-level ledgers),
+docs/overview/ (2), plus a new docs/INDEX.md map. README.md, VERSION, REPRODUCE.md stay at root as
+the entry docs. Documents under code/emergence_v2/ and code/analyses/ are LEFT in place (engine +
+ledger co-located by design). NO change to code/, verify_all.py logic, expected_sha256.json, the
+repro/results verification data, or any measured input. Document files are not in the sha256 pin
+(only code/*.py and code/*.json are), so the move is verification-invariant: expected_sha256.json
+still pins 84 files, drift 0; verify_all.py still reports OVERALL: PASS (19/19). Pinned-code comment
+cross-references to documents were NOT edited (pin preservation); filenames are unchanged and locatable
+via docs/INDEX.md. Functional byte-duplicates are intentional and KEPT: results/*.json mirror
+repro/morpho/expected/*.json (regenerated-output vs frozen baseline -- the basis of the drift-0
+fidelity check); code/organism/core.py vendors the shared _engine core (package self-containment).
+  DOI of record 10.5281/zenodo.20471407 maintained; living-version snapshot. Whitepaper section 1-13,
+  the locked engines, the measured gamma/Carnegie tables, and every null value are unchanged.
+
+----------------------------------------------------------------------------------------------------
+
+12.2
+
+universal_morphogenesis_geneclock v12.2 (DNA whitepaper v1.9.1 -- Phase 5 organ-allometry WIDE gate fold-in)
+Built on v12.1 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v12.2 (this release), add-only, NO engine edits and NO edit to any existing code/*.py, code/*.json,
+or whitepaper section 1-13. Folds the Phase 5 organ-allometry WIDE gate into code/emergence_v2/: FIVE
+new files (param_db_wide.json, validation_targets_wide.json, emergence_organs_wide.py,
+verify_emergence_organs_wide.py, LEDGER_organ_allometry_wide.md) + one CHANGELOG. The wide gate is
+wired into single-entry verify_all.py via EMERGENCE_GATES (add-only): OVERALL: PASS 19/19 (was 18/18,
++1 check). expected_sha256.json pins 84 files (was 80; +2 code, +2 measured-input json), drift 0; the
+existing 80 pins and all 12 morpho fidelity baselines are byte-identical; emergence_gate_baseline.json
+now freezes 4 gates (added emergence_organs_wide 8/8 sha d82eeb925973).
+  RESULT: organ-allometry [O] -> [L]. The Phase 2 cited-exponent test was power-limited (n=8, exact
+  p=0.069, graded [O]). Phase 5 widens to a PRE-REGISTERED organ set (n=11): Spearman(e_pred, e_obs)
+  rho=+0.800, exact permutation p=0.0047 -> promoted [L]-grounded. Ladder (exact-perm Spearman):
+  A original-8 rho=+0.690 p=0.0694 [O] (reproduces Phase 2); B +skeleton+blood rho=+0.733 p=0.0202 [L];
+  C +skeletal-muscle (pre-registered 1st endpoint, n=11) rho=+0.800 p=0.0047 [L]. Brain anchor +
+  robustness pass. NO back-fit: the exponents are independent of human masses; the 3 new tissues have
+  no gamma master (gamma-independent -> a MORE independent test). grade==evidence held throughout.
+  RESIDUAL [O] (named, kept): long-run ABSOLUTE organ mass in grams stays [O] (only sign/rank scored,
+  grams not predicted). Narrative grades promoted in README abstract claim-strip and
+  code/emergence_v2/LEDGER_emergence_organs.md (cross-ref LEDGER_organ_allometry_wide.md); the locked
+  engines, the measured gamma/Carnegie tables, and every null value are unchanged.
+  DOI of record 10.5281/zenodo.20471407 maintained; this is a new living-version snapshot.
+
+----------------------------------------------------------------------------------------------------
+
+12.1
+
+universal_morphogenesis_geneclock v12.1 (DNA whitepaper v1.9.1 -- systemic-parameter shape-emergence fold-in)
+Built on v12 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v12.1 (this release), add-only, NO engine edits and NO edit to any existing code/*.py, code/*.json,
+or whitepaper section 1-13. Folds the systemic-recovery build into the appendix: code/emergence_v2/
+(Phase 1 heart dynamics gate 7/7 sha 939ae9924a6c; Phase 2 organs+allometry gate 6/6 sha 40225433a67a;
+Phase 3 reduced-order RD trajectory gate 7/7 sha b2b34a770f5a) + code/analyses/ (3 boundary studies +
+null note). The three gates are wired into the single-entry verify_all.py (add-only layers [1b]/[3b]):
+OVERALL: PASS 18/18. expected_sha256.json pins 80 files (was 69; +8 emergence_v2 + 3 analyses), drift
+0; new emergence_gate_baseline.json freezes each emergence gate's PASS count + result-hash.
+  INTEGRATED LAW (now the appendix abstract claim-strip): intrinsic gamma fixes WHAT/ORDER
+  deterministically [V]; WHEN/HOW-BIG is a systemic, relational quantity (time=dynamics, size=dosage)
+  recovered only when that parameter is supplied -- graded [L] measured / [F] model-only / [O] absent.
+  This re-reads Appendix A's measured NULL (gamma predicts neither timing nor absolute size) as a
+  boundary and fills past it with provenance-graded systemic parameters under strict no-tuning (engine
+  never reads a validation target; NON-FIT invariant). Full grades in LEDGER_systemic_recovery.md.
+  RE-LABEL (numbers unchanged): the old grow_to_target scan-convergence (RMS 2.31->0.055, Chamfer->0;
+  head 0.06/bird 0.08/quad 0.10/fish 0.07) is target-fitting geometry [V] but NOT realized shape
+  emergence [O] -- the scan supplies the coordinates and no systemic parameter realized the form. The
+  only axis whose realized shape comes from a measured systemic parameter is form(P,E) dosage,
+  H^2=0.51 [L] (morpho_decomposition.py). grow_to_target.py is byte-identical; only interpretation
+  labels (LEDGER_gene_clock.md convergence rows, README Layer 3) were corrected.
+  DOI of record 10.5281/zenodo.20471407 maintained; this is a new living-version snapshot. Whitepaper
+  section 1-13, the locked engines, the measured gamma/Carnegie tables, and every null value are
+  unchanged.
+
+----------------------------------------------------------------------------------------------------
+
+12.0
+
+universal_morphogenesis_geneclock v12 (SINGLE-ORGAN deep dive: the heart, cardiac sub-stage timing)
+Built on v11 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v12 (this release), add-only, no engine edits, no fork of organism/core.py and no edit to any
+existing code/*.py. SIX new files only (code/heart_substages.py + code/verify_heart_substages.py +
+code/data/fetch_heart_gamma.py + 3 locked/cached data files). ONE new measured modality: real
+cardiac sub-stage master-gene gamma (IDENTICAL NCBI->SantaLucia pipeline; NKX2-5 reproduces the
+organ_atlas value) + ONE locked + cited cardiac Carnegie-staging table. Unified entry verify_all.py
+PASS 14/14 (twelve gates 5/5 + sha256 source/measured-input pin drift 0 + twelve fidelity baselines
+leaf drift 0). expected_sha256.json pins 69 files (was 63; +2 code, +1 fetch, +3 data).
+
+v12 -- the FAIR, single-system version of the organ-timing test. v10 returned an honest NULL for
+DNA-vs-organ-timing but mixed 8 heterogeneous organs with soft cross-system staging. The heart is
+the textbook gold standard for crisp developmental staging, so v12 resolves the heart's OWN program
+into its crisp sub-stage MILESTONES (specification -> tube -> looping -> second heart field ->
+chambers -> cushions/valves -> ventricular septation -> outflow-tract septation), tags each with its
+canonical specifier master (NKX2-5, GATA4, HAND2, ISL1, TBX5, SOX9, MEF2C, TBX1), fetches each gene's
+REAL gamma, and runs the same falsifiable gene-clock timing test on this one coherent system.
+  RESULT: honest NULL, and SHARPER than the 8-organ null. Spearman rho=+0.071, exact permutation
+  p=0.882 (n!=40320), Pearson r=-0.030 -> grade [O]. The cardiac MASTER NKX2-5 (first in vivo, CS9)
+  is ranked near-LAST by gamma; MEF2C (late septation) ranked FIRST -- gamma gets the anchors
+  backwards. Robust to +/-1 CS jitter (max rho 0.395 < crit 0.714; 0% of re-encodings reach
+  significance). Non-blind (synthetic gamma ordered to stages -> rho=+1.000; shuffle -> 0.323).
+  CONCLUSION: promoter thermodynamic stiffness gamma is ORTHOGONAL to developmental timing -- even
+  inside one tightly-regulated organ's own cascade. This is the project's central methodological
+  result, now established on the best-characterised single system with full power disclosure: gamma
+  fixes WHAT/ORDER of structure deterministically [V] but does NOT predict WHEN vs biology [O].
+  New: heart_substages.py (schedule = argsort(spinodal(gamma)), one switch 2.2e-16; calibrate() runs
+       the test; apparatus_detects_signal() proves non-blindness; +/-1 jitter robustness band),
+       verify_heart_substages.py (PASS 5/5: one switch; locked cited input + identical-pipeline
+       guarantee; grade==evidence + jitter-robust; falsifiability; determinism).
+  HONEST scope: the one-specifier-per-milestone map is a forced choice [F] (cardiac TFs are
+  pleiotropic; documented in heart_substages.json/_forced_choice_note and LEDGER_heart.md). The
+  staging is locked/cited/gamma-independent [L]; gamma is real/read-only [L]; the order is [V]; the
+  timing-vs-biology claim is [O] (null). n=8 -> power-limited (disclosed), same ceiling as the 8-organ
+  test; the only lever to a positive remains a different measured modality (expression-onset/chromatin).
+
+----------------------------------------------------------------------------------------------------
+
+11.0
+
+universal_morphogenesis_geneclock v11 (INTERNAL/visceral organ ANATOMY coupling)
+Built on v10 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v11 (this release), add-only, no engine edits, no fork of organism/core.py and no edit to
+assemble.py / anatomy.py / body.py / gene_clock.py / morpho_core.py. TWO new files only
+(code/organ_anatomy.py + code/verify_organ_anatomy.py); ZERO new measured inputs. Unified entry
+verify_all.py PASS 13/13 (eleven gates 5/5 + sha256 source/measured-input pin drift 0 + eleven
+fidelity baselines leaf drift 0). expected_sha256.json pins 63 files (was 61; +2 code, +0 data).
+
+v11 -- realise the v10 organ EMERGENCE SCHEDULE inside the Layer-2 voxel ANATOMY. v10 tagged each
+visceral organ with its master gene so the ORDER of organ appearance is a gene-clock readout of
+measured gamma, but the organs still lived only as hand-placed, time-less ellipsoids in
+assemble.anatomy_spec. v11 wraps anatomy_spec (no edit) and overlays the gene-clock time-gate, so a
+grown organism FILLS WITH ORGAN STRUCTURE in gamma-order and is COMPLETE at tau=1.
+  New: organ_anatomy.py -- timed_anatomy_spec(tau) gates each organ ellipsoid by a_f(tau;gamma,tau_on)
+       (R19 emergence fold, the SAME one switch, max|delta|=2.2e-16), drops organs below off_eps, and
+       adds 4 new visceral ellipsoids (stomach/pancreas/kidney/spleen) so the full v10 8-organ set is
+       realised in the body. DNA-derived fill order spleen<gut<pancreas<lung<heart<liver<kidney<stomach
+       == argsort(spinodal(gamma)) (order_is_gamma_readout=True); complete (8/8 organs) at tau=1.
+       verify_organ_anatomy.py (PASS 5/5): one switch; complete-at-tau=1 (spec + voxel); fill order ==
+       gamma readout (anatomy appearance order + nested voxel fill); overlay invariants (bbox-cull
+       build_tissue == naive_tissue byte-for-byte, body surface untouched, organs relabel interior only);
+       determinism (2x build bit-identical).
+  HONEST scope: v11 is GEOMETRY -- the v10 schedule realised in the voxel body. It makes NO new
+  timing-vs-biology claim: whether the gamma-order matches real organogenesis timing remains the v10
+  measured NULL (organ_timing.py: Spearman rho=-0.414, perm p=0.360, grade [O]). The gene->organ map,
+  sign convention, tau window, and the 4 new-organ placements + relative dwell sizing are forced
+  modelling choices [F]; absolute organ sizes are a crude canvas [O]. The order itself is [V].
+  Still open (see HANDOFF_v11_organ_anatomy.md): a different measured modality (expression-onset/
+  chromatin) to actually test DNA-vs-organ-timing ([O] data-blocked); widen the crisp-staged organ
+  set; per-organ measured shape/placement priors; dna_vp merge route.
+
+----------------------------------------------------------------------------------------------------
+
+10.0
+
+universal_morphogenesis_geneclock v10 (INTERNAL/visceral organ emergence)
+Built on v9 + neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v10 (this release), add-only, no engine edits, no fork of organism/core.py; ONE new measured input
+table (visceral-organ master gamma, identical NCBI->SantaLucia pipeline) + ONE locked + cited
+organ-primordium Carnegie-stage table. Unified entry verify_all.py PASS 12/12 (ten gates 5/5 +
+sha256 source/measured-input pin drift 0 + ten fidelity baselines leaf drift 0). expected_sha256.json
+pins 61 files (was 54).
+
+v10 -- complete the "DNA -> body" arc with the INTERNAL organs. The package grew the external form
+(face/body/skeleton) and the composition axis (adipose) from measured gamma; the internal organs
+existed only as hand-placed ellipsoids in assemble.anatomy_spec. v10 tags each visceral organ with
+its master gene so the ORDER/timing of organ appearance falls out of the SAME R19 gene clock that
+drives the face features (heterochrony, a deterministic gamma readout).
+  New: organ_atlas.py (8 organs: heart=NKX2-5, liver=HHEX, stomach=BARX1, lung=NKX2-1, pancreas=PDX1,
+       kidney=SIX2, spleen=TLX1, midgut=CDX2; emergence order = argsort(spinodal(gamma)), one switch
+       2.2e-16), organ_timing.py (test vs locked Carnegie stages -> HONEST NULL: Spearman rho=-0.414,
+       perm p=0.360, grade [O]; promoter stiffness is not the organ-timing correlate, consistent with
+       the external-feature null), verify_organ_timing.py (PASS 5/5, grade==evidence).
+  gamma fetched by the identical pipeline (NC_/GRCh38, corr(gamma,GC)=0.994, cached -> reproduces
+  offline). midgut/intestine carried in the atlas (geometry) but excluded from the timing test for
+  soft staging (same reason MYF5 was excluded in v8).
+  Still open (see HANDOFF_v10_organ.md): couple the schedule into Layer-2 anatomy (geometry); a
+  different measured modality (expression-onset/chromatin) to actually test DNA-vs-organ-timing
+  ([O] data-blocked); widen the crisp-staged organ set.
+
+----------------------------------------------------------------------------------------------------
+
+9.0
+
+universal_morphogenesis_geneclock v9 (CAPSTONE / project conclusion)
+Built on neuro_emergence_chain_integrated v1.9 (VP-SPEC C3 no-tuning governance).
+
+v9 (this release), add-only, no engine edits, no fork of organism/core.py; ONE new locked + cited
+external input (published twin-study heritability) used only as an order-of-magnitude REGIME anchor,
+never tuned to. Unified entry verify_all.py PASS 11/11 (nine gates 5/5 + sha256 source/measured-input
+pin drift 0 + nine fidelity baselines leaf drift 0).
+
+v9 -- the SHAPE-decomposition capstone: how much of FORM does measured DNA fix?
+  The project's real question was never the developmental ORDER of features (the dev-timing line, v6-v8,
+  settled as an honest, robust null) -- it was how much of the final FORM (face, body) measured DNA
+  determines. The empirically obvious answer, which the model is built to embody, is: DNA is the FIRST
+  CAUSE of form but not the whole of it -- identical twins resemble yet diverge when their lives differ
+  (exercise, diet, stress); 100% of the face does not come from DNA. v9 makes that decomposition explicit
+  and quantitative on the package's already-gated gene x environment machinery (the adipose fat-fold,
+  which turns a genome and an energy/lifestyle into an actual body and face), and anchors it to published
+  twin-study heritability.
+
+  New module morpho_decomposition.py computes, reusing public adipose primitives (no engine edit):
+    * VARIANCE DECOMPOSITION. Over a genetic-propensity x environment grid, the variance of body size/shape
+      (occupancy volume) splits into a GENETIC fraction H^2 = Var_genetic/Var_total and an ENVIRONMENTAL
+      fraction. At a realistic environmental range H^2 = 0.51 -- inside the published twin band (BMI/body-
+      fat/waist 0.48-0.63). Both fractions are substantial: shape is neither all-DNA nor all-environment.
+    * HERITABILITY IS POPULATION-DEPENDENT. H^2 rises to 0.84 when environmental variation is narrow and
+      falls to 0.10 when it is wide -- reproducing a published fact (twin BMI-heritability varies across
+      populations precisely because their environmental variation differs), and why no single H^2 is "the"
+      answer. The anchor is therefore a REGIME match, not a tuned decimal.
+    * IDENTICAL-TWIN DECOMPOSITION. For one genome (= MZ twins, same DNA), the morphology at the shared
+      lean reference is the DNA-FIXED CORE, bit-identical between the twins (the resemblance). Give the
+      twins two lives -- active/lean vs surplus/sedentary -- and the body and face DIVERGE: same DNA, but
+      the surplus life adds +37% body volume and widens lower-face roundness by +25% (the environmental
+      envelope that fills the slots DNA leaves open).
+    * FACE: DNA vs ENVIRONMENT. The model's lower-face roundness moves with adiposity (cheek/jowl) --
+      environmental -- while the bony face frame is the gamma-fixed core. This matches the twin-study
+      finding that cheeks/chin/lips show the most environmental variation whereas central midface bone
+      (nose, orbital ridges) is the most heritable. Honest [O]: the model's facial BONE has no
+      non-adiposity environmental axis (aging, gravity), so for those it trivially attributes 100% to DNA,
+      which real faces do not -- the clearest remaining open slot.
+
+New gate: verify_morpho_decomposition (PASS 5/5) -> gate suite is now nine gates.
+New files: code/morpho_decomposition.py, code/verify_morpho_decomposition.py,
+           code/data/heritability_anchor.json (locked + cited),
+           LEDGER_morpho_decomposition.md, CHANGELOG_v9.md, PROJECT_SUMMARY.md,
+           repro/morpho/expected/morpho_decomposition_verify.json.
+expected_sha256.json now pins 54 governed source + measured-input files (was 51; +2 code, +1 data).
+
+This is the project's intended concluding release. See PROJECT_SUMMARY.md for the whole arc.

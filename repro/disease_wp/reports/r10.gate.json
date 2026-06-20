@@ -1,0 +1,244 @@
+{
+  "phase": "R10",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 2 (PMC-OA dominant-sequela join) — S/P corroboration, no new lock",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "5ce66ff08c81"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "cd876ac291ec"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "3e91de086bd4"
+    },
+    "litcurate2_join_csv": {
+      "path": "methodology/severity_litcurate2_join.csv",
+      "sha12": "a4e1e19f02b3"
+    },
+    "litcurate2_excluded_csv": {
+      "path": "methodology/severity_litcurate2_excluded.csv",
+      "sha12": "011d51eda33c"
+    },
+    "litcurate_fetch_log_r10": {
+      "path": "data/raw/litcurate/_fetch_log_r10.json",
+      "sha12": "c8c59427c027"
+    }
+  },
+  "lift_counts": {
+    "P_H_to_L": 2,
+    "P_excluded_recorded": 2,
+    "S_excluded_recorded": 1
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 9,
+      "[H]": 5
+    },
+    "S": {
+      "[L]": 3,
+      "[H]": 21,
+      "[O]": 11
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate2_join": [
+    {
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "axis": "P",
+      "pmcid": "PMC9967779",
+      "pmid": "37259462",
+      "tier": 0.5,
+      "tier_label": "progressive course",
+      "exact_sentence": "FD is a progressive, multisystemic disease requiring early clinical recognition by clinicians to avoid life-threatening complications of renal failure, heart failure, arrhythmias, and stroke.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axis": "P",
+      "pmcid": "PMC9772687",
+      "pmid": "36543362",
+      "tier": 0.5,
+      "tier_label": "progressive course",
+      "exact_sentence": "Aortic involvement is generally progressive, and with a growing aortic root diameter, the risk of dissection increases.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    }
+  ],
+  "litcurate2_excluded": [
+    {
+      "entity": "Hb SS disease",
+      "cui": "C0002895",
+      "axis": "P",
+      "considered_pmcid": "PMC12635507",
+      "considered_pmid": "41281092",
+      "decline_class": "umbrella_spectrum",
+      "considered_statement": "Sickle cell disease (SCD) is a hereditary hemoglobinopathy caused by a point mutation in the β-globin gene, leading to the production of hemoglobin S and resulting in chronic hemolytic anemia, vaso-occlusion, and progressive organ damage.",
+      "exclusion_reason": "the cohort entity C0002895 is the SPECIFIC homozygous-SS genotype (Hb SS disease / sickle cell anaemia), whereas the only retrievable OA disease-level progression statement is scoped to the SICKLE CELL DISEASE UMBRELLA (SCD), which spans the HbSS, HbSC and HbS/beta-thalassaemia genotypes; although the frozen R3 progression function WOULD map this sentence to 0.5 ('progressive organ damage', non-spectrum), the magnitude is asserted for the umbrella, not for the HbSS entity's own dominant untreated sequela, and a deliberate OA full-text search ('sickle cell anaemia'[Title] AND progressive, PMC open-access) found no entity-specific disease-level progression sentence exposed in retrievable open-access full text (entity-specific articles bury it in non-efetch-captured introductions). P left [O], not lifted"
+    },
+    {
+      "entity": "Hb SS disease",
+      "cui": "C0002895",
+      "axis": "S",
+      "considered_pmcid": "PMC3459630",
+      "considered_pmid": "23049411",
+      "decline_class": "spectrum",
+      "considered_statement": "However, the clinical phenotype of SCD varies widely, influenced by additional cellular and genetic factors, which could explain, at least partially, why some individuals have very severe disease with frequent vaso-occlusive complications and early morbidity and death at a very young age, whereas others can go unnoticed until adulthood.",
+      "exclusion_reason": "an OA source predicates WIDE within-entity phenotypic variability ('varies widely ... some individuals have very severe disease ... whereas others can go unnoticed until adulthood'); under the BURDEN_INDEX severity-spectrum rule a mild-to-severe range is scored at the [H] midpoint not an extreme, and the frozen R3 spectrum_S override TRIPS on this sentence, so a clean non-spectrum disease-level severe tier is not defensibly isolable. S kept [O] (no anchored disease-level severity)"
+    },
+    {
+      "entity": "Alpha-1-antitrypsin deficiency",
+      "cui": "C0221757",
+      "axis": "P",
+      "considered_pmcid": "PMC11843710",
+      "considered_pmid": "39980299",
+      "decline_class": "umbrella_spectrum",
+      "considered_statement": "The development of emphysema and decline in lung function varies by AATD genotype and is accelerated by risk factors, such as smoking.",
+      "exclusion_reason": "alpha-1 antitrypsin deficiency progression is predicated as GENOTYPE-DEPENDENT and variable ('varies by AATD genotype'), and the cohort entity spans a genotype spectrum (PiZZ, PiSZ, rare variants) with two distinct dominant sequelae (pulmonary emphysema vs hepatic cirrhosis) whose untreated courses differ; a single disease-level progression magnitude is therefore not defensibly isolable for the umbrella entity, and the available OA statements describe variability rather than an anchored untreated-progression tier. P left [O], not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Fabry disease",
+      "axis": "P",
+      "old": 0.5,
+      "new": 0.5,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Marfan syndrome",
+      "axis": "P",
+      "old": 0.5,
+      "new": 0.5,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    }
+  ],
+  "registry_set_sha12": "e77c0bf0e887",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r9->r10 chain registry-set sha e77c0bf0e887 == e77c0bf0e887"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r9",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2']"
+    },
+    {
+      "name": "litcurate2_join_anchored_cited",
+      "pass": true,
+      "detail": "2 round-2 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate2_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-2 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate2_excluded_recorded",
+      "pass": true,
+      "detail": "3 round-2 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R9 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R9; S/P changed only for the 2 round-2 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "no_new_order_lock",
+      "pass": true,
+      "detail": "lock set unchanged R9=3 -> R10=3 (['Achondrogenesis type II', 'Niemann-Pick disease, type A', 'Tyrosinemia type II']); Fabry/Marfan P [H]->[L] grade-only lifts do NOT lock (severity remains [H])"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate2_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 5 round-2 cited sources open-access + sha-pinned; every round-2 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "r9_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 recorded join/excluded CSVs byte-identical to their R9 digests (0 modified) -- R10 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

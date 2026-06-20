@@ -1,0 +1,89 @@
+{
+  "disease_result_sha256": "2bc5d1f7d8d3c4b9afd4f19185f2df4316100251b69370f6d59a1af34deddf2c",
+  "determinism_2xsha256_identical": true,
+  "battery": {
+    "suites": [
+      {
+        "target": "D1",
+        "disease": "Mayer waves (~0.1 Hz)",
+        "status": "PASS",
+        "value": {
+          "any_in_mayer_band": true,
+          "period_over_delay_mean": 2.5417
+        },
+        "grade": "[V] mechanism reuse (T5); [L] absolute frequency",
+        "note": "baroreflex self-oscillates by the same forced relation as Cheyne-Stokes"
+      },
+      {
+        "target": "D2",
+        "disease": "Asthma (airway-tone switch)",
+        "status": "PASS",
+        "value": {
+          "convex_monotone_shape": true,
+          "spinodal_collapse": true,
+          "reversible_hysteresis": true,
+          "hysteresis_width": 1.43339,
+          "pc20_bias": 0.2502
+        },
+        "grade": "shape [V] (reuses oncology kernel); hysteresis [V?]; absolute PC20 [O]",
+        "note": "reversible bias = bronchodilator; PC20 absolute needs calibration"
+      },
+      {
+        "target": "D3",
+        "disease": "OSA (loop-gain + Pcrit switch)",
+        "status": "PASS",
+        "value": {
+          "stable_below_LG1": true,
+          "unstable_above_LG1": true,
+          "pharyngeal_collapse_hysteretic": true,
+          "pcrit_spinodal": 0.707107
+        },
+        "grade": "loop-gain endotype [V] (T2 reuse); Pcrit collapse [V?]; absolute Pcrit [O]",
+        "note": "LG/LGc is exactly the clinical loop-gain endotype"
+      },
+      {
+        "target": "D4",
+        "disease": "CSA spectrum (altitude/CHF/opioid)",
+        "status": "PASS",
+        "value": {
+          "altitude_onset": 1.2,
+          "chf_in_csr_band": true,
+          "chf_period_slope": 1.9628,
+          "opioid_quench_drive": -0.77
+        },
+        "grade": "directions [V] (T2/T4 reuse); absolute thresholds [O]",
+        "note": "three diseases = three axes of one apnea machinery"
+      },
+      {
+        "target": "D5",
+        "disease": "Fever HR-RR co-scaling",
+        "status": "PASS",
+        "value": {
+          "co_scale_same_direction": true,
+          "hr_bpm_per_C": 0.9358,
+          "rr_bpm_per_C": 0.247,
+          "hr_rr_ratio": 3.7887,
+          "cited_rule_bpm_per_C": 10.0
+        },
+        "grade": "co-scaling DIRECTION [V?] (substrate-distinctive); absolute slope [O]",
+        "note": "shared gamma(T) forces HR & RR to move together; magnitude has exogenous (metabolic/autonomic) contributions -> absolute is open"
+      },
+      {
+        "target": "D6",
+        "disease": "Cough (excitable threshold)",
+        "status": "PASS",
+        "value": {
+          "all_or_none": true,
+          "threshold_amp": 0.3,
+          "resting_peak": -0.499,
+          "fired_peak": 1.095
+        },
+        "grade": "all-or-none excitation [V?]; absolute capsaicin C5 [O]",
+        "note": "FHN in the excitable (sub-Hopf) regime: single stereotyped pulse"
+      }
+    ],
+    "all_targets_pass": true,
+    "n_pass": 6,
+    "n_total": 6
+  }
+}

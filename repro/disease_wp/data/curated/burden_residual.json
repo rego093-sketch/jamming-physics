@@ -1,0 +1,1176 @@
+{
+  "schema": "disease_wp.burden_residual/v1",
+  "phase": "R4",
+  "investigation_only": true,
+  "generated": "2026-06-17",
+  "method": "methodology/TREATMENT_INDEX.md (R_treat = 1 - e; burden_score = raw_burden * R_treat)",
+  "reads_unchanged": "data/curated/burden_scores.json raw_burden (R3 banked; not mutated)",
+  "offset_source": "data/curated/treatments.csv (R4 survey)",
+  "residual_rule": "burden_score = raw_burden * (1 - e); placed set = R3 rankability cut (axes_scored>=3), re-ranked by residual burden_score desc, then raw_burden desc, then axes_scored desc, then entity",
+  "grade_rule": "burden_score grade = floor over (raw_burden grade_present, R_treat grade [H]); null where raw_burden null",
+  "weights_default": {
+    "O": 0.2,
+    "P": 0.2,
+    "S": 0.2,
+    "M": 0.2,
+    "D": 0.2
+  },
+  "cohort_size": 35,
+  "placed": 17,
+  "not_placed": 18,
+  "sensitivity": {
+    "equal_default": {
+      "weights": {
+        "O": 0.2,
+        "P": 0.2,
+        "S": 0.2,
+        "M": 0.2,
+        "D": 0.2
+      },
+      "spearman_vs_default": 1.0
+    },
+    "onset_heavy": {
+      "weights": {
+        "O": 0.4,
+        "P": 0.15,
+        "S": 0.15,
+        "M": 0.15,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9804
+    },
+    "mortality_heavy": {
+      "weights": {
+        "O": 0.15,
+        "P": 0.15,
+        "S": 0.15,
+        "M": 0.4,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9755
+    },
+    "severity_heavy": {
+      "weights": {
+        "O": 0.15,
+        "P": 0.15,
+        "S": 0.4,
+        "M": 0.15,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9853
+    },
+    "drop_disability_core4": {
+      "weights": {
+        "O": 0.25,
+        "P": 0.25,
+        "S": 0.25,
+        "M": 0.25,
+        "D": 0.0
+      },
+      "spearman_vs_default": 0.9933
+    }
+  },
+  "status_distribution": {
+    "none": 2,
+    "symptomatic": 3,
+    "disease-modifying (partial)": 9,
+    "disease-modifying (substantial)": 21
+  },
+  "records": [
+    {
+      "residual_rank": 1,
+      "raw_rank": 1,
+      "rank_shift_vs_raw": 0,
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "tier": "extension",
+      "system_class": "skeletal",
+      "genes": [
+        "COL2A1"
+      ],
+      "omim_codes": [
+        "120140",
+        "200610"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.9166666666666666,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "none",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.0,
+      "treatability": {
+        "value": 1.0,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 1.00; e = 0.00 for evidence_status 'none' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: no disease-directed therapy (perinatal-lethal skeletal dyspl...)"
+      },
+      "burden_score": 0.916666666667,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 2,
+      "raw_rank": 5,
+      "rank_shift_vs_raw": 3,
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [
+        "SMPD1"
+      ],
+      "omim_codes": [
+        "257200",
+        "607608"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.7,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "none",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.0,
+      "treatability": {
+        "value": 1.0,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 1.00; e = 0.00 for evidence_status 'none' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: supportive care; enzyme replacement (olipudase alfa) is appr...)"
+      },
+      "burden_score": 0.7,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 3,
+      "raw_rank": 4,
+      "rank_shift_vs_raw": 1,
+      "entity": "alpha Thalassemia",
+      "cui": "C0002312",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "HBA1",
+        "HBA2"
+      ],
+      "omim_codes": [
+        "141800",
+        "141850",
+        "604131"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.7333333333333333,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "treatability": {
+        "value": 0.9,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.90; e = 0.10 for evidence_status 'symptomatic' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: supportive care with intermittent transfusion for HbH diseas...)"
+      },
+      "burden_score": 0.66,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 4,
+      "raw_rank": 15,
+      "rank_shift_vs_raw": 11,
+      "entity": "Becker muscular dystrophy",
+      "cui": "C0917713",
+      "tier": "extension",
+      "system_class": "musculoskeletal",
+      "genes": [
+        "DMD"
+      ],
+      "omim_codes": [
+        "300376",
+        "300377"
+      ],
+      "rankable": true,
+      "axes_scored": 5,
+      "raw_burden": 0.56,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "treatability": {
+        "value": 0.9,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.90; e = 0.10 for evidence_status 'symptomatic' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: supportive care with cardiac surveillance and management; no...)"
+      },
+      "burden_score": 0.504,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 5,
+      "raw_rank": 10,
+      "rank_shift_vs_raw": 5,
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "tier": "flagship",
+      "system_class": "skeletal",
+      "genes": [
+        "COL1A1",
+        "COL1A2"
+      ],
+      "omim_codes": [
+        "120150",
+        "166200",
+        "166210",
+        "166220",
+        "259420"
+      ],
+      "rankable": true,
+      "axes_scored": 5,
+      "raw_burden": 0.64,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: bisphosphonate therapy with orthopedic and rehabilitative ma...)"
+      },
+      "burden_score": 0.448,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 6,
+      "raw_rank": 12,
+      "rank_shift_vs_raw": 6,
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "tier": "flagship",
+      "system_class": "musculoskeletal",
+      "genes": [
+        "DMD"
+      ],
+      "omim_codes": [
+        "300377",
+        "310200"
+      ],
+      "rankable": true,
+      "axes_scored": 5,
+      "raw_burden": 0.63,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: corticosteroid therapy with exon-skipping antisense oligonuc...)"
+      },
+      "burden_score": 0.441,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 7,
+      "raw_rank": 14,
+      "rank_shift_vs_raw": 7,
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [
+        "GLA"
+      ],
+      "omim_codes": [
+        "300644",
+        "301500"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.5625,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: enzyme replacement therapy (agalsidase) with optional pharma...)"
+      },
+      "burden_score": 0.39375,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 8,
+      "raw_rank": 2,
+      "rank_shift_vs_raw": -6,
+      "entity": "Tyrosinemia type I",
+      "cui": "C0268490",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "FAH"
+      ],
+      "omim_codes": [
+        "276700",
+        "613871"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.8166666666666667,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: nitisinone with a low-tyrosine diet)"
+      },
+      "burden_score": 0.3675,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 9,
+      "raw_rank": 16,
+      "rank_shift_vs_raw": 7,
+      "entity": "Polycystic kidney disease 2",
+      "cui": "C2751306",
+      "tier": "flagship",
+      "system_class": "renal",
+      "genes": [
+        "PKD2"
+      ],
+      "omim_codes": [
+        "173910",
+        "613095"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.5166666666666667,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: vasopressin V2-receptor antagonist (tolvaptan) in rapid prog...)"
+      },
+      "burden_score": 0.361666666667,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 10,
+      "raw_rank": 3,
+      "rank_shift_vs_raw": -7,
+      "entity": "Classic homocystinuria",
+      "cui": "C0751202",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "CBS"
+      ],
+      "omim_codes": [
+        "236200"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.7375,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: pyridoxine (B6) in responsive individuals; methionine-restri...)"
+      },
+      "burden_score": 0.331875,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 11,
+      "raw_rank": 6,
+      "rank_shift_vs_raw": -5,
+      "entity": "Cystic fibrosis",
+      "cui": "C0010674",
+      "tier": "flagship",
+      "system_class": "respiratory/exocrine",
+      "genes": [
+        "CFTR",
+        "FCGR2A",
+        "TGFB1"
+      ],
+      "omim_codes": [
+        "219700",
+        "602421"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.6833333333333332,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: CFTR modulator therapy (corrector + potentiator) with airway...)"
+      },
+      "burden_score": 0.3075,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 12,
+      "raw_rank": 7,
+      "rank_shift_vs_raw": -5,
+      "entity": "Gaucher disease type I",
+      "cui": "C1961835",
+      "tier": "extension",
+      "system_class": "lysosomal",
+      "genes": [
+        "GBA1"
+      ],
+      "omim_codes": [
+        "230800",
+        "606463"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.675,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: enzyme replacement therapy (imiglucerase) with optional subs...)"
+      },
+      "burden_score": 0.30375,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 13,
+      "raw_rank": 8,
+      "rank_shift_vs_raw": -5,
+      "entity": "Hurler syndrome",
+      "cui": "C0086795",
+      "tier": "extension",
+      "system_class": "lysosomal",
+      "genes": [
+        "IDUA"
+      ],
+      "omim_codes": [
+        "252800",
+        "607014"
+      ],
+      "rankable": true,
+      "axes_scored": 5,
+      "raw_burden": 0.66,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: hematopoietic stem cell transplantation (early) with enzyme ...)"
+      },
+      "burden_score": 0.297,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 14,
+      "raw_rank": 9,
+      "rank_shift_vs_raw": -5,
+      "entity": "Glycogen storage disease, type II",
+      "cui": "C0017921",
+      "tier": "flagship",
+      "system_class": "metabolic/muscular",
+      "genes": [
+        "GAA"
+      ],
+      "omim_codes": [
+        "232300"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.65,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: enzyme replacement therapy (alglucosidase alfa / avalglucosi...)"
+      },
+      "burden_score": 0.2925,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 15,
+      "raw_rank": 11,
+      "rank_shift_vs_raw": -4,
+      "entity": "Gaucher disease",
+      "cui": "C0017205",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [],
+      "omim_codes": [
+        "230800",
+        "230900",
+        "231000"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.6375,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: enzyme replacement therapy (imiglucerase) with optional subs...)"
+      },
+      "burden_score": 0.286875,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 16,
+      "raw_rank": 13,
+      "rank_shift_vs_raw": -3,
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "TAT"
+      ],
+      "omim_codes": [
+        "276600",
+        "613018"
+      ],
+      "rankable": true,
+      "axes_scored": 3,
+      "raw_burden": 0.6166666666666667,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: dietary tyrosine (and phenylalanine) restriction)"
+      },
+      "burden_score": 0.2775,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": 17,
+      "raw_rank": 17,
+      "rank_shift_vs_raw": 0,
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "tier": "flagship",
+      "system_class": "connective_tissue",
+      "genes": [
+        "FBN1"
+      ],
+      "omim_codes": [
+        "134797",
+        "154700"
+      ],
+      "rankable": true,
+      "axes_scored": 4,
+      "raw_burden": 0.5125,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: comprehensive cardiovascular management (beta-blockade or AR...)"
+      },
+      "burden_score": 0.230625,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia",
+      "cui": "C2936858",
+      "tier": "extension",
+      "system_class": "endocrine",
+      "genes": [
+        "CYP21A2"
+      ],
+      "omim_codes": [
+        "201910",
+        "613815"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.42499999999999993,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: glucocorticoid replacement with mineralocorticoid in salt-wa...)"
+      },
+      "burden_score": 0.19125,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Achondroplasia",
+      "cui": "C0001080",
+      "tier": "extension",
+      "system_class": "skeletal",
+      "genes": [
+        "FGFR3"
+      ],
+      "omim_codes": [
+        "100800",
+        "134934"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.7000000000000001,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: CNP analog (vosoritide) for growth, with orthopedic manageme...)"
+      },
+      "burden_score": 0.49,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Acute intermittent porphyria",
+      "cui": "C0162565",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "HMBS"
+      ],
+      "omim_codes": [
+        "176000",
+        "609806"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.42499999999999993,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: hemin for acute attacks and givosiran (siRNA) for prophylaxi...)"
+      },
+      "burden_score": 0.19125,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Alpha-1-antitrypsin deficiency",
+      "cui": "C0221757",
+      "tier": "flagship",
+      "system_class": "hepatic/respiratory",
+      "genes": [
+        "SERPINA1"
+      ],
+      "omim_codes": [
+        "613490"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.37500000000000006,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: alpha-1-antitrypsin augmentation therapy with smoking cessat...)"
+      },
+      "burden_score": 0.2625,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "cui": "CN322236",
+      "tier": "flagship",
+      "system_class": "hematologic",
+      "genes": [
+        "HBB",
+        "HBB-LCR"
+      ],
+      "omim_codes": [
+        "613985"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.6,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: regular red-blood-cell transfusion with iron chelation)"
+      },
+      "burden_score": 0.27,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Hb SS disease",
+      "cui": "C0002895",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "HBB"
+      ],
+      "omim_codes": [
+        "141900",
+        "603903"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.6999999999999998,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: hydroxyurea with transfusion as needed; HSCT or gene therapy...)"
+      },
+      "burden_score": 0.49,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Hemochromatosis type 1",
+      "cui": "C3469186",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "BMP2",
+        "HFE"
+      ],
+      "omim_codes": [
+        "235200",
+        "613609"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.625,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: therapeutic phlebotomy (iron chelation where phlebotomy is c...)"
+      },
+      "burden_score": 0.28125,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Hereditary factor IX deficiency disease",
+      "cui": "C0008533",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "F9"
+      ],
+      "omim_codes": [
+        "306900"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.6,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: factor IX replacement or gene therapy (etranacogene dezaparv...)"
+      },
+      "burden_score": 0.27,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Maple syrup urine disease",
+      "cui": "C0024776",
+      "tier": "flagship",
+      "system_class": "metabolic",
+      "genes": [
+        "BCKDHA",
+        "BCKDHB"
+      ],
+      "omim_codes": [
+        "248600"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.7500000000000001,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: branched-chain-amino-acid-restricted diet with thiamine in r...)"
+      },
+      "burden_score": 0.3375,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Phenylketonuria",
+      "cui": "C0031485",
+      "tier": "flagship",
+      "system_class": "metabolic",
+      "genes": [
+        "PAH"
+      ],
+      "omim_codes": [
+        "261600"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.875,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: lifelong low-phenylalanine diet (with sapropterin/BH4 or peg...)"
+      },
+      "burden_score": 0.39375,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Wilson disease",
+      "cui": "C0019202",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "ATP7B"
+      ],
+      "omim_codes": [
+        "277900",
+        "606882"
+      ],
+      "rankable": false,
+      "axes_scored": 2,
+      "raw_burden": 0.7500000000000001,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: copper chelation (penicillamine or trientine) with zinc)"
+      },
+      "burden_score": 0.3375,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Alkaptonuria",
+      "cui": "C0002066",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "HGD"
+      ],
+      "omim_codes": [
+        "203500",
+        "607474"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.85,
+      "raw_burden_grade_present": "[L]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: nitisinone (homogentisic-acid lowering) with supportive join...)"
+      },
+      "burden_score": 0.595,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Cystinosis",
+      "cui": "C4316899",
+      "tier": "flagship",
+      "system_class": "renal/lysosomal",
+      "genes": [
+        "CTNS"
+      ],
+      "omim_codes": [
+        "219800"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.85,
+      "raw_burden_grade_present": "[L]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: cystine-depleting therapy (cysteamine) with kidney transplan...)"
+      },
+      "burden_score": 0.3825,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Cystinuria",
+      "cui": "C0010691",
+      "tier": "extension",
+      "system_class": "renal",
+      "genes": [
+        "SLC3A1",
+        "SLC7A9"
+      ],
+      "omim_codes": [
+        "104614",
+        "220100",
+        "604144"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.6999999999999998,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: high fluid intake with urinary alkalinization and thiol drug...)"
+      },
+      "burden_score": 0.315,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Ehlers-Danlos syndrome, classic type, 1",
+      "cui": "C0268335",
+      "tier": "extension",
+      "system_class": "connective_tissue",
+      "genes": [
+        "COL5A1"
+      ],
+      "omim_codes": [
+        "120215",
+        "130000"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.25,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "treatability": {
+        "value": 0.9,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.90; e = 0.10 for evidence_status 'symptomatic' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: supportive: skin and joint protection, wound care; no diseas...)"
+      },
+      "burden_score": 0.225,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Ehlers-Danlos syndrome, type 4",
+      "cui": "C0268338",
+      "tier": "extension",
+      "system_class": "connective_tissue",
+      "genes": [
+        "COL3A1"
+      ],
+      "omim_codes": [
+        "120180",
+        "130050"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 1.0,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "treatability": {
+        "value": 0.7,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.70; e = 0.30 for evidence_status 'disease-modifying (partial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: celiprolol for arterial-event reduction with vascular survei...)"
+      },
+      "burden_score": 0.7,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "Hereditary factor VIII deficiency disease",
+      "cui": "C0019069",
+      "tier": "flagship",
+      "system_class": "hematologic",
+      "genes": [
+        "F8"
+      ],
+      "omim_codes": [
+        "300841",
+        "306700"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.5,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: factor VIII replacement, FVIIIa-mimetic prophylaxis (emicizu...)"
+      },
+      "burden_score": 0.225,
+      "burden_score_grade": "[H]"
+    },
+    {
+      "residual_rank": null,
+      "raw_rank": null,
+      "rank_shift_vs_raw": null,
+      "entity": "von Willebrand disease type 1",
+      "cui": "C1264039",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "VWF"
+      ],
+      "omim_codes": [
+        "193400",
+        "613160"
+      ],
+      "rankable": false,
+      "axes_scored": 1,
+      "raw_burden": 0.5,
+      "raw_burden_grade_present": "[H]",
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "treatability": {
+        "value": 0.45,
+        "grade": "[H]",
+        "basis": "R_treat = 1 - e = 0.45; e = 0.55 for evidence_status 'disease-modifying (substantial)' (TREATMENT_INDEX.md offset map)",
+        "source": "data/curated/treatments.csv (modality: desmopressin with antifibrinolytics, and von Willebrand fact...)"
+      },
+      "burden_score": 0.225,
+      "burden_score_grade": "[H]"
+    }
+  ],
+  "grade_vocabulary": {
+    "[L]": "registry-stated and cited (carried from R3 burden axes)",
+    "[H]": "inference from cited text / established science (burden axes and/or treatability)",
+    "[O]": "open/unavailable; obstacle named; not guessed"
+  },
+  "note": "Residual (post-treatment) order. raw_burden is the R3 pre-treatment burden, read unchanged. The treatability offset e is the R4 [H]-grade survey value; the residual burden_score therefore inherits an [H] grade (TREATMENT_INDEX.md two-tier evidence, accession-dated [L] verification deferred). Like the R3 order, this is a provisional [H]-grade prioritisation device, not a registry-locked ranking."
+}

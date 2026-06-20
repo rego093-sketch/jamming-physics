@@ -1,0 +1,983 @@
+{
+  "schema": "disease_wp.treatments/v1",
+  "phase": "R4",
+  "investigation_only": true,
+  "generated": "2026-06-17",
+  "method": "methodology/TREATMENT_INDEX.md + methodology/treatment_rules.csv + methodology/TREATMENT_LEXICON.md",
+  "efficacy_offset_map": {
+    "curative": 0.85,
+    "disease-modifying (substantial)": 0.55,
+    "disease-modifying (partial)": 0.3,
+    "symptomatic": 0.1,
+    "none": 0.0
+  },
+  "offset_rule": "R_treat = 1 - e; e assigned by the declared natural-history rule per evidence_status; no class fitted to an ordering",
+  "grade_rule": "uniform [H]: definition-tier basis = matched in-package phrase (runtime-corroborated); standard_of_care-tier basis = named therapy + source class, accession-dated [L] verification deferred. evidence_status=none is a positive [H] finding (no disease-directed therapy), distinct from [O].",
+  "conservatism": "no disease assigned curative at the disease level; strongest class used is disease-modifying (substantial)",
+  "medical_safety": "constitution C-D4: modality + mechanism describe how the therapy works only; no dosing, no diagnosis, no individualized advice",
+  "cohort_size": 35,
+  "status_distribution": {
+    "disease-modifying (substantial)": 21,
+    "none": 2,
+    "disease-modifying (partial)": 9,
+    "symptomatic": 3
+  },
+  "tier_distribution": {
+    "standard_of_care": 23,
+    "definition": 12
+  },
+  "definition_tier_corroborated": 12,
+  "definition_tier_total": 12,
+  "records": [
+    {
+      "cui": "C2936858",
+      "entity": "21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia",
+      "gene": "CYP21A2",
+      "modality": {
+        "value": "glucocorticoid replacement with mineralocorticoid in salt-wasting forms",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "corrects cortisol deficiency and suppresses ACTH-driven adrenal androgen excess; mineralocorticoid corrects salt-wasting",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0220685",
+      "entity": "Achondrogenesis type II",
+      "gene": "COL2A1",
+      "modality": {
+        "value": "no disease-directed therapy (perinatal-lethal skeletal dysplasia); perinatal palliative care",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews; OMIM clinical synopsis; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "no disease-directed therapy exists",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews; OMIM clinical synopsis; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "none",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.0,
+      "R_treat": 1.0,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews; OMIM clinical synopsis",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0001080",
+      "entity": "Achondroplasia",
+      "gene": "FGFR3",
+      "modality": {
+        "value": "CNP analog (vosoritide) for growth, with orthopedic management and foramen-magnum decompression where indicated",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "vosoritide antagonizes FGFR3 downstream MAPK signaling to promote endochondral growth",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0162565",
+      "entity": "Acute intermittent porphyria",
+      "gene": "HMBS",
+      "modality": {
+        "value": "hemin for acute attacks and givosiran (siRNA) for prophylaxis, with trigger avoidance and carbohydrate loading",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "hemin and givosiran downregulate hepatic ALAS1, lowering neurotoxic ALA and porphobilinogen",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0002066",
+      "entity": "Alkaptonuria",
+      "gene": "HGD",
+      "modality": {
+        "value": "nitisinone (homogentisic-acid lowering) with supportive joint care",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "nitisinone inhibits 4-hydroxyphenylpyruvate dioxygenase, reducing homogentisic-acid production",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0221757",
+      "entity": "Alpha-1-antitrypsin deficiency",
+      "gene": "SERPINA1",
+      "modality": {
+        "value": "alpha-1-antitrypsin augmentation therapy with smoking cessation; liver transplant for end-stage liver disease",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "intravenous pooled AAT raises serum and lung antiprotease levels",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0917713",
+      "entity": "Becker muscular dystrophy",
+      "gene": "DMD",
+      "modality": {
+        "value": "supportive care with cardiac surveillance and management; no Becker-specific disease-modifying therapy established",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "supportive and cardiac management",
+        "grade": "[H]",
+        "established": "no",
+        "source": "established standard of care; source class: GeneReviews Management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "R_treat": 0.9,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "CN322236",
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "gene": "HBB",
+      "modality": {
+        "value": "regular red-blood-cell transfusion with iron chelation",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"chelation\" [modality: chelation therapy]"
+      },
+      "mechanism": {
+        "value": "transfusion supplies functional hemoglobin; chelation removes transfusional iron overload",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"chelation\" [modality: chelation therapy]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "chelation"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0751202",
+      "entity": "Classic homocystinuria",
+      "gene": "CBS",
+      "modality": {
+        "value": "pyridoxine (B6) in responsive individuals; methionine-restricted diet with betaine in non-responsive individuals",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "B6 augments residual CBS activity; betaine remethylates homocysteine; diet limits methionine load",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0010674",
+      "entity": "Cystic fibrosis",
+      "gene": "CFTR",
+      "modality": {
+        "value": "CFTR modulator therapy (corrector + potentiator) with airway clearance and pancreatic enzyme replacement",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "CFTR modulators restore folding and channel gating of mutant CFTR protein",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C4316899",
+      "entity": "Cystinosis",
+      "gene": "CTNS",
+      "modality": {
+        "value": "cystine-depleting therapy (cysteamine) with kidney transplantation for end-stage disease",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"transplantation\" [modality: transplantation]"
+      },
+      "mechanism": {
+        "value": "cysteamine converts intralysosomal cystine to a transportable cysteine-cysteamine mixed disulfide",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"transplantation\" [modality: transplantation]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "transplantation"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0010691",
+      "entity": "Cystinuria",
+      "gene": "SLC3A1",
+      "modality": {
+        "value": "high fluid intake with urinary alkalinization and thiol drugs (tiopronin or penicillamine)",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "alkalinization raises cystine solubility; thiol drugs form soluble cysteine-drug disulfides",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0013264",
+      "entity": "Duchenne muscular dystrophy",
+      "gene": "DMD",
+      "modality": {
+        "value": "corticosteroid therapy with exon-skipping antisense oligonucleotide for amenable variants and cardiac management",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "corticosteroids slow muscle degeneration; exon-skipping restores the dystrophin reading frame",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0268335",
+      "entity": "Ehlers-Danlos syndrome, classic type, 1",
+      "gene": "COL5A1",
+      "modality": {
+        "value": "supportive: skin and joint protection, wound care; no disease-modifying therapy",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "supportive only",
+        "grade": "[H]",
+        "established": "no",
+        "source": "established standard of care; source class: GeneReviews Management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "R_treat": 0.9,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0268338",
+      "entity": "Ehlers-Danlos syndrome, type 4",
+      "gene": "COL3A1",
+      "modality": {
+        "value": "celiprolol for arterial-event reduction with vascular surveillance; no definitive disease-modifying therapy",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "celiprolol reduces arterial-wall stress (limited-evidence)",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0002986",
+      "entity": "Fabry disease",
+      "gene": "GLA",
+      "modality": {
+        "value": "enzyme replacement therapy (agalsidase) with optional pharmacologic chaperone (migalastat) for amenable variants",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "ERT replaces alpha-galactosidase A; chaperone stabilizes amenable mutant enzyme",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0017205",
+      "entity": "Gaucher disease",
+      "gene": "GBA1",
+      "modality": {
+        "value": "enzyme replacement therapy (imiglucerase) with optional substrate reduction (eliglustat/miglustat) — non-neuronopathic type 1",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "ERT replaces deficient glucocerebrosidase; substrate reduction lowers glucosylceramide synthesis",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C1961835",
+      "entity": "Gaucher disease type I",
+      "gene": "GBA1",
+      "modality": {
+        "value": "enzyme replacement therapy (imiglucerase) with optional substrate reduction (eliglustat/miglustat)",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "ERT replaces deficient glucocerebrosidase; substrate reduction lowers glucosylceramide synthesis",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0017921",
+      "entity": "Glycogen storage disease, type II",
+      "gene": "GAA",
+      "modality": {
+        "value": "enzyme replacement therapy (alglucosidase alfa / avalglucosidase alfa)",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"enzyme replacement\" [modality: enzyme replacement therapy]"
+      },
+      "mechanism": {
+        "value": "ERT replaces acid alpha-glucosidase, clearing lysosomal glycogen",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"enzyme replacement\" [modality: enzyme replacement therapy]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "enzyme replacement"
+      },
+      "source_class": "cited MedGen clinical_definition; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0002895",
+      "entity": "Hb SS disease",
+      "gene": "HBB",
+      "modality": {
+        "value": "hydroxyurea with transfusion as needed; HSCT or gene therapy with curative intent in selected individuals",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"transfusion\" [modality: transfusion therapy]"
+      },
+      "mechanism": {
+        "value": "hydroxyurea induces fetal hemoglobin, reducing HbS polymerization",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"transfusion\" [modality: transfusion therapy]"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "transfusion"
+      },
+      "source_class": "cited MedGen clinical_definition; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C3469186",
+      "entity": "Hemochromatosis type 1",
+      "gene": "HFE",
+      "modality": {
+        "value": "therapeutic phlebotomy (iron chelation where phlebotomy is contraindicated)",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "phlebotomy depletes excess body iron stores",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0008533",
+      "entity": "Hereditary factor IX deficiency disease",
+      "gene": "F9",
+      "modality": {
+        "value": "factor IX replacement or gene therapy (etranacogene dezaparvovec)",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"prophylactic treatment\" [efficacy: prophylactic / perioperative treatment]"
+      },
+      "mechanism": {
+        "value": "restores factor IX coagulant activity; AAV gene therapy provides endogenous factor IX",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"prophylactic treatment\" [efficacy: prophylactic / perioperative treatment]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "efficacy",
+        "matched_phrase": "prophylactic treatment"
+      },
+      "source_class": "cited MedGen clinical_definition; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0019069",
+      "entity": "Hereditary factor VIII deficiency disease",
+      "gene": "F8",
+      "modality": {
+        "value": "factor VIII replacement, FVIIIa-mimetic prophylaxis (emicizumab), or gene therapy",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"prophylactic treatment\" [efficacy: prophylactic / perioperative treatment]"
+      },
+      "mechanism": {
+        "value": "restores or mimics factor VIII coagulant activity",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"prophylactic treatment\" [efficacy: prophylactic / perioperative treatment]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "efficacy",
+        "matched_phrase": "prophylactic treatment"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0086795",
+      "entity": "Hurler syndrome",
+      "gene": "IDUA",
+      "modality": {
+        "value": "hematopoietic stem cell transplantation (early) with enzyme replacement (laronidase)",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "HSCT supplies enzyme-secreting donor cells (metabolic cross-correction); ERT replaces alpha-L-iduronidase somatically",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0024776",
+      "entity": "Maple syrup urine disease",
+      "gene": "BCKDHA",
+      "modality": {
+        "value": "branched-chain-amino-acid-restricted diet with thiamine in responsive individuals and a sick-day protocol",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"thiamine therapy\" [modality: dietary therapy]"
+      },
+      "mechanism": {
+        "value": "dietary branched-chain amino-acid restriction prevents neurotoxic accumulation",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"thiamine therapy\" [modality: dietary therapy]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "thiamine therapy"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0024796",
+      "entity": "Marfan syndrome",
+      "gene": "FBN1",
+      "modality": {
+        "value": "comprehensive cardiovascular management (beta-blockade or ARB with prophylactic aortic-root surgery)",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"With proper management\" [efficacy: managed-course / normalized outcome]"
+      },
+      "mechanism": {
+        "value": "reduces aortic-wall stress; surgical root replacement removes dissection risk",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"With proper management\" [efficacy: managed-course / normalized outcome]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "efficacy",
+        "matched_phrase": "With proper management"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0268242",
+      "entity": "Niemann-Pick disease, type A",
+      "gene": "SMPD1",
+      "modality": {
+        "value": "supportive care; enzyme replacement (olipudase alfa) is approved for non-CNS ASMD only and does not alter the lethal neurologic course of type A",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"Enzyme replacement\" [modality: enzyme replacement therapy]"
+      },
+      "mechanism": {
+        "value": "ERT addresses visceral sphingomyelin storage but the neuronopathic course is not amenable (cited)",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"Enzyme replacement\" [modality: enzyme replacement therapy]"
+      },
+      "evidence_status": "none",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.0,
+      "R_treat": 1.0,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "Enzyme replacement"
+      },
+      "source_class": "cited MedGen clinical_definition; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0029434",
+      "entity": "Osteogenesis imperfecta",
+      "gene": "COL1A1",
+      "modality": {
+        "value": "bisphosphonate therapy with orthopedic and rehabilitative management",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "bisphosphonate anti-resorptive action increases bone mineral density",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0031485",
+      "entity": "Phenylketonuria",
+      "gene": "PAH",
+      "modality": {
+        "value": "lifelong low-phenylalanine diet (with sapropterin/BH4 or pegvaliase in selected individuals)",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"low Phe diet\" [modality: dietary therapy]"
+      },
+      "mechanism": {
+        "value": "dietary phenylalanine restriction prevents neurotoxic phenylalanine accumulation",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"low Phe diet\" [modality: dietary therapy]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "low Phe diet"
+      },
+      "source_class": "cited MedGen clinical_definition; GeneReviews Management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C2751306",
+      "entity": "Polycystic kidney disease 2",
+      "gene": "PKD2",
+      "modality": {
+        "value": "vasopressin V2-receptor antagonist (tolvaptan) in rapid progressors, with supportive renal care and renal replacement",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "tolvaptan lowers cyst-driving intracellular cAMP, slowing cyst growth",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (partial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.3,
+      "R_treat": 0.7,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0268490",
+      "entity": "Tyrosinemia type I",
+      "gene": "FAH",
+      "modality": {
+        "value": "nitisinone with a low-tyrosine diet",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"nitisinone\" [modality: small-molecule / enzyme-pathway drug]"
+      },
+      "mechanism": {
+        "value": "nitisinone inhibits 4-hydroxyphenylpyruvate dioxygenase, blocking formation of toxic succinylacetone",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"nitisinone\" [modality: small-molecule / enzyme-pathway drug]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "modality",
+        "matched_phrase": "nitisinone"
+      },
+      "source_class": "cited MedGen clinical_definition; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0268487",
+      "entity": "Tyrosinemia type II",
+      "gene": "TAT",
+      "modality": {
+        "value": "dietary tyrosine (and phenylalanine) restriction",
+        "grade": "[H]",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"treated from early infancy\" [efficacy: treatment-from-onset response]"
+      },
+      "mechanism": {
+        "value": "dietary tyrosine restriction prevents tyrosine crystal deposition in cornea and skin",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "cited MedGen clinical_definition (in-package [L] source) — matched treatment-efficacy phrase: \"treated from early infancy\" [efficacy: treatment-from-onset response]"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "definition",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": true,
+        "category": "efficacy",
+        "matched_phrase": "treated from early infancy"
+      },
+      "source_class": "cited MedGen clinical_definition; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0019202",
+      "entity": "Wilson disease",
+      "gene": "ATP7B",
+      "modality": {
+        "value": "copper chelation (penicillamine or trientine) with zinc",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "chelators promote urinary copper excretion; zinc blocks intestinal copper absorption",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C0002312",
+      "entity": "alpha Thalassemia",
+      "gene": "HBA1",
+      "modality": {
+        "value": "supportive care with intermittent transfusion for HbH disease; transfusion-dependent management for severe forms",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "transfusion supplies functional hemoglobin",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; OMIM clinical management; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "symptomatic",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.1,
+      "R_treat": 0.9,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; OMIM clinical management",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    },
+    {
+      "cui": "C1264039",
+      "entity": "von Willebrand disease type 1",
+      "gene": "VWF",
+      "modality": {
+        "value": "desmopressin with antifibrinolytics, and von Willebrand factor concentrate for procedures",
+        "grade": "[H]",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "mechanism": {
+        "value": "desmopressin releases stored endothelial von Willebrand factor and factor VIII",
+        "grade": "[H]",
+        "established": "yes",
+        "source": "established standard of care; source class: GeneReviews Management; FDA label; accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+      },
+      "evidence_status": "disease-modifying (substantial)",
+      "evidence_tier": "standard_of_care",
+      "efficacy_offset_e": 0.55,
+      "R_treat": 0.45,
+      "definition_corroboration": {
+        "corroborated": false,
+        "category": "",
+        "matched_phrase": ""
+      },
+      "source_class": "GeneReviews Management; FDA label",
+      "obstacle_for_L": "accession-dated [L] verification deferred (FDA label / GeneReviews Management / OMIM clinical management / Orphanet)"
+    }
+  ],
+  "grade_vocabulary": {
+    "[H]": "inference from a cited in-package source / established clinical science; basis recorded; not a registry figure",
+    "[O]": "open/undetermined therapy; obstacle named; not guessed (none required for this cohort)",
+    "[L]": "registry/label-stated and accession-cited — NOT used in R4; this is the deferred validation pass"
+  }
+}

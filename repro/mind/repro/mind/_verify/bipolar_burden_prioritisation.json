@@ -1,0 +1,293 @@
+{
+ "title": "Burden-weighted bipolar TARGET prioritisation (cited tiers + declared weights)",
+ "inherited_from": "analgesic_threshold_logic v2.0 M10 (DOI 10.5281/zenodo.20733420)",
+ "weights_declared": {
+  "B": 0.4,
+  "U": 0.35,
+  "G": 0.25
+ },
+ "scale": "B/U/G cited on 1..5; score = 0.40*B + 0.35*U + 0.25*G (range 1..5)",
+ "principle": "ranks READS/TARGETS, not drugs. B/U/G are CITED tiers; the weights are a declared editorial choice -> the ranking is [F] from tiers+weights, NOT a [V] engine output. gamma-|h_sp| is carried ALONGSIDE as structural context and is NEVER folded into the score (firewall: a promoter-stiffness read is not a clinical magnitude). efficacy=0; no molecule, dose, or patient is ranked.",
+ "top_actionable_genes": [
+  "CACNA1C",
+  "GSK3B",
+  "CACNB2",
+  "ARNTL",
+  "CLOCK",
+  "CACNA1D"
+ ],
+ "ranking": [
+  {
+   "gene": "ANK3",
+   "lever": "L1-adjacent",
+   "channel_or_protein": "ankyrin-G (axon-initial-segment Na_V scaffold)",
+   "B_burden": 5,
+   "U_unmet": 5,
+   "G_genetic_druggability": 5,
+   "priority_score": 5.0,
+   "actionable": false,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.40984,
+    "spinodal_h_sp": 0.644322,
+    "h_sp_rank_stiffest_first": 11
+   },
+   "cite": "#2 BD locus (Ferreira 2008; Schulze 2009); AIS excitability set-point, not an acute drug target",
+   "rank": 1
+  },
+  {
+   "gene": "CACNA1C",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V1.2 (L-type Ca2+)",
+   "B_burden": 5,
+   "U_unmet": 5,
+   "G_genetic_druggability": 5,
+   "priority_score": 5.0,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.261496,
+    "spinodal_h_sp": 0.545352,
+    "h_sp_rank_stiffest_first": 14
+   },
+   "cite": "lead BD locus (Ferreira 2008; Sklar 2011; Cross-Disorder 2013); L-type Ca-blocker is a tractable DIRECTION",
+   "rank": 2
+  },
+  {
+   "gene": "GSK3B",
+   "lever": "L3",
+   "channel_or_protein": "GSK-3beta (kinase; lithium's molecular target)",
+   "B_burden": 5,
+   "U_unmet": 4,
+   "G_genetic_druggability": 4,
+   "priority_score": 4.4,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.536348,
+    "spinodal_h_sp": 0.732964,
+    "h_sp_rank_stiffest_first": 3
+   },
+   "cite": "lithium's molecular target (Klein&Melton 1996; Stambolic 1996); mechanism-DIRECTION node, [O] link",
+   "rank": 3
+  },
+  {
+   "gene": "CACNB2",
+   "lever": "L1-adjacent",
+   "channel_or_protein": "Ca_V beta2 (auxiliary Ca2+ subunit)",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "G_genetic_druggability": 5,
+   "priority_score": 4.25,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.451184,
+    "spinodal_h_sp": 0.672871,
+    "h_sp_rank_stiffest_first": 8
+   },
+   "cite": "cross-disorder Ca-channel hit (Cross-Disorder 2013); auxiliary subunit of the CACNA1C target",
+   "rank": 4
+  },
+  {
+   "gene": "ARNTL",
+   "lever": "L3",
+   "channel_or_protein": "BMAL1 (core circadian clock TF)",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "G_genetic_druggability": 3,
+   "priority_score": 4.1,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.33348,
+    "spinodal_h_sp": 0.59269,
+    "h_sp_rank_stiffest_first": 12
+   },
+   "cite": "core circadian clock; circadian disruption is a cited episode trigger; chronotherapy DIRECTION",
+   "rank": 5
+  },
+  {
+   "gene": "CLOCK",
+   "lever": "L3",
+   "channel_or_protein": "CLOCK (core circadian clock TF)",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "G_genetic_druggability": 3,
+   "priority_score": 4.1,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.435948,
+    "spinodal_h_sp": 0.662302,
+    "h_sp_rank_stiffest_first": 10
+   },
+   "cite": "Clock-Delta19 mania-like, lithium-rescued (Roybal 2007); circadian DIRECTION",
+   "rank": 6
+  },
+  {
+   "gene": "CACNA1D",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V1.3 (L-type Ca2+)",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "G_genetic_druggability": 4,
+   "priority_score": 4.0,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.5028,
+    "spinodal_h_sp": 0.709088,
+    "h_sp_rank_stiffest_first": 5
+   },
+   "cite": "L-type Ca family in the cross-disorder Ca signal (Cross-Disorder 2013)",
+   "rank": 7
+  },
+  {
+   "gene": "SCN2A",
+   "lever": "L1",
+   "channel_or_protein": "Na_V1.2 (voltage-gated Na+)",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "G_genetic_druggability": 4,
+   "priority_score": 4.0,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.198152,
+    "spinodal_h_sp": 0.504796,
+    "h_sp_rank_stiffest_first": 16
+   },
+   "cite": "Na-blocker-stabiliser effector current (lamotrigine/valproate/carbamazepine class); neuropsychiatric Na gene",
+   "rank": 8
+  },
+  {
+   "gene": "GRIN2A",
+   "lever": "L1",
+   "channel_or_protein": "NMDA-R GluN2A (glutamate, Ca2+-permeable)",
+   "B_burden": 3,
+   "U_unmet": 5,
+   "G_genetic_druggability": 4,
+   "priority_score": 3.95,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.469712,
+    "spinodal_h_sp": 0.685798,
+    "h_sp_rank_stiffest_first": 7
+   },
+   "cite": "NMDA subunit; glutamatergic mood axis (ketamine is an NMDA antagonist -- DIRECTION, not efficacy)",
+   "rank": 9
+  },
+  {
+   "gene": "NR3C1",
+   "lever": "L3",
+   "channel_or_protein": "glucocorticoid receptor (HPA effector)",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.75,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.261348,
+    "spinodal_h_sp": 0.545256,
+    "h_sp_rank_stiffest_first": 15
+   },
+   "cite": "glucocorticoid receptor / HPA dysregulation; the M18 depressive-pole cortisol drive",
+   "rank": 10
+  },
+  {
+   "gene": "CACNA1I",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V3.3 (T-type Ca2+)",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.444852,
+    "spinodal_h_sp": 0.668472,
+    "h_sp_rank_stiffest_first": 9
+   },
+   "cite": "T-type Ca_V3.3 in the SCZ/BD overlap (PGC-SCZ 2014)",
+   "rank": 11
+  },
+  {
+   "gene": "CRHR1",
+   "lever": "L3",
+   "channel_or_protein": "CRF receptor 1 (HPA initiator)",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.561712,
+    "spinodal_h_sp": 0.75119,
+    "h_sp_rank_stiffest_first": 2
+   },
+   "cite": "CRF-receptor-1 atop the HPA stress cascade; stress-axis DIRECTION",
+   "rank": 12
+  },
+  {
+   "gene": "PER2",
+   "lever": "L3",
+   "channel_or_protein": "PER2 (circadian period protein)",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "G_genetic_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.323284,
+    "spinodal_h_sp": 0.585906,
+    "h_sp_rank_stiffest_first": 13
+   },
+   "cite": "circadian period; lithium lengthens period (a direction-level link)",
+   "rank": 13
+  },
+  {
+   "gene": "KCNQ2",
+   "lever": "L2",
+   "channel_or_protein": "K_V7.2 (M-current)",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.75,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.576756,
+    "spinodal_h_sp": 0.76207,
+    "h_sp_rank_stiffest_first": 1
+   },
+   "cite": "M-current excitability brake; K_V7-opener DIRECTION (ezogabine template, molecule caveats)",
+   "rank": 14
+  },
+  {
+   "gene": "KCNQ3",
+   "lever": "L2",
+   "channel_or_protein": "K_V7.3 (M-current)",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.75,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.498016,
+    "spinodal_h_sp": 0.705704,
+    "h_sp_rank_stiffest_first": 6
+   },
+   "cite": "M-current partner of K_V7.2",
+   "rank": 15
+  },
+  {
+   "gene": "KCNB1",
+   "lever": "L2",
+   "channel_or_protein": "K_V2.1 (delayed-rectifier K+)",
+   "B_burden": 2,
+   "U_unmet": 3,
+   "G_genetic_druggability": 2,
+   "priority_score": 2.35,
+   "actionable": true,
+   "structural_context_NOT_in_score": {
+    "gamma": 1.527424,
+    "spinodal_h_sp": 0.726587,
+    "h_sp_rank_stiffest_first": 4
+   },
+   "cite": "delayed-rectifier excitability brake; broad direction, weaker BD-specific genetic anchor",
+   "rank": 16
+  }
+ ]
+}

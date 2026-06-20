@@ -1,0 +1,185 @@
+{
+ "disease": "Familial hypercholesterolaemia",
+ "omim": "143890",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Familial hypercholesterolaemia",
+  "omim": "143890",
+  "summary": "A monogenic defect in LDL-receptor-mediated clearance of plasma LDL. The commonest cause is LDLR loss-of-function (the receptor that internalises LDL); a gain-of-function in PCSK9 (which targets LDLR for degradation) is a second monogenic cause. Either way the LDL-clearance axis is driven DOWN, so plasma LDL accumulates.",
+  "emergent_axis": "LDL-receptor-mediated clearance of plasma LDL",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 2,
+  "n_emerged": 2,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "PCSK9",
+    "gamma": 1.4691,
+    "spinodal_h_sp": 0.68537,
+    "barrier": 0.53956,
+    "dwell_relative_size": 1.61877,
+    "role": "brake",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "brake over-active -> target over-suppressed",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 55039547,
+     "gene_end": 55064851,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "proprotein convertase subtilisin/kexin type 9"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "PCSK9 binds LDLR and routes it for lysosomal degradation; a GOF allele over-brakes clearance by lowering LDLR density. Stiffest promoter switch of the pair -> primary.",
+    "src": "Abifadel 2003 Nat Genet 34:154 (PCSK9 GOF -> FH)"
+   },
+   {
+    "gene": "LDLR",
+    "gamma": 1.3851,
+    "spinodal_h_sp": 0.62744,
+    "barrier": 0.47963,
+    "dwell_relative_size": 1.48193,
+    "role": "channel",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "gate stuck in OFF basin -> current lost",
+    "ncbi": {
+     "acc": "NC_000019.10",
+     "gene_start": 11089462,
+     "gene_end": 11133819,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "low density lipoprotein receptor"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "the hepatic LDL-uptake receptor (the gate through which LDL particles are internalised); LOF leaves the uptake gate stuck OFF -> LDL clearance lost. Commonest cause of FH.",
+    "src": "Brown & Goldstein 1986 Science 232:34 (Nobel); Goldstein & Brown 2009"
+   }
+  ],
+  "primary_switch": {
+   "gene": "PCSK9",
+   "role": "brake",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "brake over-active -> target over-suppressed"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "4b44f921bbd1"
+ },
+ "treatment_A_switch": {
+  "disease": "Familial hypercholesterolaemia",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "oppose",
+    "target_gene": "PCSK9",
+    "push_direction": "inhibit PCSK9 -> spare LDLR from degradation -> raise LDLR density -> restore LDL clearance (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "anti-PCSK9 mAb (evolocumab, alirocumab) / PCSK9 siRNA (inclisiran)",
+    "status": "approved",
+    "mechanism_grade": "[O] LDL-lowering magnitude not derived from sequence",
+    "src": "Sabatine 2017 NEJM 376:1713 (evolocumab); Ray 2020 NEJM 382:1507 (inclisiran)"
+   },
+   {
+    "lever": "potentiate",
+    "target_gene": "LDLR",
+    "push_direction": "up-regulate LDLR transcription via SREBP-2 (intracellular sterol depletion) -> more receptor -> more LDL clearance (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "statin (HMG-CoA reductase inhibitor -> SREBP-2 -> LDLR up-regulation)",
+    "status": "approved",
+    "mechanism_grade": "[O] receptor-up-regulation magnitude not derived from sequence",
+    "src": "Endo 1976 (statin discovery); Brown & Goldstein 1997 (SREBP/LDLR)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "oppose",
+   "target_gene": "PCSK9",
+   "push_direction": "inhibit PCSK9 -> spare LDLR from degradation -> raise LDLR density -> restore LDL clearance (axis UP)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "anti-PCSK9 mAb (evolocumab, alirocumab) / PCSK9 siRNA (inclisiran)",
+   "status": "approved",
+   "mechanism_grade": "[O] LDL-lowering magnitude not derived from sequence",
+   "src": "Sabatine 2017 NEJM 376:1713 (evolocumab); Ray 2020 NEJM 382:1507 (inclisiran)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.61877,
+   "dwell_disease": 1.04744,
+   "dwell_treated": 1.32884,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "23a83c66672b"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "LDLR LOF lowers LDL-receptor-mediated clearance (plasma LDL rises)",
+   "falsifier": "an LDLR LOF allele associated with LOWER plasma LDL, or hepatocytes in which LDLR loss INCREASES LDL uptake, refutes the clearance-down direction",
+   "measurable_by": "LDL uptake assay in LDLR-null vs wild-type hepatocytes; plasma LDL by LDLR genotype"
+  },
+  {
+   "claim": "opposing PCSK9 (sparing LDLR) is the CORRECTIVE direction",
+   "falsifier": "if PCSK9 inhibition LOWERED hepatic LDLR or RAISED plasma LDL, the 'oppose PCSK9' lever sign is wrong",
+   "measurable_by": "hepatic LDLR level and plasma LDL response to PCSK9 inhibition"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Familial hypercholesterolaemia": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "a21e32b7ba49"
+ },
+ "determinism_sha": "c4142640eabe"
+}

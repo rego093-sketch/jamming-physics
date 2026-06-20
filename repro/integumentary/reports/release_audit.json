@@ -1,0 +1,149 @@
+{
+  "release": "integumentary_vp_site v1.0.0",
+  "audit": "release-readiness consolidation gate (additive; reads, never alters)",
+  "frozen_hash_contract": [
+    {
+      "runner": "run_all.py",
+      "pinned_sha256": "1fb59f556e01882916c0f4b4e72aa76ad47ef348bffb81fe4a7f3ce9093d3e92",
+      "pinned_sha_short": "1fb59f556e018829",
+      "emitted_sha_shorts": [
+        "1fb59f556e01"
+      ],
+      "hash_match": true,
+      "gate_token": "all targets pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_pathology.py",
+      "pinned_sha256": "0a4404ccde6559a7621249de90cd889f907619db48a4104329f3af2f74c51cd8",
+      "pinned_sha_short": "0a4404ccde6559a7",
+      "emitted_sha_shorts": [
+        "0a4404ccde6559a7"
+      ],
+      "hash_match": true,
+      "gate_token": "all diseases pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_cycle.py",
+      "pinned_sha256": "d910fa5d2854462236a5ef56b831490f1aca82ba37050b3f8bb751198b356822",
+      "pinned_sha_short": "d910fa5d28544622",
+      "emitted_sha_shorts": [
+        "d910fa5d28544622"
+      ],
+      "hash_match": true,
+      "gate_token": "all pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_seb.py",
+      "pinned_sha256": "1e8a557d9a8d7b05823259bb2fcac31e372b96272e47ef1f2f5d89b1b0246a84",
+      "pinned_sha_short": "1e8a557d9a8d7b05",
+      "emitted_sha_shorts": [
+        "1e8a557d9a8d7b05"
+      ],
+      "hash_match": true,
+      "gate_token": "all pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_adhesion.py",
+      "pinned_sha256": "55dce8c267ea4c76d8d5b967535a4ee0876c4b67f605e6ae7d65bf38516f28ad",
+      "pinned_sha_short": "55dce8c267ea4c76",
+      "emitted_sha_shorts": [
+        "55dce8c267ea4c76"
+      ],
+      "hash_match": true,
+      "gate_token": "all pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_vasomotor.py",
+      "pinned_sha256": "53a99f522ad684a11bcc6d4d33c5e8123d1f4dff5a75836c0bbced6736a62003",
+      "pinned_sha_short": "53a99f522ad684a1",
+      "emitted_sha_shorts": [
+        "53a99f522ad684a1"
+      ],
+      "hash_match": true,
+      "gate_token": "all pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "runner": "run_seam.py",
+      "pinned_sha256": "52b49a95a9add070a05a02848b1a4cef0589f4a36791167232fda3fc1c1d58f7",
+      "pinned_sha_short": "52b49a95a9add070",
+      "emitted_sha_shorts": [
+        "52b49a95a9add070"
+      ],
+      "hash_match": true,
+      "gate_token": "all pass: True",
+      "gate_green": true,
+      "returncode": 0,
+      "ok": true
+    }
+  ],
+  "all_frozen_hashes_match": true,
+  "all_gates_green": true,
+  "all_ok": true,
+  "coverage": {
+    "targets": [
+      "T1 barrier permeability",
+      "T2 wound healing (jamming/unjamming)",
+      "T3 melanin UV response",
+      "T4 epidermal turnover",
+      "T5 thermoregulation",
+      "T6 hair-follicle cycle oscillator",
+      "T7 sebaceous-duct occlusion jam",
+      "T8 cell-adhesion binding jam",
+      "T9 neurovascular reactivity jam",
+      "ONCO UV-carcinogenesis kernel"
+    ],
+    "n_targets": 10,
+    "diseases": [
+      "atopic dermatitis",
+      "contact dermatitis",
+      "ichthyosis (dynamics)",
+      "psoriasis",
+      "chronic/diabetic/pressure wound",
+      "vitiligo",
+      "melasma/hyperpigmentation",
+      "albinism/OCA (dynamics)",
+      "hypohidrotic ectodermal dysplasia (dynamics)",
+      "primary hyperhidrosis",
+      "heat stroke",
+      "skin cancer (melanoma/SCC/BCC)",
+      "actinic keratosis",
+      "androgenetic alopecia",
+      "alopecia areata",
+      "telogen effluvium",
+      "anagen effluvium",
+      "acne vulgaris",
+      "hidradenitis suppurativa",
+      "pemphigus vulgaris",
+      "bullous pemphigoid",
+      "rosacea",
+      "Raynaud phenomenon"
+    ],
+    "n_diseases": 23,
+    "seam_classes": {
+      "INHERITED_IN": 3,
+      "INTERNAL_LIVE": 1,
+      "DECLARED_OUT": 6
+    }
+  },
+  "in_lane_program": "COMPLETE (jamming barrier/interface + external-insult class)",
+  "remaining_work": "live wiring of DECLARED-OUT cross-package contracts; needs the integration harness that does not yet exist (HANDOFF 5.3 first bullet + 5.4). Out of this self-contained package's scope by construction.",
+  "grades_note": "shapes [V]; cited anchors [L]; regime-scale set-points [F]; absolute magnitudes [O] with stated obstacle."
+}

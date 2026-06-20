@@ -1,0 +1,159 @@
+{
+ "disease": "MECP2 duplication syndrome",
+ "omim": "300260",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "MECP2 duplication syndrome",
+  "omim": "300260",
+  "summary": "A single-locus MECP2 GAIN-of-dosage: a duplication spanning MECP2 (Xq28) roughly doubles MeCP2, and because MeCP2 is sharply dosage-sensitive, the MeCP2-dependent neuronal regulation program is OVER-driven -> that axis is driven UP. This is the EXACT OPPOSITE-direction read of Rett on the SAME cached MECP2 locus (Rett = LOF, axis DOWN, corrective = raise MeCP2; duplication = GOF, axis UP, corrective = lower MeCP2) -- one gene, both dosage directions, both under the firewall. There is no approved therapy; lowering MeCP2 toward normal (antisense) reverses phenotypes in duplication models and is the lead investigational direction, with a NARROW window (over-lowering tips toward the Rett-like loss). The gamma read is of the MECP2 locus switch structure. Magnitude [O].",
+  "emergent_axis": "MeCP2-dependent neuronal regulation program (MeCP2 dosage)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "MECP2",
+    "gamma": 1.4951,
+    "spinodal_h_sp": 0.70364,
+    "barrier": 0.55883,
+    "dwell_relative_size": 1.66193,
+    "role": "master_TF",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "lineage over-specified",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 154021572,
+     "gene_end": 154097716,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "methyl-CpG binding protein 2"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "A copy-number GAIN at Xq28 spanning MECP2 increases MeCP2 dosage; as a broadly-acting transcriptional regulator, EXCESS MeCP2 OVER-drives its program -> axis UP. This is the mirror of the Rett LOF read on the same locus. The promoter gamma reads the locus switch STRUCTURE only; the lesion here is a structural copy-number gain, and dosage/magnitude is [O]. CAUTION: dosage-sensitive in BOTH directions -- correction must respect a narrow window (over-lowering reproduces Rett-like loss).",
+    "src": "Van Esch 2005 Am J Hum Genet 77:442; Ramocki 2010 Ann Neurol"
+   }
+  ],
+  "primary_switch": {
+   "gene": "MECP2",
+   "role": "master_TF",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "UP",
+   "reason": "lineage over-specified"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "ec7fc5d39f37"
+ },
+ "treatment_A_switch": {
+  "disease": "MECP2 duplication syndrome",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "MECP2",
+    "push_direction": "lower MeCP2 toward the normal dosage window (antisense knockdown) -> relieve the over-drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "MECP2-lowering antisense oligonucleotide (investigational; dosage normalisation)",
+    "status": "investigational",
+    "mechanism_grade": "[O] MeCP2-lowering magnitude not derived from sequence; NARROW window -- over-lowering tips toward Rett-like loss",
+    "src": "Sztainberg 2015 Nature 528:123 (ASO reversal in MECP2-duplication mice)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "MECP2",
+    "push_direction": "dosage-reducing knockdown (RNAi / editing) to normalise MeCP2 level -> relieve the over-drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "MECP2 dosage-reducing knockdown (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] knockdown magnitude / window not derived from sequence; investigational",
+    "src": "Shao 2021; Sztainberg 2015 Nature 528:123 (proof-of-principle)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "MECP2",
+   "push_direction": "lower MeCP2 toward the normal dosage window (antisense knockdown) -> relieve the over-drive",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "MECP2-lowering antisense oligonucleotide (investigational; dosage normalisation)",
+   "status": "investigational",
+   "mechanism_grade": "[O] MeCP2-lowering magnitude not derived from sequence; NARROW window -- over-lowering tips toward Rett-like loss",
+   "src": "Sztainberg 2015 Nature 528:123 (ASO reversal in MECP2-duplication mice)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.66193,
+   "dwell_disease": 2.28515,
+   "dwell_treated": 1.86543,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "dd15b613d3e4"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "MECP2 duplication (over-driven program) raises the MeCP2-dosage axis (axis UP) -- the OPPOSITE of Rett on the same locus",
+   "falsifier": "a MECP2 duplication that LOWERED MeCP2-dependent program output, or behaved like the LOF (Rett) direction, would refute the over-drive direction",
+   "measurable_by": "MeCP2 level and MeCP2-target program output by copy number (duplication vs normal vs null)"
+  },
+  {
+   "claim": "lowering MeCP2 toward normal (restrain) is the CORRECTIVE direction for the duplication",
+   "falsifier": "if normalising MeCP2 downward WORSENED or failed to improve the duplication phenotype, the restrain-MECP2 lever sign is wrong",
+   "measurable_by": "duplication-phenotype rescue vs MeCP2-lowering dose (with a window -- under-correction returns toward Rett-like loss)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "MECP2 duplication syndrome": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "c52c4ca53a08"
+ },
+ "determinism_sha": "c370b7a69df6"
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducibility bundle and run — Configured Continuum Appendix A | Jamming Physics</title>
+<meta name="description" content="A single Python bundle (numpy, scipy, pandas, matplotlib) reproduces every pillar of the paper; each script lists its purpose and expected output.">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/ax-a-reproducibility-bundle-run-instructions/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Reproducibility bundle and run — Configured Continuum Appendix A | Jamming Physics"><meta property="og:description" content="A single Python bundle (numpy, scipy, pandas, matplotlib) reproduces every pillar of the paper; each script lists its purpose and expected output."><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/ax-a-reproducibility-bundle-run-instructions/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Reproducibility bundle and run — Configured Continuum Appendix A | Jamming Physics"><meta name="twitter:description" content="A single Python bundle (numpy, scipy, pandas, matplotlib) reproduces every pillar of the paper; each script lists its purpose and expected output.">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Reproducibility bundle and run", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 15, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/", "knowsAbout": ["jamming lattice", "configured continuum", "Reproducibility bundle and run"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"Appendix A Reproducibility bundle and run"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; Appendix A</nav></header>
+<main>
+<h1>Reproducibility bundle and run instructions</h1>
+<p class="answer">A single self-contained Python bundle (numpy, scipy, pandas, matplotlib) reproduces every pillar of the paper: axioms.py recovers the No-Go and U3 reduction, validate_all.py returns 5/5 PASS on Pillars I and IV, and verify_rotcore.py runs the Pillar II RCCI audit, alongside the marginal-substrate result c² = B/ρ.</p>
+<p class="abstract">A single self-contained Python bundle (numpy, scipy, pandas, matplotlib) reproduces every pillar of the paper: axioms.py recovers the No-Go and U3 reduction, validate_all.py returns 5/5 PASS on Pillars I and IV, and verify_rotcore.py runs the Pillar II RCCI audit, alongside the marginal-substrate result c² = B/ρ. Each script is listed with its one-line purpose and expected output.</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>The scripts below form a single self-contained bundle. With a standard
+scientific Python stack (<code>numpy</code>, <code>scipy</code>, <code>pandas</code>,
+<code>matplotlib</code>):
+\begin{verbatim}
+python axioms.py                  # Axiomatic core: No-Go + U3 reduction
+python validate_all.py            # Pillars I & IV: 5/5 PASS
+python verify_rotcore.py <data>   # Pillar II: RCCI audit (<=3e-12)
+python length_selection.py        # Pillar III: one-half law
+python universality.py            # Reach U1-U3 (Burgers, d-capacity, Turing)
+python extensibility.py           # Cross-scale E1-E3 (DNA, droplet, 2D/3D)
+python rigid_shell.py             # G-S quantification E4 (82-core, n-fold)
+python corotation.py              # Mechanism M (co-rotation, merger, Ekman)
+python lattice_inflow.py          # G-Q test: 81+1 nozzle (2D/3D)
+python event_flux.py              # Pillar IV: events carry flux (Burgers)
+python multid_flux.py             # Pillar IV: 2D NS flux on events (N=192)
+python ns3d.py                    # Pillar IV: 3D NS solver (validated)
+python event_rg.py                # Event-RG fixed point = Pi_L plateau
+python marginal_fluidity.py       # Substrate: G_rel -> 0, B finite, c^2 = B/rho
+python unjam_inflow.py            # Step 0: rotation unjams; forced-radius attractor
+python transition_dp.py           # Transition test stage 1: G-SOC rules -> DP class
+python transition_dp_refine.py    # stage 2: lambda_c refine (curvature criterion)
+python transition_dp_final.py     # stage 3: spreading, correlation, consolidated table
+\end{verbatim}
+<code>validate_all.py</code> output, verbatim from a clean run:
+\begin{verbatim}
+[1] 2D Euler energy+enstrophy conserved (nu=0):    PASS  (dE=2.9e-08, dZ=5.4e-06)
+[2] Energy budget dE/dt = -eps_nu (NS identity):   PASS  (max rel=4.4e-06)
+[3] Enstrophy monotone => max_eps proportional nu:  PASS
+[4] Metriplectic budget closes (eps_tot=I):        PASS
+[5] Onsager saturation eps_bind->I as nu->0:       PASS
+\end{verbatim}</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/14-claims-non-claims-falsification/">&larr; §14</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/ax-b-algorithm-boxes-complete-forms/">Appendix B &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

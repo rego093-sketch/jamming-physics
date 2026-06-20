@@ -1,0 +1,157 @@
+{
+ "_finding": "HONEST result (not tuned): the measured ephaptic field lifts inter-organ order ABOVE the uncoupled baseline at EVERY size 4->12 (field_contribution>0 for all N) and the network NEVER approaches global lock (R<0.9 = no seizure) nor collapses to silence; this survives +/-20% band perturbation at every N. As the atlas grows, the OPERATING POINT loosens: global order eases from ~0.44 at N=8 to ~0.33 at N=12 as more diverse rhythms join -- biologically the right direction (a whole brain that does not globally lock). The lift's magnitude is also non-monotone in N: it dips to +0.043 at N=6 (just below the engine's +0.05 partial-metastable cutoff -> labelled 'incoherent') when a lone very-slow rhythm (hypothalamus 2 Hz) is added, then recovers as more slow rhythms form a cluster. So the partial-metastable CLASSIFICATION is NOT strictly scale-invariant (regime_scale_stable=False), even though the field's coordinating CONTRIBUTION is positive and robust at all scales. Whether cognition uses any of this stays OPEN.",
+ "_grading": "gamma [F measured]; kappa [F measured fraction, neuro 19]; band identity [cited]; absolute f0 Hz & ring geometry [O representative]; biological functional use [O] -> medium_efficacy_tested=0.",
+ "_provenance": "All 12 organ gamma+f0 read verbatim from the engine brain_organ_atlas.json (8 cortico-subcortical organs frozen since v1.9; pallidum/NKX2-1 + forebrain_gaba/DLX2 promoted into the engine in v1.10; basal_forebrain_chol/LHX8 + olfactory_bulb/PAX6 fetched in v1.10 by this package's SantaLucia eutils pipeline, promoter sha256 in extra_masters.json). Coordination computed with engine primitives (_ring/_ephaptic_kernel/_integrate) at the MEASURED kappa=0.5496. No engine modified; no constant tuned.",
+ "_what": "M9-EXT scale sweep: ephaptic coordination regime vs network size (4->12) over the full measured 12-organ engine atlas.",
+ "cav_augment_R": 0.4704030993,
+ "cav_cancel_R": 0.25493407,
+ "cav_measured_R": 0.328330589,
+ "engine_cross_check": {
+  "engine_R_measured": 0.3896145516,
+  "engine_field_contribution": 0.1346804816,
+  "engine_n_regions": 12,
+  "matches_full_sweep": false
+ },
+ "field_contribution_Nmax": 0.0733965191,
+ "field_contribution_positive_all_N": true,
+ "field_monotone_cancel_lt_measured_lt_augment": true,
+ "kappa_ephaptic_measured": 0.5496,
+ "medium_efficacy_tested": 0.0,
+ "network_bounded_no_seizure_all_N": true,
+ "promoted_regions": [
+  {
+   "band_cited": "beta",
+   "f0_hz_open": 18.0,
+   "gamma": 1.5088,
+   "master_gene": "NKX2-1",
+   "region": "pallidum"
+  },
+  {
+   "band_cited": "gamma",
+   "f0_hz_open": 45.0,
+   "gamma": 1.426,
+   "master_gene": "DLX2",
+   "region": "forebrain_gaba_in"
+  },
+  {
+   "band_cited": "theta",
+   "f0_hz_open": 6.0,
+   "gamma": 1.368,
+   "master_gene": "LHX8",
+   "region": "basal_forebrain_chol"
+  },
+  {
+   "band_cited": "gamma",
+   "f0_hz_open": 60.0,
+   "gamma": 1.511,
+   "master_gene": "PAX6",
+   "region": "olfactory_bulb"
+  }
+ ],
+ "regime_scale_stable": false,
+ "robust_to_band_perturbation_all_N": true,
+ "sweep": [
+  {
+   "R_measured": 0.5419591635,
+   "R_uncoupled": 0.4499735194,
+   "field_contribution": 0.0919856441,
+   "metastability_std_R": 0.2184599151,
+   "n": 4,
+   "regime": "partial_metastable",
+   "regions": [
+    "neocortex",
+    "hippocampus",
+    "thalamus",
+    "striatum"
+   ],
+   "robust_partial": true
+  },
+  {
+   "R_measured": 0.4100382574,
+   "R_uncoupled": 0.3672628775,
+   "field_contribution": 0.0427753799,
+   "metastability_std_R": 0.1772136537,
+   "n": 6,
+   "regime": "incoherent",
+   "regions": [
+    "neocortex",
+    "hippocampus",
+    "thalamus",
+    "striatum",
+    "cerebellum",
+    "hypothalamus"
+   ],
+   "robust_partial": true
+  },
+  {
+   "R_measured": 0.43843671,
+   "R_uncoupled": 0.3198416392,
+   "field_contribution": 0.1185950708,
+   "metastability_std_R": 0.1946126173,
+   "n": 8,
+   "regime": "partial_metastable",
+   "regions": [
+    "neocortex",
+    "hippocampus",
+    "thalamus",
+    "striatum",
+    "cerebellum",
+    "hypothalamus",
+    "midbrain",
+    "brainstem"
+   ],
+   "robust_partial": true
+  },
+  {
+   "R_measured": 0.3813082685,
+   "R_uncoupled": 0.2812505787,
+   "field_contribution": 0.1000576897,
+   "metastability_std_R": 0.1753750759,
+   "n": 10,
+   "regime": "partial_metastable",
+   "regions": [
+    "neocortex",
+    "hippocampus",
+    "thalamus",
+    "striatum",
+    "cerebellum",
+    "hypothalamus",
+    "midbrain",
+    "brainstem",
+    "pallidum",
+    "forebrain_gaba_in"
+   ],
+   "robust_partial": true
+  },
+  {
+   "R_measured": 0.328330589,
+   "R_uncoupled": 0.25493407,
+   "field_contribution": 0.0733965191,
+   "metastability_std_R": 0.1533282536,
+   "n": 12,
+   "regime": "partial_metastable",
+   "regions": [
+    "neocortex",
+    "hippocampus",
+    "thalamus",
+    "striatum",
+    "cerebellum",
+    "hypothalamus",
+    "midbrain",
+    "brainstem",
+    "pallidum",
+    "forebrain_gaba_in",
+    "basal_forebrain_chol",
+    "olfactory_bulb"
+   ],
+   "robust_partial": true
+  }
+ ],
+ "sweep_N": [
+  4,
+  6,
+  8,
+  10,
+  12
+ ]
+}

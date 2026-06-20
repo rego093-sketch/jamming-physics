@@ -1,0 +1,118 @@
+{
+  "Q1_falsification_real_methylator_below_floor": {
+    "PASS": true,
+    "lowest_group_a_GC_pct": 31.6,
+    "margin_pts_above_floor": 6.6,
+    "offenders": []
+  },
+  "Q2_below_floor_nonmethylators_handled": {
+    "PASS": true,
+    "all_correct": true,
+    "below_floor_group_b": [
+      "entamoeba"
+    ]
+  },
+  "Q3_above_floor_raw_engine_correct": {
+    "PASS": true,
+    "raw_misclassified_above_floor": []
+  },
+  "VERDICT": {
+    "floor_generalizes_out_of_sample": true,
+    "guarded_correct_total": "7/7",
+    "raw_correct_total": "6/7"
+  },
+  "gc_floor": 0.25,
+  "rows": {
+    "brassica": {
+      "below_floor": false,
+      "cg_oe": 0.7132,
+      "chg_oe": 0.9472,
+      "gc": 0.3578,
+      "group": "a",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "PLANT_global_CG_CHG_CHH",
+      "known_biology": "plant: global CG+CHG+CHH",
+      "raw_correct": true,
+      "raw_regime": "PLANT_global_CG_CHG_CHH"
+    },
+    "cryptosporidium": {
+      "below_floor": false,
+      "cg_oe": 0.6446,
+      "chg_oe": 1.0566,
+      "gc": 0.3091,
+      "group": "b",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "no_global_methylation_pergene_unknown",
+      "known_biology": "apicomplexan: AT-rich, no 5mC",
+      "raw_correct": true,
+      "raw_regime": "no_global_methylation_pergene_unknown"
+    },
+    "entamoeba": {
+      "below_floor": true,
+      "cg_oe": 0.3338,
+      "chg_oe": 0.858,
+      "gc": 0.2448,
+      "group": "b",
+      "guard": "low_GC_composition_confounded",
+      "guarded_correct": true,
+      "guarded_regime": "no_global_methylation_pergene_unknown",
+      "known_biology": "amoeba: very AT-rich, no global 5mC",
+      "raw_correct": false,
+      "raw_regime": "PLANT_global_CG_CHG_CHH"
+    },
+    "moss": {
+      "below_floor": false,
+      "cg_oe": 0.6574,
+      "chg_oe": 0.7303,
+      "gc": 0.3826,
+      "group": "a",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "PLANT_global_CG_CHG_CHH",
+      "known_biology": "moss: global CG+CHG+CHH",
+      "raw_correct": true,
+      "raw_regime": "PLANT_global_CG_CHG_CHH"
+    },
+    "soybean": {
+      "below_floor": false,
+      "cg_oe": 0.4412,
+      "chg_oe": 0.8054,
+      "gc": 0.3162,
+      "group": "a",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "PLANT_global_CG_CHG_CHH",
+      "known_biology": "plant: global CG+CHG+CHH (RdDM)",
+      "raw_correct": true,
+      "raw_regime": "PLANT_global_CG_CHG_CHH"
+    },
+    "theileria": {
+      "below_floor": false,
+      "cg_oe": 0.6661,
+      "chg_oe": 1.1161,
+      "gc": 0.3383,
+      "group": "b",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "no_global_methylation_pergene_unknown",
+      "known_biology": "apicomplexan: no global 5mC",
+      "raw_correct": true,
+      "raw_regime": "no_global_methylation_pergene_unknown"
+    },
+    "trichomonas": {
+      "below_floor": false,
+      "cg_oe": 0.7109,
+      "chg_oe": 1.084,
+      "gc": 0.3343,
+      "group": "b",
+      "guard": null,
+      "guarded_correct": true,
+      "guarded_regime": "no_global_methylation_pergene_unknown",
+      "known_biology": "parabasalid: no global 5mC",
+      "raw_correct": true,
+      "raw_regime": "no_global_methylation_pergene_unknown"
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "S1_progressive_stabilisation": {
+    "Rlock_deep": 0.4048148087,
+    "Rlock_shallow": 0.3985440534,
+    "bias_sweep": {
+      "0.2": true,
+      "0.3": true,
+      "0.45": true
+    },
+    "deeper_at_least_as_deep": true,
+    "eta_sweep": {
+      "0.05": true,
+      "0.08": true,
+      "0.12": true
+    },
+    "monotone_over_bias_sweep": true,
+    "monotone_over_eta_sweep": true,
+    "reproduced": true,
+    "trace_monotone_increasing": true,
+    "trace_vs_epochs": {
+      "0": 0.0,
+      "6": 0.183794,
+      "12": 0.35285,
+      "18": 0.497543
+    }
+  },
+  "S2_self_sustaining_loop": {
+    "excess_Rlock_minus_M9_vs_epochs": {
+      "0": -0.001177,
+      "6": 0.00893,
+      "12": 0.01353,
+      "18": 0.0152
+    },
+    "excess_grows_with_consolidation": true,
+    "reproduced": true,
+    "rows": {
+      "eta0.05_ep12": {
+        "Rfresh": 0.393599,
+        "Rlock": 0.400146,
+        "self_sustains": true
+      },
+      "eta0.05_ep18": {
+        "Rfresh": 0.395069,
+        "Rlock": 0.401921,
+        "self_sustains": true
+      },
+      "eta0.05_ep6": {
+        "Rfresh": 0.392286,
+        "Rlock": 0.396177,
+        "self_sustains": true
+      },
+      "eta0.08_ep12": {
+        "Rfresh": 0.395154,
+        "Rlock": 0.403145,
+        "self_sustains": true
+      },
+      "eta0.08_ep18": {
+        "Rfresh": 0.395854,
+        "Rlock": 0.404815,
+        "self_sustains": true
+      },
+      "eta0.08_ep6": {
+        "Rfresh": 0.392397,
+        "Rlock": 0.398544,
+        "self_sustains": true
+      },
+      "eta0.12_ep12": {
+        "Rfresh": 0.395503,
+        "Rlock": 0.404991,
+        "self_sustains": true
+      },
+      "eta0.12_ep18": {
+        "Rfresh": 0.396527,
+        "Rlock": 0.405848,
+        "self_sustains": true
+      },
+      "eta0.12_ep6": {
+        "Rfresh": 0.394098,
+        "Rlock": 0.401337,
+        "self_sustains": true
+      }
+    },
+    "self_sustains_over_eta_x_epoch_sweep": true
+  },
+  "S3_levers_do_not_unstick": {
+    "deep_consolidated_trace": 0.497543,
+    "lever_leaves_trace_invariant": true,
+    "max_lever_cannot_reduce_trace": true,
+    "reproduced": true,
+    "trace_invariance": {
+      "eta0.05_ep12": {
+        "invariant": true,
+        "trace_after": 0.231012,
+        "trace_before": 0.231012
+      },
+      "eta0.05_ep18": {
+        "invariant": true,
+        "trace_after": 0.337214,
+        "trace_before": 0.337214
+      },
+      "eta0.05_ep6": {
+        "invariant": true,
+        "trace_after": 0.117545,
+        "trace_before": 0.117545
+      },
+      "eta0.08_ep12": {
+        "invariant": true,
+        "trace_after": 0.35285,
+        "trace_before": 0.35285
+      },
+      "eta0.08_ep18": {
+        "invariant": true,
+        "trace_after": 0.497543,
+        "trace_before": 0.497543
+      },
+      "eta0.08_ep6": {
+        "invariant": true,
+        "trace_after": 0.183794,
+        "trace_before": 0.183794
+      },
+      "eta0.12_ep12": {
+        "invariant": true,
+        "trace_after": 0.490224,
+        "trace_before": 0.490224
+      },
+      "eta0.12_ep18": {
+        "invariant": true,
+        "trace_after": 0.653431,
+        "trace_before": 0.653431
+      },
+      "eta0.12_ep6": {
+        "invariant": true,
+        "trace_after": 0.266043,
+        "trace_before": 0.266043
+      }
+    }
+  },
+  "S4_structural_variable_guard": {
+    "consolidation0_R_faithful": 0.3896145516,
+    "consolidation0_W_identical_to_kernel": true,
+    "consolidation0_reverts_to_anchor_bitwise": true,
+    "consolidation0_trace_exactly_zero": true,
+    "engine_integrate_W0_matches_anchor": true,
+    "imported_E0_baseline_W_untouched": true,
+    "imported_E0_baseline_matches_anchor": true,
+    "reproduced": true
+  },
+  "S5_dynamics_handle": {
+    "lower_rate_writes_less_structure": true,
+    "rate_rows": {
+      "6": {
+        "lower_rate_writes_less": true,
+        "trace_high_rate": 0.183794,
+        "trace_low_rate": 0.117545
+      },
+      "12": {
+        "lower_rate_writes_less": true,
+        "trace_high_rate": 0.35285,
+        "trace_low_rate": 0.231012
+      },
+      "18": {
+        "lower_rate_writes_less": true,
+        "trace_high_rate": 0.497543,
+        "trace_low_rate": 0.337214
+      }
+    },
+    "reproduced": true,
+    "symptomatic_lever_has_no_structural_handle": true
+  },
+  "_what": "OCD-T3c-D -- OCD stabilisation dynamics: the dominant compulsion-maintaining axis (the self-sustaining STUCK LOOP) modelled DIRECTLY on top of the E0 plasticity layer as the THIRD E0 MODE (after 37 GAIN and 39 DECAY). It REUSES the E0 plasticity LAYER (imports PlasticConnectome, the kernel W0, the coupling map, the order-parameter machinery -- not re-derived) and drives that kernel through E0's potentiating Hebbian update, at a negatively-reinforced coordinated operating point, until the connectome writes the coordination into its own structure -- a self-sustaining locked loop. The BASELINE the loop locks around is grounded READ-ONLY in the frozen M9 anchor; the BASIN-DEPTH concept in the READ-ONLY R19 barrier B(g)=g^2/4=0.25; the engine has NO stuck-loop signal, so the stabilisation DIRECTION is grounded as the SAME E0 consolidation family as 37's GAIN (distinguished by the self-sustaining-at-rest readout), not in an engine pathology signal (the honest disanalogy with 37). This is the OTHER HALF of the 40 (OCD-T3c-L, B-i) convergence: B-i NAMED the STABILISATION lock (the self-sustaining loop / over-deep basin, an E2 phenomenon) out of reach for the instant symptomatic levers; B-ii MODELS it. Magnitudes are never asserted; only the SIGNS.",
+  "convergence_with_B_i": {
+    "B_i_named": "the dominant defect of OCD = the STABILISATION lock (the self-sustaining stuck loop that makes a compulsion a compulsion: the over-deep basin / over-wide hysteresis), named OUT OF REACH for the instant L1/L2/L3 symptomatic levers, for two reasons: (1) a LOOP-STABILITY / BASIN-DEPTH property, not an instant operating point (a plasticity/E0-layer variable -- the addiction lesson); and (2) SELF-SUSTAINING -- the loop holds ITSELF, so an instant lever lowering the drive does not erase the structure that keeps it going. §40 called it 'an E2 phenomenon'. Named with real genes (DLGAP3/SAPAP3, SLITRK5, PTPRD, BTBD3) but graded [F] NOT REACHED.",
+    "B_ii_models": "this module models that exact stabilisation lock via E0 plasticity dynamics, reusing the imported E0 layer and driving the potentiating Hebbian update to a self-sustaining locked loop on the frozen kernel: it supplies the variable that actually MAINTAINS the loop -- the rate of the consolidation process (the learning/plasticity axis where ERP re-writing acts) -- and shows the symptomatic levers have no handle on it.",
+    "seam": "the symptomatic threshold frame (B-i) names the loop unreachable for the instant levers; the plasticity-dynamics frame (B-ii) exhibits the loop (S1-S2), shows the levers do not unstick it (S3 -- relief without re-writing the loop), proves it is a structural variable the instant levers cannot reach (S4 guard), and gives a handle that lives ONLY on the consolidation axis (S5). The two halves meet in one disorder. This completes the E0 trio: addiction's E0 GAIN (36 B-i / 37 B-ii), Alzheimer's E0 DECAY (38 B-i / 39 B-ii), OCD's E0 STABILISATION (40 B-i / 41 B-ii)."
+  },
+  "faithfulness_guard": {
+    "engine_integrate_W0": "0.38961455156044245",
+    "faithful_ic_integrator_W0": "0.38961455156044245",
+    "faithful_integrator_reproduces_engine_bitwise": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "note": "the faithful IC integrator, fed the engine's own fixed (incoherent-seed) initial condition, reproduces E._integrate(W0) bit-for-bit (= the M9 anchor), licensing the locked/fresh branch reads as faithful to the engine's own dynamics."
+  },
+  "grounding": {
+    "R19_barrier_readonly_note": "the basin-depth concept (how deep a coordinated basin is, which an over-stabilised loop deepens) is grounded in the engine's READ-ONLY R19 barrier B(g)=g^2/4 = 0.25 at g=1.0 -- the cusp-catastrophe normal-form basin depth. The proper over-deep-basin/over-wide-hysteresis lock named by §40 is an E2/R19-cusp phenomenon; it is NOT a network-hysteresis claim (the network exhibits no clean bistability under these couplings).",
+    "R19_fold_readonly": 0.3849001795,
+    "baseline_R": 0.3896145516,
+    "baseline_is_frozen_anchor": 1.0,
+    "baseline_signal": "the frozen M9 coordination anchor (W0): the engine's own emergent coordinated structure -- the structure an over-stabilised loop locks around. The engine has NO stuck-loop/compulsion signal (no over-stable basin or self-sustaining-loop variable); it is a healthy emergent atlas. So unlike the addiction module (whose reward SIGN came from the engine's M5 dopamine reward-prediction error), this module does NOT claim to ground the stabilisation sign in an engine pathology signal -- the honest disanalogy with §37. It grounds the BASELINE, the BASIN-DEPTH concept, and the GUARD; the stabilisation DIRECTION is the SAME E0 consolidation family as §37's GAIN, distinguished by the self-sustaining-at-rest readout.",
+    "basin_depth_concept_grounded_in_R19_barrier": 0.25,
+    "engine_has_no_stuck_loop_signal": 1.0,
+    "stabilisation_sign_grounding": "SAME E0 consolidation family as §37's GAIN (the potentiating phase-correlation Hebbian update writes a trace > 0), DISTINGUISHED from GAIN by the self-sustaining-at-rest readout (the locked loop holds its coordination above the M9 anchor with no external cue). SIGN only; magnitude and real mechanism [O].",
+    "third_mode_of": "E0 plasticity layer: GAIN (37 addiction) -> DECAY (39 Alzheimer's) -> STABILISATION (41 OCD)"
+  },
+  "honesty_ledger": {
+    "basin_depth_grounded_in_R19_barrier_readonly": 1.0,
+    "closes_OCD_B_i_convergence": 1.0,
+    "consciousness_claim": 0.0,
+    "dignity_boundary_ocd_treatable_intrusive_thought_not_moral_failing": 1.0,
+    "distinguished_from_gain_by_self_sustaining_loop": 1.0,
+    "hard_problem_open": 1.0,
+    "is_an_application_of_E0": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "network_hysteresis_claimed": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "reuses_E0_layer_read_only": 1.0,
+    "same_E0_family_as_addiction_gain": 1.0,
+    "stabilisation_is_third_E0_mode": 1.0,
+    "stabilisation_sign_grounded_in_engine_pathology_signal": 0.0
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true
+  },
+  "overall": {
+    "dynamics_handle_reproduced": true,
+    "is_full_module": true,
+    "levers_do_not_unstick_reproduced": true,
+    "progressive_stabilisation_reproduced": true,
+    "self_sustaining_loop_reproduced": true,
+    "structural_variable_guard_reproduced": true,
+    "verdict": "OCD-T3c-D models the dominant compulsion-maintaining axis of OCD -- the self-sustaining STUCK LOOP §40 (B-i) named OUT OF REACH for the instant symptomatic levers -- DIRECTLY, by reusing the E0 plasticity layer (imported, not re-derived) and driving its frozen kernel, through E0's potentiating Hebbian update at a negatively-reinforced coordinated point, into a self-sustaining locked loop -- the THIRD E0 mode (after addiction GAIN and Alzheimer's DECAY). Consolidation monotonically writes structure and the locked state deepens (S1 progressive stabilisation); the consolidated loop holds its own coordination above the M9 anchor at rest with no cue, above the cold-start branch (S2 self-sustaining loop -- the defining readout); the symptomatic lever moves the operating point but leaves the structural trace exactly unchanged, and even the maximum lever cannot reduce it (S3 levers-do-not-unstick -- relief without re-writing the loop, the seam); with consolidation=0 the connectome reverts to the frozen M9 anchor bit-for-bit via the faithful integrator, proving the loop is a structural variable the instant levers cannot reach (S4 guard); and the only handle on the trajectory lives on the consolidation rate -- the learning/plasticity axis where ERP re-writing acts -- while the symptomatic lever has none (S5 dynamics handle). STABILISATION shares the addiction GAIN's E0 consolidation family (both write a trace) and is distinguished by the self-sustaining-at-rest readout (a structural contrast, not a cue-reactivity claim). The stabilisation DIRECTION is grounded as the same E0 consolidation family as §37's gain (the engine has no stuck-loop signal -- the honest disanalogy with the addiction module, whose sign came from M5); the basin-depth concept is grounded in the READ-ONLY R19 barrier (NOT a network-hysteresis claim -- the network has no clean bistability under these couplings); magnitudes [O], signs survive eta and bias sweeps, no new tuned constant, engine byte-unchanged. OCD is a TREATABLE condition; an intrusive thought is a symptom, not a wish or a moral failing; efficacy=0; not medical advice; no cure, reversal, or prevention; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "S1_progressive_stabilisation": {
+      "claim": "consolidation monotonically writes structure into the connectome (the trace increases with epochs over both an eta and a bias sweep) and the locked state deepens (Rlock deeper >= Rlock shallower) -- the loop deepening, a basin-depth variable the instant levers cannot reach",
+      "status": "CONFIRMED"
+    },
+    "S2_self_sustaining_loop": {
+      "claim": "a consolidated connectome started from a coordinated (locked) IC holds its coordination at or above the frozen M9 anchor at rest, and at or above the cold-start (fresh) branch, with no external cue (the loop self-sustains), over an eta sweep for epochs >= 4; the excess Rlock - M9 grows -- the defining readout distinguishing STABILISATION from GAIN and DECAY",
+      "status": "CONFIRMED"
+    },
+    "S3_levers_do_not_unstick": {
+      "claim": "the symptomatic lever (the B-i reachable instant axis) leaves the retained trace EXACTLY unchanged, and even the maximum lever cannot reduce the consolidated trace -- relief without re-writing the loop, the convergence seam, the analogue of extinction-persistence / levers-do-not-rebuild",
+      "status": "CONFIRMED"
+    },
+    "S4_structural_variable_guard": {
+      "claim": "with consolidation off the connectome stays identical to the kernel, the order parameter (faithful integrator, engine's fixed IC) returns to the frozen M9 anchor bit-for-bit, and the trace is zero -- stabilisation is a structural variable the instant levers cannot reach (pure add-on); mirror of the addiction / Alzheimer's plasticity-variable guard",
+      "status": "CONFIRMED"
+    },
+    "S5_dynamics_handle": {
+      "claim": "a lower consolidation rate writes strictly less structure (a shallower loop) at equal consolidation time, while the symptomatic lever has NO handle on the structural trajectory -- the handle lives ONLY on the consolidation (learning/plasticity) axis where ERP re-writing acts; the analogue of the spacing / progression-rate handle",
+      "status": "CONFIRMED"
+    }
+  },
+  "roadmap_id": "T3c (OCD) -- the stabilisation/plasticity (LOOP) half of the convergence opened by §40 OCD-T3c-L (B-i); RESEARCH_ROADMAP_post_autism_adhd.md",
+  "three_mode_crosscheck": {
+    "decay_deletes_mass": true,
+    "decay_mass_lost": 5.515679,
+    "gain_trace": 0.35285,
+    "gain_writes_trace": true,
+    "stabilisation_Rlock": 0.403145,
+    "stabilisation_self_sustains_at_rest": true,
+    "stabilisation_trace": 0.35285,
+    "stabilisation_writes_trace": true,
+    "statement": "the SAME E0 plasticity layer met three ways: addiction GAIN writes a sensitised reward trace (mass up); Alzheimer's DECAY deletes a substrate (mass down, the structural inverse); OCD STABILISATION writes a trace that SELF-SUSTAINS at rest (the locked loop holds its coordination above the M9 anchor with no cue). STABILISATION shares GAIN's consolidation family (both write a trace) and is distinguished by the self-sustaining-at-rest readout -- framed as a structural contrast, not a cue-reactivity claim.",
+    "three_modes_distinct": true
+  }
+}

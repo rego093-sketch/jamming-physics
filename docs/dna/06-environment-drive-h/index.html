@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environment — 4D DNA Blueprint §6 | Jamming Physics</title>
+<meta name="description" content="The environment never rewrites the genome; it sets h via methylation (CpG handles 11–179) and temperature (fixed γ, flip ×4) within a fixed SET. Reversible.">
+<link rel="canonical" href="https://jamming-physics.org/dna/06-environment-drive-h/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Environment — 4D DNA Blueprint §6 | Jamming Physics"><meta property="og:description" content="The environment never rewrites the genome; it sets h via methylation (CpG handles 11–179) and temperature (fixed γ, flip ×4) within a fixed SET. Reversible."><meta property="og:url" content="https://jamming-physics.org/dna/06-environment-drive-h/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Environment — 4D DNA Blueprint §6 | Jamming Physics"><meta name="twitter:description" content="The environment never rewrites the genome; it sets h via methylation (CpG handles 11–179) and temperature (fixed γ, flip ×4) within a fixed SET. Reversible.">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Environment: the drive h", "isPartOf": {"@type": "CreativeWorkSeries", "name": "4D DNA Blueprint", "identifier": "https://doi.org/10.5281/zenodo.20471407", "url": "https://jamming-physics.org/dna/"}, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "https://doi.org/10.5281/zenodo.20471407", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/", "license": "https://creativecommons.org/licenses/by/4.0/", "knowsAbout": ["reading DNA from sequence", "deterministic DNA interpretation", "DNA stacking stiffness", "A4 coordinate grammar", "R19 double-well switch", "anchor-relative helical phase", "CpG O/E methylation", "readable layer of DNA", "sequence-to-trait reading", "reproducible genomics", "jamming lattice", "4D DNA Blueprint"]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "4D DNA Blueprint", "item": "https://jamming-physics.org/dna/"}, {"@type": "ListItem", "position": 3, "name": "§6 Environment"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › §6</nav></header>
+<main>
+<h1>Environment — the drive h (sets and remembers, within a fixed SET)</h1>
+
+<p class="answer">The environment never rewrites the genome; it sets h via methylation (CpG handles 11–179) and temperature (fixed γ, flip ×4) within a fixed SET. Reversible.</p>
+
+
+<p class="abstract">ENVIRONMENT is the tilt h the environment sets on R19. It sets and remembers STATE/DWELL within a fixed SET — it cannot rewrite SET or γ. The primary readable mechanism is DNA methylation: the CpG count is the number of writable handles, ~11–179 per switch (16×). At fixed γ the flip rate changes ~4× with temperature. Methylation is heritable and reversible, so the mutable part is bounded by the fixed SET.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-calibrated">principle-demonstration</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/06-environment-drive-h/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h3>What ENVIRONMENT is</h3>
+<p>ENVIRONMENT is the runtime drive h on R19: ṡ = −(s³ − γs − h). The environment (temperature, water, nutrition, stress, social signal) sets h, biasing whether a switch turns on (<a href="/dna/04-state-switch-on-or-off/">STATE</a>) and how long it stays (<a href="/dna/05-dwell-how-long-switch-runs/">DWELL</a>), and — via molecular marks — remembers that bias. It is Layer-2: it sets and remembers, but does not change the readable hardware (SET, position, γ).</p>
+
+<h3>Mechanism — moving a switch without changing the sequence</h3>
+<p><strong>DNA methylation — the primary readable mechanism.</strong> In animal genomes the mark is 5-methylcytosine at CpG; it changes local accessibility, binding, and effective stiffness, biasing h. It is readable: the CpG count is the number of writable handles on a switch. Measured across switches, CpG handles span ~11 (frog UCP1) to ~179 (chicken UCP1) — a 16× range; CpG-island switches are highly tunable, CpG-poor switches nearly hard-wired. So how open a switch is to the environment is itself read from the sequence. The mark is heritable through cell division (hysteresis = memory) and reversible: genetically identical individuals enter diapause epigenetically, transmitted for ~3 generations.</p>
+<p><strong>Temperature — a physical mechanism.</strong> The R19 barrier γ²/4 is fixed by the sequence, but the flip rate ∝ exp(−barrier / noise(T)). At a fixed γ=1.41 (barrier 0.497, unchanged), as effective temperature rises the same switch flips ~4× more often. Hardware unchanged; the environment changed only the drive.</p>
+
+<h3>The environment re-sets within a fixed SET</h3>
+<ul>
+<li><strong>Salamander timing trigger:</strong> developmental timing correlates with dry climate / low water — an environmental drive setting how long the embryo develops inside.</li>
+<li><strong>Vernalization:</strong> cold sets a plant's flowering switch (FLC silenced via methylation) — the environment remembers a STATE.</li>
+<li><strong>Temperature-dependent sex (TSD):</strong> egg temperature pushes the gonad STATE switch past spinodal — the environment flipping a Layer-1 STATE.</li>
+<li><strong>Bee caste:</strong> nutrition (royal jelly) → methylation difference → queen/worker.</li>
+</ul>
+
+<h3>The boundary — ceiling is SET, reversible</h3>
+<p>The environment sets h and remembers via methylation; it can push STATE past spinodal (TSD). But it cannot rewrite <a href="/dna/03-set-switch-inventory/">SET</a> or γ — those are fixed. So environmental adaptation re-sets STATE/DWELL within a fixed SET, and is reversible (a mark can be erased). The fixed SET is the ceiling: the mechanism re-tunes switches that exist; it does not make new ones. (On origin and history this paper is silent — see the <a href="/dna/01-constitution-scope/">Constitution</a>.)</p>
+
+<h3>Failure log</h3>
+<ul>
+<li><strong>Causality largely correlative:</strong> methylation→phenotype is mostly correlative in the literature; the exact h-shift per mark is open. We report the CpG-handle range, not a quantified causal effect.</li>
+<li><strong>Salamander plastic vs fixed unresolved:</strong> real-time plasticity vs a population-fixed difference is not cleanly resolved; the mechanism-confirmed clean cases are diapause, TSD, vernalization, bee caste.</li>
+<li><strong>CpG count ≠ realized methylation:</strong> the handle count is readable; the realized state is runtime.</li>
+</ul>
+<nav class="pn"><a rel="prev" href="/dna/05-dwell-how-long-switch-runs/">← §5</a><a href="/dna/">contents</a><a rel="next" href="/dna/07-cases-by-register/">§7 →</a></nav>
+</main>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.12)</footer>
+</body>
+</html>

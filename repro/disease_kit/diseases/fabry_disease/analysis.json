@@ -1,0 +1,202 @@
+{
+ "disease": "Fabry disease",
+ "omim": "301500",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Fabry disease",
+  "omim": "301500",
+  "summary": "Loss-of-function of lysosomal alpha-galactosidase A (GLA) lowers the catabolism of globotriaosylceramide (Gb3/GL-3), so the glycosphingolipid substrate accumulates in vascular endothelium, kidney, heart and nerve. The throughput axis is driven DOWN; correction is to restore enzymatic throughput (replace the enzyme / stabilise residual amenable enzyme) or to lower the substrate load upstream. X-linked; a lysosomal-storage read on the same level axis as Gaucher and A1AT.",
+  "emergent_axis": "lysosomal globotriaosylceramide catabolism (alpha-galactosidase A throughput)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "GLA",
+    "gamma": 1.3386,
+    "spinodal_h_sp": 0.59611,
+    "barrier": 0.44796,
+    "dwell_relative_size": 1.40794,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 101397802,
+     "gene_end": 101407924,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "galactosidase alpha"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "lysosomal alpha-galactosidase A; LOF lowers Gb3/GL-3 catabolism -> glycosphingolipid accumulates (vascular endothelium, podocytes, cardiomyocytes). X-linked (Xq22.1). NCBI official symbol GLA. Coding/splice lesions (missense e.g. Gly328Arg, the IVS4+919 cardiac-variant); promoter firewall respected.",
+    "src": "Brady 1967 NEJM 276:1163 (enzyme defect); Desnick 2001 OMMBID"
+   }
+  ],
+  "primary_switch": {
+   "gene": "GLA",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "293bfa8897d2"
+ },
+ "treatment_A_switch": {
+  "disease": "Fabry disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "GLA",
+    "push_direction": "supply recombinant alpha-galactosidase A -> restore catabolic throughput (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme replacement (agalsidase beta, agalsidase alfa, pegunigalsidase alfa)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored throughput / substrate-clearance magnitude not derived from sequence",
+    "src": "Eng 2001 NEJM 345:9 (agalsidase beta); agalsidase beta (Fabrazyme) FDA 2003; pegunigalsidase alfa (Elfabrio) FDA 2023"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "GLA",
+    "push_direction": "stabilise the residual mutant enzyme fold so more functional enzyme reaches the lysosome (chaperone rescue; amenable missense alleles only)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "pharmacological chaperone (migalastat)",
+    "status": "approved",
+    "mechanism_grade": "[O] fold-stabilisation magnitude / allele amenability not derived from sequence",
+    "src": "Germain 2016 NEJM 375:545; migalastat (Galafold) FDA 2018"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "GLA",
+   "push_direction": "supply recombinant alpha-galactosidase A -> restore catabolic throughput (axis UP)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme replacement (agalsidase beta, agalsidase alfa, pegunigalsidase alfa)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored throughput / substrate-clearance magnitude not derived from sequence",
+   "src": "Eng 2001 NEJM 345:9 (agalsidase beta); agalsidase beta (Fabrazyme) FDA 2003; pegunigalsidase alfa (Elfabrio) FDA 2023"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.40794,
+   "dwell_disease": 0.91102,
+   "dwell_treated": 1.15577,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "5876929610c6"
+ },
+ "treatment_B_chem": {
+  "disease": "Fabry disease",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 2,
+  "n_open_inputs": 4,
+  "candidates": [
+   {
+    "candidate": "substrate-reduction (glucosylceramide-synthase inhibition)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "lower upstream glycosphingolipid synthesis -> less Gb3 substrate for the deficient catabolic step",
+    "rationale": "reduces influx into the throttled catabolic step; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "clinical",
+    "src": "Guerard 2018 Clin Pharmacol Ther (lucerastat); venglustat trials"
+   },
+   {
+    "candidate": "pharmacological chaperone (migalastat)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "stabilise residual mutant alpha-Gal A fold (active-site iminosugar chaperone)",
+    "rationale": "a stabilising binder restores partial fold/throughput for amenable missense alleles; the feasibility QUESTION is reported, the thermodynamics are not supplied -> [O].",
+    "status": "approved",
+    "src": "Germain 2016; Galafold FDA 2018"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "a34f4eaea006"
+ },
+ "falsifiers": [
+  {
+   "claim": "GLA LOF lowers lysosomal Gb3/GL-3 catabolism (substrate accumulates)",
+   "falsifier": "a GLA LOF allele that INCREASES alpha-galactosidase A throughput, or cells in which GLA loss REDUCES Gb3, refutes the throughput-down direction",
+   "measurable_by": "lysosomal alpha-galactosidase A activity and Gb3/lyso-Gb3 level in GLA-deficient endothelial cells/podocytes"
+  },
+  {
+   "claim": "restoring enzyme throughput (replace / correct) is the CORRECTIVE direction",
+   "falsifier": "if supplying or stabilising the enzyme REDUCED catabolic throughput or RAISED substrate, the 'replace enzyme' lever sign is wrong",
+   "measurable_by": "substrate-clearance response to recombinant alpha-galactosidase A in patient-derived cells"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Fabry disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "fd5bde2cdcb7"
+ },
+ "determinism_sha": "0b6f522ee255"
+}

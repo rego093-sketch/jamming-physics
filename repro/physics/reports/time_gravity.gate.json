@@ -1,0 +1,103 @@
+{
+  "paper": "physics",
+  "lane": "time-gravity",
+  "spec": "VP_SPEC_v1.7",
+  "no_tuning": true,
+  "generated_utc": "2026-06-14T23:23:39Z",
+  "gates": [
+    {
+      "id": "G-RIVER",
+      "statement": "sqrt(1-v_river^2/c^2) == exact Schwarzschild sqrt(1-2GM/rc^2), identically",
+      "verdict": "PASS",
+      "grade": "[F?] (exact form conditional on exact-sqrt [O])",
+      "bodies_checked": [
+        "Moon",
+        "Earth",
+        "Sun",
+        "WhiteDwarf",
+        "NeutronStar"
+      ],
+      "evidence": "TIME_GRAVITY_NUMERIC_LEDGER.csv"
+    },
+    {
+      "id": "REL-MATCH",
+      "statement": "leading 1+phi/c^2 - v^2/2c^2 == GPS expression at O(c^-2); O(x^2) departure",
+      "verdict": "PASS",
+      "grade": "[F]@O(c^-2)",
+      "evidence": "TIME_GRAVITY_NUMERIC_LEDGER.csv"
+    },
+    {
+      "id": "G-INFLOW-COMP/PASS-A",
+      "statement": "common f cancels -> m_p/m_e=6*pi^5 preserved (LPI)",
+      "verdict": "PASS",
+      "grade": "[F]",
+      "evidence": "INFLOW_COMPETITION_LEDGER.csv"
+    },
+    {
+      "id": "G-INFLOW-COMP/SAT",
+      "statement": "cap == nuclear binding/nucleon saturation; iron peak; plateau",
+      "verdict": "PASS",
+      "grade": "[F?] structural (SEMF coeffs [CAL]; abs scale [O])",
+      "iron_peak": {
+        "A": 58,
+        "B_per_A_MeV": 8.784
+      },
+      "evidence": "INFLOW_COMPETITION_LEDGER.csv"
+    },
+    {
+      "id": "G-INFLOW-COMP/ASTRO",
+      "statement": "nu(phi_A)/nu(phi_B) is m_q-free (mapping symmetry)",
+      "verdict": "PASS",
+      "grade": "[F]",
+      "evidence": "INFLOW_COMPETITION_LEDGER.csv"
+    },
+    {
+      "id": "DRIFT",
+      "statement": "drift gate over prose: canonical literals consistent with SSOT",
+      "verdict": "PASS",
+      "grade": "method",
+      "evidence": "vp_timegravity_ssot.py --check"
+    },
+    {
+      "id": "G-CAP-DEPART",
+      "statement": "strong-field cap fluidization => VP != Schwarzschild (falsifier)",
+      "verdict": "REGISTERED",
+      "grade": "[VP] open prediction",
+      "evidence": "NeutronStar row: v/c=0.587, f=0.8095"
+    },
+    {
+      "id": "I-TIME-3",
+      "statement": "cosmological (1+z) time dilation from same medium lag",
+      "verdict": "OPEN",
+      "grade": "OPEN",
+      "evidence": "not met (sharpest unmet discriminator)"
+    },
+    {
+      "id": "G-EXACT-SQRT",
+      "statement": "exact sqrt(1-v^2/c^2) value forced by finite-c rotation closure + electron-rate isotropy; kappa=sqrt(1-v^2/c^2) is the unique anisotropy-zeroing contraction (no relativity, no light-clock)",
+      "verdict": "PASS",
+      "grade": "[F] (value forced); ab-initio dynamical contraction in full vector sector = [O] section 14.0.6",
+      "checked_v_over_c": [
+        0.1,
+        0.5,
+        0.9,
+        0.99
+      ],
+      "evidence": "EXACT_SQRT_LEDGER.csv ; vp_exact_sqrt.py"
+    }
+  ],
+  "open_items": [
+    "exact-sqrt VALUE now [F] (forced by isotropy); only full-vector dynamical contraction [O] (sec 14.0.6)",
+    "absolute g magnitude m_q [O] (four-wall)",
+    "rotor-scale isotropy eta_rotor->1 [F?] (universality)",
+    "cosmological (1+z) OPEN"
+  ],
+  "module_sha256": {
+    "vp_timegravity_ssot.py": "97add077093b33dc070f6a2a0784432dcc09e5a6b8690cf61e907a11a406a6e4",
+    "vp_inflow_competition.py": "0b5aa2e3114af2133a135409b6adbd17b213492f30d69ac929e208da51e8690a",
+    "TIME_GRAVITY_NUMERIC_LEDGER.csv": "c8993aa3bea521f850238981bbd98fd46ac237c2eb7b6ae057d9fd55ecbf3c5a",
+    "INFLOW_COMPETITION_LEDGER.csv": "bd2cce3dbedc743f7374edc8fb170bb8a29651912ae7c59d6a4a6d0cbd56975c",
+    "vp_exact_sqrt.py": "d71d4e1682ae617d2c479665e9e2bf5bfacb015d4917f4a2c5907c72f37cb141",
+    "EXACT_SQRT_LEDGER.csv": "27fa3dbb8fc63af6300afdccb46a2e824a8f3300ea007215336d7e26e5ac406c"
+  }
+}

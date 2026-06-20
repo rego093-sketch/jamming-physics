@@ -1,0 +1,56 @@
+{
+  "C3_bounds_aggregated_in": [
+    "repro/dna/08-bounds-open-questions-retired-claims/README.md",
+    "repro/dna/09-environment-methylation-layer/IRREPRODUCIBILITY_LEDGER.md",
+    "repro/dna/12-clade-methylation-readers/LEDGER_clade_readers.md",
+    "repro/dna/13-unified-deterministic-interpreter/LEDGER_unified.md"
+  ],
+  "additions": {
+    "ch14_guard_validation": "GC floor 0.25 validated OUT-OF-SAMPLE: caught a 3rd false-positive (Entamoeba 24.5%); guarded 7/7; no real methylator < 31.6% GC",
+    "ch14_guards": "detect_regime_safe (GC floor 0.25), run_key_safe ([O] on len<W), bulk_contexts_safe (case-norm) \u2014 wrappers around locked engines",
+    "stress_abnormal_inputs": "engines never silently wrong; run_key sub-window opaque IndexError (one gap)",
+    "stress_coordinate_stability": "A4 anchor positions robust (93% within 2kb); count is resolution-set (bound)",
+    "stress_detector_adversarial": "methylation detector generalizes within plant/vertebrate regimes; false-positive at GC<=~25% (Plasmodium/Dictyostelium); latent panel error surfaced",
+    "stress_gamma_vs_gc": "\u03b3=GC refined: +CpG-coupled ~1% dinucleotide term; inverts at GC~20% (bound)"
+  },
+  "byte_invariance": {
+    "locked_files_identical": "152/152 (LEDGERs/ledgers appended only)",
+    "verified_vs": "dna_vp_site_INTEGRATED_v1_9 original zip"
+  },
+  "corrections_to_shipped": {
+    "ch12_auto_detector_all_correct": "CORRECTED -> bounded below ~25% GC (LEDGER_clade_readers.md)",
+    "ch13_gate_auto_detector_all_correct_true": "superseded by this gate; bound documented in \u00a708/\u00a709/\u00a712 ledgers (historical gate left as audit trail)",
+    "panel_plasmodium_regime": "PLANT_global_CG_CHG_CHH -> corrected to no_global at guard layer (raw retained for audit)"
+  },
+  "determinism_2x_sha256": true,
+  "gate": "dna-ch14-defensive-guards-and-stress-battery",
+  "gate_all_pass": true,
+  "gates": {
+    "guards_OVERALL_PASS": true,
+    "guards_part1_fixed": [
+      "dictyostelium",
+      "plasmodium"
+    ],
+    "guards_part1_methylation_no_regression": true,
+    "guards_part1_raw_to_guarded": "17/19 -> 19/19",
+    "guards_part2_runkey_PASS": true,
+    "guards_part3_bulk_PASS": true,
+    "validation_Q1_no_methylator_below_floor": true,
+    "validation_Q2_below_floor_handled": true,
+    "validation_Q3_above_floor_raw_correct": true,
+    "validation_floor_generalizes_oos": true,
+    "validation_guarded_correct": "7/7"
+  },
+  "locked_grammar_untouched": true,
+  "residual_risk_declared": "GC<25% genome with genuine global 5mC would be down-graded by detect_regime_safe; none known (3 extreme-AT non-methylators caught, 6 real methylators all >=31.6% GC); raw call retained",
+  "results_sha256": {
+    "stress_abnormal_inputs": "d0d6062d257f9d51bd3dc6349ba5a1005c70dfb6d9d73bce3cd4b14e14573c19",
+    "stress_coordinate_stability": "ac0669d00b8784ff4400fe33eaabace78f85b16320e9ebb3896758f98f46ef27",
+    "stress_detector_adversarial": "e5817f8f1f2dd27daba5b5a9018f250c60e7be3c7be1c064b8e96cd095db45ed",
+    "stress_gamma_vs_gc": "e8697c3c9a714fe12797275a41a500c3cf5813afb8b48c48625982a70e0b6518",
+    "stress_guard_validation": "ec6436d9209edbca7746bea85616df36ae025cf583ea0123471d45ff0ed38a60",
+    "stress_guards": "c05343462e8d8f3be3b0102e15e6296c403a07ce7677356a48a941d47bb6723f"
+  },
+  "spec": "VP-SPEC v1.8 \u00b7 stress battery + guard layer (append-only; chapters 02/12/13/14)",
+  "what": "Second-session stress battery probing all three grammar layers + engine robustness, plus a chapter-14 defensive guard WRAPPER (locked engines unchanged, byte-identical). Found and corrected a methylation auto-detector false-positive at GC<=~25% (incl. the shipped Plasmodium panel call); refined the \u03b3=GC and A4-anchor claims with their GC/resolution bounds. No locked grammar/threshold/\u03b3/NN-table/frozen-expected modified."
+}

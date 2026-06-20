@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carcinogen Dose–Response (Kramers) — Immune/Hematologic §6 | Jamming Physics</title>
+<meta name="description" content="Carcinogens lower the R19 barrier; the malignant crossing rate follows a convex, super-linear Kramers dose–response that diverges as the barrier is erased. Benzene→AML is the cleanest anchor.">
+<link rel="canonical" href="https://jamming-physics.org/immune_hematologic/06-carcinogen-dose-response-kramers-kernel/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Carcinogen Dose–Response (Kramers) — Immune/Hematologic §6 | Jamming Physics"><meta property="og:description" content="Carcinogens lower the R19 barrier; the malignant crossing rate follows a convex, super-linear Kramers dose–response that diverges as the barrier is erased. Benzene→AML is the cleanest anchor."><meta property="og:url" content="https://jamming-physics.org/immune_hematologic/06-carcinogen-dose-response-kramers-kernel/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Carcinogen Dose–Response (Kramers) — Immune/Hematologic §6 | Jamming Physics"><meta name="twitter:description" content="Carcinogens lower the R19 barrier; the malignant crossing rate follows a convex, super-linear Kramers dose–response that diverges as the barrier is erased. Benzene→AML is the cleanest anchor.">
+<link rel="stylesheet" href="/immune_hematologic/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Carcinogen Dose–Response (Kramers)", "isPartOf": {"@type": "CreativeWork", "name": "Immune & Hematologic Emergence (VP / Jamming Physics)", "sameAs": ["https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic", "https://doi.org/10.5281/zenodo.20755280"], "identifier": "10.5281/zenodo.20755280"}, "position": 6, "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.20755280"}, "sameAs": "https://doi.org/10.5281/zenodo.20755280", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Immune/Hematologic", "item": "https://jamming-physics.org/immune_hematologic/"}, {"@type": "ListItem", "position": 3, "name": "§6 Carcinogen Dose–Response (Kramers)"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/immune_hematologic/">Immune/Hematologic</a> › §6</nav></header>
+<main>
+<h1>Carcinogen Dose–Response (Kramers)</h1>
+
+<p class="answer">A carcinogen lowers the R19 barrier, raising the malignant crossing rate. This volume does not assume the Kramers law — it simulates the stochastic R19 field and counts crossings, and both a convex super-linear dose–response and the Kramers exponential emerge from the dynamics. Benzene→AML (IARC Group 1) anchors it. Grade [V] shape+law / [L] anchor / [O] steepness.</p>
+
+<p class="abstract">The dose–response is measured by direct stochastic barrier-crossing simulation: it is convex/super-linear (convex=True) and the Kramers law emerges (log-rate linear in barrier, R²=0.973). Sites: AML←benzene/radiation/alkylators; lymphoma←radiation/immunosuppression/EBV. Absolute steepness (noise scale D) is uncalibrated and graded [O].</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] grade</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/06-carcinogen-dose-response-kramers-kernel/" rel="noopener">reproduction code (GitHub)</a>
+  <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
+</aside>
+
+<aside class="vp-card" data-locked="barrier"><b>barrier = γ²/4</b> — the energy barrier between the two basins; it ranks state stability and sets the Kramers crossing rate, so larger-γ organs hold memory and resist transformation more strongly. <b>[F]</b> canonical derivation: substrate R19</aside>
+<aside class="vp-card" data-locked="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>[F]</b> canonical derivation: substrate R19</aside>
+
+<h2>Why the curve bends up</h2>
+<p>The kernel is one line: a carcinogen erodes the barrier, and the Kramers rate depends exponentially on the
+remaining barrier. A small extra dose near the top of the range removes proportionally more barrier, so the
+crossing rate accelerates — the curve is convex, not linear.</p>
+<p>At the spinodal the barrier reaches zero and the rate diverges: with no barrier left the transformation is
+deterministic rather than thermally activated. This is the mathematical face of a saturating carcinogen.</p>
+<h2>The shape is measured, not assumed</h2>
+<p>Rather than write down the Kramers formula and trust it, the volume <em>simulates</em> the stochastic R19
+field directly: a population of healthy cells under overdamped Langevin dynamics with a carcinogen drive that
+erodes the barrier, and the malignant crossing rate is <em>counted</em> from how many cells cross the ridge.
+Two things emerge from the dynamics. First, the measured dose–response is convex and super-linear
+(convex=True; the measured relative rate runs roughly 1 → 10 → 370 → 1782 across the dose fractions). Second, the logarithm of the
+measured rate is linear in the independently-computed effective barrier (R²=0.973) with an Arrhenius slope of
+-19.0, recovering the expected −1/D=-20.0 — so the Kramers exponential law is an <em>emergent</em> property of
+the simulated substrate, not an assumed kernel.</p>
+<h2>Anchors, honestly graded</h2>
+<p>Benzene→acute myeloid leukaemia is the cleanest occupational anchor (IARC Group 1, ppm-years exposure
+metric); lymphoma is anchored to ionizing radiation, chronic immunosuppression, and EBV drive. The shape and
+the Kramers law are [V] (simulation-measured) and the anchors are [L], but the absolute incidence and the
+steepness depend on the cellular-noise scale D, which the volume does not calibrate — stated [O], no fabricated
+relative-risk numbers.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/immune_hematologic/05-immunosurveillance-escape-cross-cutting-seam/">← §5</a>
+  <a href="/immune_hematologic/">paper contents</a>
+  <a rel="next" href="/immune_hematologic/07-fundamental-treatment-levers-attractor-landscape/">§7 →</a>
+</nav>
+</main>
+<footer>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · <a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> · §6 of 21</footer>
+</body>
+</html>

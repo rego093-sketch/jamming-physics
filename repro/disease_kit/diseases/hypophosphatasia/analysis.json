@@ -1,0 +1,188 @@
+{
+ "disease": "Hypophosphatasia",
+ "omim": "241500",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hypophosphatasia",
+  "omim": "241500",
+  "summary": "Inborn error of bone mineralization. Loss-of-function of ALPL -- the gene for tissue-nonspecific alkaline phosphatase (TNSALP), the ectoenzyme that dephosphorylates extracellular inorganic pyrophosphate (PPi), pyridoxal-5'-phosphate (PLP) and phosphoethanolamine -- lowers TNSALP throughput, so its substrate PPi ACCUMULATES extracellularly. Because PPi is a potent INHIBITOR of hydroxyapatite crystal growth, the deficient enzyme leaves mineralization over-inhibited: rickets/osteomalacia, premature deciduous tooth loss, and in the perinatal/infantile forms respiratory insufficiency and PLP-dependent (vitamin-B6-responsive) seizures. The disease is read as the TNSALP substrate-dephosphorylation / mineralization-throughput axis driven DOWN (a deficient ectoenzyme whose substrate accumulates -- the same enzyme-deficiency-with-substrate-accumulation shape as the lysosomal storage reads, here on an extracellular mineralization enzyme rather than a lysosomal catabolic one). Correction is to restore enzymatic throughput (replace the enzyme). The kit re-derives the approved replace arm -- asfotase alfa, a bone-targeted recombinant TNSALP-Fc-deca-aspartate enzyme replacement that homes to mineralizing matrix and restores local PPi hydrolysis. This pairs with X-linked hypophosphataemia as the OPPOSITE bone-mineral defect: HPP is an ALPL enzyme DEFICIENCY read on the throughput axis DOWN (replace the enzyme), whereas XLH is a PHEX released-brake read on the FGF23 hormone axis UP (restrain the excess hormone). The gamma read is of the ALPL locus switch STRUCTURE; the disease lesion is coding (e.g. p.Glu191Lys, p.Ala116Thr), outside the promoter firewall. Magnitude [O]. NOTE: high-dose vitamin D / calcium / phosphate are NOT corrective switch levers here (they do not restore TNSALP and can drive hypercalcaemia/nephrocalcinosis), and pyridoxine (B6) addresses only the downstream PLP-seizure consequence -- both are downstream-symptomatic, not switch levers (the XLH/Rett downstream-agent discipline).",
+  "emergent_axis": "TNSALP extracellular substrate dephosphorylation / bone mineralization throughput (alkaline-phosphatase-mediated PPi hydrolysis)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "ALPL",
+    "gamma": 1.472,
+    "spinodal_h_sp": 0.6874,
+    "barrier": 0.5417,
+    "dwell_relative_size": 1.62356,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 21508983,
+     "gene_end": 21578409,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "alkaline phosphatase, biomineralization associated"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "ALPL encodes tissue-nonspecific alkaline phosphatase (TNSALP / liver-bone-kidney isozyme), the GPI-anchored ectoenzyme on osteoblast/chondrocyte membranes and matrix vesicles that hydrolyses extracellular inorganic pyrophosphate (PPi) and pyridoxal-5'-phosphate (PLP). LOF lowers PPi hydrolysis -> PPi (a mineralization inhibitor) accumulates -> defective hydroxyapatite deposition (rickets/osteomalacia, dental disease); PLP accumulation underlies the B6-responsive seizures of severe forms. Located 1p36.12. NCBI official symbol ALPL. Both autosomal recessive (severe perinatal/infantile) and autosomal dominant (milder) inheritance occur via the allele's residual activity and dominant-negative dimerisation. Coding lesions (e.g. p.Glu191Lys, p.Ala116Thr, p.Arg54Cys); promoter firewall respected.",
+    "src": "Weiss 1988 PNAS 85:7666 (ALPL mutation in HPP); Mornet 2000 Hum Mol Genet 9:1133 (TNSALP mutation spectrum); Hessle 2002 PNAS 99:9445 (TNSALP and PPi regulate mineralization)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "ALPL",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "32e4f75c7faa"
+ },
+ "treatment_A_switch": {
+  "disease": "Hypophosphatasia",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "ALPL",
+    "push_direction": "supply bone-targeted recombinant TNSALP -> restore extracellular PPi/PLP hydrolysis -> relieve mineralization inhibition (axis UP toward function)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "bone-targeted enzyme replacement (asfotase alfa, recombinant TNSALP-Fc-deca-aspartate)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored dephosphorylation / mineralization-recovery magnitude not derived from sequence",
+    "src": "Whyte 2012 NEJM 366:904 (asfotase alfa in perinatal/infantile HPP); Whyte 2016 J Clin Endocrinol Metab 101:334 (juvenile HPP); asfotase alfa (Strensiq) FDA/EMA 2015"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "ALPL",
+    "push_direction": "restore endogenous TNSALP expression at the locus (gene-level enzyme restoration)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "gene therapy (AAV-mediated TNSALP / mineral-targeted TNSALP transfer)",
+    "status": "preclinical",
+    "mechanism_grade": "[O] expression / mineralization-rescue magnitude not derived from sequence",
+    "src": "Matsumoto 2011 Hum Gene Ther 22:1355 (AAV8 bone-targeted TNSALP rescues a murine HPP model)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "ALPL",
+   "push_direction": "supply bone-targeted recombinant TNSALP -> restore extracellular PPi/PLP hydrolysis -> relieve mineralization inhibition (axis UP toward function)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "bone-targeted enzyme replacement (asfotase alfa, recombinant TNSALP-Fc-deca-aspartate)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored dephosphorylation / mineralization-recovery magnitude not derived from sequence",
+   "src": "Whyte 2012 NEJM 366:904 (asfotase alfa in perinatal/infantile HPP); Whyte 2016 J Clin Endocrinol Metab 101:334 (juvenile HPP); asfotase alfa (Strensiq) FDA/EMA 2015"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.62356,
+   "dwell_disease": 1.05054,
+   "dwell_treated": 1.33278,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "6dc9b57b94f5"
+ },
+ "treatment_B_chem": {
+  "disease": "Hypophosphatasia",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "PPi-generation reduction (lower the upstream mineralization inhibitor)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "lower extracellular PPi supply (e.g. ENPP1 / ANKH attenuation) -> less PPi for the deficient TNSALP step -> less inhibition of hydroxyapatite growth",
+    "rationale": "reduces the inhibitory substrate that backs up behind the throttled TNSALP step; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "preclinical",
+    "src": "Hessle 2002 PNAS 99:9445 (TNSALP vs NPP1/PPi set-point for mineralization)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "5f7224ae9e23"
+ },
+ "falsifiers": [
+  {
+   "claim": "ALPL LOF lowers TNSALP throughput (PPi/PLP accumulate, mineralization impaired)",
+   "falsifier": "an ALPL LOF allele that INCREASED alkaline-phosphatase activity, or osteoblast/matrix in which ALPL loss REDUCED extracellular PPi, refutes the throughput-down direction",
+   "measurable_by": "serum/extracellular alkaline-phosphatase activity and PPi (and PLP) levels in ALPL-deficient cells / HPP patient plasma"
+  },
+  {
+   "claim": "restoring enzyme throughput (replace) is the CORRECTIVE direction",
+   "falsifier": "if supplying bone-targeted recombinant TNSALP REDUCED mineralization or RAISED PPi, the 'replace enzyme' lever sign is wrong",
+   "measurable_by": "plasma PPi/PLP normalisation and radiographic/histomorphometric mineralization response to asfotase alfa in patient-derived cells / HPP model"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hypophosphatasia": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "a7349928faf8"
+ },
+ "determinism_sha": "5ce519c1276d"
+}

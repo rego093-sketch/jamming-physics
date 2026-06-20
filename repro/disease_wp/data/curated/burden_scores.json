@@ -1,0 +1,2392 @@
+{
+  "schema": "disease_wp.burden_scores/v1",
+  "phase": "R3",
+  "investigation_only": true,
+  "generated": "2026-06-17",
+  "method": "methodology/BURDEN_INDEX.md + methodology/BURDEN_LEXICON.md",
+  "weights_default": {
+    "O": 0.2,
+    "P": 0.2,
+    "S": 0.2,
+    "M": 0.2,
+    "D": 0.2
+  },
+  "composite_rule": "raw_burden = mean of present axis values (renormalised); missing axis excluded, not imputed",
+  "floor_rule": "raw_burden grade = min over 5 axis grades (O<H<L<V; any missing axis -> [O]); grade_present = floor over scored axes only",
+  "treatability": "R_treat = 1 - e; e from R4 treatments.csv (not yet built) so R_treat = 1.0, [O]; primary ordering on raw_burden (pre-treatment)",
+  "ranking_basis": "raw_burden desc, axes_scored desc, entity asc; only rankable (>=3 axes) placed",
+  "rankability": {
+    "min_axes": 3,
+    "rule": "rankable = axes_scored >= 3 (majority of 5). Only rankable diseases are placed in the ordered suffering-order; diseases with fewer scored axes are reported with rank = null under 'not placed - insufficient axis coverage'.",
+    "rationale": "raw_burden is a renormalised mean over scored axes; a mean over <3 of 5 axes is not a meaningful aggregate and would let a single-axis disease crowd the top of the order. One fixed declared threshold, not a tuned cut.",
+    "placed": 17,
+    "not_placed": 18
+  },
+  "cohort_size": 35,
+  "sensitivity": {
+    "equal_default": {
+      "weights": {
+        "O": 0.2,
+        "P": 0.2,
+        "S": 0.2,
+        "M": 0.2,
+        "D": 0.2
+      },
+      "spearman_vs_default": 1.0
+    },
+    "onset_heavy": {
+      "weights": {
+        "O": 0.4,
+        "P": 0.15,
+        "S": 0.15,
+        "M": 0.15,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9485
+    },
+    "mortality_heavy": {
+      "weights": {
+        "O": 0.15,
+        "P": 0.15,
+        "S": 0.15,
+        "M": 0.4,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9436
+    },
+    "severity_heavy": {
+      "weights": {
+        "O": 0.15,
+        "P": 0.15,
+        "S": 0.4,
+        "M": 0.15,
+        "D": 0.15
+      },
+      "spearman_vs_default": 0.9381
+    },
+    "drop_disability_core4": {
+      "weights": {
+        "O": 0.25,
+        "P": 0.25,
+        "S": 0.25,
+        "M": 0.25,
+        "D": 0.0
+      },
+      "spearman_vs_default": 0.9742
+    }
+  },
+  "axis_grade_coverage": {
+    "O": {
+      "[L]": 20,
+      "[H]": 11,
+      "[O]": 4
+    },
+    "P": {
+      "[O]": 21,
+      "[H]": 13,
+      "[L]": 1
+    },
+    "S": {
+      "[H]": 24,
+      "[O]": 11
+    },
+    "M": {
+      "[L]": 1,
+      "[H]": 16,
+      "[O]": 18
+    },
+    "D": {
+      "[O]": 27,
+      "[H]": 8
+    }
+  },
+  "records": [
+    {
+      "rank": 1,
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "tier": "extension",
+      "system_class": "skeletal",
+      "genes": [
+        "COL2A1"
+      ],
+      "omim_codes": [
+        "120140",
+        "200610"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Second trimester onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "severe / debilitating (definition: 'severe')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "HPO Mortality/Aging term(s): Stillbirth",
+          "source": "HPO phenotype.hpoa v2026-06-06 Mortality/Aging annotations"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "P",
+        "D"
+      ],
+      "raw_burden": 0.9166666666666666,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.9166666666666666,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "COL2A1 loss disrupts cartilage extracellular-matrix assembly; perturbs the diffusion term D in the morphogen length scale lambda = sqrt(D*tau) for skeletal anlage",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": 2,
+      "entity": "Tyrosinemia type I",
+      "cui": "C0268490",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "FAH"
+      ],
+      "omim_codes": [
+        "276700",
+        "613871"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "childhood onset (definition: 'children')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "severe / debilitating (definition: 'severe')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "early-life lethality stated",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "P",
+        "D"
+      ],
+      "raw_burden": 0.8166666666666667,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.8166666666666667,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 3,
+      "entity": "Classic homocystinuria",
+      "cui": "C0751202",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "CBS"
+      ],
+      "omim_codes": [
+        "236200"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Juvenile onset, Neonatal onset, Childhood onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "severely reduced / premature survival stated",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'intellectual disability')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "P"
+      ],
+      "raw_burden": 0.7375,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7375,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 4,
+      "entity": "alpha Thalassemia",
+      "cui": "C0002312",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "HBA1",
+        "HBA2"
+      ],
+      "omim_codes": [
+        "141800",
+        "141850",
+        "604131"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "congenital / neonatal onset (definition: 'neonatal')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "P",
+        "D"
+      ],
+      "raw_burden": 0.7333333333333333,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7333333333333333,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 5,
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [
+        "SMPD1"
+      ],
+      "omim_codes": [
+        "257200",
+        "607608"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Infantile onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "progressive course (definition: 'progressive')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "severe / debilitating (definition: 'severe')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.7,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 6,
+      "entity": "Cystic fibrosis",
+      "cui": "C0010674",
+      "tier": "flagship",
+      "system_class": "respiratory/exocrine",
+      "genes": [
+        "CFTR",
+        "FCGR2A",
+        "TGFB1"
+      ],
+      "omim_codes": [
+        "219700",
+        "602421"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Infantile onset, Childhood onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "progressive course (definition: 'progressive')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "disease-related mortality stated (timing unspecified)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "S",
+        "D"
+      ],
+      "raw_burden": 0.6833333333333332,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6833333333333332,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 7,
+      "entity": "Gaucher disease type I",
+      "cui": "C1961835",
+      "tier": "extension",
+      "system_class": "lysosomal",
+      "genes": [
+        "GBA1"
+      ],
+      "omim_codes": [
+        "230800",
+        "606463"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "congenital / neonatal onset (definition: 'perinatal')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "D"
+      ],
+      "raw_burden": 0.675,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.675,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 8,
+      "entity": "Hurler syndrome",
+      "cui": "C0086795",
+      "tier": "extension",
+      "system_class": "lysosomal",
+      "genes": [
+        "IDUA"
+      ],
+      "omim_codes": [
+        "252800",
+        "607014"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Childhood onset, Infantile onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'intellectual disability')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 5,
+      "rankable": true,
+      "axes_missing": [],
+      "raw_burden": 0.66,
+      "raw_burden_grade_floor": "[H]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.66,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 9,
+      "entity": "Glycogen storage disease, type II",
+      "cui": "C0017921",
+      "tier": "flagship",
+      "system_class": "metabolic/muscular",
+      "genes": [
+        "GAA"
+      ],
+      "omim_codes": [
+        "232300"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Young adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "progressive course (definition: 'progressive')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "early-life lethality stated",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'wheelchair')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "S"
+      ],
+      "raw_burden": 0.65,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.65,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 10,
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "tier": "flagship",
+      "system_class": "skeletal",
+      "genes": [
+        "COL1A1",
+        "COL1A2"
+      ],
+      "omim_codes": [
+        "120150",
+        "166200",
+        "166210",
+        "166220",
+        "259420"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Fetal onset, Infantile onset, Congenital onset, Adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "partial support need (definition: 'mobility impair')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 5,
+      "rankable": true,
+      "axes_missing": [],
+      "raw_burden": 0.64,
+      "raw_burden_grade_floor": "[H]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.64,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "COL1A1/COL1A2 defects alter type-I collagen matrix stiffness; perturbs the mechanical Layer-2 substrate on which the morphogenetic length scale acts",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": 11,
+      "entity": "Gaucher disease",
+      "cui": "C0017205",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [],
+      "omim_codes": [
+        "230800",
+        "230900",
+        "231000"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Adult onset, Infantile onset, Childhood onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated); refines HPO Mortality term(s) [Death in infancy] (presence flag, not lifespan magnitude)",
+          "source": "cited-text inference over MedGen clinical_definition; HPO phenotype.hpoa v2026-06-06 corroborates presence"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "D"
+      ],
+      "raw_burden": 0.6375,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6375,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 12,
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "tier": "flagship",
+      "system_class": "musculoskeletal",
+      "genes": [
+        "DMD"
+      ],
+      "omim_codes": [
+        "300377",
+        "310200"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Childhood onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'wheelchair')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 5,
+      "rankable": true,
+      "axes_missing": [],
+      "raw_burden": 0.63,
+      "raw_burden_grade_floor": "[H]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.63,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 13,
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "TAT"
+      ],
+      "omim_codes": [
+        "276600",
+        "613018"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[H]",
+          "basis": "infantile onset (definition: 'infancy')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.25,
+          "grade": "[H]",
+          "basis": "mild / asymptomatic (definition: 'mild')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'intellectual disability')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "P",
+        "M"
+      ],
+      "raw_burden": 0.6166666666666667,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6166666666666667,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 14,
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "tier": "flagship",
+      "system_class": "lysosomal",
+      "genes": [
+        "GLA"
+      ],
+      "omim_codes": [
+        "300644",
+        "301500"
+      ],
+      "components": {
+        "O": {
+          "value": 0.55,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Young adult onset, Late onset, Middle age onset, Juvenile onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "progressive course (definition: 'progressive')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "D"
+      ],
+      "raw_burden": 0.5625,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.5625,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 15,
+      "entity": "Becker muscular dystrophy",
+      "cui": "C0917713",
+      "tier": "extension",
+      "system_class": "musculoskeletal",
+      "genes": [
+        "DMD"
+      ],
+      "omim_codes": [
+        "300376",
+        "300377"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Adult onset, Late onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "variable mortality spectrum (lethal/severe-to-normal range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'wheelchair')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 5,
+      "rankable": true,
+      "axes_missing": [],
+      "raw_burden": 0.56,
+      "raw_burden_grade_floor": "[H]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.56,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 16,
+      "entity": "Polycystic kidney disease 2",
+      "cui": "C2751306",
+      "tier": "flagship",
+      "system_class": "renal",
+      "genes": [
+        "PKD2"
+      ],
+      "omim_codes": [
+        "173910",
+        "613095"
+      ],
+      "components": {
+        "O": {
+          "value": 0.55,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Middle age onset, Juvenile onset, Young adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[L]",
+          "basis": "HPO clinical-course term(s): Progressive",
+          "source": "HPO phenotype.hpoa v2026-06-06 Clinical-course (aspect C) annotations"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 3,
+      "rankable": true,
+      "axes_missing": [
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.5166666666666667,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.5166666666666667,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": 17,
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "tier": "flagship",
+      "system_class": "connective_tissue",
+      "genes": [
+        "FBN1"
+      ],
+      "omim_codes": [
+        "134797",
+        "154700"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Young adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable progression spectrum (fast/fatal-to-slow/mild range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "severely reduced / premature survival stated",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 4,
+      "rankable": true,
+      "axes_missing": [
+        "D"
+      ],
+      "raw_burden": 0.5125,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.5125,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "FBN1 microfibril defect dysregulates TGF-beta sequestration; perturbs the morphogen effective decay time tau in lambda = sqrt(D*tau) for connective-tissue patterning",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": null,
+      "entity": "21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia",
+      "cui": "C2936858",
+      "tier": "extension",
+      "system_class": "endocrine",
+      "genes": [
+        "CYP21A2"
+      ],
+      "omim_codes": [
+        "201910",
+        "613815"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.42499999999999993,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.42499999999999993,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Achondroplasia",
+      "cui": "C0001080",
+      "tier": "extension",
+      "system_class": "skeletal",
+      "genes": [
+        "FGFR3"
+      ],
+      "omim_codes": [
+        "100800",
+        "134934"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Congenital onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": 0.4,
+          "grade": "[H]",
+          "basis": "near-normal lifespan with qualified mortality risk; refines HPO Mortality term(s) [Death in infancy] (presence flag, not lifespan magnitude)",
+          "source": "cited-text inference over MedGen clinical_definition; HPO phenotype.hpoa v2026-06-06 corroborates presence"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "D"
+      ],
+      "raw_burden": 0.7000000000000001,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7000000000000001,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "FGFR3 constitutive activation suppresses chondrocyte proliferation at the growth plate; perturbs the morphogen length scale lambda = sqrt(D*tau) governing long-bone elongation",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": null,
+      "entity": "Acute intermittent porphyria",
+      "cui": "C0162565",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "HMBS"
+      ],
+      "omim_codes": [
+        "176000",
+        "609806"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[H]",
+          "basis": "adult onset (definition: 'third decade')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.42499999999999993,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.42499999999999993,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Alpha-1-antitrypsin deficiency",
+      "cui": "C0221757",
+      "tier": "flagship",
+      "system_class": "hepatic/respiratory",
+      "genes": [
+        "SERPINA1"
+      ],
+      "omim_codes": [
+        "613490"
+      ],
+      "components": {
+        "O": {
+          "value": 0.35,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Early young adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": 0.4,
+          "grade": "[H]",
+          "basis": "near-normal lifespan with qualified mortality risk",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "D"
+      ],
+      "raw_burden": 0.37500000000000006,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.37500000000000006,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "cui": "CN322236",
+      "tier": "flagship",
+      "system_class": "hematologic",
+      "genes": [
+        "HBB",
+        "HBB-LCR"
+      ],
+      "omim_codes": [
+        "613985"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "childhood onset (definition: 'childhood')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.6,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Hb SS disease",
+      "cui": "C0002895",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "HBB"
+      ],
+      "omim_codes": [
+        "141900",
+        "603903"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "childhood onset (definition: 'childhood')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "disease-related mortality stated (timing unspecified)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "D"
+      ],
+      "raw_burden": 0.6999999999999998,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6999999999999998,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Hemochromatosis type 1",
+      "cui": "C3469186",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "BMP2",
+        "HFE"
+      ],
+      "omim_codes": [
+        "235200",
+        "613609"
+      ],
+      "components": {
+        "O": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "onset not stated",
+          "obstacle": "age of onset not in HPO annotations or MedGen definition; registry onset (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "P": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "progressive course (definition: 'progressive')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "severe / debilitating (definition: 'severe')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "O",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.625,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.625,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Hereditary factor IX deficiency disease",
+      "cui": "C0008533",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "F9"
+      ],
+      "omim_codes": [
+        "306900"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "childhood onset (definition: 'childhood')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.6,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Maple syrup urine disease",
+      "cui": "C0024776",
+      "tier": "flagship",
+      "system_class": "metabolic",
+      "genes": [
+        "BCKDHA",
+        "BCKDHB"
+      ],
+      "omim_codes": [
+        "248600"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "congenital / neonatal onset (definition: 'neonates')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.7500000000000001,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7500000000000001,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Phenylketonuria",
+      "cui": "C0031485",
+      "tier": "flagship",
+      "system_class": "metabolic",
+      "genes": [
+        "PAH"
+      ],
+      "omim_codes": [
+        "261600"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Congenital onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": 0.75,
+          "grade": "[H]",
+          "basis": "high support need (definition: 'intellectual disability')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "M"
+      ],
+      "raw_burden": 0.875,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.875,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Wilson disease",
+      "cui": "C0019202",
+      "tier": "flagship",
+      "system_class": "hepatic/metabolic",
+      "genes": [
+        "ATP7B"
+      ],
+      "omim_codes": [
+        "277900",
+        "606882"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Juvenile onset, Young adult onset, Childhood onset, Intermediate young adult onset, Late young adult onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": 0.8,
+          "grade": "[H]",
+          "basis": "rapidly progressive (definition: 'fulminant')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 2,
+      "rankable": false,
+      "axes_missing": [
+        "S",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.7500000000000001,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.7500000000000001,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Alkaptonuria",
+      "cui": "C0002066",
+      "tier": "extension",
+      "system_class": "metabolic",
+      "genes": [
+        "HGD"
+      ],
+      "omim_codes": [
+        "203500",
+        "607474"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Adult onset, Infantile onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.85,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[L]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.85,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Cystinosis",
+      "cui": "C4316899",
+      "tier": "flagship",
+      "system_class": "renal/lysosomal",
+      "genes": [
+        "CTNS"
+      ],
+      "omim_codes": [
+        "219800"
+      ],
+      "components": {
+        "O": {
+          "value": 0.85,
+          "grade": "[L]",
+          "basis": "earliest of HPO onset annotations: Infantile onset, Adult onset, Juvenile onset, Young adult onset, Childhood onset",
+          "source": "HPO phenotype.hpoa v2026-06-06 onset annotations (dossier age_of_onset)"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.85,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[L]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.85,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Cystinuria",
+      "cui": "C0010691",
+      "tier": "extension",
+      "system_class": "renal",
+      "genes": [
+        "SLC3A1",
+        "SLC7A9"
+      ],
+      "omim_codes": [
+        "104614",
+        "220100",
+        "604144"
+      ],
+      "components": {
+        "O": {
+          "value": 0.7,
+          "grade": "[H]",
+          "basis": "childhood onset (definition: 'early-onset')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.6999999999999998,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.6999999999999998,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "Ehlers-Danlos syndrome, classic type, 1",
+      "cui": "C0268335",
+      "tier": "extension",
+      "system_class": "connective_tissue",
+      "genes": [
+        "COL5A1"
+      ],
+      "omim_codes": [
+        "120215",
+        "130000"
+      ],
+      "components": {
+        "O": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "onset not stated",
+          "obstacle": "age of onset not in HPO annotations or MedGen definition; registry onset (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.25,
+          "grade": "[H]",
+          "basis": "mild / asymptomatic (definition: 'mild')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "O",
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.25,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.25,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "COL5A1/COL1A1 defects impair collagen fibril nucleation; perturbs matrix diffusion D in the morphogenetic length scale for dermal/connective patterning",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": null,
+      "entity": "Ehlers-Danlos syndrome, type 4",
+      "cui": "C0268338",
+      "tier": "extension",
+      "system_class": "connective_tissue",
+      "genes": [
+        "COL3A1"
+      ],
+      "omim_codes": [
+        "120180",
+        "130050"
+      ],
+      "components": {
+        "O": {
+          "value": 1.0,
+          "grade": "[H]",
+          "basis": "congenital / neonatal onset (definition: 'neonates')",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "severity not stated",
+          "obstacle": "severity descriptor not in MedGen definition; registry severity (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "P",
+        "S",
+        "M",
+        "D"
+      ],
+      "raw_burden": 1.0,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 1.0,
+      "burden_score_grade": "[O]",
+      "emergence_link": {
+        "value": "COL3A1 loss weakens type-III collagen in vessel/organ walls; perturbs the mechanical substrate term of the morphogenetic baseline",
+        "grade": "[H]",
+        "basis": "developmental/morphogenesis mechanism mapped to the emergence baseline",
+        "source": "code/emergence_v2/ (pinned read-only baseline; morphogen_lengths.json, param_db.json)"
+      }
+    },
+    {
+      "rank": null,
+      "entity": "Hereditary factor VIII deficiency disease",
+      "cui": "C0019069",
+      "tier": "flagship",
+      "system_class": "hematologic",
+      "genes": [
+        "F8"
+      ],
+      "omim_codes": [
+        "300841",
+        "306700"
+      ],
+      "components": {
+        "O": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "onset not stated",
+          "obstacle": "age of onset not in HPO annotations or MedGen definition; registry onset (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "O",
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.5,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.5,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    },
+    {
+      "rank": null,
+      "entity": "von Willebrand disease type 1",
+      "cui": "C1264039",
+      "tier": "extension",
+      "system_class": "hematologic",
+      "genes": [
+        "VWF"
+      ],
+      "omim_codes": [
+        "193400",
+        "613160"
+      ],
+      "components": {
+        "O": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "onset not stated",
+          "obstacle": "age of onset not in HPO annotations or MedGen definition; registry onset (OMIM clinical synopsis) deferred, not guessed"
+        },
+        "P": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "progression not stated",
+          "obstacle": "natural-history/progression not in HPO Clinical-course annotations or MedGen definition; registry natural-history (Orphanet) deferred, not guessed"
+        },
+        "S": {
+          "value": 0.5,
+          "grade": "[H]",
+          "basis": "variable severity spectrum (mild-to-severe range stated)",
+          "source": "cited-text inference over MedGen clinical_definition"
+        },
+        "M": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "survival not stated",
+          "obstacle": "life-expectancy impact not in HPO Mortality/Aging annotations or MedGen definition; survival literature deferred, not guessed"
+        },
+        "D": {
+          "value": null,
+          "grade": "[O]",
+          "basis": "functional status not stated",
+          "obstacle": "functional/disability status not in MedGen definition; functional registry (Orphanet) deferred, not guessed"
+        }
+      },
+      "axes_scored": 1,
+      "rankable": false,
+      "axes_missing": [
+        "O",
+        "P",
+        "M",
+        "D"
+      ],
+      "raw_burden": 0.5,
+      "raw_burden_grade_floor": "[O]",
+      "raw_burden_grade_present": "[H]",
+      "treatability": {
+        "value": 1.0,
+        "grade": "[O]",
+        "basis": "no treatability offset applied (e = 0); R4 treatments.csv not yet built",
+        "obstacle": "treatability offset deferred to Phase R4 (treatments.csv); raw_burden is the pre-treatment burden"
+      },
+      "burden_score": 0.5,
+      "burden_score_grade": "[O]",
+      "emergence_link": null
+    }
+  ],
+  "grade_vocabulary": {
+    "[L]": "registry-stated and cited (HPO annotation; observed input)",
+    "[H]": "inference from the cited MedGen clinical_definition; matched phrase recorded as basis",
+    "[V]": "derived from a quantitative published distribution (reserved; none used in R3)",
+    "[O]": "open/unavailable; obstacle named; not guessed"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "phase": "R4",
+  "kind": "investigation_gate",
+  "generated": "2026-06-18",
+  "inputs": {
+    "treatments_csv": {
+      "path": "data/curated/treatments.csv",
+      "sha12": "810cf5385c11"
+    },
+    "treatments_json": {
+      "path": "data/curated/treatments.json",
+      "sha12": "0f6de1a24e2e"
+    },
+    "burden_residual_csv": {
+      "path": "data/curated/burden_residual.csv",
+      "sha12": "ee651495ecc1"
+    },
+    "burden_residual_json": {
+      "path": "data/curated/burden_residual.json",
+      "sha12": "46755e1a0d7f"
+    },
+    "treatment_lexicon": {
+      "path": "methodology/TREATMENT_LEXICON.md",
+      "sha12": "05ec90d3511b"
+    },
+    "treatment_rules": {
+      "path": "methodology/treatment_rules.csv",
+      "sha12": "c35871664101"
+    }
+  },
+  "counts": {
+    "treatment_rows": 35,
+    "residual_records": 35,
+    "status_distribution": {
+      "disease-modifying (substantial)": 21,
+      "none": 2,
+      "disease-modifying (partial)": 9,
+      "symptomatic": 3
+    },
+    "tier_distribution": {
+      "standard_of_care": 23,
+      "definition": 12
+    },
+    "definition_tier_corroborated": 12,
+    "definition_tier_total": 12,
+    "placed": 17,
+    "not_placed": 18
+  },
+  "checks": [
+    {
+      "name": "treatments_graded_no_guess",
+      "pass": true,
+      "detail": "35 treatment rows graded with basis; 0 violations"
+    },
+    {
+      "name": "evidence_status_in_vocab",
+      "pass": true,
+      "detail": "35 rows; 0 outside ['curative', 'disease-modifying (partial)', 'disease-modifying (substantial)', 'none', 'symptomatic']"
+    },
+    {
+      "name": "efficacy_offset_correct",
+      "pass": true,
+      "detail": "35 rows e=E_MAP[status] & R_treat=1-e verified"
+    },
+    {
+      "name": "definition_corroboration_consistent",
+      "pass": true,
+      "detail": "12 definition-tier rows; 0 uncorroborated"
+    },
+    {
+      "name": "residual_composite_correct",
+      "pass": true,
+      "detail": "35 residual records burden_score=raw*(1-e) verified"
+    },
+    {
+      "name": "raw_burden_unchanged_from_R3",
+      "pass": true,
+      "detail": "35 records raw_burden == R3 banked; 0 mutated"
+    },
+    {
+      "name": "residual_ranking_deterministic_2x",
+      "pass": true,
+      "detail": "treatments f5ba4f0e438d==f5ba4f0e438d; residual d41d4e95b8b1==d41d4e95b8b1"
+    },
+    {
+      "name": "cohort_complete_35",
+      "pass": true,
+      "detail": "treatments=35 residual=35 cohort=35; cui sets match=True"
+    },
+    {
+      "name": "treatability_no_fabricated_cure",
+      "pass": true,
+      "detail": "no curative, no claimed [L], every non-[O] has modality+basis"
+    },
+    {
+      "name": "residual_sensitivity_present",
+      "pass": true,
+      "detail": "5 weightings; equal_default rho=1.0"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ],
+  "verdict": "PASS (11/11)",
+  "note": "Investigation gate over the R4 treatment survey and residual burden. Every treatment row carries a uniform [H] grade with a recorded basis: the 12 definition-tier rows are runtime-corroborated against the in-package, already-[L]-cited MedGen clinical_definition (matched phrase recorded); the 23 standard-of-care-tier rows name the established therapy and its source class with the accession-dated [L] verification explicitly deferred. The efficacy offset e is re-derived here from the declared evidence_status->e map, and the residual burden_score = raw_burden * (1 - e) is re-derived from R3's banked raw_burden (verified read UNCHANGED). No disease is assigned a curative class and no row claims [L] (constitution C-D3: no fabricated cure). Determinism is verified by two fresh runs of each builder producing identical digests. HONESTY/SCOPE: treatment evidence is [H] (cited text / established science), not [L]; pinning each therapy to an accession-dated source (FDA label / GeneReviews Management / OMIM clinical management / Orphanet) is the deferred [L] validation pass, the analogue of R3's deferred natural-history registry pass, and must be completed before any W-phase prose treats the residual order as more than a provisional [H]-grade prioritisation device. The governed emergence engine pin is re-verified drift-zero."
+}

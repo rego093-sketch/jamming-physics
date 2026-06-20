@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix K — VP Theory §AXK | Jamming Physics</title>
+<meta name="description" content="This appendix adds an external calibration for the VP “discrete-medium reconstruction” logic.">
+<link rel="canonical" href="https://jamming-physics.org/physics/axk-methodological-validation-via-classical-gas/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix K — VP Theory §AXK | Jamming Physics"><meta property="og:description" content="This appendix adds an external calibration for the VP “discrete-medium reconstruction” logic."><meta property="og:url" content="https://jamming-physics.org/physics/axk-methodological-validation-via-classical-gas/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix K — VP Theory §AXK | Jamming Physics"><meta name="twitter:description" content="This appendix adds an external calibration for the VP “discrete-medium reconstruction” logic.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix K",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXK",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXK Appendix K"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXK</nav></header>
+<main>
+<h1>Appendix K: Methodological Validation via Classical Gas Acoustics (Mean-Free-Path Reconstruction)</h1>
+<p class="answer">Appendix K: This appendix adds an external calibration for the VP “discrete-medium reconstruction” logic. It is not an analogy (“space is like air”) and it is not used to tune any VP LOCK constants. We use representative macroscopic inputs together with γ≈ 1.4 and molar mass M≈ 28.97g/mol.</p>
+<p class="abstract" data-phase2="abstract">This appendix adds an external calibration for the VP “discrete-medium reconstruction” logic. It is not an analogy (“space is like air”) and it is not used to tune any VP LOCK constants. We use representative macroscopic inputs together with γ≈ 1.4 and molar mass M≈ 28.97g/mol.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axk-methodological-validation-via-classical-gas/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<span id="app:acoustic_validation"></span>
+<h2>K.0 Scope and intent (calibration module; NON-LOCK)</h2>
+<p>This appendix adds an <strong>external calibration</strong> for the VP “discrete-medium reconstruction” logic.
+It is <em>not</em> an analogy (“space is like air”) and it is not used to tune any VP LOCK constants.
+Instead, it is a <strong>black-box inversion test</strong>:</p>
+<blockquote>
+<strong>Given:</strong> macroscopic wave data and macroscopic transport data of a known discrete medium.<br>
+<strong>Recover:</strong> an accepted microscopic length scale of that medium.<br>
+<strong>Interpretation:</strong> if the same inversion structure works on a classical system with known micro-scale,
+then applying the same <em>structure</em> to the VP lattice problem is methodologically less arbitrary.
+</blockquote>
+<h2>K.1 Why acoustics in air is a suitable calibration target</h2>
+<p>In a dilute gas, the <strong>speed of sound</strong> vₛ is determined by equilibrium thermodynamics
+(mainly T and the adiabatic index γ), while the <strong>continuum validity</strong> of wave mechanics
+(and the frequency-dependent attenuation) is governed by collisional microphysics.
+The controlling micro-length is the <strong>mean free path</strong> λ_mfp.</p>
+<p>A key point is that <em>λ_mfp cannot be inferred from vₛ alone</em>.
+One needs at least one macroscopic transport coefficient (e.g., viscosity) or attenuation data.
+This is exactly the same type of requirement we impose in VP theory:
+a wave speed plus a dissipation/transport gate is needed to infer a discrete scale.</p>
+<h2>K.2 Reconstruction of λₘfp from macroscopic data (one worked example)</h2>
+<p>We consider dry air near room temperature and 1atm as a calibration case.
+We use representative macroscopic inputs</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-006.svg" data-eq="phy-axk-006" width="505" height="21" loading="lazy" alt="v_s \approx 343\,\mathrm{m/s},\quad \eta \approx 1.81\times 10^{-5}\,\mathrm{Pa\cdot s},\quad p \approx 1.01325\times 10^{5}\,\mathrm{Pa},"></figure>
+<p>together with γ≈ 1.4 and molar mass M≈ 28.97g/mol.</p>
+<h3>K.2.1 Step 1: Temperature from sound speed</h3>
+<p>For an ideal gas,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-000.svg" data-eq="phy-axk-000" width="274" height="48" loading="lazy" alt="\begin{equation} v_s=\sqrt{\gamma \frac{R T}{M}} \quad\Longrightarrow\quad T=\frac{v_s^2\,M}{\gamma R}. \end{equation}"></figure>
+<p>With the above inputs, T≈ 2.93× 10²K.</p>
+<h3>K.2.2 Step 2: Effective collision diameter from viscosity (hard-sphere scaling)</h3>
+<p>A standard hard-sphere kinetic-theory scaling (Chapman–Enskog form) for dynamic viscosity is</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-001.svg" data-eq="phy-axk-001" width="170" height="46" loading="lazy" alt="\begin{equation} \eta \approx \frac{5}{16\,d^2}\sqrt{\frac{m\,k_B\,T}{\pi}}, \end{equation}"></figure>
+<p>where d is an effective collision diameter and m=M/N_A is the molecular mass.
+Solving for d gives</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-002.svg" data-eq="phy-axk-002" width="181" height="57" loading="lazy" alt="\begin{equation} d \approx \sqrt{\frac{5}{16\,\eta}\sqrt{\frac{m\,k_B\,T}{\pi}}}. \end{equation}"></figure>
+<p>Numerically, this yields d≈ 3.7× 10⁻¹⁰m (sub-nanometer scale, as expected).</p>
+<h3>K.2.3 Step 3: Mean free path</h3>
+<p>For a hard-sphere gas,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-003.svg" data-eq="phy-axk-003" width="145" height="46" loading="lazy" alt="\begin{equation} \lambda_{\mathrm{mfp}}=\frac{k_B T}{\sqrt{2}\,\pi\,d^2\,p}. \end{equation}"></figure>
+<p>Using the reconstructed d and the macroscopic inputs above, we obtain</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-004.svg" data-eq="phy-axk-004" width="249" height="22" loading="lazy" alt="\begin{equation} \lambda_{\mathrm{mfp}}\approx 6.6\times 10^{-8}\,\mathrm{m}\;\approx\;66\,\mathrm{nm}. \end{equation}"></figure>
+<p>This is consistent with the commonly quoted order-of-magnitude for the mean free path of air
+near 1atm and room temperature (  10²nm).</p>
+<h2>K.3 Regime gate: continuum acoustics vs.discrete-collision scale</h2>
+<p>A simple regime indicator is the Knudsen number for the wave,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axk-005.svg" data-eq="phy-axk-005" width="199" height="42" loading="lazy" alt="\begin{equation} \mathrm{Kn}_\lambda := \frac{\lambda_{\mathrm{mfp}}}{\lambda_{\mathrm{wave}}} =\frac{\lambda_{\mathrm{mfp}}\,\nu}{v_s}, \end{equation}"></figure>
+<p>where λ_wave=vₛ/ν and ν is the acoustic frequency.
+The continuum acoustic model is reliable for Kn_λll 1,
+and breaks down (strong kinetic attenuation / non-continuum behavior) as Kn_λ→ O(1).
+Thus the reconstruction is not only a number-fit; it also predicts the expected <strong>frequency gate</strong>
+where macroscopic wave theory ceases to be valid.</p>
+<h2>K.4 Isomorphic comparison table (acoustics vs.VP lattice reconstruction)</h2>
+<div class="tblwrap">
+<table><tr><td><strong>Item</strong></td><td><strong>Classical gas acoustics (air)</strong></td><td><strong>VP lattice reconstruction (space)</strong></td></tr><tr><td>Wave type</td><td>Longitudinal pressure wave</td><td>EM / lattice wave in VP medium</td></tr><tr><td>Macroscopic speed</td><td>vₛ (measured)</td><td>c (defined/measured)</td></tr><tr><td>Micro length to infer</td><td>λ_mfp (collision scale)</td><td>ℓ_VP (lattice scale)</td></tr><tr><td>Auxiliary macro input</td><td>η (transport / damping gate)</td><td>VP transport/damping gate (protocol-defined)</td></tr><tr><td>Regime gate</td><td>Kn_λll 1 (continuum valid)</td><td>VP Gate stack (Jam/Unjam, protocol window)</td></tr><tr><td>Outcome</td><td>λ_mfp  10²nm (known)</td><td>ℓ_VP (predicted/anchored)</td></tr></table>
+<strong>Isomorphic validation logic.</strong> The goal is not to equate “air” and “space”,
+but to show that <em>inferring a discrete micro-scale from macroscopic wave data</em> is a well-posed operation
+once an appropriate transport/damping gate is included.
+</div>
+<h2>K.5 Claim level and limitation</h2>
+<p>This appendix supports a <strong>methodological claim</strong>:
+<em>the inversion logic that maps (wave speed + transport gate) → (micro-scale)</em>
+is not unique to VP theory and succeeds on a classical benchmark.
+It does <em>not</em> by itself prove any specific VP lattice value; it only reduces arbitrariness
+by demonstrating an isomorphic reconstruction on a known system.</p>
+<nav class="pn"><a rel="prev" href="/physics/axh-theory-geometric-rigidity-v2-1/">← §AXH</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axl-4-3-1-state-dictionary/">§AXL →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

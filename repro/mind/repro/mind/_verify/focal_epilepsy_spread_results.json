@@ -1,0 +1,332 @@
+{
+  "F1_focus_partition": {
+    "broadcast_set": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "broadcast_set_is_E1_relay_set": true,
+    "contained_set": [
+      "basal_forebrain_chol",
+      "brainstem",
+      "cerebellum",
+      "forebrain_gaba_in",
+      "hypothalamus",
+      "neocortex",
+      "olfactory_bulb",
+      "pallidum",
+      "striatum",
+      "thalamus"
+    ],
+    "partition_drive_invariant": true,
+    "partition_per_intensity": {
+      "0.3": {
+        "basal_forebrain_chol": "contained",
+        "brainstem": "contained",
+        "cerebellum": "contained",
+        "forebrain_gaba_in": "contained",
+        "hippocampus": "broadcast",
+        "hypothalamus": "contained",
+        "midbrain": "broadcast",
+        "neocortex": "contained",
+        "olfactory_bulb": "contained",
+        "pallidum": "contained",
+        "striatum": "contained",
+        "thalamus": "contained"
+      },
+      "0.5": {
+        "basal_forebrain_chol": "contained",
+        "brainstem": "contained",
+        "cerebellum": "contained",
+        "forebrain_gaba_in": "contained",
+        "hippocampus": "broadcast",
+        "hypothalamus": "contained",
+        "midbrain": "broadcast",
+        "neocortex": "contained",
+        "olfactory_bulb": "contained",
+        "pallidum": "contained",
+        "striatum": "contained",
+        "thalamus": "contained"
+      },
+      "0.7": {
+        "basal_forebrain_chol": "contained",
+        "brainstem": "contained",
+        "cerebellum": "contained",
+        "forebrain_gaba_in": "contained",
+        "hippocampus": "broadcast",
+        "hypothalamus": "contained",
+        "midbrain": "broadcast",
+        "neocortex": "contained",
+        "olfactory_bulb": "contained",
+        "pallidum": "contained",
+        "striatum": "contained",
+        "thalamus": "contained"
+      },
+      "0.9": {
+        "basal_forebrain_chol": "contained",
+        "brainstem": "contained",
+        "cerebellum": "contained",
+        "forebrain_gaba_in": "contained",
+        "hippocampus": "broadcast",
+        "hypothalamus": "contained",
+        "midbrain": "broadcast",
+        "neocortex": "contained",
+        "olfactory_bulb": "contained",
+        "pallidum": "contained",
+        "striatum": "contained",
+        "thalamus": "contained"
+      }
+    },
+    "reading": "driving each region as a focal ictal focus, the 12 foci partition into CONTAINED (self-localising -- the ictal change concentrates at the focus, the seizure stays focal) and BROADCAST (relay -- the change lands harder off-target, the seizure secondarily generalises). The partition is IDENTICAL across the entire ictal-intensity sweep, the broadcast set {hippocampus, midbrain} fixed at every intensity. Whether a focal seizure stays focal or secondarily generalises is a fixed property of focus LOCATION, not of ictal intensity. Inherits the E1.3 self/relay class; structure-only.",
+    "reproduced": true
+  },
+  "F2_off_target_dominance": {
+    "broadcast_iff_off_target_dominant_all_intensities": true,
+    "per_site_at_representative_intensity": {
+      "basal_forebrain_chol": {
+        "off_over_own": 0.1203,
+        "off_target_abs_dc": 0.001258,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.01046
+      },
+      "brainstem": {
+        "off_over_own": 0.1374,
+        "off_target_abs_dc": 0.007394,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.053795
+      },
+      "cerebellum": {
+        "off_over_own": 0.0402,
+        "off_target_abs_dc": 0.011707,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.291303
+      },
+      "forebrain_gaba_in": {
+        "off_over_own": 0.1046,
+        "off_target_abs_dc": 0.001717,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.016422
+      },
+      "hippocampus": {
+        "off_over_own": 4.2309,
+        "off_target_abs_dc": 0.026124,
+        "off_target_dominant": true,
+        "own_abs_dc": 0.006175
+      },
+      "hypothalamus": {
+        "off_over_own": 0.2485,
+        "off_target_abs_dc": 0.002732,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.010994
+      },
+      "midbrain": {
+        "off_over_own": 1.6348,
+        "off_target_abs_dc": 0.010777,
+        "off_target_dominant": true,
+        "own_abs_dc": 0.006593
+      },
+      "neocortex": {
+        "off_over_own": 0.1077,
+        "off_target_abs_dc": 0.001768,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.016416
+      },
+      "olfactory_bulb": {
+        "off_over_own": 0.1074,
+        "off_target_abs_dc": 0.000676,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.006298
+      },
+      "pallidum": {
+        "off_over_own": 0.7735,
+        "off_target_abs_dc": 0.003868,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.005001
+      },
+      "striatum": {
+        "off_over_own": 0.0246,
+        "off_target_abs_dc": 0.000469,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.019057
+      },
+      "thalamus": {
+        "off_over_own": 0.1714,
+        "off_target_abs_dc": 0.001225,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.007149
+      }
+    },
+    "reading": "for a BROADCAST focus the ictal local-coherence change lands HARDER on distal circuits than on the focus itself (mean off-target |dc| > own |dc|, ratio > 1) -- the structural signature of a seizure recruiting circuits BEYOND its focus; for a CONTAINED focus it concentrates at the focus (ratio < 1). The broadcast <-> (off/own > 1) equivalence holds at every swept intensity, tying 'broadcast' to the clinical meaning of secondary generalisation. Sign-only; magnitudes [O].",
+    "reproduced": true
+  },
+  "F3_spread_not_global_hypersynchrony": {
+    "_what": "the honest no-tuning result -- a clean hypothesis ('the broadcast / secondarily-generalising foci are exactly the foci that drive the whole brain into the §25 over-sync state') tested and FOUND FALSE",
+    "broadcast_foci_oppose_on_global_sync_all_intensities": true,
+    "global_reach_hub_is_in_contained_set": true,
+    "global_sync_direction_per_intensity": {
+      "0.3": {
+        "hippocampus_dR": -0.011007,
+        "hippocampus_lowers_sync": true,
+        "midbrain_dR": 0.013247,
+        "midbrain_raises_sync": true
+      },
+      "0.5": {
+        "hippocampus_dR": -0.015925,
+        "hippocampus_lowers_sync": true,
+        "midbrain_dR": 0.012379,
+        "midbrain_raises_sync": true
+      },
+      "0.7": {
+        "hippocampus_dR": -0.015925,
+        "hippocampus_lowers_sync": true,
+        "midbrain_dR": 0.012379,
+        "midbrain_raises_sync": true
+      },
+      "0.9": {
+        "hippocampus_dR": -0.015925,
+        "hippocampus_lowers_sync": true,
+        "midbrain_dR": 0.012379,
+        "midbrain_raises_sync": true
+      }
+    },
+    "reach_per_intensity": {
+      "0.3": {
+        "hippocampus_reach": 0.011007,
+        "midbrain_reach": 0.013247,
+        "top_reach": 0.021121,
+        "top_reach_focus": "cerebellum"
+      },
+      "0.5": {
+        "hippocampus_reach": 0.015925,
+        "midbrain_reach": 0.012379,
+        "top_reach": 0.027737,
+        "top_reach_focus": "cerebellum"
+      },
+      "0.7": {
+        "hippocampus_reach": 0.015925,
+        "midbrain_reach": 0.012379,
+        "top_reach": 0.027737,
+        "top_reach_focus": "cerebellum"
+      },
+      "0.9": {
+        "hippocampus_reach": 0.015925,
+        "midbrain_reach": 0.012379,
+        "top_reach": 0.027737,
+        "top_reach_focus": "cerebellum"
+      }
+    },
+    "reproduced": true,
+    "top_global_reach_focus_is_contained_all_intensities": true,
+    "two_axes_decoupled": true,
+    "verdict": "the broadcast set is NOT the high-global-reach set (the single largest global-reach focus is the CEREBELLUM, which is CONTAINED, at every intensity), and the two broadcast foci move global synchrony in OPPOSITE directions (the midbrain RAISES global R toward the §25 over-sync state while the hippocampus LOWERS it, at every intensity) -- so 'broadcast' carries no consistent global-synchrony sign. Off-target spread (F1/F2) and global hypersynchrony (the §25 over-sync axis) are TWO DISTINCT, decoupled spatial properties; secondary-generalisation propagation is SITE-DETERMINED and not reducible to a 'spread = hypersynchrony' rule. The refuted clean hypothesis is reported honestly -- the E1.4 lesson made concrete for epilepsy. A refuted clean hypothesis is a finding."
+  },
+  "F4_broadcast_minority_relay_hub_class": {
+    "broadcast_equals_off_target_dominant_set": true,
+    "broadcast_is_strict_minority": true,
+    "broadcast_set": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "clinical_correspondence": "a DIRECTION-ONLY cited correspondence, never a magnitude or a prediction: clinically most focal seizures remain focal, and mesial-temporal (hippocampal) foci are the paradigmatic secondarily-generalising epilepsy -- consistent with the hippocampus sitting in the broadcast set and with containment being the structural majority. NOT a patient-level prediction.",
+    "clinical_correspondence_grade": "[L] direction-only",
+    "coherent_minority_relay_hub_class": true,
+    "containment_is_structural_default": true,
+    "disjoint_from_global_reach_hub": true,
+    "n_broadcast": 2,
+    "reading": "the two broadcast foci {hippocampus, midbrain} are simultaneously the E1.3 relay set AND the off-target-dominant set (F2), a STRICT MINORITY (2 of 12 -- containment is the structural default), AND disjoint from the global-reach hub (cerebellum) -- one coherent class of limbic/brainstem relay hubs. Secondary generalisation is structurally the EXCEPTION carried by specific relay hubs, not a global property of the ictal drive. Structure-only; the clinical correspondence is [L] direction-only.",
+    "reproduced": true
+  },
+  "S5_engine_invariance_guard": {
+    "R_direct_measured": "0.38961455156044245",
+    "_what": "a zero ictal drive (no focus driven) reproduces the frozen M9 coordination anchor bit-for-bit and the per-node field equals the baseline exactly -- the focal-spread reads are a pure structural read on the frozen kernel (no new mechanism)",
+    "baseline_equals_anchor": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "guard": true,
+    "matches_frozen_anchor_bitwise": true,
+    "offstate_R": "0.38961455156044245",
+    "offstate_field_equals_baseline": true,
+    "offstate_matches_direct_bitwise": true
+  },
+  "_what": "FOC-EPI-E1 -- focal epilepsy: containment vs secondary generalisation. The FIRST region-specific application of the E1 spatial-localisation layer (§43) and the SPATIAL refinement of the §25 (T2a) over-synchronisation epilepsy module. §25 placed the seizure as the network crossing the over-sync threshold on the GLOBAL order R, but drove the brain GLOBALLY, so it could not ask whether a seizure that BEGINS at one focus STAYS focal or SECONDARILY GENERALISES -- an intrinsically SPATIAL question. This module IMPORTS the E1 SpatialField (it does NOT re-derive the kernel or coupling map) and reads, on the frozen kernel, which foci CONTAIN a focal ictal drive and which BROADCAST it, and whether broadcast is the same thing as the §25 global over-synchronisation. Four sign-only results: F1 the containment/broadcast partition is drive-invariant (broadcast set {hippocampus, midbrain} fixed across the ictal-intensity sweep -- whether a focal seizure stays focal or secondarily generalises is a property of focus LOCATION); F2 broadcast is off-target dominance (the ictal change lands harder on distal circuits than on the focus -- the structural content of secondary generalisation); F3 (honest negative) off-target spread is NOT global hypersynchrony (the cerebellum is the largest global recruiter yet is CONTAINED, and the two broadcast foci move global R in OPPOSITE directions -- two distinct decoupled axes, the E1.4 lesson for epilepsy); F4 the broadcast set is a coherent minority relay-hub class (containment is the structural default, secondary generalisation the exception carried by specific relay hubs). MECHANISM only -- a containment/broadcast class is a STRUCTURAL spatial quantity, NOT a felt seizure locus, NOT a real electrode/EEG/SEEG, NOT a clinical prediction of which seizures generalise, and NOT surgical guidance. efficacy=0; not medical advice.",
+  "application_of_E1": {
+    "E1_supplied": "the E1.3 SELF-LOCALISING vs RELAY classification (drive-invariant, relay set {hippocampus, midbrain}) and the E1.2 heterogeneous global reach with a drive-stable cerebellar hub -- a fixed spatial MAP of the frozen kernel",
+    "reuse_discipline": "imports SpatialField; does NOT re-derive the ephaptic kernel W0 or the k(b) coupling map; engine emerged READ-ONLY and byte-unchanged",
+    "seam_with_sec25": "§25 (T2a) certified the seizure = global over-sync on R; §44 refines it spatially -- a focus's tendency to secondarily generalise (off-target broadcast) is a DIFFERENT, decoupled property from how much it drives the global over-sync state, so the two cannot be conflated",
+    "this_module_reads": "which foci CONTAIN a focal ictal drive (stay focal) and which BROADCAST it (secondarily generalise), and tests whether broadcast coincides with the §25 global over-synchronisation -- it finds it does NOT (F3), so secondary-generalisation propagation is site-determined, exactly the region-specific reading E1.4 demanded"
+  },
+  "cited_and_locked": {
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; whether any real focal seizure contains or generalises by this structure is external",
+    "no_universal_spread_law_LOCK": "off-target spread is NOT global hypersynchrony; the clean 'spread = over-sync' hypothesis is explicitly refuted, not forced -- secondary-generalisation propagation is site-determined (the E1.4 lesson for epilepsy)",
+    "not_clinical_LOCK": "nothing here is a real electrode, EEG/SEEG localisation, current density, seizure-propagation map, a prediction of which patient's seizures generalise, or surgical/resection guidance; localisation and surgery are external clinical decisions",
+    "oversync_seam_cited": "§25 (T2a) certified the seizure = global over-synchronisation on R; §44 refines it spatially and shows secondary-generalisation broadcast is a DIFFERENT, decoupled property from the global over-sync magnitude (F3)",
+    "partition_is_position_LOCK": "whether a focal seizure stays focal or secondarily generalises is a fixed property of focus LOCATION (the E1.3 relay class), drive-invariant -- structure, not a fitted result",
+    "real_propagation_heterogeneous_LOCK": "real seizure propagation is HETEROGENEOUS (white-matter tractography, the individual epileptogenic network, ictal recruitment dynamics, the patient's connectome and pathology); this module asserts the SIGN/STRUCTURE of a focal ictal drive on the FROZEN kernel, not that any real focal seizure follows it",
+    "spatial_layer_cited": "the E1 spatial-localisation layer (§43) supplies the SpatialField class, the self/relay classification (E1.3) and the heterogeneous global reach (E1.2); this module shapes a focal ictal drive on the frozen kernel, it does not re-derive it"
+  },
+  "honesty_ledger": {
+    "clean_hypothesis_refuted": "F3 reports a REFUTED clean hypothesis honestly (off-target spread is NOT global hypersynchrony) rather than forcing a single-axis 'spread = over-sync' narrative",
+    "clinical_prediction": "NONE -- no patient-level prediction of secondary generalisation, no localisation, no surgical guidance; the only clinical correspondence (F4) is [L] direction-only",
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "ictal_intensity": "OPEN [O] -- swept; signs/structure hold over the ictal-intensity sweep, not tuned",
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "not_medical_advice": 1.0,
+    "reuses_E1_spatial_field": 1.0,
+    "spatial_quantities_are_structural": 1.0
+  },
+  "ictal_model": {
+    "form": "a focal seizure focus = a strong focal EXCITATORY ictal drive at one region (the rest at baseline), via the SAME k = kappa/(1-|b|) [excit] map as §25/E1 (no new constant); ictal intensity b0 swept over {0.3,0.5,0.7,0.9} (anti-tuning)",
+    "form_grade": "[F] forced -- the frozen ephaptic kernel W0 plus the existing k(b) map; no free constant; a zero ictal drive reproduces the scalar engine bit-for-bit",
+    "ictal_intensity_sweep": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "profile_grade": "[O] swept -- the ictal intensity is a SWEEP, not a tuned constant; every SIGN/STRUCTURE holds across the sweep",
+    "representative_intensity": 0.7,
+    "reused_constants": {
+      "R19_fold_spinodal": 0.3849,
+      "baseline_R0_M9_anchor": 0.3896145516,
+      "kappa_measured": 0.5496,
+      "n_regions": 12
+    }
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_reproduced_bitwise": true
+  },
+  "overall": {
+    "broadcast_is_off_target_dominance": true,
+    "broadcast_minority_relay_hub_class": true,
+    "engine_invariance_guard": true,
+    "focus_partition_drive_invariant": true,
+    "is_full_module": true,
+    "spread_not_global_hypersynchrony": true,
+    "verdict": "focal epilepsy containment vs secondary generalisation -- the first region-specific application of the E1 spatial-localisation layer and the spatial refinement of §25 over-sync epilepsy. Driving each region as a focal ictal focus, the containment/broadcast partition is DRIVE-INVARIANT, the broadcast (secondarily-generalising) set {hippocampus, midbrain} fixed at every intensity (F1); broadcast IS off-target dominance, the structural content of secondary generalisation (F2); off-target spread is NOT global hypersynchrony -- the largest global recruiter is the CONTAINED cerebellum and the two broadcast foci oppose on global synchrony, so the two are distinct decoupled axes (F3, the honest no-tuning result, the E1.4 lesson for epilepsy); and the broadcast set is a coherent minority relay-hub class, containment the structural default (F4). A zero ictal drive reproduces the frozen M9 anchor bit-for-bit (S5). The ictal form is forced, the intensity swept, every sign survives the sweep, no new tuned constant, engine byte-unchanged; the SpatialField is imported, not re-derived. Axis-A firewall: a containment/broadcast class is a structural spatial quantity, NOT a felt seizure locus, NOT a real electrode/EEG/SEEG, NOT a prediction of which seizures generalise, NOT surgical guidance. efficacy=0; not medical advice."
+  },
+  "preregistered_results": {
+    "F1_focus_partition_drive_invariant": {
+      "claim": "driving each region as a focal ictal focus, the containment/broadcast partition is identical across the ictal-intensity sweep and the broadcast (relay) set is {hippocampus, midbrain} at every intensity",
+      "status": "CONFIRMED"
+    },
+    "F2_broadcast_is_off_target_dominance": {
+      "claim": "a focus is broadcast IFF its ictal change lands harder off-target than on itself (mean off-target |dc| > own |dc|), at every swept intensity",
+      "status": "CONFIRMED"
+    },
+    "F3_spread_not_global_hypersynchrony": {
+      "claim": "off-target spread is NOT global hypersynchrony: the top global-reach focus is the contained cerebellum at every intensity AND the two broadcast foci move global R in opposite directions at every intensity -- two decoupled axes",
+      "status": "CONFIRMED"
+    },
+    "F4_broadcast_minority_relay_hub_class": {
+      "claim": "the broadcast set is the E1.3 relay set AND the off-target-dominant set, a strict minority (containment the default), disjoint from the global-reach hub -- one coherent minority relay-hub class",
+      "status": "CONFIRMED"
+    }
+  },
+  "roadmap_id": "E1 region-specific application #1 (focal epilepsy), the spatial refinement of §25 T2a over-sync epilepsy; the first application of the E1.3 self/relay map named owed by §43; RESEARCH_ROADMAP_post_autism_adhd.md"
+}

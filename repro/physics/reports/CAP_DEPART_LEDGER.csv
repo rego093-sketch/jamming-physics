@@ -1,0 +1,25 @@
+# VP G-CAP-DEPART confrontation (deterministic)
+# r_fluid/r_s = 1/alpha^2 ; alpha = yield-velocity fraction (framework [O]); alpha=1 sonic
+
+# Compact objects: surface inflow and redshift (geom/river channel)
+object,M_Msun,R_km,r_s_km,R/r_s,v_river/c@surf,z_GR,z_VP_geom,z_VP-z_GR,alpha_min_to_stay_jammed
+"PSR J0740 (2.08Msun,12.92km)",2.08,12.92,6.143,2.103,0.6895,0.3807,0.3807,0.00e+00,0.690
+"fiducial NS (1.4Msun,12km)",1.40,12.00,4.135,2.902,0.5870,0.2352,0.2352,0.00e+00,0.587
+
+# BH characteristic radii probed by GW (in r_s)
+radius,r/r_s,v_river/c,alpha_min_to_stay_jammed
+ISCO (3 r_s),3.00,0.5774,0.577
+light ring (1.5 r_s),1.50,0.8165,0.816
+horizon (1 r_s),1.00,1.0000,1.000
+
+# alpha grid: r_fluid/r_s and which probes are fluidized (DEPART) vs GR-exact
+alpha,r_fluid/r_s,NS_J0740(2.10),NS_fid(2.90),ISCO(3.0),lightring(1.5)
+0.300,11.111,DEPART,DEPART,DEPART,DEPART
+0.500,4.000,DEPART,DEPART,DEPART,DEPART
+0.587,2.902,DEPART,GR-exact,GR-exact,DEPART
+0.690,2.100,GR-exact,GR-exact,GR-exact,DEPART
+0.750,1.778,GR-exact,GR-exact,GR-exact,DEPART
+0.816,1.502,GR-exact,GR-exact,GR-exact,DEPART
+0.900,1.235,GR-exact,GR-exact,GR-exact,GR-exact
+0.990,1.020,GR-exact,GR-exact,GR-exact,GR-exact
+1.000,1.000,GR-exact,GR-exact,GR-exact,GR-exact

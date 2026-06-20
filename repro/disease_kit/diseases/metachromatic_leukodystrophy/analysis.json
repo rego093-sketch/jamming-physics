@@ -1,0 +1,157 @@
+{
+ "disease": "Metachromatic leukodystrophy (arylsulfatase A deficiency; MLD)",
+ "omim": "250100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Metachromatic leukodystrophy (arylsulfatase A deficiency; MLD)",
+  "omim": "250100",
+  "summary": "ARSA encodes the lysosomal enzyme arylsulfatase A (cerebroside-3-sulfatase), which removes the 3-O-sulfate from 3-O-sulfogalactosylceramide (SULFATIDE) -- the rate-limiting first step of sulfatide catabolism. Loss-of-function halts that step -> progressive lysosomal SULFATIDE accumulation in the myelin-forming oligodendrocytes (CNS) and Schwann cells (PNS) -> demyelination of the central AND peripheral nervous system -> progressive motor, cognitive and behavioural regression, spasticity and seizures (late-infantile / juvenile / adult forms graded by residual activity). Lysosomal sulfatide-catabolism axis DOWN; the kit's FIRST leukodystrophy and FIRST sulfatide substrate.",
+  "emergent_axis": "lysosomal sulfatide (3-O-sulfogalactosylceramide) catabolic throughput sustaining CNS/PNS myelin",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "ARSA",
+    "gamma": 1.4806,
+    "spinodal_h_sp": 0.69343,
+    "barrier": 0.54804,
+    "dwell_relative_size": 1.63781,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000022.11",
+     "gene_start": 50622753,
+     "gene_end": 50628151,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "arylsulfatase A"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "arylsulfatase A hydrolyses the 3-O-sulfate of sulfatide (with the sphingolipid-activator protein saposin B as cofactor); LOF blocks sulfatide degradation -> lysosomal storage in myelinating cells -> demyelination. Severe null / 0-activity alleles (e.g. the c.459+1G>A splice null; p.Pro426Leu) give late-infantile MLD; alleles retaining residual activity (e.g. p.Arg370Trp, the 'I' allele) give juvenile/adult forms -- the classic catabolic-enzyme deficiency-with-substrate-accumulation shape, now on a sulfatide/myelin substrate. (A clinically identical MLD also arises from LOF of the saposin-B activator PSAP; that is the activator-deficiency contrast, not the enzyme itself.)",
+    "src": "Polten 1991 NEJM 324:18 (ARSA molecular basis / genotype-phenotype); Gieselmann 2010 (MLD review)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "ARSA",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "f1bfba297bae"
+ },
+ "treatment_A_switch": {
+  "disease": "Metachromatic leukodystrophy (arylsulfatase A deficiency; MLD)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "ARSA",
+    "push_direction": "restore endogenous arylsulfatase A by haematopoietic reconstitution with ARSA-overexpressing autologous cells: ex-vivo lentiviral gene-corrected CD34+ HSCs engraft, and their progeny -- including donor-derived microglia that migrate across the blood-brain barrier -- secrete supraphysiological ARSA that cross-corrects oligodendrocytes / Schwann cells -> the deficient sulfatide-degradation step is RESTORED -> demyelination halted/slowed; net axis effect UP toward function (DIRECT, on the causal enzyme).",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "ex-vivo autologous ARSA-lentiviral haematopoietic stem-cell gene therapy (atidarsagene autotemcel; Lenmeldy / Libmeldy)",
+    "status": "approved",
+    "mechanism_grade": "[O] ARSA expression level / sulfatide-clearance fraction / extent of myelin preservation not derived from sequence. Approved (atidarsagene autotemcel; FDA 2024 / EMA 2020) but ONLY for PRE-symptomatic late-infantile, pre-symptomatic early-juvenile or early-symptomatic early-juvenile MLD -- the corrective window CLOSES once demyelination is established, so TIMING (not magnitude) is the decisive limit; degree of benefit [O].",
+    "src": "Fumagalli 2022 Lancet 399:372 (atidarsagene autotemcel phase 1/2); Lenmeldy FDA approval 2024-03-18; Libmeldy EMA 2020"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "ARSA",
+    "push_direction": "supply functional arylsulfatase A directly into the CNS (intrathecal recombinant enzyme) to restore the deficient lysosomal sulfatide-degradation step -> reduced sulfatide storage; net axis effect UP. (Systemic IV ERT does not cross the blood-brain barrier, so the CNS-predominant disease requires intrathecal delivery.)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "intrathecal enzyme replacement therapy (recombinant human arylsulfatase A)",
+    "status": "clinical",
+    "mechanism_grade": "[O] CNS enzyme distribution / clinical benefit not derived from sequence; intrathecal ARSA remains investigational (the systemic recombinant enzyme does not cross the BBB) -- [O].",
+    "src": "Dali 2020 Ann Clin Transl Neurol 7:518 (intrathecal ARSA trial)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "ARSA",
+   "push_direction": "restore endogenous arylsulfatase A by haematopoietic reconstitution with ARSA-overexpressing autologous cells: ex-vivo lentiviral gene-corrected CD34+ HSCs engraft, and their progeny -- including donor-derived microglia that migrate across the blood-brain barrier -- secrete supraphysiological ARSA that cross-corrects oligodendrocytes / Schwann cells -> the deficient sulfatide-degradation step is RESTORED -> demyelination halted/slowed; net axis effect UP toward function (DIRECT, on the causal enzyme).",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "ex-vivo autologous ARSA-lentiviral haematopoietic stem-cell gene therapy (atidarsagene autotemcel; Lenmeldy / Libmeldy)",
+   "status": "approved",
+   "mechanism_grade": "[O] ARSA expression level / sulfatide-clearance fraction / extent of myelin preservation not derived from sequence. Approved (atidarsagene autotemcel; FDA 2024 / EMA 2020) but ONLY for PRE-symptomatic late-infantile, pre-symptomatic early-juvenile or early-symptomatic early-juvenile MLD -- the corrective window CLOSES once demyelination is established, so TIMING (not magnitude) is the decisive limit; degree of benefit [O].",
+   "src": "Fumagalli 2022 Lancet 399:372 (atidarsagene autotemcel phase 1/2); Lenmeldy FDA approval 2024-03-18; Libmeldy EMA 2020"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.63781,
+   "dwell_disease": 1.05976,
+   "dwell_treated": 1.34447,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "3436d6616633"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "ARSA loss-of-function moves the lysosomal sulfatide-catabolism axis DOWN (sulfatide accumulates in myelinating cells)",
+   "falsifier": "an ARSA LOF allele that LOWERS tissue / urinary sulfatide (i.e. raises catabolic throughput) refutes the axis-DOWN direction",
+   "measurable_by": "leukocyte/fibroblast arylsulfatase A activity and urinary sulfatide quantification, stratified by ARSA genotype (controlling for the common pseudodeficiency allele)"
+  },
+  {
+   "claim": "restoring ARSA (replace) is the CORRECTIVE direction (raises the deficient catabolic throughput)",
+   "falsifier": "if ARSA gene-therapy engraftment that raised leukocyte ARSA activity FAILED to reduce CSF / urinary sulfatide, or accelerated demyelination, the 'replace' lever sign would be wrong",
+   "measurable_by": "CSF/urinary sulfatide and MRI demyelination load vs leukocyte ARSA activity after gene therapy, stratified by pre- vs post-symptomatic treatment timing"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Metachromatic leukodystrophy (arylsulfatase A deficiency; MLD)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "355f9087ee6c"
+ },
+ "determinism_sha": "20b34042b2ff"
+}

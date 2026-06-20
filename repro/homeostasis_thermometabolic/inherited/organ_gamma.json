@@ -1,0 +1,64 @@
+{
+ "_atlas": "VP visceral + morphogenesis + energy/thermogenesis master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact TSS -> window TSS-2000..+500). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit.",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)",
+  "obesity_gamma.json (energy/thermogenesis)",
+  "crossspecies_thermo_panel.json (cross-species furnace/torpor panel; UCP1/ADRB3/PDK4)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma MEASURED [V], never fitted; identity + order owned by DNA. _to_measure entries are named masters whose gamma is an honest research input still to fetch (notably the torpor/hibernation program and any single-master thermostat gene) -- deferred, not invented.",
+ "genes": {
+  "UCP1": {
+   "gamma": 1.4054,
+   "gc": 0.5046,
+   "src": "NC_000004.12 - TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "ADRB3": {
+   "gamma": 1.4462,
+   "gc": 0.5414,
+   "src": "NC_000008.11 - TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "PPARG": {
+   "gamma": 1.3902,
+   "gc": 0.4898,
+   "src": "NC_000003.12 + TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "MC4R": {
+   "gamma": 1.272,
+   "gc": 0.381,
+   "src": "NC_000018.10 - TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "LEPR": {
+   "gamma": 1.4554,
+   "gc": 0.5494,
+   "src": "NC_000001.11 + TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "INSR": {
+   "gamma": 1.4956,
+   "gc": 0.5746,
+   "src": "NC_000019.10 - TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "GHRL": {
+   "gamma": 1.355,
+   "gc": 0.4642,
+   "src": "NC_000003.12 - TSS-2000..+500",
+   "_source": "obesity_gamma.json (energy/thermogenesis)"
+  },
+  "PDK4": {
+   "gamma": 1.4112,
+   "gc": 0.5086,
+   "src": "NC_000007.14 - TSS-2000..+500",
+   "_source": "DNA fetch_morpho_gamma pipeline (NN-stacking dG37, SantaLucia 1998); promoted to_measure->measured this session",
+   "_note": "torpor fuel-switch master; gamma re-derives offline from inherited/crossspecies_thermo_panel.json cache (PDK4|Homo sapiens)"
+  }
+ },
+ "_to_measure": [],
+ "_to_measure_note": "PDK4 (torpor fuel-switch) promoted to_measure->measured this session via the IDENTICAL DNA pipeline (NN-stacking dG37, SantaLucia 1998, TSS-2000..+500). No named master remains unmeasured; the two diffuse nodes (preoptic_thermostat, torpor_arousal_rhythm) are circuits with no single master gene, not to-measure inputs."
+}

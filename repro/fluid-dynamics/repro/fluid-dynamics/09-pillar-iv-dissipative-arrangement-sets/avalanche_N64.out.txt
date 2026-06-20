@@ -1,0 +1,15 @@
+== P4 analysis: N=64 nu=0.008, 8 snapshots gap=18 ==
+   solver check (inviscid N=32): dE/E=4.7e-09 div=4.0e-12 PASS
+   snapshot skewness mean=-0.50 (canonical ~ -0.5)
+
+    h*<eps>  Nstruct   tau_MLE   +-se  xmin  ntail     KS  tau_lbin     R2     LLR    d_f
+       2.0      3170     1.612  0.020     3    901  0.055     1.490  0.977   +2.56   1.69
+       3.0      2758     1.600  0.016     2   1384  0.031     1.593  0.992   +1.64   2.28
+       4.0      1918     1.570  0.019     2    913  0.063     1.551  0.981   +1.08   2.04
+       6.0       835     1.646  0.030     2    452  0.071     1.587  0.981   +0.62   2.12
+
+   PLATEAU (h>=3, intense events): tau = 1.596 +- 0.011  | tau_logbin in [1.55,1.59]  | d_f ~ 2.15
+   Lin-Wyart back-out: d_f=2.15 & tau=1.596 => substrate theta=0.41 (framework expects 0.5-0.6).
+   PRE-REGISTERED tau in [1.40,1.50]: TENSION (measured 1.596+-0.011).
+   power-law vs exponential LLR/pt = +1.12 (>0 favors power law; exponential rejected).
+   runtime 85s

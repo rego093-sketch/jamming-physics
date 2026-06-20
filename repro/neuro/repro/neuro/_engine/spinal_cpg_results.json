@@ -1,0 +1,223 @@
+{
+  "method": {
+    "gamma_def": "mean(-NN dG37) SantaLucia 1998",
+    "window": "promoter [TSS-2000,TSS+500] = 2501 bp coding strand",
+    "assembly": "GRCh38 / GRCm39 RefSeq"
+  },
+  "L1_material": {
+    "gamma_band": [
+      1.3736,
+      1.5556
+    ],
+    "gamma_band_width": 0.182,
+    "cardinal_TF_gamma_span": 0.1146,
+    "same_material_scale": 0.05,
+    "cpg_island_fraction": [
+      12,
+      19
+    ],
+    "one_material": true
+  },
+  "gamma_by_gene": {
+    "DBX1": 1.4268,
+    "DBX2": 1.4166,
+    "EN1": 1.4692,
+    "EVX1": 1.4375,
+    "EVX2": 1.4243,
+    "FOXA2": 1.4986,
+    "GATA3": 1.4646,
+    "IRX3": 1.5312,
+    "ISL1": 1.4244,
+    "LHX3": 1.4956,
+    "MNX1": 1.5556,
+    "NKX2-2": 1.4884,
+    "NKX6-1": 1.4231,
+    "OLIG2": 1.4747,
+    "PAX6": 1.511,
+    "SHH": 1.448,
+    "SHOX2": 1.3736,
+    "SIM1": 1.4465,
+    "VSX2": 1.4515
+  },
+  "spinodal": {
+    "derived_order_ventral_to_dorsal": [
+      "p3",
+      "pMN",
+      "p2",
+      "p1",
+      "p0"
+    ],
+    "boundary_flips": [
+      0.167,
+      0.279,
+      0.421,
+      0.6
+    ],
+    "domain_count": 5,
+    "boundaries_ordered": true,
+    "order_matches_measured": true
+  },
+  "cpg": {
+    "functions_present": [
+      "flexor_extensor",
+      "left_right",
+      "output",
+      "rhythm"
+    ],
+    "complete": true
+  },
+  "ledger": [
+    {
+      "layer": "L1",
+      "quantity": "gamma of 19 master-gene promoters (NCBI, recomputed)",
+      "grade": "F",
+      "reason": "mean(-NN dG37) on the 2501 bp window; in-package from FASTA"
+    },
+    {
+      "layer": "L1",
+      "quantity": "gamma band width of the master-gene set",
+      "grade": "F",
+      "reason": "0.182; narrow -> one material"
+    },
+    {
+      "layer": "L1",
+      "quantity": "cardinal D-V TF gamma span",
+      "grade": "F",
+      "reason": "0.1146; combinatorial-code, same material"
+    },
+    {
+      "layer": "L1",
+      "quantity": "CpG-island fraction (methylation-gateable substrate)",
+      "grade": "F",
+      "reason": "12/19 promoters are CpG islands"
+    },
+    {
+      "layer": "L1",
+      "quantity": "identity is combinatorial (not material)",
+      "grade": "F",
+      "reason": "flat gamma across the code -> a TF-CODE on one substrate (neuro 12)"
+    },
+    {
+      "layer": "spinodal",
+      "quantity": "discreteness: smooth gradient -> sharp domains",
+      "grade": "F",
+      "reason": "cross-repression bistability (R19 flip), not a ramp"
+    },
+    {
+      "layer": "spinodal",
+      "quantity": "domain COUNT = switches+1 = 5",
+      "grade": "F",
+      "reason": "topology of the switch stack"
+    },
+    {
+      "layer": "spinodal",
+      "quantity": "ventral->dorsal ORDER p3,pMN,p2,p1,p0",
+      "grade": "F",
+      "reason": "monotonic drive + ordered thresholds preserve spatial order"
+    },
+    {
+      "layer": "spinodal",
+      "quantity": "order matches measured (Briscoe 2000)",
+      "grade": "V",
+      "reason": "derived order == measured cardinal domains"
+    },
+    {
+      "layer": "spinodal",
+      "quantity": "gamma is flat -> ORDER is spinodal, NOT gamma-ranking",
+      "grade": "F",
+      "reason": "honest: Layer-1 gamma is identity; position is the morphogen threshold"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "domain->neuron-class map (V3,MN,V2a,V2b,V1,V0)",
+      "grade": "V",
+      "reason": "measured postmitotic fate of each progenitor domain"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "V0(DBX1/EVX1) -> left-right alternation",
+      "grade": "L",
+      "reason": "Lanuza et al. 2004, Neuron 42:375-386; Talpalar et al. 2013, Nature 500:85-88 (V0 ablation -> left-right hopping)"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "V2a(VSX2) -> left-right at higher frequency",
+      "grade": "L",
+      "reason": "Crone et al. 2008, Neuron 60:70-83; Crone et al. 2009 (V2a/Chx10 left-right at higher freq)"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "V1(EN1)+V2b(GATA3) -> flexor-extensor alternation",
+      "grade": "L",
+      "reason": "Zhang et al. 2014, Neuron 82:138-150 (V1+V2b -> flexor-extensor alternation)"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "MN(ISL1/MNX1/LHX3) -> final common path",
+      "grade": "F",
+      "reason": "the motor-unit output quantified in neuro 14"
+    },
+    {
+      "layer": "circuit",
+      "quantity": "the four CPG functions are all instantiated",
+      "grade": "V",
+      "reason": "rhythm + left-right + flexor-extensor + output all present"
+    },
+    {
+      "layer": "L2",
+      "quantity": "relative neuron counts / domain sizes (DWELL~gamma^1.5)",
+      "grade": "B",
+      "reason": "relative neuron counts / domain sizes (DWELL ~ gamma^1.5) are illustrative-rate Layer-2 quantities, not read from the gamma window"
+    },
+    {
+      "layer": "L2",
+      "quantity": "firing-rate / force magnitudes",
+      "grade": "B",
+      "reason": "firing-rate/force magnitudes are the R19/EM biophysical layers (neuro 2,14), not the gamma identity layer"
+    },
+    {
+      "layer": "open",
+      "quantity": "exact framework gamma-window per gene",
+      "grade": "O",
+      "reason": "this engine uses [TSS-2000,TSS+500]=2501 bp; the framework's exact promoter window is undocumented (same provenance gap as neuro 16 MYOD1) — closes with the framework window spec"
+    },
+    {
+      "layer": "open",
+      "quantity": "absolute neuron numbers per class",
+      "grade": "O",
+      "reason": "needs single-cell census (e.g. mouse spinal scRNA-seq / stereology) — a count, not a structure"
+    },
+    {
+      "layer": "open",
+      "quantity": "Shh absolute concentration profile",
+      "grade": "O",
+      "reason": "needs quantitative morphogen imaging (Shh-GFP gradient dataset) — refines the threshold values"
+    }
+  ],
+  "ledger_counts": {
+    "total": 21,
+    "F": 10,
+    "V": 3,
+    "L": 3,
+    "O": 3,
+    "B": 2,
+    "positively_evidenced": 16,
+    "ungraded": 0
+  },
+  "validation": {
+    "order_match": true,
+    "one_material": true,
+    "cpg_complete": true,
+    "gamma_drift": []
+  },
+  "fidelity_pass": true,
+  "irreducible_O": [
+    "exact framework gamma-window per gene",
+    "absolute neuron numbers per class",
+    "Shh absolute concentration profile"
+  ],
+  "boundary_B": [
+    "relative neuron counts / domain sizes (DWELL~gamma^1.5)",
+    "firing-rate / force magnitudes"
+  ]
+}

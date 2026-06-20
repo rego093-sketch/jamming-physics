@@ -1,0 +1,77 @@
+{
+  "manifest_counts": {
+    "inherited_in": 3,
+    "internal_live": 1,
+    "declared_out": 6
+  },
+  "battery": {
+    "reexport_fidelity": {
+      "status": "PASS",
+      "field_matches": {
+        "scc_hazard_RR_screen_removed": true,
+        "scc_incidence_RR_screen_removed": true,
+        "scc_hazard_RR_with_sunscreen": true,
+        "melanoma_burst_RR_pigment_loss": true,
+        "lesion_delivered_uv_attenuation": true
+      },
+      "description": "every INTERNAL-LIVE coupling value equals the pathology layer's own return value (the seam re-exports the internal link verbatim, it does not re-implement it)"
+    },
+    "coupling_sign": {
+      "status": "PASS",
+      "hazard_rises_on_screen_loss": true,
+      "sunscreen_lowers_hazard": true,
+      "lesion_has_no_screen": true,
+      "description": "the coupling carries the expected sign (a depigmenting lesion raises the oncology hazard) and the screen is the causal lever (restoring it lowers the hazard)"
+    },
+    "provenance_and_contracts": {
+      "status": "PASS",
+      "internal_fully_provenanced": true,
+      "out_contracts_valid": true,
+      "in_seams_sourced": true,
+      "no_new_constant": true,
+      "contract_detail": [
+        {
+          "out__disease_wp__gene_lesion": true
+        },
+        {
+          "out__immune_hematologic__urticaria": true
+        },
+        {
+          "out__immune_effector__lichen_planus": true
+        },
+        {
+          "out__rheumatology__secondary_raynaud": true
+        },
+        {
+          "out__immune_effector__rosacea_inflammation": true
+        },
+        {
+          "out__none__cutaneous_infection": true
+        }
+      ],
+      "description": "every internal number traces to a named pathology field (no orphan constant), every declared-out seam is validly targeted or explicitly out-of-class, and every inherited-in seam names its source package"
+    },
+    "non_disturbance": {
+      "status": "PASS",
+      "pathology_sha_unchanged": true,
+      "pathology_sha": "0a4404ccde6559a7621249de90cd889f907619db48a4104329f3af2f74c51cd8",
+      "expected": "0a4404ccde6559a7621249de90cd889f907619db48a4104329f3af2f74c51cd8",
+      "description": "the pathology layer's own 2x-sha256 hash is unchanged after the seam runs (the seam reads it, it does not perturb it); the core battery is never imported here"
+    },
+    "counts": {
+      "inherited_in": 3,
+      "internal_live": 1,
+      "declared_out": 6
+    },
+    "all_pass": true
+  },
+  "seam_gate": {
+    "determinism_2xsha256_identical": true,
+    "result_sha256": "52b49a95a9add070a05a02848b1a4cef0589f4a36791167232fda3fc1c1d58f7",
+    "reexport_fidelity_ok": true,
+    "coupling_sign_ok": true,
+    "provenance_and_contracts_ok": true,
+    "non_disturbance_ok": true,
+    "all_green": true
+  }
+}

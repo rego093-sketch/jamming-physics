@@ -1,0 +1,139 @@
+{
+  "E2_1_hysteresis": {
+    "down_transition_drive": -0.39,
+    "fold_spinodal": 0.3849,
+    "hysteresis_reproduced": true,
+    "loop_width": 0.78,
+    "loop_width_matches_two_spinodal": true,
+    "model": "sweep the drive up through the fold and back down, carrying the state forward; the up- and down-transitions sit at +/-spinodal -> a hysteresis loop of width 2*spinodal (the inter-state interval is bistable, not a single set-point)",
+    "reading": "the up-transition (down->up) and the down-transition (up->down) occur at DIFFERENT drives (+spinodal and -spinodal): the trajectory traces a hysteresis loop and the inter-state ('euthymic' / inter-ictal) interval is BISTABLE -- where the state sits depends on where it came from. The signature a static fixed point cannot express.",
+    "transitions_on_opposite_sides": true,
+    "transitions_within_a_grid_step_of_fold": true,
+    "two_spinodal": 0.7698,
+    "up_transition_drive": 0.39
+  },
+  "E2_2_ictal_timecourse": {
+    "_what": "the TRANSITION as a TIME-COURSE -- the ictal onset 25 left OWED. Past the fold the state crosses in finite time; the latency decreases as the drive overshoots the fold and diverges (critical slowing) as the drive approaches it",
+    "closes_25_owed_ictal_time_course": true,
+    "crossing_latency_vs_overshoot": {
+      "0.001": 73.4,
+      "0.005": 31.64,
+      "0.015": 17.36,
+      "0.035": 10.62,
+      "0.065": 7.24,
+      "0.115": 4.96,
+      "0.215": 3.16,
+      "0.415": 1.88,
+      "0.615": 1.36
+    },
+    "fold_spinodal": 0.3849,
+    "ictal_timecourse_reproduced": true,
+    "latency_diverges_near_fold": true,
+    "latency_monotone_decreasing_in_overshoot": true,
+    "reading": "past the fold the state crosses s=0 in FINITE time, and the crossing latency DECREASES monotonically as the drive OVERSHOOTS the fold (a stronger E/I push -> a faster onset) while DIVERGING as the drive approaches the fold from above (critical slowing, the bifurcation signature). This is precisely the 'seizure starting and spreading in time' that chapter 25 owed to a state-switching layer -- now exhibited. Direction only; efficacy = 0; loss of the gate over time is a mechanism boundary, NOT a claim about ictal experience (Axis-A)."
+  },
+  "E2_3_barrier_threshold": {
+    "barrier_threshold_reproduced": true,
+    "deep_well_holds": true,
+    "fixed_drive": 0.45,
+    "flips_vs_g": {
+      "0.6": true,
+      "0.8": true,
+      "1.0": true,
+      "1.2": false,
+      "1.4": false
+    },
+    "model": "the flip threshold IS the spinodal, monotone-up in the barrier g; a fixed drive flips a shallow well and fails to flip a deeper one -- the dwell / stability handle",
+    "reading": "the flip threshold equals the spinodal |h_sp| = E.spinodal(g), monotone-INCREASING in the barrier g: a deeper well needs a LARGER drive to switch and holds the state LONGER (dwell). A fixed drive that flips a shallow well fails to flip a deeper one. This is the handle a barrier-raising operator (mood-stabiliser direction) pushes up and a disinhibition pushes down -- the bipolar module reuses it; only the SIGN is asserted, magnitudes are [O].",
+    "shallow_well_flips": true,
+    "spinodal_monotone_up_in_barrier": true,
+    "spinodal_vs_g": {
+      "0.6": 0.178885,
+      "0.8": 0.275412,
+      "1.0": 0.3849,
+      "1.2": 0.505964,
+      "1.4": 0.637588
+    }
+  },
+  "E2_4_engine_invariance_guard": {
+    "_what": "a constant-drive run reproduces E.settle bit-for-bit (the static limit IS the frozen engine) and the fold is read from E.spinodal -- no new constant",
+    "all_constant_drive_bitwise": true,
+    "constant_drive_matches_E_settle_bitwise": {
+      "h+0.00_s0-1": true,
+      "h+0.00_s01": true,
+      "h+0.20_s0-1": true,
+      "h+0.20_s01": true,
+      "h+0.50_s0-1": true,
+      "h+0.50_s01": true,
+      "h-0.30_s0-1": true,
+      "h-0.30_s01": true,
+      "h-0.50_s0-1": true,
+      "h-0.50_s01": true
+    },
+    "fold_read_from_engine_spinodal": true,
+    "guard": true
+  },
+  "_what": "E2 -- the state-switching / transition-dynamics layer: the frozen R19 bistable cell ds/dt = g*s - s^3 + h(t) used OVER TIME, on top of the READ-ONLY engine. Every prior module read the switch as a STATIC fixed point (E.settle), which is why the epilepsy module (25) could characterise the standing seizure SUSCEPTIBILITY but had to leave the ICTAL ONSET AS A TIME-COURSE owed -- a transition between attractors has no expression in a fixed point. This layer integrates the SAME cubic with a time-varying drive and reads (1) the hysteresis loop (the inter-state interval is bistable, width 2*spinodal), (2) the crossing TIME-COURSE -- the ictal onset 25 owed, latency decreasing with overshoot and diverging at the fold -- and (3) the barrier that sets the flip threshold and the dwell. The cell is reused verbatim (E.sdot/E.settle/E.spinodal); the constant-drive limit reproduces E.settle bit-for-bit. The rule FORM is forced [F]; g=1.0 is the engine's universal R19 scale, not fit. MECHANISM only -- NOT a disorder yet, NOT felt, NOT efficacy, NOT medical advice.",
+  "cited_and_locked": {
+    "applications_owed_LOCK": "bipolar (T2b) imports this layer for episode transitions and is owed to that module; the dynamic ictal onset of a particular epilepsy is owed to the module that uses it -- E2 is the LAYER, not an application",
+    "closes_epilepsy_owed_LOCK": "the epilepsy module (25) left the ICTAL TIME-COURSE explicitly OWED to a state-switching layer (E2); this layer supplies it (E2.2) WITHOUT touching the frozen 25 results -- 25 characterised the static susceptibility, E2 adds the temporal transition on the same cubic",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; the timing of any individual's seizure or mood transition is held OPEN",
+    "hysteresis_is_bistability_cited": "hysteresis -- a different threshold for the up- and the down-transition -- is the defining time-domain signature of a bistable switch; here it falls out of the R19 fold with no added constant (loop width = 2*spinodal)",
+    "ictal_onset_is_a_transition_cited": "the ictal onset of a seizure is a TRANSITION between states (the interictal-to-ictal transition), a temporal event that a static susceptibility cannot express; the dynamic-systems reading of seizure onset as a bifurcation is a standard framing (e.g. Lopes da Silva 2003 on epilepsy as a dynamical disease) -- this layer reproduces the SIGN (a finite, overshoot-shortened crossing), NOT any magnitude or any individual's onset",
+    "transition_form_heterogeneous_LOCK": "real neural state transitions are HETEROGENEOUS -- saddle-node, Hopf, homoclinic bifurcations, noise-driven escape, slow-fast bursting -- this module asserts only the SIGN of a bistable transition read on the shared R19 cell, NOT that any transition follows this exact cubic"
+  },
+  "honesty_ledger": {
+    "closes_epilepsy_ictal_time_course": 1.0,
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "is_a_layer_not_an_application": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "reuses_engine_r19_cell": 1.0,
+    "transition_magnitudes": "OPEN [O] -- only the SIGNS are asserted (hysteresis loop = 2*spinodal forced; latency decreasing in overshoot forced; spinodal monotone-up in barrier forced); no timing magnitude is fit"
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "static_limit_is_E_settle": true
+  },
+  "overall": {
+    "barrier_threshold_reproduced": true,
+    "engine_invariance_guard": true,
+    "hysteresis_reproduced": true,
+    "ictal_timecourse_reproduced": true,
+    "is_full_module": true,
+    "verdict": "E2 is the state-switching layer: the frozen R19 bistable cell used over time. Sweeping the drive through the fold and back traces a hysteresis loop of width 2*spinodal (the inter-state interval is bistable); past the fold the state crosses in finite time with a latency that shortens as the drive overshoots and diverges at the fold -- the ictal onset epilepsy (25) left owed, now a time-course; and the barrier sets the flip threshold and the dwell (the handle a mood-stabiliser raises). A constant-drive run reproduces E.settle bit-for-bit and the fold is read from E.spinodal -- no new constant. E2 is the LAYER; bipolar (T2b) imports it for episode transitions and is owed. efficacy=0; not medical advice; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "E2_1_hysteresis": {
+      "claim": "sweeping the drive up through the fold and back down, the up- and down-transitions occur at +/-spinodal -> a hysteresis loop of width 2*spinodal; the inter-state interval is bistable, not a single set-point",
+      "status": "CONFIRMED"
+    },
+    "E2_2_ictal_timecourse": {
+      "claim": "past the fold the state crosses in finite time and the crossing latency decreases monotonically as the drive overshoots the fold (diverging at the fold) -- the ictal onset 25 left owed, now a time-course",
+      "status": "CONFIRMED"
+    },
+    "E2_3_barrier_threshold": {
+      "claim": "the flip threshold is the spinodal, monotone-up in the barrier g; a fixed drive flips a shallow well and fails to flip a deeper one (the dwell handle)",
+      "status": "CONFIRMED"
+    }
+  },
+  "primitive": {
+    "cell": "ds/dt = g*s - s^3 + h(t)  (the shared R19 double-well, used over time)",
+    "cell_grade": "[F] forced -- the engine's R19 cubic (E.sdot), reused verbatim; no free constant; the fold is E.spinodal(g) = 2*(g/3)^1.5",
+    "fold_spinodal": 0.3849,
+    "g_grade": "[F] the engine's universal R19 scale (the same g that emerged M0..M16 and the same FOLD used by M11 / the theta-cap / epilepsy); NOT fit",
+    "g_scale": 1.0,
+    "reused_constants": {
+      "R19_fold_spinodal": 0.3849,
+      "dt": 0.02,
+      "g": 1.0
+    },
+    "static_limit": "a constant-drive run with the engine's (n=1500, dt=0.02, s0) reproduces E.settle(g, h, s0) BIT-FOR-BIT -- the static limit IS the frozen engine"
+  }
+}

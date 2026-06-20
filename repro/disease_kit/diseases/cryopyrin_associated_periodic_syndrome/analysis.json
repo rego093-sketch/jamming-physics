@@ -1,0 +1,181 @@
+{
+ "disease": "Cryopyrin-associated periodic syndrome (CAPS / NLRP3-associated autoinflammatory disease)",
+ "omim": "120100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Cryopyrin-associated periodic syndrome (CAPS / NLRP3-associated autoinflammatory disease)",
+  "omim": "120100",
+  "summary": "A single-gene NLRP3 gain-of-function. NLRP3 (cryopyrin) is the sensor that nucleates the NLRP3 inflammasome; on activation it recruits the adaptor ASC and pro-caspase-1, and active caspase-1 cleaves pro-IL-1beta (and pro-IL-18) to their mature, secreted forms. GOF missense alleles render the inflammasome CONSTITUTIVELY / hyper-active (lowering its activation threshold), so IL-1beta is OVER-produced even without a normal trigger -> the IL-1beta inflammatory drive is pushed UP, giving the CAPS spectrum: familial cold autoinflammatory syndrome (FCAS, cold-induced urticarial rash/fever), Muckle-Wells syndrome (urticaria, sensorineural hearing loss, AA amyloidosis) and the severe neonatal-onset multisystem inflammatory disease (NOMID / CINCA, chronic meningitis, arthropathy, developmental impairment). This is read as a NEW kind of emergent axis for the kit -- an INFLAMMASOME / autoinflammatory (IL-1beta cytokine-drive) axis -- driven UP by an over-active accelerator, so the corrective direction is to RESTRAIN it. The kit re-derives the approved restrain arm: lower the over-produced signal by IL-1 blockade -- canakinumab (an anti-IL-1beta monoclonal antibody that neutralises the mature cytokine), with anakinra (recombinant IL-1 receptor antagonist) and rilonacept (an IL-1 'trap' decoy receptor) as the established alternatives. Direct NLRP3-inflammasome inhibitors are an emerging upstream restrain direction (investigational). Recorded as an IL-1beta OVER-production axis -- the contrast to hereditary angioedema's bradykinin OVER-production: both are axis-UP released/over-driven mediator floods, but on a different mediator (IL-1beta vs bradykinin) with a different lever target (IL-1 blockade vs kallikrein-kinin restraint). The gamma read is of the NLRP3 locus switch STRUCTURE; the disease lesion is coding (GOF missense in the NACHT domain, e.g. p.Arg260Trp, p.Asp303Asn / p.Asp305Asn region), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "NLRP3-inflammasome IL-1beta drive (caspase-1-processed IL-1beta over-production -> systemic autoinflammation) -- an inflammasome/cytokine axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "NLRP3",
+    "gamma": 1.3745,
+    "spinodal_h_sp": 0.62025,
+    "barrier": 0.47231,
+    "dwell_relative_size": 1.46496,
+    "role": "accelerator",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "drive excess -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 247416076,
+     "gene_end": 247448816,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "NLR family pyrin domain containing 3"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "NLRP3 (cryopyrin; formerly CIAS1) encodes the pattern/danger sensor that nucleates the NLRP3 inflammasome; via ASC it activates caspase-1, which matures pro-IL-1beta to secreted IL-1beta -- the master driver of the autoinflammatory response. CAPS alleles are gain-of-function: they lower the inflammasome's activation threshold so it assembles and fires constitutively -> IL-1beta is over-produced -> the inflammatory drive is pushed UP. As an over-driven ACCELERATOR of IL-1beta output, the pathological axis goes UP and the corrective levers LOWER it. Autosomal dominant (often de novo / somatic mosaic), 1q44 (OMIM 606416). NCBI official symbol NLRP3. The promoter gamma reads the locus switch STRUCTURE only; the activating NACHT-domain missense lesions are outside the promoter firewall.",
+    "src": "Hoffman 2001 Nat Genet 29:301 (CIAS1/NLRP3 mutations cause FCAS and Muckle-Wells); Aksentijevich 2002 Arthritis Rheum 46:3340 (NOMID/CINCA); Agostini 2004 Immunity 20:319 (cryopyrin inflammasome activates caspase-1 / IL-1beta)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "NLRP3",
+   "role": "accelerator",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "UP",
+   "reason": "drive excess -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "74c1852b443d"
+ },
+ "treatment_A_switch": {
+  "disease": "Cryopyrin-associated periodic syndrome (CAPS / NLRP3-associated autoinflammatory disease)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "IL1B",
+    "push_direction": "neutralise the over-produced IL-1beta -> lower the inflammasome-driven inflammatory drive (axis DOWN toward healthy)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "anti-IL-1beta monoclonal antibody (canakinumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1beta neutralisation / inflammation control not derived from sequence",
+    "src": "Lachmann 2009 NEJM 360:2416 (canakinumab beta-Confident, CAPS); canakinumab (Ilaris) FDA 2009 / EMA 2009"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1R1",
+    "push_direction": "block the IL-1 receptor with the receptor antagonist so IL-1beta cannot signal -> lower the inflammatory drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "IL-1 receptor antagonist (anakinra)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1 signalling blockade not derived from sequence",
+    "src": "Goldbach-Mansky 2006 NEJM 355:581 (anakinra in NOMID); anakinra (Kineret)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1B",
+    "push_direction": "trap circulating IL-1 with a decoy-receptor fusion so less reaches its receptor -> lower the inflammatory drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "IL-1 trap (rilonacept)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1 sequestration not derived from sequence",
+    "src": "Hoffman 2008 Arthritis Rheum 58:2443 (rilonacept in CAPS); rilonacept (Arcalyst)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "NLRP3",
+    "push_direction": "inhibit the NLRP3 inflammasome directly upstream -> less caspase-1 activation -> less IL-1beta produced -> lower the inflammatory drive (definitive, upstream)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "selective NLRP3-inflammasome inhibitor (small molecule, investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] potency / inflammasome-suppression magnitude not derived from sequence",
+    "src": "Coll 2015 Nat Med 21:248 (MCC950, a selective NLRP3 inhibitor)"
+   }
+  ],
+  "n_corrective": 4,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "IL1B",
+   "push_direction": "neutralise the over-produced IL-1beta -> lower the inflammasome-driven inflammatory drive (axis DOWN toward healthy)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "anti-IL-1beta monoclonal antibody (canakinumab)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of IL-1beta neutralisation / inflammation control not derived from sequence",
+   "src": "Lachmann 2009 NEJM 360:2416 (canakinumab beta-Confident, CAPS); canakinumab (Ilaris) FDA 2009 / EMA 2009"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.46496,
+   "dwell_disease": 2.01431,
+   "dwell_treated": 1.64434,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "f4e61d814a94"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "NLRP3 GOF (over-active inflammasome accelerator) raises IL-1beta over-production (axis UP)",
+   "falsifier": "a CAPS NLRP3 GOF allele that LOWERED inflammasome assembly / caspase-1 activation / IL-1beta secretion would refute the over-driven-accelerator direction",
+   "measurable_by": "ASC-speck formation, caspase-1 activation and mature IL-1beta secretion from NLRP3-mutant vs wild-type monocytes / macrophages"
+  },
+  {
+   "claim": "restraining IL-1 (IL-1 blockade) is the CORRECTIVE direction (lowers the inflammatory drive)",
+   "falsifier": "if neutralising IL-1beta, blocking the IL-1 receptor, or trapping IL-1 RAISED or failed to lower the autoinflammatory readouts, the restrain lever sign is wrong",
+   "measurable_by": "CRP / SAA inflammatory markers and clinical attack/flare activity response to an IL-1-blocking agent in CAPS"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Cryopyrin-associated periodic syndrome (CAPS / NLRP3-associated autoinflammatory disease)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "9b0335965b40"
+ },
+ "determinism_sha": "24cfe55537c2"
+}

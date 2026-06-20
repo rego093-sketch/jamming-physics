@@ -1,0 +1,139 @@
+{
+  "_question": "Does anchor-relative contact_competent carry element-level signal, or is it geometry at chance? (helical-as-A4-grammar stress test)",
+  "_method": {
+    "twist_deg_per_bp": 34.29,
+    "same_face_window_deg": "~60 (|face|<0.17)",
+    "analytic_chance": 0.34,
+    "permutations": 2000,
+    "seed": 19,
+    "null": "uniform-random motor positions, nearest-anchor contact rate"
+  },
+  "per_organism": [
+    {
+      "organism": "human",
+      "n_motors": 2,
+      "skipped": "too few motors (<3)",
+      "ww_global_percentile": 94.5
+    },
+    {
+      "organism": "mouse",
+      "n_motors": 10,
+      "observed_contact_rate": 0.5,
+      "null_mean": 0.343,
+      "null_std": 0.149,
+      "observed_percentile_vs_null": 76.2,
+      "z_vs_null": 1.05,
+      "ww_global_percentile": 99.6
+    },
+    {
+      "organism": "chicken",
+      "n_motors": 3,
+      "observed_contact_rate": 0.333,
+      "null_mean": 0.329,
+      "null_std": 0.273,
+      "observed_percentile_vs_null": 30.3,
+      "z_vs_null": 0.02,
+      "ww_global_percentile": 90.3
+    },
+    {
+      "organism": "frog",
+      "n_motors": 4,
+      "observed_contact_rate": 0.0,
+      "null_mean": 0.338,
+      "null_std": 0.241,
+      "observed_percentile_vs_null": 0.0,
+      "z_vs_null": -1.4,
+      "ww_global_percentile": 96.2
+    },
+    {
+      "organism": "zebrafish",
+      "n_motors": 7,
+      "observed_contact_rate": 0.857,
+      "null_mean": 0.34,
+      "null_std": 0.175,
+      "observed_percentile_vs_null": 99.4,
+      "z_vs_null": 2.96,
+      "ww_global_percentile": 99.9
+    },
+    {
+      "organism": "fly",
+      "n_motors": 36,
+      "observed_contact_rate": 0.222,
+      "null_mean": 0.343,
+      "null_std": 0.081,
+      "observed_percentile_vs_null": 4.1,
+      "z_vs_null": -1.48,
+      "ww_global_percentile": 100.0
+    },
+    {
+      "organism": "worm",
+      "n_motors": 37,
+      "observed_contact_rate": 0.27,
+      "null_mean": 0.339,
+      "null_std": 0.077,
+      "observed_percentile_vs_null": 14.4,
+      "z_vs_null": -0.89,
+      "ww_global_percentile": 96.7
+    },
+    {
+      "organism": "arabidopsis",
+      "n_motors": 39,
+      "observed_contact_rate": 0.333,
+      "null_mean": 0.341,
+      "null_std": 0.076,
+      "observed_percentile_vs_null": 39.8,
+      "z_vs_null": -0.1,
+      "ww_global_percentile": 91.0
+    },
+    {
+      "organism": "rice",
+      "n_motors": 9,
+      "observed_contact_rate": 0.444,
+      "null_mean": 0.344,
+      "null_std": 0.161,
+      "observed_percentile_vs_null": 62.1,
+      "z_vs_null": 0.62,
+      "ww_global_percentile": 93.1
+    },
+    {
+      "organism": "maize",
+      "n_motors": 0,
+      "skipped": "too few motors (<3)",
+      "ww_global_percentile": 74.7
+    },
+    {
+      "organism": "yeast",
+      "n_motors": 72,
+      "observed_contact_rate": 0.347,
+      "null_mean": 0.341,
+      "null_std": 0.057,
+      "observed_percentile_vs_null": 51.1,
+      "z_vs_null": 0.1,
+      "ww_global_percentile": 68.8
+    },
+    {
+      "organism": "plasmodium",
+      "n_motors": 29,
+      "observed_contact_rate": 0.379,
+      "null_mean": 0.342,
+      "null_std": 0.088,
+      "observed_percentile_vs_null": 59.8,
+      "z_vs_null": 0.42,
+      "ww_global_percentile": 74.1
+    }
+  ],
+  "aggregate": {
+    "organisms_tested": 10,
+    "pooled_motor_anchor_pairs": 246,
+    "pooled_observed_rate": 0.3374,
+    "analytic_chance": 0.34,
+    "z_pooled_vs_chance": -0.09,
+    "n_organisms_enriched_p95": 1,
+    "n_organisms_depleted_p5": 2
+  },
+  "contrast_global_ww_periodicity": {
+    "note": "the frozen §11 GLOBAL WW-ACF(10-11) percentile is the nucleosome-positioning propensity -- a REAL descriptive composition signal (elevated above shuffle in all 12). §13 retired only its use as an element-level CONTACT claim, not as a descriptive fact. This test isolates the element-level contact question."
+  },
+  "verdict": "contact_competent is AT CHANCE: across the pooled motor-anchor pairs the same-face rate is statistically indistinguishable from the analytic chance of 0.34 (pooled z = -0.09). Real TSS positions are NOT helically phased to the composition-shell anchors -- the bare nearest-anchor contact flag is Layer-1 geometry, not a biological phasing signal. (Per-organism departures are small-n noise: median motor count is low and the tails wash out when pooled.)",
+  "interpretation": "Helical phase is sequence-derivable Layer-1 GEOMETRY and can be read for every locus (no [O] for the geometry itself). But a 100% read means 100% of the GEOMETRY, not 100% of the realized functional contact: whether two same-face loci actually loop depends on runtime factors (bound TFs, cohesin) that are Layer-2 by this paper's thesis. The global WW periodicity (nucleosome propensity) is the real, gradeable helical signal; the nearest-anchor contact flag must be graded by THIS test, not assumed."
+}

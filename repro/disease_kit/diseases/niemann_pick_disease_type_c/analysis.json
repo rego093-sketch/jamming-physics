@@ -1,0 +1,190 @@
+{
+ "disease": "Niemann-Pick disease type C (NPC1)",
+ "omim": "257220",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Niemann-Pick disease type C (NPC1)",
+  "omim": "257220",
+  "summary": "A single-gene NPC1 loss-of-function. NPC1 encodes a large polytopic late-endosomal/lysosomal membrane protein that, with the soluble luminal partner NPC2, EXPORTS unesterified cholesterol (delivered by LDL endocytosis) out of the late endosome/lysosome and coordinates lysosomal sphingolipid trafficking. NPC1 LOF disables this export -> unesterified cholesterol, glycosphingolipids and sphingosine ACCUMULATE in late endosomes/lysosomes of neurons and viscera -> a neurovisceral disease: hepatosplenomegaly, progressive cerebellar ataxia, dystonia, dysphagia, cognitive decline and the characteristic VERTICAL SUPRANUCLEAR GAZE PALSY (the NPC spectrum, from neonatal cholestasis to adult neurodegeneration). The stored-lysosomal-load axis is driven UP by loss of the export 'brake'. This is read on the kit's lysosomal-storage axis -- the SEVENTH lysosomal read -- but as a TRAFFICKING / TRANSPORT defect, NOT a catabolic-enzyme defect: it is the explicit contrast both to the enzyme-replacement lysosomal reads (Gaucher, Fabry, Pompe, LIPA -- a missing catalyst) AND to cystinosis on a DIFFERENT cargo (cystinosis loses a lysosomal cystine EXPORTER; NPC loses a lysosomal cholesterol/sphingolipid EXPORTER -- both transport defects, corrected by lowering the stored substrate rather than by replacing an enzyme). The kit re-derives the approved restrain arm: SUBSTRATE REDUCTION -- miglustat, a glucosylceramide-synthase inhibitor that lowers glycosphingolipid synthesis so less accumulates (EMA-approved for NPC neurological manifestations) -- with arimoclomol, a heat-shock-response co-inducer that enhances lysosomal protein handling/function (FDA 2024 for NPC, used with miglustat), as the established adjunct correcting lysosomal function. (Levacetylleucine, approved 2024 for NPC neurological symptoms, is a further symptomatic adjunct.) The gamma read is of the NPC1 locus switch STRUCTURE; the disease lesions are coding/missense (notably the common p.Ile1061Thr allele), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "lysosomal cholesterol/sphingolipid trafficking (NPC1 export of unesterified cholesterol + sphingolipids from the late endosome/lysosome; LOF -> stored lysosomal lipid load UP) -- a lysosomal trafficking/transport axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "NPC1",
+    "gamma": 1.4553,
+    "spinodal_h_sp": 0.67574,
+    "barrier": 0.52947,
+    "dwell_relative_size": 1.59601,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000018.10",
+     "gene_start": 23506183,
+     "gene_end": 23586505,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "NPC intracellular cholesterol transporter 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "NPC1 encodes the late-endosomal/lysosomal membrane protein that, with NPC2, exports unesterified cholesterol (and coordinates sphingolipid trafficking) OUT of the lysosome -- functionally the EXPORT BRAKE on lysosomal lipid accumulation. LOF disables export -> cholesterol, glycosphingolipids and sphingosine accumulate in lysosomes of neurons and viscera. As a lost export 'brake' the stored-load axis goes UP (the same released-brake convention used for the cystinosis lysosomal transporter and for tyrosinaemia/haemochromatosis accumulation). Autosomal recessive, 18q11.2 (OMIM 607623). NCBI official symbol NPC1. The promoter gamma reads the locus switch STRUCTURE only; the coding/missense lesions (e.g. p.Ile1061Thr) are outside the promoter firewall.",
+    "src": "Carstea 1997 Science 277:228 (NPC1 identification); Vanier 2010 Orphanet J Rare Dis 5:16 (Niemann-Pick C clinical/biochemical review)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "NPC1",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "796a28cc4f28"
+ },
+ "treatment_A_switch": {
+  "disease": "Niemann-Pick disease type C (NPC1)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "UGCG",
+    "push_direction": "reduce glycosphingolipid synthesis (inhibit glucosylceramide synthase) -> less substrate to accumulate in the export-blocked lysosome -> lower the stored lysosomal load (axis DOWN toward healthy)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "substrate-reduction therapy (miglustat, glucosylceramide-synthase inhibitor)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of glycosphingolipid lowering / neurological stabilisation not derived from sequence",
+    "src": "Patterson 2007 Lancet Neurol 6:765 (miglustat stabilises NPC neurological disease); miglustat (Zavesca) EMA-approved for NPC neurological manifestations"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "NPC1",
+    "push_direction": "amplify the cellular heat-shock / chaperone response to enhance lysosomal protein handling and function -> improve clearance of stored lipid (functional correction adjunct)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "WORSENS",
+    "agent_class": "heat-shock-response co-inducer (arimoclomol)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of lysosomal-function improvement not derived from sequence",
+    "src": "arimoclomol (Miplyffa) FDA 2024 for NPC (used with miglustat); Kirkegaard 2016 Sci Transl Med 8:355ra118 (HSP70 / lysosomal function in NPC models)"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 1,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "UGCG",
+   "push_direction": "reduce glycosphingolipid synthesis (inhibit glucosylceramide synthase) -> less substrate to accumulate in the export-blocked lysosome -> lower the stored lysosomal load (axis DOWN toward healthy)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "substrate-reduction therapy (miglustat, glucosylceramide-synthase inhibitor)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of glycosphingolipid lowering / neurological stabilisation not derived from sequence",
+   "src": "Patterson 2007 Lancet Neurol 6:765 (miglustat stabilises NPC neurological disease); miglustat (Zavesca) EMA-approved for NPC neurological manifestations"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.59601,
+   "dwell_disease": 2.19452,
+   "dwell_treated": 1.79144,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "eb470533be39"
+ },
+ "treatment_B_chem": {
+  "disease": "Niemann-Pick disease type C (NPC1)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "2-hydroxypropyl-beta-cyclodextrin (cholesterol-mobilising agent)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "mobilise sequestered lysosomal cholesterol for export-independent egress -> lower stored cholesterol; pathway-B reports DIRECTION only",
+    "rationale": "an alternative stored-substrate-lowering direction tested in NPC; measured thermodynamics not supplied here -> [O] (no number -> hold it). Feasibility direction, not a quantitative claim, and intrathecal delivery / outcomes remain investigational.",
+    "status": "investigational",
+    "src": "Ory 2017 Lancet 390:1758 (intrathecal VTS-270 / hydroxypropyl-beta-cyclodextrin in NPC1)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "7bba22f3805e"
+ },
+ "falsifiers": [
+  {
+   "claim": "NPC1 LOF (loss of the lysosomal cholesterol-export brake) raises stored lysosomal lipid load (axis UP)",
+   "falsifier": "an NPC1 LOF allele that LOWERED lysosomal unesterified-cholesterol / glycosphingolipid storage would refute the lost-export-brake direction",
+   "measurable_by": "filipin staining of lysosomal unesterified cholesterol and lysosomal glycosphingolipid content in NPC1-deficient vs control cells"
+  },
+  {
+   "claim": "lowering the stored substrate (substrate reduction / enhanced lysosomal handling) is the CORRECTIVE direction",
+   "falsifier": "if miglustat substrate reduction or arimoclomol RAISED stored lysosomal lipid or accelerated the neurological decline, the restrain/correct lever sign is wrong",
+   "measurable_by": "lysosomal lipid content and neurological progression markers on substrate reduction / HSP co-induction in NPC models / patients"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Niemann-Pick disease type C (NPC1)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "c6b5a0879dd1"
+ },
+ "determinism_sha": "3f8caab5a94c"
+}

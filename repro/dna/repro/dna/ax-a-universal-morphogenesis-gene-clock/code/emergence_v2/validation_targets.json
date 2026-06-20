@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "purpose": "MEASURED validation targets, kept SEPARATE from param_db.json so the emergence engine never reads them. Used ONLY by the post-hoc falsifiable test (validate_organs) to GRADE predictions -- never to choose a parameter. The allometric exponents the engine uses (param_db.allometry) come from comparative MAMMALIAN physiology and were fixed independently of these HUMAN fractions, so testing one against the other is a genuine prediction-test, not a back-fit.",
+    "grade": "[L] locked measured anchors",
+    "discipline": "If emergence_organs.py ever reads this file, the gate's non-fit check FAILS by design."
+  },
+  "organ_mass_g": {
+    "_provenance": "ICRP Publication 89 (2002) reference adult male (~73 kg) and reference newborn (~3.5 kg) organ masses; standard pediatric anatomy. Order-of-magnitude reference values; read-only.",
+    "adult_body_g": 73000,
+    "neonate_body_g": 3500,
+    "adult":   {"brain":1450, "liver":1800, "heart":330, "lung":1200, "kidney":310, "spleen":150, "pancreas":140, "stomach":150},
+    "neonate": {"brain":380,  "liver":130,  "heart":20,  "lung":60,   "kidney":25,  "spleen":9.5, "pancreas":6,   "stomach":7}
+  },
+  "developmental_anchor": {
+    "_provenance": "Well-established human developmental fact: the brain is ~10-12% of body mass at birth but ~2% in the adult (strong negative allometry); heart and lungs stay near a constant body-fraction (near-isometric).",
+    "brain_fraction_falls_strongly": true,
+    "lung_heart_near_isometric": true
+  }
+}

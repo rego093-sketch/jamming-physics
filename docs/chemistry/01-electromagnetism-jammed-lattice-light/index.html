@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electromagnetism — VP Chemistry &amp; EM §1 | Jamming Physics</title>
+<meta name="description" content="Light emerges from the jammed lattice as a single longitudinal wave at c² = B/ρ; charge, the Coulomb 1/r², the E/B geometry, polarization, blackbody radiation">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/01-electromagnetism-jammed-lattice-light/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Electromagnetism — VP Chemistry &amp; EM §1 | Jamming Physics"><meta property="og:description" content="Light emerges from the jammed lattice as a single longitudinal wave at c² = B/ρ; charge, the Coulomb 1/r², the E/B geometry, polarization, blackbody radiation"><meta property="og:url" content="https://jamming-physics.org/chemistry/01-electromagnetism-jammed-lattice-light/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Electromagnetism — VP Chemistry &amp; EM §1 | Jamming Physics"><meta name="twitter:description" content="Light emerges from the jammed lattice as a single longitudinal wave at c² = B/ρ; charge, the Coulomb 1/r², the E/B geometry, polarization, blackbody radiation">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Electromagnetism: from the jammed lattice to light", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 1, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/01-electromagnetism-jammed-lattice-light/", "knowsAbout": ["jamming lattice", "electromagnetism", "speed of light", "Coulomb law"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§1 Electromagnetism"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §1</nav></header>
+<main>
+<h1>Electromagnetism: from the jammed lattice to light</h1>
+
+<p class="answer">Electromagnetism is derived, not assumed: at the jammed lattice's isostatic point the shear modulus vanishes while the bulk modulus survives, leaving one longitudinal wave, light, at c² = B/ρ, matched by a deterministic simulation to 0.06%. Charge is synchronized rotation and the Coulomb 1/r² is three-dimensional flux conservation.</p>
+
+<p class="abstract">Light is not assumed but emerges from the jammed lattice: at the isostatic point the shear modulus vanishes while the bulk modulus survives, leaving one longitudinal wave at c² = B/ρ, reproduced by a deterministic simulation to 0.06%. On that wave, charge is synchronized rotation, the Coulomb 1/r² is three-dimensional flux conservation, and the dynamic field equations, Poynting flow ∂ₜe + ∇·S = 0, and a strict light cone follow.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/01-electromagnetism-jammed-lattice-light/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+<aside class="vp-card" data-locked="mp_me"><b>mₚ/mₑ = 6π⁵ (−19 ppm)</b> — proton-electron mass ratio from VP Theory (Vol I); the 6π⁶ rₚ diameter check here reproduces the same −19 ppm residual. <b>[O]</b> open (cross-volume, measured residual). <a href="https://jamming-physics.org/physics/" rel="noopener">Canonical derivation: VP Theory (Vol I), mass sector → /physics/</a></aside>
+
+<blockquote>
+<p>One medium, one motion seen two ways. Charge is the bookkeeping of a
+synchronized rotation; light is the transverse swing of that rotation
+propagating on the single surviving longitudinal wave. Electricity, a
+radio wave, and a γ-ray differ only by an angle.</p>
+</blockquote>
+<h2 id="em.0-governance-inherited-from-vp-theory-1">EM.0 Governance
+(inherited from VP Theory §1)</h2>
+<p>This chapter inherits the No-Tuning / LOCK / Gate discipline of the
+physics whitepaper. <strong>The fundamental electromagnetic mechanism is
+supplied by physics §10 (light, clock-free c) and §14 (force, the 1/r²
+Green function). This chapter does not re-derive it; it takes those
+results as input and develops the chemical and optical
+consequences.</strong> Where a quantity is a measured constant (notably
+the fine-structure coupling αₑₘ), it is marked <strong>[CAL]</strong>
+and is never tuned to fit a downstream result.</p>
+<h2 id="em.1-genesis-charge-as-synchronized-rotation-hv">EM.1 Genesis:
+charge as synchronized rotation <strong>[H]→[V]</strong></h2>
+<p>A quantum that receives energy can only store it as rotation, so
+energy input forces rotation. This is grounded in established physics:
+photon–photon collisions create matter (γγ → e⁺e⁻; E=mc²), and photons
+carry helicity ± 1 — circular polarization is a <em>rotating field</em>.
+<strong>Electric charge is the bookkeeping of one synchronized
+rotation</strong> of the quanta; the sign ± is the handedness (CW/CCW)
+of the twist of a charge’s rotation relative to the surrounding common
+axis. The elementary charge is one boundary-crossing rotation unit
+(universal), so the EM coupling carries no nucleon-structure factor
+(contrast the mass/gravity sector, where mₚ/mₑ = 6π⁵ and the 82+7 core
+appear).</p>
+<h2 id="em.2-light-emergence-the-keystone-fv">EM.2 Light emergence — the
+keystone <strong>[F]/[V]</strong></h2>
+<p>Light is not assumed; it <em>emerges</em> from the jammed lattice.
+The chain (physics §SP):</p>
+<ol type="1">
+<li><strong>[F, axiom]</strong> Infinitely rigid, fully packing quanta ⇒
+the vacuum is a jammed lattice.</li>
+<li><strong>[H]→[V]</strong> Rotation (temperature) drives the contact
+number z to the isostatic threshold z = 2d = 6 (self-organized
+criticality).</li>
+<li><strong>[V]</strong> At the isostatic point the shear reserve is
+zero, so the relaxed shear modulus vanishes while the bulk modulus stays
+finite:</li>
+</ol>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-001.svg" width="361" height="41" alt="G_{\text{relaxed}} \to 0,\qquad B = \text{finite}\;\Rightarrow\; c^2 = \frac{B}{\rho}=K." loading="lazy"></figure>
+<p>The transverse acoustic wave dies; <strong>one longitudinal speed
+survives.</strong> 4. <strong>[F]</strong> A single speed gives linear
+dispersion and hence a wavelength:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-002.svg" width="159" height="18" alt="\omega = c\,q \;\Rightarrow\; \lambda = c/\nu." loading="lazy"></figure>
+<p><strong>Direct demonstration (module
+<code>vp_light_emergence.py</code>).</strong> A 1-D chain of quanta, m
+ddot uₙ = k(uₙ₊₁-2uₙ+uₙ₋₁), is given a right-moving Gaussian packet and
+integrated by leapfrog (no randomness). The energy centroid propagates
+at c₍measured) = 0.99940 versus the closed form c₍theory) = a√(k/m) = 1
+— a <strong>0.06 %</strong> agreement. The exact dispersion ω(q)=2√(k/m)
+|sin(qa/2)| tends to ω = cq as q→ 0 (vₚₕ/c → 0.99999), and the identity
+c²=B/ρ is verified to machine precision. A 2-D triangular lattice
+confirms that as the shear reserve → 0 the transverse speed c_T → 0
+while the longitudinal c_L survives — <strong>light is the unique
+surviving longitudinal wave of the jammed lattice.</strong></p>
+<p><strong>Quantum diameter [F].</strong> One 2π phase winding of the
+carrier sets the rotational circulation length</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-003.svg" width="429" height="37" alt="D = 2\pi\,a_{\text{phys}} = \frac{2\pi\lambda}{A} = 2\lambda_{C,e} = 6\pi^6 r_p, \qquad
+   r_p = \tfrac{2}{\pi}\lambda_{C,p}," loading="lazy"></figure>
+<p>where rₚ is the globally stable fixed point of the stiffness-shell
+balance α x⁻⁵=x⁻⁴⇒ x^<em>=2/π (physics §SP S4). Numerically D = 4.8526
+pm. The module verifies D=6π⁶ rₚ to within <strong>+18.8 ppm</strong>,
+which is exactly the headline residual mₚ/mₑ = 6π⁵ (-19 ppm): the small
+mismatch is the </em>known residual of the theory*, not an error.</p>
+<h2 id="em.3-the-coulomb-sector-why-1r²-why-long-range-how-strong">EM.3
+The Coulomb sector: why 1/r², why long-range, how strong</h2>
+<p><strong>Why a force exists [F].</strong> Two sources’ fields
+superpose; the stored strain energy depends on separation and the medium
+relaxes it, giving Eᵢₙₜ = k q₁ q₂ / r. Like sources repel, opposite
+attract (a positive-definite strain structure).</p>
+<p><strong>Why 1/r² [F].</strong> A fixed source flux is diluted over
+the 4π r² shell (Gauss = Poisson Green’s function). In d dimensions the
+field falls as r⁽-(d-1)), so d=3 gives 1/r². Module
+<code>vp_electromagnetism.py</code> measures the exponent directly:
+d=1,2,3,4 → 0,-1,-2,-3, confirming E∝ 1/r² in three dimensions as the
+geometric consequence of flux conservation.</p>
+<p><strong>Why long-range / unscreened [H].</strong> Synchronization
+spontaneously breaks a <em>global</em> U(1) (the common phase), giving a
+massless Goldstone mode and hence infinite range. (Were the U(1) gauged,
+its breaking would make the mediator massive and short-ranged;
+long-range EM requires the broken symmetry to be global — a stated
+departure.)</p>
+<p><strong>Coupling magnitude [CAL].</strong> The elementary charge is
+one universal rotation unit, so</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-004.svg" width="304" height="38" alt="K_C = k_e e^2 = \alpha_{\mathrm{em}}\,\hbar c, \qquad
+   k_e = \frac{\alpha_{\mathrm{em}}\hbar c}{e^2}." loading="lazy"></figure>
+<p>The module reproduces the Coulomb constant kₑ = 8.987552× 10⁹ to 3×
+10⁻¹⁰%. <strong>αₑₘ is taken from measurement; it is not derived
+here</strong> — an honest [CAL] item.</p>
+<h2 id="em.4-the-eb-geometry-longitudinal-e-transverse-b-f">EM.4 The E/B
+geometry: longitudinal E, transverse B <strong>[F]</strong></h2>
+<p>The same rotating medium supplies the vector sector. The organizing
+statement: <strong>the electric field is the force directed along the
+light (propagation) direction; the magnetic field is the force directed
+at 90^∘ to it.</strong> Both originate from one fact — a charge’s
+rotational output is <em>twisted</em> relative to the surrounding
+synchronized quanta because its axis differs. A charge with axis aligned
+to the common axis emits a pure radial (Coulomb) field and no magnetic
+field. A moving charge tilts its axis by an amount ∝ v/c; the
+propagation of that twisted region, transverse to the light direction,
+is the magnetic field:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-005.svg" width="98" height="33" alt="|\mathbf B| = \frac{v}{c}\,|\mathbf E|." loading="lazy"></figure>
+<p>Module <code>vp_electromagnetism.py</code> confirms |mathbf
+B|/|mathbf E| = v/c exactly. Because mathbf B <em>is</em> a rotation (a
+pseudovector), it is automatically divergence-free, ∇ ·mathbf B = 0: the
+poles are the two ends of one rotation axis and cannot be separated —
+there are <strong>no magnetic monopoles</strong>, and cutting a magnet
+yields two fresh N/S pairs. The right-hand rule is the handedness of the
+rotation.</p>
+<h2 id="em.5-polarization-as-rotation-helicity-f">EM.5 Polarization as
+rotation (helicity) <strong>[F]</strong></h2>
+<p>Circular polarization <em>is</em> the rotating field; the two senses
+(CW/CCW) are helicity ± 1. In Jones form the circular states are (1,±
+i)/√ 2. The module computes their Stokes vectors and finds |S₃| = S₀
+with S₁ = S₂ = 0 — i.e. pure rotation, no linear component. Linear
+polarization is the equal superposition of the two rotation senses. (The
+sign convention of S₃ depends on the time convention e⁽∓ iω t); the
+invariant content is |S₃| = S₀ for circular light.)</p>
+<h2
+id="em.6-the-propagation-angle-conduction-radiation-fvp-prediction">EM.6
+The propagation angle: conduction ↔︎ radiation
+<strong>[F]/[VP-prediction]</strong></h2>
+<p>Light is unambiguously an electromagnetic wave — <em>one</em> object.
+Its longitudinal part (∇ ·mathbf u, compression = deficit) is the static
+Coulomb field; its transverse, propagating part is light. What
+distinguishes electricity, a radio wave, and a γ-ray is only the
+propagation angle χ, set by the wavelength through physics §10.9:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-006.svg" width="240" height="37" alt="\sin\chi = \frac{\lambda}{mD},\qquad m = \lceil \lambda/D\rceil." loading="lazy"></figure>
+<p>Short-λ γ-rays are near-longitudinal (χ→ 0, penetrating); visible and
+radio waves are near-transverse (χ→ 90^∘). Crucially the visible band is
+<strong>near — not exactly — transverse</strong>: χ ≈ 89.9^∘, a small
+<em>falsifiable</em> departure from the textbook exactly-transverse
+wave. Electric conduction is the extreme-longitudinal limit (χ→ 0):
+charges drift through a wire’s internal quanta, each producing a
+transverse twist that wraps the wire azimuthally as the magnetic field.
+<strong>Conduction and radiation are the same electromagnetic
+phenomenon, differing only in angle (longitudinal vs transverse) and
+medium (atomic-internal quanta vs free space)</strong> — “electricity
+travels like a γ-ray.”</p>
+<p>Forward predictions (falsifiers, no fitting): for HeNe lines, χ(632.8
+nm) = 89.892^∘ and χ(532 nm) = 89.825^∘ (modules
+<code>vp_light_angle.py</code>,
+<code>vp_electromagnetism.py</code>).</p>
+<p>The earlier Word-document formulation λ = d/cosθ with d = 5000 fm is
+<strong>superseded</strong>: it has no m-chain and is undefined for λ
+&lt; d (γ-rays, X-rays). The refined law fixes d to the <em>derived</em>
+value D = 4852.6 fm and covers the whole spectrum via the m-chain.</p>
+<h2 id="em.7-blackbody-radiation-f">EM.7 Blackbody radiation
+<strong>[F]</strong></h2>
+<p>The Planck spectrum is the product of two lattice facts:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-007.svg" width="385" height="68" alt="u(\nu,T) \;\propto\; \underbrace{\nu^2}_{\text{geometric mode density}}\;\times\;
+   \underbrace{\frac{h\nu}{e^{h\nu/k_BT}-1}}_{\text{rigid-shell high-}\nu\text{ cutoff}}." loading="lazy"></figure>
+<p>The first factor alone is Rayleigh–Jeans and diverges (the UV
+catastrophe); the rigid shell blocks high-frequency deformation when the
+shell energy exceeds the thermal excitation, supplying the Bose cutoff.
+Module <code>vp_electromagnetism.py</code> tabulates u₍RJ) versus
+u₍Planck) (agreement at low ν, strong suppression at high ν) and solves
+the Wien transcendental x = 5(1-e⁽-x)) to recover λₚₑₐₖT = 2.89777× 10⁻³
+m·K to 6× 10⁻⁹%. A 300 K body peaks at ∼ 9.7 μm (infrared) with χ ≈
+89.95^∘ — transverse light, consistent with EM.6.</p>
+<h2
+id="em.8-refraction-and-dispersion-the-bridge-to-chemistry-fcal">EM.8
+Refraction and dispersion — the bridge to chemistry
+<strong>[F]/[CAL]</strong></h2>
+<p>Once light exists, its interaction with matter is geometric.
+Interfacial transverse-oscillation matching gives Snell’s law n₁sinθ₁ =
+n₂sinθ₂ <strong>[F]</strong>; the primary rainbow angle is 42.1^∘ from
+Snell + droplet sphere geometry (Descartes) <strong>[F]</strong>; total
+internal reflection has sinθ_c = 1/n <strong>[F]</strong> (water 48.6^∘,
+diamond 24.4^∘). The absolute refractive index n is a material constant
+<strong>[CAL]</strong>. Wavelength-dependent n(λ) orders the rainbow
+colors (blue refracts more). These feed directly into the chemistry
+chapter’s color of coordination compounds (d–d transitions, Δₜₑₜ/Δ₍oct)
+= 4/9) and spectroscopy (modules <code>vp_refraction.py</code>,
+<code>vp_light_angle.py</code>, <code>vp_crystal_field.py</code>).</p>
+<h2 id="em.9-master-ledger-forced-measured-open">EM.9 Master ledger —
+forced / measured / open</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Grade</th>
+<th>Basis / module</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>c² = B/ρ (single surviving longitudinal speed)</td>
+<td>[F]/[V]</td>
+<td>isostatic z=2d; <code>vp_light_emergence.py</code></td>
+</tr>
+<tr class="even">
+<td>Linear dispersion ω = cq</td>
+<td>[F]/[V]</td>
+<td>long-λ limit; <code>vp_light_emergence.py</code></td>
+</tr>
+<tr class="odd">
+<td>Quantum diameter D = 2λ₍C,e) = 6π⁶ rₚ</td>
+<td>[F]</td>
+<td>wavelength relation; (−19 ppm residual)</td>
+</tr>
+<tr class="even">
+<td>1/r² from 4π r² flux dilution</td>
+<td>[F]</td>
+<td>Gauss/Poisson; <code>vp_electromagnetism.py</code></td>
+</tr>
+<tr class="odd">
+<td>Coulomb constant kₑ = αₑₘℏ c/e²</td>
+<td>[F]+[CAL]</td>
+<td>reproduces kₑ to 3×10⁻¹⁰%</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mathbf B</td>
+<td>= (v/c)</td>
+</tr>
+<tr class="odd">
+<td>Circular polarization = rotation (</td>
+<td>S₃</td>
+<td>=S₀)</td>
+</tr>
+<tr class="even">
+<td>Propagation angle sinχ = λ/(mD)</td>
+<td>[F]/[VP-pred]</td>
+<td><code>vp_light_angle.py</code></td>
+</tr>
+<tr class="odd">
+<td>Blackbody = mode density × rigid cutoff; Wien</td>
+<td>[F]</td>
+<td><code>vp_electromagnetism.py</code></td>
+</tr>
+<tr class="even">
+<td>Snell, rainbow 42.1^∘, critical angle</td>
+<td>[F]</td>
+<td><code>vp_refraction.py</code></td>
+</tr>
+<tr class="odd">
+<td>Fine-structure coupling αₑₘ</td>
+<td>[CAL]</td>
+<td>measured input, <strong>not derived</strong></td>
+</tr>
+<tr class="even">
+<td>Long-range / unscreened (global U(1) Goldstone)</td>
+<td>[H]</td>
+<td>symmetry argument</td>
+</tr>
+<tr class="odd">
+<td>Magnetic / radiative <em>absolute</em> vector sector; γγ genesis
+dynamics</td>
+<td>[O]</td>
+<td>open (physics §14.0.6)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="em.10-falsification-criteria-f">EM.10 Falsification criteria
+<strong>[F]</strong></h2>
+<p>Because the forced results have no free parameters, they are refuted
+if measurement disagrees:</p>
+<ul>
+<li>If the visible-band propagation angle is <em>exactly</em> 90^∘ (not
+≈ 89.9^∘), the rotating-quantum / m-chain picture is wrong.</li>
+<li>If χ(632.8 nm) ≠ 89.892^∘ or χ(532 nm) ≠ 89.825^∘, the angle law is
+refuted (forward prediction, length → angle, no fitting).</li>
+<li>If the Coulomb field deviates from 1/r² in three dimensions, the
+flux-dilution origin fails.</li>
+<li>If circular light is not pure rotation (|S₃| ≠ S₀),
+helicity-as-rotation is wrong.</li>
+<li>If the blackbody peak does not satisfy the Wien transcendental, the
+mode-density × rigid-cutoff factorization fails.</li>
+</ul>
+<h2 id="em.11-reproducibility">EM.11 Reproducibility</h2>
+<p>All numbers above are produced by deterministic, standard-library
+Python modules with self-checks (<code>assert</code>). Determinism is
+verified by running each module twice and comparing the stdout
+sha256.</p>
+<pre><code>python3 vp_light_emergence.py      # light emergence: c²=B/ρ, dispersion, single speed, angle
+python3 vp_electromagnetism.py     # charge, 1/r², E/B, polarization, conduction/radiation, blackbody
+python3 verify_chemistry.py --root &lt;package root&gt;   # runs all modules + ledger integrity gate</code></pre>
+<p>The harness reports execution, determinism, standard-library-only
+dependency, and case-ledger integrity across all modules (currently
+32/32 PASS with the two EM/light modules added).</p>
+<p><em>This chapter completes the electromagnetic foundation on which
+the chemistry chapter rests: light emerges from the jammed lattice
+(EM.2), charge and the Coulomb 1/r² follow (EM.3), the E/B geometry and
+polarization are rotation (EM.4–5), the same wave spans conduction and
+radiation by angle (EM.6), and the optical consequences (blackbody,
+refraction, color) bridge into chemistry (EM.7–8). It is deliberately
+more detailed and fully reproducible relative to the original Korean
+working document, and every forced claim is falsifiable.</em></p>
+<h2
+id="em.12-dynamic-field-equations-poynting-and-causality-addendum-fv">EM.12
+Dynamic field equations, Poynting, and causality (addendum)
+<strong>[F]/[V]</strong></h2>
+<p><em>Added 2026-06-14. Closes the dynamic-Maxwell gap flagged in the
+EM completeness review (Faraday/Ampère/Poynting were absent from
+EM.0–EM.11). Source: <strong>AQD — Axiomatic Quantized Dynamics, NOCAL
+v1.1, DOI 10.5281/zenodo.17423870</strong>. Reproduced by
+<code>vp_em_field_dynamics.py</code>.</em></p>
+<blockquote>
+<p>The original EM chapter derived the <strong>static</strong> Coulomb
+sector (1/r², EM.3), the algebraic ratio |mathbf B|=(v/c)|mathbf E| and
+∇ ·mathbf B=0 (EM.4) — i.e. <strong>two of the four Maxwell
+statements</strong> (the two divergence facts). It did
+<strong>not</strong> state the <strong>dynamic</strong> field equations,
+the Poynting energy flow, or a causality theorem. This addendum supplies
+them in the <strong>longitudinal (E-sector, pressure P) form</strong>
+from the AQD axioms, and marks the remaining vector-curl sector honestly
+as open.</p>
+</blockquote>
+<h2 id="em.12.1-the-first-order-dynamic-system-f">EM.12.1 The
+first-order dynamic system <strong>[F]</strong></h2>
+<p>The jammed-lattice field obeys a coupled first-order system (AQD
+axiom A1) — pressure P (the compression = deficit = longitudinal/Coulomb
+sector) and velocity mathbf v:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-008.svg" width="312" height="17" alt="\partial_t P + K\,\nabla\!\cdot\mathbf v = 0,
+\qquad
+\rho\,\partial_t \mathbf v + \nabla P = 0." loading="lazy"></figure>
+<p>Eliminating mathbf v gives the wave equation and the speed already
+used in EM.2:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-009.svg" width="251" height="41" alt="\Box_c P = 0,\qquad c^2 = \frac{K}{\rho}\;(=B/\rho)." loading="lazy"></figure>
+<p><strong>These two coupled first-order equations are the longitudinal
+analogue of Maxwell’s curl pair</strong> (∇×mathbf E=-∂ₜmathbf B,
+∇×mathbf B=μ₀ε₀∂ₜmathbf E): the time-derivative of each field is sourced
+by a spatial derivative of the other, and their combination is the wave.
+Module <code>vp_em_field_dynamics.py</code> integrates this system
+(staggered leapfrog, deterministic) and recovers the pulse speed
+c₍measured)=1.0001 vs c=1 (<strong>0.01 %</strong>).</p>
+<h2 id="em.12.2-poyntings-theorem-and-energy-conservation-fv">EM.12.2
+Poynting’s theorem and energy conservation <strong>[F]/[V]</strong></h2>
+<p>Define the energy density and flux (AQD; equivalent to the
+second-order form e=tfrac12[(∂ₜP)²/c²+|∇ P|²], mathbf S=-(∂ₜP)∇ P):</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-010.svg" width="445" height="45" alt="e = \tfrac12\!\left[\frac{P^2}{K} + \rho\,|\mathbf v|^2\right],
+\qquad
+\mathbf S = P\,\mathbf v,
+\qquad
+\boxed{\;\partial_t e + \nabla\!\cdot\mathbf S = 0\;}" loading="lazy"></figure>
+<p>— the <strong>local energy-conservation (Poynting) law</strong>, the
+longitudinal counterpart of EM’s ∂ₜ u + ∇ ·(mathbf E×mathbf H)=0.
+Integrating over a lossless domain (periodic, Neumann, time-invariant
+Dirichlet, or radiationless infinity) gives ointmathbf S · mathbf n=0
+and hence</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-011.svg" width="371" height="37" alt="\frac{dE}{dt}=0\qquad(\text{AQD QP-0002-001, fully proven})." loading="lazy"></figure>
+<p>The module confirms ∂ₜ e+∂ₓ S=0 pointwise (RMS residual ∼ 3×10⁻²,
+discretization scale) and energy conservation to 3×10⁻⁴ over the run. A
+companion uniqueness theorem (energy method, QP-0002-002) shows
+identical initial data give a unique solution.</p>
+<h2
+id="em.12.3-causality-finite-propagation-and-the-light-cone-f">EM.12.3
+Causality: finite propagation and the light cone
+<strong>[F]</strong></h2>
+<p>The same energy structure forces a <strong>hard light cone</strong>
+(AQD theorems F-A/B/C):</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-01-012.svg" width="379" height="18" alt="u_{\max}=c,\qquad \operatorname{supp} e(\tau,\cdot)\ \subseteq\ \operatorname{supp} e(0,\cdot)\,\oplus\,B_{c\tau}." loading="lazy"></figure>
+<p>Energy and information cannot reach beyond cτ of the initial support.
+The module verifies this directly: the pulse support stays inside the
+cone (expansion 0.00 le cτ). At the quantum level the AQD upgrades this
+to <strong>microcausality</strong> — with Φ:=P/√ K, [Φ(x),Φ(y)]=0 for
+spacelike (x-y) via the Pauli–Jordan function D(x) whose support lies on
+the light cone (the cone speed is fixed at c by c²=K/ρ), and the
+arrival-time bound tₐᵣᵣge dist/c follows from commutator support. No
+calibration enters.</p>
+<h2 id="em.12.4-what-this-closes-and-what-remains-open-o">EM.12.4 What
+this closes, and what remains open <strong>[O]</strong></h2>
+<p><strong>Closed (this addendum):</strong> the <em>dynamic</em> field
+equations, the Poynting energy flow and its exact conservation,
+uniqueness, and causality (classical light cone + quantum
+microcausality). Together with EM.2 (wave/c²=B/ρ) and EM.3 (static
+1/r²), the <strong>longitudinal (E-sector)</strong> electrodynamics is
+now complete and reproducible.</p>
+<p><strong>Still open — honestly marked [O] (unchanged from
+EM.9):</strong> the <strong>full vector mathbf E/mathbf B curl
+structure</strong> — Faraday’s ∇×mathbf E=-∂ₜmathbf B and
+Ampère–Maxwell’s ∇×mathbf B in <em>vector</em> form, with the
+<strong>magnetic field as an independent transverse
+pseudovector</strong> and its <em>absolute</em> magnitude. The AQD
+treatment is scalar/longitudinal (P, mathbf v with mathbf v
+irrotational); it yields the compression (Coulomb/E) sector rigorously
+but not the independent transverse-vector (magnetic/radiative) sector.
+This is exactly the EM.9 line <em>“magnetic/radiative absolute vector
+sector — [O] (physics §14.0.6)”</em>. It is <strong>not</strong>
+resolved here; it remains the principal open structural item of the EM
+chapter.</p>
+<h2 id="em.12.5-updated-master-ledger-rows">EM.12.5 Updated
+master-ledger rows</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Grade</th>
+<th>Basis / module</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>First-order system ∂ₜP+K∇ ·mathbf v=0, ρ∂ₜmathbf v+∇ P=0</td>
+<td>[F]</td>
+<td>AQD A1; <code>vp_em_field_dynamics.py</code></td>
+</tr>
+<tr class="even">
+<td>Poynting law ∂ₜ e+∇ ·mathbf S=0, mathbf S=Pmathbf v</td>
+<td>[F]/[V]</td>
+<td>AQD QP-0002-001; residual ∼3e-2</td>
+</tr>
+<tr class="odd">
+<td>Energy conservation dE/dt=0 (lossless) + uniqueness</td>
+<td>[F]</td>
+<td>AQD QP-0002-001/002; dev 3e-4</td>
+</tr>
+<tr class="even">
+<td>Causality: light cone, u₍max)=c; microcausality</td>
+<td>[F]</td>
+<td>AQD F-A/B/C, QP-0002-U121</td>
+</tr>
+<tr class="odd">
+<td>Full vector mathbf E/mathbf B curl (Faraday/Ampère, magnetic
+absolute)</td>
+<td><strong>[O]</strong></td>
+<td>open — scalar/longitudinal AQD does not supply it</td>
+</tr>
+</tbody>
+</table>
+<p><em>This addendum upgrades the EM chapter from “static sector +
+algebraic B/E ratio” to “<strong>complete longitudinal electrodynamics
+with Poynting flow and causality</strong>,” using the AQD axiomatic
+field dynamics. The dynamic-Maxwell gap is closed in the E-sector; the
+independent vector (magnetic/radiative) sector remains the chapter’s
+honestly-declared open item.</em></p>
+
+
+<nav class="pn">
+  <span></span>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/02-chemistry-single-anchor/">§2 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

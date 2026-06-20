@@ -1,0 +1,59 @@
+{
+  "phase": "W-unmet-need",
+  "kind": "view_gate",
+  "title": "unmet-need / treatment-gap surface — pure graded view over the R9 registry",
+  "generated": "2026-06-18",
+  "inputs": {
+    "unmet_need_surface_json": {
+      "path": "data/curated/unmet_need_surface.json",
+      "sha12": "ada62bdc9831"
+    },
+    "unmet_need_surface_csv": {
+      "path": "data/curated/unmet_need_surface.csv",
+      "sha12": "ce9dbac3815f"
+    },
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "6167e4eddd12"
+    }
+  },
+  "headline_unmet_need_diseases": [
+    "Achondrogenesis type II",
+    "Niemann-Pick disease, type A"
+  ],
+  "surface_sha12": "a3c6c16fdeeb",
+  "summary": "6/6 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_2x",
+      "pass": true,
+      "detail": "surface sha a3c6c16fdeeb == a3c6c16fdeeb"
+    },
+    {
+      "name": "cells_rederived_from_registry",
+      "pass": true,
+      "detail": "residual=raw*(1-e)=registry burden_score, gap_class, provisional flag, and all grades re-derived from the registry for all 35 rows (0 bad)"
+    },
+    {
+      "name": "sorted_by_residual_desc",
+      "pass": true,
+      "detail": "placed surface monotone non-increasing in residual unmet-need; unmet_rank contiguous (23 placed)"
+    },
+    {
+      "name": "headline_rule_exact",
+      "pass": true,
+      "detail": "headline (burden [L] + no disease-directed therapy) = ['Achondrogenesis type II', 'Niemann-Pick disease, type A']"
+    },
+    {
+      "name": "no_cure_or_outcome_claim",
+      "pass": true,
+      "detail": "surface carries only burden/treatability/residual/grades/flags; no prognosis/outcome field (none)"
+    },
+    {
+      "name": "read_only_no_upstream_change",
+      "pass": true,
+      "detail": "banked R3/R4 byte-identical (0 changed); engine pin drift 0 (15/15)"
+    }
+  ]
+}

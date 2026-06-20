@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to read a locus — 4D DNA Blueprint §I | Jamming Physics</title>
+<meta name="description" content="The method end-to-end on human_SOX2 (γ=1.287315): γ→threshold scale, the A4 coordinate, R19 can-fire, the five channels of one read.">
+<link rel="canonical" href="https://jamming-physics.org/dna/how-to-read-a-locus/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="How to read a locus — 4D DNA Blueprint §I | Jamming Physics"><meta property="og:description" content="The method end-to-end on human_SOX2 (γ=1.287315): γ→threshold scale, the A4 coordinate, R19 can-fire, the five channels of one read."><meta property="og:url" content="https://jamming-physics.org/dna/how-to-read-a-locus/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="How to read a locus — 4D DNA Blueprint §I | Jamming Physics"><meta name="twitter:description" content="The method end-to-end on human_SOX2 (γ=1.287315): γ→threshold scale, the A4 coordinate, R19 can-fire, the five channels of one read.">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "How to read a locus", "isPartOf": {"@type": "CreativeWorkSeries", "name": "4D DNA Blueprint", "identifier": "https://doi.org/10.5281/zenodo.20471407", "url": "https://jamming-physics.org/dna/"}, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "https://doi.org/10.5281/zenodo.20471407", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/", "license": "https://creativecommons.org/licenses/by/4.0/", "knowsAbout": ["reading DNA from sequence", "deterministic DNA interpretation", "DNA stacking stiffness", "A4 coordinate grammar", "R19 double-well switch", "anchor-relative helical phase", "CpG O/E methylation", "readable layer of DNA", "sequence-to-trait reading", "reproducible genomics", "jamming lattice", "4D DNA Blueprint"]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "4D DNA Blueprint", "item": "https://jamming-physics.org/dna/"}, {"@type": "ListItem", "position": 3, "name": "§I How to read a locus"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › §I</nav></header>
+<main>
+<h1>How to read a locus</h1>
+
+<p class="answer">A locus is read in one deterministic pass. From its sequence the engine computes γ (stacking stiffness), which fixes the R19 threshold scale; places the element in its A4 coordinate (shell, nearest anchor and strength, loops, anchor-relative helical phase); decides whether the R19 well is bistable (can-fire); and returns five channels. Walked here on human_SOX2, γ = 1.287315.</p>
+
+<p class="abstract">This chapter is the method, end to end, on one worked locus. Reading is mechanical and order-free: γ from nearest-neighbour stacking sets the threshold scale (spinodal ∝ γ^1.5, barrier γ²/4); the A4 coordinate places the element relative to its nearest anchor and reads the helical phase between them; the R19 switch reports can-fire while on/off stays runtime; and the five channels (material, set, state, dwell, environment) are the output of that single read, not five separate analyses.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/13-unified-deterministic-interpreter" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h3>Step 1 — What is γ, and what does it fix?</h3>
+<p>γ is the stacking stiffness of the duplex: γ = −mean nearest-neighbour stacking ΔG over the sequence, using the SantaLucia 1998 table. It is read mechanically — no fitting, no free parameter — and re-derives identically every run. For <strong>human_SOX2</strong> (302,512 bp) the engine reads <strong>γ = 1.287315</strong> at GC = 0.396.</p>
+<p>γ fixes the <strong>scale of the R19 switch threshold</strong>, not the trait. From γ alone the switch's spinodal (the tilt that collapses one basin) is |h_sp| = (2/3√3)·γ^1.5 and its barrier is γ²/4. For human_SOX2 that is <strong>spinodal = 0.5622</strong> and <strong>barrier = 0.4143</strong>. Because γ is an affine read of GC (corr(γ,GC)=0.998 across the census), γ carries composition, not lineage.</p>
+
+<h3>Step 2 — Where does the element sit? The A4 coordinate</h3>
+<p>The same read places the element in a four-part coordinate, so a locus is read structurally rather than as a flat string. The four components are: the <strong>shell</strong> (soft / mid / stiff composition band) the element falls in; the <strong>nearest anchor</strong> and its <strong>strength</strong>; the <strong>loops</strong> co-anchored with it, built from real motors parsed from the region's feature table; and the <strong>anchor-relative helical phase</strong>.</p>
+<p>The phase is the physically meaningful part. Using the locked B-DNA geometry — rise 3.4 Å and twist 34.29° per base pair — the engine asks whether the element and its nearest anchor fall on the <strong>same rotational face</strong> of the helix (and could contact) or on opposite faces (and cannot). On the worked lactase promoter the read is <strong>γ 1.315 · mid-shell · anchor 1065 bp · 1 loop / 5 motors · face 0.44 → contact False</strong>. The same grammar reads human_SOX2; where a window is gene-poor the loop read is flagged open and names the dataset that would close it.</p>
+<aside class="vp-card" data-stress="helical-contact">
+  <b>The helical face is read as geometry, not function.</b> Across twelve cross-kingdom regions a real TSS sits on the same helical face as its nearest anchor at a rate of 0.337, against an analytic chance of 0.340 (246 motor–anchor pairs, permutation z = −0.09) — indistinguishable from chance. So <code>contact_competent</code> is a deterministic Layer-1 <b>geometry</b> read, never a functional-contact claim; realized looping depends on runtime factors (bound factors, cohesin) that are Layer-2. <span class="grade g-open">geometry / chance-level</span> <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/13-unified-deterministic-interpreter/stress_helical/" rel="noopener">stress test → repro</a></aside>
+
+<h3>Step 3 — Can it fire? R19, and why on/off is not readable</h3>
+<p>The R19 switch is a double-well in a state variable s, with dynamics ṡ = −(s³ − γs − h). For γ &gt; 0 the well is <strong>bistable</strong> — it has an ON basin and an OFF basin — so the switch <strong>can fire</strong>. human_SOX2, at γ = 1.287315, is bistable. <strong>Which</strong> basin it rests in (on or off) is set by the environmental tilt h, not by γ, so the on/off <strong>STATE is runtime and is not read from the sequence</strong>. This is the boundary in miniature: γ reads that a switch <em>can</em> fire; it is blind to whether it <em>is</em> firing.</p>
+
+<h3>Step 4 — What does one read return? The five channels</h3>
+<p>One read returns five channels at once, not five analyses. <strong>MATERIAL</strong> is γ and its threshold scale. <strong>SET</strong> is the presence/copy-count of switches a genome carries. <strong>STATE</strong> is on/off (runtime-flagged). <strong>DWELL</strong> is how long a switch stays on (∝ γ^1.5 × dosage; direction admissible, absolute open). <strong>ENVIRONMENT</strong> is the tilt h the environment writes via methylation (the CpG handles) and temperature, within a fixed SET. Parts III–V take each channel in turn; here they are simply the output of the single read above.</p>
+<p class="note"><strong>In one line:</strong> read γ → threshold scale, place it in the A4 coordinate, ask R19 can-fire, and report the five channels — every value mechanical and reproducible, the on/off sign and amount left explicitly to runtime.</p>
+<nav class="pn"><a rel="prev" href="/dna/00-the-reading-stated-plainly/">← §0</a><a href="/dna/">contents</a><a rel="next" href="/dna/the-dna-dictionary/">§II →</a></nav>
+</main>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.12)</footer>
+</body>
+</html>

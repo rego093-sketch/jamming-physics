@@ -1,0 +1,29 @@
+# VP inflow-competition ledger (deterministic; standard-library)
+# NU_E=1[F]; NU_P=3*pi^4[F]; MP_ME=6*pi^5[F]; SEMF coeffs=[CAL] textbook (not tuned)
+
+block,key,value,grade,note
+PASS-A,m_p/m_e @ f=1,1836.118109,[F],common f cancels -> 6*pi^5 preserved (LPI)
+PASS-A,m_p/m_e @ f=0.999999,1836.118109,[F],common f cancels -> 6*pi^5 preserved (LPI)
+PASS-A,m_p/m_e @ f=0.999,1836.118109,[F],common f cancels -> 6*pi^5 preserved (LPI)
+DIFFER,delta=f_p/f_e-1=1e-03,m_p/m_e=1837.954227 rel=1.00e-03,[H/O],Reading-B: drift ~ delta (leading)
+DIFFER,delta=f_p/f_e-1=1e-06,m_p/m_e=1836.119945 rel=1.00e-06,[H/O],Reading-B: drift ~ delta (leading)
+DIFFER,delta=f_p/f_e-1=1e-09,m_p/m_e=1836.118111 rel=1.00e-09,[H/O],Reading-B: drift ~ delta (leading)
+DIFFER,delta=f_p/f_e-1=1e-12,m_p/m_e=1836.118109 rel=1.00e-12,[H/O],Reading-B: drift ~ delta (leading)
+DIFFER,empirical bound: atomic/nuclear clock (historical),delta < 1e-06,[H/O],Reading-B excluded if rotor-scale delta exceeds this
+DIFFER,empirical bound: optical-clock comparison (current),delta < 1e-18,[H/O],Reading-B excluded if rotor-scale delta exceeds this
+SAT,B/A @ A=4 (Z=2),5.547 MeV,[F?],vs empirical 7.074
+SAT,B/A @ A=8 (Z=4),6.645 MeV,[F?],
+SAT,B/A @ A=12 (Z=6),7.316 MeV,[F?],vs empirical 7.680
+SAT,B/A @ A=16 (Z=8),7.733 MeV,[F?],vs empirical 7.976
+SAT,B/A @ A=24 (Z=11),8.058 MeV,[F?],
+SAT,B/A @ A=40 (Z=18),8.667 MeV,[F?],
+SAT,B/A @ A=56 (Z=25),8.722 MeV,[F?],iron-peak region
+SAT,B/A @ A=60 (Z=27),8.734 MeV,[F?],iron-peak region
+SAT,B/A @ A=90 (Z=39),8.666 MeV,[F?],
+SAT,B/A @ A=120 (Z=51),8.483 MeV,[F?],
+SAT,B/A @ A=150 (Z=62),8.277 MeV,[F?],
+SAT,B/A @ A=200 (Z=79),7.882 MeV,[F?],
+SAT,B/A @ A=238 (Z=92),7.603 MeV,[F?],vs empirical 7.570
+SAT,peak,"A=60, B/A=8.734 MeV",[F?],cap ceiling = saturation; a_V=15.8 [CAL]; absolute scale=[O]
+ASTRO,g_Moon/g_Earth,0.16531,[F],scalar-free
+ASTRO,same ratio with arbitrary G,0.16531 (diff 2.8e-17),[F],G (=> m_q) cancels in the ratio

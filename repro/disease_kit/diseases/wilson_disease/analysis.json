@@ -1,0 +1,170 @@
+{
+ "disease": "Wilson disease",
+ "omim": "277900",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Wilson disease",
+  "omim": "277900",
+  "summary": "A single-gene ATP7B loss-of-function disables the copper-transporting ATPase that exports hepatic copper into bile and loads it onto ceruloplasmin. Without it, copper is not excreted and ACCUMULATES in liver and brain, where free copper is toxic -> the copper burden is driven UP. Read as a released BRAKE on copper accumulation (ATP7B brakes the build-up; LOF releases it -> copper UP). The kit re-derives the approved therapy, which REMOVES or BLOCKS copper rather than restoring the transporter: chelation (penicillamine / trientine) promotes urinary copper excretion, and zinc blocks intestinal copper absorption (maintenance); restoring ATP7B export is investigational gene therapy. The gamma read is of the ATP7B locus switch structure; the disease lesion is coding, outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "free / loosely-bound copper burden (hepatic and CNS copper accumulation)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "ATP7B",
+    "gamma": 1.3642,
+    "spinodal_h_sp": 0.61329,
+    "barrier": 0.46526,
+    "dwell_relative_size": 1.44852,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000013.11",
+     "gene_start": 51932668,
+     "gene_end": 52012131,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "ATPase copper transporting beta"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "ATP7B is a copper-transporting P-type ATPase that exports hepatic copper to bile and loads ceruloplasmin. As a BRAKE on copper accumulation, its LOF RELEASES the brake -> biliary copper excretion fails and copper accumulates (toxic in liver and brain). The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the COPPER BURDEN (it goes UP), so the corrective levers LOWER it.",
+    "src": "Bull 1993 Nat Genet 5:327; Tanzi 1993 Nat Genet 5:344"
+   }
+  ],
+  "primary_switch": {
+   "gene": "ATP7B",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "5a5ca5a8e434"
+ },
+ "treatment_A_switch": {
+  "disease": "Wilson disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "copper",
+    "push_direction": "chelate copper to promote urinary excretion -> lower the toxic copper burden (bypasses the ATP7B export defect)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "copper chelator (penicillamine / trientine)",
+    "status": "approved",
+    "mechanism_grade": "[O] copper-clearance magnitude / outcome not derived from sequence",
+    "src": "Walshe 1956 (penicillamine); Walshe 1982 (trientine)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "copper",
+    "push_direction": "block intestinal copper ABSORPTION via metallothionein induction -> lower copper input (maintenance)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "zinc salts (metallothionein induction)",
+    "status": "approved",
+    "mechanism_grade": "[O] absorption-blockade magnitude not derived from sequence",
+    "src": "Brewer 1983; zinc acetate FDA-approved for Wilson maintenance"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "ATP7B",
+    "push_direction": "restore ATP7B copper export so biliary excretion resumes -> lower the copper burden (definitive)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "ATP7B restoration (gene therapy investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-export magnitude not derived from sequence; investigational",
+    "src": "Murillo 2019 Hepatology (AAV-ATP7B models); UX701 / VTX-801 programs"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "copper",
+   "push_direction": "chelate copper to promote urinary excretion -> lower the toxic copper burden (bypasses the ATP7B export defect)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "copper chelator (penicillamine / trientine)",
+   "status": "approved",
+   "mechanism_grade": "[O] copper-clearance magnitude / outcome not derived from sequence",
+   "src": "Walshe 1956 (penicillamine); Walshe 1982 (trientine)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.44852,
+   "dwell_disease": 1.99171,
+   "dwell_treated": 1.62589,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "efc9260e2825"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "ATP7B LOF (released brake) raises the toxic copper burden (axis UP)",
+   "falsifier": "an ATP7B null allele that LOWERED hepatic / CNS copper would refute the released-brake direction",
+   "measurable_by": "hepatic / urinary / CNS copper by ATP7B genotype"
+  },
+  {
+   "claim": "removing or blocking copper (chelation / zinc) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if chelation or absorption-blockade RAISED or failed to lower tissue copper, the restrain-copper lever sign is wrong",
+   "measurable_by": "tissue / urinary copper response to chelation or zinc"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Wilson disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "3ec1eb295a5e"
+ },
+ "determinism_sha": "eacd4b859519"
+}

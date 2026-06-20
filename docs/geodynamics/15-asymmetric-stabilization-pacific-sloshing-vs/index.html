@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asymmetric stabilization: Pacific sloshing — Jamming Geodynamics §15 | Jamming Physics</title>
+<meta name="description" content="This model treats the origins of the two oceans as different. Asymmetric stabilization: Pacific sloshing vs Atlantic filling — geodynamics chapter.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Asymmetric stabilization: Pacific sloshing — Jamming Geodynamics §15 | Jamming Physics"><meta property="og:description" content="This model treats the origins of the two oceans as different. Asymmetric stabilization: Pacific sloshing vs Atlantic filling — geodynamics chapter."><meta property="og:url" content="https://jamming-physics.org/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Asymmetric stabilization: Pacific sloshing — Jamming Geodynamics §15 | Jamming Physics"><meta name="twitter:description" content="This model treats the origins of the two oceans as different. Asymmetric stabilization: Pacific sloshing vs Atlantic filling — geodynamics chapter.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Asymmetric stabilization: Pacific sloshing",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 15,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Asymmetric stabilization: Pacific sloshing"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§15 Asymmetric stabilization"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §15</nav></header>
+<main>
+<h1>Asymmetric stabilization: Pacific sloshing</h1>
+
+<p class="answer">Asymmetric stabilization: Pacific sloshing vs Atlantic filling — This model treats the two oceans’ origins as different: the Pacific behaves as a source-like region whose uplift and subsidence leave a damped, sloshing oscillation, while the Atlantic fills an opening void. The two regimes predict distinct sea-level signatures — overshoot versus sustained rise.</p>
+
+<p class="abstract">This model treats the origins of the two oceans as different (LOCK → Derive → Gate).</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h2>Core idea</h2>
+<p>This model treats the origins of the two oceans as different:</p>
+<ul><li><strong>Pacific</strong>: source-like region — uplift followed by subsidence leaves elastic/viscoelastic oscillation.</li><li><strong>Atlantic</strong>: rupture-like region — newly opened volume is filled by water/sediment, leading to monotone stabilization.</li></ul>
+<h2>Toy model 1: Pacific sloshing (damped oscillation)</h2>
+<p>Let Pacific-floor displacement be <span class="eq-inline">x(t)</span> and sketch a damped harmonic oscillator <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-15-001.svg" width="178" height="21" loading="lazy" alt="x'' + 2ζω₀ x' + ω₀² x = 0"></figure> (conceptual only). Coastal RSL, as a mixture of <span class="eq-inline">x(t)</span> and water redistribution, can show overshoot (highstand) and relaxation.</p>
+<h2>Toy model 2: Atlantic filling (volume charging)</h2>
+<p>Let the “empty volume” of the Atlantic basin be <span class="eq-inline">V(t)</span>. A conceptual filling sketch is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-15-002.svg" width="143" height="37" loading="lazy" alt="dV/dt = Qᵢₙ - Q_out."></figure> Thus RSL patterns may show “sustained rise” more than “large overshoot” (P3).</p>
+<h2>Translation into a test (P3)</h2>
+<p>P3 must be locked as a test that includes:</p>
+<ul><li>fixed correction version: how GIA/crustal motion/sediment/human-activity corrections were applied,</li><li>fixed feature definitions: e.g., overshoot amplitude <span class="eq-inline">A</span>, relaxation half-time <span class="eq-inline">t_1/2</span>, monotonicity index,</li><li>stability: leave-one-out checks to ensure the pattern is not dominated by a single site.</li></ul>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">← §14</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/16-scale-checks-omega-nogo-constraints/">§16 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+{
+  "_what": "Layer-0 PLAN ONLY for expanding the M9 brain_organ_atlas from 8 regions toward '100% brain organs'. This file asserts NO gamma values and NO emergent numbers. It lists target regions and their CANONICAL developmental master TFs (textbook facts, cited; not tuned). Every gamma stays null until it is either (a) cited VERBATIM from neuro v1.10.1's already-cached master-gene data, or (b) fetched by the SAME read-only pipeline (eutils + promoter [TSS-2000,TSS+500] 2501 bp coding strand + SantaLucia 1998 NN dG37) and cached with provenance+sha256. See MASTER_MANUAL_START_HERE.md sec 6.",
+  "_governance": "gamma = Layer-1 [F measured] once obtained (read-only, NEVER fitted). band identity [cited]. absolute f0 Hz = Layer-2 [O representative, not tuned]. ring geometry & R_brain [O]. ephaptic kappa is the MEASURED fraction kappa=dVm/threshold=0.5496 (neuro 19), shared across all regions, NOT per-region tuned. medium_efficacy_tested stays 0 (functional use OPEN).",
+  "_pipeline_ref": "repro/mind/13-em-coordination/fetch_extra_masters.py (eutils + SantaLucia NN dG37). Prefer neuro v1.10.1 verbatim where the region already exists there.",
+  "_status_legend": "done = already in brain_organ_atlas.json (frozen). next_central = central region, fetch via pipeline or cite neuro. sensory_cite_neuro = emerged in neuro v1.10.1 sensory atlas; INCLUDE BY CITATION, do not re-fetch. tbd_master = canonical master needs a short lit check before fetch.",
+  "_handoff_progress": "v1.10 DONE: the M9 atlas was PROMOTED into the main engine, grown 8->12 central regions (pallidum/NKX2-1 + forebrain GABAergic/DLX2 promoted from the v1.9 M9-EXT study; basal_forebrain_cholinergic/LHX8 + olfactory_bulb/PAX6 newly fetched by the eutils/SantaLucia pipeline with promoter sha256). Engine re-froze (tree 774228fe...), M0-M8 byte-identical, all 6 gates + verify_expand (12/12) PASS, registry/chapter/manifest updated. The scale sweep now runs 4->6->8->10->12 over the live engine atlas and cross-checks the frozen N=12 engine (engine_cross_check.matches_full_sweep=true); N=8 preserved as a byte-identical historical anchor (R~0.44,+0.12). Honest finding unchanged: field contribution positive & robust at every N, no seizure/silence, operating point loosens with N (R 0.44@N=8 -> 0.33@N=12), partial-metastable label marginal (incoherent) at N=6 so NOT strictly scale-invariant (regime_scale_stable=False). REMAINING data-gates to true 100%: (b) amygdala/septum/preoptic canonical master ambiguous -> kept tbd_master (documented, not forced); (c) sensory<->central coupling needs neuro v1.10.1 sensory transduction gamma cited VERBATIM (upload that zip to proceed).",
+  "done_8_regions": [
+    {
+      "region": "neocortex",
+      "master_tf": "FOXG1",
+      "status": "done"
+    },
+    {
+      "region": "hippocampus",
+      "master_tf": "LHX2",
+      "status": "done"
+    },
+    {
+      "region": "thalamus",
+      "master_tf": "GBX2",
+      "status": "done"
+    },
+    {
+      "region": "striatum",
+      "master_tf": "GSX2",
+      "status": "done"
+    },
+    {
+      "region": "cerebellum",
+      "master_tf": "EN1",
+      "status": "done"
+    },
+    {
+      "region": "hypothalamus",
+      "master_tf": "SIM1",
+      "status": "done"
+    },
+    {
+      "region": "midbrain",
+      "master_tf": "OTX2",
+      "status": "done"
+    },
+    {
+      "region": "brainstem",
+      "master_tf": "PHOX2B",
+      "status": "done"
+    }
+  ],
+  "target_central_regions": [
+    {
+      "region": "pallidum (globus pallidus)",
+      "master_tf": "NKX2-1",
+      "gamma": 1.5088,
+      "status": "done",
+      "note": "Promoted into engine in v1.10. MGE master -> pallidal output identity; gamma measured verbatim via eutils NC_000014.9 + SantaLucia 1998 (promoter sha256 in extra_masters.json). band beta 18 Hz [O] (Brown 2003)."
+    },
+    {
+      "region": "basal_forebrain_cholinergic",
+      "master_tf": "LHX8",
+      "gamma": 1.368,
+      "status": "done",
+      "note": "Fetched in v1.10 via eutils NC_000001.11 + SantaLucia 1998 (promoter sha256 in extra_masters.json). Canonical cholinergic BF master (Hangya 2009; Buzsaki 2002). band theta 6 Hz [O]."
+    },
+    {
+      "region": "olfactory_bulb",
+      "master_tf": "PAX6",
+      "gamma": 1.511,
+      "status": "done",
+      "note": "Fetched in v1.10 via eutils NC_000011.10 + SantaLucia 1998 (promoter sha256 in extra_masters.json). Canonical OB neurogenesis master. band gamma 60 Hz [O] (Lagier 2004; Kay 2009)."
+    },
+    {
+      "region": "amygdala (central/medial)",
+      "master_tf": "TBD",
+      "gamma": null,
+      "status": "tbd_master",
+      "note": "Heterogeneous origin (LGE/dLGE + cortical); pick a defensible single canonical master (e.g. OTP for some hypothalamo-amygdala nuclei, or LHX6 for MGE-derived) after a short lit check before fetch. [v1.12 RESOLVED-OPEN: primary developmental-neuroscience literature confirms the amygdala is genuinely multi-origin with NO single canonical master TF — CeM/ISL1(vLGE), CeC-CeL/PAX6(dLGE), CeA/DLX5(striatal), MeA/LHX5-6-9+OTP(hypothalamic), POA-derived/DBX1+FOXP2, BLA/DBX1-EMX1(pallial). Forcing one master would over-claim. Documented as legitimately open in brain_region_master_survey.json. Sources: Front Mol Neurosci 2024(1364268), Front Neuroanat 2022(883537), eLife 2017(PMC5384829), PubMed 29869132.]"
+    },
+    {
+      "region": "preoptic_area",
+      "master_tf": "NKX2-1",
+      "gamma": null,
+      "status": "tbd_master",
+      "note": "Shares NKX2-1 with pallidum/hypothalamus; confirm distinct promoter target or fold into hypothalamus. [v1.12 RESOLVED-SHARED: NKX2-1 is shared with pallidum AND hypothalamus — an independent POA atlas entry would double-count one already-locked promoter (the pallidum NKX2-1 lock). POA is additionally internally parcellated (multiple niche identities, not one master). Resolved as 'shared master, not independent organ'; correctly excluded from the single-master atlas to avoid promoter double-counting. Sources: J Neurosci 2007(9682), eLife 2017(PMC5384829).]"
+    },
+    {
+      "region": "septum",
+      "master_tf": "ZIC1",
+      "gamma": null,
+      "status": "tbd_master",
+      "note": "Confirm canonical septal master before fetch. [v1.12 RESOLVED-OPEN: the ZIC family (ZIC1-5) is expressed in the septum in an overlapping/redundant manner and is NOT septum-specific — the same ZIC pattern appears in thalamus, POA, cortical hem, and retina. No single ZIC gene is a canonical septum master; picking one would be arbitrary and non-specific. Documented as legitimately open in brain_region_master_survey.json. Sources: PMC11113920, PMC6672357(J Neurosci 2007), Dev Dyn 2007.]"
+    }
+  ],
+  "phenomena_to_test_after_expansion": [
+    "partial/metastable order R holds at larger N (neither free-drift nor global lock=seizure)?",
+    "cancel-vs-augment causal contribution (the positive cancel-vs-augment class (currently +0.073 at N=12)) under added regions?",
+    "richer traveling-wave / theta-gamma PAC structure with more conduction-delay gradients?",
+    "sensory<->central coordination: how does input transduction load onto the central ephaptic field?"
+  ],
+  "hard_constraint": "medium_efficacy_tested stays 0.0 (whether cognition FUNCTIONALLY USES this coupling is OPEN until in-vivo field-cancel-vs-augment intracranial recordings, neuro 9/19).",
+  "sensory_organs_cite_neuro_v1_10_1": {
+    "_how": "neuro v1.10.1 emerged ALL nine sensory modalities from real measured gamma (14 master genes, corr(gamma,GC)=0.997). INCLUDE these in M9 BY VERBATIM CITATION from neuro's cached data — do NOT re-fetch (single-source rule). This lets M9 study sensory<->central ephaptic coordination (how input transduction loads onto the central field).",
+    "modalities": [
+      {
+        "modality": "vision",
+        "organ": "retina",
+        "source": "neuro v1.10.1 sensory atlas"
+      },
+      {
+        "modality": "hearing",
+        "organ": "cochlea",
+        "source": "neuro v1.10.1 sensory atlas"
+      },
+      {
+        "modality": "smell",
+        "organ": "olfactory_epithelium",
+        "source": "neuro v1.10.1 sensory atlas"
+      },
+      {
+        "modality": "taste",
+        "organ": "taste_bud",
+        "source": "neuro v1.10.1 sensory atlas"
+      },
+      {
+        "modality": "touch_warmth_pain",
+        "organ": "skin",
+        "master_anchor": "TRPV1 43C (Caterina 1997)",
+        "source": "neuro v1.10.1 §20 somatosensory triad"
+      },
+      {
+        "modality": "proprioception",
+        "organ": "muscle_spindle",
+        "master_tf": "RUNX3 + PIEZO2",
+        "source": "neuro v1.10.1 §20 (closes §11 reflex loop)"
+      },
+      {
+        "modality": "balance",
+        "organ": "vestibular_hair_cell",
+        "master_tf": "ATOH1 + OTOP1",
+        "source": "neuro v1.10.1 §20 (directional/signed)"
+      }
+    ],
+    "_status": "DATA-GATE (open): requires neuro v1.10.1 zip uploaded alongside mind to cite sensory transduction gamma VERBATIM. Cannot close from mind package alone."
+  }
+}

@@ -1,0 +1,170 @@
+{
+ "disease": "Familial Mediterranean fever (FMF)",
+ "omim": "249100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Familial Mediterranean fever (FMF)",
+  "omim": "249100",
+  "summary": "MEFV encodes pyrin (marenostrin), an innate-immune sensor that nucleates the PYRIN inflammasome -- a SECOND, distinct inflammasome from the NLRP3 inflammasome of CAPS. On activation pyrin recruits the adaptor ASC and pro-caspase-1, and active caspase-1 matures pro-IL-1beta to its secreted form. FMF alleles -- clustered in the C-terminal B30.2/SPRY domain (M694V, M680I, V726A, M694I) -- are FUNCTIONALLY gain-of-function: the mutant pyrin escapes its normal RhoA-PKN regulatory brake and assembles the inflammasome at a lowered threshold, so IL-1beta is OVER-produced and the inflammatory drive is pushed UP. (FMF is classically inherited autosomal-recessive / gene-dose-dependent, yet the protein-level lesion is an over-active sensor.) The phenotype is recurrent, self-limited attacks of fever with SEROSITIS (peritonitis, pleuritis), synovitis and an erysipelas-like erythema, with AA amyloidosis as the feared long-term complication. This is read as an over-driven ACCELERATOR of IL-1beta output on the inflammasome / autoinflammatory axis -- the SECOND inflammasome SENSOR the kit reads (after NLRP3) but the FIRST on the PYRIN inflammasome -- so the corrective direction is to RESTRAIN it. The kit re-derives the iconic approved lever: colchicine, the FMF first-line, which neutrophils concentrate and where it depolymerises microtubules and thereby suppresses pyrin-inflammasome assembly and the downstream IL-1beta drive -- a CYTOSKELETAL / microtubule mechanism NOT used in CAPS or DIRA. For colchicine-resistant disease it re-derives IL-1 blockade (canakinumab, FDA-approved for colchicine-resistant FMF; anakinra). The promoter gamma reads the locus switch STRUCTURE only (firewall); the B30.2-domain missense lesions are outside the promoter firewall and every magnitude is held [O].",
+  "emergent_axis": "pyrin-inflammasome IL-1beta drive (MEFV-pyrin over-activation -> caspase-1 -> IL-1beta over-production -> recurrent serosal/synovial autoinflammation) -- a second inflammasome SENSOR on the IL-1 axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "MEFV",
+    "gamma": 1.4322,
+    "spinodal_h_sp": 0.65971,
+    "barrier": 0.5128,
+    "dwell_relative_size": 1.55816,
+    "role": "accelerator",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "drive excess -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000016.10",
+     "gene_start": 3242026,
+     "gene_end": 3256632,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "MEFV innate immunity regulator, pyrin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "MEFV (Mediterranean fever; pyrin / marenostrin) encodes the sensor that nucleates the PYRIN inflammasome; via ASC it activates caspase-1, which matures pro-IL-1beta -- the driver of the autoinflammatory response. FMF alleles in the C-terminal B30.2/SPRY domain are functionally GAIN-of-function: the mutant pyrin escapes RhoA-PKN-dependent inhibitory phosphorylation and assembles/fires at a lowered threshold -> IL-1beta is over-produced -> the inflammatory drive is pushed UP. As an over-driven ACCELERATOR of IL-1beta output the pathological axis goes UP and the corrective levers LOWER it. Classically autosomal-recessive / gene-dose-dependent, 16p13.3 (OMIM 608107 gene). NCBI official symbol MEFV. The promoter gamma reads the locus switch STRUCTURE only; the activating B30.2-domain missense lesions are outside the promoter firewall.",
+    "src": "International FMF Consortium 1997 Cell 90:797 and French FMF Consortium 1997 Nat Genet 17:25 (MEFV/pyrin cloned); Chae 2011 Immunity 34:755 (FMF pyrin is hyperactive); Park 2016 Nat Immunol 17:914 (RhoA-PKN regulation of pyrin)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "MEFV",
+   "role": "accelerator",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "UP",
+   "reason": "drive excess -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "2f5512328558"
+ },
+ "treatment_A_switch": {
+  "disease": "Familial Mediterranean fever (FMF)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "MEFV",
+    "push_direction": "suppress microtubule-dependent pyrin-inflammasome assembly in neutrophils -> less caspase-1 activation -> less IL-1beta produced -> lower the inflammatory drive (the first-line, upstream lever; also prevents AA amyloidosis)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "microtubule-depolymerising pyrin-inflammasome suppressor (colchicine)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of inflammasome suppression / attack control not derived from sequence",
+    "src": "Goldfinger 1972 NEJM 287:1302 (colchicine prevents FMF attacks); Zemer 1986 NEJM 314:1001 (colchicine prevents amyloidosis); Park 2016 Nat Immunol 17:914 (colchicine/microtubule-pyrin)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1B",
+    "push_direction": "neutralise the over-produced IL-1beta -> lower the inflammasome-driven inflammatory drive (for colchicine-resistant FMF)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "anti-IL-1beta monoclonal antibody (canakinumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1beta neutralisation / inflammation control not derived from sequence",
+    "src": "De Benedetti 2018 NEJM 378:1908 (CLUSTER, canakinumab in crFMF); canakinumab (Ilaris) FDA 2016 for colchicine-resistant FMF"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1R1",
+    "push_direction": "block the IL-1 receptor with the receptor antagonist so IL-1beta cannot signal -> lower the inflammatory drive (colchicine-resistant / intolerant)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "IL-1 receptor antagonist (anakinra)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree of IL-1 signalling blockade not derived from sequence",
+    "src": "Ben-Zvi 2017 Arthritis Rheumatol 69:854 (anakinra RCT in colchicine-resistant FMF)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "MEFV",
+   "push_direction": "suppress microtubule-dependent pyrin-inflammasome assembly in neutrophils -> less caspase-1 activation -> less IL-1beta produced -> lower the inflammatory drive (the first-line, upstream lever; also prevents AA amyloidosis)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "microtubule-depolymerising pyrin-inflammasome suppressor (colchicine)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of inflammasome suppression / attack control not derived from sequence",
+   "src": "Goldfinger 1972 NEJM 287:1302 (colchicine prevents FMF attacks); Zemer 1986 NEJM 314:1001 (colchicine prevents amyloidosis); Park 2016 Nat Immunol 17:914 (colchicine/microtubule-pyrin)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.55816,
+   "dwell_disease": 2.14247,
+   "dwell_treated": 1.74896,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "84bb41bad9c1"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "MEFV functional GOF (over-active pyrin inflammasome) raises IL-1beta over-production (axis UP)",
+   "falsifier": "an FMF MEFV allele that LOWERED pyrin-inflammasome assembly / caspase-1 activation / IL-1beta secretion would refute the over-driven-accelerator direction",
+   "measurable_by": "ASC-speck / pyroptosome formation, caspase-1 activation and mature IL-1beta release from MEFV-mutant vs wild-type monocytes / neutrophils"
+  },
+  {
+   "claim": "restraining the pyrin inflammasome / IL-1 (colchicine or IL-1 blockade) is the CORRECTIVE direction",
+   "falsifier": "if colchicine, IL-1beta neutralisation or IL-1-receptor blockade RAISED or failed to lower attack frequency and inflammatory markers, the restrain lever sign is wrong",
+   "measurable_by": "attack frequency, CRP / SAA inflammatory markers and amyloidosis progression in response to colchicine or an IL-1 blocker in FMF"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Familial Mediterranean fever (FMF)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "89822da49c2e"
+ },
+ "determinism_sha": "743cf13ab197"
+}

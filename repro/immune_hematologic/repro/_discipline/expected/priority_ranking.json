@@ -1,0 +1,205 @@
+{
+ "title": "D2 burden-weighted TARGET prioritisation (declared weights; ranks targets, not drugs)",
+ "inherited_from": "analgesic_threshold_logic_v2_0/M10 (DOI 10.5281/zenodo.20733420)",
+ "declared_weights": {
+  "burden": 0.4,
+  "unmet_durability": 0.4,
+  "tractability_basin_lever": 0.2
+ },
+ "firewall": "This ranks immune/hematologic intervention TARGETS / disease axes by DECLARED public-health burden weights x cited 1-5 tiers. It is NOT a drug ranking, NOT a dose, NOT an efficacy or safety claim, and NOT medical advice. gamma/|h_sp| are carried for context and are NEVER folded into the score (a promoter switch-threshold read is not a disease-burden number). Weights are declared up front, not reverse-fit.",
+ "grade": "[V] reproducible function of declared weights x tiers / [O] absolute burden statistics (declared ordinals, not measured here)",
+ "ranking": [
+  {
+   "id": "AUTOIMMUNE_RETOLERIZE",
+   "axis": "systemic autoimmunity (re-tolerization, T27)",
+   "lever": "re-tolerization across the saddle-node",
+   "tiers": {
+    "burden": 5,
+    "unmet_durability": 5,
+    "tractability_basin_lever": 3
+   },
+   "basis": "GBD: autoimmune diseases ~5-8% prevalence, lifelong; standard care is suppression-only (relapse on withdrawal) -> high unmet durability",
+   "score": 0.92,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 1
+  },
+  {
+   "id": "HEME_MALIGNANCY",
+   "axis": "hematologic malignancy (AML/APL/leukemia-lymphoma)",
+   "lever": "A basin re-flip / D surveillance restoration",
+   "tiers": {
+    "burden": 5,
+    "unmet_durability": 4,
+    "tractability_basin_lever": 5
+   },
+   "basis": "GBD: leukaemia+lymphoma high mortality; two clean durable cures exist (APL=ATRA[L], CAR-T=D[L]) -> high tractability",
+   "score": 0.92,
+   "gamma_context": {
+    "organ": "bone_marrow_hematopoiesis",
+    "gamma": 1.3225,
+    "h_sp": 0.585385,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 2
+  },
+  {
+   "id": "SEPSIS_LATCH_BREAK",
+   "axis": "systemic inflammatory latch / sepsis (T31)",
+   "lever": "latch-break within the break window",
+   "tiers": {
+    "burden": 5,
+    "unmet_durability": 5,
+    "tractability_basin_lever": 2
+   },
+   "basis": "GBD: sepsis ~11M deaths/yr; no durable latch-break therapy in practice (window narrow) -> high burden+unmet, low present tractability",
+   "score": 0.88,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 3
+  },
+  {
+   "id": "IMMUNE_EXHAUSTION",
+   "axis": "immune exhaustion (chronic infection/tumor, T25)",
+   "lever": "exhaustion reversal / surveillance restoration",
+   "tiers": {
+    "burden": 4,
+    "unmet_durability": 4,
+    "tractability_basin_lever": 3
+   },
+   "basis": "chronic viral infection + tumor escape; checkpoint reversal is a partial, heterogeneous durable-class lever",
+   "score": 0.76,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 4
+  },
+  {
+   "id": "ALLERGY_DESENS",
+   "axis": "allergic sensitization / desensitization (T29)",
+   "lever": "desensitization (durable de-escalation)",
+   "tiers": {
+    "burden": 4,
+    "unmet_durability": 3,
+    "tractability_basin_lever": 3
+   },
+   "basis": "GBD: allergic disease very high prevalence, mostly low-mortality; immunotherapy offers a durable-class path for a subset",
+   "score": 0.68,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 5
+  },
+  {
+   "id": "TRANSPLANT_ALLOTOL",
+   "axis": "transplant rejection (allo-tolerance induction, T32)",
+   "lever": "tolerance induction (durable) vs lifelong immunosuppression",
+   "tiers": {
+    "burden": 3,
+    "unmet_durability": 4,
+    "tractability_basin_lever": 3
+   },
+   "basis": "transplant recipients lifelong on suppression with attendant harm; durable allo-tolerance is the basin-acting goal",
+   "score": 0.68,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 6
+  },
+  {
+   "id": "CHRONIC_INFLAMMATION",
+   "axis": "chronic inflammation containment (T2/T9 hysteresis)",
+   "lever": "drive removal below the spinodal (preventive) vs latch containment",
+   "tiers": {
+    "burden": 4,
+    "unmet_durability": 3,
+    "tractability_basin_lever": 2
+   },
+   "basis": "broad chronic inflammatory burden; once latched the basin persists, so durable cure is hard (mostly containment)",
+   "score": 0.64,
+   "gamma_context": {
+    "organ": "spleen",
+    "gamma": 1.4228,
+    "h_sp": 0.653227,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 7
+  },
+  {
+   "id": "IMMUNODEFICIENCY_RECON",
+   "axis": "immunodeficiency reconstitution (T30)",
+   "lever": "reconstitution above the coverage threshold",
+   "tiers": {
+    "burden": 3,
+    "unmet_durability": 3,
+    "tractability_basin_lever": 4
+   },
+   "basis": "primary+acquired immunodeficiency; reconstitution (HSCT/gene therapy) is an established durable-class route -> good tractability",
+   "score": 0.64,
+   "gamma_context": {
+    "organ": "bone_marrow_hematopoiesis",
+    "gamma": 1.3225,
+    "h_sp": 0.585385,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 8
+  },
+  {
+   "id": "EPITOPE_SPREADING",
+   "axis": "epitope spreading (autoimmune progression, T28)",
+   "lever": "early re-tolerization before the repertoire broadens",
+   "tiers": {
+    "burden": 2,
+    "unmet_durability": 4,
+    "tractability_basin_lever": 2
+   },
+   "basis": "progressive autoimmunity; window for durable reversal narrows as spreading proceeds -> high unmet, low late tractability",
+   "score": 0.56,
+   "gamma_context": {
+    "organ": "lymphoid_adaptive",
+    "gamma": 1.4892,
+    "h_sp": 0.699484,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 9
+  },
+  {
+   "id": "AUTOIMMUNE_CYTOPENIA",
+   "axis": "lineage-targeted autoimmune cytopenia (T33)",
+   "lever": "re-tolerization restoring lineage output",
+   "tiers": {
+    "burden": 2,
+    "unmet_durability": 3,
+    "tractability_basin_lever": 3
+   },
+   "basis": "ITP/AIHA/PRCA; relapsing on suppression, output recovers on re-tolerization in the model",
+   "score": 0.52,
+   "gamma_context": {
+    "organ": "bone_marrow_hematopoiesis",
+    "gamma": 1.3225,
+    "h_sp": 0.585385,
+    "note": "carried for CONTEXT only; NEVER folded into the score"
+   },
+   "rank": 10
+  }
+ ],
+ "overall": "PASS",
+ "failures": []
+}

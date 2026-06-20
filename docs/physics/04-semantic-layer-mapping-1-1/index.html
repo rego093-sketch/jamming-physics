@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic layer mapping — VP Theory §4 | Jamming Physics</title>
+<meta name="description" content="No template, no map — meaning transfers only on the registered form. Five duties make a closure usable; missing one makes it noise.">
+<link rel="canonical" href="https://jamming-physics.org/physics/04-semantic-layer-mapping-1-1/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Semantic layer mapping — VP Theory §4 | Jamming Physics"><meta property="og:description" content="No template, no map — meaning transfers only on the registered form. Five duties make a closure usable; missing one makes it noise."><meta property="og:url" content="https://jamming-physics.org/physics/04-semantic-layer-mapping-1-1/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Semantic layer mapping — VP Theory §4 | Jamming Physics"><meta name="twitter:description" content="No template, no map — meaning transfers only on the registered form. Five duties make a closure usable; missing one makes it noise.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Semantic layer mapping",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"4",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§4 Semantic layer mapping"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §4</nav></header>
+<main>
+<h1>Semantic layer mapping (1:1) and the closure system</h1>
+<p class="answer">Semantic layer mapping: No template, no map — meaning transfers only on the registered form. Five duties make a closure usable; missing one makes it noise. Layer: which of L0/L1/L2/L3 it belongs. This chapter fixes, as a single system, the document-wide conventions of “semantic layer mapping (1:1)” and “closure”.</p>
+<p class="abstract" data-phase2="abstract">No template, no map — meaning transfers only on the registered form. Five duties make a closure usable; missing one makes it noise. Layer: which of L0/L1/L2/L3 it belongs.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/04-semantic-layer-mapping-1-1/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>Chapter declaration: the role of semantic layers and closures</h2>
+<p>This chapter fixes, as a single system, the document-wide conventions of “semantic layer mapping (1:1)” and “closure”.  
+A semantic layer mapping is a convention that separates “what each symbol means” into explicit layers and relates the layers via 1:1 correspondence, while a closure is a convention that explicitly seals choices (decision rules) that are not determined by axioms and definitions alone.  
+These conventions are a <strong>prerequisite</strong> for all subsequent derivations (stationary constants, events, unit realizations, mass, force, and extended regimes). Any derivation or verification that violates this chapter cannot claim the status of a valid conclusion.</p>
+<h2>Global principles for 1:1 semantic mapping</h2>
+<p>Semantic layer mapping is fixed by the following principles.</p>
+<ol>
+<li> <strong>1 symbol–1 meaning–1 unit</strong>: the same symbol has exactly one meaning (object attribution + geometric meaning + admissible operation scope) and exactly one unit dimension across the entire document.
+<li> <strong>Layer separation</strong>: a meaning defined in the “definition layer” does not automatically convert when it is used in the “observation layer”. Any conversion must be stated explicitly as a map.
+<li> <strong>1:1 correspondence</strong>: an item in one layer connects to an item in another layer only via 1:1 correspondence. If a 1:N or N:1 relation is needed, it must be decomposed into a new intermediate object and/or a new explicit conversion rule.
+<li> <strong>Locking of maps</strong>: mapping rules must be locked in <code>analysis_lock</code> or <code>canon_lock</code>; they cannot be swapped after inspecting results.
+</ol>
+<p>Therefore, “meaning jumps” (reinterpreting a symbol without a definition), “unit jumps” (performing a dimensional conversion implicitly), and “object jumps” (retroactively reassigning an item to a different object) are prohibited.</p>
+<h2>The standard 4-layer architecture</h2>
+<p>In this document, the semantic layers are fixed to the following four layers. Each item is sealed by a registry entry, and inter-layer movement is permitted only via explicit maps.</p>
+<ol>
+<li> <strong>L0 (primitive layer)</strong>: primitive objects fixed by axioms/definitions—VP, domain, contact, adjacency, cell, event, etc.
+<li> <strong>L1 (structural/combinatorial layer)</strong>: discrete structural items—contact graph, backbone, throat, path, integer structures (core/shell), cancellation conventions, etc.
+<li> <strong>L2 (aggregated/observable layer)</strong>: aggregated observables or computables—counts, distributions, indicators, thresholds, event rates, switch observables, cross-consistency scores, etc.
+<li> <strong>L3 (realization/numeric layer)</strong>: realized numeric results with units attached (length/time/mass/force, etc.) and the standard reporting format.
+</ol>
+<p>Items in L0–L3 are not mixed, and L0 definitions are never modified retroactively by L2 or L3 outputs.</p>
+<h2>4.4 Standard template for 1:1 semantic mapping</h2>
+<aside class="claim-strip vps" data-vps="4.4" data-cards="VP-C-046, VP-C-057"><span class="g">mandatory template</span><span class="io">in: — / out: 1:1 semantic-map registry template (map_id, from/to layer, items) required in analysis_lock; missing template $⇒$ unusable map</span><q class="one">No template, no map — meaning transfers only on the registered form.</q><span class="cards">VP-C-046, VP-C-057</span></aside>
+<p>A semantic layer map is a registry entry that must follow the template below. This template must be included in <code>analysis_lock</code>; if it is missing, the corresponding map cannot be used.</p>
+<pre class="vb">
+semantic_maps:
+  - map_id: MAP-L1toL2-THROAT-001
+    from_layer: L1
+    to_layer: L2
+    from_item:
+      object_id: OBJ-THROAT
+      symbol: delta_gap
+      meaning: (gap/thickness/critical throat, single meaning)
+      unit_dimension: L (or 1)
+    to_item:
+      quantity_id: Q-THROAT-DELTAEFF
+      symbol: delta_eff
+      meaning: (definition of a representative aggregated throat value)
+      unit_dimension: L (or 1)
+    rule:
+      definition: (aggregation rule: mean/median/min-cut-based, etc.)
+      algorithm_id: ALG-THROAT-EST-001
+      parameters_locked_by: analysis_lock_id
+    scope: (regime identifier)
+    failure_modes:
+      - FM-SCOPE
+      - FM-NONUNIQUE
+      - FM-NUMERIC
+    required_gates:
+      - G-SYM
+      - G-LOCK
+      - G-REG
+      - (optional) G-NUM
+</pre>
+<p>In this template, <code>failure_modes</code> and <code>required_gates</code> are mandatory fields. A map does not consist of a “rule” alone; its failure modes and verification conditions must also be locked.</p>
+<h2>4.5 Definition of closure</h2>
+<aside class="claim-strip vps" data-vps="4.5" data-cards="VP-C-057, VP-C-049"><span class="g">closure definition (5 duties)</span><span class="io">in: — / out: explicit choice, declared I/O types, locked regime, built-in failure modes, Gate-required — all five or unusable</span><q class="one">Five duties make a closure usable; missing one makes it noise.</q><span class="cards">VP-C-057, VP-C-049</span></aside>
+<p>A closure is a device that seals, as an <strong>explicit rule</strong>, a choice that is not determined by axioms/definitions alone. A closure has the following properties.</p>
+<ol>
+<li> <strong>Explicit declaration of the choice</strong>: a closure states, in sentences and equations, “what is being chosen”. If no choice is needed, no closure should be introduced.
+<li> <strong>Declaration of input/output</strong>: a closure declares the types of its inputs and outputs (layer, unit dimension, object attribution). If the I/O types are ambiguous, the closure cannot be used.
+<li> <strong>Scope (regime)</strong>: a closure can be valid only in a specific regime; that regime must be locked.
+<li> <strong>Built-in failure modes</strong>: a closure includes a list of failure modes (undefinedness, non-uniqueness, numerical instability, regime violation, cross-consistency failure, etc.).
+<li> <strong>Gate required</strong>: a closure cannot produce conclusions without a Gate judgement. Any conclusion involving a closure requires <code>PASS</code> of the Gate stack assigned to that closure.
+</ol>
+<h2>4.6 Global principles for the closure DAG (dependency graph)</h2>
+<aside class="claim-strip vps" data-vps="4.6" data-cards="VP-C-050, VP-C-057"><span class="g">DAG principles</span><span class="io">in: — / out: closure dependencies one-way, acyclic, SSOT-located, with conclusion attribution (closure_ids + analysis_lock_id)</span><q class="one">Choices stack forward only — no closure may feed its own input.</q><span class="cards">VP-C-050, VP-C-057</span></aside>
+<p>Closures may depend on other closures, but the dependency must be a <strong>DAG (a directed acyclic graph)</strong>. The closure DAG is fixed by the following principles.</p>
+<ol>
+<li> <strong>One-way</strong>: closures have a topologically sortable direction; an output of a later closure cannot retroactively modify an input of an earlier closure.
+<li> <strong>No cycles</strong>: cyclic dependencies in which a closure's output determines its own input (directly or indirectly) are prohibited.
+<li> <strong>SSOT</strong>: closure definitions exist only at a single location in <code>analysis_lock</code>. The main text never redefines closures.
+<li> <strong>Conclusion attribution</strong>: every conclusion involving closures carries the list of used closures (<code>closure_ids</code>) and the DAG version (<code>analysis_lock_id</code>).
+</ol>
+<p>The purpose of the closure DAG is to prevent “necessary choices” from being hidden, and to make the impact of each choice traceable to conclusions.</p>
+<h2>4.7 Standard taxonomy of failure modes</h2>
+<aside class="claim-strip vps" data-vps="4.7" data-cards="VP-C-049, VP-C-058"><span class="g">failure-mode taxonomy (pre-registered)</span><span class="io">in: — / out: standard labels FM-SYM/FM-SCOPE/FM-NONUNIQUE/FM-NODEF/FM-NUMERIC$…$ attached at design time</span><q class="one">Every device ships with the list of ways it dies.</q><span class="cards">VP-C-049, VP-C-058</span></aside>
+<p>Failure modes are standard labels that record “when this closure/map collapses”. Failure modes are not post-hoc remarks; they are pre-registered items, fixed by the following classification.</p>
+<ol>
+<li> <strong>FM-SYM</strong>: symbol/meaning/unit conflict or overloading.
+<li> <strong>FM-SCOPE</strong>: regime/scope violation (used outside the declared scope).
+<li> <strong>FM-NONUNIQUE</strong>: non-unique solution (multiple solutions without a selection rule).
+<li> <strong>FM-NODEF</strong>: undefinedness (missing inputs, or the defining equation does not close).
+<li> <strong>FM-NUMERIC</strong>: numerical instability (non-convergence, sensitivity blow-up, iteration inconsistency).
+<li> <strong>FM-XCROSS</strong>: cross-consistency failure (mismatch across independent channels).
+<li> <strong>FM-REP</strong>: reproducibility failure (cannot obtain the same judgement upon re-run).
+<li> <strong>FM-NT</strong>: detection of a No-Tuning violation (post-hoc adjustment).
+</ol>
+<p>A failure mode does not mean “the result is unpleasant”; it means “the definition/procedure/judgement does not hold”. When a failure mode occurs, the corresponding conclusion is judged <code>FAIL</code> or <code>INCONCLUSIVE</code> and loses the status of a valid conclusion.</p>
+<h2>4.8 Why verification is required (closure/map conclusion criteria)</h2>
+<aside class="claim-strip vps" data-vps="4.8" data-cards="VP-C-049"><span class="g">global rules (why Gates)</span><span class="io">in: — / out: closures/maps gain legitimacy only by passing pre-registered Gates; no Gates / no failure modes / no DAG version $⇒$ no conclusion</span><q class="one">No authority blesses a closure — only a Gate it named in advance.</q><span class="cards">VP-C-049</span></aside>
+<p>Since semantic maps and closures contain <em>choices</em>, their legitimacy is not granted by external authority but only by <strong>passing pre-registered Gates</strong>. Therefore, the following become global rules.</p>
+<ol>
+<li> A closure/map without Gates cannot generate a valid conclusion.
+<li> A closure/map without defined failure modes cannot be used.
+<li> A conclusion that does not record the closure DAG version loses its basis and cannot claim the status of a valid conclusion.
+</ol>
+<p>The global principles fixed in this chapter—“1:1 semantic mapping”, “closure DAG”, “failure modes”, and “Gate required”—are not re-explained in later chapters. Each later section refers only to the relevant items via its final LOCK/Gate link.</p>
+<h2>4.1 Meaning-layer mapping: pressure/flux/deficit/charge</h2>
+<aside class="claim-strip vps" data-vps="4.1" data-cards="VP-C-043, VP-C-046"><span class="g">layered semantics [D]</span><span class="io">in: — / out: L0–L3 layer architecture for pressure/flux/deficit/charge + minimal operational record format</span><q class="one">Pressure and charge are bookkeeping at a declared layer, never free-floating words.</q><span class="cards">VP-C-043, VP-C-046</span></aside>
+<h3>4.1.1 Common premise: layers (L0–L3) and the minimal operational record format</h3>
+<p>All of <strong>pressure/flux/deficit/charge</strong> defined in this section follow the layered semantic architecture below.</p>
+<ol>
+<li> L0 (primitive): VP, domain (cell), contact/adjacency, local update (event), etc.
+<li> L1 (structure): contact graph, boundary set, cut surface, throat/path, core/shell structure, etc.
+<li> L2 (aggregated observables): counts/indices/rates/slopes (differential forms), including intermediate unitless quantities.
+<li> L3 (realized numbers): final numbers with physical units attached via length a, time Δ t, energy unit U_lat, etc.
+</ol>
+<p>Each quantity is defined only by a <strong>1:1 mapping</strong> L1→L2→L3; any transformation that retroactively rewrites the meaning of another layer is prohibited.</p>
+<p>In addition, the common operational record (log) used in this section must contain at least the following fields. This record schema is locked in <code>analysis_lock</code>; if any field is missing, the corresponding quantity is judged <em>non-computable</em>.</p>
+<ol>
+<li> Cell domain: lock D_(square) and the representative length D_anch (cell geometry=<code>CELL-CUBE</code>, meaning of D_anch=<code>edge</code>).
+<li> Contact graph: lock G_c=(V,E_c) and the contact predicate C(i,j)∈0,1.
+<li> Event log: lock the event set E, event index e∈E, event time (tick) n(e)∈Z, pre/post configuration identifiers, and the participating VP subset V(e)⊆V.
+<li> Definition of cut surface/boundary: lock the geometric definition of boundary sets ∂D^(±) or a cut surface Σ (plane/curved surface, orientation normal included).
+</ol>
+<h3>4.1.2 Standard symbols (type/dimension/unit) and the 1:1 operational definition table</h3>
+<p>The standard entries of pressure/flux/deficit/charge are locked by the table below. Each row represents one item; an item has meaning only as the tuple <strong>(symbol, type, dimension, unit, operational procedure)</strong>.</p>
+<div class="c">
+<table><tr><td>Name</td><td>Symbol</td><td>Type</td><td>Dimension/Unit</td><td>1:1 operational procedure (summary)</td></tr><tr><td>pressure</td><td>P</td><td>scalar</td><td>[E L⁻³], U_lat/a³</td><td>boundary compression protocol → minimal relaxation cost W(ε) → P:=lim_(ε→0^+)W(ε)/Δ V(ε)</td></tr><tr><td>flux</td><td>J</td><td>scalar or vector (if direction included)</td><td>[L T⁻¹] or [tokenA⁻¹T⁻¹]</td><td>cut surface Σ and event crossing sign s_Σ(e) → net crossing count Δ N_Σ → J:=a³Δ N_Σ/(A_ΣΔ T)</td></tr><tr><td>deficit</td><td>D_def</td><td>scalar</td><td>[1] (default), optionally [L⁻³]</td><td>contact degree z_i → reference degree z_ref → d_i:=max(0,z_ref-z_i) → D_def:=frac1|V|Σ_i d_i</td></tr><tr><td>charge</td><td>Q</td><td>signed scalar</td><td>[Q] (independent dimension), unit q₀</td><td>shell(7) cancellation convention → survival vector V → sign indicator q:=sgn(V·n_Q) → Q:=q₀ q</td></tr></table>
+</div>
+<p>The “summary” in the table is <em>not</em> a shortened definition; it lists only the names of the procedures. The complete procedures are fixed step-by-step in the subsections below.</p>
+<h3>4.1.3 1:1 definition of pressure (boundary compression → cost → pressure)</h3>
+<h4>4.1.3.1 L1 input (structure): boundary and compression operator</h4>
+<p>In the canonical cell domain D_(square), lock the compression direction as a unit normal n_P. For a cube cell, lock one of the following choices in <code>analysis_lock</code>.</p>
+<figure class="eq" id="eq:pressure_normal_lock"><img src="/physics/eq/physics/phy-04-000.svg" data-eq="phy-04-000" width="671" height="20" loading="lazy" alt="\begin{equation} \mathbf{n}_P \in \{\hat{\mathbf{x}},\hat{\mathbf{y}},\hat{\mathbf{z}}\}, \qquad \partial\mathcal{D}^{-},\partial\mathcal{D}^{+}\ \text{are locked as the two opposite faces orthogonal to }\mathbf{n}_P. \end{equation}"></figure>
+<p>For a compression amount ε>0, define the “compressed domain” by</p>
+<figure class="eq" id="eq:compressed_domain"><img src="/physics/eq/physics/phy-04-001.svg" data-eq="phy-04-001" width="870" height="22" loading="lazy" alt="\begin{equation} \mathcal{D}_{\square}(\epsilon) := \left\{\mathbf{x}\in\mathcal{D}_{\square}\ \big|\ \mathbf{x}\cdot\mathbf{n}_P &lt; D_{\mathrm{anch}}-\epsilon\right\} \quad\text{(move one of the opposite faces by $\epsilon$ to reduce the domain volume)}. \end{equation}"></figure>
+<p>The domain volume reduction is</p>
+<figure class="eq" id="eq:deltaV_cube"><img src="/physics/eq/physics/phy-04-002.svg" data-eq="phy-04-002" width="410" height="21" loading="lazy" alt="\begin{equation} \Delta V(\epsilon) := |\mathcal{D}_{\square}|-|\mathcal{D}_{\square}(\epsilon)| = A_{\square}\,\epsilon, \qquad A_{\square}:=D_{\mathrm{anch}}^{2}. \end{equation}"></figure>
+<p>Here A_(square) is the cell face area perpendicular to the compression direction; it is usable only when the cell geometry (cube) and the meaning of D_anch are locked.</p>
+<p>Define the compression operator C_ε as follows. C_ε includes the boundary displacement and the induced mapping of configurations (coordinate transform).</p>
+<figure class="eq" id="eq:compression_operator"><img src="/physics/eq/physics/phy-04-003.svg" data-eq="phy-04-003" width="214" height="25" loading="lazy" alt="\begin{equation} \mathcal{C}_\epsilon:\ \{\Omega_i\}_{i\in\mathcal{V}}\ \mapsto\ \{\Omega_i^{(\epsilon)}\}_{i\in\mathcal{V}}, \end{equation}"></figure>
+<p>However, there is no guarantee that Ω_i^((ε)) satisfies the non-penetration / full-packing / local rules after applying C_ε. Therefore the compression operator must always be paired with relaxation (4.1.3.2).</p>
+<h4>4.1.3.2 L1→L2 map: minimal relaxation cost W(ε)</h4>
+<p>Define the relaxation operator (composition of local updates) R by</p>
+<figure class="eq" id="eq:relax_operator"><img src="/physics/eq/physics/phy-04-004.svg" data-eq="phy-04-004" width="195" height="25" loading="lazy" alt="\begin{equation} \mathcal{R}:\ \{\Omega_i^{(\epsilon)}\}\ \mapsto\ \{\Omega_i^{(\epsilon,\mathrm{rel})}\}, \end{equation}"></figure>
+<p>where Ω_i^(ε,rel) must be an <em>admissible configuration</em> that satisfies non-penetration, full packing, and the local rules. Relaxation consists only of compositions of local updates (the local rule in 3.1). The relaxation rules (update selection, termination condition, failure condition) must be locked in <code>analysis_lock</code>.</p>
+<p>The relaxation cost is defined only in <strong>pre-registered cost units</strong>. A cost unit consists of the two components below.</p>
+<ol>
+<li> Cost unit per one local update: lock as U_lat (energy unit).
+<li> Cost coefficient: lock a weight ω_upd per local-update type in <code>analysis_lock</code> (the default value may be locked as 1).
+</ol>
+<p>Define the minimal relaxation cost for compression ε by</p>
+<figure class="eq" id="eq:work_definition"><img src="/physics/eq/physics/phy-04-005.svg" data-eq="phy-04-005" width="280" height="59" loading="lazy" alt="\begin{equation} W(\epsilon) := U_{\mathrm{lat}}\, \min_{\mathcal{R}} \left(\sum_{k=1}^{N_{\mathrm{upd}}(\epsilon)} \omega_{\mathrm{upd}}(k)\right), \end{equation}"></figure>
+<p>where the minimization is performed under the constraint “return to an admissible configuration”. The minimization rule (search method, deduplication, stopping criterion) must be locked in <code>analysis_lock</code>. If relaxation fails and cannot return to an admissible configuration, then W(ε) is undefined and is recorded as a failure mode.</p>
+<h4>4.1.3.3 L2→L3 map: definition of pressure P</h4>
+<p>Pressure is defined by the limit</p>
+<figure class="eq" id="eq:pressure_def"><img src="/physics/eq/physics/phy-04-006.svg" data-eq="phy-04-006" width="145" height="45" loading="lazy" alt="\begin{equation} P := \lim_{\epsilon\to 0^+}\frac{W(\epsilon)}{\Delta V(\epsilon)}. \end{equation}"></figure>
+<p>For a cube cell, using <a href="#eq:deltaV_cube" class="xref" data-ref="eq:deltaV_cube">(deltaV_cube)</a> gives</p>
+<figure class="eq" id="eq:pressure_cube"><img src="/physics/eq/physics/phy-04-007.svg" data-eq="phy-04-007" width="251" height="48" loading="lazy" alt="\begin{equation} P = \lim_{\epsilon\to 0^+}\frac{W(\epsilon)}{A_{\square}\epsilon} = \lim_{\epsilon\to 0^+}\frac{W(\epsilon)}{D_{\mathrm{anch}}^{2}\epsilon}. \end{equation}"></figure>
+<p>The dimension of P is locked as [E L⁻³], and the unit is locked as U_lat/a³. Here a is the realized length scale and U_lat is the realized energy unit; this unit system must be locked in <code>realization_lock</code>.</p>
+<h4>4.1.3.4 Failure modes for the pressure definition (undefinedness conditions)</h4>
+<p>The conditions under which the pressure definition fails (failure modes) are fixed as follows.</p>
+<ol>
+<li> <strong>FM-SYM</strong>: the meaning of D_anch (cell edge) or the cell geometry (cube) is not locked.
+<li> <strong>FM-NODEF</strong>: relaxation cannot return to an admissible configuration, so W(ε) is undefined.
+<li> <strong>FM-NONUNIQUE</strong>: the minimization rule is not locked, so the word “minimum” is not mechanically defined.
+<li> <strong>FM-NUMERIC</strong>: W(ε)/ε does not converge stably over a sufficiently small ε range (the convergence criterion itself is locked by Gate).
+</ol>
+<h3>4.1.4 1:1 definition of flux (cut surface Σ → crossing sign → flux)</h3>
+<h4>4.1.4.1 L1 input (structure): cut surface, orientation, measurement window</h4>
+<p>Inside the domain D_(square), define an oriented cut surface Σ. The cut surface simultaneously locks the following three elements.</p>
+<ol>
+<li> geometric definition of the cut surface (plane/curved-surface equation or mesh),
+<li> the unit normal n_Σ (orientation lock),
+<li> the area A_Σ (area-computation convention lock).
+</ol>
+<p>Define the measurement time window as the tick interval [n₁,n₂), and lock the realized duration by</p>
+<figure class="eq" id="eq:deltaT"><img src="/physics/eq/physics/phy-04-008.svg" data-eq="phy-04-008" width="156" height="19" loading="lazy" alt="\begin{equation} \Delta T := (n_2-n_1)\Delta t \end{equation}"></figure>
+<p>where Δ t must be locked in <code>realization_lock</code>.</p>
+<h4>4.1.4.2 L1→L2 map: event crossing sign s_Σ(e)</h4>
+<p>For the cut surface Σ, define the “side indicator” function σ_Σ(i)∈-1,+1.</p>
+<figure class="eq" id="eq:side_function"><img src="/physics/eq/physics/phy-04-009.svg" data-eq="phy-04-009" width="915" height="45" loading="lazy" alt="\begin{equation} \sigma_\Sigma(i)= \begin{cases} +1, &amp; \text{the representative point of $\Omega_i$ (by a locked representative-point convention) lies on the $+$ side of }\Sigma,\\ -1, &amp; \text{the representative point of $\Omega_i$ lies on the $-$ side of }\Sigma. \end{cases} \end{equation}"></figure>
+<p>The representative-point convention (e.g., center of the occupied region, a selected marker point, etc.) must be locked in <code>analysis_lock</code>.</p>
+<p>From the change of σ_Σ between the pre/post configurations of an event e, define the event crossing sign by</p>
+<figure class="eq" id="eq:crossing_sign"><img src="/physics/eq/physics/phy-04-010.svg" data-eq="phy-04-010" width="290" height="51" loading="lazy" alt="\begin{equation} s_\Sigma(e) := \frac{1}{2}\sum_{i\in\mathcal{V}(e)} \Bigl(\sigma_\Sigma^{\mathrm{post}}(i)-\sigma_\Sigma^{\mathrm{pre}}(i)\Bigr). \end{equation}"></figure>
+<p>By definition s_Σ(e)∈Z, and if an event does not cross the cut surface then s_Σ(e)=0. If the event log does not contain pre/post configurations, then s_Σ(e) is undefined.</p>
+<p>In the measurement window [n₁,n₂), define the net crossing count by</p>
+<figure class="eq" id="eq:deltaN"><img src="/physics/eq/physics/phy-04-011.svg" data-eq="phy-04-011" width="207" height="44" loading="lazy" alt="\begin{equation} \Delta N_\Sigma := \sum_{e:\ n_1\le n(e)&lt;n_2} s_\Sigma(e). \end{equation}"></figure>
+<p>Δ N_Σ is a pure L2 aggregate (unitless).</p>
+<h4>4.1.4.3 L2→L3 map: flux (token flux) J</h4>
+<p>Flux is defined as a flow of “tokens”. The token size is locked as the VP unit volume a³. Therefore, define the flux by</p>
+<figure class="eq" id="eq:flux_def"><img src="/physics/eq/physics/phy-04-012.svg" data-eq="phy-04-012" width="156" height="44" loading="lazy" alt="\begin{equation} J := \frac{a^{3}}{A_\Sigma\,\Delta T}\,\Delta N_\Sigma. \end{equation}"></figure>
+<p>In this definition, a is the realized length scale, Δ T is defined by <a href="#eq:deltaT" class="xref" data-ref="eq:deltaT">(deltaT)</a>, and A_Σ is the realized area of the cut surface. The dimension of J is locked as [L T⁻¹], because token volume (length³) divided by area (length²) and time yields a length/time scale.</p>
+<p>If a direction-aware flux vector is needed, define</p>
+<figure class="eq" id="eq:flux_vector"><img src="/physics/eq/physics/phy-04-013.svg" data-eq="phy-04-013" width="84" height="16" loading="lazy" alt="\begin{equation} \mathbf{J} := J\,\mathbf{n}_\Sigma. \end{equation}"></figure>
+<p>If n_Σ is not locked, then J is undefined.</p>
+<h4>4.1.4.4 Failure modes for the flux definition (undefinedness conditions)</h4>
+<p>The conditions under which the flux definition fails (failure modes) are fixed as follows.</p>
+<ol>
+<li> <strong>FM-NODEF</strong>: the event log lacks pre/post configurations, or V(e) is missing so that s_Σ(e) is undefined.
+<li> <strong>FM-SYM</strong>: the orientation of Σ or the area A_Σ is not locked.
+<li> <strong>FM-SCOPE</strong>: the cut surface is not defined consistently with the domain D_(square) (e.g., defined outside the domain or mixing cell geometries).
+<li> <strong>FM-NUMERIC</strong>: the representative-point convention is not locked, or the representative-point choice is unstable for the same event, so s_Σ(e) is not reproducible.
+</ol>
+<h3>4.1.5 1:1 definition of deficit (contact deficit: an operational measure of structural deficit)</h3>
+<h4>4.1.5.1 L1 input (structure): contact degree z_i</h4>
+<p>In the contact graph G_c=(V,E_c), define the contact degree (graph degree) of each VP i by</p>
+<figure class="eq" id="eq:degree_deficit"><img src="/physics/eq/physics/phy-04-014.svg" data-eq="phy-04-014" width="371" height="19" loading="lazy" alt="\begin{equation} z_i := |\mathcal{N}(i)|, \qquad \mathcal{N}(i):=\{\,j\in\mathcal{V}\ |\ (i,j)\in\mathcal{E}_c\,\}. \end{equation}"></figure>
+<p>If the contact predicate C(i,j) is not locked, then z_i is undefined.</p>
+<h4>4.1.5.2 L1→L2 map: reference degree z_ref and deficit d_i</h4>
+<p>Deficit is defined as “shortfall relative to a reference contact level”. The reference degree z_ref is locked in <code>analysis_lock</code> by the rules below.</p>
+<ol>
+<li> z_ref∈Z_(≥ 0).
+<li> z_ref may depend on the contact-predicate convention, dimension (2D/3D), and boundary-handling convention; such dependencies are locked as scope.
+<li> The choice of z_ref must not be changed by post-hoc correction; changes are allowed only by versioning.
+</ol>
+<p>Define the deficit of each VP by</p>
+<figure class="eq" id="eq:di_def"><img src="/physics/eq/physics/phy-04-015.svg" data-eq="phy-04-015" width="188" height="22" loading="lazy" alt="\begin{equation} d_i := \max\bigl(0,\ z_{\mathrm{ref}}-z_i\bigr). \end{equation}"></figure>
+<p>Define the cell-level deficit by</p>
+<figure class="eq" id="eq:deficit_cell"><img src="/physics/eq/physics/phy-04-016.svg" data-eq="phy-04-016" width="148" height="48" loading="lazy" alt="\begin{equation} \mathcal{D}_{\mathrm{def}} := \frac{1}{|\mathcal{V}|}\sum_{i\in\mathcal{V}} d_i. \end{equation}"></figure>
+<p>D_def is a dimensionless L2 deficit indicator.</p>
+<h4>4.1.5.3 L2→L3 map: deficit density (optional, if needed)</h4>
+<p>If deficit is used as a spatial density, fix the following derived definition.</p>
+<figure class="eq" id="eq:deficit_density"><img src="/physics/eq/physics/phy-04-017.svg" data-eq="phy-04-017" width="379" height="50" loading="lazy" alt="\begin{equation} \rho_{\mathrm{def}} := \frac{1}{V_{\square}}\sum_{i\in\mathcal{V}} d_i = \frac{|\mathcal{V}|}{V_{\square}}\ \mathcal{D}_{\mathrm{def}}, \qquad V_{\square}:=D_{\mathrm{anch}}^{3}. \end{equation}"></figure>
+<p>The dimension of ρ_def is locked as [L⁻³]. V_(square) is usable only when the cell geometry (cube) and the meaning of D_anch are locked. Deficit density is an <em>optional derived quantity</em>; whether it is used must be locked in <code>analysis_lock</code>.</p>
+<h4>4.1.5.4 Failure modes for the deficit definition (undefinedness conditions)</h4>
+<p>The conditions under which the deficit definition fails (failure modes) are fixed as follows.</p>
+<ol>
+<li> <strong>FM-SYM</strong>: the contact-predicate convention is not locked, so z_i is undefined.
+<li> <strong>FM-SCOPE</strong>: the scope of z_ref (dimension/boundary handling/protocol) is not locked, so the reference collapses.
+<li> <strong>FM-NONUNIQUE</strong>: z_ref moves within the same version or multiple values are mixed.
+<li> <strong>FM-NUMERIC</strong>: the contact-graph construction convention is not locked, so z_i is not reproducible.
+</ol>
+<h3>4.1.6 1:1 definition of charge (shell cancellation → survival vector → sign)</h3>
+<h4>4.1.6.1 L1 input (structure): shell vector set and cancellation convention</h4>
+<p>Charge is defined as “the sign of the residual directionality left by the shell structure”. For this, define the shell vector set by</p>
+<figure class="eq" id="eq:shell_vectors"><img src="/physics/eq/physics/phy-04-018.svg" data-eq="phy-04-018" width="214" height="23" loading="lazy" alt="\begin{equation} \mathcal{S} := \{\mathbf{s}_k\}_{k=1}^{7}, \qquad \mathbf{s}_k \in \mathbb{R}^3. \end{equation}"></figure>
+<p>The coordinate system, scale (internal unit), and the vector-generation convention (what structural quantity is encoded as a vector) must be locked in <code>analysis_lock</code>.</p>
+<p>The cancellation convention simultaneously locks the following.</p>
+<ol>
+<li> the rule that assigns 6 of the 7 vectors as cancellation terms (e.g., pairwise/quartet grouping) and its fixed ordering,
+<li> the cancellation criterion (the condition under which two vectors cancel) (inner product/angle/component convention, etc.),
+<li> the definition of the remaining 1 vector (or remaining sum), i.e., the survival vector.
+</ol>
+<p>If the cancellation convention is not locked, charge is undefined.</p>
+<h4>4.1.6.2 L1→L2 map: survival vector V and sign indicator q</h4>
+<p>Define the survival vector by</p>
+<figure class="eq" id="eq:survival_vector"><img src="/physics/eq/physics/phy-04-019.svg" data-eq="phy-04-019" width="98" height="56" loading="lazy" alt="\begin{equation} \mathbf{V} := \sum_{k=1}^{7}\mathbf{s}_k, \end{equation}"></figure>
+<p>where <a href="#eq:survival_vector" class="xref" data-ref="eq:survival_vector">(survival_vector)</a> is used only as an expression equivalent to “the residual after cancellation terms cancel out according to the locked convention”. If the cancellation terms are constructed explicitly in the actual computation, that construction must be locked in <code>analysis_lock</code>.</p>
+<p>Lock the sign-determination axis (charge axis) n_Q by</p>
+<figure class="eq" id="eq:charge_axis"><img src="/physics/eq/physics/phy-04-020.svg" data-eq="phy-04-020" width="483" height="20" loading="lazy" alt="\begin{equation} \mathbf{n}_Q \in \{\hat{\mathbf{x}},\hat{\mathbf{y}},\hat{\mathbf{z}}\}\ \text{or a pre-registered unit vector}, \qquad \|\mathbf{n}_Q\|=1. \end{equation}"></figure>
+<p>n_Q must not be chosen after seeing the result; the selection rule must be locked in <code>analysis_lock</code>.</p>
+<p>Define the sign indicator by</p>
+<figure class="eq" id="eq:q_sign"><img src="/physics/eq/physics/phy-04-021.svg" data-eq="phy-04-021" width="369" height="63" loading="lazy" alt="\begin{equation} q := \mathrm{sgn}\!\left(\mathbf{V}\cdot\mathbf{n}_Q\right), \qquad \mathrm{sgn}(x)= \begin{cases} +1,&amp; x&gt;0,\\ 0,&amp; x=0,\\ -1,&amp; x&lt;0. \end{cases} \end{equation}"></figure>
+<p>Here q=0 means “sign-indeterminate or neutral”. Whether q=0 is admissible as a <em>conclusion</em> (allowed/forbidden) is locked by <code>PASS.rules</code> in <code>analysis_lock</code>.</p>
+<h4>4.1.6.3 L2→L3 map: charge Q and charge density</h4>
+<p>Lock the charge unit q₀ in <code>canon_lock</code> as</p>
+<figure class="eq" id="eq:q0_lock"><img src="/physics/eq/physics/phy-04-022.svg" data-eq="phy-04-022" width="787" height="19" loading="lazy" alt="\begin{equation} q_0\ \text{is the base unit of charge dimension }[Q],\ \text{and its value is locked as }q_0:=1\ \text{(internal unit system)}. \end{equation}"></figure>
+<p>Define charge by</p>
+<figure class="eq" id="eq:charge_def"><img src="/physics/eq/physics/phy-04-023.svg" data-eq="phy-04-023" width="78" height="17" loading="lazy" alt="\begin{equation} Q := q_0\,q. \end{equation}"></figure>
+<p>If a spatial charge density is needed, use the derived definition</p>
+<figure class="eq" id="eq:charge_density"><img src="/physics/eq/physics/phy-04-024.svg" data-eq="phy-04-024" width="229" height="41" loading="lazy" alt="\begin{equation} \rho_Q := \frac{Q}{V_{\square}}, \qquad V_{\square}:=D_{\mathrm{anch}}^{3}. \end{equation}"></figure>
+<p>The dimension of ρ_Q is locked as [Q L⁻³].</p>
+<h4>4.1.6.4 Failure modes for the charge definition (undefinedness conditions)</h4>
+<p>The conditions under which the charge definition fails (failure modes) are fixed as follows.</p>
+<ol>
+<li> <strong>FM-STR</strong>: the shell-vector generation convention or the cancellation convention is not locked (structure is unspecified).
+<li> <strong>FM-SYM</strong>: n_Q or the coordinate-system definition is not locked (direction meaning is unspecified).
+<li> <strong>FM-NONUNIQUE</strong>: the cancellation convention admits multiple solutions, so V is non-unique.
+<li> <strong>FM-SCOPE</strong>: the shell(7) structure is not defined in the declared regime, yet charge is invoked.
+</ol>
+<h2>4.2 Closure types, stacks, and DAG rules</h2>
+<aside class="claim-strip vps" data-vps="4.2" data-cards="VP-C-057, VP-C-049"><span class="g">closure charter</span><span class="io">in: — / out: a closure = documented selection rule (not an extra hypothesis); types, stacks, and DAG placement</span><q class="one">A closure is a confession of choice, sealed.</q><span class="cards">VP-C-057, VP-C-049</span></aside>
+<h3>4.2.1 Position and purpose of a closure</h3>
+<p>A closure is a device that seals, as an <strong>explicit rule</strong>, a choice that is not determined by axioms ([A]) and definitions ([D]) alone. A closure is not an “extra hypothesis”; it is <strong>documentation of a selection rule</strong>. The existence of closures is fixed by the two reasons below.</p>
+<ol>
+<li> <strong>Resolving indeterminacy</strong>: even with the same inputs, the output may be non-unique or multi-valued; a rule is needed to select which solution will be used.
+<li> <strong>Sealing procedures</strong>: the output can vary with the algorithm/estimator/boundary handling/normalization; without locking the procedure, the same conclusion cannot be claimed.
+</ol>
+<p>Therefore a closure must always include (i) input/output types, (ii) selection rule (assumptions), (iii) scope (regime), (iv) failure modes, and (v) Gate stack. If any of the five elements is missing, the closure is unusable.</p>
+<h3>4.2.2 Closure types (standard taxonomy)</h3>
+<p>In this document, closures are classified by “what is being closed” into the standard types below. The type is locked in <code>analysis_lock</code>, and closure IDs follow a namespace that includes the type.</p>
+<h3>(CL-S) Semantic-map Closure</h3>
+<p>A closure used when a choice is required in an L1→L2 or L2→L3 map. Examples include choosing the representative value of a throat (mean vs minimum-cut), and fixing how an event aggregation window is defined.</p>
+<h3>(CL-G) Graph/Path Closure</h3>
+<p>A closure that seals graph-based choices such as contact-graph construction, critical-throat definition, path selection, backbone selection, and minimum-cut computation. Examples include boundary-node definition, weight assignment, and equivalence rules.</p>
+<h3>(CL-R) Regime Closure</h3>
+<p>A closure that seals the scope of applicability: which rules are valid under which conditions (jamming/non-jamming, rotation-driven/non-driven, linear/nonlinear, etc.). Since changing regime conditions can change the conclusion, regime closures are premises of all conclusions.</p>
+<h3>(CL-N) Numerical Closure</h3>
+<p>A closure that seals numerical procedures: convergence, termination criteria, sensitivity policies, iteration limits, tolerances, and step policies. This closure exists not to “obtain” a result but to ensure the result is <em>reproducible</em>.</p>
+<h3>(CL-X) Cross-consistency Closure</h3>
+<p>A closure that seals cross-consistency rules for judging whether independently constructed channels/baselines/input combinations are consistent with the same conclusion. Cross-consistency closures include choices of thresholds, comparison quantities, and verdict methods.</p>
+<h3>(CL-P) Protocol Closure</h3>
+<p>A closure that seals execution conventions: input file formats, log schema, seed policy, environment fixation, etc. Protocol closures are premises of the reproducibility Gate and of snapshot sealing.</p>
+<h3>4.2.3 Closure ID rules (identifier and namespace)</h3>
+<p>Each closure is identified by a <strong>closure_id</strong>. The closure_id format is fixed as</p>
+<figure class="eq" id="eq:closure_id_format"><img src="/physics/eq/physics/phy-04-025.svg" data-eq="phy-04-025" width="214" height="19" loading="lazy" alt="\begin{equation} \texttt{CL-}\langle\texttt{TYPE}\rangle\texttt{-}\langle\texttt{TOPIC}\rangle\texttt{-}\langle\texttt{NNN}\rangle, \end{equation}"></figure>
+<p>where</p>
+<ul>
+<li> <code>TYPE</code> is one of <code>S,G,R,N,X,P</code>,
+<li> <code>TOPIC</code> is the topic handled by the closure (e.g., <code>THROAT</code>, <code>BACKBONE</code>, <code>EVENTWIN</code>, <code>ANCHOR</code>, <code>RCROSS</code>),
+<li> <code>NNN</code> is a serial number starting from 001.
+</ul>
+<p>Multiple closures may coexist for the same <code>TYPE</code> and <code>TOPIC</code>, but within a single conclusion (claim_id) the simultaneously adopted closure for the same topic is restricted to <strong>one</strong>. If multiple are needed, the topic must be decomposed into distinct topics.</p>
+<h3>4.2.4 I/O type rules for closures (layer/dimension/object attribution)</h3>
+<p>A closure must state the types of its inputs and outputs. A type consists of the following four elements.</p>
+<ol>
+<li> <strong>Layer</strong>: which of L0/L1/L2/L3 it belongs to.
+<li> <strong>Object attribution (object_id)</strong>: which object the quantity belongs to (e.g., <code>OBJ-THROAT</code>, <code>OBJ-PATH</code>, <code>OBJ-EVENT</code>).
+<li> <strong>Symbol</strong>: the symbol used in the main text (locked to a single meaning).
+<li> <strong>Dimension/unit</strong>: dimensionless (1) or physical dimensions (length/time/mass/energy/force, etc.) and unit system (SI/internal).
+</ol>
+<p>If the I/O types of a closure are ambiguous, or the same symbol appears with different types, then this is a definition conflict and the closure is unusable.</p>
+<h3>4.2.5 The “assumptions” field of a closure (explicit selection rules)</h3>
+<p>The “assumptions” contained in a closure are fixed by the rules below.</p>
+<ol>
+<li> Assumptions exist only in the form of <strong>selection rules</strong>. They must record, in mechanically readable sentences, “what was chosen”.
+<li> Assumptions must not introduce new ontology (e.g., a new continuous field, a new global objective function, axiomatizing a new probability distribution, etc. are outside the scope of closures).
+<li> Assumptions must have scope (scope). Assumptions without scope are prohibited because they can be misread as global assumptions.
+<li> Assumptions must not be changed after seeing results. Changes are allowed only by versioning (new <code>analysis_lock_id</code>).
+</ol>
+<h3>4.2.6 Gate stack (mandatory) and linkage to PASS/FAIL judgements</h3>
+<p>Every closure has its required Gate stack. The purpose of the Gate stack is to make the choices embedded in the closure <strong>necessary conditions</strong> for a conclusion to obtain admissible status. The Gate stack is fixed by the following rules.</p>
+<ol>
+<li> <strong>Mandatory base Gates</strong>: every closure requires at least G-SYM, G-LOCK, G-REG, and G-NT.
+<li> <strong>Type-dependent additional Gates</strong>: depending on the closure type, add the following Gates as needed.
+<ul>
+<li> CL-S: (if needed) G-NUM
+<li> CL-G: (if needed) G-STR, G-NUM
+<li> CL-R: (if needed) strengthened G-REG and/or G-STR
+<li> CL-N: G-NUM
+<li> CL-X: G-RCROSS, (if needed) G-NUM
+<li> CL-P: G-REP
+  </ul>
+<li> <strong>Judgement precedence</strong>: if any required Gate yields <code>FAIL</code> or <code>INCONCLUSIVE</code>, then any conclusion using the closure cannot obtain conclusion status.
+<li> <strong>Failure-mode labeling</strong>: the causes of <code>FAIL</code>/<code>INCONCLUSIVE</code> are decomposed and recorded as failure-mode labels (FM-*) or No-Tuning violation labels (FAIL-NT-*).
+</ol>
+<h3>4.2.7 Closure DAG rules (no cyclic dependency)</h3>
+<p>Closures may depend on each other, but the dependency must be a DAG (a directed acyclic graph). The closure DAG rules are fixed as follows.</p>
+<h4>4.2.7.1 Nodes and edges</h4>
+<p>Let the closure set be C and denote each closure by c∈C. Define the closure DAG by</p>
+<figure class="eq" id="eq:closure_dag_def"><img src="/physics/eq/physics/phy-04-026.svg" data-eq="phy-04-026" width="127" height="19" loading="lazy" alt="\begin{equation} \mathcal{G}_{\mathrm{CL}} := (\mathcal{C}, \mathcal{E}_{\mathrm{CL}}), \end{equation}"></figure>
+<p>where (c_i,c_j)∈E_CL means “closure c_j depends on the output of closure c_i.”</p>
+<h4>4.2.7.2 Acyclic condition (no cycles)</h4>
+<p>The DAG condition is fixed as</p>
+<figure class="eq" id="eq:acyclic_rule"><img src="/physics/eq/physics/phy-04-027.svg" data-eq="phy-04-027" width="245" height="17" loading="lazy" alt="\begin{equation} \text{$\mathcal{G}_{\mathrm{CL}}$ contains no directed cycle}. \end{equation}"></figure>
+<p>That is, if a path of the form c₁→ c₂→⋯→ cₖ→ c₁ exists, then that set of closures is unusable.</p>
+<h4>4.2.7.3 Typical forbidden patterns of cycles</h4>
+<p>Cycles occur in the representative patterns below. These patterns are fixed as forbidden rules.</p>
+<ol>
+<li> <strong>Threshold–output cycle</strong>: a closure output determines a Gate threshold, and that threshold in turn changes the solution selection of the same closure.
+<li> <strong>Channel–consistency cycle</strong>: in a cross-consistency closure, the selected channels are re-selected/excluded based on the output.
+<li> <strong>Regime–selection cycle</strong>: a regime closure reclassifies the regime using an output indicator, and that reclassification changes closure selection.
+<li> <strong>Post-hoc selection cycle</strong>: selecting a “good” solution among multiple candidates using a rule that depends on the output value (a form of post-hoc tuning).
+</ol>
+<p>If such a pattern appears, the closure definition is rejected in <code>analysis_lock</code>, and related conclusions are automatically judged <code>FAIL</code> or <code>INCONCLUSIVE</code>.</p>
+<h4>4.2.7.4 Topological sorting and execution order</h4>
+<p>If the DAG condition holds, closures have a topologically sortable order. Denote the execution precedence by prec; then</p>
+<figure class="eq" id="eq:toposort_rule"><img src="/physics/eq/physics/phy-04-028.svg" data-eq="phy-04-028" width="562" height="19" loading="lazy" alt="\begin{equation} c_i \prec c_j \quad \Longleftrightarrow \quad (c_i,c_j)\in\mathcal{E}_{\mathrm{CL}}\ \text{or a precedence relation derived from it}. \end{equation}"></figure>
+<p>Derivations and Gate executions must follow the prec order. If the order is violated, required inputs do not exist and the result is judged <code>INCONCLUSIVE</code>.</p>
+<h3>4.2.8 Closure template (standard registry form)</h3>
+<p>Below is the standard template for recording a closure in the registry. The key structure and fields are fixed; if any required field is missing, the closure is unusable.</p>
+<pre class="vb">
+closures:
+  - closure_id: CL-G-THROAT-001
+    type: CL-G
+    topic: THROAT
+    version: (local version within analysis_lock_id)
+    scope: (regime identifier or predicate)
+    inputs:
+      - layer: L1
+        object_id: OBJ-THROAT
+        symbol: delta_gap
+        dimension: L
+        unit_system: internal
+    outputs:
+      - layer: L2
+        quantity_id: Q-THROAT-DELTAEFF
+        symbol: delta_eff
+        dimension: L
+        unit_system: internal
+    assumptions:
+      - "Define the critical throat on the contact graph via a minimum-cut rule"
+      - "The weight convention follows W_THROAT"
+      - "Fix the representative value to the minimum-cut representative value (not the median)"
+    algorithm:
+      algorithm_id: ALG-THROAT-EST-001
+      parameters_locked_by: analysis_lock_id
+    dag:
+      depends_on: [CL-R-REGIME-001, CL-P-PROTO-001]
+    failure_modes:
+      - FM-SYM
+      - FM-SCOPE
+      - FM-NONUNIQUE
+      - FM-NUMERIC
+    required_gates:
+      - G-SYM
+      - G-LOCK
+      - G-REG
+      - G-STR
+      - G-NUM
+      - G-NT
+    pass_rules_hook:
+      claim_types_allowed_on_pass: [CT-DER-FORM, CT-DER-NUM, CT-LIM]
+      claim_types_forbidden_on_fail: [CT-DER-NUM, CT-XCROSS, CT-REP]
+</pre>
+<p>In this template, <code>dag.depends_on</code> contains the edge information of the closure DAG, and <code>failure_modes</code> and <code>required_gates</code> are mandatory fields. <code>pass_rules_hook</code> is a declaration connected to PASS.rules, linking “which sentences are allowed when which Gates pass” at the closure level.</p>
+<h3>4.2.9 Closure stacks and claim attribution</h3>
+<p>A single conclusion (claim_id) uses one or more closures. This is called a closure stack. The closure stack is fixed by the rules below.</p>
+<ol>
+<li> A closure stack has an <strong>order</strong>. The order is determined by topological sorting of the closure DAG.
+<li> A conclusion must include the <strong>closure_ids</strong> list. Without it, the conclusion loses its basis and cannot claim conclusion status.
+<li> If any closure in the stack yields <code>FAIL</code>/<code>INCONCLUSIVE</code> in Gate, then the conclusion cannot obtain conclusion status.
+<li> Mixing closure stacks from different <code>analysis_lock_id</code> to form one conclusion is prohibited.
+</ol>
+<h2>4.3 Regime map (scope of applicability)</h2>
+<aside class="claim-strip vps" data-vps="4.3" data-cards="VP-C-057"><span class="g">regime definition</span><span class="io">in: — / out: regime as a coordinate tuple $R$ (axes, not slogans); validity declared per tuple</span><q class="one">``Rigid regime&#x27;&#x27; is not a phrase here — it is a tuple with axes.</q><span class="cards">VP-C-057</span></aside>
+<h3>4.3.1 Definition of a regime</h3>
+<p>A regime is a coordinate description of “under which conditions which definitions/closures/judgements are valid”. A regime is not expressed as a single sentence (e.g., “rigid regime”); it must be defined as a tuple composed of the values of regime coordinate axes. Fix the regime in the form</p>
+<figure class="eq" id="eq:regime_tuple"><img src="/physics/eq/physics/phy-04-029.svg" data-eq="phy-04-029" width="457" height="22" loading="lazy" alt="\begin{equation} \mathcal{R} := \bigl( R_{\mathrm{dim}}, R_{\mathrm{cell}}, R_{\mathrm{drive}}, R_{\mathrm{span}}, R_{\kappa}, R_{\mathrm{scale}}, R_{\mathrm{bc}}, R_{\mathrm{init}}, R_{\mathrm{obs}} \bigr). \end{equation}"></figure>
+<p>Each component is a regime-axis value defined in 4.3.2, and the axes themselves are locked in <code>analysis_lock</code>.</p>
+<h3>4.3.2 Regime coordinate axes (standard coordinate system)</h3>
+<p>This section fixes the regime coordinate system to the 9 axes below. Each axis is defined as an enumeration or an operational predicate (indicator function / thresholded index); it is not replaced by “interpretation”.</p>
+<h3>(A) Dimension axis R_dim</h3>
+<p>The dimension axis indicates the dimension in which the domain/contact graph/cut surface definitions are performed.</p>
+<figure class="eq" id="eq:reg_dim"><img src="/physics/eq/physics/phy-04-030.svg" data-eq="phy-04-030" width="194" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{dim}}\in\{\texttt{DIM-2},\ \texttt{DIM-3}\}. \end{equation}"></figure>
+<p>The dimension is locked by object definitions in <code>canon_lock</code> and protocols in <code>analysis_lock</code>, and must not be mixed within one output.</p>
+<h3>(B) Cell-geometry axis R_cell</h3>
+<p>The cell-geometry axis indicates the canonical geometry type of the Anchor Cell.</p>
+<figure class="eq" id="eq:reg_cell"><img src="/physics/eq/physics/phy-04-031.svg" data-eq="phy-04-031" width="169" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{cell}}\in\{\texttt{CELL-CUBE}\}, \end{equation}"></figure>
+<p>In the canonical regime, only <code>CELL-CUBE</code> is allowed. <code>CELL-SPHERE-VIS</code> is a visualization transform, not a regime-axis value. Visualization transforms are locked only by <code>vis_mode</code> in <code>analysis_lock</code> and do not replace the canonical regime.</p>
+<h3>(C) Drive axis R_drive</h3>
+<p>The drive axis indicates which driving condition is included in configuration updates (composition of local updates).</p>
+<figure class="eq" id="eq:reg_drive"><img src="/physics/eq/physics/phy-04-032.svg" data-eq="phy-04-032" width="250" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{drive}}\in\{\texttt{DRV-NONE},\ \texttt{DRV-ROT}\}. \end{equation}"></figure>
+<code>DRV-ROT</code> holds only when a rotation-drive input (e.g., ℓ_rot) exists and the corresponding protocol lock (drive method/termination condition/sampling) is satisfied. The satisfaction conditions for <code>DRV-ROT</code> must be locked in <code>analysis_lock</code>, and reclassifying the drive axis after seeing results is prohibited.
+<h3>(D) Spanning axis Rₛpan</h3>
+<p>The spanning axis is defined as an indicator of whether the contact graph connects opposite boundary sets of the domain.</p>
+<figure class="eq" id="eq:reg_span"><img src="/physics/eq/physics/phy-04-033.svg" data-eq="phy-04-033" width="448" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{span}}\in\{\texttt{SPAN-0},\ \texttt{SPAN-1}\}, \qquad R_{\mathrm{span}}:=\texttt{SPAN-}\chi_{\mathrm{span}}(\mathfrak{J}), \end{equation}"></figure>
+<p>where χ_span(mathfrakJ)∈0,1 is the spanning indicator defined in 3.2. If boundary sets and boundary-node definitions are not locked, then R_span is undefined and the regime declaration itself does not hold.</p>
+<h3>(E) Bottleneck axis R_(κ)</h3>
+<p>The bottleneck axis is defined as a binning of the minimum-cut size (or an equivalent bottleneck index).</p>
+<figure class="eq" id="eq:reg_kappa_enum"><img src="/physics/eq/physics/phy-04-034.svg" data-eq="phy-04-034" width="319" height="19" loading="lazy" alt="\begin{equation} R_{\kappa}\in\{\texttt{KAPPA-0},\ \texttt{KAPPA-1},\ \texttt{KAPPA-GE2}\}, \end{equation}"></figure>
+<p>Fix R_(κ) by the mapping rule</p>
+<figure class="eq" id="eq:reg_kappa_map"><img src="/physics/eq/physics/phy-04-035.svg" data-eq="phy-04-035" width="351" height="63" loading="lazy" alt="\begin{equation} \kappa_{\min}(\mathfrak{J}) \ \mapsto\ R_{\kappa}:= \begin{cases} \texttt{KAPPA-0}, &amp; \kappa_{\min}=0,\\ \texttt{KAPPA-1}, &amp; \kappa_{\min}=1,\\ \texttt{KAPPA-GE2}, &amp; \kappa_{\min}\ge 2. \end{cases} \end{equation}"></figure>
+<p>The algorithm used to compute κ_(min) (exact/approximate, weighted/unweighted, boundary handling) must be locked in <code>analysis_lock</code>. If the algorithm is not locked, then R_(κ) is undefined.</p>
+<h3>(F) Scale-window axis Rₛcale</h3>
+<p>The scale-window axis indicates “under which internal scale range the output was aggregated/evaluated”. Lock the scale window as a bin of a unitless internal index s.</p>
+<figure class="eq" id="eq:reg_scale_enum"><img src="/physics/eq/physics/phy-04-036.svg" data-eq="phy-04-036" width="407" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{scale}}\in\{\texttt{SCALE-LONG},\ \texttt{SCALE-MID},\ \texttt{SCALE-SHORT}\}, \end{equation}"></figure>
+<p>Here s is a single internal index locked in <code>analysis_lock</code> (e.g., a graph-distance-based length, path-length-based length, lattice-index-based length). The bin thresholds</p>
+<figure class="eq" id="eq:scale_thresholds"><img src="/physics/eq/physics/phy-04-037.svg" data-eq="phy-04-037" width="92" height="15" loading="lazy" alt="\begin{equation} 0&lt;s_1&lt;s_2 \end{equation}"></figure>
+<p>are locked as thresholds in <code>analysis_lock</code>. Fix the scale window by</p>
+<figure class="eq" id="eq:reg_scale_map"><img src="/physics/eq/physics/phy-04-038.svg" data-eq="phy-04-038" width="317" height="63" loading="lazy" alt="\begin{equation} R_{\mathrm{scale}}:= \begin{cases} \texttt{SCALE-LONG}, &amp; s\ge s_2,\\ \texttt{SCALE-MID}, &amp; s_1\le s &lt; s_2,\\ \texttt{SCALE-SHORT}, &amp; 0&lt; s &lt; s_1. \end{cases} \end{equation}"></figure>
+<p>Scale-window classification must not be changed after seeing results.</p>
+<h3>(G) Boundary-condition axis R_bc</h3>
+<p>The boundary-condition axis indicates the boundary-handling type of the domain.</p>
+<figure class="eq" id="eq:reg_bc"><img src="/physics/eq/physics/phy-04-039.svg" data-eq="phy-04-039" width="344" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{bc}}\in\{\texttt{BC-CLOSED},\ \texttt{BC-OPEN},\ \texttt{BC-DRIVEN}\}. \end{equation}"></figure>
+<code>BC-DRIVEN</code> may be combined with the drive axis (e.g., <code>DRV-ROT</code>) but must not be conflated with it. Boundary conditions are part of the protocol and must be locked in <code>protocol_lock</code> or <code>analysis_lock</code>.
+<h3>(H) Initial-condition axis R_init</h3>
+<p>The initial-condition axis classifies the initial configuration (contact graph/deficit/defect distribution, etc.).</p>
+<figure class="eq" id="eq:reg_init"><img src="/physics/eq/physics/phy-04-040.svg" data-eq="phy-04-040" width="390" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{init}}\in\{\texttt{INIT-RAW},\ \texttt{INIT-RELAXED},\ \texttt{INIT-PREJ}\}. \end{equation}"></figure>
+<code>INIT-RELAXED</code> means an initial condition for which an admissible configuration is fixed by passing a pre-registered relaxation protocol. <code>INIT-PREJ</code> means an initial condition generated using a pre-registered control-parameter window to sample around Point-J; the generation rule and window must be locked in <code>analysis_lock</code>.
+<h3>(I) Observation/aggregation axis Rₒbs</h3>
+<p>The observation/aggregation axis indicates the conventions for event logs and aggregation windows.</p>
+<figure class="eq" id="eq:reg_obs"><img src="/physics/eq/physics/phy-04-041.svg" data-eq="phy-04-041" width="389" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{obs}}\in\{\texttt{OBS-EVENT},\ \texttt{OBS-STATIC},\ \texttt{OBS-HYBRID}\}. \end{equation}"></figure>
+<code>OBS-EVENT</code> indicates an observational regime that obligatorily includes event-based aggregation (ticks, event pre/post configurations). <code>OBS-STATIC</code> indicates a regime that aggregates only structural indicators of a single configuration (contact degree, cut, path, etc.). <code>OBS-HYBRID</code> combines the two, but holds only when each aggregation has its own locked 1:1 map.
+<h3>4.3.3 Regime IDs and the standard format for regime declarations</h3>
+<p>A regime is called by a string identifier <code>regime_id</code>. A <code>regime_id</code> is valid only when the values in <a href="#eq:regime_tuple" class="xref" data-ref="eq:regime_tuple">(regime_tuple)</a> are fixed in the registry. Fix the standard registry template as follows.</p>
+<pre class="vb">
+regimes:
+  - regime_id: R-BASE-001
+    coords:
+      dim: DIM-3
+      cell: CELL-CUBE
+      drive: DRV-NONE
+      span: SPAN-1
+      kappa: KAPPA-GE2
+      scale: SCALE-LONG
+      bc: BC-CLOSED
+      init: INIT-RELAXED
+      obs: OBS-EVENT
+    allowed_closure_stacks:
+      - stack_id: CS-BASE-CORE-001
+        closures: [ ... ]
+    forbidden_extrapolations:
+      - "drive: DRV-ROT"
+      - "dim: DIM-2"
+</pre>
+<p>If <code>coords</code> is missing or any axis value does not match the registry enumeration, the regime declaration is invalid and the output is judged <code>INCONCLUSIVE</code>.</p>
+<h3>4.3.4 Allowed closure stacks (regime-wise allow-lists)</h3>
+<p>A regime carries an allow-list of “allowed closure stacks”. An allowed closure stack includes (i) the list of usable closures, (ii) stack order (topological sorting of the closure DAG), and (iii) additional Gate requirements specific to the regime.
+Fix the allowed closure stacks by the rules below.</p>
+<ol>
+<li> Every derivation that generates conclusions under the same <code>regime_id</code> must select and use one of the allowed closure stacks of that regime.
+<li> Using a closure that is not in the allow-list yields immediate <code>FAIL</code> (regime violation).
+<li> An allowed stack must satisfy the closure DAG; a stack violating the DAG cannot be registered.
+<li> Changes of allowed stacks are permitted only by versioning of <code>analysis_lock</code>.
+</ol>
+<h4>4.3.4.1 Example allowed stack for the base regime (canonical chain)</h4>
+<p>A minimal allowed stack for the canonical chain (canonical→structure→event→realization→derived) is fixed in the following form (item names are examples; actual use is by closure_id only).</p>
+<figure class="eq" id="eq:closure_stack_base"><img src="/physics/eq/physics/phy-04-042.svg" data-eq="phy-04-042" width="1457" height="22" loading="lazy" alt="\begin{equation} \texttt{CS-BASE-CORE-001}: \bigl[ \texttt{CL-R-REGIME-001}, \texttt{CL-P-PROTO-001}, \texttt{CL-G-CONTACT-001}, \texttt{CL-G-BOUNDARY-001}, \texttt{CL-G-BACKBONE-001}, \texttt{CL-S-EVENTMAP-001}, \texttt{CL-N-CONV-001}, \texttt{CL-X-RCROSS-001} \bigr]. \end{equation}"></figure>
+<p>Each closure's I/O types, failure modes, and required Gates follow the closure-template conventions in 4.2. The stack means the following.</p>
+<ul>
+<li> First the regime axes are locked (<code>CL-R-REGIME-001</code>),
+<li> the protocol/logs are sealed (<code>CL-P-PROTO-001</code>),
+<li> the contact graph and boundary definitions are fixed (<code>CL-G-CONTACT-001</code>, <code>CL-G-BOUNDARY-001</code>),
+<li> the rigid backbone (or bottleneck index) is fixed by a selection rule (<code>CL-G-BACKBONE-001</code>),
+<li> the event aggregation map is fixed (<code>CL-S-EVENTMAP-001</code>),
+<li> numerical convergence/stability conventions are fixed (<code>CL-N-CONV-001</code>),
+<li> if realization or cross-consistency is required, a cross-consistency closure is fixed (<code>CL-X-RCROSS-001</code>).
+</ul>
+<h4>4.3.4.2 Example allowed stack for a rotation-driven regime (extended)</h4>
+<p>In a rotation-driven regime (<code>DRV-ROT</code>), the following closures are <em>added</em> to <a href="#eq:closure_stack_base" class="xref" data-ref="eq:closure_stack_base">(closure_stack_base)</a>. A conclusion that does not include the added closures cannot obtain admissible status under a rotation-driven regime.</p>
+<figure class="eq" id="eq:closure_stack_rot"><img src="/physics/eq/physics/phy-04-043.svg" data-eq="phy-04-043" width="1545" height="22" loading="lazy" alt="\begin{equation} \texttt{CS-ROT-EXT-001}: \bigl[ \texttt{CL-R-REGIME-ROT-001}, \texttt{CL-P-PROTO-ROT-001}, \texttt{CL-G-CONTACT-001}, \texttt{CL-G-BOUNDARY-001}, \texttt{CL-G-ANISO-AXIS-001}, \texttt{CL-S-ANISO-MAP-001}, \texttt{CL-N-CONV-001}, \texttt{CL-X-RCROSS-001} \bigr]. \end{equation}"></figure>
+<p>Here <code>CL-G-ANISO-AXIS-001</code> is a closure that locks the selection convention of the anisotropy axis / directional distribution, and <code>CL-S-ANISO-MAP-001</code> locks the 1:1 maps for direction-dependent observables. In a rotation-driven regime, whether ℓ_rot is a reference value (<code>CANON-REF</code>) or a promoted value (<code>CANON-PRIMARY</code>) changes the input items and failure modes of <code>CL-R-REGIME-ROT-001</code>; this attribution is tied to the <code>canon_lock</code> version.</p>
+<h4>4.3.4.3 Example allowed stack for a non-rigid regime (restricted)</h4>
+<p>In a non-rigid regime, closures that presuppose the existence of a rigid backbone cannot be used. Therefore the following restriction is included in the regime definition.</p>
+<figure class="eq" id="eq:nonstiff_forbid_backbone"><img src="/physics/eq/physics/phy-04-044.svg" data-eq="phy-04-044" width="671" height="19" loading="lazy" alt="\begin{equation} R_{\mathrm{span}}=\texttt{SPAN-0} \ \ \text{or}\ \ R_{\kappa}\in\{\texttt{KAPPA-0},\texttt{KAPPA-1}\} \ \Longrightarrow\ \texttt{CL-G-BACKBONE-001}\ \text{forbidden}. \end{equation}"></figure>
+<p>In this case, the allowed stack is fixed as</p>
+<figure class="eq" id="eq:closure_stack_nonstiff"><img src="/physics/eq/physics/phy-04-045.svg" data-eq="phy-04-045" width="1110" height="22" loading="lazy" alt="\begin{equation} \texttt{CS-NONSTIFF-001}: \bigl[ \texttt{CL-R-REGIME-001}, \texttt{CL-P-PROTO-001}, \texttt{CL-G-CONTACT-001}, \texttt{CL-G-BOUNDARY-001}, \texttt{CL-S-STATMAP-001}, \texttt{CL-N-CONV-001} \bigr]. \end{equation}"></figure>
+<p>To produce rigidity-related statements under a non-rigid regime, the statements must not be “rigidity conclusions” but “rigidity failure or limit conclusions” (CT-LIM), accompanied by failure-mode labels.</p>
+<h3>4.3.5 Extrapolation Ban</h3>
+<p>Regime extrapolation is defined as “describing a conclusion derived and Gate-passed in regime R as the same conclusion for another regime R' with different regime-axis values”. Extrapolation occurs if any of the following holds.</p>
+<ol>
+<li> <strong>Axis mismatch</strong>: at least one regime-axis value differs between R and R'.
+<li> <strong>Allowed-stack mismatch</strong>: the conclusion uses a closure that is not allowed under R'.
+<li> <strong>Missing regime Gates</strong>: the Gates required to justify the transition to R' (regime fit/cross-consistency/reproducibility) were not executed.
+</ol>
+<p>Extrapolation is not softened by interpretation; it is handled immediately by the rules below.</p>
+<h4>4.3.5.1 Sentence rules for the extrapolation ban</h4>
+<p>A sentence that contains regime extrapolation cannot obtain conclusion status. Fix the sentence rules as follows.</p>
+<ol>
+<li> Every conclusion sentence must include <code>regime_id</code>. If <code>regime_id</code> is missing, the sentence is judged <code>INCONCLUSIVE</code>.
+<li> Regime-axis values appearing in a conclusion sentence must match <code>coords</code> of the registered regime. Any mismatch is immediate <code>FAIL</code>.
+<li> To describe a generalization to another regime, one must present a separate <code>regime_id</code>, the allowed stack, and new Gate judgements for that regime.
+<li> Outside the declared regime, only limit statements (CT-LIM) are allowed (not conclusions). Limit statements must include the cause labels of <code>FAIL</code>/<code>INCONCLUSIVE</code>.
+</ol>
+<h4>4.3.5.2 FAIL labels for extrapolation violations</h4>
+<p>If regime extrapolation is detected, assign the following FAIL labels.
+<div class="c"></p>
+<table><tr><td>Label</td><td>Meaning</td></tr><tr><td>FAIL-REG-NOID</td><td>missing <code>regime_id</code> in a conclusion</td></tr><tr><td>FAIL-REG-MISMATCH</td><td>mismatch between declared <code>regime_id</code> and regime-axis values</td></tr><tr><td>FAIL-REG-STACK</td><td>use of a closure stack not allowed in the regime</td></tr><tr><td>FAIL-REG-EXTRAP</td><td>inclusion of out-of-regime generalization/extrapolation</td></tr><tr><td>INCON-REG-UNDEF</td><td>regime coordinates or indicator is undefined (missing locks)</td></tr></table>
+</div>
+If <code>FAIL-REG-*</code> is assigned, the output loses conclusion status; this loss propagates along the dependency graph to derived outputs.
+<h3>4.3.6 Admissible conditions for regime transitions</h3>
+<p>A regime transition is recorded as “R→R”' and is allowed only in the two cases below.</p>
+<ol>
+<li> <strong>Refinement within the same axis values</strong>: adding a sub-classification within the same regime using a pre-registered axis such as the scale window (R_scale) or observation axis (R_obs). Even then, the sub-regime must be registered with a new <code>regime_id</code>.
+<li> <strong>Parallel presentation of independent conclusions</strong>: generating conclusions independently in different regimes and listing them in parallel without mixing. Parallel presentation may require a cross-consistency closure (<code>CL-X-*</code>); whether it is required must be locked in <code>analysis_lock</code>.
+</ol>
+<p>To synthesize a regime transition into a <em>single conclusion</em>, the synthesis rule itself must be locked as a closure, and the Gate stack for the synthesis must be pre-registered. A transition without a synthesis rule is treated as extrapolation and is forbidden.</p>
+<h2 class="part">Forced — Results With No Adjustable Content</h2>
+<p>Everything here follows from geometry, counting, and the rectification integrals of the Read-First decoder. There is no knob: each π is one rotation averaged, each integer a lattice count. This is where the physics is decided.</p>
+<nav class="pn"><a rel="prev" href="/physics/03-axioms-primitives-volume-particle-lattice/">← §3</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/sp-jamming-spine-verified-physical-backbone/">§SP →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

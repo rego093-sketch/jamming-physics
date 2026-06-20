@@ -1,0 +1,44 @@
+{
+ "_meta": {
+  "title": "Skeletal-muscle twitch & force-frequency properties (measured) — locked input for the §14 twitch-fusion derivation",
+  "what": "LOCKED MEASURED inputs (cited, not tuned) used to DERIVE the saturating force-frequency (twitch-fusion) curve as a DIMENSIONLESS function of nu = f*T, and to VALIDATE its shape against the measured sigmoidal tension-frequency relation. Nothing here is fitted to a target.",
+  "derivation": "Sum the cited Fuglevand-Winter-Patla analytical twitch h(tau)=tau*exp(1-tau) at dimensionless rate nu=f*T; the steady-state fusion index FI(nu)=F_min/F_max rises monotonically 0->1 and SATURATES, with NO free parameter. This reproduces the measured low-rate-twitch / high-rate-smooth-tetanus fusion (Rack & Westbury 1969).",
+  "validated_claim": "the DIMENSIONLESS fusion curve FI(nu) (monotone rise + saturation, and the well-fused knee at nu*~1.08) is derived from the cited twitch form with no tuning; it reproduces the measured sigmoidal tension-frequency shape.",
+  "open_O": "the ABSOLUTE fusion frequency f = nu/T (contraction time T is muscle/species-dependent); the twitch:tetanus AMPLITUDE ratio (~3.9x, representative); and the MEAN-force sigmoid plateau (needs nonlinear calcium summation, not modelled here).",
+  "convention_note": "the 'well-fused' fusion criterion FI=0.90 used to report nu* is a STATED CONVENTION (a readable landmark on the monotone curve), NOT a measurement and NOT tuned to hit a target; it is defined in code, not taken from this measured block.",
+  "payload_sha256_note": "sha256 over canonical json.dumps(measured, sort_keys=True, separators=(',',':')); the module recomputes and checks this on every run (locks the data).",
+  "payload_sha256": "71b15ae9bf0391a6f13252bbad966c2e917a1db8599e4195202c7a32977e9eba"
+ },
+ "measured": {
+  "fuglevand_winter_patla1993": {
+   "cite": "Fuglevand AJ, Winter DA, Patla AE (1993) Models of recruitment and rate coding organization in motor-unit pools. J Neurophysiol 70:2470-2488. doi:10.1152/jn.1993.70.6.2470",
+   "twitch_model": "analytical motor-unit twitch (impulse response of a critically-damped 2nd-order system): h(t) = (t/T) * exp(1 - t/T), peak amplitude 1 at t = T, where T is the contraction time. In dimensionless form with tau = t/T it carries NO free parameter.",
+   "normalization_result": "force-frequency / fusion behaviour collapses onto a single curve when firing rate f is expressed as the dimensionless product nu = f*T (rate normalized to the inverse contraction time 1/T); curves for units of different T then coincide.",
+   "verbatim": "the twitch was modelled as the impulse response of a critically damped second-order system; when stimulus rate is normalized to the twitch contraction time the force-frequency curves of different motor units are similar"
+  },
+  "rack_westbury1969": {
+   "cite": "Rack PMH, Westbury DR (1969) The effects of length and stimulus rate on tension in the isometric cat soleus muscle. J Physiol 204:443-460. doi:10.1113/jphysiol.1969.sp008923",
+   "preparation": "anaesthetised cat, isometric soleus, controlled stimulus rate",
+   "tension_frequency_shape": "sigmoidal: tension rises with stimulus rate, with progressive fusion of twitches into a smooth tetanus and a high-rate plateau",
+   "approx_tetanic_fusion_rate_pps": 35,
+   "approx_physiological_rate_pps": 5.5,
+   "verbatim": "tension increased with stimulus rate along an S-shaped curve; at low rates individual twitches were visible, fusing into a smooth tetanus at higher rates"
+  },
+  "twitch_tetanus_ratio": {
+   "value_representative": 3.9,
+   "is_measured_input_not_derived": true,
+   "note": "representative whole-muscle twitch:tetanus (peak tetanic / peak twitch) force ratio; muscle-, species- and temperature-dependent. Sets the AMPLITUDE of a fully-fused tetanus relative to a single twitch; the precise value is left open [O]. NOT tuned to any target.",
+   "cite": "order-of-magnitude consistent with Close RI (1972) Dynamic properties of mammalian skeletal muscles. Physiol Rev 52:129-197 (twitch:tetanus typically ~1:3 to ~1:5 across mammalian muscles)"
+  },
+  "contraction_time_references": {
+   "human_soleus_ms": 156.5,
+   "human_soleus_sd_ms": 14.7,
+   "human_soleus_cite": "Buchthal F, Schmalbruch H (1970) Contraction times and fibre types in intact human muscle. Acta Physiol Scand 79:435-452. doi:10.1111/j.1748-1716.1970.tb04744.x",
+   "note": "contraction time T is muscle/species/fibre-type dependent (tens to ~150+ ms); it sets the ABSOLUTE rate axis f = nu/T and therefore stays open [O]. Only the dimensionless fusion curve in nu is derived/validated here."
+  },
+  "fusion_index_definition": {
+   "FI": "FI = F_min / F_max evaluated over one steady-state period of the summed twitch train; FI = 0 for isolated (unfused) twitches and FI -> 1 for a smooth (fully fused) tetanus",
+   "derived_property": "under linear twitch summation the MEAN force is unbounded in rate (no plateau); what saturates is the FUSION (disappearance of ripple). The sigmoidal MEAN-force plateau of Rack & Westbury additionally requires nonlinear (calcium) summation, which is NOT modelled here and stays open [O]."
+  }
+ }
+}

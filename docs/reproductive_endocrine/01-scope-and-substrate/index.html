@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scope and the jammed-vacuum substrate &mdash; Reproductive Endocrine &sect;1 | Jamming Physics</title>
+<meta name="description" content="The reproductive / gonadal-endocrine axis on a jammed-vacuum substrate: one R19 switch and one FHN oscillator give one drive, two failure modes, one temporal-pattern lever.">
+<link rel="canonical" href="https://jamming-physics.org/reproductive_endocrine/01-scope-and-substrate/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Scope and the jammed-vacuum substrate &mdash; Reproductive Endocrine &sect;1 | Jamming Physics"><meta property="og:description" content="The reproductive / gonadal-endocrine axis on a jammed-vacuum substrate: one R19 switch and one FHN oscillator give one drive, two failure modes, one temporal-pattern lever."><meta property="og:url" content="https://jamming-physics.org/reproductive_endocrine/01-scope-and-substrate/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Scope and the jammed-vacuum substrate &mdash; Reproductive Endocrine &sect;1 | Jamming Physics"><meta name="twitter:description" content="The reproductive / gonadal-endocrine axis on a jammed-vacuum substrate: one R19 switch and one FHN oscillator give one drive, two failure modes, one temporal-pattern lever.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Scope and the jammed-vacuum substrate", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Reproductive Endocrine", "sameAs": "https://jamming-physics.org/reproductive_endocrine/"}, "position": 1, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/01-scope-and-substrate/", "knowsAbout": ["jamming lattice", "R19 bistable switch", "FitzHugh-Nagumo oscillator", "HPG axis", "rectification constant"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Reproductive Endocrine", "item": "https://jamming-physics.org/reproductive_endocrine/"}, {"@type": "ListItem", "position": 3, "name": "§1 Scope &amp; substrate"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="../">Reproductive Endocrine</a> &rsaquo; &sect;1</nav></header>
+<main>
+<h1>Scope and the jammed-vacuum substrate: one drive, two failures, one lever</h1>
+
+<p class="answer">This package derives the human gonadal-endocrine (HPG) axis on a jammed-vacuum substrate, where a single bistable R19 switch and a single FitzHugh-Nagumo relaxation oscillator generate every reproductive rhythm. One sex-hormone drive h yields two failure modes &mdash; an oscillator disease and an oncogenic switch &mdash; governed by one lever: temporal pattern. Brain-facing HPA stays in the Felt Cognition paper.</p>
+
+<p class="abstract">The substrate is the R19 tilted double well V(s) = &minus;&gamma;s&sup2;/2 + s&#8308;/4 &minus; hs, whose spinodal h<sub>sp</sub> = 2(&gamma;/3)<sup>3/2</sup> = 0.3849 at &gamma;=1 makes every fate-flip discontinuous. The same kernel, run as an FHN oscillator, produces the GnRH pulse, the menstrual cycle, and the spermatogenic cycle by changing only the recovery timescale &tau;<sub>s</sub>. No new physics is introduced here; the vendored primitives are used unchanged.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/" rel="noopener">reproduction code (GitHub)</a>
+  <a class="doi" href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">DOI 10.5281/zenodo.20754657</a>
+</aside>
+
+<aside class="vp-card" data-locked="spinodal"><b>h<sub>sp</sub> = 2(&gamma;/3)<sup>3/2</sup></b> &mdash; the R19 spinodal: the drive past which the opposite basin disappears, so the flip is <b>discontinuous</b> (= 0.3849 at &gamma;=1). <b>[F]</b> forced (geometric). <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a></aside>
+<aside class="vp-card" data-locked="barrier"><b>&Delta;V<sub>0</sub> = &gamma;<sup>2</sup>/4</b> &mdash; the energy barrier between the two R19 basins (state stability); a sustained drive tilts the well and lowers it. <b>[F]</b> forced. <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a></aside>
+
+<h2>The substrate is a jammed-vacuum lattice, not a new postulate</h2>
+<p>The VP programme treats the vacuum as a jammed granular medium; this package inherits its bistable switch and oscillator unchanged. A cell or tissue fate is a point in the R19 double-well potential, and a hormone is a tilt h on that well.</p>
+<figure class="eq">
+  <img src="../eq/rep-sub-001.svg" width="232" height="35" loading="lazy" alt="V(s) = -\frac{1}{2}\gamma s^{2} + \frac{1}{4}s^{4} - h\,s">
+  <figcaption>R19 tilted double-well potential (the fate landscape).</figcaption>
+</figure>
+<p>The stationary states are the roots of the cubic, so for three real roots there are two minima and a saddle. As the tilt h grows the metastable minimum and the saddle approach and annihilate at the spinodal &mdash; beyond it the flip is unavoidable and discontinuous.</p>
+<figure class="eq">
+  <img src="../eq/rep-sub-002.svg" width="319" height="30" loading="lazy" alt="\dot s = \gamma s - s^{3} + h \;\Rightarrow\; s^{3} - \gamma s - h = 0">
+  <figcaption>Force balance; its roots are the basins (outer) and the saddle (middle).</figcaption>
+</figure>
+<h2>Two locked constants set every threshold and barrier</h2>
+<p>The spinodal fixes where a switch flips, and the barrier fixes how stable a basin is &mdash; both are forced functions of the identity constant &gamma; alone. At &gamma;=1 the spinodal is 0.3849 and the barrier is 0.2500.</p>
+<figure class="eq">
+  <img src="../eq/rep-sub-003.svg" width="153" height="36" loading="lazy" alt="h_{\mathrm{sp}}(\gamma) = 2\left(\frac{\gamma}{3}\right)^{3/2}">
+  <figcaption>Spinodal: the drive past which the opposite basin disappears.</figcaption>
+</figure>
+<figure class="eq">
+  <img src="../eq/rep-sub-004.svg" width="116" height="41" loading="lazy" alt="\Delta V_{0}(\gamma) = \frac{\gamma^{2}}{4}">
+  <figcaption>Inter-basin energy barrier (state stability).</figcaption>
+</figure>
+<h2>The unifying thesis: one drive, two failure modes, one lever</h2>
+<p>One sex-hormone drive h, moved two opposite ways, produces the whole disease map. Move it the wrong <em>pattern</em> and the HPG oscillator fails (an endocrine disorder); lower the barrier and the R19 oncogenic switch crosses (a hormone-driven cancer).</p>
+<p>The single control axis the framework exposes is therefore temporal pattern &mdash; pulsatile versus continuous, cycling versus sustained. This thesis is developed across the discriminant targets (&sect;3&ndash;&sect;7), oncology (&sect;8), therapy (&sect;9) and the disease map (&sect;10).</p>
+<h2>Firewall: this package owns the gonadal axis only</h2>
+<p>Decomposition is by physical regime, not textbook organ-system labels: this is the jamming (hormonal-cycle / germline) class. The brain-facing hypothalamic-pituitary-adrenal (HPA) stress axis and felt experience belong to the Felt Cognition paper and are cited, never re-derived here.</p>
+<p class="note">Sex-hormone <em>levels</em> are this package&rsquo;s single source of truth (SSOT); sibling packages cite them rather than recomputing them.</p>
+
+<nav class="pn">
+  <a href="../">&larr; contents</a>
+  <a href="../">paper contents</a>
+  <a rel="next" href="../02-organ-emergence-measured-gamma/">&sect;2 &rarr;</a>
+</nav>
+</main>
+<footer><strong>Reproductive Endocrine</strong> &mdash; part of the VP Theory programme (<a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">jamming branch</a>). Author <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">Young Jae Lee</a> (ORCID). DOI: <a href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">10.5281/zenodo.20754657</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Living version: <a href="https://jamming-physics.org/reproductive_endocrine/">jamming-physics.org/reproductive_endocrine/</a>. Research package; falsifiable, deterministic, honestly graded &mdash; not clinical advice.</footer>
+</body>
+</html>

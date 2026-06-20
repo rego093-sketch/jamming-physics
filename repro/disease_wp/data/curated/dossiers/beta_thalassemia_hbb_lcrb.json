@@ -1,0 +1,148 @@
+{
+  "schema": "disease_wp.dossier/v1",
+  "phase": "R2",
+  "investigation_only": true,
+  "identity": {
+    "entity": "Beta-thalassemia HBB/LCRB",
+    "medgen_cui": "CN322236",
+    "medgen_uid": "1001603",
+    "omim_codes": [
+      "613985"
+    ],
+    "omim_code_source": "MedGen conceptmeta (SAB=OMIM) + omim_join_supplement.csv (HPO-name-verified)",
+    "genes": [
+      "HBB",
+      "HBB-LCR"
+    ],
+    "semantic_type": "Disease or Syndrome",
+    "tier": "flagship",
+    "system_class": "hematologic",
+    "in_scope": true,
+    "cns_cross_reference": "false"
+  },
+  "inheritance": {
+    "value": "not_stated",
+    "grade": "[O]",
+    "obstacle": "MedGen esummary returned no ModeOfInheritance for this concept; provenance medgen:esummary:no_ModeOfInheritance:2026-06-17"
+  },
+  "molecular_mechanism": {
+    "value": "loss-of-function (reduced/absent beta-globin)",
+    "grade": "[L]",
+    "source": "curated_rule:hbb_thal_lof; established molecular genetics; OMIM(row) molecular section; OMIM:613985"
+  },
+  "gene_function": [
+    {
+      "value": {
+        "gene": "HBB",
+        "geneid": "3043",
+        "full_name": "hemoglobin subunit beta",
+        "summary": "The alpha (HBA) and beta (HBB) loci determine the structure of the 2 types of polypeptide chains in adult hemoglobin, Hb A. The normal adult hemoglobin tetramer consists of two alpha chains and two beta chains. Mutant beta globin causes sickle cell anemia. Absence of beta chain causes beta-zero-thalassemia. Reduced amounts of detectable beta globin causes beta-plus-thalassemia. The order of the genes in the beta-globin cluster is 5'-epsilon -- gamma-G -- gamma-A -- delta -- beta--3'. [provided by RefSeq, Jul 2008]"
+      },
+      "grade": "[L]",
+      "source": "NCBI Gene:3043 RefSeq Summary; retrieved 2026-06-17"
+    },
+    {
+      "value": {
+        "gene": "HBB-LCR",
+        "geneid": "109580095",
+        "full_name": "beta-globin locus control region",
+        "summary": "This genomic sequence, which spans 34 kb upstream of the hemoglobin subunit epsilon 1 (HBE1) gene, represents the 5' regulatory region of the human beta-globin gene cluster on chromosome 11. It includes a locus control region (LCR), which can confer developmentally regulated, position-independent and copy number-dependent expression on linked beta-globin genes in transgenic mice. The LCR is the major element controlling expression of the downstream beta-globin genes (epsilon, G-gamma, A-gamma, delta and beta, or HBE1, HBG2, HBG1, HBD and HBB, respectively), which are organized on the chromosome in their order of developmental expression. This region includes several DNase I hypersensitive sites (HSs; 5'HS1-5'HS7 in the entire region, 5'HS1-5'HS5 in the LCR), some of which possess enhancer activity in erythroid cells and/or function in synergy (e.g., the 5'HS2 and 5'HS3 enhancers). The HSs bind to erythroid transcription factors and are associated with regulatory complexes involved in beta-globin gene expression and the organization of local chromatin domain structure. This region also includes matrix attachment regions (MARs), silencers, an enhancer-blocking element (at 5'HS5), a DNA-RNA triplex-forming region (at 5'HS2) that reduces beta-globin gene expression, and a retroviral element (ERV-9) with enhancer activity in erythrocytes. Chromosome conformation capture assays show that the LCR is an integral part of the beta-globin active chromatin hub in erythroid cells, where it undergoes looping interactions with distal 5' and 3' HSs (HS-111 and 3'HS1) and the active beta-globin gene promoters. A larger region that includes 5'HS2-5'HS5 of the LCR plus an additional 27 kb may regulate replication initiation at a replication origin (IR) in the vicinity of the adult beta-globin (HBB) gene. Mutations in this LCR result in beta-thalassemias and beta-hemoglobinopathies. A large naturally-occurring deletion, which includes the sequence spanning 5'HS2-5'HS7, results in Hispanic gamma-delta-beta thalassemia and a closed chromatin conformation across the beta-globin locus. [provided by RefSeq, Dec 2019]"
+      },
+      "grade": "[L]",
+      "source": "NCBI Gene:109580095 RefSeq Summary; retrieved 2026-06-17"
+    }
+  ],
+  "variant_spectrum": [
+    {
+      "value": {
+        "gene": "HBB",
+        "total_records": 1962,
+        "germline_classification_counts": {
+          "Pathogenic": 628,
+          "Likely pathogenic": 194,
+          "Uncertain significance": 1506,
+          "Likely benign": 1475,
+          "Benign": 1482
+        }
+      },
+      "grade": "[L]",
+      "source": "ClinVar gene query 'HBB[gene]' with [Germline classification] filters; retrieved 2026-06-17; categories overlap, not summed"
+    },
+    {
+      "value": {
+        "gene": "HBB-LCR",
+        "total_records": 68,
+        "germline_classification_counts": {
+          "Pathogenic": 6,
+          "Likely pathogenic": 0,
+          "Uncertain significance": 62,
+          "Likely benign": 62,
+          "Benign": 62
+        }
+      },
+      "grade": "[L]",
+      "source": "ClinVar gene query 'HBB-LCR[gene]' with [Germline classification] filters; retrieved 2026-06-17; categories overlap, not summed"
+    }
+  ],
+  "clinical": {
+    "organ_systems": {
+      "value": [
+        {
+          "system": "Abnormality of blood and blood-forming tissues",
+          "hpo_id": "HP:0001871",
+          "supporting_term_count": 2
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 613985); P-aspect terms rolled up to HP:0000118 organ-system categories via hp.obo"
+    },
+    "cardinal_symptoms": {
+      "value": [
+        {
+          "hpo_id": "HP:0004840",
+          "name": "Hypochromic microcytic anemia",
+          "frequency": null,
+          "reference": "OMIM:613985"
+        },
+        {
+          "hpo_id": "HP:0011906",
+          "name": "Reduced beta/alpha synthesis ratio",
+          "frequency": null,
+          "reference": "OMIM:613985"
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 613985); top P-aspect phenotypes by annotated frequency; reference = HPO source citation"
+    },
+    "age_of_onset": {
+      "value": [],
+      "grade": "[O]",
+      "obstacle": "no HPO onset annotation joinable (OMIM cross-ref: 613985)"
+    },
+    "prevalence": {
+      "value": null,
+      "grade": "[O]",
+      "obstacle": "prevalence/incidence not stated in the MedGen definition; epidemiological magnitude requires a dedicated source (e.g. Orphanet/GBD), deferred — not guessed"
+    },
+    "clinical_definition": {
+      "value": "Beta-thalassemia (ß-thalassemia) has two clinically significant forms, ß-thalassemia major and ß-thalassemia intermedia, caused by absent or reduced synthesis of the hemoglobin subunit beta (beta globin chain). Individuals with ß-thalassemia major present between ages six and 24 months with pallor due to severe anemia, poor weight gain, stunted growth, mild jaundice, and hepatosplenomegaly. Feeding problems, diarrhea, irritability, and recurrent bouts of fever may occur. Treatment with regular red blood cell transfusions and iron chelation therapy allows for normal growth and development and improves prognosis. Long-term complications associated with iron overload include stunted growth, dilated cardiomyopathy, liver disease, and endocrinopathies. Individuals with ß-thalassemia intermedia have a more variable age of presentation due to milder anemia that does not require regular red blood cell transfusions from early childhood. Additional clinical features may include jaundice, cholelithiasis, hepatosplenomegaly, skeletal changes (long bone deformities, characteristic craniofacial features, and osteoporosis), leg ulcers, pulmonary hypertension, extramedullary masses of hyperplastic erythroid marrow, and increased risk of thrombotic complications. Individuals with ß-thalassemia intermedia are at risk for iron overload secondary to increased intestinal absorption of iron as a result of dysregulation of iron metabolism caused by ineffective erythropoiesis.",
+      "grade": "[L]",
+      "source": "MedGen concept CN322236 (NCBI MedGen); retrieved 2026-06-17"
+    }
+  },
+  "provenance": {
+    "disease_index": "data/curated/disease_index.csv",
+    "medgen_cohort_cache": "data/raw/medgen/dossier_cohort_esummary.json",
+    "gene_resources_cache": "data/raw/clinvar/cohort_gene_resources.json",
+    "hpo_annotations": "data/raw/hpo/phenotype.hpoa.gz (v2026-06-06)",
+    "hpo_ontology": "data/raw/hpo/hp.obo.gz",
+    "mechanism_rules": "methodology/mechanism_rules.csv",
+    "omim_join_supplement": "methodology/omim_join_supplement.csv",
+    "retrieved": "2026-06-17"
+  },
+  "grade_vocabulary": {
+    "[L]": "source-stated and cited (observed input)",
+    "[H]": "inference from established science; basis recorded",
+    "[O]": "open/unavailable; obstacle named; not guessed"
+  }
+}

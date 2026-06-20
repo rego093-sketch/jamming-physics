@@ -1,0 +1,192 @@
+{
+  "D1_acute_hypocoordination": {
+    "R_vs_withdrawal_bias": {
+      "-0.1": 0.378595,
+      "-0.2": 0.363549,
+      "-0.3": 0.365343,
+      "-0.5": 0.357384,
+      "-0.7": 0.330986,
+      "0.0": 0.389615
+    },
+    "acute_reproduced": true,
+    "all_withdrawal_below_health": true,
+    "model": "a sustained chronic-stress WITHDRAWAL bias (HPA handle) lowers the global order parameter R below health -- the acute / reactive depressed operating point; a deeper withdrawal lowers it further; fully reversible on the static substrate",
+    "reversible_on_static_substrate": "eta=0 -> the excursion is fully reversible (see D2)",
+    "severe_below_mild": true,
+    "stress_bias": -0.3
+  },
+  "D2_chronification": {
+    "R_baseline": 0.389615,
+    "_what": "the reversible->chronified switch (E0.3) DRIVEN BY THE HPA HANDLE: eta=0 a stress excursion fully reverts (reactive low mood that lifts); eta>0 it writes a retained structural trace (the substrate of chronic depression) that deepens with exposure",
+    "chronification_reproduced": true,
+    "deepening_holds_over_eta_sweep": true,
+    "eta0_R_after_stressor_removed": 0.389615,
+    "eta0_retained_trace_dW": 0.0,
+    "eta0_reverts_exactly": true,
+    "eta_pos_R_after_stressor_removed": 0.392699,
+    "eta_pos_retained_trace_dW": 0.226744,
+    "eta_pos_retains_structural_trace": true,
+    "honest_note_on_R": "the robust, sign-stable signal is the retained STRUCTURAL trace ||dW||; the post-removal coordination R is NOT asserted to sit below baseline (phase-Hebb consolidates the surviving in-phase structure, so R can tick up) -- reported honestly, not claimed. The persistent OBJECT is the trace.",
+    "reading": "WITHOUT plasticity (eta=0) the sustained withdrawal fully REVERTS when the stressor is removed -- a REACTIVE low mood, the E0.3 'no-plasticity reverts' result on the HPA handle. WITH plasticity (eta>0) the same excursion leaves a retained structural trace that does not revert -- the structural substrate of CHRONIFICATION -- and the trace deepens monotonically with exposure (kindling direction). Axis-A firewall: a retained trace is a mechanism boundary, NOT a claim about the felt quality of chronic low mood.",
+    "stress_bias": -0.3,
+    "trace_deepens_with_exposure": true,
+    "trace_depth_vs_exposure": {
+      "0": 0.0,
+      "4": 0.075469,
+      "8": 0.151304,
+      "12": 0.226744,
+      "18": 0.337625
+    }
+  },
+  "D3_antidepressant_delayed_onset": {
+    "R_after_full_course": 0.39553,
+    "R_chronified": 0.393387,
+    "R_vs_antidepressant_epochs": {
+      "0": 0.393387,
+      "1": 0.39289,
+      "2": 0.393295,
+      "4": 0.395085,
+      "8": 0.39553
+    },
+    "_what": "antidepressant DELAYED ONSET as a consolidation timescale, not a pharmacokinetic delay: a coordination-restoring push moves the chronified structure only slowly",
+    "antidepressant_bias": 0.1,
+    "delayed_onset_reproduced": true,
+    "reading": "the restoring structural movement ||W_k - W_dep|| accumulates monotonically over epochs and is small after a single epoch -- the effect builds over a consolidation timescale (the weeks-to-onset signature of antidepressants), not instantly. Its direction is therapeutic (coordination R after the full course exceeds the chronified R), and that sign holds over an eta x strength sweep. Sign / timescale only; efficacy = 0.",
+    "restoring_move_monotone_up": true,
+    "restoring_move_small_after_one_epoch": true,
+    "restoring_move_vs_epochs": {
+      "0": 0.0,
+      "1": 0.018034,
+      "2": 0.035858,
+      "4": 0.07089,
+      "8": 0.138354
+    },
+    "therapeutic_direction_R_rises": true,
+    "therapeutic_direction_holds_over_sweep": true
+  },
+  "D4_treatment_resistance": {
+    "_what": "TREATMENT RESISTANCE = the DEPTH of the chronified trace: at a FIXED restoring budget the FRACTION of the depressive structural trace the antidepressant neutralises decreases as the trace deepens",
+    "antidepressant_bias": 0.1,
+    "depth_and_restoration_by_chronification": {
+      "12": {
+        "fractional_restoration": 0.623581,
+        "restoring_move_at_budget": 0.141394,
+        "trace_depth": 0.226744
+      },
+      "20": {
+        "fractional_restoration": 0.342872,
+        "restoring_move_at_budget": 0.128112,
+        "trace_depth": 0.373643
+      },
+      "30": {
+        "fractional_restoration": 0.197425,
+        "restoring_move_at_budget": 0.107275,
+        "trace_depth": 0.543369
+      },
+      "6": {
+        "fractional_restoration": 1.310224,
+        "restoring_move_at_budget": 0.148591,
+        "trace_depth": 0.113409
+      }
+    },
+    "fixed_budget_epochs": 8,
+    "fractional_restoration_monotone_down_in_depth": true,
+    "reading": "a deeper (longer-consolidated) chronified trace is proportionally LESS reachable at a fixed restoring budget -- the same budget neutralises a smaller FRACTION of the depressive structure, leaving a larger residual. The structural reading of treatment-resistant depression. Sign only; efficacy = 0; a residual structural trace is a mechanism boundary, NOT a claim about the felt quality of refractory depression (Axis-A).",
+    "shallow_restored_more_than_deep": true,
+    "trd_ordering_holds_over_eta_x_budget": true,
+    "treatment_resistance_reproduced": true
+  },
+  "D5_engine_invariance_guard": {
+    "R_direct_measured": "0.38961455156044245",
+    "_what": "eta=0 and stress=0 reproduce the frozen M9 coordination anchor bit-for-bit -- T1b is a pure add-on on top of E0",
+    "eta0_W_identical_to_kernel": true,
+    "eta0_epoch_R": "0.38961455156044245",
+    "eta0_matches_direct_bitwise": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "guard": true,
+    "matches_frozen_anchor_bitwise": true
+  },
+  "_what": "Depression / TRD (T1b): major depression as the CHRONIFICATION of a low-coordination operating point, built ON TOP of the E0 plasticity layer (imports PlasticConnectome; does not re-derive the rule). The HPA/stress axis (M18 cortisol cascade + M17 valence, already emerged) is the handle, mapped to the SAME effective-coupling-vs-bias map as the SZ/epilepsy/E0 modules (no new constant). A sustained withdrawal (chronic-stress) bias lowers R below health (acute hypo-coordination, fully reversible on the static substrate); WITH plasticity the excursion writes a retained structural trace -- the reversible->chronified switch, now driven by the HPA handle. Antidepressant DELAYED ONSET is the slow accumulation of restoring structural movement (a consolidation timescale, not a pharmacokinetic delay); TREATMENT RESISTANCE is the DEPTH of the chronified trace (a deeper trace is proportionally less reachable at a fixed budget). MECHANISM only -- NOT a disorder subtype, NOT felt, NOT efficacy, NOT medical advice.",
+  "axis": {
+    "acute_pole": "chronic-stress WITHDRAWAL bias -> coupling DOWN -> R below health (hypo-coordination); reversible on the static substrate (eta=0)",
+    "relation_to_atlas": "autism-T under-ignites, schizophrenia over-ignites, epilepsy over-synchronises (the synchrony/ignition axis); depression sits on the low-coupling part of the coupling axis AND on the new temporal (chronification) axis E0 opened -- the first temporal disorder",
+    "shared_axis": "the measured ephaptic coupling (global Kuramoto order parameter R) plus the E0 plasticity layer; depression = a sustained low-coupling (withdrawal) operating point that, under plasticity, chronifies into a retained structural trace",
+    "temporal_axis": "the E0 reversible->chronified switch (plasticity writes the withdrawal excursion into the connectome) -- the substrate of a CHRONIC illness"
+  },
+  "baseline_health": {
+    "R19_fold_spinodal": 0.3849,
+    "R_health": 0.389615,
+    "kappa_measured": 0.5496,
+    "n_regions": 12,
+    "plasticity_rate_eta": 0.05,
+    "reused_from_E0": "PlasticConnectome (phase-correlation Hebbian update); the coupling-vs-bias map k=kappa/(1-|b|)[excit]/kappa/(1+|b|)[inhib] cap 2*kappa -- no new constant"
+  },
+  "cited_and_locked": {
+    "antidepressant_delayed_onset_cited": "antidepressants characteristically take weeks to reach clinical effect (a delayed onset), classically linked to slow downstream / plasticity changes rather than the immediate monoamine change; E0 reproduces a delayed-onset SIGN from a consolidation timescale, a mechanism direction, NOT an efficacy claim",
+    "applications_owed_LOCK": "bipolar depression needs the state-switching layer (E2 + E0, T2b); addiction needs sensitisation (T3a); those remain OWED to later modules",
+    "depression_heterogeneous_LOCK": "real depression is HETEROGENEOUS -- melancholic, atypical, psychotic, peripartum, seasonal and bipolar depression, with monoaminergic, HPA, inflammatory, circadian and psychosocial contributors -- NOT one mechanism or one cause",
+    "depression_hypoconnectivity_direction": "major depression is associated, in DIRECTION, with reduced large-scale functional coordination / connectivity in mood and cognitive-control networks; this module reproduces the SIGN (a sustained withdrawal lowers the order parameter), NOT any magnitude or any individual's connectivity",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; which depression subtype any individual has, and whether any treatment helps them, is held OPEN",
+    "hpa_axis_in_depression_cited": "HPA-axis dysregulation (elevated / dysregulated cortisol, blunted negative feedback) is a robustly reported correlate of depression; the HPA kinetics are CITED [L] from M18 (Dickerson & Kemeny 2004 cortisol-peak window) -- this module adds NO new kinetic constant and asserts only the stress->withdrawal SIGN",
+    "rate_is_open_LOCK": "the plasticity RATE eta is [O] (the E0 representative rate); only the SIGNS are asserted and they hold over an eta sweep -- no magnitude is fit",
+    "stress_to_bias_magnitude_OPEN_LOCK": "the gain mapping chronic HPA drive to the withdrawal bias magnitude is [O] (representative); only the SIGN (chronic stress -> withdrawal -> hypo-coordination) is asserted, consistent with the M17 valence geometry, and the signs hold over a stress sweep -- no magnitude is fit"
+  },
+  "honesty_ledger": {
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "plasticity_rate_eta": "OPEN [O] -- the E0 representative rate; signs hold over an eta sweep",
+    "post_removal_R_below_baseline": "NOT CLAIMED -- the robust signal is the retained structural trace ||dW||; post-removal R is reported, not asserted lower",
+    "reuses_e0_plasticity": 1.0,
+    "stress_to_bias_magnitude": "OPEN [O] -- representative; only the sign is asserted, over a stress sweep",
+    "which_subtype_individual": "OWED [O] -- requires per-individual data; the model asserts the chronification mechanism and the HPA sign, NOT which depression any individual has or whether any treatment helps them"
+  },
+  "hpa_handle": {
+    "circumplex_2d": 1.0,
+    "cortisol_peak_in_cited_window": 1.0,
+    "cortisol_peak_min": 24.06,
+    "hpa_master": "SIM1 (PVN) -- emerged in M0; HPA hub grounded (M18)",
+    "hpa_negative_feedback_on": 1.0,
+    "mapping": "chronic HPA drive -> sustained WITHDRAWAL bias b<0 -> k=kappa/(1+|b|) (lower coupling); SIGN asserted (consistent with M17 valence), MAGNITUDE [O]",
+    "valence_arousal_corr": -0.11543101,
+    "valence_axis": "approach(DA) - avoid(cortisol); cortisol on the withdrawal pole (M17)"
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_reproduced_bitwise": true,
+    "reuses_e0_layer": true
+  },
+  "overall": {
+    "acute_reproduced": true,
+    "chronification_reproduced": true,
+    "delayed_onset_reproduced": true,
+    "engine_invariance_guard": true,
+    "is_full_module": true,
+    "treatment_resistance_reproduced": true,
+    "verdict": "depression is the chronification of a low-coordination operating point: a sustained HPA-driven withdrawal bias lowers coordination below health (acute, reversible); under the E0 plasticity layer the excursion writes a retained structural trace -- the reversible->chronified switch on the HPA handle -- that deepens with exposure. Antidepressant delayed onset is the slow accumulation of restoring structural movement (a consolidation timescale), and treatment resistance is the depth of the chronified trace (a deeper trace is proportionally less reachable at a fixed budget). All signs hold over eta / stress / budget sweeps; the module reuses the E0 PlasticConnectome (no re-derivation) and adds no new tuned constant; eta=0/stress=0 reproduces the frozen M9 anchor bit-for-bit, engine byte-unchanged. The state-switching layer (E2, for bipolar) and sensitisation (T3a, for addiction) remain owed. efficacy=0; not medical advice; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "D1_acute_hypocoordination": {
+      "claim": "a sustained chronic-stress withdrawal bias lowers R below health (every withdrawal point below health) and a deeper withdrawal lowers it further (severe < mild); reversible on the static substrate",
+      "status": "CONFIRMED"
+    },
+    "D2_chronification_switch": {
+      "claim": "eta=0 a sustained withdrawal excursion reverts exactly when the stressor is removed; eta>0 it leaves a retained structural trace that deepens with exposure (the reversible->chronified switch on the HPA handle), over an eta sweep",
+      "status": "CONFIRMED"
+    },
+    "D3_antidepressant_delay": {
+      "claim": "a coordination-restoring push moves the chronified structure only slowly -- the restoring movement accumulates over epochs and is small after one epoch (delayed onset = a consolidation timescale) -- and its direction is therapeutic (R rises), over an eta x strength sweep",
+      "status": "CONFIRMED"
+    },
+    "D4_treatment_resistance": {
+      "claim": "at a fixed restoring budget the fraction of the depressive structural trace the antidepressant neutralises decreases as the trace deepens (deeper = treatment-resistant), over an eta x budget sweep",
+      "status": "CONFIRMED"
+    }
+  }
+}

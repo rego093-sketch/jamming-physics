@@ -1,0 +1,243 @@
+{
+  "phase": "R12",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 4 (PMC-OA dominant-sequela join) — severity lift that order-locks Duchenne muscular dystrophy",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "7480e5ecad50"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "503eabdc55cc"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "d51f4e51233a"
+    },
+    "litcurate4_join_csv": {
+      "path": "methodology/severity_litcurate4_join.csv",
+      "sha12": "28586b571553"
+    },
+    "litcurate4_excluded_csv": {
+      "path": "methodology/severity_litcurate4_excluded.csv",
+      "sha12": "ae480bcd8313"
+    },
+    "litcurate_fetch_log_r12": {
+      "path": "data/raw/litcurate/_fetch_log_r12.json",
+      "sha12": "bc09f8b57b39"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 2,
+    "S_excluded_recorded": 2
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 9,
+      "[H]": 5
+    },
+    "S": {
+      "[L]": 6,
+      "[O]": 11,
+      "[H]": 18
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate4_join": [
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "axis": "S",
+      "pmcid": "PMC13205412",
+      "pmid": "42194990",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Introduction Duchenne muscular dystrophy (DMD) is a severe, progressive neuromuscular disorder characterized by the gradual deterioration and weakening of skeletal and cardiac muscle tissue [ 1 ].",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Tyrosinemia type I",
+      "cui": "C0268490",
+      "axis": "S",
+      "pmcid": "PMC12844047",
+      "pmid": "41590629",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Background/Objectives : Tyrosinemia type 1 (HT-1) is a treatable inherited disorder characterized by disrupted tyrosine metabolism, leading to severe liver, renal, and occasionally neurological dysfunction.",
+      "prior_value": 0.75,
+      "prior_grade": "[H]",
+      "open_access": true
+    }
+  ],
+  "litcurate4_excluded": [
+    {
+      "entity": "Hurler syndrome",
+      "cui": "C0086795",
+      "axis": "S",
+      "considered_pmcid": "PMC13090637",
+      "considered_pmid": "42004902",
+      "decline_class": "comparative",
+      "considered_statement": "The severe phenotype is known as Hurler syndrome (MPS IH; OMIM 607014 ), and other forms are classified as attenuated MPS I (Hurler-Scheie syndrome, MPS IH-S, OMIM 607015 ; Scheie syndrome, MPS IS, OMIM 607016 ).",
+      "exclusion_reason": "the retrievable OA disease-level severity framing for Hurler syndrome (C0086795) is COMPARATIVE -- it defines Hurler AS 'the severe phenotype' of mucopolysaccharidosis type I in explicit contrast to the 'attenuated' forms (Hurler-Scheie, Scheie); although the frozen R3 severity function pattern-matches 'severe', the word is the phenotype-class label distinguishing Hurler from the milder MPS I forms (severe-vs-attenuated within the MPS I spectrum), not a clean disease-level magnitude for Hurler's own dominant untreated sequela; the only other retrievable 'severe' magnitude in the dedicated MPS I-H burden paper ('Severe manifestations can include organ failure, cognitive impairments, and shortened lifespan') is a property of the MPS DISORDER CLASS generally, not Hurler specifically; S left [H], not lifted"
+    },
+    {
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "cui": "CN322236",
+      "axis": "S",
+      "considered_pmcid": "PMC13262897",
+      "considered_pmid": "42201229",
+      "decline_class": "umbrella_spectrum",
+      "considered_statement": "Unlike thalassemia silent and minor which typically are asymptomatic, individuals with thalassemia intermedia present different levels of anemia at infancy, while patients with α-thalassemia major die in utero or shortly after birth, and patients with β-thalassemia major suffer from severe anemia and need lifelong transfusions and oral iron chelation therapy [ 3 , 5 , 6 ].",
+      "exclusion_reason": "the retrievable OA severity framing for the beta-thalassemia umbrella entity (CN322236) is an UMBRELLA SPECTRUM that ranges from asymptomatic (thalassemia silent and minor) through thalassemia intermedia to transfusion-dependent beta-thalassemia major ('severe anemia ... lifelong transfusions'); the disease-level magnitude is genotype/form-stratified across the silent-to-major continuum, and the 'severe' magnitude is explicitly attached to the MAJOR form, not to the umbrella entity's own single dominant sequela; the frozen R3 spectrum override trips on this within-entity range, so a clean disease-level umbrella severity tier is not defensibly isolable; S left [H], not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Tyrosinemia type I",
+      "axis": "S",
+      "old": 0.75,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "axes_scored": 5
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axes_scored": 4
+    }
+  ],
+  "registry_set_sha12": "8c5dbae815f7",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r11->r12 chain registry-set sha 8c5dbae815f7 == 8c5dbae815f7"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r11",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2', 'R11_litcurate3', 'R12_litcurate4']"
+    },
+    {
+      "name": "litcurate4_join_anchored_cited",
+      "pass": true,
+      "detail": "2 round-4 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate4_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-4 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate4_excluded_recorded",
+      "pass": true,
+      "detail": "2 round-4 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R11 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R11; S/P changed only for the 2 round-4 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "new_order_lock_is_duchenne",
+      "pass": true,
+      "detail": "order-lock set grows 4 -> 5; the single added lock is EXACTLY Duchenne muscular dystrophy ['Duchenne muscular dystrophy'] via S [H]->[L] (onset/progression/mortality/disability already [L]); the grade-only second lift does not lock; no lock removed"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate4_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 4 round-4 cited sources open-access + sha-pinned; every round-4 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "prior_round_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 + R10 + R11 recorded join/excluded CSVs byte-identical to their digests (0 modified) -- R12 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

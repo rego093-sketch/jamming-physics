@@ -1,0 +1,404 @@
+{
+  "phase": "R7",
+  "kind": "investigation_gate",
+  "title": "open-source natural-history pass (GBD disability weights + PMC survival) — D lift / M corroboration",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "0c5f96885d67"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "d76fb1cd7a37"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "8d39d36ef9f5"
+    },
+    "gbd_dw_pdf": {
+      "path": "data/raw/gbd/salomon2015_mmc1.pdf",
+      "sha12": "c7d22442bad8"
+    },
+    "gbd_dw_table": {
+      "path": "data/raw/gbd/gbd_disability_weights.json",
+      "sha12": "b7791f57b4ae"
+    },
+    "litsurvival_log": {
+      "path": "data/raw/litsurvival/_fetch_log.json",
+      "sha12": "9ecf8b64ebd8"
+    },
+    "omim_log": {
+      "path": "data/raw/omim/_fetch_log.json",
+      "sha12": "1b27d6cb7f62"
+    }
+  },
+  "lift_counts": {
+    "D_excluded_recorded": 9,
+    "M_L_corroborated_pmc": 2,
+    "S_kept_H": 22,
+    "P_O_kept_no_source": 21,
+    "D_H_to_L": 3,
+    "S_O_kept_no_source": 11,
+    "P_kept_H": 9,
+    "P_kept_L": 5,
+    "D_O_to_L": 6,
+    "M_O_kept_no_figure": 18,
+    "S_kept_L": 2,
+    "D_O_kept_no_state": 13,
+    "D_kept_L": 3,
+    "D_L_corroborated": 1
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[H]": 9,
+      "[L]": 5
+    },
+    "S": {
+      "[H]": 22,
+      "[O]": 11,
+      "[L]": 2
+    },
+    "M": {
+      "[L]": 8,
+      "[H]": 9,
+      "[O]": 18
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "gbd_disability_join": [
+    {
+      "entity": "Glycogen storage disease, type II",
+      "cui": "C0017921",
+      "gbd_health_state": "Motor impairment: severe",
+      "dw2013": 0.402,
+      "ui": [
+        0.268,
+        0.545
+      ],
+      "disability_tier": 0.75,
+      "prior_value": 0.75,
+      "prior_grade": "[H]",
+      "evidence_basis": "GeneReviews NBK1261 (Pompe Disease) Clinical Description: progressive muscle weakness and motor impairment; intellect typically normal"
+    },
+    {
+      "entity": "Hurler syndrome",
+      "cui": "C0086795",
+      "gbd_health_state": "Motor plus cognitive impairments: severe",
+      "dw2013": 0.542,
+      "ui": [
+        0.374,
+        0.702
+      ],
+      "disability_tier": 0.75,
+      "prior_value": 0.75,
+      "prior_grade": "[H]",
+      "evidence_basis": "GeneReviews NBK1162 (MPS I) Clinical Description: progressive cognitive decline with motor and skeletal disease in the severe (Hurler) phenotype"
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "gbd_health_state": "Motor plus cognitive impairments: severe",
+      "dw2013": 0.542,
+      "ui": [
+        0.374,
+        0.702
+      ],
+      "disability_tier": 0.75,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "GeneReviews NBK1370 (Acid Sphingomyelinase Deficiency, type A): rapidly progressive neurodegeneration, loss of motor and cognitive milestones"
+    },
+    {
+      "entity": "alpha Thalassemia",
+      "cui": "C0002312",
+      "gbd_health_state": "Anemia: moderate",
+      "dw2013": 0.052,
+      "ui": [
+        0.034,
+        0.076
+      ],
+      "disability_tier": 0.2,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "MedGen clinical_definition: HbH disease chronic hemolytic anemia of moderate severity"
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "gbd_health_state": "Motor impairment: severe",
+      "dw2013": 0.402,
+      "ui": [
+        0.268,
+        0.545
+      ],
+      "disability_tier": 0.75,
+      "prior_value": 0.75,
+      "prior_grade": "[L]",
+      "evidence_basis": "GeneReviews NBK1119 (Dystrophinopathies) Clinical Description: loss of independent ambulation, wheelchair use by early teens"
+    },
+    {
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "cui": "CN322236",
+      "gbd_health_state": "Anemia: severe",
+      "dw2013": 0.149,
+      "ui": [
+        0.101,
+        0.209
+      ],
+      "disability_tier": 0.5,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "MedGen clinical_definition: severe anemia from infancy requiring regular transfusion (transfusion-dependent beta-thalassemia / Cooley anemia)"
+    },
+    {
+      "entity": "Hereditary factor IX deficiency disease",
+      "cui": "C0008533",
+      "gbd_health_state": "Musculoskeletal problems: generalised, moderate",
+      "dw2013": 0.317,
+      "ui": [
+        0.216,
+        0.44
+      ],
+      "disability_tier": 0.75,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "GeneReviews NBK1495 (Hemophilia B): recurrent joint bleeding leads to progressive, disabling arthropathy without prophylaxis"
+    },
+    {
+      "entity": "Hereditary factor VIII deficiency disease",
+      "cui": "C0019069",
+      "gbd_health_state": "Musculoskeletal problems: generalised, moderate",
+      "dw2013": 0.317,
+      "ui": [
+        0.216,
+        0.44
+      ],
+      "disability_tier": 0.75,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "GeneReviews NBK1404 (Hemophilia A): recurrent joint bleeding leads to progressive, disabling arthropathy without prophylaxis"
+    },
+    {
+      "entity": "Maple syrup urine disease",
+      "cui": "C0024776",
+      "gbd_health_state": "Intellectual disability: severe",
+      "dw2013": 0.16,
+      "ui": [
+        0.107,
+        0.226
+      ],
+      "disability_tier": 0.5,
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "evidence_basis": "MedGen clinical_definition: without treatment, neurological damage and intellectual disability"
+    },
+    {
+      "entity": "Phenylketonuria",
+      "cui": "C0031485",
+      "gbd_health_state": "Intellectual disability: severe",
+      "dw2013": 0.16,
+      "ui": [
+        0.107,
+        0.226
+      ],
+      "disability_tier": 0.5,
+      "prior_value": 0.75,
+      "prior_grade": "[H]",
+      "evidence_basis": "GeneReviews NBK1504 (Phenylalanine Hydroxylase Deficiency): untreated classic PKU causes profound, irreversible intellectual disability"
+    }
+  ],
+  "gbd_excluded": [
+    {
+      "entity": "Hb SS disease",
+      "cui": "C0002895",
+      "reason": "multi-domain: chronic hemolytic anemia + episodic vaso-occlusive pain crises + cumulative ischemic organ damage (stroke, acute chest, splenic/renal). No single GBD health state captures the dominant sequela without gross under-statement; D left [O] (not guessed)"
+    },
+    {
+      "entity": "Cystic fibrosis",
+      "cui": "C0010674",
+      "reason": "multi-system: progressive obstructive lung disease + exocrine pancreatic insufficiency + nutritional/GI involvement; no single dominant GBD state. D left [O]"
+    },
+    {
+      "entity": "Classic homocystinuria",
+      "cui": "C0751202",
+      "reason": "variable and pyridoxine(B6)-responsive in a major subset; multi-domain (intellectual disability + ectopia lentis + skeletal marfanoid + thromboembolism); no single dominant untreated state. D left at banked grade (not lifted)"
+    },
+    {
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "reason": "multi-domain (progressive renal + cardiac + cerebrovascular + neuropathic pain + GI); no single dominant disability state. D left [O]"
+    },
+    {
+      "entity": "Wilson disease",
+      "cui": "C0019202",
+      "reason": "variable hepatic vs neuropsychiatric presentation; highly treatable; no single dominant untreated disability state. D left [O]"
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "reason": "dominant life-threat is aortic dissection/rupture (captured on the mortality axis); chronic functional disability is variable (skeletal/ocular). No single dominant disability state. D left [O]"
+    },
+    {
+      "entity": "Polycystic kidney disease 2",
+      "cui": "C2751306",
+      "reason": "disability is stage-dependent (slowly progressive CKD reaching ESRD typically in later adulthood, and not in all); no single fixed-tier dominant state for the untreated natural history. D left [O]"
+    },
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "reason": "perinatal-lethal skeletal dysplasia: death in utero or neonatally precludes a chronic disability phase (whole burden is on onset/mortality). D left [O]"
+    },
+    {
+      "entity": "Tyrosinemia type I",
+      "cui": "C0268490",
+      "reason": "untreated natural history is mortality-dominant (acute liver failure, hepatocellular carcinoma, neurological crises); no single chronic disability state distinct from the lethal course (burden on the mortality axis). D left [O]"
+    }
+  ],
+  "pmc_mortality_corroborations": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "pmcid": "PMC12692501",
+      "banked_value": 1.0,
+      "candidate_tier": 1.0,
+      "sentence": "The condition is often lethal, with death usually occurring either in utero or in the early neonatal period [ 28 ]."
+    },
+    {
+      "entity": "Hurler syndrome",
+      "cui": "C0086795",
+      "pmcid": "PMC13090637",
+      "banked_value": 1.0,
+      "candidate_tier": 1.0,
+      "sentence": "Despite earlier diagnosis from earlier indications of disease onset, the median lifespan for untreated MPS IH patients is under 10 years [15] , whereas the median lifespan for untreated MPS IA patients is longer, with the majority of patients living into adulthood [15] , [30] ."
+    }
+  ],
+  "promotions": [
+    {
+      "entity": "Beta-thalassemia HBB/LCRB",
+      "cui": "CN322236",
+      "axes_scored": 3,
+      "raw_burden": 0.5666666666666665
+    },
+    {
+      "entity": "Hereditary factor IX deficiency disease",
+      "cui": "C0008533",
+      "axes_scored": 3,
+      "raw_burden": 0.6499999999999999
+    },
+    {
+      "entity": "Hereditary factor VIII deficiency disease",
+      "cui": "C0019069",
+      "axes_scored": 3,
+      "raw_burden": 0.75
+    },
+    {
+      "entity": "Maple syrup urine disease",
+      "cui": "C0024776",
+      "axes_scored": 3,
+      "raw_burden": 0.6666666666666666
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    }
+  ],
+  "registry_set_sha12": "4747712fad56",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->r6->r7 chain registry-set sha 4747712fad56 == 4747712fad56"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "gbd_source_pinned_anchored",
+      "pass": true,
+      "detail": "PDF sha==pin; 6/6 GBD2013 anchors reproduced; 233 states parsed"
+    },
+    {
+      "name": "gbd_join_anchored_cited",
+      "pass": true,
+      "detail": "10 GBD joins: cui in cohort, state in pinned DW table, evidence_basis + sequela present, tier from a-priori cut-points (0 bad)"
+    },
+    {
+      "name": "disability_cutpoints_a_priori",
+      "pass": true,
+      "detail": "declared cut-points match fixed map; every GBD-sourced D == binned tier (0 bad)"
+    },
+    {
+      "name": "gbd_excluded_recorded",
+      "pass": true,
+      "detail": "9 declined mappings: in cohort, reason present, D not GBD-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R6 (0 violations)"
+    },
+    {
+      "name": "supersede_corroborate_only",
+      "pass": true,
+      "detail": "D changes GBD-[L]-backed & existing-[L] D non-decreasing; M values unchanged (0 bad)"
+    },
+    {
+      "name": "pmc_corroboration_verified",
+      "pass": true,
+      "detail": "2 PMC corroborations verified in cached text (signal+exclude+direction); 0 [O] mortality filled from free text (0 bad, 0 illicit fills)"
+    },
+    {
+      "name": "s_p_not_lifted",
+      "pass": true,
+      "detail": "S and P axis value+grade identical to R6 (no open source; obstacle-only) (0 changed)"
+    },
+    {
+      "name": "omim_skip_recorded",
+      "pass": true,
+      "detail": "OMIM clinical-synopsis pass status = SKIPPED (obstacle named, S not guessed)"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds (1 locked; 0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

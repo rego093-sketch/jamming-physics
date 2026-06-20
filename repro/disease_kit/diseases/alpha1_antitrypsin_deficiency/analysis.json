@@ -1,0 +1,162 @@
+{
+ "disease": "Alpha-1-antitrypsin deficiency",
+ "omim": "613490",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Alpha-1-antitrypsin deficiency",
+  "omim": "613490",
+  "summary": "A single-gene SERPINA1 deficiency: the common Z allele (Glu342Lys) mis-folds, so little functional alpha-1-antitrypsin (the principal serpin that inhibits neutrophil elastase) reaches the circulation -> the antiprotease protection of lung tissue is driven DOWN (unopposed elastase -> early emphysema). This is a SUPPLY-DEFICIENCY (loss-of-function) read on the antiprotease axis, and the approved therapy SUPPLIES the missing protein (augmentation). NOTE the disease is genuinely TWO-SIDED: the same Z allele also has a hepatic TOXIC gain-of-function (Z-polymer accumulates in hepatocytes -> liver disease), a DISTINCT axis the single loss-of-function direction here does NOT fold in; an RNAi approach (silencing SERPINA1) targets that hepatic axis and would LOWER circulating A1AT, so it is not a corrective on the antiprotease axis. The gamma read is of the SERPINA1 locus switch structure; the Glu342Lys lesion is a coding change outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "functional circulating alpha-1-antitrypsin (neutrophil-elastase antiprotease protection of lung tissue)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SERPINA1",
+    "gamma": 1.4544,
+    "spinodal_h_sp": 0.67511,
+    "barrier": 0.52882,
+    "dwell_relative_size": 1.59453,
+    "role": "structural",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "structural element deficient -> tissue integrity reduced",
+    "ncbi": {
+     "acc": "NC_000014.9",
+     "gene_start": 94376746,
+     "gene_end": 94390634,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "serpin family A member 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SERPINA1 encodes alpha-1-antitrypsin, the major circulating inhibitor of neutrophil elastase; the Z allele (Glu342Lys) mis-folds and polymerises, so secreted functional antiprotease falls -> loss of lung antiprotease protection. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the Glu342Lys coding lesion (firewall). The hepatic Z-polymer toxic gain-of-function is a separate axis (see summary), not the primary antiprotease loss read here (SERPINA1 gene OMIM 107400).",
+    "src": "Laurell & Eriksson 1963; Lomas 1992 Nature 357:605 (Z-polymerisation)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SERPINA1",
+   "role": "structural",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "structural element deficient -> tissue integrity reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "e47f67629eb8"
+ },
+ "treatment_A_switch": {
+  "disease": "Alpha-1-antitrypsin deficiency",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "SERPINA1",
+    "push_direction": "supply functional alpha-1-antitrypsin to the circulation -> restore neutrophil-elastase inhibition (raises the antiprotease axis)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "alpha-1-antitrypsin augmentation (pooled human plasma A1AT)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored functional-antiprotease level / emphysema-slowing magnitude not derived from sequence",
+    "src": "Dirksen 2009 Eur Respir J; RAPID trial Chapman 2015 Lancet; A1AT augmentation FDA-approved"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "SERPINA1",
+    "push_direction": "block Z-polymerisation / chaperone the mis-folded protein toward secretion -> raise functional secreted A1AT (mutation-targeted)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "Z-polymerisation blocker / folding corrector (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] secreted-A1AT recovery not derived from sequence; direction-only",
+    "src": "Lomas 2021 review (small-molecule polymerisation blockers); Mallya 2007"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "SERPINA1",
+   "push_direction": "supply functional alpha-1-antitrypsin to the circulation -> restore neutrophil-elastase inhibition (raises the antiprotease axis)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "alpha-1-antitrypsin augmentation (pooled human plasma A1AT)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored functional-antiprotease level / emphysema-slowing magnitude not derived from sequence",
+   "src": "Dirksen 2009 Eur Respir J; RAPID trial Chapman 2015 Lancet; A1AT augmentation FDA-approved"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.59453,
+   "dwell_disease": 1.03176,
+   "dwell_treated": 1.30894,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "6b9d43788818"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SERPINA1 LOF lowers functional circulating antiprotease (lung-protection axis DOWN)",
+   "falsifier": "a SERPINA1 deficiency allele that RAISED functional circulating antiprotease / elastase-inhibitory capacity would refute the loss direction",
+   "measurable_by": "serum functional A1AT level and neutrophil-elastase inhibitory capacity by genotype"
+  },
+  {
+   "claim": "augmenting functional A1AT (replace / correct) is the CORRECTIVE direction on the antiprotease axis",
+   "falsifier": "if raising circulating functional A1AT WORSENED or failed to improve elastase inhibition / lung protection, the augment-A1AT lever sign is wrong",
+   "measurable_by": "lung elastase-inhibition / emphysema-progression response to A1AT augmentation"
+  },
+  {
+   "claim": "the hepatic Z-polymer toxic gain is a DISTINCT axis from the antiprotease loss (not captured by the single LOF direction)",
+   "falsifier": "if silencing SERPINA1 (clearing hepatic Z-polymer) ALSO improved the antiprotease/lung axis rather than lowering circulating A1AT, the two-axis separation would be wrong",
+   "measurable_by": "hepatic Z-polymer burden vs circulating functional A1AT vs lung function under SERPINA1 silencing"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Alpha-1-antitrypsin deficiency": {
+     "n_falsifiers": 3,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "d793f16fcd69"
+ },
+ "determinism_sha": "d57ac96d2864"
+}

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copper conduction, iron magnetism — VP Chemistry &amp; EM §3 | Jamming Physics</title>
+<meta name="description" content="Two fates of the d-shell: why copper conducts and iron is magnetic, from the geometry of the partially filled d-band on the jamming substrate.">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/03-conduction-copper-magnetism-iron/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Copper conduction, iron magnetism — VP Chemistry &amp; EM §3 | Jamming Physics"><meta property="og:description" content="Two fates of the d-shell: why copper conducts and iron is magnetic, from the geometry of the partially filled d-band on the jamming substrate."><meta property="og:url" content="https://jamming-physics.org/chemistry/03-conduction-copper-magnetism-iron/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Copper conduction, iron magnetism — VP Chemistry &amp; EM §3 | Jamming Physics"><meta name="twitter:description" content="Two fates of the d-shell: why copper conducts and iron is magnetic, from the geometry of the partially filled d-band on the jamming substrate.">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Conduction in copper and magnetism in iron", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 3, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/03-conduction-copper-magnetism-iron/", "knowsAbout": ["d-band", "electrical conduction", "ferromagnetism", "copper", "iron"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§3 Copper conduction, iron magnetism"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §3</nav></header>
+<main>
+<h1>Conduction in copper and magnetism in iron</h1>
+
+<p class="answer">The partially filled d-shell has two fates. A filled 3d¹⁰ band beneath one 4s electron makes copper a free-electron conductor; an exchange-split d-band leaves iron a net moment ≈ 2.2 μ_B and ferromagnetism. Both follow from d-band occupation, not from adjustable parameters, with a stated falsification criterion.</p>
+
+<p class="abstract">The partially filled d-shell splits into two fates. In copper a filled 3d¹⁰ band beneath a single 4s electron gives free-electron conduction; in iron an exchange-split d-band leaves a net moment ≈ 2.2 μ_B and ferromagnetism. Both follow from d-band occupation, not from adjustable parameters.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/03-conduction-copper-magnetism-iron/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>(chemistry). Status grades as in Chapter EM. Numbers reproduced by
+<code>vp_copper_conduction.py</code> and
+<code>vp_iron_magnetism.py</code> (deterministic, standard-library,
+self-checking).</p>
+<blockquote>
+<p>Copper conducts and iron magnetizes for the same root reason, read
+two ways. Copper’s inner <em>d</em>-shell is <strong>full</strong>,
+freeing its outer electron into a conducting sea; iron’s
+<em>d</em>-shell is <strong>partly empty</strong>, leaving unpaired
+rotations that align into a magnet. A filled shell makes a conductor; an
+unfilled shell makes a magnet.</p>
+</blockquote>
+<h2 id="cm.0-the-two-questions">CM.0 The two questions</h2>
+<p>This chapter answers two concrete questions about metals using the
+electromagnetism of Chapter EM:</p>
+<ol type="1">
+<li><strong>Electricity is an electromagnetic wave — how does it pass
+<em>through the inside</em> of copper,</strong> when copper (a metal)
+<em>reflects</em> ordinary light?</li>
+<li><strong>What is the principle of iron’s magnetism</strong> — and in
+particular, why iron (and cobalt, nickel) but not copper, and not even
+manganese, which has <em>more</em> unpaired electrons than iron? (The
+physics whitepaper took the “why Fe and not Cu” criterion as an
+empirical input, §14; here it is derived.)</li>
+</ol>
+<h2 id="cm.1-the-paradox">CM.1 The paradox</h2>
+<p>Light is a transverse electromagnetic wave, and metals reflect it —
+that is why copper is shiny and opaque. Yet electricity is <em>also</em>
+electromagnetic, and it travels straight through the body of a copper
+wire. How can the same medium reflect one electromagnetic disturbance
+and transmit another?</p>
+<p>The resolution is the propagation angle of Chapter EM (§EM.6).
+Electricity is the <strong>extreme longitudinal limit</strong> (χ → 0)
+of the electromagnetic wave, while visible light is the
+<strong>transverse limit</strong> (χ → 90^∘). The same free-electron sea
+reflects the transverse wave and transmits the longitudinal one. Same
+medium, opposite fates, set by angle.</p>
+<h2 id="cm.2-coppers-free-electron-sea-fcal">CM.2 Copper’s free-electron
+sea <strong>[F]/[CAL]</strong></h2>
+<p>Copper is [Ar] 3d¹⁰4s¹: the inner 3d shell is <strong>full</strong>,
+and the single 4s electron is delocalized into a conducting sea. The
+free-electron density is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-03-001.svg" width="266" height="37" alt="n = \frac{\rho\,N_A\,Z_{\text{free}}}{M} = 8.49\times 10^{28}\ \mathrm{m^{-3}}" loading="lazy"></figure>
+<p>(one free electron per atom; ρ, M measured <strong>[CAL]</strong>).
+This sea is the “internal quanta” through which conduction
+propagates.</p>
+<h2
+id="cm.3-why-transverse-light-is-reflected-the-plasma-frequency-fcal">CM.3
+Why transverse light is reflected — the plasma frequency
+<strong>[F]/[CAL]</strong></h2>
+<p>The free-electron sea has a natural oscillation frequency, the plasma
+frequency</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-03-002.svg" width="648" height="55" alt="\omega_p = \sqrt{\frac{n e^2}{\varepsilon_0 m_e}} = 1.64\times 10^{16}\ \mathrm{rad/s}
+   \;\;(f_p = 2.6\times 10^{15}\ \mathrm{Hz},\ \lambda_p = 115\ \mathrm{nm},\ \text{ultraviolet})." loading="lazy"></figure>
+<p>Below ωₚ — radio, infrared, <strong>all of visible light</strong> —
+an incident transverse wave drives the free electrons, which re-radiate
+and <strong>reflect</strong> it: this is exactly why metals are shiny
+and opaque (<code>vp_copper_conduction.py</code>, §1). Above ωₚ (X-rays)
+the electrons cannot follow and the metal becomes transparent. The
+transverse electromagnetic wave is turned back by the very sea that
+carries the current.</p>
+<h2
+id="cm.4-why-longitudinal-electricity-is-transmitted-conduction-as-χ-0-f">CM.4
+Why longitudinal electricity is transmitted — conduction as χ → 0
+<strong>[F]</strong></h2>
+<p>The longitudinal mode is different. A longitudinal (χ → 0)
+electromagnetic disturbance is a <strong>density/pressure wave of the
+electron sea</strong> that threads straight along the wire — straighter
+even than a γ-ray. It is not reflected because it is not a transverse
+oscillation of the surface electrons; it propagates <em>through</em> the
+internal quanta of the copper atoms, not through vacuum or air (physics
+§14). This longitudinal disturbance is the current. The angle that makes
+light reflect (transverse) is the angle that makes electricity transmit
+(longitudinal). Two physical facts fix conduction at χ → 0: small
+amplitude (a low-amplitude disturbance threads straight; if the
+amplitude grows the path tilts transverse and the signal <em>leaves</em>
+the copper as radiative loss) and medium (it runs through the
+atomic-internal quanta).</p>
+<h2 id="cm.5-the-skin-effect-fcal">CM.5 The skin effect
+<strong>[F]/[CAL]</strong></h2>
+<p>The transverse and longitudinal pictures are quantitatively distinct.
+A transverse wave that does enter the metal decays within the skin
+depth</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-03-003.svg" width="414" height="55" alt="\delta = \sqrt{\frac{2}{\mu_0\,\sigma\,\omega}}: \quad
+   8.4\ \mathrm{mm}\ (60\ \mathrm{Hz}) \to 2.1\ \mu\mathrm{m}\ (1\ \mathrm{GHz})." loading="lazy"></figure>
+<p>High-frequency transverse fields are confined to a micron-thin
+surface layer, while the direct/low-frequency longitudinal current fills
+the whole cross-section (<code>vp_copper_conduction.py</code>, §3).</p>
+<h2 id="cm.6-three-velocities-drift-signal-fermi-fcal">CM.6 Three
+velocities — drift, signal, Fermi <strong>[F]/[CAL]</strong></h2>
+<p>A common confusion is dissolved by separating three speeds
+(<code>vp_copper_conduction.py</code>, §4):</p>
+<ul>
+<li><strong>Drift velocity</strong> v_d = J/(ne): for J = 10⁶ A/m², only
+0.074 mm/s — the electrons themselves crawl.</li>
+<li><strong>Signal velocity</strong> ∼ c: the longitudinal field
+disturbance travels near light speed, so a lamp lights essentially
+instantly even though the electrons barely move.</li>
+<li><strong>Fermi velocity</strong> v_F = 1.57× 10⁶ m/s: the electrons
+at the Fermi surface move fast, but their <em>net</em> drift is the slow
+v_d.</li>
+</ul>
+<p>The predicted Fermi energy E_F = ℏ²(3π² n)⁽2/3)/(2mₑ) = 7.04 eV
+matches the measured ≈ 7.0 eV.</p>
+<h2 id="cm.7-why-copper-conducts-so-well-fcal">CM.7 Why copper conducts
+so well <strong>[F]/[CAL]</strong></h2>
+<p>The Drude relation σ = ne²τ/mₑ with σ₍Cu) = 5.96× 10⁷ S/m gives a
+relaxation time τ = 2.5× 10⁻¹⁴ s and a mean free path ℓ = v_Fτ = 39 nm.
+Copper’s <strong>filled</strong> 3d¹⁰ shell hands its 4s¹ electron to a
+low-scattering sea — exactly the property that, in iron, is
+<em>absent</em>. This is the hinge of the whole chapter: <strong>a
+filled inner shell yields conduction; an unfilled one yields
+magnetism.</strong></p>
+<h2 id="cm.8-the-magnetic-field-of-a-current-and-joule-loss-f">CM.8 The
+magnetic field of a current — and Joule loss <strong>[F]</strong></h2>
+<p>A drifting charge tilts its rotation axis by ∼ v/c (§EM.4), shedding
+a small transverse twist perpendicular to the drift; propagating
+sideways it wraps the wire azimuthally as the magnetic field B = μ₀
+I/(2π r), with circulation sense set by the rotation handedness (the
+right-hand rule). The transverse twist has two fates: the
+<strong>returned</strong> part is the reactive B field itself (present
+even at zero loss, as in a superconductor), and the
+<strong>un-returned</strong> fraction is dissipation (Joule loss). Thus
+B and resistive loss share one origin — the transverse twist of moving
+charge — as its returned versus un-returned parts; B itself is not the
+loss.</p>
+<h2 id="cm.9-irons-magnetism-the-principle-fcalo">CM.9 Iron’s magnetism
+— the principle <strong>[F]/[CAL]/[O]</strong></h2>
+<p>Magnetism is aligned rotation. A magnetic moment is the rotation of
+an unpaired electron — the same rotation that <em>is</em> electric
+charge (§EM.1) and helicity (§EM.5). For a material to be a permanent
+(ferro)magnet, <strong>two conditions must both hold</strong>, and the
+pair derives exactly which elements magnetize.</p>
+<h2
+id="cm.10-criterion-1-unpaired-d-electrons-this-is-why-not-copper-f">CM.10
+Criterion 1 — unpaired <em>d</em>-electrons (this is why <strong>not
+copper</strong>) <strong>[F]</strong></h2>
+<p>A localized moment requires an <strong>unfilled</strong> d-shell with
+unpaired electrons (Hund’s rule). For 3d⁽n_d) the unpaired count is n_d
+if n_dle 5 else 10-n_d, and the spin-only moment is μ = √(n(n+2)) μ_B
+(<code>vp_iron_magnetism.py</code>, condition 1):</p>
+<table>
+<thead>
+<tr class="header">
+<th>element</th>
+<th>config</th>
+<th>unpaired d</th>
+<th>μₛₒ [μ_B]</th>
+<th>moment?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mn</td>
+<td>3d⁵4s²</td>
+<td>5</td>
+<td>5.92</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Fe</td>
+<td>3d⁶4s²</td>
+<td>4</td>
+<td>4.90</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Co</td>
+<td>3d⁷4s²</td>
+<td>3</td>
+<td>3.87</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Ni</td>
+<td>3d⁸4s²</td>
+<td>2</td>
+<td>2.83</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td><strong>Cu</strong></td>
+<td>3d¹⁰4s¹</td>
+<td><strong>0</strong></td>
+<td><strong>0.00</strong></td>
+<td><strong>no</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Copper’s 3d¹⁰ shell is full: zero unpaired d-electrons, no localized
+moment. Its 4s¹ is a free conduction electron, not a localized moment.
+<strong>Copper fails condition 1 and cannot be magnetic — the same
+filled shell that makes it a superb conductor.</strong></p>
+<h2
+id="cm.11-criterion-2-positive-exchange-this-is-why-not-manganese-fcal">CM.11
+Criterion 2 — positive exchange (this is why <strong>not
+manganese</strong>) <strong>[F]/[CAL]</strong></h2>
+<p>Having moments is not enough; neighbouring d-rotations must align
+<strong>parallel</strong> (ferromagnetic), not antiparallel
+(antiferromagnetic). The Bethe–Slater criterion uses the ratio D/d =
+interatomic distance / 3d-orbital diameter: above a critical value (≈
+1.5) the exchange integral is positive (parallel, ferromagnetic); below
+it the exchange is negative (antiparallel, antiferromagnetic)
+(<code>vp_iron_magnetism.py</code>, condition 2):</p>
+<table>
+<thead>
+<tr class="header">
+<th>element</th>
+<th>D/d</th>
+<th>exchange</th>
+<th>alignment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cr</td>
+<td>1.18</td>
+<td>J&lt;0</td>
+<td>antiparallel (antiferro)</td>
+</tr>
+<tr class="even">
+<td>Mn</td>
+<td>1.47</td>
+<td>J&lt;0</td>
+<td>antiparallel (antiferro)</td>
+</tr>
+<tr class="odd">
+<td>Fe</td>
+<td>1.63</td>
+<td>J&gt;0</td>
+<td>parallel (ferro)</td>
+</tr>
+<tr class="even">
+<td>Co</td>
+<td>1.82</td>
+<td>J&gt;0</td>
+<td>parallel (ferro)</td>
+</tr>
+<tr class="odd">
+<td>Ni</td>
+<td>1.98</td>
+<td>J&gt;0</td>
+<td>parallel (ferro)</td>
+</tr>
+</tbody>
+</table>
+<p>Manganese has <strong>five</strong> unpaired electrons — more than
+iron — yet D/d = 1.47 &lt; 1.5 gives J&lt;0, so its moments align
+antiparallel and cancel: <strong>manganese fails condition 2 and is
+antiferromagnetic.</strong> Cobalt (D/d = 1.82) sits near the exchange
+maximum.</p>
+<h2 id="cm.12-the-derivation-77-classification-f">CM.12 The derivation —
+7/7 classification <strong>[F]</strong></h2>
+<p>Applying both conditions reproduces the observed magnetic class of
+the late 3d series with no fitted magnetic parameter
+(<code>vp_iron_magnetism.py</code>, summary):</p>
+<table>
+<thead>
+<tr class="header">
+<th>element</th>
+<th>unpaired d</th>
+<th>D/d</th>
+<th>derived</th>
+<th>observed</th>
+<th>✓</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cr</td>
+<td>5</td>
+<td>1.18</td>
+<td>antiferro</td>
+<td>antiferro</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Mn</td>
+<td>5</td>
+<td>1.47</td>
+<td>antiferro</td>
+<td>antiferro</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>Fe</td>
+<td>4</td>
+<td>1.63</td>
+<td>ferro</td>
+<td>ferro</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Co</td>
+<td>3</td>
+<td>1.82</td>
+<td>ferro</td>
+<td>ferro</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>Ni</td>
+<td>2</td>
+<td>1.98</td>
+<td>ferro</td>
+<td>ferro</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Cu</td>
+<td>0</td>
+<td>—</td>
+<td>non-magnetic</td>
+<td>non-magnetic</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>Zn</td>
+<td>0</td>
+<td>—</td>
+<td>non-magnetic</td>
+<td>non-magnetic</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>7/7.</strong> Copper is non-magnetic by condition 1,
+manganese is antiferromagnetic by condition 2, and only iron, cobalt,
+and nickel satisfy both — the “why Fe and not Cu” the physics whitepaper
+left as input is here derived.</p>
+<h2 id="cm.13-curie-temperature-domains-and-mathbf-b-0-fcal">CM.13 Curie
+temperature, domains, and ∇ ·mathbf B = 0
+<strong>[F]/[CAL]</strong></h2>
+<p>Thermal rotation destroys alignment above the Curie temperature,
+where k_BT_C is of order the exchange energy: Fe 1043 K, Co 1388 K
+(highest, matching the strongest exchange), Ni 627 K
+(<code>vp_iron_magnetism.py</code>). Below T_C, exchange aligns moments
+into <strong>domains</strong>; an external field moves the domain walls.
+Because mathbf B <em>is</em> a rotation axis (§EM.4), it is
+divergence-free, ∇ ·mathbf B = 0: the poles are the two ends of one axis
+and cannot be separated — no monopoles, and cutting a magnet yields two
+fresh N/S pairs. Hysteresis is the part of the alignment that does not
+return — the permanent magnet — and heating above T_C erases it. The ∇
+·mathbf B = 0 seen abstractly in Chapter EM becomes, in iron, the
+macroscopic fact of domains and permanent magnets. (The metallic moments
+are non-integer — Fe 2.22, Co 1.72, Ni 0.62 μ_B — an itinerant/band
+effect marked <strong>[O]</strong>; the localized Hund count gives the
+correct <em>ordering</em> and the magnetic <em>class</em>.)</p>
+<h2 id="cm.14-the-unifying-picture">CM.14 The unifying picture</h2>
+<p>Copper and iron are the two fates of the d-shell:</p>
+<ul>
+<li><strong>Copper — filled 3d¹⁰ → free 4s electron →
+conduction.</strong> Electricity passes through copper as the
+longitudinal (χ→ 0) electromagnetic mode of that free sea, while light
+(transverse) is reflected by it.</li>
+<li><strong>Iron — unfilled 3d⁶ → unpaired moments → magnetism.</strong>
+With positive exchange (D/d&gt;1.5) the moments align into a
+ferromagnet; the aligned rotation is the magnetic field.</li>
+</ul>
+<p>A filled inner shell makes a conductor; an unfilled one makes a
+magnet. Both are the same rotation — the rotation that is charge, light,
+and helicity — expressed as a delocalized current in copper and as an
+aligned moment in iron.</p>
+<h2 id="cm.15-falsification-and-reproducibility-f">CM.15 Falsification
+and reproducibility <strong>[F]</strong></h2>
+<ul>
+<li>If a metal’s plasma frequency did not predict its reflectivity edge
+(shiny below ωₚ, transparent above), the plasma-reflection account of
+conduction-vs-light fails.</li>
+<li>If manganese (more unpaired electrons than iron) were ferromagnetic,
+or copper (3d¹⁰) were ferromagnetic, the two-condition criterion
+fails.</li>
+<li>If the derived magnetic class disagreed with any late-3d metal, the
+derivation fails (it is 7/7).</li>
+</ul>
+<pre><code>python3 code/foundation/vp_copper_conduction.py   # plasma freq, skin depth, drift/signal/Fermi
+python3 code/foundation/vp_iron_magnetism.py      # two-condition ferromagnetic criterion (7/7)</code></pre>
+<p>Both modules are deterministic (stdout sha256 identical on re-run)
+and standard-library only.</p>
+<p><em>Copper and iron close the loop opened in Chapter EM: charge is
+rotation, and that one rotation appears as a longitudinal current
+threading copper’s filled-shell electron sea, and as an aligned moment
+in iron’s unfilled d-shell. The conductor and the magnet are the same
+physics, divided by whether the inner shell is full.</em></p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/02-chemistry-single-anchor/">← §2</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/04-color-molecules/">§4 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

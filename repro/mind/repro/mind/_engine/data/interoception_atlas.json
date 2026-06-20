@@ -1,0 +1,49 @@
+{
+  "_purpose": "LOCKED interoceptive-axis anchor DB for M18 (the heart -> vagus -> hypothalamus afferent highway). Grounds the 'sensation felt in the heart' interoceptive route that the affect literature (James-Lange; Damasio somatic-marker; Barrett constructed-emotion; Critchley & Garfinkel interoceptive predictive coding) treats as constitutive of emotion. Every value is INDEPENDENTLY measured / published; none is chosen to match a scored affect target. The heart itself is grounded in the DNA package's cardiac emergence (master NKX2-5, heart_gamma.json; the heart EXISTS by the same 4D-DNA gene-clock that builds the brain organs) -- M18 adds its FUNCTION (rhythm + afferent volley), not its existence.",
+  "_grades": {
+    "[L]": "locked: independently measured / published value, cited",
+    "[F]": "fixed modelling choice; documented, robustness-swept, NOT tuned to a scored target",
+    "[O]": "open: canonical single value absent in-package; placeholder + declared residual"
+  },
+  "_afferent_dominance_thesis": "Heart->brain afferent traffic dominates brain->heart efferent traffic. ~80% of vagal fibres are AFFERENT (Agostoni et al. 1957 J Physiol 135:182; Berthoud & Neuhuber 2000 Auton Neurosci 85:1). M18 models the cardiac axis as INPUT-dominant: the heart drives the substrate far more than the substrate drives the heart.",
+
+  "cardiac_rhythm": {
+    "sa_node_intrinsic_hz": {"value": 1.67, "range": [1.0, 1.83], "grade": "[L]",
+      "provenance": "Sinoatrial-node INTRINSIC rate (denervated) ~100-110 bpm; resting in-vivo 60-100 bpm under vagal brake (Jose & Collison 1970 Cardiovasc Res 4:160). 1.67 Hz = 100 bpm intrinsic. The SA node is a relaxation oscillator (funny-current I_f, DiFrancesco 2010) -- modelled on the SAME R19 cubic + slow recovery used for the neuron, no new primitive."},
+    "resting_hr_hz": {"value": 1.17, "range": [1.0, 1.67], "grade": "[L]",
+      "provenance": "Resting heart rate 60-100 bpm (1.0-1.67 Hz). 1.17 Hz = 70 bpm, a representative resting value."},
+    "vagal_brake": {"value": true, "grade": "[L]",
+      "provenance": "Parasympathetic (vagal) tone slows the intrinsic SA rate from ~100 to ~70 bpm at rest (Levy 1971). The efferent (brain->heart) arm; modelled as WEAK relative to the afferent arm per the afferent-dominance thesis."}
+  },
+
+  "heartbeat_evoked_potential": {
+    "hep_latency_window_ms": {"value": [200.0, 600.0], "grade": "[L]",
+      "provenance": "The heartbeat-evoked potential -- the cortical response time-locked to each R-peak -- appears in a ~200-600 ms post-R window over fronto-central / insular-cingulate sites (Schandry et al. 1986; Pollatos & Schandry 2004 Psychophysiology 41:476; Park & Blanke 2019 NeuroImage 197:502). This is the brain READING each heartbeat -- the neural correlate of the felt heart."},
+    "hep_amplitude_tracks_arousal": {"value": true, "grade": "[L]",
+      "provenance": "HEP amplitude scales with interoceptive attention and emotional arousal (Pollatos & Schandry 2004; Garfinkel & Critchley 2013 Soc Cogn Affect Neurosci). The link the author cited: the felt cardiac signal co-varies with affect. M18/M19 reproduce this as HEP-amplitude vs arousal-gain co-variation."}
+  },
+
+  "hrv_bands": {
+    "lf_band_hz": {"value": [0.04, 0.15], "grade": "[L]",
+      "provenance": "Low-frequency HRV band 0.04-0.15 Hz (Task Force 1996, Circulation 93:1043; ESC/NASPE standard). Sympatho-vagal."},
+    "hf_band_hz": {"value": [0.15, 0.40], "grade": "[L]",
+      "provenance": "High-frequency HRV band 0.15-0.40 Hz, respiratory sinus arrhythmia, vagally mediated (Task Force 1996). Indexes parasympathetic / interoceptive vagal tone."}
+  },
+
+  "vagus_cn_x": {
+    "afferent_fraction": {"value": 0.80, "range": [0.75, 0.90], "grade": "[L]",
+      "provenance": "~80% of vagus-nerve fibres are afferent (Agostoni 1957; Berthoud & Neuhuber 2000). Drives the afferent-dominance modelling."},
+    "afferent_conduction_to_nts": {"value": "A_and_C_fibres", "grade": "[L]",
+      "provenance": "Cardiac/visceral vagal afferents (myelinated A and unmyelinated C) project to the nucleus tractus solitarius (NTS), then to parabrachial -> hypothalamus / insula / cingulate (Saper 2002 Annu Rev Neurosci 25:433). The anatomical highway from heart to the hypothalamic/affective hubs."},
+    "afferent_conduction_delay_ms": {"value": 100.0, "range": [50.0, 250.0], "grade": "[O]",
+      "provenance": "A single canonical heart->NTS->cortex conduction LATENCY constant is not available in-package as one measured value (it depends on fibre class and path). Carried as [O]; the HEP window above (a measured cortical-response window) is the [L] anchor actually used. Declared, not back-fit."}
+  },
+
+  "interoceptive_emotion_route": {
+    "_thesis": "The afferent cardiac signal is read by the brain (HEP) and integrated by hypothalamic/insular/cingulate hubs into the felt body-state that the affect literature equates with emotion. This is a MECHANISM claim (layer 1) -- that the heart's signal reaches and modulates the affective substrate -- NOT a claim that the resulting state is consciously felt (layer 3, which stays OPEN).",
+    "citations_grade": "[L]",
+    "citations": "James 1884 ('What is an Emotion?'); Damasio 1994 somatic-marker hypothesis; Craig 2002 interoception/insula (Nat Rev Neurosci 3:655); Barrett 2017 constructed-emotion (Soc Cogn Affect Neurosci 12:1); Seth & Critchley 2013 interoceptive predictive coding; Garfinkel et al. 2014 interoceptive dimensions (Biol Psychol 104:65)."
+  },
+
+  "_remaining_open": "The heart->cortex afferent conduction latency is [O] (no single canonical constant in-package); the HEP cortical-response window [L] is used instead. Whether the integrated body-state is consciously FELT is the single hard problem -- OPEN. M18 closes the MECHANISM (afferent route exists, is input-dominant, and modulates the substrate), not the EXPERIENCE."
+}

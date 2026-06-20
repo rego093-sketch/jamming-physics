@@ -1,0 +1,34 @@
+{
+ "_atlas": "VP visceral + morphogenesis + energy/thermogenesis master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact gene-model TSS -> window TSS-2000..+500). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit; inherited/measure_gamma.py recomputes them and VALIDATES the pipeline by reproducing SIX2 (1.5556/0.6381) exactly before certifying REN.",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)",
+  "obesity_gamma.json (energy/thermogenesis)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma MEASURED [V], never fitted; identity + order owned by DNA. REN was the one named master still to fetch; it is now MEASURED in-package on the validated SIX2 pipeline (measured input, not fitted) and vendored below. No to-measure masters remain for this package.",
+ "genes": {
+  "SIX2": {
+   "gamma": 1.5556,
+   "gc": 0.6381,
+   "src": "NC_000002.12 - TSS-2000..+500",
+   "_source": "organ_gamma.json (visceral)"
+  },
+  "REN": {
+   "gamma": 1.3634,
+   "gc": 0.4746,
+   "src": "NC_000001.11 - TSS-2000..+500",
+   "_source": "measured in-package via DNA fetch_morpho_gamma pipeline (NN-stacking dG37, SantaLucia 1998); TSS = NCBI gene-model 5' end 204166337 (minus), cross-checked vs Ensembl canonical ENST00000272190; validated bit-for-bit against SIX2; sequence cached in organ_promoters.cache.json"
+  }
+ },
+ "_to_measure": [],
+ "_resolved": [
+  {
+   "master": "REN",
+   "organ": "raas_endocrine",
+   "gamma": 1.3634,
+   "gc": 0.4746,
+   "resolved": "fetched via DNA fetch_morpho_gamma pipeline (NN-stacking dG37, SantaLucia 1998) on the cited promoter; measured input, never fitted; pipeline validated by exact SIX2 reproduction"
+  }
+ ]
+}

@@ -1,0 +1,265 @@
+{
+  "phase": "R13",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 5 (PMC-OA dominant-sequela join) — three honest S/P lifts that add no new order-lock",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "295d780b5341"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "b528723a6344"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "f9d420b16647"
+    },
+    "litcurate5_join_csv": {
+      "path": "methodology/severity_litcurate5_join.csv",
+      "sha12": "fb9f4e29342f"
+    },
+    "litcurate5_excluded_csv": {
+      "path": "methodology/severity_litcurate5_excluded.csv",
+      "sha12": "a3154f2ba7a6"
+    },
+    "litcurate_fetch_log_r13": {
+      "path": "data/raw/litcurate/_fetch_log_r13.json",
+      "sha12": "c3feeb30398f"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 1,
+    "P_H_to_L": 2,
+    "S_excluded_recorded": 2
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 11,
+      "[H]": 3
+    },
+    "S": {
+      "[L]": 7,
+      "[O]": 11,
+      "[H]": 17
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate5_join": [
+    {
+      "entity": "Maple syrup urine disease",
+      "cui": "C0024776",
+      "axis": "S",
+      "pmcid": "PMC12861732",
+      "pmid": "41635633",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Maple syrup urine disease (MSUD, OMIM # 248600 ) is a life-threatening metabolic disorder caused by biallelic pathogenic variants in the BCKDHA , BCKDHB, DBT , and DLD genes, which encode the E1α, E1β, E2 and E3 subunits (respectively) of the branched-chain amino acid (BCKD) enzyme complex [ 11 , 12 ].",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Cystic fibrosis",
+      "cui": "C0010674",
+      "axis": "P",
+      "pmcid": "PMC13110062",
+      "pmid": "42039762",
+      "tier": 0.5,
+      "tier_label": "progressive course",
+      "exact_sentence": "Cystic fibrosis (CF) is a progressive genetic disease characterized by defective ion transport, mucus accumulation, chronic infection, and inflammation that drive airway damage and ultimately end-stage lung failure.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Glycogen storage disease, type II",
+      "cui": "C0017921",
+      "axis": "P",
+      "pmcid": "PMC13142844",
+      "pmid": "40261290",
+      "tier": 0.5,
+      "tier_label": "progressive course",
+      "exact_sentence": "Pompe disease is a rare neuromuscular disorder caused by acid alpha-glucosidase deficiency, leading to glycogen accumulation and progressive striated muscle weakness.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    }
+  ],
+  "litcurate5_excluded": [
+    {
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "axis": "S",
+      "considered_pmcid": "PMC13266223",
+      "considered_pmid": "42305572",
+      "decline_class": "comparative",
+      "considered_statement": "Severe osteogenesis imperfecta is often diagnosed earlier than milder disease.",
+      "exclusion_reason": "the retrievable OA disease-level severity framing for osteogenesis imperfecta (C0029434) is COMPARATIVE -- 'Severe osteogenesis imperfecta is often diagnosed earlier than milder disease' uses 'severe' as the phenotype-class label distinguishing severe OI (Sillence type III / perinatally-lethal type II) from milder OI (type I), not a clean disease-level magnitude for the umbrella entity's own dominant untreated sequela (heritable bone fragility / recurrent fractures); OI severity is Sillence-type-stratified across a mild-to-perinatally-lethal range, so although the frozen R3 severity function pattern-matches 'severe' to tier 0.75, the word is a within-entity phenotype-class label rather than an isolable disease-level magnitude; S left [H], not lifted"
+    },
+    {
+      "entity": "alpha Thalassemia",
+      "cui": "C0002312",
+      "axis": "S",
+      "considered_pmcid": "PMC13089801",
+      "considered_pmid": "42004318",
+      "decline_class": "umbrella_spectrum",
+      "considered_statement": "Clinical presentation can vary widely in severity from resulting in stillbirth to being asymptomatic, correlating with the number of functional alpha globin genes inherited.",
+      "exclusion_reason": "the retrievable OA severity framing for the alpha-thalassemia umbrella entity (C0002312) is an UMBRELLA SPECTRUM -- 'Clinical presentation can vary widely in severity from resulting in stillbirth to being asymptomatic, correlating with the number of functional alpha globin genes inherited' -- gene-dosage-stratified from asymptomatic (silent carrier / one affected gene) through HbH disease to fatal Hb Bart's hydrops fetalis (stillbirth, all four genes); the disease-level magnitude is genotype-stratified across the asymptomatic-to-lethal continuum, so a clean disease-level magnitude for the umbrella entity's own single dominant sequela is not isolable; the frozen R3 spectrum override trips on this within-entity range; S left [H], not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Maple syrup urine disease",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Cystic fibrosis",
+      "axis": "P",
+      "old": 0.5,
+      "new": 0.5,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Glycogen storage disease, type II",
+      "axis": "P",
+      "old": 0.5,
+      "new": 0.5,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "axes_scored": 5
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axes_scored": 4
+    }
+  ],
+  "registry_set_sha12": "49af5f824afa",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r12->r13 chain registry-set sha 49af5f824afa == 49af5f824afa"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r12",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2', 'R11_litcurate3', 'R12_litcurate4', 'R13_litcurate5']"
+    },
+    {
+      "name": "litcurate5_join_anchored_cited",
+      "pass": true,
+      "detail": "3 round-5 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate5_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-5 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate5_excluded_recorded",
+      "pass": true,
+      "detail": "2 round-5 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R12 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R12; S/P changed only for the 3 round-5 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "no_new_order_lock",
+      "pass": true,
+      "detail": "order-lock set UNCHANGED at 5 -> 5 (added=[], removed=[]); the three round-5 lifts (MSUD S, Cystic fibrosis P, Glycogen storage disease type II P) each raise grade [H]->[L] WITHOUT completing a lock (each retains an [H] on another scored axis); no fishing for an order-lock"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate5_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 5 round-5 cited sources open-access + sha-pinned; every round-5 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "prior_round_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 + R10 + R11 + R12 recorded join/excluded CSVs byte-identical to their digests (0 modified) -- R13 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

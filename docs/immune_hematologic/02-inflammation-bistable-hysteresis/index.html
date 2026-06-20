@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inflammation as Bistable Hysteresis — Immune/Hematologic §2 | Jamming Physics</title>
+<meta name="description" content="Acute inflammation resolves but chronic inflammation latches because the R19 switch is hysteretic: a brief sub-spinodal pulse decays, a sustained supra-spinodal drive stays ON.">
+<link rel="canonical" href="https://jamming-physics.org/immune_hematologic/02-inflammation-bistable-hysteresis/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Inflammation as Bistable Hysteresis — Immune/Hematologic §2 | Jamming Physics"><meta property="og:description" content="Acute inflammation resolves but chronic inflammation latches because the R19 switch is hysteretic: a brief sub-spinodal pulse decays, a sustained supra-spinodal drive stays ON."><meta property="og:url" content="https://jamming-physics.org/immune_hematologic/02-inflammation-bistable-hysteresis/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Inflammation as Bistable Hysteresis — Immune/Hematologic §2 | Jamming Physics"><meta name="twitter:description" content="Acute inflammation resolves but chronic inflammation latches because the R19 switch is hysteretic: a brief sub-spinodal pulse decays, a sustained supra-spinodal drive stays ON.">
+<link rel="stylesheet" href="/immune_hematologic/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Inflammation as Bistable Hysteresis", "isPartOf": {"@type": "CreativeWork", "name": "Immune & Hematologic Emergence (VP / Jamming Physics)", "sameAs": ["https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic", "https://doi.org/10.5281/zenodo.20755280"], "identifier": "10.5281/zenodo.20755280"}, "position": 2, "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.20755280"}, "sameAs": "https://doi.org/10.5281/zenodo.20755280", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Immune/Hematologic", "item": "https://jamming-physics.org/immune_hematologic/"}, {"@type": "ListItem", "position": 3, "name": "§2 Inflammation as Bistable Hysteresis"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/immune_hematologic/">Immune/Hematologic</a> › §2</nav></header>
+<main>
+<h1>Inflammation as Bistable Hysteresis</h1>
+
+<p class="answer">Inflammation is bistable hysteresis of the R19 switch. Rather than assume the boundary, this volume simulates stochastic pulses and measures it: the critical amplitude equals the spinodal organ-by-organ, sub-spinodal insults never latch, and dose trades off against duration. The autoimmune tolerance break is the same latch on an escaped self-clone. Grade [V].</p>
+
+<p class="abstract">The chronicity boundary is measured by direct stochastic pulse simulation: the critical amplitude equals the spinodal for every organ (within 1%), a sub-spinodal insult never latches (P=0.033 at the longest duration), and the dose×duration tradeoff is monotone — the latched pathological basin.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] grade</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/02-inflammation-bistable-hysteresis/" rel="noopener">reproduction code (GitHub)</a>
+  <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
+</aside>
+
+<aside class="vp-card" data-locked="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>[F]</b> canonical derivation: substrate R19</aside>
+
+<h2>Two fates from one switch</h2>
+<p>Resolution and chronicity are not two mechanisms. They are the two outcomes of a single hysteretic switch
+driven for different durations and amplitudes.</p>
+<p>An acute insult that stays below the spinodal cannot leave the OFF basin; once the insult clears the state
+relaxes back — the inflammation resolves on its own. A drive that exceeds the spinodal and persists long
+enough crosses into the ON basin and is then held there by the barrier even after the drive is withdrawn.</p>
+<h2>The latched basin</h2>
+<p>Chronic inflammation is therefore a memory phenomenon: the system records the supra-threshold history in
+its basin occupancy. This is the same barrier that, in the therapy volume, must be acted on to reverse a
+committed state — culling mediators without moving the basin lets it refill.</p>
+<h2>The chronicity boundary emerges in the amplitude × duration plane</h2>
+<p>Rather than assert that acute resolves and chronic latches, the volume <em>simulates</em> the stochastic R19
+switch directly: each organ's OFF state is hit with a rectangular insult of a given amplitude and duration under
+independent cellular noise, the drive is withdrawn, and whether the state has latched ON is <em>measured</em>.
+The critical amplitude that comes out is the spinodal itself, organ-by-organ (a<sub>crit</sub>/spinodal = 0.993,
+0.994, 0.992, 0.989 for the four organs — all within 1%), so the analytic threshold is confirmed dynamically, not
+assumed.</p>
+<p>Two further facts emerge. A sub-spinodal insult never becomes chronic no matter how long it is applied (latch
+probability only 0.033 at the longest duration tested), and above the spinodal the required duration trades off
+against amplitude monotonically: the critical dwell falls 550 → 400 → 300 → 150 steps as the amplitude rises
+1.10× → 1.25× → 1.50× → 2.00× the spinodal. The boundary is thus a measured curve in the amplitude × duration
+plane, with only the absolute noise scale D (transition sharpness) left [O].</p>
+<h2>Tolerance breaks as a bistable latch</h2>
+<p>The same hysteresis has a pathological mirror in autoimmunity. Take a self-reactive clone that escaped central
+tolerance (§1): its residual self-antigen drive sits just below the spinodal, so the switch is bistable — a
+resting tolerant basin and a self-sustaining autoreactive basin both exist. Hit with an inflammatory insult
+pulse, the break boundary is <em>measured</em> to be the switch's saddle-node. Across a sweep of the residual
+self-drive the critical <em>total</em> drive (residual + insult) stays at the spinodal (sum = 0.997, 0.985, 0.977,
+0.973, 0.945× spinodal as the residual rises 0 → 0.8×), so self-antigen and inflammation are interchangeable ways
+of reaching the same ridge — the critical insult falls 0.997 → 0.577 → 0.145× as the residual self-drive deepens.</p>
+<p>The break is irreversible — a pathological memory. A supra-threshold insult latches the clone ON and it
+<em>stays</em> ON after the insult is withdrawn to the persisting self-drive (P(autoreactive)=0.980, unchanged
+when the settle is tripled), whereas a sub-threshold insult resolves (P=0.024) and a deeply-tolerant clone under a
+sub-spinodal total never breaks (P=0.000). The dose×duration tradeoff carries over (critical dwell 550 → 300 → 150
+steps as the insult strengthens), and — the link back to §1 — because the critical insult shrinks as the residual
+self-drive nears the deletion threshold, <em>deeper</em> negative selection leaves only smaller-residual
+survivors and so <em>raises</em> the insult needed to break tolerance. Autoimmune susceptibility is set by
+deletion depth; only the absolute break rate (residual depth, insult amplitude/duration, noise scale D) is
+[O].</p>
+<h2>A tolerance&ndash;immunity dose window between ignorance and deletion</h2>
+<p>Self-antigen dose has two safe regimes and one dangerous one between them, and the volume <em>measures</em>
+where the edges fall by composing two of its own processes over a swept dose: central deletion (&sect;1) removes a
+high-dose clone, while the inflammatory break (above) fires an escaped clone whose residual drive is large enough.
+The net break-risk is single-peaked in dose &mdash; 0.036 at low dose (the clone is ignored), peaking at an
+intermediate dose (here d=0.80), and 0.000 at high dose (the clone is deleted, central tolerance). The honest sign
+is the dual of the textbook &ldquo;safe window&rdquo;: the interior is the <em>danger</em> band, flanked by two
+safe regimes &mdash; ignorance below and central deletion above.</p>
+<p>The band's edges are mechanistic and move predictably. The lower (break) edge = spinodal &minus; insult, so it
+tracks the insult one-for-one: as the insult rises 0.2 &rarr; 0.4 &rarr; 0.6&times; the lower edge falls 0.782
+&rarr; 0.615 &rarr; 0.429 (measured slope -0.882 &asymp; &minus;1), and d<sub>lo</sub> + insult stays at the spinodal
+(0.982, 1.015, 1.029&times;) &mdash; the &sect;1 commit threshold. The upper (deletion) edge is insult-independent
+(fixed at 0.824&times; by central tolerance), so the band <em>width</em> grows one-for-one with the insult (0.042
+&rarr; 0.395 as the insult widens, slope 0.882 &asymp; +1) and <em>collapses</em> when the insult vanishes &mdash; no
+insult, no danger band. The window position tracks each organ's spinodal (the deletion edge is a constant
+dimensionless fraction across all four organs). Only the absolute edges (thermal lowering of the deletion edge,
+insult amplitude, noise scale D) are [O]; the slopes are the clean invariants.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/immune_hematologic/01-clonal-selection-saddle-node-threshold/">← §1</a>
+  <a href="/immune_hematologic/">paper contents</a>
+  <a rel="next" href="/immune_hematologic/03-developmental-lineage-order-gamma-readout/">§3 →</a>
+</nav>
+</main>
+<footer>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · <a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> · §2 of 21</footer>
+</body>
+</html>

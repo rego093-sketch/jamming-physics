@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The DNA Dictionary — 4D DNA Blueprint §II | Jamming Physics</title>
+<meta name="description" content="Engine-generated lexicon over 26 curated loci (γ 1.264–1.444, all R19-bistable) with its own gate — a Dictionary of reads, not traits.">
+<link rel="canonical" href="https://jamming-physics.org/dna/the-dna-dictionary/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The DNA Dictionary — 4D DNA Blueprint §II | Jamming Physics"><meta property="og:description" content="Engine-generated lexicon over 26 curated loci (γ 1.264–1.444, all R19-bistable) with its own gate — a Dictionary of reads, not traits."><meta property="og:url" content="https://jamming-physics.org/dna/the-dna-dictionary/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The DNA Dictionary — 4D DNA Blueprint §II | Jamming Physics"><meta name="twitter:description" content="Engine-generated lexicon over 26 curated loci (γ 1.264–1.444, all R19-bistable) with its own gate — a Dictionary of reads, not traits.">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The DNA Dictionary", "isPartOf": {"@type": "CreativeWorkSeries", "name": "4D DNA Blueprint", "identifier": "https://doi.org/10.5281/zenodo.20471407", "url": "https://jamming-physics.org/dna/"}, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "https://doi.org/10.5281/zenodo.20471407", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/", "license": "https://creativecommons.org/licenses/by/4.0/", "knowsAbout": ["reading DNA from sequence", "deterministic DNA interpretation", "DNA stacking stiffness", "A4 coordinate grammar", "R19 double-well switch", "anchor-relative helical phase", "CpG O/E methylation", "readable layer of DNA", "sequence-to-trait reading", "reproducible genomics", "jamming lattice", "4D DNA Blueprint"]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "4D DNA Blueprint", "item": "https://jamming-physics.org/dna/"}, {"@type": "ListItem", "position": 3, "name": "§II The DNA Dictionary"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › §II</nav></header>
+<main>
+<h1>The DNA Dictionary</h1>
+
+<p class="answer">The completed reading's usable artifact is an engine-generated lexicon. For each of 26 curated loci it lists only the locked engine's mechanical read — γ, its R19 threshold scale (spinodal, barrier), GC, CpG density, and R19 bistability — spanning γ 1.264–1.444, all bistable. It is a Dictionary of reads, not traits; STATE, sign, dosage and timing are left to runtime.</p>
+
+<p class="abstract">A Dictionary entry is a gloss of one locus's mechanical Layer-1 read, in the spirit of a lexicon rather than an interpretation. Nothing is hand-assigned: every value is emitted by the same locked engine the paper uses, which re-derives human_SOX2 γ = 1.287315 every run, and the table has its own fail-closed gate — deterministic (two builds share one sha256) and baseline-pinned (every value matches the frozen regression to 1e-9 across all 26 loci). Because the reading of the readable layer is closed, a finite lexicon like this is possible at all.</p>
+
+<aside class="vp-card" data-register="15-dna-dictionary">
+  <h4 class="vp-q">An engine-generated lexicon of mechanical reads</h4>
+  <p class="vp-value">26 curated loci, γ 1.264–1.444, every locus R19-bistable. human_ZRS reads γ 1.264 and snake_LMBR1 reads γ 1.290 — nearly the same γ — yet the limb enhancer is ON in one lineage and OFF in the other, so the table makes visible that γ is blind to on/off. γ sorts almost monotonically in GC (corr(γ,GC)=0.998).</p>
+  <p class="vp-meaning">The Dictionary is the usable proof that the reading is closed: a finite, enumerated table of every readable channel for each locus, generated mechanically and pinned to the locked truth. It glosses reads, not traits — on/off, sign, dosage and timing are runtime and are returned as such.</p>
+  <p class="vp-grade">Grade: admissible (mechanical Layer-1 read; STATE/sign/dosage/timing runtime)</p>
+  <p class="vp-canonical"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/15-dna-dictionary/" rel="noopener">Canonical reproduction → repro/dna/15-dna-dictionary/</a></p>
+</aside>
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/15-dna-dictionary" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h3>How the Dictionary is built</h3>
+<p>The generator reads each curated sequence, runs the locked <code>dna_interpreter</code>, and writes one row per locus: γ, GC, the R19 threshold scale (spinodal |h_sp| = (2/3√3)·γ^1.5 and barrier γ²/4), CpG density, and R19 bistability. STATE, sign, dosage and timing are not assigned — they are recorded as runtime. Two checks gate it, fail-closed: the build is deterministic (two runs share one sha256), and every reported value matches the frozen <code>regression_baseline.json</code> to 1e-9 for all 26 loci.</p>
+
+<h3>The lexicon (26 loci, sorted by γ)</h3>
+<table>
+<thead><tr><th>locus (read)</th><th>γ</th><th>GC</th><th>spinodal |h_sp|</th><th>barrier γ²/4</th><th>CpG density</th><th>R19 bistable</th></tr></thead>
+<tbody>
+<tr><td>human ZRS</td><td>1.2638</td><td>0.371</td><td>0.5469</td><td>0.3993</td><td>0.0070</td><td>yes</td></tr>
+<tr><td>human IGF1</td><td>1.2804</td><td>0.392</td><td>0.5577</td><td>0.4099</td><td>0.0057</td><td>yes</td></tr>
+<tr><td>human LMBR1 ZRS region</td><td>1.2813</td><td>0.391</td><td>0.5583</td><td>0.4104</td><td>0.0097</td><td>yes</td></tr>
+<tr><td>human HMGA2</td><td>1.2863</td><td>0.396</td><td>0.5615</td><td>0.4136</td><td>0.0089</td><td>yes</td></tr>
+<tr><td>human SOX2</td><td>1.2873</td><td>0.396</td><td>0.5622</td><td>0.4143</td><td>0.0108</td><td>yes</td></tr>
+<tr><td>snake LMBR1 region</td><td>1.2904</td><td>0.398</td><td>0.5642</td><td>0.4163</td><td>0.0112</td><td>yes</td></tr>
+<tr><td>elephant HMGA2</td><td>1.2930</td><td>0.402</td><td>0.5659</td><td>0.4179</td><td>0.0110</td><td>yes</td></tr>
+<tr><td>elephant IGF1</td><td>1.2936</td><td>0.404</td><td>0.5663</td><td>0.4184</td><td>0.0081</td><td>yes</td></tr>
+<tr><td>human PAX6</td><td>1.2954</td><td>0.405</td><td>0.5675</td><td>0.4195</td><td>0.0105</td><td>yes</td></tr>
+<tr><td>mouse PAX6</td><td>1.3049</td><td>0.416</td><td>0.5737</td><td>0.4257</td><td>0.0096</td><td>yes</td></tr>
+<tr><td>human OTX2</td><td>1.3080</td><td>0.416</td><td>0.5758</td><td>0.4277</td><td>0.0111</td><td>yes</td></tr>
+<tr><td>mouse FOXA2</td><td>1.3193</td><td>0.431</td><td>0.5833</td><td>0.4352</td><td>0.0079</td><td>yes</td></tr>
+<tr><td>human FOXA2</td><td>1.3221</td><td>0.429</td><td>0.5851</td><td>0.4370</td><td>0.0105</td><td>yes</td></tr>
+<tr><td>mouse OTX2</td><td>1.3284</td><td>0.437</td><td>0.5893</td><td>0.4412</td><td>0.0115</td><td>yes</td></tr>
+<tr><td>mouse SOX2</td><td>1.3386</td><td>0.447</td><td>0.5961</td><td>0.4480</td><td>0.0124</td><td>yes</td></tr>
+<tr><td>human shh locus</td><td>1.3417</td><td>0.447</td><td>0.5982</td><td>0.4500</td><td>0.0146</td><td>yes</td></tr>
+<tr><td>human POU5F1</td><td>1.3579</td><td>0.464</td><td>0.6090</td><td>0.4609</td><td>0.0142</td><td>yes</td></tr>
+<tr><td>human SIX3</td><td>1.3586</td><td>0.465</td><td>0.6095</td><td>0.4614</td><td>0.0154</td><td>yes</td></tr>
+<tr><td>mouse GSC</td><td>1.3606</td><td>0.470</td><td>0.6109</td><td>0.4628</td><td>0.0108</td><td>yes</td></tr>
+<tr><td>mouse SIX3</td><td>1.3613</td><td>0.469</td><td>0.6113</td><td>0.4633</td><td>0.0140</td><td>yes</td></tr>
+<tr><td>human GSC</td><td>1.3690</td><td>0.473</td><td>0.6165</td><td>0.4685</td><td>0.0142</td><td>yes</td></tr>
+<tr><td>mouse POU5F1</td><td>1.3740</td><td>0.483</td><td>0.6199</td><td>0.4720</td><td>0.0112</td><td>yes</td></tr>
+<tr><td>mouse NODAL</td><td>1.3826</td><td>0.490</td><td>0.6258</td><td>0.4779</td><td>0.0136</td><td>yes</td></tr>
+<tr><td>human NODAL</td><td>1.3932</td><td>0.497</td><td>0.6330</td><td>0.4853</td><td>0.0157</td><td>yes</td></tr>
+<tr><td>elephant IGF2</td><td>1.4334</td><td>0.535</td><td>0.6605</td><td>0.5137</td><td>0.0217</td><td>yes</td></tr>
+<tr><td>human IGF2</td><td>1.4443</td><td>0.545</td><td>0.6681</td><td>0.5215</td><td>0.0240</td><td>yes</td></tr>
+</tbody></table>
+<p class="note">Every cell is an engine read, not a trait. The same-γ / opposite-state pair (human ZRS 1.264 ON-lineage vs snake LMBR1 1.290 OFF-lineage) is the boundary made visible in a single table: γ reads the material and the threshold, and is blind to on/off. The full per-locus JSON (including rest-basin |s| and the runtime flags) lives under repro/dna/15-dna-dictionary/expected/dictionary.json.</p>
+<nav class="pn"><a rel="prev" href="/dna/how-to-read-a-locus/">← §I</a><a href="/dna/">contents</a><a rel="next" href="/dna/01-constitution-scope/">§1 →</a></nav>
+</main>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.12)</footer>
+</body>
+</html>

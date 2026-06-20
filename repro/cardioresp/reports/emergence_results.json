@@ -1,0 +1,85 @@
+{
+ "_what": "Cardiorespiratory -- emerge organs from measured gamma, then circulate dynamics.",
+ "dynamics": {
+  "baroreflex": {
+   "closed_returns": true,
+   "onset_latency_s": 0.68,
+   "static_slope_bpm_per_mmHg": -1.0
+  },
+  "chemoreflex": {
+   "LG_c": 1.01912,
+   "stable_amp": 0.0,
+   "unstable_amp": 1.24147,
+   "unstable_period_s": 31.74
+  },
+  "cheyne_stokes": {
+   "period_vs_delay_slope": 1.9918
+  },
+  "eupnea": {
+   "breaths_per_min": 16.865,
+   "ratio_breath_to_beat": 0.24025
+  },
+  "rsa": {
+   "f_resp_hz": 0.2811,
+   "hrv_peak_hz": 0.2784,
+   "off_locked": false,
+   "on_locked": true
+  },
+  "time_anchor": {
+   "f_arb_heart": 0.0191022,
+   "grade": "[L]",
+   "kappa_s_per_arb": 0.01632666,
+   "note": "single time anchor: heart FHN intrinsic rhythm := resting_hr_hz (cited)",
+   "resting_hr_hz": 1.17
+  }
+ },
+ "dynamics_status": "EMERGED: eupnea / chemoreflex (apnea+CSR) / RSA / baroreflex active",
+ "organs": {
+  "gamma_order_ascending": [
+   "lung",
+   "heart"
+  ],
+  "order_grade": "[V] order is a pure gamma readout (identity+order owned by DNA gene-clock)",
+  "organs": [
+   {
+    "dyn_class": "oscillator",
+    "functional_spinodal": 0.716319,
+    "gamma": 1.513,
+    "master": "NKX2-5",
+    "organ": "heart",
+    "rel_size_dwell": 1.691865,
+    "role": "SA-node pacemaker + conduction + contraction"
+   },
+   {
+    "dyn_class": "oscillator",
+    "functional_spinodal": 0.713338,
+    "gamma": 1.5088,
+    "master": "NKX2-1",
+    "organ": "lung",
+    "rel_size_dwell": 1.684825,
+    "role": "preBotzinger inspiratory rhythm + ventilatory pump"
+   }
+  ]
+ },
+ "oscillators": {
+  "heart": {
+   "beats": 115,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "rate_anchor": "resting_hr 1.17 Hz [L]; intrinsic 1.67 Hz [L]",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.0191022,
+   "tau_s": 18.0
+  },
+  "lung": {
+   "beats": 28,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "rate_anchor": "eupnea ~0.2-0.3 Hz [L]",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.00458926,
+   "tau_s": 95.0
+  }
+ },
+ "targets": "see repro/_verify/stress_tests.py (T1-T5) and repro/_oncology/"
+}

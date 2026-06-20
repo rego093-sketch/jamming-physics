@@ -1,0 +1,65 @@
+{
+  "phase": "R2",
+  "kind": "investigation_gate",
+  "generated": "2026-06-18",
+  "inputs": {
+    "disease_index": {
+      "path": "data/curated/disease_index.csv",
+      "sha12": "a274e25a00bb"
+    },
+    "dossier_cohort_manifest": {
+      "path": "methodology/dossier_cohort.csv",
+      "rows": 35
+    },
+    "dossier_set": {
+      "path": "data/curated/dossiers/",
+      "files": 35,
+      "set_sha12": "94818007c9cc"
+    }
+  },
+  "counts": {
+    "index_rows": 6170,
+    "in_scope": 6167,
+    "excluded": 3,
+    "dossiers": 35
+  },
+  "checks": [
+    {
+      "name": "inheritance_complete",
+      "pass": true,
+      "detail": "6167/6167 in-scope rows inheritance-graded"
+    },
+    {
+      "name": "mechanism_graded_no_guess",
+      "pass": true,
+      "detail": "6167/6167 mechanism rows graded with evidence"
+    },
+    {
+      "name": "boundary_resolved",
+      "pass": true,
+      "detail": "cns_cross_reference=['false', 'true']; 3/3 boundary moves out-of-scope+logged"
+    },
+    {
+      "name": "provenance_complete",
+      "pass": true,
+      "detail": "6170/6170 rows carry provenance"
+    },
+    {
+      "name": "dossier_schema_valid",
+      "pass": true,
+      "detail": "35 dossiers; 0 graded-field violations"
+    },
+    {
+      "name": "dossier_cohort_complete",
+      "pass": true,
+      "detail": "dossiers=35 manifest=35 index=35"
+    },
+    {
+      "name": "grade_vocab_consistent",
+      "pass": true,
+      "detail": "stray grades=none"
+    }
+  ],
+  "verdict": "PASS (7/7)",
+  "note": "Investigation gate. Every in-scope disease carries inheritance and a mechanism grade; no grade appears without its evidence (a cited source for [L]/[H], a named obstacle for [O]). Boundary review's 3 primary-CNS GM2 diseases (Tay-Sachs, Tay-Sachs variant AB, Sandhoff) are out-of-scope and logged. Every dossier field is a graded object {value, grade, source|obstacle} -- no bare values. Determinism of the mechanism and dossier stages was confirmed by repeated identical runs this session. The dossier-set digest is computed over date-stamped files (each carries today's generated date), so it is reproducible within a run/day; the pipeline inputs and logic are otherwise deterministic. Disease-level mechanism precision for multi-gene/CNV syndromes is reserved for the curated dossiers (see R2 handover, ClinGen-source caveat)."
+}

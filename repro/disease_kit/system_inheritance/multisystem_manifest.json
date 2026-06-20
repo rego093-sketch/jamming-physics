@@ -1,0 +1,160 @@
+{
+ "_about": "MULTI-SYSTEM INHERITANCE MANIFEST (ROADMAP V / system-inheritance). For each MULTI-SYSTEM, INTRACTABLE (난치) monogenic disease already RESOLVED in this kit, the NECESSARY subset of VP body siblings whose organ-system STRUCTURE the single causal-gene lesion manifests in. The kit reads the ONE causal-gene promoter (suspension rule respected: every disease here is RESOLVED / readable); it then INHERITS, read-only, the γ-grounded structural context of each affected organ system from system_inheritance/sibling_registry.json, and surfaces -- structurally -- which compartments the lead corrective lever REACHES vs leaves as a GAP (the gap = the next, non-obvious treatment direction).",
+ "_doi_kit": "10.5281/zenodo.20755262",
+ "_firewall": "STRUCTURE (which organ systems) + DIRECTION (which compartments the lead lever reaches) ONLY. Compartment reach is a qualitative biodistribution DIRECTION (does the modality class reach the compartment at all), cited; the DEGREE of correction in any compartment is always [O]. No dose, no efficacy, no magnitude.",
+ "_scope": "INTRACTABLE multi-system monogenic disease, EXCLUDING the 'major' (dynamics-defined, common) disease each sibling owns (VP_FRAMEWORK_MAP section 6 -- enforced by the exclusion gate in pipeline/system_inheritance.py).",
+ "_provenance": "Each disease's lead_lever_frozen + lead_modality_signature ECHO the disease's own frozen analysis.json lead_corrective_lever; the module fails closed if the frozen agent_class does not contain the declared signature token. inherited_systems map to real organ-master γ in the registry (or to a declared compartment anchor for the neural compartment).",
+ "diseases": {
+  "fabry_disease": {
+   "disease": "Fabry disease",
+   "causal_gene": "GLA",
+   "intractable_rationale": "X-linked lysosomal storage; the approved enzyme replacement does NOT cross the blood-brain barrier, so the small-fibre neuropathy / CNS compartment is not addressed -- a multi-compartment unmet need this kit already records.",
+   "lead_lever_frozen": {"lever": "replace", "status": "approved"},
+   "lead_modality": "enzyme_replacement_iv",
+   "lead_modality_signature": "enzyme replacement",
+   "inherited_systems": [
+    {"compartment": "vascular_endothelium", "sibling": "circulatory", "organ": "vessels", "reason": "Gb3/GL-3 accumulates in vascular endothelium -> angiokeratoma, vasculopathy", "cited": "Desnick 2001 OMMBID"},
+    {"compartment": "renal", "sibling": "circulatory", "organ": "kidney", "reason": "podocyte Gb3 accumulation -> proteinuric Fabry nephropathy", "cited": "Eng 2001 NEJM 345:9"},
+    {"compartment": "cardiac", "sibling": "cardioresp", "organ": "heart", "reason": "cardiomyocyte Gb3 -> LV hypertrophy / conduction disease (incl. the IVS4+919 cardiac variant)", "cited": "Desnick 2001 OMMBID"},
+    {"compartment": "pns_peripheral_nerve", "sibling": "neuro", "organ": null, "anchor": true, "reason": "dorsal-root-ganglion / small-fibre involvement -> acroparaesthesia, the BBB-excluded compartment", "cited": "Brady 1967 NEJM 276:1163"}
+   ],
+   "falsifier": {
+    "claim": "the IV enzyme reaches the systemic (vascular/renal/cardiac) compartments but not the CNS/PNS compartment",
+    "falsifier": "demonstrate recombinant alpha-galactosidase A correcting neuronal/DRG Gb3 after IV dosing without a BBB-crossing modification -> the reach-gap direction is wrong",
+    "measurable_by": "neuronal Gb3 / lyso-Gb3 after IV enzyme vs a BBB-penetrant route in a Fabry model"
+   }
+  },
+  "pompe_disease": {
+   "disease": "Pompe disease (glycogen storage disease type II)",
+   "causal_gene": "GAA",
+   "intractable_rationale": "lysosomal glycogen storage; enzyme replacement rescues cardiac and skeletal muscle unevenly and the CNS compartment is poorly reached, leaving residual motor and respiratory burden.",
+   "lead_lever_frozen": {"lever": "replace", "status": "approved"},
+   "lead_modality": "enzyme_replacement_iv",
+   "lead_modality_signature": "enzyme replacement",
+   "inherited_systems": [
+    {"compartment": "skeletal_muscle", "sibling": "musculoskeletal", "organ": "skeletal_muscle", "reason": "lysosomal glycogen in skeletal myofibres -> proximal myopathy", "cited": "Hirschhorn & Reuser 2001 OMMBID"},
+    {"compartment": "cardiac", "sibling": "cardioresp", "organ": "heart", "reason": "infantile-onset hypertrophic cardiomyopathy from cardiomyocyte glycogen", "cited": "Kishnani 2006 (alglucosidase alfa)"},
+    {"compartment": "respiratory", "sibling": "cardioresp", "organ": "lung", "reason": "diaphragm/respiratory-muscle glycogen -> respiratory failure (the leading cause of death)", "cited": "van der Ploeg 2010 NEJM 362:1396"}
+   ],
+   "falsifier": {
+    "claim": "IV enzyme reaches cardiac + skeletal-muscle compartments; CNS is poorly reached",
+    "falsifier": "show IV alglucosidase clears motor-neuron/CNS glycogen as effectively as cardiac glycogen -> the uneven-reach direction is wrong",
+    "measurable_by": "glycogen clearance by compartment (cardiac vs skeletal vs CNS) after IV enzyme in a Pompe model"
+   }
+  },
+  "cystic_fibrosis": {
+   "disease": "Cystic fibrosis",
+   "causal_gene": "CFTR",
+   "intractable_rationale": "multi-epithelial channelopathy; CFTR modulators reach every CFTR-expressing epithelium systemically but are GENOTYPE-LIMITED (only modulator-responsive alleles), leaving non-responsive genotypes without a switch-level option.",
+   "lead_lever_frozen": {"lever": "potentiate", "status": "approved"},
+   "lead_modality": "cftr_modulator_oral",
+   "lead_modality_signature": "CFTR",
+   "inherited_systems": [
+    {"compartment": "respiratory", "sibling": "cardioresp", "organ": "lung", "reason": "airway-surface-liquid dehydration -> mucus plugging, bronchiectasis (the dominant burden)", "cited": "Riordan 1989 Science 245:1066"},
+    {"compartment": "pancreatic", "sibling": "digestive", "organ": "pancreas", "reason": "ductal CFTR loss -> exocrine pancreatic insufficiency, CF-related diabetes", "cited": "Rowe 2005 NEJM 352:1992"},
+    {"compartment": "intestinal", "sibling": "digestive", "organ": "intestine", "reason": "intestinal CFTR loss -> meconium ileus / DIOS", "cited": "Rowe 2005 NEJM 352:1992"},
+    {"compartment": "hepatic", "sibling": "digestive", "organ": "liver", "reason": "biliary CFTR loss -> CF liver disease / focal biliary cirrhosis", "cited": "Rowe 2005 NEJM 352:1992"},
+    {"compartment": "reproductive_tract", "sibling": "reproductive", "organ": "reproductive_tract", "reason": "congenital bilateral absence of the vas deferens (CBAVD) -> male infertility", "cited": "Chillon 1995 NEJM 332:1475"}
+   ],
+   "falsifier": {
+    "claim": "the oral modulator reaches all CFTR epithelia but only for modulator-responsive genotypes",
+    "falsifier": "show a CFTR potentiator restoring chloride conductance in a class-I (no-protein) genotype -> the genotype-limited-reach direction is wrong",
+    "measurable_by": "CFTR-mediated chloride current vs CFTR genotype class in patient-derived epithelia"
+   }
+  },
+  "cystinosis": {
+   "disease": "Nephropathic cystinosis",
+   "causal_gene": "CTNS",
+   "intractable_rationale": "lysosomal cystine-transporter defect; systemic aminothiol depletes cystine in perfused tissues but the AVASCULAR cornea is poorly reached by the systemic route -> corneal cystine crystals require a SEPARATE topical direction.",
+   "lead_lever_frozen": {"lever": "restrain", "status": "approved"},
+   "lead_modality": "small_molecule_substrate_depleter_systemic",
+   "lead_modality_signature": "cysteamine",
+   "inherited_systems": [
+    {"compartment": "renal", "sibling": "circulatory", "organ": "kidney", "reason": "proximal-tubule cystine -> renal Fanconi syndrome then ESRD (the life-limiting compartment)", "cited": "Gahl 2002 NEJM 347:111"},
+    {"compartment": "ocular_cornea", "sibling": "sensory", "organ": "eye_retina_optics", "reason": "corneal cystine crystals (photophobia) -- the avascular eye compartment poorly reached by systemic cysteamine, requiring topical drops", "cited": "Kaiser-Kupfer 1990; Gahl 2002 NEJM 347:111"}
+   ],
+   "falsifier": {
+    "claim": "systemic cysteamine reaches the renal compartment but not the avascular cornea (topical needed)",
+    "falsifier": "show oral cysteamine clearing corneal crystals as well as topical drops -> the avascular-cornea reach-gap is wrong",
+    "measurable_by": "corneal crystal density under systemic-only vs systemic+topical cysteamine"
+   }
+  },
+  "tuberous_sclerosis_complex": {
+   "disease": "Tuberous sclerosis complex",
+   "causal_gene": "TSC2",
+   "intractable_rationale": "a dominant multisystem hamartoma syndrome; the mTOR inhibitor restrains lesions across organs (including CNS SEGA) but is cytostatic -- lesions regrow on withdrawal, so the switch-level (TSC restore) direction stays open.",
+   "lead_lever_frozen": {"lever": "restrain", "status": "approved"},
+   "lead_modality": "mtor_inhibitor_systemic",
+   "lead_modality_signature": "mTOR",
+   "inherited_systems": [
+    {"compartment": "cns", "sibling": "neuro", "organ": null, "anchor": true, "reason": "subependymal giant-cell astrocytoma (SEGA), cortical tubers -> epilepsy / TAND", "cited": "Krueger 2010 NEJM 363:1801"},
+    {"compartment": "renal", "sibling": "circulatory", "organ": "kidney", "reason": "renal angiomyolipoma (the leading cause of TSC mortality in adults)", "cited": "Bissler 2013 Lancet 381:817"},
+    {"compartment": "epidermal", "sibling": "integumentary", "organ": "epidermis", "reason": "facial angiofibroma, hypomelanotic macules, shagreen patch", "cited": "Northrup 2013 (diagnostic criteria)"},
+    {"compartment": "cardiac", "sibling": "cardioresp", "organ": "heart", "reason": "cardiac rhabdomyoma (often regresses; arrhythmia risk in infancy)", "cited": "Northrup 2013"},
+    {"compartment": "respiratory", "sibling": "cardioresp", "organ": "lung", "reason": "lymphangioleiomyomatosis (LAM) -> cystic lung disease in females", "cited": "McCormack 2011 NEJM 364:1595"}
+   ],
+   "falsifier": {
+    "claim": "the systemic rapalogue reaches all hamartoma compartments including CNS (everolimus is approved for SEGA)",
+    "falsifier": "show an mTOR inhibitor failing to reach the CNS SEGA compartment at a tissue-suppressing exposure -> the systemic-incl-CNS reach is wrong",
+    "measurable_by": "lesion-volume response by compartment (SEGA vs AML vs skin) on a rapalogue"
+   }
+  },
+  "bardet_biedl_syndrome": {
+   "disease": "Bardet-Biedl syndrome",
+   "causal_gene": "BBS1",
+   "intractable_rationale": "a primary ciliopathy across four organ systems; the approved MC4R agonist bypasses the broken cilium ONLY at the hypothalamic satiety node -- the retina, kidney and limb compartments have NO approved therapy, the starkest multi-compartment reach gap in the kit.",
+   "lead_lever_frozen": {"lever": "potentiate", "status": "approved"},
+   "lead_modality": "melanocortin4_agonist",
+   "lead_modality_signature": "MC4R",
+   "inherited_systems": [
+    {"compartment": "hypothalamic_satiety", "sibling": "thermometabolic", "organ": "melanocortin_appetite", "reason": "ciliary leptin-melanocortin signalling fails -> hyperphagia / obesity (the ONLY compartment the lead lever reaches)", "cited": "Haqq 2003; Pomeroy 2021 (setmelanotide BBS)"},
+    {"compartment": "ocular_retina", "sibling": "sensory", "organ": "eye_retina_optics", "reason": "rod-cone dystrophy -> progressive blindness (no approved therapy)", "cited": "Forsythe & Beales 2013"},
+    {"compartment": "renal", "sibling": "circulatory", "organ": "kidney", "reason": "renal cystic / dysplastic disease -> CKD (no approved therapy)", "cited": "Forsythe & Beales 2013"},
+    {"compartment": "limb_skeleton", "sibling": "musculoskeletal", "organ": "limb_skeleton", "reason": "post-axial polydactyly (developmental ciliary patterning)", "cited": "Forsythe & Beales 2013"}
+   ],
+   "falsifier": {
+    "claim": "the MC4R agonist reaches ONLY the satiety compartment; retina/kidney/limb are not addressed",
+    "falsifier": "show setmelanotide slowing the retinal dystrophy or renal decline -> the satiety-only reach is wrong",
+    "measurable_by": "ERG / eGFR trajectory on setmelanotide vs the obesity endpoint it is approved for"
+   }
+  },
+  "wilson_disease": {
+   "disease": "Wilson disease",
+   "causal_gene": "ATP7B",
+   "intractable_rationale": "a copper-transport defect with hepatic, neurological and ocular deposition; the CONTRAST case where the systemic chelator DOES reach every compartment (including CNS copper) -- showing the reach read is not a blanket pessimism but a per-modality structural fact.",
+   "lead_lever_frozen": {"lever": "restrain", "status": "approved"},
+   "lead_modality": "metal_chelator_systemic",
+   "lead_modality_signature": "chelator",
+   "inherited_systems": [
+    {"compartment": "hepatic", "sibling": "digestive", "organ": "liver", "reason": "hepatic copper accumulation -> hepatitis / cirrhosis / acute liver failure", "cited": "Roberts & Schilsky 2008 Hepatology"},
+    {"compartment": "cns", "sibling": "neuro", "organ": null, "anchor": true, "reason": "basal-ganglia copper -> dystonia, tremor, dysarthria (neurologic Wilson)", "cited": "Roberts & Schilsky 2008 Hepatology"},
+    {"compartment": "ocular_cornea", "sibling": "sensory", "organ": "eye_retina_optics", "reason": "Kayser-Fleischer corneal copper rings (the diagnostic ocular sign)", "cited": "Roberts & Schilsky 2008 Hepatology"}
+   ],
+   "falsifier": {
+    "claim": "the systemic chelator reaches all copper-deposition compartments including the CNS",
+    "falsifier": "show a copper chelator failing to mobilise CNS copper while clearing hepatic copper -> the all-compartment systemic reach is wrong",
+    "measurable_by": "brain vs liver copper / free-copper response to chelation"
+   }
+  },
+  "hereditary_haemochromatosis_type_1": {
+   "disease": "Hereditary haemochromatosis type 1",
+   "causal_gene": "HFE",
+   "intractable_rationale": "systemic iron overload across liver, pancreas, heart, joints and gonad; phlebotomy removes iron from the whole parenchymal pool via plasma equilibration -- a second all-compartment-reach contrast, but it does NOT restore the hepcidin brake (the switch-level direction stays open).",
+   "lead_lever_frozen": {"lever": "restrain", "status": "approved"},
+   "lead_modality": "therapeutic_phlebotomy",
+   "lead_modality_signature": "phlebotomy",
+   "inherited_systems": [
+    {"compartment": "hepatic", "sibling": "digestive", "organ": "liver", "reason": "hepatocyte iron -> fibrosis / cirrhosis / HCC risk", "cited": "Pietrangelo 2010 Gastroenterology"},
+    {"compartment": "pancreatic", "sibling": "digestive", "organ": "pancreas", "reason": "islet iron -> 'bronze diabetes'", "cited": "Pietrangelo 2010 Gastroenterology"},
+    {"compartment": "cardiac", "sibling": "cardioresp", "organ": "heart", "reason": "myocardial iron -> cardiomyopathy / arrhythmia", "cited": "Pietrangelo 2010 Gastroenterology"},
+    {"compartment": "joint", "sibling": "musculoskeletal", "organ": "cartilage", "reason": "iron arthropathy (2nd/3rd MCP joints the classic site)", "cited": "Pietrangelo 2010 Gastroenterology"},
+    {"compartment": "gonadal_testis", "sibling": "reproductive", "organ": "gonad_testis", "reason": "pituitary/gonadal iron -> hypogonadotropic hypogonadism", "cited": "Pietrangelo 2010 Gastroenterology"}
+   ],
+   "falsifier": {
+    "claim": "phlebotomy lowers iron across all parenchymal compartments via plasma equilibration",
+    "falsifier": "show a parenchymal iron pool that phlebotomy cannot mobilise while plasma ferritin normalises -> the all-compartment reach is wrong",
+    "measurable_by": "tissue iron (hepatic / cardiac MRI T2*) vs serum ferritin across a phlebotomy course"
+   }
+  }
+ }
+}

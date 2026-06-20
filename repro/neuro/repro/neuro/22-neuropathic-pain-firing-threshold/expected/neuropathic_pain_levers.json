@@ -1,0 +1,147 @@
+{
+ "module": "22-neuropathic-pain-firing-threshold",
+ "scope": "neuro-native acquired/dynamics-key reading of nociceptor sensitisation; gene-key monogenic pain channelopathies are disease_wp entities, cross-referenced only",
+ "firewall": "peripheral afferent firing-threshold term only; delta is structural (not a dose); every clinical magnitude is [O]; the felt/affective pain is the Felt Cognition volume's; no molecule designed; nothing prescribes",
+ "master_gene": "PRDM12 (lineage) \u00b7 SCN9A/Na_V1.7 (firing gate)",
+ "de_sensitisation": {
+  "gamma": 1.4014,
+  "spinodal": 0.638545,
+  "sensitisation_bias_b0": 0.383127,
+  "b0_fraction_of_spinodal": 0.6,
+  "baseline_gain_1_over_2g": 0.356786,
+  "sensitised_gain": 0.600188,
+  "gain_amplification": 1.6822,
+  "levers": {
+   "L1": "reduce the inward (excitatory) current (block depolarising Na_V/Ca_V/ASIC/P2X/TRP) -> lower the effective sensitisation bias",
+   "L2": "increase the outward K+ current (open K_V7) -> hyperpolarise away from yield -> lower the effective bias",
+   "L3": "remove the up-stream NGF/CGRP sensitising drive -> un-do the sensitisation -> lower the effective bias"
+  },
+  "note": "shown once for one element; L1/L2/L3 are identical in direction (all lower b_eff)",
+  "sweep": [
+   {
+    "delta": 0.0,
+    "firing_threshold_margin": 0.255418,
+    "afferent_gain": 0.600188
+   },
+   {
+    "delta": 0.095782,
+    "firing_threshold_margin": 0.3512,
+    "afferent_gain": 0.50193
+   },
+   {
+    "delta": 0.191563,
+    "firing_threshold_margin": 0.446981,
+    "afferent_gain": 0.437767
+   },
+   {
+    "delta": 0.287345,
+    "firing_threshold_margin": 0.542763,
+    "afferent_gain": 0.391772
+   },
+   {
+    "delta": 0.383127,
+    "firing_threshold_margin": 0.638545,
+    "afferent_gain": 0.356786
+   }
+  ],
+  "all_T_rise_monotone": true,
+  "all_gain_fall_monotone": true,
+  "full_reversal_returns_to_baseline": true
+ },
+ "channelopathy_anchor": {
+  "title": "Channelopathy direction anchor \u2014 measured biology fixes the firing-threshold direction",
+  "axis": "the nociceptor firing threshold is the pain knob: lower it -> more pain, raise it -> less pain",
+  "anchors": [
+   {
+    "locus": "SCN9A (Na_V1.7)",
+    "dna_change": "loss-of-function / null",
+    "threshold_direction": "firing threshold -> infinity (gate never opens)",
+    "measured_phenotype": "congenital insensitivity to pain (no pain under any circumstance)",
+    "owns_entity": "disease_wp (gene-key)",
+    "citation": "Cox 2006 Nature 444:894; Goldberg 2007 Clin Genet 71:311",
+    "grade": "[V/F] direction anchored to measured phenotype"
+   },
+   {
+    "locus": "SCN9A (Na_V1.7)",
+    "dna_change": "gain-of-function lowering activation threshold",
+    "threshold_direction": "firing threshold lowered (gate opens too easily)",
+    "measured_phenotype": "inherited erythromelalgia (burning extremity pain)",
+    "owns_entity": "disease_wp (gene-key)",
+    "citation": "Drenth 2005 J Invest Dermatol 124:1333; Yang/Waxman",
+    "grade": "[V/F] direction anchored to measured phenotype"
+   },
+   {
+    "locus": "SCN9A (Na_V1.7)",
+    "dna_change": "gain-of-function impairing inactivation",
+    "threshold_direction": "sustained firing (gate fails to re-close)",
+    "measured_phenotype": "paroxysmal extreme pain disorder (PEPD)",
+    "owns_entity": "disease_wp (gene-key)",
+    "citation": "Fertleman 2006; Estacion 2008 J Neurosci 28:11079",
+    "grade": "[V/F] direction anchored to measured phenotype"
+   },
+   {
+    "locus": "NTRK1 (TrkA)",
+    "dna_change": "loss-of-function",
+    "threshold_direction": "nociceptor developmental arm absent",
+    "measured_phenotype": "congenital insensitivity to pain with anhidrosis (CIPA)",
+    "owns_entity": "disease_wp (gene-key)",
+    "citation": "Indo 1996 Nat Genet 13:485",
+    "grade": "[V/F] direction anchored to measured phenotype"
+   },
+   {
+    "locus": "SCN10A (Na_V1.8)",
+    "dna_change": "pharmacological closed-state stabilisation (VSD2 binder)",
+    "threshold_direction": "firing threshold RAISED (gate held closed) \u2014 the realised analgesic move",
+    "measured_phenotype": "approved non-opioid analgesia for moderate-severe acute pain",
+    "owns_entity": "machine (dynamics; realised L1)",
+    "citation": "suzetrigine (VX-548/Journavx) FDA 2025-01-30",
+    "grade": "[V/F] direction anchored to approved mechanism (magnitudes [O])"
+   }
+  ],
+  "reading": "The two DNA directions bracket the lever map: a LOF that drives the threshold to infinity ABOLISHES pain (CIP), and a GOF that lowers it CAUSES spontaneous pain (IEM/PEPD). The realised analgesic (Na_V1.8 closed-state stabiliser) sits on the SAME axis, pushed the protective way. So 'raise the firing threshold' is not an analogy \u2014 it is the measured pain axis, and the three levers are three ways onto it."
+ },
+ "disease_lever_pointers": [
+  {
+   "disorder": "Peripheral neuropathic pain (post-injury, e.g. diabetic/post-herpetic)",
+   "mechanism": "injury up-regulates Na_V1.3/Na_V1.7-Na_V1.8 traffic + NGF drive -> threshold lowered, gain up",
+   "levers": [
+    "L1",
+    "L2",
+    "L3"
+   ],
+   "pointer_classes": "alpha2delta-1 gabapentinoids (CACNA2D1); Na_V1.8/Na_V1.7-selective (SCN10A/SCN9A); K_V7 openers (KCNQ2/3/5); anti-NGF (NGF/NTRK1)"
+  },
+  {
+   "disorder": "Trigeminal / migraine-associated pain (CGRP-driven)",
+   "mechanism": "CGRP sensitising drive lowers the afferent threshold (validated in migraine)",
+   "levers": [
+    "L3"
+   ],
+   "pointer_classes": "anti-CGRP mAbs / gepants (CALCA/CALCB/CALCRL/RAMP1)"
+  },
+  {
+   "disorder": "Inflammatory / nociplastic pain (tissue acidosis + heat sensitisation)",
+   "mechanism": "ASIC/TRPV1 inward current rises with acidosis/heat -> threshold lowered",
+   "levers": [
+    "L1"
+   ],
+   "pointer_classes": "ASIC blockers (ASIC1/ASIC3); TRPV1 modulators; P2X3 (P2RX3)"
+  },
+  {
+   "disorder": "Inherited erythromelalgia / PEPD (Na_V1.7 GOF)",
+   "mechanism": "GOF lowers/sustains the firing gate -> spontaneous/triggered pain (gene-key entity = disease_wp)",
+   "levers": [
+    "L1"
+   ],
+   "pointer_classes": "Na_V1.7-selective block (SCN9A); carbamazepine in PEPD (cited)"
+  },
+  {
+   "disorder": "Refractory / severe central pain",
+   "mechanism": "presynaptic N-type Ca2+ release (dorsal horn) drives the central gain",
+   "levers": [
+    "L1"
+   ],
+   "pointer_classes": "N-type Ca_V2.2 block (CACNA1B, ziconotide, intrathecal)"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "disease": "Achondroplasia",
+ "omim": "100800",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Achondroplasia",
+  "omim": "100800",
+  "summary": "The commonest skeletal dysplasia: a recurrent FGFR3 gain-of-function (G380R) constitutively activates the growth-plate brake, so endochondral elongation is suppressed -> disproportionate short stature.",
+  "emergent_axis": "endochondral (growth-plate) bone elongation",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "FGFR3",
+    "gamma": 1.6194,
+    "spinodal_h_sp": 0.79319,
+    "barrier": 0.65561,
+    "dwell_relative_size": 1.87343,
+    "role": "brake",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "brake over-active -> target over-suppressed",
+    "ncbi": {
+     "acc": "NC_000004.12",
+     "gene_start": 1793292,
+     "gene_end": 1808866,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "fibroblast growth factor receptor 3"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "G380R transmembrane substitution -> ligand-independent constitutive kinase",
+    "src": "Shiang 1994 Cell 78:335; Rousseau 1994 Nature 371:252"
+   }
+  ],
+  "primary_switch": {
+   "gene": "FGFR3",
+   "role": "brake",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "brake over-active -> target over-suppressed"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "a5e9a77b03c2"
+ },
+ "treatment_A_switch": {
+  "disease": "Achondroplasia",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "oppose",
+    "target_gene": "NPR2",
+    "push_direction": "boost CNP->NPR2->cGMP, which OPPOSES the over-active FGFR3/MAPK brake",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "CNP analogue (vosoritide)",
+    "status": "approved",
+    "mechanism_grade": "[O] the downstream brake-suppression magnitude is not derived from sequence",
+    "src": "Savarirayan 2020 Lancet 396:684; vosoritide FDA/EMA 2021"
+   },
+   {
+    "lever": "reduce",
+    "target_gene": "FGFR3",
+    "push_direction": "reduce FGFR3 tyrosine-kinase output directly",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "FGFR3-TKI / soluble FGFR3 decoy (infigratinib, recifercept; investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] potency/selectivity/dose not asserted",
+    "src": "Legeai-Mallet lineage; infigratinib paediatric program"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "oppose",
+   "target_gene": "NPR2",
+   "push_direction": "boost CNP->NPR2->cGMP, which OPPOSES the over-active FGFR3/MAPK brake",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "CNP analogue (vosoritide)",
+   "status": "approved",
+   "mechanism_grade": "[O] the downstream brake-suppression magnitude is not derived from sequence",
+   "src": "Savarirayan 2020 Lancet 396:684; vosoritide FDA/EMA 2021"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.87343,
+   "dwell_disease": 1.21222,
+   "dwell_treated": 1.53789,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "04899617a301"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "FGFR3 GOF moves the growth-plate emergent axis DOWN (brake over-active)",
+   "falsifier": "an FGFR3 GOF allele that INCREASES limb length, or a growth-plate in which constitutive FGFR3 signalling raises chondrocyte proliferation, refutes the brake direction",
+   "measurable_by": "growth-plate chondrocyte proliferation index in an Fgfr3-G380R model; limb-length cohort by genotype"
+  },
+  {
+   "claim": "boosting NPR2/CNP (vosoritide axis) is the CORRECTIVE direction (opposes the brake)",
+   "falsifier": "if CNP/NPR2 activation reduced rather than restored endochondral growth, the 'oppose the brake' lever sign is wrong",
+   "measurable_by": "endochondral growth response to a CNP analogue in an Fgfr3-GOF growth-plate"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Achondroplasia": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "157c3dac6bba"
+ },
+ "determinism_sha": "920edb5f7862"
+}

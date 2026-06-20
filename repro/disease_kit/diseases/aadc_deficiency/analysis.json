@@ -1,0 +1,157 @@
+{
+ "disease": "Aromatic L-amino acid decarboxylase (AADC) deficiency",
+ "omim": "608643",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Aromatic L-amino acid decarboxylase (AADC) deficiency",
+  "omim": "608643",
+  "summary": "An autosomal-recessive neurometabolic disorder of monoamine-neurotransmitter synthesis. DDC encodes aromatic L-amino acid decarboxylase (AADC), the enzyme that decarboxylates L-DOPA -> dopamine and 5-hydroxytryptophan -> serotonin, shared by the catecholamine and serotonin pathways. DDC loss-of-function collapses synthesis of dopamine, noradrenaline, adrenaline and serotonin -> the monoamine-neurotransmitter axis falls -> a severe infantile-onset disorder (developmental delay, truncal hypotonia with limb hypertonia, oculogyric crises, autonomic dysfunction, movement disorder). Read as enzyme LOF -> pathway throughput DOWN (substrate L-DOPA / 3-O-methyldopa accumulates while the products fail) -> axis DOWN: a DEFICIENCY-driven neurodevelopmental / neurodegeneration. The honest CONTRAST to Friedreich ataxia is the LEAD lever: in FRDA the approved lead is downstream-only (omaveloxolone, which does not restore frataxin), whereas HERE the approved lead is the SWITCH-LEVEL gene restore -- eladocagene exuparvovec, an AAV2 vector carrying the DDC gene delivered into the putamen, restores AADC enzyme and dopamine synthesis; it is FDA-approved (Kebilidi, Nov 2024 -- the first US gene therapy administered directly into the brain) and EMA-approved (Upstaza, 2022). So this is the gene-restore-IS-the-lead read (like RPE65 / LCA2's voretigene) on a neurometabolic axis -- the deficiency-driven neurodegeneration in which restoring the gene IS the approved lead, the precise complement to FRDA's downstream-only lead. Downstream / supportive agents -- pyridoxal-5'-phosphate / vitamin B6 (the AADC cofactor; helps cofactor-responsive residual-activity alleles but does NOT restore a null enzyme), dopamine agonists and MAO-B inhibitors -- are recorded as downstream-symptomatic, partial NON-switch management, not the lead. The gamma read is of the DDC promoter switch STRUCTURE; the disease lesions are coding/splice (e.g. the founder IVS6+4A>T splice allele common in East Asia; p.Gly102Ser), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "monoamine-neurotransmitter synthesis throughput (dopamine / noradrenaline / adrenaline / serotonin) -- a neurotransmitter-biosynthesis axis; a deficiency-driven neurodegeneration",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "DDC",
+    "gamma": 1.3688,
+    "spinodal_h_sp": 0.61639,
+    "barrier": 0.4684,
+    "dwell_relative_size": 1.45585,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000007.14",
+     "gene_start": 50458441,
+     "gene_end": 50565404,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "dopa decarboxylase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "DDC encodes aromatic L-amino acid decarboxylase (AADC), the pyridoxal-5'-phosphate-dependent decarboxylase producing dopamine (from L-DOPA) and serotonin (from 5-HTP) -- the shared final enzyme of catecholamine and serotonin biosynthesis. LOF lowers throughput of BOTH monoamine pathways (substrate L-DOPA / 3-O-methyldopa accumulates; products fail) -> the neurotransmitter-synthesis axis falls (axis DOWN). 7p12.2 (OMIM 107930). NCBI official symbol DDC. Autosomal recessive. Coding/splice lesions (the East-Asian founder IVS6+4A>T splice allele; p.Gly102Ser); promoter firewall respected.",
+    "src": "Hyland 1992 (AADC deficiency identified); Brun 2010 Neurology 75:64 (clinical and biochemical spectrum of AADC deficiency)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "DDC",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "64de248ae747"
+ },
+ "treatment_A_switch": {
+  "disease": "Aromatic L-amino acid decarboxylase (AADC) deficiency",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "DDC",
+    "push_direction": "deliver a working DDC copy to putaminal neurons -> restore AADC enzyme -> restore dopamine (and monoamine) synthesis -> raise the deficient axis toward normal (axis UP). The switch-level corrective: it restores the deficient gene itself, and here it is the APPROVED lead (the Friedreich-ataxia contrast, where the approved lead is downstream-only)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AAV2-hAADC putaminal gene therapy (eladocagene exuparvovec)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored-enzyme level / dopamine-synthesis recovery not derived from sequence",
+    "src": "Tai 2022 Mol Ther 30:509 (eladocagene exuparvovec long-term outcomes); Upstaza (EMA 2022) / Kebilidi (FDA Nov 2024) -- first US gene therapy administered directly into the brain, for AADC deficiency"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "monoamine pathway",
+    "push_direction": "supply the AADC cofactor (pyridoxal-5'-phosphate / vitamin B6) and downstream monoamine support (dopamine agonists, MAO-B inhibitors) -> partially raise monoamine tone in cofactor-responsive / residual-activity disease. DOWNSTREAM and symptomatic -- does NOT restore a null enzyme or correct the DDC switch",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "cofactor + downstream monoamine support (pyridoxal-5'-phosphate / B6; dopamine agonist; MAO-B inhibitor)",
+    "status": "clinical",
+    "mechanism_grade": "[O] downstream / partial compensation not derived from sequence; symptomatic, not the switch lever",
+    "src": "Brun 2010 / Wassenberg 2017 consensus guideline (supportive pharmacotherapy in AADC deficiency)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "DDC",
+   "push_direction": "deliver a working DDC copy to putaminal neurons -> restore AADC enzyme -> restore dopamine (and monoamine) synthesis -> raise the deficient axis toward normal (axis UP). The switch-level corrective: it restores the deficient gene itself, and here it is the APPROVED lead (the Friedreich-ataxia contrast, where the approved lead is downstream-only)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "AAV2-hAADC putaminal gene therapy (eladocagene exuparvovec)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored-enzyme level / dopamine-synthesis recovery not derived from sequence",
+   "src": "Tai 2022 Mol Ther 30:509 (eladocagene exuparvovec long-term outcomes); Upstaza (EMA 2022) / Kebilidi (FDA Nov 2024) -- first US gene therapy administered directly into the brain, for AADC deficiency"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.45585,
+   "dwell_disease": 0.94202,
+   "dwell_treated": 1.1951,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "1752df2709ab"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "DDC (AADC) loss lowers dopamine / serotonin synthesis throughput (axis DOWN)",
+   "falsifier": "a DDC LOF genotype that RAISED CSF dopamine / serotonin end-metabolites (HVA / 5-HIAA), or AADC restoration that LOWERED them, refutes the deficiency (axis-DOWN) direction",
+   "measurable_by": "CSF homovanillic acid (HVA), 5-hydroxyindoleacetic acid (5-HIAA) and 3-O-methyldopa, with plasma AADC enzyme activity, stratified by DDC genotype"
+  },
+  {
+   "claim": "restoring the deficient DDC gene is the SWITCH-LEVEL corrective and is the lead (unlike FRDA's downstream-only lead)",
+   "falsifier": "if putaminal AAV-DDC re-expression failed to raise dopamine synthesis or improve motor milestones, the replace-DDC lever sign is wrong",
+   "measurable_by": "dopamine-synthesis (F-DOPA) PET, CSF HVA, and gross-motor-milestone change after AAV2-hAADC (the eladocagene-exuparvovec trial design)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Aromatic L-amino acid decarboxylase (AADC) deficiency": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "36ade9338ee6"
+ },
+ "determinism_sha": "230520bf55c2"
+}

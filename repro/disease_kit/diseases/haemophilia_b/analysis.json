@@ -1,0 +1,157 @@
+{
+ "disease": "Haemophilia B (F9, factor IX deficiency)",
+ "omim": "306900",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Haemophilia B (F9, factor IX deficiency)",
+  "omim": "306900",
+  "summary": "An X-linked single-gene F9 loss-of-function lowers coagulation factor IX, a vitamin-K-dependent serine-protease zymogen that, once activated (FIXa), drives the intrinsic-tenase step of the coagulation cascade (FIXa with cofactor FVIIIa activates factor X). With F9 LOF the procoagulant DRIVE is lost, thrombin/fibrin generation is under-driven, and haemostasis fails -> spontaneous and trauma-related bleeding (haemarthroses, soft-tissue and other bleeds), severity tracking residual factor IX level -> the coagulation-cascade axis is driven DOWN. Read as a lost ACCELERATOR of the coagulation cascade (factor IX drives clot formation; LOF -> under-driven haemostasis), the deficiency-driven DOWN shape -- but on a NEW physiological axis, the coagulation cascade, not previously represented in the kit. Correction RESTORES factor IX. The kit re-derives the gene-restore lead: etranacogene dezaparvovec, a liver-directed AAV5 F9-Padua gene-transfer therapy (the first approved haemophilia B gene therapy), restoring endogenous factor IX -- gene-restore-as-lead on haemostasis, extending the clean gene-restore reads (RPE65/LCA2, DDC/AADC) onto the clotting axis. The long-standing established replace arm is factor IX protein replacement (recombinant / plasma-derived factor IX, including extended-half-life fusions), also direction-consistent (replace the missing factor). The gamma read is of the F9 locus switch STRUCTURE (an AT-rich promoter, among the lowest gamma in the kit, consistent with its X-linked locus); the disease lesion is coding/regulatory (missense/nonsense; the distinct F9-promoter 'haemophilia B Leyden' androgen-responsive regulatory variants that remit at puberty are a SEPARATE class, noted not modelled), outside the structural promoter-window read. X-linked, so penetrance/severity are zygosity-dependent (males hemizygous; carrier females variable by X-inactivation) and held [O]. Magnitude [O].",
+  "emergent_axis": "coagulation-cascade output (factor-IX-driven intrinsic-tenase / thrombin-fibrin generation) -- a new haemostasis axis, the kit's first coagulation read",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "F9",
+    "gamma": 1.2627,
+    "spinodal_h_sp": 0.54613,
+    "barrier": 0.3986,
+    "dwell_relative_size": 1.2899,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 139530738,
+     "gene_end": 139563458,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "coagulation factor IX"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "F9 encodes coagulation factor IX, a vitamin-K-dependent serine-protease zymogen; activated FIXa is a positive DRIVER of the coagulation cascade (with FVIIIa it activates factor X). As an ACCELERATOR of clot formation, its LOF LOSES the drive -> thrombin/fibrin generation under-driven -> bleeding. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the COAGULATION OUTPUT (it goes DOWN), so the corrective levers RAISE it. Xq27.1 (OMIM 300746). NCBI official symbol F9. X-linked recessive. Coding/nonsense lesions; the 'haemophilia B Leyden' F9-promoter variants are a separate regulatory class (noted, not modelled).",
+    "src": "Choo 1982 Nature 299:178 (F9 cloned); Kurachi 1982 PNAS 79:6461 (F9 cDNA); Bolton-Maggs and Pasi 2003 Lancet 361:1801 (the haemophilias)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "F9",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "f525efcf176c"
+ },
+ "treatment_A_switch": {
+  "disease": "Haemophilia B (F9, factor IX deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "F9",
+    "push_direction": "restore endogenous factor IX expression by liver-directed AAV F9 (Padua hyperfunctional variant) gene transfer -> raise factor IX -> restore coagulation drive (axis UP toward haemostasis)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AAV F9 gene replacement (etranacogene dezaparvovec; also fidanacogene elaparvovec)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored factor-IX level / bleed-rate magnitude not derived from sequence",
+    "src": "Nathwani 2011 NEJM 365:2357 and 2014 NEJM 371:1994 (AAV F9 first-in-human); etranacogene dezaparvovec (Hemgenix) FDA 2022 / EMA 2023 -- first approved haemophilia B gene therapy; fidanacogene elaparvovec (Beqvez) FDA 2024"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "F9",
+    "push_direction": "supply exogenous factor IX protein -> raise factor IX -> restore coagulation drive (the long-standing established replace arm)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "factor IX protein replacement (recombinant / plasma-derived; extended-half-life Fc / albumin / PEG fusions)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored factor-IX activity / bleed-protection magnitude not derived from sequence",
+    "src": "recombinant factor IX (nonacog alfa) FDA 1997; extended-half-life rIX-FP (albutrepenonacog alfa) and rFIXFc (eftrenonacog alfa) approved"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "F9",
+   "push_direction": "restore endogenous factor IX expression by liver-directed AAV F9 (Padua hyperfunctional variant) gene transfer -> raise factor IX -> restore coagulation drive (axis UP toward haemostasis)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "AAV F9 gene replacement (etranacogene dezaparvovec; also fidanacogene elaparvovec)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored factor-IX level / bleed-rate magnitude not derived from sequence",
+   "src": "Nathwani 2011 NEJM 365:2357 and 2014 NEJM 371:1994 (AAV F9 first-in-human); etranacogene dezaparvovec (Hemgenix) FDA 2022 / EMA 2023 -- first approved haemophilia B gene therapy; fidanacogene elaparvovec (Beqvez) FDA 2024"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.2899,
+   "dwell_disease": 0.83464,
+   "dwell_treated": 1.05888,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "18c3a0296465"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "F9 LOF lowers coagulation-cascade output (haemostasis under-driven)",
+   "falsifier": "an F9 LOF allele that RAISED thrombin generation / shortened clotting time, or that improved haemostasis, would refute the drive-down direction",
+   "measurable_by": "plasma factor IX activity and thrombin-generation / aPTT clotting assay stratified by F9 genotype"
+  },
+  {
+   "claim": "restoring factor IX (replace) is the CORRECTIVE direction",
+   "falsifier": "if raising factor IX REDUCED coagulation output or WORSENED bleeding, the 'replace factor' lever sign is wrong",
+   "measurable_by": "thrombin generation / bleed-rate response to factor IX restoration (gene transfer or protein replacement)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Haemophilia B (F9, factor IX deficiency)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "2d74291dd659"
+ },
+ "determinism_sha": "7a2e0918d15e"
+}

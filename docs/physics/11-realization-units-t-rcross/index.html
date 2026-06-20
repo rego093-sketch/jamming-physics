@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realization of units: a,Δ t,RCROSS — VP Theory §11 | Jamming Physics</title>
+<meta name="description" content="c_ref may anchor units, never justify results. One split rule turns the anchor into the lattice unit.">
+<link rel="canonical" href="https://jamming-physics.org/physics/11-realization-units-t-rcross/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Realization of units: a,Δ t,RCROSS — VP Theory §11 | Jamming Physics"><meta property="og:description" content="c_ref may anchor units, never justify results. One split rule turns the anchor into the lattice unit."><meta property="og:url" content="https://jamming-physics.org/physics/11-realization-units-t-rcross/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Realization of units: a,Δ t,RCROSS — VP Theory §11 | Jamming Physics"><meta name="twitter:description" content="c_ref may anchor units, never justify results. One split rule turns the anchor into the lattice unit.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Realization of units: a,Δ t,RCROSS",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"11",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§11 Realization of units: a,Δ t,RCROSS"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §11</nav></header>
+<main>
+<h1>Realization of units: $a,Δ t,RCROSS$</h1>
+<p class="answer">Realization of units: a,Δ t,RCROSS: One split rule turns the anchor into the lattice unit. No single anchor decides anything: two channels or no conclusion. Tier-3 adjudication Tier-3 is evaluated only when Tier-2= PASS. This chapter fixes the procedure that seals a world described in internal units (dimensionless/internal length/internal time) into realized units (length/time). Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">One split rule turns the anchor into the lattice unit. No single anchor decides anything: two channels or no conclusion. Tier-3 adjudication Tier-3 is evaluated only when Tier-2= PASS.</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/11-realization-units-t-rcross/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="nu-p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a></aside>
+<aside class="vp-card" data-locked="mp-me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−19 ppm vs measurement). <b>[F]</b> forced. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a></aside>
+<aside class="vp-card" data-locked="d-anch"><b>D = 4.8526 pm</b> — Quantum (anchor) diameter that fixes the lattice length scale. <b>[F]</b> forced. <a href="/physics/03-axioms-primitives-volume-particle-lattice/">canonical derivation §3</a></aside>
+<aside class="vp-card" data-locked="spine"><b>c² = B/ρ</b> — Speed of light as the lattice elastic-wave speed (bulk modulus over density); simulation-validated. <b>[V]</b> verified. <a href="/physics/sp-jamming-spine-verified-physical-backbone/">canonical derivation §SP</a></aside>
+<h2>Purpose (deliverables of unit realization)</h2>
+<p>This chapter fixes the procedure that <strong>seals</strong> a world described in internal units (dimensionless/internal length/internal time) into realized units (length/time). The deliverables of this chapter are fixed as the following four items.</p>
+<ol>
+<li> The realized length scale a (the VP diameter) and the locking of its value in <code>realization_lock</code>.
+<li> The realized time tick Δ t and the locking of its value in <code>realization_lock</code>.
+<li> The definition of operational anchors (input channels, record formats, scopes).
+<li> The cross-validation system RCROSS (a multi-anchor consistency Gate) and its PASS/FAIL judgment.
+</ol>
+<p>This chapter does <em>not</em> treat realized values as “tuning to make things fit.” Realized values are outputs that are computed from operational anchors and pre-registered procedures and then sealed; any post hoc change after seeing the result is prohibited.</p>
+<h2>Declaration of Option-B (realization philosophy)</h2>
+<p>This chapter fixes the philosophy of unit realization as <strong>Option-B</strong>. Option-B consists of the following declarations.</p>
+<ol>
+<li> Dimensionless results or internal-unit results produced by internal computations (lattice/events/propagation) are preserved <strong>as they are</strong> as locked relations (ratios/invariants).
+<li> Conversion into realized units is performed through <em>operational anchors</em>; anchors have pre-registered channels and logging protocols.
+<li> Realized values (a,Δ t) have the status of conclusions only when self-consistency is confirmed through <strong>cross-validation (RCROSS)</strong> rather than by a single anchor.
+</ol>
+<p>The core of Option-B is to prohibit “realization that depends on a single reference point,” and to structurally implement No-Tuning by weaving at least two independent channels into <strong>cross-consistency</strong>.</p>
+<h2>Declaration of operational anchors (status of inputs)</h2>
+<p>Operational anchors are reference channels used in the realization map, and they have the following properties.</p>
+<ol>
+<li> Anchors are <strong>inputs</strong>: an anchor is not a derived output but a reference for realization; its choice/interpretation/logging are locked in <code>analysis_lock</code> and <code>protocol_lock</code>.
+<li> Anchors are <strong>single-source-of-truth</strong>: the value and record of an anchor belong to <code>realization_lock</code> and are not duplicated elsewhere in the manuscript.
+<li> Anchors have a <strong>scope</strong>: an anchor is locked together with its applicable regime (observation/experiment/channel) and is not reused out of scope.
+<li> Anchors are <strong>immutable after sealing</strong>: changes are allowed only via versioning; any change triggers full re-derivation and full re-validation.
+</ol>
+<h2>Declaration of the cross-validation system (RCROSS)</h2>
+<p>RCROSS is defined as a Gate stack that judges whether <em>two or more independent anchors support the same realized values</em>. RCROSS consists of the following elements.</p>
+<ol>
+<li> Anchor channel set: A=A₁,A₂,….
+<li> Channel-wise candidate realized values: (a^((k)),Δ t^((k))).
+<li> Comparison indicators: Π-type indicators (ratios/differences/cross-invariants).
+<li> Thresholds/tolerances: a set ε (pre-registered).
+<li> Verdict outputs: <code>PASS</code>/<code>FAIL</code>/<code>INCONCLUSIVE</code>.
+</ol>
+<p>RCROSS does not assert “matching implies truth”; it only judges whether the pre-registered conditions are satisfied. If RCROSS is not <code>PASS</code>, realized values do not have the status of conclusions.</p>
+<h2>Locking a,Δ t and declared linkage</h2>
+<p>In this chapter, a and Δ t are fixed as core entries in <code>realization_lock</code>.</p>
+<figure class="eq" id="eq:S11_values"><img src="/physics/eq/physics/phy-11-000.svg" data-eq="phy-11-000" width="518" height="20" loading="lazy" alt="\begin{equation} a=\aVP, \qquad \Delta t=1.86\times 10^{-21}\ \mathrm{s}. \end{equation}"></figure>
+<p>These values are sealed as the output of the procedures in this chapter (operational anchors + RCROSS), and are not re-estimated/re-calibrated elsewhere. Changes to realized values are permitted only through versioning; if changed, all dependent derived quantities (energy, mass, force, propagation speed, etc.) must be fully recomputed and re-adjudicated.</p>
+<h2>11.1 Option-B philosophy: c_ref is an operational anchor</h2>
+<aside class="claim-strip vps" data-vps="11.1" data-cards="VP-C-045, VP-C-052"><span class="g">Option-B anchor policy</span><span class="io">in: $c_ref$ / out: allowed slots only; FAIL-CREF-* labels</span><q class="one">$c_ref$ may anchor units, never justify results.</q><span class="cards">VP-C-045, VP-C-052</span></aside>
+<h3>11.1.1 Purpose</h3>
+<p>This section fixes the status of c_ref in Option-B unit realization as an <strong>operational anchor</strong>, and fixes as prohibition rules any use of c_ref as a “prediction target” or “justification basis.”
+The deliverables of this section are (i) the meaning (definition) of c_ref, (ii) the allowed slots where c_ref may be used, and (iii) prohibited uses and their violation handling.</p>
+<h3>11.1.2 Definition: fixing the meaning of c_ref</h3>
+<h4>[D-11.1-1] Realization map (length/time)</h4>
+<p>Fix the relation between internal coordinates x,t and realized coordinates x,t as follows.</p>
+<figure class="eq" id="eq:S11_01_map"><img src="/physics/eq/physics/phy-11-001.svg" data-eq="phy-11-001" width="183" height="21" loading="lazy" alt="\begin{equation} x:=a\,\tilde{x}, \qquad t:=\Delta t\,\tilde{t}. \end{equation}"></figure>
+<p>Therefore the internal velocity v and realized velocity v are linked by</p>
+<figure class="eq" id="eq:S11_01_vmap"><img src="/physics/eq/physics/phy-11-002.svg" data-eq="phy-11-002" width="134" height="38" loading="lazy" alt="\begin{equation} v=\frac{dx}{dt}=\frac{a}{\Delta t}\,\tilde{v}. \end{equation}"></figure>
+<h4>[D-11.1-2] c_ref</h4>
+<p>c_ref is a <strong>reference speed constant</strong> used in the realization procedure, defined with the following meaning.</p>
+<figure class="eq" id="eq:S11_01_cref_def"><img src="/physics/eq/physics/phy-11-003.svg" data-eq="phy-11-003" width="641" height="19" loading="lazy" alt="\begin{equation} c_{\mathrm{ref}} := \text{the value of a reference channel used to fix the realized speed unit }(a/\Delta t). \end{equation}"></figure>
+<p>That is, c_ref is not a derived output of the internal propagation indicator c; it is a reference used to fix the realization of a and Δ t. The dimension of c_ref is length/time, and the unit notation is locked as <code>m/s</code>.</p>
+<h4>[D-11.1-3] Storage protocol for c_ref</h4>
+<p>c_ref must be stored together with the following fields in <code>realization_lock</code>.</p>
+<ol>
+<li> <strong>value</strong>: the numeric value of c_ref.
+<li> <strong>unit</strong>: the unit (fixed: <code>m/s</code>).
+<li> <strong>channel_id</strong>: identifier of the reference channel (which operational anchor).
+<li> <strong>scope</strong>: applicable scope (which regime/experiment/baseline combination).
+<li> <strong>protocol_ref</strong>: measurement/recording/preprocessing protocol identifier.
+</ol>
+<p>If any field is missing, then c_ref degenerates into “a constant with only a number,” violating SSOT, hence unusable; all downstream realization results become <code>INCONCLUSIVE</code> or <code>FAIL</code>.</p>
+<h3>11.1.3 Allowed slots for using c_ref in Option-B (defined slots)</h3>
+<p>Option-B locks c_ref so that it is used only in the following slots.</p>
+<h4>11.1.3.1 Slot for fixing the realization scale factor</h4>
+<p>Define the realized velocity scale factor as</p>
+<figure class="eq" id="eq:S11_01_Lv"><img src="/physics/eq/physics/phy-11-004.svg" data-eq="phy-11-004" width="86" height="34" loading="lazy" alt="\begin{equation} \Lambda_v := \frac{a}{\Delta t}. \end{equation}"></figure>
+<p>In Option-B, c_ref is used only as a reference for fixing Λ_v. That is, when a channel Aₖ provides an internal speed indicator c^((k)), the realization factor is defined to be determined only by</p>
+<figure class="eq" id="eq:S11_01_Lv_from_cref"><img src="/physics/eq/physics/phy-11-005.svg" data-eq="phy-11-005" width="764" height="35" loading="lazy" alt="\begin{equation} \Lambda_v :=\frac{c_{\mathrm{ref}}}{\tilde{c}^{(k)}}, \qquad \text{(channel $k$ is a pre-registered anchor, selected/adjudicated by cross-validation)}. \end{equation}"></figure>
+<p>Equation <a href="#eq:S11_01_Lv_from_cref" class="xref" data-ref="eq:S11_01_Lv_from_cref">(S11_01_Lv_from_cref)</a> encodes that “c_ref is a reference” and “the internal indicator is a derived output.”</p>
+<h4>11.1.3.2 Slot for decomposing the realization into a and Δ t</h4>
+<p>Option-B assumes that Λ_v=a/Δ t alone does not determine a and Δ t individually; a and Δ t must be decomposed via at least two independent anchors. c_ref is used only as <strong>one anchor value</strong> in this decomposition, and additional anchors (e.g., baseline combinations, RCROSS channels) are required. Hence c_ref does not determine a or Δ t by itself.</p>
+<h3>11.1.4 Prohibition rule: do not use c_ref as a prediction target</h3>
+<p>This section prohibits using c_ref as a “prediction target” under the following conditions.</p>
+<h4>11.1.4.1 Definition of the prohibition</h4>
+<p>If any of the following is performed, it is judged as “predictive use of c_ref” and prohibited.</p>
+<ol>
+<li> After computing an internal-derived c or realized c, writing a justification statement that uses agreement with c_ref as a basis.
+<li> Claiming to produce c without knowing c_ref, while in fact using c_ref as an input in selecting a, Δ t, or channel choice.
+<li> Post hoc modification of c_ref or anchor-channel definitions to evade an RCROSS failure.
+</ol>
+<p>This prohibition is not a “sentence ban” but a “procedure ban”; it must be decidable from logs.</p>
+<h4>11.1.4.2 The only allowed comparison slot (comparison as a Gate metric)</h4>
+<p>When comparing c_ref and c is necessary, such comparison is allowed only in the following slot.</p>
+<figure class="eq" id="eq:S11_01_compare_rule"><img src="/physics/eq/physics/phy-11-006.svg" data-eq="phy-11-006" width="972" height="19" loading="lazy" alt="\begin{equation} \text{Comparison is recorded only as a Gate (cross-consistency or reproducibility) metric and is not used as a justification basis.} \end{equation}"></figure>
+<p>That is, comparisons are used only for <code>PASS</code>/<code>FAIL</code>/<code>INCONCLUSIVE</code> adjudication; retroactively modifying axioms/definitions/realized values based on a comparison outcome is prohibited.</p>
+<h3>11.1.5 Prohibition rule: do not use c_ref as a single anchor</h3>
+<p>Option-B prohibits determining (a,Δ t) using c_ref as a single anchor. The prohibition condition is</p>
+<figure class="eq" id="eq:S11_01_single_anchor_ban"><img src="/physics/eq/physics/phy-11-007.svg" data-eq="phy-11-007" width="679" height="17" loading="lazy" alt="\begin{equation} \text{If $a$ or $\Delta t$ is determined using only $c_{\mathrm{ref}}$ as a single anchor, then }\texttt{FAIL-ANCHOR-SINGLE}. \end{equation}"></figure>
+<p>A “single-anchor determination” means one of the following.</p>
+<ol>
+<li> Fixing a arbitrarily and sealing Δ t computed only from c_ref (or vice versa).
+<li> Determining (a,Δ t) simultaneously by a single channel without cross-channel consistency (RCROSS).
+</ol>
+<p>Therefore, in this chapter, realized values must pass a Gate stack that includes RCROSS.</p>
+<h3>11.1.6 Handling upon violation (FAIL labels)</h3>
+<p>Violations of the prohibition rules in this section are handled with the following FAIL labels.
+<div class="c"></p>
+<table><tr><td>Label</td><td>Meaning</td></tr><tr><td>FAIL-CREF-PREDICT</td><td>using c_ref as a prediction target (as justification/basis)</td></tr><tr><td>FAIL-ANCHOR-SINGLE</td><td>determining realized values using c_ref as a single anchor</td></tr><tr><td>FAIL-CREF-RETRO</td><td>post hoc modification of c_ref or channel definitions after RCROSS/judgment failure</td></tr><tr><td>FAIL-CREF-LOCK</td><td>missing storage fields for c_ref or mixing lock_id combinations</td></tr></table>
+</div>
+If any of these FAIL labels occurs, then the realized values (a,Δ t) and all dependent derived quantities (energy/mass/force/c/etc.) lose conclusion status, and the loss propagates along the dependency graph.
+<h2>11.2 Deriving a=λ_ref/N→aVPm</h2>
+<aside class="claim-strip vps" data-vps="11.2" data-cards="VP-C-003, VP-C-001, VP-C-002"><span class="g">realization</span><span class="io">in: $λ_ref,N$ / out: $a=λ_ref/N=6.3299×10⁻¹⁹$ m (diameter)</span><q class="one">One split rule turns the anchor into the lattice unit.</q><span class="cards">VP-C-003, VP-C-001, VP-C-002</span></aside>
+<h3>11.2.1 Inputs (LOCK): λ_ref and N</h3>
+<h4>[D-11.2-1] Reference length λ_ref</h4>
+<p>Define λ_ref as a reference length (operational anchor) used in unit realization. λ_ref is locked in <code>realization_lock</code> together with the fields <code>value</code>, <code>unit</code>, <code>channel_id</code>, <code>scope</code>, <code>protocol_ref</code>.
+The locked value used in this section is fixed as</p>
+<figure class="eq" id="eq:S11_02_lref_nm"><img src="/physics/eq/physics/phy-11-008.svg" data-eq="phy-11-008" width="279" height="16" loading="lazy" alt="\begin{equation} \lambda_{\mathrm{ref}} = 632.99121257859865746\ \mathrm{nm}. \end{equation}"></figure>
+<h4>[D-11.2-2] Split integer N</h4>
+<p>N is a dimensionless integer, defined as the number of equal subdivisions of the reference length λ_ref into N pieces. N is locked in <code>analysis_lock</code> and cannot be changed after seeing the result.
+The locked value used in this section is fixed as</p>
+<figure class="eq" id="eq:S11_02_N_lock"><img src="/physics/eq/physics/phy-11-009.svg" data-eq="phy-11-009" width="80" height="18" loading="lazy" alt="\begin{equation} N = 10^{12}. \end{equation}"></figure>
+<h3>11.2.2 Definition: realized length a (VP diameter)</h3>
+<h4>[D-11.2-3] Meaning (diameter) and unit of a</h4>
+<p>Define a as the fundamental diameter of the volume particle (VP). The geometric meaning of a is locked as <code>diameter</code> and is not reinterpreted as a radius. The dimension of a is length (<code>L</code>), and the unit is locked as <code>m</code>.</p>
+<h4>[D-11.2-4] Split-realization rule</h4>
+<p>Define the realized length a by the following split rule.</p>
+<figure class="eq" id="eq:S11_02_a_def"><img src="/physics/eq/physics/phy-11-010.svg" data-eq="phy-11-010" width="81" height="38" loading="lazy" alt="\begin{equation} a := \frac{\lambda_{\mathrm{ref}}}{N}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S11_02_a_def" class="xref" data-ref="eq:S11_02_a_def">(S11_02_a_def)</a> is a unit-realization rule; if λ_ref and N are not locked, then a is undefined.</p>
+<h3>11.2.3 Unit conversion: SI expression of λ_ref</h3>
+<h4>[D-11.2-5] Nanometer-to-meter conversion</h4>
+<p>Fix the unit conversion rule as</p>
+<figure class="eq" id="eq:S11_02_nm_to_m"><img src="/physics/eq/physics/phy-11-011.svg" data-eq="phy-11-011" width="127" height="18" loading="lazy" alt="\begin{equation} 1\ \mathrm{nm} = 10^{-9}\ \mathrm{m}. \end{equation}"></figure>
+<h4>[D-11.2-6] Meter value of λ_ref</h4>
+<p>From <a href="#eq:S11_02_lref_nm" class="xref" data-ref="eq:S11_02_lref_nm">(S11_02_lref_nm)</a> and <a href="#eq:S11_02_nm_to_m" class="xref" data-ref="eq:S11_02_nm_to_m">(S11_02_nm_to_m)</a>,</p>
+<figure class="eq" id="eq:S11_02_lref_m"><img src="/physics/eq/physics/phy-11-012.svg" data-eq="phy-11-012" width="328" height="72" loading="lazy" alt="\begin{align} \lambda_{\mathrm{ref}} &amp;= 632.99121257859865746\ \mathrm{nm} \notag\\ &amp;= 632.99121257859865746\times 10^{-9}\ \mathrm{m} \notag\\ &amp;= 6.3299121257859865746\times 10^{-7}\ \mathrm{m}. \end{align}"></figure>
+<h3>11.2.4 Expanding the computation a=λ_ref/N</h3>
+<p>Substitute <a href="#eq:S11_02_lref_m" class="xref" data-ref="eq:S11_02_lref_m">(S11_02_lref_m)</a> and <a href="#eq:S11_02_N_lock" class="xref" data-ref="eq:S11_02_N_lock">(S11_02_N_lock)</a> into <a href="#eq:S11_02_a_def" class="xref" data-ref="eq:S11_02_a_def">(S11_02_a_def)</a>.</p>
+<figure class="eq" id="eq:S11_02_a_step1"><img src="/physics/eq/physics/phy-11-013.svg" data-eq="phy-11-013" width="374" height="98" loading="lazy" alt="\begin{align} a &amp;=\frac{\lambda_{\mathrm{ref}}}{N} =\frac{6.3299121257859865746\times 10^{-7}\ \mathrm{m}}{10^{12}} \\ &amp;=6.3299121257859865746\times 10^{-7}\times 10^{-12}\ \mathrm{m} \\ &amp;=6.3299121257859865746\times 10^{-19}\ \mathrm{m}. \end{align}"></figure>
+<p>Therefore the realized length a is fixed as</p>
+<figure class="eq" id="eq:S11_02_a_box"><img src="/physics/eq/physics/phy-11-014.svg" data-eq="phy-11-014" width="480" height="28" loading="lazy" alt="\begin{equation} \boxed{ a = 6.3299121257859865746\times 10^{-19}\ \mathrm{m} } \qquad (\text{VP diameter}). \end{equation}"></figure>
+<h3>11.2.5 Derived expression (attometer units)</h3>
+<h4>[D-11.2-7] Attometer conversion</h4>
+<p>Fix the unit conversion rule as</p>
+<figure class="eq" id="eq:S11_02_am_to_m"><img src="/physics/eq/physics/phy-11-015.svg" data-eq="phy-11-015" width="132" height="18" loading="lazy" alt="\begin{equation} 1\ \mathrm{am} = 10^{-18}\ \mathrm{m}. \end{equation}"></figure>
+<h4>[D-11.2-8] Attometer expression of a</h4>
+<p>From <a class="xref" data-ref="eq:S11_02_a_final">(S11_02_a_final)</a> and <a href="#eq:S11_02_am_to_m" class="xref" data-ref="eq:S11_02_am_to_m">(S11_02_am_to_m)</a>,</p>
+<figure class="eq" id="eq:S11_02_a_am"><img src="/physics/eq/physics/phy-11-016.svg" data-eq="phy-11-016" width="321" height="72" loading="lazy" alt="\begin{align} a &amp;=6.3299121257859865746\times 10^{-19}\ \mathrm{m} \notag\\ &amp;=0.63299121257859865746\times 10^{-18}\ \mathrm{m} \notag\\ &amp;=0.63299121257859865746\ \mathrm{am}. \end{align}"></figure>
+<h3>11.2.6 LOCK location of a (registry entry)</h3>
+<p>a must be recorded in <code>realization_lock</code> with the following fields.</p>
+<ol>
+<li> <strong>symbol</strong>: <code>a</code>
+<li> <strong>entity</strong>: the fundamental diameter of <code>OBJ-VP</code>
+<li> <strong>geometry_meaning</strong>: <code>diameter</code>
+<li> <strong>dimension</strong>: <code>L</code>
+<li> <strong>unit</strong>: <code>m</code>
+<li> <strong>value</strong>: <a href="#eq:S11_02_a_box" class="xref" data-ref="eq:S11_02_a_box">(S11_02_a_box)</a>
+<li> <strong>derived_from</strong>: λ_ref (including its <code>channel_id</code>), N (including its <code>analysis_lock</code> field name)
+<li> <strong>derivation_id</strong>: <code>DER-11-02-A</code>
+</ol>
+<p>In the same release, it must also be sealed by <code>manifest</code> and <code>checksums</code>; an unsealed a cannot be used as an input for later chapters (energy/mass/force/c).</p>
+<h2>11.3 Deriving Δ t=(A· a)/c_ref→1.86× 10⁻²¹s</h2>
+<aside class="claim-strip vps" data-vps="11.3" data-cards="VP-C-004, VP-C-010"><span class="g">realization</span><span class="io">in: $A,a,c_ref$ / out: $Δ t=Aa/c_ref=1.86×10⁻²¹$ s; error budget</span><q class="one">The tick follows from the amplification; $cΔ t/a=A$ closes exactly.</q><span class="cards">VP-C-004, VP-C-010</span></aside>
+<h3>11.3.1 Inputs (LOCK): a, c_ref, A</h3>
+<h4>[D-11.3-1] Realized length a</h4>
+<p>a is defined as the fundamental <strong>diameter</strong> of VP (<code>geometry_meaning</code>=<code>diameter</code>), locked with length dimension (<code>L</code>) and unit <code>m</code>. The locked value used in this section is</p>
+<figure class="eq" id="eq:S11_03_a_lock"><img src="/physics/eq/physics/phy-11-017.svg" data-eq="phy-11-017" width="317" height="18" loading="lazy" alt="\begin{equation} a = 6.3299121257859865746\times 10^{-19}\ \mathrm{m}. \end{equation}"></figure>
+<h4>[D-11.3-2] Reference speed constant c_ref</h4>
+<p>c_ref is defined as a <strong>reference speed constant</strong> of an operational anchor (reference channel), locked with dimension <code>L/T</code> and unit <code>m/s</code>. The locked value used in this section is</p>
+<figure class="eq" id="eq:S11_03_cref_lock"><img src="/physics/eq/physics/phy-11-018.svg" data-eq="phy-11-018" width="182" height="19" loading="lazy" alt="\begin{equation} c_{\mathrm{ref}} = 299\,792\,458\ \mathrm{m/s}. \end{equation}"></figure>
+<h4>[D-11.3-3] Propagation amplification coefficient A</h4>
+<p>A is dimensionless and is defined as a coefficient indicating how many times the “effective propagation length corresponding to one tick” aggregates relative to the base length a. The locked value used in this section is</p>
+<figure class="eq" id="eq:S11_03_A_lock"><img src="/physics/eq/physics/phy-11-019.svg" data-eq="phy-11-019" width="791" height="15" loading="lazy" alt="\begin{equation} A = 880918.97770344000000074873389538365909152024492565003100802687690543842580063599. \end{equation}"></figure>
+<p>The procedure that produces A (event definition, propagation path, aggregation window, estimator) must be locked in <code>analysis_lock</code> and cannot be changed after seeing results.</p>
+<h3>11.3.2 Definition: effective propagation length ℓₑff</h3>
+<p>Define the effective propagation length corresponding to one tick as</p>
+<figure class="eq" id="eq:S11_03_leff_def"><img src="/physics/eq/physics/phy-11-020.svg" data-eq="phy-11-020" width="96" height="16" loading="lazy" alt="\begin{equation} \ell_{\mathrm{eff}} := A\cdot a. \end{equation}"></figure>
+<p>In <a href="#eq:S11_03_leff_def" class="xref" data-ref="eq:S11_03_leff_def">(S11_03_leff_def)</a>, since A is dimensionless, ℓ_eff has dimension length (<code>L</code>) and unit <code>m</code>.</p>
+<h3>11.3.3 Definition: Δ t (an anchor-based time tick)</h3>
+<p>Fix the reference speed constant c_ref as an operational quantity defined by the ratio of the “effective propagation length per tick” to the “tick time”.</p>
+<figure class="eq" id="eq:S11_03_cref_as_ratio"><img src="/physics/eq/physics/phy-11-021.svg" data-eq="phy-11-021" width="93" height="39" loading="lazy" alt="\begin{equation} c_{\mathrm{ref}} := \frac{\ell_{\mathrm{eff}}}{\Delta t}. \end{equation}"></figure>
+<p>Substituting <a href="#eq:S11_03_leff_def" class="xref" data-ref="eq:S11_03_leff_def">(S11_03_leff_def)</a> into <a href="#eq:S11_03_cref_as_ratio" class="xref" data-ref="eq:S11_03_cref_as_ratio">(S11_03_cref_as_ratio)</a> gives</p>
+<figure class="eq" id="eq:S11_03_cref_sub"><img src="/physics/eq/physics/phy-11-022.svg" data-eq="phy-11-022" width="101" height="39" loading="lazy" alt="\begin{equation} c_{\mathrm{ref}} = \frac{A\cdot a}{\Delta t}. \end{equation}"></figure>
+<p>Solving <a href="#eq:S11_03_cref_sub" class="xref" data-ref="eq:S11_03_cref_sub">(S11_03_cref_sub)</a> for Δ t yields</p>
+<figure class="eq" id="eq:S11_03_dt_formula"><img src="/physics/eq/physics/phy-11-023.svg" data-eq="phy-11-023" width="107" height="51" loading="lazy" alt="\begin{equation} \boxed{ \Delta t = \frac{A\cdot a}{c_{\mathrm{ref}}} }. \end{equation}"></figure>
+<p>Equation <a href="#eq:S11_03_dt_formula" class="xref" data-ref="eq:S11_03_dt_formula">(S11_03_dt_formula)</a> is the derived result of this section, completed by combining definitions <a href="#eq:S11_03_cref_as_ratio" class="xref" data-ref="eq:S11_03_cref_as_ratio">(S11_03_cref_as_ratio)</a> and <a href="#eq:S11_03_leff_def" class="xref" data-ref="eq:S11_03_leff_def">(S11_03_leff_def)</a>.</p>
+<h3>11.3.4 Numerical substitution (fully expanded)</h3>
+<h4>11.3.4.1 Computing ℓₑff=A· a</h4>
+<p>Substitute <a href="#eq:S11_03_A_lock" class="xref" data-ref="eq:S11_03_A_lock">(S11_03_A_lock)</a> and <a href="#eq:S11_03_a_lock" class="xref" data-ref="eq:S11_03_a_lock">(S11_03_a_lock)</a> into <a href="#eq:S11_03_leff_def" class="xref" data-ref="eq:S11_03_leff_def">(S11_03_leff_def)</a>.</p>
+<figure class="eq" id="eq:S11_03_leff_value"><img src="/physics/eq/physics/phy-11-024.svg" data-eq="phy-11-024" width="1107" height="74" loading="lazy" alt="\begin{align} \ell_{\mathrm{eff}} &amp;=A\cdot a \notag\\ &amp;= \left( 880918.97770344000000074873389538365909152024492565003100802687690543842580063599 \right) \left( 6.3299121257859865746\times 10^{-19}\ \mathrm{m} \right) \notag\\ &amp;= 5.5761397188\times 10^{-13}\ \mathrm{m}. \end{align}"></figure>
+<h4>11.3.4.2 Computing Δ t=ℓₑff/c_ref</h4>
+<p>Substitute <a href="#eq:S11_03_leff_value" class="xref" data-ref="eq:S11_03_leff_value">(S11_03_leff_value)</a> and <a href="#eq:S11_03_cref_lock" class="xref" data-ref="eq:S11_03_cref_lock">(S11_03_cref_lock)</a> into <a href="#eq:S11_03_dt_formula" class="xref" data-ref="eq:S11_03_dt_formula">(S11_03_dt_formula)</a>.</p>
+<figure class="eq" id="eq:S11_03_dt_value"><img src="/physics/eq/physics/phy-11-025.svg" data-eq="phy-11-025" width="307" height="73" loading="lazy" alt="\begin{align} \Delta t &amp;= \frac{\ell_{\mathrm{eff}}}{c_{\mathrm{ref}}} = \frac{5.5761397188\times 10^{-13}\ \mathrm{m}}{299\,792\,458\ \mathrm{m/s}} \notag\\ &amp;= 1.86\times 10^{-21}\ \mathrm{s}. \end{align}"></figure>
+<p>Therefore the realized time tick is fixed as</p>
+<figure class="eq" id="eq:S11_03_dt_box"><img src="/physics/eq/physics/phy-11-026.svg" data-eq="phy-11-026" width="173" height="28" loading="lazy" alt="\begin{equation} \boxed{ \Delta t = 1.86\times 10^{-21}\ \mathrm{s} }. \end{equation}"></figure>
+<h3>11.3.5 Linkage to an error budget (sensitivity)</h3>
+<p>Since Δ t is defined by <a href="#eq:S11_03_dt_formula" class="xref" data-ref="eq:S11_03_dt_formula">(S11_03_dt_formula)</a>, the first-order sensitivity to changes in (A,a,c_ref) is obtained by differentiation.</p>
+<figure class="eq" id="eq:S11_03_rel_sens"><img src="/physics/eq/physics/phy-11-027.svg" data-eq="phy-11-027" width="391" height="43" loading="lazy" alt="\begin{equation} \Delta t=\frac{A a}{c_{\mathrm{ref}}} \quad\Longrightarrow\quad \frac{d(\Delta t)}{\Delta t} = \frac{dA}{A} + \frac{da}{a} - \frac{dc_{\mathrm{ref}}}{c_{\mathrm{ref}}}. \end{equation}"></figure>
+<p>Therefore a first-order upper bound on the absolute error is recorded as</p>
+<figure class="eq" id="eq:S11_03_abs_error_bound"><img src="/physics/eq/physics/phy-11-028.svg" data-eq="phy-11-028" width="347" height="45" loading="lazy" alt="\begin{equation} \left|\Delta(\Delta t)\right| \le \Delta t\left( \left|\frac{\Delta A}{A}\right| + \left|\frac{\Delta a}{a}\right| + \left|\frac{\Delta c_{\mathrm{ref}}}{c_{\mathrm{ref}}}\right| \right). \end{equation}"></figure>
+<p>If a variance-type budget is recorded under an independence assumption, the following must be locked in <code>analysis_lock</code> as the “error-budget selection rule.”</p>
+<figure class="eq" id="eq:S11_03_var_budget"><img src="/physics/eq/physics/phy-11-029.svg" data-eq="phy-11-029" width="333" height="48" loading="lazy" alt="\begin{equation} \left(\frac{\sigma_{\Delta t}}{\Delta t}\right)^2 = \left(\frac{\sigma_A}{A}\right)^2 + \left(\frac{\sigma_a}{a}\right)^2 + \left(\frac{\sigma_{c_{\mathrm{ref}}}}{c_{\mathrm{ref}}}\right)^2. \end{equation}"></figure>
+<p>Here σ_A,σₐ,σ_c_ref are standard uncertainties of each input, and the estimation rules (which logs/windows/repetitions are used) must be locked in <code>analysis_lock</code>.
+In particular, in a version where a is sealed as a value in <code>realization_lock</code> and c_ref is sealed as an operational anchor, the error budget in that version may be dominated by the production procedure for A; any decision (e.g., treating certain terms as zero) is permitted only under a pre-registered protocol.</p>
+<h2>11.4 RCROSS(633/532): a 3-Tier Gate</h2>
+<aside class="claim-strip vps" data-vps="11.4" data-cards="VP-C-052"><span class="g">gate spec</span><span class="io">in: two channels / out: RCROSS 3-Tier; dev; FAIL labels</span><q class="one">No single anchor decides anything: two channels or no conclusion.</q><span class="cards">VP-C-052</span></aside>
+<h3>11.4.1 Purpose</h3>
+<p>This section defines the cross-validation RCROSS using two baseline channels (633, 532) as a <strong>3-Tier Gate</strong>, and fixes (i) the deviation metric dev, (ii) the tolerance threshold <code>dev_max</code>, and (iii) failure-mode labeling.
+This section does not justify cross-consistency; it only defines the <code>PASS</code>/<code>FAIL</code>/<code>INCONCLUSIVE</code> adjudication rules.</p>
+<h3>11.4.2 Inputs (LOCK): two channels and channel-wise realization candidates</h3>
+<p>Define the two baseline channels as</p>
+<figure class="eq" id="eq:S11_04_channels"><img src="/physics/eq/physics/phy-11-030.svg" data-eq="phy-11-030" width="147" height="19" loading="lazy" alt="\begin{equation} \mathcal{A}:=\{A_{633},A_{532}\}. \end{equation}"></figure>
+<p>Each channel must output a realization candidate (a^((k)),Δ t^((k))), or at least a realized velocity scale factor Λ_v^((k))=a^((k))/Δ t^((k)). Channel-wise artifacts must include at least the following fields.</p>
+<ol>
+<li> <strong>channel_id</strong>: <code>A633</code> or <code>A532</code>.
+<li> <strong>lambda_ref</strong>: the baseline value (with a length unit).
+<li> <strong>N</strong>: split integer (dimensionless).
+<li> <strong>a_cand</strong>: candidate a^((k)) (or a common a if <code>N</code> is common).
+<li> <strong>dt_cand</strong>: candidate Δ t^((k)).
+<li> <strong>lock_refs</strong>: <code>canon_lock_id</code>, <code>realization_lock_id</code>, <code>analysis_lock_id</code>.
+</ol>
+<p>If any field is missing, the channel artifact is undefined and <code>INCONCLUSIVE</code>.</p>
+<h3>11.4.3 Definition of the deviation metric (dev)</h3>
+<p>The core of cross-consistency is whether “two channels support the same realized result.” Define the deviation metric as follows.</p>
+<h4>11.4.3.1 Relative deviation dev</h4>
+<p>Let Δ t^((k)) be the candidate time tick of channel k∈633,532. Define the relative deviation by</p>
+<figure class="eq" id="eq:S11_04_dev_def"><img src="/physics/eq/physics/phy-11-031.svg" data-eq="phy-11-031" width="245" height="53" loading="lazy" alt="\begin{equation} \mathrm{dev} := \left|\frac{\Delta t^{(633)}-\Delta t^{(532)}}{\frac{1}{2}\left(\Delta t^{(633)}+\Delta t^{(532)}\right)}\right|. \end{equation}"></figure>
+<p>If the denominator can be zero, the metric is undefined, hence require positivity of both candidates.</p>
+<figure class="eq" id="eq:S11_04_dt_positive"><img src="/physics/eq/physics/phy-11-032.svg" data-eq="phy-11-032" width="226" height="21" loading="lazy" alt="\begin{equation} \Delta t^{(633)}&gt;0,\qquad \Delta t^{(532)}&gt;0. \end{equation}"></figure>
+<p>If <a href="#eq:S11_04_dt_positive" class="xref" data-ref="eq:S11_04_dt_positive">(S11_04_dt_positive)</a> is violated, it is an immediate <code>FAIL-RCROSS-NONPOS</code>.</p>
+<h4>11.4.3.2 Alternative deviation (scale-factor based; optional)</h4>
+<p>If a channel provides only the realized scale factor Λ_v^((k))=a^((k))/Δ t^((k)) instead of Δ t, define the alternative deviation by</p>
+<figure class="eq" id="eq:S11_04_devL_def"><img src="/physics/eq/physics/phy-11-033.svg" data-eq="phy-11-033" width="243" height="75" loading="lazy" alt="\begin{equation} \mathrm{dev}_{\Lambda} := \left|\frac{\Lambda_v^{(633)}-\Lambda_v^{(532)}}{\frac{1}{2}\left(\Lambda_v^{(633)}+\Lambda_v^{(532)}\right)}\right|. \end{equation}"></figure>
+<p>Which deviation is used (time-based dev or scale-based dev_Λ) must be pre-registered in <code>analysis_lock</code> and cannot be switched after seeing results.</p>
+<h3>11.4.4 Definition of the 3-Tier Gate</h3>
+<p>The 3-Tier Gate adjudicates in the order <strong>definability</strong> → <strong>consistency pass</strong> → <strong>strengthening (additional consistency)</strong>. Each Tier outputs an independent <code>PASS</code>/<code>FAIL</code>/<code>INCONCLUSIVE</code>.</p>
+<h4>11.4.4.1 Tier-1: input/definition completeness Gate</h4>
+<p>Tier-1 judges whether “the comparison itself is well-defined.”</p>
+<h4>Tier-1 PASS condition</h4>
+<p>Tier-1=<code>PASS</code> if all of the following are satisfied.</p>
+<ol>
+<li> All required fields exist in both channel artifacts.
+<li> <code>lock_refs</code> exists, and the two channels belong to the same lock_id combination (or to a pre-registered allowed combination).
+<li> Δ t⁽⁶³³⁾,Δ t⁽⁵³²⁾ (or Λ_v⁽⁶³³⁾,Λ_v⁽⁵³²⁾) are both defined and positive.
+</ol>
+<h4>Tier-1 INCONCLUSIVE condition</h4>
+<p>If there are missing fields, missing <code>lock_refs</code>, possible zero denominators, or any undefined values, then Tier-1=<code>INCONCLUSIVE</code>.</p>
+<h4>Tier-1 FAIL condition</h4>
+<p>If traces of post hoc modifications (channel-definition swaps, threshold changes, value substitutions) or lock_id mixing are detected, then Tier-1=<code>FAIL</code>.</p>
+<h4>11.4.4.2 Tier-2: dev-threshold pass Gate (core)</h4>
+<p>Tier-2 judges whether the deviation metric is within the tolerance.</p>
+<h4>Locking the tolerance (dev_max)</h4>
+<p>Lock the tolerance <code>dev_max</code> as</p>
+<figure class="eq" id="eq:S11_04_devmax_lock"><img src="/physics/eq/physics/phy-11-034.svg" data-eq="phy-11-034" width="438" height="17" loading="lazy" alt="\begin{equation} \mathrm{dev}_{\max}&gt;0, \qquad \mathrm{dev}_{\max}\ \text{is pre-registered in }\texttt{gate\_lock}. \end{equation}"></figure>
+<h4>Tier-2 adjudication</h4>
+<p>When Tier-1=<code>PASS</code> and dev is definable, define Tier-2 by</p>
+<figure class="eq" id="eq:S11_04_tier2_rule"><img src="/physics/eq/physics/phy-11-035.svg" data-eq="phy-11-035" width="263" height="45" loading="lazy" alt="\begin{equation} \texttt{Tier2}= \begin{cases} \texttt{PASS}, &amp; \mathrm{dev}\le \mathrm{dev}_{\max},\\ \texttt{FAIL}, &amp; \mathrm{dev}&gt;\mathrm{dev}_{\max}. \end{cases} \end{equation}"></figure>
+<p>If Tier-1≠<code>PASS</code>, then Tier-2 is <code>INCONCLUSIVE</code> (the comparison is not well-defined).</p>
+<h4>11.4.4.3 Tier-3: strengthening consistency Gate (additional conditions)</h4>
+<p>Tier-3 is a strengthening Gate that can require “channel-wise internal consistency” even after dev passes. Tier-3 locks either one or both of the following strengthening conditions (selection/combination is locked in <code>analysis_lock</code>).</p>
+<h4>(T3-A) Derived-quantity consistency</h4>
+<p>Compute a channel-wise set of derived quantities Π^((k))=Π₁^((k)),Π₂^((k)),… under locked definitions, and judge whether relative deviations of derived quantities are within thresholds. The derived-quantity choices and deviation definitions are locked in <code>analysis_lock</code>. The threshold Π_(max) is locked in <code>gate_lock</code>.</p>
+<h4>(T3-B) Repeat/replay consistency</h4>
+<p>Judge whether the dev distribution is stable when the same channel is rerun over a pre-registered replay set. The replay set and stability thresholds (e.g., variance bounds) are locked in <code>analysis_lock</code>/<code>gate_lock</code>.</p>
+<h4>Tier-3 adjudication</h4>
+<p>Tier-3 is evaluated only when Tier-2=<code>PASS</code>. If strengthening conditions are not locked, Tier-3 remains <code>INCONCLUSIVE</code>. If strengthening conditions are locked and a threshold is violated, Tier-3=<code>FAIL</code>.</p>
+<h3>11.4.5 Final RCROSS Gate (3-Tier composition)</h3>
+<p>Define the final RCROSS verdict by</p>
+<figure class="eq" id="eq:S11_04_GRCROSS_def"><img src="/physics/eq/physics/phy-11-036.svg" data-eq="phy-11-036" width="773" height="19" loading="lazy" alt="\begin{equation} \texttt{G-RCROSS}=\texttt{PASS} \Longleftrightarrow (\texttt{Tier1}=\texttt{PASS})\ \wedge\ (\texttt{Tier2}=\texttt{PASS})\ \wedge\ (\texttt{Tier3}\in\{\texttt{PASS},\texttt{INCONCLUSIVE}\}). \end{equation}"></figure>
+<p>That is, Tier-3 requires <code>PASS</code> when it is locked and evaluated; if it is not locked, it may remain <code>INCONCLUSIVE</code>, but in that case statements like “strengthening consistency passed” are prohibited (restricted by PASS.rules).</p>
+<h3>11.4.6 Failure-mode labeling (standard labels)</h3>
+<p>Record RCROSS failures with cause-decomposition labels. Labels are fixed as the following enumeration (multiple labels allowed).
+<div class="c"></p>
+<table><tr><td>Label</td><td>Meaning</td></tr><tr><td>INCON-RCROSS-MISSING</td><td>missing required fields (undefined)</td></tr><tr><td>INCON-RCROSS-UNLOCK</td><td>missing lock_refs or missing snapshot sealing (undefined)</td></tr><tr><td>FAIL-RCROSS-NONPOS</td><td>non-positive Δ t or Λ_v (definition violated)</td></tr><tr><td>FAIL-RCROSS-LOCKMIX</td><td>mixing different lock_id combinations (lock violated)</td></tr><tr><td>FAIL-RCROSS-DEV</td><td>dev>dev_(max) (core inconsistency)</td></tr><tr><td>FAIL-RCROSS-T3</td><td>Tier-3 strengthening condition violated</td></tr><tr><td>FAIL-RCROSS-RETRO</td><td>post hoc modification detected (channel/threshold/definition swap)</td></tr></table>
+</div>
+<h3>11.4.7 Logging/sealing protocol (link to checksums)</h3>
+<p>The RCROSS verdict must generate and seal the following record.</p>
+<pre class="vb">
+rcross_report:
+  - rcross_id: (unique)
+    channels: [A633, A532]
+    dt_633: ...
+    dt_532: ...
+    dev: ...
+    dev_max: ...
+    tier1: PASS|FAIL|INCONCLUSIVE
+    tier2: PASS|FAIL|INCONCLUSIVE
+    tier3: PASS|FAIL|INCONCLUSIVE
+    verdict: PASS|FAIL|INCONCLUSIVE
+    labels: [...]
+    lock_refs: {canon_lock_id, realization_lock_id, analysis_lock_id, gate_lock_id, protocol_lock_id}
+    manifest_ref: ...
+    checksums_ref: ...
+</pre>
+<p>A report without <code>manifest_ref</code> and <code>checksums_ref</code> does not grant conclusion status.</p>
+<h2>11.5 (Integrated appendix) MMS Operational Anchor format</h2>
+<aside class="claim-strip vps" data-vps="11.5" data-cards="VP-C-052, VP-C-001"><span class="g">format definition (integrated appendix)</span><span class="io">in: MMS operational-anchor records / out: required fields + correspondence table into realization/analysis/gate locks and the RCROSS 3-Tier fields; missing field $⇒$ INCONCLUSIVE</span><q class="one">External anchors enter only through a fixed form — or not at all.</q><span class="cards">VP-C-052, VP-C-001</span></aside>
+<h3>11.5.1 Purpose</h3>
+<p>This section provides a <strong>format definition</strong> and a <strong>correspondence table</strong> to attach the Operational Anchor format used in MMS documents into this theory's <code>realization_lock</code>/<code>analysis_lock</code>/<code>gate_lock</code> system.
+This section fixes (i) the required fields of MMS operational-anchor records, and (ii) how the v4 RCROSS(633/532) and threshold items correspond to the 3-Tier Gate fields of this manuscript. This section does not perform interpretation.</p>
+<h3>11.5.2 Standard format of MMS Operational Anchor records (required fields)</h3>
+<p>An MMS operational-anchor record must contain the following fields as <strong>required</strong>. If a field is missing, the anchor is unusable and <code>INCONCLUSIVE</code>.</p>
+<ol>
+<li> <strong>anchor_id</strong>: anchor identifier (e.g., <code>A633</code>, <code>A532</code>).
+<li> <strong>anchor_type</strong>: <code>length</code> or <code>time</code> or <code>velocity</code>, etc. (this manuscript is length-centered).
+<li> <strong>value</strong>: numeric value.
+<li> <strong>unit</strong>: unit notation (<code>nm</code>, <code>m</code>, <code>s</code>, <code>m/s</code>, etc.).
+<li> <strong>channel</strong>: channel description (e.g., baseline, instrument, mode).
+<li> <strong>scope</strong>: identifier of the applicable regime/experimental conditions.
+<li> <strong>protocol_id</strong>: measurement/preprocessing/log-schema identifier.
+<li> <strong>lock_refs</strong>: <code>canon_lock_id</code>, <code>realization_lock_id</code>, <code>analysis_lock_id</code>, <code>gate_lock_id</code>, <code>protocol_lock_id</code>.
+<li> <strong>artifacts</strong>: list of raw/preprocessed/report file paths.
+<li> <strong>hash_refs</strong>: manifest/checksums reference keys.
+</ol>
+<p>After including these fields, MMS records must be sealed by inclusion into <code>registry/realization_lock.*</code> or <code>snapshot/registry_snapshot/</code> according to this manuscript's registry structure.</p>
+<h3>11.5.3 v4 RCROSS/threshold leftrightarrow the main-text 3-Tier Gate correspondence table</h3>
+<p>The table below fixes how RCROSS and threshold-type items that appear in v4 documents (including MMS) correspond to the 3-Tier Gate and registry fields of this manuscript. Because the “v4 item name” can differ in spelling/keys, the correspondence is by <strong>meaning</strong>; the actual key-string mapping is locked separately as a mapping table in <code>protocol_lock</code>.</p>
+<div class="c">
+<table><tr><td>v4/MMS item (meaning)</td><td>Location in this manuscript</td><td>Protocol/judgment</td></tr><tr><td>Baseline 633 channel (wavelength/length)</td><td><code>realization_lock.anchors[A633].lambda_ref</code></td><td>Tier-1 required input; includes unit/scope/protocol</td></tr><tr><td>Baseline 532 channel (wavelength/length)</td><td><code>realization_lock.anchors[A532].lambda_ref</code></td><td>Tier-1 required input; includes unit/scope/protocol</td></tr><tr><td>Split integer N (e.g., 10¹²)</td><td><code>analysis_lock.anchor_split.N</code></td><td>post hoc change prohibited; changes only via versioning</td></tr><tr><td>Channel-wise candidate Δ t⁽⁶³³⁾</td><td><code>outputs/derived/dt_633.txt</code> + <code>rcross_report.dt_633</code></td><td>Tier-1 definability; Tier-2 dev input</td></tr><tr><td>Channel-wise candidate Δ t⁽⁵³²⁾</td><td><code>outputs/derived/dt_532.txt</code> + <code>rcross_report.dt_532</code></td><td>Tier-1 definability; Tier-2 dev input</td></tr><tr><td>Definition of cross deviation (dev)</td><td><code>analysis_lock.rcross.dev_definition</code></td><td>lock either dev or dev_Λ</td></tr><tr><td>Tolerance dev_max</td><td><code>gate_lock.rcross.dev_max</code></td><td>Tier-2 core threshold; dev>dev_max yields FAIL-RCROSS-DEV</td></tr><tr><td>3-Tier structure (define/consistency/strengthen)</td><td><code>analysis_lock.rcross.tiers</code></td><td>fixes Tier-1/2/3 protocols</td></tr><tr><td>Strengthening condition (derived-quantity comparison)</td><td><code>analysis_lock.rcross.tier3.derivatives</code></td><td>when locked, run Tier-3; violation yields FAIL-RCROSS-T3</td></tr><tr><td>Strengthening condition (replay consistency)</td><td><code>analysis_lock.rcross.tier3.replay_set</code></td><td>if replay set not locked, Tier-3=INCONCLUSIVE</td></tr><tr><td>thresholds.yaml (threshold file)</td><td>overall <code>gate_lock</code> + <code>configs/thresholds.yaml</code></td><td>thresholds are pre-registered; the file itself is a seal target</td></tr><tr><td>PASS/FAIL judgment logs</td><td><code>outputs/gates/rcross_report.json</code></td><td>without <code>manifest+checksums</code> sealing, no conclusion status</td></tr><tr><td>Bonferroni/CI cross rules (if present)</td><td><code>analysis_lock.rcross.stat_rule</code></td><td>allowed only as Tier-3 strengthening conditions</td></tr></table>
+</div>
+<h3>11.5.4 Protocol for a mapping table (key-string correspondence)</h3>
+<p>To link the actual key strings used in v4/MMS to the registry keys of this manuscript, a “key mapping table” is required; it is locked in <code>protocol_lock</code>. The standard format is fixed as</p>
+<pre class="vb">
+key_map_mms_to_v5:
+  - mms_key: "lambda_633"
+    v5_path: "registry/realization_lock.anchors[A633].lambda_ref.value"
+  - mms_key: "lambda_532"
+    v5_path: "registry/realization_lock.anchors[A532].lambda_ref.value"
+  - mms_key: "dev_max"
+    v5_path: "registry/gate_lock.rcross.dev_max"
+  - mms_key: "thresholds_yaml"
+    v5_path: "configs/thresholds.yaml"
+</pre>
+<p>The key mapping table cannot be modified after seeing results; modifications are permitted only via versioning.</p>
+<h3>11.5.5 manifest/checksums/registry_snapshot</h3>
+<p>For MMS records and correspondence tables to have conclusion status, the following are required.</p>
+<ol>
+<li> MMS records (anchors, thresholds, rcross report) must all be listed in <code>manifest</code>.
+<li> All related files must be included in <code>checksums</code> and sealed with sha256 hashes.
+<li> The lock files used must be frozen into <code>registry_snapshot</code>.
+</ol>
+<p>If any requirement is missing, the RCROSS verdict does not grant conclusion status.</p>
+<h2>11.6 Stiffness selects size: three-layer epistemic logic</h2>
+<span id="hub:stiffness"></span>
+<aside class="claim-strip vps" data-vps="11.6" data-cards="VP-C-045, VP-C-033, VP-C-026"><span class="g">[F]/[H] three-layer logic</span><span class="io">in: jamming / out: stiffness exists (no constant in); one anchor sets size; air cross-check; stiffness forces $rₚ$</span><q class="one">The $c²=K$ circularity dissolves into input-vs-output; the radius is a stable fixed point.</q><span class="cards">VP-C-045, VP-C-033, VP-C-026</span></aside>
+<em> Concept links: reviewer objection answered in <a href="/physics/01-governance-no-tuning-lock-gate/#hub:doubtA1" class="xref" data-ref="hub:doubtA1">§1.9 A1</a>; A defined in <a href="/physics/10-implementing-speed-light-clock-free/#hub:Adef" class="xref" data-ref="hub:Adef">§10.5</a>; D=2πλ/A computed in <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a>.</em>
+<p>The relation c² = K (with K the collective stiffness of the jammed lattice) is the framework's mechanism for promoting c from "fundamental constant" to "derived response." Several reviewer doubt-trails have mis-read this as either a free parameter or a circular input; this section makes the epistemic layering explicit.</p>
+<h3>11.6.1 Layer 1: stiffness exists — [F]</h3>
+<p>Under the jamming postulate (no voids; effective coordination e=1), the lattice has a well-defined collective elastic response. The released simulation <code>lattice_3d_jam_percolation.py</code> (in the public bundle <code>AQD_DOI_bundle_unified_v0.4.0_2026-06-05.zip</code>) measures it without any physical-constant input: the percolation gap g^* and the structural amplification A = a/g^* are CSV outputs, not inputs. (This A is exactly the amplification that fixes the quantum diameter via D=2πλ/A; D is computed in <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a> and defined in <a href="/physics/03-axioms-primitives-volume-particle-lattice/#hub:lrot" class="xref" data-ref="hub:lrot">§3.4</a>.) This establishes that the relevant collective stiffness is a measurable property of the lattice itself, not an assumption injected from physics.</p>
+<p><strong>From measured stiffness to a single signal speed ([V], strengthened in v0.4).</strong> That the surviving elastic response is a <em>single longitudinal</em> speed c²=B/ρ is now demonstrated, not asserted: at the isostatic point z=2d=6 the <em>relaxed</em> (non-affine) shear modulus is driven to zero while the bulk modulus stays finite, established along <em>five independent observables</em> (static G_relaxed∝Δ z→0; vibrational ω^*→0, τ→∞, R²=0.997; finite-rate viscosity divergence; an athermal-quasistatic cross-check matching the static modulus to <1%; yield stress σ_y→0). The shear wave dies and one compression speed survives. See the <a href="/physics/sp-jamming-spine-verified-physical-backbone/#hub:spine" class="xref" data-ref="hub:spine">Jamming Spine</a>, §2, and modules <code>01_stiffness_to_c2/</code>, <code>02_shear_relaxedG/</code> of the unified bundle. This is the textbook isostatic-jamming result (O'Hern–Silbert–Liu–Nagel; Wyart; Olsson–Teitel) for the harmonic-contact substrate; it changes no locked value.</p>
+<h3>11.6.2 Layer 2: the stiffness value needs one anchor — [H]</h3>
+<p>Going from the dimensionless amplification A (a pure number, output of the simulation) to a stiffness with units of (length/time)² requires <em>one</em> length scale — the lattice unit a — to set the absolute magnitude. Because a comes from the single empirical anchor λ_ref=632.99nm, the magnitude of the stiffness is anchor-dependent. There are no additional free parameters: <strong>the entire dependence is on the same single anchor that fixes every other absolute scale in the paper.</strong> This is identical in structure to how the proton mass, electron mass, and lattice unit energy all derive their absolute scale from the same anchor.</p>
+<h3>11.6.3 Layer 3: air verification cross-check — [H]</h3>
+<p>Appendix K's air-stiffness analysis provides an independent cross-check. Applying the same stiffness-from-jamming logic to atmospheric air (a structurally trivial jammed medium, but with measurable acoustic stiffness) reproduces c_sound,air within the expected order of magnitude. The cross-check does not derive c_sound,air to high precision — we are not claiming a first-principles acoustic derivation here. It does, however, falsify the alternative reading that the c²=K relation is a circular reuse of the speed of light. Air is the trivial case the relation should pass and does.</p>
+<h3>11.6.4 Why this size is the proton's size: stiffness forces the radius</h3>
+<p>The task here is not to <em>state</em> that rₚ=(2/π)λ_(C,p) but to explain <em>why</em> a proton has a definite size at all, and why it is fixed precisely <em>here</em>. With c²=K established, the answer is that the radius is <strong>forced by stiffness</strong>: it is the unique <em>stable</em> equilibrium between the rigid medium's outward support and the inward inflow, and the scale that sets it is the medium's rigidity itself.</p>
+<h4>The size is a forced fixed point, not a chosen scale.</h4>
+<p>Two opposing pressures act on the core boundary. The <em>stiffness support</em> — the rigidity of the fully-packed medium resisting compression — pushes outward and falls as r⁻⁵; the <em>inflow collapse</em> pulls inward and falls as r⁻⁴. Because the support falls one power faster, at small r the stiffness dominates and resists further compression (net outward), while at large r the inflow dominates and drives collapse (net inward). The two curves therefore cross exactly once, and the crossing is <em>stable</em>: a small compression is met by steeply rising support, a small expansion by rising inflow, so the boundary is restored to it. That single stable crossing is the only radius at which a proton can sit — which is precisely why a proton <em>has</em> a definite, reproducible size. The radius is <em>forced</em> by the competition; there is no free length to choose, and the scale that pins it is the stiffness K (this is the concrete content of “stiffness selects size”).</p>
+<h4>Why the forced balance lands at 2/π.</h4>
+<p>The stiffness support is a <em>radial</em>, directional action, so only its rectified component is effective along the radius: of the full-cycle directional support, the fraction surviving the magnitude average is α=⟨|cosθ|⟩=2/π (<a href="/physics/05-geometric-rectification-constants-single-source/#hub:alpha" class="xref" data-ref="hub:alpha">§5.1</a>). Writing the rectified stiffness αx⁻⁵ against the inflow x⁻⁴ (inflow coefficient normalised to unity), the equilibrium αx⁻⁵=x⁻⁴ forces x^*=α, i.e. rₚ/λ_(C,p)=2/π. The 2/π is thus <em>not</em> a coefficient assigned to match the radius; it is the geometric <em>survival fraction of the rigid support</em>, and the stable balance forces the radius to equal it. The identical balance, with the rectification written instead as the 1/α correction on the collapse term, is obtained from the dilution geometry in <a href="/physics/06-continuum-core-model-deriving-rp/#hub:RpLq" class="xref" data-ref="hub:RpLq">§6.2</a> and graded [F]{}; the two are one balance written two ways, agreeing at Rₚ/L_q=α.</p>
+<h4>What is, and is not, doing the work.</h4>
+<p>Located honestly: the exponents -5,-4 fix only that equilibrium occurs <em>at</em> the stiffness-to-inflow coefficient ratio — they do not by themselves produce the number 2/π. The load-bearing physics is the <em>rectification of the stiffness support</em>: that only the fraction α of the directional rigidity acts radially. That rectification is forced geometry (§5.1), not a fit. Granting that single physical input, the radius is forced; the numerical statement rₚ/λ_(C,p)=2/π (proton Compton 1.321fm =(π/2)×0.841fm) then follows and is reproduced by the public-bundle script <code>proton_radius_model.py</code> (dimensionless pressure balance).</p>
+<h4>Why this is not circular.</h4>
+<p>The reviewer worry "stiffness comes from c, then c comes from stiffness" is resolved by the layering. Layer 1: the lattice has a measurable amplification, independent of any physical constant. Layer 2: its absolute magnitude is set by a single anchor — the same anchor used everywhere else. Layer 3: the consistency of the whole picture is checked against an independent acoustic system. No quantity is used twice; no parameter is fitted. The chain is single-anchor and falsifiable.</p>
+<h2>11.6.5 Independent reproduction (unified jamming bundle: v0.3 rotation set + v0.4 spine verification)</h2>
+<span id="hub:repro03"></span>
+<aside class="claim-strip vps" data-vps="11.6.5" data-cards="VP-C-010, VP-C-044, VP-C-033, VP-C-051"><span class="g">[V] independent reproduction (second witness; no locked value changed)</span><span class="io">in: unified jamming bundle (final_verification.py, zero fitted parameters) / out: $A_med=8.1×10⁵$ vs deposited $8.0×10⁵$; $D$ three-route corroboration ($~$0.04%); $c²=B/ρ$ with relaxed $G→0$ on five observables — all PASS</span><q class="one">One command re-derives the central locks — a witness, not a new claim.</q><span class="cards">VP-C-010, VP-C-044, VP-C-033, VP-C-051</span></aside>
+<p><em> An additional independent code path (bundle <code>02_lattice_percolation_soc/jamming_rotation_verification_v0.3/</code>, one-line entry <code>final_verification.py</code>) re-derives the central locked quantities with no fitted parameter. These are [V] records: a second witness to results already established in §5–§13, not a new claim; no canonical locked value is changed.</em></p>
+<div class="c">
+<table><tr><td><strong>Quantity (where established)</strong></td><td><strong>Independent reproduction</strong></td><td><strong>Verdict</strong></td></tr><tr><td>A=a/g^* amplification (<a href="#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6.1</a>, §10.3)</td><td><code>soc_percolation_pinning</code> re-run, N=200, multi-seed: pooled A_med=8.1×10⁵, g^*/g₀≈ 1; matches deposited 8.0×10⁵</td><td><code>PASS</code></td></tr><tr><td>D anchor + corroborations (<a href="/physics/03-axioms-primitives-volume-particle-lattice/#hub:lrot" class="xref" data-ref="hub:lrot">§3.4</a>)</td><td>anchor 2λ_(C,e)=4.8526; proton scale 6π⁶rₚ=4.8523 (mₚ/mₑ=6π⁵ check); jamming length 4.854 pm ( 0.04%,  7% distribution)</td><td><code>PASS</code></td></tr><tr><td>c²=B/ρ single-speed keystone (<a href="#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6.1</a>)</td><td>bulk B measured directly (<code>01_stiffness_to_c2</code>); <em>relaxed</em> shear G→0 at z=2d=6 along <strong>five</strong> observables (G, ω^* R²=0.997, η→∞, AQS, σ_y→0; <code>02_shear_relaxedG</code>); B finite, 82=81+1 core isostatic</td><td><code>PASS</code></td></tr><tr><td>α=2/π, δ=1/π² (<a href="/physics/05-geometric-rectification-constants-single-source/#hub:alpha" class="xref" data-ref="hub:alpha">§5.1</a>, <a href="/physics/05-geometric-rectification-constants-single-source/#hub:delta" class="xref" data-ref="hub:delta">§5.2</a>)</td><td>quadrature of rectification integrals = closed form to machine precision; α/δ=2π</td><td><code>PASS</code></td></tr><tr><td>νₚ=3π⁴, mₚ/mₑ=6π⁵=2πνₚ (<a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a>, <a href="/physics/13-mass-u-lat-m-h/#hub:mpme" class="xref" data-ref="hub:mpme">§13.5</a>)</td><td>3π⁴=292.227; 6π⁵=1836.118 (CODATA 1836.153, -19 ppm); n=3 minimal positively-spanning set</td><td><code>PASS</code></td></tr><tr><td>82=81+1=3⁴; 2D analogue 21 (<a href="/physics/06-continuum-core-model-deriving-rp/#hub:RpLq" class="xref" data-ref="hub:RpLq">§6.2</a>, §6.4, §8.1)</td><td>integer counts #x²+y²+z²≤ 6=81, #x²+y²≤ 6=21</td><td><code>PASS</code></td></tr></table>
+</div>
+<p>The amplification in particular is a <em>measured</em> simulation output, reproduced across seeds; it is not tuned. The verification adds an independent code path to the single-anchor chain of <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>; it leaves every LOCK value unchanged.</p>
+<h4>Reproducibility map.</h4>
+ The scripts below live in <code>02_lattice_percolation_soc/jamming_rotation_verification_v0.3/modules/</code> of the deposited bundle (one-line driver <code>final_verification.py</code>; environment pinned in <code>reproduce/requirements.txt</code>). Each reproduces a result already established in the indicated section.
+<div class="c">
+<table><tr><td><strong>Module</strong></td><td><strong>Reproduces</strong></td><td><strong>Ref</strong></td></tr><tr><td><code>final_verification.py</code></td><td>α=2/π, δ=1/π², νₚ=3π⁴, mₚ/mₑ=6π⁵, three-route D, 81=3⁴/21</td><td>§5, §9.4, §13.5</td></tr><tr><td><code>verify_amplification_A.py</code></td><td>re-runs bundle <code>soc_percolation_pinning</code> at N=200: A_med≈8×10⁵</td><td>§10.3, <a href="#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6.1</a></td></tr><tr><td><code>stiffness_size.py</code></td><td>stiffness/inflow balance → rₚ/λ_(C,p)=2/π (stable fixed point)</td><td><a href="/physics/06-continuum-core-model-deriving-rp/#hub:RpLq" class="xref" data-ref="hub:RpLq">§6.2</a>, §11.6.4</td></tr><tr><td><code>wavelength_jamming.py</code>, <code>vp_lattice.py</code></td><td>c²=B_eff/ρ_eff on the jam branch; 82-core isostatic z=6</td><td><a href="#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6.1</a></td></tr><tr><td><code>rotation_sweep.py</code>, <code>canonical_rate.py</code></td><td>rotation births the length (x^* 1/Ω); n=3 rate law νₙ=nπ²⁽ⁿ⁻¹⁾</td><td>§8.0, <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a></td></tr><tr><td><code>proton_contract.py</code>, <code>proton_formation_3d.py</code></td><td>steady-state grinder dynamics (balance, νₚ, no-collapse)</td><td><a href="/physics/08-discrete-proton-structure-82-7/#hub:grinder" class="xref" data-ref="hub:grinder">§8.5</a></td></tr></table>
+</div>
+<h4>Measured-value robustness (the amplification A is anchored, not free).</h4>
+ A=a_med/g^* is an empirical average, not a hand-set number. It was measured across many seeds and two lattice sizes: N=200 gives A_med=8.02×10⁵ (83 avalanches; p10–p90 4.4–21×10⁵), and the largest feasible 3D run, N=750 (seeds 45–48, 104 events), gives A_med=4.76×10⁵, A_mean=5.69×10⁵. The decrease with N is <em>predicted</em>: at fixed microscopic threshold g₀ and unit box the typical neighbour distance scales as a_med N^(-1/3), hence A N^(-1/3), while the pinning ratio g^*/g₀ stays near unity (1.14 at N=200, 1.24 at N=750). Two independent cross-checks fix the absolute size: (i) the N^(-1/3) law predicts A(750) from A(200) to within -7.7%; (ii) more sharply, the SOC-measured A_mean(750)=5.69×10⁵ matches the <em>unit-realization anchor</em> A_geo=cΔ t/a (scaled by N^(-1/3)) to <strong>0.16%</strong>. The magnitude of A is therefore pinned by the unit realization and reproduced by percolation at the largest run — it is anchored (to c,Δ t,a; cf. the input-dependence honestly noted in <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>), not an unconstrained distribution. (<code>verify_A_scaling.py</code> reproduces both cross-checks from the deposited summaries.)
+<h4>Direct length simulation and the geometric reading of 4.85 pm.</h4>
+ The rotation-circulation length is also measured directly (<code>jamming_rotation_485pm_study.py</code>): over the 82-core the 633-channel circulation length has median 4.96 pm with a best-matched avalanche at <strong>4.8542 pm</strong> (target 4.85). This is the empirical face of a geometric statement: the proton radius is fixed by rₚ/λ_(C,p)=2/π, where 2/π=⟨|cosθ|⟩ is the rectified-rotation average (<a href="/physics/05-geometric-rectification-constants-single-source/#hub:alpha" class="xref" data-ref="hub:alpha">§5.1</a>); the balance is rectified stiffness (  r⁻⁵) against rotational-unjamming inflow (  r⁻⁴, whose origin is the marginal-rigidity argument of <a href="/physics/08-discrete-proton-structure-82-7/#hub:grinder" class="xref" data-ref="hub:grinder">§8.5.0</a>); and the map to SI units is D=2λ_(C,e)=6π⁶rₚ. The length is thus geometric — a rectification ratio carried on a Compton scale — with the jamming substrate supplying the stiffness and the rotation supplying the inflow.
+<h4>Empirical (measured) values — summary.</h4>
+<div class="c">
+<table><tr><td><strong>Measured quantity</strong></td><td><strong>Value</strong></td><td><strong>Script</strong></td></tr><tr><td>Amplification A, N=200</td><td>A_med=8.02×10⁵ (83 avalanches)</td><td><code>soc_percolation_pinning.py</code></td></tr><tr><td>Amplification A, N=750 (largest)</td><td>A_med=4.76×10⁵, mean 5.69×10⁵; matches A_geo to 0.16%</td><td><code>soc_.._N750_clean_colab.py</code></td></tr><tr><td>Rotation length, 633 channel</td><td>median 4.96 pm, best 4.8542 pm</td><td><code>jamming_rotation_485pm_study.py</code></td></tr><tr><td>Jamming point</td><td>φ_jam=0.633, z→6 isostatic, K=2.05×10⁴</td><td><code>lattice_3d_jam_percolation.py</code></td></tr><tr><td>Proton core count</td><td>3D 82 (2D analogue 21)</td><td><code>vp_lattice.py</code>, §8</td></tr></table>
+</div>
+ These are simulation <em>measurements</em> (not external-theory comparisons); each script and its output reside in the deposited bundle, mapped above.
+<em>Non-claim note (v0.5.0).</em> The numerals φ_jam=0.633, 2/π=0.6366, and
+the anchor wavelength 632.99 nm are numerically adjacent, but <em>no identity or causal relation is claimed
+among them anywhere in this document</em>; treating the adjacency as evidence is itself a <code>G-NT</code> violation.
+<nav class="pn"><a rel="prev" href="/physics/17-extensions-optional-reading/">← §17</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/13-mass-u-lat-m-h/">§13 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

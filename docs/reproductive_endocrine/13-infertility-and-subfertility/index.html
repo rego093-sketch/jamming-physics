@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infertility and subfertility: past a spinodal vs near a threshold &mdash; Reproductive Endocrine &sect;13 | Jamming Physics</title>
+<meta name="description" content="Conception is an AND of substrate operations; infertility is an operation past a spinodal (categorical), subfertility is one near a threshold (a finite Kramers rate per cycle).">
+<link rel="canonical" href="https://jamming-physics.org/reproductive_endocrine/13-infertility-and-subfertility/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Infertility and subfertility: past a spinodal vs near a threshold &mdash; Reproductive Endocrine &sect;13 | Jamming Physics"><meta property="og:description" content="Conception is an AND of substrate operations; infertility is an operation past a spinodal (categorical), subfertility is one near a threshold (a finite Kramers rate per cycle)."><meta property="og:url" content="https://jamming-physics.org/reproductive_endocrine/13-infertility-and-subfertility/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Infertility and subfertility: past a spinodal vs near a threshold &mdash; Reproductive Endocrine &sect;13 | Jamming Physics"><meta name="twitter:description" content="Conception is an AND of substrate operations; infertility is an operation past a spinodal (categorical), subfertility is one near a threshold (a finite Kramers rate per cycle).">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Infertility and subfertility: past a spinodal vs near a threshold", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Reproductive Endocrine", "sameAs": "https://jamming-physics.org/reproductive_endocrine/"}, "position": 13, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/13-infertility-and-subfertility/", "knowsAbout": ["infertility", "subfertility", "fecundability", "Kramers escape rate", "azoospermia", "anovulation", "ovarian reserve", "cohesin fatigue", "aneuploidy", "ICSI"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Reproductive Endocrine", "item": "https://jamming-physics.org/reproductive_endocrine/"}, {"@type": "ListItem", "position": 3, "name": "§13 Infertility &amp; subfertility"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="../">Reproductive Endocrine</a> &rsaquo; &sect;13</nav></header>
+<main>
+<h1>Infertility and subfertility: one distinction, a spinodal apart</h1>
+
+<p class="answer">The reproductive arc is a chain of substrate operations and conception requires every one to succeed. Infertility is an operation on the wrong side of a spinodal &mdash; categorical and deterministic, a per-cycle probability of exactly zero that a sub-threshold drive cannot move. Subfertility is an operation near its threshold &mdash; a small but finite Kramers crossing rate per cycle, so the same drive that does nothing across a spinodal moves it exponentially. One distinction, two failure classes. <b>[V]</b></p>
+
+<p class="abstract">Each link of the chain is an operation the earlier chapters verified (the GnRH pulse, the follicle/sperm switch, ordered REC8 meiosis, gamete number, the metaphase-II flip, syngamy, ZGA, the gene-clock). The categorical/probabilistic split is computed on the same R19 spinodal and Kramers exp(&minus;&Delta;V/D) the oncology chapter uses: a fixed drive nudge raises a near-threshold cycle probability 1.56&times; while leaving a past-spinodal operation at exactly zero. Male factor is oscillator throughput; female factor adds REC8 cohesin fatigue, the rising-with-age mis-segregation clock; and treatment is read as a substrate move. Honestly graded; a research model, not a diagnostic.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] sim-verified</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/" rel="noopener">reproduction code (GitHub)</a>
+  <a class="doi" href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">DOI 10.5281/zenodo.20754657</a>
+</aside>
+
+<aside class="vp-card" data-locked="spinodal"><b>h<sub>sp</sub> = 2(&gamma;/3)<sup>3/2</sup></b> &mdash; the R19 spinodal: the drive past which the opposite basin disappears, so the flip is <b>discontinuous</b> (= 0.3849 at &gamma;=1). <b>[F]</b> forced (geometric). <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a></aside>
+<aside class="vp-card" data-locked="barrier"><b>&Delta;V<sub>0</sub> = &gamma;<sup>2</sup>/4</b> &mdash; the energy barrier between the two R19 basins (state stability); a sustained drive tilts the well and lowers it. <b>[F]</b> forced. <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a></aside>
+
+<h2>Conception is an AND of substrate operations</h2>
+<p>Every step the package built &mdash; the GnRH pulse, the follicle and sperm switches, ordered meiosis, gamete number, the metaphase-II flip, syngamy, ZGA, the gene-clock body plan &mdash; is an operation that must succeed. Conception is their logical AND, so a single link below threshold is sterility, whatever the rest of the chain does.</p>
+<figure class="eq">
+  <img src="../eq/rep-inf-001.svg" width="225" height="66" loading="lazy" alt="P_{\mathrm{conceive}} = \prod_{i=1}^{8} g_i \in \{0,1\}">
+  <figcaption>Conception as the product (AND) of the substrate gates; one zero zeroes it.</figcaption>
+</figure>
+<table>
+<thead><tr><th>operation</th><th>substrate gate that must fire</th><th>kind</th></tr></thead>
+<tbody><tr><td>HPG pulse</td><td>GnRH FHN oscillator must run (T1)</td><td>oscillator</td></tr><tr><td>follicle/sperm switch</td><td>folliculogenesis / spermatogenesis switch flips (T2/T4)</td><td>switch</td></tr><tr><td>meiosis order</td><td>ordered two-stage REC8 release (G1)</td><td>switch</td></tr><tr><td>gamete number</td><td>oscillator throughput makes gametes (G3/oogenesis)</td><td>oscillator</td></tr><tr><td>MII arrest+flip</td><td>egg held at MII, fertilisation supra-spinodal flip (G4)</td><td>switch</td></tr><tr><td>syngamy</td><td>two haploids restore diploidy (E1)</td><td>switch</td></tr><tr><td>ZGA</td><td>maternal->zygotic spinodal crossing (E3)</td><td>switch</td></tr><tr><td>gene-clock</td><td>argsort(spinodal(gamma)) body plan (E4)</td><td>order</td></tr></tbody>
+</table>
+<h2>The central distinction: a spinodal apart</h2>
+<p>Infertility and subfertility are not two points on one scale; they are two sides of a spinodal. An operation pushed past its spinodal loses the conception basin entirely &mdash; per-cycle success is exactly zero, and a sub-threshold change in drive does nothing. An operation that merely sits <em>near</em> its threshold still has the basin, just behind a high barrier.</p>
+<figure class="eq">
+  <img src="../eq/rep-inf-003.svg" width="523" height="30" loading="lazy" alt="d \geq h_{\mathrm{sp}}\,\Rightarrow\,p=0\ \ (\mathrm{sterile});\quad d < h_{\mathrm{sp}}\,\Rightarrow\,p>0\ \ (\mathrm{subfertile})">
+  <figcaption>Categorical (past the spinodal) versus probabilistic (below it).</figcaption>
+</figure>
+<p>For the near-threshold case the per-cycle probability is a Kramers crossing &mdash; the same escape-over-a-barrier the oncology chapter uses, here for a <em>good</em> outcome. Because the rate is exponential in the barrier, a modest favourable drive moves it a lot.</p>
+<figure class="eq">
+  <img src="../eq/rep-inf-002.svg" width="272" height="40" loading="lazy" alt="p_{\mathrm{cycle}} = p_{\max}\,\exp\!\left[-\frac{\Delta V(d)-\Delta V_{0}}{D}\right]">
+  <figcaption>Per-cycle conception as a Kramers rate over the residual barrier.</figcaption>
+</figure>
+<p>The dissociation is the whole point. A single fixed drive nudge raises the subfertile cycle probability from 0.039 to 0.061 (1.56&times;), turning a 0.38 annual chance into 0.53; the identical nudge applied past the spinodal leaves the sterile operation at 0.0. Same drive, exponential versus nothing.</p>
+<table>
+<thead><tr><th>operation</th><th>deficit</th><th>p/cycle</th><th>p/cycle (nudged)</th><th>response</th><th>p/year (&rarr; nudged)</th></tr></thead>
+<tbody><tr><td>subfertile (near threshold)</td><td>0.327</td><td>0.039</td><td>0.061</td><td>1.56&times;</td><td>0.38 &rarr; 0.53</td></tr><tr><td>sterile (past spinodal)</td><td>0.616</td><td>0.000</td><td>0.000</td><td>&mdash;</td><td>0.00</td></tr></tbody>
+</table>
+<figure class="eq">
+  <img src="../eq/rep-inf-004.svg" width="222" height="33" loading="lazy" alt="P_{\mathrm{year}} = 1-\left(1-p_{\mathrm{cycle}}\right)^{12}">
+  <figcaption>Cumulative-over-cycles: subfertility is a delay, infertility a wall.</figcaption>
+</figure>
+<h2>Male factor: spermatogenesis is oscillator throughput</h2>
+<p>Whether sperm are made at all is an R19 switch: below its spinodal the switch never flips, which is azoospermia &mdash; categorical, sterile. How <em>many</em> are made once it is on is oscillator throughput: the seminiferous and flagellar beat (the fast clock of &sect;11), whose rate falls from 51 beats to 7 as the recovery slows &mdash; oligo- and asthenozoospermia, subfertile but not zero.</p>
+<p>Hyperactivation is a separate gate. Without the supra-spinodal CatSper gain (measured &gamma; = 1.4019) the beat cannot enter the penetrating regime, so a normal count can still fail at the egg coat &mdash; a categorical sub-case sitting on top of the throughput axis.</p>
+<h2>Female factor: the ovulation switch and REC8 cohesin fatigue</h2>
+<p>Anovulation is the mid-cycle surge switch failing to flip &mdash; sub-spinodal drive, no surge, sterile &mdash; the same switch &sect;5 and &sect;10 describe. The deeper female clock is the egg itself: a bivalent is held for decades by REC8 cohesin (measured &gamma; = 1.4525), a switch whose holding barrier is the same &gamma;&sup2;/4 the substrate sets.</p>
+<p>As cohesin integrity decays with the years held, that barrier falls and the per-egg mis-segregation (aneuploidy) escape rate rises &mdash; from 0.121 modelled at 25 to 0.752 by 45. This rising shape is the molecular clock of age-related subfertility; the latch lost early and irreversibly is premature ovarian insufficiency, the menopause failure of &sect;10 brought forward.</p>
+<figure class="eq">
+  <img src="../eq/rep-inf-005.svg" width="316" height="40" loading="lazy" alt="P_{\mathrm{miss}}(\mathrm{age}) = \exp\!\left[-\frac{\Delta V_{0}\,c(\mathrm{age})}{D}\right],\quad c\downarrow">
+  <figcaption>Cohesin fatigue: the held barrier decays, mis-segregation rises with age.</figcaption>
+</figure>
+<table>
+<thead><tr><th>maternal age (y)</th><th>modelled mis-segregation P</th></tr></thead>
+<tbody><tr><td>25</td><td>0.121</td></tr><tr><td>30</td><td>0.278</td></tr><tr><td>35</td><td>0.460</td></tr><tr><td>37</td><td>0.530</td></tr><tr><td>40</td><td>0.625</td></tr><tr><td>43</td><td>0.706</td></tr><tr><td>45</td><td>0.752</td></tr></tbody>
+</table>
+<h2>Treatment is a move on the substrate</h2>
+<p>The clinic&rsquo;s tools read as three substrate moves. The hCG trigger and ovulation induction are a supra-spinodal kick that forces a stuck switch across (the spinodal kick &sect;10 already retrodicts); pulsatile GnRH restarts the oscillator where continuous suppresses it (41 pulses versus 0, from &sect;9); and ICSI or IVF bypass a missing gate by supplying the flip it could not reach.</p>
+<p>Each maps onto the chain: push a near-threshold operation across, restart a stalled oscillator, or substitute for a categorical gate. The framework adds the <em>why</em> &mdash; which class of failure each tool is for &mdash; not a schedule.</p>
+<p class="disclaimer">The chain-AND logic and the categorical/probabilistic dissociation are sim-verified [V]; fecundability, the Kramers temperature, REC8/CatSper &gamma; and the clinical age-aneuploidy anchor are measured or anchored [L]; every absolute per-cycle probability, the map from a real semen or age value to a drive, and specific azoospermia/POI gene &gamma; are open [O]. This is a physics-derived research model, not a diagnosis or a treatment plan.</p>
+
+<nav class="pn">
+  <a rel="prev" href="../12-embryogenesis-fertilisation-to-fetus/">&larr; &sect;12</a>
+  <a href="../">paper contents</a>
+  <a rel="next" href="../14-sex-determination-and-sex-ratio-distortion/">&sect;14 &rarr;</a>
+</nav>
+</main>
+<footer><strong>Reproductive Endocrine</strong> &mdash; part of the VP Theory programme (<a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">jamming branch</a>). Author <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">Young Jae Lee</a> (ORCID). DOI: <a href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">10.5281/zenodo.20754657</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Living version: <a href="https://jamming-physics.org/reproductive_endocrine/">jamming-physics.org/reproductive_endocrine/</a>. Research package; falsifiable, deterministic, honestly graded &mdash; not clinical advice.</footer>
+</body>
+</html>

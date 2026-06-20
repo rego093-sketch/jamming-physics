@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravity as the Momentum of Absorbed Inflow — Vacuum-Inflow Cosmology §3 | Jamming Physics</title>
+<meta name="description" content="The model-independent facts of gravitation are few and familiar: unsupported bodies near the Earth accelerate downward at g≃9.81ms⁻² regardless of their">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/03-gravity-momentum-absorbed-inflow/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Gravity as the Momentum of Absorbed Inflow — Vacuum-Inflow Cosmology §3 | Jamming Physics"><meta property="og:description" content="The model-independent facts of gravitation are few and familiar: unsupported bodies near the Earth accelerate downward at g≃9.81ms⁻² regardless of their"><meta property="og:url" content="https://jamming-physics.org/cosmology/03-gravity-momentum-absorbed-inflow/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Gravity as the Momentum of Absorbed Inflow — Vacuum-Inflow Cosmology §3 | Jamming Physics"><meta name="twitter:description" content="The model-independent facts of gravitation are few and familiar: unsupported bodies near the Earth accelerate downward at g≃9.81ms⁻² regardless of their">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Gravity as the Momentum of Absorbed Inflow", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": 3, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/03-gravity-momentum-absorbed-inflow/", "knowsAbout": ["vacuum inflow", "jamming lattice", "vacuum-inflow gravity"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§3 Gravity as the Momentum of Absorbed Inflow"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §3</nav></header>
+<main><!--vp-v1.8-->
+<h1>Gravity as the Momentum of Absorbed Inflow</h1>
+<p class="answer">The central chapter of the volume takes the inflow rate Q from Chapter 1 as its only input and derives the gravitational field, the meaning of mass and of the gravitational constant, and the equivalence principle. The argument is a numbered chain, each step checked by simulation. Its predictions are degenerate with Newtonian gravity.</p>
+<p class="abstract" data-phase2="abstract">The model-independent facts of gravitation are few and familiar: unsupported bodies near the Earth accelerate downward at g≃9.81ms⁻² regardless of their composition; the planets trace closed, stable orbits about the Sun characterised by the heliocentric strength GM_(odot)=1.327×10²⁰m³s⁻²; and the orbital data obey an inverse-square force law. We will show that all three—the inverse-square law, the composition independence, and the identification of the source strength with GM—follow from a body being a sink of the vacuum medium, draining it at the rate Q of Chapter 1.</p>
+<aside class="claim-strip page"><span class="g g-degenerate" data-phase2="grade">Degenerate</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/03-gravity-momentum-absorbed-inflow/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="a0"><b>a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²</b> — galactic acceleration scale, derived from the inflow law — the one prediction unique to this framework. <b class="grade g-distinguishing">[distinguishing]</b> <a href="/cosmology/06-galactic-rotation-derivation-a0-ch0/">canonical derivation §6</a></aside>
+<aside class="vp-card" data-locked="QM"><b>Q/M = 1.7522×10²⁹ quanta s⁻¹ kg⁻¹</b> — mass-specific inflow rate (hydrogen anchor) — fixes the inflow rate of any body from its mass alone. <b class="grade g-forced">[forced]</b> <a href="/cosmology/01-single-input-inflow-rate/">canonical derivation §1</a></aside>
+<em>This is Chapter 3, the central chapter of the volume. It takes as its only
+body-specific input the inflow rate Q defined and tabulated in Chapter 1
+(Q∝ M, with Q/M=1.7522×10²⁹quantas⁻¹kg⁻¹), and from it
+derives the gravitational field, the meaning of mass and of the gravitational constant, and
+the equivalence principle. Following the rules of Chapter 0, the argument is given as a
+numbered chain with no step left implicit, every non-trivial step is checked by an attached,
+reproducible simulation, and the strong-field results that belong to the physics volume are
+imported by citation rather than re-derived.</em>
+<h2>The raw facts to be explained</h2>
+<p>The model-independent facts of gravitation are few and familiar: unsupported bodies near the
+Earth accelerate downward at g≃9.81ms⁻² regardless of their composition;
+the planets trace closed, stable orbits about the Sun characterised by the heliocentric
+strength GM_(odot)=1.327×10²⁰m³s⁻²; and the orbital data obey an
+inverse-square force law. We will show that all three—the inverse-square law, the
+composition independence, and the identification of the source strength with GM—follow
+from a body being a <em>sink</em> of the vacuum medium, draining it at the rate Q of
+Chapter 1.</p>
+<h2>The inflow velocity field (steps 1–3)</h2>
+<p>We first establish the velocity field that a single sink sets up in the surrounding medium.</p>
+<ol>
+<li> <strong>Depletion.</strong> A body of inflow rate Q₁ annihilates Q₁ vacuum quanta
+per second (Chapter 1). This continuously removes quanta from the region it occupies.
+<li> <strong>Refilling (no-void).</strong> By premise (P1) of Chapter 1 the medium is fully packed and
+admits no voids; the surrounding quanta therefore move inward to replace those annihilated.
+After transients this settles to a steady, spherically symmetric, radially inward flow.
+<li> <strong>Conservation fixes the profile.</strong> In steady state every quantum that is annihilated
+must first cross every sphere surrounding the body, so the inward flux through a sphere of
+radius r equals the annihilation rate:
+<figure class="eq" id="eq:flux"><img src="/cosmology/eq/cosmology/cos-03-000.svg" data-eq="cos-03-000" width="223" height="58" loading="lazy" alt="\begin{equation} \underbrace{4\pi r^{2}}_{\text{area}}\; \underbrace{n_{0}}_{\substack{\text{number}\\\text{density}}}\; \underbrace{v(r)}_{\text{inflow speed}} \;=\; Q_{1}, \end{equation}"></figure>
+<p>with n₀ the undisturbed number density of the medium (a universal constant). Solving,</p>
+<figure class="eq" id="eq:vfield"><img src="/cosmology/eq/cosmology/cos-03-001.svg" data-eq="cos-03-001" width="221" height="52" loading="lazy" alt="\begin{equation} \boxed{\,v(r)\;=\;\frac{Q_{1}}{4\pi n_{0}\,r^{2}}\;\propto\;\frac{Q_{1}}{r^{2}}.\,} \end{equation}"></figure>
+</ol>
+<p>The inflow speed falls as 1/r². This is the single field quantity from which the force
+will be built; note that nothing here yet refers to a second body.</p>
+<h2>The gravitational force as absorbed momentum (steps 4–6)</h2>
+<ol>
+<li> <strong>A second sink in the flow.</strong> Place a second body, of inflow rate Q₂, at
+distance r from the first. About <em>itself</em> the second body draws an isotropic inflow,
+which by symmetry exerts no net force on it. The only asymmetry it experiences is the inflow
+<a class="xref" data-ref="eq:vfield">(vfield)</a> set up by the first body, which at the second body's location carries the
+medium past it with velocity v(r) directed toward body 1.
+<li> <strong>Momentum delivered by absorption.</strong> The second body is a sink: it annihilates
+quanta at rate Q₂. Each quantum (mass m_q) that it absorbs from its surroundings is,
+on average, drifting toward body 1 with the local velocity v(r), hence carrying momentum
+m_qv(r) toward body 1. By momentum conservation the absorbing body acquires this
+momentum. The momentum delivered per unit time—i.e. the force—is therefore
+<figure class="eq" id="eq:force"><img src="/cosmology/eq/cosmology/cos-03-002.svg" data-eq="cos-03-002" width="446" height="42" loading="lazy" alt="\begin{equation} F \;=\; Q_{2}\,\big(m_{q}\,v(r)\big) \;=\; Q_{2}\,m_{q}\,\frac{Q_{1}}{4\pi n_{0}r^{2}} \;=\; \frac{m_{q}}{4\pi n_{0}}\,\frac{Q_{1}Q_{2}}{r^{2}}, \end{equation}"></figure>
+<p>directed toward body 1 (attractive).</p>
+<li> <strong>The inverse-square law.</strong> Equation <a class="xref" data-ref="eq:force">(force)</a> is an attractive force
+proportional to the product of the two inflow rates and falling as 1/r². Writing
+κ' ≡ m_q/(4π n₀), a universal constant of the medium,
+<figure class="eq" id="eq:Fnewton"><img src="/cosmology/eq/cosmology/cos-03-003.svg" data-eq="cos-03-003" width="127" height="39" loading="lazy" alt="\begin{equation} F \;=\; \kappa&#x27;\,\frac{Q_{1}Q_{2}}{r^{2}} . \end{equation}"></figure>
+<p>This has exactly Newton's form, with the role of “gravitational charge” played by the inflow
+rate Q.
+</ol></p>
+<h2>Why 1/r² and not 1/r⁵ (step 7)</h2>
+<span id="sec:why"></span>
+<p>This step is the one most easily skipped and therefore, by the rule of Chapter 0, the one we
+make most explicit. A natural-seeming alternative would treat the gravitating body not as a
+sink that <em>absorbs</em> momentum, but as a parcel <em>carried along</em> by the inflow, feeling
+the flow's own (convective) acceleration. For the steady radial field <a class="xref" data-ref="eq:vfield">(vfield)</a> that
+acceleration is</p>
+<figure class="eq" id="eq:rfive"><img src="/cosmology/eq/cosmology/cos-03-004.svg" data-eq="cos-03-004" width="646" height="48" loading="lazy" alt="\begin{equation} a_{\text{flow}} \;=\; (\mathbf{v}\!\cdot\!\nabla)\mathbf{v} \;=\; v\,\frac{dv}{dr} \;=\; \frac{Q_{1}}{4\pi n_{0}r^{2}}\cdot\!\left(-\frac{2\,Q_{1}}{4\pi n_{0}r^{3}}\right) \;=\; -\,2\!\left(\frac{Q_{1}}{4\pi n_{0}}\right)^{\!2}\frac{1}{r^{5}}\;\propto\;\frac{1}{r^{5}} . \end{equation}"></figure>
+<p>The two candidate laws differ sharply: absorption of momentum gives 1/r²
+(Eq. <a class="xref" data-ref="eq:force">(force)</a>), whereas convective carry-along gives 1/r⁵ (Eq. <a class="xref" data-ref="eq:rfive">(rfive)</a>).
+<em>Which is physically correct is decided by what the body actually is.</em> A gravitating body
+annihilates the medium; it is a sink, not a passive tracer. A sink does not move with the
+local flow—it removes the flow—so the force it feels is the momentum it absorbs,
+Eq. <a class="xref" data-ref="eq:force">(force)</a>, the 1/r² law. The convective expression <a class="xref" data-ref="eq:rfive">(rfive)</a> would apply
+to a neutrally buoyant tracer that neither emits nor absorbs the medium, which a massive body
+is not.</p>
+<h4>Stability confirms the selection.</h4>
+ The two laws are also distinguished
+observationally, because orbits under a central force F∝ r⁻ⁿ are stable only for
+n<3 (a circular orbit's small radial perturbations oscillate for n<3 and grow without
+bound for n≥3). Thus n=2 (absorption) permits the stable, long-lived planetary orbits we
+observe, while n=5 (carry-along) does not. Simulation A integrates a circular orbit given a
+1% tangential-speed perturbation under each law:
+<pre class="vb">
+def leapfrog(n_exp, perturb=0.01, T=60, N=600000, k=1.0):
+    x=[1.,0.]; v=[0.,1.+perturb]; dt=T/N
+    acc=lambda x:-k*hypot(x)**(-n_exp)*(x/hypot(x))
+    # ... kick-drift-kick; record r(t) ...
+n=2 : r stays in [1.00, 1.04]              -&gt; BOUNDED (libration ~4%)
+n=5 : r grows 1 -&gt; 41 and keeps climbing   -&gt; RUNAWAY (escape)
+</pre>
+<p>The result (Fig. <a class="xref" data-ref="fig:stab">(stab)</a>) is unambiguous: under the n=2 absorption law the perturbed
+orbit librates within a few percent of its radius, exactly as the planets do; under the n=5
+carry-along law the same orbit runs away by more than a factor of forty and continues to grow.
+Since planetary orbits are observed to be stable over billions of years, the gravitational
+mechanism <em>must</em> be momentum absorption (1/r²), not convective carry-along
+(1/r⁵). This is the “why this and not that” that an inverse-square claim requires.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch3_stability.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>Mass is the inflow rate; G is a property of the medium (step 8)</h2>
+<ol>
+<li> <strong>Identifying GM.</strong> Comparing the force <a class="xref" data-ref="eq:Fnewton">(Fnewton)</a> with Newton's
+F=GM₁M₂/r² shows that the gravitational mass of a body is proportional to its inflow
+rate, MproptoQ. Equivalently, the source strength is
+<figure class="eq" id="eq:GMkappa"><img src="/cosmology/eq/cosmology/cos-03-005.svg" data-eq="cos-03-005" width="222" height="43" loading="lazy" alt="\begin{equation} GM_{1}\;=\;\kappa\,Q_{1},\qquad \kappa\equiv\frac{\kappa&#x27;}{\beta}, \end{equation}"></figure>
+<p>where β is the constant relating inertia to inflow rate (next section) and κ is a
+universal medium constant. We fix κ <em>once</em>, by matching the Sun:</p>
+<figure class="eq" id="eq:kappaval"><img src="/cosmology/eq/cosmology/cos-03-006.svg" data-eq="cos-03-006" width="457" height="45" loading="lazy" alt="\begin{equation} \kappa=\frac{GM_{\odot}}{Q_{\odot}} =\frac{1.327\times10^{20}\,\mathrm{m^{3}s^{-2}}}{3.485\times10^{59}\,\mathrm{s^{-1}}} =3.81\times10^{-40}\ \mathrm{m^{3}\,s^{-1}} . \end{equation}"></figure>
+<p>Every other body's source strength then follows from its tabulated Q (Chapter 1,
+Table 1) with <em>no further input</em>. As a consistency check, κQ_(⊕)
+=3.81×10⁻⁴⁰×1.046×10⁵⁴=3.98×10¹⁴m³s⁻²
+=GM_(⊕), recovering the measured terrestrial value.
+</ol></p>
+<h4>The mass/G split is conventional.</h4>
+ Only the <em>product</em> kappaQ(=GM)
+enters any orbit (Eq. <a class="xref" data-ref="eq:GMkappa">(GMkappa)</a> feeds the acceleration a=kappaQ₁/r² of the next
+section). Rescaling Q→ cQ and κ→κ/c leaves kappaQ unchanged and the
+orbit identical. Simulation C verifies this to machine precision:
+<pre class="vb">
+(kappa, Q)  vs  (kappa/1e6, Q*1e6)   [same product kappa*Q = GM]
+   max |trajectory difference| over an orbit = 2.7e-13   -&gt;  identical
+</pre>
+<p>Hence the framework fixes the product; how one chooses to call part of it “G” and part of
+it “mass” is a matter of units. Adopting the measured G recovers the conventional mass
+scale, and the inflow rate Q is then simply the mass expressed in annihilation-rate units.</p>
+<h2>The equivalence principle, as a theorem (step 9)</h2>
+<ol>
+<li> <strong>Inertia is also the inflow rate.</strong> The same sink property that makes Q the
+gravitational charge also makes it the inertia: resisting acceleration means rearranging the
+quanta one is absorbing, so a body's inertial mass is m=βQ with the <em>same</em>
+universal β for all matter. The acceleration of body 2 in body 1's field is then
+<figure class="eq" id="eq:EP"><img src="/cosmology/eq/cosmology/cos-03-007.svg" data-eq="cos-03-007" width="356" height="45" loading="lazy" alt="\begin{equation} a_{2}=\frac{F}{m_{2}} =\frac{\kappa&#x27;\,Q_{1}Q_{2}/r^{2}}{\beta\,Q_{2}} =\frac{\kappa&#x27;}{\beta}\,\frac{Q_{1}}{r^{2}} =\kappa\,\frac{Q_{1}}{r^{2}} . \end{equation}"></figure>
+<p>The test body's own rate Q₂ appears in the force (proptoQ₂) and in its inertia
+(proptoQ₂) and therefore <em>cancels</em>. The acceleration depends only on the source,
+not on the composition or amount of the falling body.
+</ol></p>
+<p>This is the (weak) equivalence principle—universality of free fall—obtained here as a
+<em>theorem</em> rather than assumed as a postulate, because gravitational coupling and inertia
+are literally the same physical quantity, the inflow rate. Simulation B drops two test bodies
+whose inflow rates differ by a factor 10⁴ in the same source field:</p>
+<pre class="vb">
+Q_a   vs   Q_b = 1e4 * Q_a   in the same field  a = kappa*Q_source / r^2
+   max |trajectory_a - trajectory_b| over an orbit = 1.9e-14  -&gt;  identical
+</pre>
+<p>The trajectories coincide to machine precision, as the cancellation <a class="xref" data-ref="eq:EP">(EP)</a> requires.</p>
+<h2>What is deferred to the physics volume</h2>
+<p>The derivation above is the leading-order, weak- and far-field result, and it is exactly
+Newtonian gravity. The strong-field completion is established in the physics volume and is
+<em>not</em> re-derived here; we record its results in one paragraph and import them by citation.
+There the field is two-channel: a geometric channel g_(geom)=GM/R² that is not
+capped, plus a contact (restoring) channel g_(restore)=min(gₚₒₜ,g_(*)) that
+<em>saturates</em> at a yield value g_(*)=c²Ψ_(yield) — these, with the four-wall
+status below, are the genuine physics-volume imports. The strong-field <em>consequences</em>, by
+contrast, are owned by <em>this</em> volume (ownership corrected in v2; the physics volume does not carry
+them): the inflow reaching the wave speed at Rₛ=2GM/c² gives the river/Painlev\'e picture of
+black holes developed in Chapter 9, and the resulting effective optical index n=1+Rₛ/r reproduces
+light bending δ=1.752” (the Eddington value; derived in Chapter 9 from the same inflow). The
+physics volume (v0.6.0) has additionally opened a recovery program R1–R4 for the historical
+full-physics magnitude claim (its §17.4.4). One honest consequence of that
+structure must be flagged here: because the restoring channel saturates, the absolute value of
+G (equivalently, of g=9.81ms⁻²) is tied to a yield cap, and a
+first-principles micro-derivation of that absolute value is <em>not</em> yet complete—the
+“four-wall” no-go discussed in the physics volume. In the present volume G therefore enters
+only through the empirically fixed product κ of Eq. <a class="xref" data-ref="eq:kappaval">(kappaval)</a>; we never claim
+to derive its absolute value here, and we mark this as open in the ledger (Chapter 16).</p>
+<h2>What can be shown here: gate physics (saturation and a critical radius)</h2>
+<span id="sec:gate"></span>
+<p>Two of those imported results—that the restoring channel <em>saturates</em> at g_(*), and
+that the inflow reaching the wave speed defines a critical radius—need not be taken purely on
+loan. Their <em>mechanism</em> follows from one minimal ingredient, a finite microscopic transport
+speed, and can be <em>shown</em> directly (Fig. <a class="xref" data-ref="fig:gate">(gate)</a>); only the <em>absolute</em> value of
+the cap remains a physics-volume matter (DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}). (This is the volume's stance throughout: we do not prove
+the foundations, we show their consequences.)</p>
+<h4>The flux bound.</h4>
+<p>If the active phase cannot move faster than c (|v|≤ c), then the energy flux is bounded
+by the active energy density it carries:</p>
+<figure class="eq" id="eq:gate_flux"><img src="/cosmology/eq/cosmology/cos-03-008.svg" data-eq="cos-03-008" width="335" height="43" loading="lazy" alt="\begin{equation} \|\mathbf{S}\|\le c\,e_{\mathrm{a}} \qquad\Longrightarrow\qquad \|\mathbf{u}\|:=\frac{\|\mathbf{S}\|}{e_{\mathrm{a}}}\le c . \end{equation}"></figure>
+<p>The mean transport velocity therefore has a ceiling. (The same bound caps the second moment,
+trT≤ c²eₐ, which limits any isotropic closure to
+κ_T≤ c²/3.)</p>
+<h4>Saturation.</h4>
+<p>The active→stored conversion rate is a maximum rate times a dimensionless, bounded gain,</p>
+<figure class="eq" id="eq:gate_sat"><img src="/cosmology/eq/cosmology/cos-03-009.svg" data-eq="cos-03-009" width="388" height="19" loading="lazy" alt="\begin{equation} \Gamma=\Gamma_{\max}\,g(e_{\mathrm{a}}), \qquad g:[0,1]\to[0,1],\quad g(0)=0, \end{equation}"></figure>
+<p>for example the Hill form g(eₐ)=eₐⁿ/(K_(Γ)ⁿ+eₐⁿ).
+Since g≤1, the rate cannot exceed Γ_(max): the restoring channel <em>saturates</em>.
+This is the microphysical shape of the cap g_(*)—why a contact restoring force levels off
+rather than growing without bound.</p>
+<h4>An emergent critical radius.</h4>
+<p>Under an inverse-square drive |F_r|=K_F/r², the demanded transport velocity grows inward
+as u_(dem)=K_F/(B r²) and meets the ceiling c at</p>
+<figure class="eq" id="eq:gate_rch"><img src="/cosmology/eq/cosmology/cos-03-010.svg" data-eq="cos-03-010" width="107" height="46" loading="lazy" alt="\begin{equation} r_{\mathrm{ch}}=\sqrt{\frac{K_{F}}{B\,c}}, \end{equation}"></figure>
+<p>inside which the flow is <em>choked</em>: the transport velocity is pinned at c and the choking
+ratio χ_S=u_(dem)/c≥1. A horizon-like critical radius—a surface where the
+inflow reaches the wave speed—thus emerges <em>solely</em> from a flux-capacity bound, with no
+extra postulate. (Its coefficient is drive-dependent; the strong-field black-hole horizon
+Rₛ=2GM/c² is the geometric-channel instance, Chapter 9.)</p>
+<h4>What the simulation shows.</h4>
+<code>ch3_gate.py</code> evaluates the three relations (Fig. <a class="xref" data-ref="fig:gate">(gate)</a>): the gain
+g(eₐ) climbing from 0 to its ceiling 1 (the conversion rate saturating at
+Γ_(max)); the inward demand u_(dem)∝1/r² crossing the cap c at the
+analytic r_(ch)=√K_F/(Bc) (measured 1.001 in units where r_(ch)=1);
+and the resulting choked interior in which u=min(u_(dem),c) saturates at c.
+<figure class="fig"><img src="/cosmology/assets/img/ch3_gate.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>Status of the gate claim.</h4>
+<ul>
+<li> <strong>Evidence (Gate 1): mechanism, not measurement.</strong> A finite transport speed <em>does</em>
+produce both a saturating restoring rate and a horizon-like critical radius. The units are toy and
+c,K_F,B,K_(Γ),n are inputs; the simulation does <em>not</em> derive the absolute value of
+G/g_(*) (the “four-wall” question stays open), nor the Schwarzschild coefficient
+Rₛ=2GM/c² (whose linear-in-M scaling comes from the uncapped geometric channel, not the
+inverse-square <em>choke</em> radius, which scales as √K_F).
+<li> <strong>Label (Gate 2): degenerate in outcome.</strong> The <em>existence</em> of a saturating cap and
+of a surface where the inflow reaches c is degenerate with a capped restoring force and the
+standard horizon; the distinguishing content is the <em>mechanism</em>—a throughput choke with a
+finite, non-singular interior (Chapter 9).
+<li> <strong>Scope (Gate 3): present-day.</strong> These are statements about how gravity saturates and
+how a horizon forms <em>now</em>; no origin or cosmic-history claim.
+</ul>
+<h2>Anticipated objections</h2>
+<h4>“This is Le Sage gravity, which is known to fail.”</h4>
+<p>Classical Le Sage models post a flux of <em>particles</em> streaming through space and founder on
+the drag and heating such particles would produce. The present mechanism differs in kind. (i)
+The leading-order law is exactly Newton's 1/r² (Eq. <a class="xref" data-ref="eq:Fnewton">(Fnewton)</a>), with no leading
+drag term, because the force is the momentum of the <em>absorbed</em> medium, not of a transverse
+particle flux. (ii) Aberration of the inflow produces only a v/c-order secular effect, i.e.\
+an extraordinarily slow orbital decay, not a first-order drag. (iii) The energy carried in by
+absorption is not a fatal heating paradox but is reinterpreted as the power source of central
+engines (active galactic nuclei and their jets), a point developed in Chapters 6 and 8. The
+medium here is the vacuum itself, and the relevant transport is its inflow momentum.</p>
+<h4>“This is just Newton relabelled.”</h4>
+<p>At Solar-System scale, this is correct, and we say so without hedging: the predictions are
+identical to Newton's, so this chapter and the next are <em>degenerate</em> with standard gravity
+and constitute a consistency check, not evidence of superiority. The framework's distinct,
+non-degenerate content appears where the same inflow law, combined with the cosmic
+<em>background</em> inflow, departs from Newton—galactic rotation and the derived acceleration
+scale a₀=cH₀/2π (Chapter 6). The value of the re-description is twofold: economy (a
+single quantity, the inflow rate Q, replaces the separate notions of gravitational charge,
+inertial mass, and the equivalence principle, which are here one thing and one theorem); and
+extensibility to regimes where it ceases to be degenerate.</p>
+<h2>Status of this chapter</h2>
+<ul>
+<li> <strong>Derived (internal success).</strong> The inverse-square force, the identification of mass
+with the inflow rate, the identification of G with a medium constant, and the equivalence
+principle. The two non-trivial selections—1/r² over 1/r⁵ by stability, and the
+exact cancellation of the test body's Q—are confirmed by Simulations A and B.
+<li> <strong>Degenerate.</strong> All weak-field/orbital predictions coincide with Newtonian gravity
+(quantified body-by-body in Chapter 4). This is consistency and economy, not a discriminating
+result.
+<li> <strong>Open / partly shown.</strong> The <em>mechanism</em> of the saturation and of the critical
+radius is now shown by simulation (§<a class="xref" data-ref="sec:gate">(gate)</a>, gate physics): a single finite transport
+speed yields both the cap g_(*) and a choke radius r_(ch). What remains
+<em>open</em> is the <em>absolute</em> value of G/g_(*) (the “four-wall” question), still
+fixed empirically through κ; aberration-induced secular decay and the
+absorbed-energy/central-engine link remain qualitative.
+</ul>
+<p>With the inverse-square law, the meaning of mass and G, and the equivalence principle in
+hand—all from the single inflow rate of Chapter 1—we turn in Chapter 4 to the quantitative
+consistency test: reproducing the measured orbital speeds and periods of the Solar System to
+sub-percent accuracy.</p>
+<h2>Reproducibility</h2>
+<p>All three simulations are pure-Python (NumPy), use a symplectic kick–drift–kick integrator,
+and report the numbers quoted above. Units are normalised (r₀=1, circular speed =1 for
+Sim A; GM=4π², i.e. years/AU, for Sims B and C).</p>
+<ul class="desc">
+<li><strong>Sim A — stability (1/r² vs 1/r⁵).</strong>  Integrate a 1%-perturbed circular orbit
+under a=-kr⁻ⁿ r, k=1. Output: n=2 keeps r∈[1.00,1.04] (bounded);
+n=5 grows r:1→41 and rising (runaway). Generates Fig. <a class="xref" data-ref="fig:stab">(stab)</a>.
+<li><strong>Sim B — equivalence principle.</strong>  Field a=kappaQₛ/r² with kappaQₛ=4π²;
+integrate two bodies with Q differing by 10⁴ (force proptoQ, inertia proptoQ,
+ratio independent of Q). Output: max trajectory difference 1.9×10⁻¹⁴.
+<li><strong>Sim C — mass/G degeneracy.</strong>  Integrate under (κ,Qₛ) and
+(κ/10⁶,10⁶Qₛ) (same product kappaQₛ=GM). Output: max trajectory
+difference 2.7×10⁻¹³.
+</ul>
+<em>Next stage: Chapter 4 (the Solar System as a consistency test), then Chapter 5
+(axial spin and tidal locking). Foundational results continue to be imported from the physics
+volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}.</em>
+<nav class="pn"><a rel="prev" href="/cosmology/02-light-lattice-elastic-wave-sharpest/">← §2</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/04-solar-system-consistency-test/">§4 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

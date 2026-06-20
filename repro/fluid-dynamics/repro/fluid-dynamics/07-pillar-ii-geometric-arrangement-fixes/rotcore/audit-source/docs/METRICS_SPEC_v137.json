@@ -1,0 +1,32 @@
+{
+  "version": "v1.3.7",
+  "base_version": "v1.3.6",
+  "denominator": "r_pred",
+  "metrics": {
+    "MAE": "mean(|r_meas - r_pred|)",
+    "MAPE_percent": "100 * mean(|r_meas - r_pred| / r_pred)",
+    "rel_med_percent": "100 * median(|r_meas - r_pred| / r_pred)",
+    "rel_IQR_percent": "100 * (Q3(|r_meas - r_pred| / r_pred) - Q1(|r_meas - r_pred| / r_pred))",
+    "RMSE": "sqrt(mean((r_meas - r_pred)^2))",
+    "NRMSE_percent": "100 * RMSE / median(r_pred)",
+    "rho_spearman": "Spearman rank correlation between r_pred and r_meas",
+    "coverage_10_percent": "P(|r_meas - r_pred| / r_pred <= 0.10)",
+    "coverage_20_percent": "P(|r_meas - r_pred| / r_pred <= 0.20)",
+    "identity_resid_percent": "100 * |N_star * r_meas^2 - phi * s * L_core^2| / (phi * s * L_core^2)"
+  },
+  "bootstrap": {
+    "n": 800,
+    "type": "percentile",
+    "targets": [
+      "rel_med_percent",
+      "NRMSE_percent"
+    ]
+  },
+  "files": {
+    "metrics_long": "data/metrics_long_v137.csv",
+    "metrics_robust": "data/metrics_robust_v137.csv",
+    "coverage": "data/coverage_v137.csv",
+    "identity_resid": "data/identity_resid_v137.csv"
+  },
+  "timestamp_utc": "2025-11-17T04:41:57.983698Z"
+}

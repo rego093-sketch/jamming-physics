@@ -1,0 +1,99 @@
+{
+  "phase": "CONSOLIDATION",
+  "kind": "consolidation_gate",
+  "generated": "2026-06-18",
+  "subsumes": [
+    "r1.gate.json",
+    "r2.gate.json",
+    "r3.gate.json",
+    "r4.gate.json"
+  ],
+  "inputs": {
+    "disease_index": {
+      "path": "data/curated/disease_index.csv",
+      "sha12": "a274e25a00bb"
+    },
+    "cohort_index": {
+      "path": "data/curated/dossiers/_cohort_index.json",
+      "sha12": "1e2f9041b04b"
+    },
+    "treatments_json": {
+      "path": "data/curated/treatments.json",
+      "sha12": "0f6de1a24e2e"
+    },
+    "burden_scores": {
+      "path": "data/curated/burden_scores.json",
+      "sha12": "f8792286838c"
+    },
+    "burden_residual": {
+      "path": "data/curated/burden_residual.json",
+      "sha12": "46755e1a0d7f"
+    }
+  },
+  "counts": {
+    "cohort_size": 35,
+    "disease_index_rows": 6170,
+    "disease_index_excluded_rows": 3,
+    "r_phase_gate_verdicts": {
+      "r1": "PASS (5/5)",
+      "r2": "PASS (7/7)",
+      "r3": "PASS (9/9)",
+      "r4": "PASS (11/11)"
+    }
+  },
+  "checks": [
+    {
+      "name": "r_phase_gates_all_pass",
+      "pass": true,
+      "detail": "R1-R4 gates re-run: r1=PASS (5/5), r2=PASS (7/7), r3=PASS (9/9), r4=PASS (11/11)"
+    },
+    {
+      "name": "cohort_identity_consistent_35",
+      "pass": true,
+      "detail": "35-disease cohort CUI set identical across dossiers/cohort_index/treatments/burden_scores/burden_residual=True; all n=35=True; all present in disease_index=True"
+    },
+    {
+      "name": "provenance_complete",
+      "pass": true,
+      "detail": "every graded field across 35 dossiers + 35 treatments + burden axes carries source/obstacle (and [L]/[V] dossier sources carry a date/accession token); 0 violations"
+    },
+    {
+      "name": "grade_complete_no_summary_drift",
+      "pass": true,
+      "detail": "all field grades in vocabulary and _cohort_index field_grades match the dossiers; 0 drifts"
+    },
+    {
+      "name": "class_consistency_cross_artifact",
+      "pass": true,
+      "detail": "inheritance/mechanism/gene agree across disease_index, dossiers, treatments, burden for all 35 cohort entities; 0 inconsistencies"
+    },
+    {
+      "name": "scope_clean_cohort",
+      "pass": true,
+      "detail": "all 35 cohort entities in_scope in dossier+index, no OUT primary system leaked without cross-reference; 0 violations"
+    },
+    {
+      "name": "exclusions_logged_not_dropped",
+      "pass": true,
+      "detail": "3 disease_index in_scope=false rows, all carry an exclusion_reason; 0 unlogged"
+    },
+    {
+      "name": "gene_function_symbol_sweep",
+      "pass": true,
+      "detail": "every dossier gene_function official symbol matches its cohort gene symbol (Erratum-E1 alias-collision guard, confirmation sweep); 0 mismatches"
+    },
+    {
+      "name": "treatability_no_fabricated_cure",
+      "pass": true,
+      "detail": "no disease-level curative class, no treatment row claims [L], residual grade is [H] (provisional); 0 violations"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ],
+  "verdict": "PASS (10/10)",
+  "w1_readiness_decision": "READY to enter Phase W1. The two deferred [L] passes are NOT consolidation prerequisites -- they are accuracy UPGRADES, not gate criteria. They are scheduled as EARLY-W1 tasks: (1) treatment accession-dating (pin each of the 35 therapies to an FDA label / GeneReviews Management / OMIM clinical management / Orphanet accession+date, lifting treatments.csv grades [H]->[L] where confirmed) and (2) the natural-history registry pass (lift burden P/S/M/D axes [H]->[L]/[V]). UNTIL both land, any W-phase prose MUST carry the burden and residual ORDER as a provisional [H]-grade prioritisation device, not a registry-locked ranking. This is the explicit, recorded W1-entry condition.",
+  "note": "Consolidation gate -- the explicit R->W pivot. It writes no whitepaper prose and introduces no new facts; it re-derives, independently of any recorded digest, that the R1-R4 datasets jointly meet the four ROADMAP criteria (provenance-complete, internally consistent, grade-complete, scope-clean), plus the Erratum-E1 gene_function official-symbol confirmation sweep and constitution C-D3 (no fabricated cure). It SUBSUMES the four investigation gates by re-running them and asserting each PASSes, and re-verifies the governed emergence-engine pin drift-zero. HONESTY/SCOPE: clinical facts from NCBI are observed inputs (C-D1) -- respected and cited, never 'reproduced'; the reproducible layer is the analysis (classification, burden index, residual offset). Treatment evidence is [H] (cited text / established science), and the burden order is [H]-grade provisional, until the two deferred [L] passes (the W1-readiness decision above) complete."
+}

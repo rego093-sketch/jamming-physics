@@ -1,0 +1,2433 @@
+{
+  "_method": {
+    "edge_crops_bp": [
+      500,
+      1000,
+      2000,
+      5000
+    ],
+    "locked": {
+      "W": 2000,
+      "eps": 1e-09,
+      "loop_k": 2,
+      "min_shell_bp": 5000,
+      "smooth_radius": 2,
+      "step": 500,
+      "w_at": -0.5,
+      "w_cpg": 0.5,
+      "w_gc": 1.0
+    },
+    "metric": "interior-anchor recall at tolerance (fraction of baseline anchors with a perturbed anchor within T bp); region edges excluded",
+    "note": "PROBE only -- locked params unchanged in the grammar",
+    "sweeps": {
+      "W": [
+        1000,
+        1500,
+        2000,
+        3000,
+        4000
+      ],
+      "min_shell_bp": [
+        2500,
+        5000,
+        10000
+      ],
+      "smooth_radius": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "step": [
+        250,
+        500,
+        1000
+      ]
+    }
+  },
+  "_pins": {
+    "key_pipeline_full.py": "3141fa22cfe34a94d9fc36b447ceffa951dc5964629abf30aae024fa475cdced"
+  },
+  "_question": "Are A4 shells/anchors robust sequence properties, or window-parameter / region-edge artifacts? (coordinate-read stability, T3.1+T3.4)",
+  "aggregate": {
+    "edge_crop_mean_recall": {
+      "1000": {
+        "recall_1000bp": 0.942,
+        "recall_2000bp": 0.942,
+        "recall_500bp": 0.934
+      },
+      "2000": {
+        "recall_1000bp": 0.91,
+        "recall_2000bp": 0.91,
+        "recall_500bp": 0.903
+      },
+      "500": {
+        "recall_1000bp": 0.981,
+        "recall_2000bp": 0.981,
+        "recall_500bp": 0.973
+      },
+      "5000": {
+        "recall_1000bp": 0.864,
+        "recall_2000bp": 0.872,
+        "recall_500bp": 0.864
+      }
+    },
+    "lock_sweep_mean_recall": {
+      "W": {
+        "1000": {
+          "recall_1000bp": 0.891,
+          "recall_2000bp": 0.905,
+          "recall_500bp": 0.884
+        },
+        "1500": {
+          "recall_1000bp": 0.897,
+          "recall_2000bp": 0.913,
+          "recall_500bp": 0.875
+        },
+        "2000": {
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "3000": {
+          "recall_1000bp": 0.921,
+          "recall_2000bp": 0.928,
+          "recall_500bp": 0.908
+        },
+        "4000": {
+          "recall_1000bp": 0.842,
+          "recall_2000bp": 0.867,
+          "recall_500bp": 0.745
+        }
+      },
+      "min_shell_bp": {
+        "10000": {
+          "recall_1000bp": 0.278,
+          "recall_2000bp": 0.278,
+          "recall_500bp": 0.271
+        },
+        "2500": {
+          "recall_1000bp": 0.986,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 0.922
+        },
+        "5000": {
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        }
+      },
+      "smooth_radius": {
+        "0": {
+          "recall_1000bp": 0.699,
+          "recall_2000bp": 0.721,
+          "recall_500bp": 0.661
+        },
+        "1": {
+          "recall_1000bp": 0.865,
+          "recall_2000bp": 0.889,
+          "recall_500bp": 0.859
+        },
+        "2": {
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "3": {
+          "recall_1000bp": 0.935,
+          "recall_2000bp": 0.935,
+          "recall_500bp": 0.878
+        },
+        "4": {
+          "recall_1000bp": 0.808,
+          "recall_2000bp": 0.862,
+          "recall_500bp": 0.666
+        }
+      },
+      "step": {
+        "1000": {
+          "recall_1000bp": 0.657,
+          "recall_2000bp": 0.832,
+          "recall_500bp": 0.427
+        },
+        "250": {
+          "recall_1000bp": 0.856,
+          "recall_2000bp": 0.878,
+          "recall_500bp": 0.764
+        },
+        "500": {
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        }
+      }
+    }
+  },
+  "grade": "POSITIONS ROBUST, COUNT IS A RESOLUTION CHOICE. (1) At neighboring W/step/smooth_radius and small edge crops, 93% of interior anchors recur within 2 kb -- the anchor POSITIONS are a real ~kb-scale property of the sequence, not a window artifact. (2) min_shell_bp is a granularity knob: doubling it to 10 kb keeps only 0.31x the anchors, BUT those survivors land on baseline positions (precision 0.879) -- a consistent NESTED subset, not relocation. So the anchor INVENTORY (and anchor_loops count) is resolution-dependent while the boundaries themselves are stable. (3) Anchor positions carry ~kb uncertainty, so a distance like 'nearest anchor 1065 bp' is ~1 kb-binned, not exact. Net: the coordinate read survives -- graded as a robust multi-scale skeleton with a resolution-set anchor count, not as exact per-bp coordinates.",
+  "headline": {
+    "W_neighbors_recall_2000bp": [
+      0.913,
+      0.928
+    ],
+    "edge_crop_5000bp_recall_2000bp": 0.872,
+    "edge_crop_500bp_recall_2000bp": 0.981,
+    "min_shell_10000_anchor_count_ratio": 0.31,
+    "min_shell_10000_precision_2000bp": 0.879,
+    "min_shell_neighbors_recall_2000bp": [
+      1.0,
+      0.278
+    ],
+    "smooth_radius_neighbors_recall_2000bp": [
+      0.889,
+      0.935
+    ]
+  },
+  "mean_neighbor_recall_2000bp": 0.929,
+  "per_organism": {
+    "arabidopsis": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 8,
+          "recall_1000bp": 0.7,
+          "recall_2000bp": 0.7,
+          "recall_500bp": 0.7
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 8,
+          "recall_1000bp": 0.7,
+          "recall_2000bp": 0.7,
+          "recall_500bp": 0.7
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 0.8,
+          "recall_2000bp": 0.9,
+          "recall_500bp": 0.8
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 0.8,
+            "median_offset_bp": 0.0,
+            "n_anchors": 8,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.8,
+            "recall_2000bp": 0.8,
+            "recall_500bp": 0.8
+          },
+          "1500": {
+            "anchor_count_ratio": 1.1,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.636,
+            "recall_1000bp": 0.6,
+            "recall_2000bp": 0.7,
+            "recall_500bp": 0.5
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "4000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.8
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.2,
+            "median_offset_bp": 13750.0,
+            "n_anchors": 2,
+            "precision_2000bp": 0.5,
+            "recall_1000bp": 0.1,
+            "recall_2000bp": 0.1,
+            "recall_500bp": 0.1
+          },
+          "2500": {
+            "anchor_count_ratio": 2.9,
+            "median_offset_bp": 0.0,
+            "n_anchors": 29,
+            "precision_2000bp": 0.345,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.8
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.6,
+            "median_offset_bp": 4500.0,
+            "n_anchors": 6,
+            "precision_2000bp": 0.667,
+            "recall_1000bp": 0.4,
+            "recall_2000bp": 0.4,
+            "recall_500bp": 0.3
+          },
+          "1": {
+            "anchor_count_ratio": 0.8,
+            "median_offset_bp": 0.0,
+            "n_anchors": 8,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.7,
+            "recall_2000bp": 0.8,
+            "recall_500bp": 0.7
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.9
+          },
+          "4": {
+            "anchor_count_ratio": 1.1,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.8,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.7
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.3,
+            "median_offset_bp": 500.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.615,
+            "recall_1000bp": 0.7,
+            "recall_2000bp": 0.8,
+            "recall_500bp": 0.5
+          },
+          "250": {
+            "anchor_count_ratio": 0.6,
+            "median_offset_bp": 2375.0,
+            "n_anchors": 6,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.5,
+            "recall_2000bp": 0.5,
+            "recall_500bp": 0.3
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 10
+    },
+    "chicken": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 13,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 13,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 13,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 0.917,
+          "recall_2000bp": 0.917,
+          "recall_500bp": 0.917
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "1500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.833
+          },
+          "4000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.75
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.33,
+            "median_offset_bp": 6750.0,
+            "n_anchors": 4,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.333,
+            "recall_2000bp": 0.333,
+            "recall_500bp": 0.333
+          },
+          "2500": {
+            "anchor_count_ratio": 1.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 23,
+            "precision_2000bp": 0.522,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.917
+          },
+          "1": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.75
+          },
+          "4": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.75
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 750.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.75,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.333
+          },
+          "250": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 125.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.833
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 12
+    },
+    "fly": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 0.692,
+          "recall_2000bp": 0.692,
+          "recall_500bp": 0.692
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 0.692,
+          "recall_2000bp": 0.692,
+          "recall_500bp": 0.692
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 0.769,
+          "recall_2000bp": 0.769,
+          "recall_500bp": 0.769
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.769,
+          "recall_2000bp": 0.769,
+          "recall_500bp": 0.769
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 0.692,
+            "recall_2000bp": 0.692,
+            "recall_500bp": 0.692
+          },
+          "1500": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 250.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 0.692,
+            "recall_2000bp": 0.692,
+            "recall_500bp": 0.615
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 0.85,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.846,
+            "recall_2000bp": 0.846,
+            "recall_500bp": 0.846
+          },
+          "4000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.917,
+            "recall_1000bp": 0.846,
+            "recall_2000bp": 0.846,
+            "recall_500bp": 0.769
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.31,
+            "median_offset_bp": 6000.0,
+            "n_anchors": 4,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.308,
+            "recall_2000bp": 0.308,
+            "recall_500bp": 0.308
+          },
+          "2500": {
+            "anchor_count_ratio": 2.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 27,
+            "precision_2000bp": 0.481,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.85,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.727,
+            "recall_1000bp": 0.615,
+            "recall_2000bp": 0.615,
+            "recall_500bp": 0.615
+          },
+          "1": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.769,
+            "recall_1000bp": 0.769,
+            "recall_2000bp": 0.769,
+            "recall_500bp": 0.692
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.923,
+            "recall_2000bp": 0.923,
+            "recall_500bp": 0.846
+          },
+          "4": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.769,
+            "recall_1000bp": 0.692,
+            "recall_2000bp": 0.769,
+            "recall_500bp": 0.538
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 750.0,
+            "n_anchors": 14,
+            "precision_2000bp": 0.643,
+            "recall_1000bp": 0.615,
+            "recall_2000bp": 0.692,
+            "recall_500bp": 0.231
+          },
+          "250": {
+            "anchor_count_ratio": 0.77,
+            "median_offset_bp": 125.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.769,
+            "recall_2000bp": 0.769,
+            "recall_500bp": 0.769
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 13
+    },
+    "frog": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 0.818,
+          "recall_2000bp": 0.818,
+          "recall_500bp": 0.818
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.818
+          },
+          "1500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "4000": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.545
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.18,
+            "median_offset_bp": 14500.0,
+            "n_anchors": 2,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.182,
+            "recall_2000bp": 0.182,
+            "recall_500bp": 0.182
+          },
+          "2500": {
+            "anchor_count_ratio": 2.45,
+            "median_offset_bp": 0.0,
+            "n_anchors": 27,
+            "precision_2000bp": 0.444,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.818
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.727
+          },
+          "1": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.909,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "4": {
+            "anchor_count_ratio": 1.18,
+            "median_offset_bp": 1000.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.615,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.455
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 750.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.667,
+            "recall_1000bp": 0.545,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.182
+          },
+          "250": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 125.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.909,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.818
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 11
+    },
+    "human": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 0.889,
+          "recall_2000bp": 0.889,
+          "recall_500bp": 0.889
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 8,
+          "recall_1000bp": 0.889,
+          "recall_2000bp": 0.889,
+          "recall_500bp": 0.889
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.22,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "1500": {
+            "anchor_count_ratio": 1.22,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.22,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "4000": {
+            "anchor_count_ratio": 1.44,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.692,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.889
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.44,
+            "median_offset_bp": 7500.0,
+            "n_anchors": 4,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 0.333,
+            "recall_2000bp": 0.333,
+            "recall_500bp": 0.333
+          },
+          "2500": {
+            "anchor_count_ratio": 2.78,
+            "median_offset_bp": 0.0,
+            "n_anchors": 25,
+            "precision_2000bp": 0.36,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.889
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.67,
+            "median_offset_bp": 10500.0,
+            "n_anchors": 6,
+            "precision_2000bp": 0.667,
+            "recall_1000bp": 0.444,
+            "recall_2000bp": 0.444,
+            "recall_500bp": 0.444
+          },
+          "1": {
+            "anchor_count_ratio": 1.33,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.889
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.44,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.692,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "4": {
+            "anchor_count_ratio": 1.44,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.692,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.889
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.44,
+            "median_offset_bp": 250.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.692,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.556
+          },
+          "250": {
+            "anchor_count_ratio": 1.11,
+            "median_offset_bp": 375.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 0.889,
+            "recall_500bp": 0.778
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 9
+    },
+    "maize": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 0.909
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 0.909
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.909,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "1500": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 250.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.18,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.769,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "4000": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.636
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.36,
+            "median_offset_bp": 6500.0,
+            "n_anchors": 4,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.364,
+            "recall_2000bp": 0.364,
+            "recall_500bp": 0.364
+          },
+          "2500": {
+            "anchor_count_ratio": 2.18,
+            "median_offset_bp": 0.0,
+            "n_anchors": 24,
+            "precision_2000bp": 0.458,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.82,
+            "median_offset_bp": 500.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.727
+          },
+          "1": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.818
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "4": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.727,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.636
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 1250.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.667,
+            "recall_1000bp": 0.455,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.273
+          },
+          "250": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 125.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.727
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 11
+    },
+    "mouse": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 9,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 8,
+          "recall_1000bp": 0.889,
+          "recall_2000bp": 0.889,
+          "recall_500bp": 0.889
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.22,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "1500": {
+            "anchor_count_ratio": 1.11,
+            "median_offset_bp": 250.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.11,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "4000": {
+            "anchor_count_ratio": 1.22,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.727,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 0.889,
+            "recall_500bp": 0.778
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.22,
+            "median_offset_bp": 16000.0,
+            "n_anchors": 2,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.222,
+            "recall_2000bp": 0.222,
+            "recall_500bp": 0.222
+          },
+          "2500": {
+            "anchor_count_ratio": 2.78,
+            "median_offset_bp": 0.0,
+            "n_anchors": 25,
+            "precision_2000bp": 0.36,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.889
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.78,
+            "median_offset_bp": 0.0,
+            "n_anchors": 7,
+            "precision_2000bp": 0.857,
+            "recall_1000bp": 0.667,
+            "recall_2000bp": 0.667,
+            "recall_500bp": 0.667
+          },
+          "1": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.11,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "4": {
+            "anchor_count_ratio": 1.33,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.778
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.44,
+            "median_offset_bp": 250.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.692,
+            "recall_1000bp": 0.889,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.667
+          },
+          "250": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 125.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 9
+    },
+    "plasmodium": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.8,
+          "recall_2000bp": 0.8,
+          "recall_500bp": 0.8
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.8,
+            "recall_2000bp": 0.8,
+            "recall_500bp": 0.8
+          },
+          "1500": {
+            "anchor_count_ratio": 1.1,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.9
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.1,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.9
+          },
+          "4000": {
+            "anchor_count_ratio": 0.9,
+            "median_offset_bp": 500.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.8,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.8
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.3,
+            "median_offset_bp": 14000.0,
+            "n_anchors": 3,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.3,
+            "recall_2000bp": 0.3,
+            "recall_500bp": 0.3
+          },
+          "2500": {
+            "anchor_count_ratio": 2.1,
+            "median_offset_bp": 0.0,
+            "n_anchors": 21,
+            "precision_2000bp": 0.476,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.9,
+            "median_offset_bp": 500.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.9
+          },
+          "1": {
+            "anchor_count_ratio": 1.1,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.9
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.9
+          },
+          "4": {
+            "anchor_count_ratio": 0.9,
+            "median_offset_bp": 500.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.8,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.7
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 750.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.5,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.5
+          },
+          "250": {
+            "anchor_count_ratio": 0.9,
+            "median_offset_bp": 125.0,
+            "n_anchors": 9,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.9,
+            "recall_2000bp": 0.9,
+            "recall_500bp": 0.8
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 10
+    },
+    "rice": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 0.833,
+          "recall_2000bp": 0.833,
+          "recall_500bp": 0.833
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "1500": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 250.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.846,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.917
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.846,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.917
+          },
+          "4000": {
+            "anchor_count_ratio": 0.83,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.667,
+            "recall_2000bp": 0.667,
+            "recall_500bp": 0.667
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.42,
+            "median_offset_bp": 5750.0,
+            "n_anchors": 5,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.333,
+            "recall_2000bp": 0.333,
+            "recall_500bp": 0.333
+          },
+          "2500": {
+            "anchor_count_ratio": 1.83,
+            "median_offset_bp": 0.0,
+            "n_anchors": 22,
+            "precision_2000bp": 0.591,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.917
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.846,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.833
+          },
+          "1": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 0.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.833
+          },
+          "4": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.75,
+            "recall_2000bp": 0.75,
+            "recall_500bp": 0.583
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 750.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.667,
+            "recall_2000bp": 0.75,
+            "recall_500bp": 0.417
+          },
+          "250": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 125.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 12
+    },
+    "worm": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 13,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 0.917,
+          "recall_2000bp": 0.917,
+          "recall_500bp": 0.833
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 0.833,
+          "recall_2000bp": 0.833,
+          "recall_500bp": 0.833
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 0.83,
+            "median_offset_bp": 250.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.75
+          },
+          "1500": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.917
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.917
+          },
+          "4000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.833
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.42,
+            "median_offset_bp": 6000.0,
+            "n_anchors": 5,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.417,
+            "recall_2000bp": 0.417,
+            "recall_500bp": 0.333
+          },
+          "2500": {
+            "anchor_count_ratio": 1.58,
+            "median_offset_bp": 0.0,
+            "n_anchors": 19,
+            "precision_2000bp": 0.632,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.75,
+            "median_offset_bp": 500.0,
+            "n_anchors": 9,
+            "precision_2000bp": 0.889,
+            "recall_1000bp": 0.667,
+            "recall_2000bp": 0.667,
+            "recall_500bp": 0.583
+          },
+          "1": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.909,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.833
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 250.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.917
+          },
+          "4": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.75
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.08,
+            "median_offset_bp": 500.0,
+            "n_anchors": 13,
+            "precision_2000bp": 0.923,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.5
+          },
+          "250": {
+            "anchor_count_ratio": 0.83,
+            "median_offset_bp": 375.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.9,
+            "recall_1000bp": 0.75,
+            "recall_2000bp": 0.75,
+            "recall_500bp": 0.583
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 12
+    },
+    "yeast": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 12,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.917,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.833
+          },
+          "1500": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.833
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.75
+          },
+          "4000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.75
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.17,
+            "median_offset_bp": 39750.0,
+            "n_anchors": 2,
+            "precision_2000bp": 0.5,
+            "recall_1000bp": 0.083,
+            "recall_2000bp": 0.083,
+            "recall_500bp": 0.083
+          },
+          "2500": {
+            "anchor_count_ratio": 1.75,
+            "median_offset_bp": 0.0,
+            "n_anchors": 21,
+            "precision_2000bp": 0.571,
+            "recall_1000bp": 0.917,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.75
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 0.67,
+            "median_offset_bp": 500.0,
+            "n_anchors": 8,
+            "precision_2000bp": 0.875,
+            "recall_1000bp": 0.583,
+            "recall_2000bp": 0.583,
+            "recall_500bp": 0.583
+          },
+          "1": {
+            "anchor_count_ratio": 0.92,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.917,
+            "recall_500bp": 0.833
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.667
+          },
+          "4": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.667
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 1000.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.833,
+            "recall_1000bp": 0.5,
+            "recall_2000bp": 0.833,
+            "recall_500bp": 0.417
+          },
+          "250": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 125.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.833,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.833
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 12,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 12
+    },
+    "zebrafish": {
+      "edge_crop": {
+        "1000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        },
+        "2000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        },
+        "500": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 11,
+          "recall_1000bp": 1.0,
+          "recall_2000bp": 1.0,
+          "recall_500bp": 1.0
+        },
+        "5000": {
+          "median_offset_bp": 0.0,
+          "n_anchors": 10,
+          "recall_1000bp": 0.909,
+          "recall_2000bp": 0.909,
+          "recall_500bp": 0.909
+        }
+      },
+      "lock_sweep": {
+        "W": {
+          "1000": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.917,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "1500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.909
+          },
+          "2000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3000": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 0.909,
+            "recall_500bp": 0.909
+          },
+          "4000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.727
+          }
+        },
+        "min_shell_bp": {
+          "10000": {
+            "anchor_count_ratio": 0.36,
+            "median_offset_bp": 7000.0,
+            "n_anchors": 4,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 0.364,
+            "recall_2000bp": 0.364,
+            "recall_500bp": 0.364
+          },
+          "2500": {
+            "anchor_count_ratio": 2.36,
+            "median_offset_bp": 0.0,
+            "n_anchors": 26,
+            "precision_2000bp": 0.423,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "5000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        },
+        "smooth_radius": {
+          "0": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 500.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.818,
+            "recall_1000bp": 0.818,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.636
+          },
+          "1": {
+            "anchor_count_ratio": 0.91,
+            "median_offset_bp": 500.0,
+            "n_anchors": 10,
+            "precision_2000bp": 0.8,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.727,
+            "recall_500bp": 0.727
+          },
+          "2": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          },
+          "3": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.917,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.909
+          },
+          "4": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 500.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.75,
+            "recall_1000bp": 0.727,
+            "recall_2000bp": 0.818,
+            "recall_500bp": 0.545
+          }
+        },
+        "step": {
+          "1000": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 250.0,
+            "n_anchors": 11,
+            "precision_2000bp": 0.636,
+            "recall_1000bp": 0.545,
+            "recall_2000bp": 0.636,
+            "recall_500bp": 0.545
+          },
+          "250": {
+            "anchor_count_ratio": 1.09,
+            "median_offset_bp": 375.0,
+            "n_anchors": 12,
+            "precision_2000bp": 0.917,
+            "recall_1000bp": 0.909,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 0.727
+          },
+          "500": {
+            "anchor_count_ratio": 1.0,
+            "median_offset_bp": 0.0,
+            "n_anchors": 11,
+            "precision_2000bp": 1.0,
+            "recall_1000bp": 1.0,
+            "recall_2000bp": 1.0,
+            "recall_500bp": 1.0
+          }
+        }
+      },
+      "n_interior_anchors": 11
+    }
+  }
+}

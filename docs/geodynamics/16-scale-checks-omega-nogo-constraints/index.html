@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scale checks and Omega-NoGo constraints — Jamming Geodynamics §16 | Jamming Physics</title>
+<meta name="description" content="This subsection performs first-pass feasibility checks on force/friction/time/impulse scales.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/16-scale-checks-omega-nogo-constraints/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Scale checks and Omega-NoGo constraints — Jamming Geodynamics §16 | Jamming Physics"><meta property="og:description" content="This subsection performs first-pass feasibility checks on force/friction/time/impulse scales."><meta property="og:url" content="https://jamming-physics.org/geodynamics/16-scale-checks-omega-nogo-constraints/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Scale checks and Omega-NoGo constraints — Jamming Geodynamics §16 | Jamming Physics"><meta name="twitter:description" content="This subsection performs first-pass feasibility checks on force/friction/time/impulse scales.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Scale checks and Omega-NoGo constraints",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 16,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/16-scale-checks-omega-nogo-constraints/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Scale checks and Omega-NoGo constraints"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§16 Scale and Omega-NoGo"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §16</nav></header>
+<main>
+<h1>Scale checks and Omega-NoGo constraints</h1>
+
+<p class="answer">Scale checks and Omega-NoGo constraints — This subsection performs first-pass feasibility checks on force/friction/time/impulse scales. If pre-registered Ω-NoGo constraints are violated, the corresponding conclusion is treated as HOLD or STOP. The ratio must be read honestly across scales. The material jamming law is lab-grounded and scale-invariant.</p>
+
+<p class="abstract">This subsection performs first-pass feasibility checks on force/friction/time/impulse scales. If pre-registered Ω-NoGo constraints are violated, the corresponding conclusion is treated as HOLD or STOP.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/16-scale-checks-omega-nogo-constraints/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>This subsection performs first-pass feasibility checks on force/friction/time/impulse scales. If pre-registered <span class="eq-inline">Ω</span>-NoGo constraints are violated, the corresponding conclusion is treated as HOLD or STOP.</p>
+<h2>Tensile failure condition (order)</h2>
+<p>The failure relation is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-001.svg" width="353" height="38" loading="lazy" alt="σₜₑₙₛᵢₒₙ ≈ EΔ R/R ≳ σ_fail ⇒ Δ R ≳ Rσ_failE."></figure> <strong>Decision.</strong> If required <span class="eq-inline">Δ R</span> exceeds <span class="eq-inline">Ω</span>-NoGo (e.g., <span class="eq-inline">Δ R ≳ 50 km</span>), C1 should be STOP or downgraded to HOLD.</p>
+<h2>Required inertia scale for a target displacement/time (order)</h2>
+<p>Use a simple constant-acceleration (from rest) model achieving displacement <span class="eq-inline">d</span> in time window <span class="eq-inline">T</span>: <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-002.svg" width="217" height="38" loading="lazy" alt="vₘₑₐₙ ≈ d/T, a_req ≈ 2d/T²."></figure> With an effective mass <span class="eq-inline">M_plate=ρ A_basetL</span>, the inertia term requires <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-003.svg" width="154" height="18" loading="lazy" alt="Fᵢₙₑᵣₜᵢₐ ≈ M_plate a_req."></figure> Even if this is modest, the dominant bottleneck is typically friction/resistance (next subsection).</p>
+<h2>Suction vs friction: the key inequality and ratio <span class="eq-inline">Λ</span></h2>
+<p>Using the combined resistance shear stress (Eq. <a href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">&sect;14</a>), <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-004.svg" width="423" height="18" loading="lazy" alt="F_friction ≈ τᵣₑₛA_base = μ_eff σₙ A_base (μ_eff:=τᵣₑₛ/σₙ),"></figure> while suction is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-005.svg" width="153" height="16" loading="lazy" alt="F_suction ≈ A_crossΔ P."></figure> The key inequality is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-006.svg" width="253" height="18" loading="lazy" alt="F_push + A_crossΔ P > μ_eff σₙ A_base,"></figure> and the dimensionless ratio <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-007.svg" width="141" height="42" loading="lazy" alt="Λ = A_crossΔ Pμ_eff σₙ A_base."></figure> Conservatively setting <span class="eq-inline">F_push=0</span>, <span class="eq-inline">Λ>1</span> is a minimal condition.</p>
+<p>Recommended pre-registered decision rules (examples):</p>
+<ul><li>TEST-L1: under conservative input distributions, if <span class="eq-inline">(Λ>1)≥ 0.95</span>, UNLOCK.</li><li>TEST-L2: if <span class="eq-inline">(Λ>1)<0.50</span>, STOP.</li><li>TEST-L3: otherwise, HOLD (needs additional data/definitions).</li></ul>
+<h2>Master-scale accounting: what extrapolates and what is on HOLD</h2>
+<p>The ratio <span class="eq-inline">Λ</span> must be read honestly across scales.</p>
+<p><strong>(1) What extrapolates (UNLOCK-eligible).</strong> With friction pinned by liquefaction (Section &sect;14), the broad-prior STOP (TEST-L2) is superseded: writing <span class="eq-inline">μ_eff=η_flowV/(hσ')</span>, <span class="eq-inline">Δ P≤σ'</span>, and the slab geometry <span class="eq-inline">A_cross/A_base=d/W</span> (detachment depth <span class="eq-inline">d</span>, block width <span class="eq-inline">W</span>), <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-008.svg" width="225" height="44" loading="lazy" alt="Λ = κ h (ρ-ρ_w) g d²W η_flow V ∝ d², eq:lambda_d2"></figure> so <span class="eq-inline">Λ>1</span> is reached at a <strong>critical detachment depth</strong> <span class="eq-inline">d_crit≈ 12 km</span> (baseline). The upper bound is the brittle–ductile transition (the gouge must start <strong>jammed</strong>); the viable window is <span class="eq-inline">~ 12</span>–<span class="eq-inline">26 km</span> in cold cratons, narrowing/closing under warm young crust — a sharp, map-testable preference for <strong>cold, thick lithosphere</strong>. The material jamming law is lab-grounded and scale-invariant.</p>
+<p><strong>(2) What is on HOLD (the master gamble).</strong> Equation <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">&sect;16</a> is <strong>scale-explicit</strong> (<span class="eq-inline">Λ∝ d²/W</span>): the continental dimensionless geometry <span class="eq-inline">d²/W≈ 36 m</span> cannot be reproduced in a normal laboratory sample (matching it at <span class="eq-inline">W=1 cm</span> would require a <span class="eq-inline">0.6 m</span>-thick, <span class="eq-inline">1 cm</span>-wide specimen). The <strong>system-scale</strong> suction runaway therefore does not lab-reproduce, and the continental claim rests on <strong>the geometry being correct at scale</strong>, not on a clean laboratory-to-Earth dimensionless invariance. We register this explicitly as <strong>HOLD (master scale gate)</strong>, to be narrowed by (i) natural small-basin tests — the same <span class="eq-inline">Λ</span> predicts shallower detachments in smaller basins, <span class="eq-inline">d_crit∝√(W)</span> (Red Sea <span class="eq-inline">~ 3.3 km</span>, Afar <span class="eq-inline">~ 1.9 km</span>; cf. P7) — or (ii) scale-matched continuum simulations.</p>
+<p><strong>Trigger and <span class="eq-inline">Ω</span>-NoGo (computed).</strong> A shell membrane perturbation <span class="eq-inline">σₘ=E Δ R/R</span> reaches tensile-rupture initiation (<span class="eq-inline">~ 10 MPa</span>) at <span class="eq-inline">Δ R≈ 0.6 km</span> and mobilizes deep <span class="eq-inline">σ'</span> (<span class="eq-inline">~ 400 MPa</span>) at <span class="eq-inline">Δ R≈ 25 km</span> — both inside <span class="eq-inline">Ω</span>-NoGo (<span class="eq-inline">Δ R<50 km</span>). All six <span class="eq-inline">Ω</span>-NoGo limits pass (5/5 active checks; see Section <a href="/geodynamics/07-reproducibility-bundle-file-map/">&sect;7</a>). The trigger's <strong>origin</strong> remains external (assumption-register item), so this establishes only that a sufficient <span class="eq-inline">Δ R</span> is within bounds.</p>
+<aside class="note"><p><strong>Reproducibility.</strong> <code>atl_bundle/engine/feasibility_map.py</code> (depth window; <span class="eq-inline">Λ∝ d²</span>); <code>atl_bundle/engine/c4_scalability.py</code> (scale split; <span class="eq-inline">d_crit∝√(W)</span>); <code>atl_bundle/engine/c2_trigger.py</code> (trigger <span class="eq-inline">Δ R<50 km</span>); <code>atl_bundle/engine/omega_nogo_check.py</code> (all <span class="eq-inline">Ω</span>-NoGo limits). Audited checks C3, C10–C12.</p></aside>
+<p><strong>Field-test outcome (r17).</strong> An attempt to narrow this HOLD against natural analogs (Red Sea, Afar, Baikal, East Africa; P7, Section <a href="/geodynamics/18-pre-registered-predictions-p1-p4/">&sect;18</a>) found that observed detachment/BDT depth is thermally controlled (Spearman<span class="eq-inline">(d_obs,</span>coldness<span class="eq-inline">)=+1.00</span>) rather than width-controlled (Spearman<span class="eq-inline">(d_obs,W)=-0.56</span>), so the <span class="eq-inline">√(W)</span> feasibility edge <span class="eq-inline">d_crit</span> is not directly observable in rifts. The HOLD therefore stands; the mechanism's cold-thick-lithosphere siting prediction is, however, corroborated.</p>
+<h2>Timescale/impulse constraint: locking the “instant low-pressure” issue into equations</h2>
+<p>If suction acts only for a short time <span class="eq-inline">τ</span>, impulse (not static force) matters: <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-009.svg" width="262" height="18" loading="lazy" alt="J_suction ≈ F_suctionτ = (A_crossΔ P)τ."></figure> The minimum impulse to accelerate to a representative speed <span class="eq-inline">v^(*)</span> is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-16-010.svg" width="126" height="19" loading="lazy" alt="J_ ≈ M_platev^(*)."></figure> If the Void persists only for 10–100 seconds, one must compute whether <span class="eq-inline">J_suction</span> is sufficient (or whether deficits repeat/persist). Failure implies C2/C3 remain HOLD (AR-4).</p>
+<h2><span class="eq-inline">Ω</span>-NoGo (draft): pre-registering “this is too much”</h2>
+<p><figure class="tbl"><table><tr><th>Item</th><th><span class="eq-inline">Ω</span>-NoGo (draft)</th><th>Meaning</th></tr><tr><td>Required <span class="eq-inline">Δ R</span></td><td>STOP if <span class="eq-inline">Δ R ≳ 50 km</span></td><td>Model requires excessive uplift to trigger failure</td></tr><tr><td>Required <span class="eq-inline">Δ P</span></td><td>STOP if <span class="eq-inline">Δ P ≳ 500 MPa</span></td><td>Suction requires an implausible pressure difference</td></tr><tr><td><span class="eq-inline">μ_eff</span></td><td>HOLD if <span class="eq-inline">μ_eff ≳ 10⁻²</span></td><td>Without lubrication, other resistance-reduction is needed</td></tr><tr><td>Film thickness <span class="eq-inline">h</span></td><td>STOP if <span class="eq-inline">h ≲ 10⁻⁶ m</span> is required</td><td>Film must be unrealistically thin</td></tr><tr><td>Time window <span class="eq-inline">τ</span></td><td>HOLD if only <span class="eq-inline">τ ≪ 10³ s</span> is possible</td><td>Too short to explain large displacement</td></tr><tr><td>Drainage condition</td><td>HOLD/FAIL if <span class="eq-inline">τ ≳ τ_drain</span></td><td>Undrained condition fails; overpressure collapses; squeeze-out risk</td></tr></table></figure></p>
+<p>Note: the numbers above are drafts. The rigor is not “picking numbers,” but <strong>fixing thresholds before analysis and publicly reporting PASS/FAIL</strong>.</p>
+<h2>Pre-registration key map: TeX symbols/tables <span class="eq-inline">↔</span> <code>config/constraints.yml</code></h2>
+<p>This TeX document is the explanatory layer. The <strong>authoritative source of PASS/FAIL decisions</strong> is <code>config/constraints.yml</code> (and, if P8/P9/P10–P12 are enabled, the corresponding <code>config/p*_prereg.yml</code> files). If TeX and YAML conflict, <strong>YAML overrides TeX</strong> (reproducibility rule).</p>
+<p><figure class="tbl"><table><tr><th>TeX item</th><th>YAML key</th><th>Unit</th><th>Decision</th></tr><tr><td>Hard STOP for <span class="eq-inline">Δ R</span></td><td><code>omega_nogo.deltaR_stop_km</code></td><td>km</td><td>STOP if exceeded</td></tr><tr><td>Hard STOP for <span class="eq-inline">Δ P</span></td><td><code>omega_nogo.deltaP_stop_MPa</code></td><td>MPa</td><td>STOP if exceeded</td></tr><tr><td>Minimum requirement for <span class="eq-inline">μ_eff</span></td><td><code>omega_nogo.mu_eff_hold_min</code></td><td>–</td><td>HOLD/FAIL if unattainable</td></tr><tr><td>Hard STOP for film thickness <span class="eq-inline">h</span></td><td><code>omega_nogo.h_stop_m</code></td><td>m</td><td>STOP if required below</td></tr><tr><td>Reference gate for time window <span class="eq-inline">τ</span></td><td><code>omega_nogo.tau_hold_s</code></td><td>s</td><td>HOLD if too short</td></tr><tr><td>Undrained requirement</td><td><code>omega_nogo.undrained_required</code></td><td>bool</td><td>HOLD/FAIL if <span class="eq-inline">τ≥τ_drain</span></td></tr><tr><td>Optional P6 propagation fit</td><td><code>predictions.P6.*</code></td><td>–</td><td>UNLOCK if thresholds pass</td></tr><tr><td>Optional P8 magnetic stripes</td><td><code>predictions.P8.prereg_file</code></td><td>path</td><td>fixed in a separate file</td></tr><tr><td>Optional P9 orogeny</td><td><code>predictions.P9.prereg_file</code></td><td>path</td><td>fixed in a separate file</td></tr><tr><td>Optional P10 sediment thickness</td><td><code>predictions.P10.prereg_file</code></td><td>path</td><td>fixed in a separate file</td></tr><tr><td>Optional P11 Mn nodules</td><td><code>predictions.P11.prereg_file</code></td><td>path</td><td>fixed in a separate file</td></tr><tr><td>Optional P12 volcanism</td><td><code>predictions.P12.prereg_file</code></td><td>path</td><td>fixed in a separate file</td></tr></table></figure></p>
+<p><strong>Operational rules (enforced).</strong></p>
+<ul><li>If <code>config/constraints.yml</code> or any <code>config/p*_prereg.yml</code> file changes, issue a <strong>new version number</strong>.</li><li>The automatic gate script (<code>tests/tests_hardgate.py</code>) reads these keys and logs PASS/FAIL.</li></ul>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/">← §15</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/17-energy-budget-locking-feasibility-into/">§17 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

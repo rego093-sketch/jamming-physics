@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extensions (Optional Reading) — VP Theory §17 | Jamming Physics</title>
+<meta name="description" content="Anisotropy and rotation enter as definitions on top of the core — never as edits to it.">
+<link rel="canonical" href="https://jamming-physics.org/physics/17-extensions-optional-reading/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Extensions (Optional Reading) — VP Theory §17 | Jamming Physics"><meta property="og:description" content="Anisotropy and rotation enter as definitions on top of the core — never as edits to it."><meta property="og:url" content="https://jamming-physics.org/physics/17-extensions-optional-reading/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Extensions (Optional Reading) — VP Theory §17 | Jamming Physics"><meta name="twitter:description" content="Anisotropy and rotation enter as definitions on top of the core — never as edits to it.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Extensions (Optional Reading)",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"17",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§17 Extensions (Optional Reading)"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §17</nav></header>
+<main>
+<h1>Extensions (Optional Reading)</h1>
+<p class="answer">Extensions (Optional Reading): Anisotropy and rotation enter as definitions on top of the core — never as edits to it. Jets, cores, and cosmology are filed as regimes with conditions — not as conclusions. The rotation/anisotropy extension includes the following two categories. Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">Anisotropy and rotation enter as definitions on top of the core — never as edits to it. Jets, cores, and cosmology are filed as regimes with conditions — not as conclusions. 2π.</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/17-extensions-optional-reading/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="mp-me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−19 ppm vs measurement). <b>[F]</b> forced. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a></aside>
+<aside class="vp-card" data-locked="anchor"><b>λ_anchor = 632.99 nm</b> — Single empirical anchor (DOF = 1); the only measured length input to the framework. <b>[F]</b> forced. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a></aside>
+<h2>17.1 Rotation/anisotropy extension (ℓ_rot included) and experimental module structure</h2>
+<aside class="claim-strip vps" data-vps="17.1" data-cards="VP-C-020, VP-C-058"><span class="g">optional-route operational definitions</span><span class="io">in: isotropic-regime kernels / out: E-ANISO (direction-dependent propagation/attenuation) + E-ROT (rotation drive: rate, axis, $ℓ_rot$) extensions</span><q class="one">Anisotropy and rotation enter as definitions on top of the core — never as edits to it.</q><span class="cards">VP-C-020, VP-C-058</span></aside>
+<h3>17.1.1 Definition of the extension targets</h3>
+<p>The rotation/anisotropy extension includes the following two categories.</p>
+<ul>
+<li> (E-ANISO) <strong>Anisotropic propagation/attenuation</strong>: extend the attenuation kernel, propagation backbone, and event-aggregation rules used in the isotropic regime into direction-dependent forms.
+<li> (E-ROT) <strong>Rotation-driven events</strong>: on top of the 3-sector event structure, add rotation drive (rotation rate, rotation axis, rotational length scale) as operational definitions, and couple it to anisotropic propagation.
+</ul>
+<h3>17.1.2 Anisotropy axis and directional variable (definition)</h3>
+<p>Define the anisotropy axis (unit vector) as</p>
+<figure class="eq" id="eq:S17_01_u_axis"><img src="/physics/eq/physics/phy-17-000.svg" data-eq="phy-17-000" width="166" height="21" loading="lazy" alt="\begin{equation} \mathbf{u}\in\mathbb{R}^d,\qquad \|\mathbf{u}\|=1 \end{equation}"></figure>
+<p>For an arbitrary separation vector R≠ 0, define the directional cosine</p>
+<figure class="eq" id="eq:S17_01_mu"><img src="/physics/eq/physics/phy-17-001.svg" data-eq="phy-17-001" width="195" height="43" loading="lazy" alt="\begin{equation} \mu(\mathbf{R}):=\frac{\mathbf{R}\cdot\mathbf{u}}{\|\mathbf{R}\|} \in[-1,1] \end{equation}"></figure>
+<p>All anisotropic kernels below are parameterized by μ or by an equivalent angular variable.</p>
+<h3>17.1.3 Operational definition of the anisotropic dilution kernel (definition)</h3>
+<p>In the isotropic regime, take the geometric dilution kernel as</p>
+<figure class="eq" id="eq:S17_01_dil_iso"><img src="/physics/eq/physics/phy-17-002.svg" data-eq="phy-17-002" width="155" height="38" loading="lazy" alt="\begin{equation} \mathcal{D}_{\mathrm{dil,iso}}(R)=\left(\frac{a}{R}\right)^2 \end{equation}"></figure>
+<p>and define the anisotropic extension kernel in the following product form:</p>
+<figure class="eq" id="eq:S17_01_dil_aniso"><img src="/physics/eq/physics/phy-17-003.svg" data-eq="phy-17-003" width="312" height="38" loading="lazy" alt="\begin{equation} \mathcal{D}_{\mathrm{dil}}(R,\mu) := \left(\frac{a}{R}\right)^2\,g(\mu), \qquad g(\mu)\ge 0 \end{equation}"></figure>
+<p>Here g(μ) is a function locked by <code>analysis_lock</code>; it cannot be selected after inspecting results.</p>
+<h4>(Definition) Normalization condition</h4>
+<p>Impose the following normalization so that g(μ) preserves the isotropic average:</p>
+<figure class="eq" id="eq:S17_01_g_norm"><img src="/physics/eq/physics/phy-17-004.svg" data-eq="phy-17-004" width="207" height="47" loading="lazy" alt="\begin{equation} \langle g\rangle_{\mu} := \frac{1}{2}\int_{-1}^{1} g(\mu)\,d\mu = 1 \end{equation}"></figure>
+<p>If the normalization holds, <a href="#eq:S17_01_dil_aniso" class="xref" data-ref="eq:S17_01_dil_aniso">(S17_01_dil_aniso)</a> reduces to <a href="#eq:S17_01_dil_iso" class="xref" data-ref="eq:S17_01_dil_iso">(S17_01_dil_iso)</a> after angular averaging.</p>
+<h4>(Definition) Anisotropy coefficient (summary statistic)</h4>
+<p>Define the following summary statistic to report the magnitude of anisotropy:</p>
+<figure class="eq" id="eq:S17_01_beta_g"><img src="/physics/eq/physics/phy-17-005.svg" data-eq="phy-17-005" width="264" height="51" loading="lazy" alt="\begin{equation} \beta_g := \left(\frac{1}{2}\int_{-1}^{1}\big(g(\mu)-1\big)^2\,d\mu\right)^{1/2} \end{equation}"></figure>
+<p>β_g=0 indicates isotropy, and β_g>0 indicates anisotropy.</p>
+<h3>17.1.4 Operational definition of anisotropic percolation/backbone (definition)</h3>
+<p>Let B denote the set of paths forming the propagation backbone on the lattice, and treat each path γ∈B as a sequence of links.
+For a link direction ℓ, define the anisotropic weight by</p>
+<figure class="eq" id="eq:S17_01_link_weight"><img src="/physics/eq/physics/phy-17-006.svg" data-eq="phy-17-006" width="271" height="33" loading="lazy" alt="\begin{equation} w(\hat{\ell}) := g\!\left(\mu(\hat{\ell})\right), \qquad \mu(\hat{\ell}):=\hat{\ell}\cdot\mathbf{u} \end{equation}"></figure>
+<p>Define the cumulative weight of a path γ as</p>
+<figure class="eq" id="eq:S17_01_path_weight"><img src="/physics/eq/physics/phy-17-007.svg" data-eq="phy-17-007" width="136" height="50" loading="lazy" alt="\begin{equation} W(\gamma):=\prod_{\hat{\ell}\in\gamma} w(\hat{\ell}) \end{equation}"></figure>
+<p>The anisotropic backbone is then defined by the following maximization rule:</p>
+<figure class="eq" id="eq:S17_01_backbone_argmax"><img src="/physics/eq/physics/phy-17-008.svg" data-eq="phy-17-008" width="225" height="36" loading="lazy" alt="\begin{equation} \gamma^\star(\mathbf{x}\to\mathbf{y}) := \operatorname*{arg\,max}_{\gamma\in\Gamma(\mathbf{x}\to\mathbf{y})} W(\gamma) \end{equation}"></figure>
+<p>Here Γ(x→y) is the set of candidate paths that can connect x to y.
+This definition fixes the “preferred propagation direction” via g(μ) and does not call external dynamics.</p>
+<h3>17.1.5 Treatment of the rotational length ℓ_rot (definition)</h3>
+<p>Treat the rotational length ℓ_rot as an optional extension constant. If ℓ_rot is adopted, fix the following rule:</p>
+<figure class="eq" id="eq:S17_01_lrot_lock"><img src="/physics/eq/physics/phy-17-009.svg" data-eq="phy-17-009" width="754" height="19" loading="lazy" alt="\begin{equation} \ell_{\mathrm{rot}} \in \mathbb{R}_{&gt;0}, \qquad \ell_{\mathrm{rot}} \text{ numeric value/unit/source is locked to }\texttt{canon\_lock}\text{ or }\texttt{realization\_lock}\text{.} \end{equation}"></figure>
+<p>If the adoption choice for ℓ_rot changes, the LOCK version must be incremented.</p>
+<h4>(Definition) Rotation rate and dimensionless rotation strength</h4>
+<p>Define the rotation rate (an operational variable corresponding to angular speed) as</p>
+<figure class="eq" id="eq:S17_01_Omega"><img src="/physics/eq/physics/phy-17-010.svg" data-eq="phy-17-010" width="68" height="16" loading="lazy" alt="\begin{equation} \Omega_{\mathrm{rot}}\in\mathbb{R} \end{equation}"></figure>
+<p>and define the dimensionless rotation strength by</p>
+<figure class="eq" id="eq:S17_01_chi_rot"><img src="/physics/eq/physics/phy-17-011.svg" data-eq="phy-17-011" width="154" height="39" loading="lazy" alt="\begin{equation} \chi_{\mathrm{rot}} := \frac{\ell_{\mathrm{rot}}}{a}\,\Omega_{\mathrm{rot}}\,\Delta t \end{equation}"></figure>
+<p>The value of χ_rot is determined by the realization length a, the realization time Δ t, and the locked value of ℓ_rot.</p>
+<h3>17.1.6 Rotation–anisotropy coupling rule (definition)</h3>
+<p>Rotation drive affects the anisotropy axis u and the anisotropy function g(μ). Define this via the following coupling map:</p>
+<figure class="eq" id="eq:S17_01_u_g_couple"><img src="/physics/eq/physics/phy-17-012.svg" data-eq="phy-17-012" width="278" height="19" loading="lazy" alt="\begin{equation} \mathbf{u}\mapsto \mathbf{u}(\chi_{\mathrm{rot}}),\qquad g(\mu)\mapsto g(\mu;\chi_{\mathrm{rot}}) \end{equation}"></figure>
+<p>The coupling map is locked by <code>analysis_lock</code> and cannot be chosen post hoc to fit outcomes without preregistration.</p>
+<h4>(Definition) Weak-coupling and strong-coupling regimes</h4>
+<figure class="eq" id="eq:S17_01_regime_rot"><img src="/physics/eq/physics/phy-17-013.svg" data-eq="phy-17-013" width="599" height="19" loading="lazy" alt="\begin{equation} \text{Weak-coupling regime: }|\chi_{\mathrm{rot}}|\le \chi_{\star}, \qquad \text{Strong-coupling regime: }|\chi_{\mathrm{rot}}|&gt; \chi_{\star} \end{equation}"></figure>
+<p>Here χ_(*)>0 is a threshold locked by <code>analysis_lock</code>. In the weak-coupling regime, an operational series representation such as</p>
+<figure class="eq" id="eq:S17_01_g_expand"><img src="/physics/eq/physics/phy-17-014.svg" data-eq="phy-17-014" width="320" height="21" loading="lazy" alt="\begin{equation} g(\mu;\chi_{\mathrm{rot}})=g_0(\mu)+\chi_{\mathrm{rot}}\,g_1(\mu)+O(\chi_{\mathrm{rot}}^2) \end{equation}"></figure>
+<p>is allowed. In the strong-coupling regime, a series form is not used; instead, a different form (e.g., piecewise definition, saturation type) must be preregistered and then applied.</p>
+<h3>17.1.7 Experimental module structure (definition): file tree, protocol, and outputs</h3>
+<p>The experimental module for the rotation/anisotropy extension is fixed to the following directory structure:</p>
+<pre class="vb">
+modules/
+  rot_aniso/
+    protocol.yaml
+    locks_required.txt
+    src/
+      simulate_rot_aniso.py
+      estimators.py
+      gates.py
+      io_schema.py
+    schemas/
+      protocol.schema.json
+      run_log.schema.json
+      metrics.schema.json
+      manifest.schema.json
+    plans/
+      plan.json
+    outputs_spec/
+      artifacts.md
+</pre>
+<h4>(Definition) Input (LOCK) dependency list</h4>
+<code>locks_required.txt</code> must include, at minimum, the following items:
+<ul>
+<li> <code>canon_lock</code>: δ, π, and canonical definitions (required)
+<li> <code>realization_lock</code>: a, Δ t, and realization definitions (required)
+<li> <code>analysis_lock</code>: g(μ), χ_(*), coupling map, Gate thresholds (required)
+<li> <code>canon_lock</code> or <code>realization_lock</code>: ℓ_rot (optional; required if adopted)
+</ul>
+<h4>(Definition) Metrics (summary statistics) and Gates</h4>
+<p>At minimum, the rotation/anisotropy module outputs the following metrics:</p>
+<ul>
+<li> β_g (anisotropy magnitude; <a href="#eq:S17_01_beta_g" class="xref" data-ref="eq:S17_01_beta_g">(S17_01_beta_g)</a>)
+<li> A_(∥), A_(⊥) (propagation response along/orthogonal to the axis; defined below)
+<li> Δ_bb (backbone change magnitude; defined below)
+</ul>
+<p>Define the axis-parallel and axis-perpendicular response using either arrival time or event-flux under identical source–sink conditions as follows.
+Let D_(∥) be the set of test directions parallel to the axis and D_(⊥) the set of perpendicular directions.
+If the response in direction hatd is defined as A(hatd), then</p>
+<figure class="eq" id="eq:S17_01_Apar_Aperp"><img src="/physics/eq/physics/phy-17-015.svg" data-eq="phy-17-015" width="335" height="32" loading="lazy" alt="\begin{equation} \mathcal{A}_{\parallel}:=\langle A(\hat{\mathbf{d}})\rangle_{\hat{\mathbf{d}}\in\mathcal{D}_{\parallel}}, \qquad \mathcal{A}_{\perp}:=\langle A(\hat{\mathbf{d}})\rangle_{\hat{\mathbf{d}}\in\mathcal{D}_{\perp}} \end{equation}"></figure>
+<p>Define the backbone change magnitude via the link-set difference between the isotropic backbone γ^*_iso and the anisotropic backbone γ^*_aniso.
+If the link set is denoted E(γ), then</p>
+<figure class="eq" id="eq:S17_01_delta_bb"><img src="/physics/eq/physics/phy-17-016.svg" data-eq="phy-17-016" width="219" height="47" loading="lazy" alt="\begin{equation} \Delta_{\mathrm{bb}} := \frac{|\mathcal{E}(\gamma^\star_{\mathrm{aniso}})\,\triangle\,\mathcal{E}(\gamma^\star_{\mathrm{iso}})|}{|\mathcal{E}(\gamma^\star_{\mathrm{iso}})|} \end{equation}"></figure>
+<p>where triangle denotes the symmetric difference.</p>
+<p>At minimum, Gates include:</p>
+<ul>
+<li> (G-AN1) Normalization check for g(μ): satisfies <a href="#eq:S17_01_g_norm" class="xref" data-ref="eq:S17_01_g_norm">(S17_01_g_norm)</a> within numerical tolerance.
+<li> (G-AN2) Anisotropy–response consistency: A_(∥)/A_(⊥) lies within a preregistered predicted range.
+<li> (G-AN3) Backbone stability: Δ_bb satisfies the regime-specific threshold condition (below or above) as preregistered.
+<li> (G-ROT) Rotation-strength regime classification: |χ_rot| matches the regime declaration in <a href="#eq:S17_01_regime_rot" class="xref" data-ref="eq:S17_01_regime_rot">(S17_01_regime_rot)</a>.
+</ul>
+<h2>17.2 Jet/singularity/astronomy–cosmology regime extension (integrated into the regime map)</h2>
+<aside class="claim-strip vps" data-vps="17.2" data-cards="VP-C-057, VP-C-N04"><span class="g">optional-route regime map</span><span class="io">in: operational definitions only (no external dynamics) / out: E-JET / E-CORE (singularity replacement) / E-COSMO classes integrated into one regime map</span><q class="one">Jets, cores, and cosmology are filed as regimes with conditions — not as conclusions.</q><span class="cards">VP-C-057, VP-C-N04</span></aside>
+<h3>17.2.1 Decomposition of the target regimes (definition)</h3>
+<p>The jet/singularity/astronomy–cosmology regime extension incorporates the following three classes into a single regime map.</p>
+<ul>
+<li> (E-JET) <strong>Jet regime</strong>: a regime with local sources/sinks where the propagation backbone forms a strongly directional outflow pattern.
+<li> (E-CORE) <strong>Core-saturation regime (singularity replacement)</strong>: a regime where density/stiffness/throat-gap change extremely and the isotropic approximation breaks down.
+<li> (E-COSMO) <strong>Large-scale boundary regime (cosmology extension)</strong>: a regime where boundary conditions (inflow/outflow, creation/annihilation, lattice scale) vary with time.
+</ul>
+<p>In this section, we do not use dynamics from external theories; everything is constructed only from operational definitions of events/propagation/throat-gap/backbone/boundary conditions.</p>
+<h4>(Terminology) “jet” and “jet stream”</h4>
+<p>In this section, (E-JET) includes the general class of “outflows created by sources/sinks”. Among them, when the structure is <em>persistent in time</em> and <em>narrow and long-maintained in space</em>, we call it a “jet stream” in this document. A jet stream is not defined by a separate dynamical equation; it is determined only by <strong>persistence/width/axis-stability</strong> Gates computed from the same event-flux log (17.2.3).</p>
+<h3>17.2.2 Common primitives: source/sink, flux, backbone (definition)</h3>
+<h4>(Definition) Source/sink sets</h4>
+<p>For a lattice region Λ⊂L, define a source set Λ₊⊂Λ and a sink set Λ₋⊂Λ, and impose</p>
+<figure class="eq" id="eq:S17_02_src_sink_disjoint"><img src="/physics/eq/physics/phy-17-017.svg" data-eq="phy-17-017" width="109" height="17" loading="lazy" alt="\begin{equation} \Lambda_{+}\cap\Lambda_{-}=\varnothing \end{equation}"></figure>
+<p>Sources/sinks are defined as external injection/absorption conditions on event rates.</p>
+<h4>(Definition) Injection/absorption event rates</h4>
+<p>Define the net injection event rate at each node n∈Λ by</p>
+<figure class="eq" id="eq:S17_02_Jdef"><img src="/physics/eq/physics/phy-17-018.svg" data-eq="phy-17-018" width="241" height="19" loading="lazy" alt="\begin{equation} J(\mathbf{n},k) := J_{+}(\mathbf{n},k)-J_{-}(\mathbf{n},k) \end{equation}"></figure>
+<p>Here J₊ can be positive only at sources, and J₋ can be positive only at sinks.
+The preregistered plan file must fix the form of J₊,J₋ (constant, pulse, ramp, feedback, etc.).</p>
+<h4>(Definition) Event-flux on links</h4>
+<p>Let the sector index be s∈1,2,3.
+Define the link-level event flux for observation window start k₀ and window length M by</p>
+<figure class="eq" id="eq:S17_02_Fev"><img src="/physics/eq/physics/phy-17-019.svg" data-eq="phy-17-019" width="321" height="57" loading="lazy" alt="\begin{equation} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) := \sum_{k=k_0}^{k_0+M-1}\sum_{s=1}^{3} \Xi_{s}(\mathbf{n},e,k) \end{equation}"></figure>
+<p>where Ξₛ(n,e,k) is an indicator for whether a sector-s event occurred on link e from node n at time-window k.</p>
+<h4>(Definition) Consistency (links to Sec. 4.1, Sec. 5.3)</h4>
+<p>For a region Σ⊂Λ and its boundary ∂Σ, define the net event balance by</p>
+<figure class="eq" id="eq:S17_02_consistency"><img src="/physics/eq/physics/phy-17-020.svg" data-eq="phy-17-020" width="473" height="59" loading="lazy" alt="\begin{equation} \Delta N_{\Sigma}(k_0,M) = \sum_{\mathbf{n}\in\Sigma}\sum_{k=k_0}^{k_0+M-1} J(\mathbf{n},k) = \sum_{(\mathbf{n},e)\in\partial\Sigma} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) \end{equation}"></figure>
+<p>This ties the event-flux definition to the event-balance rule and maintains consistency with earlier flux definitions.</p>
+<h4>(Definition) Event-flux rate (time normalization)</h4>
+<p>Define the flux rate by time-normalizing the boundary flux:</p>
+<figure class="eq" id="eq:S17_02_Phi_ev"><img src="/physics/eq/physics/phy-17-021.svg" data-eq="phy-17-021" width="291" height="51" loading="lazy" alt="\begin{equation} \Phi_{\mathrm{ev}} := \frac{1}{M\Delta t}\sum_{(\mathbf{n},e)\in\partial\Sigma} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) \end{equation}"></figure>
+<p>The unit/time convention is fixed by <code>analysis_lock</code> and must not be tuned after observing results.</p>
+<h4>(Definition) Propagation-direction flux rate (link-flux on an observation cone)</h4>
+<p>Let C(hatd)⊂∂Σ be the preregistered observation cone/cylinder associated with direction hatd.
+Define the direction-resolved flux rate by</p>
+<figure class="eq" id="eq:S17_02_flux_link"><img src="/physics/eq/physics/phy-17-022.svg" data-eq="phy-17-022" width="393" height="55" loading="lazy" alt="\begin{equation} \Phi_{\mathrm{link}}(\hat{\mathbf{d}};k_0,M) := \frac{1}{M\Delta t}\sum_{(\mathbf{n},e)\in\mathcal{C}(\hat{\mathbf{d}})} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M). \end{equation}"></figure>
+<p>This is the rate-form companion of the integer event flux F_ev and is the source of all jet/axis/width statistics.</p>
+<h4>(Definition) Jet collimation index</h4>
+<p>For observation directions hatd∈S^(d-1), let C(hatd)⊂∂Σ denote an observation cone (or cylinder) on the boundary.
+Define the jet collimation index by</p>
+<figure class="eq" id="eq:S17_02_Jindex"><img src="/physics/eq/physics/phy-17-023.svg" data-eq="phy-17-023" width="301" height="55" loading="lazy" alt="\begin{equation} \mathcal{J} := \max_{\hat{\mathbf{d}}} \frac{\sum_{(\mathbf{n},e)\in \mathcal{C}(\hat{\mathbf{d}})} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M)}{\sum_{(\mathbf{n},e)\in\partial\Sigma} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M)} \end{equation}"></figure>
+<p>A value near 1 indicates a strongly collimated outflow, while a value near 0 indicates a widely distributed flux over directions.</p>
+<h4>(Definition) Jet axis direction (estimator)</h4>
+<p>Define the jet axis direction by</p>
+<figure class="eq" id="eq:S17_02_aJ"><img src="/physics/eq/physics/phy-17-024.svg" data-eq="phy-17-024" width="310" height="50" loading="lazy" alt="\begin{equation} \hat{\mathbf{d}}_J := \operatorname*{arg\,max}_{\hat{\mathbf{d}}} \sum_{(\mathbf{n},e)\in \mathcal{C}(\hat{\mathbf{d}})} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) \end{equation}"></figure>
+<p>If there are ties, the tie-breaking rule must be fixed by LOCK.</p>
+<h4>(Definition) Jet width (opening angle) summary statistic</h4>
+<p>Let C(hatd_J;θ)⊂∂Σ denote the cone of half-angle θ around the axis hatd_J.
+Define the jet opening angle (quantile width) by</p>
+<figure class="eq" id="eq:S17_02_theta"><img src="/physics/eq/physics/phy-17-025.svg" data-eq="phy-17-025" width="576" height="70" loading="lazy" alt="\begin{equation} \theta_J(q) := \inf\left\{\theta: \sum_{(\mathbf{n},e)\in \mathcal{C}(\hat{\mathbf{d}}_J;\theta)} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) \ge q\sum_{(\mathbf{n},e)\in\partial\Sigma} F_{\mathrm{ev}}(\mathbf{n},e;k_0,M) \right\} \end{equation}"></figure>
+<h3>17.2.3 Jet regime and jet stream (definition and Gates)</h3>
+<h4>(Definition) Jet-regime conditions</h4>
+<p>Define the jet regime as a regime in which both total injection and total absorption are nonzero:</p>
+<figure class="eq" id="eq:S17_03_JR1"><img src="/physics/eq/physics/phy-17-026.svg" data-eq="phy-17-026" width="138" height="43" loading="lazy" alt="\begin{equation} \sum_{\mathbf{n}\in\Lambda_{+}} J_{+}(\mathbf{n},k)&gt;0 \end{equation}"></figure>
+<figure class="eq" id="eq:S17_03_JR2"><img src="/physics/eq/physics/phy-17-027.svg" data-eq="phy-17-027" width="138" height="43" loading="lazy" alt="\begin{equation} \sum_{\mathbf{n}\in\Lambda_{-}} J_{-}(\mathbf{n},k)&gt;0 \end{equation}"></figure>
+<p>These are necessary conditions for defining an outflow, but do not by themselves guarantee collimation.</p>
+<h4>(Gate) Jet Gate</h4>
+<p>Define</p>
+<figure class="eq" id="eq:S17_03_gateJET"><img src="/physics/eq/physics/phy-17-028.svg" data-eq="phy-17-028" width="184" height="22" loading="lazy" alt="\begin{equation} \texttt{PASS\_JET} := \big[\mathcal{J}\ge \mathcal{J}_{\star}\big] \end{equation}"></figure>
+<p>where the threshold J_(*) is preregistered and LOCKed.</p>
+<h4>(Definition) Time resolution and persistence (jet-stream candidate)</h4>
+<p>Compute the windowed jet index J_i:=J(k₀+i m,m) using window length m fixed by LOCK.
+Define the persistence fraction</p>
+<figure class="eq" id="eq:S17_03_PJ"><img src="/physics/eq/physics/phy-17-029.svg" data-eq="phy-17-029" width="194" height="55" loading="lazy" alt="\begin{equation} P_J := \frac{1}{M}\sum_{i=1}^{M} \mathbb{I}[\mathcal{J}_i\ge \mathcal{J}_{\star}] \end{equation}"></figure>
+<p>and define the axis-fluctuation metric</p>
+<figure class="eq" id="eq:S17_03_MJ"><img src="/physics/eq/physics/phy-17-030.svg" data-eq="phy-17-030" width="320" height="55" loading="lazy" alt="\begin{equation} M_J := \frac{1}{M-1}\sum_{i=2}^{M} \arccos\big(|\hat{\mathbf{d}}_{J,i}\cdot \hat{\mathbf{d}}_{J,i-1}|\big) \end{equation}"></figure>
+<p>where hatd_(J,i) is the estimated jet axis direction in window i.</p>
+<h4>(Definition) Time-averaged jet width (jet-stream summary statistic)</h4>
+<p>Define the time-averaged width in passing windows by</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-077.svg" data-eq="phy-17-077" width="260" height="56" loading="lazy" alt="\overline{\theta}_J(q) := \frac{\sum_{i=1}^{M} \theta_{J,i}(q)\,\mathbb{I}[\mathcal{J}_i\ge \mathcal{J}_{\star}]}{\sum_{i=1}^{M}\mathbb{I}[\mathcal{J}_i\ge \mathcal{J}_{\star}]}"></figure>
+<p>where θ_(J,i)(q) is the width statistic computed in window i.</p>
+<h4>(Optional Gate) Consistency with anisotropy axis</h4>
+<p>If the anisotropy axis u is declared (Sec. 17.1), define</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-078.svg" data-eq="phy-17-078" width="206" height="55" loading="lazy" alt="A_{\mathrm{align}} := \frac{1}{M}\sum_{i=1}^{M} \big|\hat{\mathbf{d}}_{J,i}\cdot\mathbf{u}\big|."></figure>
+<p>Define</p>
+<figure class="eq" id="eq:S17_03_gateALIGN"><img src="/physics/eq/physics/phy-17-031.svg" data-eq="phy-17-031" width="230" height="22" loading="lazy" alt="\begin{equation} \texttt{PASS\_ALIGN} := \big[A_{\mathrm{align}}\ge \mu_{\star}\big] \end{equation}"></figure>
+<p>where the threshold μ_(*) is preregistered and LOCKed.</p>
+<h4>(Definition) Jet-stream Gate</h4>
+<p>Define</p>
+<figure class="eq" id="eq:S17_03_gateJSTREAM"><img src="/physics/eq/physics/phy-17-032.svg" data-eq="phy-17-032" width="463" height="25" loading="lazy" alt="\begin{equation} \texttt{PASS\_JSTREAM} := \big[P_J\ge P_{\star}\big] \wedge \big[\overline{\theta}_J(q)\le \theta_{\star}\big] \wedge \big[M_J\le M_{\star}\big] \end{equation}"></figure>
+<p>All thresholds (P_(*),θ_(*),M_(*),q) are preregistered and LOCKed.</p>
+<h4>(Correspondence table; non-evidential) Mapping to an atmospheric jet stream (Earth)</h4>
+<p>The following correspondence table is offered only as an interpretive label, not as evidence or a dynamical derivation.</p>
+<ul>
+<li> Domain Λ: corresponds to a latitude–longitude band (2D manifold) on a rotating planet.
+<li> Source/sink belts Λ₊,Λ₋: correspond to injection/absorption zones of momentum or mass.
+<li> Coupling rule (<a href="#eq:S17_01_u_g_couple" class="xref" data-ref="eq:S17_01_u_g_couple">(S17_01_u_g_couple)</a>): can be interpreted as a Coriolis-like anisotropy effect, but no atmospheric physics is assumed.
+<li> Jet-stream Gate (<a href="#eq:S17_03_gateJSTREAM" class="xref" data-ref="eq:S17_03_gateJSTREAM">(S17_03_gateJSTREAM)</a>): corresponds to persistence/width/axis-stability criteria.
+</ul>
+<h3>17.2.4 Core-saturation regime (singularity replacement) (definition)</h3>
+<h4>(Definition) Core region and core score</h4>
+<p>Define a core region Λ_core⊂Λ (preregistered; e.g., high-density zone).
+Let N(n;k₀,M) denote the total number of events counted at node n within the observation window (k₀,M).
+Define the core score by</p>
+<figure class="eq" id="eq:S17_04_Score"><img src="/physics/eq/physics/phy-17-033.svg" data-eq="phy-17-033" width="299" height="49" loading="lazy" alt="\begin{equation} S_{\mathrm{core}}(k_0,M) := \frac{\sum_{\mathbf{n}\in\Lambda_{\mathrm{core}}} N(\mathbf{n};k_0,M)}{\sum_{\mathbf{n}\in\Lambda} N(\mathbf{n};k_0,M)} \end{equation}"></figure>
+<h4>(Definition) Throat-gap statistic on the core</h4>
+<p>Let δ_eff(n) denote the effective throat-gap at node n (cf. Sec. 6).
+Define the core-averaged effective gap by</p>
+<figure class="eq" id="eq:S17_04_deltaeff"><img src="/physics/eq/physics/phy-17-034.svg" data-eq="phy-17-034" width="220" height="50" loading="lazy" alt="\begin{equation} \delta_{\mathrm{core}} := \frac{1}{|\Lambda_{\mathrm{core}}|}\sum_{\mathbf{n}\in\Lambda_{\mathrm{core}}}\delta_{\mathrm{eff}}(\mathbf{n}) \end{equation}"></figure>
+<h4>(Definition) Core regime conditions</h4>
+<p>Define the core-saturation regime by either condition:</p>
+<figure class="eq" id="eq:S17_04_COREA"><img src="/physics/eq/physics/phy-17-035.svg" data-eq="phy-17-035" width="140" height="19" loading="lazy" alt="\begin{equation} S_{\mathrm{core}}(k_0,M)\ge S_{\star} \end{equation}"></figure>
+<p>or</p>
+<figure class="eq" id="eq:S17_04_COREB"><img src="/physics/eq/physics/phy-17-036.svg" data-eq="phy-17-036" width="74" height="16" loading="lazy" alt="\begin{equation} \delta_{\mathrm{core}}\le \delta_{\star} \end{equation}"></figure>
+<p>with preregistered thresholds S_(*),δ_(*).</p>
+<p>If the core regime passes, the isotropic approximation is not automatically valid; the analysis should classify the run as (E-CORE) and use the anisotropy/rotation extension if applicable.</p>
+<h4>No-singularity claim rule</h4>
+<p>In the (E-CORE) regime, the analysis must not claim mathematical singularities or divergences.
+Only the operational summary statistics and Gates above may be reported.</p>
+<h3>17.2.5 Operational definition of the large-scale boundary regime (E-COSMO)</h3>
+<h4>(Definition) Dynamic boundary input</h4>
+<p>We define the net inflow/outflow from the lattice boundary or an external reservoir as a time-dependent input.
+Let the boundary set be ∂Λ, and define</p>
+<figure class="eq" id="eq:S17_02_Jboundary"><img src="/physics/eq/physics/phy-17-037.svg" data-eq="phy-17-037" width="154" height="19" loading="lazy" alt="\begin{equation} J_{\partial}(\mathbf{n},k)\quad(\mathbf{n}\in\partial\Lambda) \end{equation}"></figure>
+<p>as the dynamic boundary input. The functional form of J_(∂) must be preregistered in <code>plan.json</code>; post-run modification is prohibited.</p>
+<h4>(Definition) Lattice-scale tracking variable</h4>
+<p>In a large-scale regime we do not fix the lattice scale. Instead, we define an effective scale per observation window as a summary statistic.
+For example, from the second central moment of the event density we define an effective radius by</p>
+<figure class="eq" id="eq:S17_02_Reff"><img src="/physics/eq/physics/phy-17-038.svg" data-eq="phy-17-038" width="388" height="49" loading="lazy" alt="\begin{equation} R_{\mathrm{eff}}^2(k_0,M) := \frac{\sum_{\mathbf{n}\in\Lambda}\|\mathbf{x}(\mathbf{n})-\mathbf{x}_{\mathrm{cm}}\|^2\,\rho(\mathbf{n};k_0,M)} {\sum_{\mathbf{n}\in\Lambda}\rho(\mathbf{n};k_0,M)} \end{equation}"></figure>
+<p>where</p>
+<figure class="eq" id="eq:S17_02_xcm"><img src="/physics/eq/physics/phy-17-039.svg" data-eq="phy-17-039" width="248" height="47" loading="lazy" alt="\begin{equation} \mathbf{x}_{\mathrm{cm}} := \frac{\sum_{\mathbf{n}\in\Lambda}\mathbf{x}(\mathbf{n})\,\rho(\mathbf{n};k_0,M)} {\sum_{\mathbf{n}\in\Lambda}\rho(\mathbf{n};k_0,M)} \end{equation}"></figure>
+<p>is the center-of-mass position weighted by ρ. We use R_eff only as an operational summary statistic for deciding “large-scale variation.”</p>
+<h4>(Definition) Large-scale regime Gate</h4>
+<p>Claims in the large-scale regime (e.g., “a scale change is observed”) are only qualified when the following Gate is satisfied:</p>
+<figure class="eq" id="eq:S17_02_pass_cosmo"><img src="/physics/eq/physics/phy-17-040.svg" data-eq="phy-17-040" width="414" height="45" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{COSMO}} :\Longleftrightarrow \left|\frac{R_{\mathrm{eff}}(k_1,M)-R_{\mathrm{eff}}(k_0,M)}{R_{\mathrm{eff}}(k_0,M)}\right| \ge \eta_{\star} \end{equation}"></figure>
+<p>where η_(*)>0 is a preregistered threshold, and k₁-k₀ as well as M must be fixed by the protocol.</p>
+<h4>(Derived observable example) Redshift z and distance estimate</h4>
+<p>We connect the lattice-friction redshift model registered in §17.5 (development owned by the Earth–Cosmos volume, Ch. 7) to a derived observable in the E-COSMO regime.
+From the observed redshift z of each source, we define an effective path-length (distance) estimate by</p>
+<figure class="eq" id="eq:S17_02_Dz_def"><img src="/physics/eq/physics/phy-17-041.svg" data-eq="phy-17-041" width="142" height="38" loading="lazy" alt="\begin{equation} D_{z} := \frac{1}{\kappa}\ln(1+z) \end{equation}"></figure>
+<p>The parameter κ must be obtained from a LOCK (or a preregistered calibration procedure). Any post-hoc tuning after observing results is prohibited.</p>
+<h4>(LOCK) Separation of calibration and validation for κ</h4>
+<p>When a set of distance anchors (D_anch,i,z_i) is available,
+κ must be estimated only on the preregistered calibration set S_cal,
+and judgement on the validation set S_val must use a <em>fixed</em> κ.
+For example, if we adopt weighted least squares,</p>
+<figure class="eq" id="eq:S17_02_kappa_hat"><img src="/physics/eq/physics/phy-17-042.svg" data-eq="phy-17-042" width="581" height="54" loading="lazy" alt="\begin{equation} \widehat{\kappa} = \arg\min_{\kappa}\sum_{i\in\mathcal{S}_{\mathrm{cal}}}w_i\left(\ln(1+z_i)-\kappa D_{\mathrm{anch},i}\right)^2 = \frac{\sum_{i\in\mathcal{S}_{\mathrm{cal}}}w_i D_{\mathrm{anch},i}\ln(1+z_i)} {\sum_{i\in\mathcal{S}_{\mathrm{cal}}}w_i D_{\mathrm{anch},i}^2} \end{equation}"></figure>
+<p>A choice of (w_i) and the split S_cal/S_val must be LOCKed prior to the run.</p>
+<h4>(Gate) Cross-validation of the z–distance mapping</h4>
+<p>On the validation set S_val, define</p>
+<figure class="eq" id="eq:S17_02_delta_i"><img src="/physics/eq/physics/phy-17-043.svg" data-eq="phy-17-043" width="276" height="45" loading="lazy" alt="\begin{equation} \Delta_i := \frac{D_{z,i}-D_{\mathrm{anch},i}}{D_{\mathrm{anch},i}} \qquad(i\in\mathcal{S}_{\mathrm{val}}) \end{equation}"></figure>
+<p>and set the Gate</p>
+<figure class="eq" id="eq:S17_02_pass_zdist"><img src="/physics/eq/physics/phy-17-044.svg" data-eq="phy-17-044" width="553" height="35" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{z\text{-dist}} :\Longleftrightarrow \mathrm{median}_{i\in\mathcal{S}_{\mathrm{val}}}\left(|\Delta_i|\right)\le \epsilon_{\mathrm{med}}^{\star} \ \wedge\ \sqrt{\mathrm{mean}_{i\in\mathcal{S}_{\mathrm{val}}}(\Delta_i^2)}\le \epsilon_{\mathrm{rms}}^{\star} \end{equation}"></figure>
+<p>where ε_med^(*),ε_rms^(*)>0 are preregistered thresholds.
+If this Gate fails, then in the E-COSMO regime the definition <a href="#eq:S17_02_Dz_def" class="xref" data-ref="eq:S17_02_Dz_def">(S17_02_Dz_def)</a> is incompatible with the distance anchors and is a <code>FAIL</code>.</p>
+<h4>(Mandatory LOCK) Observation mapping: extending D_z to D_L,D_A and flux/angular-size predictions</h4>
+<p>The quantity D_z in <a href="#eq:S17_02_Dz_def" class="xref" data-ref="eq:S17_02_Dz_def">(S17_02_Dz_def)</a> is defined as a <em>path length</em>. To compare directly with observed fluxes and angular sizes,
+we need mappings D_z↦ D_L^(model) and D_z↦ D_A^(model).
+For this purpose, we define an <strong>attenuation factor</strong> Φ(z) and an <strong>angular/area mapping factor</strong> Υ(z) as follows:</p>
+<figure class="eq" id="eq:S17_02_flux_mapping"><img src="/physics/eq/physics/phy-17-045.svg" data-eq="phy-17-045" width="400" height="48" loading="lazy" alt="\begin{equation} F_{\mathrm{obs}}(z) := \frac{L}{4\pi D_z^2}\,\Phi(z), \qquad D_L^{(\mathrm{model})}(z):=\frac{D_z}{\sqrt{\Phi(z)}} \end{equation}"></figure>
+<figure class="eq" id="eq:S17_02_ang_mapping"><img src="/physics/eq/physics/phy-17-046.svg" data-eq="phy-17-046" width="160" height="43" loading="lazy" alt="\begin{equation} D_A^{(\mathrm{model})}(z):=\frac{D_z}{\Upsilon(z)} \end{equation}"></figure>
+<p>We also define the observed/emitted relation for time-scales (light-curve width, variability period, etc.) by</p>
+<figure class="eq" id="eq:S17_02_time_dilation_T"><img src="/physics/eq/physics/phy-17-047.svg" data-eq="phy-17-047" width="147" height="19" loading="lazy" alt="\begin{equation} \tau_{\mathrm{obs}}(z):=\tau_{\mathrm{em}}\,T(z) \end{equation}"></figure>
+<p>The <strong>functional forms and estimation procedures for Φ,Υ,T must be LOCKed prior to execution</strong>;
+post-hoc modification to fit outcomes is prohibited.
+<em>(Example)</em> If one adopts static geometry (Υ≡ 1), no time dilation (T≡ 1), and only energy loss (Φ(z)=(1+z)⁻¹),
+then D_L^(model)=D_z√(1+z) and a surface-brightness scaling B_obs∝(1+z)⁻¹ follow.
+This is only a <strong>branch example</strong>; adoption is decided only by a LOCK.</p>
+<h4>(Gate) Time dilation decision</h4>
+<p>Assume that for a standardized class of events (e.g., Type Ia supernovae) an emitted time-scale τ_em can be calibrated.
+From observations (z_i,τ_obs,i), define</p>
+<figure class="eq" id="eq:S17_02_r_TD"><img src="/physics/eq/physics/phy-17-048.svg" data-eq="phy-17-048" width="180" height="46" loading="lazy" alt="\begin{equation} r_i^{\mathrm{TD}}:=\frac{\tau_{\mathrm{obs},i}/\tau_{\mathrm{em},i}}{T(z_i)}-1 \end{equation}"></figure>
+<p>and set the Gate</p>
+<figure class="eq" id="eq:S17_02_pass_TD"><img src="/physics/eq/physics/phy-17-049.svg" data-eq="phy-17-049" width="293" height="23" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{TD}} :\Longleftrightarrow \mathrm{median}_i\bigl(|r_i^{\mathrm{TD}}|\bigr)\le \epsilon_{\mathrm{TD}}^{\star} \end{equation}"></figure>
+<p>where ε_TD^(*) is preregistered.
+If τ_em cannot be calibrated or T(z) is not LOCKed, the status is <code>INCONCLUSIVE</code>.</p>
+<h4>(Gate) Surface-brightness (Tolman-type) decision</h4>
+<p>Assume that for a standardized source class the emitted surface brightness B₀ (including rest-frame calibration) is LOCKed.
+Then the observed surface brightness B_obs(z) predicted from <a href="#eq:S17_02_flux_mapping" class="xref" data-ref="eq:S17_02_flux_mapping">(S17_02_flux_mapping)</a>–<a href="#eq:S17_02_ang_mapping" class="xref" data-ref="eq:S17_02_ang_mapping">(S17_02_ang_mapping)</a> is</p>
+<figure class="eq" id="eq:S17_02_Bobs_pred"><img src="/physics/eq/physics/phy-17-050.svg" data-eq="phy-17-050" width="161" height="45" loading="lazy" alt="\begin{equation} B_{\mathrm{obs}}(z)=B_0\,\frac{\Phi(z)}{\Upsilon(z)^2} \end{equation}"></figure>
+<p>Hence define</p>
+<figure class="eq" id="eq:S17_02_r_TOL"><img src="/physics/eq/physics/phy-17-051.svg" data-eq="phy-17-051" width="214" height="46" loading="lazy" alt="\begin{equation} r_i^{\mathrm{TOL}}:=\frac{B_{\mathrm{obs},i}}{B_0}\,\frac{\Upsilon(z_i)^2}{\Phi(z_i)}-1 \end{equation}"></figure>
+<p>and set the Gate</p>
+<figure class="eq" id="eq:S17_02_pass_TOL"><img src="/physics/eq/physics/phy-17-052.svg" data-eq="phy-17-052" width="318" height="23" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{TOL}} :\Longleftrightarrow \mathrm{median}_i\bigl(|r_i^{\mathrm{TOL}}|\bigr)\le \epsilon_{\mathrm{TOL}}^{\star} \end{equation}"></figure>
+<p>where ε_TOL^(*) is preregistered.
+If the standardization of B₀ (evolution/band/K-correction, etc.) is not LOCKed, this Gate is <code>INCONCLUSIVE</code>.</p>
+<h4>(Gate) Image blurring / line broadening (Blur/Broadening) decision</h4>
+<p>If lattice friction/scattering (a “medium”) exists, then in addition to frequency attenuation,
+additional observational signatures may accompany it, such as <em>image blurring (angular diffusion)</em>, <em>line broadening</em>, and <em>phase noise</em>.
+Therefore, at the level of an “expansion alternative” conclusion, we must Gate-check that any additional blurring introduced by the model does not exceed observational tolerances.
+For each source i, define a blurring metric b_obs,i (including instrument PSF / spectrograph resolution removal and rest-frame corrections).
+Let a standardized intrinsic metric b₀ and a model-predicted blurring factor B_BLR(z) be LOCKed inputs.
+Define residual</p>
+<figure class="eq" id="eq:S17_02_r_BLR"><img src="/physics/eq/physics/phy-17-053.svg" data-eq="phy-17-053" width="179" height="46" loading="lazy" alt="\begin{equation} r_i^{\mathrm{BLR}}:=\frac{b_{\mathrm{obs},i}/b_0}{B_{\mathrm{BLR}}(z_i)}-1 \end{equation}"></figure>
+<p>and set</p>
+<figure class="eq" id="eq:S17_02_pass_BLR"><img src="/physics/eq/physics/phy-17-054.svg" data-eq="phy-17-054" width="316" height="23" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{BLR}} :\Longleftrightarrow \mathrm{median}_i\bigl(|r_i^{\mathrm{BLR}}|\bigr)\le \epsilon_{\mathrm{BLR}}^{\star} \end{equation}"></figure>
+<p>where ε_BLR^(*)>0 is preregistered.
+If the standardization of b₀ (source evolution/band/K-correction) or the instrument correction procedure for b_obs,i (PSF/resolution removal) is not LOCKed, this Gate is <code>INCONCLUSIVE</code>.</p>
+<h4>(Gate) Dissipated-energy sink decision</h4>
+<p>As noted in §17.5.5, frequency attenuation of the form <a href="#eq:S10_08_dnudx" class="xref" data-ref="eq:S10_08_dnudx">(S10_08_dnudx)</a> implies a decrease in photon energy.
+Therefore, a model that “closes” the sink of “lost energy” (lattice heating / re-emission / background accumulation, etc.) is required.
+Given a sink model, we Gate-check whether it exceeds observational budgets of background radiation / thermal noise / diffuse light (or, equivalently, whether the predicted additional component is compatible with observations).</p>
+<p>First, because the emitted-to-observed energy ratio is E_obs/E_em=ν_obs/ν_em=(1+z)⁻¹,
+we define the lost-energy fraction for a single source as</p>
+<figure class="eq" id="eq:S17_02_floss"><img src="/physics/eq/physics/phy-17-055.svg" data-eq="phy-17-055" width="238" height="39" loading="lazy" alt="\begin{equation} f_{\mathrm{loss}}(z):=1-\frac{1}{1+z}=\frac{z}{1+z} \end{equation}"></figure>
+<p>For an observation sample (or preregistered source function) S, define a predicted quantity corresponding to the sink-model-selected observational budget I_bg as</p>
+<figure class="eq" id="eq:S17_02_Isink_def"><img src="/physics/eq/physics/phy-17-056.svg" data-eq="phy-17-056" width="280" height="41" loading="lazy" alt="\begin{equation} I_{\mathrm{sink}}:=\sum_{i\in\mathcal{S}} F_{\mathrm{obs},i}\, f_{\mathrm{loss}}(z_i)\,W_{\mathrm{SINK}}(z_i) \end{equation}"></figure>
+<p>Here F_obs,i is the observed flux in <a href="#eq:S17_02_flux_mapping" class="xref" data-ref="eq:S17_02_flux_mapping">(S17_02_flux_mapping)</a>, and W_SINK(z) is a LOCKed transfer factor summarizing how the lost energy contributes to the chosen observable (re-emission spectrum / absorption / thermalization, etc.).
+After sealing an observational/ literature-based upper bound (or measured value) I_bg^(max) in <code>analysis_lock</code>, we set the Gate</p>
+<figure class="eq" id="eq:S17_02_pass_SINK"><img src="/physics/eq/physics/phy-17-057.svg" data-eq="phy-17-057" width="273" height="47" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{SINK}} :\Longleftrightarrow \frac{I_{\mathrm{sink}}}{I_{\mathrm{bg}}^{\max}}\le 1+\epsilon_{\mathrm{SINK}}^{\star} \end{equation}"></figure>
+<p>where ε_SINK^(*)≥ 0 is preregistered.
+If the choice of I_bg (band/data/masking/integration convention) or W_SINK(z) is not LOCKed, this Gate is <code>INCONCLUSIVE</code>.</p>
+<h4>(Mandatory Gate stack) Qualification for an “expansion alternative” conclusion</h4>
+<p>To claim that E-COSMO uses <a href="#eq:S17_02_Dz_def" class="xref" data-ref="eq:S17_02_Dz_def">(S17_02_Dz_def)</a> as the basis of cosmological distances <em>instead of expansion</em>,
+and simultaneously explains distance–redshift and luminosity/time/image observations,
+it must pass not only the <strong>distance agreement Gate</strong> but also the <strong>time-dilation / surface-brightness / blurring / energy-sink</strong> Gates. (For example, the Tolman surface-brightness test and tired-light constraints are discussed in L. M. Lubin &amp; A. Sandage (2001), <em>AJ</em> 122, 1084–1103, DOI: <a href="https://doi.org/10.1086/322134" rel="noopener">10.1086/322134</a>; arXiv: <a href="https://arxiv.org/abs/astro-ph/0106566" rel="noopener">astro-ph/0106566</a>. Time-dilation discussions include G. Goldhaber et al. (2001), <em>ApJ</em> 558, 359–368, DOI: <a href="https://doi.org/10.1086/322460" rel="noopener">10.1086/322460</a>; arXiv: <a href="https://arxiv.org/abs/astro-ph/0104382" rel="noopener">astro-ph/0104382</a>.)
+That is,</p>
+<figure class="eq" id="eq:S17_02_pass_cosmo_alt"><img src="/physics/eq/physics/phy-17-058.svg" data-eq="phy-17-058" width="749" height="16" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{COSMO\text{-}ALT}} :\Longleftrightarrow \mathrm{PASS}_{z\text{-dist}}\wedge \mathrm{PASS}_{z\text{-achr}}\wedge \mathrm{PASS}_{\mathrm{TD}}\wedge \mathrm{PASS}_{\mathrm{TOL}}\wedge \mathrm{PASS}_{\mathrm{BLR}}\wedge \mathrm{PASS}_{\mathrm{SINK}} \end{equation}"></figure>
+<p>is set as the minimum requirement.
+Here PASS_BLR means that image blurring/line broadening is within tolerance, and PASS_SINK means that the dissipated-energy sink model is compatible with cumulative observations.
+If the corresponding Gate report is missing, the conclusion is <code>UNLOGGED</code> or <code>INCONCLUSIVE</code>;
+in that state one cannot output <strong>strong cosmological conclusions</strong> such as “dark energy is unnecessary.”</p>
+<p>Each Gate must LOCK numerical criteria in the protocol and cannot be changed after execution.</p>
+<p>For each regime R, define a regime indicator</p>
+<figure class="eq" id="eq:S17_02_regime_indicator"><img src="/physics/eq/physics/phy-17-059.svg" data-eq="phy-17-059" width="132" height="19" loading="lazy" alt="\begin{equation} \mathbb{I}_{\mathcal{R}}(\texttt{run})\in\{0,1\} \end{equation}"></figure>
+<p>and fix the regime map as</p>
+<figure class="eq" id="eq:S17_02_regime_map"><img src="/physics/eq/physics/phy-17-060.svg" data-eq="phy-17-060" width="296" height="19" loading="lazy" alt="\begin{equation} \mathcal{M}_{\mathrm{regime}}:=\{\mathbb{I}_{\mathrm{JET}},\mathbb{I}_{\mathrm{CORE}},\mathbb{I}_{\mathrm{COSMO}},\dots\} \end{equation}"></figure>
+<p>Each indicator can only be declared by <code>protocol.*</code> and cannot be replaced post-run.</p>
+<h3>17.2.7 Jet/jet-stream module structure (definition): file tree, protocol, artifacts</h3>
+<p>The experimental module for the jet/jet-stream extension is fixed to the following directory structure.</p>
+<pre class="vb">
+modules/
+  jet_regime/
+    protocol.yaml
+    locks_required.txt
+    src/
+      simulate_jet_regime.py
+      extract_event_flux.py
+      estimators.py
+      gates.py
+      io_schema.py
+    schemas/
+      protocol.schema.json
+      run_log.schema.json
+      metrics.schema.json
+      manifest.schema.json
+    plans/
+      plan.json
+    outputs_spec/
+      artifacts.md
+</pre>
+<h4>(Definition) Input (LOCK) dependency list</h4>
+<code>locks_required.txt</code> must include at least the following items.
+<ul>
+<li> <code>realization_lock</code>: a, Δ t, and realization definitions (essential for time normalization)
+<li> <code>analysis_lock</code>: J_*, q_*, P_*, θ_*, M_* (mandatory)
+<li> <code>analysis_lock</code>: explicit schema for the observation cone/cylinder C(·) (opening angle/radius and tie-break rule) (mandatory)
+<li> <code>analysis_lock</code> or <code>canon_lock</code>: (optional) anisotropy axis u and rotation-related parameters (χ_rot, χ_*, etc.; mandatory if Sec. 17.1 is adopted)
+</ul>
+<h4>(Definition) Metrics (summary statistics) and Gates</h4>
+<p>The module must output at least the following metrics.</p>
+<ul>
+<li> J, hatd_J (collimation and axis)
+<li> θ_J(q_*) or r_J(q_*) (width; for time-resolved analyses also report θ_J(q_*))
+<li> P_J, M_J (persistence / axis stability)
+<li> (optional) A_align (alignment to an anisotropy axis)
+</ul>
+<p>The Gates must include at least the following.</p>
+<ul>
+<li> (G-JET1) Collimation: <a href="#eq:S17_03_gateJET" class="xref" data-ref="eq:S17_03_gateJET">(S17_03_gateJET)</a>
+<li> (G-JET2) Jet stream: <a href="#eq:S17_03_gateJSTREAM" class="xref" data-ref="eq:S17_03_gateJSTREAM">(S17_03_gateJSTREAM)</a>
+<li> (G-JET3) (optional) Alignment to anisotropy axis: <a href="#eq:S17_03_gateALIGN" class="xref" data-ref="eq:S17_03_gateALIGN">(S17_03_gateALIGN)</a>
+<li> (G-LOG) Link-log schema validation: no missing fields / format mismatches in Ξₛ
+<li> (G-REP) Reproducibility: identical judgement upon re-run with the same inputs/seeds
+</ul>
+<h2>LOCK/Gate connections for this section (if any)</h2>
+<ul>
+<li> LOCK: protocol lock for the source/sink definition (<a href="#eq:S17_02_src_sink_disjoint" class="xref" data-ref="eq:S17_02_src_sink_disjoint">(S17_02_src_sink_disjoint)</a>) and the injection/absorption event-rate form (<a href="#eq:S17_02_Jdef" class="xref" data-ref="eq:S17_02_Jdef">(S17_02_Jdef)</a>).
+<li> LOCK: fix the link-event flux definition (<a href="#eq:S17_02_flux_link" class="xref" data-ref="eq:S17_02_flux_link">(S17_02_flux_link)</a>) and the observation cone/cylinder C(·) schema, including the tie-break rule, in <code>analysis_lock</code>.
+<li> LOCK: fix the definitions of the jet index J, jet axis hatd_J, width θ_J(q_*) and its time average θ_J(q_*), persistence P_J, and axis stability M_J in <code>analysis_lock</code>.
+<li> Gate: preregister thresholds for the collimation Gate PASS_JET and the jet-stream Gate PASS_JSTREAM.
+<li> Gate: any link-log schema mismatch or an unlocked tie-break rule triggers an immediate <code>FAIL</code> in G-LOG/G-SYM.
+</ul>
+<h2>17.3 Limitations, open problems, and the vNext roadmap (conditions for new LOCK admission and revision rules)</h2>
+<aside class="claim-strip vps" data-vps="17.3" data-cards="VP-C-058, VP-C-049"><span class="g">governance (limitations + vNext rules)</span><span class="io">in: — / out: limitation classes REGIME_OUT, IDENTIFIABILITY, NUMERICS, MEASUREMENT, DEPENDENCY; admission conditions for new LOCKs and revision rules</span><q class="one">Limitations are classified, not confessed — and the door for new locks has a posted protocol.</q><span class="cards">VP-C-058, VP-C-049</span></aside>
+<h3>17.3.1 Formal classification of limitations (definition)</h3>
+<p>Limitations are classified not as “model failure” but as “outside-regime application” or “non-verifiability.”
+We define the limitation class set by</p>
+<figure class="eq" id="eq:S17_03_lim_classes"><img src="/physics/eq/physics/phy-17-061.svg" data-eq="phy-17-061" width="786" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{lim}} = \{\mathrm{REGIME\_OUT},\mathrm{IDENTIFIABILITY},\mathrm{NUMERICS},\mathrm{MEASUREMENT},\mathrm{DEPENDENCY}\} \end{equation}"></figure>
+<p>The meaning of each class is fixed as follows.</p>
+<ul>
+<li> <strong>REGIME_OUT</strong>: regime condition not satisfied (0 in the regime-map decision).
+<li> <strong>IDENTIFIABILITY</strong>: different closures/modules reproduce the same observations, making them indistinguishable.
+<li> <strong>NUMERICS</strong>: Gate judgement is not stable due to finite size, resolution limits, or seed sensitivity.
+<li> <strong>MEASUREMENT</strong>: the observation protocol (log/channel/split) is insufficient, so metrics cannot be computed.
+<li> <strong>DEPENDENCY</strong>: external dependencies (code/libraries/environment) are not fully frozen as a snapshot.
+</ul>
+<h3>17.3.2 Minimum list of open problems (definition)</h3>
+<p>Open problems are described only in the form of preregistrable verification items or candidate LOCKs.
+We fix the minimum list of open problems as follows.</p>
+<ul>
+<li> (OP-ANISO) Determining the explicit form of g(μ): identify a family of functions that satisfies <a href="#eq:S17_01_g_norm" class="xref" data-ref="eq:S17_01_g_norm">(S17_01_g_norm)</a> and consistently explains regime-dependent response metrics.
+<li> (OP-ROT) Conditions for adopting ℓ_rot: specify the minimum requirements (observations/experiments/estimators) needed when including ℓ_rot in a LOCK.
+<li> (OP-DAG) Maintaining acyclicity of the closure stack/DAG: complete a rule-set that automatically detects and blocks cyclic dependencies as extension modules grow.
+<li> (OP-SCALE) Finite-size and resolution scaling: specify whether metrics converge as resolution increases, and in what order the convergence should be assessed.
+<li> (OP-LOG) Standardizing the link-log Ξₛ: fix a schema that reproduces the propagation-direction flux measurement <a href="#eq:S17_02_flux_link" class="xref" data-ref="eq:S17_02_flux_link">(S17_02_flux_link)</a> identically across all modules.
+<li> (OP-JET) Scale-up / resolution issues of the jet-stream estimator: specify how J,θ_J,θ_J,P_J,M_J stabilize as the observation-window length M, the observation cone/cylinder convention, and the tie-break rule are varied. Also standardize event-log extraction protocols for real-world data such as atmospheric/oceanic jet streams.
+</ul>
+<h3>17.3.3 Objects in the vNext roadmap (definition): candidate, admission, deprecation</h3>
+<h4>(Change Request, CR)</h4>
+<p>All changes are submitted only as a document unit defined as <code>CR</code>.</p>
+<figure class="eq" id="eq:S17_03_CR_schema"><img src="/physics/eq/physics/phy-17-062.svg" data-eq="phy-17-062" width="520" height="19" loading="lazy" alt="\begin{equation} \texttt{CR}= \{\texttt{id},\texttt{type},\texttt{target},\texttt{rationale},\texttt{diff},\texttt{tests},\texttt{gates},\texttt{impact}\} \end{equation}"></figure>
+<p>The <code>type</code> field is fixed to one of the following.</p>
+<figure class="eq" id="eq:S17_03_CR_types"><img src="/physics/eq/physics/phy-17-063.svg" data-eq="phy-17-063" width="735" height="19" loading="lazy" alt="\begin{equation} \texttt{type}\in\{\texttt{NEW\_LOCK},\texttt{LOCK\_UPDATE},\texttt{NEW\_GATE},\texttt{PROTOCOL\_UPDATE},\texttt{CODE\_UPDATE},\texttt{DOC\_UPDATE}\} \end{equation}"></figure>
+<h4>(Candidate lock)</h4>
+<p>A LOCK candidate is a new key-value (or a new file) that may be added to the sealed (locked) set.
+We define a LOCK candidate L^* as the following 4-tuple:</p>
+<figure class="eq" id="eq:S17_03_lock_candidate"><img src="/physics/eq/physics/phy-17-064.svg" data-eq="phy-17-064" width="353" height="19" loading="lazy" alt="\begin{equation} \mathcal{L}^\star:= (\texttt{key},\texttt{value},\texttt{unit},\texttt{origin\_protocol}) \end{equation}"></figure>
+<p>The <code>origin_protocol</code> must identify from which protocol and which artifacts the value was derived (it must be traceable via logs/checksums).</p>
+<h3>17.3.4 Conditions for admitting a new LOCK (definition): minimum requirements</h3>
+<p>Admission of a new LOCK must satisfy the following conditions <em>simultaneously</em>.</p>
+<figure class="eq" id="eq:S17_03_admit_lock"><img src="/physics/eq/physics/phy-17-065.svg" data-eq="phy-17-065" width="747" height="19" loading="lazy" alt="\begin{equation} \mathrm{ADMIT}(\mathcal{L}^\star)=1 \Longleftrightarrow (\mathrm{PASS}_{\mathrm{ID}}=1)\wedge(\mathrm{PASS}_{\mathrm{STAB}}=1)\wedge(\mathrm{PASS}_{\mathrm{TRACE}}=1)\wedge(\mathrm{PASS}_{\mathrm{NT}}=1) \end{equation}"></figure>
+<p>Each Gate is defined as follows.</p>
+<ul>
+<li> (PASS<sub>ID</sub>) <strong>Identifiability</strong>: the candidate value has a monotone or otherwise distinguishable effect on at least one metric, and preregistered tests exist that distinguish it from alternative candidates.
+<li> (PASS<sub>STAB</sub>) <strong>Stability</strong>: the candidate value or its derivation procedure is stable within Gate thresholds under changes in resolution/seeds/sampling.
+<li> (PASS<sub>TRACE</sub>) <strong>Traceability</strong>: the derivation is fully traceable via <code>run_log.jsonl</code>, <code>metrics.json</code>, <code>manifest.json</code>, and <code>registry_snapshot.json</code>.
+<li> (PASS<sub>NT</sub>) <strong>No tuning</strong>: the admission is not a post-hoc change of thresholds/definitions to fit outcomes; it is generated within preregistered protocol bounds.
+</ul>
+<p>If any condition fails, the candidate cannot be promoted to a LOCK and remains only as a hypothesis item in <code>analysis_lock</code> or as an open problem.</p>
+<h3>17.3.5 Revision rules (definition): semantic changes and version bumps</h3>
+<h4>(Definition) Semantic change</h4>
+<p>A “semantic change” in a LOCK includes not only the case where only the value changes for the same <code>key</code>, but also the following cases.</p>
+<ul>
+<li> A change of units (<code>unit</code> change).
+<li> A change of origin (protocol/estimator) of the value (<code>origin_protocol</code> change).
+<li> A change of interpretation (usage sites / applicable regimes change).
+</ul>
+<h4>(Definition) Version bump rule</h4>
+<p>If a semantic change occurs in any LOCK, a <strong>Major</strong> version bump is forced.
+If a protocol/Gate extension preserves backward compatibility, a <strong>Minor</strong> bump is used.
+If a change is a typographical fix or otherwise does not affect results, a <strong>Patch</strong> bump is fixed.
+The version-bump rules must be consistent with the release rules in Sec. 16.3.</p>
+<h3>17.3.6 Deprecation / replacement rules (definition): DEPRECATED, REVOKED</h3>
+<h4>(Definition) DEPRECATED</h4>
+<p>If an item is no longer used but is kept to reproduce past releases, it is marked <code>DEPRECATED</code>.
+A <code>DEPRECATED</code> item cannot be deleted and must provide a mapping to its replacement item.
+We define the mapping format as</p>
+<figure class="eq" id="eq:S17_03_deprecation_map"><img src="/physics/eq/physics/phy-17-066.svg" data-eq="phy-17-066" width="512" height="19" loading="lazy" alt="\begin{equation} \texttt{DEPRECATION\_MAP}= (\texttt{old\_key},\texttt{new\_key},\texttt{since\_version},\texttt{rule}) \end{equation}"></figure>
+<h4>(Definition) REVOKED</h4>
+<p>If integrity/traceability failures or a No-Tuning violation is confirmed, an item is marked <code>REVOKED</code> and can no longer be referenced.
+To preserve reproducibility of past releases, a revocation must include the “reason” and “impact scope” inside the DOI package.
+A revocation must include at least the following unit:</p>
+<figure class="eq" id="eq:S17_03_revoke_pack"><img src="/physics/eq/physics/phy-17-067.svg" data-eq="phy-17-067" width="769" height="19" loading="lazy" alt="\begin{equation} \mathsf{REVOKE\_PACK}:=\{\texttt{reason.md},\texttt{evidence/*},\texttt{affected\_runs.csv},\texttt{registry\_snapshot.json}\} \end{equation}"></figure>
+<h3>17.3.7 vNext implementation order (definition): modularization, verification, release</h3>
+<p>vNext is defined by the following invariant procedure.</p>
+<ol>
+<li> (STEP-1) <strong>Add module</strong>: add an independent module in the form <code>modules/<name>/</code> and freeze <code>protocol.*</code> and schemas together.
+<li> (STEP-2) <strong>Preregistration</strong>: generate a preregistration digest including <code>plan.json</code> and Gate thresholds.
+<li> (STEP-3) <strong>Execution and log generation</strong>: produce all artifacts and integrity files in <code>runs/<run_id>/</code>.
+<li> (STEP-4) <strong>Validation</strong>: recompute schema/checksum/Gate decisions via <code>validate.py</code> and finalize the status.
+<li> (STEP-5) <strong>Release</strong>: generate <code>release_manifest.*</code> and freeze at the DOI-package level.
+</ol>
+<p>Omission or reordering of steps is treated as a failure of procedure (Sec. 16.1).</p>
+<h2>17.4 Gravity: cap mechanism and the four-wall theorem</h2><aside class="claim-strip vps"><span class="io"><strong>[PROMOTION NOTE v0.10.0]</strong> Gravity (inflow, cap, terrain, four-wall) is promoted to the featured chapter <a href="/physics/18-time-and-gravity/">§18 Time and Gravity</a>, where it is unified with the time sector via the river identity (§18.6: gravitational time dilation = kinematic dilation in the free-fall inflow = exact Schwarzschild). The locks and derivations remain here in §17.4 (SSOT unchanged); §18 references them. All §17.4.x anchors, equation labels, and numbers are preserved verbatim.</span></aside>
+<span id="hub:gravity"></span>
+<aside class="claim-strip vps" data-vps="17.4" data-cards="VP-C-037, VP-C-038, VP-C-039, VP-C-040, VP-C-N05"><span class="g">[F]+[O]</span><span class="io">in: annihilation sink / out: inflow law; cap (EP as result); four-wall no-go; one-scalar $m_q$</span><q class="one">Structure derived, absolute honestly external — with the no-go proven, not confessed.</q><span class="cards">VP-C-037, VP-C-038, VP-C-039, VP-C-040, VP-C-N05</span></aside>
+<em> Concept links: the root cause (annihilation-driven inflow, closure 1) is <a href="#hub:gravroot" class="xref" data-ref="hub:gravroot">§17.4.0</a>; annihilation defined in <a href="/physics/09-event-quantum-definition-canonical-event/#hub:event9" class="xref" data-ref="hub:event9">§9</a>.</em>
+<h3>17.4.0 Root cause: gravity arises from quantum annihilation-driven inflow</h3>
+<span id="hub:gravroot"></span>
+<aside class="claim-strip vps" data-vps="17.4.0" data-cards="VP-C-037, VP-C-038"><span class="g">[F] root cause</span><span class="io">in: annihilation rate $Q$ / out: $∇²φ=-σ⇒ F∝ Q/r²$; always attractive; closures in series</span><q class="one">A sink in a plenum that forbids voids: gravity exists before it saturates.</q><span class="cards">VP-C-037, VP-C-038</span></aside>
+<em> Concept links: annihilation is defined in <a href="/physics/09-event-quantum-definition-canonical-event/#hub:event9" class="xref" data-ref="hub:event9">§9</a>; the cap that saturates this inflow (closure 2) is <a href="#hub:gravity" class="xref" data-ref="hub:gravity">§17.4</a>.</em>
+<p>Before describing the cap mechanism (which explains why gravity <em>saturates</em>), we identify what makes gravity <em>exist</em> in the first place. In this framework gravity is not a primitive: it is a downstream consequence of a more fundamental process — <strong>quantum-scale annihilation acting as a localized sink in the lattice continuity field, with surrounding lattice content forced to flow inward because empty space is forbidden</strong>.</p>
+<h4>The sink-Green's-function chain.</h4>
+<p>A point sink of annihilation rate Q enters the lattice continuity equation as a delta source</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-079.svg" data-eq="phy-17-079" width="135" height="21" loading="lazy" alt="\sigma(\mathbf{r}) = -Q\,\delta^{3}(\mathbf{r})."></figure>
+<p>The Green's function of the Laplacian then gives the lattice deficit field around the sink:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-080.svg" data-eq="phy-17-080" width="236" height="39" loading="lazy" alt="\nabla^{2}\phi = -\sigma \;\Longrightarrow\; \phi(r) \propto \frac{Q}{4\pi r},"></figure>
+<p>and the resulting gradient force on a test element of the surrounding lattice is</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-081.svg" data-eq="phy-17-081" width="102" height="39" loading="lazy" alt="F(r) \;\propto\; \frac{Q}{r^{2}}."></figure>
+<p>This is the same algebra that gives the 1/r² central law in electrostatics from a delta source. In this framework the annihilation rate Q plays the role of the source strength.</p>
+<h4>From annihilation rate to force.</h4>
+<p>Using the framework's mass–rate identity m = 2π · ν_ann (the rectification bracket α/δ = 2π, see §5.0) and the bridge F_bridge = mc²/D (verified to four digits across particle cards in §14.1.5), the chain closes:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-082.svg" data-eq="phy-17-082" width="519" height="30" loading="lazy" alt="\text{annihilation rate } \nu_{\mathrm{ann}} \;\xrightarrow{\times 2\pi}\; \text{mass} \;\xrightarrow{\times c^{2}/D}\; \text{internal force strength}."></figure>
+<p>Thus annihilation rate is the source quantity; force is its downstream image.</p>
+<h4>Why this implies inflow (always attractive).</h4>
+<p>A sink removes lattice content. Because empty space is forbidden by the jamming postulate (no voids may form in the plenum), surrounding lattice content <em>must</em> move toward the sink at the rate the sink consumes. That motion is the inflow. It is therefore <strong>always attractive</strong> (matter falls toward the sink, never away from it) and <strong>always present</strong> wherever annihilation takes place. There is no analog of a repulsive case: the framework simply does not admit "negative" annihilation, and the empty-space-forbidden rule converts any net annihilation into net inflow.</p>
+<h4>Two questions, two closures.</h4>
+<p>This subsection answers the <em>root-cause</em> question: <em>why is there inflow at all?</em> The remaining subsections (§17.4.1–§17.4.5) answer the separate, downstream question: <em>why does that inflow saturate at a finite ceiling, and why is the equivalence principle a result?</em> These are two structurally distinct closures: the first is the sink-Green's-function chain shown here; the second is the local hourglass-type saturation imposed by the plenum and the e=1 elastic response. <strong>The two closures are connected in series, not parallel:</strong> closure 1 <em>produces</em> the inflow (the downward mass current), and that same inflow is precisely the input current that closure 2 then <em>saturates</em> at the cap. Gravity as observed is the composition of the two — annihilation drives an always-attractive inflow (closure 1), and the jammed plenum caps that inflow at a velocity-dependent ceiling (closure 2). When §17.4.1 below says "introduce a small downward-going mass current," that current is not an external stipulation; it is the inflow generated by closure 1.</p>
+<h4>Grade: [F]for the inflow law; [F]for the sink-Green's-function equivalence.</h4>
+<p>The annihilation-as-sink picture is structurally derived; only the <em>absolute magnitude</em> of the annihilation rate at a particular celestial body is back-substituted (see §17.4.4 four-wall theorem and §17.4.6 inter-body variation).</p>
+<h3>17.4.0.1 The fullness theorem: one root for inflow, inertia, the speed limit, and the unattainability of absolute zero</h3>
+<p>The “empty space is forbidden” rule used above is not an extra assumption: it is a <em>theorem</em> of the full-packing axiom (VP-A2) together with continuity. Let a number density n obey ∂ₜ n+∇·(nmathbf v)=0 under a no-flux boundary (nmathbf v)·mathbf n|_(∂Ω)=0, with an initially full state n(·,0)≥ n₀>0 and mathbf v∈ L¹ₜ W^(1,∞)ₓ. Integrating along the flow Φₜ (dotΦₜ=mathbf v(Φₜ,t)) the continuity equation becomes d/dtn(Φₜ,t)=-n(∇·mathbf v), hence</p>
+<figure class="eq" id="eq:fullness"><img src="/physics/eq/physics/phy-17-068.svg" data-eq="phy-17-068" width="455" height="45" loading="lazy" alt="\begin{equation} n(\Phi_t,t)=n_0(\mathbf x_0)\,\exp\!\Big(-\!\int_0^t (\nabla\!\cdot\!\mathbf v)(\Phi_s,s)\,ds\Big)&gt;0\qquad\forall t, \end{equation}"></figure>
+<p>so a region that starts full can never become empty; for ∇·mathbf v=0 one has n≥ n₀ exactly. Call this the <strong>fullness (void-forbidden) theorem</strong>.</p>
+<p>This single result is the common root of four otherwise-separate facts:</p>
+<ol>
+<li> <strong>Inflow = gravity</strong> (<em>derived</em>, <a href="#hub:gravroot" class="xref" data-ref="hub:gravroot">§17.4.0</a>): annihilation would open a void; <a href="#eq:fullness" class="xref" data-ref="eq:fullness">(fullness)</a> forbids it, so surrounding content must flow inward — the always-attractive inflow.
+<li> <strong>The speed limit c</strong> (<em>derived</em>, <a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6</a>): the full jammed medium has a single signal speed, the elastic wave speed c²=K/ρ_eff; there is no faster channel because there is no void to bypass through.
+<li> <strong>Inertia</strong> (<em>qualitative</em>): to accelerate a body one must displace the surrounding full, incompressible plenum, and the reaction to that displacement is inertial resistance — a hydrodynamic, Mach-type origin. (Mechanism only; the inertial magnitude is not derived here.)
+<li> <strong>Unattainability of absolute zero</strong> (<em>qualitative</em>): cooling is progressive jamming (liquid→solid). Reaching 0K would require removing all motion, but any incipient void left by a de-energizing/annihilating quantum is instantly refilled by inflow — i.e. by motion — so motion self-regenerates and the fully-static, zero-quantum state is approached but never reached. The irreducible residual is this framework's analogue of zero-point energy and of the third law.
+</ol>
+<p>Remove fullness (admit voids) and all four vanish together — no inflow, no inertia, no speed limit, and absolute zero becomes reachable: a different universe. Items 1–2 are derived in the cited sections; items 3–4 are mechanism-level (the direction is fixed, the magnitudes are not derived here).</p>
+<h3>17.4.1 Setup and hourglass intuition</h3>
+<p>Take a jammed lattice with no rigid container walls but with the lattice's own internal stiffness providing pinning. Introduce a small downward-going mass current. Because the lattice is jammed (effective coordination e=1), the response is not "free fall plus drag"; it is "free fall until a local-cap pressure budget runs out, then steady saturation." The intuition: an hourglass without a glass, in which the constriction is formed dynamically by the velocity-pressure balance itself.</p>
+<h3>17.4.2 Cap mechanism — seven structural results</h3>
+<p>The following are derived ([F]) from the jammed-lattice continuity equation plus the local stiffness postulate; no empirical input enters:</p>
+<ol>
+<li> <strong>Result 1 — A ceiling exists.</strong> For any downward mass current, there is a maximum steady flux j_(max) above which the cap unjams locally.
+<li> <strong>Result 2 — Velocity drives pressure.</strong> Below the cap, p ∝ ρ v²; the cap engages when p reaches a critical yield <em>pressure</em> p_yield. (Note: the inverse-length parameter Ψ_yield appearing in Result 7 and §17.4.4 is the <em>normalized</em> form of this threshold, Ψ_yield=g_(*)/c²; see App G. The two are the same physical condition expressed in different units — a pressure here, an inverse length there.)
+<li> <strong>Result 3 — Momentum only, energy zero at the cap.</strong> The cap state transmits momentum density but supports no net energy flow (the kinetic energy is dissipated locally into the jamming stiffness).
+<li> <strong>Result 4 — Height-independence.</strong> The steady-state flux through the cap depends on the cap geometry, not on the column height above it (Beverloo-type law, well-known in granular media).
+<li> <strong>Result 5 — Mass-independence (equivalence principle as a derived result).</strong> Because the cap responds to the velocity field, not to the mass content of the column, two columns of different mass content fall with the same acceleration in the cap regime. The equivalence principle here is a <em>consequence</em>, not an axiom.
+<li> <strong>Result 6 — Two-channel structure.</strong> There are two distinguishable accelerations: g_geom (set by the cap geometry) and g_restore (set by the post-cap restoration). In a steady free-fall regime these coincide.
+<li> <strong>Result 7 — Saturation relation.</strong> g_(*) = c²· Ψ_yield as a structural relation (skeleton), where Ψ_yield here carries units of inverse length (the normalized yield parameter of Result 2; see App G). The absolute numerical value of Ψ_yield is not provided by the structure; see §17.4.4.
+</ol>
+<h3>17.4.3 Five-step argument: why this rules out a global GM/R² closure</h3>
+<p>The rise-then-saturate signature of the cap is incompatible with a pure GM/R² law:</p>
+<ol>
+<li> GM/R² is a fixed function of R alone; it does not rise then saturate with anything.
+<li> Experimental observation (and numerical simulation in the bundle) shows a velocity-dependent rise to a plateau.
+<li> A function that is fixed in R cannot reproduce "rise-then-saturate" as a function of velocity at fixed R.
+<li> The rise-then-saturate signature is a structural fingerprint of a local cap, not of an Earth-scale inverse-square closure.
+<li> Therefore, whatever Newtonian gravity <em>is</em>, in this framework it cannot be the local cap mechanism; the two phenomena live at different scales and the framework currently addresses only the cap.
+</ol>
+<h3>17.4.4 The four-wall theorem: why no purely microscopic chain gives 9.8m/s² absolute</h3>
+<aside class="claim-strip vps" data-vps="17.4.4" data-cards="VP-C-040, VP-C-N05, VP-C-N09, VP-C-N12"><span class="g">[F] derived no-go</span><span class="io">in: lattice primitives / out: four walls; $G^*=gτ_q/c=5.295×10⁻²⁸$ (Earth); one scalar $m_q$; pinned: resource bound, $αₑₘ$ class</span><q class="one">The missing piece of absolute $g$ is one scalar and an HPC-scale run — proven, listed, gated.</q><span class="cards">VP-C-040, VP-C-N05, VP-C-N09, VP-C-N12</span></aside>
+<p>We claim that no purely microscopic derivation <em>within this framework</em> can yield the absolute number g_(⊕)=9.80665m/s² without an external macroscopic input. The proof is by enumeration of four walls that any such derivation would have to cross.</p>
+<h4>Wall 1 — Dimensionless lattice results.</h4>
+<p>Pure-geometry outputs of the lattice (rectification, integer ratios, π-products) are dimensionless. Multiplying by combinations of h, c, a at most produces quantities at the lattice's own length, time, and energy scales (a, Δ t, U_lat), not at the Earth's surface.</p>
+<h4>Wall 2 — g requires a macroscopic length.</h4>
+<p>The relation g = c²·Ψ_yield has c² on the right with units of (length)²(time)⁻² and Ψ_yield with units of (length)⁻¹. The numerical value Ψ_yield^((⊕))=g_(⊕)/c²≈ 1.09×10⁻¹⁶ m⁻¹ corresponds to the inverse of a length far beyond <em>any</em> natural length built into the lattice geometry (the lattice unit a=6.33×10⁻¹⁹ m, and any integer-and-π combinations thereof, remain at sub-particle scales). No quantity at the lattice scale can produce a length of the order required by Ψ⁻¹.</p>
+<h4>Wall 3 — No combinatorial bridge from anchor to yield.</h4>
+<p>The single anchor λ_ref=632.99 nm enters into dimensionless ratios via small geometric factors (2, π, integers up to 7). The ratio Ψ_yield/λ_ref⁻¹≈ (1.09×10⁻¹⁶)/(1.58×10⁶)  10⁻²² shows that any closed-form passage from the anchor to the yield threshold would require a multiplicative geometric factor of order 10⁻²² (about 22 decimal orders below unity). No such factor appears in the canonical-cell geometry: the largest natural combinatorial factors are products of integers up to 7 times powers of π, of order 10⁰ to 10². The 22-order shortfall is structural, not a tuning gap.</p>
+<h4>Wall 4 — No anchor for force constants.</h4>
+<p>Even if Walls 1–3 were crossed, the absolute magnitude of any force constant in physics has the same status as the cosmological constant or the Higgs vacuum expectation value: it is an "absolute scale" not derivable from microscopic structure alone. This is the standard hierarchy problem of mainstream physics. The framework does not solve it; it openly reproduces it.</p>
+<h4>Conclusion (and explicit future-work statement).</h4>
+<p>The cap mechanism is derived; the absolute value 9.80665 m/s² at Earth's surface is back-substituted. The honest report is [F] + [O]: structure is geometric, magnitude is empirical.</p>
+<strong>Explicit future work.</strong> Deriving the <em>detailed dynamics and packing geometry</em> that fix the Earth-specific number 9.80665 m/s² — i.e., obtaining Ψ_yield^((⊕)) from microscopic lattice primitives without back-substitution from measurement — is identified as the central open problem of the gravity chapter and is <strong>not attempted in this version</strong>. The four walls above enumerate, in advance, the obstacles any such future derivation must overcome. This is not a forbidden program; it is a flagged open program with a clear obstacle-list. Until it succeeds, the framework treats the per-body number as an external input — exactly as the Standard Model treats the Higgs vacuum expectation value or the cosmological constant. The cap mechanism, the inflow law (§17.4.0), and the inter-body variation structure (§17.4.6) are independent of this open problem; they are derived results that hold regardless of when (or whether) the absolute-magnitude derivation succeeds.
+<h4>Recovery program for the historical full-physics claim (added v0.5.0).</h4>
+<p>The operator's historical full-physics simulation is reported to have <em>exhibited</em> g≈9.8 m/s²
+(operator confirmation; 2026-06-10 session record). That code is <strong>not open</strong>: it is absent from the public
+bundle (<code>full_gravity_sim.py</code> is not present in the v0.4 manifest), and its decisive specification —
+the momentum-handling rule of a single absorption event (cells displaced per event / residual velocity) — is
+unrecorded. Under the v34 rule the report is therefore <em>operator testimony, not evidence</em>, and this
+theorem's canonical status is unchanged. Two readings remain logically open: <strong>(a)</strong> the full implementation
+embedded a yield-scale-equivalent input inside the absorption rule — in which case it belongs to the §17.4.5
+category “reproduces the pattern <em>given</em> Ψ_yield” and is fully consistent with this
+theorem; or <strong>(b)</strong> the value emerged with no such input — which would be a counterexample to this theorem.
+The unrecovered specification makes (a)/(b) indistinguishable today; no adjudication is made here.</p>
+<strong>Computational wall (why a reduced reproduction cannot decide).</strong> A general-purpose-language reduced
+implementation (Python or similar) falls short of the requirement, axis by axis: <em>event interval</em>
+(1 event =1/293 s =2.1×10¹⁷ quantum ticks; an acceleration trend needs  10² events
+⇒ 10¹⁹ ticks, vs  10⁶ ticks per run: short by 10¹¹–10¹³);
+<em>quantum resolution</em> (D/a=7.67×10⁶ cells per quantum per axis; a minimal 2D slab needs
+gtrsim10¹⁵ cells vs  10³: short by  10¹²); <em>signal size</em>
+(9.8 m/s²=5.29×10⁻²⁸ in natural units against bath fluctuations  10⁻³, so seed
+averaging would need N 10⁴⁸: short by  10²⁵); <em>throughput</em> (at v=2.4×10⁵ m/s,
+v/D≈4.95×10¹⁶ crossings per second per column vs  0.1: short by  10¹⁷).
+Rewriting in C gains <10². <em>Hence the failure of a reduced run to show 9.8 is a statement about
+computational resources, not a falsification of the claim — and, symmetrically, the historical claim cannot be
+canonized from testimony.</em> Reduced engines remain useful for <em>laws</em> (exponents, invariants, cancellation
+ratios), which is exactly what §17.4.5 now records.
+<strong>Re-adjudication conditions (all four required, in order):</strong>
+<strong>(R1)</strong> recover or reconstruct the absorption-event momentum specification;
+<strong>(R2)</strong> show that this specification contains no per-body external scale (else state explicitly where the
+macroscopic length Ψ⁻¹ 10¹⁶ m of Wall 2 enters);
+<strong>(R3)</strong> re-execute under the registry/seed discipline of §16 with the code and FAILPACKs published in the
+bundle;
+<strong>(R4)</strong> state the crossing of Walls 1–4 item by item.
+Until R1–R4 are met, the four-wall theorem stands and the per-body magnitude remains an external input.
+<h4>R1 decision aid: the three candidate rules, compared (added v0.5.0; reduced, law-level).</h4>
+<p>The momentum-handling candidates for one absorption event are three: <strong>(A)</strong> erase the absorbed momentum;
+<strong>(B)</strong> transfer it in full to the absorber (conserving bookkeeping); <strong>(C)</strong> transfer a fraction f.
+A deterministic 1D elastic-chain test (module <code>07_absorption_rule_study/</code>: unit-mass cells, exact
+elastic exchange, bottom absorber every K ticks, void-forbidden descent, zero-net-momentum carrier bath,
+embedded heavy tracer; no randomness anywhere) gives the decision table: <strong>(A)</strong> leaves a global momentum
+ledger error equal to the absorbed-flux integral, scaling exactly with carrier speed (×2 at 2v);
+<strong>(B)</strong> closes the ledger to machine precision at every speed — the <em>unique</em> ledger-exact rule, and
+the one consistent with the §17.4.5 reduced-engine finding (“momentum protected; perfect elasticity is the
+conservation condition — breaking it halves the effect”); <strong>(C)</strong> carries a deficit scaling exactly as
+(1-f). A key negative finding is recorded with equal weight: in this minimal model the <em>reduced laws
+themselves are rule-independent</em> (descent rate, bath evolution, tracer drift identical across A/B/C), because the
+rule changes only where the absorbed momentum is <em>booked</em>; the candidates separate dynamically only when the
+absorber is a dynamical body whose recoil feeds back. This is precisely why the unrecorded full-sim specification
+makes readings (a)/(b) above indistinguishable, and why R1 must <em>recover</em> the specification rather than
+infer it from reduced laws. The table is a decision aid; the <code>analysis_lock</code> act of choosing remains the
+operator's (candidate on record: <strong>B</strong>).</p>
+<h4>The mapping attempt: gravity's dimensionless value under the light-mapping technique
+(added v0.6.0; operator request).</h4>
+<p>The §10.9.1 reality mapping has the structure [dimensionless law] × [one absolute scale];
+for light the absolute (D) sits in <code>canon_lock</code> and the mapping closes. Applying the same
+technique here (module <code>08_gravity_mapping_attempt/</code>; deterministic, no fitting) yields three
+exact results. <em>(i) The λ/D analog.</em> Gravity's dimensionless value under the canon is
+G^*_body:=gτ_q/c=gD/c²=Ψ_yieldD — the velocity gained per quantum
+tick, in units of c: 5.295×10⁻²⁸ (Earth), 8.747×10⁻²⁹ (Moon),
+2.003×10⁻²⁸ (Mars). It is body-specific, so no universal lattice constant can equal it —
+the four-wall statement, restated dimensionlessly. <em>(ii) One-scalar reduction.</em> The derived
+inflow-momentum chain (F=Qₜp₁(r), p₁=m_q v(r), void-forbidden continuity
+4πφ r²v=QₛV_q ⇒ 1/r²) makes every factor canon except <em>one</em> symbol:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-17-083.svg" data-eq="phy-17-083" width="355" height="46" loading="lazy" alt="G=\frac{m_q\,V_q\,(\nu_H/m_H)^{2}}{4\pi\phi}\qquad(\text{convention M1}),"></figure>
+<p>so the entire absolute-magnitude problem collapses to the single universal scalar m_q (the
+momentum-per-absorption-event coefficient) — exactly the line R1 must recover. Back-substituting the
+one <code>[INPUT]</code> G gives, across the four O(1) conventions (sphere/cube × with/without
+φ_jam, tabulated G-TE-O1-style):
+<div class="c">
+<table><tr><td>convention</td><td>m_q [kg]</td><td>m_qc² [eV]</td><td>m_q/mₑ</td></tr><tr><td>M1 sphere+φ</td><td>2.890×10⁻³⁴</td><td>162.1</td><td>3.173×10⁻⁴</td></tr><tr><td>M2 sphere</td><td>4.566×10⁻³⁴</td><td>256.1</td><td>5.012×10⁻⁴</td></tr><tr><td>M3 cube+φ</td><td>1.513×10⁻³⁴</td><td>84.9</td><td>1.661×10⁻⁴</td></tr><tr><td>M4 cube</td><td>2.391×10⁻³⁴</td><td>134.1</td><td>2.625×10⁻⁴</td></tr></table>
+</div>
+Status [O]{} (back-substituted); forward closure reproduces g=GM/R² at machine precision (the
+reduction is exact Newton re-parameterized — stated plainly); the implied consistency surface
+(drift ≈194 km/s at Earth's surface, ρ_eff≈3.06 kg/m³,
+B_eff≈2.7×10¹⁷ Pa under M1) is reported for R1, not claimed.
+<em>(iii) Mapping-symmetry lemma.</em> The pair-<em>ratio</em> cancels the absolute in both sectors —
+(λ/D)₆₃₃/(λ/D)₅₃₂=633/532 cancels D and mass; g_Moon/g_(⊕)=
+(M/R²)_Moon/(M/R²)_(⊕) cancels m_q, κ, φ, V_q (verified
+0.16519 vs 0.16531, the residue being the bodies' known rotation/oblateness offsets) — so ratios
+are scalar-free in both sectors, and the difference is solely <em>where the absolute lives</em>: light's
+D is in canon, gravity's m_q is not. Gate <code>G-GRAV-MAP</code> is registered: any future derivation
+or R1-recovered absorption spec must land m_q inside the convention band
+[1.51,4.57]×10⁻³⁴ kg — <code>PASS</code> would close the absolute magnitude and supersede the
+four-wall theorem <em>by construction</em> (a §2.3.7-versioned event); <code>FAIL-GRAVMAP-BAND</code> /
+<code>FAIL-GRAVMAP-NONUNIQ</code> otherwise. Non-claims: 9.8 remains underived; no identity between
+m_q (or any derived value above) and any canonical constant is asserted <em>or examined</em> (G-NT);
+no numeral moved.</p>
+<em>(iv) Calibration cross-check (operator question, same session: “apply the light-emergence
+length/time to the cap simulation — does 9.8 come out?”).</em> Computed directly (module
+<code>09_cap_calibration_attempt/</code>): the calibration supplies six natural unit accelerations,
+2.4×10²¹–1.4×10³⁰ m/s² (e.g. D/τ_q²=c²/D=1.85×10²⁸,
+a/Δ t²=1.83×10²³), while every documented cap engine outputs <em>O(1)</em> quantities
+(the saturation law, occupancy 0.98–0.997, normalized g_*=1) with the cap magnitude equal to
+the engine's own yield <em>input</em>. Hence g_pred=O(1)×unit overshoots
+g_⊕ by 20–29 orders in every pairing; the <em>required</em> dimensionless cap is exactly
+G^*=5.295×10⁻²⁸ (D,τ_q) / 5.360×10⁻²³ (a,Δ t) — the same single
+missing scalar as (ii), seen from the calibration side. The answer to the question is therefore
+<em>no, and quantifiably why</em>: light mapped because its lattice observable
+sinχ=λ/(mD) is O(1); gravity's lattice observable is O(10⁻²⁸), and producing that
+suppression from microphysics requires a  10²⁸ dynamic range — the four walls themselves.
+A positive by-product: the wall magnitudes are now <em>partially derived</em> rather than quoted —
+falling through one cell a at g_⊕ takes 1.93×10¹¹ ticks and through one quantum D
+takes 6.15×10¹³τ_q (the documented Wall-1 band 10¹¹–10¹³), and the per-tick
+velocity signal is Δ v/c=6.08×10⁻²⁹ (the Wall-3 band): <em>the walls are the
+kinematics of a 5.3×10⁻²⁸ acceleration expressed in tick counts</em>.
+<em>(v) The column verdict and the recovered historical record (operator-delegated campaign,
+2026-06-11; modules <code>10_column_engine/</code>).</em> The operator's historical full-physics gravity
+document was recovered and read in full. Forensics: the famous surface speed
+v^*=245,654.76 m/s is reproduced by the document's own recipe —
+Q_(⊕)V_sphere/(4π R²)=135,049m/s×1.05(lattice fit)
+×1.735(concentration fit) — i.e. the old chain carried <em>two sim-fitted O(1)
+factors</em>, and its own appendix states the surface reproduction was speed-sensitive with v^* used
+to <em>target</em> 9.8. The historical “derivation” of 9.8 was therefore a targeted consistency
+closure, and the four-wall theorem survives contact with the original record. The mechanical
+single-column engine then established, at law level: (a) <em>structural theorem</em> — internal
+cohesion cannot translate the column's center of mass, so void-forbidden must enter as a
+<em>boundary pressing</em> interaction (the operator's pressing picture is dynamically mandatory, not
+optional); (b) in engaged flow the arrival speed equals the <em>demand</em> speed
+(⟨ v⟩/v_dem=0.91–0.96 across a 4× demand range), pinning the
+operative velocity in the impulse law to the continuity field, with the supply speed/pressure
+relevant only as a threshold (the recovered record's saturation, whose 10⁴ m/s knee the record
+itself flags as density-dependent — an engine-internal response scale, not physics); (c)
+Δ p∝ m_q exactly at fixed demand; (d) delivery collapses as demand approaches the
+column's wave speed (the c-ceiling); (e) the 1-D supply-pressure axis is confounded by wall
+statics and slam (logged honestly; clean test deferred to a bypass-column engine). Consequences,
+exercised under the operator's delegation: the absorption-rule <code>analysis_lock</code> is now
+<strong>exercised — rule B (conserving) adopted</strong> (rule A gives identically zero force in both the
+bookkeeping and mechanical engines; pressing and striking reconcile as one ledger:
+<em>the constraint sets the operative speed, momentum keeps the books</em>); the convention-free
+per-event impulse at Earth's surface is registered,
+<figure class="eq"><img src="/physics/eq/physics/phy-17-084.svg" data-eq="phy-17-084" width="703" height="36" loading="lazy" alt="p_{1}^{(\oplus)}\;=\;\frac{g\,m_{\mathrm H}}{\nu_{\mathrm H}}\;=\;5.597\times10^{-29}\ \mathrm{kg\,m/s} \quad(\text{exact identity given }g;\ \Om\ \text{input-equivalent}),"></figure>
+<p>and the m_q band is narrowed to the sphere branch
+[2.28,4.56]×10⁻³⁴ kg =128–256 eV/c² (cube conventions retired by the recovered
+spec's explicit sphere volume; the  3 keV reading retired with the engine-internal threshold),
+with the residual O(1) being the inflow-anisotropy factor η∈[1,1.82]. Gate
+<code>G-GRAV-MAP</code> target updated accordingly. The campaign's standing answer to “can 9.8 be
+derived”: <em>no</em> for the absolute (theorem, record forensics, and column mechanics now agree);
+the derivable boundary is everything up to <em>one impulse scalar</em> p₁ (equivalently m_q
+times a velocity convention) <em>and one O(1) anisotropy</em> — the 1/r² form, EP, the
+saturation/threshold laws, and the ceiling are law-level and delivered.</p>
+<h4>Pinned status correction (added 2026-06-11): the four walls are a resource bound, not a conceptual or mapping failure — the epistemic status of absolute g equals that of αₑm.</h4>
+<span id="par:gravity-status-pinned"></span>
+Earlier wording in this chapter (and in the front-matter open-items list) could be read as saying that
+9.8m/s² is missing <em>because dimensionless mapping fails for gravity</em>. That reading is
+incorrect and is corrected here. The final position, after the mapping attempt (i)–(v) above, is:
+<strong>(1) the conceptual mechanism is complete</strong> — annihilation-driven sink inflow under the
+void-forbidden plenum (§17.4.0) and the cap; force is carried by the <em>absorption</em> channel (rule B,
+adopted in (v); rule A gives identically zero), while the elastic e=1 pass-through channel transmits
+none — dissolving the classical drag objection to sink-flow gravity; all structurally derived.
+<strong>(2) The dimensionless mapping is complete and works for gravity exactly as it does for light</strong> —
+under the <a href="/physics/10-implementing-speed-light-clock-free/#par:qbasis-pinned" class="xref" data-ref="par:qbasis-pinned">pinned quantum-basis rule</a>, G^*_body=gτ_q/c=
+5.295×10⁻²⁸ is computed, the one-scalar reduction collapses the entire absolute-magnitude problem
+to the single scalar m_q (equivalently the per-event impulse p₁), and the mapping-symmetry lemma
+shows the sole difference from the light sector is <em>where the absolute lives</em> (D is in canon;
+m_q is not yet). <strong>(3) What is missing is therefore neither concept nor mapping but
+<em>computation</em>:</strong> recovering m_q/p₁ ab initio means running the absorption event and its inflow
+at native resolution, and the four walls are precisely the <em>cost quantification</em> of that run
+(10¹¹–10²⁵ per axis; an interpreted reduced engine cannot adjudicate; rewriting in C buys
+<10²; the indicated class is HPC-scale full physics — C++/GPU, massively parallel, long-time
+averaged). <strong>(4) Epistemic grade:</strong> this places absolute g in <em>exactly</em> the class of
+α_em (§14.5): two honestly-declared open absolutes — α_em awaits a
+derivation, absolute g awaits a computation (or the R1 spec recovery) — each with its historical
+full-sim realization graded as <em>testimony, not evidence</em>, and each with the absence of a reduced-run
+reproduction graded as <em>a resource limit, not an adjudication</em> (§14.5 wording, adopted verbatim for
+this sector). The four-wall theorem itself is unchanged — it correctly bars <em>short</em> chains
+(closed-form geometric factors, reduced engines) — but its conclusion is henceforth to be cited in the
+corrected form: <em>“not derivable at presently accessible computational scale without an external
+input”</em>, never “not mappable.” Gate <code>G-GRAV-MAP</code> remains the supersession mechanism by
+construction. This note adds no input and triggers no realization versioning (§2.3.7).
+<h3>17.4.5 Role division (full-sim vs theoretical)</h3>
+<code>full_gravity_sim.py</code> is <em>not present</em> in the public bundle (verified against the v0.4
+manifest); the historical full-physics evidence is therefore carried as <em>operator testimony</em> under the v34
+rule, with its recovery program stated in §17.4.4. The theoretical chapter provides the closed-form skeleton;
+the reduced-resolution engines below provide the public numerical evidence. The current honest status: a
+simulation can produce the rise-then-saturate pattern <em>given</em> Ψ_yield as an input; no public
+code predicts Ψ_yield from microscopic structure.
+<h4>Reduced-resolution numerical evidence (added v0.5.0; tuning-free, resolution-stable).</h4>
+<p>Five independent reduced engines (a 2D jamming MD with conservative harmonic contacts, perfect elasticity,
+friction 0, B=c², ρ=1; a 3D 4×4 cylinder MD with a dented quantum and built-in
+void-forbidden absolute descent; a mass-free tick automaton (one vacancy cell per tick, absolute descent); an
+event-driven exact tracker over a full physical second including the 0.84 fm transparent-core geometry; and a
+1D deterministic elastic chain with zero noise —  80 runs in all, zero tuned parameters, mass never
+injected, mapping v_nat=v_SI/c, a_SI=a_natc²/D) reproduce,
+stably under a size ladder N=3→9:
+the <em>hourglass law</em> (throughput pinned to the event rate, load-independent over a 25,794× range;
+Beverloo-type, Result 2);
+the <em>load cap</em> (upward/downward force cancellation at 98–99.7% with a v-invariant residual; Result 1);
+<em>equal acceleration</em> (the up–down difference is ν-invariant; the equivalence principle as a result,
+Result 3);
+<em>inertia as inflow count</em> (momentum protected; perfect elasticity is the conservation condition — breaking
+it halves the effect);
+the <em>inflow continuity</em> vr=const (matched to 3%);
+the <em>lower-column cap anatomy</em> (cell-by-cell descent in 1:1 correspondence with lower-end absorption);
+and the <em>strike law</em> (intensity and frequency ∝ approach speed;  98% of exchanges cancel in
+round trips).
+These support Results 1–6 numerically at reduced resolution. <em>None of them bears on the absolute
+magnitude</em>, per the computational wall of §17.4.4; a hybrid that pins the laws in the reachable window
+(v=0.01–0.5c) and extrapolates 2–3 decades by the kinematic balance is on record as
+<code>[EXTRAPOLATION]</code>-grade only, with no absolute-value guarantee.</p>
+<h3>17.4.6 Inter-body surface gravity differences (the hourglass theorem explains them)</h3>
+<p>A one-sentence statement of the result: <strong>the cap mechanism predicts that two different celestial bodies have different surface gravities because their local lattice yield thresholds Ψ_yield differ, while the cap formula g_(*)=c²·Ψ_yield is universal across bodies.</strong></p>
+<h4>What is universal vs what is body-specific.</h4>
+<ul>
+<li> <strong>Universal (geometric, [F]).</strong> The functional form g_(*)=c²·Ψ_yield, the rise-then-saturate signature, height-independence (Beverloo), mass-independence (equivalence principle as a derived result), the velocity-driven pressure law p∝ρ v², and the two-channel structure (g_geom vs g_restore). These do not change from Earth to Moon to Mars to a small asteroid.
+<li> <strong>Body-specific (empirical, [O]).</strong> The numerical value of Ψ_yield at each body, back-substituted from the observed surface gravity there. The canonical example kept in this volume is Earth, Ψ_yield^((⊕)) = 9.80665/c² (<code>[INPUT]</code>). The per-body values for the other bodies (Moon, Mars, …) and the worked per-body table are owned, as celestial applications, by the Earth–Cosmos volume (per-body appendix; same concept-DOI lineage) as of the v0.6.0 handover — each carries <code>[INPUT]</code> status there exactly as here.
+</ul>
+<h4>What the hourglass theorem does explain.</h4>
+<ol>
+<li> <em>Why</em> different bodies have different surface gravities — they have different local lattice-jamming conditions and hence different Ψ_yield, the same formula evaluated at different yield values.
+<li> <em>Why</em> the surface gravity is independent of the test particle's mass at each body — equivalence principle as a derived consequence of the cap.
+<li> <em>Why</em> the surface gravity is independent of altitude column-height above each body — Beverloo-type height-independence.
+<li> <em>Why</em> terrain-dependent surface effects exist on a single body — different effective Ψ_yield at different surface conditions (granite vs sediment, dry vs water-saturated, sea level vs mountaintop), in direct analogy to how an hourglass with different shapes of neck (sand vs gravel vs rice) saturates at different throughput rates while obeying the same Beverloo law.
+</ol>
+<h4>What the hourglass theorem does emphnot predict (and what is explicit future work).</h4>
+<ol>
+<li> The absolute number 9.80665m/s² at Earth's surface from microscopic primitives alone.
+<li> The analogous absolute numbers at the other bodies from microscopic primitives alone (their application tables are owned by the Earth–Cosmos volume as of v0.6.0).
+<li> The ratio g_(⊕)/g_Moon≈ 6.05 from microscopic primitives <em>without</em> additionally specifying the lattice yield-threshold ratio at the two bodies.
+</ol>
+<p>The framework currently delivers: (a) the cap structure that makes "surface gravity exists and saturates" a derived statement, (b) the inflow law from annihilation (§17.4.0) that makes "matter is attracted to massive bodies" a derived statement, and (c) the formal universality of the closure g_(*)=c²·Ψ_yield across bodies. This is enough to assert that the hourglass theory <strong>explains the existence and qualitative structure of inter-body surface-gravity differences as natural variations of a single mechanism.</strong></p>
+<strong>Explicit future work</strong>: deriving the actual numerical value of Ψ_yield at Earth — and the analogous values at other bodies — from the microscopic dynamics and packing geometry of the inflow at the body's surface. This is the open program the four-wall theorem (§17.4.4) catalogues the obstacles to. We flag it as <strong>open, planned future work</strong>, not as a hidden weakness.
+<em>Celestial applications: canonical home (added v0.5.0).</em> The downstream celestial ecosystem of this
+mechanism — orbital revolution and Kepler consistency, axial spin from a one-sided inflow, tidal evolution and
+locking, and the per-body application tables — is developed and owned by the companion <em>Earth–Cosmos
+volume</em> (Chapters 3–5 and its appendix; published as its own record, DOI <code>10.5281/zenodo.20568874</code>). This
+section remains the canonical home of the <em>mechanism</em> and of the magnitude-honesty results (four-wall
+theorem, §17.4.4; recovery program R1–R4).
+<h3>17.4.7 Honest summary</h3>
+<p>We have a derived <em>mechanism</em> with an empirical <em>magnitude</em>. The mechanism predicts: existence of gravity from annihilation-driven inflow (§17.4.0), equivalence principle, height-independence, velocity-driven pressure, two-channel structure, and inter-body universality of the cap form (§17.4.6). The magnitude — the actual number 9.80665m/s² at Earth and the analogous values at other bodies — is not predicted from microscopic primitives in this version; it is read back from measurement at each body. This is exactly the situation of the Standard Model with respect to the Higgs vacuum expectation value: the structure is there, the absolute number is not. We do not claim to have solved the hierarchy problem. Two results here are easy to undervalue, however: the four-wall theorem (§17.4.4) is a <em>derived no-go</em>—a proof, by enumeration of the four obstacles, that the absolute magnitude cannot follow from these microscopic inputs alone; and an independent substrate reproducing the <em>exact</em> “structure-present, absolute-scale-absent” form of the Standard Model is a consistency check, not merely a shared blank. The magnitude stays an input; the structure, and the proof that the magnitude must be supplied externally, are results.</p>
+<h2>17.5 Lattice friction and redshift (energy dissipation during propagation) footnotesize(relocated from S10.8 in v0.5.0; Open-tier phenomenology — the hard Gates of S17.5.6 are registered and unmet, so no cosmological conclusion may cite this section)</h2>
+<aside class="claim-strip vps" data-vps="17.5" data-cards="VP-C-N04"><span class="g">open-tier stub</span><span class="io">in: $κ$ [INPUT] / out: $1+z=e^κ s_path$ map; hard Gates unmet</span><q class="one">A phenomenology module on embargo — no cosmological conclusion may cite it.</q><span class="cards">VP-C-N04</span></aside>
+<em> Notation (v0.8): the effective path length, previously denoted D in this section, is renamed s_path to remove the symbol collision with the quantum diameter D_anch; equations and labels otherwise unchanged.</em>
+<div class="box"><strong>Where this module now lives (added v0.5.0).</strong> The full development of
+the redshift mechanism is carried in the companion <em>Earth–Cosmos volume</em> (“The Earth–Cosmos Volume:
+Gravity, Planetary Motion, Galactic Dynamics, and Cosmology as Vacuum Inflow — A Simulation-Grounded Account,”
+same author; published as its own record, DOI <code>10.5281/zenodo.20568874</code>), Chapter 7, with the microwave
+background in its Chapter 9. In brief: light loses a fixed energy fraction per unit path,
+1+z=e^κ_opts with κ_opt=H₀/c, giving
+d_L=(c/H₀)(1+z)ln(1+z) — fit there to the real Pantheon+ compilation (χ²/dof=0.50 vs
+0.44 for ΛCDM; honestly recorded as <em>degenerate</em>, no observational advantage claimed). Against
+this section's hard Gates: <strong>(iii) supernova time dilation</strong> is <em>built in</em> there (time-varying index
+⇒ the (1+z) light-curve stretch — the decisive break from classical tired light) and tested on
+data; <strong>(i) Tolman surface brightness</strong> follows as (1+z)⁻⁴ <em>conditionally</em> on a
+reciprocity/focusing step which that volume itself registers as its own hard gate (open; without it the scaling
+is (1+z)⁻²); <strong>(ii) CMB</strong> is reinterpreted in its Chapter 9 (Planck shape from quantized lattice
+modes; the absolute 2.725 K and the T(z) ladder remain open there). <em>Gate ownership:</em> the development
+and its data runs are owned by the cosmos volume; this section keeps the mechanism stub and the Gate registry,
+and the <code>E-COSMO</code> embargo stands until pass evidence is registered <em>here</em>. The cosmos volume's
+distance-ladder-free discriminator (angular-size minimum z_(min)=e-1≈1.72 vs ≈1.61) is recorded
+there as presently undecidable at real-ruler scatter.</div>
+<h3>17.5.1 Operational hypothesis (mechanism stub; development owned by the Earth–Cosmos volume)</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>Hypothesis on record: the propagation speed c is maintained while a small, cumulative energy dissipation
+(“lattice friction”) acts over long paths; it is fixed here only at the level of an <em>operational
+equation for observables</em> (§17.5.2). The physical account of the mechanism — why the loss exists, why it
+should be achromatic, and its confrontation with data — is owned by the companion Earth–Cosmos volume
+(Ch. 7; box above) as of the v0.6.0 handover.</p>
+<h3>17.5.2 Redshift equation and distance–redshift map (registry stub: equations, κ-lock, and INCONCLUSIVE rules; development owned by the Earth–Cosmos volume)</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>Assume that the photon frequency ν(x) decays along a path length x, and <strong>define</strong></p>
+<figure class="eq" id="eq:S10_08_dnudx"><img src="/physics/eq/physics/phy-17-069.svg" data-eq="phy-17-069" width="186" height="38" loading="lazy" alt="\begin{equation} \frac{d\nu}{dx}=-\kappa\,\nu, \qquad \kappa&gt;0, \end{equation}"></figure>
+<p>whose solution is</p>
+<figure class="eq" id="eq:S10_08_nu_solution"><img src="/physics/eq/physics/phy-17-070.svg" data-eq="phy-17-070" width="318" height="20" loading="lazy" alt="\begin{equation} \nu(x)=\nu_{\mathrm{em}}\,e^{-\kappa x}, \qquad \nu_{\mathrm{obs}}=\nu_{\mathrm{em}}\,e^{-\kappa\,s_{\mathrm{path}}}, \end{equation}"></figure>
+<p>where s_path is the effective path length. Define the observed redshift as</p>
+<figure class="eq" id="eq:S10_08_z_def"><img src="/physics/eq/physics/phy-17-071.svg" data-eq="phy-17-071" width="178" height="41" loading="lazy" alt="\begin{equation} 1+z:=\frac{\nu_{\mathrm{em}}}{\nu_{\mathrm{obs}}} =\frac{\lambda_{\mathrm{obs}}}{\lambda_{\mathrm{em}}}. \end{equation}"></figure>
+<p>Then</p>
+<figure class="eq" id="eq:S10_08_D_of_z"><img src="/physics/eq/physics/phy-17-072.svg" data-eq="phy-17-072" width="331" height="38" loading="lazy" alt="\begin{equation} 1+z=e^{\kappa\,s_{\mathrm{path}}}, \qquad s_{\mathrm{path}}(z)=\frac{1}{\kappa}\ln(1+z) \end{equation}"></figure>
+<p>and for zll 1 one has the linear approximation z≃ κs_path.</p>
+<h4>(Note) Meaning of sₚath vs observational distances (D_L,D_A)</h4>
+<p>In this section s_path is defined as the <em>geometric effective path length</em> of a ray.
+It is <em>not</em> assumed to equal the observational <em>luminosity distance</em> D_L or <em>angular diameter distance</em> D_A.
+Therefore, to use <a href="#eq:S10_08_D_of_z" class="xref" data-ref="eq:S10_08_D_of_z">(S10_08_D_of_z)</a> as a map to observational distances (for comparison against flux/size data), one must separately lock a mapping convention s_path↦ (D_L,D_A) in the E-COSMO regime (§17.2.5).
+If that mapping is not locked, any conclusion that identifies <a href="#eq:S10_08_D_of_z" class="xref" data-ref="eq:S10_08_D_of_z">(S10_08_D_of_z)</a> with observational distance is <code>INCONCLUSIVE</code>.</p>
+<h4>(Estimation protocol) Estimating/fixing κ</h4>
+<p>To use <a href="#eq:S10_08_D_of_z" class="xref" data-ref="eq:S10_08_D_of_z">(S10_08_D_of_z)</a> as a distance map, one must <strong>LOCK</strong> κ.
+For example, from data (or simulation logs) (s_i,z_i) one may compute</p>
+<figure class="eq" id="eq:S10_08_kappa_i"><img src="/physics/eq/physics/phy-17-073.svg" data-eq="phy-17-073" width="151" height="41" loading="lazy" alt="\begin{equation} \kappa_i:=\frac{1}{s_i}\ln(1+z_i), \end{equation}"></figure>
+<p>and then produce a single κ by a preregistered aggregation rule (mean/median/weighted least squares, etc.).
+Changing κ or the aggregation rule after seeing results is forbidden.</p>
+<h4>(Handover note) Mechanism link and development</h4>
+<p>Thus <a href="#eq:S10_08_D_of_z" class="xref" data-ref="eq:S10_08_D_of_z">(S10_08_D_of_z)</a> may be used as a computation module that takes κ as a <strong>locked
+input</strong> (<code>[INPUT]</code>; estimated from data, not derived — the same status the Earth–Cosmos volume
+assigns its κ_opt=H₀/c, fixed there by the low-z Hubble law) and outputs an effective
+distance. The lattice-step mechanism link (per-step loss ε at the ℓ_rot scale),
+the luminosity-distance form d_L=(c/H₀)(1+z)ln(1+z), and the data confrontation are owned by the
+Earth–Cosmos volume, Ch. 7, as of the v0.6.0 handover (box at the head of §17.5).</p>
+<h3>17.5.3 Gate: achromatic line shifts and spectrum preservation</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>A minimal requirement for an observed redshift is that the <em>entire line spectrum shifts by the same ratio</em>.
+Define the effective attenuation rate by frequency as</p>
+<figure class="eq" id="eq:S10_08_kappa_eff"><img src="/physics/eq/physics/phy-17-074.svg" data-eq="phy-17-074" width="395" height="45" loading="lazy" alt="\begin{equation} \kappa_{\mathrm{eff}}(\nu) := \frac{1}{s_{\mathrm{path}}}\ln\!\left(\frac{\nu_{\mathrm{em}}(\nu)}{\nu_{\mathrm{obs}}(\nu)}\right) = \frac{1}{s_{\mathrm{path}}}\ln(1+z(\nu)) \end{equation}"></figure>
+<p>and for a preregistered line set νₐ define the Gate</p>
+<figure class="eq" id="eq:S10_08_pass_achr"><img src="/physics/eq/physics/phy-17-075.svg" data-eq="phy-17-075" width="598" height="44" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{z\text{-achr}} :\Longleftrightarrow \max_{a,b}\frac{\left|\kappa_{\mathrm{eff}}(\nu_a)-\kappa_{\mathrm{eff}}(\nu_b)\right|} {\overline{\kappa}_{\mathrm{eff}}} \le \epsilon_{\mathrm{achr}}^{\star} \quad (\epsilon_{\mathrm{achr}}^{\star}&gt;0\ \text{preregistered}) \end{equation}"></figure>
+<p>If this Gate is not passed, the use of <a href="#eq:S10_08_D_of_z" class="xref" data-ref="eq:S10_08_D_of_z">(S10_08_D_of_z)</a> as a “distance map” is <code>FAIL</code>.</p>
+<em>Mechanism note.</em> The model imposes κ independent of ν <em>by construction</em> (<a href="#eq:S10_08_dnudx" class="xref" data-ref="eq:S10_08_dnudx">(S10_08_dnudx)</a> carries no ν-dependence). That the physical lattice-friction mechanism is genuinely achromatic is <em>asserted</em>, not derived: every known propagation loss (Compton, Rayleigh/Thomson, plasma dispersion) is strongly ν-dependent and would also <em>blur</em> images with distance. PASS therefore additionally requires either (a) a derivation that lattice friction is wavelength-independent and non-blurring, or (b) the empirical check that image sharpness does not degrade with z. Absent (a)/(b), achromaticity is an open assumption.
+<h3>17.5.4 Gate: separating redshift from intensity attenuation (extinction)</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>If one introduces intensity attenuation such as “early extinction of blue/short-wavelength light,” it must be stated as an attenuation term <strong>separate</strong> from <a href="#eq:S10_08_dnudx" class="xref" data-ref="eq:S10_08_dnudx">(S10_08_dnudx)</a>. For example,</p>
+<figure class="eq" id="eq:S10_08_dIdx"><img src="/physics/eq/physics/phy-17-076.svg" data-eq="phy-17-076" width="116" height="38" loading="lazy" alt="\begin{equation} \frac{dI}{dx}=-\alpha(\nu)\,I \end{equation}"></figure>
+<p>may be added, and spectral distortions (line broadening, color-index changes, image blurring, etc.) must be judged by Gates.
+If the form/estimation procedure of α(ν) is not locked, the conclusion is <code>INCONCLUSIVE</code>.</p>
+<h3>17.5.5 Gate: energy conservation (sink of dissipated energy)</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>Equation <a href="#eq:S10_08_dnudx" class="xref" data-ref="eq:S10_08_dnudx">(S10_08_dnudx)</a> implies a decrease of photon energy E=hν.
+Therefore a <strong>sink model</strong> is required: where does the lost energy go (lattice heating, transfer to background radiation, local re-emission, etc.)?
+If the sink model is missing, the redshift–distance map of this section is judged <code>INCONCLUSIVE</code>.</p>
+<h3>17.5.6 Gate: decisive cosmological tests for a static-space redshift (registered, currently open)</h3>
+<aside class="claim-strip banner">noindent[OPEN-TIER PHENOMENOLOGY — S17.5.6 hard Gates unmet; no cosmological conclusion may cite this section; development owned by the Earth–Cosmos volume]</aside>
+<p>A cumulative-loss (“tired-light”) redshift in a non-expanding plenum must also pass the standard tests that historically discriminate a static redshift from metric expansion. These are registered here as hard Gates; until each is locked and passed, the redshift–distance map of §17.5.2 is a <em>phenomenological module</em> only (grade [H]{}/<code>INCONCLUSIVE</code>), not a derived cosmology.</p>
+<ol>
+<li> <strong>Supernova time dilation.</strong> Type-Ia light-curve durations are observed to scale as (1+z) (temporal stretching). Pure frequency-loss in static space predicts <em>no</em> time dilation. PASS requires the framework to produce the (1+z) stretching of transient time-scales from a stated mechanism; absent that, this Gate <code>FAIL</code>s. This is the single sharpest discriminator and is currently unmet.
+<li> <strong>Tolman surface-brightness test.</strong> Bolometric surface brightness scales as (1+z)⁻⁴ under metric expansion but only (1+z)⁻¹ under static energy-loss alone. The framework must reproduce the observed exponent (after a pre-registered galaxy-evolution correction). Predicting the wrong exponent is <code>FAIL</code>.
+<li> <strong>CMB spectrum and T(z).</strong> The microwave background is a near-perfect Planck spectrum with T(z)=T₀(1+z) confirmed to moderate z. A static-space model must (i) yield an undistorted blackbody via the §17.5.5 sink (energy removed from photons must not corrupt the Planck shape), and (ii) reproduce T(z)=T₀(1+z). Failure on either is <code>FAIL</code>.
+</ol>
+<p>Each item is a published, quantitative discriminator, not a rhetorical objection. The honest current status: §17.5 supplies the <em>map</em> zleftrightarrow D with a <em>fitted</em> κ (<a href="#eq:S10_08_kappa_i" class="xref" data-ref="eq:S10_08_kappa_i">(S10_08_kappa_i)</a>; κ/ε is estimated from data, not derived), but does not yet supply the mechanism that passes (1)–(3), and the §17.5.5 energy-sink Gate is itself unmet. The section is therefore carried as an open phenomenological module, and no cosmological conclusion may be drawn from it until these Gates are locked and passed.</p>
+<h2 class="part">Calibrated — Attaching SI Scale to the Forced Architecture</h2>
+<p>These sections give the dimensionless architecture its units, using only the single anchor and h,c. §13 carries the <em>forced</em> ratios (6π⁵, 5π) that feed the calibrated mass <em>values</em>; the <strong>electron mass is the calibration node</strong> (§13.5.4), an anchor, not a prediction.</p>
+<nav class="pn"><a rel="prev" href="/physics/14-force-lattice-tension-1-r2/">← §14</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/11-realization-units-t-rcross/">§11 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{
+ "disease": "Neonatal severe hyperparathyroidism / Familial hypocalciuric hypercalcaemia type 1 (CASR loss-of-function)",
+ "omim": "239200",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Neonatal severe hyperparathyroidism / Familial hypocalciuric hypercalcaemia type 1 (CASR loss-of-function)",
+  "omim": "239200",
+  "summary": "A calcium-set-point disorder caused by loss-of-function mutations in CASR, which encodes the calcium-sensing receptor (CaSR), a class-C G-protein-coupled receptor on parathyroid chief cells and renal tubular cells (chr3q21.1). The CaSR senses extracellular ionised calcium and, when calcium rises, SUPPRESSES PTH secretion and reduces renal calcium reabsorption -- it is the BRAKE that holds serum calcium in its narrow band. Heterozygous LOF raises the set-point modestly -> familial hypocalciuric hypercalcaemia type 1 (FHH1, usually benign: mildly high calcium with inappropriately non-suppressed PTH and low urinary calcium). Biallelic (homozygous / compound-heterozygous) LOF removes the brake almost entirely -> neonatal severe hyperparathyroidism (NSHPT): life-threatening hypercalcaemia, very high PTH, skeletal demineralisation and fractures in the newborn. The kit reads this as the PTH-secretion / serum-calcium axis driven UP (a BRAKE released -> the output over-driven). This is the kit's FIRST calcium-sensing-GPCR axis -- a distinct receptor and physiology from the existing water-balance GPCR axis (the AVPR2 / V2 vasopressin receptor in nephrogenic diabetes insipidus). Correction is to RESTRAIN the over-driven PTH/calcium output by POTENTIATING the residual receptor: cinacalcet, a calcimimetic that allosterically increases CaSR sensitivity to calcium, directly potentiates the brake, lowering PTH and serum calcium. Cinacalcet is APPROVED for related hyperparathyroid conditions (secondary hyperparathyroidism of chronic kidney disease, parathyroid carcinoma, primary hyperparathyroidism) and is used OFF-LABEL but as documented effective first-line therapy in NSHPT and symptomatic FHH, repeatedly allowing serum-calcium normalisation and avoidance / delay of parathyroidectomy. IMPORTANT HONESTY: because cinacalcet works THROUGH the receptor, its effect is GENOTYPE-DEPENDENT -- it requires RESIDUAL CaSR function, so alleles that abolish the receptor (true nulls) may be unresponsive (the corrective DIRECTION is forced [F]; the realised magnitude is [O]). Parathyroidectomy remains the PHYSICAL fallback for unresponsive / homozygous-null NSHPT (a surgical, non-switch option). The CASR coding lesions sit outside the promoter firewall; the gamma read is of the CASR promoter switch STRUCTURE (chr3, gamma 1.3299). The OPPOSITE-direction disease of the SAME receptor -- autosomal dominant hypocalcaemia from CaSR GAIN-of-function (over-active brake -> PTH/calcium too LOW) -- is a distinct (mechanism) read not conflated here. Magnitude [O].",
+  "emergent_axis": "PTH secretion / serum-calcium set-point -- the calcium-sensing receptor (CaSR) is the brake that, on sensing a rise in extracellular calcium, suppresses PTH and renal calcium reabsorption. LOF raises the set-point so PTH and serum calcium are inappropriately over-driven (axis UP). The kit's first calcium-sensing-GPCR axis (brake released -> restrain), distinct from the AVPR2 water-balance GPCR axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CASR",
+    "gamma": 1.3299,
+    "spinodal_h_sp": 0.59031,
+    "barrier": 0.44216,
+    "dwell_relative_size": 1.39423,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000003.12",
+     "gene_start": 122183667,
+     "gene_end": 122291628,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "calcium sensing receptor"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "CASR encodes the calcium-sensing receptor, a class-C GPCR on parathyroid and renal-tubular cells that senses extracellular Ca2+ and suppresses PTH secretion and renal Ca2+ reabsorption -- a BRAKE on the PTH / serum-calcium axis. Heterozygous LOF -> FHH1 (benign); biallelic LOF -> neonatal severe hyperparathyroidism. chr3q21.1. NCBI official symbol CASR. NSHPT OMIM 239200; FHH1 145980. Coding lesions; promoter firewall respected.",
+    "src": "Pollak 1993 Cell 75:1297 (inactivating CASR mutations cause FHH and NSHPT); Pearce 1995 J Clin Invest 96:2683 (CaSR set-point); Hannan 2018 Nat Rev Endocrinol 14:476 (CaSR disorders)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CASR",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "228d038c30b9"
+ },
+ "treatment_A_switch": {
+  "disease": "Neonatal severe hyperparathyroidism / Familial hypocalciuric hypercalcaemia type 1 (CASR loss-of-function)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "CASR",
+    "push_direction": "allosterically POTENTIATE the residual calcium-sensing receptor (raise its calcium sensitivity) -> suppress PTH secretion and renal calcium reabsorption -> bring the over-driven PTH / serum-calcium axis DOWN toward normal",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "calcimimetic / CaSR positive allosteric modulator (cinacalcet)",
+    "status": "approved",
+    "mechanism_grade": "[O] serum-calcium / PTH-lowering MAGNITUDE not sequence-derived; GENOTYPE-DEPENDENT -- requires RESIDUAL CaSR function, so true-null alleles may be unresponsive (held [O]); the corrective DIRECTION (potentiate the brake, restrain PTH/Ca) is forced [F]. Cinacalcet is approved for related hyperparathyroid indications and used OFF-LABEL but as documented first-line therapy in NSHPT / symptomatic FHH.",
+    "src": "Gannon 2014 J Clin Endocrinol Metab 99:7 (cinacalcet monotherapy normalises calcium in NSHPT); Mayr 2016 Eur J Endocrinol 174:R189 (calcimimetics in CaSR disorders); Nemeth 2004 J Pharmacol Exp Ther 308:627 (cinacalcet calcimimetic mechanism)"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "CASR",
+   "push_direction": "allosterically POTENTIATE the residual calcium-sensing receptor (raise its calcium sensitivity) -> suppress PTH secretion and renal calcium reabsorption -> bring the over-driven PTH / serum-calcium axis DOWN toward normal",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "calcimimetic / CaSR positive allosteric modulator (cinacalcet)",
+   "status": "approved",
+   "mechanism_grade": "[O] serum-calcium / PTH-lowering MAGNITUDE not sequence-derived; GENOTYPE-DEPENDENT -- requires RESIDUAL CaSR function, so true-null alleles may be unresponsive (held [O]); the corrective DIRECTION (potentiate the brake, restrain PTH/Ca) is forced [F]. Cinacalcet is approved for related hyperparathyroid indications and used OFF-LABEL but as documented first-line therapy in NSHPT / symptomatic FHH.",
+   "src": "Gannon 2014 J Clin Endocrinol Metab 99:7 (cinacalcet monotherapy normalises calcium in NSHPT); Mayr 2016 Eur J Endocrinol 174:R189 (calcimimetics in CaSR disorders); Nemeth 2004 J Pharmacol Exp Ther 308:627 (cinacalcet calcimimetic mechanism)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.39423,
+   "dwell_disease": 1.91707,
+   "dwell_treated": 1.56496,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "46d98c6b3cd7"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "CASR LOF moves the PTH / serum-calcium axis UP (the brake on PTH secretion is released)",
+   "falsifier": "a CASR loss-of-function allele that LOWERED PTH / serum calcium, or restored normal calcium-dependent PTH suppression, would refute the brake-released (axis UP) read",
+   "measurable_by": "PTH-vs-calcium set-point curves and serum / urinary calcium in CASR-mutant patients or CaSR-knock-in models"
+  },
+  {
+   "claim": "POTENTIATING the residual receptor (cinacalcet) is the CORRECTIVE direction",
+   "falsifier": "if a calcimimetic RAISED rather than lowered serum calcium / PTH in CaSR-LOF disease, the restrain-by-potentiating-the-brake lever sign is wrong",
+   "measurable_by": "serum-calcium and PTH response to cinacalcet in NSHPT / symptomatic FHH patients (the documented monotherapy series)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Neonatal severe hyperparathyroidism / Familial hypocalciuric hypercalcaemia type 1 (CASR loss-of-function)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "058a124f40fa"
+ },
+ "determinism_sha": "4bf0aba6f142"
+}

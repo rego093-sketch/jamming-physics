@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix E: Conjectures on solar activity — Vacuum-Inflow Cosmology §AXE | Jamming Physics</title>
+<meta name="description" content="Five present, model-independent facts about sunspots and flares. (i) Beneath a sunspot, helioseismology finds a downflow with near-surface horizontal inflows">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/axe-conjectures-solar-activity-exploratory-textsfhyp/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix E: Conjectures on solar activity — Vacuum-Inflow Cosmology §AXE | Jamming Physics"><meta property="og:description" content="Five present, model-independent facts about sunspots and flares. (i) Beneath a sunspot, helioseismology finds a downflow with near-surface horizontal inflows"><meta property="og:url" content="https://jamming-physics.org/cosmology/axe-conjectures-solar-activity-exploratory-textsfhyp/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix E: Conjectures on solar activity — Vacuum-Inflow Cosmology §AXE | Jamming Physics"><meta name="twitter:description" content="Five present, model-independent facts about sunspots and flares. (i) Beneath a sunspot, helioseismology finds a downflow with near-surface horizontal inflows">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Appendix E: Conjectures on solar activity", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": "AXE", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/axe-conjectures-solar-activity-exploratory-textsfhyp/", "knowsAbout": ["vacuum inflow", "jamming lattice", "solar activity"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§AXE Appendix E: Conjectures on solar activity"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §AXE</nav></header>
+<main><!--vp-v1.8-->
+<h1>Appendix E: Conjectures on solar activity (exploratory, textsfHYP/textsfSPEC)</h1>
+<p class="answer">This appendix is exploratory and deliberately separated from the chapters; nothing in it is established. It records a conjecture—that the volume's inflow dynamics can accommodate solar activity such as sunspots and flares—at hypothesis grade only. It is degenerate with standard solar magnetoconvection on every observable it touches, but exposes one clean distinguishing claim and one honest tension.</p>
+<p class="abstract" data-phase2="abstract">Five present, model-independent facts about sunspots and flares: a sub-surface downflow with near-surface horizontal inflows (Duvall et al. 1996); the depressed Wilson surface; a strong, cool, dark umbral field; a surface flow reversal to outflow; and flare activity correlated with the field divergence.</p>
+<aside class="claim-strip page"><span class="g g-distinguishing" data-phase2="grade">Distinguishing</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/axe-conjectures-solar-activity-exploratory-textsfhyp/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<em>This appendix is exploratory and is deliberately separated from the chapters.
+Nothing in it is established. It records a conjecture—that the volume's inflow dynamics can
+<em>accommodate</em> solar activity—at \textsf{HYP}/\textsf{SPEC} grade only. It is degenerate with
+standard solar magnetoconvection on every observable it touches, adds <em>no</em> reproducible
+evidence for the framework, and does not bear on the audited results of Chapters 1–10. It is
+included because attempting the problem exposes one clean distinguishing claim and one honest
+tension—and because saying so plainly is part of the volume's standard.</em>
+<h2>The observations to be accommodated</h2>
+<p>Five present, model-independent facts about sunspots and flares. (i) Beneath a sunspot,
+helioseismology finds a downflow with near-surface horizontal <em>inflows</em> that replace the mass
+drained downward (Duvall et al. 1996); converging flows persist beneath developed spots.
+(ii) The sunspot surface is <em>depressed</em>—the Wilson depression,  400–800km below
+the quiet photosphere. (iii) The umbra carries a strong near-vertical field ( 3kG) and is
+<em>cool and dark</em> ( 3800K versus 5800K). (iv) At the surface the flow
+<em>reverses</em> to outflow (the penumbral Evershed flow  3–4km/s and the moat flow
+ 0.5–1km/s); the link between the deep inflow and the shallow outflow is
+observationally debated. (v) Flare activity correlates with the divergence and helicity of the
+subsurface flow.</p>
+<h2>A single inflow sink reproduces the core phenomenology</h2>
+<p>Model a sunspot as a localized converging-inflow/downdraft <em>sink</em>—in the framework, a local
+concentration of the gravitational inflow (Chapter 3). Four of the five facts follow from this one
+object (Fig. <a class="xref" data-ref="fig:sunspot">(sunspot)</a>; <code>ch12_sunspot.py</code>):</p>
+<ol>
+<li> <strong>Converging inflow + downdraft.</strong> Flow toward a subsurface sink is horizontally
+converging near the surface and downward at the centre—directly the Duvall et al. picture
+(Fig. <a class="xref" data-ref="fig:sunspot">(sunspot)</a>, left).
+<li> <strong>Field organised by the inflow.</strong> The converging inflow concentrates the vertical field
+by flux freezing; an area convergence of  30 takes a quiet 100G to the umbral
+ 3kG (Fig. <a class="xref" data-ref="fig:sunspot">(sunspot)</a>, right). In the framework the field <em>is</em> organised
+rotation, so here the inflow organises the field, not the reverse.
+<li> <strong>Cooling by suppressed throughput.</strong> The concentrated field/downdraft suppresses the
+upward random-thermal (convective) transport; blocking  82% of the heat flux gives
+T=5800(0.18)^(1/4)≈3800K by F∝ T⁴—the observed umbral temperature.
+<li> <strong>The Wilson depression.</strong> The magnetic pressure
+B²/2μ₀≈3.6×10⁴Pa exceeds the photospheric gas pressure, so the
+τ=1 surface sinks by a few pressure scale heights,  300km—the order observed.
+</ol>
+<p>The fifth fact, the shallow Evershed/moat <em>outflow</em>, is a separate near-surface component
+(magnetoconvection in the inclined field); it is not part of this toy, and we do not force it.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch12_sunspot.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>Flares as a destabilised sink</h2>
+<p>If the inflow that maintains the sink slows or reorganises, the local inflow momentum—hence the
+local gravity (Chapter 3)—drops, so the confined organised-field energy is released and the
+no-longer-bound gas is ejected: a flare with an associated mass ejection. This is the transient,
+high-energy limit of the framework's low-pressure “sprinkler” ejection (physics volume,
+PART 12), and it is consistent with the observed correlation of flares with subsurface-flow
+divergence and helicity. An order-of-magnitude check closes: the organised-field energy of a spot,
+B²/2μ₀× V 10²⁵–10²⁶J for B 0.3T and V (10⁷m)³,
+matches large-flare energies  10²⁵J.</p>
+<h2>Internal-consistency audit, and the honest limits</h2>
+<p>This account was checked against the rest of the volume and against magnitude:</p>
+<ul>
+<li> <strong>Not the deficit darkness.</strong> A sunspot is dark by <em>reduced throughput</em> and is
+still warm ( 3800K) with quanta present; this is <em>not</em> the absolute-zero darkness of
+the dark-matter cores (Chapter 8), where there are no quanta. The two “darks” are different.
+<li> <strong>Not a redshift, not a black hole.</strong> The umbral dimming is far too large to be a
+gravitational or path redshift of emitted light—that reading needs z 0.5 against an
+available z 10⁻⁶, a  10⁵ shortfall—so the darkening is thermal, not optical.
+And a sunspot is a local inflow <em>concentration</em>, not a near-critical object: the solar surface
+lies  10⁵ Schwarzschild radii from the critical inflow of a black hole (Chapter 9). The
+“black-hole-like” intuition is rejected quantitatively.
+<li> <strong>Transient, not permanent, deficit.</strong> The flare's under-supply is a transient that
+refills—distinct from the permanent annihilation deficit of Chapter 8.
+<li> <strong>Degenerate.</strong> Every observable above is reproduced equally by standard
+magnetoconvection and the solar dynamo. This appendix shows inflow-dynamics <em>consistency</em>,
+not superiority, and supplies no evidence for the framework.
+<li> <strong>One distinguishing claim.</strong> The framework reverses the causal order: the converging
+<em>inflow</em> is primary and organises the field, whereas the dynamo makes the field primary and
+the flows its consequence.
+<li> <strong>One honest tension.</strong> Observation suggests magnetic flux <em>emerges first</em> and the
+converging flow forms afterwards—which reads field-first. The inflow-primary view must hold that
+the emerging flux <em>is</em> the inflow's organised-rotation manifestation; whether that survives
+scrutiny is open. This is the first thing to test, and the reason the account is a conjecture, not
+a result.
+</ul>
+<nav class="pn"><a rel="prev" href="/cosmology/axd-index-imports-physics-volume/">← §AXD</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/axf-executive-summary-one-page-result/">§AXF →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

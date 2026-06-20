@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The color of molecules — VP Chemistry &amp; EM §4 | Jamming Physics</title>
+<meta name="description" content="Color from d-orbitals: crystal-field splitting and the forced ratio Δ_tet/Δ_oct = 4/9 set which wavelengths transition-metal compounds absorb, from pigments t">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/04-color-molecules/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The color of molecules — VP Chemistry &amp; EM §4 | Jamming Physics"><meta property="og:description" content="Color from d-orbitals: crystal-field splitting and the forced ratio Δ_tet/Δ_oct = 4/9 set which wavelengths transition-metal compounds absorb, from pigments t"><meta property="og:url" content="https://jamming-physics.org/chemistry/04-color-molecules/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The color of molecules — VP Chemistry &amp; EM §4 | Jamming Physics"><meta name="twitter:description" content="Color from d-orbitals: crystal-field splitting and the forced ratio Δ_tet/Δ_oct = 4/9 set which wavelengths transition-metal compounds absorb, from pigments t">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The color of molecules", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 4, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/04-color-molecules/", "knowsAbout": ["crystal field theory", "d-d transition", "molecular color", "ligand field"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§4 The color of molecules"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §4</nav></header>
+<main>
+<h1>The color of molecules</h1>
+
+<p class="answer">Color is a d–d transition. A ligand field splits the d-orbitals and the geometry forces the ratio Δ_tet/Δ_oct = 4/9; the absorbed wavelength then fixes the observed color. The splitting magnitude is a calibration input, but the 4/9 ratio is forced sphere geometry with no free parameters.</p>
+
+<p class="abstract">Color is a d–d transition. A ligand field splits the d-orbitals, and the geometry forces the ratio Δ_tet/Δ_oct = 4/9; the absorbed wavelength then fixes the observed color. The splitting magnitude is a calibration input, but the 4/9 ratio is forced sphere geometry.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/04-color-molecules/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>(crystal field), and Chapter CM. Numbers reproduced by
+<code>vp_molecular_color.py</code> (and
+<code>vp_crystal_field.py</code>); deterministic, standard-library,
+self-checking.</p>
+<blockquote>
+<p>Color is a subtraction. White light arrives; the molecule removes the
+photons whose energy matches an electronic gap, and what is left —
+transmitted or reflected — is the color we see. Four different gaps give
+the four families of molecular color, but the rule is one: a gap the
+size of a visible photon makes a colored substance.</p>
+</blockquote>
+<h2 id="cc.0-the-question">CC.0 The question</h2>
+<p>Why is copper sulfate blue, a carrot orange, cadmium-yellow paint
+yellow, and titanium-white paint white? This chapter derives the color
+of molecules and pigments from the electromagnetism of Chapter EM:
+visible light is the transverse electromagnetic wave (§EM.6), and
+<strong>color is which visible photons a substance absorbs</strong>, set
+by the size of an electronic energy gap.</p>
+<h2 id="cc.1-the-principle-color-is-selective-absorption-f">CC.1 The
+principle — color is selective absorption <strong>[F]</strong></h2>
+<p>A substance has color when its electronic structure absorbs
+<em>part</em> of the visible spectrum (400–700 nm). An absorbed photon
+(a transverse light quantum) lifts an electron across an electronic
+<strong>gap</strong>; the gap size fixes which wavelength is absorbed,
+and the remaining light is the perceived color. For dissolved molecules
+the eye sees the <strong>complementary</strong> of the absorbed band;
+for opaque pigments it sees the <strong>reflected</strong> band. Two
+limits frame the rest: a gap <em>larger</em> than any visible photon
+absorbs nothing (white or colorless), and a gap <em>smaller</em> than
+every visible photon absorbs everything (black).</p>
+<h2 id="cc.2-energy-and-wavelength-f">CC.2 Energy and wavelength
+<strong>[F]</strong></h2>
+<p>The bridge is the photon relation of Chapter EM,</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-04-001.svg" width="237" height="42" alt="E = \frac{hc}{\lambda}, \qquad \lambda[\mathrm{nm}] = \frac{1240}{E[\mathrm{eV}]}." loading="lazy"></figure>
+<p>Visible light spans E = 1.77 eV (red, 700 nm) to 3.10 eV (violet, 400
+nm). A gap in this energy window produces color; outside it, the
+substance is white/colorless (gap too large) or black (gap too
+small).</p>
+<h2
+id="cc.3-mechanism-1-dd-transitions-transition-metal-complexes-fcalo">CC.3
+Mechanism 1 — <em>d</em>–<em>d</em> transitions (transition-metal
+complexes) <strong>[F]/[CAL]/[O]</strong></h2>
+<p>In a transition-metal complex the ligands’ electromagnetic 1/r² field
+splits the geometric d-orbitals by the crystal-field gap Δ (Chapter CH
+§CH.5). An electron absorbs a photon to cross Δ:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-04-002.svg" width="169" height="46" alt="\lambda_{\text{abs}}[\mathrm{nm}] = \frac{10^7}{\Delta[\mathrm{cm}^{-1}]}." loading="lazy"></figure>
+<p>For [Ti(mathrm H₂mathrm O)₆]³⁺ (d¹, single transition), Δ =
+20300 mathrmcm⁻¹ gives λ₍abs) = 493 nm (blue-green absorbed) → reddish
+violet, matching observation (<code>vp_molecular_color.py</code>, §1).
+The mechanism — color <em>is</em> the d–d gap — is forced by VP geometry
+<strong>[F]</strong>; the spectrochemical ordering of Δ is calibration
+<strong>[CAL]</strong>; and for multi-electron ions (d⁹ Cu²⁺, d⁸ Ni²⁺)
+the single-Δ point model is insufficient (broad multi-band absorption
+tails into the red, giving the real blue/green), an honestly
+<strong>[O]</strong> limitation. Weak-field ligands give a small Δ (red
+absorption); strong-field ligands a large Δ (blue absorption).</p>
+<h2 id="cc.4-mechanism-2-conjugated-π-systems-organic-dyes-ff">CC.4
+Mechanism 2 — conjugated π systems (organic dyes)
+<strong>[F]/[F?]</strong></h2>
+<p>In a conjugated polyene the π-electrons behave as a free electron gas
+in a one-dimensional box of length L (the conjugation length). The
+levels are Eₙ = n² h²/(8 mₑ L²); with N = 2k electrons (k double bonds)
+filling levels up to k, the HOMO→LUMO gap is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-04-003.svg" width="183" height="43" alt="\Delta E = \frac{h^2}{8 m_e L^2}\,(N+1)." loading="lazy"></figure>
+<p>Because L grows with conjugation, <strong>the gap shrinks and the
+absorption red-shifts</strong> — the derived trend
+(<code>vp_molecular_color.py</code>, §2): short polyenes (ethene,
+butadiene, hexatriene) absorb in the ultraviolet and are colorless,
+while extended conjugation (β-carotene, 11 double bonds) absorbs in the
+visible and is colored (orange; lycopene, red). The scaling Δ E ∝
+(N+1)/L² and the UV→visible crossover are forced <strong>[F]</strong>;
+the absolute wavelengths from the free-electron model overestimate for
+long chains (bond alternation caps the gap), so the model’s numbers are
+trend-only <strong>[F?]</strong>. This is why carrots and tomatoes are
+colored: long π-conjugation pulls the gap down into the visible.</p>
+<h2
+id="cc.5-mechanism-3-the-band-gap-inorganic-pigments-and-paint-fcal">CC.5
+Mechanism 3 — the band gap (inorganic pigments and paint)
+<strong>[F]/[CAL]</strong></h2>
+<p>A solid pigment is a semiconductor with a band gap E_g. Photons with
+E &gt; E_g (wavelength below the absorption edge λ₍edge) = hc/E_g) are
+absorbed; photons with E &lt; E_g (longer wavelength) are reflected, and
+<strong>the reflected band is the color</strong>. As E_g decreases, the
+edge sweeps across the visible and the pigment runs <strong>white →
+yellow → orange → red → black</strong>
+(<code>vp_molecular_color.py</code>, §3):</p>
+<table>
+<thead>
+<tr class="header">
+<th>pigment</th>
+<th>E_g (eV)</th>
+<th>edge (nm)</th>
+<th>reflected color</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TiO₂ titanium white</td>
+<td>3.05</td>
+<td>407</td>
+<td>white (all visible reflected)</td>
+</tr>
+<tr class="even">
+<td>ZnO zinc white</td>
+<td>3.20</td>
+<td>387</td>
+<td>white</td>
+</tr>
+<tr class="odd">
+<td>As₂S₃ orpiment</td>
+<td>2.70</td>
+<td>459</td>
+<td>yellow (violet/blue absorbed)</td>
+</tr>
+<tr class="even">
+<td>CdS cadmium yellow</td>
+<td>2.42</td>
+<td>512</td>
+<td>yellow</td>
+</tr>
+<tr class="odd">
+<td>CdS·Se cadmium orange</td>
+<td>2.10</td>
+<td>590</td>
+<td>orange/red</td>
+</tr>
+<tr class="even">
+<td>HgS vermilion (cinnabar)</td>
+<td>2.00</td>
+<td>620</td>
+<td>red</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃ red ochre (hematite)</td>
+<td>2.10</td>
+<td>590</td>
+<td>red</td>
+</tr>
+<tr class="even">
+<td>CdSe cadmium red</td>
+<td>1.73</td>
+<td>717</td>
+<td>red (only deep red reflected)</td>
+</tr>
+<tr class="odd">
+<td>carbon black</td>
+<td>~0.5</td>
+<td>—</td>
+<td>black (all visible absorbed)</td>
+</tr>
+</tbody>
+</table>
+<p>The same single rule λ₍edge) = hc/E_g orders the entire cadmium
+pigment series and the historical mineral pigments (vermilion, orpiment,
+hematite) <strong>[F]</strong>, with E_g a measured material constant
+<strong>[CAL]</strong>. This is the physics of paint: <strong>the band
+gap is the color knob.</strong> Titanium white reflects everything
+because its gap (3.05 eV) sits just past the violet edge; cadmium red
+absorbs nearly all visible because its gap (1.73 eV) sits at the red
+edge.</p>
+<h2 id="cc.6-mechanism-4-charge-transfer-intense-colors-fcal">CC.6
+Mechanism 4 — charge transfer (intense colors)
+<strong>[F]/[CAL]</strong></h2>
+<p>When a photon moves an electron between a metal and a ligand
+(ligand-to-metal or metal-to-ligand charge transfer), the transition is
+fully allowed and therefore <strong>intense</strong> — 100–1000×
+stronger than a d–d transition, so a trace gives a deep color.
+Permanganate MnO₄⁻ absorbs ∼ 525 nm (O→Mn charge transfer) and is deep
+purple; dichromate mathrmCr₂O₇²⁻ is orange; Prussian blue is an
+Fe²⁺↔︎Fe³⁺ charge transfer (<code>vp_molecular_color.py</code>, §4). The
+mechanism is the same electron-across-a-gap; only the gap’s origin
+(metal↔︎ligand) and its allowedness differ.</p>
+<h2 id="cc.7-white-black-and-everything-between-f">CC.7 White, black,
+and everything between <strong>[F]</strong></h2>
+<p>The two achromatic limits follow from the same rule and require no
+extra assumption:</p>
+<ul>
+<li><strong>White</strong>: gap larger than any visible photon (E_g &gt;
+3.1 eV, edge in the ultraviolet). No visible light is absorbed; all is
+reflected. Titanium white, zinc white, table salt, snow.</li>
+<li><strong>Black</strong>: gap smaller than every visible photon (E_g
+&lt; 1.8 eV, edge in the infrared). All visible light is absorbed.
+Carbon black, graphite.</li>
+<li><strong>Color</strong>: gap inside the visible window. The substance
+absorbs the short-wavelength side of the edge and shows the
+long-wavelength side.</li>
+</ul>
+<p>So white and black are not “colors added” but the two ends of where
+the gap sits relative to the visible band.</p>
+<h2 id="cc.8-the-unifying-picture">CC.8 The unifying picture</h2>
+<p>All four families are one mechanism — <strong>a transverse visible
+photon absorbed by lifting an electron across an electronic gap</strong>
+— differing only in what sets the gap:</p>
+<ul>
+<li>d–d: the crystal-field splitting Δ (ligand electromagnetic 1/r²
+field).</li>
+<li>conjugated π: the HOMO–LUMO gap ∝ (N+1)/L² (conjugation
+length).</li>
+<li>band gap: the semiconductor E_g (the pigment’s electronic
+structure).</li>
+<li>charge transfer: the metal↔︎ligand donor–acceptor gap.</li>
+</ul>
+<p>The absorbing light is the transverse electromagnetic wave of Chapter
+EM (χ→ 90^∘); only a photon whose energy matches the gap is absorbed
+(resonance), and the gap size determines the wavelength and hence the
+color. One principle — gap-sized absorption — and four ways nature
+builds the gap.</p>
+<h2 id="cc.9-falsification-and-reproducibility-f">CC.9 Falsification and
+reproducibility <strong>[F]</strong></h2>
+<ul>
+<li>If a transition-metal complex’s color did not track its
+crystal-field Δ (weak-field red, strong-field blue absorption), the d–d
+account fails.</li>
+<li>If extending π-conjugation did not red-shift absorption (UV for
+short, visible for long), the particle-in-a-box account fails.</li>
+<li>If a semiconductor pigment’s color did not follow its band-gap edge
+λ₍edge) = hc/E_g (large gap white, small gap black, intermediate
+colored), the band-gap account fails — this is tested across the cadmium
+series and historical pigments.</li>
+</ul>
+<pre><code>python3 code/foundation/vp_molecular_color.py    # complementary color, d-d, FEM, band-gap pigments
+python3 code/foundation/vp_crystal_field.py      # crystal-field Δ and 4/9</code></pre>
+<p>Both modules are deterministic (stdout sha256 identical on re-run)
+and standard-library only.</p>
+<p><em>Color completes the optical arc of Chapter EM: light emerges from
+the lattice, refraction and the rainbow split it by wavelength, and here
+matter </em>subtracts* selected wavelengths by lifting electrons across
+gaps — crystal-field, conjugation, band-gap, and charge-transfer gaps —
+so that a carrot is orange and titanium-white is white for the same
+reason, read through the size of a gap.*</p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/03-conduction-copper-magnetism-iron/">← §3</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/05-platinum-catalysis-d-band-descriptor/">§5 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

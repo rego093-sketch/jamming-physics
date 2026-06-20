@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix A. Mathematical lemmas and proof — VP Theory §AXA | Jamming Physics</title>
+<meta name="description" content="R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C.">
+<link rel="canonical" href="https://jamming-physics.org/physics/axa-mathematical-lemmas-proof-sketches/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix A. Mathematical lemmas and proof — VP Theory §AXA | Jamming Physics"><meta property="og:description" content="R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C."><meta property="og:url" content="https://jamming-physics.org/physics/axa-mathematical-lemmas-proof-sketches/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix A. Mathematical lemmas and proof — VP Theory §AXA | Jamming Physics"><meta name="twitter:description" content="R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix A. Mathematical lemmas and proof",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXA",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXA Appendix A. Mathematical lemmas and proof"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXA</nav></header>
+<main>
+<h1>Appendix A. Mathematical lemmas and proof sketches</h1>
+<p class="answer">Appendix A. Mathematical lemmas and proof: R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C. Thus b_j=0, so π(u_j) is a basis and dim(V/W)=n-k.</p>
+<p class="abstract" data-phase2="abstract">R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C. Thus b_j=0, so π(u_j) is a basis and dim(V/W)=n-k.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axa-mathematical-lemmas-proof-sketches/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>A.0 Notation and basic conventions (common)</h2>
+<h4>(1) Numbers and vectors</h4>
+<p>R is the field of real numbers and C is the field of complex numbers. Let V be a vector space over R or C.</p>
+<h4>(2) Inner product and norm</h4>
+<p>In a complex inner-product space (V,⟨·,·⟩), the inner product satisfies the following properties.</p>
+<ol>
+<li> (Linearity) ⟨ ax+by, z⟩ = a⟨ x,z⟩ + b⟨ y,z⟩.
+<li> (Conjugate symmetry) ⟨ x,y⟩ = ⟨ y,x⟩.
+<li> (Positive definiteness) ⟨ x,x⟩ ≥ 0, and ⟨ x,x⟩=0 ⇔ x=0.
+</ol>
+<p>The norm is defined by |x|:=√(⟨ x,x⟩).</p>
+<h4>(3) Linear operators and adjoints</h4>
+<p>The adjoint A^dagger of a linear operator A:V→ V is defined by</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-012.svg" data-eq="phy-axa-012" width="253" height="22" loading="lazy" alt="\langle Ax,y\rangle=\langle x,A^\dagger y\rangle\quad(\forall x,y\in V)"></figure>
+<p>as the operator satisfying the above. If A=A^dagger, then A is (in the mathematical sense) self-adjoint (Hermitian).</p>
+<h4>(4) Commutator</h4>
+<p>For operators A,B, the commutator is defined by [A,B]:=AB-BA.</p>
+<h2>A.1 Cauchy–Schwarz inequality</h2>
+<h4>Theorem A.1 (Cauchy–Schwarz)</h4>
+<p>For any x,y∈ V,</p>
+<figure class="eq" id="eq:AppA_CS"><img src="/physics/eq/physics/phy-axa-000.svg" data-eq="phy-axa-000" width="137" height="19" loading="lazy" alt="\begin{equation} |\langle x,y\rangle|\le \|x\|\,\|y\| \end{equation}"></figure>
+<p>holds.</p>
+<h4>Proof</h4>
+<p>If y=0 then the left-hand side is 0 and the claim holds. Now assume y≠ 0 and,
+for any λ∈C,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-013.svg" data-eq="phy-axa-013" width="268" height="21" loading="lazy" alt="0\le \|x-\lambda y\|^2=\langle x-\lambda y, x-\lambda y\rangle"></figure>
+<p>expand the expression.</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-001.svg" data-eq="phy-axa-001" width="393" height="53" loading="lazy" alt="\begin{align*} \|x-\lambda y\|^2 &amp;=\langle x,x\rangle-\lambda\langle y,x\rangle-\overline{\lambda}\langle x,y\rangle+|\lambda|^2\langle y,y\rangle\\ &amp;=\|x\|^2-\lambda\overline{\langle x,y\rangle}-\overline{\lambda}\langle x,y\rangle+|\lambda|^2\|y\|^2. \end{align*}"></figure>
+<p>Choosing λ:=⟨ x,y⟩/|y|², we obtain</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-002.svg" data-eq="phy-axa-002" width="534" height="103" loading="lazy" alt="\begin{align*} 0\le \|x-\lambda y\|^2 &amp;=\|x\|^2-\frac{\langle x,y\rangle\overline{\langle x,y\rangle}}{\|y\|^2} -\frac{\overline{\langle x,y\rangle}\langle x,y\rangle}{\|y\|^2} +\frac{|\langle x,y\rangle|^2}{\|y\|^4}\|y\|^2\\ &amp;=\|x\|^2-\frac{|\langle x,y\rangle|^2}{\|y\|^2}. \end{align*}"></figure>
+<p>Therefore |⟨ x,y⟩|²≤ |x|²|y|², and taking square roots yields <a href="#eq:AppA_CS" class="xref" data-ref="eq:AppA_CS">(AppA_CS)</a>.  square</p>
+<h2>A.2 Triangle inequality</h2>
+<h4>Theorem A.2 (Triangle inequality)</h4>
+<p>For any x,y∈ V,</p>
+<figure class="eq" id="eq:AppA_triangle"><img src="/physics/eq/physics/phy-axa-003.svg" data-eq="phy-axa-003" width="165" height="19" loading="lazy" alt="\begin{equation} \|x+y\|\le \|x\|+\|y\| \end{equation}"></figure>
+<p>holds.</p>
+<h4>Proof</h4>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-014.svg" data-eq="phy-axa-014" width="426" height="21" loading="lazy" alt="\|x+y\|^2=\langle x+y,x+y\rangle=\|x\|^2+\|y\|^2+2\operatorname{Re}\langle x,y\rangle."></figure>
+<p>From Cauchy–Schwarz <a href="#eq:AppA_CS" class="xref" data-ref="eq:AppA_CS">(AppA_CS)</a> we have |⟨ x,y⟩|≤ |x||y|, and
+since Re⟨ x,y⟩≤ |⟨ x,y⟩|,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-015.svg" data-eq="phy-axa-015" width="410" height="21" loading="lazy" alt="\|x+y\|^2\le \|x\|^2+\|y\|^2+2\|x\|\|y\|=(\|x\|+\|y\|)^2."></figure>
+<p>taking square roots of both sides gives <a href="#eq:AppA_triangle" class="xref" data-ref="eq:AppA_triangle">(AppA_triangle)</a>.  square</p>
+<h2>A.3 Quotient-space dimension theorem (removing global reference degrees of freedom)</h2>
+<h4>Theorem A.3 (Quotient-space dimension)</h4>
+<p>Let V be a finite-dimensional vector space and W⊂ V a subspace. Then</p>
+<figure class="eq" id="eq:AppA_dim_quotient"><img src="/physics/eq/physics/phy-axa-004.svg" data-eq="phy-axa-004" width="260" height="19" loading="lazy" alt="\begin{equation} \dim(V/W)=\dim(V)-\dim(W) \end{equation}"></figure>
+<p>holds.</p>
+<h4>Proof</h4>
+<p>Extend a basis w₁,…,wₖ of W to a basis of V so that
+w₁,…,wₖ,u₁,…,uₙ₋ₖ becomes a basis of V (n=dim(V)).
+For the quotient map π:V→ V/W, show that π(u₁),…,π(uₙ₋ₖ) generates V/W.
+Any v∈ V can be written as</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-016.svg" data-eq="phy-axa-016" width="184" height="57" loading="lazy" alt="v=\sum_{i=1}^k a_i w_i + \sum_{j=1}^{n-k} b_j u_j"></figure>
+<p>and since π(w_i)=0,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-017.svg" data-eq="phy-axa-017" width="151" height="57" loading="lazy" alt="\pi(v)=\sum_{j=1}^{n-k} b_j \pi(u_j)."></figure>
+<p>therefore</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-018.svg" data-eq="phy-axa-018" width="418" height="57" loading="lazy" alt="\sum_{j=1}^{n-k} b_j \pi(u_j)=0 \Rightarrow \pi\Bigl(\sum_{j=1}^{n-k} b_j u_j\Bigr)=0 \Rightarrow \sum_{j=1}^{n-k} b_j u_j \in W."></figure>
+<p>But since w_i,u_j is a basis, any vector in W must have all u_j components equal to 0.
+Thus b_j=0, so π(u_j) is a basis and dim(V/W)=n-k.  square</p>
+<h4>Application A.3.1 (removing the global reference in a 6-face channel)</h4>
+<p>If V=R⁶, W=span1₆, and 1₆=(1,1,1,1,1,1), then
+dim(W)=1 and dim(V)=6, hence by <a href="#eq:AppA_dim_quotient" class="xref" data-ref="eq:AppA_dim_quotient">(AppA_dim_quotient)</a> we have dim(V/W)=5.</p>
+<h2>A.4 Discrete Fourier transform and Parseval's theorem (finite lattice)</h2>
+<h4>Setup</h4>
+<p>For N∈N, let Z_N=0,1,…,N-1 be the cyclic group modulo N.
+Define the inner product of a complex sequence x:Z_N→C by</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-019.svg" data-eq="phy-axa-019" width="142" height="55" loading="lazy" alt="\langle x,y\rangle := \sum_{n=0}^{N-1} x_n \overline{y_n}"></figure>
+<p>as above.</p>
+<h4>DFT</h4>
+<p>Define the discrete Fourier transform (DFT) by</p>
+<figure class="eq" id="eq:AppA_DFT"><img src="/physics/eq/physics/phy-axa-005.svg" data-eq="phy-axa-005" width="365" height="55" loading="lazy" alt="\begin{equation} X_k := \sum_{n=0}^{N-1} x_n\,e^{-2\pi i kn/N}\qquad (k=0,\dots,N-1) \end{equation}"></figure>
+<p>and define the inverse transform by</p>
+<figure class="eq" id="eq:AppA_IDFT"><img src="/physics/eq/physics/phy-axa-006.svg" data-eq="phy-axa-006" width="384" height="56" loading="lazy" alt="\begin{equation} x_n := \frac{1}{N}\sum_{k=0}^{N-1} X_k\,e^{2\pi i kn/N}\qquad (n=0,\dots,N-1) \end{equation}"></figure>
+<p>as follows.</p>
+<h4>Theorem A.4.1 (Orthogonality)</h4>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-020.svg" data-eq="phy-axa-020" width="191" height="55" loading="lazy" alt="\sum_{n=0}^{N-1} e^{2\pi i (k-\ell)n/N}=N\,\delta_{k\ell}."></figure>
+<h4>Proof</h4>
+<p>If k=ℓ then the sum is N. If k≠ ℓ, it is a geometric series with ratio r=e^(2π i (k-ℓ)/N)≠ 1, hence</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-021.svg" data-eq="phy-axa-021" width="249" height="55" loading="lazy" alt="\sum_{n=0}^{N-1} r^n=\frac{1-r^N}{1-r}=\frac{1-1}{1-r}=0."></figure>
+<p>square</p>
+<h4>Theorem A.4.2 (Parseval)</h4>
+<figure class="eq" id="eq:AppA_Parseval"><img src="/physics/eq/physics/phy-axa-007.svg" data-eq="phy-axa-007" width="201" height="56" loading="lazy" alt="\begin{equation} \sum_{n=0}^{N-1}|x_n|^2=\frac{1}{N}\sum_{k=0}^{N-1}|X_k|^2. \end{equation}"></figure>
+<h4>Proof</h4>
+<p>Using <a href="#eq:AppA_IDFT" class="xref" data-ref="eq:AppA_IDFT">(AppA_IDFT)</a>,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-022.svg" data-eq="phy-axa-022" width="415" height="48" loading="lazy" alt="x_n=\frac{1}{N}\sum_{k}X_k e^{2\pi i kn/N},\quad \overline{x_n}=\frac{1}{N}\sum_{\ell}\overline{X_\ell} e^{-2\pi i \ell n/N}."></figure>
+<p>therefore</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-008.svg" data-eq="phy-axa-008" width="418" height="106" loading="lazy" alt="\begin{align*} \sum_{n}|x_n|^2 &amp;=\sum_{n}x_n\overline{x_n} =\sum_n \frac{1}{N^2}\sum_{k,\ell} X_k\overline{X_\ell} e^{2\pi i (k-\ell)n/N}\\ &amp;=\frac{1}{N^2}\sum_{k,\ell}X_k\overline{X_\ell}\sum_n e^{2\pi i (k-\ell)n/N}. \end{align*}"></figure>
+<p>By Theorem A.4.1, the inner sum equals Nδ_(kℓ), hence</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-023.svg" data-eq="phy-axa-023" width="377" height="50" loading="lazy" alt="\sum_{n}|x_n|^2=\frac{1}{N^2}\sum_{k,\ell}X_k\overline{X_\ell}\,N\delta_{k\ell} =\frac{1}{N}\sum_k |X_k|^2."></figure>
+<p>square</p>
+<h2>A.5 Commutator-based uncertainty inequality (pure algebra)</h2>
+<h4>Theorem A.5 (Robertson form)</h4>
+<p>For self-adjoint A,B in an inner-product space and a normalized vector ψ (|ψ|=1),</p>
+<figure class="eq" id="eq:AppA_Robertson"><img src="/physics/eq/physics/phy-axa-009.svg" data-eq="phy-axa-009" width="244" height="38" loading="lazy" alt="\begin{equation} \Delta_\psi A\cdot \Delta_\psi B \ge \frac{1}{2}\left|\left\langle \psi,\;[A,B]\psi\right\rangle\right| \end{equation}"></figure>
+<p>holds. Here</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-024.svg" data-eq="phy-axa-024" width="440" height="35" loading="lazy" alt="\Delta_\psi A:=\sqrt{\langle (A-\langle A\rangle)\psi,(A-\langle A\rangle)\psi\rangle}, \quad \langle A\rangle:=\langle \psi,A\psi\rangle"></figure>
+<p>we define</p>
+<h4>Proof</h4>
+<p>Let A':=A-⟨ A⟩ I and B':=B-⟨ B⟩ I, and set
+u:=A'ψ and v:=B'ψ. Then</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-025.svg" data-eq="phy-axa-025" width="217" height="19" loading="lazy" alt="\|u\|=\Delta_\psi A,\quad \|v\|=\Delta_\psi B."></figure>
+<p>By Cauchy–Schwarz <a href="#eq:AppA_CS" class="xref" data-ref="eq:AppA_CS">(AppA_CS)</a>,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-026.svg" data-eq="phy-axa-026" width="260" height="19" loading="lazy" alt="|\langle u,v\rangle|\le \|u\|\,\|v\|=\Delta_\psi A\cdot \Delta_\psi B."></figure>
+<p>On the other hand,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-027.svg" data-eq="phy-axa-027" width="267" height="20" loading="lazy" alt="\langle u,v\rangle=\langle A&#x27;\psi,B&#x27;\psi\rangle=\langle \psi,A&#x27;B&#x27;\psi\rangle."></figure>
+<p>For the complex number z:=⟨ ψ,A'B'ψ⟩, since Im(z)≤ |z|,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-028.svg" data-eq="phy-axa-028" width="107" height="19" loading="lazy" alt="|z|\ge |\operatorname{Im}(z)|."></figure>
+<p>Also,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-010.svg" data-eq="phy-axa-010" width="498" height="50" loading="lazy" alt="\begin{align*} z-\overline{z} &amp;=\langle \psi,A&#x27;B&#x27;\psi\rangle-\overline{\langle \psi,A&#x27;B&#x27;\psi\rangle} =\langle \psi,A&#x27;B&#x27;\psi\rangle-\langle \psi,(A&#x27;B&#x27;)^\dagger\psi\rangle\\ &amp;=\langle \psi,A&#x27;B&#x27;\psi\rangle-\langle \psi,B&#x27;A&#x27;\psi\rangle =\langle \psi,[A&#x27;,B&#x27;]\psi\rangle. \end{align*}"></figure>
+<p>Therefore</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-029.svg" data-eq="phy-axa-029" width="201" height="20" loading="lazy" alt="2i\,\operatorname{Im}(z)=\langle \psi,[A&#x27;,B&#x27;]\psi\rangle."></figure>
+<p>Taking absolute values gives</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-030.svg" data-eq="phy-axa-030" width="214" height="21" loading="lazy" alt="2|\operatorname{Im}(z)|=\left|\langle \psi,[A&#x27;,B&#x27;]\psi\rangle\right|."></figure>
+<p>But the constant term cancels in the commutator, so [A',B']=[A,B]. Therefore</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-031.svg" data-eq="phy-axa-031" width="253" height="38" loading="lazy" alt="|z|\ge |\operatorname{Im}(z)|=\frac{1}{2}\left|\langle \psi,[A,B]\psi\rangle\right|."></figure>
+<p>Finally, combining |z|=|⟨ u,v⟩|≤ Δ_ψ AΔ_ψ B yields <a href="#eq:AppA_Robertson" class="xref" data-ref="eq:AppA_Robertson">(AppA_Robertson)</a>.  square</p>
+<h2>A.6 Sensitivity (error propagation) upper bound</h2>
+<h4>Theorem A.6 (first-order sensitivity bound)</h4>
+<p>Let f:Rⁿ→R be differentiable at x, and let the input error be δ x∈Rⁿ. Then</p>
+<figure class="eq" id="eq:AppA_sensitivity"><img src="/physics/eq/physics/phy-axa-011.svg" data-eq="phy-axa-011" width="392" height="19" loading="lazy" alt="\begin{equation} |f(x+\delta x)-f(x)| \le \|\nabla f(x)\|_2\,\|\delta x\|_2 + o(\|\delta x\|_2). \end{equation}"></figure>
+<h4>Proof</h4>
+<p>By the definition of differentiability,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-032.svg" data-eq="phy-axa-032" width="513" height="45" loading="lazy" alt="f(x+\delta x)-f(x)=\nabla f(x)\cdot \delta x + r(\delta x), \quad \frac{|r(\delta x)|}{\|\delta x\|_2}\to 0\ (\delta x\to 0)."></figure>
+<p>By Cauchy–Schwarz, |∇ f(x)· δ x|≤ |∇ f(x)|₂|δ x|₂.
+Thus <a href="#eq:AppA_sensitivity" class="xref" data-ref="eq:AppA_sensitivity">(AppA_sensitivity)</a>.  square</p>
+<h2>A.7 Significant-digit rounding operator (reporting convention)</h2>
+<h4>Definition A.7 (rounding operator)</h4>
+<p>For k∈Z, define Roundₖ:R→R by</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-033.svg" data-eq="phy-axa-033" width="267" height="21" loading="lazy" alt="\mathrm{Round}_k(x):=10^{-k}\cdot \mathrm{round}(10^k x)"></figure>
+<p>as above. Here, round denotes rounding to the nearest integer (the tie-breaking rule is locked in <code>analysis_lock</code>).</p>
+<h4>Property A.7.1 (Error bound)</h4>
+<p>Regardless of the tie-breaking rule,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axa-034.svg" data-eq="phy-axa-034" width="224" height="38" loading="lazy" alt="|\mathrm{Round}_k(x)-x|\le \frac{1}{2}\cdot 10^{-k}"></figure>
+<p>holds (since the integer lattice spacing is 10^(-k), the worst case is half the spacing).</p>
+<nav class="pn"><a rel="prev" href="/physics/16-doi/">← §16</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axb-numerical-protocol-details-gates-seeds/">§AXB →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

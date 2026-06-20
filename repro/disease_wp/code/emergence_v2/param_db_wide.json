@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "purpose": "ADD-ONLY companion to param_db.json for the Phase-5 organ-allometry power widening. Holds ONLY additional interspecific mammalian organ-mass scaling exponents that already exist as single canonical published values and that ICRP-89 also tabulates. Kept in a SEPARATE file so param_db.json stays byte-identical (its sha256 is pinned by the v1.9.1 snapshot). Same discipline as param_db.json: every entry is an INDEPENDENTLY published interspecific exponent, NEVER a value chosen by us to match a human organ mass. The wide engine reads ONLY this file (for the extra exponents) plus param_db.json; it NEVER reads any validation-target file.",
+    "grades": {
+      "[L]": "locked: independently measured/published interspecific value, cited; legitimate to use",
+      "[F]": "fixed modelling choice; documented",
+      "[O]": "open: the entity-specific measured value does not exist in literature accessible here"
+    },
+    "rule": "Pre-registered, OUTCOME-INDEPENDENT inclusion rule (fixed before the wide statistics were computed): add every tissue that (a) has a single canonical published INTERSPECIFIC mammalian organ-mass-vs-body-mass exponent, AND (b) is tabulated in ICRP-89 with both a newborn and an adult mass, AND (c) is not already in param_db.allometry.organ_scaling_exponent_reference. No tissue was added or dropped on the basis of whether it helped the p-value. Tissues lacking a single canonical interspecific exponent (skin, adipose) were excluded ON PRINCIPLE, not on outcome.",
+    "non_fit_invariant": "These exponents are fixed from comparative MAMMALIAN data and were NOT derived from the human ICRP-89 fractions they are later tested against. Skeleton, blood and skeletal muscle additionally carry NO gene-clock master anywhere in this package, so adding them makes the allometric test STRICTLY MORE independent of the gamma layer, not less."
+  },
+
+  "allometry_wide": {
+    "_axis": "HOW BIG (size) -- additional interspecific mammalian organ-scaling exponents, fixed independently of human organ masses",
+    "skeleton": {
+      "value": 1.08, "grade": "[L]", "universal": true,
+      "frac_exponent_b_minus_1": 0.08,
+      "provenance": "Interspecific scaling of mammalian skeletal (supportive-tissue) mass on body mass, exponent ~1.08 (skeleton grows slightly faster than isometric across mammals): Prange, Anderson & Rahn 1979, 'Scaling of skeletal mass to body mass in birds and mammals', Q. Rev. Biol. / Am. Nat. 113:103. Interspecific, fixed independently of human masses."
+    },
+    "blood": {
+      "value": 1.00, "grade": "[L]", "universal": true,
+      "frac_exponent_b_minus_1": 0.00,
+      "provenance": "Blood volume/mass scales near-isometrically with body mass across mammals (blood ~6-8% of body mass, exponent ~1.0): Stahl 1967, 'Scaling of respiratory variables in mammals', J. Appl. Physiol. 22:453; standard mammalian haematology (NRC). Isometric reference, fixed independently of human masses."
+    },
+    "skeletal_muscle": {
+      "value": 1.10, "grade": "[L]", "universal": true,
+      "frac_exponent_b_minus_1": 0.10,
+      "provenance": "Interspecific scaling of mammalian skeletal-muscle mass on body mass, exponent ~1.10: Alexander, Jayes, Maloiy & Wathuta 1981, 'Allometry of the leg muscles of mammals', J. Zool. Lond. 194:539. The INTERSPECIFIC value (1.1) is used deliberately, to match the interspecific basis of every exponent already in param_db.allometry; the human INTRA-specific muscle exponent (~1.3) is NOT used, so no value was chosen to fit the human masses."
+    }
+  },
+
+  "_residual_open": {
+    "_axis": "[O] still open after widening",
+    "organ_absolute_mass": "[O] the test grades the SIGN+RANK of fraction-change (b-1) only; the absolute organ mass in grams is not predicted by this layer and remains open (universal supply rule stands in).",
+    "excluded_no_canonical_exponent": "[O]/excluded: skin (no single canonical interspecific organ-mass exponent) and adipose (environment-labile, textbook non-allometric) were excluded by the pre-registered rule, not modelled."
+  }
+}

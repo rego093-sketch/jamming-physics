@@ -1,0 +1,170 @@
+{
+ "disease": "Acute intermittent porphyria",
+ "omim": "176000",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Acute intermittent porphyria",
+  "omim": "176000",
+  "summary": "A single-gene HMBS loss-of-function partially blocks heme synthesis at the hydroxymethylbilane-synthase (porphobilinogen deaminase) step. HMBS normally consumes porphobilinogen; when it is deficient, the upstream neurotoxic precursors delta-aminolevulinic acid (ALA) and porphobilinogen (PBG) ACCUMULATE during attacks -> the toxic-precursor burden is driven UP. Read as a released BRAKE on precursor accumulation (HMBS brakes the build-up; LOF releases it -> burden UP), the tyrosinaemia pattern. The kit re-derives the approved therapy, which RESTRAINS the UPSTREAM rate-limiting enzyme ALAS1 rather than restoring HMBS: givosiran (an ALAS1-knockdown siRNA) and hemin (heme feedback that down-regulates ALAS1) both lower ALA/PBG production; restoring HMBS (liver transplantation; gene therapy investigational) is definitive. The gamma read is of the HMBS locus switch structure; the disease lesion is coding, outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "toxic heme-precursor burden (delta-aminolevulinic acid / porphobilinogen accumulation)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "HMBS",
+    "gamma": 1.4159,
+    "spinodal_h_sp": 0.64848,
+    "barrier": 0.50119,
+    "dwell_relative_size": 1.53164,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 119084880,
+     "gene_end": 119093548,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "hydroxymethylbilane synthase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "HMBS (hydroxymethylbilane synthase / porphobilinogen deaminase) is the third enzyme of heme synthesis and consumes porphobilinogen. As a BRAKE on heme-precursor accumulation, its LOF RELEASES the brake -> the neurotoxic precursors ALA and PBG accumulate during attacks. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the TOXIC PRECURSOR BURDEN (it goes UP), so the corrective levers LOWER it.",
+    "src": "Grandchamp 1989 (HMBS mutations); Anderson 2005 review (ALA/PBG in AIP)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "HMBS",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "d97c20b70b59"
+ },
+ "treatment_A_switch": {
+  "disease": "Acute intermittent porphyria",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "ALAS1",
+    "push_direction": "knock down the UPSTREAM rate-limiting ALAS1 so less ALA / PBG is made -> lower the toxic-precursor burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "ALAS1-knockdown siRNA (givosiran)",
+    "status": "approved",
+    "mechanism_grade": "[O] ALA/PBG-lowering magnitude / attack-rate not derived from sequence",
+    "src": "Balwani 2020 NEJM 382:2289 (ENVISION, givosiran); givosiran FDA 2019"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "ALAS1",
+    "push_direction": "supply heme so feedback DOWN-regulates ALAS1 -> reduce ALA / PBG production during attacks",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "hemin / heme arginate (ALAS1 feedback repression)",
+    "status": "approved",
+    "mechanism_grade": "[O] feedback-repression magnitude not derived from sequence",
+    "src": "Anderson 2006 (hematin in acute porphyria)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "HMBS",
+    "push_direction": "restore HMBS so accumulating porphobilinogen is consumed again -> lower the toxic burden (definitive)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HMBS restoration (liver transplantation; HMBS gene therapy investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree/durability of restored HMBS activity not derived from sequence",
+    "src": "Dowman 2012 (liver transplant in AIP); D'Avola 2016 (AAV-HMBS phase I)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "ALAS1",
+   "push_direction": "knock down the UPSTREAM rate-limiting ALAS1 so less ALA / PBG is made -> lower the toxic-precursor burden",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "ALAS1-knockdown siRNA (givosiran)",
+   "status": "approved",
+   "mechanism_grade": "[O] ALA/PBG-lowering magnitude / attack-rate not derived from sequence",
+   "src": "Balwani 2020 NEJM 382:2289 (ENVISION, givosiran); givosiran FDA 2019"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.53164,
+   "dwell_disease": 2.106,
+   "dwell_treated": 1.71919,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "bcb8e7f1e04f"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "HMBS LOF (released brake) raises the toxic heme-precursor burden (axis UP)",
+   "falsifier": "an HMBS deficiency allele that LOWERED ALA / PBG accumulation would refute the released-brake direction",
+   "measurable_by": "urinary ALA / PBG levels by HMBS genotype (during attacks)"
+  },
+  {
+   "claim": "knocking down the upstream ALAS1 (givosiran / hemin) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if ALAS1 knockdown or heme feedback RAISED or failed to lower ALA / PBG, the restrain-ALAS1 lever sign is wrong",
+   "measurable_by": "urinary ALA / PBG response to ALAS1 knockdown or hemin"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Acute intermittent porphyria": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "ab4dcde36db9"
+ },
+ "determinism_sha": "196051c3ed06"
+}

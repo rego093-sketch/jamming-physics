@@ -1,0 +1,49 @@
+{
+  "phase": "R1",
+  "kind": "investigation_gate",
+  "generated": "2026-06-18",
+  "inputs": {
+    "raw_gene_condition_source_id": {
+      "path": "data/raw/clinvar/gene_condition_source_id.tsv",
+      "sha12": "c68955939e1f"
+    },
+    "disease_index_base": {
+      "path": "data/curated/disease_index_base.csv",
+      "sha12": "ddfbcac71d6b"
+    }
+  },
+  "counts": {
+    "unique_diseases": 7672,
+    "in_scope": 6170,
+    "excluded": 1502
+  },
+  "checks": [
+    {
+      "name": "provenance_complete",
+      "pass": true,
+      "detail": "7672/7672 rows carry provenance"
+    },
+    {
+      "name": "dedup_unique_cui",
+      "pass": true,
+      "detail": "0 duplicate CUIs"
+    },
+    {
+      "name": "scope_logged",
+      "pass": true,
+      "detail": "0 excluded-without-reason, 0 in-scope-with-reason"
+    },
+    {
+      "name": "in_scope_binary",
+      "pass": true,
+      "detail": "values=['false', 'true']"
+    },
+    {
+      "name": "entity_present",
+      "pass": true,
+      "detail": "0 rows missing entity"
+    }
+  ],
+  "verdict": "PASS (5/5)",
+  "note": "Scope filter is NAME-BASED and PROVISIONAL. Known boundary classes deferred to R2 case-by-case review: lysosomal/storage diseases with primary CNS (e.g. Tay-Sachs, neuronopathic Gaucher), neurocutaneous syndromes (e.g. tuberous sclerosis), and metabolic disorders with primary CNS. inheritance_class / mechanism_class are PENDING_R2. Some rows have empty genes where the source association is at a phenotypic-series level; R2 fills gene from NCBI Gene."
+}

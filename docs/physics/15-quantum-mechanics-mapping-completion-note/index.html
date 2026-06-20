@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum mechanics mapping — VP Theory §15 | Jamming Physics</title>
+<meta name="description" content="The wavefunction enters as a mapped object, not an imported axiom. Collapse becomes a counting protocol with a Gate, not a mystery.">
+<link rel="canonical" href="https://jamming-physics.org/physics/15-quantum-mechanics-mapping-completion-note/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Quantum mechanics mapping — VP Theory §15 | Jamming Physics"><meta property="og:description" content="The wavefunction enters as a mapped object, not an imported axiom. Collapse becomes a counting protocol with a Gate, not a mystery."><meta property="og:url" content="https://jamming-physics.org/physics/15-quantum-mechanics-mapping-completion-note/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Quantum mechanics mapping — VP Theory §15 | Jamming Physics"><meta name="twitter:description" content="The wavefunction enters as a mapped object, not an imported axiom. Collapse becomes a counting protocol with a Gate, not a mystery.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Quantum mechanics mapping",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"15",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§15 Quantum mechanics mapping"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §15</nav></header>
+<main>
+<h1>Quantum mechanics mapping (completion note: lock standard-QM elements as a mapping table)</h1>
+<p class="answer">Quantum mechanics mapping: The wavefunction enters as a mapped object, not an imported axiom. Collapse becomes a counting protocol with a Gate, not a mystery. Let the lattice dimension be d∈N, and define the lattice-node set.</p>
+<p class="abstract" data-phase2="abstract">The wavefunction enters as a mapped object, not an imported axiom. Collapse becomes a counting protocol with a Gate, not a mystery. 2π/3.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/15-quantum-mechanics-mapping-completion-note/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>15.1 Lattice dispersion / plane-wave solutions leftrightarrow wavefunction (state space) mapping</h2>
+<aside class="claim-strip vps" data-vps="15.1" data-cards="VP-C-043, VP-C-057"><span class="g">correspondence map (definitions)</span><span class="io">in: lattice $L=Z^d$ / out: dispersion/plane-wave solutions mapped to a wavefunction state space</span><q class="one">The wavefunction enters as a mapped object, not an imported axiom.</q><span class="cards">VP-C-043, VP-C-057</span></aside>
+<h3>15.1.1 Base set and scaling (definition)</h3>
+<p>Let the lattice dimension be d∈N, and define the lattice-node set by</p>
+<figure class="eq" id="eq:S15_01_L"><img src="/physics/eq/physics/phy-15-000.svg" data-eq="phy-15-000" width="63" height="18" loading="lazy" alt="\begin{equation} \mathcal{L}:=\mathbb{Z}^d \end{equation}"></figure>
+<p>Using the realization length a>0 and the realization time step Δ t>0 (their units are locked in the Realization chapter), define the real-space coordinate and the physical time corresponding to node n∈L and tick k∈Z as</p>
+<figure class="eq" id="eq:S15_01_xt"><img src="/physics/eq/physics/phy-15-001.svg" data-eq="phy-15-001" width="238" height="19" loading="lazy" alt="\begin{equation} \mathbf{x}(\mathbf{n}) := a\,\mathbf{n},\qquad t(k):=k\,\Delta t. \end{equation}"></figure>
+<h3>15.1.2 Complex state field from the event log (definition)</h3>
+<p>For each node n and tick k, define the 3-sector event indicators by</p>
+<figure class="eq" id="eq:S15_01_E"><img src="/physics/eq/physics/phy-15-002.svg" data-eq="phy-15-002" width="278" height="19" loading="lazy" alt="\begin{equation} E_s(\mathbf{n},k)\in\{0,1\},\qquad s\in\{1,2,3\}. \end{equation}"></figure>
+<p>Let the observation (aggregation) window have length M∈N and start tick k₀∈Z, and define</p>
+<figure class="eq" id="eq:S15_01_window"><img src="/physics/eq/physics/phy-15-003.svg" data-eq="phy-15-003" width="342" height="19" loading="lazy" alt="\begin{equation} W(k_0,M):=\{k_0,k_0+1,\dots,k_0+M-1\}. \end{equation}"></figure>
+<p>Define the sector-wise event counts (log aggregates) within the window as</p>
+<figure class="eq" id="eq:S15_01_Ns"><img src="/physics/eq/physics/phy-15-004.svg" data-eq="phy-15-004" width="276" height="44" loading="lazy" alt="\begin{equation} N_s(\mathbf{n};k_0,M):=\sum_{k\in W(k_0,M)}E_s(\mathbf{n},k). \end{equation}"></figure>
+<p>Fix the sector angles by</p>
+<figure class="eq" id="eq:S15_01_theta"><img src="/physics/eq/physics/phy-15-005.svg" data-eq="phy-15-005" width="258" height="38" loading="lazy" alt="\begin{equation} \theta_s:=\frac{2\pi}{3}(s-1),\qquad s=1,2,3. \end{equation}"></figure>
+<p>Define the node-wise 3-sector composite phasor by</p>
+<figure class="eq" id="eq:S15_01_Z"><img src="/physics/eq/physics/phy-15-006.svg" data-eq="phy-15-006" width="327" height="55" loading="lazy" alt="\begin{equation} Z(\mathbf{n};k_0,M) := \sum_{s=1}^{3} N_s(\mathbf{n};k_0,M)\,e^{i\theta_s} \in\mathbb{C}. \end{equation}"></figure>
+<p>Also define the total event count and the event density by</p>
+<figure class="eq" id="eq:S15_01_rho"><img src="/physics/eq/physics/phy-15-007.svg" data-eq="phy-15-007" width="556" height="55" loading="lazy" alt="\begin{equation} N(\mathbf{n};k_0,M):=\sum_{s=1}^{3}N_s(\mathbf{n};k_0,M),\qquad \rho(\mathbf{n};k_0,M):=\frac{1}{M}\,N(\mathbf{n};k_0,M). \end{equation}"></figure>
+<p>Define the phase (principal value) of the composite phasor by</p>
+<figure class="eq" id="eq:S15_01_phi"><img src="/physics/eq/physics/phy-15-008.svg" data-eq="phy-15-008" width="329" height="19" loading="lazy" alt="\begin{equation} \varphi(\mathbf{n};k_0,M):=\arg Z(\mathbf{n};k_0,M)\in(-\pi,\pi]. \end{equation}"></figure>
+<p>Then define the node-wise complex state field (complex amplitude) by</p>
+<figure class="eq" id="eq:S15_01_psi_def"><img src="/physics/eq/physics/phy-15-009.svg" data-eq="phy-15-009" width="314" height="35" loading="lazy" alt="\begin{equation} \psi(\mathbf{n};k_0,M):=\sqrt{\rho(\mathbf{n};k_0,M)}\,e^{i\varphi(\mathbf{n};k_0,M)}. \end{equation}"></figure>
+<p>Therefore</p>
+<figure class="eq" id="eq:S15_01_abs2_rho"><img src="/physics/eq/physics/phy-15-010.svg" data-eq="phy-15-010" width="225" height="21" loading="lazy" alt="\begin{equation} |\psi(\mathbf{n};k_0,M)|^2=\rho(\mathbf{n};k_0,M) \end{equation}"></figure>
+<p>holds identically.
+The definitions above are operational: they construct a state field directly from event-log aggregates and do not invoke axioms from any external theory.</p>
+<h3>15.1.3 State space (definition) and inner product (definition)</h3>
+<p>Define the complex function space</p>
+<figure class="eq" id="eq:S15_01_Sspace"><img src="/physics/eq/physics/phy-15-011.svg" data-eq="phy-15-011" width="303" height="56" loading="lazy" alt="\begin{equation} \mathcal{S}:=\left\{\psi:\mathcal{L}\to\mathbb{C}\ \bigg|\ \sum_{\mathbf{n}\in\mathcal{L}}|\psi(\mathbf{n})|^2&lt;\infty\right\} \end{equation}"></figure>
+<p>as the state space.
+Define the inner product on S by</p>
+<figure class="eq" id="eq:S15_01_inner"><img src="/physics/eq/physics/phy-15-012.svg" data-eq="phy-15-012" width="189" height="41" loading="lazy" alt="\begin{equation} \langle \phi,\psi\rangle := \sum_{\mathbf{n}\in\mathcal{L}}\phi(\mathbf{n})^{*}\psi(\mathbf{n}) \end{equation}"></figure>
+<p>and the norm by |ψ|:=√(⟨ψ,ψ⟩).
+A normalized state is defined by</p>
+<figure class="eq" id="eq:S15_01_normstate"><img src="/physics/eq/physics/phy-15-013.svg" data-eq="phy-15-013" width="184" height="43" loading="lazy" alt="\begin{equation} \widehat{\psi}:=\frac{\psi}{\|\psi\|}\qquad(\psi\neq 0). \end{equation}"></figure>
+<h3>15.1.4 Discrete Fourier expansion and wave-number space (definition)</h3>
+<p>Define the d-dimensional Brillouin zone by</p>
+<figure class="eq" id="eq:S15_01_BZ"><img src="/physics/eq/physics/phy-15-014.svg" data-eq="phy-15-014" width="112" height="21" loading="lazy" alt="\begin{equation} \mathcal{B}:=[-\pi,\pi)^d. \end{equation}"></figure>
+<p>For sufficiently fast-decaying states (or for a finite lattice with periodic boundary conditions), define the discrete Fourier transform by</p>
+<figure class="eq" id="eq:S15_01_FT"><img src="/physics/eq/physics/phy-15-015.svg" data-eq="phy-15-015" width="284" height="42" loading="lazy" alt="\begin{equation} \widetilde{\psi}(\boldsymbol{\kappa}) := \sum_{\mathbf{n}\in\mathcal{L}} \psi(\mathbf{n})\,e^{-i\boldsymbol{\kappa}\cdot\mathbf{n}}, \qquad \boldsymbol{\kappa}\in\mathcal{B}. \end{equation}"></figure>
+<p>Here boldsymbolκ is the dimensionless lattice wave number.
+Define the real-space wave vector (with dimension L⁻¹) by</p>
+<figure class="eq" id="eq:S15_01_kmap"><img src="/physics/eq/physics/phy-15-016.svg" data-eq="phy-15-016" width="77" height="38" loading="lazy" alt="\begin{equation} \mathbf{k}:=\frac{1}{a}\boldsymbol{\kappa}. \end{equation}"></figure>
+<h3>15.1.5 One-tick evolution operator, dispersion, and plane waves (definition)</h3>
+<p>Assume a regime in which tick evolution is linear and translation-invariant (i.e., the same rule under the same closure stack).
+Define the one-tick evolution operator by</p>
+<figure class="eq" id="eq:S15_01_Udef"><img src="/physics/eq/physics/phy-15-017.svg" data-eq="phy-15-017" width="177" height="19" loading="lazy" alt="\begin{equation} \psi(\cdot,k+1)=\mathcal{U}\,\psi(\cdot,k). \end{equation}"></figure>
+<p>Translation invariance means that for every m∈L, with the translation operator T_m defined by</p>
+<figure class="eq" id="eq:S15_01_Tm"><img src="/physics/eq/physics/phy-15-018.svg" data-eq="phy-15-018" width="191" height="19" loading="lazy" alt="\begin{equation} (\mathcal{T}_{\mathbf{m}}\psi)(\mathbf{n}) := \psi(\mathbf{n}+\mathbf{m}), \end{equation}"></figure>
+<p>one has</p>
+<figure class="eq" id="eq:S15_01_commute"><img src="/physics/eq/physics/phy-15-019.svg" data-eq="phy-15-019" width="228" height="19" loading="lazy" alt="\begin{equation} \mathcal{U}\,\mathcal{T}_{\mathbf{m}}=\mathcal{T}_{\mathbf{m}}\,\mathcal{U} \qquad(\forall\,\mathbf{m}\in\mathcal{L}). \end{equation}"></figure>
+<p>Under this condition, define the plane waves (lattice harmonic modes) by</p>
+<figure class="eq" id="eq:S15_01_planewave"><img src="/physics/eq/physics/phy-15-020.svg" data-eq="phy-15-020" width="211" height="21" loading="lazy" alt="\begin{equation} \phi_{\boldsymbol{\kappa}}(\mathbf{n}) := e^{i\boldsymbol{\kappa}\cdot\mathbf{n}}, \qquad \boldsymbol{\kappa}\in\mathcal{B}. \end{equation}"></figure>
+<p>Then φ_boldsymbolκ can be an eigenmode of U.
+Define its eigenvalue in phase form by</p>
+<figure class="eq" id="eq:S15_01_dispersion_phase"><img src="/physics/eq/physics/phy-15-021.svg" data-eq="phy-15-021" width="309" height="22" loading="lazy" alt="\begin{equation} \mathcal{U}\,\phi_{\boldsymbol{\kappa}} = e^{-i\Omega(\boldsymbol{\kappa})}\,\phi_{\boldsymbol{\kappa}}, \qquad \Omega(\boldsymbol{\kappa})\in(-\pi,\pi]. \end{equation}"></figure>
+<p>Define the lattice dispersion (angular frequency) by</p>
+<figure class="eq" id="eq:S15_01_omega"><img src="/physics/eq/physics/phy-15-022.svg" data-eq="phy-15-022" width="147" height="38" loading="lazy" alt="\begin{equation} \omega(\boldsymbol{\kappa}) := \frac{1}{\Delta t}\,\Omega(\boldsymbol{\kappa}). \end{equation}"></figure>
+<p>Therefore, a single-mode plane-wave solution can be written as</p>
+<figure class="eq" id="eq:S15_01_plane_solution"><img src="/physics/eq/physics/phy-15-023.svg" data-eq="phy-15-023" width="447" height="33" loading="lazy" alt="\begin{equation} \psi_{\boldsymbol{\kappa}}(\mathbf{n},k) = A\, e^{i\boldsymbol{\kappa}\cdot\mathbf{n}} e^{-i\Omega(\boldsymbol{\kappa})k} = A\, \exp\!\Big(i\boldsymbol{\kappa}\cdot\mathbf{n}-i\omega(\boldsymbol{\kappa})t(k)\Big). \end{equation}"></figure>
+<p>This follows directly from the definitions <a href="#eq:S15_01_Udef" class="xref" data-ref="eq:S15_01_Udef">(S15_01_Udef)</a>–<a href="#eq:S15_01_dispersion_phase" class="xref" data-ref="eq:S15_01_dispersion_phase">(S15_01_dispersion_phase)</a>.</p>
+<h3>15.1.6 Mapping table to external text (standard QM) (target-text lock)</h3>
+<p>In this section, “standard QM” is treated as an <em>external target text</em> and is not used as a derivation basis.
+The following table fixes only a <em>notation mapping</em> to the standard-QM notation (target text).
+<div class="c"></p>
+<table><tr><td>VP/lattice–event system (definition)</td><td>Standard-QM target text (term)</td><td>Mapping rule (locked)</td></tr><tr><td>Node n∈L</td><td>position variable x</td><td>x=an</td></tr><tr><td>Tick k∈Z</td><td>time variable t</td><td>t=kΔ t</td></tr><tr><td>Complex state field ψ(n;k₀,M)</td><td>wavefunction ψ(x,t)</td><td>ψ(x(n),t(k))leftrightarrow ψ(n,k)</td></tr><tr><td>Dimensionless wave number boldsymbolκ</td><td>wave vector k</td><td>k=boldsymbolκ/a</td></tr><tr><td>Eigenphase Ω(boldsymbolκ)</td><td>angular frequency ω</td><td>ω=Ω/Δ t</td></tr><tr><td>Mode exp(iboldsymbolκ·n-iΩ k)</td><td>plane wave exp(ik·x-iω t)</td><td><a href="#eq:S15_01_xt" class="xref" data-ref="eq:S15_01_xt">(S15_01_xt)</a>, <a href="#eq:S15_01_kmap" class="xref" data-ref="eq:S15_01_kmap">(S15_01_kmap)</a>, <a href="#eq:S15_01_omega" class="xref" data-ref="eq:S15_01_omega">(S15_01_omega)</a></td></tr></table>
+</div>
+<h3>15.1.7 Declared scope: allowed vs forbidden uses (locked)</h3>
+<h4>Allowed uses (internal computations in this document)</h4>
+<ul>
+<li> The complex state field ψ defined by <a href="#eq:S15_01_psi_def" class="xref" data-ref="eq:S15_01_psi_def">(S15_01_psi_def)</a> and the identity <a href="#eq:S15_01_abs2_rho" class="xref" data-ref="eq:S15_01_abs2_rho">(S15_01_abs2_rho)</a>.
+<li> The Fourier expansion <a href="#eq:S15_01_FT" class="xref" data-ref="eq:S15_01_FT">(S15_01_FT)</a> and the eigenphase (dispersion) definition <a href="#eq:S15_01_dispersion_phase" class="xref" data-ref="eq:S15_01_dispersion_phase">(S15_01_dispersion_phase)</a>.
+<li> The plane-wave mode representation <a href="#eq:S15_01_plane_solution" class="xref" data-ref="eq:S15_01_plane_solution">(S15_01_plane_solution)</a> (mode basis in a translation-invariant regime).
+</ul>
+<h4>Forbidden uses (may not be used as derivation grounds; target-text only)</h4>
+<ul>
+<li> Using the axioms of standard QM (wavefunction axiom, operator axiom, projection postulate, etc.) as <em>justification</em>.
+<li> Adopting specific continuum equations from standard QM (target text) in place of this document's internal closures/axioms.
+</ul>
+<h2>15.2 Rewriting the Born rule, measurement, and collapse as event frequency and gates (link to observation protocols)</h2>
+<aside class="claim-strip vps" data-vps="15.2" data-cards="VP-C-043, VP-C-049"><span class="g">protocol rewrite</span><span class="io">in: observation module $Λ$, output labels / out: Born rule, measurement, and collapse re-expressed as event frequencies under gated protocols</span><q class="one">Collapse becomes a counting protocol with a Gate, not a mystery.</q><span class="cards">VP-C-043, VP-C-049</span></aside>
+<h3>15.2.1 Partition of an observation module (definition)</h3>
+<p>Let the lattice region referenced by the observation module be a finite set Λ⊂L, and define the set of output labels by</p>
+<figure class="eq" id="eq:S15_02_Mset"><img src="/physics/eq/physics/phy-15-024.svg" data-eq="phy-15-024" width="183" height="19" loading="lazy" alt="\begin{equation} \mathcal{M}:=\{1,2,\dots,M_{\mathrm{out}}\}. \end{equation}"></figure>
+<p>Define a partition map that splits Λ into mutually disjoint subregions by</p>
+<figure class="eq" id="eq:S15_02_partition"><img src="/physics/eq/physics/phy-15-025.svg" data-eq="phy-15-025" width="636" height="41" loading="lazy" alt="\begin{equation} \Pi:\Lambda\to\mathcal{M}, \qquad \Omega_m:=\Pi^{-1}(m), \qquad \Omega_m\cap\Omega_{m&#x27;}=\varnothing\ (m\neq m&#x27;),\quad \bigcup_{m\in\mathcal{M}}\Omega_m=\Lambda. \end{equation}"></figure>
+<p>The family Ωₘ defines the outcome channels (output bins).</p>
+<h3>15.2.2 Event counts and outcome frequencies (definition)</h3>
+<p>For an observation window W(k₀,M), define the event count of outcome channel m by</p>
+<figure class="eq" id="eq:S15_02_Cm"><img src="/physics/eq/physics/phy-15-026.svg" data-eq="phy-15-026" width="489" height="58" loading="lazy" alt="\begin{equation} C_m(k_0,M) := \sum_{\mathbf{n}\in\Omega_m}\sum_{k\in W(k_0,M)}\sum_{s=1}^{3}E_s(\mathbf{n},k) = \sum_{\mathbf{n}\in\Omega_m} N(\mathbf{n};k_0,M). \end{equation}"></figure>
+<p>The total event count is C_tot:=Σ_m∈MCₘ.
+Define the outcome frequency (normalized event frequency) by</p>
+<figure class="eq" id="eq:S15_02_Pm"><img src="/physics/eq/physics/phy-15-027.svg" data-eq="phy-15-027" width="337" height="45" loading="lazy" alt="\begin{equation} P_m(k_0,M) := \frac{C_m(k_0,M)}{C_{\mathrm{tot}}(k_0,M)} \qquad (C_{\mathrm{tot}}&gt;0). \end{equation}"></figure>
+<p>Thus Pₘ is an outcome frequency computed <em>directly from the event log</em>.</p>
+<h3>15.2.3 Equivalent expression in terms of the complex state field (definition)</h3>
+<p>From the definition <a href="#eq:S15_01_psi_def" class="xref" data-ref="eq:S15_01_psi_def">(S15_01_psi_def)</a> and identity <a href="#eq:S15_01_abs2_rho" class="xref" data-ref="eq:S15_01_abs2_rho">(S15_01_abs2_rho)</a> in §15.1, for each channel one has</p>
+<figure class="eq" id="eq:S15_02_Cm_psi"><img src="/physics/eq/physics/phy-15-028.svg" data-eq="phy-15-028" width="464" height="42" loading="lazy" alt="\begin{equation} C_m(k_0,M) = M\sum_{\mathbf{n}\in\Omega_m}\rho(\mathbf{n};k_0,M) = M\sum_{\mathbf{n}\in\Omega_m}|\psi(\mathbf{n};k_0,M)|^2. \end{equation}"></figure>
+<p>Therefore <a href="#eq:S15_02_Pm" class="xref" data-ref="eq:S15_02_Pm">(S15_02_Pm)</a> can be rewritten exactly as</p>
+<figure class="eq" id="eq:S15_02_Pm_bornform"><img src="/physics/eq/physics/phy-15-029.svg" data-eq="phy-15-029" width="535" height="56" loading="lazy" alt="\begin{equation} P_m(k_0,M) = \frac{\sum_{\mathbf{n}\in\Omega_m}|\psi(\mathbf{n};k_0,M)|^2}{\sum_{\mathbf{n}\in\Lambda}|\psi(\mathbf{n};k_0,M)|^2} \qquad \left(\sum_{\mathbf{n}\in\Lambda}|\psi(\mathbf{n};k_0,M)|^2&gt;0\right). \end{equation}"></figure>
+<p>Here <a href="#eq:S15_02_Pm_bornform" class="xref" data-ref="eq:S15_02_Pm_bornform">(S15_02_Pm_bornform)</a> is <em>not</em> derived from the foundations of standard QM.
+It is an <em>identity</em> that holds equivalently by construction from the event-log definition and <a href="#eq:S15_01_psi_def" class="xref" data-ref="eq:S15_01_psi_def">(S15_01_psi_def)</a>.</p>
+<h3>15.2.4 Gate decision (condition for a measurement event; definition)</h3>
+<p>A measurement is an event that creates a log entry “some m was selected.”
+To formalize this, define an outcome-selection rule (gate) as</p>
+<figure class="eq" id="eq:S15_02_mstar"><img src="/physics/eq/physics/phy-15-030.svg" data-eq="phy-15-030" width="294" height="34" loading="lazy" alt="\begin{equation} m^\star := \operatorname*{arg\,max}_{m\in\mathcal{M}} \ \mathcal{G}_m\big(C_m(k_0,M);\Theta_m\big). \end{equation}"></figure>
+<p>Here Gₘ(·;Θₘ) is the gate function for channel m, and Θₘ is a pre-registered set of threshold/decision parameters.
+Define the condition for producing a measurement log by</p>
+<figure class="eq" id="eq:S15_02_PASS_meas"><img src="/physics/eq/physics/phy-15-031.svg" data-eq="phy-15-031" width="474" height="22" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{meas}} :\Longleftrightarrow \left[ \exists\,m^\star\in\mathcal{M}\ \text{s.t.}\ \mathcal{G}_{m^\star}\big(C_{m^\star}(k_0,M);\Theta_{m^\star}\big)=1 \right]. \end{equation}"></figure>
+<p>If PASS_meas does not hold, the protocol <em>does not generate a measurement log</em> (no outcome selection).</p>
+<h3>15.2.5 Operational definition of collapse (conditional renormalization) (definition)</h3>
+<p>When the measurement outcome m^* is fixed in the log (i.e., when <a href="#eq:S15_02_PASS_meas" class="xref" data-ref="eq:S15_02_PASS_meas">(S15_02_PASS_meas)</a> holds), define the following mask operator (channel filter) on the state field ψ(·;k₀,M) from the same window:</p>
+<figure class="eq" id="eq:S15_02_Pmop"><img src="/physics/eq/physics/phy-15-032.svg" data-eq="phy-15-032" width="371" height="45" loading="lazy" alt="\begin{equation} (\mathcal{P}_{m}\psi)(\mathbf{n}) := \begin{cases} \psi(\mathbf{n}), &amp; \mathbf{n}\in\Omega_m,\\ 0, &amp; \mathbf{n}\in\Lambda\setminus\Omega_m, \end{cases} \qquad \mathbf{n}\in\Lambda. \end{equation}"></figure>
+<p>Then define the <em>post-measurement state</em> by conditional renormalization:</p>
+<figure class="eq" id="eq:S15_02_collapse"><img src="/physics/eq/physics/phy-15-033.svg" data-eq="phy-15-033" width="343" height="65" loading="lazy" alt="\begin{equation} \widehat{\psi}_{\mathrm{post}} := \frac{\mathcal{P}_{m^\star}\widehat{\psi}_{\mathrm{pre}}}{\left\|\mathcal{P}_{m^\star}\widehat{\psi}_{\mathrm{pre}}\right\|} \qquad \left(\left\|\mathcal{P}_{m^\star}\widehat{\psi}_{\mathrm{pre}}\right\|&gt;0\right). \end{equation}"></figure>
+<p>Here ψ_pre is the normalized state immediately before measurement (computed under the same protocol).
+Equation <a href="#eq:S15_02_collapse" class="xref" data-ref="eq:S15_02_collapse">(S15_02_collapse)</a> is a convention for re-expressing the state <em>after</em> the event log is fixed, and cannot be applied without a gate pass.</p>
+<h3>15.2.6 Mapping table to the standard-QM target text (target-text lock)</h3>
+<p>In this subsection, standard-QM terms (Born rule, measurement, collapse) are treated as <em>target text</em>.
+The following table fixes only the notation mapping based on <a href="#eq:S15_02_Pm_bornform" class="xref" data-ref="eq:S15_02_Pm_bornform">(S15_02_Pm_bornform)</a> and <a href="#eq:S15_02_collapse" class="xref" data-ref="eq:S15_02_collapse">(S15_02_collapse)</a>.
+<div class="c"></p>
+<table><tr><td>VP/event–gate system (definition)</td><td>Standard-QM target text (term)</td><td>Mapping rule (locked)</td></tr><tr><td>Outcome frequency Pₘ</td><td>probability pₘ</td><td>pₘleftrightarrow Pₘ</td></tr><tr><td>Σ_(Ωₘ)|ψ|²/Σ_(Λ)|ψ|²</td><td>“|ψ|² rule”</td><td><a href="#eq:S15_02_Pm_bornform" class="xref" data-ref="eq:S15_02_Pm_bornform">(S15_02_Pm_bornform)</a></td></tr><tr><td>Gate pass PASS_meas</td><td>condition for measurement to occur</td><td><a href="#eq:S15_02_PASS_meas" class="xref" data-ref="eq:S15_02_PASS_meas">(S15_02_PASS_meas)</a></td></tr><tr><td>Conditional renormalization <a href="#eq:S15_02_collapse" class="xref" data-ref="eq:S15_02_collapse">(S15_02_collapse)</a></td><td>projection (collapse) notation</td><td>notation mapping only</td></tr></table>
+</div>
+<h3>15.2.7 Declared scope: allowed vs forbidden uses (locked)</h3>
+<h4>Allowed uses (internal computations in this document)</h4>
+<ul>
+<li> Log-based computation of event counts Cₘ and outcome frequencies Pₘ (<a href="#eq:S15_02_Cm" class="xref" data-ref="eq:S15_02_Cm">(S15_02_Cm)</a>–<a href="#eq:S15_02_Pm" class="xref" data-ref="eq:S15_02_Pm">(S15_02_Pm)</a>).
+<li> The identity <a href="#eq:S15_02_Pm_bornform" class="xref" data-ref="eq:S15_02_Pm_bornform">(S15_02_Pm_bornform)</a> (the ψ-form).
+<li> Conditional renormalization <a href="#eq:S15_02_collapse" class="xref" data-ref="eq:S15_02_collapse">(S15_02_collapse)</a> <em>after</em> a gate pass.
+</ul>
+<h4>Forbidden uses (may not be used as derivation grounds; target-text only)</h4>
+<ul>
+<li> Adopting the standard-QM “measurement postulate” in place of the gate definition in this document.
+<li> Back-injecting the standard-QM “probability interpretation” as the justification for the event-frequency definition.
+</ul>
+<h2>15.3 Operators, commutation relations, uncertainty, and the spin/statistics link (3-sector): separating theorem / hypothesis / validation</h2>
+<aside class="claim-strip vps" data-vps="15.3" data-cards="VP-C-048, VP-C-029"><span class="g">theorem/hypothesis/validation split</span><span class="io">in: state space $S$ / out: operators, commutation, uncertainty, and the 3-sector spin/statistics link, each filed by claim type</span><q class="one">What is theorem, what is hypothesis, what is merely checked — each claim is filed where it belongs.</q><span class="cards">VP-C-048, VP-C-029</span></aside>
+<h3>15.3.1 Operational definition of observables (theorem)</h3>
+<p>Define a linear operator O:S→S on the state space S as an observable operator.
+For a normalized state ψ, define its expectation and variance by</p>
+<figure class="eq" id="eq:S15_03_mean_var"><img src="/physics/eq/physics/phy-15-034.svg" data-eq="phy-15-034" width="420" height="34" loading="lazy" alt="\begin{equation} \langle \mathcal{O}\rangle_{\widehat{\psi}} := \langle \widehat{\psi},\mathcal{O}\widehat{\psi}\rangle, \qquad (\Delta \mathcal{O})^2_{\widehat{\psi}} := \left\langle \widehat{\psi},(\mathcal{O}-\langle \mathcal{O}\rangle_{\widehat{\psi}})^2\widehat{\psi}\right\rangle. \end{equation}"></figure>
+<p>Equation <a href="#eq:S15_03_mean_var" class="xref" data-ref="eq:S15_03_mean_var">(S15_03_mean_var)</a> is a purely operator-algebraic definition determined by the inner product <a href="#eq:S15_01_inner" class="xref" data-ref="eq:S15_01_inner">(S15_01_inner)</a>.</p>
+<h3>15.3.2 Basic operators: position, translation, and finite differences (theorem)</h3>
+<p>For coordinate component j∈1,…,d, define the position (multiplication) operator X_j by</p>
+<figure class="eq" id="eq:S15_03_X"><img src="/physics/eq/physics/phy-15-035.svg" data-eq="phy-15-035" width="291" height="19" loading="lazy" alt="\begin{equation} (\mathcal{X}_j\psi)(\mathbf{n}) := x_j(\mathbf{n})\,\psi(\mathbf{n}) = a\,n_j\,\psi(\mathbf{n}). \end{equation}"></figure>
+<p>For the unit lattice vector e_j, define the translation (shift) operator T_j by</p>
+<figure class="eq" id="eq:S15_03_T"><img src="/physics/eq/physics/phy-15-036.svg" data-eq="phy-15-036" width="423" height="25" loading="lazy" alt="\begin{equation} (\mathcal{T}_j\psi)(\mathbf{n}) := \psi(\mathbf{n}+\mathbf{e}_j), \qquad (\mathcal{T}_j^{-1}\psi)(\mathbf{n}) := \psi(\mathbf{n}-\mathbf{e}_j). \end{equation}"></figure>
+<p>The commutation relation (exact identity) follows by direct computation:</p>
+<figure class="eq" id="eq:S15_03_comm_XT"><img src="/physics/eq/physics/phy-15-037.svg" data-eq="phy-15-037" width="585" height="72" loading="lazy" alt="\begin{align} (\mathcal{X}_j\mathcal{T}_j\psi)(\mathbf{n}) &amp;= a\,n_j\,\psi(\mathbf{n}+\mathbf{e}_j), \notag\\ (\mathcal{T}_j\mathcal{X}_j\psi)(\mathbf{n}) &amp;= a\,(n_j+1)\,\psi(\mathbf{n}+\mathbf{e}_j), \notag\\ \Rightarrow\quad \big([\mathcal{X}_j,\mathcal{T}_j]\psi\big)(\mathbf{n}) &amp;= (\mathcal{X}_j\mathcal{T}_j-\mathcal{T}_j\mathcal{X}_j)\psi(\mathbf{n}) = -a\,\psi(\mathbf{n}+\mathbf{e}_j) = -a\,(\mathcal{T}_j\psi)(\mathbf{n}). \end{align}"></figure>
+<p>Hence</p>
+<figure class="eq" id="eq:S15_03_comm_XT2"><img src="/physics/eq/physics/phy-15-038.svg" data-eq="phy-15-038" width="331" height="25" loading="lazy" alt="\begin{equation} [\mathcal{X}_j,\mathcal{T}_j]=-a\,\mathcal{T}_j, \qquad [\mathcal{X}_j,\mathcal{T}_j^{-1}]=+a\,\mathcal{T}_j^{-1} \end{equation}"></figure>
+<p>holds exactly.</p>
+<h3>15.3.3 Momentum-like operator and commutation relation (theorem + hypothesis)</h3>
+<h4>(Theorem) Symmetric-difference generator</h4>
+<p>Define the symmetric-difference operator D_j by</p>
+<figure class="eq" id="eq:S15_03_D"><img src="/physics/eq/physics/phy-15-039.svg" data-eq="phy-15-039" width="175" height="38" loading="lazy" alt="\begin{equation} \mathcal{D}_j := \frac{1}{2a}\big(\mathcal{T}_j-\mathcal{T}_j^{-1}\big). \end{equation}"></figure>
+<h4>(Hypothesis H-Pmap) Mapping to the “momentum” notation in the standard-QM target text</h4>
+<p>Define the constant</p>
+<figure class="eq" id="eq:S15_03_hbar_map"><img src="/physics/eq/physics/phy-15-040.svg" data-eq="phy-15-040" width="94" height="38" loading="lazy" alt="\begin{equation} \hbar_{\mathrm{map}}:=\frac{h}{2\pi} \end{equation}"></figure>
+<p>as a <em>mapping constant</em> (derived from the realization input h).
+Define the momentum-like operator P_j by</p>
+<figure class="eq" id="eq:S15_03_P"><img src="/physics/eq/physics/phy-15-041.svg" data-eq="phy-15-041" width="285" height="40" loading="lazy" alt="\begin{equation} \mathcal{P}_j := \frac{\hbar_{\mathrm{map}}}{i}\,\mathcal{D}_j = \frac{\hbar_{\mathrm{map}}}{2ia}\big(\mathcal{T}_j-\mathcal{T}_j^{-1}\big). \end{equation}"></figure>
+<p>By <a href="#eq:S15_03_comm_XT2" class="xref" data-ref="eq:S15_03_comm_XT2">(S15_03_comm_XT2)</a>, P_j satisfies the exact commutation relation</p>
+<figure class="eq" id="eq:S15_03_comm_XP_exact"><img src="/physics/eq/physics/phy-15-042.svg" data-eq="phy-15-042" width="381" height="85" loading="lazy" alt="\begin{align} [\mathcal{X}_j,\mathcal{P}_j] &amp;= \frac{\hbar_{\mathrm{map}}}{2ia}\Big([\mathcal{X}_j,\mathcal{T}_j]-[\mathcal{X}_j,\mathcal{T}_j^{-1}]\Big) \notag\\ &amp;= \frac{\hbar_{\mathrm{map}}}{2ia}\Big(-a\mathcal{T}_j-a\mathcal{T}_j^{-1}\Big) = \frac{i\hbar_{\mathrm{map}}}{2}\big(\mathcal{T}_j+\mathcal{T}_j^{-1}\big). \end{align}"></figure>
+<p>For the plane-wave mode <a href="#eq:S15_01_planewave" class="xref" data-ref="eq:S15_01_planewave">(S15_01_planewave)</a>,</p>
+<figure class="eq" id="eq:S15_03_P_eig"><img src="/physics/eq/physics/phy-15-043.svg" data-eq="phy-15-043" width="206" height="45" loading="lazy" alt="\begin{equation} \mathcal{P}_j\,\phi_{\boldsymbol{\kappa}} = \left(\frac{\hbar_{\mathrm{map}}}{a}\sin\kappa_j\right)\phi_{\boldsymbol{\kappa}} \end{equation}"></figure>
+<p>holds.
+Therefore, in the small-κ_j regime (slow-variation regime) where sinκ_j≃ κ_j,</p>
+<figure class="eq" id="eq:S15_03_P_smallk"><img src="/physics/eq/physics/phy-15-044.svg" data-eq="phy-15-044" width="407" height="35" loading="lazy" alt="\begin{equation} \mathcal{P}_j\,\phi_{\boldsymbol{\kappa}} \simeq \left(\hbar_{\mathrm{map}}\,\frac{\kappa_j}{a}\right)\phi_{\boldsymbol{\kappa}} = \left(\hbar_{\mathrm{map}}\,k_j\right)\phi_{\boldsymbol{\kappa}} \qquad(\kappa_j\to 0). \end{equation}"></figure>
+<p>We map this approximation to the standard-QM target-text notation p=ħ k <em>only as a translation rule</em>, and it must not be used as a derivation basis.</p>
+<h3>15.3.4 Uncertainty inequality (theorem; derivation as a mathematical theorem)</h3>
+<p>Derive an operator uncertainty inequality using the Cauchy–Schwarz inequality in an inner-product space:</p>
+<figure class="eq" id="eq:S15_03_CS"><img src="/physics/eq/physics/phy-15-045.svg" data-eq="phy-15-045" width="178" height="21" loading="lazy" alt="\begin{equation} |\langle u,v\rangle|^2\le \langle u,u\rangle\,\langle v,v\rangle. \end{equation}"></figure>
+<p>For a normalized state ψ and two operators A,B, define</p>
+<figure class="eq" id="eq:S15_03_dA_dB"><img src="/physics/eq/physics/phy-15-046.svg" data-eq="phy-15-046" width="303" height="24" loading="lazy" alt="\begin{equation} \delta\mathcal{A}:=\mathcal{A}-\langle\mathcal{A}\rangle_{\widehat{\psi}},\qquad \delta\mathcal{B}:=\mathcal{B}-\langle\mathcal{B}\rangle_{\widehat{\psi}}. \end{equation}"></figure>
+<p>Let</p>
+<figure class="eq" id="eq:S15_03_u_v"><img src="/physics/eq/physics/phy-15-047.svg" data-eq="phy-15-047" width="204" height="24" loading="lazy" alt="\begin{equation} u:=\delta\mathcal{A}\,\widehat{\psi},\qquad v:=\delta\mathcal{B}\,\widehat{\psi}. \end{equation}"></figure>
+<p>Then</p>
+<figure class="eq" id="eq:S15_03_var_uv"><img src="/physics/eq/physics/phy-15-048.svg" data-eq="phy-15-048" width="409" height="33" loading="lazy" alt="\begin{equation} \langle u,u\rangle = \langle \widehat{\psi},(\delta\mathcal{A})^2\widehat{\psi}\rangle = (\Delta\mathcal{A})^2_{\widehat{\psi}}, \qquad \langle v,v\rangle = (\Delta\mathcal{B})^2_{\widehat{\psi}}. \end{equation}"></figure>
+<p>By <a href="#eq:S15_03_CS" class="xref" data-ref="eq:S15_03_CS">(S15_03_CS)</a>,</p>
+<figure class="eq" id="eq:S15_03_RS0"><img src="/physics/eq/physics/phy-15-049.svg" data-eq="phy-15-049" width="351" height="38" loading="lazy" alt="\begin{equation} (\Delta\mathcal{A})^2_{\widehat{\psi}}\,(\Delta\mathcal{B})^2_{\widehat{\psi}} \ge |\langle u,v\rangle|^2 = \left|\left\langle \widehat{\psi},\delta\mathcal{A}\,\delta\mathcal{B}\,\widehat{\psi}\right\rangle\right|^2. \end{equation}"></figure>
+<p>Let z:=⟨ ψ,δAδBψ⟩∈C and decompose</p>
+<figure class="eq" id="eq:S15_03_split"><img src="/physics/eq/physics/phy-15-050.svg" data-eq="phy-15-050" width="323" height="38" loading="lazy" alt="\begin{equation} z = \frac{1}{2}\langle \widehat{\psi},\{\delta\mathcal{A},\delta\mathcal{B}\}\widehat{\psi}\rangle + \frac{1}{2}\langle \widehat{\psi},[\delta\mathcal{A},\delta\mathcal{B}]\widehat{\psi}\rangle. \end{equation}"></figure>
+<p>Here X,Y:=XY+YX is the anticommutator and [X,Y]:=XY-YX is the commutator.
+Therefore</p>
+<figure class="eq" id="eq:S15_03_ReIm"><img src="/physics/eq/physics/phy-15-051.svg" data-eq="phy-15-051" width="234" height="22" loading="lazy" alt="\begin{equation} |z|^2 = \left(\Re z\right)^2+\left(\Im z\right)^2 \ge \left(\Im z\right)^2. \end{equation}"></figure>
+<p>Also</p>
+<figure class="eq" id="eq:S15_03_Imz"><img src="/physics/eq/physics/phy-15-052.svg" data-eq="phy-15-052" width="505" height="38" loading="lazy" alt="\begin{equation} \Im z = \frac{1}{2i}\left(z-z^{*}\right) = \frac{1}{2i}\left\langle \widehat{\psi},\left(\delta\mathcal{A}\delta\mathcal{B}-\delta\mathcal{B}\delta\mathcal{A}\right)\widehat{\psi}\right\rangle = \frac{1}{2i}\langle \widehat{\psi},[\mathcal{A},\mathcal{B}]\widehat{\psi}\rangle. \end{equation}"></figure>
+<p>Combining <a href="#eq:S15_03_RS0" class="xref" data-ref="eq:S15_03_RS0">(S15_03_RS0)</a>–<a href="#eq:S15_03_Imz" class="xref" data-ref="eq:S15_03_Imz">(S15_03_Imz)</a> yields</p>
+<figure class="eq" id="eq:S15_03_uncertainty"><img src="/physics/eq/physics/phy-15-053.svg" data-eq="phy-15-053" width="373" height="45" loading="lazy" alt="\begin{equation} \Delta\mathcal{A}\,\Delta\mathcal{B} \ge \frac{1}{2}\left|\left\langle \widehat{\psi},\frac{1}{i}[\mathcal{A},\mathcal{B}]\,\widehat{\psi}\right\rangle\right| = \frac{1}{2}\left|\langle [\mathcal{A},\mathcal{B}]\rangle_{\widehat{\psi}}\right|. \end{equation}"></figure>
+<p>Equation <a href="#eq:S15_03_uncertainty" class="xref" data-ref="eq:S15_03_uncertainty">(S15_03_uncertainty)</a> is a mathematical theorem derived from the inner product and operator definitions.</p>
+<h3>15.3.5 Spin-like label from 3-sector structure (hypothesis) and statistics (hypothesis)</h3>
+<h4>(Theorem) 3-sector probability vector</h4>
+<p>For node n and window W(k₀,M), define the sector fractions by</p>
+<figure class="eq" id="eq:S15_03_ps"><img src="/physics/eq/physics/phy-15-054.svg" data-eq="phy-15-054" width="551" height="55" loading="lazy" alt="\begin{equation} p_s(\mathbf{n};k_0,M):=\frac{N_s(\mathbf{n};k_0,M)}{N(\mathbf{n};k_0,M)} \qquad(N(\mathbf{n};k_0,M)&gt;0), \qquad \sum_{s=1}^{3}p_s=1. \end{equation}"></figure>
+<p>Define the normalized sector phasor by</p>
+<figure class="eq" id="eq:S15_03_u"><img src="/physics/eq/physics/phy-15-055.svg" data-eq="phy-15-055" width="277" height="55" loading="lazy" alt="\begin{equation} u(\mathbf{n};k_0,M):=\sum_{s=1}^{3}p_s(\mathbf{n};k_0,M)\,e^{i\theta_s} \end{equation}"></figure>
+<p>and its phase by</p>
+<figure class="eq" id="eq:S15_03_Phi"><img src="/physics/eq/physics/phy-15-056.svg" data-eq="phy-15-056" width="327" height="19" loading="lazy" alt="\begin{equation} \Phi(\mathbf{n};k_0,M):=\arg u(\mathbf{n};k_0,M)\in(-\pi,\pi]. \end{equation}"></figure>
+<p>Thus Φ is an angular variable computed from the 3-sector occupancy fractions.</p>
+<h4>(Hypothesis H-S1) Definition of a two-valued spin-like label</h4>
+<p>Consider two consecutive windows (k₀,M) and (k₀+M,M) and define the phase increment by</p>
+<figure class="eq" id="eq:S15_03_dPhi"><img src="/physics/eq/physics/phy-15-057.svg" data-eq="phy-15-057" width="500" height="33" loading="lazy" alt="\begin{equation} \Delta\Phi(\mathbf{n};k_0,M) := \mathrm{Wrap}_{(-\pi,\pi]}\!\Big(\Phi(\mathbf{n};k_0+M,M)-\Phi(\mathbf{n};k_0,M)\Big). \end{equation}"></figure>
+<p>Here Wrap_((-π,π]) reduces a value into the interval (-π,π].
+Define the spin-like label by</p>
+<figure class="eq" id="eq:S15_03_sigma"><img src="/physics/eq/physics/phy-15-058.svg" data-eq="phy-15-058" width="393" height="22" loading="lazy" alt="\begin{equation} \sigma(\mathbf{n};k_0,M) := \mathrm{sgn}\big(\Delta\Phi(\mathbf{n};k_0,M)\big) \in\{-1,0,+1\}. \end{equation}"></figure>
+<p>Treat σ=0 as indeterminate (gate failure).
+Map only σ=±1 to the standard-QM target-text “two-valued spin projection” notation, and classify σ=0 as a state with no target-text counterpart.</p>
+<h4>(Lemma T-S1) Two-valuedness is forced in the cyclic-shift regime (added v0.5.0).</h4>
+<p>Suppose the 3-sector occupancies evolve, between consecutive windows, by a cyclic shift:
+pₛ(·;k₀+M,M)=p_(s-r)(·;k₀,M) with r∈+1,-1 (one sector step per window — the
+synchronized-rotation regime of §14.0, where the sign is the CW/CCW rotation sense, §14.3.2). With
+θₛ=2π(s-1)/3, the phasor obeys
+u(k₀+M)=Σₛ p_(s-r)e^(iθₛ)=e^(2π i r/3)u(k₀), hence
+ΔΦ=Wrap_((-π,π])(2π r/3)=± 2π/3 exactly: σ=r∈+1,-1 and <em>σ=0
+cannot occur</em>. Spatial parity reverses the rotation sense (θₛ↦-θₛ, so Φ↦-Φ and
+σ↦-σ): the label set is a single parity orbit +1,-1, a forced Z₂.
+<em>Consequence for the grading:</em> the <em>two-valuedness</em> of the label is a theorem conditional on the
+cyclic-shift premise ([F]{} given the premise); what remains hypothesis (H-S1 proper, [H]{}) is (i) that physical
+one-quantum states are in this regime, and (ii) the identification of σ with the target-text
+spin-tfrac12 projection (magnitude ħ/2, the SU(2) double cover, the statistics link), which this lemma
+does not address. The logic-gaps audit graded the entry “hypothesis”; the corrected grading is
+<em>two-valuedness: conditional theorem; spin identification: hypothesis</em>.</p>
+<h4>(Hypothesis H-STAT1) Exclusive-occupancy rule and mapping to statistics</h4>
+<p>Define an <em>exclusive-occupancy regime</em> as a regime in which two objects with the same label cannot stably co-exist simultaneously on the same node (or the same slot in a contact graph).
+Declare the occupancy rule as</p>
+<figure class="eq" id="eq:S15_03_occupancy"><img src="/physics/eq/physics/phy-15-059.svg" data-eq="phy-15-059" width="776" height="19" loading="lazy" alt="\begin{equation} \mathcal{N}(\mathbf{n})\in\{0,1\}\quad(\text{exclusive-occupancy regime}), \qquad \mathcal{N}(\mathbf{n})\in\{0,1,2,\dots\}\quad(\text{non-exclusive regime}). \end{equation}"></figure>
+<p>Assign the standard-QM target-text terms “Fermi/Bose statistics” to the regime classification above <em>only as a label mapping</em>.</p>
+<h3>15.3.6 Validation items (judged only by gates; fixed list)</h3>
+<h4>(V-OP) Operator-level agreement items</h4>
+<ul>
+<li> (V-OP1) Under the same protocol, whether the mode eigenvalues of P_j satisfy <a href="#eq:S15_03_P_eig" class="xref" data-ref="eq:S15_03_P_eig">(S15_03_P_eig)</a> (Fourier-mode fit Gate).
+<li> (V-OP2) In the slow-variation regime, whether the expectation of <a href="#eq:S15_03_comm_XP_exact" class="xref" data-ref="eq:S15_03_comm_XP_exact">(S15_03_comm_XP_exact)</a> converges to ⟨ tfraciħ_map2(T_j+T_j⁻¹)⟩≃ iħ_map (regime Gate).
+</ul>
+<h4>(V-S) Spin-like label items</h4>
+<ul>
+<li> (V-S1) Within the same partition module, whether the event frequencies of the two channels σ=±1 match the predicted frequencies computed from <a href="#eq:S15_02_Pm" class="xref" data-ref="eq:S15_02_Pm">(S15_02_Pm)</a> (two-channel Gate).
+<li> (V-S2) Whether the occurrence rate of σ=0 is below a pre-registered upper bound (indeterminacy upper-bound Gate).
+</ul>
+<h4>(V-STAT) Statistics-regime items</h4>
+<ul>
+<li> (V-STAT1) In the exclusive-occupancy regime, whether the simultaneous-occupancy violation log count is 0 (exclusion-violation Gate).
+<li> (V-STAT2) In the non-exclusive regime, whether the multi-occupancy distribution satisfies the pre-registered sampling protocol (sampling Gate).
+</ul>
+<h2>15.4 Standard Model boundary: share (observational numbers) vs ban (gauge dynamics), and scope declaration</h2>
+<aside class="claim-strip vps" data-vps="15.4" data-cards="VP-C-N03, VP-C-057"><span class="g">boundary declaration</span><span class="io">in: external target texts (SM, standard QM) / out: mapping tables only — observational numbers shared, gauge dynamics banned; scope declared</span><q class="one">The Standard Model is a target text: its numbers may be borrowed, its dynamics may not.</q><span class="cards">VP-C-N03, VP-C-057</span></aside>
+<h3>15.4.1 Form of the boundary declaration (definition)</h3>
+<p>In this section, “Standard Model” and “standard QM” are treated as <em>external target texts</em>.
+The role of this chapter is to provide <em>mapping tables</em> that translate target-text terms/symbols into this document's operational definitions (LOCK, Gate, event log).
+It provides no justification and no derivational support.
+Accordingly, fix the following two categories:</p>
+<figure class="eq" id="eq:S15_04_share_ban"><img src="/physics/eq/physics/phy-15-060.svg" data-eq="phy-15-060" width="929" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{share}}:\ \text{share (observational numbers / reporting units)}, \qquad \mathcal{C}_{\mathrm{ban}}:\ \text{ban (target-text dynamics / axioms / structure)}. \end{equation}"></figure>
+<h3>15.4.2 Shared items Cₛhare (observational numbers and reporting units; fixed list)</h3>
+<p>The following items are shared <em>only</em> as “reported quantities” or “reporting units.”
+Sharing means unit conversion and table-based correspondence; it does <em>not</em> mean adopting the target text's theoretical structure.</p>
+<ul>
+<li> (SH1) The choice of reporting units for mass, length, time, energy, etc. (SI or the document's realization units).
+<li> (SH2) The numerical values themselves when given observationally (e.g., mass ratios, length ratios, frequency ratios).
+<li> (SH3) Labels of reported quantities referred to by terms such as “charge,” “spin,” and “probability.”
+</ul>
+<h3>15.4.3 Banned items C_ban (gauge dynamics and axiom structure; fixed list)</h3>
+<p>The following items, even if present in the target text, are not permitted in the derivation chain of this document.</p>
+<ul>
+<li> (BN1) Target-text dynamical generators such as gauge fields, gauge symmetry, Lagrangians, and action integrals.
+<li> (BN2) Internal target-text construction principles such as renormalization, perturbation expansions, and vacuum structure.
+<li> (BN3) Treating the axioms of standard QM (state axiom, measurement axiom, operator axiom) as <em>grounds</em>.
+<li> (BN4) Adopting target-text continuum equations (e.g., a specific wave equation) in place of this document's closures.
+</ul>
+<h3>15.4.4 Mapping table to the standard-QM/Standard-Model target text (including banned scope; fixed)</h3>
+<div class="c">
+<table><tr><td>This document (operational definitions / outputs)</td><td>Target text (term)</td><td>Handling (share / ban)</td></tr><tr><td>Event log Eₛ, counts Nₛ, frequencies Pₘ</td><td>probability p</td><td>share: report item; ban as justification</td></tr><tr><td>Complex state field ψ (event density + phase construction)</td><td>wavefunction ψ</td><td>share: notation mapping; ban as axiom</td></tr><tr><td>Gate PASS and conditional renormalization</td><td>measurement/collapse</td><td>share: notation mapping; ban as axiom</td></tr><tr><td>Operators X,T,P and commutators</td><td>operators/commutators</td><td>share: mapping table; ban target-text axioms</td></tr><tr><td>3-sector phase-increment label σ</td><td>spin (projection)</td><td>share: label mapping; ban dynamics structure</td></tr><tr><td>Exclusive/non-exclusive occupancy regimes</td><td>statistics (Fermi/Bose)</td><td>share: label mapping; ban target-text principle</td></tr></table>
+</div>
+<h3>15.4.5 Effective scope (regime declaration; locked)</h3>
+<p>The mapping of this chapter is defined only in the following regimes:</p>
+<ul>
+<li> (R1) A regime where an event log exists (C_tot>0) and a state field ψ can be constructed by <a href="#eq:S15_01_psi_def" class="xref" data-ref="eq:S15_01_psi_def">(S15_01_psi_def)</a>.
+<li> (R2) A regime where the observation-module partition Π, the gate functions Gₘ, and the thresholds Θₘ are pre-registered.
+<li> (R3) If an operator mapping is claimed (in particular, the target-text mapping of P_j), a slow-variation regime (small |boldsymbolκ|) must be separately certified by a Gate.
+</ul>
+<p>If these regime conditions do not hold, no conclusions may be produced using the target-text mapping tables.</p>
+<h2>15.5 Blackbody radiation: the energy quantum reinterpreted as a lattice-stiffness threshold</h2>
+<aside class="claim-strip vps" data-vps="15.5" data-cards="VP-C-014, VP-C-048"><span class="g">reinterpretation (CALIB; not a derivation of $h$)</span><span class="io">in: rigidity-shell modes, BE statistics / out: quantum as lattice-stiffness threshold $ε_b=h_VPν$; spectrum shape follows, $h_VP$ calibrated (S16.4)</span><q class="one">Planck&#x27;s quantum re-read as a lattice toll — the spectrum follows, $h$ is calibrated, nothing is over-claimed.</q><span class="cards">VP-C-014, VP-C-048</span></aside>
+<span id="sec:S15_05_blackbody"></span>
+<p>This section does <em>not</em> derive energy quantization from a deeper principle; it <em>reinterprets</em> the quantum as the cost of crossing a rigidity-shell barrier, ε_b(ν)=h_VPν (the Planck hypothesis stated in lattice language, with h_VP calibrated to data; grade CALIB, §16.4).
+Given that reinterpretation, the spectrum <em>shape</em> follows from <strong>standard Bose–Einstein statistics</strong> over the <strong>rigidity-shell</strong> modes and the 3D mode count; the contribution here is conceptual (the quantum as lattice stiffness), not a derivation of h or of quantization. (Planck's original paper: M. Planck, “Ueber das Gesetz der Energieverteilung im Normalspectrum,” <em>Annalen der Physik</em> <strong>309</strong>(3), 553–563 (1901). DOI: <a href="https://doi.org/10.1002/andp.19013090310" rel="noopener">10.1002/andp.19013090310</a>.)</p>
+<h3>15.5.1 Geometry of mode count (statement): g(ν)∝ ν²</h3>
+<p>In a 3D cavity, the number of wave modes is given by the volume of a spherical shell in k-space.
+As a function of frequency ν, the mode density per unit volume scales geometrically as</p>
+<figure class="eq" id="eq:S15_05_gnu"><img src="/physics/eq/physics/phy-15-061.svg" data-eq="phy-15-061" width="122" height="21" loading="lazy" alt="\begin{equation} g(\nu)\,d\nu \propto \nu^{2}\,d\nu \end{equation}"></figure>
+<p>(continuum geometry).
+Including the usual electromagnetic prefactors gives g(ν)=8πν²/c_ref³,
+but the key point here is that the ν² scaling comes from <strong>pure geometry</strong>.</p>
+<h3>15.5.2 Rigidity-shell barrier and the action constant h_VP (definition)</h3>
+<p>In VP theory, “softness” is not a property of the particle itself but the result of <strong>structural events</strong> (§3.2.1).
+For a high-frequency mode to exist, the lattice rigidity shell must be periodically deformed.
+Under linear elastic response, the strain rate ε is proportional to frequency.
+Hence the minimum barrier energy ε_b required to penetrate the shell (or to cross the critical deformation once) satisfies</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-15-062.svg" data-eq="phy-15-062" width="112" height="19" loading="lazy" alt="\begin{equation} \epsilon_b(\nu) \propto \dot{\varepsilon} \propto \nu. \end{equation}"></figure>
+<p>Fix the proportionality constant in <strong>action (energy×time) units</strong> and <em>define</em></p>
+<figure class="eq" id="eq:S15_05_barrier"><img src="/physics/eq/physics/phy-15-063.svg" data-eq="phy-15-063" width="123" height="28" loading="lazy" alt="\begin{equation} \boxed{\epsilon_b(\nu) := h_{\mathrm{VP}}\,\nu} \end{equation}"></figure>
+<p>Here h_VP is not an arbitrary “unknown constant”;
+it is the <strong>minimum action (structural resistance coefficient)</strong> required for the VP shell to allow one cycle of deformation.</p>
+<h3>15.5.3 Integer event count n and the emergence of (e^x-1)⁻¹ (derivation)</h3>
+<p>The key point is that “excitation” is not continuous but is tallied as the <strong>number of barrier-crossing events</strong>.
+In a mode of frequency ν, one barrier crossing costs ε_b(ν)=h_VPν;
+therefore the accumulated energy after n crossing events is</p>
+<figure class="eq" id="eq:S15_05_En"><img src="/physics/eq/physics/phy-15-064.svg" data-eq="phy-15-064" width="307" height="19" loading="lazy" alt="\begin{equation} E_n(\nu) = n\,h_{\mathrm{VP}}\,\nu,\qquad n\in\{0,1,2,\dots\}. \end{equation}"></figure>
+<p>This is not “postulating E=n hν” but follows from the fact that <strong>n is an event count and thus must be an integer</strong> (discreteness).</p>
+<p>In thermal equilibrium at temperature T, the Boltzmann weight is</p>
+<figure class="eq" id="eq:S15_05_Pn"><img src="/physics/eq/physics/phy-15-065.svg" data-eq="phy-15-065" width="370" height="45" loading="lazy" alt="\begin{equation} P(n\mid \nu) \propto \exp\!\left(-\frac{E_n(\nu)}{k_B T}\right) =\exp\!\left(-\frac{n h_{\mathrm{VP}}\nu}{k_B T}\right) \end{equation}"></figure>
+<p>and the partition function closes as a geometric series:</p>
+<figure class="eq" id="eq:S15_05_Z"><img src="/physics/eq/physics/phy-15-066.svg" data-eq="phy-15-066" width="412" height="52" loading="lazy" alt="\begin{equation} Z(\nu)=\sum_{n=0}^{\infty} e^{-n\beta h_{\mathrm{VP}}\nu}=\frac{1}{1-e^{-\beta h_{\mathrm{VP}}\nu}},\qquad \beta:=\frac{1}{k_B T}. \end{equation}"></figure>
+<p>Therefore the mean energy per mode is</p>
+<figure class="eq" id="eq:S15_05_Emean"><img src="/physics/eq/physics/phy-15-067.svg" data-eq="phy-15-067" width="303" height="42" loading="lazy" alt="\begin{equation} \langle E\rangle(\nu) = -\frac{\partial}{\partial \beta}\ln Z =\frac{h_{\mathrm{VP}}\nu}{e^{h_{\mathrm{VP}}\nu/(k_B T)}-1}. \end{equation}"></figure>
+<p>This term produces the characteristic “-1” of the Planck spectrum.</p>
+<h3>15.5.4 Planck spectrum (conclusion): geometry × stiffness filter</h3>
+<p>The energy density per unit volume is u(ν)=g(ν)⟨ E⟩(ν), hence</p>
+<figure class="eq" id="eq:S15_05_planck_shape"><img src="/physics/eq/physics/phy-15-068.svg" data-eq="phy-15-068" width="641" height="74" loading="lazy" alt="\begin{equation} u(\nu) \propto \underbrace{\nu^{2}}_{\text{geometric mode count}} \times \underbrace{\frac{h_{\mathrm{VP}}\nu}{e^{h_{\mathrm{VP}}\nu/(k_B T)}-1}}_{\text{rigidity-shell filter (discrete events)}} \;\;\Rightarrow\;\; u(\nu)\propto \frac{\nu^{3}}{e^{h_{\mathrm{VP}}\nu/(k_B T)}-1}. \end{equation}"></figure>
+<p>Thus the high-frequency cutoff is not a “mystery of light”;
+it occurs because the <strong>rigidity shell structurally blocks (filters) high-frequency deformation</strong>.</p>
+<h4>Interpretive note (NON-LOCK)</h4>
+<p>If one loosely says “light is gas-like,” this should be read as a statement about excitation statistics on top of a jammed background (State 4), not as a claim that the vacuum medium itself is unjammed. A concise regime dictionary for this distinction is provided in <a href="/physics/axl-4-3-1-state-dictionary/#app:state_dictionary_431" class="xref" data-ref="app:state_dictionary_431">Appendix L</a> (see L.5).</p>
+<figure class="fig"><img src="/physics/assets/img/phy-fig-01.svg" loading="lazy" alt="Blackbody radiation by rigidity-shell filtering (schematic).
+At low frequency the geometric growth of modes (ν²) domin"><figcaption>Blackbody radiation by rigidity-shell filtering (schematic).
+At low frequency the geometric growth of modes (ν²) dominates, whereas at high frequency the rigidity-shell barrier exceeds thermal excitation and a cutoff occurs.</figcaption></figure>
+<h3>15.5.5 Gate: conditions for using the blackbody regime (definition)</h3>
+<p>This derivation may be used as a “Planck spectrum derivation” only when the following conditions hold:</p>
+<figure class="eq" id="eq:S15_05_pass_BB"><img src="/physics/eq/physics/phy-15-069.svg" data-eq="phy-15-069" width="906" height="19" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{BB}} :\Longleftrightarrow \text{(thermal equilibrium)}\wedge\text{(optically thick cavity)}\wedge\text{(linear response)}\wedge\text{(integer event count $n$ holds)}. \end{equation}"></figure>
+<p>If conditions are not satisfied, this section is set to <code>INCONCLUSIVE</code>.</p>
+<h2 class="part">Open — What This Framework Does Not Claim</h2>
+<p>Stated plainly. §12 (electron one-second) carries an unresolved O(1) factor. Other open items are flagged <em>in place</em> within their parent sections in Part I—αₑₘ (§14.5, non-evidence) and the absolute magnitude of gravity (§17.4, a proven obstruction = the hierarchy problem).</p>
+<nav class="pn"><a rel="prev" href="/physics/13-mass-u-lat-m-h/">← §13</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/12-electron-1-second-cross-check/">§12 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrainment: the phase-response curve and the Arnold tongue — Chronobiology §3 | Jamming Physics</title>
+<meta name="description" content="The circadian clock entrains via a biphasic phase-response curve (a pulse advances or delays depending on phase, with a dead zone) and locks to a periodic zeitgeber with a locking range that widens with strength — an Arnold tongue. The PRC bounds re-alignment to ~1 h/day.">
+<meta name="keywords" content="circadian rhythm, circadian clock, chronobiology, limit-cycle oscillator, BMAL1, CLOCK gene, PER CRY feedback loop, suprachiasmatic nucleus, SCN, FitzHugh-Nagumo, jamming physics, VP theory, deterministic model, measured gamma, phase-response curve, Arnold tongue, zeitgeber, light entrainment, melatonin PRC, jet lag">
+<meta name="author" content="Young Jae Lee">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://jamming-physics.org/circadian/03-entrainment-prc/">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jamming Physics">
+<meta property="og:title" content="Entrainment: the phase-response curve and the Arnold tongue — Chronobiology §3">
+<meta property="og:description" content="The circadian clock entrains via a biphasic phase-response curve (a pulse advances or delays depending on phase, with a dead zone) and locks to a periodic zeitgeber with a locking range that widens with strength — an Arnold tongue. The PRC bounds re-alignment to ~1 h/day.">
+<meta property="og:url" content="https://jamming-physics.org/circadian/03-entrainment-prc/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Entrainment: the phase-response curve and the Arnold tongue — Chronobiology §3">
+<meta name="twitter:description" content="The circadian clock entrains via a biphasic phase-response curve (a pulse advances or delays depending on phase, with a dead zone) and locks to a periodic zeitgeber with a locking range that widens with strength — an Arnold tongue. The PRC bounds re-alignment to ~1 h/day.">
+<link rel="stylesheet" href="/circadian/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle",
+ "headline":"Entrainment: the phase-response curve and the Arnold tongue — Chronobiology §3",
+ "isPartOf":{"@type":"CreativeWorkSeries","name":"Chronobiology: the Circadian Oscillator Network, Entrainment, and Clock-Disruption Disease","url":"https://jamming-physics.org/circadian/","sameAs":"https://doi.org/10.5281/zenodo.20755413","identifier":"10.5281/zenodo.20755413"},
+ "position":3,
+ "identifier":"10.5281/zenodo.20755413",
+ "datePublished":"2026-06-19","dateModified":"2026-06-19",
+ "isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/03-entrainment-prc/",
+ "knowsAbout":["circadian rhythm","circadian clock","chronobiology","limit-cycle oscillator","BMAL1","CLOCK gene","PER CRY feedback loop","suprachiasmatic nucleus","SCN","FitzHugh-Nagumo","jamming physics","VP theory","deterministic model","measured gamma","phase-response curve","Arnold tongue","zeitgeber","light entrainment","melatonin PRC","jet lag"],
+ "author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+ "publisher":{"@type":"Organization","name":"Zenodo"},
+ "license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Chronobiology","item":"https://jamming-physics.org/circadian/"},
+ {"@type":"ListItem","position":3,"name":"§3 Entrainment &amp; the PRC"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/circadian/">Chronobiology</a> &rsaquo; §3 Entrainment &amp; the PRC</nav></header>
+<main>
+<h1>Entrainment &mdash; the phase-response curve and the Arnold tongue</h1>
+<!-- vp:answer:start -->
+<p class="answer">A brief pulse <strong>advances</strong> the clock (up to 0.185022 of a cycle) or <strong>delays</strong> it (down to -0.129012) depending on phase, with a dead zone &mdash; the canonical biphasic circadian light PRC, emergent with no fitting. A periodic zeitgeber locks the clock, and the locking range widens monotonically with strength ([5, 11, 15, 15, 15] detunings across the sweep): an Arnold tongue.</p>
+<!-- vp:answer:end -->
+<p class="abstract">Entrainment is phase resetting, not driving. The substrate reproduces the canonical light phase-response curve (advance / delay / dead zone, correct sign) and the Arnold-tongue widening of the locking range with zeitgeber strength. The PRC is also the clock's control law: it bounds re-alignment to about an hour a day, the limit the misalignment and chronotherapy chapters both turn on. Mechanism and tongue verified; absolute period a cited anchor.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">verified</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/03-entrainment-prc/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20755413" rel="noopener">DOI snapshot</a>
+</aside>
+<!-- vp:cards:start -->
+<aside class="vp-card" data-locked="entrainment_prc"><b>entrainment = phase resetting along a biphasic PRC, with the locking range widening as an Arnold tongue</b> = a brief pulse ADVANCES (up to 0.185022 cyc) or DELAYS (down to -0.129012 cyc) the clock depending on phase, with a dead zone &mdash; the canonical circadian light PRC (morning advances, evening delays), emergent with no fitting; a periodic zeitgeber LOCKS the clock and the locking range widens monotonically with strength ([5, 11, 15, 15, 15] detunings locked across the amplitude sweep) = an Arnold tongue; the PRC bounds re-alignment to ~1 h/day, the limit the disease + treatment chapters use; mechanism + tongue [V], absolute period [L] <b>[V mech]</b>. <a href="/circadian/03-entrainment-prc/">this chapter</a></aside>
+<!-- vp:cards:end -->
+<h2>A pulse advances or delays depending on when it lands</h2>
+<p>A free-running clock is entrained by resetting its phase. Deliver a brief pulse at many phases of the cycle and measure the shift of the next beat: the response is <strong>biphasic</strong>. A pulse in one part of the cycle <em>advances</em> the clock (up to <span class="mono">0.185022</span> of a cycle), a pulse in another part <em>delays</em> it (down to <span class="mono">-0.129012</span>), with a dead zone between. That advance/delay-with-a-dead-zone shape is the canonical circadian light phase-response curve &mdash; morning light advances, evening light delays &mdash; and it falls out of the substrate, sign and all, with no curve-fitting.</p>
+<h2>Stronger zeitgeber, wider locking range: the Arnold tongue</h2>
+<p>Entrainment proper is locking to a periodic drive. Sweep a periodic zeitgeber over a wide band of external periods (0.65&ndash;1.35&times; the natural period) at five amplitudes and count how many detunings lock. The locking range <strong>widens monotonically</strong> with zeitgeber strength: <span class="mono">[5, 11, 15, 15, 15]</span> detunings locked across the amplitude sweep. A weak zeitgeber entrains only near the natural period; a strong one captures a broad band. That widening wedge is an Arnold tongue &mdash; the standard structure of a forced oscillator, here emergent.</p>
+<h2>Why this matters for the disease axis</h2>
+<p>The PRC is also the clock's <strong>control law</strong>, and it sets a hard limit that the disease and treatment chapters both use: because a single pulse only shifts the clock by a bounded amount, the clock can re-align only <strong>~1&nbsp;hour per day</strong>. A large phase gap therefore takes many days to close &mdash; the mechanism of jet lag &mdash; and a corrective zeitgeber works only if it lands on the right side of the PRC. Mechanism and tongue are <span class="mono">[V]</span>; the absolute period the tongue centres on is the cited <span class="mono">[L]</span> anchor.</p>
+<nav class="pn">
+  <a rel="prev" href="/circadian/02-free-running/">&larr; §2 Free-running</a>
+  <a href="/circadian/">paper contents</a>
+  <a rel="next" href="/circadian/04-master-vs-network/">§4 Master vs network &rarr;</a>
+</nav>
+</main>
+<footer>Part of <a href="/circadian/">Chronobiology</a> &middot; <a href="https://doi.org/10.5281/zenodo.20755413" rel="noopener">DOI 10.5281/zenodo.20755413</a> &middot; seam cites mind <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

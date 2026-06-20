@@ -1,0 +1,63 @@
+{
+ "_what": "Circulatory Transport -- emerge organs from measured gamma, then circulate transport / control-loop / clearance dynamics from the cardiac pump BC.",
+ "dynamics_status": "EMERGED: vessels(Windkessel) + kidney(TGF+osmostat) + liver(well-stirred) driven from the cardiac pump BC. Stress battery in repro/_verify; carcinogen kernel in repro/_oncology.",
+ "hemodynamics": {
+  "DBP_mmHg": 80.2092,
+  "MAP_mmHg": 95.6665,
+  "PP_mmHg": 32.0166,
+  "SBP_mmHg": 112.2258,
+  "tau_RC_s": 1.54,
+  "tau_meas_s": 1.5398
+ },
+ "hepatic": {
+  "CL_H_mL_min": 1124.9994,
+  "E": 0.75,
+  "F": 0.25
+ },
+ "organs": {
+  "gamma_order_ascending": [
+   "liver",
+   "kidney"
+  ],
+  "order_grade": "[V] order is a pure gamma readout (SIX2 1.5556 > HHEX 1.525 => liver-before-kidney by functional spinodal)",
+  "organs": [
+   {
+    "dyn_class": "control-loop",
+    "functional_spinodal": 0.746784,
+    "gamma": 1.5556,
+    "master": "SIX2",
+    "organ": "kidney",
+    "rel_size_dwell": 1.76382,
+    "role": "metanephric nephron: filtration + tubular transport + osmoregulation"
+   },
+   {
+    "dyn_class": "clearance",
+    "functional_spinodal": 0.724858,
+    "gamma": 1.525,
+    "master": "HHEX",
+    "organ": "liver",
+    "rel_size_dwell": 1.712033,
+    "role": "hepatic blood flow + first-pass clearance/metabolism"
+   },
+   {
+    "dyn_class": "transport",
+    "gamma": null,
+    "master": "(vasculature)",
+    "note": "no single master gene (derived/diffuse)",
+    "organ": "vessels",
+    "role": "pressure-driven flow network (no single master gene; mesodermal/diffuse)"
+   }
+  ]
+ },
+ "oscillators": {},
+ "osmoregulation": {
+  "osm_rest": 287.0,
+  "osm_set": 287.0
+ },
+ "renal": {
+  "GFR_mL_min": 125.0,
+  "GFR_set": 125.0,
+  "P_GC_mmHg": 54.0,
+  "RBF_mL_min": 1100.4785
+ }
+}

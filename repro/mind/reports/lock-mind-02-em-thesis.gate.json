@@ -1,0 +1,45 @@
+{
+  "phase": "lock",
+  "paper": "mind",
+  "scope": "§2 not-a-field (regime lock; numbers cited to neuro §18–§19, one-way)",
+  "lock": "EM near/far thesis (radiative far-field carrier RETIRED + near-field ephaptic AFFIRMED)",
+  "canonical": "EM_NEAR_FAR_THESIS.md",
+  "generator": "repro/mind/02-not-a-field/verify_em_thesis.py",
+  "generator_sha256": "c6bfb4203e374929eef9f7549f9a3431a6d9ebe8372a7f251d982e96d3cf30b1",
+  "deterministic": "no RNG; 2x run identical; every constant is a measured input or derived value",
+  "checks_total": 6,
+  "checks_pass": 6,
+  "verdict": "PASS",
+  "boundaries_pinned": [
+    "far-field radiative/optical-fibre carrier RETIRED",
+    "near-field ephaptic carrier AFFIRMED (neuro §19)"
+  ],
+  "checks": [
+    {
+      "name": "(A) far-field RETIRED: non-radiation, radiated fraction (kr)^2 = 5.08e-15 << 1e-9",
+      "pass": true
+    },
+    {
+      "name": "(A) far-field RETIRED: transparency, head/skin-depth = 1.17e-3 << 1e-2",
+      "pass": true
+    },
+    {
+      "name": "(A) far-field RETIRED: velocity, light/nerve = 1.78e6x >= 1e6",
+      "pass": true
+    },
+    {
+      "name": "(B) near-field AFFIRMED: ephaptic dVm = 0.2748 mV contained in measured < 0.5 mV",
+      "pass": true
+    },
+    {
+      "name": "(B) near-field AFFIRMED: dVm = 0.2748 mV > 0.1 mV (at threshold, not negligible)",
+      "pass": true
+    },
+    {
+      "name": "(B) internal flow: cable space constant = 1.58 mm (mm-scale)",
+      "pass": true
+    }
+  ],
+  "drift": [],
+  "missing": []
+}

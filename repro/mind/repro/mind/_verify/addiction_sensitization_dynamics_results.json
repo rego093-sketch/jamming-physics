@@ -1,0 +1,229 @@
+{
+  "A1_incentive_sensitisation": {
+    "eta_sweep": {
+      "0.03": true,
+      "0.05": true,
+      "0.08": true
+    },
+    "monotone_over_eta_sweep": true,
+    "reading": "repeated reward exposure monotonically strengthens the retained reward-circuit trace -- the integrated sensitisation gain (dFosB trace) accumulating; the thing a one-shot reward does not do and B-i named out of reach for the instant levers. Direction grounded in M5 RPE; magnitude [O]",
+    "reproduced": true,
+    "trace_monotone_increasing": true,
+    "trace_vs_exposures": {
+      "0": 0.0,
+      "4": 0.077013,
+      "8": 0.152896,
+      "12": 0.226976,
+      "18": 0.332504,
+      "24": 0.429096
+    }
+  },
+  "A2_cue_reactivity": {
+    "R_naive_cue": 0.3956732853,
+    "R_naive_off": 0.3896145516,
+    "endpoint_sensitised_exceeds_naive": true,
+    "eta_depth_sweep": {
+      "eta0.03_d12": true,
+      "eta0.03_d24": true,
+      "eta0.05_d12": true,
+      "eta0.05_d24": true,
+      "eta0.08_d12": true,
+      "eta0.08_d24": true
+    },
+    "holds_over_eta_x_depth_sweep": true,
+    "marginal_cue_gain_monotone_NOT_asserted": 1.0,
+    "reading": "a connectome sensitised by reward exposure responds MORE to the SAME reward cue than a naive one (R_sens(cue) > R_naive(cue)), its resting R already >= naive -- the learned trace sits the circuit in a higher-coordination basin, the substrate of cue-induced craving/relapse. Only the response-exceeds-naive SIGN is asserted (the marginal cue gain is not claimed monotone)",
+    "reproduced": true,
+    "sensitised_rows": {
+      "12": {
+        "cue_gt_naive": true,
+        "off_ge_naive": true,
+        "sens_cue": 0.3964819351,
+        "sens_off": 0.393669875
+      },
+      "24": {
+        "cue_gt_naive": true,
+        "off_ge_naive": true,
+        "sens_cue": 0.3995029121,
+        "sens_off": 0.3959008961
+      }
+    }
+  },
+  "A3_extinction_persists": {
+    "eta0_trace_exactly_zero": true,
+    "eta_sweep": {
+      "0.03": {
+        "extinction_trace": 0.271121,
+        "persists": true
+      },
+      "0.05": {
+        "extinction_trace": 0.427644,
+        "persists": true
+      },
+      "0.08": {
+        "extinction_trace": 0.610782,
+        "persists": true
+      }
+    },
+    "extinction_trace_above_zero": true,
+    "persistence_over_eta_sweep": true,
+    "reading": "removing the reward (extinction = baseline OFF epochs) does NOT return the trace to zero under plasticity (eta>0: trace stays above zero, here it continues to consolidate), whereas with eta=0 it is exactly zero -- extinction removes the DRIVE (the reachable instant axis) but not the LEARNED TRACE (the out-of-reach axis): the convergence seam, dynamically. Direction forced",
+    "reproduced": true,
+    "trace_after_extinction_eta0": 0.0,
+    "trace_after_extinction_eta_pos": 0.427644,
+    "trace_after_sensitisation": 0.226976
+  },
+  "A4_plasticity_variable_guard": {
+    "eta0_R_after_reward_removed": 0.3896145516,
+    "eta0_W_identical_to_kernel": true,
+    "eta0_baseline_epoch_matches_anchor": true,
+    "eta0_retained_trace": 0.0,
+    "eta0_reverts_exactly": true,
+    "eta0_reward_epoch_R": 0.4005046134,
+    "matches_frozen_anchor_bitwise": true,
+    "reading": "with eta=0 the reward excursion reverts EXACTLY when the reward bias is removed and W stays identical to the kernel -- the integrated gain DISAPPEARS without plasticity, proving the sensitisation axis is a LEARNED/CONSOLIDATED (plasticity) variable, not an instant one. This is precisely why B-i's instant levers (drive or ion) cannot reach it; eta=0 reproduces the frozen M9 anchor bit-for-bit (pure add-on)",
+    "reproduced": true
+  },
+  "A5_dynamics_handle_spacing": {
+    "eta_epochs_sweep": {
+      "eta0.03_k4": {
+        "massed_dW": 0.046784,
+        "spaced_dW": 0.092305,
+        "spaced_gt": true
+      },
+      "eta0.03_k6": {
+        "massed_dW": 0.070014,
+        "spaced_dW": 0.137982,
+        "spaced_gt": true
+      },
+      "eta0.03_k8": {
+        "massed_dW": 0.093134,
+        "spaced_dW": 0.183183,
+        "spaced_gt": true
+      },
+      "eta0.05_k4": {
+        "massed_dW": 0.077013,
+        "spaced_dW": 0.151696,
+        "spaced_gt": true
+      },
+      "eta0.05_k6": {
+        "massed_dW": 0.115087,
+        "spaced_dW": 0.225471,
+        "spaced_gt": true
+      },
+      "eta0.05_k8": {
+        "massed_dW": 0.152896,
+        "spaced_dW": 0.296501,
+        "spaced_gt": true
+      },
+      "eta0.08_k4": {
+        "massed_dW": 0.120978,
+        "spaced_dW": 0.236715,
+        "spaced_gt": true
+      },
+      "eta0.08_k6": {
+        "massed_dW": 0.18028,
+        "spaced_dW": 0.346401,
+        "spaced_gt": true
+      },
+      "eta0.08_k8": {
+        "massed_dW": 0.238245,
+        "spaced_dW": 0.446253,
+        "spaced_gt": true
+      }
+    },
+    "holds_over_eta_x_epochs_sweep": true,
+    "massed_continuous_dW": 0.115087,
+    "reading": "SPACED (intermittent) reward exposure consolidates a LARGER retained trace than MASSED (continuous) at equal total time-at-reward -- intermittent reinforcement sensitises MORE, emerging from pure phase-plasticity (the E0.2 spacing effect applied to the reward bias). This is the structural HANDLE on the trace B-i named out of reach: the threshold frame names the gain unreachable for instant levers; the dynamics frame both exhibits it (A1-A3) and gives a handle on it (the schedule of exposure). Direction forced; magnitude [O]",
+    "reproduced": true,
+    "spaced_exceeds_massed": true,
+    "spaced_intermittent_dW": 0.225471
+  },
+  "_what": "ADD-T3a -- addiction sensitisation dynamics: the integrated reward-circuit gain (the dFosB trace) modelled DIRECTLY on top of the E0 plasticity layer (imports PlasticConnectome; does not re-derive the rule). The reward SIGN is grounded READ-ONLY in M5 (dopamine RPE potentiation) and M4 (selection); a reward-exposure epoch maps to a positive reward-drive bias and the E0 Hebbian update accumulates it into a retained structural trace. This is the OTHER HALF of the §36 (ADD-T-L, B-i) convergence: B-i NAMED the integrated gain out of reach for the instant threshold levers (a gain not a fold AND a learned not an instant variable); B-ii MODELS it and supplies the variable that MOVES it. Magnitudes are never asserted; only the SIGNS.",
+  "anchor": {
+    "cue_bias": 0.08,
+    "eta_representative": 0.05,
+    "health_R_M9_anchor": 0.3896145516,
+    "matches_frozen_anchor_bitwise": true,
+    "note": "reward exposure RAISES coupling (k=kappa/(1-|b|)); eta is [O]; the SIGNS survive an eta sweep, so no number is fit to a target",
+    "reward_bias": 0.12
+  },
+  "convergence_with_B_i": {
+    "B_i_named": "the dominant defect of addiction = the integrated sensitisation gain (dFosB trace), named OUT OF REACH for the instant L1/L2/L3 levers, for two reasons: (1) a GAIN not a fold (no instant handle on amplitude -- the ADHD lesson), (2) a LEARNED/CONSOLIDATED plasticity variable (a memory the circuit hardened) no instant lever can move",
+    "B_ii_models": "this module models that exact trace via E0 plasticity dynamics, exhibiting it (A1 sensitisation, A2 cue-reactivity, A3 extinction-persistence) and giving a structural HANDLE on it (A5 the schedule of exposure -- spaced sensitises more), which the instant frame could not",
+    "closes": "the §36 argument that the threshold frame and the plasticity-dynamics frame are two halves of one convergence, in one disorder (addiction)",
+    "seam": "extinction (A3) removes the DRIVE (the B-i reachable instant axis) but not the LEARNED TRACE (the B-i out-of-reach axis); eta=0 (A4) shows the gain is a plasticity variable that vanishes without plasticity -- the two frames meet"
+  },
+  "grounding": {
+    "m4_selection_commits": 1.0,
+    "m4_winner": 5,
+    "m5_p_target_control": 0.2,
+    "m5_p_target_learned": 0.8985261574,
+    "m5_reward_potentiates": 1.0,
+    "mapping": "reward exposure -> positive (excitatory) reward-drive bias b>0 -> k=kappa/(1-|b|) (RAISES coupling, capped 2*kappa); the E0 phase-correlation Hebbian update accumulates it into a retained ||W-W0|| (the integrated sensitisation gain). SIGN grounded in M5 RPE potentiation; MAGNITUDE [O].",
+    "reward_master": "TH/SLC6A3 (dopamine synthesis/transport) -- emerged upstream; the reward-drive hub grounded (M4/M5)",
+    "value_signal": "dopamine reward-prediction error (M5): the rewarded eddy's laid-down probability rises well above an unrewarded control -> reward potentiates"
+  },
+  "honesty_ledger": {
+    "closes_B_i_convergence": 1.0,
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "is_an_application_of_E0": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "real_rule_identity": "OWED [O] -- which real plasticity rule(s) operate is external; only the phase-correlation Hebbian SIGN and its consequences are asserted",
+    "reuses_E0_PlasticConnectome": 1.0,
+    "reward_sign_grounded_in_M5_RPE": 1.0,
+    "sensitisation_magnitudes": "OPEN [O] -- only the SIGNS are asserted (trace monotone-up in exposure; cue response exceeds naive; extinction trace > 0 while eta=0 trace == 0; spaced > massed); no magnitude is fit, and the signs survive an eta sweep"
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "eta0_reverts_to_anchor": true,
+    "m0_16_subtree_unchanged": true
+  },
+  "locks": {
+    "chronic_relapsing_medical_LOCK": "addiction is a CHRONIC, RELAPSING MEDICAL condition (a disorder of the integrated reward circuit), NOT a moral failing and NOT a failure of will; this module maps a mechanism, it does not judge a person",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; whether any real sensitisation, cue-reactivity or relapse follows this rule is external",
+    "no_cure_no_licence_LOCK": "no direction here is a cure, a treatment, or a recommen-dation, and NOTHING here is a licence to acquire or use any substance; the schedule handle (A5) is a MECHANISM sign, not advice",
+    "real_plasticity_heterogeneous_LOCK": "real addiction plasticity is HETEROGENEOUS -- dFosB/CREB/BDNF transcriptional cascades, AMPA receptor trafficking, dendritic spine remodelling, glutamatergic homeostatic adaptation, epigenetic marks -- NOT one rule; this module asserts the SIGN of an integrated reward-driven trace, not that any synapse follows this exact equation",
+    "reuses_E0_layer_LOCK": "this module IMPORTS the E0 PlasticConnectome (phase-correlation Hebbian update) and the coupling-vs-bias map; it does NOT re-derive either -- the new content is the reward GROUNDING (M5 RPE, READ-ONLY) and the four sensitisation readouts (sensitisation, cue-reactivity, extinction-persistence, the schedule handle), none of which E0 carried",
+    "reward_sign_grounded_magnitude_open_LOCK": "the reward bias SIGN (reward potentiates -> positive drive) is grounded READ-ONLY in M5 RPE; the MAGNITUDE of any real sensitisation, the rate eta, and the identity of the real plasticity rule(s) are all [O]; the SIGNS are required to hold over an eta sweep -- no number is fit",
+    "structural_trace_not_felt_LOCK": "the retained ||W-W0|| is the integrated sensitisation gain as a STRUCTURAL quantity, NOT a claim about the felt quality of craving, reward or relapse (Axis-A firewall: consciousness_claim stays 0; hard problem stays OPEN)"
+  },
+  "overall": {
+    "cue_reactivity_reproduced": true,
+    "dynamics_handle_reproduced": true,
+    "extinction_persistence_reproduced": true,
+    "is_full_module": true,
+    "plasticity_variable_guard": true,
+    "sensitisation_reproduced": true,
+    "verdict": "ADD-T3a models the integrated sensitisation gain of addiction -- the dFosB trace §36 (B-i) named OUT OF REACH for the instant threshold levers -- DIRECTLY, by importing the E0 PlasticConnectome and driving it with a reward bias whose SIGN is grounded READ-ONLY in M5 dopamine RPE. Repeated reward exposure monotonically builds a retained structural trace (A1 incentive sensitisation); the sensitised connectome responds more to the same reward cue than a naive one (A2 cue-reactivity, the relapse substrate); extinction removes the drive but not the learned trace (A3 persistence -- the convergence seam); and with eta=0 the gain vanishes, proving it is a plasticity variable the instant levers cannot reach (A4 guard, M9 anchor reproduced bit-for-bit). The dynamics frame then supplies the handle the threshold frame could not: spaced (intermittent) exposure sensitises more than massed (A5 -- intermittent reinforcement). The two halves of the convergence meet in one disorder: B-i names the gain unreachable for instant levers, B-ii exhibits it and gives a structural handle on it. Reward SIGN grounded in M5 RPE, magnitudes [O], signs survive an eta sweep, no new tuned constant, engine byte-unchanged. Addiction is a chronic relapsing MEDICAL condition, not a moral failing; efficacy=0; not medical advice; no cure; no licence to use; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "A1_incentive_sensitisation": {
+      "claim": "repeated reward exposure monotonically strengthens the retained reward-circuit trace (the integrated sensitisation gain accumulating), over an eta sweep",
+      "status": "CONFIRMED"
+    },
+    "A2_cue_reactivity": {
+      "claim": "a sensitised connectome responds MORE to the same reward cue than a naive one (R_sens(cue) > R_naive(cue), resting R already >= naive), over an eta sweep -- the cue-induced relapse substrate",
+      "status": "CONFIRMED"
+    },
+    "A3_extinction_persists": {
+      "claim": "extinction (reward removed) does NOT return the trace to zero under plasticity (eta>0 trace > 0) while eta=0 trace == 0 exactly -- the drive reverts but the learned trace persists (the convergence seam)",
+      "status": "CONFIRMED"
+    },
+    "A4_plasticity_variable_guard": {
+      "claim": "with eta=0 the reward excursion reverts exactly and W stays identical to the kernel -- the integrated gain is a plasticity variable that vanishes without plasticity (why B-i's instant levers cannot reach it); eta=0 reproduces the frozen M9 anchor bit-for-bit",
+      "status": "CONFIRMED"
+    },
+    "A5_dynamics_handle_spacing": {
+      "claim": "spaced (intermittent) reward exposure consolidates a larger retained trace than massed (continuous) at equal total exposure (intermittent reinforcement sensitises more), over an eta x epochs sweep -- the structural handle on the trace the instant frame could not reach",
+      "status": "CONFIRMED"
+    }
+  },
+  "roadmap_id": "T3a (addiction) -- the temporal/plasticity half of the convergence opened by §36 ADD-T-L (B-i); RESEARCH_ROADMAP_post_autism_adhd.md"
+}

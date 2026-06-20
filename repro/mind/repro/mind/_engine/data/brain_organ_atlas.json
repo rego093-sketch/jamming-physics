@@ -1,0 +1,130 @@
+{
+ "_provenance": "M9 inter-organ coordination atlas (v1.10: 12 central-brain organs). EVERY gamma is extracted VERBATIM (read-only, never fitted) by the SantaLucia 1998 nearest-neighbour stacking metric (gamma = -mean(NN stacking dG37)) over each master gene's promoter window [TSS-2000, TSS+500] (2501 bp, coding strand) from NCBI RefSeq (GRCh38) -- the SAME read-only metric used by the DNA volume, the neuro chain, and mind M0. The 8 cortico-subcortical organs were frozen in v1.9 (gamma cited verbatim from the neuro package master-gene data files repro/neuro/_engine/data/{sensory_organ_gamma.json, spinal_master_genes.json}; GSX2/PHOX2B fetched this project by the same eutils/SantaLucia pipeline). v1.10 PROMOTES four further central organs whose gamma was fetched by THIS package's own pipeline (repro/mind/13-em-coordination/{extra_masters.json, fetch_extra_masters.py}): pallidum/NKX2-1 and forebrain_gaba_in/DLX2 (validated in v1.9's additive M9-EXT scale-sweep), plus basal_forebrain_chol/LHX8 and olfactory_bulb/PAX6 (added in v1.10, promoter sha256 recorded in extra_masters.json). corr(gamma, GC) = 0.9954 across these 12 regions, consistent with the wider atlas (0.994-0.995). The gamma layer is Layer-1 [F]. f0_hz is the region's empirically-dominant oscillation band: its BAND IDENTITY is cited to the experimental literature, but the absolute centre frequency in Hz is Layer-2 [O] (a representative value, NOT read from the gamma window and NOT tuned to any model target). neuro single-source reference: neuro v1.10.1.",
+ "_window": "promoter [TSS-2000, TSS+500] = 2501 bp coding strand",
+ "_metric": "gamma = mean(-NN dG37), SantaLucia 1998 (read-only; identical to DNA/neuro/M0)",
+ "_grading": "gamma [F measured input]; band identity [cited]; absolute f0 in Hz [O representative]; ring geometry & R_brain [O]; ephaptic coupling kappa is a MEASURED fraction (neuro 19), not tuned.",
+ "_relation_to_M0": "M0 emerges 4 organs (cerebrum/cerebellum/hypothalamus/hippocampus) and freezes their order/geometry (UNCHANGED in v1.10). M9 EXTENDS that measured set to the full central-brain loop and adds the inter-organ ephaptic coordination layer. The 4 M0 masters reappear here with byte-identical gamma (FOXG1->neocortex, EN1->cerebellum, SIM1->hypothalamus, LHX2->hippocampus); v1.9 added the thalamus, striatum, midbrain, brainstem of the canonical loop; v1.10 adds the pallidum, forebrain GABAergic interneuron hub, basal-forebrain cholinergic nucleus, and olfactory bulb.",
+ "_remaining_open": "Toward 100% brain organs, three central regions (amygdala, septum, preoptic area) remain outside the atlas. As of v1.12 they are no longer an UN-examined 'tbd': they were checked against the PRIMARY developmental-neuroscience literature and confirmed to GENUINELY lack a single unambiguous canonical master TF (amygdala = multi-origin complex: ISL1/vLGE, PAX6/dLGE, DLX5 striatal, OTP/LHX-family/EBF3/DBX1 in the medial part; septum = ZIC1-5 redundant & not septum-specific; preoptic area = shares NKX2-1 with pallidum/hypothalamus, so an entry would double-count one promoter, and is itself an internally parcellated niche). Selecting any single master would be the over-claim the no-tuning rule forbids, so they are kept open ON PURPOSE. Full evidence with sources: data/brain_region_master_survey.json. Data-gate (b) therefore stands open as a documented HARD BIOLOGICAL LIMIT (not a closeable in-package gap): closing it needs future field consensus naming a single master, or a deliberate switch to subnucleus granularity -- neither available, neither a tuned constant. Data-gate (c) -- sensory<->central coupling -- is CLOSED (v1.11): nine sensory modalities enter mind BY VERBATIM CITATION from neuro v1.10.1 as the eight-node sensory_input_atlas.json, coupled to their anatomical central relays at the measured kappa in engine module M10 (chapter 14). Whether cognition functionally USES either coupling stays open (medium_efficacy_tested=0).",
+ "organs": {
+  "neocortex": {
+   "master": "FOXG1",
+   "gamma": 1.4737,
+   "gc": 0.5582,
+   "f0_hz": 40.0,
+   "band": "gamma",
+   "band_citation": "Fries 2009, Annu Rev Neurosci 32:209-224 (cortical gamma 30-80 Hz, neuronal communication through coherence)",
+   "role": "telencephalon / neocortex master (forebrain identity); same master as M0 cerebrum",
+   "source": "neuro sensory_organ_gamma.json genes.FOXG1"
+  },
+  "hippocampus": {
+   "master": "LHX2",
+   "gamma": 1.5172,
+   "gc": 0.5986,
+   "f0_hz": 7.0,
+   "band": "theta",
+   "band_citation": "Buzsaki 2002, Neuron 33:325-340 (hippocampal theta 4-10 Hz)",
+   "role": "cortical-hem / hippocampal-field regulator; same master as M0 hippocampus",
+   "source": "neuro sensory_organ_gamma.json genes.LHX2"
+  },
+  "thalamus": {
+   "master": "GBX2",
+   "gamma": 1.5431,
+   "gc": 0.6178,
+   "f0_hz": 10.0,
+   "band": "alpha/spindle",
+   "band_citation": "Steriade, McCormick & Sejnowski 1993, Science 262:679-685 (thalamo-cortical spindle/alpha pacing)",
+   "role": "diencephalon / thalamic identity master",
+   "source": "neuro sensory_organ_gamma.json genes.GBX2"
+  },
+  "striatum": {
+   "master": "GSX2",
+   "gamma": 1.4606,
+   "gc": 0.557,
+   "f0_hz": 20.0,
+   "band": "beta",
+   "band_citation": "Brown 2003, Mov Disord 18:357-363 (basal-ganglia beta 13-30 Hz)",
+   "role": "LGE GABAergic projection-neuron master (striatal identity)",
+   "source": "M9 extra_masters.json GSX2 (NCBI eutils, SantaLucia 1998)"
+  },
+  "cerebellum": {
+   "master": "EN1",
+   "gamma": 1.4692,
+   "gc": 0.5526,
+   "f0_hz": 12.0,
+   "band": "low-beta",
+   "band_citation": "Courtemanche, Robinson & Aponte 2013, Front Syst Neurosci 7:25 (cerebellar 10-25 Hz cortical oscillations)",
+   "role": "mid-hindbrain / cerebellar master (engrailed); same master as M0 cerebellum",
+   "source": "neuro sensory_organ_gamma.json genes.EN1"
+  },
+  "hypothalamus": {
+   "master": "SIM1",
+   "gamma": 1.4465,
+   "gc": 0.5378,
+   "f0_hz": 2.0,
+   "band": "delta/slow",
+   "band_citation": "Saper, Lu, Chou & Gooley 2005, Trends Neurosci 28:152-157 (hypothalamic slow homeostatic/circadian pacing)",
+   "role": "hypothalamic master (PVN/SON neuroendocrine identity); same master as M0 hypothalamus",
+   "source": "neuro spinal_master_genes.json genes.SIM1"
+  },
+  "midbrain": {
+   "master": "OTX2",
+   "gamma": 1.4211,
+   "gc": 0.5158,
+   "f0_hz": 4.0,
+   "band": "theta",
+   "band_citation": "Grace & Bunney 1984, J Neurosci 4:2877-2890 (midbrain dopamine-neuron slow/theta pacemaking)",
+   "role": "mes/diencephalic boundary master (midbrain identity)",
+   "source": "neuro sensory_organ_gamma.json genes.OTX2"
+  },
+  "brainstem": {
+   "master": "PHOX2B",
+   "gamma": 1.3608,
+   "gc": 0.459,
+   "f0_hz": 3.0,
+   "band": "delta/respiratory",
+   "band_citation": "Smith, Ellenberger, Ballanyi, Richter & Feldman 1991, Science 254:726-729 (pre-Botzinger respiratory rhythm)",
+   "role": "hindbrain visceral-motor master (brainstem identity)",
+   "source": "M9 extra_masters.json PHOX2B (NCBI eutils, SantaLucia 1998)"
+  },
+  "pallidum": {
+   "master": "NKX2-1",
+   "gamma": 1.5088,
+   "gc": 0.5942,
+   "f0_hz": 18.0,
+   "band": "beta",
+   "band_citation": "Brown 2003, Mov Disord 18:357-363 (pallidal/basal-ganglia output beta 13-30 Hz)",
+   "role": "MGE master -> globus pallidus identity (pallidal output)",
+   "source": "M9 extra_masters.json NKX2-1 (NCBI eutils NC_000014.9, SantaLucia 1998); validated v1.9 M9-EXT"
+  },
+  "forebrain_gaba_in": {
+   "master": "DLX2",
+   "gamma": 1.426,
+   "gc": 0.5126,
+   "f0_hz": 45.0,
+   "band": "gamma",
+   "band_citation": "Cardin et al. 2009, Nature 459:663-667; Sohal et al. 2009, Nature 459:698-702 (PV fast-spiking interneurons drive cortical gamma)",
+   "role": "pan-forebrain GABAergic interneuron master (PV/SST lineages)",
+   "source": "M9 extra_masters.json DLX2 (NCBI eutils NC_000002.12, SantaLucia 1998); validated v1.9 M9-EXT"
+  },
+  "basal_forebrain_chol": {
+   "master": "LHX8",
+   "gamma": 1.368,
+   "gc": 0.467,
+   "f0_hz": 6.0,
+   "band": "theta",
+   "band_citation": "Hangya, Borhegyi, Szilagyi, Freund & Varga 2009, J Neurosci 29:8094-8102; Buzsaki 2002, Neuron 33:325-340 (medial-septum/diagonal-band cholinergic pacing of hippocampal theta)",
+   "role": "MS/DB cholinergic master (Zhao 2003 PNAS; Mori 2004) -> basal-forebrain cholinergic identity",
+   "source": "M9 extra_masters.json LHX8 (NCBI eutils NC_000001.11, SantaLucia 1998); fetched v1.10"
+  },
+  "olfactory_bulb": {
+   "master": "PAX6",
+   "gamma": 1.511,
+   "gc": 0.6054,
+   "f0_hz": 60.0,
+   "band": "gamma",
+   "band_citation": "Lagier, Carleton & Lledo 2004, J Neurosci 24:4382-4392; Kay 2009, Ann N Y Acad Sci 1170:269-274 (olfactory-bulb gamma 40-100 Hz)",
+   "role": "olfactory-bulb neurogenesis master (Hack 2005; Kohwi 2005) -> OB identity",
+   "source": "M9 extra_masters.json PAX6 (NCBI eutils NC_000011.10, SantaLucia 1998); fetched v1.10"
+  }
+ }
+}

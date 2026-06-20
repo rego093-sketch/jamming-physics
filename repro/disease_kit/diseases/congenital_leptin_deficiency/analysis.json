@@ -1,0 +1,157 @@
+{
+ "disease": "Congenital leptin deficiency",
+ "omim": "614962",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Congenital leptin deficiency",
+  "omim": "614962",
+  "summary": "A very rare autosomal-recessive cause of severe early-onset obesity. Leptin (LEP) is the adipocyte-secreted satiety hormone that signals the body's energy/fat state to the hypothalamus, where it ACCELERATES the satiety and energy-expenditure programme (via LEPR -> POMC -> alpha-MSH -> MC4R). Biallelic LEP loss-of-function (homozygous frameshift/missense or bioinactive-leptin alleles) removes that drive -> hypothalamic satiety signalling is UNDER-driven -> the emergent hormone axis falls, producing intense hyperphagia and severe early-onset obesity (with hypogonadotropic hypogonadism and immune/metabolic disturbance). Because the axis is driven DOWN, the corrective direction is UP, and the switch the kit re-derives is to REPLACE the missing hormone: recombinant human leptin (metreleptin) restores the satiety signal and reverses the hyperphagia, adiposity and neuroendocrine abnormalities -- the seminal demonstration (Farooqi 1999) that exogenous leptin dramatically reduced food intake in a leptin-deficient child is the direct confirmation of the deficiency-axis read. This is the EXACT CONTRAST PARTNER to X-linked hypophosphataemia in the kit: XLH is a HORMONE axis driven UP (FGF23 over-produced) corrected by RESTRAINING the excess hormone (burosumab), whereas congenital leptin deficiency is a HORMONE axis driven DOWN corrected by REPLACING the deficient hormone (metreleptin) -- the same hormone-axis logic read on opposite signs. The downstream MC4R-pathway agonist setmelanotide is the established therapy for the RECEPTOR-deficient sibling genotypes (LEPR deficiency, and POMC / PCSK1 deficiency), where the ligand is present but its signal is not transduced; it is NOT the lever for LEP-LIGAND deficiency itself (where replacing leptin restores the upstream signal) -- named as a distinct boundary, not folded in. The gamma read is of the LEP promoter switch STRUCTURE; the disease lesions are coding (e.g. p.Arg105Trp; the original homozygous frameshift), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "leptin (adipostat satiety hormone) signalling tone -- the hypothalamic energy-balance set-point; a hormone axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "LEP",
+    "gamma": 1.4627,
+    "spinodal_h_sp": 0.6809,
+    "barrier": 0.53487,
+    "dwell_relative_size": 1.6082,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000007.14",
+     "gene_start": 128241277,
+     "gene_end": 128257628,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "leptin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "LEP encodes leptin, the adipocyte-derived type-I-cytokine satiety hormone that signals energy/fat sufficiency to the hypothalamus and ACCELERATES the satiety / energy-expenditure programme (LEPR on POMC neurons -> alpha-MSH -> MC4R). Biallelic LOF (null / frameshift, or a bioinactive-leptin allele) removes the drive -> hypothalamic satiety signalling is under-driven -> the hormone axis falls (axis DOWN), giving hyperphagia and severe early-onset obesity. Located 7q32.1 (OMIM 164160). NCBI official symbol LEP. Autosomal recessive. Coding lesions (the original homozygous frameshift; p.Arg105Trp; bioinactive p.Asn103Lys); promoter firewall respected.",
+    "src": "Montague 1997 Nature 387:903 (congenital leptin deficiency, homozygous LEP frameshift -> severe early-onset obesity); Wabitsch 2015 NEJM 372:48 (bioinactive leptin)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "LEP",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "74aeaa17654e"
+ },
+ "treatment_A_switch": {
+  "disease": "Congenital leptin deficiency",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "LEP",
+    "push_direction": "supply recombinant leptin -> restore the hypothalamic satiety signal -> raise the under-driven leptin hormone axis back toward normal (axis UP), reducing hyperphagia and adiposity. The switch-level corrective: it replaces the deficient hormone itself.",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "recombinant human leptin / hormone replacement (metreleptin)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of appetite / adiposity normalisation not derived from sequence",
+    "src": "Farooqi 1999 NEJM 341:879 (recombinant leptin reduces food intake in congenital leptin deficiency); metreleptin (Myalept/Myalepta) FDA 2014 / EMA 2018 (approved leptin-replacement biologic; established treatment for congenital leptin deficiency)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "LEP",
+    "push_direction": "restore endogenous leptin expression at the locus -> restore the satiety signal (axis UP); investigational gene-level alternative to recombinant-protein replacement",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "LEP gene/expression restoration (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-leptin level not derived from sequence; investigational",
+    "src": "leptin-replacement principle (Farooqi 1999) extended to a gene-level restore; no approved LEP gene therapy"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "LEP",
+   "push_direction": "supply recombinant leptin -> restore the hypothalamic satiety signal -> raise the under-driven leptin hormone axis back toward normal (axis UP), reducing hyperphagia and adiposity. The switch-level corrective: it replaces the deficient hormone itself.",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "recombinant human leptin / hormone replacement (metreleptin)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of appetite / adiposity normalisation not derived from sequence",
+   "src": "Farooqi 1999 NEJM 341:879 (recombinant leptin reduces food intake in congenital leptin deficiency); metreleptin (Myalept/Myalepta) FDA 2014 / EMA 2018 (approved leptin-replacement biologic; established treatment for congenital leptin deficiency)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.6082,
+   "dwell_disease": 1.0406,
+   "dwell_treated": 1.32016,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "c925e96255a6"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "leptin (LEP) loss lowers hypothalamic satiety-signal tone (axis DOWN), producing hyperphagia",
+   "falsifier": "an LEP loss-of-function genotype that REDUCED food intake / adiposity, or leptin replacement that INCREASED hyperphagia, refutes the deficiency (axis-DOWN) direction",
+   "measurable_by": "ad-libitum energy intake / satiety response and fat mass versus serum leptin, stratified by LEP genotype (the Farooqi 1999 design)"
+  },
+  {
+   "claim": "replacing leptin is the CORRECTIVE direction in LEP-ligand deficiency",
+   "falsifier": "if recombinant leptin failed to reduce hyperphagia / adiposity in genetically confirmed congenital leptin deficiency, the replace-LEP lever sign is wrong",
+   "measurable_by": "change in energy intake and fat mass on recombinant-leptin replacement in congenital leptin deficiency"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Congenital leptin deficiency": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "660f4649a29e"
+ },
+ "determinism_sha": "8417887f56e2"
+}

@@ -1,0 +1,150 @@
+{
+  "schema": "disease_wp.dossier/v1",
+  "phase": "R2",
+  "investigation_only": true,
+  "identity": {
+    "entity": "alpha Thalassemia",
+    "medgen_cui": "C0002312",
+    "medgen_uid": "1434",
+    "omim_codes": [
+      "141800",
+      "141850",
+      "604131"
+    ],
+    "omim_code_source": "MedGen conceptmeta (SAB=OMIM)",
+    "genes": [
+      "HBA1",
+      "HBA2"
+    ],
+    "semantic_type": "Disease or Syndrome",
+    "tier": "extension",
+    "system_class": "hematologic",
+    "in_scope": true,
+    "cns_cross_reference": "false"
+  },
+  "inheritance": {
+    "value": "Autosomal recessive inheritance",
+    "grade": "[L]",
+    "source": "medgen:esummary:ModeOfInheritance:2026-06-17"
+  },
+  "molecular_mechanism": {
+    "value": "loss-of-function (biallelic; recessive)",
+    "grade": "[H]",
+    "source": "inference:recessive=>loss_of_function; basis=medgen_inheritance(recessive); corrob=clingen_AR(HI30):HBA1,HBA2"
+  },
+  "gene_function": [
+    {
+      "value": {
+        "gene": "HBA1",
+        "geneid": "3039",
+        "full_name": "hemoglobin subunit alpha 1",
+        "summary": "The human alpha globin gene cluster located on chromosome 16 spans about 30 kb and includes seven loci: 5'- zeta - pseudozeta - mu - pseudoalpha-1 - alpha-2 - alpha-1 - theta - 3'. The alpha-2 (HBA2) and alpha-1 (HBA1) coding sequences are identical. These genes differ slightly over the 5' untranslated regions and the introns, but they differ significantly over the 3' untranslated regions. Two alpha chains plus two beta chains constitute HbA, which in normal adult life comprises about 97% of the total hemoglobin; alpha chains combine with delta chains to constitute HbA-2, which with HbF (fetal hemoglobin) makes up the remaining 3% of adult hemoglobin. Alpha thalassemias result from deletions of each of the alpha genes as well as deletions of both HBA2 and HBA1; some nondeletion alpha thalassemias have also been reported. [provided by RefSeq, Jul 2008]"
+      },
+      "grade": "[L]",
+      "source": "NCBI Gene:3039 RefSeq Summary; retrieved 2026-06-17"
+    },
+    {
+      "value": {
+        "gene": "HBA2",
+        "geneid": "3040",
+        "full_name": "hemoglobin subunit alpha 2",
+        "summary": "The human alpha globin gene cluster located on chromosome 16 spans about 30 kb and includes seven loci: 5'- zeta - pseudozeta - mu - pseudoalpha-1 - alpha-2 - alpha-1 - theta - 3'. The alpha-2 (HBA2) and alpha-1 (HBA1) coding sequences are identical. These genes differ slightly over the 5' untranslated regions and the introns, but they differ significantly over the 3' untranslated regions. Two alpha chains plus two beta chains constitute HbA, which in normal adult life comprises about 97% of the total hemoglobin; alpha chains combine with delta chains to constitute HbA-2, which with HbF (fetal hemoglobin) makes up the remaining 3% of adult hemoglobin. Alpha thalassemias result from deletions of each of the alpha genes as well as deletions of both HBA2 and HBA1; some nondeletion alpha thalassemias have also been reported. [provided by RefSeq, Jul 2008]"
+      },
+      "grade": "[L]",
+      "source": "NCBI Gene:3040 RefSeq Summary; retrieved 2026-06-17"
+    }
+  ],
+  "variant_spectrum": [
+    {
+      "value": {
+        "gene": "HBA1",
+        "total_records": 529,
+        "germline_classification_counts": {
+          "Pathogenic": 233,
+          "Likely pathogenic": 121,
+          "Uncertain significance": 236,
+          "Likely benign": 201,
+          "Benign": 202
+        }
+      },
+      "grade": "[L]",
+      "source": "ClinVar gene query 'HBA1[gene]' with [Germline classification] filters; retrieved 2026-06-17; categories overlap, not summed"
+    },
+    {
+      "value": {
+        "gene": "HBA2",
+        "total_records": 518,
+        "germline_classification_counts": {
+          "Pathogenic": 278,
+          "Likely pathogenic": 133,
+          "Uncertain significance": 300,
+          "Likely benign": 248,
+          "Benign": 251
+        }
+      },
+      "grade": "[L]",
+      "source": "ClinVar gene query 'HBA2[gene]' with [Germline classification] filters; retrieved 2026-06-17; categories overlap, not summed"
+    }
+  ],
+  "clinical": {
+    "organ_systems": {
+      "value": [
+        {
+          "system": "Abnormality of blood and blood-forming tissues",
+          "hpo_id": "HP:0001871",
+          "supporting_term_count": 2
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 141800,141850,604131); P-aspect terms rolled up to HP:0000118 organ-system categories via hp.obo"
+    },
+    "cardinal_symptoms": {
+      "value": [
+        {
+          "hpo_id": "HP:0004840",
+          "name": "Hypochromic microcytic anemia",
+          "frequency": null,
+          "reference": "OMIM:604131"
+        },
+        {
+          "hpo_id": "HP:0011907",
+          "name": "Reduced alpha/beta synthesis ratio",
+          "frequency": null,
+          "reference": "OMIM:604131"
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 141800,141850,604131); top P-aspect phenotypes by annotated frequency; reference = HPO source citation"
+    },
+    "age_of_onset": {
+      "value": [],
+      "grade": "[O]",
+      "obstacle": "no HPO onset annotation joinable (OMIM cross-ref: 141800,141850,604131)"
+    },
+    "prevalence": {
+      "value": null,
+      "grade": "[O]",
+      "obstacle": "prevalence/incidence not stated in the MedGen definition; epidemiological magnitude requires a dedicated source (e.g. Orphanet/GBD), deferred — not guessed"
+    },
+    "clinical_definition": {
+      "value": "Alpha-thalassemia (a-thalassemia) has two clinically significant forms: hemoglobin Bart hydrops fetalis (Hb Bart) syndrome (caused by deletion/inactivation of all four alpha globin [a-globin] alleles; --/--), and hemoglobin H (HbH) disease (most frequently caused by deletion/inactivation of three a-globin alleles; --/-a). Hb Bart syndrome, the more severe form, is characterized by prenatal onset of generalized edema and pleural and pericardial effusions as a result of congestive heart failure induced by severe anemia. Extramedullary erythropoiesis, marked hepatosplenomegaly, and a massive placenta are common. Death usually occurs in the neonatal period. HbH disease has a broad phenotypic spectrum: although clinical features usually develop in the first years of life, HbH disease may not present until adulthood or may be diagnosed only during routine hematologic analysis in an asymptomatic individual. The majority of individuals have enlargement of the spleen (and less commonly of the liver), mild jaundice, and sometimes thalassemia-like bone changes. Individuals with HbH disease may develop gallstones and experience acute episodes of hemolysis in response to infections or exposure to oxidant drugs.",
+      "grade": "[L]",
+      "source": "MedGen concept C0002312 (NCBI MedGen); retrieved 2026-06-17"
+    }
+  },
+  "provenance": {
+    "disease_index": "data/curated/disease_index.csv",
+    "medgen_cohort_cache": "data/raw/medgen/dossier_cohort_esummary.json",
+    "gene_resources_cache": "data/raw/clinvar/cohort_gene_resources.json",
+    "hpo_annotations": "data/raw/hpo/phenotype.hpoa.gz (v2026-06-06)",
+    "hpo_ontology": "data/raw/hpo/hp.obo.gz",
+    "mechanism_rules": "methodology/mechanism_rules.csv",
+    "omim_join_supplement": "methodology/omim_join_supplement.csv",
+    "retrieved": "2026-06-17"
+  },
+  "grade_vocabulary": {
+    "[L]": "source-stated and cited (observed input)",
+    "[H]": "inference from established science; basis recorded",
+    "[O]": "open/unavailable; obstacle named; not guessed"
+  }
+}

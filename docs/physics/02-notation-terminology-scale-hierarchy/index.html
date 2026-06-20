@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notation, Terminology, and Scale Hierarchy — VP Theory §2 | Jamming Physics</title>
+<meta name="description" content="Even the notation of a unit is a locked field, not a habit. Canonical scales have definitions; realized scales have values — the registry keeps them from">
+<link rel="canonical" href="https://jamming-physics.org/physics/02-notation-terminology-scale-hierarchy/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Notation, Terminology, and Scale Hierarchy — VP Theory §2 | Jamming Physics"><meta property="og:description" content="Even the notation of a unit is a locked field, not a habit. Canonical scales have definitions; realized scales have values — the registry keeps them from"><meta property="og:url" content="https://jamming-physics.org/physics/02-notation-terminology-scale-hierarchy/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Notation, Terminology, and Scale Hierarchy — VP Theory §2 | Jamming Physics"><meta name="twitter:description" content="Even the notation of a unit is a locked field, not a habit. Canonical scales have definitions; realized scales have values — the registry keeps them from">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Notation, Terminology, and Scale Hierarchy",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"2",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§2 Notation, Terminology, and Scale Hierarchy"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §2</nav></header>
+<main>
+<h1>Notation, Terminology, and Scale Hierarchy</h1>
+<p class="answer">Notation, Terminology, and Scale Hierarchy: Even the notation of a unit is a locked field, not a habit. Canonical scales have definitions; realized scales have values — the registry keeps them from trading places. Scientific notation is fixed to the form x× 10ⁿ.</p>
+<p class="abstract" data-phase2="abstract">Even the notation of a unit is a locked field, not a habit. Canonical scales have definitions; realized scales have values — the registry keeps them from trading places. Scientific notation is fixed to the form x× 10ⁿ.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/02-notation-terminology-scale-hierarchy/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<h2>Purpose and top-level principles</h2>
+<p>This chapter fixes, under a single registry system, the <strong>symbols</strong>, <strong>units</strong>, and <strong>scales (length/time/mass/energy/force, etc.)</strong> used across the entire document, and structurally prevents the same item from being defined twice or assigned conflicting meanings across different sections.  
+The conventions of this chapter act as the highest-precedence rules for the whole document. That is, any derivation, number, table, figure, or log that violates the symbol/unit/scale registry conventions fixed here cannot qualify as a conclusion.</p>
+<h2>Priority of symbol–unit–scale registries (conflict resolution order)</h2>
+<p>When a symbol/unit/scale conflict occurs, there is no rule that “patches” the conflict by interpretation. Conflicts are judged by Gate; if the verdict is <code>FAIL</code> or <code>INCONCLUSIVE</code>, the corresponding artifact loses admissibility as a conclusion. The precedence order used for conflict judgment is fixed as follows.</p>
+<ol>
+<li> <strong>Priority 1: Symbol Registry</strong>  
+  The <em>meaning</em> of a symbol has the highest priority. Here, meaning includes (i) the entity/object the symbol refers to (cell/core/shell/throat/path, etc.), (ii) the geometric meaning (diameter/radius, center/surface, cube/sphere, etc.), (iii) the measurement convention to which the numeric value is bound (which definition of length it belongs to), and (iv) the admissible operations (sum/product/integration, etc.).  
+  Assigning a unit or a scale value before the symbol meaning is locked is forbidden.
+<li> <strong>Priority 2: Unit Registry</strong>  
+  Units are subordinate to symbol meaning. The unit registry fixes, for each symbol, the dimension (length/time/mass/dimensionless, etc.), the notation system (SI vs internal dimensionless, including mixing-prohibition rules), and the conversion policy.  
+  If a unit conflicts with the symbol meaning (e.g., assigning time to a symbol defined as length), the unit is automatically invalid and the conflict is judged as <code>FAIL</code> by Gate.
+<li> <strong>Priority 3: Scale Registry</strong>  
+  The scale registry has meaning only after symbol and unit are locked. Scales are fixed by separating (i) <strong>canonical scales</strong> and (ii) <strong>realized scales</strong>.  
+  Canonical scales lock definitions (what the scale is), while realized scales lock the numerical values as sealed by operational anchors and procedures.  
+  No rule permits moving the numerical value of a scale to match a target outcome.
+</ol>
+<p>Therefore, changing a symbol meaning (priority-1), changing a unit (priority-2), or changing a scale value (priority-3) because “the number does not match” is forbidden within the same version. Change exists only via versioning (a new LOCK).</p>
+<h2>Single source of truth (SSOT) and separated storage of registries</h2>
+<p>Symbols/units/scales are stored in separate registry files, and each registry functions as SSOT. The SSOT implementation rules are fixed as follows.</p>
+<ol>
+<li> The meaning of a symbol exists only in the <strong>symbol registry</strong>.
+<li> The unit dimension and notation rules of a symbol exist only in the <strong>unit registry</strong>.
+<li> The definition and numeric attribution of a scale exist only in the <strong>scale registry</strong>.
+<li> Body sections do not redefine registry items; they refer to them by item name and lock_id.
+<li> Duplicated definitions/units/numbers outside registries are forbidden; upon detection, they are judged as conflicts.
+</ol>
+<p>Separated storage is a structural device to prevent “definitions (meaning)”, “units (dimensions)”, and “numbers (scales)” from retroactively adjusting each other.</p>
+<h2>Standard fields of the symbol registry (sealing meaning)</h2>
+<p>The symbol registry contains the following standard fields for each symbol. The presence of these fields is mandatory; if a field is missing, the corresponding symbol is judged unusable.</p>
+<ol>
+<li> <strong>symbol</strong>: the symbol string (e.g., <code>a</code>, <code>D_anch</code>, <code>r_p</code>, <code>stringℓ_rot</code>, etc.).
+<li> <strong>entity</strong>: the entity/object the symbol refers to (e.g., cell length, core radius, shell coordinates, critical throat thickness, etc.).
+<li> <strong>geometry_meaning</strong>: geometric meaning (diameter/radius, center–surface, cube/sphere, axis/plane, etc.).
+<li> <strong>definition</strong>: a definition sentence or equation (optionally with an identifier).
+<li> <strong>allowed_operations</strong>: admissible operations and combinations (e.g., whether integration is allowed, what averaging convention applies, whether absolute value/square is allowed).
+<li> <strong>scope</strong>: scope of applicability (a regime identifier or a condition). Use outside scope is forbidden.
+<li> <strong>notes</strong>: conflict-prevention notes (distinguishing similarly spelled symbols, prohibiting reinterpretations, etc.).
+</ol>
+<p>The symbol registry forbids “the same notation used with different meanings.” A single symbol cannot carry multiple meanings; if needed, symbols must be split and each meaning locked as an independent entry.</p>
+<h2>2.5 Standard fields of the unit registry (sealing dimensions)</h2>
+<aside class="claim-strip vps" data-vps="2.5" data-cards="VP-C-046"><span class="g">unit-registry schema</span><span class="io">in: — / out: per-symbol fields — dimension, unit_system, unitₙame, conversionₚolicy (notation itself is locked)</span><q class="one">Even the notation of a unit is a locked field, not a habit.</q><span class="cards">VP-C-046</span></aside>
+<p>The unit registry contains the following standard fields for each symbol.</p>
+<ol>
+<li> <strong>symbol</strong>: linked 1:1 to the <code>symbol</code> field in the symbol registry.
+<li> <strong>dimension</strong>: dimension (length/time/mass/dimensionless, etc.) or composite dimensions if required.
+<li> <strong>unit_system</strong>: notation system (e.g., SI vs internal dimensionless), together with whether mixing is allowed.
+<li> <strong>unit_name</strong>: unit notation (e.g., m, s, fm, pm, etc.). The notation itself is locked.
+<li> <strong>conversion_policy</strong>: conversion policy (allowed/disallowed; where conversions may be performed).
+<li> <strong>consistency_checks</strong>: rules for dimensional-consistency checks (identifiers or checklist items).
+</ol>
+<p>The unit registry is valid only under the “meaning-first” precedence. Therefore, the unit registry does not modify symbol meaning, and unit conflicts are not resolved by unit reinterpretation.</p>
+<h2>2.6 Standard fields of the scale registry (separating canonical vs realized)</h2>
+<aside class="claim-strip vps" data-vps="2.6" data-cards="VP-C-046, VP-C-004"><span class="g">scale-registry schema</span><span class="io">in: — / out: canonical vs realized vs derived scale entries (e.g., S-L-a, S-T-dt, S-L-Danch) with definition/value separation</span><q class="one">Canonical scales have definitions; realized scales have values — the registry keeps them from trading places.</q><span class="cards">VP-C-046, VP-C-004</span></aside>
+<p>The scale registry records scales by separating <strong>canonical</strong> and <strong>realized</strong> entries. The standard fields are as follows.</p>
+<ol>
+<li> <strong>scale_id</strong>: scale identifier (e.g., <code>S-L-a</code>, <code>S-T-dt</code>, <code>S-L-Danch</code>, <code>S-L-rp</code>, <code>S-L-lrot</code>, etc.).
+<li> <strong>symbol</strong>: the symbol to which the scale is bound (linked to a symbol-registry entry).
+<li> <strong>kind</strong>: one of <code>canonical</code>, <code>realized</code>, or <code>derived</code>.
+<li> <strong>definition</strong>: the definition equation (canonical) or the output equation (realized/derived).
+<li> <strong>value</strong>: the numerical value (mandatory only for realized/derived). For canonical, this field is left empty.
+<li> <strong>unit_ref</strong>: unit-registry reference (binding to a unit dimension).
+<li> <strong>anchor_ref</strong>: operational-anchor reference (mandatory only for realized). It identifies which anchor and which procedure sealed the value.
+<li> <strong>dependencies</strong>: a list of dependencies (other scales, anchors, procedures). Circular dependency is forbidden.
+<li> <strong>scope</strong>: scope of applicability (a regime identifier or a condition).
+</ol>
+<p>In the scale registry, <code>realized</code> is not “a measurement” but “a sealed result value fixed by an operational anchor and procedure,” and <code>derived</code> is a computed result obtained from locked scales. A <code>derived</code> entry does not modify or replace a <code>canonical</code> entry.</p>
+<h2>2.7 Conflict verdict and versioning procedure (no interpretation)</h2>
+<aside class="claim-strip vps" data-vps="2.7" data-cards="VP-C-050, VP-C-049"><span class="g">conflict procedure (no interpretation)</span><span class="io">in: detected conflicts / out: FAIL/INCONCLUSIVE verdict + isolation of dependents + new lock_id versioning; mixing lock_ids forbidden</span><q class="one">Conflicts are not repaired by interpretation — they are quarantined and re-versioned.</q><span class="cards">VP-C-050, VP-C-049</span></aside>
+<p>Symbol/unit/scale conflicts are not repaired by interpretation, and are handled by the following rules.</p>
+<ol>
+<li> <strong>Conflict detection</strong>: multiple meanings for the same symbol, unit-dimension mismatch, mismatch between scale definition and numeric attribution, ambiguous diameter/radius meaning, mixed cube/sphere interpretations, etc.
+<li> <strong>Verdict</strong>: conflicts are judged only as <code>FAIL</code> or <code>INCONCLUSIVE</code> by Gate, accompanied by conflict-type labels.
+<li> <strong>Isolation</strong>: any artifact containing the conflict and any artifacts derived from it are removed from the pool of admissible conclusions (this is a status transition, not deletion).
+<li> <strong>Versioning</strong>: to resolve a conflict, a new lock_id must be issued for the relevant registry (canon/realization/analysis). Under the new lock_id, (i) fix the conflicting item, (ii) update dependencies, (iii) re-derive all dependent results, (iv) re-judge all required Gates, and (v) seal a snapshot.
+<li> <strong>No mixing</strong>: building one conclusion by mixing symbol/unit/scale entries from different lock_id combinations is forbidden.
+</ol>
+<p>Therefore, sentences of the form “the same value can be read with another meaning” do not qualify as conclusions in this document. If the meaning is not uniquely locked, the value is not a conclusion.</p>
+<h2>2.1 Symbol / unit / object standards</h2>
+<aside class="claim-strip vps" data-vps="2.1" data-cards="VP-C-046, VP-C-050"><span class="g">global standards [D]</span><span class="io">in: — / out: symbol/unit/object/scale registries that structurally prevent overloaded spellings, split notations, unit ambiguity, diameter-vs-radius mixing</span><q class="one">One spelling, one meaning, one place — enforced by registry, not by care.</q><span class="cards">VP-C-046, VP-C-050</span></aside>
+<h3>2.1.1 Scope of the standard</h3>
+<p>This subsection fixes the global standards for (i) symbols, (ii) units, (iii) objects, and (iv) scales used throughout the document.  
+The purpose is to structurally prevent: the same spelling being used with different meanings; the same meaning splitting into multiple notations; unclear unit dimensions; and mixed geometric meanings such as diameter vs radius.  
+The standards fixed here are not redefined later; instead of restating them, later sections refer only to the corresponding registry entries (item name and identifier).</p>
+<h3>2.1.2 Symbol standard (notation rules)</h3>
+<p>Symbols are fixed across the whole document by the following conventions.</p>
+<h3>(A) Fonts and entity types</h3>
+<ol>
+<li> <strong>Scalars</strong> are written in italic: a, r₀, r_p, ℓ_rot, Δ t.
+<li> <strong>Vectors</strong> are written in bold italic: x, v, n.
+<li> <strong>Matrices/tensors</strong> are written either as bold capitals or by a double-struck rule: M or T. In this document, bold capitals are the default.
+<li> <strong>Sets</strong> are written in calligraphic style: V (VP set), E (event set), G (graph).
+<li> <strong>Functions</strong> are written in roman: Gate(·), Rect(·), Hash(·).
+</ol>
+<h3>(B) Indices and subscripts</h3>
+<ol>
+<li> <strong>Entity indices</strong> are written as integer subscripts: i, j, k.
+<li> <strong>Component indices</strong> are written as Greek letters or coordinate subscripts: α, β or x,y,z.
+<li> <strong>Object-label subscripts</strong> are written as roman abbreviations: r_p (proton core radius), ℓ_rot (rotation-driven length).
+<li> <strong>Regime/scope subscripts</strong> are written in roman: a_sim (internal unit), a_real (after unit realization).
+<li> <strong>Averaging/aggregation notation</strong> is fixed to an overbar: X denotes only a result produced by a pre-registered averaging operator. The averaging operator is locked in <code>analysis_lock</code>.
+</ol>
+<h3>(C) Reserved Symbols</h3>
+<p>To prevent symbol conflicts, the following reservation rules are fixed.</p>
+<ol>
+<li> <strong>Canonical input scales</strong> are written as D_anch, r_p, ℓ_rot, etc., and symbols used for canonical inputs are not reused with other meanings.
+<li> <strong>Unit-realization scales</strong> use a, Δ t as base symbols, and a and Δ t are not reused with other meanings (e.g., area or acceleration).
+<li> <strong>Diameter/radius meaning</strong> is locked in the symbol field <code>geometry_meaning</code>; a single symbol cannot mean both diameter and radius.
+<li> <strong>Dimensionless numbers</strong> refer only to entries whose unit field specifies <code>dimensionless</code>, and dimensionless notation does not permit unit mixing.
+</ol>
+<h3>2.1.3 Unit standard (dimension and notation rules)</h3>
+<p>Units are assigned <em>only after</em> symbol meaning has been locked. The unit standards are fixed as follows.</p>
+<h3>(A) Separation of unit systems</h3>
+<ol>
+<li> <strong>Canonical units</strong>: used at the stage where meaning is locked (not values). Canonical units may be recorded as internal dimensionless or internal length/time units; in that case the unit registry locks <code>unit_system=internal</code>.
+<li> <strong>Realized units</strong>: used after numeric values are fixed via operational anchors. Realized units are locked as <code>unit_system=SI</code>, and notation <code>m, s</code> with sub-prefix forms is allowed.
+<li> <strong>No mixing</strong>: internal and SI units are not mixed within a single equation or a single table. If mixing is required, the conversion step itself must be separated as an independent derivation item and the input/output units of the conversion must be locked.
+</ol>
+<h3>(B) Mandatory dimension field</h3>
+<p>Every symbol must have a mandatory dimension field in the unit registry.</p>
+<ol>
+<li> Length dimension: <code>L</code>
+<li> Time dimension: <code>T</code>
+<li> Mass dimension: <code>M</code>
+<li> Energy dimension: <code>E</code>
+<li> Force dimension: <code>F</code>
+<li> Dimensionless: <code>1</code>
+</ol>
+<p>If the dimension field is empty or conflicting, the symbol is judged unusable.</p>
+<h3>(C) Prefix notation and fixed scientific notation</h3>
+<p>In realized units, length and time may use prefixes, but the notation rules are fixed.</p>
+<ol>
+<li> Only prefix forms approved in the unit registry may be used.
+<li> Scientific notation is fixed to the form x× 10ⁿ.
+<li> Significant-digit and rounding rules follow the rule locked in <code>analysis_lock</code>. Post-hoc changes are forbidden; changes are allowed only by versioning.
+</ol>
+<h3>2.1.4 Object standard (object dictionary and meaning lock)</h3>
+<p>An object specifies “what a symbol refers to” and acts as the highest-level criterion. Objects are fixed in an Object Registry with the following conventions.</p>
+<h3>(A) Object ID and minimal fields</h3>
+<p>Every object has an <strong>object ID</strong> and the following minimal fields.</p>
+<ol>
+<li> <strong>object_id</strong>: e.g., <code>OBJ-VP</code>, <code>OBJ-CELL</code>, <code>OBJ-CORE</code>, <code>OBJ-SHELL</code>, <code>OBJ-THROAT</code>, <code>OBJ-PATH</code>, <code>OBJ-EVENT</code>.
+<li> <strong>name</strong>: a human-readable object name.
+<li> <strong>definition</strong>: the object definition (including defining equations if needed).
+<li> <strong>geometry_meaning</strong>: the geometric meaning of the length symbols carried by the object (diameter/radius/gap/thickness/lattice constant, etc.).
+<li> <strong>state_fields</strong>: state variables of the object (if any), locked as a list.
+<li> <strong>allowed_maps</strong>: admissible mappings to other objects/observables (only allowed transforms are listed).
+<li> <strong>scope</strong>: regime scope.
+</ol>
+<h3>(B) Standard definitions of core objects (minimal declarations)</h3>
+<p>Core objects that must appear in this document are fixed as follows.</p>
+<ol>
+<li> <strong>Volume particle (VP), <code>OBJ-VP</code></strong>: the fundamental unit composing space. VP properties and admissible rules are locked in the axioms/definitions of <code>canon_lock</code>.
+<li> <strong>Cell, <code>OBJ-CELL</code></strong>: the reference domain used to bundle a set of VP. Cell geometry (e.g., cube cell, spherical visualization cell) is locked by the <code>geometry_meaning</code> field; a single cell symbol cannot simultaneously refer to different geometries.
+<li> <strong>Core, <code>OBJ-CORE</code></strong>: the object defining the central structure. The radius/diameter meaning of the core length symbol must be locked.
+<li> <strong>Shell, <code>OBJ-SHELL</code></strong>: the structural object outside the core. Shell-coordinate sets, cancellation rules, survival vectors, etc., are locked together with procedures in <code>analysis_lock</code>.
+<li> <strong>Throat, <code>OBJ-THROAT</code></strong>: a microscopic bottleneck element in global connectivity. A throat thickness/gap/threshold symbol requires <code>geometry_meaning</code>, and the critical-throat estimator is locked in <code>analysis_lock</code>.
+<li> <strong>Path, <code>OBJ-PATH</code></strong>: a global transfer path made of connected throats. Path-selection rules and alternative-path rules are locked in <code>analysis_lock</code>.
+<li> <strong>Event, <code>OBJ-EVENT</code></strong>: the minimal observable/loggable event unit. Event definition is locked in <code>canon_lock</code>; event-rate estimation and aggregation are locked in <code>analysis_lock</code>.
+</ol>
+<h3>2.1.5 Scale hierarchy for length/time/mass (hierarchy registry)</h3>
+<p>A scale hierarchy separates “what is an input,” “what is a derived result,” and “what is a realized output,” and locks the classification. Length/time/mass share a common structure.</p>
+<h3>(A) Hierarchy types</h3>
+<p>Each scale is classified as one of the following types.</p>
+<ol>
+<li> <strong>CAN-INPUT</strong>: canonical input. Meaning and value are locked in <code>canon_lock</code>.
+<li> <strong>CAN-DERIVED</strong>: canonical derived. Derived from CAN-INPUT; derivation rules are locked in <code>canon_lock</code> or <code>analysis_lock</code>.
+<li> <strong>REAL-PRIMARY</strong>: primary outputs of unit realization. Locked in <code>realization_lock</code> by operational anchors and realization rules.
+<li> <strong>REAL-DERIVED</strong>: realized derived. Derived from REAL-PRIMARY and locked derivation rules; results are recorded in <code>realization_lock</code> or a derived registry.
+<li> <strong>OBS-REF</strong>: observational reference. A reference obtained from an observation protocol; the meaning and protocol of the observation value are locked in <code>analysis_lock</code>.
+</ol>
+<h3>(B) Standard entries for the length-scale hierarchy</h3>
+<p>The length-scale hierarchy contains the following standard entries. The existence of these items is enforced in the registry (whether a value is present depends on the type).
+<div class="c"></p>
+<table><tr><td>Item</td><td>Type</td><td>Geometric meaning</td><td>Bound object / description</td></tr><tr><td>D_anch</td><td>CAN-INPUT</td><td>diameter or length (locked)</td><td><code>OBJ-CELL</code> or canonical cell length (meaning must be locked)</td></tr><tr><td>r₀</td><td>CAN-DERIVED</td><td>radius (locked)</td><td>fixed as r₀:=D_anch/2 (diameter–radius meaning lock)</td></tr><tr><td>r_p</td><td>CAN-INPUT</td><td>radius (locked)</td><td><code>OBJ-CORE</code> reference radius (meaning must be locked)</td></tr><tr><td>ℓ_rot</td><td>CAN-INPUT or OBS-REF</td><td>length (locked)</td><td><code>OBJ-CELL</code>/<code>OBJ-THROAT</code> rotation-drive input (adopted type is fixed by the lock)</td></tr><tr><td>a</td><td>REAL-PRIMARY</td><td>length (locked)</td><td><code>OBJ-VP</code> or the basic length unit inside the cell (unit realization output)</td></tr><tr><td>δ_gap</td><td>REAL-DERIVED</td><td>gap/thickness (locked)</td><td><code>OBJ-THROAT</code> critical-throat gap (estimator locked)</td></tr></table>
+</div>
+<h3>(C) Standard entries for the time-scale hierarchy</h3>
+<p>The time-scale hierarchy contains the following standard entries.
+<div class="c"></p>
+<table><tr><td>Item</td><td>Type</td><td>Meaning</td><td>Bound object / description</td></tr><tr><td>Δ t</td><td>REAL-PRIMARY</td><td>time tick (locked)</td><td><code>OBJ-EVENT</code> or a cell-based time unit (unit realization output)</td></tr><tr><td>T_p</td><td>REAL-DERIVED or CAN-DERIVED</td><td>build time (locked)</td><td>build time derived from canonical event rate and structural conventions</td></tr><tr><td>T_n</td><td>REAL-DERIVED or CAN-DERIVED</td><td>auxiliary time (locked)</td><td>an auxiliary time scale defined together with T_p (definition location locked)</td></tr></table>
+</div>
+<h3>(D) Standard entries for the mass-scale hierarchy</h3>
+<p>Even when a number named “mass” appears, the mass-scale hierarchy fixes <em>which internal definition</em> that number comes from.
+<div class="c"></p>
+<table><tr><td>Item</td><td>Type</td><td>Meaning</td><td>Bound object / description</td></tr><tr><td>mₚ</td><td>REAL-DERIVED</td><td>mass scale (locked)</td><td><code>OBJ-CORE</code> mass scale (derivation rules + Gate required)</td></tr><tr><td>mₑ</td><td>REAL-DERIVED</td><td>mass scale (locked)</td><td><code>OBJ-EVENT</code> or a shell-survival-structure-based mass scale (derivation rules + Gate required)</td></tr><tr><td>m_H</td><td>REAL-DERIVED</td><td>mass scale (locked)</td><td>mass scale derived from the lattice unit energy and geometric resistance conventions (derivation rules + Gate required)</td></tr></table>
+</div>
+Mass-scale entries do not qualify as conclusions by value alone. A mass scale acquires admissibility only together with (i) meaning lock, (ii) locked derivation rules, and (iii) a Gate verdict.
+<h3>2.1.6 Prohibition of symbol reuse (no overloading)</h3>
+<p>Symbol reuse (overloading) is a global prohibition rule in this document. “Overloading” refers to any case where at least one of the following holds.</p>
+<ol>
+<li> The same symbol is bound to different objects (<code>OBJ-*</code>).
+<li> The same symbol has different geometric meanings (diameter/radius/gap/thickness/lattice constant, etc.).
+<li> The same symbol has different dimensions (<code>L</code>, <code>T</code>, <code>M</code>, <code>1</code>, etc.).
+<li> The same symbol simultaneously has different hierarchy types (CAN-INPUT vs REAL-PRIMARY, etc.).
+<li> The same symbol is subjected to different averaging/aggregation conventions (e.g., different averaging operators for X).
+</ol>
+<p>A need for overloading is not accepted as a justification. If meanings differ, symbols must be split. Symbol splitting follows these fixed rules.</p>
+<ol>
+<li> <strong>Object-subscript split</strong>: if the same spelling is maintained, attach an object-label subscript (e.g., r_p, r₀, r_cell).
+<li> <strong>Regime-subscript split</strong>: if regimes differ, split with a regime subscript (e.g., a_sim, a_real). However, even then the meaning and dimension must remain identical.
+<li> <strong>Full split</strong>: if meaning and dimension differ, change the spelling itself and fix a purpose subscript (e.g., δ_rect vs δ_gap).
+</ol>
+<p>If symbol overloading is detected, the corresponding artifact is judged <code>FAIL</code> by the symbol Gate and loses admissibility as a conclusion. Overloading is not resolved by “interpretation” within the same version; if a registry entry must be modified, it is permitted only via versioning.</p>
+<h2>2.2 CANON inputs (canonical)</h2>
+<aside class="claim-strip vps" data-vps="2.2" data-cards="VP-C-050, VP-C-044"><span class="g">canonical-input definition</span><span class="io">in: — / out: CANON inputs = starting points of evidence with meaning lock + unit lock + value lock, all simultaneously</span><q class="one">Canonical inputs are triple-locked before any derivation may touch them.</q><span class="cards">VP-C-050, VP-C-044</span></aside>
+<h3>2.2.1 Definition of canonical inputs</h3>
+<p>Canonical inputs (CANON inputs) are the set of inputs treated as <em>starting points of evidence</em> throughout the document. A canonical input must satisfy all of the following properties simultaneously.</p>
+<ol>
+<li> <strong>Meaning lock</strong>: what the item means (object binding, geometric meaning such as diameter/radius, inclusion/exclusion criteria) is fixed uniquely.
+<li> <strong>Unit lock</strong>: its dimension and unit notation are fixed. Items that require units have their units locked.
+<li> <strong>Value lock</strong>: if a value is given, it is fixed (including accuracy/significant-digit rules).
+<li> <strong>Scope lock</strong>: the applicable regime scope (global vs specific regimes) is fixed. It cannot be referenced outside scope.
+<li> <strong>SSOT</strong>: canonical inputs exist only in a single location in the <code>canon_lock</code> registry. The body does not redefine them and refers only to item name and identifier.
+</ol>
+<p>Canonical inputs are not “targets to be derived.” They are derivation inputs, and replacing a canonical input by a derived result, or retroactively modifying a canonical input based on a derived result, is forbidden. <em>(Exception, v0.2.1: r_p has since been reclassified as a <strong>derived prediction</strong> r_p=D_anch/(6π⁶) under LOCK-NU-N, <a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>; the value retained in <code>canon_lock</code> is now its +61 ppm cross-check reference. The rule applies to the remaining four items; see the reclassification note in (B).)</em></p>
+<h3>2.2.2 List and classification of canonical input items</h3>
+<p>In this document, the following five items are classified as canonical inputs.</p>
+<ol>
+<li> D_anch : canonical anchor length (representative length of the anchor cell).
+<li> r_p : canonical radius (defined as the proton core radius).
+<li> π : the circle constant (dimensionless).
+<li> δ : a rectification constant (dimensionless).
+<li> ℓ_rot : rotation-drive length (reference canonical input).
+</ol>
+<p>Because these items have different roles, canonical inputs are further classified as follows.</p>
+<ul>
+<li> <strong>CANON-PRIMARY</strong>: primary canonical inputs whose values and units are fixed (e.g., physical lengths/radii).
+<li> <strong>CANON-CONST</strong>: canonical constants whose values are globally fixed (dimensionless constants).
+<li> <strong>CANON-REF</strong>: reference canonical inputs used only in specific regimes (not automatically promoted to required inputs of the core chain).
+</ul>
+<h3>2.2.3 Meaning lock for each item (object binding and geometric meaning)</h3>
+<p>For canonical inputs, “meaning” must be locked before “value.” The object binding and geometric meaning of each item are fixed as follows.</p>
+<h3>(A) D_anch : canonical anchor length</h3>
+<p>D_anch is defined as the representative length of <code>OBJ-CELL</code> (cell) or a canonical geometric object treated as equivalent to the cell. The <strong>geometric meaning</strong> of D_anch (diameter/radius/edge length) is fixed <strong>uniquely</strong> in the <code>geometry_meaning</code> field of <code>canon_lock</code>.  
+Because D_anch is the canonical anchor, no section may reinterpret its meaning and replace it by a different geometric quantity. If a radius-like derived quantity is needed, it is introduced only as a <strong>derived definition</strong> with a separate symbol, for example</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-02-007.svg" data-eq="phy-02-007" width="104" height="38" loading="lazy" alt="r_0 := \frac{D_{\mathrm{anch}}}{2}."></figure>
+<p>Here, r₀ is a <strong>derived symbol</strong>, and it is usable only after the meaning lock of D_anch is satisfied.</p>
+<h3>(B) r_p : canonical radius (core radius)</h3>
+<p>r_p is defined as the radius of <code>OBJ-CORE</code> (core). r_p is locked as a <strong>radius</strong> and cannot be reinterpreted as a diameter.  
+The value of r_p is locked as a canonical input value; the unit is locked as <strong>length</strong>. The unit notation is fixed to one of the registry-approved prefix forms (e.g., fm).  
+r_p is used as an evidence starting point in core geometry and event-rate derivations; changing r_p or replacing it by a different meaning is forbidden within the same version.
+<strong>r_p status.</strong> Under LOCK-NU-N (<a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>), r_p is a <em>derived prediction</em> r_p=D_anch/(6π⁶)=0.84125 fm, not a free canonical input; the forced (2/π)λ_(C,p)=0.8412 fm is its +61 ppm cross-check. Accordingly r_p is exempt from the “not derivable” rule of §2.2.1, and the proton mass built on it (§13.4) is a <em>prediction</em>, not a calibration. (Reclassified in v0.2.1; see the <a href="/physics/vh-appendix-version-history-reclassification-log/#app:versionhistory" class="xref" data-ref="app:versionhistory">version-history appendix</a>.)</p>
+<h3>(C) π : the circle constant</h3>
+<p>π is dimensionless and its value is globally fixed. Since π is a defined constant rather than a measurement, no section may estimate or adjust π.  
+π is used in rectification constants and geometric ratios, and every derivation that uses π refers to it only as a <strong>canonical constant</strong>.</p>
+<h3>(D) δ : rectification constant</h3>
+<p>δ is defined as a dimensionless rectification constant. The definition of δ is fixed in a <strong>single location</strong> as</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-02-008.svg" data-eq="phy-02-008" width="70" height="38" loading="lazy" alt="\delta := \frac{1}{\pi^2}."></figure>
+<p>This definition is locked in <code>canon_lock</code>; later sections do not re-derive δ.  
+Recomputing δ from a different averaging or projection convention in order to change its value is forbidden. The usage of δ is restricted to the <strong>defined form</strong>; if another rectification constant is needed, it must be separated as a <strong>new symbol</strong> and locked as a separate entry.</p>
+<h3>(E) ℓ_rot : rotation-drive length (reference canonical input)</h3>
+<p>ℓ_rot is defined as a length input used in rotation-drive regimes. Its geometric meaning is locked as a <strong>diameter</strong> (no diameter/radius mixing). ℓ_rot is classified as follows.</p>
+<ul>
+<li> <strong>CANON-REF</strong>: ℓ_rot is referenced only in specific extension regimes (rotation drive / anisotropy / spin indicators, etc.).
+<li> <strong>Not part of the required chain</strong>: ℓ_rot is not automatically promoted to a required input of the core chain (canonical → event → realization → mass/force).
+</ul>
+<p>Therefore, replacing ℓ_rot by D_anch, or redefining the meaning of D_anch from ℓ_rot, is forbidden. If promotion is required, the versioning procedure of 2.2.6 must be followed.</p>
+<h3>2.2.4 Value/unit lock (standard notation and significant digits)</h3>
+<p>Value and unit notation of canonical inputs are locked by the following rules.</p>
+<ol>
+<li> D_anch, r_p, and ℓ_rot are locked as length dimension (<code>L</code>).
+<li> π and δ are locked as dimensionless (<code>1</code>).
+<li> If a value is provided, it is fixed either in <strong>standard scientific notation</strong> (x× 10ⁿ) or in a <strong>fixed-point notation</strong> as specified in the registry.
+<li> Significant-digit / rounding rules are fixed in <code>analysis_lock</code> under <code>numeric_format</code>, and do not change within the same version.
+</ol>
+<p>If a value for ℓ_rot is provided (e.g., ℓ_rot=lrot), its <strong>diameter meaning</strong> and unit (e.g., pm) must be locked simultaneously. Recording a value without locking meaning is not allowed.</p>
+<h3>2.2.5 Reference rules for canonical inputs (usage rules in the body)</h3>
+<p>Canonical inputs are used in the body only under the following rules.</p>
+<ol>
+<li> The body <strong>does not redefine</strong> canonical inputs. It refers only to the <code>canon_lock</code> item names (e.g., <code>D_anch</code>, <code>rp</code>, <code>pi</code>, <code>delta</code>, <code>l_rot</code>) and <code>lock_id</code>.
+<li> Every equation/table/figure/log that uses a canonical input must also reference the corresponding <strong>meaning lock information</strong> (<code>geometry_meaning</code>, <code>entity</code>, <code>object_id</code>).
+<li> Any section that requires a canonical input must declare the <strong>regime scope</strong> together. For example, ℓ_rot may be referenced only in rotation-drive regimes; unconditional reference in global sections is forbidden.
+<li> When π and δ appear together in the same section, δ must always be used by <em>referencing</em> the definition δ:=1/π², and may not be treated as an independently adjustable constant.
+</ol>
+<h3>2.2.6 Change procedure (versioning and re-verification)</h3>
+<p>Changing a canonical input is not allowed within the same version. Changes are performed only via versioning, under the following fixed procedure.</p>
+<ol>
+<li> Specify the category of change: a <code>canon_lock</code> item change (canonical input change).
+<li> Issue a new <code>canon_lock</code> <code>lock_id</code>. The previous <code>lock_id</code> is preserved and is not modified.
+<li> Fix a change log that records, before/after, (i) meaning (<code>entity</code>, <code>geometry_meaning</code>, <code>object_id</code>), (ii) value, and (iii) unit.
+<li> Mark all derived results that depend on the changed item as targets for regeneration in the dependency graph.
+<li> Re-run the required Gate stacks and re-judge PASS/FAIL/INCONCLUSIVE for all affected results.
+<li> Seal the new version with a registry snapshot, manifest, and checksums.
+</ol>
+<p>In particular, promoting ℓ_rot to a required input, or modifying the meaning of D_anch by coupling it with ℓ_rot, is a <strong>change of the canonical-input structure</strong> itself and therefore requires versioning and full re-verification.</p>
+<h2>2.3 REALIZATION inputs</h2>
+<aside class="claim-strip vps" data-vps="2.3" data-cards="VP-C-004, VP-C-001"><span class="g">realization-input definition</span><span class="io">in: internal coordinates / out: realization_lock items ($a$, $Δ t$ family) mapping internal units to external ones, with procedural attribution (channel + verdict rule)</span><q class="one">Realization anchors carry their own birth certificate.</q><span class="cards">VP-C-004, VP-C-001</span></aside>
+<h3>2.3.1 Definition of REALIZATION inputs</h3>
+<p>REALIZATION inputs are the set of items fixed to <em>realize</em> an internally described world (dimensionless or internal length/time units) into external units (length/time). REALIZATION inputs are included in <code>realization_lock</code> and do not change within the same <code>lock_id</code>.  
+REALIZATION inputs are not “canonical inputs”; they are treated as “realization outputs” or “reference anchors used for realization.” Therefore, REALIZATION inputs must simultaneously lock (i) meaning (what length/what time), (ii) unit, (iii) numeric value, and (iv) procedural attribution (which reference channel and which verdict rule sealed it).</p>
+<h3>2.3.2 Internal coordinates and realization map (length/time conversion)</h3>
+<p>Define internal coordinates as follows.</p>
+<ul>
+<li> Internal length coordinate: x (dimensionless or internal unit), with base unit treated as “1”.
+<li> Internal time coordinate: t (dimensionless or internal unit), with base unit treated as “1”.
+</ul>
+<p>The realization map is fixed as</p>
+<figure class="eq" id="eq:realization_map_xt"><img src="/physics/eq/physics/phy-02-000.svg" data-eq="phy-02-000" width="204" height="21" loading="lazy" alt="\begin{equation} x \;:=\; a\,\tilde{x}, \qquad t \;:=\; \Delta t\,\tilde{t}, \end{equation}"></figure>
+<p>where x is realized length (length dimension) and t is realized time (time dimension).  
+Accordingly, internal velocity v and realized velocity v are related by</p>
+<figure class="eq" id="eq:realization_map_v"><img src="/physics/eq/physics/phy-02-001.svg" data-eq="phy-02-001" width="278" height="43" loading="lazy" alt="\begin{equation} \tilde{v} \;:=\; \frac{d\tilde{x}}{d\tilde{t}}, \qquad v \;:=\; \frac{dx}{dt} \;=\; \frac{a}{\Delta t}\,\tilde{v} \end{equation}"></figure>
+<p>In this relation, a/Δ t is the fundamental scaling factor with dimension (length/time), and fixing this factor is the core of realization.</p>
+<h3>2.3.3 Meaning lock for a (realized length scale)</h3>
+<p>a is the realized primary length scale. The meaning of a is fixed as follows.</p>
+<ol>
+<li> a is defined as the <strong>fundamental diameter of a volume particle (VP)</strong>.
+<li> The geometric meaning of a is locked as a <strong>diameter</strong> and is not reinterpreted as a radius.
+<li> The dimension of a is locked as length (<code>L</code>), and the unit system is locked as SI.
+<li> The numerical value of a is locked in <code>realization_lock</code> as
+<figure class="eq" id="eq:a_value_lock"><img src="/physics/eq/physics/phy-02-002.svg" data-eq="phy-02-002" width="325" height="18" loading="lazy" alt="\begin{equation} a \;=\; \aVP. \end{equation}"></figure>
+</ol>
+<p>If a radius is needed, introduce a separate derived symbol</p>
+<figure class="eq" id="eq:ra_derived"><img src="/physics/eq/physics/phy-02-003.svg" data-eq="phy-02-003" width="80" height="33" loading="lazy" alt="\begin{equation} r_a \;:=\; \frac{a}{2}. \end{equation}"></figure>
+<p>rₐ is a derived quantity; it is not a device to alter the meaning of a.</p>
+<h3>2.3.4 Meaning lock for Δ t (realized time tick)</h3>
+<p>Δ t is the realized primary time tick. Its meaning is fixed as follows.</p>
+<ol>
+<li> Δ t is defined as the scaling factor that converts one unit of internal time t into realized time t (Eq. <a href="#eq:realization_map_xt" class="xref" data-ref="eq:realization_map_xt">(realization_map_xt)</a>).
+<li> The dimension of Δ t is locked as time (<code>T</code>), and the unit system is locked as SI.
+<li> The numerical value of Δ t is locked in <code>realization_lock</code> as
+<figure class="eq" id="eq:dt_value_lock"><img src="/physics/eq/physics/phy-02-004.svg" data-eq="phy-02-004" width="173" height="18" loading="lazy" alt="\begin{equation} \Delta t \;=\; 1.86\times 10^{-21}\ \mathrm{s}. \end{equation}"></figure>
+</ol>
+<p>Δ t is not identified with an algorithmic time step used for numerical stability. If an algorithmic step exists, it is locked as a protocol parameter in <code>analysis_lock</code> and kept distinct from Δ t. Δ t is used only as the fixed scaling factor of the realization map (<a href="#eq:realization_map_xt" class="xref" data-ref="eq:realization_map_xt">(realization_map_xt)</a>).</p>
+<h3>2.3.5 Meaning lock for c_ref (reference speed constant for realization)</h3>
+<p>c_ref is a <strong>reference speed constant</strong> used during realization. Its meaning is fixed as follows.</p>
+<ol>
+<li> c_ref is defined as a constant of an external reference channel used to fix the realized speed unit a/Δ t.
+<li> c_ref is locked with dimension (<code>L/T</code>) and unit notation <code>m/s</code>.
+<li> c_ref is recorded in <code>realization_lock</code> together with both a “value” and a “reference-channel identifier.” Locking only a value without the channel/procedure is not allowed.
+<li> c_ref is <strong>not</strong> identified with an internally derived propagation indicator (e.g., a particular value of internal speed v). The internal propagation indicator is a derived result; c_ref is a realization reference. Their connection is made only via the realization scaling factor a/Δ t in Eq. <a href="#eq:realization_map_v" class="xref" data-ref="eq:realization_map_v">(realization_map_v)</a>.
+</ol>
+<p>Therefore, if c_ref is adopted as a realization input, the realized speed scale is fixed as</p>
+<figure class="eq" id="eq:a_over_dt"><img src="/physics/eq/physics/phy-02-005.svg" data-eq="phy-02-005" width="212" height="34" loading="lazy" alt="\begin{equation} \frac{a}{\Delta t} \quad\text{(realized speed unit)} \end{equation}"></figure>
+<p>This fixing is valid only when the meaning locks of a, Δ t, and c_ref all hold simultaneously.</p>
+<h3>2.3.6 Lock rules for REALIZATION inputs (nature of realized values)</h3>
+<p>REALIZATION inputs (a, Δ t, c_ref) are locked by the following rules.</p>
+<ol>
+<li> <strong>Simultaneous meaning–unit–value lock</strong>: for all three items, (i) object binding, (ii) geometric meaning (diameter/radius, etc.), (iii) dimension and unit notation, and (iv) numerical value must be locked simultaneously.
+<li> <strong>SSOT</strong>: realized values exist only in a single location in <code>realization_lock</code>. The body refers only to item name and <code>lock_id</code>.
+<li> <strong>Procedural attribution</strong>: a, Δ t, and c_ref must carry which reference channel / which cross-consistency / which thresholds sealed them. This procedural information cross-references the Gate composition and protocol conventions in <code>analysis_lock</code>.
+<li> <strong>No reinterpretation</strong>: reinterpreting a as a radius, replacing Δ t by an algorithmic step, or retroactively identifying c_ref with an internal derived indicator is forbidden within the same version.
+</ol>
+<p>If any of the above rules is violated, the realization map (<a href="#eq:realization_map_xt" class="xref" data-ref="eq:realization_map_xt">(realization_map_xt)</a>) collapses; the corresponding artifact loses admissibility as a conclusion.</p>
+<h3>2.3.7 Change procedure for realized values (versioning and full re-judgment)</h3>
+<p>Changing realized values (a, Δ t, c_ref) is not allowed within the same version. Changes are performed only via <strong>versioning</strong>, under the following fixed procedure.</p>
+<ol>
+<li> <strong>Specify what changes</strong>: identify whether the change is in a/Δ t/c_ref, and whether it changes (i) meaning, (ii) unit, (iii) value, and/or (iv) reference channel/procedure.
+<li> <strong>Create a new realization_lock</strong>: issue a new <code>realization_lock_id</code>. The previous <code>realization_lock_id</code> is preserved and not modified.
+<li> <strong>Fix a change_log</strong>: lock the before/after items (meaning/unit/value/channel identifier), the reason, and the list of affected derived quantities.
+<li> <strong>Update dependency graph</strong>: mark all derived quantities that depend on a or Δ t (length/time/velocity scaling factors, energy scale, mass scale, force scale, etc.) as regeneration targets.
+<li> <strong>Full re-derivation</strong>: regenerate all related derived artifacts from scratch (including intermediate artifacts) using the changed realized values.
+<li> <strong>Full re-judgment</strong>: re-run Gate stacks from scratch, including cross-consistency, lock integrity, reproducibility, and No-Tuning violations, and re-judge PASS/FAIL/INCONCLUSIVE.
+<li> <strong>Sealing</strong>: seal the new version by generating and freezing <code>registry_snapshot</code>, <code>manifest</code>, and <code>checksums</code>.
+</ol>
+<p>Conclusions prior to versioning belong to the previous <code>realization_lock_id</code> combination; conclusions after versioning belong to the new combination. Mixing results across different <code>realization_lock_id</code> values in one conclusion sentence is forbidden.</p>
+<h2>2.4 Preventing confusion between diameter/radius/cell geometry</h2>
+<aside class="claim-strip vps" data-vps="2.4" data-cards="VP-C-046, VP-C-008"><span class="g">geometry-meaning lock</span><span class="io">in: — / out: radius/diameter/cell-length standard definitions, allowed conversions, ambiguity $⇒$ immediate FAIL</span><q class="one">A symbol may be a radius or a diameter — never both, never silently.</q><span class="cards">VP-C-046, VP-C-008</span></aside>
+<h3>2.4.1 Purpose</h3>
+<p>This subsection locks (i) standard definitions of diameter/radius/cell geometry, (ii) standard notation rules, (iii) allowed derived-conversion rules, and (iv) an immediate-<code>FAIL</code> policy for ambiguity/conflict detection, in order to structurally prevent a length symbol from being used interchangeably as a diameter, a radius, or a cell representative length (edge/diameter, etc.).</p>
+<h3>2.4.2 Standard definitions: radius and diameter</h3>
+<p>In this document, “radius” and “diameter” are fixed by the following definitions. Definitions are locked in the <code>geometry_meaning</code> field, and a single symbol cannot carry both meanings.</p>
+<h3>(A) radius</h3>
+<p>A radius is defined as the distance from a chosen center (or reference point) to a chosen boundary (or reference boundary surface). Radius symbols follow these conventions.</p>
+<ol>
+<li> Use <strong>r</strong> in the symbol name: r₀, r_p, rₐ, etc.
+<li> Lock <code>geometry_meaning</code> as <code>radius</code>.
+<li> A radius is not defined via the conventional relation “half of a diameter.” It is defined directly together with the object definition; its relation to diameter is connected only via a separate derived definition.
+</ol>
+<h3>(B) diameter</h3>
+<p>A diameter is defined as the distance between two opposite boundaries (or reference boundary surfaces) of the same object. Diameter symbols follow these conventions.</p>
+<ol>
+<li> Use <strong>D</strong> in the symbol name: D_anch, Dₐ, etc.
+<li> Lock <code>geometry_meaning</code> as <code>diameter</code>.
+<li> A diameter is not defined via the conventional relation “twice a radius.” It is defined directly together with the object definition; its relation to radius is connected only via a separate derived definition.
+</ol>
+<h3>(C) Radius–diameter linkage (derived definitions only)</h3>
+<p>The linkage between radius and diameter is permitted only as <strong>derived definitions</strong> as follows.</p>
+<figure class="eq" id="eq:rd_relation"><img src="/physics/eq/physics/phy-02-006.svg" data-eq="phy-02-006" width="196" height="38" loading="lazy" alt="\begin{equation} r \;:=\; \frac{D}{2}, \qquad D \;:=\; 2r. \end{equation}"></figure>
+<p>Equation <a href="#eq:rd_relation" class="xref" data-ref="eq:rd_relation">(rd_relation)</a> does not mean “converting symbol meaning” but “deriving a new symbol.” That is, if D is locked as a diameter in a section, then when a radius is needed one must introduce a <strong>new symbol</strong> r:=D/2 and use it; within that section, D must not be used as if it were a radius. Likewise, if r is locked as a radius, then when a diameter is needed one must introduce a <strong>new symbol</strong> D:=2r; within that section, r must not be used as if it were a diameter.</p>
+<h3>2.4.3 Standard definition: cell and cell geometry</h3>
+<p>In this document, a “cell” is the reference domain that bundles a VP set and is defined as an <strong>object</strong>. A cell must lock “which geometry it uses” together with the cell definition; a cell length/cell radius/cell diameter is unusable if cell geometry is not locked.</p>
+<h3>(A) Required fields of the cell object</h3>
+<p>The cell object <code>OBJ-CELL</code> must include the following mandatory fields.</p>
+<ol>
+<li> <strong>cell_id</strong>: cell identifier.
+<li> <strong>cell_geometry</strong>: cell-geometry type.
+<li> <strong>cell_length_symbol</strong>: the symbol used as the cell representative length.
+<li> <strong>geometry_meaning</strong>: geometric meaning of the representative length (edge length, diameter, radius, etc.).
+<li> <strong>definition</strong>: definition of the cell and the representative length.
+<li> <strong>scope</strong>: applicable regime.
+</ol>
+<h3>(B) Standard list of cell geometry types (enumeration)</h3>
+<p>Cell geometry type is locked as one of the following enumerated values.</p>
+<ol>
+<li> <strong><code>CELL-CUBE</code></strong>: the cell is a cube, and the representative cell length is defined as an edge length.
+<li> <strong><code>CELL-SPHERE-VIS</code></strong>: the cell is used as a sphere for visualization or auxiliary definition, and the representative cell length is defined as either a diameter or a radius (exactly one is chosen and locked).
+<li> <strong><code>CELL-OTHER</code></strong>: if a geometry other than the above two is used, the geometry definition (boundary, representative length, measurement convention) must be fully specified and locked with <strong>additional fields</strong>.
+</ol>
+<code>CELL-OTHER</code> is not an “ambiguous free parameter.” If <code>CELL-OTHER</code> is used, the cell-geometry definition must be complete in the document, and the meaning and conversion relations of the representative length must all be locked.
+<h3>(C) CELL-CUBE</h3>
+<p>For a cube cell, the representative length is defined as an edge length.</p>
+<ol>
+<li> The representative-length symbol of a cube cell may be written as L_cell or D_anch, etc., but regardless of the spelling the <code>geometry_meaning</code> must be locked as <code>edge</code>.
+<li> To introduce a “radius” or “diameter” for a cube cell, it must be introduced only as a derived symbol. For example, to connect a cube diagonal or an equivalent visualization sphere, the connection rule must be fixed either in <code>analysis_lock</code> (procedure) or <code>canon_lock</code> (definition), and the derived symbol must be created separately.
+</ol>
+<p>Interpreting a cube cell representative length as a radius or a diameter is forbidden.</p>
+<h3>(D) CELL-SPHERE-VIS</h3>
+<p>For a spherical cell, the representative length is defined as exactly one of diameter or radius; the two are not used simultaneously.</p>
+<ol>
+<li> If the representative length is defined as a diameter: use symbol D_cell and lock <code>geometry_meaning=diameter</code>.
+<li> If the representative length is defined as a radius: use symbol r_cell and lock <code>geometry_meaning=radius</code>.
+<li> If both diameter and radius are needed, introduce a <strong>separate symbol</strong> connected by the derived definition (Eq. <a href="#eq:rd_relation" class="xref" data-ref="eq:rd_relation">(rd_relation)</a>).
+</ol>
+<code>CELL-SPHERE-VIS</code> is a choice of cell geometry; using one cell representative length “as if” it were both <code>CELL-CUBE</code> and <code>CELL-SPHERE-VIS</code> within the same section is forbidden.
+<h3>2.4.4 Confusion-prevention rules (lock rules)</h3>
+<p>This subsection locks confusion-prevention rules as follows. Violations are judged immediately as <code>FAIL</code>.</p>
+<h3>(R1) Mandatory meaning lock</h3>
+<p>Before a length symbol is used, it must simultaneously carry the following three fields.</p>
+<ol>
+<li> <strong>object_id</strong> (which object's length)
+<li> <strong>geometry_meaning</strong> (diameter/radius/edge/gap/thickness, etc.)
+<li> <strong>dimension</strong> (length dimension)
+</ol>
+<p>If any of the three is missing, the symbol is unusable and any equation/table/figure/log that contains it is judged immediately as <code>FAIL</code>.</p>
+<h3>(R2) Single-meaning principle for the same symbol (no overloading)</h3>
+<p>The same symbol (same spelling) may carry only a single triple (<code>object_id</code>,<code>geometry_meaning</code>,<code>dimension</code>) across the whole document.  
+Once the same spelling appears with a different triple, the conflict is not repaired by interpretation and is immediately <code>FAIL</code>.</p>
+<h3>(R3) Explicit derived conversion principle (no implicit conversion)</h3>
+<p>Diameterleftrightarrowradius conversion, cubeleftrightarrowsphere mapping, and representative-lengthleftrightarrowderived-length conversion are permitted only through <strong>explicit derived symbols</strong>.</p>
+<ol>
+<li> “Using D as if it were r” or “using r as if it were D” is forbidden.
+<li> “Changing the cell representative length into diameter/radius/edge depending on context” is forbidden.
+<li> If a conversion is needed, a new symbol must be introduced, and the new symbol must be registered in the registry together with the conversion equation.
+</ol>
+<h3>(R4) No cross-mixing of diameter/radius/cell geometry</h3>
+<p>Within the same section, the following mixes are forbidden.</p>
+<ol>
+<li> After locking a cell representative length as <code>edge</code>, using the same symbol as <code>diameter</code> or <code>radius</code>.
+<li> In a cell locked as <code>CELL-CUBE</code>, assigning a <code>CELL-SPHERE-VIS</code> diameter/radius definition to the same symbol without an explicit derived definition.
+<li> Treating different cell geometry types as if they were the “same cell” and composing them within one derivation chain.
+</ol>
+<h3>2.4.5 Immediate FAIL policy upon confusion detection (Gate verdict)</h3>
+<p>Detection of confusion (ambiguity/conflict) is performed by Gate; upon detection the verdict is immediately <code>FAIL</code>. The verdict is independent of interpretation and depends only on the integrity of definitions/locks.</p>
+<h3>(A) Immediate FAIL conditions</h3>
+<p>If any of the following holds, the verdict is immediately <code>FAIL</code>.</p>
+<ol>
+<li> <strong>RD-AMB (radius/diameter ambiguity)</strong>: the registry does not determine whether a symbol is radius or diameter (missing or multiple <code>geometry_meaning</code>).
+<li> <strong>RD-CONFLICT (radius/diameter conflict)</strong>: the same symbol is used as <code>radius</code> in one place and as <code>diameter</code> in another.
+<li> <strong>CELL-AMB (cell-geometry ambiguity)</strong>: the cell geometry type (<code>CELL-CUBE</code>/<code>CELL-SPHERE-VIS</code>/<code>CELL-OTHER</code>) is not locked.
+<li> <strong>CELL-CONFLICT (cell-geometry conflict)</strong>: the same cell representative-length symbol is used as a representative length under different cell geometry types.
+<li> <strong>IMPLICIT-CONV (implicit conversion)</strong>: Dleftrightarrow r conversion or cubeleftrightarrowsphere mapping is performed implicitly in an equation/table/figure/log without a derived symbol.
+<li> <strong>DIM-MISMATCH (dimension mismatch)</strong>: a symbol locked as length is used with a different dimension, or unit notation changes without an explicit conversion step.
+</ol>
+<h3>(B) FAIL labels (standard labels)</h3>
+<p>The FAIL labels for confusion verdicts are fixed as follows (multiple labels are allowed).
+<div class="c"></p>
+<table><tr><td>Label</td><td>Meaning</td></tr><tr><td>FAIL-GEO-RD-AMB</td><td>radius/diameter meaning is not locked (ambiguous)</td></tr><tr><td>FAIL-GEO-RD-CONF</td><td>the same symbol is used conflictingly as radius/diameter</td></tr><tr><td>FAIL-GEO-CELL-AMB</td><td>cell geometry type is not locked (ambiguous)</td></tr><tr><td>FAIL-GEO-CELL-CONF</td><td>cell geometry type or representative-length meaning conflicts</td></tr><tr><td>FAIL-GEO-IMPL</td><td>implicit conversion performed without derived symbols</td></tr><tr><td>FAIL-GEO-DIM</td><td>unit/dimension mismatch or missing conversion step</td></tr></table>
+</div>
+<h3>(C) Propagation rule for immediate FAIL</h3>
+<p>If <code>FAIL</code> occurs, the following immediately hold.</p>
+<ol>
+<li> The artifact containing the failing equation/table/figure/log loses admissibility as a conclusion.
+<li> In the dependency graph, all derived artifacts that use the failing artifact as input lose admissibility in a cascading manner.
+<li> <code>FAIL</code> is not resolved by “editing text”; resolution exists only via versioning (registry modification followed by full re-derivation and re-judgment).
+</ol>
+<h3>2.4.6 The only path to resolve confusion (versioning)</h3>
+<p>The procedure for resolving confusion is fixed as follows.</p>
+<ol>
+<li> Identify the location of the conflicting items (symbol meaning / cell geometry / unit / derived definition) in the registry.
+<li> Issue a new <code>lock_id</code> for the relevant registry (<code>canon_lock</code> or <code>analysis_lock</code> or <code>realization_lock</code>).
+<li> Modify items so as to remove the conflict (symbol splitting, enforcing a single <code>geometry_meaning</code>, enforcing a single cell geometry type, adding derived symbols, etc.).
+<li> Regenerate all related derivations under the modified <code>lock_id</code> combination and re-judge all relevant Gates.
+<li> Seal the new version with a registry snapshot, manifest, and checksums.
+</ol>
+<p>Interpretation or sentence editing within the same version is not accepted as confusion resolution. Confusion is a definition/lock problem; without changing definitions/locks, confusion remains.</p>
+<nav class="pn"><a rel="prev" href="/physics/00-prologue-how-use-this-document/">← §0</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/03-axioms-primitives-volume-particle-lattice/">§3 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -1,0 +1,278 @@
+{
+  "phase": "R15",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 7 (PMC-OA dominant-sequela join) — three honest S/P lifts; one disclosed order-lock (5->6, +Phenylketonuria)",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "6167e4eddd12"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "b6408e6011ed"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "694af8025ab4"
+    },
+    "litcurate7_join_csv": {
+      "path": "methodology/severity_litcurate7_join.csv",
+      "sha12": "97998592858a"
+    },
+    "litcurate7_excluded_csv": {
+      "path": "methodology/severity_litcurate7_excluded.csv",
+      "sha12": "56574f04dd95"
+    },
+    "litcurate_fetch_log_r15": {
+      "path": "data/raw/litcurate/_fetch_log_r15.json",
+      "sha12": "7c7c1ca2654c"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 1,
+    "S_O_to_L": 2,
+    "S_excluded_recorded": 2
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 12,
+      "[H]": 2
+    },
+    "S": {
+      "[L]": 12,
+      "[O]": 9,
+      "[H]": 14
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate7_join": [
+    {
+      "entity": "Acute intermittent porphyria",
+      "cui": "C0162565",
+      "axis": "S",
+      "pmcid": "PMC13091603",
+      "pmid": "42005216",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Acute intermittent porphyria (AIP) is a rare metabolic disorder characterized by neurovisceral manifestations, most commonly severe abdominal pain.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Achondroplasia",
+      "cui": "C0001080",
+      "axis": "S",
+      "pmcid": "PMC13046303",
+      "pmid": "41615893",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Achondroplasia is a rare skeletal dysplasia characterized by severe disproportionate short stature.",
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "open_access": true
+    },
+    {
+      "entity": "Phenylketonuria",
+      "cui": "C0031485",
+      "axis": "S",
+      "pmcid": "PMC13259324",
+      "pmid": "42280447",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "PAH deficiency leads to hyperphenylalaninemia, with untreated blood Phe levels often exceeding 1200 μmol/L in classical PKU [ 2 ], resulting in severe intellectual disability and irreversible brain damage if not managed promptly [ 1 ].",
+      "prior_value": null,
+      "prior_grade": "[O]",
+      "open_access": true
+    }
+  ],
+  "litcurate7_excluded": [
+    {
+      "entity": "21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia",
+      "cui": "C2936858",
+      "axis": "S",
+      "considered_pmcid": "PMC13214666",
+      "considered_pmid": "42201219",
+      "decline_class": "form_specific",
+      "considered_statement": "The severest form of CAH results from an almost complete absence in enzyme activity that can lead to life-threatening salt-wasting (SW-CAH) in the first weeks of life and progressive virilisation if not optimally managed over time.",
+      "exclusion_reason": "the retrievable OA disease-level severity framing for 21-hydroxylase-deficient CAH (C2936858) is FORM-SPECIFIC -- 'The severest form of CAH results from an almost complete absence in enzyme activity that can lead to life-threatening salt-wasting (SW-CAH) in the first weeks of life ...' attaches the 'life-threatening' magnitude to the SEVEREST FORM (classic salt-wasting SW-CAH), one allelic sub-form of the entity, not to the 21-OHD CAH entity as a whole, which also comprises the simple-virilizing classic form and the characteristically MILD non-classic (late-onset) form; the entity's own registry severity basis already records a 'variable severity spectrum (mild-to-severe range stated)', so no clean, isolable disease-level magnitude for the whole entity is retrievable (the life-threatening adrenal/salt-wasting crisis is the dominant untreated sequela of the CLASSIC forms only); S left [H], not lifted -- consistent with the umbrella/form declines recorded for alpha-thalassaemia, beta-thalassaemia and Hb SS"
+    },
+    {
+      "entity": "Hemochromatosis type 1",
+      "cui": "C3469186",
+      "axis": "S",
+      "considered_pmcid": "PMC13019597",
+      "considered_pmid": "41951274",
+      "decline_class": "comparative",
+      "considered_statement": "Male HFE C282Y homozygotes genetically predisposed to higher TSAT had a greater risk of haemochromatosis and severe clinical outcomes, such as liver and musculoskeletal complications, compared with those with genetically predicted low TSAT.",
+      "exclusion_reason": "the retrievable OA severity framing for type 1 (HFE) hereditary haemochromatosis (C3469186) is COMPARATIVE and modifier-stratified -- 'Male HFE C282Y homozygotes genetically predisposed to higher TSAT had a greater risk of haemochromatosis and severe clinical outcomes ... compared with those with genetically predicted low TSAT' frames 'severe clinical outcomes' only as a BETWEEN-STRATUM contrast (high- vs low-TSAT-predisposed homozygotes), not as a clean disease-level magnitude for the HFE-HH entity's dominant untreated sequela (progressive parenchymal iron overload -> cirrhosis / hepatocellular carcinoma / cardiomyopathy / diabetes); the only other OA 'severe' framings retrievable are an HFE-C282Y HETEROZYGOTE case report (genotype-phenotype discordance, not the homozygous type 1 entity) and a non-dominant arthropathy hedge ('likely have an increased risk of severe chronic joint disease of the ankle'); type 1 HH is characteristically LOW-PENETRANCE (the entity's GeneReviews natural-history lexicon read 'mild', conflicting with the MedGen definition's 'severe' -- the source of the existing S 0.75 [H] grade), and no non-comparative disease-level magnitude is retrievable; S left [H] at value 0.75, grade NOT lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Acute intermittent porphyria",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Achondroplasia",
+      "axis": "S",
+      "old": null,
+      "new": 0.75,
+      "old_grade": "[O]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Phenylketonuria",
+      "axis": "S",
+      "old": null,
+      "new": 0.75,
+      "old_grade": "[O]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Phenylketonuria",
+      "cui": "C0031485",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "axes_scored": 5
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axes_scored": 4
+    }
+  ],
+  "order_lock_delta": {
+    "from": 5,
+    "to": 6,
+    "added": [
+      "C0031485"
+    ],
+    "removed": []
+  },
+  "registry_set_sha12": "efe81b447194",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r14->r15 chain registry-set sha efe81b447194 == efe81b447194"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r14",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2', 'R11_litcurate3', 'R12_litcurate4', 'R13_litcurate5', 'R14_litcurate6', 'R15_litcurate7']"
+    },
+    {
+      "name": "litcurate7_join_anchored_cited",
+      "pass": true,
+      "detail": "3 round-7 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate7_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-7 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate7_excluded_recorded",
+      "pass": true,
+      "detail": "2 round-7 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R14 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R14; S/P changed only for the 3 round-7 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "order_lock_change_documented",
+      "pass": true,
+      "detail": "order-lock set 5 -> 6 (added=['C0031485'], removed=[]); Phenylketonuria S [O]->[L] completes a lock as an honest CONSEQUENCE (O,D,S all [L], >=3 axes), disclosed not engineered; Acute intermittent porphyria S [H]->[L] stays sub-rankable (2 axes < 3, no lock); Achondroplasia S [O]->[L] becomes rankable but retains mortality [H] (no lock); delta is EXACTLY +Phenylketonuria"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (6 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate7_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 5 round-7 cited sources open-access + sha-pinned; every round-7 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "prior_round_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 + R10 + R11 + R12 + R13 + R14 recorded join/excluded CSVs byte-identical to their digests (0 modified) -- R15 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

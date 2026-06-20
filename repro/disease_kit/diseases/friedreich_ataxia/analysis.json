@@ -1,0 +1,168 @@
+{
+ "disease": "Friedreich ataxia",
+ "omim": "229300",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Friedreich ataxia",
+  "omim": "229300",
+  "summary": "The commonest inherited ataxia, an autosomal-recessive neurodegeneration. Frataxin (FXN) is a small mitochondrial protein that ACCELERATES iron-sulfur (Fe-S) cluster biogenesis (it binds and allosterically activates the NFS1 cysteine-desulfurase assembly complex and chaperones iron), so Fe-S-dependent enzymes (aconitase, respiratory-chain complexes) and oxidative-phosphorylation capacity depend on it. The disease is driven by an intronic GAA triplet-repeat expansion in FXN that epigenetically silences transcription -> frataxin is DEFICIENT -> Fe-S cluster biogenesis and mitochondrial bioenergetics are UNDER-driven -> the emergent axis falls (progressive spinocerebellar and sensory ataxia, plus hypertrophic cardiomyopathy and diabetes). This is read as a DEFICIENCY-driven neurodegeneration -- the contrast to the kit's toxic-aggregate neurodegenerations (Huntington HTT gain-of-function, TTR amyloid), where a toxic species is REMOVED; here a lost function must be RESTORED, so the corrective direction is UP. The clean and honest point of this entry is the LEAD approved drug: omaveloxolone is an Nrf2 (NFE2L2) activator that boosts the antioxidant/mitochondrial gene programme and improves cellular resilience to the oxidative stress that frataxin loss causes -- it is DOWNSTREAM and does NOT restore frataxin (the same Rett/trofinetide discipline: an approved, corrective-direction, symptomatic agent that does not touch the causal switch). The SWITCH-LEVEL lever is to REPLACE frataxin -- frataxin-restoring AAV gene therapy and frataxin protein/mRNA approaches are investigational. Dimethyl fumarate (an approved Nrf2-activating drug in other diseases) is recorded as a downstream, repurposing candidate, not a switch lever. The gamma read is of the FXN promoter switch STRUCTURE; the causal lesion is the intron-1 GAA repeat expansion (a structural/epigenetic lesion), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "mitochondrial Fe-S cluster biogenesis / oxidative-phosphorylation capacity (cerebellar, sensory-neuron and cardiomyocyte bioenergetics) -- a deficiency axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "FXN",
+    "gamma": 1.4416,
+    "spinodal_h_sp": 0.66622,
+    "barrier": 0.51955,
+    "dwell_relative_size": 1.57353,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000009.12",
+     "gene_start": 69035751,
+     "gene_end": 69079075,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "frataxin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "FXN encodes frataxin, a mitochondrial iron-binding protein that ACCELERATES iron-sulfur cluster biogenesis by binding/activating the NFS1-ISCU-ISD11(LYRM4) cysteine-desulfurase complex and donating iron. It is the rate-enhancer (accelerator) of Fe-S assembly; its loss removes that drive -> Fe-S enzymes and respiratory-chain function are under-driven -> the bioenergetic axis falls (axis DOWN). Located 9q21.11 (OMIM 606829). NCBI official symbol FXN. Autosomal recessive. The disease allele is an intron-1 GAA triplet-repeat expansion that silences transcription (heterochromatinisation); a minority carry a coding/point LOF allele on one chromosome. The repeat/epigenetic lesion is outside the promoter firewall.",
+    "src": "Campuzano 1996 Science 271:1423 (FXN GAA expansion identifies Friedreich ataxia); Tsai 2010 Biochemistry 49:9132 (frataxin activates the NFS1 cysteine-desulfurase / accelerates Fe-S assembly)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "FXN",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "8134a63ae7c4"
+ },
+ "treatment_A_switch": {
+  "disease": "Friedreich ataxia",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "NFE2L2",
+    "push_direction": "activate NRF2 (block KEAP1-mediated degradation) -> raise the antioxidant / mitochondrial gene programme -> improve cellular resilience and bioenergetic output toward normal (axis UP). DOWNSTREAM and symptomatic -- does NOT restore frataxin or correct the FXN switch itself.",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "Nrf2 activator (omaveloxolone)",
+    "status": "approved",
+    "mechanism_grade": "[O] downstream-compensation magnitude not derived from sequence; symptomatic -- does not correct the FXN switch",
+    "src": "Lynch 2021 Ann Neurol 89:212 (MOXIe Part 2, omaveloxolone in FRDA); omaveloxolone (Skyclarys) FDA Feb 2023, EMA 2024 -- first disease-modifying therapy approved for Friedreich ataxia"
+   },
+   {
+    "lever": "potentiate",
+    "target_gene": "NFE2L2",
+    "push_direction": "activate NRF2 / promote mitochondrial biogenesis (repurposed approved Nrf2-activating drug); downstream, does not restore frataxin",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "Nrf2 activator (dimethyl fumarate, repurposing candidate)",
+    "status": "clinical",
+    "mechanism_grade": "[O] downstream effect magnitude not derived from sequence; repurposing candidate, not a switch lever",
+    "src": "Jasoliya 2019 / Hui 2024 (dimethyl fumarate raises frataxin/ mitochondrial biogenesis in FRDA models; repurposing trials)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "FXN",
+    "push_direction": "restore frataxin expression at/above threshold -> re-accelerate Fe-S cluster biogenesis -> raise mitochondrial bioenergetic output (axis UP). The switch-level corrective: it targets the deficient gene itself, unlike the downstream Nrf2 agent.",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "frataxin-restoring gene therapy (AAV-FXN) / frataxin protein- or mRNA-replacement",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-frataxin level / cell fraction not derived from sequence; over-supply caution noted (frataxin dosage is biologically constrained)",
+    "src": "Ocana-Santero 2021 (AAVrh.10/AAV-FXN frataxin gene-therapy programmes for FRDA, preclinical/early clinical)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "NFE2L2",
+   "push_direction": "activate NRF2 (block KEAP1-mediated degradation) -> raise the antioxidant / mitochondrial gene programme -> improve cellular resilience and bioenergetic output toward normal (axis UP). DOWNSTREAM and symptomatic -- does NOT restore frataxin or correct the FXN switch itself.",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "Nrf2 activator (omaveloxolone)",
+   "status": "approved",
+   "mechanism_grade": "[O] downstream-compensation magnitude not derived from sequence; symptomatic -- does not correct the FXN switch",
+   "src": "Lynch 2021 Ann Neurol 89:212 (MOXIe Part 2, omaveloxolone in FRDA); omaveloxolone (Skyclarys) FDA Feb 2023, EMA 2024 -- first disease-modifying therapy approved for Friedreich ataxia"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.57353,
+   "dwell_disease": 1.01817,
+   "dwell_treated": 1.2917,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "4bcbc919a41f"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "frataxin (FXN) loss lowers Fe-S-enzyme activity and mitochondrial bioenergetic output (axis DOWN)",
+   "falsifier": "an FXN loss-of-function genotype that RAISED aconitase / Fe-S-enzyme activity or respiratory capacity, or frataxin restoration that LOWERED them, refutes the deficiency (axis-DOWN) direction",
+   "measurable_by": "aconitase / Fe-S-cluster-enzyme activity and mitochondrial respiratory capacity versus frataxin level in patient fibroblasts, iPSC-derived neurons/cardiomyocytes, and mouse models"
+  },
+  {
+   "claim": "restoring frataxin is the SWITCH-LEVEL corrective direction",
+   "falsifier": "if re-expressing frataxin failed to improve Fe-S-enzyme activity / mitochondrial function, the replace-FXN lever sign is wrong",
+   "measurable_by": "aconitase activity and oxidative-phosphorylation readouts in response to frataxin re-expression in FRDA cells/models"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Friedreich ataxia": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "821c254e010f"
+ },
+ "determinism_sha": "6e1217c95be0"
+}

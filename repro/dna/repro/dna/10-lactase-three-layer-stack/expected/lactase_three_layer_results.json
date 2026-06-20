@@ -1,0 +1,161 @@
+{
+  "knobs_layer2": {
+    "H_BASE": 0.45,
+    "LAM": 1.5,
+    "KAPPA_NP": 0.08,
+    "KAPPA_LP": 0.008
+  },
+  "structure": {
+    "helical_percentile": 100.0,
+    "occluded_freezes_switch": true,
+    "joined_unit": [
+      "LCT_human",
+      "MCM6_enh_human"
+    ],
+    "ctcf_core_candidates": {
+      "fwd_candidates": 0,
+      "rev_candidates": 0
+    }
+  },
+  "external_validation": {
+    "LCT_prom_methyl_ON": 0.004,
+    "LCT_prom_methyl_OFF": 0.8369,
+    "LCT_prom_accessible": true,
+    "MCM6_is_enhancer": true,
+    "MCM6_enh_methyl_tissue_specific": false
+  },
+  "ledger": [
+    {
+      "layer": "gamma",
+      "quantity": "SET (LCT present human+mouse)",
+      "grade": "F",
+      "reason": "conserved gene; read from catalog"
+    },
+    {
+      "layer": "gamma",
+      "quantity": "γ_human, γ_mouse",
+      "grade": "F",
+      "reason": "measured NN-stacking, read-only"
+    },
+    {
+      "layer": "gamma",
+      "quantity": "|Δγ| same-material verdict",
+      "grade": "F",
+      "reason": "0.034 < 0.05 scale"
+    },
+    {
+      "layer": "M",
+      "quantity": "CpG O/E mean + local-max (substrate location)",
+      "grade": "F",
+      "reason": "measured, read-only"
+    },
+    {
+      "layer": "M",
+      "quantity": "methylation direction (age -> silencing)",
+      "grade": "F",
+      "reason": "documented direction"
+    },
+    {
+      "layer": "M",
+      "quantity": "same-γ two-trajectories -> opposite STATE",
+      "grade": "F",
+      "reason": "R19 settle on measured γ"
+    },
+    {
+      "layer": "M",
+      "quantity": "discontinuous flip",
+      "grade": "F",
+      "reason": "R19 bistable, Δs~2√γ"
+    },
+    {
+      "layer": "M",
+      "quantity": "hysteresis (non-re-inducibility)",
+      "grade": "F",
+      "reason": "sub-spinodal baseline"
+    },
+    {
+      "layer": "M",
+      "quantity": "LCT promoter methylation is tissue-specific (hypo where LCT ON, hyper where OFF)",
+      "grade": "L",
+      "reason": "Loyfer atlas (literature, not API-fetchable): β 0.004 small-int (ON) vs 0.8369 OFF (Δ+0.83); gating itself is the R19 [F] result above"
+    },
+    {
+      "layer": "M",
+      "quantity": "age-dependent methylation gain (genotype-dependent)",
+      "grade": "L",
+      "reason": "Labrie 2016: LCT methylation rises with age in -13910 CC; cg20242066; T allele blocks it"
+    },
+    {
+      "layer": "M",
+      "quantity": "rate magnitudes κ, λ, H_BASE",
+      "grade": "B",
+      "reason": "Layer-2 illustrative parameters (the deliberate Layer-1/Layer-2 boundary); direction anchored by [L]"
+    },
+    {
+      "layer": "E",
+      "quantity": "helical/nucleosome positioning signal (accessibility gated)",
+      "grade": "F",
+      "reason": "WW ACF vs shuffle; arrangement"
+    },
+    {
+      "layer": "E",
+      "quantity": "accessibility gate direction (occlusion freezes switch)",
+      "grade": "F",
+      "reason": "multiplicative drive gate"
+    },
+    {
+      "layer": "E",
+      "quantity": "poly(dA:dT) accessibility signal",
+      "grade": "F",
+      "reason": "measured, nucleosome-disfavoring tracts"
+    },
+    {
+      "layer": "E",
+      "quantity": "joined unit LCT+MCM6 (read together)",
+      "grade": "F",
+      "reason": "within looping range; one unit"
+    },
+    {
+      "layer": "E",
+      "quantity": "LCT promoter accessible (open chromatin)",
+      "grade": "V",
+      "reason": "ENCODE DNase clusters [69, 88, 30, 83]"
+    },
+    {
+      "layer": "E",
+      "quantity": "MCM6 -13910 region is a distal enhancer",
+      "grade": "V",
+      "reason": "ENCODE cCRE enhD (distal enhancer); LCT enhancer-regulated (GeneHancer)"
+    },
+    {
+      "layer": "E",
+      "quantity": "physical loop -13910 enhancer <-> LCT promoter",
+      "grade": "L",
+      "reason": "documented chromatin looping; TFs at MCM6 intron-13 recruit TET demethylases to LCT promoter (couples E2->M)"
+    },
+    {
+      "layer": "E",
+      "quantity": "exact per-bp nucleosome dyad map",
+      "grade": "O",
+      "reason": "functional accessibility is [V] (DNase); base-pair dyad positions need MNase-seq -- a refinement, not a gating change"
+    },
+    {
+      "layer": "above-DNA",
+      "quantity": "lactose-tolerance plasticity (microbiome/physiology)",
+      "grade": "B",
+      "reason": "explicitly ABOVE the DNA layer -- a category boundary, not an empirical gap"
+    }
+  ],
+  "ledger_counts": {
+    "total": 20,
+    "F": 12,
+    "V": 2,
+    "L": 3,
+    "O_empirical": 1,
+    "B_boundary": 2,
+    "ungraded": 0
+  },
+  "flip_age_OPEN": 19,
+  "discontinuous_jump": 2.086,
+  "gates_pass": true
+}

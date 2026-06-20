@@ -1,0 +1,141 @@
+{
+ "_what": "D9.1 candidate encoding: a threshold-lowering 'drug' is a multi-lever MECHANISM operator on the R19 substrate (chemistry-as-code), its EFFECT derived from the engine fold with zero free parameters. Library spans blunt-single (D8.12) -> selective-single (D8.14) -> dual -> tri-lever (the proposal). Magnitudes are SWEPT in D9.3, not tuned. Levers grounded in the real cohort channel/receptor gammas (D9.0).",
+ "candidate_library": {
+  "C0_blunt_single": {
+   "axis_A_firewall": "lowering a fold = ignition mechanism, not experience",
+   "efficacy": 0,
+   "id": "C0_blunt_single",
+   "levers": {
+    "A3": {
+     "gamma_target": 1.3845,
+     "gene_basis": "GABRB3/GABRA2/GABRA5 (tonic GABA-A), applied BLUNT",
+     "magnitude": 0.25,
+     "selective": false,
+     "width": 0.05
+    }
+   },
+   "mechanism_only": true,
+   "name": "blunt single-lever threshold operator (D8.12 baseline: uniform E/I shift)",
+   "no_dose": true,
+   "no_synthesis": true,
+   "not_medical_advice": true,
+   "rationale": "one global depolarising shift; hits every cell equally (no subtype/state selectivity)"
+  },
+  "C1_selective_single": {
+   "axis_A_firewall": "lowering a fold = ignition mechanism, not experience",
+   "efficacy": 0,
+   "id": "C1_selective_single",
+   "levers": {
+    "A3": {
+     "gamma_target": 1.3845,
+     "gene_basis": "GABRB3/GABRA2/GABRA5 (tonic GABA-A), subtype-selective",
+     "magnitude": 0.25,
+     "selective": true,
+     "width": 0.05
+    }
+   },
+   "mechanism_only": true,
+   "name": "stiffness-selective single-lever operator (D8.14: subtype/state-selective)",
+   "no_dose": true,
+   "no_synthesis": true,
+   "not_medical_advice": true,
+   "rationale": "one lever keyed to the faulted stiffness (receptor-subtype / use-dependent selectivity)"
+  },
+  "C2_dual_selective": {
+   "axis_A_firewall": "lowering a fold = ignition mechanism, not experience",
+   "efficacy": 0,
+   "id": "C2_dual_selective",
+   "levers": {
+    "A1": {
+     "gamma_target": 1.2298,
+     "gene_basis": "SCN2A/CACNA1C (Nav/Cav inward gain)",
+     "magnitude": 0.125,
+     "selective": true,
+     "width": 0.05
+    },
+    "A3": {
+     "gamma_target": 1.3845,
+     "gene_basis": "GABA-A tonic disinhibition",
+     "magnitude": 0.125,
+     "selective": true,
+     "width": 0.05
+    }
+   },
+   "mechanism_only": true,
+   "name": "dual-lever stiffness-selective operator (A1 excitability + A3 disinhibition)",
+   "no_dose": true,
+   "no_synthesis": true,
+   "not_medical_advice": true,
+   "rationale": "split the correction across two independent channel systems, each subtype-selective"
+  },
+  "C3_trilever_selective": {
+   "axis_A_firewall": "lowering a fold = ignition mechanism, not experience",
+   "efficacy": 0,
+   "id": "C3_trilever_selective",
+   "levers": {
+    "A1": {
+     "gamma_target": 1.2298,
+     "gene_basis": "SCN2A/CACNA1C (Nav/Cav inward gain UP)",
+     "magnitude": 0.0833,
+     "selective": true,
+     "width": 0.05
+    },
+    "A2": {
+     "gamma_target": 1.498,
+     "gene_basis": "KCNQ3 (Kv7.3 outward current DOWN)",
+     "magnitude": 0.0833,
+     "selective": true,
+     "width": 0.05
+    },
+    "A3": {
+     "gamma_target": 1.3845,
+     "gene_basis": "GABA-A a5/b3/a2 (tonic inhibition DOWN)",
+     "magnitude": 0.0833,
+     "selective": true,
+     "width": 0.05
+    }
+   },
+   "mechanism_only": true,
+   "name": "tri-lever stiffness-selective threshold operator (A1 + A2 + A3) -- THE PROPOSAL",
+   "no_dose": true,
+   "no_synthesis": true,
+   "not_medical_advice": true,
+   "rationale": "a real neuron co-expresses Na, K, GABA-A; move the fold a little on each of three independent, subtype-selective systems instead of a lot on one -- smaller per-system footprint, more margin to the seizure edge. The analgesic three-lever logic, inverted."
+  }
+ },
+ "firewall": "mechanism only; efficacy=0; no dose; no synthesis; NOT medical advice; Axis-A firewall.",
+ "honesty_ledger": {
+  "consciousness_claim": 0,
+  "medium_efficacy_tested": 0,
+  "new_tuned_constants": 0,
+  "no_cure_claimed": 1
+ },
+ "invariants": {
+  "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70"
+ },
+ "lever_definitions": {
+  "A1": "inward-excitatory gain UP (Nav/Cav) -> +delta_bias  [SCN2A, CACNA1C]",
+  "A2": "outward-K current DOWN (Kv7.3, inverse of analgesic opener) -> +delta_bias  [KCNQ3]",
+  "A3": "tonic GABA-A inhibition DOWN (remove the fault's own bias) -> +delta_bias  [GABRB3/GABRA2/GABRA5]"
+ },
+ "lever_gamma_targets_from_cohort": {
+  "A1": 1.2298,
+  "A2": 1.498,
+  "A3": 1.3845
+ },
+ "no_free_parameter_statement": "the candidate supplies only gamma_target (a measured gene gamma), width (a mechanism property), and magnitude (swept). The fold and the seizure boundary are the engine's measured R19 cusp -- no fold value is fitted; no constant is tuned to a target.",
+ "overall_pass": true,
+ "self_tests": {
+  "baseline_fold_fault": 0.6425,
+  "baseline_fold_health": 0.3925,
+  "baseline_reproduces_D8_12": true,
+  "blunt_full_correction_restores_health": true,
+  "fold_after_blunt": 0.3925,
+  "forbidden_hits": [],
+  "library_forbidden_claim_clean": true,
+  "scanner_self_test_fires_on_planted": true,
+  "selective_key_off_target": 0.000335,
+  "selective_key_on_target": 1.0,
+  "selectivity_behaves": true
+ }
+}

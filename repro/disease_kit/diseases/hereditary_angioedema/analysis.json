@@ -1,0 +1,170 @@
+{
+ "disease": "Hereditary angioedema (C1-inhibitor deficiency)",
+ "omim": "106100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hereditary angioedema (C1-inhibitor deficiency)",
+  "omim": "106100",
+  "summary": "A single-gene SERPING1 loss-of-function. C1-inhibitor (a serpin) is the principal brake on the contact (kallikrein-kinin) system, inhibiting plasma kallikrein and activated factor XII. When SERPING1 is deficient (type I, low C1-INH) or dysfunctional (type II, normal-level but inactive C1-INH), the kallikrein-kinin cascade is disinhibited, so bradykinin is OVER-produced -> the bradykinin burden is driven UP, causing recurrent bradykinin-mediated angioedema attacks. Read as a released serpin BRAKE on the kallikrein-bradykinin cascade (C1-INH brakes it; LOF releases it -> bradykinin UP). Molecularly this is a SERPIN loss like alpha-1-antitrypsin deficiency (SERPINA1) -- the same protein family failing -- but where A1AT is read on the protective-antiprotease-LEVEL axis (DOWN), hereditary angioedema's defining axis is the downstream bradykinin OVER-production (UP), so it joins the axis-UP toxic-over-production class. The kit re-derives BOTH approved arms: RESTRAIN the over-active downstream cascade (plasma-kallikrein inhibitors lanadelumab / ecallantide / berotralstat; bradykinin B2-receptor antagonist icatibant for acute attacks) AND RESTORE the serpin brake by replacement (C1-esterase-inhibitor concentrate). The gamma read is of the SERPING1 locus switch STRUCTURE; the coding / regulatory lesions are outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "bradykinin burden (contact/kallikrein-kinin-driven vascular permeability -> angioedema)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SERPING1",
+    "gamma": 1.3946,
+    "spinodal_h_sp": 0.6339,
+    "barrier": 0.48623,
+    "dwell_relative_size": 1.49721,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 57597684,
+     "gene_end": 57614847,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "serpin family G member 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SERPING1 encodes C1-inhibitor, the serpin that restrains plasma kallikrein and activated factor XII (and C1). As a BRAKE on the contact / kallikrein-kinin cascade, its LOF RELEASES the brake -> plasma kallikrein cleaves high-molecular-weight kininogen unchecked -> bradykinin accumulates and raises vascular permeability. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding / regulatory lesion (firewall). The pathological axis is the BRADYKININ BURDEN (it goes UP), so the corrective levers LOWER it. (Same serpin family as SERPINA1 / A1AT, but the defining axis here is the downstream over-production rather than a protective-level loss.)",
+    "src": "Donaldson & Evans 1963 (C1-INH deficiency in HAE); Zuraw 2008 NEJM review (bradykinin mechanism)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SERPING1",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "ebd0cb01ea54"
+ },
+ "treatment_A_switch": {
+  "disease": "Hereditary angioedema (C1-inhibitor deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "KLKB1",
+    "push_direction": "inhibit plasma kallikrein so less bradykinin is generated from kininogen -> lower the bradykinin burden (prophylaxis)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "plasma-kallikrein inhibitor (lanadelumab mAb / ecallantide / berotralstat)",
+    "status": "approved",
+    "mechanism_grade": "[O] bradykinin-lowering / attack-rate magnitude not derived from sequence",
+    "src": "Banerji 2018 JAMA (HELP, lanadelumab); Zuraw 2010 (ecallantide); Zuraw 2021 (berotralstat); lanadelumab FDA 2018"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "BDKRB2",
+    "push_direction": "block the bradykinin B2 receptor so the accumulated bradykinin cannot raise vascular permeability -> abort the acute attack",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "bradykinin B2-receptor antagonist (icatibant)",
+    "status": "approved",
+    "mechanism_grade": "[O] attack-resolution magnitude not derived from sequence",
+    "src": "Cicardi 2010 NEJM 363:532 (FAST-3, icatibant); icatibant FDA 2011"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "SERPING1",
+    "push_direction": "supply functional C1-inhibitor to restore the serpin brake on the kallikrein-kinin cascade -> less bradykinin generated -> lower the burden (replacement)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "C1-esterase-inhibitor concentrate (plasma-derived / recombinant)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored-C1-INH-activity / attack-rate magnitude not derived from sequence",
+    "src": "Zuraw 2010 NEJM 363:513 (C1-INH concentrate); Cinryze / Berinert / Ruconest approved"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "KLKB1",
+   "push_direction": "inhibit plasma kallikrein so less bradykinin is generated from kininogen -> lower the bradykinin burden (prophylaxis)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "plasma-kallikrein inhibitor (lanadelumab mAb / ecallantide / berotralstat)",
+   "status": "approved",
+   "mechanism_grade": "[O] bradykinin-lowering / attack-rate magnitude not derived from sequence",
+   "src": "Banerji 2018 JAMA (HELP, lanadelumab); Zuraw 2010 (ecallantide); Zuraw 2021 (berotralstat); lanadelumab FDA 2018"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.49721,
+   "dwell_disease": 2.05866,
+   "dwell_treated": 1.68054,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "bdf1312a63cd"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SERPING1 LOF (released serpin brake) raises the bradykinin burden (axis UP)",
+   "falsifier": "a SERPING1 deficiency allele that LOWERED bradykinin generation / contact-system activation would refute the released-brake direction",
+   "measurable_by": "cleaved high-molecular-weight kininogen / bradykinin generation by SERPING1 genotype (or during attacks)"
+  },
+  {
+   "claim": "restraining the cascade (kallikrein inhibition / B2 blockade) or restoring C1-INH is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if plasma-kallikrein inhibition, B2-receptor blockade, or C1-INH replacement RAISED or failed to lower bradykinin / attack frequency, the restrain lever sign is wrong",
+   "measurable_by": "bradykinin level / angioedema attack rate response to kallikrein inhibitor, icatibant, or C1-INH concentrate"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hereditary angioedema (C1-inhibitor deficiency)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "c82369dcce03"
+ },
+ "determinism_sha": "10bf74381a61"
+}

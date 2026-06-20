@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open-items register — VP Chemistry &amp; EM §8 | Jamming Physics</title>
+<meta name="description" content="Every open and hypothesis item, with the specific physics that would close it: bond-dissociation energy, the coupling α_em, the global U(1) long-range hypothe">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/ax-o-open-items-register-what-is-honestly/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Open-items register — VP Chemistry &amp; EM §8 | Jamming Physics"><meta property="og:description" content="Every open and hypothesis item, with the specific physics that would close it: bond-dissociation energy, the coupling α_em, the global U(1) long-range hypothe"><meta property="og:url" content="https://jamming-physics.org/chemistry/ax-o-open-items-register-what-is-honestly/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Open-items register — VP Chemistry &amp; EM §8 | Jamming Physics"><meta name="twitter:description" content="Every open and hypothesis item, with the specific physics that would close it: bond-dissociation energy, the coupling α_em, the global U(1) long-range hypothe">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Open-items register: what is honestly unsolved", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 7, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/ax-o-open-items-register-what-is-honestly/", "knowsAbout": ["open problems", "falsifiability", "fine-structure constant"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§8 Open-items register"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §8</nav></header>
+<main>
+<h1>Open-items register: what is honestly unsolved</h1>
+
+<p class="answer">The genuinely open questions are stated plainly: absolute bond energies and several magnitudes need physics beyond π-geometry, the coupling α_em is not derived, long range rests on a global U(1) hypothesis, and the absolute magnetic-vector sector is open. Closing any one is new physics, not a correction.</p>
+
+<p class="abstract">The genuinely open questions are stated plainly. On the chemistry side, absolute bond energies and a few magnitudes need physics outside the π-geometry. On the electromagnetism side, the coupling α_em is not derived, long range rests on a global U(1) hypothesis, and the absolute vector (magnetic) sector is open. Closing any is new physics, not a correction.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-open">[O] open</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/ax-o-open-items-register-what-is-honestly/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>This appendix consolidates every [O] / [H] item carried in this
+volume, with the specific physics that would be required to close it.
+None is a defect to be fixed; each is open research. Closing any of them
+would be <em>new physics</em>, not a correction — and forcing a closure
+would reintroduce exactly the kind of overfitting (the retracted √(2.5)
+rule, the refuted electron amplitude) that this program has been careful
+to discard.</p>
+<h2
+id="o.1-chemistry-peripheral-quantitative-opens-independently-re-examined">O.1
+Chemistry — peripheral quantitative opens (independently
+re-examined)</h2>
+<p>Each was re-examined by <code>vp_open_items_reexam.py</code>; all
+four correctly remain open because the closing variable lies
+<em>outside</em> VP π-geometry.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Open item</th>
+<th>Module</th>
+<th>Closing physics (outside VP geometry)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Absolute bond-dissociation energy</td>
+<td><code>vp_bond_energy.py</code></td>
+<td>the Morse range β = a rₑ (anharmonicity; lone-pair / polarity). A
+direct test found β uncorrelated with bond order (r = +0.18), so √2
+geometry alone cannot close it.</td>
+</tr>
+<tr class="even">
+<td>Defect knockdown (real vs ideal strength)</td>
+<td><code>vp_strength.py</code></td>
+<td>dislocation density ρ₍disl) (processing-dependent; Taylor τ=α G
+b√(ρ)) — intrinsically a calibration input.</td>
+</tr>
+<tr class="odd">
+<td>Naïve shell correction</td>
+<td><code>vp_shell_correction.py</code></td>
+<td>the nuclear spin–orbit shell model (Mayer–Jensen); a uniform
+proximity bonus over-corrects because Δ B changes sign across magic
+numbers.</td>
+</tr>
+<tr class="even">
+<td>Electron affinity / absolute IE</td>
+<td><code>vp_dblock_chemistry.py</code></td>
+<td>electron screening constants (Clementi–Raimondi); Slater rules give
+only the correlation (sign correct 8/18).</td>
+</tr>
+</tbody>
+</table>
+<h2
+id="o.2-electromagnetism-foundational-opens-deeper-than-the-chemistry-set">O.2
+Electromagnetism — foundational opens (deeper than the chemistry
+set)</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Open item</th>
+<th>Grade</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Electromagnetic coupling αₑₘ (the “1/137”)</strong></td>
+<td>[CAL]</td>
+<td>The <em>strength</em> of electromagnetism is a measured input; the
+framework derives the <em>form</em> (1/r², c, E/B, polarization, the
+angle law) but not the magnitude. Physics §14.5 states it is not
+derived. A topological / phase-winding route has been scaffolded but is
+computationally heavy and is <strong>on hold</strong>; there is no known
+low-cost shortcut. Closing it is new physics.</td>
+</tr>
+<tr class="even">
+<td><strong>Long-range / unscreened EM (global U(1))</strong></td>
+<td>[H]</td>
+<td>Masslessness and infinite range rest on the breaking of a
+<em>global</em> (not gauged) U(1), giving a Goldstone mode — a stated
+departure from gauge theory. The AQD dynamics supply causality (§EM.12)
+but not the gauge structure; this remains a hypothesis.</td>
+</tr>
+<tr class="odd">
+<td><strong>Absolute vector (magnetic / radiative) sector</strong></td>
+<td>[O]</td>
+<td>The longitudinal (Coulomb / E) sector — including the dynamic
+equations, Poynting flow, and causality — is closed in §EM.12. The full
+vector mathbf E/mathbf B curl structure (Faraday’s ∇×mathbf E and
+Ampère–Maxwell’s ∇×mathbf B in vector form, with the magnetic field as
+an independent transverse pseudovector and its absolute magnitude) is
+<strong>not</strong> supplied by the scalar/longitudinal treatment. This
+is the principal open structural item of the EM chapter.</td>
+</tr>
+<tr class="even">
+<td><strong>γγ genesis dynamics</strong></td>
+<td>[O]</td>
+<td>How charge is created from photon collisions (γγ→ e⁺e⁻) at the level
+of lattice dynamics is open.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="o.3-what-is-closed-for-contrast">O.3 What is <em>closed</em>
+(for contrast)</h2>
+<p>The longitudinal electrodynamics is complete and reproducible: light
+emergence (c²=B/ρ), the static Coulomb 1/r², the |mathbf B|=(v/c)|mathbf
+E| ratio and ∇ ·mathbf B=0, polarization as helicity, the
+conduction–radiation angle, blackbody radiation, refraction, and — as of
+this edition — the <strong>dynamic field equations, Poynting’s theorem,
+energy conservation, uniqueness, and light-cone causality</strong>
+(§EM.12). On the chemistry side the forced body is complete: bonding
+geometry, coordination color, the metal d-shell fates, thermodynamics,
+equilibrium, kinetics, solution and electrochemistry, materials
+geometry, and the nuclear skeleton; and the applications are re-grounded
+on the verified d-band descriptor (catalysis, ammonia, water
+electrolysis, energy storage, new materials, CO₂ reduction), with the
+non-working mechanisms (magnetic desalination, amplitude-to-electricity
+ESS) honestly refuted and replaced by working alternatives.</p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/07-low-grade-waste-heat-electricity/">← §7</a>
+  <a href="/chemistry/">Paper contents</a>
+  <span></span>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

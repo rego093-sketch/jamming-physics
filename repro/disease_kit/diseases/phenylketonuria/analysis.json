@@ -1,0 +1,207 @@
+{
+ "disease": "Phenylketonuria (PKU)",
+ "omim": "261600",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Phenylketonuria (PKU)",
+  "omim": "261600",
+  "summary": "PAH loss-of-function lowers phenylalanine-hydroxylase throughput -> phenylalanine accumulates and is neurotoxic. A subset of alleles keep residual enzyme that a BH4 cofactor can stabilise -> a SMALL-MOLECULE (pathway-B) correction.",
+  "emergent_axis": "phenylalanine -> tyrosine metabolic throughput (enzyme switch)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "PAH",
+    "gamma": 1.4344,
+    "spinodal_h_sp": 0.66123,
+    "barrier": 0.51438,
+    "dwell_relative_size": 1.56175,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000012.12",
+     "gene_start": 102836888,
+     "gene_end": 102958440,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "phenylalanine hydroxylase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "many alleles; BH4-responsive subset retains residual activity",
+    "src": "DiLella 1986; Blau 2010 Lancet 376:1417"
+   }
+  ],
+  "primary_switch": {
+   "gene": "PAH",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "bfad47db0b44"
+ },
+ "treatment_A_switch": {
+  "disease": "Phenylketonuria (PKU)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "PAH",
+    "push_direction": "supply the enzyme activity another way (enzyme substitution)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "PEGylated phenylalanine ammonia-lyase (pegvaliase)",
+    "status": "approved",
+    "mechanism_grade": "[O] activity/dose not asserted",
+    "src": "Thomas 2018 (pegvaliase)"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "PAH",
+   "push_direction": "supply the enzyme activity another way (enzyme substitution)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "PEGylated phenylalanine ammonia-lyase (pegvaliase)",
+   "status": "approved",
+   "mechanism_grade": "[O] activity/dose not asserted",
+   "src": "Thomas 2018 (pegvaliase)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.56175,
+   "dwell_disease": 1.01055,
+   "dwell_treated": 1.28204,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "894609e004cd"
+ },
+ "treatment_B_chem": {
+  "disease": "Phenylketonuria (PKU)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 2,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "sapropterin (BH4)",
+    "T_K": 310.15,
+    "reads": {
+     "equilibrium": {
+      "dG_kcal_per_mol": -4.8985,
+      "spontaneous": true,
+      "T_K": 310.15,
+      "grade": "[F] form (dG=dH-TdS); dH,dS are [CAL] external measured inputs"
+     },
+     "Keq": {
+      "Keq": 2829.441291,
+      "favoured_state": "bound/product (K>1)",
+      "grade": "[F] form; dG is [CAL]"
+     },
+     "binding_window": {
+      "sabatier_score": 0.7788,
+      "regime": "near-optimal window (matchmaker balance)",
+      "dG_opt_kcal": -9.0,
+      "width_kcal": 3.0,
+      "grade": "[F] window form; dG_bind is [CAL]/[O] external; NOT a Kd/potency"
+     }
+    },
+    "open": [],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "PAH cofactor rescue (supply the missing cofactor; stabilises residual PAH)",
+    "rationale": "BH4 binding stabilises the residual enzyme fold -> restores partial throughput; thermodynamic FEASIBILITY of the cofactor-stabilisation step (representative inputs)",
+    "status": "approved",
+    "src": "Burton 2007; sapropterin (Kuvan) FDA 2007"
+   },
+   {
+    "candidate": "large-neutral-amino-acid mix",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "substrate competition at the blood-brain barrier",
+    "rationale": "competes phenylalanine transport into brain; thermodynamics not supplied -> feasibility [O]",
+    "status": "clinical",
+    "src": "Matalon 2006"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "0eefff15c604"
+ },
+ "falsifiers": [
+  {
+   "claim": "PAH LOF moves the metabolic-throughput axis DOWN (substrate accumulates)",
+   "falsifier": "a PAH LOF allele that LOWERS blood phenylalanine refutes the throughput-down direction",
+   "measurable_by": "plasma phenylalanine by PAH genotype / enzyme activity assay"
+  },
+  {
+   "claim": "BH4 cofactor rescue is a thermodynamically feasible CORRECTIVE step in BH4-responsive alleles",
+   "falsifier": "if the cofactor-stabilisation step were non-spontaneous at body T (dG>0) or BH4 failed to raise residual activity in responsive alleles, the feasibility read is wrong",
+   "measurable_by": "PAH activity +- BH4 in responsive vs non-responsive alleles; ITC of BH4 binding"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Phenylketonuria (PKU)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "4a72459f6872"
+ },
+ "determinism_sha": "709eabf9824e"
+}

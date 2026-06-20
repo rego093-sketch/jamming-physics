@@ -1,0 +1,130 @@
+{
+ "_atlas": "VP visceral + morphogenesis + energy master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact TSS -> window TSS-2000..+500). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit.",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)",
+  "obesity_gamma.json (energy)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma MEASURED [V], never fitted; identity + order owned by DNA. _to_measure entries are named masters whose gamma is an honest research input still to fetch (e.g. clock genes, parathyroid/CaSR/VDR, senescence genes) -- deferred, not invented.",
+ "genes": {
+  "PAX6": {
+   "gamma": 1.511,
+   "gc": 0.6058,
+   "_source": "morpho_gamma.json (morphogenesis)"
+  },
+  "RAX": {
+   "gamma": 1.4541,
+   "gc": 0.5418,
+   "_source": "morpho_gamma.json (morphogenesis)"
+  },
+  "EYA1": {
+   "gamma": 1.3638,
+   "gc": 0.4654,
+   "_source": "morpho_gamma.json (morphogenesis)"
+  },
+  "SOX2": {
+   "gamma": 1.4573,
+   "gc": 0.5494,
+   "_source": "morpho_gamma.json (morphogenesis)"
+  },
+  "TAS1R3": {
+   "gamma": 1.5555,
+   "gc": 0.6222,
+   "_source": "morpho_gamma.json (morphogenesis)"
+  }
+ },
+ "_to_measure": [
+  {
+   "gene": "CNGA1",
+   "ncbi_gene": "1259",
+   "uniprot": "P29973",
+   "node": "eye_photoreceptor",
+   "role": "rod CNG channel alpha (cooperative ligand gate)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "CNGB1",
+   "ncbi_gene": "1258",
+   "uniprot": "Q14028",
+   "node": "eye_photoreceptor",
+   "role": "rod CNG channel beta subunit",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "TMC1",
+   "ncbi_gene": "117531",
+   "uniprot": "Q8TDI8",
+   "node": "inner_ear_haircell",
+   "role": "hair-cell mechanotransduction pore",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "PCDH15",
+   "ncbi_gene": "65217",
+   "uniprot": "Q96QU1",
+   "node": "inner_ear_haircell",
+   "role": "tip-link (gating spring)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "CDH23",
+   "ncbi_gene": "64072",
+   "uniprot": "Q9H251",
+   "node": "inner_ear_haircell",
+   "role": "tip-link (gating spring)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "SLC26A5",
+   "ncbi_gene": "375611",
+   "uniprot": "P58743",
+   "node": "cochlear_amplifier",
+   "role": "prestin OHC somatic motor (Hopf active force)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "TAS1R2",
+   "ncbi_gene": "80834",
+   "uniprot": "Q8TE23",
+   "node": "taste_chemodetection",
+   "role": "sweet receptor subunit (T1R2)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "TRPM5",
+   "ncbi_gene": "29850",
+   "uniprot": "Q9NZQ8",
+   "node": "taste_chemodetection",
+   "role": "downstream taste cation channel",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "CNGA2",
+   "ncbi_gene": "1260",
+   "uniprot": "Q16280",
+   "node": "olfaction_chemodetection",
+   "role": "olfactory CNG channel (same superfamily as rod CNGA1)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  },
+  {
+   "gene": "ADCY3",
+   "ncbi_gene": "109",
+   "uniprot": "O60266",
+   "node": "olfaction_chemodetection",
+   "role": "olfactory adenylyl cyclase (cAMP generator)",
+   "gamma": null,
+   "_status": "DEFERRED: measure via DNA pipeline (SantaLucia 1998 NN dG37, proximal promoter); not fitted, not invented"
+  }
+ ],
+ "_to_measure_note": "Transducer EFFECTOR genes (channel switch elements). gamma is an honest research input owned by the DNA package; this sensory package CITES the channel identity + NCBI/UniProt accession but does NOT compute or guess gamma here (SSOT discipline). TAS1R3 already appears under 'genes' as a vendored master."
+}

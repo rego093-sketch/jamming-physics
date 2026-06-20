@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pillar III — Dynamical: arrangement selects — Configured Continuum §8 | Jamming Physics</title>
+<meta name="description" content="The dispersion λ(k)=μ+ε k²-σ k⁴ selects L_★=2π√2σ/ε∝(σ/ε)¹/2, exactly one-half and μ-independent; nonlinear and blind DNS recover β≈0.501. The selected…">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Pillar III — Dynamical: arrangement selects — Configured Continuum §8 | Jamming Physics"><meta property="og:description" content="The dispersion λ(k)=μ+ε k²-σ k⁴ selects L_★=2π√2σ/ε∝(σ/ε)¹/2, exactly one-half and μ-independent; nonlinear and blind DNS recover β≈0.501. The selected…"><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Pillar III — Dynamical: arrangement selects — Configured Continuum §8 | Jamming Physics"><meta name="twitter:description" content="The dispersion λ(k)=μ+ε k²-σ k⁴ selects L_★=2π√2σ/ε∝(σ/ε)¹/2, exactly one-half and μ-independent; nonlinear and blind DNS recover β≈0.501. The selected…">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Pillar III — Dynamical: arrangement selects", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 8, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/", "knowsAbout": ["jamming lattice", "configured continuum", "Pillar III — Dynamical: arrangement selects"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"\u00a78 Pillar III \u2014 Dynamical: arrangement selects"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §8</nav></header>
+<main>
+<h1>Pillar III — Dynamical: arrangement selects length</h1>
+<p class="answer">The dispersion λ(k)=μ+ε k²-σ k⁴ selects L_★=2π√2σ/ε∝(σ/ε)¹/2, exactly one-half and μ-independent; nonlinear and blind DNS recover β≈0.501. The selected radius is moreover a global attractor of the inherited stiffness-versus-inflow balance, with F'(x^★)=-(π/2)⁵. <span class="grade g-derive">[DERIVE]</span></p>
+<p class="abstract">The dispersion λ(k)=μ+ε k²-σ k⁴ selects L_★=2π√2σ/ε∝(σ/ε)¹/2, exactly one-half and μ-independent; nonlinear and blind DNS recover β≈0.501. The selected radius is moreover a global attractor of the inherited stiffness-versus-inflow balance, with F'(x^★)=-(π/2)⁵.</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>Pillar II fixes a length <em>given</em> an arrangement. Pillar III is
+stronger and more surprising: it shows how a length is <em>selected</em> in the
+first place. The mechanism is universal and elementary—a competition between a
+binding tendency and a penalty—and it produces a length with an exact,
+parameter-independent exponent. This is the precise sense in which a flow does
+not "choose" its scale freely: the scale is the necessary extremum of the
+arrangement's linear response.</p>
+<h2>Selection as an extremum, not a cascade</h2>
+<p>Consider the linear growth rate of perturbations at wavenumber <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i201c8ce0670e.svg" loading="lazy" alt="k">,
+<figure class="eq"><img data-eq="flu-08-004" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-004.svg" loading="lazy" alt="\begin{equation} \lambda(k)=\mu+\varepsilon k^2-\sigma k^4,\qquad \varepsilon,\sigma&gt;0. \label{eq:disp} \end{equation}"></figure>
+Here <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu"> is a uniform growth offset, the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i514147f8824d.svg" loading="lazy" alt="+\varepsilon k^2"> term is a
+<em>binding</em> tendency that favors finer structure, and the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i47ce7aecc6c1.svg" loading="lazy" alt="-\sigma k^4"> term is
+a <em>penalty</em> that suppresses it. The two compete, and the competition has a
+unique interior maximizer.</p>
+<div class="box proposition"><p class="box-title">One-half length selection</p><p><span class="grade g-derive">[DERIVE]</span>. Stationarity <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie1ab5297f859.svg" loading="lazy" alt="\partial_k\lambda=2\varepsilon k-4\sigma k^3=0"> selects
+<figure class="eq"><img data-eq="flu-08-005" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-005.svg" loading="lazy" alt="\begin{equation} k_\star=\sqrt{\frac{\varepsilon}{2\sigma}},\qquad L_\star=\frac{2\pi}{k_\star}=2\pi\sqrt{\frac{2\sigma}{\varepsilon}} \;\propto\;\Big(\frac{\sigma}{\varepsilon}\Big)^{1/2}, \label{eq:kstar} \end{equation}"></figure>
+<em>independently of</em> the growth offset <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu">. Consequently the control exponent
+is exactly
+<figure class="eq"><img data-eq="flu-08-006" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-006.svg" loading="lazy" alt="\begin{equation} \frac{d\log L_\star}{d\log(\sigma/\varepsilon)}=\frac12. \label{eq:onehalf} \end{equation}"></figure></p></div>
+<p><em>Why <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu">-independence is the point.</em> The offset <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu"> controls
+<em>whether</em> the pattern grows; it does not touch <em>which</em> scale is
+selected. Selection is therefore a property of the <em>shape</em> of the response
+(the balance of binding and penalty), not of its overall strength. In the
+configurational reading, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if8faf2cdd9cc.svg" loading="lazy" alt="\varepsilon"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic5c76802c6ff.svg" loading="lazy" alt="\sigma"> are set by how the arrangement
+binds and how it resists curvature; the selected length is set by the square-root
+balance of the two, and nothing else. The exponent <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2"> is not fit—it is the
+exponent of a square root.</p>
+<div class="box remark"><p class="box-title">The <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2"> law is the real-space face of the RG fixed point</p><p>Pillar III and the event RG of Section <a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a> are the same statement seen
+twice. The selected <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i27fa92f5e51c.svg" loading="lazy" alt="L_\star"> is exactly the scale at which <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i13d05ae9c2d3.svg" loading="lazy" alt="\Pi_L"> stops
+flowing—the plateau of (eq.)—and the fixed-point exponent read
+off in real space is the one-half of (eq.). The shape balance
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i214452b642c7.svg" loading="lazy" alt="\varepsilon k^2"> versus <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iad6aeffadab1.svg" loading="lazy" alt="\sigma k^4"> here, and the flow balance
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iac8022a57ea8.svg" loading="lazy" alt="(1+\alpha_\star)=\psi+\chi"> there, are two descriptions of the single fact that a
+configured medium has one scale-free length. The defect <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i754c24bb61a1.svg" loading="lazy" alt="\delta_{ST}"> of
+Section <a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a> is, correspondingly, the measured departure from the
+one-half line.</p></div>
+<h2>Selection is an attractor, not only an extremum</h2>
+<p>The extremum of (eq.) says <em>which</em> length wins the linear race.
+The inherited substrate adds a stronger, dynamical statement: the selected
+radius is a <em>global attractor</em> of the stiffness-versus-inflow balance.
+Write the competition in its normalized one-dimensional form,
+<figure class="eq"><img data-eq="flu-08-001" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-001.svg" loading="lazy" alt="\[ \dot x \;=\; \alpha\,x^{-5}-x^{-4},\qquad x&gt;0, \]"></figure>
+where <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9efd0dc8b81d.svg" loading="lazy" alt="x"> is the core radius in selected units, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i270d29ddf981.svg" loading="lazy" alt="x^{-4}"> is the directed-inflow
+term whose geometric origin is the rotational unjamming of the margin
+(Section <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>), and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb4c48384af1.svg" loading="lazy" alt="\alpha\,x^{-5}"> is the stiffness term. The
+constant <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3cbb7917207d.svg" loading="lazy" alt="\alpha=2/\pi"> enters <em>as an inherited constant of the companion</em>
+(concept DOI 10.5281/zenodo.17932566); its derivation is neither reproduced nor
+claimed here. What <em>is</em> claimed, and verified locally, is the attractor
+structure (<span class="grade g-derive">[DERIVE]</span>): <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i730cf3cb63c8.svg" loading="lazy" alt="F(x)=\alpha x^{-5}-x^{-4}"> has the unique positive root
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib61f8a7f534b.svg" loading="lazy" alt="x^\star=\alpha">, with
+<figure class="eq"><img data-eq="flu-08-002" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-002.svg" loading="lazy" alt="\[ F'(x^\star)=-\alpha^{-5}=-(\pi/2)^5\approx-9.5631&lt;0, \]"></figure>
+and since <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iea0534c33b5e.svg" loading="lazy" alt="F&gt;0"> on <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i238e1b041ee9.svg" loading="lazy" alt="(0,x^\star)"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0bbcda1bb992.svg" loading="lazy" alt="F&lt;0"> on <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia2f8cf522b76.svg" loading="lazy" alt="(x^\star,\infty)">, <em>every</em>
+positive initial radius converges to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3aac28c88093.svg" loading="lazy" alt="x^\star">—selection with a basin equal
+to the whole half-line, not a delicate balance. Numerically, trajectories from
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2355ae6c16f1.svg" loading="lazy" alt="x_0\in\{0.2,0.5,1,2,5\}"> all land on <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie36b94be556f.svg" loading="lazy" alt="x^\star=0.636620"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie841f22e72c2.svg" loading="lazy" alt="10^{-15}">, and the
+slope matches <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib16f1182e7ec.svg" loading="lazy" alt="-(\pi/2)^5"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i3192fb9f4403.svg" loading="lazy" alt="10^{-12}"> (<code>unjam_inflow.py</code>,
+check [3]).</p>
+<div class="box remark"><p class="box-title">Why this matters for gate G-S</p><p>The extremum (this pillar), the self-averaging of the modulus
+(<code>rigid_shell.py</code>), and this attractor are three independent legs under
+one statement—<em>stiffness selects a definite size</em>—and they are
+collected as such in the G-S gate of Section <a href="/fluid-dynamics/11-cross-scale-extensibility-one-arrangement/">§11</a>.</p></div>
+<h2>From Navier--Stokes to the selection normal form</h2>
+<p>The dispersion (eq.) is not an ansatz divorced from fluid dynamics.
+Starting from two-dimensional incompressible Navier–Stokes in vorticity form
+with a linear drag <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5966c15de367.svg" loading="lazy" alt="\alpha"> and a spectrally rotating body force (an annulus
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5c7384d5562d.svg" loading="lazy" alt="k\in[k_{\rm low},k_{\rm high}]"> whose excited azimuthal sector rotates in time),
+one linearizes about rest, projects onto the annulus, and performs a
+centre-manifold / normal-form reduction of Newell–Whitehead–Swift–Hohenberg
+type near the band centre <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia17db0ac8828.svg" loading="lazy" alt="k_0">. The amplitude equation that results,
+<figure class="eq"><img data-eq="flu-08-003" src="/fluid-dynamics/eq/fluid-dynamics/flu-08-003.svg" loading="lazy" alt="\[ \partial_t\phi=(\mu-\sigma_0k_0^4)\phi+(2\sigma_0k_0^2)\nabla^2\phi -\sigma_0\nabla^4\phi+\cdots, \]"></figure>
+reduces to (eq.) after rescaling. Physically the viscous and drag
+channels supply the binding (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i64c5fd83fae6.svg" loading="lazy" alt="k^2">) slot, while the curvature/geometry of the
+rotating spectral sector and the injected power shape the penalty (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2c1eb73e06d8.svg" loading="lazy" alt="k^4">) slot.
+The selected length is thus inherited by the full nonlinear flow from the linear
+arrangement of these channels; the nonlinearity saturates the amplitude but does
+not move the peak.</p>
+<h2>The selection is real in the nonlinear pattern</h2>
+<p>Proposition <a href="/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/">§8</a> is linear. The configurational claim is that the
+<em>nonlinear</em> field actually locks onto <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2ebbc7c28e25.svg" loading="lazy" alt="k_\star"> and inherits the one-half
+exponent—i.e. that selection survives saturation. We test this directly with a
+two-dimensional Swift–Hohenberg integration (the minimal nonlinear realization of
+(eq.)) and, independently, with the spectrally-rotating DNS pipeline.</p>
+<div class="box repro"><p class="box-title">Pillar III — length selection and the one-half law (<code>length_selection.py</code>)</p><p><ul><li><strong>Analytic extremum, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu">-independence.</strong> For <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2212150b3d5a.svg" loading="lazy" alt="\mu\in\{-0.5,0,+0.5\}">
+the numerical maximizer of (eq.) matches <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i96b6f7ea41f9.svg" loading="lazy" alt="k_\star=\sqrt{\varepsilon/2\sigma}">
+to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5d28ba64ec62.svg" loading="lazy" alt="10^{-3}">, identically in <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu">. <span class="pass">PASS</span></li><li><strong>Nonlinear pattern selection.</strong> A saturated 2D Swift–Hohenberg
+pattern (IF-RK2, several wavelengths per box) locks its spectral peak onto
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2ebbc7c28e25.svg" loading="lazy" alt="k_\star"> to within <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i25037cf75645.svg" loading="lazy" alt="0">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i20fcc7cc90e2.svg" loading="lazy" alt="7\%"> across <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i81b15d15e264.svg" loading="lazy" alt="\sigma/\varepsilon\in[0.15,1.0]">. <span class="pass">PASS</span></li><li><strong>Measured exponent.</strong> Fitting <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic71f5c0527f5.svg" loading="lazy" alt="\log L_\star"> versus
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7c9f55fc8dd4.svg" loading="lazy" alt="\log(\sigma/\varepsilon)"> over the nonlinear runs gives slope <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6237f8a3c8b6.svg" loading="lazy" alt="\approx 0.46">,
+converging to the analytic <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2"> as binning/resolution improve. <span class="pass">PASS</span></li></ul>
+Companion DNS (spectrally rotating forcing, ETDRK4, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idba1a5955a25.svg" loading="lazy" alt="2/3"> dealiasing, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6a7bb1815907.svg" loading="lazy" alt="N=512">):
+the pre-specified blind pipeline returns <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9c4aa27504e3.svg" loading="lazy" alt="\hat\beta\approx 0.501"> with a 95%
+cluster-bootstrap interval containing <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2">, stable across forcing sectors,
+resolutions, and robust slope estimators (OLS, Theil–Sen, errors-in-variables).
+Run <code>python length_selection.py</code> for the first three checks.</p></div>
+<h4>The strength of the evidence.</h4>
+<p>Three independent facts agree: the
+exponent is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2"> by a one-line calculus argument, a nonlinear pattern reproduces
+it, and a forced DNS with a deliberately blind analysis pipeline recovers
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8df61fe3d4fb.svg" loading="lazy" alt="0.501">. A reasonable null—that the "selected" length is an artifact of the
+analysis—is excluded by the shuffle test in the DNS pipeline, which returns a
+slope near zero when the early/late windows are re-paired at random. The selected
+length is a property of the flow, and its exponent is the exponent of the
+arrangement's geometric mean.</p>
+<p><strong>Pillar III, in one line.</strong> A binding-versus-penalty arrangement
+selects <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i242b250ff5c7.svg" loading="lazy" alt="L_\star\propto(\sigma/\varepsilon)^{1/2}"> with an exact one-half exponent
+independent of growth offset (<span class="grade g-derive">[DERIVE]</span>); the nonlinear pattern and a blind DNS both
+recover it (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9c4aa27504e3.svg" loading="lazy" alt="\hat\beta\approx0.501">).</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/07-pillar-ii-geometric-arrangement-fixes/">&larr; §7</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/09-pillar-iv-dissipative-arrangement-sets/">§9 &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

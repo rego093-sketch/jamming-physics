@@ -1,0 +1,105 @@
+/* Hemodynamic Homeostasis -- canonical site stylesheet (VP-SPEC v1.8).
+   Direction: an instrument readout. Serif prose for long reading; a monospaced "gauge" face for
+   data, equations and grade tokens; a single cool gauge-teal accent; the grade pill is the signature. */
+:root{
+  --paper:#FBFAF6; --ink:#15191E; --muted:#5A6470; --line:#E2DED4;
+  --teal:#0E6E73; --teal-d:#0A5559; --amber:#9A6B12;
+  --gV:#0E6E73; --gVbg:#E1EFEF; --gL:#5A6470; --gLbg:#ECEAE3;
+  --gO:#9A6B12; --gObg:#F4ECDB; --gF:#7A3E9D; --gFbg:#EFE6F4; --gH:#9A6B12; --gHbg:#F4ECDB;
+  --gCAL:#1B5E8C; --gCALbg:#E2EEF5;
+  --mono:ui-monospace,"SFMono-Regular","JetBrains Mono",Menlo,Consolas,monospace;
+  --serif:"Iowan Old Style","Charter","Georgia","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-size:1.075rem;line-height:1.62;letter-spacing:.005em}
+main{max-width:46rem;margin:0 auto;padding:1.2rem 1.25rem 4rem}
+header,footer{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+header{padding-top:1.1rem}
+a{color:var(--teal-d);text-underline-offset:2px;text-decoration-thickness:.5px}
+a:hover{color:var(--teal)}
+:focus-visible{outline:2.5px solid var(--teal);outline-offset:2px;border-radius:2px}
+
+.crumb{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--muted);
+  text-transform:uppercase;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+.crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{color:var(--teal)}
+.crumb span{opacity:.5;padding:0 .15rem}
+
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--teal-d);margin:1.6rem 0 .3rem}
+h1{font-family:var(--sans);font-weight:680;font-size:1.95rem;line-height:1.16;letter-spacing:-.018em;
+  margin:.1rem 0 .9rem;text-wrap:balance}
+h2{font-family:var(--sans);font-weight:640;font-size:1.18rem;letter-spacing:-.01em;
+  margin:2.2rem 0 .55rem;padding-top:.2rem}
+h2::before{content:"";display:block;width:2.1rem;height:2px;background:var(--teal);
+  margin-bottom:.7rem;opacity:.8}
+p{margin:.55rem 0}
+
+.answer{font-family:var(--sans);font-size:1.16rem;line-height:1.5;font-weight:430;
+  color:var(--ink);background:linear-gradient(180deg,#fff,#FBFAF6);
+  border:1px solid var(--line);border-left:3px solid var(--teal);
+  border-radius:5px;padding:.95rem 1.1rem;margin:.2rem 0 1.1rem}
+.abstract{color:#2C333B;font-size:1.04rem}
+.lede{font-size:1.04rem;color:#2C333B}
+
+.claim-strip{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.01em;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:.6rem 0;margin:.4rem 0 1.3rem}
+.claim-strip .gate{color:var(--muted)}
+.claim-strip a{text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:1px}
+.claim-strip > :not(:first-child)::before{content:"\00B7";color:var(--muted);margin-right:.7rem;border:none}
+
+.grade{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:600;
+  letter-spacing:.01em;padding:.12rem .42rem;border-radius:3px;white-space:nowrap}
+.g-verified{color:var(--gV);background:var(--gVbg)}
+.g-cited{color:var(--gL);background:var(--gLbg)}
+.g-open{color:var(--gO);background:var(--gObg)}
+.g-forced{color:var(--gF);background:var(--gFbg)}
+.g-hypothesis{color:var(--gH);background:var(--gHbg)}
+.g-calibrated{color:var(--gCAL);background:var(--gCALbg)}
+
+.vp-card{font-size:.96rem;line-height:1.5;background:#fff;border:1px solid var(--line);
+  border-radius:6px;padding:.7rem .85rem;margin:.85rem 0;box-shadow:0 1px 0 rgba(20,25,30,.03)}
+.vp-card b{font-family:var(--mono);font-size:.92rem;color:var(--teal-d)}
+.vp-card a{font-size:.86rem;white-space:nowrap}
+.vp-card .grade{margin:0 .15rem}
+
+table.edges{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0 .2rem;
+  font-family:var(--sans)}
+table.edges th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);text-align:left;border-bottom:1.5px solid var(--ink);padding:.35rem .45rem}
+table.edges td{border-bottom:1px solid var(--line);padding:.4rem .45rem;vertical-align:top}
+table.edges td.sgn{font-family:var(--mono);text-align:center;font-weight:700;color:var(--teal-d)}
+
+.refs{margin-top:2.4rem;border-top:1px solid var(--line);padding-top:.4rem}
+.refs ol{font-size:.92rem;color:#2C333B;padding-left:1.2rem}
+.refs li{margin:.3rem 0}
+
+.pn{display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  font-family:var(--mono);font-size:.82rem;margin-top:2.8rem;padding-top:.9rem;
+  border-top:1px solid var(--line)}
+.pn a{text-decoration:none}.pn-x{flex:1}
+
+/* hub */
+.toc-list{list-style:none;padding:0;margin:.4rem 0;counter-reset:none}
+.toc-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;
+  padding:.7rem 0;border-bottom:1px solid var(--line)}
+.toc-list a{flex:1;min-width:60%;display:flex;gap:.7rem;align-items:baseline;text-decoration:none;color:var(--ink)}
+.toc-list a:hover .ti-t{color:var(--teal-d)}
+.ti-no{font-family:var(--mono);font-size:.82rem;color:var(--teal-d);min-width:2.2rem}
+.ti-t{font-family:var(--sans);font-weight:540;font-size:1.02rem;line-height:1.3}
+.seams p,.ledger p{font-size:1rem;color:#2C333B}
+
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.74rem;color:var(--muted);padding-bottom:2.5rem}
+footer a{color:var(--muted);border-bottom:1px solid var(--line)}
+.tiny{font-size:.69rem;opacity:.85;margin-top:.3rem}
+
+@media (max-width:480px){
+  body{font-size:1.02rem}h1{font-size:1.62rem}.answer{font-size:1.06rem}
+  main{padding:1rem 1.05rem 3rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

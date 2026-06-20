@@ -1,0 +1,1643 @@
+VP Disease Emergence Kit
+version: 0.32.0
+date: 2026-06-20
+author: Young Jae Lee (이영재)
+orcid: 0009-0002-7535-8245
+license: CC BY 4.0
+doi (concept): 10.5281/zenodo.20755262
+programme: jamming-physics.org (VP Theory / Jamming Physics)
+framing: rare / single-gene / hereditary disease (희귀병) — the kit's own registered Zenodo
+         concept DOI; every release version resolves under this concept DOI (CC BY 4.0,
+         ORCID 0009-0002-7535-8245). Scope is monogenic rare disease only (see `scope:` below).
+
+pivot: complements disease_wp (sibling — reproducible burden ordering + standard-of-care survey,
+       concept DOI 10.5281/zenodo.20763842, CC BY 4.0), turning to DNA emergence ->
+       perturbation read -> treatment-direction reasoning (pathways A switch / B chemistry),
+       under a structure-only firewall and a suspension rule ("no analyzable single-gene DNA -> hold").
+
+scope: single-gene / rare / hereditary diseases (the VP_FRAMEWORK_MAP section-6 etiology-class
+       contract: "disease defined by a gene" -> this track; "disease defined by dynamics" ->
+       the machine/homeostasis packages). Every disease here is monogenic; common multifactorial
+       forms (polygenic hypertriglyceridaemia, common obesity) are deliberately NOT in scope.
+       As of v0.30.0 the kit additionally reads its MULTI-SYSTEM, INTRACTABLE (난치) subset through a
+       cross-system inheritance layer (ROADMAP V): a single causal-gene lesion that manifests across
+       several organ systems inherits, read-only, the REAL measured organ-master gamma of each
+       affected sibling system, and the lead corrective lever's compartment REACH-vs-GAP is surfaced
+       as the next treatment direction. The "major" (dynamics-defined, common/acquired) disease each
+       sibling owns -- the cancers, type-2 diabetes, essential hypertension, common osteoporosis, the
+       acquired sensory diseases -- remains EXCLUDED (enforced by the §6 exclusion gate).
+
+engine:
+  gamma: SantaLucia 1998 nearest-neighbour stacking dG (deterministic)
+  switch: R19 cusp normal form  |h_sp| = 2*(g/3)^1.5 ;  barrier = g^2/4
+  dwell:  gamma^1.5/(K+brake)  [LOCKED form]; disease/treated brakes AXIS-AWARE
+          (DOWN = deficiency/over-active brake -> disease below healthy [v0.2.0 model, byte-identical];
+           UP   = gain-of-toxicity/dosage-excess/released-brake-over-accumulation -> disease over-shoots;
+                  corrective RESTRAINS it)
+  emergence: relay-ODE gene-network (param_db.json; protein t1/2 46h, mRNA 9h, Schwanhauser 2011)
+  chemistry: dG = dH - T dS @ 310.15 K ; Sabatier window ; tetrahedral 109.47 deg
+
+diseases (v0.32.0): 72 RESOLVED + 13 SUSPENDED
+  RESOLVED  : achondroplasia, cystic_fibrosis, phenylketonuria, sickle_cell_disease,
+              familial_hypercholesterolaemia, gaucher_disease, spinal_muscular_atrophy,
+              duchenne_muscular_dystrophy, huntington_disease, rett_syndrome,
+              alpha1_antitrypsin_deficiency, hereditary_tyrosinaemia_type_1,
+              wilson_disease, mecp2_duplication_syndrome,
+              transthyretin_amyloidosis, acute_intermittent_porphyria,
+              primary_hyperoxaluria_type_1, hereditary_angioedema, fabry_disease,
+              ornithine_transcarbamylase_deficiency, x_linked_hypophosphataemia, pompe_disease,
+              hypophosphatasia, leber_congenital_amaurosis_2, hypertrophic_cardiomyopathy,
+              familial_chylomicronaemia_syndrome, friedreich_ataxia, congenital_leptin_deficiency,
+              hereditary_haemochromatosis_type_1, leptin_receptor_deficiency, aadc_deficiency,
+              cystinosis, alkaptonuria, haemophilia_b,
+              menkes_disease, sod1_amyotrophic_lateral_sclerosis, haemophilia_a,
+              lysosomal_acid_lipase_deficiency, cryopyrin_associated_periodic_syndrome,
+              sitosterolaemia,
+              deficiency_of_il1_receptor_antagonist, hereditary_antithrombin_deficiency,
+              cerebrotendinous_xanthomatosis,
+              beta_thalassaemia, niemann_pick_disease_type_c, classical_homocystinuria,
+              niemann_pick_disease_type_a_b, x_linked_adrenoleukodystrophy, cystinuria,
+              tetrahydrobiopterin_deficiency, familial_mediterranean_fever,
+              tuberous_sclerosis_complex, von_hippel_lindau_disease,   [+2 in v0.20.0]
+              x_linked_retinitis_pigmentosa, hereditary_haemorrhagic_telangiectasia   [+2 in v0.21.0]
+              choroideremia, congenital_hyperinsulinism   [+2 in v0.22.0]
+              long_qt_syndrome_3, dravet_syndrome   [+2 in v0.23.0]
+              rho_autosomal_dominant_retinitis_pigmentosa, nephrogenic_diabetes_insipidus_x_linked   [+2 in v0.24.0]
+              usher_syndrome_type_2a, nephrogenic_siad   [+2 in v0.25.0]
+              factor_v_leiden, bardet_biedl_syndrome   [+2 in v0.26.0]
+              atypical_hemolytic_uremic_syndrome, mucopolysaccharidosis_type_i   [+2 in v0.27.0]
+              metachromatic_leukodystrophy   [+1 in v0.31.0],
+              scn4a_skeletal_muscle_channelopathy, neonatal_severe_hyperparathyroidism,
+              biotinidase_deficiency, primary_carnitine_deficiency   [+4 in v0.32.0]
+  SUSPENDED : down_syndrome (whole-chromosome aneuploidy),
+              prader_willi_syndrome (imprinting/structural -- paternal 15q11-q13),
+              angelman_syndrome (imprinting/structural -- maternal 15q11-q13, reciprocal to PWS),
+              beckwith_wiedemann_syndrome (imprinting -- 11p15.5, a 3rd imprinting hold on a
+                NEW locus/chromosome; v0.20.0),
+              facioscapulohumeral_muscular_dystrophy (repeat-derepression -- D4Z4 contraction
+                [FSHD1] / SMCHD1-LOF chromatin de-repression [FSHD2] of DUX4 on a permissive 4qA
+                haplotype; a FOURTH held MECHANISM class after aneuploidy + imprinting; v0.21.0),
+              leber_hereditary_optic_neuropathy (mitochondrial-genome / mtDNA point mutation --
+                m.11778G>A MT-ND4 [~60-80%] + m.3460 MT-ND1 / m.14484 MT-ND6, no nuclear promoter
+                window, heteroplasmy-dependent, maternally inherited; a FIFTH held MECHANISM class
+                -- the mtDNA generalisation, suspended DESPITE an approved drug (idebenone/Raxone);
+                v0.22.0),
+              melas (mitochondrial-genome / mtDNA point mutation -- m.3243A>G in MT-TL1, the
+                tRNA-Leu(UUR) GENE [~80% of MELAS], no nuclear promoter window, heteroplasmy-
+                dependent, maternally inherited; the SECOND mtDNA suspend -- it GENERALISES the
+                mtDNA hold from LHON's PROTEIN-CODING Complex I genes to a mitochondrial tRNA gene
+                [the within-class analogue of how Beckwith-Wiedemann generalised imprinting beyond
+                15q], suspended DESPITE supportive therapy (taurine approved for MELAS in Japan);
+                v0.23.0),
+              kearns_sayre_syndrome (mitochondrial-genome / single large-scale mtDNA DELETION --
+                a contiguous ~1.1-10 kb deletion of the ~16.6-kb circular mitochondrial genome
+                [the common 4977-bp "common deletion" spanning ND5..ATP8 the archetype], typically
+                sporadic, heteroplasmy-/tissue-distribution-dependent, no nuclear promoter window; the
+                THIRD mtDNA suspend -- it GENERALISES the mitochondrial-genome hold one further step,
+                from a POINT MUTATION in a single mtDNA gene (LHON Complex-I genes; MELAS tRNA gene) to
+                a STRUCTURAL REARRANGEMENT removing MANY contiguous mtDNA genes at once -- proving the
+                hold keys on the mitochondrial-genome MECHANISM regardless of lesion TYPE (point vs
+                structural), the mtDNA analogue of how the nuclear track holds both point-coding and
+                structural/repeat lesions; no disease-modifying therapy targets the deletion; v0.24.0),
+              digeorge_22q11_2_deletion_syndrome (contiguous-gene microdeletion / sub-chromosomal
+                multi-gene CNV -- the recurrent ~2.5-3 Mb LCR22A-D deletion at 22q11.2 [~40 genes incl.
+                the principal driver TBX1] generated by NAHR between the LCR22 low-copy repeats, so DOZENS
+                of genes are hemizygously deleted AT ONCE and there is no single readable nuclear-promoter
+                switch; a SIXTH held MECHANISM class -- the contiguous-gene microdeletion / segmental CNV
+                generalisation, distinct from whole-chromosome aneuploidy [Down = a GAIN of an entire
+                chromosome] in being a SUB-chromosomal segmental LOSS, and distinct from imprinting,
+                repeat-derepression and the mtDNA class; rare TBX1 point mutations phenocopy the cardiac/
+                parathyroid/thymic core but the FULL syndrome is not reducible to one switch; the most
+                common human microdeletion syndrome [~1:4,000]; v0.25.0),
+              fragile_x_syndrome (repeat-EXPANSION-driven promoter CpG-METHYLATION SILENCING --
+                the FMR1 5'-UTR CGG full mutation [>200 repeats] triggers CpG-island hypermethylation
+                that transcriptionally SILENCES FMR1 -> FMRP loss; the repeats do NOT alter the FMRP
+                coding sequence and do NOT change the promoter SEQUENCE the engine reads -- the lesion
+                is repeat copy-number + methylation STATE, invisible to a gamma read [the FMR1 promoter
+                is perfectly readable, gamma 1.4563 chrX, the HIGHEST CpG density in the panel at 0.0508,
+                exactly the substrate that gets methylated]; a SEVENTH held MECHANISM class -- the
+                MIRROR of FSHD [repeat CONTRACTION -> DEREPRESSION] as repeat EXPANSION -> SILENCING,
+                and the same-gene-family contrast to Huntington [HTT CAG is CODING -> toxic protein,
+                RESOLVED; FMR1 CGG is PROMOTER -> methylation silencing, SUSPENDED]; suspended PURELY on
+                engine-readability, not for lack of therapy [no approved disease-modifying therapy];
+                the commonest inherited cause of intellectual disability [~1:4,000 M / ~1:8,000 F]; v0.26.0)
+              mccune_albright_syndrome (post-zygotic SOMATIC-MOSAIC activating GNAS mutation --
+                p.Arg201His/Cys arising AFTER fertilisation, present only as a mosaic in affected
+                tissues and ABSENT from the inherited reference the engine reads; the GNAS promoter is
+                perfectly readable [gamma 1.4256 chr20] but the lesion is [a] a CODING activating point
+                mutation and [b] -- decisively -- SOMATIC MOSAIC, not in the inherited sequence at all
+                [a constitutional Arg201 activation is thought embryonic-lethal, surviving only as
+                mosaicism]; an EIGHTH held MECHANISM class -- post-zygotic somatic mosaicism, distinct
+                from aneuploidy / imprinting / repeat-derepression / mtDNA / contiguous-gene-microdeletion /
+                repeat-expansion-methylation-silencing; the same-locus contrast to the GERMLINE GNAS
+                disorders [pseudohypoparathyroidism 1a / Albright hereditary osteodystrophy -- inactivating,
+                imprinted, germline-readable]; suspended PURELY on engine-readability, not for lack of
+                therapy; v0.27.0)
+              myotonic_dystrophy_type_1 (repeat-EXPANSION-driven TOXIC-RNA gain-of-function /
+                spliceopathy -- the DMPK 3'-UTR CTG full mutation [~50 to >3,500 repeats] is
+                TRANSCRIBED but NON-CODING; the mutant CUG-repeat transcript accumulates in nuclear
+                foci and SEQUESTERS the MBNL1/2 alternative-splicing factors [reciprocally stabilising
+                CELF1] -> a trans MBNL-loss spliceopathy mis-regulating a developmental panel [CLCN1 ->
+                myotonia, INSR -> insulin resistance, SCN5A -> conduction disease] across muscle/heart/
+                CNS ['RNA dominance']; the lesion is 3'-UTR repeat COPY-NUMBER + a toxic-RNA/MBNL-
+                sequestration STATE acting in TRANS on OTHER genes' transcripts, NOT a change to the
+                DMPK promoter SEQUENCE the engine reads [the DMPK promoter is perfectly readable, gamma
+                1.5132 chr19 19q13.32]; a NINTH held MECHANISM class -- distinct from aneuploidy /
+                imprinting / repeat-derepression / mtDNA / contiguous-gene-microdeletion / repeat-
+                expansion-methylation-silencing / somatic-mosaicism; it COMPLETES the trinucleotide-
+                repeat taxonomy by fate -- Huntington [HTT CAG, CODING -> toxic PROTEIN, RESOLVED] /
+                fragile X [FMR1 CGG, 5'-UTR/promoter -> methylation SILENCING, suspended] / DM1 [DMPK
+                CTG, 3'-UTR -> toxic RNA in TRANS, suspended]; suspended PURELY on engine-readability,
+                NOT for lack of therapy [no approved disease-modifying therapy -- DMPK-lowering / CUG-
+                targeting ASO+siRNA and MBNL-displacing small molecules remain investigational, care is
+                symptomatic [mexiletine, pacing]]; the commonest adult-onset muscular dystrophy [~1:8,000];
+                v0.31.0)
+              charcot_marie_tooth_1a (single-gene DOSAGE EXCESS by GENOMIC TANDEM DUPLICATION -- a
+                ~1.4-Mb 17p11.2-p12 duplication carrying a THIRD complete copy of PMP22 -> peripheral
+                myelin protein 22 OVER-expressed by gene DOSAGE -> Schwann-cell dysmyelination -> the
+                COMMONEST inherited neuropathy [>50% of CMT, ~1/2,500]; the PMP22 promoter SEQUENCE is
+                perfectly readable [gamma 1.3883 chr17] and UNMUTATED -- the lesion is a COPY-NUMBER
+                GAIN of the whole locus, and the engine reads ONE promoter's gamma per locus with NO
+                representation of copy-number, so a dosage DUPLICATION is invisible; the TENTH held
+                MECHANISM class -- the FIRST copy-number GAIN / gene-DUPLICATION-dosage hold, distinct
+                from aneuploidy / imprinting / repeat-derepression / mtDNA-point / mtDNA-deletion /
+                contiguous-gene-microDELETION / expansion-methylation-silencing / somatic-mosaicism /
+                toxic-RNA-spliceopathy; the reciprocal MIRROR of HNPP [SAME 1.4-Mb region DELETED ->
+                PMP22 haploinsufficiency], the canonical 'gene dosage' disease [3 copies -> CMT1A;
+                1 -> HNPP; 2 -> normal]; suspended PURELY on engine-readability, NOT for lack of
+                therapy [no approved disease-modifying drug -- supportive care + orthoses + surgery
+                is a PHYSICAL track; PMP22-lowering PXT3003 completed Phase III, ASO/gene-editing
+                investigational]; v0.32.0)
+  NCBI promoter cache: 120 real human genes (gamma = SantaLucia 1998)
+    [+6 in v0.32.0: SCN4A 1.5187 (chr17, skeletal-muscle Na-channel myotonia/paralysis), CASR 1.3299
+     (chr3, calcium-sensing GPCR / NSHPT-FHH), BTD 1.3560 (chr3, biotinidase / cofactor recycling),
+     SLC22A5 1.3724 (chr5, OCTN2 carnitine transporter), CLCN1 1.3750 (chr7, context: chloride-channel
+     myotonia), PMP22 1.3883 (chr17, context: the CMT1A duplication locus -- readable promoter, dosage
+     lesion invisible)]
+    [+2 in v0.31.0: ARSA 1.4806 (chr22 22q13.33, the metachromatic-leukodystrophy causal switch --
+     arylsulfatase A, the first sulfatide / leukodystrophy read), DMPK 1.5132 (chr19 19q13.32, the
+     myotonic-dystrophy-type-1 named gene -- cached to SHOW the suspend point: the DMPK promoter is
+     perfectly readable but the 3'-UTR CTG-expansion toxic-RNA spliceopathy lesion is invisible to a
+     sequence engine)]
+    [+7 in v0.20.0: TSC1 1.4363, TSC2 1.5435, VHL 1.4325, MTOR 1.4181, RHEB 1.5215,
+     EPAS1 1.5299, HIF1A 1.4177]
+    [+7 in v0.21.0: RPGR 1.3915 (chrX, the XLRP causal switch), ENG 1.5009 (chr9, the HHT
+     primary causal switch), ACVRL1 1.4681 (chr12, the HHT second causal gene), VEGFA 1.4969
+     (chr6, the HHT off-label anti-angiogenic target context), GDF2/BMP9 1.4329 (chr10),
+     BMP10 1.3148 (chr2) -- the ALK1 ligand context; RP2 1.4663 (chrX, the second XLRP gene context)]
+    [+5 in v0.22.0: CHM 1.3083 (chrX, the choroideremia causal switch -- REP1/Rab-prenylation),
+     ABCC8 1.4657 (chr11, the CHI SUR1 channel subunit), KCNJ11 1.5068 (chr11, the CHI Kir6.2 pore
+     subunit and primary switch of the K_ATP pair -- adjacent to ABCC8 on 11p15.1), CHML 1.4562
+     (chr1, the choroideremia REP2 paralogue / retina-restriction context), GLUD1 1.5408 (chr10,
+     the diazoxide-responsive non-channel hyperinsulinism contrast context)]
+    [+5 in v0.23.0: SCN5A 1.5256 (chr3 3p22.2, the LQT3 causal switch -- cardiac NaV1.5, the kit's
+     FIRST channel GAIN-of-function read), SCN1A 1.2450 (chr2 2q24.3, AT-rich -- the Dravet causal
+     switch, neuronal NaV1.1; the SECOND-LOWEST gamma in the kit, below only DMD 1.2388, above
+     F9 1.2627), KCNQ1 1.5955 (chr11, the LQT1 IKs K+ channel context), KCNH2 1.5974 (chr7, the
+     LQT2 IKr/hERG K+ channel context), SCN8A 1.4907 (chr12, NaV1.6 -- the opposing excitatory-
+     neuron channel context for Dravet)]
+    [+5 in v0.24.0: RHO 1.4719 (chr3 3q22.1, the adRP causal switch -- rhodopsin, the kit's FIRST
+     OCULAR PROTEINOPATHY / toxic-GOF retinal read), AVPR2 1.4618 (chrX Xq28, the X-linked NDI causal
+     switch -- arginine-vasopressin receptor 2, the kit's FIRST GPCR / cAMP receptor-signalling axis),
+     AQP2 1.4575 (chr12, the apical water channel DOWNSTREAM of V2R -- the autosomal-NDI / effector
+     context), PRPH2 1.3440 (chr6, peripherin-2 -- the second adRP/digenic-RP outer-segment context
+     gene), AVP 1.4833 (chr20, arginine vasopressin -- the V2R ligand / central-DI contrast context)]
+    [+4 in v0.25.0: USH2A 1.2801 (chr1 1q41, AT-leaning -- the Usher-2A causal switch; usherin, the
+     photoreceptor periciliary-membrane / cochlear ankle-link STRUCTURAL-ADHESION scaffold; among the
+     LOWEST gamma in the kit, adjacent to RPE65 1.2842, the fifth distinct ocular-gene molecular class),
+     ADGRV1 1.3856 (chr5, the USH2C adhesion-GPCR context gene of the Usher-2 protein complex), WHRN
+     1.4220 (chr9, whirlin -- the USH2D scaffold / Usher-2 complex context gene), TBX1 1.5935 (chr22
+     22q11.2, the principal 22q11.2-deletion driver T-box transcription factor -- cached as the suspend's
+     named driver / context only, since the SYNDROME holds as a contiguous-gene microdeletion)]
+    [+7 in v0.26.0: F5 1.3512 (chr1 1q24.2, AT-leaning -- the factor V Leiden causal switch; the
+     procoagulant cofactor factor V, the kit's FIRST procoagulant-FACTOR GOF), F2 1.4194 (chr11,
+     prothrombin -- the G20210A-variant context + the downstream-anticoagulation node), PROC 1.4439
+     (chr2, protein C -- the APC brake factor V Leiden defeats; THPH3 context), BBS1 1.4268 (chr11
+     11q13.2, the Bardet-Biedl causal switch -- a BBSome ciliary-trafficking subunit, the kit's SECOND
+     syndromic ciliopathy), BBS10 1.4200 (chr12, the chaperonin-like 2nd-commonest BBS gene context),
+     MC4R 1.2720 (chr18, AT-rich -- the melanocortin-4 receptor / setmelanotide target, the downstream
+     satiety-axis bypass node), FMR1 1.4563 (chrX Xq27.3, the fragile-X named gene -- the HIGHEST CpG
+     density in the whole panel at 0.0508; cached to SHOW the suspend point: the promoter is readable
+     but the methylation-silencing lesion is invisible to a sequence engine)]
+
+changes since v0.31.0:
+  + DISEASE-ADDING release -- +4 RESOLVED, +1 SUSPENDED, NO engine change at all (every resolved lead
+      reuses an EXISTING lever -- 'restrain' x2 and 'replace' x2 -> no new role / mechanism / axis /
+      lever), so all 80 prior per-disease hashes stay drift 0 (80 -> 85 = 72 resolved + 13 suspended).
+  + The 4 RESOLVED adds each OPEN a new molecular-corrective-axis family, each web-verified before
+      shipping:
+      (A) scn4a_skeletal_muscle_channelopathy (SCN4A) -- the kit's FIRST SKELETAL-MUSCLE ion channel,
+          and the SKELETAL-MUSCLE TWIN of LQT3 (SCN5A): the SAME biophysics (a persistent/late sodium
+          current from impaired fast inactivation) in a sister Na-channel gene and a different excitable
+          tissue. Channel GOF -> membrane-excitability axis UP (myotonia; depolarisation-induced
+          inexcitability) -> lead RESTRAIN with mexiletine, a class-IB Na-channel blocker that is the
+          FIRST disease-specific licensed antimyotonic (NaMuscla, EMA-approved 2018 for non-dystrophic
+          myotonia; phase-III MYOMEX / Statland 2012 JAMA RCT) -- and, remarkably, the SAME drug LQT3
+          uses. Second INDIRECT approved arm for the paralysis variants: dichlorphenamide (Keveyis,
+          FDA-approved 2015 for primary periodic paralysis), a carbonic anhydrase inhibitor acting via
+          acid-base / K+, NOT on NaV1.4. Genotype-dependent magnitude [O]. SCN4A gamma 1.5187 chr17;
+          axis family `skeletal_muscle_sodium_channel`; burden B2/U3/D4.
+      (B) neonatal_severe_hyperparathyroidism (CASR) -- the kit's FIRST CALCIUM-SENSING-GPCR axis,
+          distinct from the AVPR2 water-balance GPCR axis. The CaSR senses extracellular Ca2+ and
+          SUPPRESSES PTH (a BRAKE); biallelic LOF -> NSHPT (life-threatening neonatal hypercalcaemia),
+          heterozygous LOF -> FHH1 (benign). Brake released -> PTH / serum-Ca axis UP -> lead RESTRAIN
+          by POTENTIATING the residual receptor with the calcimimetic cinacalcet (a DIRECT CaSR positive
+          allosteric modulator). APPROVED for related hyperparathyroid conditions, used OFF-LABEL but as
+          documented effective first-line therapy in NSHPT / symptomatic FHH; GENOTYPE-DEPENDENT (needs
+          residual receptor; true nulls -> parathyroidectomy, a PHYSICAL fallback). Magnitude [O].
+          CASR gamma 1.3299 chr3; axis family `calcium_sensing_gpcr`; burden B2/U3/D4.
+      (C) biotinidase_deficiency (BTD) -- a cofactor-RECYCLING enzyme LOF: biotinidase liberates free
+          biotin from biocytin during carboxylase turnover; LOF -> free-biotin pool DOWN -> the four
+          biotin-dependent carboxylases under-charged (late-onset multiple carboxylase deficiency, axis
+          DOWN) -> the simplest possible REPLACE: oral biotin (vitamin B7) floods the free-biotin pool
+          and re-charges the carboxylases, bypassing the recycler. One of the most TREATABLE inborn
+          errors (newborn-screened, inexpensive, normal course if pre-symptomatic); TIMING-limited --
+          established hearing loss / optic atrophy do not reverse. Magnitude [O]. BTD gamma 1.3560 chr3;
+          axis family `cofactor_recycling_replacement`; burden B2/U2/D5.
+      (D) primary_carnitine_deficiency (SLC22A5 / OCTN2) -- an active carnitine-IMPORTER LOF (an
+          accelerator whose drive loads cellular carnitine): LOF wastes carnitine in urine, depletes
+          tissue carnitine, collapses long-chain fatty-acid oxidation (axis DOWN; hypoketotic
+          hypoglycaemia, cardiomyopathy, myopathy) -> REPLACE by mass action: high-dose oral
+          levocarnitine (Carnitor, FDA-approved for primary/secondary carnitine deficiency) restores
+          tissue carnitine through residual uptake, REVERSING cardiomyopathy if started early. Once
+          lethal, now survivable; lifelong dependence; magnitude / reversibility [O]. SLC22A5 gamma
+          1.3724 chr5; axis family `carnitine_transport_replacement`; burden B2/U2/D5.
+  + The SUSPEND add (charcot_marie_tooth_1a / PMP22 17p11.2 tandem duplication) is the TENTH distinct
+      held MECHANISM class and the FIRST copy-number GAIN / gene-DUPLICATION-DOSAGE hold: a ~1.4-Mb
+      duplication carries a THIRD complete copy of PMP22 -> over-expression by gene DOSAGE -> the
+      COMMONEST inherited neuropathy. The PMP22 promoter SEQUENCE is perfectly readable (gamma 1.3883
+      chr17) and UNMUTATED; the lesion is a COPY-NUMBER GAIN, and the engine reads ONE promoter's gamma
+      per locus with NO representation of copy-number, so the dosage duplication is invisible. Genuinely
+      distinct from the nine prior classes (aneuploidy / imprinting / repeat-CONTRACTION-derepression /
+      mtDNA-point / mtDNA-deletion / contiguous-gene-microDELETION / expansion-methylation-silencing /
+      somatic-mosaicism / toxic-RNA-spliceopathy); the reciprocal MIRROR of HNPP (SAME region DELETED ->
+      PMP22 haploinsufficiency); the canonical 'gene dosage' disease (3 copies -> CMT1A; 1 -> HNPP;
+      2 -> normal). Suspended PURELY on engine-readability, NOT for lack of therapy (no approved
+      disease-modifying drug -- supportive care + orthoses + surgery is a PHYSICAL track; PMP22-lowering
+      PXT3003 completed Phase III; ASO / gene-editing investigational). PMP22 gamma 1.3883 chr17.
+  + Freeze bookkeeping (standard model): S4 auto-appended the 5 new per-disease hashes (80 -> 85, the 80
+      prior unchanged, drift 0); S5 RE-FROZEN (direction-recovery 68/68 -> 72/72 [approved 58 -> 62, the
+      no-approved tail unchanged at 10]; burden ranking gains the 4 new; indirect-lever census 58 -> 58
+      [SCN4A's dichlorphenamide arm is the one new INDIRECT, but it shares target_gene SCN4A with the
+      DIRECT mexiletine lead, so the headline count holds]; repurposing scanner: the 4 new are SINGLETON
+      axis families with no matching donor/recipient, so the 4 hypotheses / 6 orphans / 10-tail are
+      UNCHANGED and the axis_family gate classifies all 72 resolved [0 missing]). Site RE-FROZEN (corpus
+      68 -> 72 resolved). System-inheritance hash UNCHANGED (no new disease is in the multisystem
+      manifest). Cache 114 -> 120 (SCN4A, CASR, BTD, SLC22A5, CLCN1, PMP22). ledger B34 + section C
+      (the CMT1A tenth class). Concept DOI unchanged.
+
+changes since v0.30.0:
+  + DISEASE-ADDING release -- +1 RESOLVED, +1 SUSPENDED, NO engine change at all (the resolved lead
+      reuses an EXISTING lever -- 'replace' for MLD -> not even an additive deepening; no new role,
+      mechanism, axis-map entry or lever). All 78 prior FROZEN per-disease hashes drift 0 (78 -> 80
+      total per-disease = 68 resolved + 12 suspended; verified: S4 auto-appended the 2 new per-disease
+      hashes [metachromatic_leukodystrophy 16ac25dae822, myotonic_dystrophy_type_1 46adac7d0b44] and a
+      further full pass confirmed all 80 match drift 0). 80 total per-disease frozen (68 resolved + 12
+      suspended) + 6 module hashes + 4 site hashes + 1 system-inheritance hash. Concept DOI unchanged
+      (10.5281/zenodo.20755262, 희귀병 framing). Each lead's approval status was WEB-VERIFIED before
+      shipping (the standing v0.21.0 RPGR/HHT lesson). Cache 112 -> 114 (ARSA causal + DMPK suspend-
+      point context). THE THEME is A NEW LYSOSOMAL SUBSTRATE + THE FIRST LEUKODYSTROPHY + A NINTH HOLD
+      CLASS THAT COMPLETES THE TRINUCLEOTIDE-REPEAT TAXONOMY:
+      (A) metachromatic_leukodystrophy (ARSA) -- the kit's FIRST LEUKODYSTROPHY and FIRST SULFATIDE
+          substrate. Arylsulfatase A is the lysosomal enzyme that removes the 3-O-sulfate from sulfatide
+          (3-O-sulfogalactosylceramide), the rate-limiting first step of sulfatide catabolism; enzyme/
+          LOF halts that step -> lysosomal sulfatide storage in the myelin-forming oligodendrocytes
+          (CNS) and Schwann cells (PNS) -> central AND peripheral demyelination -> the lysosomal
+          sulfatide-catabolism axis DOWN -> lead 'replace' the enzyme. The lead is DIRECT on the causal
+          ARSA: ex-vivo autologous ARSA-lentiviral haematopoietic stem-cell gene therapy (atidarsagene
+          autotemcel; Lenmeldy FDA 2024-03-18 / Libmeldy EMA 2020), whose engrafted progeny -- including
+          BBB-crossing donor-derived microglia -- cross-correct the myelinating cells. APPROVED, but the
+          decisive limit is TIMING, not magnitude: it is indicated ONLY for pre-/early-symptomatic
+          patients (the corrective window CLOSES once demyelination is established), degree of benefit
+          [O]; an investigational intrathecal-ERT arm is co-derived (recombinant enzyme does not cross
+          the BBB). The mucopolysaccharide(MPS-I)/glycogen(Pompe)/sphingomyelin(NPA-B)/lipid(LAL-D)/
+          cystine(cystinosis) lysosomal reads now gain a SULFATIDE/MYELIN member, classified in the
+          lysosomal_enzyme_replacement axis family. gamma 1.4806 chr22 22q13.33. dwell[DOWN] ordered.
+          direction_confidence = clean. burden tier B3/U4/D4 (the X-ALD leukodystrophy/HSC-gene-therapy
+          sibling shape: approved-but-pre-symptomatic-only -> large residual; D=4 approved-band floor).
+      (B) myotonic_dystrophy_type_1 (DMPK) -- SUSPENDED: a repeat-EXPANSION-driven TOXIC-RNA gain-of-
+          function / spliceopathy, the NINTH held MECHANISM class. The DMPK 3'-UTR CTG full mutation is
+          TRANSCRIBED but NON-CODING; the mutant CUG-repeat transcript accumulates in nuclear foci and
+          SEQUESTERS the MBNL1/2 splicing factors (reciprocally stabilising CELF1) -> a TRANS MBNL-loss
+          spliceopathy (CLCN1/INSR/SCN5A...) across muscle/heart/CNS ('RNA dominance'). The lesion is
+          3'-UTR repeat copy-number + a toxic-RNA STATE acting in TRANS on OTHER genes' transcripts, NOT
+          a change to the DMPK promoter SEQUENCE the engine reads (DMPK promoter perfectly readable,
+          gamma 1.5132 chr19). It COMPLETES the trinucleotide-repeat taxonomy by fate: Huntington (HTT
+          CAG, coding -> toxic PROTEIN, RESOLVED) / fragile X (FMR1 CGG, 5'-UTR -> methylation SILENCING,
+          suspended) / DM1 (DMPK CTG, 3'-UTR -> toxic RNA in TRANS, suspended) -- coding-protein-toxic
+          vs promoter-epigenetic-silencing vs UTR-RNA-toxic, three fates of one lesion class, the first
+          read by the engine, the latter two not. Suspended PURELY on engine-readability, NOT for lack of
+          therapy (no approved DMT; DMPK-lowering/CUG-targeting ASO+siRNA and MBNL-displacing small
+          molecules investigational, care symptomatic). The commonest adult-onset muscular dystrophy
+          (~1:8,000). Disclosed, not dropped. (Brook 1992 Cell 68:799; Miller 2000 EMBO J 19:4439;
+          Mankodi 2002 Mol Cell 10:35 / Charlet-B 2002 Mol Cell 10:45). file appended (SUSPENDED).
+  + direction-recovery scoreboard 67/67 -> 68/68 resolved; the harness census: direction recovered
+      68/68; approved 58, clinical 7, investigational 3; no-approved tail = 10 (== clinical 7 +
+      investigational 3 == 68 - 58). MLD is the +1 resolved and is APPROVED, so approved rises 57 -> 58
+      and the no-approved tail is UNCHANGED at 10. Module hashes RE-FROZEN BY DESIGN (the disease set
+      grew): direction_recovery.json 85e032511a85 (was d07499bc37d2), disease_priority_ranking.json
+      ffb7e20eecaf (was 11d681030b53), indirect_lever_honesty.json 699ca9f45285 (was 2b78e5e74fcb -- the
+      per-disease census now enumerates MLD with n_indirect=0; the indirect-lever COUNT is UNCHANGED at
+      58 since MLD's 'replace' is DIRECT on causal ARSA), repurposing_hypotheses.json 052d32a4024f (was
+      b840a499f8e8 -- MLD classified into the lysosomal_enzyme_replacement family). claim_scan_v2.json
+      f4019841bab2 and open_directions_cards.json 61c29db81807 UNCHANGED (MLD is an approved-therapy
+      DONOR in its family -- neither a no-approved-tail recipient nor an orphan -- so it raises no
+      repurposing/orphan card and trips no false-claim scan). Site re-frozen (index.html/llms.txt
+      regenerated: corpus 67 -> 68 resolved); system-inheritance hash unchanged (MLD is single-system;
+      DM1 suspended -> neither enters the multisystem manifest).
+  + NCBI promoter cache 112 -> 114 (ARSA 1.4806 chr22 [the MLD causal switch]; DMPK 1.5132 chr19 [the DM1
+      named gene, cached to show the suspend point]). docs/IRREPRODUCIBILITY_LEDGER.md B33 added + section C
+      gains DM1 (9th class) AND a back-fill row for McCune-Albright (8th class, a pre-existing C-table gap).
+      HANDOFF / README / ROADMAP bumped to v0.31.0; ROADMAP v0.29.0/v0.31.0 disease-addition slot marked DONE.
+
+changes since v0.29.0:
+  + SYSTEM-INHERITANCE release (ROADMAP V) — NO new disease, NO engine change, NO analysis.json
+      touched. All 78 per-disease FROZEN hashes drift 0; the 6 module hashes and 4 site hashes also
+      drift 0 (verified on repeated full-harness passes). A NEW, strictly READ-ONLY layer was added with
+      its OWN separate freeze (repro/expected_system_inheritance_sha256.json, 1 hash) — the same
+      isolation discipline that has kept the per-disease freeze untouched since v0.19.0. Concept DOI
+      unchanged (10.5281/zenodo.20755262, 희귀병 framing). THE THEME is "you cannot treat the parts of a
+      body you do not know the structure of": a single causal-gene lesion in a MULTI-SYSTEM INTRACTABLE
+      (난치) disease manifests in several organ systems at once. The kit already reads the ONE causal-gene
+      promoter (the switch perturbation + corrective direction); v0.30.0 lets that read INHERIT the
+      structure of every organ system the lesion touches, where that structure is OWNED, measured, and
+      frozen in the VP body siblings.
+
+      (V-registry) system_inheritance/sibling_registry.json (built by build_sibling_registry.py) — a
+          VENDORED, read-only snapshot of 13 VP body siblings: 49 organ-master genes each with its REAL
+          MEASURED gamma (SantaLucia 1998 NN-stacking dG — the shared VP substrate, e.g. heart/NKX2-5
+          1.513, kidney/SIX2 1.5556, liver/HHEX 1.525, melanocortin_appetite/MC4R 1.272, eye/PAX6 1.511),
+          2 compartment anchors (neuro cns/pns; dna organ-identity SSOT), and the VP_FRAMEWORK_MAP §6
+          ownership contract (each sibling's owned_major_disease_EXCLUDED list). gamma values are NOT
+          recomputed here — they are inherited verbatim from each sibling's frozen reports, never fitted.
+
+      (V-manifest) system_inheritance/multisystem_manifest.json — for 8 multi-system intractable diseases
+          already RESOLVED in the kit (Fabry/GLA, Pompe/GAA, cystic_fibrosis/CFTR, cystinosis/CTNS,
+          tuberous_sclerosis_complex/TSC2, Bardet-Biedl/BBS1, Wilson/ATP7B,
+          hereditary_haemochromatosis_type_1/HFE), the NECESSARY subset of sibling organ systems the
+          single lesion manifests in, each with a cited manifestation + the lead modality whose
+          biodistribution is read. A DEMONSTRATION set; the remaining multi-system diseases roll out in
+          later versions (the kit's standard "demonstrate then roll out" pattern).
+
+      (V-module) pipeline/system_inheritance.py [NATIVE] — fail-closed, read-only over the frozen
+          per-disease analysis.json + the vendored registry/manifest. Per disease it enforces a PROVENANCE
+          HANDSHAKE (RESOLVED status [suspension rule]; manifest causal_gene == frozen
+          primary_switch.gene; manifest lever == frozen lead lever; manifest signature ⊂ frozen
+          agent_class) then resolves each affected organ system to its REAL registry gamma (or a declared
+          neural anchor), and classifies the lead corrective lever's REACH per compartment via a CITED
+          qualitative biodistribution model (compartment reach-class ∈ modality reach-set). Each GAP
+          compartment (the lever does not reach it) is surfaced as the NEXT, non-obvious treatment
+          DIRECTION. v0.30.0 census: 8 diseases, 31 inherited system links, 27 organ systems with measured
+          gamma, 26 compartments reached, 5 GAP next-directions (Fabry→PNS small-fibre [BBS], cystinosis→
+          avascular cornea [topical needed], Bardet-Biedl→retina+kidney+limb [MC4R agonist reaches the
+          satiety node only]); Wilson (chelator reaches hepatic+CNS+corneal copper) and
+          haemochromatosis (phlebotomy reaches all parenchyma) are the CONTRAST cases proving the reach
+          read is a per-modality structural fact, not blanket pessimism.
+
+      FIREWALL (unchanged in spirit): STRUCTURE (which organ systems, measured gamma) + DIRECTION (which
+      compartments the lead lever reaches) only — the reach read is a qualitative cited biodistribution
+      direction; the DEGREE of correction in any compartment is ALWAYS [O]. A magnitude scan rejects any
+      asserted dose/efficacy/rate/p-value in the emitted map (gamma constants and journal citations are
+      not magnitudes). EXCLUSION GATE (§6) holds: every manifest disease is gene-defined and none collides
+      with a sibling's owned major disease. run_all.py gains stage S6 (5 -> 6 stages). build_sibling_registry.py
+      + SYSTEM_INHERITANCE.md (design doc) added; docs/IRREPRODUCIBILITY_LEDGER.md B32 added; ROADMAP §3.8 +
+      Pillar V added; HANDOFF / README / ROADMAP bumped to v0.30.0.
+
+changes since v0.28.0:
+  + COMPANION-LINK release (work order: KIT ↔ disease_wp 역참조) — NO new disease, NO engine
+      change, NO analysis.json touched. All 78 per-disease FROZEN hashes drift 0 (the modules/site are
+      strictly READ-ONLY over the frozen analysis.json + registry, so they perturb NO per-disease hash).
+      disease_wp is now published at its own Zenodo concept DOI 10.5281/zenodo.20763842 (CC BY 4.0); this
+      kit cross-references it as a SIBLING — the reproducible burden-ordering + standard-of-care context
+      layer — retiring the earlier "replaces disease_wp" framing in favour of "complements" (the kit still
+      does NOT catalogue/classify; the two are a division of labour, not a supersession).
+      Cross-ref surfaces updated: README (DOI line + §0 pivot table), HANDOFF, VERSION pivot, and the
+      canonical site (build_site.py companion link in the footer byline + llms.txt summary + Dataset JSON-LD
+      citation); site re-frozen (repro/expected_site_sha256.json regenerated). Concept DOI unchanged
+      (10.5281/zenodo.20755262). Zenodo: KIT (20755262) isSupplementedBy 20763842 ; disease_wp (20763842)
+      isSupplementTo 20755262 — bidirectional.
+
+changes since v0.27.0:
+  + CATALYTIC-MISSION release (ROADMAP section 3.6) -- NO new disease, NO engine change, NO analysis.json
+      touched: this release does NOT widen the catalogue, it makes the EXISTING no-approved-drug tail
+      ACTIONABLE. All 78 per-disease FROZEN hashes drift 0 (verified: S4 matched all 78 on three passes;
+      the modules are strictly READ-ONLY over the frozen analysis.json + registry, so they perturb NO
+      per-disease hash -- the same invariant that has held since v0.19.0). The MODULE freeze grew 4 -> 6
+      hashes (two new NATIVE modules) and a THIRD freeze was added for the canonical site (4 files). Concept
+      DOI unchanged (10.5281/zenodo.20755262, 희귀병 framing). THE THEME is "make the pond's stone throwable"
+      -- the firewall has always FORCED a corrective direction for every resolved disease and HONESTLY
+      flagged the 10 with no approved agent; v0.28.0 turns that latent value into three concrete, falsifiable
+      catalytic artifacts:
+
+      (III-A2) pipeline/repurposing_scanner.py -- the kit's CROSS-DISEASE REPURPOSING SCANNER (highest-leverage
+          catalytic module). It partitions the resolved set by a curated axis_family taxonomy defined at the
+          MOLECULAR CORRECTIVE-AXIS level (what is pushed + how, NOT the organ -- 39 tight families, gate FAILS
+          CLOSED if any resolved disease is unclassified, forcing honest classification on every future add),
+          then within each (axis_family x corrective_direction) bucket iterates lever_class L: a RECIPIENT is a
+          no-approved-lead disease whose lead lever is L; a DONOR is a disease carrying an APPROVED agent of
+          class L (lead or secondary); a hypothesis is raised only when both are non-empty and donor != recipient.
+          RESULT: 4 recipient-level hypotheses across 2 families + 6 orphans (book-keeping closes: 4 recipients
+          union 6 orphans = the 10 no-approved tail, no overlap):
+            - retinal_gene_replacement | UP | replace: choroideremia <- LCA2 (voretigene neparvovec);
+              x_linked_retinitis_pigmentosa <- LCA2
+            - toxic_gof_protein | UP | reduce: huntington_disease <- {SOD1-ALS (tofersen), TTR-amyloidosis
+              (TTR-lowering siRNA/ASO)}; rho_autosomal_dominant_retinitis_pigmentosa <- {SOD1-ALS, TTR-amyloidosis}
+            - 6 orphans (no same-axis approved donor): dravet_syndrome, hereditary_haemorrhagic_telangiectasia,
+              mecp2_duplication_syndrome, menkes_disease, nephrogenic_diabetes_insipidus_x_linked,
+              usher_syndrome_type_2a
+          BOTH hypothesis families are honestly graded LOW-NOVELTY (CONFIRMATORY) -- the recipients ALREADY pursue
+          these agent classes in their own (non-approved) leads, so the scanner is recovering known directions,
+          which is exactly the sanity check that VALIDATES its matching logic rather than over-claiming a novel
+          cure. RHO-adRP is classified toxic_gof_protein (corrective axis = lower the toxic rhodopsin), NOT
+          retinal_gene_replacement -- the read keys on the molecular corrective axis, not the tissue. FIREWALL:
+          the scanner asserts a DIRECTION-LEVEL repurposing HYPOTHESIS + a falsifier per match; it states nothing
+          about dose, potency, response rate, efficacy or safety (hypothesis [O], every magnitude [O]); the
+          shared (axis_family x direction x lever_class) signature is the only claim. Build-failing self-test with
+          teeth (same-axis donor surfaces; other-family / other-direction / no-matching-class are rejected by the
+          same predicate the gate uses). frozen output hash: repurposing_hypotheses.json b840a499f8e8.
+
+      (III-A) pipeline/open_directions_card.py -- the OPEN-DIRECTIONS CARD module, which renders the no-approved
+          tail as a deck of actionable research cards. It reads ONLY the frozen scanner partition + each tail
+          disease's frozen analysis.json (the corrective-direction falsifier's measurable_by = the CHEAPEST
+          falsification experiment already recorded in the shipped artifact -- NO fabrication), and emits one card
+          per no-approved-tail disease: emergent axis, forced corrective direction, lead lever class + clinical
+          status, candidate drug classes (REPURPOSING cards carry the donor-attributed approved classes; ORPHAN
+          cards honestly carry NONE), the shared axis_family, and the cheapest falsifying experiment. RESULT: 10
+          cards partitioning the tail exactly (4 repurposing_candidate + 6 orphan). Derived candidate classes:
+          choroideremia / x_linked_RP -> "subretinal AAV gene replacement"; huntington / rho-adRP -> "SOD1-lowering
+          antisense oligonucleotide" + "TTR-lowering siRNA / antisense". Actionable == falsifiable: every card
+          carries a non-empty cheapest-falsification experiment and an [O] grade + honesty caveat; the exactly-one-
+          corrective-falsifier-per-disease invariant is enforced. Build-failing self-test with teeth (repurposing
+          card needs class + experiment; orphan needs no-class + experiment; missing experiment or class-on-orphan
+          rejected). frozen output hash: open_directions_cards.json 61c29db81807.
+
+      (IV-A) pipeline/build_site.py -- the kit's first CANONICAL RETRIEVAL-READY HTML SITE (ROADMAP IV-A, VP-SPEC
+          v1.8 section 6-R). It reads the two frozen catalytic JSONs + metadata parsed from VERSION (NO clock
+          read -> byte-identical rebuilds) and writes 4 files to site/: index.html (the patient-facing disclaimer
+          banner as the FIRST <body> element; an answer-first <p class="answer"> of 40-60 words [=54]; the two
+          catalytic tables -- repurposing + open-directions -- as the HEADLINE; a method/firewall section; and a
+          JSON-LD @graph in <head> = WebSite + Person[ORCID, sameAs concept DOI] + Dataset + two Claim/Rating[O]),
+          sitemap.xml (the canonical URL), robots.txt (STAGING Disallow:/ with a commented production allow-list
+          for 7 retrieval bots, for a one-line cutover), and llms.txt (<5 KB [=1753 B]; authoritative blockquote
+          summary + core/concepts/policies). FIREWALL on the page is enforced by a NUMERIC-MAGNITUDE pattern gate
+          (mg, mg/kg, %, "X of N patients", efficacy-of-N, p-value) -- not a blunt keyword ban -- so the honest
+          disclaimer prose and the disease counts do not trip it, while any asserted dose/efficacy/rate would.
+          Build-failing self-test with teeth = two independent in-process builds must be BYTE-IDENTICAL
+          (determinism) plus a structural gate (banner-first, answer-first, valid JSON-LD with ORCID + DOI,
+          staging robots, llms under 5 KB). A THIRD freeze repro/expected_site_sha256.json records the 4 site
+          hashes; both freezes (modules, site) verify drift 0 on a re-run. Frozen site hashes: index.html
+          0d59d2bf4cdf, llms.txt 0a95eed33aa8, robots.txt 208892efb3e6, sitemap.xml b5a2747e2c11.
+
+  + claim_scanner_v2 (M5v2) scope grew 3 -> 5 modules (now also scans repurposing_hypotheses + open_directions_cards)
+      AND its DOSING pattern was HARDENED: the bare tokens "dose"/"dosage" were dropped because they fire on
+      LEGITIMATE biology that the [O] firewall does not forbid -- "gene dosage" (the core concept of a duplication
+      disorder) and a "dose-response window" (an experimental falsifier), both of which surface verbatim from
+      mecp2_duplication_syndrome's frozen analysis.json into the new module outputs. The [O] firewall concerns
+      asserted clinical MAGNITUDE, which ALWAYS carries a number / unit / frequency, so DOSING now fires only on
+      quantified forms (\d mg, mg/kg, twice/once daily, bid/tid/qd, per kg, milligram, "dose of \d"). This makes
+      the scanner MORE correct, NOT weaker -- the planted self-test ("50 mg/kg twice daily; Kd=3nM; cures...safe")
+      still fires >=3 classes (DOSING via mg/kg + twice daily, plus BINDING_MAGNITUDE / EFFICACY_AS_FACT /
+      SAFETY_AS_FACT) and the negation-guard still suppresses the disclaimer probe. The source analysis.json was
+      NOT edited -- the fix is entirely in the scanner -- so all 78 per-disease hashes stay drift 0. Module
+      hashes after this release: claim_scan_v2.json f4019841bab2 (was bf528df05aa8 -- changed BY DESIGN: scope
+      3->5 + DOSING hardening), direction_recovery.json d07499bc37d2, disease_priority_ranking.json 11d681030b53,
+      indirect_lever_honesty.json 2b78e5e74fcb (all three UNCHANGED -- no disease added), repurposing_hypotheses.json
+      b840a499f8e8 (new), open_directions_cards.json 61c29db81807 (new). 6 module hashes + 4 site hashes drift 0.
+
+  + cystinuria classified into a NEW axis_family "urinary_cystine_restraint" (its lead lever 'restrain' is APPROVED
+      / DOWN; a thiol sequesters free urinary cystine -- a DISTINCT modality from upstream-enzyme metabolite
+      restraint and from metal chelation). It is an approved-lead DONOR with no no-approved-tail recipient sharing
+      its (axis_family x DOWN x restrain) signature, so the new family name can neither create nor destroy any
+      hypothesis -- it is honest book-keeping only, surfaced by the fail-closed unclassified-disease gate.
+
+  + NCBI promoter cache unchanged (112 genes) -- no new disease. ROADMAP section 3.6 marked DONE; section 3.7
+      (v0.29.0 candidate set) opened. docs/IRREPRODUCIBILITY_LEDGER.md B31 added. HANDOFF / README / ROADMAP
+      bumped to v0.28.0.
+
+
+  + DISEASE-ADDING release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at all (both resolved leads
+      reuse an EXISTING lever -- 'restrain' for aHUS, 'replace' for MPS I -> not even an additive
+      deepening; no new role, mechanism, axis-map entry or lever). All 75 prior FROZEN per-disease hashes
+      drift 0 (75 -> 78 total per-disease = 67 resolved + 11 suspended; verified: S4 auto-appended the 3
+      new per-disease hashes and three further passes confirmed all 78 match drift 0; S5 RE-FROZEN because
+      the burden ranking + native II-A scoreboard grew AND the aHUS lead is INDIRECT, so the indirect-lever
+      census grew 57 -> 58). 78 total per-disease frozen (67 resolved + 11 suspended) + 4 module hashes.
+      Concept DOI unchanged (10.5281/zenodo.20755262, 희귀병 framing). Each lead's approval status was
+      WEB-VERIFIED before shipping (the standing v0.21.0 RPGR/HHT lesson). Cache 105 -> 112 (CFH, IDUA,
+      GNAS causal/suspend + C5, C3, IDS, CFI context). THE THEME is A NEW CASCADE AXIS + A NEW LYSOSOMAL
+      SUBSTRATE CLASS + AN EIGHTH HOLD CLASS:
+      (A) atypical_hemolytic_uremic_syndrome (CFH) -- the kit's FIRST COMPLEMENT-CASCADE read: complement
+          factor H is the alternative-pathway BRAKE, LOF (C-terminal SCR19-20) releases the C3 convertase
+          on endothelium -> complement axis UP -> lead 'restrain' the cascade DOWNSTREAM at C5 with the
+          APPROVED anti-C5 mAb eculizumab/ravulizumab -- 'approved' & on-label for aHUS but INDIRECT on CFH
+          (acts at C5, no CFH-restoring agent exists) = the Factor-V-Leiden/LEPR approved-but-indirect
+          shape on a NEW cascade (a second cascade after coagulation); a causal-gene 'restrain CFH'
+          (factor-H restoration) arm co-derived (investigational). gamma 1.2845 chr1 1q31.3. dwell[UP]
+          ordered. direction_confidence = clean. file appended.
+      (B) mucopolysaccharidosis_type_i (IDUA) -- the NINTH lysosomal read and the FIRST on a GLYCOSAMINOGLYCAN
+          (dermatan/heparan-sulfate) substrate: alpha-L-iduronidase enzyme/LOF -> lysosomal GAG storage
+          (Hurler/Hurler-Scheie/Scheie) -> axis DOWN -> lead 'replace' the enzyme with the APPROVED ERT
+          laronidase (Aldurazyme, FDA 2003), DIRECT on IDUA -- with the honest limit that recombinant
+          enzyme does NOT cross the blood-brain barrier (severe-Hurler CNS disease unaddressed; HSCT, the
+          early standard, only partial), magnitude/CNS-reach [O]; HSCT co-derived (clinical). The
+          mucopolysaccharide-substrate contrast to the lipid/cystine/glycogen lysosomal reads. gamma 1.4522
+          chr4 4p16.3. dwell[DOWN] ordered. direction_confidence = clean.
+      (C) mccune_albright_syndrome (GNAS) -- SUSPENDED: a post-zygotic SOMATIC-MOSAIC activating GNAS
+          mutation (Arg201) present only in affected tissues and ABSENT from the inherited reference -- an
+          EIGHTH held MECHANISM class (somatic mosaicism), distinct from the seven prior holds, and the
+          same-locus contrast to the germline (imprinted, inactivating) GNAS disorders. The GNAS promoter
+          is perfectly readable (gamma 1.4256 chr20) but the somatic, not-inherited lesion is unreadable;
+          held purely on engine-readability, not for lack of therapy.
+  + PATIENT-FACING SIMULATION DISCLAIMER (new infrastructure, READ-ONLY -> perturbs NO determinism hash):
+      pipeline/disclaimer_banner.py -- the SINGLE SOURCE OF TRUTH for a bilingual (한국어 + English) banner
+      that states plainly this is a DNA-EMERGENCE (창발) COMPUTER SIMULATION that MAY DIFFER FROM REALITY,
+      is NOT medical advice, gives only a DIRECTION (magnitude always [O]), discovers no new treatment, and
+      points to real patient resources (Orphanet/NORD/GeneReviews/ClinicalTrials.gov). It exposes banner()
+      (boxed text) and html_banner() (role="alert" block for the future VP-SPEC v1.8 site). A new human
+      front door pipeline/explain_disease.py renders any disease's analysis.json with the banner emitted
+      AT THE VERY TOP, BEFORE the explanation (the author's instruction); SUSPENDED diseases render the
+      banner then the honest hold reason. Both are read-only over the frozen artifacts. The disclaimer is
+      now a binding patient-facing requirement: any human-facing rendering MUST emit the banner first.
+  + direction-recovery scoreboard 65/65 -> 67/67 (approved 55 -> 57, clinical 7, investigational 3;
+      no-approved tail unchanged at 10 -- both new leads APPROVED; book-keeping closes 10 == 7+3 == 67-57);
+      direction_confidence 64 clean / 3 cited-contested / 0 ambiguous; indirect-lever census 57 -> 58
+      (aHUS indirect). Module hashes RE-FROZEN (direction_recovery d07499bc37d2, disease_priority_ranking
+      11d681030b53, indirect_lever_honesty 2b78e5e74fcb, claim_scan_v2 bf528df05aa8 unchanged).
+
+changes since v0.25.0:
+  + DISEASE-ADDING release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at all (both resolved leads
+      reuse an EXISTING lever -- 'restrain' for factor V Leiden, 'potentiate' for Bardet-Biedl -> not
+      even an additive deepening; no new role, mechanism, axis-map entry or lever). All 72 prior FROZEN
+      per-disease hashes drift 0 (72 -> 75 total per-disease = 65 resolved + 10 suspended; verified: S4
+      auto-appended the 3 new per-disease hashes and three further passes confirmed all 75 match drift 0;
+      S5 was RE-FROZEN because the burden ranking + native II-A scoreboard grew AND -- UNLIKE every
+      disease-adding release since v0.21.0 -- BOTH new leads are INDIRECT, so the indirect-lever census
+      grew 55 -> 57). 75 total per-disease frozen (65 resolved + 10 suspended) + 4 module hashes. Concept
+      DOI unchanged (10.5281/zenodo.20755262, 희귀병 framing). Each lead's approval status was WEB-VERIFIED
+      before shipping (the standing v0.21.0 RPGR/HHT lesson). THE THEME is NEW MECHANISTIC TERRITORY AT
+      BOTH FIREWALL ENDS: the kit's FIRST procoagulant-FACTOR gain-of-function (a coagulation axis driven
+      UP by the accelerator that resists its own brake -- distinct from the antithrombin/SERPINC1
+      brake-loss already shipped); the kit's SECOND syndromic ciliopathy (pairing USH2A, but a
+      BBSome-trafficking read on the satiety axis rather than the retina); and a SEVENTH held MECHANISM
+      class (repeat-EXPANSION promoter methylation silencing, the mirror of FSHD's repeat-contraction
+      derepression).
+  + (1) Factor V Leiden thrombophilia (F5) -- accelerator/GOF -> coagulation axis UP -> corrective
+      RESTRAIN. R506Q (Arg506Gln) abolishes the first APC cleavage site on factor Va -> the procoagulant
+      cofactor is APC-RESISTANT -> the procoagulant accelerator cannot be braked by the protein C / APC
+      pathway. The EXACT CONTRAST to hereditary antithrombin deficiency (SERPINC1): both push the same
+      coagulation axis UP, but factor V Leiden is accelerator-GOF (the accelerator that resists its
+      brake) where SERPINC1 is brake-LOF (the serpin brake is missing) -- two opposite mechanisms, one
+      axis. Downgrade-and-disclose-ADJACENT: NO F5-targeted agent exists, so the lead RESTRAIN acts
+      DOWNSTREAM -- general anticoagulation (warfarin / DOACs), target F2, status APPROVED but INDIRECT
+      ([O]); the switch-level F5 APC-sensitivity restore is investigational. UNLIKE HHT's OFF-LABEL
+      downstream agents, anticoagulants are approved ON-LABEL for the VTE manifestation -> approved +
+      indirect (the LEPR pattern), NOT the no-approved tail. context F2/PROC/PROS1/SERPINC1. gamma 1.3512
+      chr1 1q24.2, barrier 0.45644; dwell[UP] 1.42786 < 1.6027 < 1.96331; OMIM 188055; file-hash
+      08a664f1e7be.
+  + (2) Bardet-Biedl syndrome (BBS1) -- accelerator/LOF -> hypothalamic satiety axis DOWN -> corrective
+      POTENTIATE. BBS1 (M390R, the commonest BBS allele) loss destabilises the BBSome ciliary-trafficking
+      complex -> leptin-receptor / melanocortin signalling at the hypothalamic cilium fails -> satiety
+      drive lost (hyperphagia, obesity) alongside rod-cone retinopathy / polydactyly / renal anomalies.
+      The kit's SECOND syndromic ciliopathy (pairing USH2A), but read on the SATIETY axis rather than the
+      retina, re-using the EXACT downstream-bypass logic of leptin-receptor deficiency: lead POTENTIATE
+      MC4R via setmelanotide (Imcivree, FDA 2022 for BBS obesity), APPROVED but INDIRECT ([O]); the
+      switch-level BBS1 restore is investigational. HONESTY: setmelanotide is approved for the
+      obesity/hyperphagia sub-phenotype ONLY -- the retinopathy and renal disease have NO approved
+      therapy. context BBS10/BBS2/MC4R/LEPR. gamma 1.4268 chr11 11q13.2, barrier 0.50894; dwell[DOWN]
+      1.00253 < 1.27186 < 1.54936; OMIM 209900; file-hash ffce28b20709.
+  + (3) Fragile X syndrome (FMR1) -- SUSPENDED, a SEVENTH held MECHANISM class (repeat-EXPANSION-driven
+      promoter CpG-METHYLATION SILENCING). The CGG full mutation (>200 repeats) hypermethylates the FMR1
+      promoter -> transcriptional silencing -> FMRP loss; the repeats do NOT alter the FMRP coding
+      sequence and do NOT change the promoter SEQUENCE -- the lesion is repeat copy-number + methylation
+      STATE, invisible to a gamma read. The FMR1 promoter is perfectly readable (gamma 1.4563 chrX, the
+      HIGHEST CpG density in the panel at 0.0508 -- it IS the CpG island that gets methylated), but the
+      engine reads the unmethylated reference. The MIRROR of FSHD (repeat CONTRACTION -> DEREPRESSION) as
+      repeat EXPANSION -> SILENCING; the same-gene-family contrast to Huntington (HTT CAG is CODING ->
+      toxic protein, RESOLVED; FMR1 CGG is PROMOTER -> methylation silencing, SUSPENDED). Suspended PURELY
+      on engine-readability, not for lack of therapy. OMIM 300624; file-hash ef373b93d869. (ledger B30 / C)
+  + Module re-freeze: disease_priority_ranking.json f6a652e2a084 (was 9433a7a9ec82), direction_recovery.json
+      ff77aaaad029 (was bfa94e881fcf), indirect_lever_honesty.json d91bd82a7d9b (was 2064400d73af) all
+      change BY DESIGN (burden ranking 63 -> 65; scoreboard 63/63 -> 65/65; indirect census 55 -> 57);
+      claim_scan_v2.json bf528df05aa8 UNCHANGED. Direction-recovery scoreboard: recovered 65/65 (axis UP
+      38 / DOWN 27; lead direct 35 / indirect 30); direction_confidence clean 62 / cited-contested 3 /
+      ambiguous 0; no-approved tail = 10 against approved 55. Tiers: factor_v_leiden D=4 (approved floor,
+      U=3); bardet_biedl_syndrome D=4 (approved floor, U=4).
+  + NCBI promoter cache 98 -> 105 (added F5 1.3512, F2 1.4194, PROC 1.4439, BBS1 1.4268, BBS10 1.4200,
+      MC4R 1.2720, FMR1 1.4563).
+
+changes since v0.24.0:
+  + DISEASE-ADDING release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at all (both resolved leads
+      reuse an EXISTING lever -- 'correct' for Usher-2A, 'restrain' for NSIAD -> not even an additive
+      deepening; no new role, mechanism, axis-map entry or lever). All 69 prior FROZEN hashes drift 0
+      (66 per-disease + 3 module from the v0.24.0 inherited+native set; verified: S4 auto-appended the 3
+      new per-disease hashes and a second pass confirmed all 72 total match with drift 0; S5 was RE-FROZEN
+      because the burden ranking and the native II-A scoreboard outputs legitimately changed). 72 total
+      per-disease frozen (63 resolved + 9 suspended) + 4 module hashes. Concept DOI unchanged
+      (10.5281/zenodo.20755262, 희귀병 framing). Each lead's approval status was WEB-VERIFIED before shipping
+      (the standing v0.21.0 RPGR/HHT lesson). THE THEME is COMPLETION AT BOTH FIREWALL ENDS: a FIFTH ocular
+      read that COMPLETES FIVE distinct molecular-machine classes in one retina AND is the kit's FIRST
+      SYNDROMIC (audio-visual) read; the kit's SECOND GPCR axis that COMPLETES the V2R receptor in BOTH
+      directions (NSIAD GOF is the EXACT mirror of v0.24.0's X-linked NDI LOF on the SAME AVPR2 locus --
+      the Rett/MECP2-duplication dosage-mirror pattern, now realised on a GPCR -- and it re-derives an
+      APPROVED drug, tolvaptan, but honestly GENOTYPE-LIMITED); and a SIXTH held MECHANISM class, the
+      contiguous-gene microdeletion (22q11.2).
+
+  + usher_syndrome_type_2a (USH2A structural/LOF) -- the kit's FIFTH OCULAR read, its FIRST SYNDROMIC
+      (audio-visual) read, and the read that COMPLETES FIVE distinct molecular-machine classes in a single
+      retina. USH2A encodes usherin, a very large transmembrane STRUCTURAL-ADHESION scaffold of the
+      photoreceptor periciliary membrane / connecting-cilium region (and, in the cochlea, the hair-cell
+      stereocilia ankle-link complex); LOF removes the scaffold -> photoreceptor outer-segment maintenance
+      fails (progressive retinitis pigmentosa) and cochlear stereocilia development is disrupted (congenital
+      sensorineural hearing loss) -> axis DOWN on periciliary-complex maintenance throughput. The five ocular
+      genes now span FIVE molecular classes in the same tissue -- retinoid-cycle ENZYME (RPE65/LCA2), ciliary
+      TRAFFICKING (RPGR/XLRP), Rab-PRENYLATION (CHM/choroideremia), rhodopsin PROTEINOPATHY (RHO/adRP) and
+      now STRUCTURAL-ADHESION (USH2A) -- and USH2A is the FIRST whose phenotype is SYNDROMIC, reading a single
+      gene's lesion across two sensory organs at once. Lead lever CORRECT the transcript -- an exon-13-skipping
+      antisense oligonucleotide that restores a shortened-but-functional usherin (ultevursen / QR-421a, now in
+      the Phase 2b LUNA trial, Sepul Bio NCT06627179) -- held status 'clinical', HONESTLY NOT APPROVED: NO
+      agent is approved for USH2A retinopathy (Luxturna is RPE65-only), so this is the Huntington pattern (DNA
+      readable, lead clinical-not-approved), now the FIFTH in the kit. A mutation-agnostic 'correct' second arm
+      (CRISPR/Cas, EDIT-102, preclinical) is co-derived (investigational). direction [F], magnitude/efficacy [O];
+      direction_confidence = clean (structural x LOF -> axis DOWN gives an unambiguous restore-the-scaffold
+      direction). Context genes ADGRV1 (USH2C) + WHRN (USH2D), the partner proteins of the Usher-2 complex.
+      gamma 1.2801 chr1 1q41 (among the lowest in the kit, adjacent to RPE65 1.2842), barrier 0.40966;
+      dwell[DOWN] disease 0.85196 < treated 1.08084 < healthy 1.31666; OMIM 276901; file-hash b5bf3c95da50.
+      (ledger B29)
+
+  + nephrogenic_siad (AVPR2 accelerator/GOF) -- the kit's SECOND GPCR / cAMP receptor-signalling axis, and
+      the read that COMPLETES the V2 vasopressin receptor in BOTH directions. NSIAD is caused by a
+      CONSTITUTIVELY-ACTIVE V2R: gain-of-function AVPR2 alleles (commonest the Arg137 substitutions R137C/R137L;
+      also F229V, I130N) signal Gs -> cAMP -> PKA -> apical AQP2 insertion WITHOUT vasopressin, so the collecting
+      duct reabsorbs water unrestrained -> hyponatraemia / water retention with an UNDETECTABLE plasma AVP ->
+      axis UP (the disease OVER-SHOOTS the urine-concentrating axis; the corrective lever RESTRAINS it). This is
+      the EXACT GAIN mirror of v0.24.0's X-linked NDI, which is LOSS on the SAME AVPR2 receptor: both share the
+      identical cached AVPR2 locus (gamma 1.4618) and the identical healthy dwell (1.60672), but NSIAD sits ABOVE
+      it (over-shoot) where NDI sits BELOW it (deficiency) -- the Rett/MECP2-duplication dosage-mirror pattern,
+      now realised on a GPCR rather than a chromatin gene. Lead lever RESTRAIN the over-active receptor with a
+      V2R inverse-agonist / antagonist that suppresses the constitutive signal (a vaptan, tolvaptan), status
+      'approved' and DIRECT on AVPR2 -- the kit's contrast where the forced direction re-derives an APPROVED
+      agent (vs USH2A's clinical-not-approved and NDI's investigational reads on the adjacent slots). HONESTY:
+      the read is GENOTYPE-LIMITED -- vaptan-SENSITIVE mutants (F229V, I130N) are suppressed by tolvaptan, but the
+      COMMONEST Arg137 mutants (R137C/R137L) are constitutively active in a vaptan-RESISTANT conformation that
+      signals via a beta-arrestin / ROCK -> pT269-AQP2 route, for which a 2nd investigational 'restrain' arm
+      (ROCK-pathway inhibition) is co-derived; direction [F], responsiveness/efficacy [O]; direction_confidence =
+      clean (accelerator x GOF -> axis UP gives an unambiguous restrain direction; the genotype caveat is a
+      RESPONSIVENESS [O] statement, not a direction split). Context genes AQP2 (the apical effector) + AVP (the
+      ligand, undetectable in NSIAD). gamma 1.4618 chrX Xq28 (the same AVPR2 locus as NDI), barrier 0.53421;
+      dwell[UP] healthy 1.60672 < treated 1.80346 < disease 2.20924; OMIM 300539; file-hash 71bfca5a4672.
+      (ledger B29)
+
+  + digeorge_22q11_2_deletion_syndrome -- SUSPENDED (contiguous-gene microdeletion / sub-chromosomal multi-gene
+      CNV). The cause is the recurrent ~2.5-3 Mb hemizygous deletion at 22q11.2 (the LCR22A-D interval, ~40 genes
+      including the principal driver TBX1), generated by non-allelic homologous recombination (NAHR) between the
+      LCR22 low-copy repeats -- so DOZENS of genes are deleted AT ONCE and there is no single nuclear-style
+      TSS-2000..+500 promoter window from which to read one gamma switch. Held per the suspension rule. This is
+      the SIXTH held MECHANISM class: it GENERALISES the chromosomal-dosage holds from whole-chromosome ANEUPLOIDY
+      (Down syndrome -- a GAIN of an entire chromosome) to a SUB-chromosomal SEGMENTAL LOSS -- proving the hold
+      keys on the "many genes perturbed at once with no single readable promoter" MECHANISM regardless of scale
+      (whole-chromosome vs sub-chromosomal) or sign (gain vs loss), and it is distinct from the imprinting,
+      repeat-derepression and mitochondrial-genome classes already held. TBX1 is cached (gamma 1.5935 chr22) as
+      the named driver because rare TBX1 POINT MUTATIONS phenocopy the cardiac/parathyroid/thymic core -- but the
+      FULL syndrome (the contiguous ~40-gene loss) is not reducible to that one switch, which is precisely why it
+      holds. The most common human microdeletion syndrome (~1:4,000). No single-gene-corrective therapy targets
+      the deletion; managed organ-by-organ. OMIM 188400. file-hash 21afacfbad40. (ledger B29 / section C)
+
+  + NCBI promoter cache 94 -> 98 (added USH2A 1.2801 chr1 [the Usher-2A causal switch -- usherin / structural-
+      adhesion, the fifth ocular molecular class]; ADGRV1 1.3856 chr5 [the USH2C adhesion-GPCR Usher-2 complex
+      context]; WHRN 1.4220 chr9 [whirlin / USH2D scaffold Usher-2 complex context]; TBX1 1.5935 chr22 [the
+      principal 22q11.2-deletion driver, cached as the suspend's named driver / context only]).
+
+  + pipeline/prioritise_diseases.py DISEASE_TIERS extended with the two new resolved diseases
+      (usher_syndrome_type_2a B2/U5/D3 -- clinical lead, the Huntington/XLRP/RHO-adRP tier shape, D=3 forced by
+      the 'clinical' floor/cap; nephrogenic_siad B2/U4/D4 -- approved lead, D=4 by the 'approved' floor with the
+      genotype-limited responsiveness noted in honesty, NOT D=5), so the tier/disease consistency gate stays
+      satisfied (no resolved disease missing a tier). Freeze bookkeeping: S4 auto-appended the 3 new per-disease
+      hashes; S5 was RE-FROZEN (burden ranking 61 -> 63 ranked; the native II-A direction-recovery scoreboard
+      legitimately grew to 63/63; indirect census UNCHANGED at 55 since both new leads are DIRECT on their
+      primary switch [correct USH2A / restrain AVPR2]). Module hashes after re-freeze: direction_recovery.json
+      bfa94e881fcf (was 4def995f40d5), disease_priority_ranking.json 9433a7a9ec82 (was 4ebbdbef57ae),
+      indirect_lever_honesty.json 2064400d73af (was 062c5202a50e), claim_scan_v2.json bf528df05aa8 (UNCHANGED --
+      the scanner's own output is invariant to the added rows). The two freezes remain independent; 4 module
+      hashes drift 0 on re-verification. Scoreboard tallies now: direction recovered 63/63 (axis UP 37 / DOWN 26;
+      lead direct 35 / indirect 28); direction_confidence clean 60 / cited-contested 3 / ambiguous 0; no-approved
+      HIGH-VALUE TAIL = 10 (clinical 7: choroideremia, HHT, Huntington, Menkes, RHO-adRP, USH2A, XLRP;
+      investigational 3: Dravet, MECP2-duplication, X-linked NDI) against approved 53 (+NSIAD/tolvaptan).
+
+
+changes since v0.23.0:
+  + DISEASE-ADDING + FIRST-NATIVE-MODULE release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at
+      all (both resolved leads reuse an EXISTING lever -- 'reduce' for RHO-adRP, 'correct' for X-linked
+      NDI -> not even an additive deepening), PLUS the kit's FIRST module that is NATIVE rather than
+      inherited from the analgesic package. All 66 prior per-disease FILE-hashes drift 0 (verified: S4
+      auto-appended the 3 new hashes on the first pass, then a second pass confirmed all 69 total match
+      with drift 0); 69 total frozen (61 resolved + 8 suspended). Concept DOI unchanged
+      (10.5281/zenodo.20755262, 희귀병 framing). Each lead's approval status was WEB-VERIFIED before
+      shipping (the standing v0.21.0 RPGR/HHT lesson). THE THEME is BREADTH AT BOTH FIREWALL ENDS plus
+      the SELF-AUDIT the firewall always implied: a FOURTH ocular read that is the kit's FIRST OCULAR
+      PROTEINOPATHY, the kit's FIRST GPCR / receptor-cAMP-signalling axis, the THIRD mtDNA suspend now
+      generalised from POINT to STRUCTURAL lesion, and a native scoreboard that scores -- disease by
+      disease -- whether the engine's forced direction is recovered by the lead agent an independent
+      literature pursues.
+
+  + rho_autosomal_dominant_retinitis_pigmentosa (RHO brake/GOF) -- the kit's FOURTH OCULAR read and its
+      FIRST OCULAR PROTEINOPATHY. The adRP RHO alleles (P23H the archetype, a class-II misfolding mutant)
+      act by a TOXIC GAIN-of-function -- misfolded rhodopsin aggregates and overwhelms rod proteostasis --
+      so the read is the HTT/TTR/SOD1 proteinopathy pattern (an over-active pathological BRAKE on
+      photoreceptor maintenance -> axis DOWN), NOT the trafficking/enzyme-LOF pattern of the prior three
+      ocular reads (RPE65 retinoid-cycle enzyme, RPGR ciliary trafficking, CHM/REP1 Rab prenylation). FOUR
+      ocular genes now span FOUR molecular machine classes in the same retina, and RHO is the FIRST whose
+      lesion is a toxic protein to REMOVE rather than a lost function to restore. Lead lever REDUCE the
+      toxic mutant -- allele-specific knockdown of the P23H transcript (ASO QR-1123, reached Phase 1/2
+      NCT04123626) -- held status 'clinical', HONESTLY NOT APPROVED: NO agent is approved for RHO-adRP, so
+      this is the Huntington pattern (DNA readable, lead clinical-not-approved), now the FOURTH in the kit.
+      A mutation-agnostic 'replace' arm (dual-AAV ablate-and-replace, EDIT-103, preclinical) is co-derived
+      (investigational). direction_confidence = cited-contested: the toxic-reduce direction is clean for
+      the dominant toxic-GOF majority but allele-class-contested (a minority of RHO alleles are class-I
+      LOF/null, for which the toxic-reduce read does not apply). gamma 1.4719 chr3 3q22.1, barrier 0.54162;
+      dwell[DOWN] disease 1.05043 < treated 1.33264 < healthy 1.62340; OMIM 613731; file-hash 1ff8ee6a7b87.
+      (ledger B28)
+
+  + nephrogenic_diabetes_insipidus_x_linked (AVPR2 accelerator/LOF) -- a NEW GPCR / RECEPTOR-cAMP-SIGNALLING
+      axis, the kit's FIRST. AVPR2 encodes the V2 vasopressin receptor, a Gs-coupled GPCR on the renal
+      collecting-duct principal cell that, on binding arginine vasopressin, raises cAMP -> PKA -> apical
+      AQP2 water-channel insertion -> urine concentration; the disease alleles are predominantly MISSENSE
+      that misfold and are RETAINED in the ER (a trafficking-class LOF) -> the V2R signal is lost despite
+      normal vasopressin -> the collecting duct cannot concentrate urine (polyuria/polydipsia, hypernatraemic
+      dehydration) -> axis DOWN on the V2R->cAMP->AQP2 water-reabsorption throughput. This is the kit's first
+      read where the causal node is a hormone RECEPTOR (a GPCR) rather than an enzyme, transporter, channel,
+      structural protein or secreted factor. Lead lever CORRECT the misfolded-but-retained receptor with a
+      cell-permeant pharmacochaperone -- a non-peptide V2R antagonist used at sub-inhibitory concentration to
+      template folding and rescue ER export, restoring vasopressin-responsive trafficking (SR49059/relcovaptan
+      gave the historic human proof-of-concept, Bernier 2006; SR121463) -- held status 'investigational',
+      HONESTLY NOT APPROVED: there is NO approved targeted therapy, and the conventional management
+      (thiazide + amiloride + low-solute diet +/- NSAID) is DOWNSTREAM and does NOT restore V2R signalling
+      -> recorded as NON-levers. A 'replace' arm (AVPR2 gene/function restoration) is co-derived
+      (investigational). HONESTY: the pharmacochaperone direction is missense-rescuable only (nonsense/large
+      deletions are not addressed); direction [F], magnitude/responsiveness [O]; direction_confidence = clean
+      (the forced accelerator x LOF -> axis DOWN gives an unambiguous corrective direction). AQP2 (the apical
+      water channel, the autosomal-NDI gene and the V2R effector) + AVP (the receptor's ligand, the central-DI
+      contrast) are the context genes. gamma 1.4618 chrX Xq28, barrier 0.53421; dwell[DOWN] disease 1.03964 <
+      treated 1.31895 < healthy 1.60672; OMIM 304800; file-hash a12ce969d0cd. (ledger B28)
+
+  + kearns_sayre_syndrome -- SUSPENDED (mitochondrial-genome / single large-scale mtDNA DELETION). The cause
+      is a single LARGE-SCALE DELETION of the ~16.6-kb circular mitochondrial genome -- a contiguous span
+      (commonly the 4977-bp "common deletion", ND5..ATP8) removing MANY mitochondrial genes at once,
+      typically sporadic, heteroplasmy-/tissue-distribution-dependent -- with no nuclear-style TSS-2000..+500
+      promoter window from which to read a gamma switch. Held per the suspension rule. This is the THIRD mtDNA
+      suspend, and it GENERALISES the mitochondrial-genome hold one decisive step further: LHON and MELAS are
+      mtDNA POINT MUTATIONS (LHON in protein-coding Complex-I genes, MELAS in the MT-TL1 tRNA gene), whereas
+      Kearns-Sayre is a STRUCTURAL REARRANGEMENT deleting many contiguous mtDNA genes -- proving the hold keys
+      on the mitochondrial-genome MECHANISM regardless of lesion TYPE (point vs structural), exactly as the
+      NUCLEAR track holds both point/coding lesions and structural/repeat lesions (FSHD). No disease-modifying
+      therapy targets the deletion; managed supportively (cardiac-conduction surveillance/pacing, the feared
+      complication). A SIXTH held MECHANISM class member by lesion-type breadth within the mtDNA class. OMIM
+      530000. file-hash 4c005fab8b3d. (ledger B28 / section C)
+
+  + pipeline/direction_recovery.py -- the kit's FIRST NATIVE module (ROADMAP II-A), a read-only
+      DIRECTION-RECOVERY SCOREBOARD. Unlike the v0.19.0 modules inherited from the analgesic package
+      (M10/M11/M5v2), this one is native to the disease kit: it asks, disease by disease, whether the
+      corrective-axis direction the engine FORCES from (causal-gene role x mutation mechanism), with no
+      reference to any drug, is RECOVERED by the lead therapeutic agent that an independent clinical
+      literature actually pursues (its real-world axis_effect and approval status). The falsifiable claim
+      is the agreement: a single resolved disease whose lead agent moves the axis the OTHER way would break
+      the role x mechanism -> direction map. Result: direction recovered in 61/61 resolved diseases
+      (corrective axis UP 36 / DOWN 25; lead target direct 34 / indirect 27). The scoreboard breaks the
+      agreement down by axis, lever type, target directness and lead approval status, and surfaces the
+      no-approved-drug HIGH-VALUE TAIL -- 9 resolved diseases where the direction is known but no approved
+      agent yet exists (6 'clinical': choroideremia, HHT, Huntington, Menkes, RHO-adRP, XLRP; 3
+      'investigational': Dravet, MECP2-duplication, X-linked NDI) -- against 52 with an approved lead.
+      FIREWALL: the scoreboard reports DIRECTION recovery + approval STATUS only; it asserts nothing about
+      dose, potency, binding magnitude, response rate, efficacy or safety (recovery [F] forced+cited, every
+      magnitude [O]); it is read-only over the FROZEN analysis.json + registry, so it perturbs NO per-disease
+      hash. It carries a build-failing SELF-TEST with teeth (a synthetic disease whose lead lever pushes the
+      WRONG way is rejected by the same predicate the gate uses) and is added to the M5v2 hardened-claim-scan
+      scope (claim_scan_v2 now scans 3 module outputs, fires on its planted violation across 4 classes).
+      frozen output hash: direction_recovery.json 4def995f40d5.
+
+  + ROADMAP I-D direction_confidence -- a per-disease confidence stamp the scoreboard emits. The forced
+      role x mechanism gives an unambiguous corrective direction BY CONSTRUCTION, so the default is 'clean';
+      an advisory registry field direction_confidence OVERRIDES to 'cited-contested' for genuinely two-sided
+      / dosage-sensitive biology, or 'ambiguous' for an unresolved case. Three diseases are annotated
+      cited-contested with cited bases: RHO-adRP (toxic-GOF majority clean, class-I LOF allele minority
+      contested), alpha1_antitrypsin_deficiency (two OPPOSITE corrective directions in two organs from the
+      same SERPINA1 lesion -- lung loss-of-antiprotease axis UP vs liver toxic-Z-polymer axis DOWN), and
+      rett_syndrome (MECP2 exquisitely dosage-sensitive in BOTH directions; the mirror gain is MECP2
+      duplication syndrome, which the kit resolves separately as the opposite axis-DOWN read). Tally: 58
+      clean / 3 cited-contested / 0 ambiguous over 61 resolved. The field is advisory metadata the pipeline
+      IGNORES (analyze_disease.py reads only disease/omim/summary/emergent_axis/organism/causal_genes/
+      therapeutic_axes/chem_candidates/falsifiers), so adding it to the 4 annotated registry entries leaves
+      every per-disease analysis.json hash byte-identical -> drift 0 (verified through a full S2
+      regeneration). It is exposed in the scoreboard, never folded into any direction or magnitude.
+
+  + NCBI promoter cache 89 -> 94 (added RHO 1.4719 chr3 [the adRP causal switch]; AVPR2 1.4618 chrX [the
+      X-linked NDI causal switch / first GPCR]; AQP2 1.4575 chr12 [the apical water channel downstream of
+      V2R -- autosomal-NDI / effector context]; PRPH2 1.3440 chr6 [peripherin-2, the second adRP/digenic-RP
+      outer-segment context gene]; AVP 1.4833 chr20 [arginine vasopressin, the V2R ligand / central-DI
+      contrast context]).
+
+  + pipeline/prioritise_diseases.py DISEASE_TIERS extended with the two new resolved diseases
+      (rho_autosomal_dominant_retinitis_pigmentosa B2/U5/D3 -- clinical lead, the Huntington/XLRP tier
+      shape, D=3 forced by the 'clinical' floor/cap; nephrogenic_diabetes_insipidus_x_linked B2/U5/D2 --
+      investigational lead, D=2 forced by the 'investigational' floor/cap, the strongest-unmet tier shape),
+      so the tier/disease consistency gate stays satisfied (no resolved disease missing a tier). Freeze
+      bookkeeping: S4 auto-appended the 3 new per-disease hashes; S5 was RE-FROZEN (the module set grew
+      3 -> 4 with the native II-A scoreboard, and the burden ranking + scanner outputs legitimately changed
+      -- burden ranking 59 -> 61 ranked, indirect census UNCHANGED at 55 since both new leads are DIRECT on
+      their primary switch [reduce RHO / correct AVPR2]). The two freezes remain independent; 4 module
+      hashes drift 0 on re-verification.
+
+
+  + DISEASE-ADDING release -- the FIRST CHANNELOPATHY PAIR and the kit's first cardiac AND first
+      neuronal ION-CHANNEL axes. +2 RESOLVED (long_qt_syndrome_3 / SCN5A; dravet_syndrome / SCN1A),
+      +1 SUSPENDED (melas / mtDNA tRNA MT-TL1), NO engine change at all (both resolved leads reuse an
+      EXISTING lever -- 'restrain' for LQT3, 'replace' for Dravet -> not even an additive deepening).
+      All 63 prior per-disease FILE-hashes drift 0 (verified: S4 auto-appended the 3 new hashes on the
+      first pass, then a second pass confirmed all 66 total match with drift 0); 66 total frozen
+      (59 resolved + 7 suspended). Concept DOI unchanged (10.5281/zenodo.20755262, 희귀병 framing).
+      THE THEME is a voltage-gated SODIUM-CHANNEL MIRROR PAIR plus a within-class mtDNA generalisation.
+      (A) Long QT syndrome type 3 (SCN5A) is the kit's FIRST cardiac ION-CHANNEL axis (distinct from
+      HCM's MECHANICAL cardiac axis) and its FIRST channel GAIN-of-function read: SCN5A GOF impairs
+      NaV1.5 inactivation -> a persistent LATE sodium current prolongs the action potential/QT (axis
+      UP) -> lead lever RESTRAIN the late INa via mexiletine (an approved late-INa-blocking class-IB
+      antiarrhythmic, the gene-specific LQT3 therapy -- the FIRST channel read coded 'restrain', the
+      directional OPPOSITE of CFTR/K_ATP's potentiate-a-LOF-channel reads). Honesty: GENOTYPE-DEPENDENT
+      (mexiletine-sensitive vs -insensitive SCN5A alleles), direction [F] / magnitude [O], ICD remains
+      the mainstay; beta-blockers (first-line for LQTS overall) recorded as a DOWNSTREAM NON-lever
+      (less effective / pro-arrhythmic in LQT3). KCNQ1 (LQT1) + KCNH2/hERG (LQT2) are framed as CONTEXT,
+      the OPPOSITE-mechanism K-channel LOF arms -- NOT a convergence (a clean proof the kit reads the
+      (gene x mechanism), not the syndrome label). gamma 1.5256 chr3 3p22.2, barrier 0.58186;
+      dwell[UP] 1.71304 < 1.92280 < 2.35543; OMIM 603830; file-hash 9147aa8b17dd. (B) Dravet syndrome
+      (SCN1A) is the kit's FIRST NEURONAL ion-channel (epilepsy) axis and the MIRROR of LQT3: SCN1A
+      LOF/haploinsufficiency lowers NaV1.1 in fast-spiking GABAergic interneurons -> inhibition
+      collapses (axis DOWN) -> seizures/encephalopathy. Same voltage-gated Na-channel FAMILY as SCN5A
+      but OPPOSITE organ (brain interneuron vs heart), OPPOSITE mechanism (LOF vs GOF), OPPOSITE axis
+      (DOWN vs UP) and OPPOSITE lever (restore vs restrain) -- the channelopathy analogue of the
+      Wilson/Menkes copper pair. Lead lever REPLACE SCN1A by upregulating NaV1.1 (zorevunersen/STK-001
+      TANGO ASO, Phase 3 EMPEROR), held INVESTIGATIONAL -- the Huntington pattern: the approved drugs
+      (fenfluramine/cannabidiol/stiripentol) are DOWNSTREAM, palliative, do NOT restore NaV1.1 ->
+      NON-levers. The engine's axis-DOWN read predicts the clinical sodium-channel-BLOCKER
+      contraindication (phenytoin/carbamazepine worsen Dravet -- blocking the already-deficient channel
+      pushes the axis further down) as a clean falsifiable consequence. SCN1A gamma 1.2450 (chr2 2q24.3,
+      AT-rich) is the SECOND-LOWEST in the kit; barrier 0.38751; dwell[DOWN] 0.81716 < 1.03669 <
+      1.26288; OMIM 607208; file-hash 4a049497fac9. (C) MELAS is the SECOND mtDNA suspend (m.3243A>G in
+      MT-TL1, the mitochondrial tRNA-Leu(UUR) gene): it GENERALISES the mitochondrial-genome hold from
+      LHON's PROTEIN-CODING Complex I subunit genes (MT-ND4/ND1/ND6) to a mitochondrial tRNA gene -- the
+      within-class generalisation analogue of how Beckwith-Wiedemann generalised IMPRINTING beyond
+      15q11-q13, NOT a brand-new mechanism class but proof the mtDNA hold keys on the
+      mitochondrial-genome mechanism regardless of mtDNA gene CLASS (protein-coding vs tRNA);
+      heteroplasmy-dependent, maternal, no nuclear promoter window, suspended DESPITE supportive
+      therapy (taurine approved for MELAS in Japan). OMIM 540000; file-hash e77853002039 (ledger B27
+      / section C). Cache 84 -> 89 genes (added SCN5A, SCN1A, KCNQ1, KCNH2, SCN8A). long_qt_syndrome_3
+      burden tier D = 4 (approved floor -- genotype-limited mexiletine + ICD mainstay, U = 3); dravet
+      D = 2 (investigational floor/cap -- the Huntington tier shape, U = 5). Freeze bookkeeping per the
+      standard model: S4 auto-appended 3, S5 re-frozen (burden ranking 57 -> 59; indirect census
+      UNCHANGED at 55 -- both new leads are DIRECT on their primary switch [restrain SCN5A / replace
+      SCN1A]).
+
+changes since v0.21.0:
+  + CONCEPT DOI REGISTERED + DISEASE-ADDING release -- the kit now has its OWN registered Zenodo
+      concept DOI **10.5281/zenodo.20755262** (CC BY 4.0, ORCID 0009-0002-7535-8245), framed as a
+      RARE / single-gene / hereditary disease (희귀병) resource; every release version resolves under
+      this concept DOI (applied across VERSION, README, HANDOFF, ROADMAP, and the VP-SPEC DOI
+      registry table as the `disease`/`dis` row). +2 RESOLVED, +1 SUSPENDED, NO engine change at all
+      (both resolved leads reuse an EXISTING lever -- 'replace' for choroideremia, 'potentiate' for
+      congenital hyperinsulinism -> not even an additive deepening). All 60 prior per-disease
+      FILE-hashes drift 0 (verified: S4 auto-appended the 3 new hashes on the first pass, then a
+      second pass confirmed all 63 total match with drift 0); 63 total frozen (57 resolved +
+      6 suspended). As a disease-adding release the per-disease freeze (repro/expected_sha256.json,
+      stage S4) AUTO-APPENDED the 3 new hashes while the inherited-module freeze
+      (repro/expected_modules_sha256.json, stage S5) was RE-FROZEN: adding two resolved diseases
+      legitimately grows the burden-prioritisation ranking (55 -> 57 ranked) and the indirect-lever
+      census (the two new resolved leads are both DIRECT gene-restore, so the indirect census is
+      unchanged at 55, but the ranking output changes), so disease_priority_ranking.json changes by
+      design (indirect_lever_honesty.json + claim_scan_v2.json semantics unchanged). The modules
+      touch NO analysis.json -- that invariant is what keeps the 60 prior disease hashes drift 0
+      while the module outputs evolve. The two freezes remain independent. Web-verified each lead's
+      approval status before shipping (the v0.21.0 RPGR/HHT lesson). THE THEME of this release is
+      MECHANISM-CLASS BREADTH AT BOTH ENDS OF THE FIREWALL: a THIRD ocular gene class, a NEW
+      regulated-secretion channel axis with the kit's SIXTH two-gene convergence, and the suspension
+      rule generalised to a FIFTH held mechanism class -- the MITOCHONDRIAL GENOME.
+
+  + choroideremia (CHM accelerator/LOF) -- the kit's THIRD OCULAR read and THIRD distinct ocular GENE
+      CLASS. CHM encodes Rab Escort Protein 1 (REP1), which presents nascent Rab GTPases to Rab
+      geranylgeranyl transferase for prenylation -- the obligate lipid modification letting Rabs drive
+      vesicular trafficking; LOF leaves a subset of Rabs (esp. Rab27a) under-prenylated, and because the
+      autosomal paralogue REP2 (CHML) partially compensates elsewhere the degeneration is largely
+      RETINA-RESTRICTED (RPE + photoreceptors + choroid) -> axis DOWN on the photoreceptor/RPE
+      Rab-prenylation / vesicular-trafficking maintenance throughput. Where LCA2 (RPE65) is a
+      retinoid-CYCLE ENZYME deficiency and XLRP (RPGR) is a ciliary-TRAFFICKING deficiency, choroideremia
+      (CHM/REP1) is a Rab-PRENYLATION / vesicular-trafficking deficiency -- three different molecular
+      machines in the same retina, whose lead corrective lever is nonetheless the same class, gene
+      restoration. Lead lever REPLACE CHM via subretinal AAV2-REP1 gene transfer -- timrepigene
+      emparvovec (BIIB111) -- held status 'clinical', HONESTLY NOT APPROVED: the Phase 3 STAR trial
+      (Biogen, NCT03496012, 2021) DID NOT MEET its primary endpoint AND did not demonstrate efficacy on
+      key secondary endpoints, so the corrective MAGNITUDE is [O] and the kit ships this read in the SAME
+      honest pattern as Huntington and XLRP (DNA readable, lead clinical-not-approved -- the Huntington
+      pattern, now THIRD in the kit). The STAR primary/secondary-endpoint result is exactly a magnitude
+      question, recorded honestly, not asserted. CHML (REP2) is the context gene (the partial-redundancy
+      reason for retina-restriction). chrX(NC_000023.11) Xq21.2 -strand (AT-leaning), gamma 1.3083,
+      barrier 0.42791, |h_sp| 0.57598. dwell[DOWN] disease 0.88026 < treated 1.11675 < healthy 1.36041.
+      X-linked (hemizygous males; carrier females patchy by X-inactivation, held [O]). OMIM 303100.
+      file-hash e0837a48f0f2. (ledger B26)
+
+  + congenital_hyperinsulinism (KCNJ11 + ABCC8 channel/LOF -- the beta-cell K_ATP channel) -- a NEW
+      REGULATED-SECRETION ion-channel axis and the kit's SIXTH two-causal-gene convergence (after HCM,
+      sitosterolaemia, cystinuria, TSC, HHT). KCNJ11 (Kir6.2, the pore) + ABCC8 (SUR1, the
+      sulfonylurea-receptor regulatory subunit) are the two subunits of the ATP-sensitive K+ channel that
+      couples cytosolic ATP/ADP to beta-cell membrane potential -- the repolarising BRAKE on
+      glucose-stimulated insulin secretion; inactivating (LOF) mutations of either subunit leave the
+      channel unable to open, so the beta-cell is tonically depolarised and secretes insulin INDEPENDENT
+      of glucose -> hyperinsulinaemic hypoglycaemia (macrosomia, severe recurrent hypoglycaemia,
+      hypoglycaemic brain-injury risk). The disease is read as the K_ATP channel conductance axis driven
+      DOWN (channel LOF). This is the CYSTIC-FIBROSIS pattern (channel/LOF -> axis DOWN -> POTENTIATE the
+      channel) carried onto a DIFFERENT channel and a DIFFERENT axis: CF is an epithelial
+      chloride-TRANSPORT channel (CFTR), this is the kit's FIRST regulated-hormone-secretion ion-channel
+      axis (K_ATP / SUR1-Kir6.2). Two subunits of ONE obligate channel, adjacent on 11p15.1, with KCNJ11
+      / Kir6.2 (the PORE) the deeper promoter switch (primary) over ABCC8 / SUR1. Lead lever POTENTIATE
+      the channel via the K_ATP-channel opener diazoxide (Proglycem) -- the APPROVED first-line medical
+      therapy, which the emerged switch independently re-derives, and a DIRECT lever (target KCNJ11 IS the
+      primary switch). IMPORTANT HONESTY: diazoxide opens RESIDUAL / trafficking-competent channels, so
+      the very forms most attributable to these two genes -- biallelic recessive channel-NULL ABCC8 /
+      KCNJ11 disease -- are characteristically DIAZOXIDE-UNRESPONSIVE and are managed by near-total
+      pancreatectomy (focal lesions, by paternal-allele loss-of-heterozygosity, can be cured by focal
+      resection). So the lead lever is APPROVED but GENOTYPE-LIMITED: the corrective DIRECTION (restore
+      K_ATP conductance) is forced [F], the realised RESPONSIVENESS / MAGNITUDE is [O]. This is the honest
+      approved-but-partial contrast to the same release's choroideremia (a clinical-not-approved gene
+      therapy). GLUD1 (the diazoxide-responsive non-channel hyperinsulinism contrast) is the context gene.
+      KCNJ11 chr11(NC_000011.10) 11p15.1 -strand (GC-rich), gamma 1.5068, barrier 0.56761, |h_sp| 0.71192
+      (PRIMARY) over ABCC8 gamma 1.4657, barrier 0.53707. dwell[DOWN] disease 1.08801 < treated 1.38032 <
+      healthy 1.68148. OMIM 256450 (HHF1) / 601820 (HHF2). file-hash 7e3606a67927. (ledger B26)
+
+  + leber_hereditary_optic_neuropathy (LHON) -- SUSPENDED (mitochondrial-genome / mtDNA point mutation).
+      The cause is an mtDNA POINT MUTATION -- most commonly m.11778G>A in MT-ND4 (~60-80% worldwide), with
+      m.3460G>A (MT-ND1) and m.14484T>C (MT-ND6) the remainder -- in respiratory-chain Complex I genes,
+      NOT a single-gene NUCLEAR promoter switch. Three features place it outside the kit's read: (1) the
+      lesion is in the ~16.6-kb circular MITOCHONDRIAL genome, transcribed as long polycistronic
+      transcripts from the mitochondrial heavy/light-strand promoters and processed -- there is NO
+      nuclear-style TSS-2000..+500 promoter window for MT-ND4 from which to read a gamma switch (the kit's
+      data path resolves NUCLEAR RefSeq promoters); (2) penetrance is HETEROPLASMY-dependent and incomplete
+      (a minority of carriers ever lose vision, markedly more often male, partial spontaneous recovery in a
+      subset, plus nuclear-background / mitochondrial-haplogroup / environmental modifiers) -- a continuous,
+      tissue-variable quantity a strand-symmetric single-promoter switch cannot capture; (3) inheritance is
+      MATERNAL (mitochondrial), not Mendelian. Held per the suspension rule (no analyzable single-gene
+      NUCLEAR promoter DNA -> hold). A FIFTH held MECHANISM class -- distinct from whole-chromosome
+      ANEUPLOIDY (Down), parent-of-origin IMPRINTING (PWS / Angelman / Beckwith-Wiedemann), and
+      REPEAT-CONTRACTION / CHROMATIN-DEREPRESSION (FSHD D4Z4 / DUX4) -- proving the suspension rule keys on
+      the LESION MECHANISM and now generalises to the MITOCHONDRIAL GENOME. SHARPEST DISCIPLINE POINT:
+      LHON is suspended DESPITE having an APPROVED drug -- idebenone (Raxone), a coenzyme-Q10 analogue
+      approved for LHON in the EU, Israel, South Korea and elsewhere (US FDA priority review pending as of
+      early 2026) -- plus active gene-therapy programmes (intravitreal allotopic MT-ND4, e.g. lenadogene
+      nolparvovec). Idebenone acts DOWNSTREAM (antioxidant / electron-carrier support of retinal ganglion
+      cells) and does not address the mtDNA lesion. The suspension therefore keys purely on whether the
+      ENGINE can READ the lesion (engine-readability), NOT on whether a therapy exists -- the INVERSE of
+      the Huntington/XLRP/choroideremia pattern (there the DNA is readable but the lead therapy is unproven;
+      here a therapy is approved but the DNA is unreadable by a nuclear-promoter engine). OMIM 535000.
+      file-hash 96bc957e0e09. (ledger B26 / section C)
+
+  + NCBI promoter cache 79 -> 84 (added CHM 1.3083 chrX [the choroideremia causal switch]; ABCC8 1.4657
+      chr11 + KCNJ11 1.5068 chr11 [the two K_ATP causal switches, adjacent on 11p15.1, KCNJ11 the pore /
+      primary]; CHML 1.4562 chr1 [the choroideremia REP2 paralogue context]; GLUD1 1.5408 chr10 [the
+      diazoxide-responsive non-channel hyperinsulinism contrast context]).
+
+  + pipeline/prioritise_diseases.py DISEASE_TIERS extended with the two new resolved diseases
+      (choroideremia B2/U5/D3 -- clinical lead, the Huntington/XLRP tier shape, D=3 forced by the
+      'clinical' floor/cap; congenital_hyperinsulinism B3/U3/D4 -- approved lead but genotype-limited,
+      D=4 inside the 'approved' [4,5] floor/cap), so the tier/disease consistency gate stays satisfied
+      (no resolved disease missing a tier).
+
+changes since v0.20.0:
+  + DISCIPLINE-SHOWCASE release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at all (both resolved
+      leads reuse an EXISTING lever -- 'replace' for XLRP, 'restrain' for HHT -> not even an additive
+      deepening). All 57 prior per-disease FILE-hashes drift 0 (verified: S4 auto-appended the 3 new
+      hashes on the first pass, then a second pass confirmed 60 total match with drift 0); 60 total frozen
+      (55 resolved + 5 suspended). As with v0.20.0 this is a disease-adding release, so the per-disease
+      freeze (repro/expected_sha256.json, stage S4) AUTO-APPENDED the 3 new hashes while the inherited-
+      module freeze (repro/expected_modules_sha256.json, stage S5) was RE-FROZEN: adding two resolved
+      diseases legitimately grows the burden-prioritisation ranking (53 -> 55 ranked) and the indirect-
+      lever census (53 -> 55 indirect levers, the +2 being HHT's two off-label downstream anti-angiogenic
+      levers), so disease_priority_ranking.json and indirect_lever_honesty.json change by design
+      (claim_scan_v2.json semantics unchanged). The modules touch NO analysis.json -- that invariant is
+      what keeps the 57 prior disease hashes drift 0 while the module outputs evolve. The two freezes
+      remain independent. THE THEME of this release is HONESTY UNDER NEGATIVE EVIDENCE: both resolved reads
+      ship a lead that is candidly NOT a clean approved switch-drug, and the kit records the divergence
+      between its switch logic and clinical reality rather than forcing a drug.
+
+  + x_linked_retinitis_pigmentosa (RPGR accelerator/LOF) -- the kit's SECOND OCULAR read (after LCA2) and
+      its FIRST demonstration that gamma ALONE does not name a disease. RPGR encodes the photoreceptor
+      ciliary-trafficking GTPase regulator (RPGR-ORF15 isoform) that maintains the connecting-cilium
+      protein gate; LOF collapses outer-segment protein transport -> progressive rod-then-cone death ->
+      axis DOWN on photoreceptor maintenance throughput. The CILIARY-TRAFFICKING contrast to LCA2, whose
+      RPE65 lesion is a RETINOID-CYCLE ENZYME defect: same organ (retina), entirely different molecular
+      machine (a transport/cilia gate vs a visual-cycle isomerohydrolase). Lead lever REPLACE RPGR via
+      AAV gene transfer -- botaretigene sparoparvovec (bota-vec, AAV2/5-hRKp.RPGR; MeiraGTx, acquired from
+      J&J 2026) -- but HELD status 'clinical', HONESTLY NOT APPROVED: the Phase 3 LUMEOS trial (NCT04671433)
+      MISSED its primary endpoint (secondary-endpoint signals reported), filing planned, so the magnitude
+      is an open [O] question and the kit does NOT claim a cure. This is the HUNTINGTON PATTERN (a resolved,
+      DNA-readable disease whose lead corrective agent is genuinely clinical-not-approved) carried onto an
+      ocular gene-replacement read. STRUCTURAL NOTE: RPGR's promoter gamma 1.3915 is BIT-IDENTICAL to SMN1's
+      1.3915 (spinal muscular atrophy) -- a DIFFERENT locus (chrX Xp11.4 vs chr5), a DIFFERENT disease, a
+      DIFFERENT axis -- a clean in-kit proof that the disease is the (role x mechanism) READ, never the
+      gamma number alone. chrX(NC_000023.11) Xp11.4 -strand, barrier 0.48407, |h_sp| 0.63179. OMIM 300029.
+      dwell[DOWN] disease 0.96555 < treated 1.22495 < healthy 1.49222. file-hash 594bebeff484. (ledger B25)
+
+  + hereditary_haemorrhagic_telangiectasia / Osler-Weber-Rendu (ENG brake/LOF + ACVRL1 brake/LOF) -- a NEW
+      ENDOTHELIAL TGF-beta / BMP9-10-ALK1 VASCULAR-QUIESCENCE axis and the kit's FIFTH two-causal-gene
+      convergence (after HCM, sitosterolaemia, cystinuria, TSC). Endoglin (ENG) + ALK1 (ACVRL1) are the
+      endothelial co-receptor + type-I receptor that transduce the BMP9/BMP10 (GDF2/BMP10) signal
+      maintaining vascular quiescence -- the BRAKE on aberrant angiogenesis; heterozygous LOF of EITHER
+      releases it -> arteriovenous malformations + mucocutaneous telangiectases (recurrent epistaxis, GI
+      bleeding, pulmonary/cerebral/hepatic AVMs) -> axis UP on the released angiogenic drive. Primary switch
+      ENG (gamma 1.5009, GC-rich, barrier 0.56318) over ACVRL1 (gamma 1.4681, barrier 0.53883). THIS READ IS
+      A DOWNGRADE, NOT A SUSPEND, AND NOT A CLEAN APPROVED SWITCH-DRUG: the DNA is fully readable (so the
+      suspension rule does NOT fire), the switch logic correctly says RESTORE THE BRAKE (restrain ENG/ALK1
+      signalling restoration, a switch-restore arm whose target IS in the causal set, held investigational) --
+      but there is NO approved targeted therapy for HHT anywhere in the world. The only clinical agents are
+      OFF-LABEL DOWNSTREAM anti-angiogenics that lower VEGF signalling and do NOT restore the ENG/ACVRL1
+      brake: bevacizumab (anti-VEGF mAb, off-label) and pomalidomide (PATH-HHT trial; approved only for
+      myeloma/Kaposi, off-label for HHT) -- both INDIRECT (target_gene VEGFA is OUTSIDE the ENG/ACVRL1 causal
+      set), so the indirect-lever gate FORCES their mechanism_grade to begin "[O]", cited, not derived. The
+      lead corrective lever therefore RESOLVES to an INDIRECT off-label VEGFA-restraint, and the kit RECORDS
+      THE DIVERGENCE TRANSPARENTLY: switch logic wants the brake restored, clinical reality offers only a
+      downstream flood-reducer -- an honest mismatch, not a forced approval. chr9(NC_000009.12) 9q34.11 (ENG)
+      / chr12(NC_000012.12) 12q13.13 (ACVRL1). OMIM 187300. dwell[UP] healthy 1.67161 < treated 1.87630 <
+      disease 2.29846. file-hash ba86b72718ba. (ledger B25)
+
+  + facioscapulohumeral_muscular_dystrophy -- SUSPENDED (repeat-derepression of DUX4). The cause is NOT a
+      single-gene promoter switch but a CHROMATIN-DEREPRESSION lesion: in FSHD1 a CONTRACTION of the D4Z4
+      macrosatellite repeat array at 4q35 (to <=10 units), and in FSHD2 a LOF of the chromatin repressor
+      SMCHD1 (or DNMT3B), de-represses the normally-silenced DUX4 retrogene -- but ONLY on a PERMISSIVE 4qA
+      haplotype that supplies a polyadenylation signal stabilising the DUX4 transcript -> toxic DUX4
+      mis-expression in skeletal muscle. There is no analyzable single-gene promoter gamma shift (the lesion
+      is repeat copy-number + haplotype + epigenetic state, not a promoter sequence change), so the kit HOLDS
+      it per the suspension rule ("no analyzable single-gene DNA -> hold"). This is a FOURTH held MECHANISM
+      class, distinct from the prior three: whole-chromosome ANEUPLOIDY (Down), parent-of-origin IMPRINTING
+      (Prader-Willi / Angelman / Beckwith-Wiedemann), and now REPEAT-CONTRACTION-DRIVEN DEREPRESSION --
+      proving the suspension rule keys on the LESION MECHANISM and generalises to repeat/epigenetic
+      derepression, not just aneuploidy and imprinting. OMIM 158900. file-hash ac5b2da5998b. (ledger section C)
+
+  + NCBI promoter cache 72 -> 79 (added RPGR 1.3915 chrX [the XLRP causal switch, gamma bit-identical to
+      SMN1]; ENG 1.5009 chr9 [HHT primary causal switch]; ACVRL1 1.4681 chr12 [HHT second causal gene];
+      VEGFA 1.4969 chr6 [the off-label bevacizumab/pomalidomide downstream target context]; GDF2/BMP9 1.4329
+      chr10 + BMP10 1.3148 chr2 [the ALK1 ligand context]; RP2 1.4663 chrX [the second XLRP gene context]).
+
+  + pipeline/prioritise_diseases.py DISEASE_TIERS extended with the two new resolved diseases
+      (x_linked_retinitis_pigmentosa B3/U5/D3; hereditary_haemorrhagic_telangiectasia B3/U5/D3 -- cited
+      epidemiology + lead-lever basis), so the tier/disease consistency gate stays satisfied (no resolved
+      disease missing a tier). BOTH carry D=3, forced by the D-consistency floor/cap: each lead lever's
+      frozen status is 'clinical' (clinical -> D in [3,3]), faithfully reflecting that NEITHER lead is an
+      approved switch-drug -- the burden ranking cannot silently over-state tractability beyond the shipped
+      (non-approved) evidence. Both carry the HIGH unmet-need tier U=5 (no approved therapy), matching the
+      Huntington tier shape.
+
+changes since v0.19.0:
+  + DISEASE-ADDING release -- +2 RESOLVED, +1 SUSPENDED, NO engine change at all (every lever
+      used -- 'restrain' -- already existed -> not even an additive deepening). All 54 prior
+      per-disease FILE-hashes drift 0 (verified 3x); 57 total frozen (53 resolved + 4 suspended).
+      This is the FIRST disease-adding release SINCE the analgesic-v2.0 modules were inherited in
+      v0.19.0, so the per-disease freeze (repro/expected_sha256.json, stage S4) AUTO-APPENDED the 3
+      new hashes while the inherited-module freeze (repro/expected_modules_sha256.json, stage S5)
+      was RE-FROZEN: adding diseases legitimately grows the burden-prioritisation ranking and the
+      indirect-lever census (51 -> 53 indirect levers), so disease_priority_ranking.json and
+      indirect_lever_honesty.json change by design (claim_scan_v2.json unchanged). The modules still
+      touch NO analysis.json -- that invariant is what keeps the 54 disease hashes drift 0 while the
+      module outputs evolve. The two freezes remain independent.
+
+  + tuberous_sclerosis_complex (TSC1 + TSC2 brake/LOF) -- a NEW INTRACELLULAR SIGNALLING (mTOR /
+      growth-regulation) axis and the kit's FOURTH two-causal-gene convergence (after HCM,
+      sitosterolaemia, cystinuria). The TSC1/TSC2 complex is the GTPase-activating-protein BRAKE on
+      Rheb-mTORC1; two-hit LOF of EITHER subunit releases it -> mTORC1 over-activation -> axis UP.
+      Lead lever RESTRAINS mTORC1 via the mTOR inhibitor everolimus / sirolimus (approved for
+      TSC-associated SEGA, renal angiomyolipoma, refractory seizures); gene/function restoration of
+      the deeper subunit TSC2 is the investigational switch-level arm (restrain-coded by net axis
+      effect, the Wilson/cystinosis convention). Primary switch TSC2 (gamma 1.5435, barrier 0.59560)
+      deeper than TSC1 (gamma 1.4363, barrier 0.51574); dwell[UP] healthy 1.74328 < treated 1.95674
+      < disease 2.39701. The released-brake -> over-activation convention (tyrosinaemia /
+      haemochromatosis / sitosterolaemia) carried onto a signalling pathway -- the signalling
+      contrast to the kit's metabolite/level/transport axes. OMIM 191100/613254. chr9 9q34.13 (TSC1)
+      / chr16 16p13.3 (TSC2). file-hash 4914660bf8bd. (ledger B24)
+
+  + von_hippel_lindau_disease (VHL brake/LOF) -- a NEW HYPOXIA-SENSING (HIF) axis. pVHL is the
+      E3-ubiquitin-ligase substrate-recognition BRAKE that degrades HIF-2alpha (EPAS1) under
+      normoxia; two-hit LOF releases it -> HIF-2alpha is stabilised -> constitutive pseudohypoxic
+      transcriptional drive (VEGF/PDGF/EPO) -> highly vascular tumours (clear-cell RCC, CNS/retinal
+      haemangioblastoma, phaeochromocytoma, pNET) -> axis UP. Lead lever RESTRAINS the stabilised
+      driver via the HIF-2alpha inhibitor belzutifan (Welireg, FDA 2021); VHL gene/function
+      restoration is the investigational switch-level arm. Single causal gene, primary switch VHL
+      (gamma 1.4325, barrier 0.51301); dwell[UP] healthy 1.55865 < treated 1.74951 < disease 2.14315.
+      The brake-loss -> TRANSCRIPTION-FACTOR-STABILISATION contrast to the kit's metabolite/transport
+      released-brake reads (the released species here is a stabilised TF, not an accumulating
+      metabolite). OMIM 193300. chr3 3p25.3. file-hash 8ecf6cd60154. (ledger B24)
+
+  + beckwith_wiedemann_syndrome -- SUSPENDED (11p15.5 imprinting). The cause is a parent-of-origin
+      methylation/dosage defect of the 11p15.5 imprinted region (IC1 H19/IGF2 gain-of-methylation,
+      IC2 KCNQ1OT1/CDKN1C loss-of-methylation, paternal UPD(11)p15.5, or a maternal CDKN1C LOF point
+      mutation) -- not a single-gene promoter switch, so no analyzable single-gene gamma shift. This
+      is a THIRD imprinting hold and the FIRST on a locus OTHER than 15q11-q13: where Prader-Willi
+      (paternal) and Angelman (maternal UBE3A) are the reciprocal 15q pair, Beckwith-Wiedemann is an
+      11p15.5 disorder on a DIFFERENT chromosome -- proving the suspension rule keys on the LESION
+      MECHANISM (imprinting) and GENERALISES across imprinted loci. OMIM 130650. file-hash
+      f3ce2c8b2b6b. (ledger §C)
+
+  + NCBI promoter cache 65 -> 72 (added TSC1 1.4363, TSC2 1.5435, VHL 1.4325, MTOR 1.4181 [the
+      everolimus target node], RHEB 1.5215 [the GTPase the TSC complex GAPs], EPAS1 1.5299 [HIF-2alpha,
+      the belzutifan target], HIF1A 1.4177 [HIF-1alpha context]).
+
+  + pipeline/prioritise_diseases.py DISEASE_TIERS extended with the two new resolved diseases
+      (TSC B3/U3/D5; VHL B3/U3/D5 -- cited epidemiology + approved-lead-lever basis), so the
+      tier/disease consistency gate stays satisfied (no resolved disease missing a tier).
+
+changes since v0.18.0:
+  + INHERITANCE release -- NO new diseases, NO engine change, all 54 per-disease frozen hashes drift 0
+      (verified 3x). Inherited three technologies from analgesic_threshold_logic_v2_0
+      (DOI 10.5281/zenodo.20733420) as READ-ONLY modules that touch no analysis.json and carry their
+      OWN separate freeze (repro/expected_modules_sha256.json), wired into run_all.py as new stage S5:
+      (A) pipeline/prioritise_diseases.py  [inherits analgesic M10]
+          burden-weighted prioritisation of the 51 RESOLVED diseases:
+            score = 0.40*B + 0.35*U + 0.25*D   (weights DECLARED, identical to analgesic)
+          B/U/D are cited 1-5 tiers (B = prevalence x severity, U = unmet need, D = druggability).
+          Ranks DISEASES, not drugs. Primary-switch gamma/barrier carried as STRUCTURAL context only,
+          NEVER folded into the score (firewall, verbatim from analgesic "gamma is not burden").
+          D bounded fail-closed by each disease's frozen lead-lever status
+            (approved -> [4,5], clinical -> [3,3], investigational -> [2,2]).
+          frozen output hash: disease_priority_ranking.json 36e2b734c2b0
+      (B) pipeline/indirect_lever_gate.py  [inherits analgesic M11 / L3-honesty]
+          fail-closed gate: every therapeutic lever classified gene-restore vs indirect; every INDIRECT
+          lever's mechanism_grade FORCED to begin "[O]" ([V]/[F] forbidden), non-empty src + open
+          firewall required -- the receptor/network/pharmacology link gamma does NOT capture.
+          10 headline indirect levers asserted present+all-[O] (nitisinone->HPD, burosumab->FGF23,
+          trofinetide->IGF1, omaveloxolone->NFE2L2, SMN2, BCL11A, ALAS1, copper, iron ...).
+          frozen output hash: indirect_lever_honesty.json b27db28f7243
+      (C) pipeline/claim_scanner_v2.py  [inherits analgesic M5 v2.0]
+          hardened forbidden-claim scanner adding the 3 v2.0 hardenings WITHOUT touching honesty_gate.py:
+          negation-guard (suppresses disclaimer DOSING/SYNTHESIS), build-failing self-test on a planted
+          violation, and new-module scope (scans modules A+B assertion text).
+          frozen output hash: claim_scan_v2.json 7439ebf62782
+  + analgesic v2.0 M12 (precision local-anaesthesia map: TRPV1/TRPA1 entry-port x charged blocker)
+      INTENTIONALLY NOT inherited -- nociceptor-pharmacology-specific, no faithful disease-emergence
+      analogue; forcing a fake one would violate the kit's own "없으니 못한다" suspension rule.
+      Declining it IS the discipline (ledger B22).
+  + repro/modules/run_modules.py runs all three fail-closed (order A,B,C since C scans A+B) and freezes
+      repro/expected_modules_sha256.json; run_all.py gains stage S5 -> OVERALL: PASS (5/5 stages).
+  + governance docs updated (README 0.5, ROADMAP section 3, HANDOFF 1+5, IRREPRODUCIBILITY_LEDGER B22+B23)
+      to v0.19.0; new docs/INHERITANCE_PLAN_analgesic_v2.md plans rolling the three modules out to the
+      other VP physiological packages. 54 per-disease hashes drift 0; 3 module hashes drift 0.
+
+changes since v0.17.0:
+  + 3 diseases (2 RESOLVED + 1 SUSPENDED), each independently re-deriving an APPROVED therapy
+      (for the resolved pair) against real NCBI promoter DNA. NO engine change -- every lever used
+      (replace, restrain) already existed, so all 51 prior frozen hashes untouched -> drift 0;
+      verified 3x; 54 total:
+      tetrahydrobiopterin_deficiency -> PTS enzyme/LOF; axis DOWN on the BH4 cofactor-supply throughput.
+          PTS encodes 6-pyruvoyltetrahydropterin synthase, the committed step of de novo
+          tetrahydrobiopterin (BH4) biosynthesis from GTP; LOF collapses BH4 supply. BH4 is the obligate
+          cofactor of phenylalanine, tyrosine AND tryptophan hydroxylase, so the defect yields (a)
+          hyperphenylalaninaemia -- the SAME accumulating metabolite as classic PKU but from a COFACTOR
+          lesion, not the PAH apoenzyme -- AND (b) dopamine/serotonin depletion PKU never causes. The
+          FOURTH cofactor-responsive read (after PKU's BH4, homocystinuria's B6, and the mimic lever).
+          Lead lever REPLACE the missing cofactor -- sapropterin (synthetic BH4, Kuvan, FDA 2007); the
+          elegant "one drug, two lever roles" CONTRAST to PKU, where the SAME sapropterin instead CORRECTS
+          (chaperones) residual PAH apoenzyme. Adds a monoamine-replacement arm (L-dopa+carbidopa, 5-HTP)
+          PKU does not need. chr11 11q23.1, gamma 1.4033. dwell disease 0.97786 < treated 1.24057 <
+          healthy 1.51124. file-hash 027f6f28cf59.
+      familial_mediterranean_fever -> MEFV accelerator/GOF; axis UP on the pyrin-inflammasome IL-1beta
+          drive -- the kit's THIRD autoinflammatory read and the FIRST on the PYRIN inflammasome. MEFV
+          encodes pyrin, the sensor that nucleates the pyrin inflammasome (distinct from CAPS's NLRP3
+          inflammasome); FMF B30.2/SPRY-domain alleles are functionally GAIN-of-function (the mutant
+          escapes RhoA-PKN inhibitory phosphorylation and fires at a lowered threshold) -> IL-1beta
+          over-produced -> recurrent fever with serositis, with AA amyloidosis the feared sequela. The
+          SECOND inflammasome SENSOR after NLRP3 (CAPS) but on a different inflammasome; complements the
+          IL-1-axis pair (CAPS over-production + DIRA brake-loss) with a third drive mechanism. Lead lever
+          RESTRAIN via colchicine -- the FMF first-line, concentrated by neutrophils, depolymerising
+          microtubules to suppress pyrin-inflammasome assembly: a CYTOSKELETAL/microtubule mechanism NOT
+          used in CAPS or DIRA (the distinctive new lever embodiment, still mapping to restrain by net
+          axis effect -> no code change). Second-line IL-1 blockade (canakinumab, FDA crFMF; anakinra)
+          for colchicine-resistant disease. chr16 16p13.3, gamma 1.4322. dwell[UP] healthy 1.55816 <
+          treated 1.74896 < disease 2.14247. file-hash 48561aaf4b43.
+      angelman_syndrome -> SUSPENDED (maternal imprinting / structural 15q11-q13). Loss of the
+          MATERNALLY-expressed, paternally-imprinted UBE3A allele (maternal deletion, paternal UPD,
+          imprinting-centre defect, or ~10% maternal UBE3A point mutation) -- defined by parent-of-origin-
+          specific loss across an imprinted locus, no analyzable single-gene gamma shift. The RECIPROCAL
+          imprinting hold to Prader-Willi (paternal genes of the SAME region): the kit now suspends the
+          same 15q11-q13 region from BOTH parental origins, demonstrating the suspension rule keys on the
+          LESION MECHANISM (imprinting), independent of parent-of-origin. Held per the rule (no analyzable
+          single-gene DNA -> hold). file-hash ca5088af499e.
+
+
+  + 3 diseases, each independently re-deriving an APPROVED therapy against real NCBI promoter DNA.
+      NO engine change -- every lever used (replace, restrain) already existed, so all 48 prior frozen
+      hashes untouched -> drift 0; verified 3x; 51 total:
+      niemann_pick_disease_type_a_b -> SMPD1 enzyme/LOF; axis DOWN on lysosomal sphingomyelin catabolism.
+          SMPD1 encodes acid sphingomyelinase (ASM), the lysosomal hydrolase cleaving sphingomyelin ->
+          ceramide + phosphocholine; LOF lowers that catabolic throughput -> sphingomyelin (and secondary
+          cholesterol) accumulate in macrophage/liver/spleen lysosomes (type A also neuronal). The EIGHTH
+          lysosomal-storage read, here on a SPHINGOLIPID substrate handled by enzyme replacement -- the
+          elegant "Niemann-Pick, two names, two utterly different mechanisms" CONTRAST to Niemann-Pick
+          type C (NPC1, shipped in v0.16.0): A/B is an ENZYME deficiency corrected by enzyme replacement
+          (replace), type C is a cholesterol/sphingolipid EXPORT-TRANSPORT defect corrected by substrate
+          reduction (restrain) -- same eponym, opposite defect class AND lever. Lead lever REPLACE ASM via
+          recombinant human acid sphingomyelinase -- olipudase alfa (Xenpozyme, FDA/EMA/Japan 2022); CNS
+          reach is limited (does not cross the BBB) so the type-A neurological component is not corrected
+          by it -- recorded [O], the switch DIRECTION (restore sphingomyelin catabolism) is nonetheless
+          correct. chr11 11p15.4, gamma 1.4213. dwell disease 0.99674 < treated 1.26451 < healthy 1.54041.
+          file-hash 680e1d23cff3.
+      x_linked_adrenoleukodystrophy -> ABCD1 brake/LOF; axis UP on the peroxisomal VLCFA load -- the kit's
+          FIRST PEROXISOMAL read (every prior storage read was lysosomal). ABCD1 encodes ALDP, the
+          peroxisomal-membrane ABC half-transporter that IMPORTS very-long-chain fatty acyl-CoAs into the
+          peroxisome for beta-oxidation -- the BRAKE on VLCFA accumulation; LOF blocks import -> saturated
+          VLCFA (C24:0, C26:0) accumulate -> adrenal insufficiency + cerebral demyelination /
+          adrenomyeloneuropathy. The released-brake -> over-accumulation convention (tyrosinaemia /
+          haemochromatosis / cystinosis / NPC) carried onto a new organelle: the sharp contrast is that the
+          lysosomal transport-defect reads (cystinosis CTNS, NPC1) are EXPORT defects (cargo trapped INSIDE
+          the lysosome) whereas ABCD1 is an IMPORT defect (cargo cannot ENTER the peroxisome to be
+          degraded) -- opposite transport directions on different organelles, both releasing an
+          accumulation brake. No approved small molecule lowers the CNS VLCFA burden disease-modifyingly,
+          so the lead is the switch-level RESTORE: add a functional ABCD1 gene -- elivaldogene autotemcel
+          (Skysona, FDA 2022 for early cerebral ALD), whose donor-derived microglia restore peroxisomal
+          VLCFA beta-oxidation in the CNS and arrest demyelination; net axis effect LOWERS the load ->
+          restrain-coded (the OTC / cystinosis-gene-restore convention); allogeneic HSCT the established
+          equivalent (clinical). Lorenzo's oil NORMALISES PLASMA VLCFA but does NOT modify cerebral disease
+          -> downstream/biomarker-only NON-lever (the LAL-D statin discipline). CpG-island promoter (GC
+          ~0.68), one of the deepest switches in the kit (third behind FGFR3, HTT). chrX Xq28, gamma 1.6065.
+          dwell[UP] healthy 1.85109 < treated 2.07776 < disease 2.54525. file-hash 0ab2484aba37.
+      cystinuria -> SLC3A1 + SLC7A9 brake/LOF (TWO causal genes); axis UP on the free urinary cystine
+          burden. SLC3A1 (rBAT, the heavy/chaperone subunit; type A) + SLC7A9 (b0,+AT, the catalytic light
+          subunit; type B) form the rBAT/b0,+AT brush-border transporter that REABSORBS cystine and dibasic
+          amino acids from the renal proximal tubule -- the BRAKE keeping filtered cystine out of the urine;
+          biallelic LOF of EITHER subunit disables the shared transporter -> cystine lost into the urine,
+          crystallising into recurrent cystine STONES. The THIRD two-causal-gene convergence (after HCM and
+          sitosterolaemia; the deeper switch SLC7A9, the catalytic subunit, picked as primary). The
+          explicit "CYSTINE, two diseases, two transporters" CONTRAST to cystinosis (CTNS): cystinosis is a
+          LYSOSOMAL cystine-EXPORTER defect (cystine trapped inside the lysosome, depleted in situ by the
+          aminothiol cysteamine), cystinuria is a RENAL-TUBULE cystine-REABSORBER defect (cystine lost to
+          the urine, solubilised by the thiol tiopronin) -- SAME molecule, DIFFERENT transporter, DIFFERENT
+          compartment, but a strikingly PARALLEL lever (in both a thiol converts cystine into a soluble
+          mixed disulfide). Lead lever RESTRAIN free cystine with a thiol (thiol-disulfide exchange) --
+          tiopronin (Thiola, FDA 1988; older D-penicillamine); urinary alkalinisation (potassium citrate) +
+          high fluid intake adjuncts. SLC7A9 chr19 19q13.11 gamma 1.4138 (primary) + SLC3A1 chr2 2p21 gamma
+          1.3722. dwell[UP] healthy 1.52823 < treated 1.71536 < disease 2.10132. file-hash 518d35b442f4.
+  + 4 new real NCBI promoters cached (SMPD1 1.4213 chr11; ABCD1 1.6065 chrX CpG-island; SLC3A1 1.3722 chr2;
+      SLC7A9 1.4138 chr19) -> 63 total.
+  + governance docs updated (README, HANDOFF, ROADMAP, IRREPRODUCIBILITY_LEDGER B20) to v0.17.0; 51 frozen hashes drift 0.
+
+changes since v0.15.0:
+  + 3 diseases, each independently re-deriving an APPROVED therapy against real NCBI promoter DNA.
+      NO engine change -- every lever used (potentiate, oppose, replace, restrain, correct) already
+      existed, so all 45 prior frozen hashes untouched -> drift 0; verified 3x; 48 total:
+      beta_thalassaemia -> HBB structural/LOF; axis DOWN on beta-globin output / effective erythropoiesis.
+          The deliberate SAME-LOCUS contrast to sickle cell on a DIFFERENT lesion TYPE: sickle is a
+          QUALITATIVE HBB defect (Glu6Val -> abnormal HbS polymerises), beta-thalassaemia is a QUANTITATIVE
+          HBB defect (too LITTLE normal beta-globin -> excess alpha-chain precipitation -> ineffective
+          erythropoiesis). One gene (HBB), two lesion TYPES -- the lesion-type analogue of the
+          Rett<->MECP2-duplication same-locus DIRECTION pair. Lead lever POTENTIATE terminal erythroid
+          maturation -- luspatercept (activin-receptor-IIB ligand trap, FDA 2019 / EMA 2020), the
+          DISTINCTIVE beta-thalassaemia lead NOT used in sickle cell; + oppose BCL11A / HbF re-induction
+          (exa-cel/Casgevy, the route shared with sickle) + replace HBB (betibeglogene autotemcel). Same
+          cached HBB locus as sickle -> identical gamma 1.2779 (chr11 11p15.4), different disease spec ->
+          different hash. dwell disease 0.84976 < treated 1.07805 < healthy 1.31327. file-hash 3f79b33a0710.
+      niemann_pick_disease_type_c -> NPC1 brake/LOF; axis UP on stored lysosomal lipid load -- the SEVENTH
+          lysosomal read and a TRAFFICKING/TRANSPORT defect. NPC1 is the late-endosomal/lysosomal protein
+          that (with NPC2) EXPORTS unesterified cholesterol + sphingolipids from the lysosome -- the export
+          'brake' on lysosomal accumulation; LOF -> cholesterol/glycosphingolipids/sphingosine accumulate
+          (neurovisceral disease: hepatosplenomegaly, ataxia, vertical supranuclear gaze palsy). The
+          explicit contrast both to the enzyme-replacement lysosomal reads (Gaucher/Fabry/Pompe/LIPA, a
+          missing catalyst) AND to cystinosis on a DIFFERENT cargo (cystinosis loses a cystine EXPORTER,
+          NPC loses a cholesterol/sphingolipid EXPORTER -- both transport defects corrected by lowering the
+          stored substrate, not by replacing an enzyme). Lead lever RESTRAIN via substrate reduction --
+          miglustat (glucosylceramide-synthase inhibitor, EMA-approved for NPC neurology); + arimoclomol
+          (HSP co-inducer enhancing lysosomal function, FDA 2024 for NPC, lever correct) as adjunct.
+          chr18 18q11.2, gamma 1.4553. dwell[UP] healthy 1.59601 < treated 1.79144 < disease 2.19452.
+          file-hash 05815143c222.
+      classical_homocystinuria -> CBS enzyme/LOF; axis DOWN on transsulfuration throughput -- a NEW
+          sulfur-amino-acid (methionine-homocysteine) metabolic axis. CBS (B6-dependent) commits
+          homocysteine to cysteine synthesis; LOF -> transsulfuration down, HOMOCYSTEINE accumulates
+          (ectopia lentis, marfanoid habitus, thromboembolism). The contrast to phenylketonuria's AROMATIC
+          amino-acid axis (both amino-acid enzyme/LOF with an accumulating toxic substrate, different
+          pathway). Lead lever RESTRAIN the accumulated homocysteine by an ALTERNATIVE remethylation route
+          -- betaine (methyl donor driving BHMT to remethylate homocysteine -> methionine, FDA 1996); +
+          CORRECT via the CBS cofactor pyridoxine (B6) restoring residual enzyme in the B6-responsive subset
+          (the cofactor-restore arm, analogous to BH4/sapropterin in PKU); + methionine-restricted diet.
+          chr21 21q22.3, gamma 1.4403. dwell disease 1.01679 < treated 1.28996 < healthy 1.57140.
+          file-hash 14076800cb72.
+  + 2 new real NCBI promoters cached (NPC1 1.4553 chr18; CBS 1.4403 chr21) -> 59 total. (beta-thalassaemia
+      reuses the already-cached HBB 1.2779 -- the same locus as sickle cell.)
+  + governance docs updated (README, HANDOFF, ROADMAP, IRREPRODUCIBILITY_LEDGER B19) to v0.16.0; 48 frozen hashes drift 0.
+
+changes since v0.14.0:
+  + 3 diseases, each independently re-deriving an APPROVED therapy against real NCBI promoter DNA.
+      NO engine change -- every lever used (restrain, replace) already existed, so all 42 prior frozen
+      hashes untouched -> drift 0; verified 3x; 45 total:
+      deficiency_of_il1_receptor_antagonist -> IL1RN brake/LOF; axis UP on the IL-1 signalling drive.
+          IL1RN encodes the IL-1 receptor antagonist (IL-1Ra), the secreted endogenous BRAKE that occupies
+          IL1R1 without triggering it; null/truncating LOF removes the brake -> IL-1alpha/IL-1beta signal
+          UNOPPOSED (neonatal sterile multifocal osteomyelitis, periostitis, pustulosis -- DIRA). Read on
+          the SAME inflammasome/IL-1 axis as CAPS but driven UP by a DIFFERENT lesion: CAPS = IL-1beta
+          OVER-PRODUCTION (NLRP3-GOF) vs DIRA = LOSS OF THE IL-1 BRAKE (IL1RN-LOF). Lead lever RESTRAIN
+          (net axis effect) via anakinra -- which here literally SUPPLIES the missing IL-1Ra, restoring the
+          lost brake at IL1R1; canakinumab + rilonacept alternatives. The ELEGANT "one drug (anakinra),
+          two opposite IL-1 lesions" pairing with CAPS (restrains over-produced IL-1 in CAPS, replaces the
+          absent antagonist in DIRA) -- the Wilson/Menkes & CLD/LEPR same-axis/opposite-lesion logic carried
+          onto the inflammasome axis. chr2 2q14.1, gamma 1.3702. dwell[UP] healthy 1.45809 < treated 1.63663
+          < disease 2.00487. file-hash da3d448c02d7.
+      hereditary_antithrombin_deficiency -> SERPINC1 brake/LOF; axis UP on coagulation -> thrombophilia.
+          SERPINC1 encodes antithrombin (antithrombin III), the principal plasma serpin BRAKE that
+          irreversibly inhibits thrombin (factor IIa) + factor Xa (heparin-accelerated); LOF (type I
+          quantitative / type II qualitative) under-restrains those proteases -> coagulation drive UP
+          (recurrent venous thromboembolism; homozygous quantitative loss embryonic-lethal). Read on the
+          SAME coagulation axis as haemophilia but driven the OPPOSITE way: haemophilia DOWN (missing
+          pro-coagulant -> bleeding) vs antithrombin deficiency UP (missing ANTI-coagulant brake ->
+          clotting) -- COMPLETING the coagulation axis in BOTH directions. Lead lever RESTRAIN (net axis
+          effect) via antithrombin concentrate (plasma-derived / recombinant ATryn, FDA 2009), restoring
+          the serpin brake; antithrombin-independent factor-Xa inhibitors + warfarin adjuncts (heparin
+          caveat: heparin works THROUGH antithrombin, so is relatively less effective when antithrombin is
+          deficient). The THIRD serpin read -- after A1AT (protective-LEVEL axis DOWN) and HAE/SERPING1
+          (bradykinin axis UP) -- now on the coagulation axis. chr1 1q25.1, gamma 1.3717. dwell[UP] healthy
+          1.46048 < treated 1.63932 < disease 2.00816. file-hash d94388becbd8.
+      cerebrotendinous_xanthomatosis -> CYP27A1 enzyme/LOF; axis DOWN on PRIMARY BILE-ACID SYNTHESIS --
+          a NEW bile-acid-synthesis metabolic axis. CYP27A1 encodes sterol 27-hydroxylase; LOF lowers
+          primary bile-acid synthesis throughput -> chenodeoxycholic acid (CDCA) falls, and because CDCA is
+          the strongest feedback inhibitor of cholesterol 7alpha-hydroxylase (CYP7A1) that feedback is lost,
+          DE-REPRESSING CYP7A1 and shunting flux to over-produce CHOLESTANOL + bile alcohols that accumulate
+          in brain/tendons (xanthomas)/lens (cataracts)/arteries -> CTX (juvenile cataracts, tendon xanthomas,
+          progressive neurodegeneration). Lead lever REPLACE the missing end-product via chenodeoxycholic
+          acid (chenodiol / Ctexli, FDA 2025-02-21 first US approval for CTX; CDCA-Leadiant EMA 2017) --
+          which supplies the deficient bile acid AND re-imposes CDCA feedback on CYP7A1, suppressing the
+          cholestanol-producing flux (RESTORE phase-3 withdrawal trial: cholestanol/bile-alcohol rebound on
+          CDCA withdrawal). The end-product-replacement lever is distinct from the kit's other lipid reads:
+          FH (LDL-cholesterol LEVEL axis), sitosterolaemia (sterol-ABSORPTION axis), LAL-D (lysosomal
+          neutral-lipid CATABOLISM axis). Statins/LDL-apheresis lower substrate but do not restore bile-acid
+          synthesis -> NON-levers. chr2 2q35, gamma 1.4132. dwell disease 0.98823 < treated 1.25372 <
+          healthy 1.52726. file-hash 63c4b3eba637.
+  + 3 new real NCBI promoters cached (IL1RN 1.3702 chr2; SERPINC1 1.3717 chr1; CYP27A1 1.4132 chr2) -> 57 total.
+  + governance docs updated (README, HANDOFF, ROADMAP, IRREPRODUCIBILITY_LEDGER B18) to v0.15.0; 45 frozen hashes drift 0.
+
+changes since v0.13.0:
+  + 3 diseases, each independently re-deriving an APPROVED therapy against real NCBI promoter DNA.
+      NO engine change at all -- every lever used (replace, restrain) already existed, so unlike the
+      v0.13.0 cofactor-mimic addition there is not even an additive deepening -> all 39 prior frozen
+      hashes untouched -> drift 0; verified 3x; 42 total:
+      lysosomal_acid_lipase_deficiency -> LIPA enzyme/LOF; axis DOWN on lysosomal NEUTRAL-LIPID
+          catabolism. Lysosomal acid lipase (LAL) hydrolyses the cholesteryl esters + triglycerides
+          delivered to the lysosome by LDL endocytosis; LOF lets them ACCUMULATE (Wolman / cholesteryl
+          ester storage disease). The SIXTH lysosomal-storage read (after Gaucher, A1AT-style level,
+          Fabry, Pompe, cystinosis) and the FIRST whose stored substrate is a NEUTRAL LIPID handled by
+          ENZYME REPLACEMENT -- lead lever REPLACE LAL via sebelipase alfa (recombinant human LAL, FDA/
+          EMA 2015). The explicit CONTRAST to cystinosis on the SAME organelle: a catabolic-enzyme defect
+          (enzyme replacement) vs a transport defect (small-molecule substrate-depleter). Statins/ezetimibe
+          are downstream-symptomatic NON-levers (do not restore the enzyme). chr10 10q23.31, gamma 1.4518.
+          dwell disease 1.02899 < treated 1.30544 < healthy 1.59026. file-hash 350651a115dc.
+      cryopyrin_associated_periodic_syndrome -> NLRP3 accelerator/GOF; axis UP on the NLRP3-inflammasome
+          IL-1beta drive -- the kit's FIRST inflammasome / autoinflammatory axis. CAPS GOF alleles lower
+          the inflammasome's activation threshold so it fires constitutively -> caspase-1 over-matures
+          IL-1beta -> the inflammatory drive over-shoots (FCAS / Muckle-Wells / NOMID-CINCA). Lead lever
+          RESTRAIN the over-produced signal by IL-1 BLOCKADE -- canakinumab (anti-IL-1beta mAb, FDA 2009)
+          + anakinra (IL-1 receptor antagonist) + rilonacept (IL-1 trap); selective NLRP3 inhibitors are
+          an emerging upstream restrain direction (investigational). The IL-1beta over-production CONTRAST
+          to HAE's bradykinin over-production (both axis-UP mediator floods, different mediator + lever
+          target). chr1 1q44, gamma 1.3745. dwell[UP] healthy 1.46496 < treated 1.64434 < disease 2.01431.
+          file-hash 55c6040adeb0.
+      sitosterolaemia -> ABCG5 brake/LOF + ABCG8 brake/LOF; axis UP on whole-body STEROL ABSORPTION/load
+          -- a NEW sterol-absorption axis and the SECOND two-causal-gene convergence (after HCM) where both
+          switches perturb the same axis UP. ABCG5 (sterolin-1) + ABCG8 (sterolin-2) form an obligate
+          heterodimeric sterol-efflux pump (returns plant sterols + excess cholesterol to gut lumen/bile);
+          biallelic LOF of EITHER subunit disables the same brake (the two genes even share a bidirectional
+          promoter at 2p21) -> plant sterols + cholesterol hyper-absorbed and retained (xanthomas, premature
+          atherosclerosis, stomatocytic haemolysis). Primary switch ABCG5 (gamma 1.4289, deeper barrier) over
+          ABCG8 (gamma 1.4226). Lead lever RESTRAIN the absorption axis via ezetimibe, which inhibits NPC1L1
+          (the brush-border sterol-uptake transporter UPSTREAM of the broken efflux pump) -- the upstream-
+          restraint logic (OTC/AIP/PH1), cutting absorption so the load falls. The explicit CONTRAST to
+          familial hypercholesterolaemia: FH is an LDL-cholesterol LEVEL axis (LDLR LOF/PCSK9 GOF, axis DOWN/
+          oppose-PCSK9), this is a sterol-ABSORPTION axis (axis UP/restrain-absorption). Statins are poorly
+          matched here (the lesion is absorption, not synthesis) -> NON-lever; diet + bile-acid sequestrant
+          are adjuncts. chr2 2p21 (both), gamma ABCG5 1.4289 / ABCG8 1.4226. dwell[UP] healthy 1.55278 <
+          treated 1.74292 < disease 2.13507. file-hash af251632345f.
+  + 6 new real NCBI promoters cached (LIPA 1.4518 chr10; NLRP3 1.3745 chr1; ABCG5 1.4289 chr2; ABCG8 1.4226
+      chr2 -- the four causal switches; IL1B 1.3412 chr2 -- the CAPS IL-1-blockade target context gene;
+      NPC1L1 1.4819 chr7 -- the sitosterolaemia ezetimibe-target context gene) -> 54 total.
+  + IRREPRODUCIBILITY_LEDGER B17 added (sixth lysosomal-storage read on a neutral-lipid substrate via enzyme
+      replacement, the cystinosis-transporter contrast; first inflammasome/autoinflammatory axis with the
+      HAE-bradykinin over-production contrast; a new sterol-absorption axis on a two-causal-gene convergence
+      with the FH level-axis contrast). NO new [O] hold class.
+  + governance docs (README / HANDOFF / ROADMAP / VERSION) bumped to v0.14.0; next candidate set proposed
+      for the following session (see HANDOFF section 4 / ROADMAP section 2).
+
+changes since v0.12.0:
+  + 3 diseases, each independently re-deriving an APPROVED (or established-clinical) therapy against
+      real NCBI promoter DNA. ONE small, purely ADDITIVE engine deepening (the cofactor-MIMIC lever);
+      the axis-UP and axis-DOWN dwell branches and every existing lever are byte-identical -> all 36
+      prior frozen hashes untouched -> drift 0; verified 3x:
+      menkes_disease -> ATP7A accelerator/LOF; axis DOWN on systemic/CNS COPPER DELIVERY. ATP7A is the
+          P-type copper ATPase that DRIVES dietary copper out of the gut into the body and across the
+          blood-brain barrier; LOF loses that drive -> systemic/CNS copper DEFICIENCY (cuproenzymes
+          fail). The EXACT CONTRAST to Wilson's copper: a sibling P-type copper ATPase (ATP7A vs ATP7B),
+          the SAME metal, the OPPOSITE sign AND the OPPOSITE lever -- Wilson is copper axis UP /
+          restrain-chelate, Menkes is copper axis DOWN / REPLACE-copper. Lead lever supplies copper
+          downstream of the broken transporter: parenteral copper-histidine (copper histidinate). HONEST
+          status: copper-histidine is a long-standing clinical / orphan therapy (Sarkar lineage), NOT a
+          conventional small-molecule approval, with partial, genotype-/timing-dependent benefit (the
+          blood-brain-barrier ATP7A defect limits CNS rescue) -- held status 'clinical', efficacy [O].
+          ATP7A restore (gene therapy) investigational. chrX Xq21.1, gamma 1.3072 (AT-leaning; beside its
+          Wilson sibling ATP7B 1.3642). dwell disease 0.87915 < treated 1.11534 < healthy 1.35869.
+          file-hash 0c64de39739d.
+      sod1_amyotrophic_lateral_sclerosis -> SOD1 brake/GOF; axis DOWN on MOTOR-NEURON survival/function,
+          read as a TOXIC species to REMOVE. The ALS-causing SOD1 variants act by a toxic misfolding/
+          aggregation GAIN (not loss of dismutase activity; Bruijn 1998), so they are read with the HTT/
+          TTR proteinopathy pattern -- an over-active pathological BRAKE suppressing motor-neuron function
+          (brake/GOF -> axis DOWN). Lead lever reduce SOD1 via tofersen (SOD1 antisense oligonucleotide,
+          FDA 2023, the first genetically targeted ALS therapy) -- the toxic-aggregate "reduce the poison"
+          read (HTT, TTR) carried onto MOTOR NEURONS, and the toxic-GOF contrast to SMA's structural-LOF on
+          the SAME cell type (SMA restores SMN; SOD1-ALS removes SOD1). C9orf72-repeat and sporadic ALS are
+          outside this single-gene SOD1 read. chr21 21q22.11, gamma 1.4443. dwell disease 1.02103 < treated
+          1.29533 < healthy 1.57795. file-hash 2b6f242e6bdb.
+      haemophilia_a -> F8 accelerator/LOF; axis DOWN on the coagulation cascade, COMPLETING the coagulation
+          A/B pair with haemophilia B (F9 protease vs this F8 cofactor of the same intrinsic-tenase step).
+          Factor VIII is the non-enzymatic cofactor (FVIIIa) that partners FIXa to activate factor X; LOF
+          loses the drive -> haemostasis under-driven -> bleeding (axis DOWN). Introduces the kit's FIRST
+          cofactor-MIMIC lever class: emicizumab, a bispecific antibody that bridges FIXa and factor X --
+          performing factor VIIIa's FUNCTION WITHOUT being factor VIII, so it works even past neutralising
+          anti-FVIII inhibitors -- distinct from 'replace' (same molecule) and 'correct' (rescue the native
+          protein). The established direction-consistent arms are co-derived: AAV F8 gene transfer
+          (valoctocogene roxaparvovec, the first approved haemophilia A gene therapy) and factor VIII
+          protein replacement. chrX Xq28, gamma 1.3155 (AT-leaning; above its haemophilia-B partner F9
+          1.2627). dwell disease 0.88754 < treated 1.12598 < healthy 1.37165. file-hash 3d5a61c84d46.
+  + ENGINE DEEPENING (additive, drift-0-safe): pipeline/treatment_switch.py LEVER_AXIS_SIGN gains
+      "mimic": +1 -- a DIFFERENT molecule performing the missing element's FUNCTION (vs 'replace' = the
+      same molecule). No prior disease uses it, so every frozen artifact is byte-identical -> all 36 prior
+      hashes drift 0 (the v0.4.0 axis-UP-branch deepening convention: deepen the engine only in a way that
+      leaves existing outputs untouched). The locked dwell form gamma^1.5/(K+brake) is unchanged; engine
+      self-test green.
+  + 3 new real NCBI promoters cached (ATP7A 1.3072 chrX; SOD1 1.4443 chr21; F8 1.3155 chrX) -> 48 total.
+  + IRREPRODUCIBILITY_LEDGER B16 added (copper-DEFICIENCY contrast to Wilson via the lost-accelerator
+      convention -- same metal, opposite sign and opposite lever; toxic-GOF proteinopathy carried onto
+      motor neurons with the SMA structural-LOF same-cell contrast; the coagulation A/B pair completion and
+      the new cofactor-mimic lever class).
+  + governance docs (README / HANDOFF / ROADMAP / VERSION) bumped to v0.13.0; next candidate set proposed
+      for the following session (see HANDOFF section 4 / ROADMAP section 2).
+
+changes since v0.11.0:
+  + 3 diseases, each opening a NEW lever class / axis class and independently re-deriving an APPROVED
+      therapy against real NCBI promoter DNA (NO engine change; axis-UP and axis-DOWN dwell branches
+      byte-identical -> all 33 prior frozen hashes untouched -> drift 0; verified 3x):
+      cystinosis -> CTNS brake/LOF; axis UP on intra-lysosomal CYSTINE. Cystinosin is the lysosomal
+          cystine EXPORTER (the brake on cystine accumulation); biallelic LOF releases it -> cystine
+          crystallises inside lysosomes -> axis UP. The FIFTH lysosomal-storage read but the FIRST with
+          a SMALL-MOLECULE SUBSTRATE-DEPLETER lead lever (a new lysosomal lever class): cysteamine
+          (Cystagon/Procysbi) converts the stored cystine to cysteine + a cysteine-cysteamine mixed
+          disulfide that exit via intact carriers -- depleting the substrate in situ WITHOUT restoring
+          the transporter (vs the enzyme-replacement Gaucher/Fabry/Pompe reads). CTNS gene restore
+          (autologous HSPC, investigational) is restrain-coded by net axis effect. chr17 17p13.2, gamma
+          1.5178 (GC-rich; one of the higher gamma in the kit). dwell[UP] healthy 1.69992 < treated
+          1.90808 < disease 2.33739. file-hash 58a99928b4f8.
+      alkaptonuria -> HGD brake/LOF; axis UP on homogentisic acid (HGA -> ochronosis). HGD clears HGA
+          in tyrosine catabolism; LOF releases the brake -> HGA accumulates -> axis UP. Re-derives the
+          SAME upstream-block lever already shipped for tyrosinaemia type 1: nitisinone inhibits the
+          UPSTREAM enzyme HPD so HGA is never formed (EMA-approved for AKU 2020) -- a clean "ONE
+          upstream-block lever (restrain HPD / nitisinone), TWO diseases (tyrosinaemia AND alkaptonuria)"
+          demonstration, because HPD lies upstream of BOTH the HGD lesion and the FAH lesion. HGD restore
+          restrain-coded, investigational. chr3 3q13.33, gamma 1.3343 (AT-leaning). dwell[UP] healthy
+          1.40116 < treated 1.57273 < disease 1.92659. file-hash cbd4b03f1e25.
+      haemophilia_b -> F9 accelerator/LOF; axis DOWN on the COAGULATION CASCADE -- the kit's FIRST
+          haemostasis axis. Factor IX (activated FIXa) drives the intrinsic-tenase activation of factor
+          X; X-linked LOF loses the procoagulant drive -> haemostasis under-driven -> bleeding -> axis
+          DOWN. Re-derives gene-restore-as-lead: etranacogene dezaparvovec (Hemgenix, liver-directed
+          AAV5 F9-Padua, the first approved haemophilia B gene therapy, FDA 2022 / EMA 2023), extending
+          the RPE65/LCA2 and DDC/AADC gene-restore reads onto clotting; recombinant/EHL factor IX protein
+          replacement recorded as a co-equal approved replace arm. X-linked penetrance held [O] (B10
+          inheritance); the 'haemophilia B Leyden' F9-promoter androgen-responsive variants are a separate
+          regulatory class, noted not modelled. chrX Xq27.1, gamma 1.2627 (AT-rich; second-lowest gamma in
+          the kit, above DMD 1.2388). dwell disease 0.83464 < treated 1.05888 < healthy 1.28990.
+          file-hash 571470df71ae.
+  + 3 new real NCBI promoters cached (CTNS 1.5178 chr17; HGD 1.3343 chr3; F9 1.2627 chrX) -> 45 total.
+  + IRREPRODUCIBILITY_LEDGER B15 added (substrate-depleter lysosomal lever class; one-upstream-block-lever
+      two-diseases; first coagulation axis as gene-restore-as-lead).
+  + governance docs (README / HANDOFF / ROADMAP / VERSION) bumped to v0.12.0; next candidate set
+      proposed for the following session (see HANDOFF section 4 / ROADMAP section 2).
+
+changes since v0.10.0 (kept for history):
+  + 3 diseases, each opening a NEW axis/contrast class and independently re-deriving an APPROVED
+      therapy against real NCBI promoter DNA (NO engine change; the axis-UP and axis-DOWN dwell
+      branches are byte-identical -> all 30 prior frozen hashes are untouched -> drift 0; verified 2x):
+      hereditary_haemochromatosis_type_1 -> HFE brake/LOF; axis UP on a NEW metal-ion metabolite
+          (systemic IRON). HFE is required to induce hepcidin (HAMP), the master brake on iron entry;
+          biallelic LOF (C282Y) leaves hepcidin inappropriately low -> ferroportin unrestrained ->
+          iron accumulates -> iron axis UP. The EXACT CONTRAST to Wilson's copper: a second toxic-metal
+          overload on a different metal AND a different brake, and a different MODALITY -- Wilson's lead
+          corrective is a chelating DRUG, this one's lead corrective is physical REMOVAL (therapeutic
+          phlebotomy / venesection, established first-line) + iron chelation (deferoxamine/deferasirox/
+          deferiprone, second-line) + restore the hepcidin brake (hepcidin-mimetic / mini-hepcidin,
+          investigational, switch-level). chr6 6p22.2, gamma 1.3474 (AT-leaning). dwell[UP] healthy
+          1.42184 < treated 1.59595 < disease 1.95504. sha (frozen) 37f68f73fe3c.
+      leptin_receptor_deficiency -> LEPR accelerator/LOF; axis DOWN on the SAME hormone-signalling
+          cascade as congenital leptin deficiency, but the RECEPTOR side. LEPR transduces the leptin
+          satiety signal; biallelic LOF leaves it unable to signal DESPITE high circulating leptin ->
+          satiety axis DOWN. The KEY CONTRAST: replacing the LIGAND does NOT work (leptin present), so
+          the lead is a DOWNSTREAM BYPASS -- the MC4R agonist setmelanotide (FDA 2020 / EMA 2021,
+          approved for LEPR / POMC / PCSK1 deficiency) drives the node below the broken receptor. This
+          completes the ligand-replace (CLD / metreleptin) vs receptor-bypass (LEPR / setmelanotide)
+          pair the CLD entry named. Switch-level restore of LEPR is investigational; metreleptin is
+          deliberately NOT a lever here. chr1 1p31.3, gamma 1.4554 (sits beside the LEP ligand's 1.4627).
+          dwell disease 1.03282 < treated 1.31029 < healthy 1.59618. sha (frozen) 4ed226434e20.
+      aadc_deficiency -> DDC enzyme/LOF; axis DOWN on a monoamine-neurotransmitter-synthesis axis
+          (dopamine / serotonin). AADC decarboxylates L-DOPA->dopamine and 5-HTP->serotonin; LOF
+          collapses both -> a deficiency-driven neurodevelopmental/neurodegeneration. The honest
+          CONTRAST to Friedreich ataxia: FRDA's approved lead is downstream-only (omaveloxolone),
+          whereas HERE the approved lead is the SWITCH-LEVEL gene restore -- eladocagene exuparvovec
+          (AAV2-hAADC into the putamen; Kebilidi FDA Nov 2024, the first US gene therapy delivered
+          directly into the brain; Upstaza EMA 2022). The gene-restore-IS-the-lead read (like RPE65/
+          LCA2's voretigene) on a neurometabolic axis. B6/PLP cofactor + dopamine-agonist/MAO-B-inhibitor
+          support are downstream-symptomatic NON-levers. chr7 7p12.2, gamma 1.3688; founder splice
+          IVS6+4A>T outside the promoter firewall. dwell disease 0.94202 < treated 1.19510 < healthy
+          1.45585. sha (frozen) 8b28d89b3ce8.
+  + 3 new real NCBI promoters cached (HFE 1.3474 chr6; LEPR 1.4554 chr1; DDC 1.3688 chr7) -> 42 total.
+  + IRREPRODUCIBILITY_LEDGER B14 added (iron as a 2nd toxic-metal overload via the released-brake
+      convention -- the copper contrast in metal AND modality; receptor-side hormone-axis-DOWN with a
+      downstream-bypass approved lead completing the ligand/receptor pair; gene-restore-as-the-approved-
+      lead deficiency neurodegeneration as the FRDA downstream-only contrast).
+  + governance docs (README / HANDOFF / ROADMAP / VERSION) bumped to v0.11.0; next candidate set
+      proposed for the following session (see HANDOFF section 4 / ROADMAP section 2).
+
+changes since v0.9.0 (kept for history):
+  + 3 diseases, each opening a NEW metabolite/axis class and independently re-deriving an APPROVED
+      drug against real NCBI promoter DNA (NO engine change; the axis-DOWN and axis-UP dwell branches
+      are byte-identical -> all 27 prior frozen hashes are untouched -> drift 0; verified 3x):
+      familial_chylomicronaemia_syndrome -> LPL brake/LOF; axis UP on a NEW LIPID metabolite
+          (plasma triglyceride). LPL is the endothelial enzyme that CLEARS triglyceride -- the brake on
+          circulating TG; biallelic loss releases it so chylomicrons accumulate -> TG axis UP. chr8
+          8p21.3, gamma 1.3322 (AT-leaning; the lowest-GC new promoter). The released-brake ->
+          over-accumulation pattern (tyrosinaemia/porphyria/OTC) carried onto a LIPID axis, and the
+          OPPOSITE mode to FH (LDL-cholesterol level-restore, axis DOWN). Lead lever RESTRAINS APOC3
+          (apolipoprotein C-III is an endogenous LPL INHIBITOR; lowering it DE-REPRESSES LPL and
+          restores TG clearance) -- olezarsen (APOC3 ASO, FDA 2024 / EMA 2025, first therapy approved
+          specifically for FCS) + volanesorsen (APOC3 ASO, EMA 2019) + plozasiran (APOC3 siRNA,
+          clinical) + restore LPL (gene therapy; alipogene tiparvovec was the first Western gene therapy,
+          EMA 2012, since withdrawn -- restrain-coded by NET axis effect, the OTC convention). Diet/
+          fibrates recorded as supportive NON-levers. dwell[UP] healthy 1.39785 < treated 1.56902 <
+          disease 1.92205. sha (frozen) 1354674c81d1.
+      friedreich_ataxia -> FXN accelerator/LOF; axis DOWN (frataxin / mitochondrial Fe-S cluster
+          biogenesis deficiency -> under-driven oxidative phosphorylation -> spinocerebellar/sensory
+          ataxia + hypertrophic cardiomyopathy). chr9 9q21.11, gamma 1.4416. A DEFICIENCY-driven
+          neurodegeneration -- the CONTRAST to the toxic-aggregate neurodegenerations (Huntington HTT
+          GOF, TTR amyloid) where a toxic species is REMOVED; here a lost function is RESTORED. Lead
+          (approved) lever is DOWNSTREAM: omaveloxolone (Nrf2/NFE2L2 activator, FDA 2023 / EMA 2024,
+          first disease-modifying drug for FRDA) raises the antioxidant/mitochondrial gene programme but
+          does NOT restore frataxin -- the Rett/trofinetide downstream-agent discipline (approved,
+          corrective-direction, symptomatic, not the switch). The SWITCH-LEVEL lever REPLACES frataxin
+          (AAV-FXN gene therapy / frataxin protein/mRNA, investigational); dimethyl fumarate recorded as
+          a downstream repurposing candidate. The intron-1 GAA repeat is a structural/epigenetic lesion
+          outside the promoter firewall. dwell disease 1.01817 < treated 1.29170 < healthy 1.57353.
+          sha (frozen) 77d1da0a7c2b.
+      congenital_leptin_deficiency -> LEP accelerator/LOF; axis DOWN on a HORMONE axis (leptin is the
+          adipostat satiety hormone driving hypothalamic LEPR->POMC->MC4R satiety; biallelic loss removes
+          the drive -> hyperphagia + severe early-onset obesity). chr7 7q32.1, gamma 1.4627. The EXACT
+          CONTRAST PARTNER to XLH: XLH is a hormone axis UP (FGF23 over-produced -> RESTRAIN, burosumab),
+          this is a hormone axis DOWN (leptin under-produced -> REPLACE). Lead lever REPLACES the hormone:
+          metreleptin (recombinant human leptin, FDA 2014 / EMA 2018; the established treatment for
+          congenital leptin deficiency, re-deriving Farooqi 1999). The downstream MC4R agonist
+          setmelanotide is named as the therapy for the RECEPTOR-deficient sibling genotypes (LEPR / POMC
+          / PCSK1 deficiency), NOT for LEP-ligand deficiency -- a distinct boundary, not folded in.
+          dwell disease 1.04060 < treated 1.32016 < healthy 1.60820. sha (frozen) de59a0600b5c.
+  + 4 new real NCBI promoters cached (LPL 1.3322 chr8; APOC3 1.4688 chr11; FXN 1.4416 chr9;
+      LEP 1.4627 chr7) -> 39 total. (APOC3 is the FCS therapeutic-target context gene; LPL/FXN/LEP are
+      the three new causal switches.)
+  + IRREPRODUCIBILITY_LEDGER B13 added (lipid-metabolite axis via the released-brake convention;
+      deficiency-driven neurodegeneration with a downstream-only approved lead; hormone-axis-DOWN/replace
+      as the sign-contrast to XLH's hormone-axis-UP/restrain).
+  + governance docs (README / HANDOFF / ROADMAP / VERSION) bumped to v0.10.0; next candidate set
+      proposed for the following session (see HANDOFF section 4 / ROADMAP section 2).
+
+changes since v0.8.0 (kept for history):
+  + 3 diseases (hypophosphatasia / ALPL enzyme-LOF axis DOWN -> asfotase alfa; leber_congenital_amaurosis_2
+      / RPE65 enzyme-LOF axis DOWN -> voretigene neparvovec, gene-restore IS the lead; hypertrophic_
+      cardiomyopathy / MYH7 GOF + MYBPC3 LOF, first MECHANICAL/contractile axis UP -> mavacamten),
+      no engine change, 24 prior hashes drift 0. + 4 NCBI promoters (ALPL/RPE65/MYH7/MYBPC3 -> 35).
+      IRREPRODUCIBILITY_LEDGER B12 added.
+
+changes since v0.7.0 (kept for history):
+  + 3 diseases (ornithine_transcarbamylase_deficiency / OTC brake-LOF axis UP urea-cycle -> nitrogen
+      scavengers; x_linked_hypophosphataemia / PHEX brake-LOF axis UP HORMONE -> burosumab; pompe_disease
+      / GAA enzyme-LOF axis DOWN 4th lysosomal-storage -> enzyme replacement), no engine change, 21 prior
+      hashes drift 0. + 3 NCBI promoters (OTC/PHEX/GAA). IRREPRODUCIBILITY_LEDGER B11 added.
+
+changes since v0.6.0 (kept for history):
+  + 1 disease (fabry_disease / GLA enzyme-LOF axis DOWN, Gaucher lysosomal pattern -> enzyme replacement
+      + migalastat chaperone), no engine change, 20 prior hashes drift 0. + 1 NCBI promoter (GLA).
+      IRREPRODUCIBILITY_LEDGER B10 added (X-linked zygosity/X-inactivation note).
+
+changes in v0.6.0 (kept for history):
+  + 2 diseases (primary_hyperoxaluria_type_1 / AGXT brake-LOF axis UP -> lumasiran upstream restraint;
+      hereditary_angioedema / SERPING1 brake-LOF axis UP bradykinin -> kallikrein inhibitors + C1-INH),
+      no engine change, 18 prior hashes drift 0. + 2 NCBI promoters (AGXT/SERPING1). Ledger B8 + B9 added.
+
+changes in v0.5.0 (kept for history):
+  + 2 diseases (transthyretin_amyloidosis / TTR brake-GOF axis DOWN aggregate -> TTR silencers + tafamidis;
+      acute_intermittent_porphyria / HMBS brake-LOF axis UP -> givosiran upstream restraint), no engine
+      change, 12+4 prior hashes drift 0. + 2 NCBI promoters (TTR/HMBS).
+
+changes in v0.4.0 (kept for history):
+  + ENGINE DEEPENING: emerge_switch_states AXIS-AWARE (added the axis-UP over-shoot branch; the locked
+      dwell form is unchanged; the DOWN path is byte-identical -> 12 prior hashes drift 0).
+  + 4 diseases (alpha1_antitrypsin_deficiency; hereditary_tyrosinaemia_type_1 -> nitisinone; wilson_disease
+      -> chelation; mecp2_duplication_syndrome -> MECP2-lowering ASO, the opposite-direction read of Rett).
+  + 3 NCBI promoters (SERPINA1/FAH/ATP7B). Ledger B3 extended + B7 added.
+
+reproduce: python3 repro/run_all.py   (offline; engine self-test + emerge+treat all + gates + determinism freeze)
+grades: [V] verified reproducible | [F] forced (locked rule + cited biology) | [O] open | [CAL] external input

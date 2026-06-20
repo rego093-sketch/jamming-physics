@@ -1,0 +1,157 @@
+{
+ "disease": "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I)",
+ "omim": "607014",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I)",
+  "omim": "607014",
+  "summary": "IDUA encodes the lysosomal exoglycosidase alpha-L-iduronidase, which removes terminal alpha-L-iduronic-acid residues during the stepwise degradation of the glycosaminoglycans DERMATAN SULFATE and HEPARAN SULFATE. Loss-of-function halts that catabolic step -> progressive lysosomal GAG accumulation across many tissues: dysostosis multiplex, corneal clouding, hepatosplenomegaly, cardiac valve disease, airway disease, and -- in severe Hurler -- progressive neurocognitive decline. Lysosomal GAG-catabolism axis DOWN.",
+  "emergent_axis": "lysosomal glycosaminoglycan (dermatan/heparan-sulfate) catabolic throughput",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "IDUA",
+    "gamma": 1.4522,
+    "spinodal_h_sp": 0.67358,
+    "barrier": 0.52722,
+    "dwell_relative_size": 1.59091,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000004.12",
+     "gene_start": 986996,
+     "gene_end": 1004563,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "alpha-L-iduronidase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "alpha-L-iduronidase hydrolyses terminal alpha-L-iduronic acid on dermatan/heparan sulfate; LOF blocks GAG degradation -> lysosomal storage. Severe null alleles (e.g. p.Trp402Ter, p.Gln70Ter -- common in northern-European Hurler) abolish activity (Hurler); attenuated alleles retain residual activity (Hurler-Scheie / Scheie). The classic catabolic-enzyme deficiency-with-substrate-accumulation shape.",
+    "src": "Scott 1991 PNAS 88:9695 (IDUA cloning); Neufeld & Muenzer 2001 (MMBID, MPS overview)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "IDUA",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "492e0df1cfd3"
+ },
+ "treatment_A_switch": {
+  "disease": "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "IDUA",
+    "push_direction": "supply functional alpha-L-iduronidase to RESTORE the deficient lysosomal GAG-degradation step (raise the catabolic throughput back toward normal) -> reduced somatic dermatan/heparan-sulfate storage; net axis effect UP toward function (DIRECT, on the causal enzyme).",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme replacement therapy (laronidase, recombinant human alpha-L-iduronidase)",
+    "status": "approved",
+    "mechanism_grade": "[O] substrate-clearance fraction / dose / infusion regimen not asserted. Approved (laronidase / Aldurazyme) for the non-CNS manifestations of MPS I. IMPORTANT honest limit: the recombinant enzyme does NOT cross the blood-brain barrier, so the CNS / neurocognitive disease of severe Hurler is NOT addressed by systemic ERT -- a documented gap, magnitude/CNS-reach [O].",
+    "src": "Wraith 2004 J Pediatr 144:581 (laronidase phase 3); Aldurazyme FDA 2003"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "IDUA",
+    "push_direction": "restore endogenous alpha-L-iduronidase by haematopoietic reconstitution: enzyme-secreting donor-derived cells cross-correct host tissues, and (unlike systemic ERT) engrafted donor microglia provide some CNS enzyme when given early in severe Hurler -> durable somatic and partial CNS GAG clearance; net axis effect UP.",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "allogeneic haematopoietic stem-cell transplantation (HSCT; standard of care for early severe Hurler) + ex-vivo autologous IDUA gene-corrected HSC therapy (investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] engraftment, enzyme level and the degree/timing of CNS protection are clinical outcomes not derived from sequence; HSCT is established standard for early severe MPS I but is a procedure with its own risks, not a drug approval, and its CNS benefit is partial and age-dependent -- [O].",
+    "src": "Aldenhoven 2015 Blood 125:2164 (HSCT outcomes in Hurler)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "IDUA",
+   "push_direction": "supply functional alpha-L-iduronidase to RESTORE the deficient lysosomal GAG-degradation step (raise the catabolic throughput back toward normal) -> reduced somatic dermatan/heparan-sulfate storage; net axis effect UP toward function (DIRECT, on the causal enzyme).",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme replacement therapy (laronidase, recombinant human alpha-L-iduronidase)",
+   "status": "approved",
+   "mechanism_grade": "[O] substrate-clearance fraction / dose / infusion regimen not asserted. Approved (laronidase / Aldurazyme) for the non-CNS manifestations of MPS I. IMPORTANT honest limit: the recombinant enzyme does NOT cross the blood-brain barrier, so the CNS / neurocognitive disease of severe Hurler is NOT addressed by systemic ERT -- a documented gap, magnitude/CNS-reach [O].",
+   "src": "Wraith 2004 J Pediatr 144:581 (laronidase phase 3); Aldurazyme FDA 2003"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.59091,
+   "dwell_disease": 1.02942,
+   "dwell_treated": 1.30597,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "00868fc7b2e1"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "IDUA loss-of-function moves the lysosomal GAG-catabolism axis DOWN (dermatan/heparan-sulfate accumulate)",
+   "falsifier": "an IDUA LOF allele that LOWERS tissue / urinary GAG (i.e. raises catabolic throughput) refutes the axis-DOWN direction",
+   "measurable_by": "leukocyte/fibroblast alpha-L-iduronidase activity and urinary dermatan/heparan-sulfate GAG quantification, stratified by IDUA genotype"
+  },
+  {
+   "claim": "enzyme replacement is the CORRECTIVE direction (raises the deficient catabolic throughput)",
+   "falsifier": "if laronidase raised rather than reduced tissue/urinary GAG storage the 'replace' lever sign is wrong",
+   "measurable_by": "urinary GAG and liver/spleen-volume response to laronidase infusion"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "e2f0ada79f4a"
+ },
+ "determinism_sha": "07e6769b9450"
+}

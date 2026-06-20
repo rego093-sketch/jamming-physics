@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spermatogenic cycle (T4) &mdash; Reproductive Endocrine &sect;6 | Jamming Physics</title>
+<meta name="description" content="T4: the seminiferous (spermatogenic) cycle as a third relaxation clock from the same substrate, intermediate between the GnRH pulse and the menstrual cycle; the three periods order correctly.">
+<link rel="canonical" href="https://jamming-physics.org/reproductive_endocrine/06-spermatogenic-cycle/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Spermatogenic cycle (T4) &mdash; Reproductive Endocrine &sect;6 | Jamming Physics"><meta property="og:description" content="T4: the seminiferous (spermatogenic) cycle as a third relaxation clock from the same substrate, intermediate between the GnRH pulse and the menstrual cycle; the three periods order correctly."><meta property="og:url" content="https://jamming-physics.org/reproductive_endocrine/06-spermatogenic-cycle/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Spermatogenic cycle (T4) &mdash; Reproductive Endocrine &sect;6 | Jamming Physics"><meta name="twitter:description" content="T4: the seminiferous (spermatogenic) cycle as a third relaxation clock from the same substrate, intermediate between the GnRH pulse and the menstrual cycle; the three periods order correctly.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Spermatogenic cycle (T4)", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Reproductive Endocrine", "sameAs": "https://jamming-physics.org/reproductive_endocrine/"}, "position": 6, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/06-spermatogenic-cycle/", "knowsAbout": ["seminiferous epithelium", "spermatogenic cycle", "relaxation oscillator", "period ordering", "recovery timescale"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Reproductive Endocrine", "item": "https://jamming-physics.org/reproductive_endocrine/"}, {"@type": "ListItem", "position": 3, "name": "§6 Spermatogenic cycle"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="../">Reproductive Endocrine</a> &rsaquo; &sect;6</nav></header>
+<main>
+<h1>The spermatogenic cycle is a third, intermediate relaxation clock (T4)</h1>
+
+<p class="answer">The seminiferous (spermatogenic) cycle is a third relaxation oscillator from the same substrate, intermediate between the minute-scale GnRH pulse and the ~28-day menstrual cycle. At &tau;<sub>s</sub>=340 (the measured 16:28-day ratio) the three clocks come out in the correct order: pulse 132.4 &lt; spermatogenic 656.5 &lt; menstrual 1133.7. The ~16-day period is a measured anchor; the ordering is the sim-verified claim.</p>
+
+<p class="abstract">Changing only the recovery timescale to &tau;<sub>s</sub>=340 &mdash; set from the clinical 16:28-day ratio applied to the menstrual &tau;<sub>s</sub>, not tuned &mdash; yields a relaxation oscillator with period 656.5 (arb). The three reproductive clocks then satisfy pulse &lt; spermatogenic &lt; menstrual from one kernel, with no parameter chosen to hit a target.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] sim-verified</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/" rel="noopener">reproduction code (GitHub)</a>
+  <a class="doi" href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">DOI 10.5281/zenodo.20754657</a>
+</aside>
+
+
+
+<h2>One kernel, a third timescale</h2>
+<p>The human seminiferous epithelial cycle is about 16 days &mdash; between the minute-scale GnRH pulse and the 28-day menstrual cycle. The structural claim is that the same R19/FHN substrate gives a third relaxation oscillator by changing only the slow recovery timescale &tau;<sub>s</sub>; nothing else in the kernel changes.</p>
+<p>&tau;<sub>s</sub> is fixed at 340 from the measured period ratio 16:28 applied to the menstrual timescale the previous chapter locked. That makes the <em>period</em> a measured anchor [L]; no parameter is fitted to an output.</p>
+<h2>The three clocks order correctly</h2>
+<p>Read off the same substrate at the three locked recovery timescales, the periods come out in the right order &mdash; the package&rsquo;s [V] claim is the ordering, not the magnitudes.</p>
+<table>
+<thead><tr><th>clock</th><th>recovery &tau;<sub>s</sub></th><th>period (arb)</th><th>clinical anchor</th></tr></thead>
+<tbody><tr><td>GnRH pulse (T1)</td><td>60</td><td>132.4</td><td>~1 / 90 min [L]</td></tr><tr><td>spermatogenic (T4)</td><td>340</td><td>656.5</td><td>~16 d [L]</td></tr><tr><td>menstrual (T2)</td><td>600</td><td>1133.7</td><td>~28 d [L]</td></tr></tbody>
+</table>
+<p class="note">pulse &lt; spermatogenic &lt; menstrual holds exactly, so the substrate reproduces the qualitative timescale separation of the three reproductive clocks from a single mechanism.</p>
+
+<nav class="pn">
+  <a rel="prev" href="../05-oestrogen-feedback-switch/">&larr; &sect;5</a>
+  <a href="../">paper contents</a>
+  <a rel="next" href="../07-puberty-spinodal-crossing/">&sect;7 &rarr;</a>
+</nav>
+</main>
+<footer><strong>Reproductive Endocrine</strong> &mdash; part of the VP Theory programme (<a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">jamming branch</a>). Author <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">Young Jae Lee</a> (ORCID). DOI: <a href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">10.5281/zenodo.20754657</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Living version: <a href="https://jamming-physics.org/reproductive_endocrine/">jamming-physics.org/reproductive_endocrine/</a>. Research package; falsifiable, deterministic, honestly graded &mdash; not clinical advice.</footer>
+</body>
+</html>

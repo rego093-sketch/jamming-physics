@@ -1,0 +1,170 @@
+{
+ "disease": "Hereditary haemochromatosis type 1 (HFE-related)",
+ "omim": "235200",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hereditary haemochromatosis type 1 (HFE-related)",
+  "omim": "235200",
+  "summary": "A single-gene HFE loss-of-function. HFE is required for iron-sensing hepatocytes to induce hepcidin (HAMP), the master peptide BRAKE on iron entry to plasma -- hepcidin degrades ferroportin, the iron exporter on enterocytes and macrophages. With HFE LOF (classically homozygous p.Cys282Tyr / C282Y), hepcidin is inappropriately LOW for the body's iron load -> ferroportin is not restrained -> dietary iron absorption and macrophage iron release run unchecked -> iron ACCUMULATES in liver, heart, pancreas, joints, pituitary and skin -> the iron burden is driven UP. Read as a released BRAKE on iron accumulation (HFE -> hepcidin brakes iron entry; LOF releases it -> iron UP) -- the released-brake -> over-accumulation convention (tyrosinaemia / porphyria / OTC / FCS) carried onto a NEW metal-ion metabolite, IRON, and the EXACT CONTRAST to Wilson disease (copper accumulation via the ATP7B export brake): a second toxic-metal overload, but on a different metal and a different brake. The kit re-derives the corrective direction, which REMOVES iron rather than restoring HFE: therapeutic phlebotomy (venesection) is the established first-line and bleeds off the iron burden directly; iron chelation (deferoxamine / deferasirox / deferiprone) removes iron pharmacologically where phlebotomy is not tolerated; and the SWITCH-LEVEL lever RESTORES the released brake -- hepcidin replacement / hepcidin-mimetic (mini-hepcidin) agents are investigational. The contrast to Wilson is also in MODALITY: Wilson's lead corrective is a chelating DRUG, this one's lead corrective is a physical REMOVAL (phlebotomy). The gamma read is of the HFE locus switch STRUCTURE; the disease lesion is coding (C282Y; H63D), outside the promoter firewall. Non-HFE hereditary iron-overload genes (HJV / HAMP / TFR2 juvenile and type-2/3 forms, SLC40A1 ferroportin disease) are distinct loci outside this HFE read. Magnitude [O].",
+  "emergent_axis": "systemic iron burden (hepatic / cardiac / endocrine parenchymal iron accumulation) -- a metal-ion metabolite axis; the iron contrast to Wilson's copper",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "HFE",
+    "gamma": 1.3474,
+    "spinodal_h_sp": 0.602,
+    "barrier": 0.45387,
+    "dwell_relative_size": 1.42184,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000006.12",
+     "gene_start": 26087428,
+     "gene_end": 26098342,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "homeostatic iron regulator"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "HFE (high-Fe) is an MHC-class-I-like protein that, with transferrin receptors, lets hepatocytes sense iron and INDUCE hepcidin (HAMP) -- hepcidin is the master BRAKE on iron entry to plasma (it degrades the exporter ferroportin). HFE LOF blunts hepcidin induction -> the brake is RELEASED -> ferroportin runs unchecked -> dietary iron absorption and macrophage iron release rise -> systemic iron ACCUMULATES (toxic parenchymal overload). The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the IRON BURDEN (it goes UP), so the corrective levers LOWER it. 6p22.2 (OMIM 613609). NCBI official symbol HFE. Autosomal recessive; incomplete penetrance. Coding lesions (C282Y; H63D).",
+    "src": "Feder 1996 Nat Genet 13:399 (HFE / HLA-H identified in hereditary haemochromatosis); Pietrangelo 2010 NEJM 363:2383 (HFE-hepcidin-ferroportin axis)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "HFE",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "73f38507b169"
+ },
+ "treatment_A_switch": {
+  "disease": "Hereditary haemochromatosis type 1 (HFE-related)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "iron",
+    "push_direction": "remove iron from the body by venesection -> lower the systemic iron burden directly (bypasses the HFE/hepcidin defect); the established first-line standard",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "therapeutic phlebotomy / venesection (physical iron removal)",
+    "status": "approved",
+    "mechanism_grade": "[O] de-ironing schedule / endpoint not derived from sequence; established standard-of-care procedure, not a drug",
+    "src": "EASL 2010 / AASLD haemochromatosis guidelines (phlebotomy first-line to a ferritin target)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "iron",
+    "push_direction": "chelate iron to promote its excretion -> lower the iron burden where phlebotomy is poorly tolerated / contraindicated",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "iron chelator (deferoxamine / deferasirox / deferiprone)",
+    "status": "approved",
+    "mechanism_grade": "[O] iron-clearance magnitude not derived from sequence; approved for iron overload, second-line in HFE-HH",
+    "src": "deferoxamine / deferasirox / deferiprone approved for chronic iron overload"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "HAMP",
+    "push_direction": "restore / mimic the hepcidin brake -> re-restrain ferroportin -> lower iron absorption and the burden (definitive, switch-level)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "hepcidin replacement / hepcidin-mimetic (mini-hepcidin) (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-brake magnitude not derived from sequence; investigational",
+    "src": "Casu 2018 Blood (mini-hepcidins / hepcidin-mimetics in iron-overload models)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "iron",
+   "push_direction": "remove iron from the body by venesection -> lower the systemic iron burden directly (bypasses the HFE/hepcidin defect); the established first-line standard",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "therapeutic phlebotomy / venesection (physical iron removal)",
+   "status": "approved",
+   "mechanism_grade": "[O] de-ironing schedule / endpoint not derived from sequence; established standard-of-care procedure, not a drug",
+   "src": "EASL 2010 / AASLD haemochromatosis guidelines (phlebotomy first-line to a ferritin target)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.42184,
+   "dwell_disease": 1.95504,
+   "dwell_treated": 1.59595,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "2bd36f29519a"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "HFE LOF (released brake -> low hepcidin) raises the systemic iron burden (axis UP)",
+   "falsifier": "an HFE null allele that LOWERED transferrin saturation / hepatic iron, or that RAISED hepcidin, would refute the released-brake direction",
+   "measurable_by": "serum hepcidin, transferrin saturation, serum ferritin and hepatic iron concentration (MRI R2*/biopsy) stratified by HFE genotype"
+  },
+  {
+   "claim": "removing iron (phlebotomy / chelation) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if iron removal RAISED or failed to lower serum/tissue iron and its sequelae, the restrain-iron lever sign is wrong",
+   "measurable_by": "ferritin / transferrin-saturation / hepatic-iron response to a phlebotomy or chelation schedule"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hereditary haemochromatosis type 1 (HFE-related)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "bf4ee1457c08"
+ },
+ "determinism_sha": "c39c05c47ca7"
+}

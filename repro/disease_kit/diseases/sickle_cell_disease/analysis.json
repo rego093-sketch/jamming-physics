@@ -1,0 +1,168 @@
+{
+ "disease": "Sickle cell disease",
+ "omim": "603903",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Sickle cell disease",
+  "omim": "603903",
+  "summary": "A single recurrent HBB coding substitution (Glu6Val) makes adult haemoglobin polymerise when deoxygenated (HbS), so the supply of FUNCTIONAL non-sickling haemoglobin is effectively reduced. The lesion is qualitative (a coding missense, not a promoter change); the promoter switch-threshold read here is of the beta-globin LOCUS structure, and the disease direction (functional-Hb axis DOWN) is forced by the loss-of-FUNCTION biology of HbS.",
+  "emergent_axis": "supply of functional non-sickling (adult/fetal) haemoglobin",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "HBB",
+    "gamma": 1.2779,
+    "spinodal_h_sp": 0.55602,
+    "barrier": 0.40826,
+    "dwell_relative_size": 1.31327,
+    "role": "structural",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "structural element deficient -> tissue integrity reduced",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 5225463,
+     "gene_end": 5227070,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "hemoglobin subunit beta"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "beta-globin subunit of the haemoglobin tetramer; Glu6Val (HbS) is expressed at normal level but is dysfunctional (polymerises on deoxygenation) -> qualitative/FUNCTIONAL loss of normal adult haemoglobin. The promoter gamma reads the locus switch STRUCTURE only; it does not encode the coding lesion (firewall).",
+    "src": "Ingram 1957 Nature 180:326; Pauling 1949 Science 110:543"
+   }
+  ],
+  "primary_switch": {
+   "gene": "HBB",
+   "role": "structural",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "structural element deficient -> tissue integrity reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "483af33b8cfe"
+ },
+ "treatment_A_switch": {
+  "disease": "Sickle cell disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "oppose",
+    "target_gene": "BCL11A",
+    "push_direction": "disrupt the BCL11A erythroid enhancer -> de-repress HBG -> re-induce fetal haemoglobin (HbF), which OPPOSES HbS polymerisation and restores functional Hb",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "BCL11A erythroid-enhancer disruption (exagamglogene autotemcel / exa-cel)",
+    "status": "approved",
+    "mechanism_grade": "[O] HbF induction magnitude / polymerisation suppression not derived from sequence",
+    "src": "Frangoul 2021 NEJM 384:252; exa-cel (Casgevy) FDA/EMA 2023"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "HBB",
+    "push_direction": "add a functional anti-sickling beta-globin gene -> supply non-sickling adult haemoglobin",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "beta-globin gene addition (lovotibeglogene autotemcel / lovo-cel)",
+    "status": "approved",
+    "mechanism_grade": "[O] transduced functional-Hb fraction not derived from sequence",
+    "src": "Kanter 2022 NEJM 386:617; lovo-cel (Lyfgenia) FDA 2023"
+   },
+   {
+    "lever": "oppose",
+    "target_gene": "HBG1",
+    "push_direction": "pharmacologically raise fetal haemoglobin to oppose HbS polymerisation",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HbF inducer (hydroxyurea)",
+    "status": "approved",
+    "mechanism_grade": "[O] hydroxyurea HbF-induction mechanism partly debated; magnitude not derived",
+    "src": "Charache 1995 NEJM 332:1317; hydroxyurea FDA 1998"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "oppose",
+   "target_gene": "BCL11A",
+   "push_direction": "disrupt the BCL11A erythroid enhancer -> de-repress HBG -> re-induce fetal haemoglobin (HbF), which OPPOSES HbS polymerisation and restores functional Hb",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "BCL11A erythroid-enhancer disruption (exagamglogene autotemcel / exa-cel)",
+   "status": "approved",
+   "mechanism_grade": "[O] HbF induction magnitude / polymerisation suppression not derived from sequence",
+   "src": "Frangoul 2021 NEJM 384:252; exa-cel (Casgevy) FDA/EMA 2023"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.31327,
+   "dwell_disease": 0.84976,
+   "dwell_treated": 1.07805,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "fb9aabc33851"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "HBB Glu6Val (functional LOF) lowers the supply of functional non-sickling haemoglobin",
+   "falsifier": "an HbS context in which polymerisation INCREASES functional oxygen-carrying capacity, or an HBB allele where HbS raises functional adult Hb, refutes the functional-loss direction",
+   "measurable_by": "HbS polymerisation / functional haemoglobin fraction by genotype"
+  },
+  {
+   "claim": "re-inducing fetal haemoglobin (oppose BCL11A) is the CORRECTIVE direction",
+   "falsifier": "if reducing BCL11A LOWERED fetal haemoglobin or WORSENED sickling, the 'oppose BCL11A' lever sign is wrong",
+   "measurable_by": "fetal-haemoglobin fraction and sickling response to BCL11A enhancer disruption in erythroid cells"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Sickle cell disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "da46e5e88dab"
+ },
+ "determinism_sha": "beb2af038424"
+}

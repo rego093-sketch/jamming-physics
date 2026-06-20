@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix L — VP Theory §AXL | Jamming Physics</title>
+<meta name="description" content="This appendix provides an interpretive dictionary that links familiar macroscopic phase language (solid–liquid–gas) to the discrete jamming language already">
+<link rel="canonical" href="https://jamming-physics.org/physics/axl-4-3-1-state-dictionary/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix L — VP Theory §AXL | Jamming Physics"><meta property="og:description" content="This appendix provides an interpretive dictionary that links familiar macroscopic phase language (solid–liquid–gas) to the discrete jamming language already"><meta property="og:url" content="https://jamming-physics.org/physics/axl-4-3-1-state-dictionary/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix L — VP Theory §AXL | Jamming Physics"><meta name="twitter:description" content="This appendix provides an interpretive dictionary that links familiar macroscopic phase language (solid–liquid–gas) to the discrete jamming language already">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix L",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXL",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXL Appendix L"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXL</nav></header>
+<main>
+<h1>Appendix L: A 4-3-1 State Dictionary for Jamming-Regime Unification (Interpretive Module; NON-LOCK)</h1>
+<p class="answer">Appendix L: This appendix provides an interpretive dictionary that links familiar macroscopic phase language (solid–liquid–gas) to the discrete jamming language already defined in the main text (jammed lattice, failure-rate fluidity φ, and unjamming events).</p>
+<p class="abstract" data-phase2="abstract">This appendix provides an interpretive dictionary that links familiar macroscopic phase language (solid–liquid–gas) to the discrete jamming language already defined in the main text (jammed lattice, failure-rate fluidity φ, and unjamming events). It is intended to improve conceptual closure and reader navigation; it does not introduce new axioms, and it is not used as an input to any locked numerical derivation. Hence N_bond=2 is not a stable regime, but a transient.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axl-4-3-1-state-dictionary/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<span id="app:state_dictionary_431"></span>
+<h2>L.0 Scope (what this appendix is, and is not)</h2>
+<p>This appendix provides an <em>interpretive dictionary</em> that links familiar macroscopic phase language
+(solid–liquid–gas) to the discrete jamming language already defined in the main text
+(jammed lattice, failure-rate fluidity φ, and unjamming events).  It is intended to improve
+<em>conceptual closure</em> and reader navigation; it does <strong>not</strong> introduce new axioms, and it is
+<strong>not</strong> used as an input to any locked numerical derivation.</p>
+<h2>L.1 The 4-3-1 dictionary (connectivity as a regime label)</h2>
+<p>To avoid symbol collision with electrical impedance Z used elsewhere (e.g., Appendix J),
+we denote the effective number of load-bearing bridges (an effective coordination count)
+by N_bond.</p>
+<div class="tblwrap">
+<table><tr><td><strong>State code</strong></td><td>N_bond</td><td><strong>Macroscopic analogy</strong></td><td><strong>VP regime interpretation (this whitepaper)</strong></td></tr><tr><td>4</td><td>gtrsim 4</td><td>Solid (e.g., ice): shape preserved, high stiffness</td><td><strong>Jammed lattice / space-like regime.</strong>
+χ_ST=1, φ ≈ 0; supports coherent wave propagation (“vacuum as a stiff lattice”).</td></tr><tr><td>3</td><td>≈ 3</td><td>Liquid: persistent rearrangement / flow</td><td><strong>Near-jammed / flowing regime.</strong>
+χ_ST intermittently fails; φ is nonzero due to repeated local unjamming events (structural failure-rate).</td></tr><tr><td>1</td><td>lesssim 1</td><td>Gas / chaotic dispersion</td><td><strong>Unjammed / released-carrier regime.</strong>
+Connectivity is insufficient to maintain a load-bearing enclosure; degrees of freedom behave as free carriers or high-entropy excitations.</td></tr><tr><td>2</td><td>=2</td><td>(line-like)</td><td><strong>Geometrically unstable in 3D enclosure.</strong>
+A two-bridge configuration cannot enclose volume; it collapses toward State 1 or re-jams toward State 3/4 (see §L.3).</td></tr></table>
+<strong>The 4-3-1 state dictionary.</strong> The state code is a compact label for a connectivity regime.
+It is a reader-facing <em>dictionary</em> that maps macroscopic intuition onto the already-defined VP jamming vocabulary.
+<span id="tab:AppL_431_dictionary"></span>
+</div>
+<h2>L.2 Energetics as “cost of unjamming” (a minimal staircase model)</h2>
+<p>Let ε_bond>0 denote an effective binding (jamming) energy per load-bearing bridge.
+Then a minimal coarse-grained energy bookkeeping can be written as</p>
+<figure class="eq" id="eq:AppL_energy_staircase"><img src="/physics/eq/physics/phy-axl-000.svg" data-eq="phy-axl-000" width="224" height="16" loading="lazy" alt="\begin{equation} E_{\mathrm{tot}} \;\equiv\; E_{\mathrm{kin}} \;-\; N_{\mathrm{bond}}\,\epsilon_{\mathrm{bond}}, \end{equation}"></figure>
+<p>where the potential well is represented by -N_bondε_bond.
+In this language, “energy” acts as a <em>key</em> that pays the unjamming cost:</p>
+<figure class="eq" id="eq:AppL_unjam_cost"><img src="/physics/eq/physics/phy-axl-001.svg" data-eq="phy-axl-001" width="346" height="26" loading="lazy" alt="\begin{equation} \Delta E_{4\rightarrow 1} \;\approx\; \bigl(N_{\mathrm{bond}}^{(4)} - N_{\mathrm{bond}}^{(1)}\bigr)\epsilon_{\mathrm{bond}} \;+\; \Delta E_{\mathrm{kin}}. \end{equation}"></figure>
+<p>Conversely, when the system re-jams (cooling / relaxation), the same amount of energy must be released as an effective
+<em>latent heat of re-jamming</em> (an energy budget associated with restoring connectivity).</p>
+<h2>L.3 Why “State 2” is forbidden (geometric enclosure failure)</h2>
+<p>A key reason the 4-3-1 labeling is useful is that it highlights a geometric constraint:
+a two-bridge configuration is line-like and cannot provide a closed enclosure in 3D.
+In the 2D cross-section language used in the main text, enclosing a core point requires at least
+three vectors (a minimum three-sector closure).  Two vectors remain collinear and therefore cannot
+trap a region; four vectors are redundant.  Hence N_bond=2 is not a stable regime, but a transient.</p>
+<h2>L.4 Relation to fluidity φ (failure-rate view)</h2>
+<p>In §3.2.1, fluidity was defined as a <em>failure rate</em> (fraction of unjamming events in a window).
+The 4-3-1 dictionary can be read as a coarse mapping between connectivity and failure-rate:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axl-002.svg" data-eq="phy-axl-002" width="405" height="17" loading="lazy" alt="\begin{equation} \text{State 4: }\phi\!\approx\!0,\quad \text{State 3: }0\!&lt;\!\phi\!&lt;\!1,\quad \text{State 1: }\phi\!\rightarrow\!1, \end{equation}"></figure>
+<p>with the understanding that φ is protocol- and window-dependent, and must always be reported as
+φ(P;W;χ_ST) (see the main definition).</p>
+<h2>L.5 “Light is gas-like” without contradiction (medium vs excitation)</h2>
+<p>The statement “light is gas-like” can be made consistent if we distinguish the <em>background regime</em>
+from the <em>excitation statistics</em>.
+In VP language, the <em>background</em> vacuum is State 4 (a jammed stiff lattice) that supports coherent propagation.
+On top of that background, radiation can still be treated as a high-entropy excitation ensemble
+(photon-gas-like statistics), which is exactly what appears in the Planck form derived from
+rigidity-shell filtering (see the blackbody derivation).</p>
+<h2>L.6 Link to the acoustic calibration module</h2>
+<p>Appendix K provides a classical calibration: the same “continuous wave → discrete scale” logic
+applied to air acoustics reproduces a realistic mean-free-path scale.  The purpose is methodological:
+it demonstrates that the reconstruction pipeline is not unique to VP, before applying it to the vacuum lattice scale.</p>
+<h2>L.7 Energy–volume exchange (cosmic “metabolism” as a gate-defined hypothesis)</h2>
+<p>If one models the release of a discrete volume quantum V_VP as an unjamming work cost,
+the dimensionally consistent form is an effective pressure (energy density) scale:</p>
+<figure class="eq" id="eq:AppL_energy_volume_pressure"><img src="/physics/eq/physics/phy-axl-003.svg" data-eq="phy-axl-003" width="161" height="18" loading="lazy" alt="\begin{equation} E_{\mathrm{unjam}} \;\equiv\; P_{\mathrm{jam}}\,V_{\mathrm{VP}}, \end{equation}"></figure>
+<p>where P_jam is a jamming pressure scale.  One may then express a <em>gate-defined</em> hypothesis:
+when an input energy packet exceeds a threshold (set by P_jamV_VP under the declared protocol),
+a local unjamming event occurs and an unjammed VP quantum is released.
+This statement is intentionally placed in a NON-LOCK appendix: it is interpretive until an explicit measurement
+or simulation gate is satisfied.</p>
+
+<div class="c">
+<hr/><br/>
+<strong>Part II</strong><br/>
+<strong>Reviewer Companion</strong><br/>
+AI-Reviewer-Facing Manual: Doubt Trails, Epistemic Audit, Meta-Lessons<br/>
+<hr/>
+</div>
+<blockquote>
+<strong>What Part II is.</strong> The academic body (Part I, §W through Appendix K) presents <em>what</em> this framework derives and <em>why</em> its derivations close under a single anchor. Part II is the companion volume in the same binding: the answer-key, the doubt-trail manual, and the epistemic audit log accumulated across versions v25–v40 of the framework. It is intentionally addressed to a different reader: not someone learning the results, but someone <em>evaluating</em> them. The full version-by-version reclassification record is consolidated in the <a href="/physics/vh-appendix-version-history-reclassification-log/#app:versionhistory" class="xref" data-ref="app:versionhistory">version-history appendix</a>.
+<strong>Reading routes.</strong>
+<ul>
+<li> A first-pass reviewer (human or AI) who finishes Part I and asks "is this just numerology?" should read Part II.4 (Anticipated Objections) and Part II.5 (Falsification Criteria).
+<li> A reviewer who wants to verify reproducibility should read Part II.2 (Provenance Ledger) and Part II.8 (the 5-line Python check).
+<li> A reviewer interested in the framework's intellectual history (what was tried, what failed, what closed) should read Part II.6 (Bedrock Trail v6–v8) and Part II.7 (Epistemic Audit Log v25–v40).
+<li> A future contributor extending the framework should read Part II.10 (Meta-Lessons).
+</ul>
+<strong>Why one document and not two.</strong> Earlier versions kept Part I (the whitepaper) and Part II (the supplement) as separate Zenodo records. The cross-document policy created management friction (two DOIs, two compile chains, two translation surfaces, drift risk). Version 0.2.0 retires that split: the supplement is absorbed verbatim (translated and lightly restructured) as Part II of this document. Same DOI, same language, single source of truth.
+</blockquote>
+<nav class="pn"><a rel="prev" href="/physics/axk-methodological-validation-via-classical-gas/">← §AXK</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/ov-overview-pointers-canonical-treatments/">§OV →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

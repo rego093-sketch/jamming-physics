@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muscle Fatigue as Reversible Decline &mdash; Musculoskeletal Emergence &sect;6 | Jamming Physics</title>
+<meta name="description" content="Muscle fatigue is a reversible relaxation. Sustained maximal drive loads a slow adaptation variable that suppresses force, giving a monotone exponential...">
+<link rel="canonical" href="https://jamming-physics.org/musculoskeletal/06-muscle-fatigue-reversible-decline/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Muscle Fatigue as Reversible Decline &mdash; Musculoskeletal Emergence &sect;6 | Jamming Physics"><meta property="og:description" content="Muscle fatigue is a reversible relaxation. Sustained maximal drive loads a slow adaptation variable that suppresses force, giving a monotone exponential..."><meta property="og:url" content="https://jamming-physics.org/musculoskeletal/06-muscle-fatigue-reversible-decline/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Muscle Fatigue as Reversible Decline &mdash; Musculoskeletal Emergence &sect;6 | Jamming Physics"><meta name="twitter:description" content="Muscle fatigue is a reversible relaxation. Sustained maximal drive loads a slow adaptation variable that suppresses force, giving a monotone exponential...">
+<link rel="stylesheet" href="/musculoskeletal/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Muscle Fatigue as Reversible Decline",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "Musculoskeletal Emergence: Muscle Actuation, Cartilage and Bone as Load-Bearing Jammed Matter",
+  "url": "https://jamming-physics.org/musculoskeletal/"
+ },
+ "position": 6,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "datePublished": "2026-06-19",
+ "dateModified": "2026-06-19",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/musculoskeletal/",
+ "identifier": {
+  "@type": "PropertyValue",
+  "propertyID": "DOI",
+  "value": "10.5281/zenodo.20755760"
+ },
+ "sameAs": "https://doi.org/10.5281/zenodo.20755760",
+ "knowsAbout": [
+  "jamming lattice",
+  "R19 bistable switch",
+  "load-bearing contact number",
+  "Wolff's law",
+  "force-frequency",
+  "master-gene gamma"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Musculoskeletal Emergence",
+   "item": "https://jamming-physics.org/musculoskeletal/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§6 Muscle Fatigue as Reversible Decline"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/musculoskeletal/">Musculoskeletal Emergence</a> &rsaquo; &sect;6</nav></header>
+<main>
+<h1>Muscle Fatigue as a Reversible Exponential Decline</h1>
+<p class="answer">Muscle fatigue is a reversible relaxation. Sustained maximal drive loads a slow adaptation variable that suppresses force, giving a monotone exponential decline to a plateau (here a 52% loss) with time constant 59.75&nbsp;s, inside the cited band 20&ndash;120&nbsp;s. Rest recovers force to 97% &mdash; shape and reversibility verified [V], time constant cited [L].</p>
+<p class="abstract">Under continuous drive the force follows F = 1 &minus; depth&middot;(1 &minus; e<sup>&minus;t/&tau;</sup>), declining monotonically by 52% with a recovered time constant of 59.75&nbsp;s (cited band 20&ndash;120&nbsp;s); on rest it returns to 97% of baseline. A log-linear round-trip recovers the input &tau; across the physiological band. Decline magnitude is left open [O].</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] verified</span><span class="gate">LOCK &rarr; Derive &rarr; Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/musculoskeletal/" rel="noopener">reproduction code (GitHub)</a><a class="doi" href="https://doi.org/10.5281/zenodo.20755760" rel="noopener">DOI: 10.5281/zenodo.20755760 (concept)</a></aside>
+<aside class="vp-card" data-locked="gamma_MYOD1"><b>&gamma;(MYOD1) = 1.4933</b> &mdash; master-gene composition &gamma; = &minus;mean nearest-neighbour stacking &Delta;G&#8323;&#8327; (SantaLucia 1998) over the skeletal_muscle proximal promoter; a read-only MEASURED input, never fitted. <b>[V]</b> verified (measured). <a href="https://jamming-physics.org/dna/" rel="noopener">canonical derivation: 4D DNA Blueprint</a></aside>
+<h2>A slow variable that gives way</h2><p>Fatigue here is not damage; it is a reversible relaxation of a slow adaptation variable &phi; that accumulates under sustained drive and relaxes at rest. Force is suppressed in proportion to &phi;, so a maintained maximal contraction produces a monotone exponential decline toward a plateau: F = 1 &minus; depth&middot;(1 &minus; e<sup>&minus;t/&tau;</sup>).</p><p>The simulated decline loses 52% of force with a time constant of 59.75&nbsp;s, inside the cited sustained-MVC band 20&ndash;120&nbsp;s. Removing the drive lets &phi; relax and force recovers to 97% of baseline &mdash; the defining signature that this is fatigue, not injury.</p><h2>Faithful, not fitted</h2><p>A log-linear round-trip on the simulated curve recovers the input time constant across the whole physiological band (25, 60, 110&nbsp;s in &rarr; the same out), confirming the integrator is faithful and the constant is genuinely the cited one, not tuned. The reversible exponential SHAPE and recovery are verified [V]; the time constant is cited (Bigland-Ritchie) [L]; the absolute force-loss MAGNITUDE is not fixed by the substrate and is graded [O].</p>
+<nav class="pn"><a rel="prev" href="https://jamming-physics.org/musculoskeletal/05-growth-plate-ordering-gamma-rank/">&larr; &sect;5 Growth-Plate Ordering by Gamma Rank</a><a href="https://jamming-physics.org/musculoskeletal/">contents</a><a rel="next" href="https://jamming-physics.org/musculoskeletal/07-carcinogen-dose-response-bone-soft/">&sect;7 Carcinogen Dose-Response in Bone and Soft Tissue &rarr;</a></nav>
+</main>
+<footer>Young Jae Lee &middot; <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener author">ORCID 0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a> &middot; <a href="https://doi.org/10.5281/zenodo.20755760" rel="noopener">DOI: 10.5281/zenodo.20755760 (concept)</a></footer>
+</body>
+</html>

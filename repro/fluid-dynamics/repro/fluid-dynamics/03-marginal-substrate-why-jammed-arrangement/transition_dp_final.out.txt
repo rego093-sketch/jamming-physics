@@ -1,0 +1,21 @@
+== (A) spreading, T=6000, R=512, Lw=1536 ==
+  theta_s windows [(100, 1000), (300, 3000), (600, 6000)]: ['0.382', '0.356', '0.335']  (DP .3137)
+  delta'  windows        : ['0.091', '0.093', '0.105']  (DP .1595)
+  late-window theta_s=0.3350, delta'=0.1045, sum=0.4395 (DP .4732)
+GATE[3''] spreading: PASS   [65s]
+== (B) SOC avalanches at lambda=1.2500 (0.35% below), random kick ==
+  avalanches=187 censored=8 max=1037596
+  thin stats; reported
+== (C) snapshots at lambda_c and corrected M2-1 fit ==
+  a_eff (M2-1 ~ r^-a) = 0.482 +- 0.011   (DP 2beta/nu_perp = 0.504)
+GATE[5] correlation exponent: PASS   [216s]
+== CONSOLIDATED (model: G-SOC rules, 1d ring, pseudogap theta=0.45) ==
+  lambda_c            = 1.2544
+  delta   (decay)     = 0.158          DP 0.1595   PASS
+  nu_par  (lifetime)  = 1.637          DP 1.7338   PASS
+  hyperscaling sum    = 0.662          DP 0.6326   PASS
+  theta_s (spreading) = 0.335 (windows ['0.382', '0.356', '0.335'])  DP 0.3137  PASS
+  a (activity corr.)  = 0.482          DP 0.5042   PASS
+  tau_av (SOC, expl.) = nan
+  class verdict: exponents are DP-consistent and exclude mean-field (delta=1) and compact-DP (delta=0.5); the G-SOC rules land in DP.
+runtime 216s

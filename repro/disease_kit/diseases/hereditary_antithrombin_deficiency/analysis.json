@@ -1,0 +1,170 @@
+{
+ "disease": "Hereditary antithrombin deficiency (antithrombin III deficiency / thrombophilia type 7)",
+ "omim": "613118",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hereditary antithrombin deficiency (antithrombin III deficiency / thrombophilia type 7)",
+  "omim": "613118",
+  "summary": "A single-gene SERPINC1 loss-of-function. SERPINC1 encodes antithrombin (antithrombin III), the principal plasma serpin BRAKE on the coagulation cascade: it forms irreversible 1:1 complexes with thrombin (factor IIa) and factor Xa (and IXa/XIa), an inhibition massively accelerated by heparin/heparan-sulfate. SERPINC1 LOF lowers functional antithrombin (type I quantitative deficiency) or yields a dysfunctional molecule (type II qualitative: reactive-site, heparin-binding, or pleiotropic variants), so thrombin and factor Xa are under-restrained -> the coagulation drive is pushed UP, giving heritable thrombophilia: recurrent venous thromboembolism, often early-onset, and pregnancy-associated thrombosis (homozygous complete deficiency is essentially embryonic-lethal, consistent with antithrombin being an essential brake). This is read on the kit's coagulation axis -- the SAME axis as haemophilia but driven the OPPOSITE way: haemophilia is the coagulation axis DOWN (a missing pro-coagulant cofactor/protease -> BLEEDING), antithrombin deficiency is the coagulation axis UP (a missing ANTI-coagulant brake -> CLOTTING). As a released brake the axis goes UP and the corrective direction is to RESTRAIN coagulation. The kit re-derives the approved restrain arm: antithrombin concentrate (plasma-derived, or recombinant antithrombin) -- which SUPPLIES the deficient serpin, restoring the brake on thrombin/factor Xa -- used for high-risk windows (surgery, delivery) on a background of therapeutic anticoagulation. Note the heparin caveat: heparin works by POTENTIATING antithrombin, so it is relatively less effective when antithrombin itself is deficient -- a reason the lead is to restore antithrombin and to use anticoagulants that act independently of it. Recorded as the THIRD serpin read in the kit -- after alpha-1-antitrypsin (SERPINA1, a protective-LEVEL axis DOWN: too little protease inhibitor) and hereditary angioedema (SERPING1/C1-INH, a bradykinin OVER-production axis UP) -- now completing the COAGULATION axis in BOTH directions (haemophilia DOWN vs antithrombin deficiency UP). The gamma read is of the SERPINC1 locus switch STRUCTURE; the disease lesions are coding/structural (missense at the reactive site or heparin-binding domain, plus null alleles), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "coagulation-cascade restraint (antithrombin / SERPINC1 inhibition of thrombin + factor Xa; LOF -> under-restrained coagulation -> hypercoagulability / thrombophilia) -- the coagulation axis read as a released brake",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SERPINC1",
+    "gamma": 1.3717,
+    "spinodal_h_sp": 0.61835,
+    "barrier": 0.47039,
+    "dwell_relative_size": 1.46048,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 173903799,
+     "gene_end": 173917326,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "serpin family C member 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SERPINC1 encodes antithrombin (antithrombin III), the major plasma serpin that irreversibly inhibits thrombin (factor IIa) and factor Xa (also IXa/XIa) -- the principal endogenous BRAKE on coagulation, with its inhibitory rate hugely accelerated by heparin binding. Deficiency alleles are loss-of-function: type I (quantitative, reduced antithrombin) or type II (qualitative -- reactive-site, heparin-binding-site, or pleiotropic defects). Either way the brake on thrombin/Xa is weakened -> the coagulation drive is pushed UP -> thrombophilia. As a RELEASED BRAKE the pathological axis goes UP and the corrective levers LOWER it. Autosomal dominant for the heterozygous thrombophilia (homozygous quantitative deficiency is embryonic-lethal), 1q25.1 (OMIM 107300). NCBI official symbol SERPINC1. The promoter gamma reads the locus switch STRUCTURE only; the reactive-site/heparin-binding missense and null lesions are outside the promoter firewall.",
+    "src": "Egeberg 1965 Thromb Diath Haemorrh 13:516 (inherited antithrombin deficiency and thrombophilia); Olds 1994 Blood 84:1031 (SERPINC1 mutation spectrum); Bock 1982 (antithrombin III cDNA)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SERPINC1",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "979bc2a7d064"
+ },
+ "treatment_A_switch": {
+  "disease": "Hereditary antithrombin deficiency (antithrombin III deficiency / thrombophilia type 7)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "F2",
+    "push_direction": "supply antithrombin concentrate (replacing the deficient serpin) to restore inhibition of thrombin and factor Xa -> re-impose the coagulation brake -> lower the coagulation drive (net axis effect DOWN toward healthy)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "antithrombin concentrate (plasma-derived / recombinant antithrombin)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of antithrombin restoration / thrombin-Xa inhibition not derived from sequence",
+    "src": "Recombinant antithrombin (ATryn) FDA 2009 / plasma-derived antithrombin (Thrombate III); peri-operative/peripartum use in hereditary antithrombin deficiency"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "F10",
+    "push_direction": "block factor Xa directly with an oral anticoagulant (independent of antithrombin) -> lower the coagulation drive; an antithrombin-independent restrain arm preferred because heparin, which works THROUGH antithrombin, is relatively less effective when antithrombin is deficient",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "direct factor Xa inhibitor (e.g. rivaroxaban / apixaban)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of anticoagulation not derived from sequence",
+    "src": "EINSTEIN/AMPLIFY DOAC programmes (factor Xa inhibition in venous thromboembolism); antithrombin-independent mechanism"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "F2",
+    "push_direction": "lower the vitamin-K-dependent procoagulant factors (II, VII, IX, X) with a vitamin-K antagonist -> reduce the coagulation drive (long-term secondary prevention)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "vitamin-K antagonist (warfarin)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree/target-INR of anticoagulation not derived from sequence",
+    "src": "Long-standing anticoagulation for inherited thrombophilia / recurrent VTE"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "F2",
+   "push_direction": "supply antithrombin concentrate (replacing the deficient serpin) to restore inhibition of thrombin and factor Xa -> re-impose the coagulation brake -> lower the coagulation drive (net axis effect DOWN toward healthy)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "antithrombin concentrate (plasma-derived / recombinant antithrombin)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of antithrombin restoration / thrombin-Xa inhibition not derived from sequence",
+   "src": "Recombinant antithrombin (ATryn) FDA 2009 / plasma-derived antithrombin (Thrombate III); peri-operative/peripartum use in hereditary antithrombin deficiency"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.46048,
+   "dwell_disease": 2.00816,
+   "dwell_treated": 1.63932,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "f64db55c2c04"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SERPINC1 LOF (loss of the antithrombin brake) raises coagulation drive (axis UP -> thrombophilia)",
+   "falsifier": "a SERPINC1 LOF allele that LOWERED thrombin/factor-Xa activity or REDUCED thrombosis risk would refute the released-brake direction",
+   "measurable_by": "functional antithrombin activity and thrombin-/factor-Xa-generation assays in carriers vs controls, and the epidemiological venous-thromboembolism risk associated with antithrombin deficiency"
+  },
+  {
+   "claim": "restraining coagulation (restoring antithrombin / anticoagulation) is the CORRECTIVE direction",
+   "falsifier": "if supplying antithrombin concentrate or anticoagulating RAISED thrombin generation or thrombosis, the restrain lever sign is wrong",
+   "measurable_by": "thrombin-generation / anti-Xa response and clinical thrombosis incidence on antithrombin replacement plus anticoagulation in hereditary antithrombin deficiency"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hereditary antithrombin deficiency (antithrombin III deficiency / thrombophilia type 7)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "500a885ede84"
+ },
+ "determinism_sha": "2eaf813d23a6"
+}

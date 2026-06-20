@@ -1,0 +1,157 @@
+{
+ "disease": "Spinal muscular atrophy (5q SMA)",
+ "omim": "253300",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Spinal muscular atrophy (5q SMA)",
+  "omim": "253300",
+  "summary": "Loss-of-function of SMN1 lowers full-length SMN protein, the housekeeping factor for spliceosomal snRNP assembly, and motor neurons are selectively vulnerable to the deficit. The near-identical paralog SMN2 makes mostly exon-7-skipped (truncated) SMN, so promoting SMN2 exon-7 inclusion or replacing SMN1 raises full-length SMN -- the corrective direction.",
+  "emergent_axis": "full-length SMN protein dose (motor-neuron survival)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SMN1",
+    "gamma": 1.3915,
+    "spinodal_h_sp": 0.63179,
+    "barrier": 0.48407,
+    "dwell_relative_size": 1.49222,
+    "role": "structural",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "structural element deficient -> tissue integrity reduced",
+    "ncbi": {
+     "acc": "NC_000005.10",
+     "gene_start": 70924940,
+     "gene_end": 70966374,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "survival of motor neuron 1, telomeric"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SMN1 encodes the SMN snRNP-assembly housekeeping protein; homozygous LOF lowers full-length SMN, reducing motor-neuron viability (a required cellular component whose deficiency lowers integrity). Read as a structural/housekeeping LOF.",
+    "src": "Lefebvre 1995 Cell 80:155 (SMN1 determines SMA)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SMN1",
+   "role": "structural",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "structural element deficient -> tissue integrity reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "bb6720dc7a8f"
+ },
+ "treatment_A_switch": {
+  "disease": "Spinal muscular atrophy (5q SMA)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "SMN2",
+    "push_direction": "promote SMN2 exon-7 INCLUSION -> convert the backup paralog to full-length SMN (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "SMN2 splicing modifier (nusinersen -- ASO; risdiplam -- small molecule)",
+    "status": "approved",
+    "mechanism_grade": "[O] full-length-SMN gain / motor-neuron rescue magnitude not derived from sequence",
+    "src": "Finkel 2017 NEJM 377:1723 (nusinersen); Baranello 2021 NEJM 384:915 (risdiplam)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "SMN1",
+    "push_direction": "deliver a functional SMN1 gene -> supply full-length SMN directly (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "SMN1 gene replacement (onasemnogene abeparvovec)",
+    "status": "approved",
+    "mechanism_grade": "[O] transduced SMN dose / durability not derived from sequence",
+    "src": "Mendell 2017 NEJM 377:1713; onasemnogene abeparvovec (Zolgensma) FDA 2019"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "SMN2",
+   "push_direction": "promote SMN2 exon-7 INCLUSION -> convert the backup paralog to full-length SMN (axis UP)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "SMN2 splicing modifier (nusinersen -- ASO; risdiplam -- small molecule)",
+   "status": "approved",
+   "mechanism_grade": "[O] full-length-SMN gain / motor-neuron rescue magnitude not derived from sequence",
+   "src": "Finkel 2017 NEJM 377:1723 (nusinersen); Baranello 2021 NEJM 384:915 (risdiplam)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.49222,
+   "dwell_disease": 0.96555,
+   "dwell_treated": 1.22495,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "90c26febb953"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SMN1 LOF lowers full-length SMN and motor-neuron survival",
+   "falsifier": "an SMN1 LOF context with PRESERVED motor-neuron survival independent of SMN2 dosage, or a model where SMN1 loss RAISES full-length SMN, refutes the direction",
+   "measurable_by": "full-length SMN protein and motor-neuron count in an SMN1-null background by SMN2 copy number"
+  },
+  {
+   "claim": "raising full-length SMN (potentiate SMN2 / replace SMN1) is the CORRECTIVE direction",
+   "falsifier": "if SMN2 exon-7 inclusion or SMN1 addition REDUCED motor-neuron survival, the lever sign is wrong",
+   "measurable_by": "motor-neuron survival response to an SMN2 splicing modifier in patient-derived motor neurons"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Spinal muscular atrophy (5q SMA)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "32fb54c9f7bf"
+ },
+ "determinism_sha": "2aa61da2bc1c"
+}

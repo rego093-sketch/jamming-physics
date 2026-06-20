@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menstrual cycle as a relaxation oscillator (T2) &mdash; Reproductive Endocrine &sect;4 | Jamming Physics</title>
+<meta name="description" content="T2: the menstrual cycle as the slowest relaxation oscillator in the package; the rise/fall timing asymmetry is far from 1.0, confirming relaxation (not sinusoidal) dynamics.">
+<link rel="canonical" href="https://jamming-physics.org/reproductive_endocrine/04-menstrual-cycle-relaxation-oscillator/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Menstrual cycle as a relaxation oscillator (T2) &mdash; Reproductive Endocrine &sect;4 | Jamming Physics"><meta property="og:description" content="T2: the menstrual cycle as the slowest relaxation oscillator in the package; the rise/fall timing asymmetry is far from 1.0, confirming relaxation (not sinusoidal) dynamics."><meta property="og:url" content="https://jamming-physics.org/reproductive_endocrine/04-menstrual-cycle-relaxation-oscillator/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Menstrual cycle as a relaxation oscillator (T2) &mdash; Reproductive Endocrine &sect;4 | Jamming Physics"><meta name="twitter:description" content="T2: the menstrual cycle as the slowest relaxation oscillator in the package; the rise/fall timing asymmetry is far from 1.0, confirming relaxation (not sinusoidal) dynamics.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Menstrual cycle as a relaxation oscillator (T2)", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Reproductive Endocrine", "sameAs": "https://jamming-physics.org/reproductive_endocrine/"}, "position": 4, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/04-menstrual-cycle-relaxation-oscillator/", "knowsAbout": ["menstrual cycle", "follicular phase", "luteal phase", "relaxation oscillator", "rise fall asymmetry"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Reproductive Endocrine", "item": "https://jamming-physics.org/reproductive_endocrine/"}, {"@type": "ListItem", "position": 3, "name": "§4 Menstrual cycle"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="../">Reproductive Endocrine</a> &rsaquo; &sect;4</nav></header>
+<main>
+<h1>The menstrual cycle is the slowest relaxation oscillator (T2)</h1>
+
+<p class="answer">The menstrual cycle is the slowest relaxation oscillator in the package: a long follicular charge and a fast ovulatory discharge, not a sinusoid. The rise/fall timing asymmetry is 309.6 (a pure sinusoid is exactly 1.0), confirming relaxation dynamics. The ~28-day period is a measured anchor set by the recovery timescale &tau;<sub>s</sub>, not derived from the substrate.</p>
+
+<p class="abstract">Over the run the slow FHN completes 11 cycles with period 1133.7 (arb). The waveform is strongly asymmetric &mdash; a short upstroke (3.65) and a long recovery (1130.0), giving an asymmetry ratio of 309.6. A sinusoid would give exactly 1.0, so the shape is unambiguously that of a relaxation oscillator.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] sim-verified</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/" rel="noopener">reproduction code (GitHub)</a>
+  <a class="doi" href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">DOI 10.5281/zenodo.20754657</a>
+</aside>
+
+
+
+<h2>A long charge and a fast discharge</h2>
+<p>The menstrual cycle is a slow oestradiol rise as the dominant follicle grows, then a fast ovulatory excursion (the LH surge), then a luteal plateau and reset. On the substrate this is the same FHN run at the longest recovery timescale, &tau;<sub>s</sub>=600.</p>
+<h2>The shape discriminant: rise/fall asymmetry</h2>
+<p>A relaxation oscillator is time-asymmetric (slow rise, fast excursion); a sinusoid is time-symmetric. Measuring the upstroke-to-recovery timing ratio over one period gives 309.6, which a pure sinusoid would render as exactly 1.0.</p>
+<p>The fraction of time spent &ldquo;high&rdquo; is deliberately not used as the discriminant, because a slow decay sits high for most of a period yet is still relaxation. The timing asymmetry is the clean, boundary-insensitive test, and the realised value sits far above any reasonable threshold.</p>
+<p class="note">The ~28-day period is a measured [L] anchor inherited from the recovery timescale; the relaxation <em>character</em> is the sim-verified [V] claim. The period magnitude is not derived.</p>
+
+<nav class="pn">
+  <a rel="prev" href="../03-gnrh-pulse-generator/">&larr; &sect;3</a>
+  <a href="../">paper contents</a>
+  <a rel="next" href="../05-oestrogen-feedback-switch/">&sect;5 &rarr;</a>
+</nav>
+</main>
+<footer><strong>Reproductive Endocrine</strong> &mdash; part of the VP Theory programme (<a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">jamming branch</a>). Author <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">Young Jae Lee</a> (ORCID). DOI: <a href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">10.5281/zenodo.20754657</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>. Living version: <a href="https://jamming-physics.org/reproductive_endocrine/">jamming-physics.org/reproductive_endocrine/</a>. Research package; falsifiable, deterministic, honestly graded &mdash; not clinical advice.</footer>
+</body>
+</html>

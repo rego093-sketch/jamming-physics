@@ -1,0 +1,146 @@
+{
+ "disease": "Niemann-Pick disease type A/B (acid sphingomyelinase deficiency, SMPD1)",
+ "omim": "257200 (type A) / 607616 (type B)",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Niemann-Pick disease type A/B (acid sphingomyelinase deficiency, SMPD1)",
+  "omim": "257200 (type A) / 607616 (type B)",
+  "summary": "A single-gene SMPD1 loss-of-function. SMPD1 encodes acid sphingomyelinase (ASM), the lysosomal hydrolase that cleaves sphingomyelin into ceramide and phosphocholine. LOF lowers lysosomal sphingomyelin-catabolism throughput, so sphingomyelin (and secondarily cholesterol) ACCUMULATE in the lysosomes of macrophages, hepatocytes, spleen and (in the severe infantile form) neurons -> hepatosplenomegaly, interstitial lung disease, dyslipidaemia, and, in type A, rapidly progressive neurodegeneration; type B (chronic visceral) retains residual ASM and largely spares the CNS. The catabolic-throughput axis is driven DOWN; the correction is to restore enzymatic throughput. Read on the SAME deficient-enzyme / substrate-accumulation level axis as Gaucher, Fabry, Pompe and LAL deficiency -- the EIGHTH lysosomal-storage read, here on a SPHINGOLIPID (sphingomyelin) substrate handled by enzyme replacement. The kit re-derives the approved throughput-restore arm -- replace ASM via recombinant human acid sphingomyelinase (olipudase alfa). This is the elegant 'Niemann-Pick, two names, two utterly different mechanisms' CONTRAST to Niemann-Pick type C (NPC1, already in the kit): A/B is an ENZYME deficiency corrected by enzyme replacement (replace), whereas type C is a cholesterol/sphingolipid TRANSPORT (export) defect corrected by substrate reduction (restrain) -- the same eponym, an opposite defect class and an opposite lever. Olipudase alfa addresses the systemic/visceral disease and does not cross the blood-brain barrier, so the neurological component of type A is not corrected by it (a delivery limitation, CNS reach [O]); the SWITCH DIRECTION (restore sphingomyelin catabolism) is nonetheless correct and re-derives the approved enzyme. The gamma read is of the SMPD1 locus switch STRUCTURE; the disease lesion is coding (the type-A founder alleles p.Leu302Pro / p.fsPro330 / p.Arg498Leu; the type-B p.delR608 allele), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "lysosomal sphingomyelin catabolism (acid sphingomyelinase / SMPD1 throughput on sphingomyelin -> ceramide + phosphocholine)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SMPD1",
+    "gamma": 1.4213,
+    "spinodal_h_sp": 0.65219,
+    "barrier": 0.50502,
+    "dwell_relative_size": 1.54041,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 6390473,
+     "gene_end": 6394995,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "sphingomyelin phosphodiesterase 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SMPD1 encodes acid sphingomyelinase (ASM / sphingomyelin phosphodiesterase 1), the lysosomal enzyme that hydrolyses sphingomyelin to ceramide and phosphocholine. LOF lowers lysosomal sphingomyelin catabolism -> sphingomyelin and cholesterol accumulate in lysosomes of macrophages, liver, spleen and (type A) neurons. Autosomal recessive, 11p15.4 (OMIM 607608). NCBI official symbol SMPD1. The promoter gamma reads the locus switch STRUCTURE only; the coding lesions (the type-A founder alleles; the type-B p.delR608) are outside the promoter firewall.",
+    "src": "Brady 1966 PNAS 55:366 (sphingomyelinase deficiency in Niemann-Pick); Schuchman 1991 J Biol Chem 266:8531 (SMPD1 cloning); Schuchman 2017 J Inherit Metab Dis 40:741 (ASMD spectrum)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SMPD1",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "c00312f3c511"
+ },
+ "treatment_A_switch": {
+  "disease": "Niemann-Pick disease type A/B (acid sphingomyelinase deficiency, SMPD1)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "SMPD1",
+    "push_direction": "supply recombinant human acid sphingomyelinase -> restore lysosomal sphingomyelin catabolism (axis UP toward function)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme replacement (olipudase alfa)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored lysosomal sphingomyelin-clearance / visceral-disease magnitude not derived from sequence; CNS reach limited (does not cross the BBB) -> [O]",
+    "src": "Diaz 2021 Genet Med 23:1543 (ASCEND, olipudase alfa); olipudase alfa (Xenpozyme) FDA / EMA / Japan 2022"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "SMPD1",
+   "push_direction": "supply recombinant human acid sphingomyelinase -> restore lysosomal sphingomyelin catabolism (axis UP toward function)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme replacement (olipudase alfa)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored lysosomal sphingomyelin-clearance / visceral-disease magnitude not derived from sequence; CNS reach limited (does not cross the BBB) -> [O]",
+   "src": "Diaz 2021 Genet Med 23:1543 (ASCEND, olipudase alfa); olipudase alfa (Xenpozyme) FDA / EMA / Japan 2022"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.54041,
+   "dwell_disease": 0.99674,
+   "dwell_treated": 1.26451,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "edc097408a3c"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SMPD1 LOF lowers lysosomal sphingomyelin catabolism (sphingomyelin accumulates)",
+   "falsifier": "a SMPD1 LOF allele that INCREASED acid sphingomyelinase throughput, or macrophages in which SMPD1 loss REDUCED lysosomal sphingomyelin content, refutes the throughput-down direction",
+   "measurable_by": "acid sphingomyelinase activity and lysosomal sphingomyelin content in SMPD1-deficient cells / spleen"
+  },
+  {
+   "claim": "restoring enzyme throughput (replace ASM) is the CORRECTIVE direction",
+   "falsifier": "if supplying recombinant acid sphingomyelinase REDUCED catabolic throughput or RAISED lysosomal sphingomyelin storage, the 'replace enzyme' lever sign is wrong",
+   "measurable_by": "visceral sphingomyelin / hepatosplenic-volume response to recombinant ASM in patient-derived cells / model"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Niemann-Pick disease type A/B (acid sphingomyelinase deficiency, SMPD1)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "07cdd4a596c3"
+ },
+ "determinism_sha": "066e82ee1170"
+}

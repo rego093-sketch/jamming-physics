@@ -1,0 +1,179 @@
+{
+ "disease": "Rett syndrome",
+ "omim": "312750",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Rett syndrome",
+  "omim": "312750",
+  "summary": "A single-gene MECP2 loss-of-function (X-linked, mostly de novo) removes the methyl-CpG-binding transcriptional regulator MeCP2 that is broadly required for post-natal neuronal maturation and synaptic regulation, so the MeCP2-dependent program is under-driven and that axis is forced DOWN. MECP2 is sharply DOSAGE-SENSITIVE in BOTH directions: too little causes Rett, too much causes a DISTINCT opposite-direction disorder (MECP2 duplication syndrome, OMIM 300260), so the corrective window is narrow and the corrective MAGNITUDE is especially [O]. Most lesions are coding/nonsense, OUTSIDE the promoter gamma firewall (like sickle cell's coding missense); gamma reads the MECP2 LOCUS switch structure. This entry nearly approaches SUSPENSION on dosage grounds, but the cause is a single readable locus with a forced LOF direction, so it RESOLVES with the dosage caveat made explicit. An approved therapy (trofinetide) acts DOWNSTREAM (IGF-1 / synaptic maturation) and does NOT restore MeCP2.",
+  "emergent_axis": "MeCP2-dependent neuronal maturation / synaptic regulation program",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "MECP2",
+    "gamma": 1.4951,
+    "spinodal_h_sp": 0.70364,
+    "barrier": 0.55883,
+    "dwell_relative_size": 1.66193,
+    "role": "master_TF",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "lineage threshold not reached -> program absent/reduced",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 154021572,
+     "gene_end": 154097716,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "methyl-CpG binding protein 2"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "MeCP2 is a methyl-CpG-binding transcriptional modulator broadly required for post-natal neuronal maturation and synaptic function; LOF (nonsense / missense / frameshift, X-linked) under-drives that program -> Rett. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). CAUTION -- dosage-sensitive in BOTH directions: MECP2 gain/duplication causes a DISTINCT opposite-direction disorder (MECP2 duplication syndrome, OMIM 300260), so the forced direction here is specific to the LOF (Rett) read and any correction must respect a narrow dosage window.",
+    "src": "Amir 1999 Nat Genet 23:185; Chahrour 2008 Science 320:1224"
+   }
+  ],
+  "primary_switch": {
+   "gene": "MECP2",
+   "role": "master_TF",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "lineage threshold not reached -> program absent/reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "2c73ed7b3d85"
+ },
+ "treatment_A_switch": {
+  "disease": "Rett syndrome",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "IGF1",
+    "push_direction": "potentiate downstream IGF-1 / synaptic-maturation signalling to partially compensate for MeCP2 deficiency (does NOT restore MeCP2)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "IGF-1-pathway analogue (trofinetide)",
+    "status": "approved",
+    "mechanism_grade": "[O] downstream-compensation magnitude not derived from sequence; symptomatic -- does not correct the MeCP2 switch itself",
+    "src": "Neul 2023 Nat Med (LAVENDER); trofinetide (Daybue) FDA 2023"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "MECP2",
+    "push_direction": "deliver a DOSAGE-CONTROLLED functional MECP2 transgene -> restore MeCP2 toward the normal narrow window",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "dosage-regulated MECP2 gene transfer (investigational; e.g. mini-/feedback-regulated AAV-MECP2, TSHA-102, NGN-401)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-MeCP2 level not derived from sequence; OVER-supply risks duplication-type toxicity -- correction must stay within a narrow dosage window",
+    "src": "Gadalla 2013 Mol Ther; Sinnett 2017 Mol Ther Methods Clin Dev; TSHA-102 / NGN-401 clinical programs"
+   },
+   {
+    "lever": "potentiate",
+    "target_gene": "MECP2",
+    "push_direction": "reactivate the silenced wild-type MECP2 allele on the inactive X -> restore endogenous, natively-regulated MeCP2",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "X-reactivation of the wild-type MECP2 allele (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] reactivation efficiency / cell fraction not derived from sequence; investigational",
+    "src": "Carrette 2018 PNAS 115:E668; Lyst & Bird 2015 Nat Rev Genet 16:261"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "MECP2",
+    "push_direction": "promote read-through of a premature stop codon -> full-length MeCP2 (nonsense-allele subset only)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "stop-codon read-through agent (investigational; nonsense subset)",
+    "status": "investigational",
+    "mechanism_grade": "[O] read-through efficiency / MeCP2 recovery not derived from sequence; nonsense-allele subset only",
+    "src": "Merritt 2020 Sci Transl Med; Pitsch 2022"
+   }
+  ],
+  "n_corrective": 4,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "IGF1",
+   "push_direction": "potentiate downstream IGF-1 / synaptic-maturation signalling to partially compensate for MeCP2 deficiency (does NOT restore MeCP2)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "IGF-1-pathway analogue (trofinetide)",
+   "status": "approved",
+   "mechanism_grade": "[O] downstream-compensation magnitude not derived from sequence; symptomatic -- does not correct the MeCP2 switch itself",
+   "src": "Neul 2023 Nat Med (LAVENDER); trofinetide (Daybue) FDA 2023"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.66193,
+   "dwell_disease": 1.07537,
+   "dwell_treated": 1.36427,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "e3a12376b0f5"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "MECP2 LOF under-drives the MeCP2-dependent neuronal-maturation / synaptic axis (axis DOWN)",
+   "falsifier": "a MECP2 null/LOF allele that PRESERVED or INCREASED MeCP2-dependent neuronal maturation/synaptic function would refute the LOF-under-drive direction",
+   "measurable_by": "MeCP2-target synaptic/maturation readouts (dendritic complexity, synaptic markers, RTT-phenotype score) by genotype in a Mecp2-null model"
+  },
+  {
+   "claim": "restoring MeCP2 within a narrow dosage window (replace / reactivate) is the CORRECTIVE direction",
+   "falsifier": "if raising MeCP2 toward normal FAILED to improve the phenotype, or if OVER-restoration did NOT reproduce duplication-type toxicity, the dosage-restore model is wrong",
+   "measurable_by": "RTT-phenotype rescue vs MeCP2 dosage (including over-expression) in a Mecp2-null model -- a dose-response with a window"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Rett syndrome": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "203990168064"
+ },
+ "determinism_sha": "b1c444991f9b"
+}

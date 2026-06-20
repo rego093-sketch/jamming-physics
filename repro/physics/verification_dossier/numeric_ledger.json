@@ -1,0 +1,176 @@
+{
+  "_doc": "Canonical numeric SSOT for VP Theory v0.8. Every quantity has ONE authoritative value; each residual NAMES its baseline. Derived from verified closed forms. Read-only mirror; body pages should cite this, not restate divergent roundings.",
+  "constants_in": {
+    "h": 6.62607015e-34,
+    "c": 299792458.0,
+    "a": 6.329912125785986e-19,
+    "m_e": 9.1093837015e-31
+  },
+  "quantities": [
+    {
+      "symbol": "alpha",
+      "name": "directional average |cos|",
+      "closed_form": "2/pi",
+      "value": 0.6366197723675814,
+      "unit": "",
+      "grade": "F",
+      "baselines": [],
+      "value_str": "0.636620"
+    },
+    {
+      "symbol": "delta",
+      "name": "two-sided positive overlap",
+      "closed_form": "1/pi^2",
+      "value": 0.10132118364233778,
+      "unit": "",
+      "grade": "F",
+      "baselines": [],
+      "value_str": "0.101321"
+    },
+    {
+      "symbol": "2pi",
+      "name": "alpha/delta identity",
+      "closed_form": "alpha/delta",
+      "value": 6.283185307179586,
+      "unit": "",
+      "grade": "F",
+      "baselines": [],
+      "value_str": "6.283185"
+    },
+    {
+      "symbol": "nu_p",
+      "name": "proton n-fold event rate (geometric)",
+      "closed_form": "3*pi^4",
+      "value": 292.22727310200725,
+      "unit": "s^-1",
+      "grade": "F",
+      "baselines": [],
+      "value_str": "292.227273"
+    },
+    {
+      "symbol": "m_p/m_e",
+      "name": "proton-electron mass ratio",
+      "closed_form": "6*pi^5",
+      "value": 1836.1181087116884,
+      "unit": "",
+      "grade": "F",
+      "baselines": [
+        {
+          "ref": "CODATA",
+          "ref_value": 1836.152673426,
+          "residual_ppm": -18.82
+        }
+      ],
+      "value_str": "1836.118109"
+    },
+    {
+      "symbol": "U_lat",
+      "name": "lattice unit energy",
+      "closed_form": "h*c/a",
+      "value": 1958.7033116641428,
+      "unit": "GeV",
+      "grade": "F",
+      "baselines": [],
+      "value_str": "1958.703312"
+    },
+    {
+      "symbol": "m_H",
+      "name": "Higgs mass",
+      "closed_form": "U_lat/(5*pi)",
+      "value": 124.69492564072544,
+      "unit": "GeV",
+      "grade": "F",
+      "baselines": [
+        {
+          "ref": "PDG",
+          "ref_value": 125.2,
+          "residual_pct": -0.4034
+        }
+      ],
+      "value_str": "124.694926"
+    },
+    {
+      "symbol": "m_e c^2",
+      "name": "electron rest energy (calibration node)",
+      "closed_form": "2*h*c/D",
+      "value": 0.5109989499961641,
+      "unit": "MeV",
+      "grade": "H",
+      "baselines": [],
+      "value_str": "0.510999"
+    },
+    {
+      "symbol": "lambda_C,e",
+      "name": "electron Compton length",
+      "closed_form": "h/(m_e*c)",
+      "value": 2.4263102386830924,
+      "unit": "pm",
+      "grade": "H",
+      "baselines": [],
+      "value_str": "2.426310"
+    },
+    {
+      "symbol": "D",
+      "name": "quantum diameter (anchor route)",
+      "closed_form": "2*lambda_C,e",
+      "value": 4.852620477366185,
+      "unit": "pm",
+      "grade": "H",
+      "baselines": [],
+      "value_str": "4.852620"
+    },
+    {
+      "symbol": "r_p",
+      "name": "proton radius (prediction)",
+      "closed_form": "D/(6*pi^6)",
+      "value": 0.8412514775138056,
+      "unit": "fm",
+      "grade": "F",
+      "baselines": [
+        {
+          "ref": "locked",
+          "ref_value": 0.8412000000000001,
+          "residual_ppm": 61.2
+        },
+        {
+          "ref": "CODATA(0.8414)",
+          "ref_value": 0.8414,
+          "residual_pct": -0.0177
+        }
+      ],
+      "value_str": "0.841251"
+    },
+    {
+      "symbol": "r_p_locked",
+      "name": "proton radius (locked anchor)",
+      "closed_form": "canon-lock",
+      "value": 0.8412000000000001,
+      "unit": "fm",
+      "grade": "H",
+      "baselines": [
+        {
+          "ref": "CODATA(0.8414)",
+          "ref_value": 0.8414,
+          "residual_pct": -0.0238
+        }
+      ],
+      "value_str": "0.841200"
+    },
+    {
+      "symbol": "nu_p_length",
+      "name": "proton rate (length cross-check route)",
+      "closed_form": "(D/(2*r_p))*delta",
+      "value": 292.2451560471873,
+      "unit": "s^-1",
+      "grade": "V",
+      "baselines": [
+        {
+          "ref": "geometric 3pi^4",
+          "ref_value": 292.22727310200725,
+          "residual_ppm": 61.2
+        }
+      ],
+      "value_str": "292.245156"
+    }
+  ]
+}

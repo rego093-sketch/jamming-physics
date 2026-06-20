@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+# tools/gate.py — VP-SPEC Phase 0 tool 4/4. 8장 게이트 일괄 판정 → reports/*.gate.json
+# 사용: python3 tools/gate.py --phase 1 --paper physics
+import re, os, sys, csv, json, glob, hashlib, argparse
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+import inventory as inv
+
+def tools_sha():
+    h=hashlib.sha256()
+    for f in sorted(glob.glob("tools/*")):
+        if not os.path.isfile(f): continue
+        h.update(open(f,"rb").read())
+    return h.hexdigest()[:16]
+
+def read_manifest(p):
+    return list(csv.DictReader(open(f"manifest/{p}.csv",encoding="utf-8")))
+
+def main_block(html):
+    m=re.search(r"<main>(.*)</main>",html,re.S)
+    return m.group(1) if m else html
+
+def words_of(html):
+    t=main_block(html)
+    t=re.sub(r"<aside.*?</aside>","",t,flags=re.S)
+    t=re.sub(r'<p class="abstract".*?</p>',"",t,flags=re.S)
+    t=re.sub(r"<h1>.*?</h1>","",t,flags=re.S)
+    t=re.sub(r'<nav class="pn">.*?</nav>',"",t,flags=re.S)
+    t=re.sub(r"<[^>]+>"," ",t)
+    return inv.word_count(t)
+
+def phase1(p,rep):
+    rows=read_manifest(p); ok=True
+    dirs=[d for d in sorted(os.listdir(f"docs/{p}")) if os.path.isdir(f"docs/{p}/{d}")]
+    c={"sections_manifest":len(rows),"sections_dirs":len(dirs)}
+    ok &= len(rows)==len(dirs)
+    per=[]; tot_disp=0; viol=[]
+    for r in rows:
+        f=f"docs/{p}/{r['slug']}/index.html"
+        if not os.path.exists(f): per.append({"slug":r["slug"],"err":"missing"}); ok=False; continue
+        h=open(f,encoding="utf-8").read()
+        nd=h.count("data-eq="); nf=h.count('<figure class="fig"'); nt=h.count("<table")
+        kat=h.count('class="katex'); size=len(h.encode()); dom=h.count("<")
+        w=words_of(h); wm=int(r["words"]); dw=abs(w-wm)/max(wm,1)
+        bad=[]
+        if nd!=int(r["eq_display"]): bad.append(f"display {nd}!={r['eq_display']}")
+        if nf!=int(r["figures"]): bad.append(f"fig {nf}!={r['figures']}")
+        if nt!=int(r["tables"]): bad.append(f"tab {nt}!={r['tables']}")
+        if kat: bad.append("katex-residue")
+        if size>300*1024: bad.append(f"size {size}")
+        if dom>3000: bad.append(f"dom {dom}")
+        if dw>0.005: bad.append(f"words {w} vs {wm}")
+        tot_disp+=int(r["eq_display"])
+        if bad: viol.append({"slug":r["slug"],"bad":bad}); ok=False
+    nsvg=len(glob.glob(f"docs/eq/{p}/*.svg"))
+    pend = (nsvg==0 and tot_disp>0)
+    if not pend and nsvg!=tot_disp: ok=False; viol.append({"svg":f"{nsvg}!={tot_disp}"})
+    c.update(display_total=tot_disp,svg_files=nsvg,violations=viol,
+             eq_inline_note="manifest와 동일 변환 라이브러리(inventory) 공유 — by construction 1:1")
+    rep["phase1"]=c
+    return ("PASS_WITH_PENDING_RENDER" if pend else "PASS") if ok else "FAIL"
+
+def phase2(p,rep):
+    rows=read_manifest(p); ok=True; viol=[]
+    for r in rows:
+        f=f"docs/{p}/{r['slug']}/index.html"; h=open(f,encoding="utf-8").read()
+        t=re.search(r"<title>(.*?)</title>",h,re.S); title=t.group(1).strip() if t else ""
+        subj=title.split("—")[0].strip()
+        d=re.search(r'name="description" content="([^"]*)"',h); desc=d.group(1) if d else ""
+        bad=[]
+        if not title.endswith("| Jamming Physics") or len(subj)>45 or len(title)>90: bad.append("title")
+        if not (80<=len(desc)<=160): bad.append(f"desc({len(desc)})")
+        if h.count("<h1")!=1: bad.append("h1")
+        ab=re.search(r'<p class="abstract"[^>]*>(.*?)</p>',h,re.S)
+        # v1.7: 키피겨는 '본문(aside·DOI 링크 제외)에 대표 수치가 있을 때만' abstract 에 요구
+        FIG=r"[0-9].*[=×·π/^²³⁴⁵]|[=×·π].*[0-9]"
+        main_noabs=re.sub(r'<p class="abstract".*?</p>',"",main_block(h),flags=re.S)
+        noaside_text=re.sub(r"<[^>]+>"," ",re.sub(r"<aside.*?</aside>","",main_noabs,flags=re.S))
+        abstxt=ab.group(1) if ab else ""
+        if not ab: bad.append("abstract-missing")
+        elif re.search(FIG,noaside_text) and not re.search(FIG,abstxt): bad.append("abstract-texteq")
+        # v1.7: 반작문 — abstract·description 의 모든 수치 토큰은 본문(전체)에 존재해야 함
+        src_nums=set(re.findall(r"\d+(?:\.\d+)?",re.sub(r"<[^>]+>"," ",main_noabs)))
+        for n in set(re.findall(r"\d+(?:\.\d+)?",abstxt+" "+desc)):
+            if n not in src_nums: bad.append("invent-number:"+n); break
+        if 'class="claim-strip"' not in h and "claim-strip" not in h: bad.append("strip")
+        w=words_of(h); wm=int(r["words"])
+        if abs(w-wm)/max(wm,1)>0.005: bad.append(f"words {w}/{wm}")
+        for m in re.finditer(r'href="(/[^"]+)"',h):
+            tgt="docs"+m.group(1).rstrip("/")+"/index.html"
+            if m.group(1).startswith(("/assets","/eq")): continue
+            if not os.path.exists(tgt) and not os.path.exists("docs"+m.group(1)): bad.append("link:"+m.group(1)); break
+        if "(Phase 2" in h: bad.append("placeholder-residue")
+        if bad: viol.append({"slug":r["slug"],"bad":bad}); ok=False
+    rep["phase2"]={"violations":viol}
+    return "PASS" if ok else "FAIL"
+
+def phase356(p,rep):
+    ok=True; v=[]
+    hub=f"docs/{p}/index.html"
+    if os.path.exists(hub):
+        h=open(hub,encoding="utf-8").read()
+        rows=read_manifest(p)
+        miss=[r["slug"] for r in rows if f'/{p}/{r["slug"]}/' not in h]
+        if miss: ok=False; v.append({"hub-missing":miss[:5],"n":len(miss)})
+    else: v.append({"hub":"absent (Phase 3 전)"})
+    if os.path.exists("docs/sitemap.xml"):
+        sm=open("docs/sitemap.xml").read().count("<loc>")
+        pages=len(glob.glob("docs/**/index.html",recursive=True))
+        if sm!=pages: ok=False; v.append({"sitemap":f"{sm}!={pages}"})
+    rep["phase356"]={"violations":v}
+    return "PASS" if ok else "FAIL"
+
+if __name__=="__main__":
+    ap=argparse.ArgumentParser(); ap.add_argument("--phase",required=True); ap.add_argument("--paper",required=True)
+    a=ap.parse_args(); rep={"phase":a.phase,"paper":a.paper,"tools_sha16":tools_sha()}
+    if os.path.exists(f"src/{a.paper}"):
+        for f in glob.glob(f"src/{a.paper}/*"):
+            rep.setdefault("src_sha",{})[os.path.basename(f)]=hashlib.sha256(open(f,'rb').read()).hexdigest()
+    v={"1":phase1,"2":phase2,"3":phase356,"5":phase356,"6":phase356}[a.phase](a.paper,rep)
+    rep["verdict"]=v
+    os.makedirs("reports",exist_ok=True)
+    out=f"reports/phase{a.phase}-{a.paper}.gate.json"
+    json.dump(rep,open(out,"w",encoding="utf-8"),ensure_ascii=False,indent=1)
+    print(f"[gate] phase{a.phase} {a.paper}: {v} → {out}")
+    if v=="FAIL":
+        print(json.dumps(rep.get(f"phase{a.phase}",rep),ensure_ascii=False)[:1200]); sys.exit(1)

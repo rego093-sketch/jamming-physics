@@ -1,0 +1,171 @@
+{
+ "P_VC3a_irreversible_structural_fatigue": {
+  "P_VC3a_irreversible_bounded_below_fold_any_cycle_count": true,
+  "first_flip_amplitude": 0.7,
+  "flip_boundary_is_the_spinodal_fold": true,
+  "flip_sweep_at_g_med": [
+   {
+    "amplitude": 0.08,
+    "flips_basin": false,
+    "loop_area": 0.000117,
+    "loop_area_frac_of_barrier": 0.000235,
+    "margin_to_spinodal": 0.563746,
+    "min_field": 1.15754
+   },
+   {
+    "amplitude": 0.15,
+    "flips_basin": false,
+    "loop_area": 0.000415,
+    "loop_area_frac_of_barrier": 0.000837,
+    "margin_to_spinodal": 0.493746,
+    "min_field": 1.129712
+   },
+   {
+    "amplitude": 0.3,
+    "flips_basin": false,
+    "loop_area": 0.001762,
+    "loop_area_frac_of_barrier": 0.00355,
+    "margin_to_spinodal": 0.343746,
+    "min_field": 1.06133
+   },
+   {
+    "amplitude": 0.5,
+    "flips_basin": false,
+    "loop_area": 0.0059,
+    "loop_area_frac_of_barrier": 0.011888,
+    "margin_to_spinodal": 0.143746,
+    "min_field": 0.935344
+   },
+   {
+    "amplitude": 0.6437,
+    "flips_basin": false,
+    "loop_area": 0.015866,
+    "loop_area_frac_of_barrier": 0.031967,
+    "margin_to_spinodal": 4.6e-05,
+    "min_field": 0.736852
+   },
+   {
+    "amplitude": 0.7,
+    "flips_basin": true,
+    "loop_area": 3.227679,
+    "loop_area_frac_of_barrier": 6.503219,
+    "margin_to_spinodal": -0.056254,
+    "min_field": -1.382212
+   }
+  ],
+  "min_spinodal_margin_at_window": 0.424826,
+  "no_basin_flip_at_oversync_amplitude": true,
+  "no_basin_flip_at_window_amplitude": true,
+  "reading": "below the spinodal fold the bare R19 switch is a MEMORYLESS RELAXOR: forced cycling at the window amplitude (8x below the fold) never flips the basin, at ANY cycle count, so cumulative irreversible fatigue is BOUNDED (zero structural events). The boundary on long-term use is therefore an AMPLITUDE (the spinodal), reported as the margin, not a cycle-count ceiling. The engine has no cumulative-damage variable; inventing one would violate no-tuning, so this is the faithful bound the dynamics give.",
+  "spinodal_margin_at_window_per_gamma": {
+   "g=1.1982": 0.424826,
+   "g=1.2615": 0.465355,
+   "g=1.2747": 0.473937,
+   "g=1.3505": 0.524074,
+   "g=1.3721": 0.538624,
+   "g=1.3724": 0.538827,
+   "g=1.4048": 0.56087,
+   "g=1.4061": 0.56176,
+   "g=1.409": 0.563746,
+   "g=1.417": 0.569236,
+   "g=1.4411": 0.58587,
+   "g=1.4463": 0.589477,
+   "g=1.482": 0.614417,
+   "g=1.498": 0.625693,
+   "g=1.5111": 0.63497,
+   "g=1.5142": 0.637171,
+   "g=1.5207": 0.641794
+  }
+ },
+ "P_VC3b_duty_cycle_reasonable_vs_continuous": {
+  "P_VC3b_reasonable_materially_lower": true,
+  "continuous_oversync_load": 0.000415,
+  "continuous_strong_load": 0.001762,
+  "duty_awake_fraction": 0.666667,
+  "ratio_reasonable_vs_continuous_oversync": 0.187196,
+  "ratio_reasonable_vs_continuous_strong": 0.044126,
+  "reading": "a reasonable protocol (window amplitude, cap off during sleep) carries ~4% of the thermal load of a continuous strong open-loop cap and ~19% of a continuous over-sync cap -- 'jal ttae beotneunda' (off during sleep) plus a reasonable amplitude earns its keep as a thermal-load reduction.",
+  "reasonable_window_dutycycled_load": 7.8e-05
+ },
+ "P_VC3c_oversync_accelerates_fatigue": {
+  "P_VC3c_oversync_accelerates": true,
+  "oversync_over_window_dissipation_ratio": 3.561335,
+  "reading": "over-sync amplitude raises the per-cycle dissipation ~3.6x (amplitude^2) and shrinks the spinodal margin -- over-driving is worse at the molecular scale too, though even the over-sync amplitude stays well below the fold.",
+  "spinodal_margin_oversync": 0.493746,
+  "spinodal_margin_window": 0.563746
+ },
+ "_what": "VC3 molecular-scale long-term fatigue at the R19 switch (engine READ-ONLY). The fatigue law is DERIVED from the switch's own relaxation dynamics (lambda=2g, barrier=g^2/4, fold spinodal=2(g/3)^1.5), with NO new tuned constant. Irreversible structural fatigue = basin flips under forced cycling (zero below the fold: the bare switch is a memoryless relaxor); reversible thermal load = per-cycle hysteresis loop area (tiny, quasi-static at theta, ~A^2, recovered each cycle, duty-reducible). The boundary on long-term use is an AMPLITUDE (the spinodal), not a cycle count.",
+ "deeper_finding": "the molecular substrate is MORE robust than the network: across the whole sub-fold range there are zero irreversible structural events at any cycle count, so the cap's real failure mode is NETWORK over-synchronisation (section 1 / VC1), not molecular damage. Long-term molecular safety of a reasonable, duty-cycled, window-amplitude carrier is bounded by a large spinodal margin; the binding constraint is the circuit-level over-sync edge, which closed-loop amplitude control (not strong open-loop wear) is what manages.",
+ "firewall": "mechanism only; efficacy=0; no dose/synthesis; NOT medical advice; Axis-A firewall.",
+ "honesty_ledger": {
+  "consciousness_claim": 0,
+  "medium_efficacy_tested": 0,
+  "new_tuned_constants": 0,
+  "no_cure_claimed": 1
+ },
+ "invariants": {
+  "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+  "pac_grounded": true
+ },
+ "preregistered_results": {
+  "P_VC3a_irreversible_fatigue_bounded_below_fold": {
+   "note": "the 'bounded' pre-registered branch: no cycle-count ceiling below the fold; the boundary is the spinodal AMPLITUDE.",
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P_VC3b_reasonable_dutycycled_materially_lower": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P_VC3c_oversync_accelerates_fatigue": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  }
+ },
+ "reversible_thermal_dissipation": {
+  "amplitude_squared_ratio_expected": 3.515625,
+  "oversync_over_window_dissipation_ratio": 3.561335,
+  "per_cycle_loop_area_oversync_frac_barrier": 0.000837,
+  "per_cycle_loop_area_window_frac_barrier": 0.000235,
+  "ratio_at_g_min": 3.590791,
+  "ratio_is_amplitude_squared_and_gamma_independent": true,
+  "reading": "the only molecular cost of sub-fold cycling is reversible hysteresis dissipation, recovered each cycle (it does not accumulate). It is tiny in the quasi-static theta regime and scales as amplitude^2 (mechanism, gamma-independent): a thermal-load term, not a structural-damage term."
+ },
+ "switch_relaxation_dynamics": {
+  "lambda_eq_2g_checks": [
+   {
+    "barrier": 0.358921,
+    "expected_2g": 2.3964,
+    "gamma": 1.1982,
+    "matches": true,
+    "measured_lambda": 2.3964,
+    "spinodal_fold": 0.504826
+   },
+   {
+    "barrier": 0.49632,
+    "expected_2g": 2.818,
+    "gamma": 1.409,
+    "matches": true,
+    "measured_lambda": 2.818,
+    "spinodal_fold": 0.643746
+   },
+   {
+    "barrier": 0.578132,
+    "expected_2g": 3.0414,
+    "gamma": 1.5207,
+    "matches": true,
+    "measured_lambda": 3.0414,
+    "spinodal_fold": 0.721794
+   }
+  ],
+  "lambda_is_2g_verified": true,
+  "quasi_static_ratio_Omega_at_g_med": 0.017837,
+  "reading": "the switch relaxes ~56x faster than the theta carrier cycles (Omega<<1): the carrier is deep in the quasi-static regime, where forced cycling is gentle and the field tracks its instantaneous equilibrium.",
+  "theta_carrier_freq_cyc_per_switch_time": 0.008,
+  "theta_carrier_omega_per_switch_time": 0.050265,
+  "theta_is_quasi_static": true
+ }
+}

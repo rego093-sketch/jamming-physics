@@ -1,0 +1,263 @@
+{
+  "_provenance": {
+    "A4_LOCK": {
+      "W": 2000,
+      "eps": 1e-09,
+      "loop_k": 2,
+      "min_shell_bp": 5000,
+      "smooth_radius": 2,
+      "step": 500,
+      "w_at": -0.5,
+      "w_cpg": 0.5,
+      "w_gc": 1.0
+    },
+    "engine": "unified_interpreter_engine.py",
+    "imports_single_source": {
+      "grammar_dir": "repro/dna/_verify/engine",
+      "methylation_dir": "repro/dna/12-clade-methylation-readers"
+    },
+    "pinned_sha256": {
+      "clade_reader_engine.py": "61f32837ec56578ecaf87cba7a8b39edf3a0aee4793709b80440e543123da481",
+      "dna_interpreter.py": "4929932d9032179009e9b6cf5b0abd6d390a03f09867f0d06d8e9fd7e83f2cd0",
+      "gamma_lib_v10.py": "9a8d6cca915b60c15291994e54d274007ce943f10ade766ac43d34e562f67350",
+      "key_pipeline_full.py": "3141fa22cfe34a94d9fc36b447ceffa951dc5964629abf30aae024fa475cdced"
+    },
+    "rise_A": 3.4,
+    "shuffle_seed": 19,
+    "twist_deg": 34.29
+  },
+  "gamma_identity": {
+    "expected": 1.287315,
+    "gamma": 1.2873152050669232,
+    "gamma_round6": 1.287315,
+    "length_bp": 302512,
+    "locus": "human_SOX2",
+    "match": true,
+    "nn_tables_identical": true
+  },
+  "gates": {
+    "A4_grammar_gates_all_pass": true,
+    "C3_every_open_names_closing_dataset": true,
+    "coordinate_present_all_loci": true,
+    "gamma_identity_1_287315": true,
+    "helical_corrected_to_contact_competent": true,
+    "layer2_flagged_not_assigned": true,
+    "methylation_oe_replaces_raw_cpg_density": true,
+    "methylation_retention_reproduces_section12": true,
+    "negative_control_collapses": true
+  },
+  "gates_all_pass": true,
+  "helical_correction": {
+    "correct_read": "anchor-relative phase contact_competent -- whether a motor (TSS) and its nearest anchor sit on the SAME rotational helical face (face ~0/~1) and can contact, vs opposite faces (~0.5). RISE 3.4 A/bp, TWIST 34.29 deg/bp.",
+    "present_in_every_panel_locus": true,
+    "register": "RETIRED (irreversible) -- logged in LEDGER_unified.md; sec-08 retired-register addition is the author follow-up (sec-08 is byte-locked).",
+    "retired_claim": "sec 10/11 'helical (WW-ACF 10-11) signal elevated above composition-matched shuffle in all genomes' (global ~10.4bp periodicity percentile).",
+    "why_surrogate": "an absolute periodicity from an arbitrary window edge is a composition surrogate for nucleosome spacing, not a statement about a specific element."
+  },
+  "methylation_retention": {
+    "mismatches": [],
+    "n_quantities_checked": 52,
+    "reproduces_section12": true,
+    "section12_auto_detector_all_correct": true
+  },
+  "negative_control_shuffle": {
+    "bulk_cg_oe_shuffled": 1.0103,
+    "bulk_chg_oe_shuffled": 1.0061,
+    "lct_promoter_cpg_density_raw_real": 0.0148,
+    "lct_promoter_cpg_oe_real": 0.335,
+    "note": "mononucleotide-preserving shuffle -> CpG depletion erased (O/E -> ~1), no global CG blanket; coordinate grammar reads a structureless arrangement.",
+    "promoter_cpg_oe_shuffled": 0.998,
+    "regime_shuffled": "no_global_methylation_pergene_unknown",
+    "seed": 19
+  },
+  "validation_panel": [
+    {
+      "annotation_note": "region_seq = re-acquired 120kb wide LCT window; prom_seq = the frozen sec-10 LCT promoter (byte-identical to the wide-window slice). Reproduces the sec-10 material read and ADDS the A4 coordinate it lacked.",
+      "coordinate": {
+        "anchor_distance_bp": 1065,
+        "anchor_helical_face": 0.441,
+        "anchor_kind": "shell_boundary",
+        "anchor_loops": 1,
+        "anchor_strength": 0.581,
+        "anchor_twist_deg": 158.8,
+        "contact_competent": false,
+        "nearest_anchor_id": 6,
+        "region_motor_count": 5,
+        "rise_to_anchor_nm": 362.1,
+        "shell_class": "mid",
+        "shell_index": 5,
+        "shell_mean_z": -0.003,
+        "shell_span_bp": 5000
+      },
+      "element_offset": 47185,
+      "kind": "vertebrate",
+      "layer2_flags": {
+        "brake_or_accelerator": "LAYER-2 (cascade sign; not sequence-derivable)",
+        "cascade_role": "LAYER-2 (wiring; requires network context)",
+        "runtime_fill_phi": "LAYER-2 (set at runtime)"
+      },
+      "loop_status": "read (motors from feature table)",
+      "material": {
+        "atrun_frac": 0.01442,
+        "cpg_density_raw_aux": 0.0148,
+        "gamma": 1.3153,
+        "gc": 0.4206
+      },
+      "methylation": {
+        "bulk_cg_oe": 0.2276,
+        "bulk_chg_oe": 1.328,
+        "bulk_chh_oe": 1.1725,
+        "promoter_cpg_oe": 0.335,
+        "regime": "VERTEBRATE_global_CG"
+      },
+      "name": "LCT promoter (Homo sapiens, chr2 lactase locus)",
+      "switch": {
+        "barrier": 0.4325,
+        "rest_state_magnitude": 1.1469,
+        "spinodal": 0.5806
+      }
+    },
+    {
+      "annotation_note": "coordinate × methylation-regime on ONE frozen plant region simultaneously.",
+      "coordinate": {
+        "anchor_distance_bp": 4423,
+        "anchor_helical_face": 0.291,
+        "anchor_kind": "shell_boundary",
+        "anchor_loops": 10,
+        "anchor_strength": 1.133,
+        "anchor_twist_deg": 104.7,
+        "contact_competent": false,
+        "nearest_anchor_id": 6,
+        "region_motor_count": 39,
+        "rise_to_anchor_nm": 1503.8,
+        "shell_class": "stiff",
+        "shell_index": 5,
+        "shell_mean_z": 0.622,
+        "shell_span_bp": 19000
+      },
+      "element_offset": 58827,
+      "kind": "plant",
+      "layer2_flags": {
+        "brake_or_accelerator": "LAYER-2 (cascade sign; not sequence-derivable)",
+        "cascade_role": "LAYER-2 (wiring; requires network context)",
+        "runtime_fill_phi": "LAYER-2 (set at runtime)"
+      },
+      "loop_status": "read (motors from feature table)",
+      "material": {
+        "atrun_frac": 0.01283,
+        "cpg_density_raw_aux": 0.02401,
+        "gamma": 1.2015,
+        "gc": 0.3084
+      },
+      "methylation": {
+        "bulk_cg_oe": 0.7707,
+        "bulk_chg_oe": 0.8494,
+        "bulk_chh_oe": 1.0836,
+        "promoter_cpg_oe": 1.023,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "name": "Arabidopsis thaliana representative locus (chr1 §12 region)",
+      "switch": {
+        "barrier": 0.3609,
+        "rest_state_magnitude": 1.0961,
+        "spinodal": 0.5069
+      }
+    },
+    {
+      "annotation_note": "bulk shows NO global depletion; per-gene mRNA reveals the targeted gene-body class.",
+      "coordinate": {
+        "anchor_distance_bp": 411,
+        "anchor_helical_face": 0.148,
+        "anchor_kind": "shell_boundary",
+        "anchor_loops": 3,
+        "anchor_strength": 0.609,
+        "anchor_twist_deg": 53.2,
+        "contact_competent": true,
+        "nearest_anchor_id": 6,
+        "region_motor_count": 14,
+        "rise_to_anchor_nm": -139.7,
+        "shell_class": "soft",
+        "shell_index": 6,
+        "shell_mean_z": -1.0,
+        "shell_span_bp": 8500
+      },
+      "element_offset": 59161,
+      "kind": "insect",
+      "layer2_flags": {
+        "brake_or_accelerator": "LAYER-2 (cascade sign; not sequence-derivable)",
+        "cascade_role": "LAYER-2 (wiring; requires network context)",
+        "runtime_fill_phi": "LAYER-2 (set at runtime)"
+      },
+      "loop_status": "read (motors from feature table)",
+      "material": {
+        "atrun_frac": 0.01363,
+        "cpg_density_raw_aux": 0.02081,
+        "gamma": 1.1442,
+        "gc": 0.256
+      },
+      "methylation": {
+        "bulk_cg_oe": 1.3759,
+        "bulk_chg_oe": 1.0365,
+        "bulk_chh_oe": 0.9371,
+        "pergene_frac_low_cpg": 0.1231,
+        "pergene_median_cpg_oe": 1.0782,
+        "pergene_n": 130,
+        "pergene_spread_std": 0.3113,
+        "promoter_cpg_oe": 1.2918,
+        "regime": "INSECT_targeted_gene_body"
+      },
+      "name": "Apis mellifera representative locus (§12 region) + per-gene mRNA",
+      "switch": {
+        "barrier": 0.3273,
+        "rest_state_magnitude": 1.0697,
+        "spinodal": 0.4711
+      }
+    },
+    {
+      "annotation_note": "this 120kb window is gene-poor (2 edge motors); loop is honestly [O].",
+      "coordinate": {
+        "anchor_distance_bp": 735,
+        "anchor_helical_face": 0.009,
+        "anchor_kind": "region_edge",
+        "anchor_loops": 2,
+        "anchor_strength": 0.0,
+        "anchor_twist_deg": 3.1,
+        "contact_competent": true,
+        "nearest_anchor_id": 0,
+        "region_motor_count": 2,
+        "rise_to_anchor_nm": -249.9,
+        "shell_class": "soft",
+        "shell_index": 0,
+        "shell_mean_z": -0.519,
+        "shell_span_bp": 6250
+      },
+      "element_offset": 735,
+      "kind": "vertebrate",
+      "layer2_flags": {
+        "brake_or_accelerator": "LAYER-2 (cascade sign; not sequence-derivable)",
+        "cascade_role": "LAYER-2 (wiring; requires network context)",
+        "runtime_fill_phi": "LAYER-2 (set at runtime)"
+      },
+      "loop_status": "[O] sparse annotation (closing dataset: full RefSeq genomic.gff for this region)",
+      "material": {
+        "atrun_frac": 0.00762,
+        "cpg_density_raw_aux": 0.0076,
+        "gamma": 1.2575,
+        "gc": 0.3684
+      },
+      "methylation": {
+        "bulk_cg_oe": 0.1289,
+        "bulk_chg_oe": 1.2374,
+        "bulk_chh_oe": 1.1805,
+        "promoter_cpg_oe": 0.2246,
+        "regime": "VERTEBRATE_global_CG"
+      },
+      "name": "Homo sapiens chr1 §11 region (sparse-annotation case)",
+      "switch": {
+        "barrier": 0.3953,
+        "rest_state_magnitude": 1.1214,
+        "spinodal": 0.5428
+      }
+    }
+  ]
+}

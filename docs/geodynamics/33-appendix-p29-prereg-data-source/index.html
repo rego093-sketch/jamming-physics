@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix: P29 prereg, data-source registry, — Jamming Geodynamics §33 | Jamming Physics</title>
+<meta name="description" content="This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/33-appendix-p29-prereg-data-source/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix: P29 prereg, data-source registry, — Jamming Geodynamics §33 | Jamming Physics"><meta property="og:description" content="This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35."><meta property="og:url" content="https://jamming-physics.org/geodynamics/33-appendix-p29-prereg-data-source/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix: P29 prereg, data-source registry, — Jamming Geodynamics §33 | Jamming Physics"><meta name="twitter:description" content="This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Appendix: P29 prereg, data-source registry,",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 33,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/33-appendix-p29-prereg-data-source/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Appendix: P29 prereg, data-source registry,"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§33 Prereg & roadmap"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §33</nav></header>
+<main>
+<h1>Appendix: P29 prereg, data-source registry,</h1>
+
+<p class="answer">Appendix: P29 prereg, data-source registry, and HOLD roadmap — This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35. In the formal DataPack, these are registered with the same IDs in config/data_sources.yml, and acquisition/processing must be reproducible under the codebook spec.</p>
+
+<p class="abstract">This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35. In the formal DataPack, these are registered with the same IDs in config/data_sources.yml , and acquisition/processing must be reproducible under the codebook spec.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/33-appendix-p29-prereg-data-source/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<pre><code>version: p29_joint_window_prereg_v0_1
+enabled: false
+
+data_sources:
+  event_window_estimates: data/meta/event_window_estimates.csv
+
+models:
+  joint_window:
+    method: "weighted_gaussian"
+    width_ka: 2.0
+
+metrics:
+  p_value_unlock_max: 0.05
+  sensitivity_required: true
+
+outputs:
+  json: results/p29_joint_window.json
+  log: logs/TEST-P29.log</code></pre>
+<h2>External data source registry (ERL template)</h2>
+<p>This appendix centralizes candidate “anchor datasets” used by modules such as P10/P19/P21/P31/P33/P35. In the formal DataPack, these are registered with the same IDs in <code>config/data_sources.yml</code>, and acquisition/processing must be reproducible under the codebook spec.</p>
+<h2>S1. Minimum principles</h2>
+<ul><li><strong>(S-PR1)</strong> Prefer primary sources (institutional releases / official catalogs).</li><li><strong>(S-PR2)</strong> Commercial data may be used, but list an open alternative route; if irreproducible, downgrade the evidence rank (ERL).</li><li><strong>(S-PR3)</strong> For each dataset, record mandatory metadata: (id, version, acquisition date, license, hash).</li></ul>
+<h2>S2. Core anchor list (summary)</h2>
+<p><figure class="tbl"><table><tr><th>Module</th><th>Data anchor (ID)</th><th>Use / comment</th></tr><tr><td>P10</td><td>DS-SED-01</td><td>Global marine sediment-thickness grid (ridge<span class="eq-inline">→</span>continental-margin profiles).</td></tr><tr><td>P1/P2</td><td>DS-SLAB-01 / DS-GCMT-01</td><td>Subduction-zone geometry (presence/absence) + global moment tensors (stress field).</td></tr><tr><td>P19</td><td>DS-SLB-01</td><td>Sea-level budget closure using altimetry (SSH) + GRACE (mass) + Argo (steric).</td></tr><tr><td>P21</td><td>DS-PLATE-01</td><td>Plate-motion model (long term) + GPS (short term) for deceleration testing.</td></tr><tr><td>P12</td><td>DS-VOLC-01</td><td>Holocene volcano catalog (construction/growth ages require literature linkage).</td></tr><tr><td>P31</td><td>DS-COAL-01</td><td>Coal rank / reflectance databases (global/national).</td></tr><tr><td>P33</td><td>DS-HF-01</td><td>Heat-flow / geothermal-gradient database for thermal covariate control.</td></tr><tr><td>P15/P16</td><td>DS-ICE-01 / DS-ICE-02</td><td>Ice-sheet reconstructions (meltwater scenarios / boundary fluxes).</td></tr><tr><td>P35</td><td>DS-EXPLORE-01</td><td>Exploration maturity (wells/seismic) and sediment-blanket covariates for discovery-bias quantification.</td></tr></table></figure></p>
+<h2>S3. Connection to FAIL conditions</h2>
+<ul><li>If petroleum distributions/budgets are used as “evidence” in P22/P32, discovery bias must be blocked by P35 (H-DISC) in advance; if blocking fails, downgrade ERL.</li></ul>
+<h2>HOLD DataPack lock roadmap (ARE<span class="eq-inline">→</span>Ice Melt priority)</h2>
+<p>This appendix fixes a priority order for currently HOLD modules (P8, P9, P10, P12, P14, P17, P22–P23, P25–P28), ranked by direct contribution to the core causal claim <strong>ARE<span class="eq-inline">→</span>Ice Melt</strong>. For each module it sketches required data types / minimum N / representative public repositories (DOI/endpoints) / and automated fetch/normalize scripts. Detailed instructions are synchronized with <code>docs/hold_datapack_roadmap.md</code> and the machine-readable plan <code>config/hold_datapack_plan.yml</code>.</p>
+<h2>T0. r11 DataPack updates (summary)</h2>
+<ul><li><strong>P10 (sediment thickness).</strong> The GlobSed v2 thickness grid (<code>data/external/globsed/GlobSed_v2.nc</code>) is included in the bundle, and sediment-thickness profiles along 12 fixed transects (<code>data/sediment/atl_sed_thickness_transects.csv</code>) are extracted. However, the crust-age/spreading-rate grid (DS-AGE-01; EarthByte agegrid) cannot be auto-downloaded in the current sandbox environment, so the <strong>age–thickness regression gate</strong> is not locked. Therefore P10 remains <strong>HOLD</strong>.</li><li><strong>P14 (heat flow).</strong> The IHFC Global Heat Flow Database (GHFDB-R21; DOI <code>10.5880/fidgeo.2021.014</code>) is included in the bundle, and an Atlantic-only extraction <code>data/thermal/heatflow_points.csv</code> is generated. But because kinematic constraints and prereg parameters are not fully fixed/executed, P14 remains <strong>HOLD</strong>.</li></ul>
+<h2>T1. Priority (fixed)</h2>
+<ul><li><strong>Tier 1 (ARE self-constraints; kinematics/geometry/physics)</strong>: P10 <span class="eq-inline">→</span> P14 <span class="eq-inline">→</span> P8 <span class="eq-inline">→</span> P13 <span class="eq-inline">→</span> P12 <span class="eq-inline">→</span> P9</li><li><strong>Tier 2 (ARE<span class="eq-inline">→</span>ice response bridge; indirect)</strong>: P24 <span class="eq-inline">→</span> P25 <span class="eq-inline">→</span> P26 <span class="eq-inline">→</span> P23</li><li><strong>Tier 3 (low directness / controversial / non-core)</strong>: P17, P22, P27, P28</li></ul>
+<h2>T2. Per-module minimum requirements (summary)</h2>
+<p>{</p>
+<p><figure class="tbl"><table><tr><th>Module</th><th>Core data type</th><th>Minimum N</th><th>Representative repository (DOI/endpoint) + script</th></tr><tr><td>Module</td><td>Core data type</td><td>Minimum N</td><td>Representative repository (DOI/endpoint) + script</td></tr><tr><td>4r<em>(continued on next page)</em></td></tr><tr><td>P10</td><td>sediment-thickness grid + crust-age/spreading-rate grid + transects</td><td>transects<span class="eq-inline">≥</span>12, drill<span class="eq-inline">≥</span>10</td><td><code>doi:10.25921/xs0z-z845</code> (sed grid), EarthByte agegrid(<code>10.1029/2020GC009214</code>)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P10 –download –normalize</code></td></tr><tr><td>P14</td><td>heat-flow points + kinematic constraints</td><td>HF<span class="eq-inline">≥</span>200, vel<span class="eq-inline">≥</span>5</td><td>IHFC heat-flow DB + EarthByte rate grid</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P14 –normalize</code></td></tr><tr><td>P8</td><td>age/rate grids (magnetics-based) + (optional) magnetic profiles</td><td>profiles<span class="eq-inline">≥</span>20, seg<span class="eq-inline">≥</span>3</td><td>EarthByte agegrid(<code>10.1029/2020GC009214</code>)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P8 –download –normalize</code></td></tr><tr><td>P13</td><td>friction/pore-pressure priors (literature)</td><td>refs<span class="eq-inline">≥</span>5</td><td>Byerlee-type priors (DS-FRIC-01)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P13 –normalize</code></td></tr><tr><td>P12</td><td>volcano catalog + (partial) construction-age/stage fields</td><td>volc<span class="eq-inline">≥</span>50</td><td>GVP VOTW(<code>doi:10.5479/si.GVP.VOTW5-2022.5.0</code>)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P12 –download –normalize</code></td></tr><tr><td>P9</td><td>exhumation/high-metamorphism casebook (age/depth)</td><td>cases<span class="eq-inline">≥</span>10</td><td>Example: PANGAEA <code>doi:10.1594/PANGAEA.969013</code></td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P9 –download –normalize</code></td></tr><tr><td>P24</td><td>global endorheic-lake status/time-slice</td><td>basins<span class="eq-inline">≥</span>100</td><td>Oxford LLDB <code>doi:10.25921/mxae-9596</code></td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P24 –download –normalize</code></td></tr><tr><td>P25</td><td>bathymetry-based shelf/canyon proxies</td><td>profiles<span class="eq-inline">≥</span>30</td><td>GEBCO grid(<code>https://www.gebco.net/...</code>)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P25 –download –normalize</code></td></tr><tr><td>P26</td><td>unconformity/ hiatus catalog (API-based)</td><td>sites<span class="eq-inline">≥</span>50</td><td>Macrostrat API(<code>doi:10.1029/2018GC007467</code>)</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P26 –download –normalize</code></td></tr><tr><td>P23</td><td>refugia catalog + heat-flow covariate</td><td>refugia<span class="eq-inline">≥</span>20</td><td>IHFC heat-flow DB</td></tr><tr><td></td><td></td><td></td><td><code>python code/fetch_hold_datapacks.py –module P23 –normalize</code></td></tr></table></figure></p>
+<p>}</p>
+<h2>T3. Locking execution (recommended)</h2>
+<pre><code># (1) Lock from Tier 1
+python code/fetch_hold_datapacks.py --module P10 --download --normalize
+python code/run_hold_gates.py --module P10
+
+python code/fetch_hold_datapacks.py --module P8  --download --normalize
+python code/fetch_hold_datapacks.py --module P14 --normalize
+
+# (2) Bridge modules
+python code/fetch_hold_datapacks.py --module P24 --download --normalize
+python code/run_hold_gates.py --all
+
+# (3) Final roll-up
+python code/generate_pass_hold_fail.py</code></pre>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/32-appendix-pre-registration-files-skeletons/">← §32</a>
+  <a href="/geodynamics/">Contents</a>
+  
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

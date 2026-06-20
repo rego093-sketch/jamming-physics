@@ -1,0 +1,159 @@
+{
+ "disease": "Von Hippel-Lindau disease",
+ "omim": "193300",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Von Hippel-Lindau disease",
+  "omim": "193300",
+  "summary": "A dominantly inherited tumour-predisposition syndrome caused by loss-of-function of an E3-ubiquitin-ligase substrate-recognition BRAKE on the hypoxia response. The VHL protein (pVHL) is the substrate-recognition subunit of an E3 ligase (with elongin B/C, cullin-2, Rbx1) that, under normal oxygen, binds the prolyl-hydroxylated hypoxia-inducible factor alpha subunits (chiefly HIF-2alpha / EPAS1, also HIF-1alpha) and targets them for proteasomal degradation -- the BRAKE that keeps the pseudohypoxic transcriptional programme OFF when oxygen is plentiful. Germline LOF of one VHL allele plus somatic second-hit loss disables that recognition -> HIF-2alpha is no longer degraded under normoxia -> it accumulates, dimerises with HIF-1beta/ARNT and drives a constitutive pseudohypoxic transcriptional output (VEGF, PDGF, EPO, GLUT1, TGF-alpha) -> highly vascular tumours: retinal and CNS haemangioblastomas, clear-cell renal cell carcinoma, phaeochromocytoma/paraganglioma, pancreatic neuroendocrine tumours and cysts, endolymphatic-sac tumours. Read as a released BRAKE on the HIF response (pVHL degrades HIF-2alpha; LOF releases it -> HIF-2alpha drive UP) -- the released-brake -> over-activation convention, but here the released species is a STABILISED TRANSCRIPTION FACTOR, opening a NEW HYPOXIA-SENSING (HIF) axis and the brake-loss -> TF-stabilisation contrast to the kit's metabolite/enzyme/transport released-brake reads. The kit re-derives the targeted approved arm -- RESTRAIN the stabilised driver with the HIF-2alpha inhibitor belzutifan (Welireg, FDA 2021 for VHL-associated tumours not requiring immediate surgery), which blocks HIF-2alpha/ARNT dimerisation and so lowers the pseudohypoxic output even though pVHL recognition remains lost (the downstream-driver restraint logic). Belzutifan is a systemic option for tumours that previously required repeated surgery; it modifies the disease, is not curative, and resistance/residual disease occur (recorded honestly). The gamma reads the VHL locus switch STRUCTURE; the disease lesions are missense/truncating/deletion two-hit events outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "HIF-2alpha-driven pseudohypoxic transcriptional output (angiogenic / proliferative tumour drive) -- a hypoxia-sensing (HIF) axis; the brake-loss -> transcription-factor-stabilisation contrast to the kit's other released-brake (metabolite/transport) reads",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "VHL",
+    "gamma": 1.4325,
+    "spinodal_h_sp": 0.65992,
+    "barrier": 0.51301,
+    "dwell_relative_size": 1.55865,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000003.12",
+     "gene_start": 10141777,
+     "gene_end": 10153666,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "von Hippel-Lindau tumor suppressor"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "VHL encodes pVHL, the substrate-recognition subunit of a cullin-2 E3 ubiquitin ligase that binds prolyl-hydroxylated HIF-alpha (HIF-2alpha/EPAS1, HIF-1alpha) under normoxia and marks it for proteasomal degradation -- the BRAKE on the hypoxia-inducible transcriptional programme. Two-hit (germline + somatic) LOF removes that recognition -> HIF-2alpha is stabilised and the pseudohypoxic drive runs constitutively (axis UP). 3p25.3, OMIM 608537; VHL disease OMIM 193300. NCBI official symbol VHL. The promoter gamma reads the locus switch STRUCTURE only; the coding/deletion lesions are outside the promoter firewall.",
+    "src": "Latif 1993 Science 260:1317 (VHL gene identified); Maxwell 1999 Nature 399:271 (pVHL targets HIF-alpha for oxygen-dependent degradation)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "VHL",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "f11b11f07f0e"
+ },
+ "treatment_A_switch": {
+  "disease": "Von Hippel-Lindau disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "EPAS1",
+    "push_direction": "inhibit the stabilised HIF-2alpha transcription factor (block HIF-2alpha/ARNT dimerisation) to lower the pseudohypoxic transcriptional drive -> push the axis DOWN toward healthy; bypasses the lost pVHL degradation brake by acting on the stabilised downstream driver",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HIF-2alpha inhibitor (belzutifan)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of HIF-2alpha transcriptional suppression / tumour response not derived from sequence",
+    "src": "Jonasch 2021 NEJM 385:2036 (belzutifan in VHL-associated tumours); Choueiri 2021 Nat Med 27:802 (belzutifan ccRCC); belzutifan (Welireg) FDA 2021"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "VHL",
+    "push_direction": "restore pVHL E3-ligase substrate recognition so HIF-2alpha is degraded again under normoxia -> the NET axis effect is to RESTRAIN the stabilised driver back toward normal (gene/function restoration of the causal brake; restrain-coded by net axis effect, the Wilson/cystinosis convention)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "VHL gene / function restoration (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] degree/durability of restored HIF degradation not derived from sequence",
+    "src": "Maxwell 1999 Nature 399:271 (pVHL HIF-degradation function as the restoration target); investigational, no approved VHL gene therapy"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "EPAS1",
+   "push_direction": "inhibit the stabilised HIF-2alpha transcription factor (block HIF-2alpha/ARNT dimerisation) to lower the pseudohypoxic transcriptional drive -> push the axis DOWN toward healthy; bypasses the lost pVHL degradation brake by acting on the stabilised downstream driver",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "HIF-2alpha inhibitor (belzutifan)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of HIF-2alpha transcriptional suppression / tumour response not derived from sequence",
+   "src": "Jonasch 2021 NEJM 385:2036 (belzutifan in VHL-associated tumours); Choueiri 2021 Nat Med 27:802 (belzutifan ccRCC); belzutifan (Welireg) FDA 2021"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.55865,
+   "dwell_disease": 2.14315,
+   "dwell_treated": 1.74951,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "af5201320bdc"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "VHL LOF (released HIF-degradation brake) raises HIF-2alpha-driven pseudohypoxic output (axis UP)",
+   "falsifier": "a VHL LOF allele that LOWERED normoxic HIF-2alpha protein / HIF-target transcription (VEGF, GLUT1, CA9) would refute the released-brake direction",
+   "measurable_by": "normoxic HIF-2alpha protein level and HIF-target gene expression (VEGF, CA9, GLUT1) in VHL-null vs VHL-reconstituted clear-cell RCC cells"
+  },
+  {
+   "claim": "restraining HIF-2alpha (belzutifan) is the CORRECTIVE direction (lowers the pseudohypoxic drive)",
+   "falsifier": "if a HIF-2alpha inhibitor RAISED HIF-target output or GREW VHL-associated tumours, the restrain-HIF-2alpha lever sign is wrong",
+   "measurable_by": "HIF-target transcription and haemangioblastoma / renal-tumour response to belzutifan in VHL"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Von Hippel-Lindau disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "f7ad1e3b7589"
+ },
+ "determinism_sha": "1b29ab0632eb"
+}

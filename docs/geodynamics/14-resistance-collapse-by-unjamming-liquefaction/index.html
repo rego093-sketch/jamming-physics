@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resistance collapse by unjamming — Jamming Geodynamics §14 | Jamming Physics</title>
+<meta name="description" content="“Under enormous normal stress beneath a continent-scale load, a thin water layer will simply squeeze out sideways.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Resistance collapse by unjamming — Jamming Geodynamics §14 | Jamming Physics"><meta property="og:description" content="“Under enormous normal stress beneath a continent-scale load, a thin water layer will simply squeeze out sideways."><meta property="og:url" content="https://jamming-physics.org/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Resistance collapse by unjamming — Jamming Geodynamics §14 | Jamming Physics"><meta name="twitter:description" content="“Under enormous normal stress beneath a continent-scale load, a thin water layer will simply squeeze out sideways.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Resistance collapse by unjamming",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 14,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Resistance collapse by unjamming"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§14 Unjamming-liquefaction"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §14</nav></header>
+<main>
+<h1>Resistance collapse by unjamming</h1>
+
+<p class="answer">Resistance collapse by unjamming and liquefaction — The strongest objection is that under a continent-scale load any thin water layer is squeezed out, so lubrication cannot persist. This section answers it not with a qualitative "water is slippery" claim but with effective-stress reduction and an unjamming/liquefaction transition that collapses basal resistance. Gate verdict: PASS.</p>
+
+<p class="abstract">“Under enormous normal stress beneath a continent-scale load, a thin water layer will simply squeeze out sideways. Tire hydroplaning (cm-scale films) is not comparable.” (LOCK → Derive → Gate).</p>
+
+<aside class="claim-strip">
+  <span class="grade g-pass">PASS</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<aside class="vp-card" data-locked="omega_nogo"><b>Ω-NoGo: μ_eff hold-min = 10⁻²</b> — Physics No-Go floor; a low-friction claim must hold above it (h≥ 10⁻⁶ m, ΔP≤ 500 MPa). <b>[F]</b> forced. <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">Canonical derivation §16</a></aside>
+
+<h2>The strongest critique (scale): “water immediately squeezes out”</h2>
+<p>A natural critique is:</p>
+<blockquote><p>“Under enormous normal stress beneath a continent-scale load, a thin water layer will simply squeeze out sideways. Tire hydroplaning (cm-scale films) is not comparable.”</p></blockquote>
+<p>Accordingly, this white paper does <strong>not</strong> rely on a purely qualitative “water is slippery” claim. Instead it upgrades the narrative by <strong>(i) collapsing solid friction via effective-stress reduction (hydraulic jacking)</strong>, and then <strong>(ii) modeling the residual resistance</strong> by a viscous-shear (hydroplaning) term.</p>
+<h2>Core equations: Terzaghi/Biot effective stress and friction collapse</h2>
+<p>In rock/soil mechanics, friction is governed primarily by <strong>effective normal stress</strong>. Terzaghi/Biot effective stress is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-001.svg" width="113" height="20" loading="lazy" alt="σ' = σₙ - α P_f eq:effectiveₛtress"></figure> where <span class="eq-inline">σₙ</span> is total normal stress, <span class="eq-inline">P_f</span> is pore-fluid pressure, and <span class="eq-inline">α~ 1</span> is the Biot coefficient. If solid–solid contact dominates (dry friction regime), a Coulomb-like shear scale is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-002.svg" width="106" height="20" loading="lazy" alt="τ_coul ≈ μ_dry σ' eq:coulombₛhear"></figure> so if <span class="eq-inline">P_f→ σₙ/α</span> and <span class="eq-inline">σ'→ 0</span>, then <span class="eq-inline">τ_coul→ 0</span> even if <span class="eq-inline">μ_dry</span> is large. This is <strong>hydraulic jacking</strong>: <strong>friction collapses not because water is a good lubricant, but because overpressure effectively lifts/decouples the interface and removes solid friction.</strong></p>
+<h2>Primary collapse from VP jamming: unjamming–liquefaction (not melting)</h2>
+<p>The effective-stress route (Eq. <a href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">&sect;14</a>, hydraulic jacking) is retained as a corroborating mechanism, but the <strong>primary</strong> resistance-collapse mechanism is derived from the project's own <strong>VP jamming</strong> theory (jamming spine S2.2–S2.4), so friction is <strong>not</strong> an imported fault-mechanics assumption.</p>
+<p><strong>State picture.</strong> The basal shear zone is a granular gouge in one of two VP states: <strong>jammed</strong> (State 4: load-bearing contact backbone, finite yield stress, behaves as a solid) or <strong>unjammed/liquefied</strong> (State 3: backbone dissolved, viscous flow). The control variable is the mean coordination number <span class="eq-inline">z</span> relative to the <strong>isostatic</strong> value <span class="eq-inline">zᵢₛₒ=2d</span> (<span class="eq-inline">zᵢₛₒ=6</span> in 3D).</p>
+<p><strong>Friction law (mixture).</strong> With jammed fraction <span class="eq-inline">ξ∈[0,1</span>] (1 = fully jammed), <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-003.svg" width="249" height="37" loading="lazy" alt="τᵣₑₛ = ξ μ_dry σ' + (1-ξ) η_flowV/h, eq:jam_friction"></figure> a Coulomb (jammed) term that <strong>vanishes as the gouge unjams</strong> plus a viscous (liquefied) term. In the jammed limit Eq. &sect;14 reduces to the combined resistance Eq. &sect;14; it adds the physically essential collapse channel <span class="eq-inline">ξ→ 0</span>.</p>
+<p><strong>Liquefaction rule (key step).</strong> Frictional shear heating raises the gouge temperature, driving <span class="eq-inline">z→ zᵢₛₒ</span>. At isostaticity the relaxed shear modulus and the yield stress vanish while the bulk modulus stays finite: <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-004.svg" width="526" height="19" loading="lazy" alt="G_relaxed(z) ∝ (z-zᵢₛₒ)→ 0, σ_y ~ G_relaxed γ_y ∝ (z-zᵢₛₒ)→ 0, eq:sigmay_vanish"></figure> so the shear backbone dissolves (State 4 <span class="eq-inline">→</span> 3) <strong>before melting</strong>: grains stay solid, only the collective load-bearing network is lost — <strong>liquefaction by unjamming</strong>, distinct from melting.</p>
+<p><strong>Derived (not assumed) constants.</strong> The rule <strong>form</strong> of Eqs. &sect;14–&sect;14 is derived from first-principles soft-disk jamming simulations (2D bidisperse; generalizing to the spine's 3D), reproducing classical and spine results:</p>
+<p><figure class="tbl"><table><tr><th>Quantity</th><th>Result (derived)</th></tr><tr><td>Jamming onset <span class="eq-inline">φ_jam</span></td><td><span class="eq-inline">0.840</span> (classical 2D bidisperse <span class="eq-inline">≈ 0.842</span>)</td></tr><tr><td>Isostatic coordination <span class="eq-inline">zᵢₛₒ=2d</span></td><td><span class="eq-inline">4</span> (2D); <span class="eq-inline">6</span> (3D = spine S2.4)</td></tr><tr><td>Excess contacts</td><td><span class="eq-inline">(z-zᵢₛₒ)=4.0 (φ-φ_jam)⁽1/2)</span></td></tr><tr><td>Pressure</td><td><span class="eq-inline">p = 0.33 (φ-φ_jam)</span></td></tr><tr><td>Relaxed shear modulus (Hessian)</td><td><span class="eq-inline">G_relaxed=0.068 (z-zᵢₛₒ)→ 0</span></td></tr><tr><td>Affine (Born) modulus</td><td><span class="eq-inline">G_Born≈ 0.20</span> (finite)</td></tr></table></figure></p>
+<p><strong>Prototype outcome.</strong> For a representative mid-crustal gouge, the unjamming channel <strong>on</strong> gives <span class="eq-inline">μ_eff≈ 2.2×10⁻³</span> (inside <span class="eq-inline">Ω</span>-NoGo <code>omega_nogo.mu_eff_hold_min</code><span class="eq-inline">=10⁻²</span>) at <span class="eq-inline">Δ T≈ 25 K</span> (no melting). The melt-only counterfactual needs <span class="eq-inline">Δ T≈ 1462 K</span>; unjamming reaches low friction at <span class="eq-inline">~ 1.3%</span> of the melt energy.</p>
+<aside class="note"><p><strong>Reproducibility.</strong> <code>atl_bundle/engine/vp_jamming_friction.py</code> (<span class="eq-inline">μ_eff</span>, <span class="eq-inline">Δ T</span>); <code>atl_bundle/engine/jamming_microderive.py</code> (<span class="eq-inline">φ_jam</span>, <span class="eq-inline">zᵢₛₒ</span>, scaling); <code>atl_bundle/engine/jamming_shear_modulus.py</code> (Hessian <span class="eq-inline">G_relaxed→0</span>). Audited checks C1, C4–C5 in <code>atl_bundle/validate_all.py</code>; seeds fixed; <code>SHA256SUMS.txt</code> verifies integrity.</p></aside>
+<p><strong>Bistability: a liquefied zone cannot creep slowly.</strong> Liquefaction is self-consistent only while shear heating outpaces conduction. For the viscous branch the steady temperature rise is <span class="eq-inline">Δ Tₛₛ=η_flowV²/(8k)</span>, so sustained unjamming (<span class="eq-inline">Δ Tₛₛ≥Δ T_unjam</span>) requires <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-005.svg" width="345" height="55" loading="lazy" alt="V ≥ V_crit=√8 k Δ T_unjamη_flow ≈ 10⁻²--1 m s⁻¹ eq:vcrit"></figure> across <span class="eq-inline">η_flow=10²</span>–<span class="eq-inline">10⁶ Pa s</span>. Since <span class="eq-inline">V_crit</span> exceeds cm yr<span class="eq-inline">⁻¹</span> (<span class="eq-inline">~ 3×10⁻¹⁰ m s⁻¹</span>) by <span class="eq-inline">~ 10⁸</span>, there is <strong>no stable slow-liquefied branch</strong>: <span class="eq-inline">τₛₛ(V)</span> drops by <span class="eq-inline">~10²</span>–<span class="eq-inline">10³</span> across unjamming, giving <strong>velocity-weakening</strong> (<span class="eq-inline">dτₛₛ/dV<0</span>) and a <strong>stick–slip</strong> instability. The motion mode is stuck-or-fast; an apparent slow steady rate is a time-average of brief fast slips (cumulative actual sliding to open a <span class="eq-inline">3000 km</span> half-basin <span class="eq-inline">~ 70</span> days at <span class="eq-inline">V~0.5 m s⁻¹</span>). This is the honest replacement for “slow residual viscous creep.”</p>
+<aside class="note"><p><strong>Reproducibility.</strong> <code>atl_bundle/engine/jamming_bistability.py</code> (<span class="eq-inline">V_crit</span>, velocity-weakening, stick–slip duty cycle); audited checks C9a–C9c.</p></aside>
+<p><strong>Corroborating routes (demoted).</strong> (i) <strong>Thermal pressurization</strong> (Rice 2006): the same heating raises <span class="eq-inline">P_f</span> and lowers <span class="eq-inline">σ'</span> in Eq. &sect;14; a coupled 1-D prototype gives <span class="eq-inline">~ 82%</span> undrained weakening (<code>atl_bundle/engine/tp_dilatancy_prototype.py</code>). (ii) <strong>Granular fluidization/dilatancy</strong>. A sign-discriminator <span class="eq-inline">R_md</span> governs basal weakening vs tip dilatant strengthening. These reinforce, not replace, unjamming.</p>
+<p><strong>Derivation status (honest).</strong> The <strong>material</strong> law (Eqs. &sect;14–&sect;14) is lab-grounded and scale-invariant (jamming is a material property; cf. O'Hern–Silbert–Liu–Nagel). Its <strong>application at continental scale</strong> is gated by the master-scale constraint (Section <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">&sect;16</a>).</p>
+<p><strong>Falsifier (WP-T1).</strong> <strong>(A)</strong> signature: basal shear zones should record <strong>unjamming/fluidization</strong> (gouge fluidization, injection/hydrofracture textures, grain-intact but fabric-destroyed gouge), with melting only on segments that failed to unjam (cf. P4-a/P4-b). <strong>(B)</strong> data: exhumed detachment petrofabrics; gouge microstructure; pseudotachylyte presence/absence. <strong>(C)</strong> test: is <span class="eq-inline">μ_eff≤ 10⁻²</span> reached <strong>without</strong> violating <span class="eq-inline">Ω</span>-NoGo (<span class="eq-inline">h≥ 10⁻⁶ m</span>, <span class="eq-inline">Δ P≤ 500 MPa</span>)? <strong>(D)</strong> FALSIFIER: if shear zones show <strong>neither</strong> unjamming/fluidization <strong>nor</strong> fluid-overpressure signatures, or <span class="eq-inline">μ_eff≤10⁻²</span> only by violating <span class="eq-inline">Ω</span>-NoGo, WP-T1 is <strong>FAIL</strong> and the rapid-motion core reverts to HOLD.</p>
+<h2>Rebutting squeeze-out: drainage timescale and undrained loading</h2>
+<p>For overpressure to matter, <span class="eq-inline">P_f</span> must persist over the event window. A simplest criterion is a <strong>drainage timescale</strong>. With hydraulic diffusivity <span class="eq-inline">D_h</span>, a characteristic equilibration time over length <span class="eq-inline"></span> is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-006.svg" width="262" height="43" loading="lazy" alt="τ_drain ~ ²/D_h (D_h = k/(η_f Sₛ)) eq:drainₜimescale"></figure> where <span class="eq-inline">k</span> is permeability, <span class="eq-inline">η_f</span> fluid viscosity, and <span class="eq-inline">Sₛ</span> specific storage. The key requirement is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-007.svg" width="76" height="13" loading="lazy" alt="τ ≪ τ_drain eq:undrained_condition"></figure> i.e., the event window <span class="eq-inline">τ</span> is shorter than the drainage time so that an <strong>undrained</strong> regime exists (AR-10). If this holds, “water immediately escapes” is weakened automatically. If instead <span class="eq-inline">τ≳τ_drain</span>, maintaining overpressure is difficult and hydroplaning assumptions should be downgraded to HOLD/FAIL.</p>
+<p><strong>Geologic reinforcements (qualitative).</strong> Event-like shear can induce (i) comminution/gouge that <strong>reduces permeability via self-sealing</strong>, (ii) <strong>localized trapped pockets</strong> created by hydrofracturing, and (iii) <strong>low-permeability films</strong> via fine particles/clay formation. These mechanisms must be testable via P4.</p>
+<h2>Residual resistance: viscous shear and “combined resistance”</h2>
+<p>If hydraulic jacking reduces <span class="eq-inline">σ'</span>, solid friction drops sharply but does not necessarily become zero. Residual shear resistance can be modeled by viscous shear. Under a Newtonian approximation, <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-008.svg" width="87" height="33" loading="lazy" alt="τ_visc ≈ η v/h. eq:viscₛhear"></figure> A conservative combined shear resistance is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-009.svg" width="236" height="33" loading="lazy" alt="τᵣₑₛ ≈ μ_dry (σₙ-α P_f) + /h. eq:combinedᵣesistance"></figure> The total resisting force is <span class="eq-inline">F_friction≈ τᵣₑₛA_base</span>, and the effective friction coefficient (normalized by total normal stress) is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-010.svg" width="94" height="35" loading="lazy" alt="μ_eff:= τᵣₑₛσₙ. eq:muₑffₜotal"></figure></p>
+<p><strong>Interpretation.</strong> (1) As <span class="eq-inline">P_f</span> grows and <span class="eq-inline">σ'</span> shrinks, the first (solid-friction) term collapses, (2) the bottleneck becomes the second (viscous-shear) term, and (3) the feasibility question becomes whether plausible <span class="eq-inline">(η,v,h)</span> keep <span class="eq-inline">μ_eff</span> within <span class="eq-inline">Ω</span>-NoGo limits.</p>
+<h2>Geological signatures of lubrication/overpressure (P4): “hydrofracturing” may matter more than “melting”</h2>
+<p>A common attack is: “If it slid that fast, frictional heat must have melted everything.” But this mechanism aims to <strong>reduce resistance</strong> rather than increase it. Therefore it is more honest to pre-register two branches of expected signatures:</p>
+<ul><li><strong>(P4-a) Overpressure/hydrofracturing dominated (recommended default).</strong> Widespread melting (vitrification) is not mandatory. Instead, signatures of fluid overpressure should appear near shear zones: <strong>hydrofracturing, injection veins, brecciation, and gouge fluidization</strong>.</li><li><strong>(P4-b) Local melting dominated (alternative branch).</strong> If some segments failed to achieve low friction, localized melting/vitrification (e.g., pseudotachylyte) may appear. In that case the model must explain <strong>why those segments are exceptions</strong> (local differences in permeability/drainage/fluid supply).</li></ul>
+<h2>Multiphase fluid details: what is the “lubrication film”?</h2>
+<p>Fluid composition strongly affects viscosity <span class="eq-inline">η</span> and state behavior. We therefore register candidate fluid classes (AR-8):</p>
+<ul><li>(F1) seawater/brine (low viscosity),</li><li>(F2) supercritical fluid / high-T steam mixture (variable viscosity; strong pressure sensitivity),</li><li>(F3) melt involvement (high viscosity; strong thermal signatures),</li><li>(F4) particle–fluid mixture (granular fluidization; nonlinear effective viscosity/yield stress).</li></ul>
+<p><figure class="tbl"><table><tr><th>ID</th><th>Composition/state</th><th><span class="eq-inline">η</span> (order examples)</th><th>Expected P4 signatures (examples)</th></tr><tr><td>F1</td><td>seawater/brine (liquid)</td><td><span class="eq-inline">~ 10⁻³ Pa· s</span></td><td>infiltration/salinity, low-T alteration, possible injection veins</td></tr><tr><td>F2</td><td>supercritical water / steam mixture</td><td><span class="eq-inline">10⁻⁵</span>–<span class="eq-inline">10⁻³ Pa· s</span> (variable)</td><td>phase-change/vesicularity, hydrothermal alteration, pressure-oscillation signatures</td></tr><tr><td>F3</td><td>melt involvement</td><td><span class="eq-inline">10¹</span>–<span class="eq-inline">10⁴ Pa· s</span> (high)</td><td>localized melting/vitrification (pseudotachylyte), quench textures</td></tr><tr><td>F4</td><td>particle–fluid mixture (fluidization)</td><td><span class="eq-inline">η_eff</span> nonlinear (may include yield)</td><td>gouge fluidization, grain alignment/sorting, injection breccias</td></tr></table></figure></p>
+<p><strong>Important note.</strong> These viscosity ranges are not definitive; they are <strong>order examples</strong> to be updated by references/datasheets in a release. The role of this table is to lock sensitivity-analysis inputs for “which candidate can create the <span class="eq-inline">μ_eff</span> bottleneck.”</p>
+<p><strong>Viscosity sensitivity (summary).</strong></p>
+<p>In Eq. &sect;14, <span class="eq-inline">η</span> controls the residual resistance. Therefore for each candidate, <span class="eq-inline">(η,h,v)</span> ranges must be pre-registered and judged by whether <span class="eq-inline">μ_eff</span> stays within <span class="eq-inline">Ω</span>-NoGo constraints.</p>
+<p><strong>Phase change and cavitation.</strong></p>
+<p>Strong suction can rapidly drop pressure along contacts/crack networks. If fluid vaporizes or cavitates, (1) the pathway for transmitting suction changes, and (2) the lubrication film can become discontinuous, raising friction. Conversely, if shear/heating raises <span class="eq-inline">P_f</span>, hydraulic jacking can strengthen, while phase transitions may absorb energy as <strong>latent heat</strong> (see the energy budget subsection). Accordingly, P4 should include not only “hydrothermal” signatures but also microstructures that can indicate rapid pressure fluctuations/hydrofracturing/phase change (porosity/vesicles, injection veins, breccias, quench textures).</p>
+<h2>Fluid budget and sources: a quantitative answer to “where did the fluid come from?”</h2>
+<p>Claiming hydroplaning/hydraulic jacking immediately raises: “Where does the fluid come from?” A key point is that the mechanism does <strong>not</strong> require an ocean-scale volume. It requires a <strong>thin, high-pressure film</strong> (<span class="eq-inline">h_film</span>) maintained over an interface during an event window <span class="eq-inline">τ</span>. Thus, check <strong>area <span class="eq-inline">×</span> thickness</strong> first.</p>
+<p>A simplest required volume estimate is <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-011.svg" width="137" height="18" loading="lazy" alt="V_req = A_base h_film."></figure></p>
+<p><strong>Example (order).</strong> If <span class="eq-inline">A_base~ 10⁷ km²=10¹³ m²</span> and <span class="eq-inline">h_film~ 1 mm=10⁻³ m</span>, then <figure class="eq"><img src="/geodynamics/eq/geodynamics/geo-14-012.svg" width="205" height="21" loading="lazy" alt="V_req ~ 10¹⁰ m³ ≈ 10 km³."></figure> This is tiny compared with total ocean volume; the bottleneck is not <strong>total volume</strong> but <strong>maintaining overpressure (undrained)</strong> and <strong>distribution/trapping</strong>.</p>
+<p><figure class="tbl"><table><tr><th><span class="eq-inline">h_film</span></th><th><span class="eq-inline">V_req</span> (assume <span class="eq-inline">A_base=10¹³ m²</span>)</th><th>Interpretation (order)</th></tr><tr><td><span class="eq-inline">10⁻⁴</span>m (0.1 mm)</td><td><span class="eq-inline">10⁹ m³≈ 1 km³</span></td><td>“Microfilm” regime; total-volume constraint is negligible.</td></tr><tr><td><span class="eq-inline">10⁻³</span>m (1 mm)</td><td><span class="eq-inline">10¹⁰ m³≈ 10 km³</span></td><td>Thin film; distribution/overpressure maintenance is key.</td></tr><tr><td><span class="eq-inline">10⁻²</span>m (1 cm)</td><td><span class="eq-inline">10¹¹ m³≈ 100 km³</span></td><td>Total volume grows; source assumptions become important.</td></tr></table></figure></p>
+<p><strong>Candidate sources (AR-12).</strong> We do not lock a single fluid source; instead we register competing modules (H-S1–H-S3):</p>
+<ul><li>(H-S1) <strong>External infiltration</strong>: seawater/brine intrusion along rupture/fault/damage zones.</li><li>(H-S2) <strong>In-situ generation</strong>: <strong>dehydration reactions</strong> of hydrous minerals (e.g., serpentinized mantle/crust) releasing fluids during high-T/P events.</li><li>(H-S3) <strong>Multiphase transitions</strong>: generation/condensation of supercritical water/steam (phase change) and particle–fluid mixture fluidization (F4).</li></ul>
+<p><strong>Strict falsification rule.</strong> If (1) required <span class="eq-inline">h_film</span> becomes so large that <span class="eq-inline">V_req</span> is unrealistic, or (2) P4 shows systematic absence of signatures corresponding to infiltration/dehydration/hydrothermal alteration/injection veins, then AR-12 (fluid supply) and the corresponding C3 branch must be downgraded to HOLD or FAIL.</p>
+<h2>Convergence</h2>
+<p>The friction-collapse rule here is derived from the project’s <a href="/physics/">foundational vacuum-as-jammed-solid theory</a> (jamming → unjamming) and shares the marginal, just-rigid flow state treated in the <a href="/fluid-dynamics/">configured-continuum</a> paper; it is not imported fault mechanics.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/13-driving-term-void-suction-acceleration/">← §13</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/15-asymmetric-stabilization-pacific-sloshing-vs/">§15 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

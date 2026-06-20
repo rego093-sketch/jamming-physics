@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sensory transduction to a spike code — Neural Emergence §10 | Jamming Physics</title>
+<meta name="description" content="Each sense converts its stimulus into an all-or-none R19/FHN spike train; brighter visible light gives more spikes and wavelength reads as colour.">
+<link rel="canonical" href="https://jamming-physics.org/neuro/10-sensory-input-transduction/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Sensory transduction to a spike code — Neural Emergence §10 | Jamming Physics"><meta property="og:description" content="Each sense converts its stimulus into an all-or-none R19/FHN spike train; brighter visible light gives more spikes and wavelength reads as colour."><meta property="og:url" content="https://jamming-physics.org/neuro/10-sensory-input-transduction/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Sensory transduction to a spike code — Neural Emergence §10 | Jamming Physics"><meta name="twitter:description" content="Each sense converts its stimulus into an all-or-none R19/FHN spike train; brighter visible light gives more spikes and wavelength reads as colour.">
+<link rel="stylesheet" href="/neuro/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle",
+ "headline":"Sensory input: transduction to a low-frequency code",
+ "isPartOf":{"@type":"CreativeWork","name":"From Ion Channels to Behaviour: A Falsifiable Neural Emergence Chain",
+   "sameAs":"https://doi.org/10.5281/zenodo.17979015"},
+ "position":10,
+ "author":{"@type":"Person","name":"Young Jae Lee",
+   "sameAs":"https://orcid.org/0009-0002-7535-8245"},
+ "license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Neural Emergence","item":"https://jamming-physics.org/neuro/"},
+ {"@type":"ListItem","position":3,"name":"\u00a710 Sensory input: transduction to a low-frequency code"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/neuro/">Neural Emergence</a> › §10</nav></header>
+<main>
+<h1>Sensory input — the senses transduce a stimulus into a low-frequency code</h1>
+
+<p class="answer">A sensory receptor is an R19 switch with slow recovery: the stimulus sets a graded receptor potential that biases the cell along the rising edge of its firing window, so a stronger visible stimulus gives more all-or-none spikes. Vision reads wavelength as colour. Direction is forced and simulation-verified; absolute rates are open.</p>
+
+<p class="abstract">Each sense converts its physical stimulus into the same all-or-none spike code the rest of the chain already speaks (§2). The transducer sits just below threshold in the dark or quiet and depolarises toward its optimal firing point with stimulus, so spike count rises monotonically; a low-pass turns fast input into a slow read. An L-cone gives drive 0.389 to red (620 nm) versus 0.016 to blue (450 nm), and a 5×5 light pattern is reproduced in per-pixel spike counts. The conversion direction is forced [F] and verified in simulation [V]; the absolute spike rate in Hz is calibration and open [O].</p>
+
+<aside class="claim-strip">
+  <span class="grade g-calibrated">model</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/neuro/10-sensory-input-transduction/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17979015" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h2>The transducer</h2>
+<p>A sensory receptor is the same unit as every neuron — the R19 bistable switch with a slow recovery (§2) — wired so the stimulus sets its drive. In the dark or the quiet the cell rests just below threshold and is silent; the stimulus is a graded receptor potential that depolarises it toward its optimal firing point. Because that edge of the firing window is monotonic, a stronger stimulus produces more spikes, and the recovery low-passes a fast input into a slow read.</p>
+
+<h2>Vision: the eye converts light into spikes</h2>
+<p>The eye reads the external light of Chapter EM, not a signal inside the nerve. Light is the transverse oscillation that emerges on the jammed lattice at c² = B/ρ and arrives at a propagation angle χ set by its wavelength; the photoreceptor absorbs it and depolarises its downstream stage, so a brighter visible source gives more spikes (in the run, dark → 0, bright → 23). The wavelength is read as colour because each cone has a different opsin sensitivity: the L-cone returns drive 0.389 to red light at 620 nm but only 0.016 to blue at 450 nm.</p>
+<p>A pattern is re-presented, not merely detected. Running a small retina over a 5×5 light image, the lit pixels carry about 7 spikes each and the dark pixels carry 0, so the shape is preserved as a spike map — the image is shown to the chain in the only currency it reads.</p>
+
+<aside class="vp-card" data-locked="c2"><b>c² = B/ρ</b> — light is the single longitudinal wave that survives at the jammed lattice's isostatic point (shear modulus → 0); the propagation-angle law is sinχ = λ/(mD). <b>[V]</b> verified. <a href="/physics/10-implementing-speed-light-clock-free/#10.9">derivation physics §10.9</a></aside>
+
+<h2>The other senses</h2>
+<p>Hearing, smell, taste and touch use the same transducer with a different front end. The ear's mechano-gated channels open with a pressure wave's amplitude; smell and taste bind a ligand and saturate it through a Hill term; skin thermoreceptors raise their drive with the deviation of temperature from a neutral 32 °C. Each delivers the identical all-or-none spike train downstream, so one code carries every modality, and only the front-end mapping differs.</p>
+
+<h2>Low-frequency, not light</h2>
+<p>The low-frequency read is the slow recovery of the switch, and the carrier downstream is ionic, not optical. Light enters only as the external stimulus to the eye; it never travels inside the nerve, because conduction is 0.5–120 m/s ionic switching — about 10⁶× slower than light — and the axon is not a waveguide (§9, retired). Equally, the slow signal is not a low-frequency sum that becomes "energy then information": a linear sum stays low-frequency, and energy here is only the price of switching (§2).</p>
+
+<h2>Forced and open</h2>
+<p>What is forced is the direction and the form. That a stronger visible stimulus gives more spikes, that wavelength reads as colour, and that a pattern is preserved as a spike map are parameter-free and reproduce in a deterministic module [F]/[V]. What is open is every absolute number: the spike rate in Hz, the receptor gains, and the exact transduction constants are calibration that needs separate data, and they are marked [O] in the ledger — never asserted here.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/neuro/09-bounds-open-retired/">← §9</a>
+  <a href="/neuro/">paper contents</a>
+  <a rel="next" href="/neuro/11-sensorimotor-loop/">§11 →</a>
+</nav>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.17979015">10.5281/zenodo.17979015</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

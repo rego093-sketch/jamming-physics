@@ -1,0 +1,384 @@
+{
+  "paper_id": "disease",
+  "code": "dis",
+  "title": "Systemic Genetic & Rare Disease Mechanisms",
+  "short": "Disease Mechanisms",
+  "doi": "10.5281/zenodo.20763842",
+  "doi_status": "registered (VP-SPEC §2)",
+  "hub_url": "/disease_wp/",
+  "branch": "jamming",
+  "build_date": "2026-06-18",
+  "abstract": "Systemic genetic and rare diseases, one page per disease: a graded molecular mechanism, a reproducible burden order (provisional [H]), and the established treatment mechanism (accession-dated [L] for 33 of 35). Onset is registry-graded [L] from Orphanet (28/35), disability [L] from the GBD 2013 disability-weights table (13/35), severity [L] from the HPO clinical-modifier Severity subtree (HP:0012824) for the one disease whose dominant sequela is annotated, and progression [L] from curated PMC open-access literature with a frozen-R3-derived tier (order_locked 6/35).",
+  "headline_results": [
+    "burden_score = raw_burden · (1 − e)",
+    "rankable = axes_scored ≥ 3 of 5",
+    "treatments accession-dated to GeneReviews Management: 33 [L], 2 [H] (no therapy)",
+    "disability [L] 13/35 from GBD 2013 disability weights; 2 mortality axes corroborated from PMC survival literature (R7)",
+    "severity [L] via the HPO Severity-modifier subtree (HP:0012824) dominant-sequela join (R8): 1 disease lifted",
+    "progression [L] via curated PMC-OA literature with a frozen-R3-derived tier (R9+R10): Niemann-Pick type A &rarr; tier 1.0 (3rd order_locked, R9), Duchenne MD (R9) plus Fabry &amp; Marfan progression (R10 round 2) corroborated (not locked); order_locked 6/35",
+    "unmet-need / treatment-gap surface: a read-only graded research-prioritisation view (residual = raw_burden·(1−e)); headline = burden [L] + no disease-directed therapy"
+  ],
+  "provisional_order": true,
+  "registry_passes": [
+    "R5 treatment accession-dating (GeneReviews Management → [L], 33/35)",
+    "R6 Orphanet natural-history (onset → registry [L], 28/35; +1 mortality)",
+    "R7 open-source natural-history (GBD 2013 disability weights → disability [L], 13/35; +2 mortality axes corroborated from PMC survival literature; OMIM clinical synopsis clean-skipped, no key)",
+    "R8 open-source severity (HPO clinical-modifier Severity subtree HP:0012824 → severity [L] via a cited dominant-sequela join, 1 disease)",
+    "R9 curated severity/progression (cited PMC open-access dominant-sequela join; tier DERIVED by the frozen R3 tier function over the verbatim sentence, non-spectrum → progression [L]; Niemann-Pick type A is a 3rd order_locked disease, Duchenne MD corroborated not locked; order_locked 6/35)"
+  ],
+  "order_locked": 6,
+  "deferred_L_passes": [
+    "the rest of severity (feature-level in the open HPO annotations — a category error if read as a disease tier), the rest of progression, and remaining mortality [H]→[L]/[V] via published functional & survival literature — remaining lift. The OMIM clinical-synopsis path is removed (API key unobtainable for an individual researcher), not deferred"
+  ],
+  "chapters": [
+    {
+      "no": 1,
+      "slug": "01-classification-burden-treatment-framework",
+      "kind": "framework",
+      "title": "Classification, burden, and treatment framework",
+      "one_liner": "three axes + deterministic burden index + residual offset + grade legend",
+      "grade": "[H]",
+      "residual_rank": null
+    },
+    {
+      "no": 2,
+      "slug": "02-achondrogenesis-type-ii",
+      "kind": "placed",
+      "title": "Achondrogenesis type II",
+      "one_liner": "skeletal disease in COL2A1; residual burden rank 1/23",
+      "grade": "[H]",
+      "residual_rank": "1"
+    },
+    {
+      "no": 3,
+      "slug": "03-niemann-pick-disease-type",
+      "kind": "placed",
+      "title": "Niemann-Pick disease, type A",
+      "one_liner": "lysosomal disease in SMPD1; residual burden rank 2/23",
+      "grade": "[H]",
+      "residual_rank": "2"
+    },
+    {
+      "no": 4,
+      "slug": "04-becker-muscular-dystrophy",
+      "kind": "placed",
+      "title": "Becker muscular dystrophy",
+      "one_liner": "musculoskeletal disease in DMD; residual burden rank 3/23",
+      "grade": "[H]",
+      "residual_rank": "3"
+    },
+    {
+      "no": 5,
+      "slug": "05-alpha-thalassemia",
+      "kind": "placed",
+      "title": "alpha Thalassemia",
+      "one_liner": "hematologic disease in HBA1, HBA2; residual burden rank 4/23",
+      "grade": "[H]",
+      "residual_rank": "4"
+    },
+    {
+      "no": 6,
+      "slug": "06-achondroplasia",
+      "kind": "placed",
+      "title": "Achondroplasia",
+      "one_liner": "skeletal disease in FGFR3; residual burden rank 5/23",
+      "grade": "[H]",
+      "residual_rank": "5"
+    },
+    {
+      "no": 7,
+      "slug": "07-duchenne-muscular-dystrophy",
+      "kind": "placed",
+      "title": "Duchenne muscular dystrophy",
+      "one_liner": "musculoskeletal disease in DMD; residual burden rank 6/23",
+      "grade": "[H]",
+      "residual_rank": "6"
+    },
+    {
+      "no": 8,
+      "slug": "08-fabry-disease",
+      "kind": "placed",
+      "title": "Fabry disease",
+      "one_liner": "lysosomal disease in GLA; residual burden rank 7/23",
+      "grade": "[H]",
+      "residual_rank": "7"
+    },
+    {
+      "no": 9,
+      "slug": "09-osteogenesis-imperfecta",
+      "kind": "placed",
+      "title": "Osteogenesis imperfecta",
+      "one_liner": "skeletal disease in COL1A1, COL1A2; residual burden rank 8/23",
+      "grade": "[H]",
+      "residual_rank": "8"
+    },
+    {
+      "no": 10,
+      "slug": "10-tyrosinemia-type-i",
+      "kind": "placed",
+      "title": "Tyrosinemia type I",
+      "one_liner": "hepatic/metabolic disease in FAH; residual burden rank 9/23",
+      "grade": "[H]",
+      "residual_rank": "9"
+    },
+    {
+      "no": 11,
+      "slug": "11-glycogen-storage-disease-type-ii",
+      "kind": "placed",
+      "title": "Glycogen storage disease, type II",
+      "one_liner": "metabolic/muscular disease in GAA; residual burden rank 10/23",
+      "grade": "[H]",
+      "residual_rank": "10"
+    },
+    {
+      "no": 12,
+      "slug": "12-polycystic-kidney-disease-2",
+      "kind": "placed",
+      "title": "Polycystic kidney disease 2",
+      "one_liner": "renal disease in PKD2; residual burden rank 11/23",
+      "grade": "[H]",
+      "residual_rank": "11"
+    },
+    {
+      "no": 13,
+      "slug": "13-classic-homocystinuria",
+      "kind": "placed",
+      "title": "Classic homocystinuria",
+      "one_liner": "metabolic disease in CBS; residual burden rank 12/23",
+      "grade": "[H]",
+      "residual_rank": "12"
+    },
+    {
+      "no": 14,
+      "slug": "14-hurler-syndrome",
+      "kind": "placed",
+      "title": "Hurler syndrome",
+      "one_liner": "lysosomal disease in IDUA; residual burden rank 13/23",
+      "grade": "[H]",
+      "residual_rank": "13"
+    },
+    {
+      "no": 15,
+      "slug": "15-hereditary-factor-viii-deficiency-disease",
+      "kind": "placed",
+      "title": "Hereditary factor VIII deficiency disease",
+      "one_liner": "hematologic disease in F8; residual burden rank 14/23",
+      "grade": "[H]",
+      "residual_rank": "14"
+    },
+    {
+      "no": 16,
+      "slug": "16-maple-syrup-urine-disease",
+      "kind": "placed",
+      "title": "Maple syrup urine disease",
+      "one_liner": "metabolic disease in BCKDHA, BCKDHB; residual burden rank 15/23",
+      "grade": "[H]",
+      "residual_rank": "15"
+    },
+    {
+      "no": 17,
+      "slug": "17-phenylketonuria",
+      "kind": "placed",
+      "title": "Phenylketonuria",
+      "one_liner": "metabolic disease in PAH; residual burden rank 16/23",
+      "grade": "[H]",
+      "residual_rank": "16"
+    },
+    {
+      "no": 18,
+      "slug": "18-cystic-fibrosis",
+      "kind": "placed",
+      "title": "Cystic fibrosis",
+      "one_liner": "respiratory/exocrine disease in CFTR, FCGR2A, TGFB1; residual burden rank 17/23",
+      "grade": "[H]",
+      "residual_rank": "17"
+    },
+    {
+      "no": 19,
+      "slug": "19-gaucher-disease-type-i",
+      "kind": "placed",
+      "title": "Gaucher disease type I",
+      "one_liner": "lysosomal disease in GBA1; residual burden rank 18/23",
+      "grade": "[H]",
+      "residual_rank": "18"
+    },
+    {
+      "no": 20,
+      "slug": "20-tyrosinemia-type-ii",
+      "kind": "placed",
+      "title": "Tyrosinemia type II",
+      "one_liner": "metabolic disease in TAT; residual burden rank 19/23",
+      "grade": "[H]",
+      "residual_rank": "19"
+    },
+    {
+      "no": 21,
+      "slug": "21-hereditary-factor-ix-deficiency-disease",
+      "kind": "placed",
+      "title": "Hereditary factor IX deficiency disease",
+      "one_liner": "hematologic disease in F9; residual burden rank 20/23",
+      "grade": "[H]",
+      "residual_rank": "20"
+    },
+    {
+      "no": 22,
+      "slug": "22-gaucher-disease",
+      "kind": "placed",
+      "title": "Gaucher disease",
+      "one_liner": "lysosomal disease in (gene not annotated at this aggregate concept); residual burden rank 21/23",
+      "grade": "[H]",
+      "residual_rank": "21"
+    },
+    {
+      "no": 23,
+      "slug": "23-marfan-syndrome",
+      "kind": "placed",
+      "title": "Marfan syndrome",
+      "one_liner": "connective_tissue disease in FBN1; residual burden rank 22/23",
+      "grade": "[H]",
+      "residual_rank": "22"
+    },
+    {
+      "no": 24,
+      "slug": "24-beta-thalassemia-hbb-lcrb",
+      "kind": "placed",
+      "title": "Beta-thalassemia HBB/LCRB",
+      "one_liner": "hematologic disease in HBB, HBB-LCR; residual burden rank 23/23",
+      "grade": "[H]",
+      "residual_rank": "23"
+    },
+    {
+      "no": 25,
+      "slug": "25-21-hydroxylase-deficient-congenital-adrenal",
+      "kind": "notplaced",
+      "title": "21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia",
+      "one_liner": "endocrine disease in CYP21A2; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 26,
+      "slug": "26-acute-intermittent-porphyria",
+      "kind": "notplaced",
+      "title": "Acute intermittent porphyria",
+      "one_liner": "metabolic disease in HMBS; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 27,
+      "slug": "27-alpha-1-antitrypsin-deficiency",
+      "kind": "notplaced",
+      "title": "Alpha-1-antitrypsin deficiency",
+      "one_liner": "hepatic/respiratory disease in SERPINA1; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 28,
+      "slug": "28-hb-ss-disease",
+      "kind": "notplaced",
+      "title": "Hb SS disease",
+      "one_liner": "hematologic disease in HBB; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 29,
+      "slug": "29-hemochromatosis-type-1",
+      "kind": "notplaced",
+      "title": "Hemochromatosis type 1",
+      "one_liner": "hepatic/metabolic disease in BMP2, HFE; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 30,
+      "slug": "30-wilson-disease",
+      "kind": "notplaced",
+      "title": "Wilson disease",
+      "one_liner": "hepatic/metabolic disease in ATP7B; not placed (2/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 31,
+      "slug": "31-alkaptonuria",
+      "kind": "notplaced",
+      "title": "Alkaptonuria",
+      "one_liner": "metabolic disease in HGD; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 32,
+      "slug": "32-cystinosis",
+      "kind": "notplaced",
+      "title": "Cystinosis",
+      "one_liner": "renal/lysosomal disease in CTNS; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 33,
+      "slug": "33-cystinuria",
+      "kind": "notplaced",
+      "title": "Cystinuria",
+      "one_liner": "renal disease in SLC3A1, SLC7A9; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 34,
+      "slug": "34-ehlers-danlos-syndrome-classic-type",
+      "kind": "notplaced",
+      "title": "Ehlers-Danlos syndrome, classic type, 1",
+      "one_liner": "connective_tissue disease in COL5A1; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 35,
+      "slug": "35-ehlers-danlos-syndrome-type-4",
+      "kind": "notplaced",
+      "title": "Ehlers-Danlos syndrome, type 4",
+      "one_liner": "connective_tissue disease in COL3A1; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 36,
+      "slug": "36-von-willebrand-disease-type-1",
+      "kind": "notplaced",
+      "title": "von Willebrand disease type 1",
+      "one_liner": "hematologic disease in VWF; not placed (1/5 axes scored)",
+      "grade": "[O]",
+      "residual_rank": null
+    },
+    {
+      "no": 37,
+      "slug": "37-lysosomal-storage-transport-disorders",
+      "kind": "class",
+      "title": "Lysosomal storage and transport disorders",
+      "one_liner": "mechanism class linking 7 member disease pages",
+      "grade": "[F]",
+      "residual_rank": null
+    },
+    {
+      "no": 38,
+      "slug": "38-fibrillar-collagenopathies",
+      "kind": "class",
+      "title": "Fibrillar collagenopathies",
+      "one_liner": "mechanism class linking 4 member disease pages",
+      "grade": "[F]",
+      "residual_rank": null
+    }
+  ],
+  "totals": {
+    "sections": 38,
+    "diseases_total": 35,
+    "diseases_placed": 23,
+    "diseases_not_placed": 12,
+    "class_chapters": 2
+  }
+}

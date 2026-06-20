@@ -1,0 +1,36 @@
+{
+  "1 GRADE == EVIDENCE (both tests graded by their data)": {
+    "pass_": true,
+    "msg": "gamma/spinodal grade=[O] (rho=-0.280, p=0.429, ok=True); battery mismatches=[]; overall=[O] ok=True"
+  },
+  "2 LOCKED INPUTS (orig7 bit-identical; new3 gamma-indep; masters reproduce locked gamma)": {
+    "pass_": true,
+    "msg": "orig7_identical=True & sha_frozen=True; new3 integer=True gamma-indep=True not_backfit=True (|rho|=0.280); MITF/SOX9 exact+byte-id & FOXG1 resid=2.0e-04<=tol 5e-03 -> ext_inputs_ok=True"
+  },
+  "3 FALSIFIABILITY (n=10 detects signal; DP engine == brute-force/vectorised oracle)": {
+    "pass_": true,
+    "msg": "detects_signal: rho(comonotone)=+1.000 (perm_p=0.0000<0.05), rho(shuffled)=+0.092; DP==oracle on 9/9 cases (n=7,8 brute-force; n=9 vectorised)"
+  },
+  "4 NO-TUNING MOTIFS + POWER DISCLOSED (Bonferroni + lifted perm floor)": {
+    "pass_": true,
+    "msg": "motifs==a_priori=True; bonferroni_applied=True (K=6); perm_floor=2.20e-06 reachable=True (< n=7 floor 7.9e-4 => more power: True)"
+  },
+  "5 DETERMINISM (2x run identical)": {
+    "pass_": true,
+    "msg": "result sha 3e354ca101==3e354ca101 (True)"
+  },
+  "overall": "5/5",
+  "headline": {
+    "gamma_rho": -0.2804930193267879,
+    "gamma_perm_p": 0.42941358024691356,
+    "gamma_grade": "[O]",
+    "best_predictor": "tata",
+    "best_rho": 0.49039861087284115,
+    "best_perm_p": 0.18253968253968253,
+    "best_perm_p_bonf": 1.0,
+    "overall_grade": "[O]",
+    "permutation_floor_p": 2.204585537918871e-06,
+    "floor_reachable": true,
+    "any_predictor_validated": false
+  }
+}

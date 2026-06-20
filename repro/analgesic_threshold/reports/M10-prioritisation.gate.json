@@ -1,0 +1,511 @@
+{
+ "title": "Burden-weighted prioritisation of READS/TARGETS (not drugs)",
+ "method": "score = w_B*B + w_U*U + w_D*D over cited 1..5 tiers; deterministic sort by score, tie-break by gamma-|h_sp| then gene name.",
+ "weights_declared": {
+  "B": 0.4,
+  "U": 0.35,
+  "D": 0.25
+ },
+ "weights_sum": 1.0,
+ "label": "This is a prioritisation of TARGETS/READS, NOT a ranking of drugs, doses, or efficacy.",
+ "firewall_note": "gamma-|h_sp| is shown as the structural read's place in the map and is NOT folded into the clinical priority score (it is a promoter-stiffness read, not a clinical magnitude).",
+ "n_actionable": 22,
+ "n_comparators": 5,
+ "ranking_actionable": [
+  {
+   "gene": "SCN10A",
+   "lever": "L1",
+   "channel_or_protein": "Na_V1.8",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "D_druggability": 5,
+   "priority_score": 4.6,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.579486,
+    "h_sp_rank": 22
+   },
+   "burden_tier_cited": "Tier-1 acute/peripheral (realised case)",
+   "tier_basis_cited": "Acute/peripheral; first new non-opioid class in 25y, FDA-approved (suzetrigine 2025-01-30)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 1
+  },
+  {
+   "gene": "NGF",
+   "lever": "L3",
+   "channel_or_protein": "NGF (nerve growth factor, ligand)",
+   "B_burden": 5,
+   "U_unmet": 4,
+   "D_druggability": 4,
+   "priority_score": 4.4,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.68516,
+    "h_sp_rank": 13
+   },
+   "burden_tier_cited": "Tier-1 musculoskeletal (#1 disability burden)",
+   "tier_basis_cited": "GBD: musculoskeletal is the #1 YLD burden (LBP ~619M 2020, OA ~500M); anti-NGF Phase-III, RPOA caveat (Lane 2010 NEJM)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 2
+  },
+  {
+   "gene": "SCN9A",
+   "lever": "L1",
+   "channel_or_protein": "Na_V1.7",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "D_druggability": 4,
+   "priority_score": 4.35,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.638545,
+    "h_sp_rank": 19
+   },
+   "burden_tier_cited": "Tier-1 neuropathic + Tier-3 channelopathy",
+   "tier_basis_cited": "Neuropathic + channelopathy; opioid-resistant, poorly served; Na_V1.7 genetically validated (Cox 2006)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 3
+  },
+  {
+   "gene": "CALCA",
+   "lever": "L3",
+   "channel_or_protein": "alpha-CGRP (ligand)",
+   "B_burden": 5,
+   "U_unmet": 3,
+   "D_druggability": 5,
+   "priority_score": 4.3,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.698357,
+    "h_sp_rank": 10
+   },
+   "burden_tier_cited": "Tier-1 migraine (~1 billion people)",
+   "tier_basis_cited": "Migraine ~1B people; gepants + anti-CGRP mAbs approved (de-risked); non-responders remain (Edvinsson 2018)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 4
+  },
+  {
+   "gene": "CALCRL",
+   "lever": "L3",
+   "channel_or_protein": "CALCRL (calcitonin-receptor-like receptor)",
+   "B_burden": 5,
+   "U_unmet": 3,
+   "D_druggability": 5,
+   "priority_score": 4.3,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.5137,
+    "h_sp_rank": 27
+   },
+   "burden_tier_cited": "Tier-1 migraine",
+   "tier_basis_cited": "CGRP receptor; erenumab/gepant target, approved class (McLatchie 1998)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 5
+  },
+  {
+   "gene": "CACNA2D1",
+   "lever": "L1-adjacent",
+   "channel_or_protein": "alpha2delta-1 (Ca_V auxiliary subunit)",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "D_druggability": 5,
+   "priority_score": 4.25,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.666078,
+    "h_sp_rank": 16
+   },
+   "burden_tier_cited": "Tier-1 neuropathic + adjuvant (among most-prescribed)",
+   "tier_basis_cited": "Neuropathic + very broad adjuvant use; gabapentinoids approved but modest efficacy + misuse (Field 2006)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 6
+  },
+  {
+   "gene": "NTRK1",
+   "lever": "L3",
+   "channel_or_protein": "TrkA (NGF receptor)",
+   "B_burden": 5,
+   "U_unmet": 4,
+   "D_druggability": 3,
+   "priority_score": 4.15,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.709654,
+    "h_sp_rank": 8
+   },
+   "burden_tier_cited": "Tier-1 musculoskeletal (with NGF)",
+   "tier_basis_cited": "Same NGF->TrkA axis; TrkA inhibition carries CNS/oncology selectivity caveats (Indo 1996)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 7
+  },
+  {
+   "gene": "CACNA1H",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V3.2",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "D_druggability": 3,
+   "priority_score": 4.1,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.8052,
+    "h_sp_rank": 1
+   },
+   "burden_tier_cited": "Tier-1 neuropathic",
+   "tier_basis_cited": "Neuropathic T-type Ca_V3.2; early-stage (Bourinet 2005)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 8
+  },
+  {
+   "gene": "SCN3A",
+   "lever": "L1",
+   "channel_or_protein": "Na_V1.3",
+   "B_burden": 4,
+   "U_unmet": 5,
+   "D_druggability": 3,
+   "priority_score": 4.1,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.547301,
+    "h_sp_rank": 24
+   },
+   "burden_tier_cited": "Tier-1 neuropathic",
+   "tier_basis_cited": "Neuropathic; Na_V1.3 re-expressed after nerve injury; preclinical (Hains 2003)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 9
+  },
+  {
+   "gene": "RAMP1",
+   "lever": "L3",
+   "channel_or_protein": "RAMP1 (receptor-activity-modifying protein 1)",
+   "B_burden": 5,
+   "U_unmet": 3,
+   "D_druggability": 4,
+   "priority_score": 4.05,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.654673,
+    "h_sp_rank": 18
+   },
+   "burden_tier_cited": "Tier-1 migraine",
+   "tier_basis_cited": "CGRP receptor specificity component; small-molecule tractable (McLatchie 1998)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 10
+  },
+  {
+   "gene": "KCNQ2",
+   "lever": "L2",
+   "channel_or_protein": "K_V7.2",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "D_druggability": 3,
+   "priority_score": 3.75,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.762102,
+    "h_sp_rank": 4
+   },
+   "burden_tier_cited": "Tier-1 neuropathic (excitability)",
+   "tier_basis_cited": "Neuropathic/excitability; retigabine withdrawn so direction valid but molecule caveats (Wang 1998)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 11
+  },
+  {
+   "gene": "KCNQ3",
+   "lever": "L2",
+   "channel_or_protein": "K_V7.3",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "D_druggability": 3,
+   "priority_score": 3.75,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.705693,
+    "h_sp_rank": 9
+   },
+   "burden_tier_cited": "Tier-1 neuropathic (excitability)",
+   "tier_basis_cited": "M-current partner of K_V7.2 (Wang 1998)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 12
+  },
+  {
+   "gene": "CACNA1B",
+   "lever": "L1",
+   "channel_or_protein": "Ca_V2.2",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "D_druggability": 4,
+   "priority_score": 3.6,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.776064,
+    "h_sp_rank": 2
+   },
+   "burden_tier_cited": "Tier-3 severe/refractory (intrathecal)",
+   "tier_basis_cited": "Severe/refractory; ziconotide approved but intrathecal-only limits reach (Snutch 2005)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 13
+  },
+  {
+   "gene": "P2RX3",
+   "lever": "L1",
+   "channel_or_protein": "P2X3",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "D_druggability": 4,
+   "priority_score": 3.6,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.666563,
+    "h_sp_rank": 15
+   },
+   "burden_tier_cited": "Tier-2 visceral/chronic-cough",
+   "tier_basis_cited": "Visceral/cough/endometriosis; gefapixant approved for chronic cough (Cockayne 2000)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 14
+  },
+  {
+   "gene": "CALCB",
+   "lever": "L3",
+   "channel_or_protein": "beta-CGRP (ligand)",
+   "B_burden": 4,
+   "U_unmet": 3,
+   "D_druggability": 3,
+   "priority_score": 3.4,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.71909,
+    "h_sp_rank": 6
+   },
+   "burden_tier_cited": "Tier-1 migraine",
+   "tier_basis_cited": "beta-CGRP minor isoform of the validated migraine axis (Russell 2014)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 15
+  },
+  {
+   "gene": "TRPV1",
+   "lever": "L1",
+   "channel_or_protein": "TRPV1",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "D_druggability": 4,
+   "priority_score": 3.25,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.676223,
+    "h_sp_rank": 14
+   },
+   "burden_tier_cited": "Tier-2 inflammatory",
+   "tier_basis_cited": "Inflammatory; capsaicin 8% patch approved; antagonist hyperthermia caveat (Caterina 1997)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 16
+  },
+  {
+   "gene": "KCNQ5",
+   "lever": "L2",
+   "channel_or_protein": "K_V7.5",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "D_druggability": 2,
+   "priority_score": 3.1,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.728926,
+    "h_sp_rank": 5
+   },
+   "burden_tier_cited": "Tier-1 neuropathic (excitability)",
+   "tier_basis_cited": "Peripheral M-current component; early-stage (Lerche 2000)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 17
+  },
+  {
+   "gene": "SCN11A",
+   "lever": "L1",
+   "channel_or_protein": "Na_V1.9",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "D_druggability": 2,
+   "priority_score": 3.1,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.634312,
+    "h_sp_rank": 20
+   },
+   "burden_tier_cited": "Tier-3 channelopathy/neuropathic",
+   "tier_basis_cited": "Channelopathy/neuropathic (narrower); hard to express in vitro (Dib-Hajj 1998)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 18
+  },
+  {
+   "gene": "TRPA1",
+   "lever": "L1",
+   "channel_or_protein": "TRPA1",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "D_druggability": 3,
+   "priority_score": 3.0,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.524864,
+    "h_sp_rank": 26
+   },
+   "burden_tier_cited": "Tier-2 inflammatory",
+   "tier_basis_cited": "Inflammatory/irritant transducer; clinical programmes (Story 2003)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 19
+  },
+  {
+   "gene": "ASIC3",
+   "lever": "L1",
+   "channel_or_protein": "ASIC3",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "D_druggability": 2,
+   "priority_score": 2.75,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.694277,
+    "h_sp_rank": 11
+   },
+   "burden_tier_cited": "Tier-2 inflammatory/muscle",
+   "tier_basis_cited": "Muscle/inflammatory acid sensing; preclinical (Sutherland 2001)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 20
+  },
+  {
+   "gene": "TRPM8",
+   "lever": "L1",
+   "channel_or_protein": "TRPM8",
+   "B_burden": 2,
+   "U_unmet": 3,
+   "D_druggability": 3,
+   "priority_score": 2.6,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.552112,
+    "h_sp_rank": 23
+   },
+   "burden_tier_cited": "Tier-2 cold allodynia; migraine-linked",
+   "tier_basis_cited": "Cold allodynia (narrower); human cold-pain trial (Bautista 2007)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 21
+  },
+  {
+   "gene": "ASIC1",
+   "lever": "L1",
+   "channel_or_protein": "ASIC1",
+   "B_burden": 2,
+   "U_unmet": 3,
+   "D_druggability": 2,
+   "priority_score": 2.35,
+   "actionable": true,
+   "map_place": {
+    "gamma_h_sp": 0.718522,
+    "h_sp_rank": 7
+   },
+   "burden_tier_cited": "Tier-2 inflammatory/ischaemic",
+   "tier_basis_cited": "Broader CNS expression (less peripheral-selective); preclinical (Waldmann 1997)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)",
+   "rank": 22
+  }
+ ],
+ "comparators_context": [
+  {
+   "gene": "OPRM1",
+   "lever": "context",
+   "channel_or_protein": "mu-opioid receptor",
+   "B_burden": 4,
+   "U_unmet": 4,
+   "D_druggability": 5,
+   "priority_score": 4.25,
+   "actionable": false,
+   "map_place": {
+    "gamma_h_sp": 0.541016,
+    "h_sp_rank": 25
+   },
+   "burden_tier_cited": "(comparator only \u2014 not a recommended target)",
+   "tier_basis_cited": "COMPARATOR: mu-opioid \u2014 the reward-engaging axis this design routes AWAY from (Matthes 1996)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)"
+  },
+  {
+   "gene": "PRDM12",
+   "lever": "master",
+   "channel_or_protein": "PRDM12 (transcription factor)",
+   "B_burden": 5,
+   "U_unmet": 4,
+   "D_druggability": 1,
+   "priority_score": 3.65,
+   "actionable": false,
+   "map_place": {
+    "gamma_h_sp": 0.775699,
+    "h_sp_rank": 3
+   },
+   "burden_tier_cited": "cross-cutting (refractory channelopathy anchor)",
+   "tier_basis_cited": "Nociceptor master TF; developmental, not an acute drug target (Chen 2015)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)"
+  },
+  {
+   "gene": "OPRK1",
+   "lever": "context",
+   "channel_or_protein": "kappa-opioid receptor",
+   "B_burden": 3,
+   "U_unmet": 4,
+   "D_druggability": 3,
+   "priority_score": 3.35,
+   "actionable": false,
+   "map_place": {
+    "gamma_h_sp": 0.661716,
+    "h_sp_rank": 17
+   },
+   "burden_tier_cited": "(comparator)",
+   "tier_basis_cited": "COMPARATOR: peripheral kappa, non-reward direction (dysphoria caveat) (Stein 2013)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)"
+  },
+  {
+   "gene": "CNR2",
+   "lever": "context",
+   "channel_or_protein": "CB2 cannabinoid receptor",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "D_druggability": 3,
+   "priority_score": 3.0,
+   "actionable": false,
+   "map_place": {
+    "gamma_h_sp": 0.617069,
+    "h_sp_rank": 21
+   },
+   "burden_tier_cited": "(comparator)",
+   "tier_basis_cited": "COMPARATOR: peripheral CB2, non-psychoactive direction (Guindon 2008)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)"
+  },
+  {
+   "gene": "OPRD1",
+   "lever": "context",
+   "channel_or_protein": "delta-opioid receptor",
+   "B_burden": 3,
+   "U_unmet": 3,
+   "D_druggability": 3,
+   "priority_score": 3.0,
+   "actionable": false,
+   "map_place": {
+    "gamma_h_sp": 0.690204,
+    "h_sp_rank": 12
+   },
+   "burden_tier_cited": "(comparator)",
+   "tier_basis_cited": "COMPARATOR: delta-opioid (Gaveriaux-Ruff 2011)",
+   "grade": "[F] from cited B/U/D tiers + declared weights (Layer-2 ranking, not a [V] engine output)"
+  }
+ ],
+ "tier1_clusters_surfaced_in_top_quartile": {
+  "musculoskeletal (NGF/Na_V/alpha2delta)": [
+   "NGF",
+   "SCN10A",
+   "SCN9A"
+  ],
+  "migraine (CGRP axis)": [
+   "CALCA",
+   "CALCRL"
+  ],
+  "neuropathic (Na_V1.3/Ca_V3.2/K_V7)": []
+ }
+}

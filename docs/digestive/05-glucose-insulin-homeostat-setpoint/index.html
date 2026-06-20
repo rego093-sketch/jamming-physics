@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glucose–insulin homeostat setpoint — Digestive/Metabolic §5 | Jamming Physics</title>
+<meta name="description" content="A glucose load returns to the ~5 mM setpoint via an insulin loop of graded R19 switches; meal peaks from 5.9 to 11.1 mM all settle near 5.2 mM.">
+<link rel="canonical" href="https://jamming-physics.org/digestive/05-glucose-insulin-homeostat-setpoint/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Glucose–insulin homeostat setpoint — Digestive/Metabolic §5 | Jamming Physics"><meta property="og:description" content="A glucose load returns to the ~5 mM setpoint via an insulin loop of graded R19 switches; meal peaks from 5.9 to 11.1 mM all settle near 5.2 mM."><meta property="og:url" content="https://jamming-physics.org/digestive/05-glucose-insulin-homeostat-setpoint/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Glucose–insulin homeostat setpoint — Digestive/Metabolic §5 | Jamming Physics"><meta name="twitter:description" content="A glucose load returns to the ~5 mM setpoint via an insulin loop of graded R19 switches; meal peaks from 5.9 to 11.1 mM all settle near 5.2 mM.">
+<link rel="stylesheet" href="/digestive/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Glucose\u2013insulin homeostat setpoint","identifier":{"@type":"PropertyValue","propertyID":"DOI","value":"10.5281/zenodo.20755319"},"sameAs":"https://doi.org/10.5281/zenodo.20755319","isPartOf":{"@type":"CreativeWorkSeries","name":"Digestive/Metabolic"},"position":5,"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"datePublished":"2026-06-19","dateModified":"2026-06-19","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/05-glucose-insulin-homeostat-setpoint/","license":"https://creativecommons.org/licenses/by/4.0/","knowsAbout":["glucose homeostasis", "insulin", "negative feedback", "islet beta cell"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Digestive/Metabolic","item":"https://jamming-physics.org/digestive/"},{"@type":"ListItem","position":3,"name":"\u00a75 Glucose\u2013insulin homeostat setpoint"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/digestive/">Digestive/Metabolic</a> › §5</nav></header>
+<main>
+<h1>Glucose–insulin homeostat setpoint</h1>
+<p class="answer">A glucose load returns to the ~5 mM setpoint via the insulin loop. Insulin secretion is a graded population of R19 switches activating as glucose rises; meals lift the peak from 5.9 to 11.1 mM, yet every load settles near 5.2 mM. Homeostatic return is forced by the closed loop [V]; the 5 mM setpoint is cited [L].</p>
+<p class="abstract">Insulin secretion is a graded population of R19 switches; the closed loop dG/dt = R_meal + HGP − (k_u0 + k_u·Ins)·G returns glucose to a 5.0 mM fixed point. Meal peaks from 5.9 to 11.1 mM all settle near 5.2 mM. Homeostasis is [V]; the 5 mM setpoint is [L].</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] simulation-verified</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/05-glucose-insulin-homeostat-setpoint/" rel="noopener">reproduction code (GitHub)</a><span class="doi">DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a></span></aside>
+
+<p>A glucose load returns to the <span class="m">~5 mM</span> fasting setpoint through the insulin loop. The fasting fixed point sits at <span class="m">5.0 mM</span>; meals of increasing size lift the peak from <span class="m">5.9</span> to <span class="m">11.1 mM</span>, yet every load settles back near <span class="m">5.2 mM</span>.</p>
+<p>Insulin secretion is not a single threshold but a graded population of R19 switches: as glucose rises, progressively more <span class="m">β</span>-cell switches turn on, giving a smooth dose-response that the loop integrates. Hepatic glucose production is suppressed by insulin and supported by a finite glycogen buffer, closing the loop <span class="m">dG/dt = R_meal + HGP − (k_u0 + k_u·Ins)·G</span>.</p>
+<aside class="vp-card" data-locked="r19"><b>ds/dt = g·s − s³ + h</b> — the shared jamming bistable switch; g sets the basin-threshold scale, h is the drive. <b>[F]</b> forced. <a href="/physics/">canonical derivation</a></aside>
+<table><thead><tr><th>meal amplitude</th><th>peak glucose (mM)</th><th>final glucose (mM)</th></tr></thead><tbody><tr><td>1</td><td>5.94</td><td>5.21</td></tr><tr><td>2</td><td>6.78</td><td>5.24</td></tr><tr><td>3</td><td>7.58</td><td>5.25</td></tr><tr><td>4</td><td>8.61</td><td>5.25</td></tr><tr><td>6</td><td>11.09</td><td>5.25</td></tr></tbody></table>
+<p>Homeostatic return is forced by the closed loop <span class="m">[V]</span>; the <span class="m">5 mM</span> setpoint value is a cited human fasting anchor <span class="m">[L]</span>. The pancreas (PDX1) owns the secretion switches and the liver (HHEX) owns the glycogen buffer, so the homeostat is a two-organ control loop, not a single-organ device.</p>
+
+<nav class="pn"><a rel="prev" href="/digestive/04-peristaltic-aboral-transport/">← §4</a><a href="/digestive/">contents</a><a rel="next" href="/digestive/06-hypoglycemia-counter-regulation/">§6 →</a></nav>
+</main>
+<footer><p>Young Jae Lee · ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a></p></footer>
+</body>
+</html>

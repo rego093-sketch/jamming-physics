@@ -1,0 +1,62 @@
+/* Integumentary VP site -- canonical stylesheet (VP-SPEC v1.8 sec 6). Utilitarian, readable, <50KB. */
+:root{
+  --ink:#1a1a1a; --muted:#555; --line:#e2e2e2; --bg:#fff; --soft:#f7f7f5;
+  --accent:#7a3b2e; --accent-soft:#f3ece9; --link:#15489c;
+  --g-forced:#2c6e49; --g-verified:#15489c; --g-open:#9a6a00; --g-hyp:#6b4ea0;
+  --max:46rem;
+}
+*{box-sizing:border-box}
+html{font-size:17px;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);background:var(--bg);
+  font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.62}
+header,main,footer{max-width:var(--max);margin:0 auto;padding:0 1.15rem}
+header{padding-top:1.1rem}
+nav.crumb{font:0.78rem/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--muted)}
+nav.crumb a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+nav.crumb a:hover{color:var(--accent)}
+h1{font-size:1.72rem;line-height:1.22;margin:1.1rem 0 0.6rem;font-weight:700;letter-spacing:-0.01em}
+h2{font-size:1.18rem;margin:2.1rem 0 0.55rem;font-weight:700;letter-spacing:-0.005em;
+   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h3{font-size:1.02rem;margin:1.5rem 0 0.4rem;font-weight:700;
+   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+p{margin:0.7rem 0}
+a{color:var(--link)}
+p.answer{font-size:1.12rem;line-height:1.55;background:var(--soft);border-left:3px solid var(--accent);
+  padding:0.85rem 1rem;margin:1rem 0 1.1rem;border-radius:0 4px 4px 0}
+p.abstract{color:#2a2a2a}
+code,.mono{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:0.88em;
+  background:var(--soft);padding:0.05em 0.32em;border-radius:3px}
+aside.claim-strip{display:flex;flex-wrap:wrap;gap:0.55rem;align-items:center;margin:1.1rem 0 1.4rem;
+  padding:0.6rem 0.75rem;background:var(--soft);border:1px solid var(--line);border-radius:6px;
+  font:0.76rem/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+aside.claim-strip a{text-decoration:none;border-bottom:1px solid var(--line);color:var(--link)}
+.grade{font-weight:700;padding:0.12em 0.5em;border-radius:999px;color:#fff;font-size:0.72rem}
+.g-forced{background:var(--g-forced)} .g-verified{background:var(--g-verified)}
+.g-open{background:var(--g-open)} .g-hypothesis{background:var(--g-hyp)}
+.gate{color:var(--muted);font-weight:600}
+.tag{color:var(--muted)}
+aside.vp-card{margin:1.1rem 0;padding:0.7rem 0.85rem;background:var(--accent-soft);
+  border:1px solid #e6d9d3;border-left:3px solid var(--accent);border-radius:0 5px 5px 0;
+  font:0.86rem/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+aside.vp-card b{color:var(--accent)}
+aside.vp-card a{color:var(--link);text-decoration:none;border-bottom:1px solid #d8c3ba}
+table{border-collapse:collapse;width:100%;margin:1.1rem 0;font-size:0.92rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+th,td{border:1px solid var(--line);padding:0.42rem 0.6rem;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:700}
+td.num{font-variant-numeric:tabular-nums;text-align:right}
+nav.pn{display:flex;justify-content:space-between;gap:1rem;margin:2.2rem 0 1rem;
+  padding-top:1rem;border-top:1px solid var(--line);
+  font:0.84rem/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+nav.pn a{text-decoration:none;color:var(--link)}
+footer{margin-top:2.5rem;padding:1.2rem 1.15rem 2.4rem;border-top:1px solid var(--line);
+  color:var(--muted);font:0.8rem/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+ul.toc{list-style:none;padding:0;margin:1.2rem 0}
+ul.toc li{margin:0.55rem 0;padding:0.6rem 0.8rem;border:1px solid var(--line);border-radius:6px}
+ul.toc li a{font-weight:700;text-decoration:none;font-size:1.02rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+ul.toc li .d{display:block;color:var(--muted);font-size:0.85rem;margin-top:0.2rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.lede{font-size:1.06rem;color:#333}
+.small{font-size:0.82rem;color:var(--muted)}
+@media (max-width:640px){html{font-size:16px}h1{font-size:1.5rem}}

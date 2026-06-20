@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axial Spin and Tidal Locking — Vacuum-Inflow Cosmology §5 | Jamming Physics</title>
+<meta name="description" content="The measured spin states are diverse: the terrestrial planets and gas giants rotate with periods from 10h (Jupiter) to 243days (Venus, and retrograde ); the">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/05-axial-spin-tidal-locking-inflow/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Axial Spin and Tidal Locking — Vacuum-Inflow Cosmology §5 | Jamming Physics"><meta property="og:description" content="The measured spin states are diverse: the terrestrial planets and gas giants rotate with periods from 10h (Jupiter) to 243days (Venus, and retrograde ); the"><meta property="og:url" content="https://jamming-physics.org/cosmology/05-axial-spin-tidal-locking-inflow/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Axial Spin and Tidal Locking — Vacuum-Inflow Cosmology §5 | Jamming Physics"><meta name="twitter:description" content="The measured spin states are diverse: the terrestrial planets and gas giants rotate with periods from 10h (Jupiter) to 243days (Venus, and retrograde ); the">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Axial Spin and Tidal Locking", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": 5, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/05-axial-spin-tidal-locking-inflow/", "knowsAbout": ["vacuum inflow", "jamming lattice", "axial spin"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§5 Axial Spin and Tidal Locking"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §5</nav></header>
+<main><!--vp-v1.8-->
+<h1>Axial Spin and Tidal Locking from the Inflow</h1>
+<p class="answer">Spin is treated as a first-class phenomenon a theory of gravity must produce. This chapter derives axial spin in two parts: an intrinsic spin set when a body accretes a swirling, one-sided inflow, and a tidal evolution driven by the inflow gradient. The clean result is the tidal lock—fast spin driven to synchronous rotation, reproducing the Moon.</p>
+<p class="abstract" data-phase2="abstract">The measured spin states are diverse: the terrestrial planets and gas giants rotate with periods from 10 h (Jupiter) to 243 days (Venus, and retrograde); the Moon's rotation period equals its orbital period (synchronous, “tidally locked”), as do most large moons; and Mercury rotates exactly three times for every two orbits (a 3:2 spin–orbit resonance). A theory must account both for the existence of spin and for this diversity.</p>
+<aside class="claim-strip page"><span class="g g-degenerate" data-phase2="grade">Degenerate</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/05-axial-spin-tidal-locking-inflow/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="a0"><b>a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²</b> — galactic acceleration scale, derived from the inflow law — the one prediction unique to this framework. <b class="grade g-distinguishing">[distinguishing]</b> <a href="/cosmology/06-galactic-rotation-derivation-a0-ch0/">canonical derivation §6</a></aside>
+<em>Spin is not a detail to be waved through. The rotation of a body, and the fact
+that the Moon keeps one face to the Earth, are phenomena that a theory of gravity must produce,
+and to a reader nothing about them is “obvious.” This chapter therefore derives axial spin as
+a first-class phenomenon, in two parts and with no step omitted: an <em>intrinsic</em> spin set
+when a body accretes a one-sided (swirling) inflow, and a subsequent <em>tidal</em> evolution
+driven by the gradient of the primary's inflow. The decisive, clean result is the tidal lock:
+a fast initial spin is driven to synchronous rotation, reproducing the Moon. We also reproduce
+Mercury's 3:2 from the eccentric spin–orbit dynamics, while being explicit that the
+<em>capture probability</em>—not the existence or stability of the lock—is what depends on the
+tidal-response model.</em>
+<h2>The raw facts to be explained</h2>
+<p>The measured spin states are diverse: the terrestrial planets and gas giants rotate with
+periods from  10h (Jupiter) to 243days (Venus, and <em>retrograde</em>); the Moon's
+rotation period equals its orbital period (synchronous, “tidally locked”), as do most large
+moons; and Mercury rotates exactly three times for every two orbits (a 3:2 spin–orbit
+resonance). A theory must account both for the <em>existence</em> of spin and for this
+<em>diversity</em>.</p>
+<h2>Part A — Intrinsic spin from a one-sided inflow (steps 1–3)</h2>
+<ol>
+<li> <strong>The inflow carries angular momentum.</strong> The inflow of Chapter 3 was treated as
+spherically symmetric, which is exact only for an isolated body fed isotropically. A body that
+forms by accreting from a preferred direction or from a feeding disk draws an inflow that is
+<em>one-sided</em>: it has a net swirl (vorticity) about a common axis, hence a nonzero angular
+momentum flux, not merely a radial mass flux.
+<li> <strong>Accretion transfers that angular momentum.</strong> As the body absorbs this swirling
+inflow it must, by conservation of angular momentum, take up the inflow's angular momentum and
+spin up. With mass-accretion rate dot M, surface radius a, swirl speed v_(sw),
+and instantaneous spin ω, the torque is the rate of angular-momentum delivery,
+<figure class="eq" id="eq:spinup"><img src="/cosmology/eq/cosmology/cos-05-000.svg" data-eq="cos-05-000" width="190" height="38" loading="lazy" alt="\begin{equation} \frac{dL}{dt} \;=\; \dot M\,a\,(v_{\mathrm{sw}} - \omega a), \end{equation}"></figure>
+<p>the lever arm a times the rate dot M times the <em>relative</em> tangential speed of the
+inflow with respect to the co-moving surface.</p>
+<li> <strong>Saturation at surface co-rotation.</strong> The torque <a class="xref" data-ref="eq:spinup">(spinup)</a> vanishes when
+the surface co-rotates with the swirl, ω a = v_(sw), i.e.
+<figure class="eq" id="eq:spineq"><img src="/cosmology/eq/cosmology/cos-05-001.svg" data-eq="cos-05-001" width="99" height="34" loading="lazy" alt="\begin{equation} \omega_{\mathrm{eq}} \;=\; \frac{v_{\mathrm{sw}}}{a}. \end{equation}"></figure>
+<p>Integrating <a class="xref" data-ref="eq:spinup">(spinup)</a> (Simulation A) shows ω climbing monotonically to this
+equilibrium and stopping there. The body acquires a spin whose axis and magnitude are set by
+the <em>accretion geometry</em>—the direction and swirl of the inflow it formed from.
+</ol></p>
+<p>Two consequences follow immediately and matter for the diversity in §1: (i) the intrinsic
+spin direction is whatever the accretion swirl was, so it <em>can be retrograde</em> (a body fed
+with opposite swirl spins backward—relevant to Venus); and (ii) the intrinsic rate depends on
+the accretion history, so it is not a universal number. Intrinsic spin is therefore an outcome
+of how a body formed, derived here from the same inflow that produces gravity, not an
+independent postulate.</p>
+<h2>Part B — Tidal evolution from the inflow gradient (steps 4–8)</h2>
+<p>A body in orbit does not keep its intrinsic spin unchanged; the primary's inflow reshapes it.</p>
+<ol>
+<li> <strong>The primary's inflow has a gradient.</strong> From v_(inflow)∝1/r²
+(Chapter 3, Eq. 2), the near side of an orbiting body of size L at distance R sits in a
+stronger inflow than its far side. The differential acceleration across the body is the tidal
+field,
+<figure class="eq" id="eq:tidegrad"><img src="/cosmology/eq/cosmology/cos-05-002.svg" data-eq="cos-05-002" width="390" height="44" loading="lazy" alt="\begin{equation} \Delta g \;=\; \frac{GM}{(R-L/2)^{2}}-\frac{GM}{(R+L/2)^{2}} \;\approx\; \frac{2\,GM\,L}{R^{3}} . \end{equation}"></figure>
+<p>For the Moon in the Earth's inflow this evaluates to
+Δ g=4.88×10⁻⁵ms⁻², matching the tidal approximation
+2GML/R³=4.875×10⁻⁵ms⁻² (Simulation B). <em>The tidal field is
+nothing other than the gradient of the inflow that already produces gravity</em>—no separate
+tidal postulate is introduced.</p>
+<li> <strong>The gradient raises a bulge.</strong> The differential pull <a class="xref" data-ref="eq:tidegrad">(tidegrad)</a> stretches
+the body along the line to the primary, raising a bulge whose long axis points (in equilibrium)
+at the primary.
+<li> <strong>Dissipation makes the bulge lag, producing a torque.</strong> If the body's spin is not
+already synchronous, the bulge is continually re-raised as the body rotates; with internal
+dissipation it cannot respond instantaneously and so <em>lags</em> the instantaneous line to the
+primary. The primary's pull on this lagging, misaligned bulge exerts a torque on the spin. The
+rotational equation of motion is, with θ the body's orientation and φ the orbital
+angle,
+<figure class="eq" id="eq:tidalode"><img src="/cosmology/eq/cosmology/cos-05-003.svg" data-eq="cos-05-003" width="499" height="61" loading="lazy" alt="\begin{equation} \frac{d\omega_{\mathrm{spin}}}{dt} = \underbrace{-A\,\sin\!\big(2(\theta-\phi)\big)}_{\text{conservative tidal torque}} \;\underbrace{-\,\gamma\,(\omega_{\mathrm{spin}}-\omega_{\mathrm{orb}})}_{\text{dissipative lag}}, \qquad \frac{d\theta}{dt}=\omega_{\mathrm{spin}}, \end{equation}"></figure>
+<p>where A∝ GM(B-A_(I))/R³ sets the tidal-torque strength and γ the dissipation.</p>
+<li> <strong>Synchronous locking; “in a plane.”</strong> For a circular orbit
+(ω_(orb)=n constant), Eq. <a class="xref" data-ref="eq:tidalode">(tidalode)</a> drives the spin to
+ω_(spin)=ω_(orb): the body ends rotating once per orbit, keeping
+one face to the primary. Simulation B integrates this from a fast initial spin and finds
+ω_(spin)/n:4→1.000 (Fig. <a class="xref" data-ref="fig:spin">(spin)</a>, right). The reason the problem is
+clean is geometric: the bulge, the primary, and the spin axis (perpendicular to the orbital
+plane) all lie in one configuration, so the rotation is a single degree of freedom
+θ—this is the “because it is in a plane” that makes the lock sharp. (A tilted spin
+axis would add precession and obliquity dynamics, treated elsewhere.)
+<li> <strong>Eccentric orbits give resonances.</strong> If the orbit is eccentric, the orbital angular
+velocity varies over the orbit, and the spin can be captured into a <em>spin–orbit
+resonance</em>—rotating p times per 2 orbits for half-integer p—rather than into the 1:1
+lock. Which resonance is selected depends on the eccentricity and on the tidal response. Mercury
+(e=0.206) sits in the 3:2 resonance.
+</ol>
+<figure class="fig"><img src="/cosmology/assets/img/ch5_spin.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>The locking dichotomy is derived, not assumed</h2>
+<span id="sec:lockpattern"></span>
+<p>Part B fixes the <em>mechanism</em>; it also fixes which bodies the mechanism captures. The
+despinning time implied by the inflow-gradient torque,</p>
+<figure class="eq" id="eq:taulock"><img src="/cosmology/eq/cosmology/cos-05-004.svg" data-eq="cos-05-004" width="339" height="48" loading="lazy" alt="\begin{equation} \tau_{\mathrm{lock}}\;\sim\;\frac{2\alpha}{3}\,\frac{M\,\omega_{i}\,Q\,a^{6}}{k_{2}\,G\,M_{p}^{2}\,R^{3}}, \qquad I=\alpha M R^{2}, \end{equation}"></figure>
+<p>is dominated by the a⁶/Mₚ² scaling: close to a massive primary the lock is fast, far
+from a light one it never completes. Comparing τ_(lock) to the age of the Solar
+System (4.5Gyr) with a <em>single</em> fiducial (α,Q,k₂,ω_i)—no per-body
+tuning—sorts all twelve test bodies correctly: every observed locked or despun body (the Moon;
+Io, Europa, Ganymede; Titan; Charon; Phobos; and Mercury, solar-despun into the 3:2 of the next
+section) has τ_(lock)<4.5Gyr, while every free rotator (Earth, Mars, and the giant
+planets) has τ_(lock)>4.5Gyr. The script <code>ch_spin_locking.py</code> tabulates the
+twelve and plots them against the age line. What remains genuinely <em>contingent</em> is not the
+locking outcome but the <em>intrinsic</em> spin—its initial rate and, in anomalous cases such as
+Venus's slow retrograde rotation, even its sign—which formation sets and which this chapter does
+not claim to derive. The dichotomy locked-vs-free is forced; the residual spin history is honestly
+left open.</p>
+<h2>Mercury's 3:2 resonance, reproduced</h2>
+<p>The linear-lag torque of step 8 drives a circular-orbit spin to 1:1; Mercury's 3:2 needs the
+<em>eccentric</em> dynamics, which the same inflow tidal torque supplies once the orbit's varying
+angular velocity and the body's permanent triaxiality are kept. With the true anomaly f(t) and
+distance r(t) from Kepler, the spin obeys the resonant pendulum</p>
+<figure class="eq" id="eq:spinorbit"><img src="/cosmology/eq/cosmology/cos-05-005.svg" data-eq="cos-05-005" width="558" height="39" loading="lazy" alt="\begin{equation} \ddot\theta \;=\; -\tfrac{1}{2}\sigma^{2}\Big(\frac{a}{r}\Big)^{3}\sin\!\big(2\theta-2f\big) \;-\;2\beta\,(\dot\theta-\omega_{\mathrm{eq}}), \qquad \sigma^{2}=3\,\frac{B-A}{C}\,n^{2}, \end{equation}"></figure>
+<p>the first term being the triaxial torque (the inflow gradient acting on the body's figure), the
+second a weak tidal drag. Expanding (a/r)³sin(2θ-2f) in eccentricity splits the torque
+into resonances at every half-integer ratio p=ω_(spin)/n, with strengths H(p,e)
+(Fig. <a class="xref" data-ref="fig:mercury">(mercury)</a>, left). At Mercury's e=0.206 the synchronous p=1 is strongest, but the
+<strong>3:2 (p=3/2) is the dominant <em>non</em>-synchronous resonance</strong>, |H(3/2)|=0.65, well above
+p=2 (0.33). It is a stable lock—the resonant angle 2θ-3M librates with bounded
+amplitude (≈24^(∘) in the run), the spin turning exactly 1.5 times per orbit—and a
+spin drifting down from above is <em>captured</em> into it (Fig. <a class="xref" data-ref="fig:mercury">(mercury)</a>, right). For a
+near-circular orbit the 3:2 strength vanishes and the same drift settles into 1:1. The framework
+thus reproduces Mercury's 3:2 from the inflow tidal torque, with no ingredient beyond the orbital
+eccentricity and the body's figure (<code>ch5_spin_tidal.py</code>, part D).</p>
+<p>What stays honest: the <em>capture</em> is probabilistic—which resonance traps the spin depends on
+the initial phase, on the tidal-response model (constant-Q vs. constant-lag), and on the
+triaxiality (widened in the simulation for speed; Mercury's is  1.2×10⁻⁴). The
+framework <em>admits and favours</em> the observed 3:2 at Mercury's eccentricity; it does not force it
+as the unique outcome. This is a consistency result, recorded as such in the ledger.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch5_mercury.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>The galactic inflow and planetary spin (a transparency note)</h2>
+<span id="sec:galspin"></span>
+<p>The solar system is itself embedded in the Galaxy's inflow, so one might ask whether a
+<em>galactic</em> one-sided inflow sets or corrects planetary spins and orbits. Because the relevant
+inflow parameters are partly free, we state them openly—<code>ch_galactic_spin.py</code> discloses
+every one and flags the tunable ones—and let the magnitudes decide. The galactic inflow at the
+Sun is a_(gal)=v_(gal)²/R_(gal)≈2×10⁻¹⁰ms⁻²,
+near the very a₀ scale of Chapter 6; but it is a <em>near-uniform</em> field across the solar
+system, so by the equivalence principle it produces no internal effect. Only its tidal
+<em>gradient</em>,  Ω_(gal)²≈8×10⁻³¹s⁻², acts
+internally, and that is between 10⁻¹³ and 10⁻¹⁸ of the Sun's tidal field at the planets
+(Fig. <a class="xref" data-ref="fig:galspin">(galspin)</a>); to rival the Sun at Earth it would have to be tuned up by  10¹⁶,
+which is unphysical. The galactic one-sided inflow is therefore <em>negligible</em> for planetary
+rotation and revolution: it cannot set Venus's retrograde spin or Uranus's tilt, and the observed
+obliquities (spanning 0 to 177^(∘), uncorrelated with the galactic direction) show no
+single-field signature. Planetary spins remain <em>accommodated</em>, not predicted, by accretion
+history (Part A); the galactic inflow adds nothing measurable. (It is, fairly, a real perturbation
+on the far wider orbits of the Oort cloud—just not on the planets.) We record this openly so the
+tunable galactic parameter cannot be mistaken for a hidden fit.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch_galactic_spin.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>Status of this chapter</h2>
+<h4>Shown.</h4>
+ The <em>existence</em> of spin (Part A: accretion of a swirling inflow drives a
+body to a definite, surface-co-rotating spin) and the <em>1:1 tidal lock</em> (Part B: the inflow
+gradient drives a fast spin to synchronous rotation). Both are reproduced by Simulations A and
+B; the tidal field is quantitatively the inflow gradient (Eq. <a class="xref" data-ref="eq:tidegrad">(tidegrad)</a>, matched to the
+Earth–Moon value).
+<h4>Degenerate.</h4>
+ The tidal torque <a class="xref" data-ref="eq:tidalode">(tidalode)</a> is standard tidal physics; the
+content of this chapter is that this torque <em>is</em> the gradient of the gravitational inflow,
+so spin evolution follows from the single inflow principle with no extra postulate. At the level
+of predictions it is degenerate with conventional tidal theory.
+<h4>Mercury's 3:2 (shown, with a probabilistic caveat).</h4>
+ The eccentric spin–orbit
+pendulum of Eq. <a class="xref" data-ref="eq:spinorbit">(spinorbit)</a> reproduces Mercury's 3:2: at e=0.206 the 3:2 is the
+dominant non-synchronous resonance and a stable lock, and a spin drifting down from above is
+captured into it, whereas a circular orbit gives 1:1 (Fig. <a class="xref" data-ref="fig:mercury">(mercury)</a>). What is <em>not</em>
+forced is the <em>capture probability</em>—it depends on the initial phase, the tidal-response
+model (constant-Q vs. constant-lag), and the triaxiality. The framework admits and favours the
+observed 3:2 at Mercury's eccentricity (a consistency result), not a unique deterministic outcome.
+<h4>The diversity of spins.</h4>
+ Observed spin states are the <em>combined</em> outcome of
+intrinsic spin (Part A, set by accretion history and possibly retrograde, as for Venus) and
+tidal evolution (Part B, locking or resonating depending on eccentricity and dissipation). There
+is no single closed-form spin rate, and we do not pretend otherwise; what the framework supplies
+is the two mechanisms, each derived from the inflow, whose combination yields the observed
+variety.
+<h2>Anticipated objections</h2>
+<h4>“If spin `comes out,' why is Venus retrograde and Mercury 3:2?”</h4>
+<p>Because spin is not a single deterministic formula but the sum of an accretion-set intrinsic
+spin and a tidal evolution. A body fed with opposite swirl acquires a retrograde intrinsic spin
+(Venus); a body on an eccentric orbit can lock into a resonance rather than 1:1, and for
+Mercury's e=0.206 that resonance is the 3:2, which we reproduce (Fig. <a class="xref" data-ref="fig:mercury">(mercury)</a>). We
+exhibit the mechanisms cleanly; the specific end states depend on each body's history, and the
+<em>probability</em> of capture into the 3:2 (not its existence or stability) depends on the
+tidal-response model.</p>
+<h4>“This is just standard tidal theory.”</h4>
+<p>At the level of the torque, yes, and we say so (degenerate). The non-trivial claim is upstream:
+the tidal field is not an independent ingredient but the <em>gradient of the same inflow that
+produces gravity</em> (Eq. <a class="xref" data-ref="eq:tidegrad">(tidegrad)</a>). Spin and tides thus require no postulate beyond the
+single inflow rate of Chapter 1; this is the economy the volume is built on, now extended to
+rotation.</p>
+<h2>Reproducibility</h2>
+<p>The computation is <code>ch5_spin_tidal.py</code> in the reproducibility package. Its logic:
+<strong>(A)</strong> integrate dω/dt=(dot M a/I)(v_(sw)-ω a) and confirm
+ω→ v_(sw)/a; <strong>(B)</strong> integrate the tidal rotation
+Eq. <a class="xref" data-ref="eq:tidalode">(tidalode)</a> for a circular orbit from ω_(spin)/n=4 and confirm it
+locks to 1.000; and evaluate the Earth–Moon inflow gradient
+Eq. <a class="xref" data-ref="eq:tidegrad">(tidegrad)</a>, confirming Δ g=4.88×10⁻⁵ms⁻²=2GML/R³.</p>
+<strong>The 3:2 capture probability, computed (v2).</strong> <code>ch5_mercury_capture.py</code>
+closes the quantitative gap left above. The capture probability is a standard spin-orbit-resonance
+result and is <em>not</em> framework-specific (the tidal dynamics are identical): for the
+constant-Q model Goldreich &amp; Peale (1966) give P_(cap)≈0.07, while
+core–mantle friction and a chaotically higher past eccentricity raise it to ≈0.55–0.73
+(Correia &amp; Laskar 2004). A vectorised ensemble integration of the resonant pendulum
+ddotγ=-tfrac12ω₀²sin2γ-drift-friction(dotγ)
+(libration period 15.7yr, matching the observed  12–15yr) reproduces the mechanism:
+capture is probabilistic, falling as the tidal sweep speeds up (1.00→0.06) and rising with
+friction. The open item is thus <em>quantified</em>, not removed—the 3:2 is favoured with a
+definite, model-dependent probability ( 7–73%), which is precisely the volume's
+“favours but does not force.”
+<strong>(D)</strong> integrate the eccentric spin–orbit pendulum Eq. <a class="xref" data-ref="eq:spinorbit">(spinorbit)</a>: report the
+resonance strengths H(p,e) (3:2 dominant non-synchronous at e=0.206), the bounded libration of
+the 3:2 resonant angle (1.5 turns/orbit), and the capture—ω_(spin)/n→1.5 for
+e=0.206 versus →1.0 for a circular orbit.
+Expected output: ω_(eq)=v_(sw)/a reached; ω_(spin)/n→1.000;
+Δ g=4.88×10⁻⁵; 3:2 capture at Mercury's e. No fitting; the only inputs are the
+orbital geometry and the dissipation strength (whose <em>value</em> sets the locking timescale, not
+the locked state).
+<em>Next stage: Chapter 6 (galactic rotation and the derivation
+a₀=cH₀/2π)—the first chapter whose result is <strong>distinguishing</strong> rather than
+degenerate. Foundations continue to be imported from the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}.</em>
+<nav class="pn"><a rel="prev" href="/cosmology/04-solar-system-consistency-test/">← §4</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/">§6 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

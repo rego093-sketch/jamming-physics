@@ -1,0 +1,159 @@
+{
+ "disease": "Long QT syndrome type 3 (LQT3; SCN5A gain-of-function, late sodium current)",
+ "omim": "603830",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Long QT syndrome type 3 (LQT3; SCN5A gain-of-function, late sodium current)",
+  "omim": "603830",
+  "summary": "Long QT syndrome type 3 (LQT3) is the cardiac-sodium-channel form of congenital long QT syndrome, caused by GAIN-of-function mutations in SCN5A, which encodes the alpha-subunit of the cardiac voltage-gated sodium channel NaV1.5 (chr3p22.2). NaV1.5 normally opens to drive the rapid upstroke of the ventricular action potential and then INACTIVATES; LQT3 GOF alleles impair inactivation (the deltaKPQ in-frame deletion is the classic example) and leave a small persistent LATE sodium current (late INa) flowing during the plateau. That extra inward depolarising charge PROLONGS the action-potential duration and the QT interval, predisposing to torsades de pointes and sudden cardiac death (events characteristically at rest / during sleep). The kit reads this as the cardiac late-sodium-current / repolarisation axis driven UP (channel GOF -> the gate fails to stay in the OFF / inactivated basin -> a runaway persistent current), the action-potential-prolonging drive OVER-shooting. This is the kit's FIRST cardiac ION-CHANNEL axis (distinct from hypertrophic cardiomyopathy's MECHANICAL / contractile cardiac axis) and its FIRST channel GAIN-of-function read: where the two prior channel reads are LOSS-of-function channels restored by POTENTIATION (CFTR in cystic fibrosis; the K_ATP / SUR1-Kir6.2 channel in congenital hyperinsulinism, both axis DOWN -> potentiate), LQT3 is a channel whose EXCESS current must be RESTRAINED (axis UP -> restrain) -- a NEW channel-lever class, the channel analogue of the gain-of-toxicity reads (HCM hypercontractility, Wilson copper). Correction is to RESTRAIN the late sodium current: mexiletine, an approved late-INa-blocking class-IB antiarrhythmic, is the GENE-SPECIFIC therapy for LQT3 -- it preferentially blocks the persistent late current, shortens the QT interval and reduces life-threatening arrhythmic events, and the emerged switch independently re-derives it (Mazzanti 2016 JACC). IMPORTANT HONESTY: the response is GENOTYPE-DEPENDENT -- some SCN5A alleles are mexiletine-SENSITIVE and others mexiletine-INSENSITIVE (the biophysics of the specific inactivation defect determine sensitivity), so the corrective DIRECTION (block the excess late INa) is forced [F] while the realised QTc-shortening MAGNITUDE is [O]; an implantable cardioverter-defibrillator remains the mainstay for high-risk patients (not a switch lever). beta-blockers (nadolol / propranolol), the first-line therapy for LQTS OVERALL, are recorded here as a DOWNSTREAM NON-lever on this switch axis: they act by an anti-adrenergic mechanism rather than blocking the late current, are less effective in LQT3 than in LQT1 / LQT2, and can even be pro-arrhythmic in LQT3 by slowing the heart rate -- the Rett / trofinetide downstream-agent discipline. The OTHER major LQTS genes are framed as CONTEXT, deliberately NOT as a convergence: KCNQ1 (LQT1, the slow-delayed-rectifier IKs potassium channel) and KCNH2 / hERG (LQT2, the rapid-delayed-rectifier IKr potassium channel) are LOSS-of-function POTASSIUM channels -- the OPPOSITE channel-level mechanism to SCN5A's gain (a K-current DOWN vs an Na-current UP, both prolonging QT by lowering the net repolarising balance). They CANNOT be folded into one convergent switch read because their channel-level directions are opposite -- a clean demonstration that the kit reads the (gene x mechanism), not the syndrome label, and that the lead therapy is correspondingly GENE-SPECIFIC. The gamma read is of the SCN5A promoter switch STRUCTURE (chr3p22.2); the disease lesions are coding (the deltaKPQ deletion; inactivation-impairing missense alleles), outside the promoter firewall. The same gene's LOSS-of-function alleles cause a DISTINCT disease (Brugada syndrome / conduction disease) -- a different (mechanism) read not conflated here. Magnitude [O].",
+  "emergent_axis": "cardiac late sodium current (late INa) through NaV1.5 / ventricular action-potential repolarisation -- the SCN5A channel normally inactivates after the upstroke; GOF alleles leave a persistent late INa during the plateau, extra inward depolarising charge that PROLONGS the action-potential duration and QT interval (the gate over-stays the conducting state -> a runaway late current). The kit's first cardiac ion-channel axis and first channel gain-of-function (axis UP / restrain) read, the channel contrast to the LOF channels restored by potentiation (CFTR, K_ATP)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SCN5A",
+    "gamma": 1.5256,
+    "spinodal_h_sp": 0.72529,
+    "barrier": 0.58186,
+    "dwell_relative_size": 1.71304,
+    "role": "channel",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "gate stuck in ON basin -> current runaway",
+    "ncbi": {
+     "acc": "NC_000003.12",
+     "gene_start": 38548061,
+     "gene_end": 38649686,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "sodium voltage-gated channel alpha subunit 5"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SCN5A encodes NaV1.5, the pore-forming alpha-subunit of the cardiac voltage-gated sodium channel that drives the action-potential upstroke and then inactivates. LQT3 GAIN-of-function alleles impair inactivation, leaving a persistent LATE sodium current (late INa) during the plateau that prolongs repolarisation (the deltaKPQ deletion is the classic example). chr3p22.2. NCBI official symbol SCN5A. LQT3 = OMIM 603830. Coding lesions; promoter firewall respected.",
+    "src": "Wang 1995 Cell 80:805 (SCN5A deltaKPQ in LQT3, persistent late INa); Bennett 1995 Nature 376:683 (impaired inactivation, sustained inward current); Mazzanti 2016 J Am Coll Cardiol 67:1053 (mexiletine reduces arrhythmic events in LQT3)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SCN5A",
+   "role": "channel",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "UP",
+   "reason": "gate stuck in ON basin -> current runaway"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "179a265d03f0"
+ },
+ "treatment_A_switch": {
+  "disease": "Long QT syndrome type 3 (LQT3; SCN5A gain-of-function, late sodium current)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "SCN5A",
+    "push_direction": "block the persistent late sodium current (late INa) through the GOF NaV1.5 channel -> shorten the action-potential plateau / QT toward normal (bring the over-shooting late-current axis DOWN)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "late-INa-blocking class-IB antiarrhythmic (mexiletine) -- the gene-specific LQT3 therapy",
+    "status": "approved",
+    "mechanism_grade": "[O] QTc-shortening / late-INa-block MAGNITUDE not sequence-derived; GENOTYPE-DEPENDENT -- some SCN5A alleles are mexiletine-SENSITIVE, others mexiletine-INSENSITIVE depending on the biophysics of the inactivation defect, held [O]; the corrective DIRECTION (reduce the excess late INa) is nonetheless forced [F]. An ICD remains the mainstay for high-risk patients (not a switch lever).",
+    "src": "Mazzanti 2016 J Am Coll Cardiol 67:1053 (mexiletine shortens QTc and reduces arrhythmic events in LQT3); Ruan 2007 Circulation 116:1137 (mutation-specific mexiletine response). Mexiletine is an approved antiarrhythmic; LQT3 use is gene-specific"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "SCN5A",
+    "push_direction": "block the persistent late INa by an alternative late-current inhibitor -> shorten repolarisation (axis DOWN)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "alternative late-INa inhibitor (ranolazine; intravenous lidocaine)",
+    "status": "clinical",
+    "mechanism_grade": "[O] magnitude not derived; ranolazine / lidocaine block late INa but are not LQT3-labelled, held [O]; direction [F]",
+    "src": "Moss 2008 J Cardiovasc Electrophysiol 19:1289 (ranolazine shortens QT in LQT3)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "SCN5A",
+   "push_direction": "block the persistent late sodium current (late INa) through the GOF NaV1.5 channel -> shorten the action-potential plateau / QT toward normal (bring the over-shooting late-current axis DOWN)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "late-INa-blocking class-IB antiarrhythmic (mexiletine) -- the gene-specific LQT3 therapy",
+   "status": "approved",
+   "mechanism_grade": "[O] QTc-shortening / late-INa-block MAGNITUDE not sequence-derived; GENOTYPE-DEPENDENT -- some SCN5A alleles are mexiletine-SENSITIVE, others mexiletine-INSENSITIVE depending on the biophysics of the inactivation defect, held [O]; the corrective DIRECTION (reduce the excess late INa) is nonetheless forced [F]. An ICD remains the mainstay for high-risk patients (not a switch lever).",
+   "src": "Mazzanti 2016 J Am Coll Cardiol 67:1053 (mexiletine shortens QTc and reduces arrhythmic events in LQT3); Ruan 2007 Circulation 116:1137 (mutation-specific mexiletine response). Mexiletine is an approved antiarrhythmic; LQT3 use is gene-specific"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.71304,
+   "dwell_disease": 2.35543,
+   "dwell_treated": 1.9228,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "dd038e7f0c8b"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SCN5A GOF moves the cardiac late-INa / repolarisation axis UP (a persistent late current prolongs the action potential)",
+   "falsifier": "an LQT3 SCN5A allele that DECREASED the late sodium current / SHORTENED the action-potential duration would refute the channel-on (axis UP) read",
+   "measurable_by": "late INa (patch clamp) + action-potential duration in SCN5A-mutant cardiomyocytes (hiPSC-CM; heterologous expression)"
+  },
+  {
+   "claim": "RESTRAINING the late sodium current (mexiletine) is the CORRECTIVE direction",
+   "falsifier": "if a late-INa blocker LENGTHENED the QT / action-potential duration in late-INa-driven LQT3, the restrain lever sign is wrong",
+   "measurable_by": "action-potential-duration / QTc response to a late-INa blocker in LQT3 cardiomyocytes or patients"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Long QT syndrome type 3 (LQT3; SCN5A gain-of-function, late sodium current)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "9c67ac357131"
+ },
+ "determinism_sha": "2fb37b108f4c"
+}

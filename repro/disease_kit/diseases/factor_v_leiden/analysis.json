@@ -1,0 +1,159 @@
+{
+ "disease": "Factor V Leiden thrombophilia (F5 R506Q -- activated protein C resistance; THPH2)",
+ "omim": "188055",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Factor V Leiden thrombophilia (F5 R506Q -- activated protein C resistance; THPH2)",
+  "omim": "188055",
+  "summary": "The commonest heritable thrombophilia: a recurrent F5 gain-of-function (R506Q / Arg506Gln, 'factor V Leiden') abolishes the first activated-protein-C (APC) cleavage site on activated factor V, so the procoagulant accelerator cofactor resists inactivation -> the coagulation drive cannot be braked by the protein C/APC pathway -> venous-thrombosis propensity UP.",
+  "emergent_axis": "coagulation drive (thrombin generation / venous-thrombosis propensity)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "F5",
+    "gamma": 1.3512,
+    "spinodal_h_sp": 0.60454,
+    "barrier": 0.45644,
+    "dwell_relative_size": 1.42786,
+    "role": "accelerator",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "drive excess -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 169511950,
+     "gene_end": 169586480,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "coagulation factor V"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "R506Q (Arg506Gln, factor V Leiden) removes the first of the three APC cleavage sites (Arg506/Arg306/Arg679) on activated factor V (factor Va), rendering the procoagulant cofactor APC-RESISTANT -- factor Va stays active far longer, so the procoagulant accelerator cannot be down-regulated by the protein C / APC brake (a functional gain on the procoagulant axis; the accelerator that resists its own brake)",
+    "src": "Bertina 1994 Nature 369:64 (factor V Leiden / APC resistance); Dahlback 1993 PNAS 90:1004"
+   }
+  ],
+  "primary_switch": {
+   "gene": "F5",
+   "role": "accelerator",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "UP",
+   "reason": "drive excess -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "50970e116174"
+ },
+ "treatment_A_switch": {
+  "disease": "Factor V Leiden thrombophilia (F5 R506Q -- activated protein C resistance; THPH2)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "F2",
+    "push_direction": "lower DOWNSTREAM thrombin (and factor Xa) generation by general anticoagulation, pushing the over-driven coagulation axis back toward normal -> reduced venous-thrombosis propensity. Acts DOWNSTREAM of the APC-resistant factor Va and does NOT restore APC sensitivity at F5 (it bypasses the switch defect rather than repairing it); net axis effect RESTRAIN",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "general anticoagulant (vitamin-K antagonist warfarin; direct oral factor Xa inhibitor [rivaroxaban / apixaban] or direct thrombin inhibitor [dabigatran])",
+    "status": "approved",
+    "mechanism_grade": "[O] off-causal-gene DOWNSTREAM anticoagulant; the link from thrombin/FXa inhibition to the corrected coagulation axis is haemostasis pharmacology the gamma read does not capture. Approved for venous-thromboembolism treatment / prophylaxis (the manifestation) -- NOT an F5-targeted agent; whether, when and how intensely to anticoagulate any individual is a clinical risk-stratification decision, asserted nowhere here",
+    "src": "Kearon 2016 Chest 149:315 (antithrombotic therapy for VTE); warfarin / DOACs approved for VTE -- no factor-V-Leiden-targeted therapy exists"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "F5",
+    "push_direction": "restore APC sensitivity of factor Va itself -- re-impose the protein C / APC brake on the procoagulant accelerator at the causal switch (the DIRECTION the switch forces) -> coagulation drive held down toward normal; net axis effect RESTRAIN (gene/function-level correction of the causal gene)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "F5-Leiden APC-sensitivity restoration (allele-specific correction / APC-pathway restoration; investigational, no approved agent)",
+    "status": "investigational",
+    "mechanism_grade": "[O] degree of restored APC sensitivity not derived from sequence; this is the forced switch-level direction, but NO approved agent restores factor Va APC sensitivity -- investigational only",
+    "src": "APC-resistance mechanism (Bertina 1994); recombinant activated protein C [drotrecogin alfa] was withdrawn 2011 -- no approved factor-V-Leiden-specific corrective"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "F2",
+   "push_direction": "lower DOWNSTREAM thrombin (and factor Xa) generation by general anticoagulation, pushing the over-driven coagulation axis back toward normal -> reduced venous-thrombosis propensity. Acts DOWNSTREAM of the APC-resistant factor Va and does NOT restore APC sensitivity at F5 (it bypasses the switch defect rather than repairing it); net axis effect RESTRAIN",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "general anticoagulant (vitamin-K antagonist warfarin; direct oral factor Xa inhibitor [rivaroxaban / apixaban] or direct thrombin inhibitor [dabigatran])",
+   "status": "approved",
+   "mechanism_grade": "[O] off-causal-gene DOWNSTREAM anticoagulant; the link from thrombin/FXa inhibition to the corrected coagulation axis is haemostasis pharmacology the gamma read does not capture. Approved for venous-thromboembolism treatment / prophylaxis (the manifestation) -- NOT an F5-targeted agent; whether, when and how intensely to anticoagulate any individual is a clinical risk-stratification decision, asserted nowhere here",
+   "src": "Kearon 2016 Chest 149:315 (antithrombotic therapy for VTE); warfarin / DOACs approved for VTE -- no factor-V-Leiden-targeted therapy exists"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.42786,
+   "dwell_disease": 1.96331,
+   "dwell_treated": 1.6027,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "d8c7b1231ed2"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "F5 R506Q (factor V Leiden) moves the coagulation emergent axis UP (procoagulant accelerator resists its brake)",
+   "falsifier": "an F5 R506Q allele that SHORTENS thrombin generation / REDUCES venous-thrombosis incidence, or factor Va inactivated FASTER by APC despite R506Q, refutes the procoagulant-GOF (axis UP) direction",
+   "measurable_by": "calibrated automated thrombography (thrombin-generation assay) and the APC-resistance ratio stratified by F5 genotype; venous-thromboembolism incidence cohort by genotype"
+  },
+  {
+   "claim": "general (downstream) anticoagulation is the CORRECTIVE direction (restrains the over-driven axis) but does NOT restore APC sensitivity",
+   "falsifier": "if lowering thrombin/FXa generation raised rather than reduced thrombosis the 'restrain the axis' lever sign is wrong; if an anticoagulant were shown to restore factor Va APC sensitivity the 'downstream / does-not-repair-the-switch' classification is wrong",
+   "measurable_by": "VTE recurrence on vs off anticoagulation in factor-V-Leiden carriers; APC-resistance ratio before/after anticoagulant exposure"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Factor V Leiden thrombophilia (F5 R506Q -- activated protein C resistance; THPH2)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "98f1297687f8"
+ },
+ "determinism_sha": "393b7e908043"
+}

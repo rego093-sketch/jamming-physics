@@ -1,0 +1,249 @@
+{
+  "phase": "R8",
+  "kind": "investigation_gate",
+  "title": "open-source severity pass (HPO Severity-modifier dominant-sequela join) — S lift / new order-lock",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "8d3775ca14ac"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "27050cda5674"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "c362b29f0e66"
+    },
+    "phenotype_hpoa": {
+      "path": "data/raw/hpo/phenotype.hpoa.gz",
+      "sha12": "1effb4e06afe"
+    },
+    "severity_join_csv": {
+      "path": "methodology/severity_hpo_join.csv",
+      "sha12": "0b2fa7847cc5"
+    },
+    "severity_excluded_csv": {
+      "path": "methodology/severity_hpo_excluded.csv",
+      "sha12": "1f9b7e85c1f6"
+    },
+    "omim_log": {
+      "path": "data/raw/omim/_fetch_log.json",
+      "sha12": "1b27d6cb7f62"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 1,
+    "S_kept_H": 17,
+    "S_O_kept_no_dominant_annotation": 10,
+    "S_kept_L": 2,
+    "S_excluded_recorded": 5
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[H]": 9,
+      "[L]": 5
+    },
+    "S": {
+      "[L]": 3,
+      "[H]": 21,
+      "[O]": 11
+    },
+    "M": {
+      "[L]": 8,
+      "[H]": 9,
+      "[O]": 18
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "severity_hpo_join": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "omim": "200610",
+      "hpo_phenotype": "HP:0003026",
+      "hpo_phenotype_name": "Short long bone",
+      "severity_modifier": "HP:0012828",
+      "severity_modifier_name": "Severe",
+      "frequency": "1/1",
+      "reference": "PMID:34573377",
+      "severity_tier": 0.75,
+      "prior_value": 0.75,
+      "prior_grade": "[H]"
+    }
+  ],
+  "severity_hpo_excluded": [
+    {
+      "entity": "Classic homocystinuria",
+      "cui": "C0751202",
+      "considered_phenotype": "HP:0000098",
+      "considered_phenotype_name": "Tall stature",
+      "considered_modifier": "HP:0012825",
+      "considered_modifier_name": "Mild",
+      "exclusion_reason": "modifier sits on a morphological feature (tall stature), which is not a severity-determining sequela; 'Mild tall stature' is severity-uninformative for the disease (category error). Not lifted"
+    },
+    {
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "considered_phenotype": "HP:0000938",
+      "considered_phenotype_name": "Osteopenia",
+      "considered_modifier": "HP:0012825",
+      "considered_modifier_name": "Mild",
+      "exclusion_reason": "feature-level 'Mild' on type-I osteopenia; the cohort entity is the OI umbrella (types I-IV) spanning mild (type I) to perinatal-lethal (type II), so a single sub-type/feature modifier cannot tier the spectrum (BURDEN_INDEX spectrum rule). S kept at the [H] spectrum midpoint, not lifted"
+    },
+    {
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "considered_phenotype": "HP:0005897",
+      "considered_phenotype_name": "Severe generalized osteoporosis",
+      "considered_modifier": "HP:0012828",
+      "considered_modifier_name": "Severe",
+      "exclusion_reason": "type-III osteoporosis carries a Severe grade — the OPPOSITE of the type-I 'Mild' modifier on the same umbrella entity; the contradiction is itself proof that a sub-type/feature severity is not the umbrella's disease-level tier (spectrum rule). Not lifted"
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "considered_phenotype": "HP:0001256",
+      "considered_phenotype_name": "Mild intellectual disability",
+      "considered_modifier": "(term-identity)",
+      "considered_modifier_name": "Mild",
+      "exclusion_reason": "the severity-graded term is on cognitive involvement, which is NOT DMD's dominant sequela (progressive motor failure and loss of ambulation is); reading 'Mild' as the disease tier would catastrophically understate a severe, life-shortening disease (category error). Not lifted"
+    },
+    {
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "considered_phenotype": "HP:0006536",
+      "considered_phenotype_name": "Airway obstruction",
+      "considered_modifier": "HP:0012825",
+      "considered_modifier_name": "Mild",
+      "exclusion_reason": "modifier on a non-dominant respiratory feature; Fabry's dominant untreated burden is renal/cardiac/cerebrovascular disease and neuropathic pain, so 'Mild airway obstruction' does not represent disease severity (category error). Not lifted"
+    },
+    {
+      "entity": "Achondroplasia",
+      "cui": "C0001080",
+      "considered_phenotype": "HP:0004565",
+      "considered_phenotype_name": "Severe platyspondyly",
+      "considered_modifier": "(term-identity)",
+      "considered_modifier_name": "Severe",
+      "exclusion_reason": "severity is encoded in the phenotype term itself (severe vertebral flattening) on a single skeletal feature; achondroplasia overall has near-normal lifespan and normal cognition (banked M=0.4 [H]), so a disease-level 'Severe' tier read from one feature would overstate it (category error). Not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Achondrogenesis type II",
+      "axis": "S",
+      "old": 0.75,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    }
+  ],
+  "registry_set_sha12": "c40c6942872d",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->r6->r7->r8 chain registry-set sha c40c6942872d == c40c6942872d"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r7",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity']"
+    },
+    {
+      "name": "severity_join_anchored_cited",
+      "pass": true,
+      "detail": "1 severity join(s): re-found in pinned hpoa (pheno+modifier+freq+ref), cited basis present, tier from a-priori cut-points, audit binds tier (0 bad)"
+    },
+    {
+      "name": "severity_annotation_obligate",
+      "pass": true,
+      "detail": "declared a-priori criterion present; every lifted severity feature is OBLIGATE (HPO frequency 100%/Obligate) in the pinned source (0 bad)"
+    },
+    {
+      "name": "severity_cutpoints_a_priori",
+      "pass": true,
+      "detail": "declared modifier cut-points match fixed map; every HPO-sourced S == binned tier (0 bad)"
+    },
+    {
+      "name": "severity_excluded_recorded",
+      "pass": true,
+      "detail": "6 declined annotations: in cohort, reason present, in audit, S not HPO-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R7 (0 violations)"
+    },
+    {
+      "name": "s_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/P/M/D identical to R7; S changed only for the 1 joined disease(s) (0 illicit)"
+    },
+    {
+      "name": "new_order_lock_proven",
+      "pass": true,
+      "detail": "Achondrogenesis II order_locked R7=False -> R8=True; locked count 1 -> 2; locked = ['Achondrogenesis type II', 'Tyrosinemia type II']"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "omim_path_removed_documented",
+      "pass": true,
+      "detail": "OMIM synopsis status=SKIPPED, path documented REMOVED (key unobtainable), no S value sourced from OMIM"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

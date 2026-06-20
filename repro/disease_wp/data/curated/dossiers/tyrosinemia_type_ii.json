@@ -1,0 +1,178 @@
+{
+  "schema": "disease_wp.dossier/v1",
+  "phase": "R2",
+  "investigation_only": true,
+  "identity": {
+    "entity": "Tyrosinemia type II",
+    "medgen_cui": "C0268487",
+    "medgen_uid": "75687",
+    "omim_codes": [
+      "276600",
+      "613018"
+    ],
+    "omim_code_source": "MedGen conceptmeta (SAB=OMIM)",
+    "genes": [
+      "TAT"
+    ],
+    "semantic_type": "Disease or Syndrome",
+    "tier": "extension",
+    "system_class": "metabolic",
+    "in_scope": true,
+    "cns_cross_reference": "false"
+  },
+  "inheritance": {
+    "value": "Autosomal recessive inheritance",
+    "grade": "[L]",
+    "source": "medgen:esummary:ModeOfInheritance:2026-06-17"
+  },
+  "molecular_mechanism": {
+    "value": "loss-of-function (biallelic; recessive)",
+    "grade": "[H]",
+    "source": "inference:recessive=>loss_of_function; basis=medgen_inheritance(recessive)"
+  },
+  "gene_function": [
+    {
+      "value": {
+        "gene": "TAT",
+        "geneid": "6898",
+        "full_name": "tyrosine aminotransferase",
+        "summary": "This nuclear gene encodes a mitochondrial protein tyrosine aminotransferase which is present in the liver and catalyzes the conversion of L-tyrosine into p-hydroxyphenylpyruvate. Mutations in this gene cause tyrosinemia (type II, Richner-Hanhart syndrome), a disorder accompanied by major skin and corneal lesions, with possible cognitive disability. A regulator gene for tyrosine aminotransferase is X-linked. [provided by RefSeq, Jul 2008]"
+      },
+      "grade": "[L]",
+      "source": "NCBI Gene:6898 RefSeq Summary; retrieved 2026-06-17"
+    }
+  ],
+  "variant_spectrum": [
+    {
+      "value": {
+        "gene": "TAT",
+        "total_records": 520,
+        "germline_classification_counts": {
+          "Pathogenic": 103,
+          "Likely pathogenic": 57,
+          "Uncertain significance": 152,
+          "Likely benign": 331,
+          "Benign": 337
+        }
+      },
+      "grade": "[L]",
+      "source": "ClinVar gene query 'TAT[gene]' with [Germline classification] filters; retrieved 2026-06-17; categories overlap, not summed"
+    }
+  ],
+  "clinical": {
+    "organ_systems": {
+      "value": [
+        {
+          "system": "Abnormality of metabolism/homeostasis",
+          "hpo_id": "HP:0001939",
+          "supporting_term_count": 3
+        },
+        {
+          "system": "Abnormality of the genitourinary system",
+          "hpo_id": "HP:0000119",
+          "supporting_term_count": 2
+        },
+        {
+          "system": "Abnormality of the eye",
+          "hpo_id": "HP:0000478",
+          "supporting_term_count": 1
+        },
+        {
+          "system": "Abnormality of the nervous system",
+          "hpo_id": "HP:0000707",
+          "supporting_term_count": 1
+        },
+        {
+          "system": "Growth abnormality",
+          "hpo_id": "HP:0001507",
+          "supporting_term_count": 1
+        },
+        {
+          "system": "Abnormality of the integument",
+          "hpo_id": "HP:0001574",
+          "supporting_term_count": 1
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 276600,613018); P-aspect terms rolled up to HP:0000118 organ-system categories via hp.obo"
+    },
+    "cardinal_symptoms": {
+      "value": [
+        {
+          "hpo_id": "HP:0003161",
+          "name": "4-Hydroxyphenylpyruvic aciduria",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        },
+        {
+          "hpo_id": "HP:0000951",
+          "name": "Abnormality of the skin",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        },
+        {
+          "hpo_id": "HP:6000479",
+          "name": "Elevated urine N-acetyltyrosine level",
+          "frequency": null,
+          "reference": "PMID:20301688"
+        },
+        {
+          "hpo_id": "HP:0001510",
+          "name": "Growth delay",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        },
+        {
+          "hpo_id": "HP:0007812",
+          "name": "Herpetiform corneal ulceration",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        },
+        {
+          "hpo_id": "HP:0003231",
+          "name": "Hypertyrosinemia",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        },
+        {
+          "hpo_id": "HP:0001249",
+          "name": "Intellectual disability",
+          "frequency": null,
+          "reference": "OMIM:276600"
+        }
+      ],
+      "grade": "[L]",
+      "source": "HPO phenotype.hpoa v2026-06-06 (OMIM 276600,613018); top P-aspect phenotypes by annotated frequency; reference = HPO source citation"
+    },
+    "age_of_onset": {
+      "value": [],
+      "grade": "[O]",
+      "obstacle": "no HPO onset annotation joinable (OMIM cross-ref: 276600,613018)"
+    },
+    "prevalence": {
+      "value": null,
+      "grade": "[O]",
+      "obstacle": "prevalence/incidence not stated in the MedGen definition; epidemiological magnitude requires a dedicated source (e.g. Orphanet/GBD), deferred — not guessed"
+    },
+    "clinical_definition": {
+      "value": "Tyrosinemia type II is characterized by corneal dystrophy, painful palmoplantar hyperkeratosis, and variable intellectual disability. Individuals diagnosed and treated from early infancy may be asymptomatic or have only mild ocular and skin manifestations. Individuals with delayed diagnosis or lack of treatment present with ocular, skin, and variable cognitive manifestations.",
+      "grade": "[L]",
+      "source": "MedGen concept C0268487 (NCBI MedGen); retrieved 2026-06-17"
+    }
+  },
+  "provenance": {
+    "disease_index": "data/curated/disease_index.csv",
+    "medgen_cohort_cache": "data/raw/medgen/dossier_cohort_esummary.json",
+    "gene_resources_cache": "data/raw/clinvar/cohort_gene_resources.json",
+    "hpo_annotations": "data/raw/hpo/phenotype.hpoa.gz (v2026-06-06)",
+    "hpo_ontology": "data/raw/hpo/hp.obo.gz",
+    "mechanism_rules": "methodology/mechanism_rules.csv",
+    "omim_join_supplement": "methodology/omim_join_supplement.csv",
+    "retrieved": "2026-06-17"
+  },
+  "grade_vocabulary": {
+    "[L]": "source-stated and cited (observed input)",
+    "[H]": "inference from established science; basis recorded",
+    "[O]": "open/unavailable; obstacle named; not guessed"
+  }
+}

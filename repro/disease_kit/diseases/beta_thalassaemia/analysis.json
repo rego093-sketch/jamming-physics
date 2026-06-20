@@ -1,0 +1,168 @@
+{
+ "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia)",
+ "omim": "613985",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia)",
+  "omim": "613985",
+  "summary": "A single-gene HBB loss-of-function -- but a QUANTITATIVE one, the deliberate contrast to sickle cell disease on the SAME HBB locus. HBB encodes the beta-globin chain of adult haemoglobin (HbA = alpha2beta2). Beta-thalassaemia alleles REDUCE (beta+) or ABOLISH (beta0) beta-globin output (promoter/splice/nonsense lesions lowering the amount of an otherwise-normal chain), so beta-globin synthesis falls -> the alpha-globin chains made in excess have no beta partner, precipitate, and damage erythroid precursors -> INEFFECTIVE ERYTHROPOIESIS and haemolysis (transfusion-dependent beta-thalassaemia major; milder beta-thalassaemia intermedia). The beta-globin-output axis is driven DOWN. This is read on the SAME structural-globin axis as sickle cell, but where sickle cell is a QUALITATIVE defect (a single missense, Glu6Val, that makes a normal AMOUNT of an ABNORMAL chain -- HbS -- that polymerises), beta-thalassaemia is a QUANTITATIVE defect (too LITTLE of a normal chain): one gene (HBB), two different KINDS of lesion -- the lesion-TYPE analogue of the Rett <-> MECP2-duplication same-locus pairing (which was a dosage-DIRECTION pair). The kit re-derives the approved corrective arms on the existing engine: (i) POTENTIATE late-stage erythroid maturation -- luspatercept, an activin-receptor-IIB ligand trap that sequesters TGF-beta-superfamily ligands (e.g. GDF11) to relieve SMAD2/3 inhibition of terminal erythroid maturation, raising effective red-cell output despite the beta-globin deficit (the distinctive beta-thalassaemia lead, NOT used in sickle cell); (ii) re-induce FETAL haemoglobin (HbF, alpha2gamma2) to substitute for the missing beta-globin -- oppose BCL11A / exagamglogene autotemcel (the SAME HbF-induction route shared with sickle cell); and (iii) ADD a functional beta-globin gene -- betibeglogene autotemcel (gene addition). The gamma read is of the HBB locus switch STRUCTURE (identical to the sickle-cell read, since it is the same locus); the disease lesions are quantitative (promoter, splice, and nonsense alleles reducing beta-globin amount), outside the promoter-switch firewall as a magnitude question. Magnitude [O].",
+  "emergent_axis": "beta-globin chain output / effective erythropoiesis (HBB structural-globin synthesis; quantitative LOF -> beta-globin deficiency -> excess alpha-chain precipitation -> ineffective erythropoiesis) -- the structural-globin axis, the QUANTITATIVE contrast to sickle cell's QUALITATIVE HBB lesion",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "HBB",
+    "gamma": 1.2779,
+    "spinodal_h_sp": 0.55602,
+    "barrier": 0.40826,
+    "dwell_relative_size": 1.31327,
+    "role": "structural",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "structural element deficient -> tissue integrity reduced",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 5225463,
+     "gene_end": 5227070,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "hemoglobin subunit beta"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "HBB encodes the beta-globin chain of adult haemoglobin (alpha2beta2). Beta-thalassaemia alleles are QUANTITATIVE loss-of-function -- beta+ (reduced) or beta0 (absent) output from promoter, splice-site, or nonsense lesions that lower the AMOUNT of an otherwise-normal beta chain. Reduced beta-globin leaves alpha-globin in excess; unpaired alpha-chains precipitate and kill erythroid precursors -> ineffective erythropoiesis and haemolysis. As a deficient STRUCTURAL globin the beta-output axis goes DOWN. Autosomal recessive, 11p15.4 (OMIM 141900). NCBI official symbol HBB. This is the SAME locus as sickle cell disease, read here for a QUANTITATIVE (amount-reducing) lesion rather than sickle's QUALITATIVE (Glu6Val structural) lesion -- one gene, two lesion types. The promoter gamma reads the locus switch STRUCTURE only; the specific quantitative coding/splice/promoter lesions are a magnitude question outside the firewall.",
+    "src": "Weatherall 2001 Nat Rev Genet 2:245 (the thalassaemias / HBB quantitative defects); Thein 2013 Cold Spring Harb Perspect Med 3:a011700 (beta-thalassaemia molecular basis)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "HBB",
+   "role": "structural",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "structural element deficient -> tissue integrity reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "517966c1a3a9"
+ },
+ "treatment_A_switch": {
+  "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "HBB",
+    "push_direction": "potentiate terminal erythroid maturation with a TGF-beta-superfamily ligand trap (relieving SMAD2/3 inhibition) -> raise effective red-cell output despite the beta-globin deficit (axis UP toward effective erythropoiesis)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "erythroid-maturation agent / activin-receptor ligand trap (luspatercept)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of erythroid-maturation improvement / transfusion reduction not derived from sequence",
+    "src": "Cappellini 2020 NEJM 382:1219 (BELIEVE, luspatercept in transfusion-dependent beta-thalassaemia); luspatercept (Reblozyl) FDA 2019 / EMA 2020"
+   },
+   {
+    "lever": "oppose",
+    "target_gene": "BCL11A",
+    "push_direction": "de-repress fetal globin (lower BCL11A) -> raise HbF (alpha2gamma2) to substitute for the missing beta-globin (axis compensated)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "BCL11A-enhancer gene editing / HbF re-induction (exagamglogene autotemcel)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of HbF induction / transfusion independence not derived from sequence",
+    "src": "Frangoul 2021 NEJM 384:252 (exa-cel / CTX001 in beta-thalassaemia); exagamglogene autotemcel (Casgevy) FDA/EMA/MHRA 2023-2024"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "HBB",
+    "push_direction": "add a functional beta-globin gene to erythroid progenitors -> restore beta-globin output",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "ex-vivo lentiviral beta-globin gene addition (betibeglogene autotemcel)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of beta-globin restoration not derived from sequence",
+    "src": "Locatelli 2022 / betibeglogene autotemcel (Zynteglo) FDA 2022 (transfusion-dependent beta-thalassaemia)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "HBB",
+   "push_direction": "potentiate terminal erythroid maturation with a TGF-beta-superfamily ligand trap (relieving SMAD2/3 inhibition) -> raise effective red-cell output despite the beta-globin deficit (axis UP toward effective erythropoiesis)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "erythroid-maturation agent / activin-receptor ligand trap (luspatercept)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of erythroid-maturation improvement / transfusion reduction not derived from sequence",
+   "src": "Cappellini 2020 NEJM 382:1219 (BELIEVE, luspatercept in transfusion-dependent beta-thalassaemia); luspatercept (Reblozyl) FDA 2019 / EMA 2020"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.31327,
+   "dwell_disease": 0.84976,
+   "dwell_treated": 1.07805,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "a0a8a4c30c29"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "HBB quantitative LOF lowers beta-globin output (axis DOWN -> excess alpha-chain / ineffective erythropoiesis)",
+   "falsifier": "an HBB beta-thalassaemia allele that RAISED beta-globin output or BALANCED the alpha/beta ratio would refute the quantitative-deficiency direction",
+   "measurable_by": "beta-globin chain synthesis and alpha/beta globin-chain ratio in patient erythroid cells vs controls"
+  },
+  {
+   "claim": "raising effective erythropoiesis (potentiate maturation / re-induce HbF / add beta-globin) is the CORRECTIVE direction",
+   "falsifier": "if luspatercept, HbF re-induction, or beta-globin gene addition LOWERED effective red-cell output or RAISED transfusion need, the corrective lever sign is wrong",
+   "measurable_by": "haemoglobin level, transfusion requirement and erythroid-maturation markers on each intervention in beta-thalassaemia"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Beta-thalassaemia (beta-thalassaemia major / intermedia)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "457db26f3f25"
+ },
+ "determinism_sha": "8ec2d1fc7e5f"
+}

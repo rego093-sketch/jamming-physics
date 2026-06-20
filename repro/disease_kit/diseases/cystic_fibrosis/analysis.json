@@ -1,0 +1,157 @@
+{
+ "disease": "Cystic fibrosis",
+ "omim": "219700",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Cystic fibrosis",
+  "omim": "219700",
+  "summary": "CFTR loss-of-function (commonest allele F508del) leaves the epithelial chloride channel mis-folded/closed -> the gate is stuck in the OFF basin, drying secretions across lung, pancreas, gut.",
+  "emergent_axis": "epithelial CFTR chloride-channel conductance (OFF<->ON switch)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CFTR",
+    "gamma": 1.3564,
+    "spinodal_h_sp": 0.60804,
+    "barrier": 0.45996,
+    "dwell_relative_size": 1.43611,
+    "role": "channel",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "gate stuck in OFF basin -> current lost",
+    "ncbi": {
+     "acc": "NC_000007.14",
+     "gene_start": 117480024,
+     "gene_end": 117668664,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "CF transmembrane conductance regulator"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "F508del: folding/trafficking defect; gate fails to reach/hold the ON basin",
+    "src": "Riordan 1989 Science 245:1066; Kerem 1989"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CFTR",
+   "role": "channel",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "gate stuck in OFF basin -> current lost"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "3eea6c318088"
+ },
+ "treatment_A_switch": {
+  "disease": "Cystic fibrosis",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "CFTR",
+    "push_direction": "increase open-probability of channels already at the membrane (open the gate)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "CFTR potentiator (ivacaftor)",
+    "status": "approved",
+    "mechanism_grade": "[O] gating kinetics/dose not asserted",
+    "src": "Ramsey 2011 NEJM 365:1663 (ivacaftor, G551D)"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "CFTR",
+    "push_direction": "rescue folding/trafficking so F508del-CFTR reaches the membrane",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "CFTR corrector(s) +- potentiator (elexacaftor/tezacaftor/ivacaftor)",
+    "status": "approved",
+    "mechanism_grade": "[O] rescue fraction/dose not asserted",
+    "src": "Middleton 2019 NEJM 381:1809 (triple combination, F508del)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "CFTR",
+   "push_direction": "increase open-probability of channels already at the membrane (open the gate)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "CFTR potentiator (ivacaftor)",
+   "status": "approved",
+   "mechanism_grade": "[O] gating kinetics/dose not asserted",
+   "src": "Ramsey 2011 NEJM 365:1663 (ivacaftor, G551D)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.43611,
+   "dwell_disease": 0.92925,
+   "dwell_treated": 1.1789,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "fc75772371ab"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "CFTR LOF moves the conductance axis DOWN (gate stuck OFF)",
+   "falsifier": "a CFTR LOF allele that INCREASES chloride conductance refutes the OFF-basin direction",
+   "measurable_by": "Ussing-chamber chloride current in CFTR-mutant epithelium"
+  },
+  {
+   "claim": "potentiate/correct is the CORRECTIVE direction (restore conductance)",
+   "falsifier": "if a potentiator/corrector reduced CFTR conductance, the lever sign is wrong",
+   "measurable_by": "short-circuit current response to ivacaftor in gating-mutant epithelium"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Cystic fibrosis": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "9264f52f1f87"
+ },
+ "determinism_sha": "8b3513704b8f"
+}

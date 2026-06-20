@@ -1,0 +1,73 @@
+{
+ "_what": "Immune / Hematologic -- emerge organs from MEASURED gamma (4/4), then circulate dynamics.",
+ "dynamics_pointer": "T1..T5 in repro/_dynamics, repro/_oncology, repro/_therapy; battery in repro/_verify",
+ "gamma_verification": {
+  "all_cache_consistent": true,
+  "gamma": {
+   "FOXN1": 1.4533,
+   "PAX5": 1.4892,
+   "RUNX1": 1.3225,
+   "TLX1": 1.4228
+  },
+  "grade": "[V] measured (SantaLucia 1998 NN dG37; knowns reproduced to 4 dp offline)",
+  "knowns_reproduced": true
+ },
+ "grounding": "full (4/4 master-gene gamma measured & offline-reproducible)",
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "bone_marrow_hematopoiesis",
+   "spleen",
+   "thymus",
+   "lymphoid_adaptive"
+  ],
+  "order_grade": "[V] developmental order is a gamma readout over 4 MEASURED organs; endpoints SIGN-validated vs cited embryology (hematopoiesis first, adaptive last)",
+  "organs": [
+   {
+    "barrier": 0.52802,
+    "dyn_class": "population",
+    "functional_spinodal": 0.674343,
+    "gamma": 1.4533,
+    "gamma_state": "vendored",
+    "master": "FOXN1",
+    "organ": "thymus",
+    "rel_size_dwell": 1.592723,
+    "role": "T-cell positive/negative selection (threshold gating)"
+   },
+   {
+    "barrier": 0.50609,
+    "dyn_class": "population",
+    "functional_spinodal": 0.653227,
+    "gamma": 1.4228,
+    "gamma_state": "vendored",
+    "master": "TLX1",
+    "organ": "spleen",
+    "rel_size_dwell": 1.542848,
+    "role": "blood filtration + lymphoid white pulp"
+   },
+   {
+    "barrier": 0.437252,
+    "dyn_class": "population",
+    "functional_spinodal": 0.585385,
+    "gamma": 1.3225,
+    "gamma_state": "vendored",
+    "master": "RUNX1",
+    "organ": "bone_marrow_hematopoiesis",
+    "rel_size_dwell": 1.382614,
+    "role": "HSC -> lineage branching (clonal)"
+   },
+   {
+    "barrier": 0.554429,
+    "dyn_class": "population",
+    "functional_spinodal": 0.699484,
+    "gamma": 1.4892,
+    "gamma_state": "vendored",
+    "master": "PAX5",
+    "organ": "lymphoid_adaptive",
+    "rel_size_dwell": 1.652102,
+    "role": "B/T clonal selection + immune memory"
+   }
+  ]
+ },
+ "oscillators": {}
+}

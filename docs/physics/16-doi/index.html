@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOI — VP Theory §16 | Jamming Physics</title>
+<meta name="description" content="Failures are public artifacts, not drawer contents. Truth has one address per item; copies are bugs.">
+<link rel="canonical" href="https://jamming-physics.org/physics/16-doi/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="DOI — VP Theory §16 | Jamming Physics"><meta property="og:description" content="Failures are public artifacts, not drawer contents. Truth has one address per item; copies are bugs."><meta property="og:url" content="https://jamming-physics.org/physics/16-doi/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="DOI — VP Theory §16 | Jamming Physics"><meta name="twitter:description" content="Failures are public artifacts, not drawer contents. Truth has one address per item; copies are bugs.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"DOI",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"16",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§16 DOI"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §16</nav></header>
+<main>
+<h1>DOI</h1>
+<p class="answer">DOI: Failures are public artifacts, not drawer contents. Truth has one address per item; copies are bugs. U_lat=hc_ref/a CALIB 13.1 Lattice unit energy SSOT combining three anchors (h,c_ref,a). This chapter defines operational rules that ensure every artifact produced throughout the main text is fixed in a form that is verifiable, reproducible, and distributable.</p>
+<p class="abstract" data-phase2="abstract">Failures are public artifacts, not drawer contents. Truth has one address per item; copies are bugs. U_lat=hc_ref/a CALIB 13.1 Lattice unit energy SSOT combining three anchors (h,c_ref,a).</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/16-doi/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>16.1 Protocol registry, pre-registration, and falsification-trigger rules (FAIL is also public)</h2>
+<aside class="claim-strip vps" data-vps="16.1" data-cards="VP-C-051, VP-C-053"><span class="g">operational rules</span><span class="io">in: — / out: protocol registry, pre-registration, falsification-trigger rules; FAIL results are published with the same ceremony as PASS</span><q class="one">Failures are public artifacts, not drawer contents.</q><span class="cards">VP-C-051, VP-C-053</span></aside>
+<h3>16.1.1 Purpose and scope (definition)</h3>
+<p>This chapter defines operational rules that ensure every artifact produced throughout the main text is fixed in a form that is <em>verifiable</em>, <em>reproducible</em>, and <em>distributable</em>.
+Here:</p>
+<ul>
+<li> <strong>Verification</strong> means “the eligibility of artifacts is decided by the predefined Gate/PASS.rules.”
+<li> <strong>Reproducibility</strong> means “the same artifacts are regenerated from the same inputs (LOCK), the same protocol, and the same reference implementation.”
+<li> <strong>Distribution</strong> means “the artifact bundle is recorded as an immutable DOI-scoped archive, and integrity is guaranteed by checksums.”
+</ul>
+<p>This chapter does not add new derivations (theory). It only covers <em>artifact qualification (verdict), recording (logs), and preservation (archives)</em>.</p>
+<h3>16.1.2 Core objects (definition): protocol, registry, registration identifiers</h3>
+<h4>(Definition) Protocol</h4>
+<p>A protocol P is defined as a 7-tuple:</p>
+<figure class="eq" id="eq:S16_01_protocol_tuple"><img src="/physics/eq/physics/phy-16-000.svg" data-eq="phy-16-000" width="185" height="22" loading="lazy" alt="\begin{equation} \mathsf{P}:=\big(\mathsf{S},\mathsf{I},\mathsf{R},\mathsf{E},\mathsf{G},\mathsf{O},\mathsf{A}\big) \end{equation}"></figure>
+<p>Each component is fixed as follows.</p>
+<ul>
+<li> S: scope (regime) declaration (target model/target data/admissibility conditions).
+<li> I: input (LOCK) references (identifiers and digests for canonical/realization/analysis locks).
+<li> R: procedure (ordered phases) definition (preprocess, execute, aggregate, verdict order).
+<li> E: estimator definition (formula/algorithm, sampling rules, seed rules).
+<li> G: Gate/PASS.rules definition (thresholds, verdict sign, failure codes).
+<li> O: artifacts definition (file list, formats, required metadata).
+<li> A: falsification triggers and the FAIL disclosure policy.
+</ul>
+<h4>(Definition) Protocol registry</h4>
+<p>A protocol registry R_prot is an immutable list that stores protocols and their metadata.
+Each registry entry is</p>
+<figure class="eq" id="eq:S16_01_registry_item"><img src="/physics/eq/physics/phy-16-001.svg" data-eq="phy-16-001" width="341" height="22" loading="lazy" alt="\begin{equation} \mathcal{R}_{\mathrm{prot}}[i]=\big(\mathrm{PID},\mathrm{VER},\mathrm{DIG},\mathrm{TS},\mathrm{STATUS}\big) \end{equation}"></figure>
+<p>with the following fixed meanings.</p>
+<ul>
+<li> PID: protocol identifier (string; globally unique).
+<li> VER: protocol version (integer or vX.Y.Z).
+<li> DIG: checksum digest of the protocol file (e.g., SHA-256).
+<li> TS: registration timestamp (UTC or fixed timestamp).
+<li> STATUS∈ACTIVE,DEPRECATED,REVOKED: status.
+</ul>
+<p>The registry is <em>append-only</em>; modification/deletion of existing entries is forbidden. If a correction is needed, a new versioned entry must be added.</p>
+<h3>16.1.3 Pre-registration rules (definition)</h3>
+<h4>(Definition) Pre-registration file</h4>
+<p>Pre-registration is the act of recording all components of P into a fixed-schema file. We define the pre-registration file as</p>
+<figure class="eq" id="eq:S16_01_prereg_file"><img src="/physics/eq/physics/phy-16-002.svg" data-eq="phy-16-002" width="307" height="16" loading="lazy" alt="\begin{equation} \texttt{protocol.yaml} \quad \text{or}\quad \texttt{protocol.json} \end{equation}"></figure>
+<p>The pre-registration file must include the following fields.</p>
+<ul>
+<li> <code>pid</code>, <code>version</code>, <code>scope</code> (=S)
+<li> <code>locks</code> (=I; paths and digests for each LOCK file)
+<li> <code>procedure</code> (=R; phase names, inputs/outputs, order)
+<li> <code>estimators</code> (=E; formulas/algorithms/seed rules)
+<li> <code>gates</code> (=G; PASS.rules, thresholds, failure codes)
+<li> <code>artifacts</code> (=O; required file list, formats, path rules)
+<li> <code>falsification</code> (=A; trigger list, FAIL disclosure policy)
+</ul>
+<h4>(Definition) Pre-registration digest and fixed point</h4>
+<p>Define the checksum digest of the pre-registration file as</p>
+<figure class="eq" id="eq:S16_01_dig_prot"><img src="/physics/eq/physics/phy-16-003.svg" data-eq="phy-16-003" width="269" height="19" loading="lazy" alt="\begin{equation} \mathrm{DIG}_{\mathrm{prot}}:=\mathrm{SHA256}(\texttt{protocol.*}) \end{equation}"></figure>
+<p>The protocol is frozen by DIG_prot. If DIG_prot changes under the same PID, then VER must increase.
+The pre-registration digest is a <em>prerequisite for every run</em> and must be included in the run logs and the DOI archive.</p>
+<h3>16.1.4 PASS.rules and verdict hierarchy (definition)</h3>
+<h4>(Definition) Gate and PASS.rules</h4>
+<p>A Gate is defined as a boolean function that decides artifact eligibility.
+Each Gate g takes a summary vector m and a threshold set Θ, and returns</p>
+<figure class="eq" id="eq:S16_01_gate_bool"><img src="/physics/eq/physics/phy-16-004.svg" data-eq="phy-16-004" width="132" height="19" loading="lazy" alt="\begin{equation} g(\mathbf{m};\Theta)\in\{0,1\} \end{equation}"></figure>
+<p>Let the set of Gates be G=g₁,…,g_K. PASS.rules is defined as a logical composition of Gates.
+For example, one may fix</p>
+<figure class="eq" id="eq:S16_01_pass_rules"><img src="/physics/eq/physics/phy-16-005.svg" data-eq="phy-16-005" width="193" height="56" loading="lazy" alt="\begin{equation} \mathrm{PASS}:=\bigwedge_{k=1}^{K} g_k(\mathbf{m}_k;\Theta_k) \end{equation}"></figure>
+<p>PASS.rules must be stated in the pre-registration file, and post-run changes are forbidden.</p>
+<h4>(Definition) Verdict classes</h4>
+<p>Each run is assigned exactly one verdict class:</p>
+<figure class="eq" id="eq:S16_01_status"><img src="/physics/eq/physics/phy-16-006.svg" data-eq="phy-16-006" width="369" height="19" loading="lazy" alt="\begin{equation} \mathrm{STATUS}\in\{\mathrm{PASS},\mathrm{FAIL},\mathrm{INCONCLUSIVE}\} \end{equation}"></figure>
+<ul>
+<li> <strong>PASS</strong>: all Gates pass, and logs/checksums/artifacts are complete.
+<li> <strong>FAIL</strong>: at least one falsification trigger fires, or at least one Gate explicitly fails.
+<li> <strong>INCONCLUSIVE</strong>: the run completes, but the verdict cannot be made because log/artifact/integrity requirements are not satisfied.
+</ul>
+<h3>16.1.5 Falsification triggers (definition) and FAIL disclosure (rule)</h3>
+<h4>(Definition) Trigger set</h4>
+<p>Define the falsification-trigger set as T=T₁,…,T_L.
+Each trigger T_ℓ takes as input summary metrics and integrity metadata, and returns</p>
+<figure class="eq" id="eq:S16_01_trigger_bool"><img src="/physics/eq/physics/phy-16-007.svg" data-eq="phy-16-007" width="138" height="19" loading="lazy" alt="\begin{equation} T_\ell(\mathbf{m},\mathbf{u})\in\{0,1\} \end{equation}"></figure>
+<p>where m is a numeric summary (metrics) and u is an integrity summary (checksums, schema conformance, log completeness, etc.).</p>
+<h4>(Definition) Minimal triggers (required)</h4>
+<p>The pre-registration must include at least the following triggers.</p>
+<ul>
+<li> (T-LOCK) <strong>LOCK mismatch</strong>: fires when any LOCK digest referenced by the run differs from the pre-registered LOCK digest.
+<figure class="eq" id="eq:S16_01_TLOCK"><img src="/physics/eq/physics/phy-16-008.svg" data-eq="phy-16-008" width="327" height="23" loading="lazy" alt="\begin{equation} T_{\mathrm{LOCK}}=1 \Longleftrightarrow \exists\,\ell\ \text{s.t.}\ \mathrm{DIG}^{\mathrm{run}}_{\ell}\neq \mathrm{DIG}^{\mathrm{prot}}_{\ell} \end{equation}"></figure>
+<li> (T-MAN) <strong>Integrity failure</strong>: fires when any artifact checksum differs from the manifest.
+<figure class="eq" id="eq:S16_01_TMAN"><img src="/physics/eq/physics/phy-16-009.svg" data-eq="phy-16-009" width="458" height="22" loading="lazy" alt="\begin{equation} T_{\mathrm{MAN}}=1 \Longleftrightarrow \exists\,f\ \text{s.t.}\ \mathrm{SHA256}^{\mathrm{run}}(f)\neq \mathrm{SHA256}^{\mathrm{manifest}}(f) \end{equation}"></figure>
+<li> (T-SCH) <strong>Schema failure</strong>: fires when log/registry/snapshot files violate their defined schemas.
+<figure class="eq" id="eq:S16_01_TSCH"><img src="/physics/eq/physics/phy-16-010.svg" data-eq="phy-16-010" width="298" height="16" loading="lazy" alt="\begin{equation} T_{\mathrm{SCH}}=1 \Longleftrightarrow \texttt{schema\_validate}=0 \end{equation}"></figure>
+<li> (T-GATE) <strong>Gate failure</strong>: fires when any pre-registered Gate fails.
+<figure class="eq" id="eq:S16_01_TGATE"><img src="/physics/eq/physics/phy-16-011.svg" data-eq="phy-16-011" width="310" height="19" loading="lazy" alt="\begin{equation} T_{\mathrm{GATE}}=1 \Longleftrightarrow \exists\,k\ \text{s.t.}\ g_k(\mathbf{m}_k;\Theta_k)=0 \end{equation}"></figure>
+<li> (T-NT) <strong>No-Tuning violation</strong>: fires when evidence of post-hoc changes (definitions/thresholds/estimators/data selection) is detected as a violation of registry immutability.
+<figure class="eq" id="eq:S16_01_TNT"><img src="/physics/eq/physics/phy-16-012.svg" data-eq="phy-16-012" width="349" height="17" loading="lazy" alt="\begin{equation} T_{\mathrm{NT}}=1 \Longleftrightarrow \texttt{registry\_immutability}=0 \end{equation}"></figure>
+</ul>
+<h4>(Rule) Minimal FAIL disclosure unit</h4>
+<p>FAIL must not be concealed, deleted, or partially disclosed. FAIL disclosure must satisfy the following minimum unit.</p>
+<figure class="eq" id="eq:S16_01_failpack"><img src="/physics/eq/physics/phy-16-013.svg" data-eq="phy-16-013" width="892" height="19" loading="lazy" alt="\begin{equation} \mathsf{FAILPACK}:=\{\texttt{protocol.*},\ \texttt{locks/*},\ \texttt{run\_log.jsonl},\ \texttt{manifest.*},\ \texttt{registry\_snapshot.json},\ \texttt{outputs/*}\} \end{equation}"></figure>
+<p>FAILPACK is subject to the <em>same integrity rules as PASS artifacts</em> (including checksums). FAILPACK must be included in the DOI archive, and the very existence of FAIL must be discoverable from the registry.</p>
+<h3>16.1.6 Falsification tree structure (definition): cause classes and code system</h3>
+<h4>(Definition) Cause classes</h4>
+<p>Fix the set of cause classes as</p>
+<figure class="eq" id="eq:S16_01_fail_classes"><img src="/physics/eq/physics/phy-16-014.svg" data-eq="phy-16-014" width="525" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{fail}}=\{\mathrm{LOCK},\mathrm{INTEGRITY},\mathrm{SCHEMA},\mathrm{GATE},\mathrm{PROCEDURE}\} \end{equation}"></figure>
+<p>Each FAIL run must have at least one cause class.</p>
+<h4>(Definition) Failure codes</h4>
+<p>Failure codes are fixed to the form <code>F-<CLASS>-<NNN></code>. Examples:</p>
+<ul>
+<li> <code>F-LOCK-001</code>: LOCK digest mismatch.
+<li> <code>F-INTEGRITY-002</code>: artifact checksum mismatch.
+<li> <code>F-SCHEMA-003</code>: log/schema violation.
+<li> <code>F-GATE-010</code>: a specific Gate failed (include Gate identifier).
+<li> <code>F-PROCEDURE-020</code>: pre-registered procedure violation (missing phase / reordered phases).
+</ul>
+<p>Failure codes must be recorded in both the log and the registry, and must be included in the DOI archive.</p>
+<h2>16.2 SSOT</h2>
+<aside class="claim-strip vps" data-vps="16.2" data-cards="VP-C-050, VP-C-051"><span class="g">SSOT layers</span><span class="io">in: — / out: input/derivation/report SSOT — constants and rules declared once, in LOCK files only</span><q class="one">Truth has one address per item; copies are bugs.</q><span class="cards">VP-C-050, VP-C-051</span></aside>
+<h3>16.2.1 SSOT (single source of truth) principle (definition)</h3>
+<p>The SSOT principle means: “inputs/constants/rules with the same meaning do not exist scattered across duplicated files.”
+SSOT is fixed in the following three layers.</p>
+<ul>
+<li> <strong>Input SSOT</strong>: all constants/definitions/thresholds are declared only in LOCK files.
+<li> <strong>Procedure SSOT</strong>: all execution phases and Gates are declared only in <code>protocol.*</code>.
+<li> <strong>Artifact SSOT</strong>: existence/path/format/checksum of every artifact is declared only in <code>manifest.*</code>.
+</ul>
+<p>SSOT violations are treated as failures via triggers (T-NT) or (T-SCH).</p>
+<h3>16.2.2 Run identification and directory conventions (definition)</h3>
+<h4>(Definition) run_id</h4>
+<p>Each run has a globally unique identifier <code>run_id</code>. Define <code>run_id</code> as a string generated by</p>
+<figure class="eq" id="eq:S16_02_runid"><img src="/physics/eq/physics/phy-16-015.svg" data-eq="phy-16-015" width="427" height="19" loading="lazy" alt="\begin{equation} \texttt{run\_id}:=\texttt{YYYYMMDDThhmmssZ}\ \Vert\ \texttt{pid}\ \Vert\ \texttt{short\_digest} \end{equation}"></figure>
+<p>Here Vert denotes string concatenation. Define <code>short_digest</code> as a fixed-length prefix such as the first 12 characters of <a href="#eq:S16_01_dig_prot" class="xref" data-ref="eq:S16_01_dig_prot">(S16_01_dig_prot)</a>.</p>
+<h4>(Definition) Run directory</h4>
+<p>The run directory tree is fixed as follows.</p>
+<pre class="vb">
+runs/
+  &lt;run_id&gt;/
+    protocol.locked.json
+    locks_snapshot/
+      canon_lock.json
+      realization_lock.json
+      analysis_lock.json
+    registry_snapshot.json
+    run_log.jsonl
+    metrics.json
+    outputs/
+      ...
+    manifest.json
+    manifest.sha256
+</pre>
+<code>protocol.locked.json</code> is a normalized JSON copy of <code>protocol.*</code>; its digest must match <a href="#eq:S16_01_dig_prot" class="xref" data-ref="eq:S16_01_dig_prot">(S16_01_dig_prot)</a>.
+<h3>16.2.3 Log specification (run_log.jsonl) and schema (definition)</h3>
+<h4>(Definition) JSON Lines log</h4>
+<p>The run log is fixed to the JSON Lines format. That is, <code>run_log.jsonl</code> is a sequence in which each line is an independent JSON object.
+Each log entry L_i must satisfy the schema</p>
+<figure class="eq" id="eq:S16_02_log_schema"><img src="/physics/eq/physics/phy-16-016.svg" data-eq="phy-16-016" width="413" height="19" loading="lazy" alt="\begin{equation} L_i= \{\texttt{ts},\texttt{run\_id},\texttt{pid},\texttt{ver},\texttt{phase},\texttt{event},\texttt{payload}\} \end{equation}"></figure>
+<p>The meaning and type of each field are fixed as follows.</p>
+<ul>
+<li> <code>ts</code>: string (UTC timestamp; e.g., <code>2025-12-12T12:34:56Z</code>)
+<li> <code>run_id</code>: string (<a href="#eq:S16_02_runid" class="xref" data-ref="eq:S16_02_runid">(S16_02_runid)</a>)
+<li> <code>pid</code>: string (<code>pid</code> in <code>protocol.*</code>)
+<li> <code>ver</code>: string or number (<code>version</code>)
+<li> <code>phase</code>: string (phase name; one of the items defined in <code>procedure</code>)
+<li> <code>event</code>: string (event name; predefined set such as <code>START</code>, <code>END</code>, <code>METRIC</code>, <code>GATE</code>, <code>ERROR</code>, etc.)
+<li> <code>payload</code>: object (additional information such as metrics/warnings/errors/file paths/checksums)
+</ul>
+<h4>(Definition) Required log events</h4>
+<p>Each run must include the following events.</p>
+<ul>
+<li> <code>START</code>: run start (including input digests).
+<li> <code>LOCKS_CHECK</code>: verification result of LOCK digests.
+<li> <code>PHASE_START</code>/<code>PHASE_END</code>: start/end of each procedure phase.
+<li> <code>METRIC</code>: output of all pre-registered metrics (value, unit, computation version).
+<li> <code>GATE</code>: verdict (0/1) for each Gate and reference to the supporting metrics.
+<li> <code>MANIFEST_WRITE</code>: manifest creation completion and checksum.
+<li> <code>STATUS</code>: final verdict (<a href="#eq:S16_01_status" class="xref" data-ref="eq:S16_01_status">(S16_01_status)</a>) and failure codes (if any).
+</ul>
+<p>Missing a required event is treated as a failure via <a href="#eq:S16_01_TSCH" class="xref" data-ref="eq:S16_01_TSCH">(S16_01_TSCH)</a>.</p>
+<h3>16.2.4 Metric file (metrics.json) specification (definition)</h3>
+<p>Metrics are recorded as <code>METRIC</code> events in the log, but they are also summarized as a single object in <code>metrics.json</code> at the end of the run.</p>
+<figure class="eq" id="eq:S16_02_metrics_schema"><img src="/physics/eq/physics/phy-16-017.svg" data-eq="phy-16-017" width="533" height="19" loading="lazy" alt="\begin{equation} \texttt{metrics.json}= \{\texttt{run\_id},\texttt{pid},\texttt{ver},\texttt{metrics},\texttt{units},\texttt{provenance}\} \end{equation}"></figure>
+<p>where</p>
+<ul>
+<li> <code>metrics</code>: key–value map (metric name → scalar/vector/matrix; JSON-representable)
+<li> <code>units</code>: key–value map (metric name → unit string)
+<li> <code>provenance</code>: input digests, code version, and environment summary (must include the same keys as <code>registry_snapshot</code> below)
+</ul>
+<p>are fixed.</p>
+<h3>16.2.5 Manifest specification (definition) and checksum files</h3>
+<h4>(Definition) manifest.json</h4>
+<p>A manifest is an SSOT file that contains a complete list of artifacts and their checksums. Fix the schema of <code>manifest.json</code> as</p>
+<figure class="eq" id="eq:S16_02_manifest_schema"><img src="/physics/eq/physics/phy-16-018.svg" data-eq="phy-16-018" width="446" height="19" loading="lazy" alt="\begin{equation} \texttt{manifest.json}= \{\texttt{run\_id},\texttt{pid},\texttt{ver},\texttt{files},\texttt{hash\_alg}\} \end{equation}"></figure>
+<p>Fix <code>hash_alg</code> to the string <code>"sha256"</code>.
+<code>files</code> is a list whose each entry must satisfy</p>
+<figure class="eq" id="eq:S16_02_manifest_fileitem"><img src="/physics/eq/physics/phy-16-019.svg" data-eq="phy-16-019" width="216" height="19" loading="lazy" alt="\begin{equation} f= \{\texttt{path},\texttt{bytes},\texttt{sha256}\} \end{equation}"></figure>
+<h4>(Definition) manifest.sha256</h4>
+<p>Fix <code>manifest.sha256</code> as a one-line (or multi-line) text in the following format.</p>
+<pre class="vb">
+&lt;sha256_of_manifest.json&gt;  manifest.json
+</pre>
+<p>The checksum of <code>manifest.json</code> itself must also be included in the registry snapshot.</p>
+<h3>16.2.6 registry_snapshot specification (definition)</h3>
+<h4>(Definition) registry_snapshot.json</h4>
+<code>registry_snapshot.json</code> stores, in a single snapshot file, <em>all fixed points</em> required to reproduce a run.
+Fix its schema as
+<figure class="eq" id="eq:S16_02_snapshot_schema"><img src="/physics/eq/physics/phy-16-020.svg" data-eq="phy-16-020" width="823" height="19" loading="lazy" alt="\begin{equation} \texttt{registry\_snapshot.json}= \{\texttt{run\_id},\texttt{protocol},\texttt{locks},\texttt{environment},\texttt{code},\texttt{randomness},\texttt{manifests}\} \end{equation}"></figure>
+<p>Each field must include the following.</p>
+<ul>
+<li> <code>protocol</code>: <code>pid</code>, <code>version</code>, <code>digest</code> (=DIG_prot), <code>file_path</code>
+<li> <code>locks</code>: for each LOCK file, <code>path</code>, <code>sha256</code>, and the <em>digest of a raw JSON copy</em>
+<li> <code>environment</code>: OS/architecture/language runtime versions/dependency list (sorted list)
+<li> <code>code</code>: source-tree digest (e.g., directory hash), commit id (if any), build flags (if any)
+<li> <code>randomness</code>: all random seeds, sampling rules, and digests of seed-derivation functions
+<li> <code>manifests</code>: digests of <code>manifest.json</code> and <code>manifest.sha256</code>
+</ul>
+<h3>16.2.7 Randomness/seed convention (definition) and minimal reproducibility condition</h3>
+<h4>(Definition) Seed system</h4>
+<p>Every stochastic element of a run must be frozen by explicit seeds. Fix a base seed seed₀∈N and per-phase seed derivation as</p>
+<figure class="eq" id="eq:S16_02_seed_derive"><img src="/physics/eq/physics/phy-16-021.svg" data-eq="phy-16-021" width="352" height="19" loading="lazy" alt="\begin{equation} \mathrm{seed}_{p}:=\mathrm{H}(\mathrm{seed}_0,\texttt{pid},\texttt{phase\_name},\texttt{run\_id}) \end{equation}"></figure>
+<p>where H is a pre-registered hash-based function. The digest of H must be included in <code>registry_snapshot.json</code>.
+Per-phase seeds must be recorded in the log and snapshot; missing records are treated as failures via <a href="#eq:S16_01_TSCH" class="xref" data-ref="eq:S16_01_TSCH">(S16_01_TSCH)</a>.</p>
+<h4>(Definition) Minimal reproducibility condition</h4>
+<p>Define reproducibility as the following simultaneous condition.</p>
+<figure class="eq" id="eq:S16_02_repro_min"><img src="/physics/eq/physics/phy-16-022.svg" data-eq="phy-16-022" width="559" height="22" loading="lazy" alt="\begin{equation} \mathrm{REPRODUCIBLE}=1 \Longleftrightarrow \big(T_{\mathrm{LOCK}}=0\big)\wedge\big(T_{\mathrm{MAN}}=0\big)\wedge\big(T_{\mathrm{SCH}}=0\big) \end{equation}"></figure>
+<p>That is, if any of LOCK mismatch, integrity failure, or schema failure occurs, reproducibility does not hold.</p>
+<h2>16.3 Reference implementation execution recipe, artifact checklist, and release rules</h2>
+<aside class="claim-strip vps" data-vps="16.3" data-cards="VP-C-051"><span class="g">reference implementation</span><span class="io">in: protocol.*, locks/*, plan.* only / out: $I_ref$ conditions, execution recipe, artifact checklist, release rules</span><q class="one">The paper&#x27;s claims compile: one implementation, one recipe, one checklist.</q><span class="cards">VP-C-051</span></aside>
+<h3>16.3.1 Definition of the reference implementation (definition)</h3>
+<h4>(Definition) Reference implementation</h4>
+<p>Define the reference implementation I_ref as the execution code set that satisfies the following conditions.</p>
+<ul>
+<li> (RI-1) Inputs are read only from <code>protocol.*</code>, <code>locks/*</code>, and the run plan (<code>plan.*</code>).
+<li> (RI-2) Gate/PASS.rules and the artifact list are used exactly as declared in <code>protocol.*</code>.
+<li> (RI-3) All run outputs are written only under <code>runs/<run_id>/</code>.
+<li> (RI-4) On run completion, <code>run_log.jsonl</code>, <code>metrics.json</code>, <code>manifest.json</code>, and <code>registry_snapshot.json</code> must be generated.
+<li> (RI-5) Under the same snapshot (LOCK/environment/seeds), artifact checksums must be identical.
+</ul>
+<p>Violation of (RI-1) is treated as a No-Tuning violation and is failed via the trigger <a href="#eq:S16_01_TNT" class="xref" data-ref="eq:S16_01_TNT">(S16_01_TNT)</a>.</p>
+<h3>16.3.2 Execution recipe (definition): inputs/outputs/phases</h3>
+<h4>(Definition) Run plan (plan) file</h4>
+<p>Define the run plan <code>plan.json</code> as the file that <em>enumerates</em> the experiment set allowed by the protocol.
+Each run item must satisfy</p>
+<figure class="eq" id="eq:S16_03_plan_job"><img src="/physics/eq/physics/phy-16-023.svg" data-eq="phy-16-023" width="580" height="19" loading="lazy" alt="\begin{equation} \texttt{job}= \{\texttt{job\_id},\texttt{pid},\texttt{protocol\_digest},\texttt{locks},\texttt{params},\texttt{seeds},\texttt{targets}\} \end{equation}"></figure>
+<code>params</code> may contain only parameters allowed by the pre-registration. If any key outside the allowed list is present, the run is immediately failed as <code>F-PROCEDURE-020</code>.
+<h4>(Definition) Execution entry points</h4>
+<p>Fix the reference implementation to provide the following entry points.</p>
+<pre class="vb">
+ref_impl/
+  run_one.py
+  run_plan.py
+  validate.py
+</pre>
+<p>Fix the responsibilities of each entry point as follows.</p>
+<ul>
+<li> <code>run_one.py</code>: execute a single <code>job</code>, create the run directory, generate logs/metrics/artifacts.
+<li> <code>run_plan.py</code>: execute every <code>job</code> in <code>plan.json</code> in enumeration order, generate a global summary log.
+<li> <code>validate.py</code>: schema validation, checksum validation, recompute PASS/FAIL verdicts, generate a result summary.
+</ul>
+<h4>(Definition) Command forms</h4>
+<p>Fix the command forms as</p>
+<pre class="vb">
+python ref_impl/run_plan.py --protocol protocol.yaml --plan plan.json --out runs/
+python ref_impl/validate.py --runs runs/ --protocol protocol.yaml
+</pre>
+<p>These commands define the interface; the execution environment/dependencies/versions are frozen by <code>registry_snapshot.json</code>.</p>
+<h3>16.3.3 Artifact checklist (definition): required files and formats</h3>
+<h4>(Definition) Minimum release artifact set</h4>
+<p>A release (distribution unit) must include at least the following files/directories.</p>
+<pre class="vb">
+README.md
+LICENSE
+CITATION.cff
+CHANGELOG.md
+protocol/
+  protocol.yaml
+  protocol.sha256
+locks/
+  canon_lock.json
+  realization_lock.json
+  analysis_lock.json
+  locks.sha256
+plans/
+  plan.json
+  plan.sha256
+runs/
+  &lt;run_id&gt;/
+    protocol.locked.json
+    locks_snapshot/
+    registry_snapshot.json
+    run_log.jsonl
+    metrics.json
+    outputs/
+    manifest.json
+    manifest.sha256
+release_manifest.json
+release_manifest.sha256
+</pre>
+<p>Here <code>release_manifest.json</code> is the top-level manifest that contains checksums of the entire release. Its schema is fixed to be identical to <a href="#eq:S16_02_manifest_schema" class="xref" data-ref="eq:S16_02_manifest_schema">(S16_02_manifest_schema)</a>.</p>
+<h4>(Definition) Required metadata contents</h4>
+<p>The minimal contents of each metadata file must include the following.</p>
+<ul>
+<li> <code>README.md</code>: release identification (version, date), included protocol/LOCK, run list (<code>run_id</code>s), artifact overview (filenames only).
+<li> <code>CITATION.cff</code>: author/title/version/DOI (after distribution), and a short release-digest summary.
+<li> <code>CHANGELOG.md</code>: per-version change summary (which LOCK/protocol/code changed).
+<li> <code>LICENSE</code>: distribution terms.
+</ul>
+<p>Missing metadata is treated as a failure via <a href="#eq:S16_01_TSCH" class="xref" data-ref="eq:S16_01_TSCH">(S16_01_TSCH)</a>.</p>
+<h3>16.3.4 Release rules (definition): versioning, immutability, DOI unit</h3>
+<h4>(Definition) Version notation and bump rules</h4>
+<p>Fix the release version string as vX.Y.Z.</p>
+<ul>
+<li> X (Major): increase when there is a <strong>semantic change</strong> in LOCK definitions or a <strong>semantic change</strong> in Gate/PASS.rules.
+<li> Y (Minor): increase when adding a reference implementation/procedure, adding an artifact structure, or extending a schema while preserving backward compatibility.
+<li> Z (Patch): increase for changes that do not affect results/schemas/verdicts (typos, notation polishing, comment edits, etc.).
+</ul>
+<p>In particular, if any key–value in any LOCK file (canonical/realization/analysis) changes, Major must increase. This forbids “post-hoc modification of conclusions under the same name.”</p>
+<h4>(Definition) Immutability rule</h4>
+<p>A DOI-assigned release is immutable: after DOI assignment, modification/deletion/replacement of files is forbidden.
+If a change is needed, create a new versioned release and obtain a new DOI unit.
+Immutability is enforced by checksums as</p>
+<figure class="eq" id="eq:S16_03_immutable"><img src="/physics/eq/physics/phy-16-024.svg" data-eq="phy-16-024" width="805" height="19" loading="lazy" alt="\begin{equation} \mathrm{IMMUTABLE}=1 \Longleftrightarrow \mathrm{SHA256}(\texttt{release\_manifest.json})=\texttt{release\_manifest.sha256&#x27;s value} \end{equation}"></figure>
+<h4>(Definition) DOI package (archive unit)</h4>
+<p>Fix the DOI package (compressed or archived) as the single bundle that contains</p>
+<figure class="eq" id="eq:S16_03_doipack"><img src="/physics/eq/physics/phy-16-025.svg" data-eq="phy-16-025" width="1014" height="19" loading="lazy" alt="\begin{equation} \mathsf{DOIPACK}:=\{\texttt{protocol/},\texttt{locks/},\texttt{plans/},\texttt{runs/},\texttt{release\_manifest.*},\texttt{README.md},\texttt{CITATION.cff},\texttt{CHANGELOG.md},\texttt{LICENSE}\} \end{equation}"></figure>
+<code>release_manifest.*</code> is mandatory as <strong>the integrity evidence for all files</strong>; if missing, the DOI package is invalid.
+<h3>16.3.5 Release verdict Gate (definition): distribution eligibility</h3>
+<p>A release is not a single run; it is defined as the distribution-eligibility verdict for the entire <code>runs/</code> set.
+Fix the release PASS condition as</p>
+<figure class="eq" id="eq:S16_03_pass_release"><img src="/physics/eq/physics/phy-16-026.svg" data-eq="phy-16-026" width="802" height="56" loading="lazy" alt="\begin{equation} \mathrm{PASS}_{\mathrm{release}} := \left(\bigwedge_{\texttt{run\_id}\in\texttt{runs/}} \mathrm{STATUS}(\texttt{run\_id})\neq \mathrm{INCONCLUSIVE}\right) \wedge \left(T_{\mathrm{MAN}}^{\mathrm{release}}=0\right) \wedge \left(T_{\mathrm{SCH}}^{\mathrm{release}}=0\right) \end{equation}"></figure>
+<p>Here T_MAN^release is the integrity trigger for <code>release_manifest.*</code>, and T_SCH^release is the release-schema trigger.
+It is allowed that a release contains FAIL runs; in that case the FAILPACK rule <a href="#eq:S16_01_failpack" class="xref" data-ref="eq:S16_01_failpack">(S16_01_failpack)</a> must be satisfied.
+However, for a release to be judged PASS, there must be no <code>INCONCLUSIVE</code> runs.</p>
+<h3>16.3.6 Minimal disclosure principle (definition): equal disclosure of PASS and FAIL</h3>
+<p>PASS and FAIL are subject to the same disclosure rules.</p>
+<ul>
+<li> Every run must include <code>run_log.jsonl</code> and <code>registry_snapshot.json</code>.
+<li> Every run must include <code>manifest.json</code> and checksums.
+<li> Every run must include protocol and LOCK snapshots.
+</ul>
+<p>This forbids “keeping only successful results and deleting failures.” Failures are treated as part of the same verification/reproducibility system.</p>
+<h3>16.3.7 Post-distribution tracking (definition): DOI–version mapping and reference freeze</h3>
+<p>After distribution, once a DOI is assigned, references are frozen via <code>CITATION.cff</code> and a dedicated mapping file.
+Define the mapping file as a CSV with columns</p>
+<figure class="eq" id="eq:S16_03_doi_map"><img src="/physics/eq/physics/phy-16-027.svg" data-eq="phy-16-027" width="439" height="19" loading="lazy" alt="\begin{equation} \texttt{DOI\_MAP.csv}:\ (\texttt{version},\texttt{doi},\texttt{release\_digest},\texttt{date}) \end{equation}"></figure>
+<p>Fix <code>release_digest</code> as the SHA-256 of <code>release_manifest.json</code>.
+Missing DOI–version mapping is treated as an incompleteness of the distribution system. After that point, every citation/reference is fixed to include both the DOI and <code>release_digest</code>.</p>
+<h2>16.4 Physical-constant closure map: separation of GEOM/ANCHOR/CALIB</h2>
+<aside class="claim-strip vps" data-vps="16.4" data-cards="VP-C-055, VP-C-014"><span class="g">constant closure map</span><span class="io">in: all major constants/scales / out: GEOM (pure geometry) vs ANCHOR (locked references) vs CALIB (anchored+geometric) classification</span><q class="one">Every constant wears its passport: geometric, anchored, or calibrated.</q><span class="cards">VP-C-055, VP-C-014</span></aside>
+<span id="sec:S16_04_constant_closure_map"></span>
+<p>This section classifies the major physical constants/scales used in the main text into
+(i) items that close purely from geometric/integer structure (<code>GEOM</code>),
+(ii) items that must be locked as anchors of the realized unit system (definitions or standard values; <code>ANCHOR</code>), and
+(iii) items whose numerical values are determined by combining <code>ANCHOR</code> with <code>GEOM</code> while keeping the geometric structure (<code>CALIB</code>).
+The purpose is to enable an internal self-audit of “what is derived and what is locked.”
+This section adds <em>no new physical assumptions</em>; it only provides a <strong>dependency status table (SSOT)</strong> for existing sections.</p>
+<h3>16.4.1 Classification rules (definition)</h3>
+<ul>
+<li> <code>GEOM</code>: closes using only integer/geometric definitions internal to the document, with no dependence on external numerical values or definitions.
+<li> <code>ANCHOR</code>: must be locked as a unit-system or standard anchor (definition/recommended value); this document does not treat it as a derivation target (but the fact of locking is never hidden).
+<li> <code>CALIB</code>: an SI value (or reported-unit value) is determined by combining <code>ANCHOR</code> with the <code>GEOM</code> structure.
+</ul>
+<h3>16.4.2 SSOT</h3>
+<table><tr><td><strong>Item</strong></td><td><strong>Status</strong></td><td><strong>Primary source</strong></td><td><strong>Definition/derivation summary</strong></td></tr><tr><td>
+<strong>Item</strong></td><td><strong>Status</strong></td><td><strong>Primary source</strong></td><td><strong>Definition/derivation summary</strong></td></tr><tr><td>
+<p>N_sec=3</td><td><code>GEOM</code></td><td>7.0</td><td>Topologically forced as the minimum number of vectors (3) required to physically enclose the core in a 2D cross-section.</td></tr><tr><td>N_shell=7</td><td><code>GEOM</code></td><td>8.2</td><td>Closes by minimality of 3D cancellation (2-pair + 4-quad) plus label survival (1), and by the residual match 89-82.</td></tr><tr><td>αₑₘ</td><td><code>OPEN</code></td><td>14.5</td><td><em>Not derived.</em> Open input taken from measurement. The closed form 4π(11-δ_proj) is recorded only as a numerical coincidence (non-evidence): the assembly is not forced, the 4π is an SI unit artifact, and αₑₘ runs with energy.</td></tr><tr><td>h_VP</td><td><code>CALIB</code></td><td>15.5</td><td>Define the rigidity-shell barrier ε_b(ν)=h_VPν and derive a Planck-like spectral form from the thermal equilibrium sum over event counts n∈N. The SI value of h_VP is identified by matching to blackbody data (protocol/Gate required).</td></tr><tr><td>Blackbody spectral form</td><td><code>GEOM</code></td><td>15.5</td><td>Shape closes as mode count ν² (pure 3D geometry) × rigidity filter frach_VPνe^h_VPν/(k_B T)-1 (discrete event counts).</td></tr><tr><td>a (VP diameter; realization length)</td><td><code>ANCHOR</code></td><td>11.2</td><td>Length anchor of the realization unit system. Post-hoc tuning is forbidden within the same version (LOCK).</td></tr><tr><td>Δ t (realization time tick)</td><td><code>ANCHOR</code></td><td>11.3</td><td>Time anchor of the realization unit system. Post-hoc tuning is forbidden within the same version (LOCK).</td></tr><tr><td>c_ref</td><td><code>ANCHOR</code></td><td>11.1, 13.1</td><td>Reference speed anchor (unit system/protocol). This document does not derive it; it is used only as a LOCK.</td></tr><tr><td>h</td><td><code>ANCHOR</code></td><td>13.1</td><td>Action-unit anchor. The SI-defined value is locked in <code>canon_lock</code>.</td></tr><tr><td>U_lat=hc_ref/a</td><td><code>CALIB</code></td><td>13.1</td><td>Lattice unit energy SSOT combining three anchors (h,c_ref,a).</td></tr><tr><td>Mass scales such as mₚ,mₑ,m_H</td><td><code>CALIB</code></td><td>13</td><td>Under the axiom U_lat/σ_eff, derived from structural resistance (geometric cross-sections/event rates). Comparisons are Gate metrics.</td></tr></table></p>
+<h3>16.4.3 Gate: “missing lock” detection rules (definition)</h3>
+<p>The status table in this section is not a <em>conclusion</em> but an <em>audit rule</em>. If any of the following violations is detected, the corresponding claim is immediately set to <code>FAIL</code>.</p>
+<ul>
+<li> (G-LOCK-MISS) An <code>ANCHOR</code> item is used but its value/unit/source is not sealed in a <code>lock</code> file.
+<li> (G-ANCHOR-HIDE) An <code>ANCHOR</code> is described as if it were <code>GEOM</code> (as if it were derived), or evidence of post-hoc adjustment is found.
+<li> (G-CALIB-NOPROTO) A <code>CALIB</code> item is used but the matching protocol/error bars/verdict function (e.g., χ) is not pre-registered.
+</ul>
+<h2>16.5 DOI completeness maintenance rules: automated audits for “zero missing”</h2>
+<aside class="claim-strip vps" data-vps="16.5" data-cards="VP-C-051, VP-C-046"><span class="g">completeness audit</span><span class="io">in: internal [cite:XX] tokens + external literature / out: zero-missing DOI rules with automated audits</span><q class="one">A citation without a DOI is treated as a broken build.</q><span class="cards">VP-C-051, VP-C-046</span></aside>
+<span id="sec:S16_05_doi_guard"></span>
+<p>This document distinguishes two kinds of citations.</p>
+<ul>
+<li> <strong>Internal citations (<code>[cite: XX]</code>)</strong>: tokens that refer to reports/simulations/protocols inside this DOI bundle.
+<li> <strong>External citations (journals/standards)</strong>: external literature with DOI (e.g., Planck's original paper, CODATA, etc.).
+</ul>
+<p>The goal is <strong>zero missing DOI</strong> for internal citations and <strong>zero missing DOI annotation</strong> for external citations.</p>
+<h3>16.5.1 Internal citation registry (definition): SSOT = CITE_REGISTRY.csv</h3>
+<p>Every internal citation token must be registered in the following SSOT.</p>
+<ul>
+<li> SSOT: <code>04_vp_whitepaper/docs/citations/CITE_REGISTRY.csv</code>
+<li> Per-ID notes: <code>04_vp_whitepaper/docs/citations/CITE-#.md</code>
+</ul>
+<p>If a token appears in the main text but is missing from the SSOT, it is a <code>FAIL</code> under (G-DOI-MISS).</p>
+<h3>16.5.2 External DOI notation rules (definition)</h3>
+<ul>
+<li> For any external journal/academic source that has a DOI, the DOI must be explicitly stated.
+<li> For sources without DOI (web pages, software, etc.), record the URL and access date.
+<li> If only arXiv exists, state the arXiv identifier; when a DOI is later assigned, add it in a version bump.
+</ul>
+<h3>16.5.3 Automated audit script (LOCK): scripts/doiₐudit.py</h3>
+<p>Before release (or before Zenodo upload), the following script must <strong>succeed (exit code 0)</strong>.</p>
+<figure class="eq" id="eq:S16_05_doi_audit_cmd"><img src="/physics/eq/physics/phy-16-028.svg" data-eq="phy-16-028" width="273" height="17" loading="lazy" alt="\begin{equation} \texttt{python3 scripts/doi\_audit.py} \end{equation}"></figure>
+<p>This script checks:
+(i) whether internal citation tokens in the main text match IDs in <code>CITE_REGISTRY.csv</code>,
+(ii) whether DOI/URL fields in <code>CITE_REGISTRY.csv</code> are blank, and
+(iii) whether external DOI strings in the main text have valid formats (regex) and duplicates.
+Uploading/distribution is forbidden in a failing state.</p>
+<nav class="pn"><a rel="prev" href="/physics/01-governance-no-tuning-lock-gate/">← §1</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axa-mathematical-lemmas-proof-sketches/">§AXA →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

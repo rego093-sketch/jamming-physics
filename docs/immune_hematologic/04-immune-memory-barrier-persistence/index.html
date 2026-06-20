@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immune Memory as Barrier Persistence — Immune/Hematologic §4 | Jamming Physics</title>
+<meta name="description" content="Immunological memory is barrier-protected persistence: an activated clone stays ON after antigen clears, the erase drive equals the spinodal, and memory stability ranks by the γ²/4 barrier.">
+<link rel="canonical" href="https://jamming-physics.org/immune_hematologic/04-immune-memory-barrier-persistence/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Immune Memory as Barrier Persistence — Immune/Hematologic §4 | Jamming Physics"><meta property="og:description" content="Immunological memory is barrier-protected persistence: an activated clone stays ON after antigen clears, the erase drive equals the spinodal, and memory stability ranks by the γ²/4 barrier."><meta property="og:url" content="https://jamming-physics.org/immune_hematologic/04-immune-memory-barrier-persistence/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Immune Memory as Barrier Persistence — Immune/Hematologic §4 | Jamming Physics"><meta name="twitter:description" content="Immunological memory is barrier-protected persistence: an activated clone stays ON after antigen clears, the erase drive equals the spinodal, and memory stability ranks by the γ²/4 barrier.">
+<link rel="stylesheet" href="/immune_hematologic/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Immune Memory as Barrier Persistence", "isPartOf": {"@type": "CreativeWork", "name": "Immune & Hematologic Emergence (VP / Jamming Physics)", "sameAs": ["https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic", "https://doi.org/10.5281/zenodo.20755280"], "identifier": "10.5281/zenodo.20755280"}, "position": 4, "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.20755280"}, "sameAs": "https://doi.org/10.5281/zenodo.20755280", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Immune/Hematologic", "item": "https://jamming-physics.org/immune_hematologic/"}, {"@type": "ListItem", "position": 3, "name": "§4 Immune Memory as Barrier Persistence"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/immune_hematologic/">Immune/Hematologic</a> › §4</nav></header>
+<main>
+<h1>Immune Memory as Barrier Persistence</h1>
+
+<p class="answer">Immune memory is barrier-protected persistence of the ON state. This volume does not just assert stability — it removes the drive and simulates the stochastic ON→OFF escape, and the measured mean lifetime ranks in ascending γ order while the Kramers law (log-rate linear in barrier) emerges. Higher-γ organs remember longest. Grade [V].</p>
+
+<p class="abstract">With the drive removed the ON state persists; the measured mean lifetime (MFPT) ranks in the same ascending order as γ (bone_marrow_hematopoiesis → spleen → thymus → lymphoid_adaptive), and log(escape-rate) is linear in the barrier (R²=0.998) — the Kramers law emerging from a direct stochastic escape simulation, with absolute lifetime [O].</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] grade</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/04-immune-memory-barrier-persistence/" rel="noopener">reproduction code (GitHub)</a>
+  <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
+</aside>
+
+<aside class="vp-card" data-locked="barrier"><b>barrier = γ²/4</b> — the energy barrier between the two basins; it ranks state stability and sets the Kramers crossing rate, so larger-γ organs hold memory and resist transformation more strongly. <b>[F]</b> canonical derivation: substrate R19</aside>
+<aside class="vp-card" data-locked="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>[F]</b> canonical derivation: substrate R19</aside>
+
+<h2>Persistence without a drive</h2>
+<p>Memory is the ON basin surviving the removal of antigen. The barrier γ²/4 is what keeps the clone in the ON
+basin once the affinity drive falls to zero, so no ongoing antigen is required to remember.</p>
+<p>Forgetting is not passive decay here: erasing the memory takes a reverse drive of at least the spinodal,
+the mirror of activation. Below that, the memory is stable.</p>
+<h2>Stability ranking</h2>
+<p>Because the barrier grows with γ, the organs rank in durability exactly as they rank in γ. The adaptive
+lymphoid compartment has the largest barrier and so is the most stable long-term store — consistent with
+durable adaptive immunity outliving innate responses.</p>
+<h2>The durability ordering emerges from a stochastic escape simulation</h2>
+<p>Rather than infer stability from the barrier height alone, the volume <em>simulates</em> forgetting directly:
+each organ's clone is initialised in the ON basin, the antigen drive is removed (h=0), and an ensemble of cells
+evolves under overdamped Langevin noise until they escape back to OFF. The mean ON-state lifetime is
+<em>measured</em> as the inverse escape rate, and it ranks bone-marrow 37.5 &lt; spleen 55.8 &lt; thymus 64.0
+&lt; lymphoid 76.9 — exactly the ascending-γ order, so the durability ranking is confirmed dynamically rather
+than read off the barrier.</p>
+<p>The Kramers law itself emerges: the logarithm of the measured escape rate is linear in the independently
+computed γ²/4 barrier (R²=0.998) with an Arrhenius slope of -6.1, recovering the expected −1/D=-6.7. The
+stability ordering and the exponential law are therefore [V] (simulation-measured); only the absolute lifetime,
+which depends on the uncalibrated cellular-noise scale D, is left [O].</p>
+
+<nav class="pn">
+  <a rel="prev" href="/immune_hematologic/03-developmental-lineage-order-gamma-readout/">← §3</a>
+  <a href="/immune_hematologic/">paper contents</a>
+  <a rel="next" href="/immune_hematologic/05-immunosurveillance-escape-cross-cutting-seam/">§5 →</a>
+</nav>
+</main>
+<footer>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · <a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> · §4 of 21</footer>
+</body>
+</html>

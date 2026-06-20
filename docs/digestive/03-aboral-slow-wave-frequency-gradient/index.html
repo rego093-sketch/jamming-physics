@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aboral slow-wave frequency gradient — Digestive/Metabolic §3 | Jamming Physics</title>
+<meta name="description" content="Intestinal slow-wave frequency falls monotonically aboral; one gastric-anchored clock predicts duodenum 11.1 cpm and ileum 7.5 cpm with no intestinal tuning.">
+<link rel="canonical" href="https://jamming-physics.org/digestive/03-aboral-slow-wave-frequency-gradient/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Aboral slow-wave frequency gradient — Digestive/Metabolic §3 | Jamming Physics"><meta property="og:description" content="Intestinal slow-wave frequency falls monotonically aboral; one gastric-anchored clock predicts duodenum 11.1 cpm and ileum 7.5 cpm with no intestinal tuning."><meta property="og:url" content="https://jamming-physics.org/digestive/03-aboral-slow-wave-frequency-gradient/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Aboral slow-wave frequency gradient — Digestive/Metabolic §3 | Jamming Physics"><meta name="twitter:description" content="Intestinal slow-wave frequency falls monotonically aboral; one gastric-anchored clock predicts duodenum 11.1 cpm and ileum 7.5 cpm with no intestinal tuning.">
+<link rel="stylesheet" href="/digestive/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Aboral slow-wave frequency gradient","identifier":{"@type":"PropertyValue","propertyID":"DOI","value":"10.5281/zenodo.20755319"},"sameAs":"https://doi.org/10.5281/zenodo.20755319","isPartOf":{"@type":"CreativeWorkSeries","name":"Digestive/Metabolic"},"position":3,"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"datePublished":"2026-06-19","dateModified":"2026-06-19","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/03-aboral-slow-wave-frequency-gradient/","license":"https://creativecommons.org/licenses/by/4.0/","knowsAbout":["slow wave gradient", "duodenum", "ileum", "aboral propagation"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Digestive/Metabolic","item":"https://jamming-physics.org/digestive/"},{"@type":"ListItem","position":3,"name":"\u00a73 Aboral slow-wave frequency gradient"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/digestive/">Digestive/Metabolic</a> › §3</nav></header>
+<main>
+<h1>Aboral slow-wave frequency gradient</h1>
+<p class="answer">The intestinal slow-wave frequency falls monotonically aboral, reproducing the duodenum-to-ileum gradient. One gastric-anchored clock (K_TIME=2400 cpm per model-Hz) converts each segment&#x27;s FitzHugh–Nagumo frequency to cycles per minute, predicting duodenum 11.1 cpm and ileum 7.5 cpm with zero intestinal tuning. The gradient direction is forced [V]; absolute rates inherit the cited clock [L].</p>
+<p class="abstract">A linearly growing recovery constant along the gut yields a monotone falling slow-wave gradient. The single gastric clock predicts duodenum 11.1 cpm (cited ~12) and ileum 7.5 cpm (cited ~8) with no intestinal tuning. The gradient shape is [V]; the absolute rates inherit the cited clock [L].</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] simulation-verified</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/03-aboral-slow-wave-frequency-gradient/" rel="noopener">reproduction code (GitHub)</a><span class="doi">DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a></span></aside>
+
+<p>The intestinal slow-wave frequency falls monotonically in the aboral direction, reproducing the physiological duodenum-to-ileum gradient. A single segment property — the FitzHugh–Nagumo recovery constant <span class="m">τ_s</span> growing linearly along the gut — produces the entire descending profile.</p>
+<p>One gastric-anchored clock converts each segment's intrinsic frequency to cycles per minute with zero intestinal tuning, predicting duodenum <span class="m">11.1 cpm</span> (cited <span class="m">~12</span>), jejunum <span class="m">9.0 cpm</span> (cited <span class="m">~10</span>), and ileum <span class="m">7.5 cpm</span> (cited <span class="m">~8</span>). The duodenal prediction lands within <span class="m">8%</span> of the cited value despite the clock being fixed by the stomach alone.</p>
+<aside class="vp-card" data-locked="fhn"><b>FHN slow recovery → low frequency</b> — a slow recovery variable τ_s sets the period, so the substrate's intrinsic rhythm is far below the switch timescale. <b>[V]</b> simulation-verified. <a href="/neuro/">canonical derivation</a></aside>
+<table><thead><tr><th>segment (proximal→distal)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr></thead><tbody><tr><th>cpm</th><td>11.1</td><td>10.5</td><td>10.2</td><td>9.9</td><td>9.6</td><td>9.0</td><td>8.7</td><td>8.7</td><td>8.4</td><td>8.1</td><td>7.8</td><td>7.5</td></tr></tbody></table>
+<p>The gradient direction and shape are forced by the substrate <span class="m">[V]</span>; the absolute rates inherit the cited clock <span class="m">[L]</span>. Monotonic decrease holds across segment counts <span class="m">N ∈ {8,12,16,20}</span> and the full drive sweep, so the falling gradient is a property of the mechanism, not of a particular discretization.</p>
+
+<nav class="pn"><a rel="prev" href="/digestive/02-gastric-slow-wave-pacemaker/">← §2</a><a href="/digestive/">contents</a><a rel="next" href="/digestive/04-peristaltic-aboral-transport/">§4 →</a></nav>
+</main>
+<footer><p>Young Jae Lee · ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a></p></footer>
+</body>
+</html>

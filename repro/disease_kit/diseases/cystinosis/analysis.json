@@ -1,0 +1,190 @@
+{
+ "disease": "Cystinosis (nephropathic, CTNS)",
+ "omim": "219800",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Cystinosis (nephropathic, CTNS)",
+  "omim": "219800",
+  "summary": "A single-gene CTNS loss-of-function removes cystinosin, the proton-driven lysosomal-membrane transporter that EXPORTS cystine out of the lysosome to the cytosol. Cystinosin is the BRAKE on intra-lysosomal cystine accumulation; with CTNS LOF the brake is released, free cystine accumulates inside lysosomes, crystallises, and damages cells (renal proximal-tubule Fanconi first, then a multi-organ course) -> the intra-lysosomal cystine burden is driven UP. Read as a released BRAKE on toxic accumulation (cystinosin clears lysosomal cystine; LOF releases the clearance -> cystine UP) -- the released-brake -> over-accumulation convention (tyrosinaemia / porphyria / OTC / FCS / haemochromatosis) carried onto a lysosomal-storage axis, but with a DISTINCT lysosomal-storage MECHANISM and lever class. Unlike the four enzyme-deficiency lysosomal-storage reads (Gaucher / Fabry / Pompe / -- where catabolic throughput is restored by REPLACING the enzyme), here the defect is TRANSPORT, not catabolism, so the kit re-derives a SMALL-MOLECULE SUBSTRATE-DEPLETER as the lead lever: cysteamine enters the lysosome and reacts with the stored cystine to form cysteine plus a cysteine-cysteamine mixed disulfide, both of which exit through transporters left intact by the CTNS lesion -- the stored substrate is depleted in situ WITHOUT restoring cystinosin (an upstream/in-situ RESTRAINT on the burden, NOT enzyme replacement). The FIFTH lysosomal-storage read and the FIRST whose lead lever is a small-molecule substrate-depleter rather than enzyme replacement -- a new lysosomal lever class. The switch-level lever RESTORES cystinosin (autologous haematopoietic-stem-cell CTNS gene therapy, investigational; net axis effect lowers the burden -> restrain-coded, the OTC/haemochromatosis convention). The gamma read is of the CTNS locus switch STRUCTURE (a GC-rich promoter, one of the higher gamma in the kit); the disease lesion is coding/structural (the common 57-kb founder deletion; truncating/missense alleles), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "intra-lysosomal free-cystine burden (lysosomal cystine accumulation / crystallisation) -- a transport-defect lysosomal-storage axis, distinct from the enzyme-deficiency storage reads",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CTNS",
+    "gamma": 1.5178,
+    "spinodal_h_sp": 0.71973,
+    "barrier": 0.57593,
+    "dwell_relative_size": 1.69992,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000017.11",
+     "gene_start": 3636458,
+     "gene_end": 3663102,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "cystinosin, lysosomal cystine transporter"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "CTNS encodes cystinosin, the H+-driven lysosomal cystine EXPORTER that moves free cystine out of the lysosome. As the BRAKE on intra-lysosomal cystine accumulation, its LOF RELEASES the brake -> cystine accumulates inside lysosomes and crystallises (toxic storage). The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding/deletion lesion (firewall). The pathological axis is the LYSOSOMAL CYSTINE BURDEN (it goes UP), so the corrective levers LOWER it. 17p13.2 (OMIM 606272). NCBI official symbol CTNS. Autosomal recessive. Coding/structural lesions (the 57-kb founder deletion; truncating/missense alleles).",
+    "src": "Town 1998 Nat Genet 18:319 (CTNS identified; 57-kb deletion); Kalatzis 2001 EMBO J 20:5940 (cystinosin is the lysosomal cystine transporter)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CTNS",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "6ca5efb80d5f"
+ },
+ "treatment_A_switch": {
+  "disease": "Cystinosis (nephropathic, CTNS)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "cystine",
+    "push_direction": "deplete the stored lysosomal cystine in situ -- cysteamine reacts with cystine to form cysteine + a cysteine-cysteamine mixed disulfide that exit via intact transporters -> lower the intra-lysosomal cystine burden (bypasses the cystinosin defect); the established lead",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "aminothiol substrate-depleter (cysteamine -- cysteamine bitartrate / mercaptamine)",
+    "status": "approved",
+    "mechanism_grade": "[O] cystine-depletion magnitude / organ outcome not derived from sequence",
+    "src": "Thoene 1976 J Clin Invest 58:180 (cysteamine depletes cystinotic cystine); Markello 1993 NEJM 328:1157 (cysteamine slows renal decline); cysteamine bitartrate (Cystagon) FDA 1994 / delayed-release (Procysbi) FDA 2013"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "CTNS",
+    "push_direction": "restore cystinosin so lysosomal cystine is exported again -> lower the stored burden (definitive, switch-level); net axis effect LOWERS the burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "CTNS restoration (autologous haematopoietic-stem-cell CTNS gene therapy, investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] degree/durability of restored cystinosin transport not derived from sequence",
+    "src": "Harrison 2013 Mol Ther 21:433 and Cherqui 2017 (HSPC CTNS gene therapy in the Ctns-/- model); CTNS-RD-04 first-in-human autologous HSPC gene therapy"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "cystine",
+   "push_direction": "deplete the stored lysosomal cystine in situ -- cysteamine reacts with cystine to form cysteine + a cysteine-cysteamine mixed disulfide that exit via intact transporters -> lower the intra-lysosomal cystine burden (bypasses the cystinosin defect); the established lead",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "aminothiol substrate-depleter (cysteamine -- cysteamine bitartrate / mercaptamine)",
+   "status": "approved",
+   "mechanism_grade": "[O] cystine-depletion magnitude / organ outcome not derived from sequence",
+   "src": "Thoene 1976 J Clin Invest 58:180 (cysteamine depletes cystinotic cystine); Markello 1993 NEJM 328:1157 (cysteamine slows renal decline); cysteamine bitartrate (Cystagon) FDA 1994 / delayed-release (Procysbi) FDA 2013"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.69992,
+   "dwell_disease": 2.33739,
+   "dwell_treated": 1.90808,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "39e9e7f11891"
+ },
+ "treatment_B_chem": {
+  "disease": "Cystinosis (nephropathic, CTNS)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "lysosomal substrate-depletion (cysteamine thiol-disulfide exchange)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "react the stored cystine with an aminothiol to form mixed disulfides that leave via intact carriers -> reduce the lysosomal cystine load without restoring the transporter",
+    "rationale": "an in-situ thiol-disulfide exchange that converts the trapped substrate into exportable species; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "approved",
+    "src": "Thoene 1976 J Clin Invest 58:180"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "ee61be84ac74"
+ },
+ "falsifiers": [
+  {
+   "claim": "CTNS LOF (released brake) raises the intra-lysosomal cystine burden (axis UP)",
+   "falsifier": "a CTNS null allele that LOWERED leukocyte/fibroblast lysosomal cystine, or cells in which cystinosin loss REDUCED cystine accumulation, would refute the released-brake direction",
+   "measurable_by": "leukocyte / fibroblast lysosomal free-cystine content stratified by CTNS genotype"
+  },
+  {
+   "claim": "depleting the stored substrate (cysteamine) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if cysteamine RAISED or failed to lower leukocyte cystine, the restrain-cystine (substrate-depleter) lever sign is wrong",
+   "measurable_by": "leukocyte cystine response to cysteamine exposure"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Cystinosis (nephropathic, CTNS)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "f782efb6ddf0"
+ },
+ "determinism_sha": "d3083bda09ec"
+}

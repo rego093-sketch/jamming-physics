@@ -1,0 +1,50 @@
+{
+  "phase": "lock",
+  "paper": "neuro",
+  "scope": "neuro<->mind architectural boundary (neuro side)",
+  "lock": "one-way dependency (mind->neuro only) + lane purity + shared EM-thesis SSOT",
+  "canonical": "PROJECT_BOUNDARY_neuro_mind.md",
+  "generator": "verify_boundary.py",
+  "generator_sha256": "04be770cac8797aeb8d71b2f2a486d6b39bc560fd6cb708c49504f908660ef60",
+  "deterministic": "no RNG; 2x run identical; every check is a structural/file invariant",
+  "checks_total": 5,
+  "checks_pass": 5,
+  "verdict": "PASS",
+  "boundaries_pinned": [
+    "no code-level neuro->mind dependency",
+    "neuro package lane is mind-free (one file per track)",
+    "EM_NEAR_FAR_THESIS.md shared SSOT present",
+    "verify_em_thesis.py content-lock holds (6/6)",
+    "standalone verification contract intact"
+  ],
+  "info": [
+    "forward-defer pointers to Mind present in 6 HTML file(s) (prose hand-off, ALLOWED — this is the interface, not a dependency)"
+  ],
+  "checks": [
+    {
+      "name": "no neuro .py imports a mind module",
+      "pass": true,
+      "detail": "0 code-level mind imports"
+    },
+    {
+      "name": "no docs/mind, repro/mind, manifest/mind* in this package",
+      "pass": true,
+      "detail": "lane clean"
+    },
+    {
+      "name": "EM_NEAR_FAR_THESIS.md present at package root",
+      "pass": true,
+      "detail": "sha256 23fe3703dab47481… (mirror byte-identical into mind)"
+    },
+    {
+      "name": "verify_em_thesis.py present + passes",
+      "pass": true,
+      "detail": "EM thesis 6/6 PASS (both boundaries pinned)"
+    },
+    {
+      "name": "all neuro verification entrypoints present",
+      "pass": true,
+      "detail": "verify_all.py + run_all.py + 2 slug run.py + 2 gate_neuro_* all present"
+    }
+  ]
+}

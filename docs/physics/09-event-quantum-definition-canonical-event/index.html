@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event (Quantum) Definition and Canonical — VP Theory §9 | Jamming Physics</title>
+<meta name="description" content="What counts as one event is fixed before anything is counted. The canonical rate splits exactly into scale times survival.">
+<link rel="canonical" href="https://jamming-physics.org/physics/09-event-quantum-definition-canonical-event/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Event (Quantum) Definition and Canonical — VP Theory §9 | Jamming Physics"><meta property="og:description" content="What counts as one event is fixed before anything is counted. The canonical rate splits exactly into scale times survival."><meta property="og:url" content="https://jamming-physics.org/physics/09-event-quantum-definition-canonical-event/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Event (Quantum) Definition and Canonical — VP Theory §9 | Jamming Physics"><meta name="twitter:description" content="What counts as one event is fixed before anything is counted. The canonical rate splits exactly into scale times survival.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Event (Quantum) Definition and Canonical",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"9",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§9 Event (Quantum) Definition and Canonical"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §9</nav></header>
+<main>
+<h1>Event (Quantum) Definition and Canonical Event Rate</h1>
+<p class="answer">Event (Quantum) Definition and Canonical: What counts as one event is fixed before anything is counted. The canonical rate splits exactly into scale times survival. This relation holds even without assuming the universal value of δ (e.g., δ=1/π²). Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">What counts as one event is fixed before anything is counted. The canonical rate splits exactly into scale times survival. This relation holds even without assuming the universal value of δ (e.g., δ=1/π²).</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/09-event-quantum-definition-canonical-event/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="nu-p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a></aside>
+<aside class="vp-card" data-locked="d-anch"><b>D = 4.8526 pm</b> — Quantum (anchor) diameter that fixes the lattice length scale. <b>[F]</b> forced. <a href="/physics/03-axioms-primitives-volume-particle-lattice/">canonical derivation §3</a></aside>
+<span id="hub:event9"></span>
+<em> Concept links: the annihilation/event rate defined here is the <em>root cause</em> of gravity (<a href="/physics/17-extensions-optional-reading/#hub:gravroot" class="xref" data-ref="hub:gravroot">§17.4.0</a>, cap <a href="/physics/17-extensions-optional-reading/#hub:gravity" class="xref" data-ref="hub:gravity">§17.4</a>); the canonical rate νₚ is computed in <a href="#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a>.</em>
+<h2>Purpose of the chapter (locking operational definitions)</h2>
+<p>This chapter fixes “event (quantum event)” as a <strong>computable/loggable operational definition</strong>, and defines the “canonical event rate” by coupling event occurrences to time (ticks).
+The outputs of this chapter are locked into the following four bundles.</p>
+<ol>
+<li> <strong>Operational definition of state</strong>: what must be recorded as a state (required fields).
+<li> <strong>Operational definition of event</strong>: which form of state change is counted as an event (trigger rules).
+<li> <strong>Operational definition of annihilation</strong>: rules by which an event terminates/cancels under specified conditions (including label rules).
+<li> <strong>Definition of the canonical event rate</strong>: based on the locked event definition, define a long-time averaged event rate, and fix the handoff point to later chapters (build time / mass / force / unit realization).
+</ol>
+<p>The definitions in this chapter rely only on internal premises—axioms (infinite rigidity / plenum / local rule), registries (LOCK/SSOT), rectification constants (α,δ), and integerization rules (3-sector, 82+7 structure)—without external-text justification.</p>
+<h2>Higher-level preconditions (regime/locks/symbol conventions)</h2>
+<p>The definitions of this chapter are valid only when the following preconditions are locked.</p>
+<ol>
+<li> <strong>Stone/plenum/local-rule regime</strong>: under the VP axiom set, events arise only as compositions of local updates.
+<li> <strong>Canonical cell and coordinates</strong>: the canonical cell (<code>CELL-CUBE</code>) and the center/boundary/cut conventions must be locked.
+<li> <strong>Rectification constants and survival convention</strong>: the definitions α=2/π and δ=1/π² are locked, and the operational definition of the survival weight w(e) is locked (when rectified event rates are used).
+<li> <strong>Integer structure and labels</strong>: the 3-sector integerization and the shell-7 cancellation–survival convention are locked; if charge/electron labels are used, the label axis and thresholds are locked.
+</ol>
+<p>If the above preconditions are not locked, the event/state/annihilation definitions in this chapter are undefined and cannot be handed off to subsequent chapters.</p>
+<h2>Status of operational definitions (fixation as definitions)</h2>
+<p>In this chapter, an “operational definition” means the following.</p>
+<ol>
+<li> A definition must be <strong>mechanically decidable</strong>: from the log fields alone, the existence/non-existence of an event must be decidable automatically.
+<li> A definition must be fixed to a <strong>single source of truth (SSOT)</strong>: the same event must not be counted by different rules in different sections.
+<li> A definition is <strong>not modifiable after the fact</strong>: changing a definition changes inputs to event rates, build time, and mass/force derivations; therefore any change is permitted only by a version bump.
+</ol>
+<p>Accordingly, every item in this chapter is presented only as “definitions/rules”, not as interpretive prose.</p>
+<h2>Connection skeleton: state / event / annihilation</h2>
+<p>The core skeleton of this chapter is fixed in the following order.</p>
+<figure class="eq" id="eq:S09_chain"><img src="/physics/eq/physics/phy-09-000.svg" data-eq="phy-09-000" width="1082" height="19" loading="lazy" alt="\begin{equation} \text{State logging} \;\Longrightarrow\; \text{event-trigger decision} \;\Longrightarrow\; \text{event aggregation (count/weight)} \;\Longrightarrow\; \text{annihilation decision} \;\Longrightarrow\; \text{canonical event rate}. \end{equation}"></figure>
+<p>Here</p>
+<ul>
+<li> “state logging” is locked as a log record with <strong>required fields</strong>;
+<li> “event trigger” is locked as a <strong>discontinuity/threshold transition</strong> rule decided by comparing pre/post states;
+<li> “event aggregation” is locked as either the raw count N₀ or the rectified (survival-weighted) count N_(δ);
+<li> “annihilation decision” is locked as a rule by which an event terminates via label cancellation or a threshold condition;
+<li> the “canonical event rate” is defined as a long-time average (or regime-average), and is used as the time scale for build times Tₚ,Tₙ and downstream derivations.
+</ul>
+<p>This overview only declares the skeleton; the concrete definitions are completed in §9.1 and onward.</p>
+<h2>9.1 Operational definitions for quantum/event/state/annihilation</h2>
+<aside class="claim-strip vps" data-vps="9.1" data-cards="VP-C-043"><span class="g">operational defs</span><span class="io">in: logs / out: state/event/annihilation triggers (TRIG-*)</span><q class="one">What counts as one event is fixed before anything is counted.</q><span class="cards">VP-C-043</span></aside>
+<h3>9.1.1 Purpose</h3>
+<p>This section fixes <strong>quantum</strong>, <strong>event</strong>, <strong>state</strong>, and <strong>annihilation</strong> as <strong>loggable operational definitions</strong>.
+The definitions include (i) required log fields, (ii) a decidable trigger function, (iii) prohibition of post hoc tuning (No-Tuning), and (iv) a single-source-of-truth (SSOT) convention; interpretive prose is not included.</p>
+<h3>9.1.2 Common time/window definitions (ticks and realized time)</h3>
+<h4>[D-9.1-1] Tick index</h4>
+<p>Define the tick index as n∈Z. In event logs, every record must include the integer tick n as a required field.</p>
+<h4>[D-9.1-2] Realized time</h4>
+<p>When the realized-time tick Δ t is locked in <code>realization_lock</code>, define realized time as</p>
+<figure class="eq" id="eq:S09_01_time_real"><img src="/physics/eq/physics/phy-09-001.svg" data-eq="phy-09-001" width="78" height="15" loading="lazy" alt="\begin{equation} t := n\,\Delta t. \end{equation}"></figure>
+<h4>[D-9.1-3] Time window</h4>
+<p>For two ticks n₁<n₂, define the time window as follows.</p>
+<figure class="eq" id="eq:S09_01_window"><img src="/physics/eq/physics/phy-09-002.svg" data-eq="phy-09-002" width="628" height="19" loading="lazy" alt="\begin{equation} W[n_1,n_2) := \{\,n\in\mathbb{Z}\mid n_1\le n&lt;n_2\,\}, \qquad \Delta N := n_2-n_1, \qquad \Delta T := \Delta N\,\Delta t. \end{equation}"></figure>
+<p>If Δ t is not definable, then Δ T cannot be used and all event rates must be recorded only on the tick basis.</p>
+<h3>9.1.3 Operational definition of state: log record (required fields)</h3>
+<h4>[D-9.1-4] State record</h4>
+<p>Define a state as a “fixed snapshot at one tick”, and denote the state record by S[n].
+The record S[n] <strong>must</strong> include the following fields (if any is missing, the state is undefined).</p>
+<ol>
+<li> <strong>state_id</strong>: unique state identifier (string).
+<li> <strong>tick</strong>: n (integer).
+<li> <strong>regime_id</strong>: regime identifier (locked in 4.3).
+<li> <strong>lock_refs</strong>: <code>canon_lock_id</code>, <code>realization_lock_id</code>, <code>analysis_lock_id</code>.
+<li> <strong>core_state_ref</strong>: reference to the core state (e.g., snapshot key or hash for <code>X82.csv</code>).
+<li> <strong>shell_state_ref</strong>: reference to the shell state (e.g., snapshot key or hash for <code>S7</code>).
+<li> <strong>center_ref</strong>: reference to (or value of) the center x_c.
+<li> <strong>geometry_ref</strong>: references to the length scales used, such as Rₚ, L_q, D_anch (item name + lock_id).
+<li> <strong>graph_ref</strong>: reference to the contact graph (e.g., hash or snapshot key of <code>G82.edgelist</code>).
+</ol>
+<h4>[D-9.1-5] Completeness condition for a state</h4>
+<p>A state record S[n] is defined as a “complete state” iff the following holds.</p>
+<figure class="eq" id="eq:S09_01_complete_state"><img src="/physics/eq/physics/phy-09-003.svg" data-eq="phy-09-003" width="788" height="19" loading="lazy" alt="\begin{equation} \mathrm{Complete}(S[n])=1 \Longleftrightarrow \text{all required fields in 9.1.3 exist and \texttt{lock\_refs} are sealed in the snapshot}. \end{equation}"></figure>
+<p>If Complete(S[n])=0, that tick cannot be used as an input for event decisions.</p>
+<h3>9.1.4 Operational definition of event: transition and trigger</h3>
+<h4>[D-9.1-6] Transition</h4>
+<p>When two consecutive states S[n-1],S[n] are both complete, define the transition as</p>
+<figure class="eq" id="eq:S09_01_transition"><img src="/physics/eq/physics/phy-09-004.svg" data-eq="phy-09-004" width="226" height="19" loading="lazy" alt="\begin{equation} \Delta S[n] := (S[n-1]\rightarrow S[n]). \end{equation}"></figure>
+<h4>[D-9.1-7] Event trigger function</h4>
+<p>Define that an event occurs for a transition Δ S[n] iff the following trigger function returns 1.</p>
+<figure class="eq" id="eq:S09_01_trig_def"><img src="/physics/eq/physics/phy-09-005.svg" data-eq="phy-09-005" width="632" height="19" loading="lazy" alt="\begin{equation} \mathrm{Trig}(\Delta S[n])\in\{0,1\}, \qquad \mathrm{Trig}(\Delta S[n])=1\ \Longleftrightarrow\ \Delta S[n]\ \text{is counted as an event}. \end{equation}"></figure>
+<p>The concrete rule of Trig must be locked in <code>analysis_lock</code>, and it must not be replaced after seeing results.</p>
+<h4>[D-9.1-8] Event record</h4>
+<p>If Trig(Δ S[n])=1, generate an event record e[n].
+The required fields of an event record are as follows.</p>
+<ol>
+<li> <strong>event_id</strong>: unique event identifier (string).
+<li> <strong>tick</strong>: n.
+<li> <strong>pre_state_id</strong>: S[n-1].state_id.
+<li> <strong>post_state_id</strong>: S[n].state_id.
+<li> <strong>trigger_id</strong>: which trigger fired (enumeration).
+<li> <strong>lock_refs</strong>: <code>canon_lock_id</code>, <code>realization_lock_id</code>, <code>analysis_lock_id</code>.
+<li> <strong>regime_id</strong>: S[n].regime_id.
+<li> <strong>event_payload</strong>: trigger-specific required data (9.1.4.1–9.1.4.3).
+</ol>
+<h4>9.1.4.1 Trigger set (standard trigger IDs)</h4>
+<p>In this white paper, trigger IDs are fixed to the following enumeration (additional triggers are permitted only by a version bump).</p>
+<ol>
+<li> <strong>TRIG-GRAPH</strong>: trigger for contact-graph changes.
+<li> <strong>TRIG-SHELL</strong>: trigger for shell split / cancellation–survival changes.
+<li> <strong>TRIG-LABEL</strong>: trigger for charge/electron label changes.
+<li> <strong>TRIG-EMIT</strong>: trigger for generating an emission record.
+<li> <strong>TRIG-ANN</strong>: trigger for annihilation decision (9.1.6).
+</ol>
+<p>For each trigger, the concrete decision rule is composed only of “log comparisons”, and its thresholds are locked in <code>gate_lock</code>.</p>
+<h4>9.1.4.2 Definition of TRIG-GRAPH (contact-graph change)</h4>
+<p>Denote the contact graph by G_c[n] and its edge set by E_c[n].
+Define the graph-change magnitude by</p>
+<figure class="eq" id="eq:S09_01_graph_delta"><img src="/physics/eq/physics/phy-09-006.svg" data-eq="phy-09-006" width="231" height="19" loading="lazy" alt="\begin{equation} \Delta E[n] := |\mathcal{E}_c[n]\ \triangle\ \mathcal{E}_c[n-1]|, \end{equation}"></figure>
+<p>where triangle denotes the symmetric difference.
+Lock the threshold E_(min)∈Z_(≥ 0) in <code>gate_lock</code>.
+Define TRIG-GRAPH as</p>
+<figure class="eq" id="eq:S09_01_trig_graph"><img src="/physics/eq/physics/phy-09-007.svg" data-eq="phy-09-007" width="345" height="19" loading="lazy" alt="\begin{equation} \mathrm{Trig}_{\mathrm{GRAPH}}(\Delta S[n])=1 \Longleftrightarrow \Delta E[n]\ge E_{\min}. \end{equation}"></figure>
+<p>The <strong>event_payload</strong> of a TRIG-GRAPH event must include references to (Δ E[n],E_(min),E_c[n-1],E_c[n]).</p>
+<h4>9.1.4.3 Definition of TRIG-LABEL (label change)</h4>
+<p>Denote the electron/positron/neutral label by
+L[n]∈<code>ELECTRON</code>,<code>ANTI_ELECTRON</code>,<code>NEUTRAL</code> (see the definitions in 7.4 and 8.4).
+Define TRIG-LABEL as</p>
+<figure class="eq" id="eq:S09_01_trig_label"><img src="/physics/eq/physics/phy-09-008.svg" data-eq="phy-09-008" width="354" height="19" loading="lazy" alt="\begin{equation} \mathrm{Trig}_{\mathrm{LABEL}}(\Delta S[n])=1 \Longleftrightarrow \mathcal{L}[n]\neq \mathcal{L}[n-1]. \end{equation}"></figure>
+<p>The <strong>event_payload</strong> of a TRIG-LABEL event must include (L[n-1],L[n]) and a reference (or hash) to V_surv used in the label computation.</p>
+<h3>9.1.5 Operational definition of quantum: minimal unit of an event</h3>
+<h4>[D-9.1-9] Quantum</h4>
+<p>In this document, the reserved word “quantum” means <strong>one event record e[n]</strong>.</p>
+<figure class="eq" id="eq:S09_01_quantum_def"><img src="/physics/eq/physics/phy-09-009.svg" data-eq="phy-09-009" width="394" height="19" loading="lazy" alt="\begin{equation} \text{Quantum } q[n]\ \equiv\ e[n]\quad (\mathrm{Trig}(\Delta S[n])=1\ \text{when}). \end{equation}"></figure>
+<p>Thus a quantum is the minimal loggable unit, and any discussion of a quantum must be reducible to the required fields of e[n].
+If a “size” or “weight” of a quantum is needed, it may refer only to items locked in <code>analysis_lock</code>, such as the survival weight w(e) or a count like N₀.
+(Introducing an arbitrary size function for a quantum is forbidden.)</p>
+<h3>9.1.6 Operational definition of annihilation: rule of cancellation events</h3>
+<p>Define annihilation as a <strong>rule</strong> by which “the simultaneous existence of opposite labels cancels within a specified window and is removed”.</p>
+<h4>9.1.6.1 Definition of the annihilation windows (time/space)</h4>
+<p>Because annihilation decisions require a time window and a spatial window, lock the following thresholds.</p>
+<figure class="eq" id="eq:S09_01_ann_windows"><img src="/physics/eq/physics/phy-09-010.svg" data-eq="phy-09-010" width="360" height="19" loading="lazy" alt="\begin{equation} \Delta n_{\mathrm{ann}}\in\mathbb{Z}_{&gt;0}\ \text{(locked)}, \qquad \rho_{\mathrm{ann}}&gt;0\ \text{(locked)}. \end{equation}"></figure>
+<p>Define the time window on the tick basis by</p>
+<figure class="eq" id="eq:S09_01_ann_time_window"><img src="/physics/eq/physics/phy-09-011.svg" data-eq="phy-09-011" width="300" height="19" loading="lazy" alt="\begin{equation} W_{\mathrm{ann}}[n] := W[n-\Delta n_{\mathrm{ann}}+1,\ n+1). \end{equation}"></figure>
+<p>Define the spatial window by the distance between emission points (8.4) x_emit.</p>
+<h4>9.1.6.2 Definition of annihilation candidates (opposite-label pairs)</h4>
+<p>Within the time window W_ann[n], define the set of emission-event records as</p>
+<figure class="eq" id="eq:S09_01_emit_set"><img src="/physics/eq/physics/phy-09-012.svg" data-eq="phy-09-012" width="547" height="19" loading="lazy" alt="\begin{equation} \mathcal{E}_{\mathrm{emit}}(W_{\mathrm{ann}}[n]) := \{\, e[m]\mid m\in W_{\mathrm{ann}}[n],\ \texttt{trigger\_id}=\texttt{TRIG-EMIT}\,\}. \end{equation}"></figure>
+<p>Each emission event carries references (by the definition in 8.4) to the emission point x_emit(e), the label L(e), and the survival vector V_surv(e).</p>
+<p>Define two distinct emission events eₐ,e_b as an annihilation-candidate pair if they satisfy</p>
+<figure class="eq" id="eq:S09_01_opposite_labels"><img src="/physics/eq/physics/phy-09-013.svg" data-eq="phy-09-013" width="392" height="19" loading="lazy" alt="\begin{equation} \mathcal{L}(e_a)=\texttt{ELECTRON}, \qquad \mathcal{L}(e_b)=\texttt{ANTI\_ELECTRON}. \end{equation}"></figure>
+<h4>9.1.6.3 Spatial proximity condition</h4>
+<p>Define the spatial proximity condition by</p>
+<figure class="eq" id="eq:S09_01_ann_spatial"><img src="/physics/eq/physics/phy-09-014.svg" data-eq="phy-09-014" width="242" height="19" loading="lazy" alt="\begin{equation} \|\mathbf{x}_{\mathrm{emit}}(e_a)-\mathbf{x}_{\mathrm{emit}}(e_b)\|\le \rho_{\mathrm{ann}}. \end{equation}"></figure>
+<h4>9.1.6.4 Cancellation condition (collapse of the sum of survival vectors)</h4>
+<p>Lock the cancellation threshold V_ann>0.
+Define the annihilation-cancellation condition by</p>
+<figure class="eq" id="eq:S09_01_ann_cancel"><img src="/physics/eq/physics/phy-09-015.svg" data-eq="phy-09-015" width="251" height="19" loading="lazy" alt="\begin{equation} \left\|\mathbf{V}_{\mathrm{surv}}(e_a)+\mathbf{V}_{\mathrm{surv}}(e_b)\right\|\le V_{\mathrm{ann}}. \end{equation}"></figure>
+<h4>9.1.6.5 TRIG-ANN</h4>
+<p>Define the annihilation trigger by</p>
+<figure class="eq" id="eq:S09_01_trig_ann"><img src="/physics/eq/physics/phy-09-016.svg" data-eq="phy-09-016" width="663" height="19" loading="lazy" alt="\begin{equation} \mathrm{Trig}_{\mathrm{ANN}}(\Delta S[n])=1 \Longleftrightarrow \exists (e_a,e_b)\subset \mathcal{E}_{\mathrm{emit}}(W_{\mathrm{ann}}[n])\ \text{s.t.}\ \eqref{eq:S09_01_opposite_labels},\ \eqref{eq:S09_01_ann_spatial},\ \eqref{eq:S09_01_ann_cancel}\ \text{all hold}. \end{equation}"></figure>
+<p>The <strong>event_payload</strong> of a TRIG-ANN event must include references to (eₐ,e_b), the distance value, the norm of the vector sum, and the thresholds (ρ_ann,V_ann,Δ n_ann).</p>
+<h4>9.1.6.6 State-update rule for annihilation (label erasure)</h4>
+<p>When a TRIG-ANN event occurs, define the state-update rule by</p>
+<figure class="eq" id="eq:S09_01_ann_state_update"><img src="/physics/eq/physics/phy-09-017.svg" data-eq="phy-09-017" width="685" height="19" loading="lazy" alt="\begin{equation} \mathcal{L}[n]\leftarrow \texttt{NEUTRAL} \quad\text{and}\quad \text{the target emission records }(e_a,e_b)\text{ are labeled as annihilated}. \end{equation}"></figure>
+<p>This rule is an operational definition: “annihilation is recorded as label erasure”; it assigns no additional meaning (interpretation).</p>
+<h3>9.1.7 Forbidden ambiguous statements (definition violation / Gate invalidation / post hoc tuning)</h3>
+<p>Under the operational-definition system of this section, the following statement types are forbidden.
+The criterion for prohibition is “not decidable from logs”, or “allows post hoc tuning”, or “invalidates Gate decisions”.</p>
+<ol>
+<li> <strong>Missing-definition type</strong>: “A state changed, so it is an event.” (which field change triggers an event is unspecified)
+<li> <strong>Undefined-threshold type</strong>: “If they are close enough, it is annihilation.” (ρ_ann or V_ann not locked)
+<li> <strong>Regime-ignoring type</strong>: “The same event rate holds in any regime.” (regime coordinate axes / allowed stack unspecified)
+<li> <strong>Gate-bypass type</strong>: “Even if Gate is FAIL, interpret it as an event.” (decision invalidation)
+<li> <strong>Post hoc tuning type</strong>: “If the result does not match, adjust the trigger threshold.” (No-Tuning violation)
+<li> <strong>Lock-mixing type</strong>: “This time, re-define the label using a different reference axis.” (lock_id mixing)
+<li> <strong>Justifying incomplete logs</strong>: “There is no log, but it probably happened.” (violates log-based decision)
+</ol>
+<h2>9.2 Canonical event-rate law ν_can=s·δ</h2>
+<aside class="claim-strip vps" data-vps="9.2" data-cards="VP-C-043"><span class="g">[F] theorem</span><span class="io">in: stationarity A-9.2-S1 / out: $ν_can=s·δ$</span><q class="one">The canonical rate splits exactly into scale times survival.</q><span class="cards">VP-C-043</span></aside>
+<h3>9.2.1 Fixing the classification (definition/axiom/theorem)</h3>
+<p>Fix the status of the key statements used in this section as follows.</p>
+<ol>
+<li> <strong>[D] definitions</strong>: s (attempt rate), δ (survival rectification coefficient), ν_can (canonical event rate), and the counts/weights/time windows/limit operations that constitute them.
+<li> <strong>[A] axioms</strong>: (i) existence and convergence of long-time averages (canonical stationarity), and (ii) applicability conditions for the universality of δ (uniform phases, dual constraints, product measure) and its scope.
+<li> <strong>[T] theorem</strong>: the derivation of ν_can=s·δ from the above definitions and axioms.
+</ol>
+<p>Accordingly, the identity ν_can=s·δ in this section is fixed as a <strong>theorem [T]</strong>, while the conditions under which the theorem holds are fixed as <strong>axioms [A]</strong>. The meanings of the symbols s,δ,ν_can are fixed only by <strong>definitions [D]</strong>.</p>
+<h3>9.2.2 [D] Attempt-event set and attempt rate s</h3>
+<h4>9.2.2.1 Time window and attempt-event set</h4>
+<p>Let the realized time window be [t,t+T) (T>0). Define the set of “attempt events” occurring in this window by</p>
+<figure class="eq" id="eq:S09_02_E0"><img src="/physics/eq/physics/phy-09-018.svg" data-eq="phy-09-018" width="386" height="19" loading="lazy" alt="\begin{equation} \mathcal{E}_0(t;T) :=\{\, e\mid t\le t(e)&lt;t+T,\ \mathrm{Trig}_0(e)=1\,\}. \end{equation}"></figure>
+<p>Here Trig₀(e)∈0,1 is the “attempt-event trigger” and is locked in <code>analysis_lock</code> so that it satisfies:</p>
+<ol>
+<li> if Trig₀(e)=1, the minimum conditions for producing an event record are satisfied (including log completeness);
+<li> Trig₀ is the event-count rule <em>before</em> applying the survival constraint (the w(e) below).
+</ol>
+<p>If the definition of Trig₀ is not locked, <a href="#eq:S09_02_E0" class="xref" data-ref="eq:S09_02_E0">(S09_02_E0)</a> is undefined.</p>
+<p>Define the number of attempt events (raw event count) by</p>
+<figure class="eq" id="eq:S09_02_N0"><img src="/physics/eq/physics/phy-09-019.svg" data-eq="phy-09-019" width="173" height="22" loading="lazy" alt="\begin{equation} N_0(t;T):=\bigl|\mathcal{E}_0(t;T)\bigr|. \end{equation}"></figure>
+<h4>9.2.2.2 Definition of the attempt rate s (long-time average)</h4>
+<p>Define the attempt rate s by the following long-time average.</p>
+<figure class="eq" id="eq:S09_02_s_def"><img src="/physics/eq/physics/phy-09-020.svg" data-eq="phy-09-020" width="156" height="41" loading="lazy" alt="\begin{equation} s := \lim_{T\to\infty}\frac{N_0(t;T)}{T}. \end{equation}"></figure>
+<p>The conditions under which the limit in <a href="#eq:S09_02_s_def" class="xref" data-ref="eq:S09_02_s_def">(S09_02_s_def)</a> exists and converges to the same value independent of t are fixed as axiom [A-9.2-S1] (§9.2.5).
+Thus s is, as a <strong>definition [D]</strong>, the “time density of attempt-event counts”; it is not justified by external texts.</p>
+<h3>9.2.3 [D] Survival weight and canonical event rate ν_can</h3>
+<h4>9.2.3.1 Dual-constrained phases and half-wave rectification</h4>
+<p>For each attempt event e∈E₀(t;T), define two phase variables by</p>
+<figure class="eq" id="eq:S09_02_theta_phi"><img src="/physics/eq/physics/phy-09-021.svg" data-eq="phy-09-021" width="262" height="19" loading="lazy" alt="\begin{equation} \theta(e)\in[0,2\pi), \qquad \varphi(e)\in[0,2\pi). \end{equation}"></figure>
+<p>The production rules for θ(e) and φ(e) (from which log fields and by which computation) are locked in <code>analysis_lock</code>.
+Define the half-wave rectification operator by</p>
+<figure class="eq" id="eq:S09_02_pospart"><img src="/physics/eq/physics/phy-09-022.svg" data-eq="phy-09-022" width="145" height="19" loading="lazy" alt="\begin{equation} [x]_+ := \max(0,x). \end{equation}"></figure>
+<h4>9.2.3.2 Definition of the survival weight w(e)</h4>
+<p>Define the survival weight of an attempt event e by</p>
+<figure class="eq" id="eq:S09_02_w_def"><img src="/physics/eq/physics/phy-09-023.svg" data-eq="phy-09-023" width="241" height="19" loading="lazy" alt="\begin{equation} w(e) := [\cos\theta(e)]_{+}\,[\cos\varphi(e)]_{+}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S09_02_w_def" class="xref" data-ref="eq:S09_02_w_def">(S09_02_w_def)</a> is the unique source of the survival convention; within the same version it must not be replaced by |·| or any other nonlinear function.</p>
+<h4>9.2.3.3 Definition of the canonical event count N_can</h4>
+<p>Define the canonical event count (rectified count) in the time window [t,t+T) by</p>
+<figure class="eq" id="eq:S09_02_Ncan_def"><img src="/physics/eq/physics/phy-09-024.svg" data-eq="phy-09-024" width="208" height="44" loading="lazy" alt="\begin{equation} N_{\mathrm{can}}(t;T) := \sum_{e\in\mathcal{E}_0(t;T)} w(e). \end{equation}"></figure>
+<p>By definition, 0≤ N_can(t;T)≤ N₀(t;T).</p>
+<h4>9.2.3.4 Definition of the canonical event rate ν_can (long-time average)</h4>
+<p>Define the canonical event rate by the following long-time average.</p>
+<figure class="eq" id="eq:S09_02_nucan_def"><img src="/physics/eq/physics/phy-09-025.svg" data-eq="phy-09-025" width="191" height="41" loading="lazy" alt="\begin{equation} \nu_{\mathrm{can}} := \lim_{T\to\infty}\frac{N_{\mathrm{can}}(t;T)}{T}. \end{equation}"></figure>
+<p>The conditions under which the limit in <a href="#eq:S09_02_nucan_def" class="xref" data-ref="eq:S09_02_nucan_def">(S09_02_nucan_def)</a> exists and converges independent of t are fixed as axiom [A-9.2-S1] (§9.2.5).</p>
+<h3>9.2.4 [D] Definition of δ and its locked value (lock location)</h3>
+<h4>9.2.4.1 Definition of δ (mean survival coefficient over attempt events)</h4>
+<p>Define δ as the following mean survival coefficient.</p>
+<figure class="eq" id="eq:S09_02_delta_def"><img src="/physics/eq/physics/phy-09-026.svg" data-eq="phy-09-026" width="453" height="51" loading="lazy" alt="\begin{equation} \delta := \lim_{T\to\infty} \frac{1}{N_0(t;T)} \sum_{e\in\mathcal{E}_0(t;T)} w(e), \qquad (\text{with }N_0(t;T)&gt;0). \end{equation}"></figure>
+<p>For <a href="#eq:S09_02_delta_def" class="xref" data-ref="eq:S09_02_delta_def">(S09_02_delta_def)</a> to be meaningful, it must hold that N₀(t;T)→∞ for long times; this condition is included in axiom [A-9.2-S1].</p>
+<h4>9.2.4.2 Locking the value of δ (regimes where the universality axiom applies)</h4>
+<p>In regimes where the universality axiom [A-5.2-U] applies, the value of δ is locked as</p>
+<figure class="eq" id="eq:S09_02_delta_value_lock"><img src="/physics/eq/physics/phy-09-027.svg" data-eq="phy-09-027" width="65" height="38" loading="lazy" alt="\begin{equation} \delta=\frac{1}{\pi^2}. \end{equation}"></figure>
+<p>Equation <a href="#eq:S09_02_delta_value_lock" class="xref" data-ref="eq:S09_02_delta_value_lock">(S09_02_delta_value_lock)</a> is locked in its unique source location in §5.2; it is not re-derived here. In this section, only <strong>referencing</strong> <a href="#eq:S09_02_delta_value_lock" class="xref" data-ref="eq:S09_02_delta_value_lock">(S09_02_delta_value_lock)</a> is permitted.</p>
+<h3>9.2.5 [A] Axioms: canonical stationarity and applicability of δ universality</h3>
+<h3>[A-9.2-S1] Canonical stationarity axiom (existence and convergence of long-time averages)</h3>
+<p>Fix as an axiom that the following limits exist and converge to the same value independent of the start time t.</p>
+<figure class="eq" id="eq:S09_02_stationarity_axiom"><img src="/physics/eq/physics/phy-09-028.svg" data-eq="phy-09-028" width="665" height="54" loading="lazy" alt="\begin{equation} \lim_{T\to\infty}\frac{N_0(t;T)}{T}=s, \qquad \lim_{T\to\infty}\frac{N_{\mathrm{can}}(t;T)}{T}=\nu_{\mathrm{can}}, \qquad \lim_{T\to\infty}\frac{1}{N_0(t;T)}\sum_{e\in\mathcal{E}_0(t;T)}w(e)=\delta. \end{equation}"></figure>
+<p>Axiom <a href="#eq:S09_02_stationarity_axiom" class="xref" data-ref="eq:S09_02_stationarity_axiom">(S09_02_stationarity_axiom)</a> means that the “canonical event rate”, the “attempt rate”, and the “survival coefficient” can be treated as constants within a regime.
+If this axiom fails, the premise of the theorem ν_can=sδ collapses.</p>
+<h3>[A-9.2-S2] δ-universality axiom (value fixation in applicable regimes)</h3>
+<p>Use δ=1/π² only in regimes where the following conditions are locked.</p>
+<ol>
+<li> phase uniformity: θ,φ each follow the uniform measure on the full cycle [0,2π);
+<li> dual constraints: the survival weight is fixed to the product form <a href="#eq:S09_02_w_def" class="xref" data-ref="eq:S09_02_w_def">(S09_02_w_def)</a>;
+<li> product measure (separated measure): the joint measure of (θ,φ) factorizes as a product measure.
+</ol>
+<p>This axiom is a restatement, in this chapter, of the regime restriction of the universality axiom set [A-5.2-U] in §5.2; the value fixation is attributed to <code>canon_lock</code>.</p>
+<h3>9.2.6 [T] Canonical event-rate law ν_can=s·δ</h3>
+<p>In regimes where axiom [A-9.2-S1] holds, derive the following theorem from definitions <a href="#eq:S09_02_s_def" class="xref" data-ref="eq:S09_02_s_def">(S09_02_s_def)</a>, <a href="#eq:S09_02_nucan_def" class="xref" data-ref="eq:S09_02_nucan_def">(S09_02_nucan_def)</a>, and <a href="#eq:S09_02_delta_def" class="xref" data-ref="eq:S09_02_delta_def">(S09_02_delta_def)</a>.</p>
+<h3>[T-9.2-1] Theorem (canonical event-rate law)</h3>
+<p>The following holds.</p>
+<figure class="eq" id="eq:S09_02_theorem_goal"><img src="/physics/eq/physics/phy-09-029.svg" data-eq="phy-09-029" width="91" height="16" loading="lazy" alt="\begin{equation} \nu_{\mathrm{can}} = s\cdot \delta. \end{equation}"></figure>
+<h4>Proof</h4>
+<p>Using the definition of the canonical event count <a href="#eq:S09_02_Ncan_def" class="xref" data-ref="eq:S09_02_Ncan_def">(S09_02_Ncan_def)</a>,</p>
+<figure class="eq" id="eq:S09_02_step1"><img src="/physics/eq/physics/phy-09-030.svg" data-eq="phy-09-030" width="236" height="54" loading="lazy" alt="\begin{equation} \frac{N_{\mathrm{can}}(t;T)}{T} = \frac{1}{T}\sum_{e\in\mathcal{E}_0(t;T)} w(e). \end{equation}"></figure>
+<p>Multiply and divide the right-hand side by N₀(t;T) to obtain (for T such that N₀(t;T)>0)</p>
+<figure class="eq" id="eq:S09_02_step2"><img src="/physics/eq/physics/phy-09-031.svg" data-eq="phy-09-031" width="425" height="62" loading="lazy" alt="\begin{align} \frac{N_{\mathrm{can}}(t;T)}{T} &amp;= \left(\frac{N_0(t;T)}{T}\right) \left(\frac{1}{N_0(t;T)}\sum_{e\in\mathcal{E}_0(t;T)} w(e)\right). \end{align}"></figure>
+<p>Now take the limit T→∞. By axiom [A-9.2-S1],</p>
+<figure class="eq" id="eq:S09_02_step3"><img src="/physics/eq/physics/phy-09-032.svg" data-eq="phy-09-032" width="439" height="54" loading="lazy" alt="\begin{equation} \lim_{T\to\infty}\frac{N_0(t;T)}{T}=s, \qquad \lim_{T\to\infty}\frac{1}{N_0(t;T)}\sum_{e\in\mathcal{E}_0(t;T)} w(e)=\delta, \end{equation}"></figure>
+<p>so from <a href="#eq:S09_02_step2" class="xref" data-ref="eq:S09_02_step2">(S09_02_step2)</a> we obtain</p>
+<figure class="eq" id="eq:S09_02_step4"><img src="/physics/eq/physics/phy-09-033.svg" data-eq="phy-09-033" width="186" height="41" loading="lazy" alt="\begin{equation} \lim_{T\to\infty}\frac{N_{\mathrm{can}}(t;T)}{T} = s\cdot\delta. \end{equation}"></figure>
+<p>The left-hand side is ν_can by definition <a href="#eq:S09_02_nucan_def" class="xref" data-ref="eq:S09_02_nucan_def">(S09_02_nucan_def)</a>, hence</p>
+<figure class="eq" id="eq:S09_02_step5"><img src="/physics/eq/physics/phy-09-034.svg" data-eq="phy-09-034" width="91" height="16" loading="lazy" alt="\begin{equation} \nu_{\mathrm{can}}=s\cdot\delta. \end{equation}"></figure>
+<p>Therefore <a href="#eq:S09_02_theorem_goal" class="xref" data-ref="eq:S09_02_theorem_goal">(S09_02_theorem_goal)</a> holds.  square</p>
+<h3>[T-9.2-2] Special form in the universal regime</h3>
+<p>In regimes where axiom [A-9.2-S2] holds so that <a href="#eq:S09_02_delta_value_lock" class="xref" data-ref="eq:S09_02_delta_value_lock">(S09_02_delta_value_lock)</a> can be used, theorem <a href="#eq:S09_02_theorem_goal" class="xref" data-ref="eq:S09_02_theorem_goal">(S09_02_theorem_goal)</a> is fixed in the following special form.</p>
+<figure class="eq" id="eq:S09_02_nucan_special"><img src="/physics/eq/physics/phy-09-035.svg" data-eq="phy-09-035" width="109" height="38" loading="lazy" alt="\begin{equation} \nu_{\mathrm{can}} = s\cdot\frac{1}{\pi^2}. \end{equation}"></figure>
+<p>Equation <a href="#eq:S09_02_nucan_special" class="xref" data-ref="eq:S09_02_nucan_special">(S09_02_nucan_special)</a> is a <strong>special case of the theorem</strong> and is used only in regimes where value fixation of δ is permitted.</p>
+<h3>9.2.7 Standard conclusion format for connecting to PASS.rules</h3>
+<p>When using theorem <a href="#eq:S09_02_theorem_goal" class="xref" data-ref="eq:S09_02_theorem_goal">(S09_02_theorem_goal)</a> or <a href="#eq:S09_02_nucan_special" class="xref" data-ref="eq:S09_02_nucan_special">(S09_02_nucan_special)</a> as a conclusion sentence, the following items must be stated together (if omitted, the conclusion has no validity).</p>
+<ol>
+<li> identifiers of the referenced definitions of Trig₀ and w(e) (via the <code>analysis_lock</code> reference);
+<li> the regime condition for δ value fixation (whether the regime is universal) and the Gate decision related to δ;
+<li> sealed references (manifest/checksums/registry_snapshot) of the time window and log snapshots used to compute s,δ,ν_can.
+</ol>
+<p>These items are not “narrative style”; they are required fields that constitute the validity of the conclusion sentence, enforced by PASS.rules.</p>
+<h2>9.3 Electron canonical: νₑ,can=1, rₑ</h2>
+<aside class="claim-strip vps" data-vps="9.3" data-cards="VP-C-025, VP-C-017"><span class="g">[F] electron normalization</span><span class="io">in: $νₑ:=1$ / out: $sₑ=π²$; $rₑ=D/(2π²)$ (event-rate role ONLY)</span><q class="one">The electron sets the clock; its radius here is a rate radius, not a mass length.</q><span class="cards">VP-C-025, VP-C-017</span></aside>
+<h3>9.3.1 [D] Defining the electron canonical event rate (fixing the unit)</h3>
+<p>Define and lock the electron canonical event rate ν_e,can by the following identity.</p>
+<figure class="eq" id="eq:S09_03_nue_can_def"><img src="/physics/eq/physics/phy-09-036.svg" data-eq="phy-09-036" width="84" height="18" loading="lazy" alt="\begin{equation} \nu_{e,\mathrm{can}} := 1. \end{equation}"></figure>
+<p>Equation <a href="#eq:S09_03_nue_can_def" class="xref" data-ref="eq:S09_03_nue_can_def">(S09_03_nue_can_def)</a> is the definition of the “electron canonical” and is not tuned within the same version.
+The unit of ν_e,can is fixed to the canonical event-rate unit used in this document (conversion to realized units is treated only in the unit-realization chapter).</p>
+<h3>9.3.2 [D] Electron attempt rate sₑ and survival coefficient δ</h3>
+<p>Specialize the general canonical-event-rate components defined in §9.2 to the electron case as follows.</p>
+<h4>9.3.2.1 [D] Electron attempt-event set and attempt rate</h4>
+<p>Denote the electron attempt-event (raw event) set by E_(0,e)(t;T), and define the raw count by</p>
+<figure class="eq" id="eq:S09_03_N0e"><img src="/physics/eq/physics/phy-09-037.svg" data-eq="phy-09-037" width="186" height="19" loading="lazy" alt="\begin{equation} N_{0,e}(t;T):=\left|\mathcal{E}_{0,e}(t;T)\right| \end{equation}"></figure>
+<p>Define the electron attempt rate sₑ by the long-time average</p>
+<figure class="eq" id="eq:S09_03_se_def"><img src="/physics/eq/physics/phy-09-038.svg" data-eq="phy-09-038" width="173" height="42" loading="lazy" alt="\begin{equation} s_e := \lim_{T\to\infty}\frac{N_{0,e}(t;T)}{T}. \end{equation}"></figure>
+<p>Existence and settlement of the limit are attributed to the stationarity axiom (the axiom items of §9.2) and are not restated here.</p>
+<h4>9.3.2.2 [D] Electron survival coefficient δ</h4>
+<p>Assume the survival weight w(e) is defined for electron attempt events e∈E_(0,e)(t;T), and define the electron survival coefficient δ by the average</p>
+<figure class="eq" id="eq:S09_03_delta_def"><img src="/physics/eq/physics/phy-09-039.svg" data-eq="phy-09-039" width="439" height="52" loading="lazy" alt="\begin{equation} \delta := \lim_{T\to\infty}\frac{1}{N_{0,e}(t;T)}\sum_{e\in\mathcal{E}_{0,e}(t;T)} w(e), \qquad ( N_{0,e}(t;T)&gt;0 ). \end{equation}"></figure>
+<p>The symbol δ is used by referring to the rectification-constant chapter (Chapter 5) and is not redefined within the same version.</p>
+<h3>9.3.3 [T] Applying the theorem: νₑ,can=sₑ·δ</h3>
+<p>Applying the canonical-event-rate theorem of §9.2 to the electron yields</p>
+<figure class="eq" id="eq:S09_03_nue_factor"><img src="/physics/eq/physics/phy-09-040.svg" data-eq="phy-09-040" width="108" height="19" loading="lazy" alt="\begin{equation} \nu_{e,\mathrm{can}}=s_e\cdot\delta. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S09_03_nue_can_def" class="xref" data-ref="eq:S09_03_nue_can_def">(S09_03_nue_can_def)</a> into <a href="#eq:S09_03_nue_factor" class="xref" data-ref="eq:S09_03_nue_factor">(S09_03_nue_factor)</a>.</p>
+<figure class="eq" id="eq:S09_03_step1"><img src="/physics/eq/physics/phy-09-041.svg" data-eq="phy-09-041" width="216" height="63" loading="lazy" alt="\begin{align} \nu_{e,\mathrm{can}}=s_e\cdot\delta &amp;\Longrightarrow 1=s_e\cdot\delta \\ &amp;\Longrightarrow s_e=\frac{1}{\delta}. \end{align}"></figure>
+<p>Therefore the electron attempt rate sₑ is fixed as the reciprocal of the survival coefficient δ.
+This relation holds even without assuming the universal value of δ (e.g., δ=1/π²).</p>
+<h3>9.3.4 [D] Defining the electron length rₑ (geometric implementation of the attempt rate)</h3>
+<p>This section locks the electron length rₑ <strong>by definition</strong> as a “geometric implementation of the electron attempt rate sₑ.”</p>
+<h4>9.3.4.1 [D] Anchor length and half-length</h4>
+<p>Assume the canonical-cell representative length D_anch is locked, and fix the half-length r₀ by the following derived definition.</p>
+<figure class="eq" id="eq:S09_03_r0"><img src="/physics/eq/physics/phy-09-042.svg" data-eq="phy-09-042" width="104" height="38" loading="lazy" alt="\begin{equation} r_0:=\frac{D_{\mathrm{anch}}}{2}. \end{equation}"></figure>
+<p>The geometric meaning of D_anch (edge length in the canonical cell) is locked in §3.3; this section only refers to it.</p>
+<h4>9.3.4.2 [D] Geometric definition of the attempt rate</h4>
+<strong>Define</strong> the electron attempt rate sₑ by the following geometric ratio.
+<figure class="eq" id="eq:S09_03_se_geom"><img src="/physics/eq/physics/phy-09-043.svg" data-eq="phy-09-043" width="76" height="36" loading="lazy" alt="\begin{equation} s_e := \frac{r_0}{r_e}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S09_03_se_geom" class="xref" data-ref="eq:S09_03_se_geom">(S09_03_se_geom)</a> adopts the convention that the attempt rate is “how many times the half-length r₀ contains the electron radius rₑ,” and is not modified within the same version.
+Equation <a href="#eq:S09_03_se_geom" class="xref" data-ref="eq:S09_03_se_geom">(S09_03_se_geom)</a> is admissible only when the meanings of the symbols (radius/half-length) are locked; any radius/diameter confusion or cell-geometry confusion is an immediate <code>FAIL</code> (see the convention in §2.4).</p>
+<h3>9.3.5 Step-by-step derivation of rₑ</h3>
+<p>Combine <a class="xref" data-ref="eq:S09_03_step2">(S09_03_step2)</a> and <a href="#eq:S09_03_se_geom" class="xref" data-ref="eq:S09_03_se_geom">(S09_03_se_geom)</a> to derive rₑ.</p>
+<figure class="eq" id="eq:S09_03_re_step1"><img src="/physics/eq/physics/phy-09-044.svg" data-eq="phy-09-044" width="287" height="65" loading="lazy" alt="\begin{align} s_e=\frac{1}{\delta} \ \ \text{and}\ \ s_e=\frac{r_0}{r_e} &amp;\Longrightarrow \frac{r_0}{r_e}=\frac{1}{\delta} \\ &amp;\Longrightarrow r_e=r_0\,\delta. \end{align}"></figure>
+<p>Substitute <a href="#eq:S09_03_r0" class="xref" data-ref="eq:S09_03_r0">(S09_03_r0)</a> into <a class="xref" data-ref="eq:S09_03_re_step2">(S09_03_re_step2)</a>.</p>
+<figure class="eq" id="eq:S09_03_re_step3"><img src="/physics/eq/physics/phy-09-045.svg" data-eq="phy-09-045" width="243" height="45" loading="lazy" alt="\begin{align} r_e=r_0\,\delta &amp;\Longrightarrow r_e=\left(\frac{D_{\mathrm{anch}}}{2}\right)\delta. \end{align}"></figure>
+<p>Therefore the final form of the electron radius is fixed as</p>
+<figure class="eq" id="eq:S09_03_re_final"><img src="/physics/eq/physics/phy-09-046.svg" data-eq="phy-09-046" width="114" height="48" loading="lazy" alt="\begin{equation} \boxed{ r_e=\frac{D_{\mathrm{anch}}}{2}\,\delta } \end{equation}"></figure>
+<p>Equation <a href="#eq:S09_03_re_final" class="xref" data-ref="eq:S09_03_re_final">(S09_03_re_final)</a> is derived only by combining the electron canonical definition ν_e,can=1, the geometric attempt-rate definition <a href="#eq:S09_03_se_geom" class="xref" data-ref="eq:S09_03_se_geom">(S09_03_se_geom)</a>, and the survival-coefficient definition <a href="#eq:S09_03_delta_def" class="xref" data-ref="eq:S09_03_delta_def">(S09_03_delta_def)</a>.</p>
+<h3>9.3.6 Special form in the universal regime (value substitution)</h3>
+<p>If δ is locked to</p>
+<figure class="eq" id="eq:S09_03_delta_univ"><img src="/physics/eq/physics/phy-09-047.svg" data-eq="phy-09-047" width="60" height="38" loading="lazy" alt="\begin{equation} \delta=\frac{1}{\pi^2} \end{equation}"></figure>
+<p>in a regime where the universality axiom applies, then substituting <a href="#eq:S09_03_delta_univ" class="xref" data-ref="eq:S09_03_delta_univ">(S09_03_delta_univ)</a> into <a href="#eq:S09_03_re_final" class="xref" data-ref="eq:S09_03_re_final">(S09_03_re_final)</a> yields the special form</p>
+<figure class="eq" id="eq:S09_03_re_univ"><img src="/physics/eq/physics/phy-09-048.svg" data-eq="phy-09-048" width="360" height="39" loading="lazy" alt="\begin{align} r_e=\frac{D_{\mathrm{anch}}}{2}\,\delta &amp;\Longrightarrow r_e=\frac{D_{\mathrm{anch}}}{2}\cdot\frac{1}{\pi^2} =\frac{D_{\mathrm{anch}}}{2\pi^2}. \end{align}"></figure>
+<p>Special form <a href="#eq:S09_03_re_univ" class="xref" data-ref="eq:S09_03_re_univ">(S09_03_re_univ)</a> is used only in the universal regime; in regimes where universality triggers are broken, only the general form <a href="#eq:S09_03_re_final" class="xref" data-ref="eq:S09_03_re_final">(S09_03_re_final)</a> (regime-dependent δ) is allowed.</p>
+<h3>9.3.7 Derived quantity (diameter)</h3>
+<p>Define the electron diameter (length) by the derived definition</p>
+<figure class="eq" id="eq:S09_03_le_def"><img src="/physics/eq/physics/phy-09-049.svg" data-eq="phy-09-049" width="76" height="16" loading="lazy" alt="\begin{equation} \ell_e := 2r_e. \end{equation}"></figure>
+<p>Therefore, from <a href="#eq:S09_03_re_final" class="xref" data-ref="eq:S09_03_re_final">(S09_03_re_final)</a>,</p>
+<figure class="eq" id="eq:S09_03_le_final"><img src="/physics/eq/physics/phy-09-050.svg" data-eq="phy-09-050" width="222" height="45" loading="lazy" alt="\begin{equation} \ell_e = 2\left(\frac{D_{\mathrm{anch}}}{2}\delta\right)=D_{\mathrm{anch}}\delta, \end{equation}"></figure>
+<p>and in the universal regime, from <a href="#eq:S09_03_re_univ" class="xref" data-ref="eq:S09_03_re_univ">(S09_03_re_univ)</a>,</p>
+<figure class="eq" id="eq:S09_03_le_univ"><img src="/physics/eq/physics/phy-09-051.svg" data-eq="phy-09-051" width="92" height="39" loading="lazy" alt="\begin{equation} \ell_e=\frac{D_{\mathrm{anch}}}{\pi^2} \end{equation}"></figure>
+<p>is fixed.
+The symbol ℓₑ is subject to the diameter/radius disambiguation convention (§2.4); using ℓₑ as a radius is an immediate <code>FAIL</code>.</p>
+<h2>9.4 νₚ,can=3π⁴≈ 292.23 — length cross-check</h2>
+<span id="hub:nucompute"></span>
+<aside class="claim-strip vps" data-vps="9.4" data-cards="VP-C-011, VP-C-007"><span class="g">[F] cross-check</span><span class="io">in: $D,rₚ,δ$ / out: $νₚ=292.245$ ($+61$ ppm vs $3π⁴$); $sₚ=D/(2rₚ)$ linear</span><q class="one">The length route lands 61 ppm from canon — the same chain as the $-19$ ppm.</q><span class="cards">VP-C-011, VP-C-007</span></aside>
+<em> Independent numerical reproduction of νₚ=3π⁴ and the integer combinatorics is recorded in <a href="/physics/11-realization-units-t-rcross/#hub:repro03" class="xref" data-ref="hub:repro03">§11.6.5</a> (deposited bundle); the same νₚ is the dynamical grind rate of <a href="/physics/08-discrete-proton-structure-82-7/#hub:grinder" class="xref" data-ref="hub:grinder">§8.5</a>.</em>
+<strong>SSOT note.</strong> The <em>canonical</em> value of ν_p,can is fixed geometrically as ν_p,can=3π⁴≈ 292.227s⁻¹ by the n-fold rectification law <strong>[LOCK-NU-N]</strong> in <a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon" class="xref" data-ref="hub:nucleon">§8.0.5</a>. The length-anchored computation of this section, ν_p,can=fracD_anch2rₚδ≈ 292.245, is retained as a <em>cross-check</em> (it agrees with 3π⁴ to +61 ppm and equivalently predicts rₚ=D_anch/(6π⁶)=0.84125fm). Where the two differ, the geometric 3π⁴ is canonical and rₚ is the derived prediction.
+<em>Cross-links for D:</em> the quantum diameter D=ℓ_rot used here is defined in <a href="/physics/03-axioms-primitives-volume-particle-lattice/#hub:lrot" class="xref" data-ref="hub:lrot">§3.4</a>; its dynamical origin A=a/g^* is in <a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6.1</a>; the structural identity D=2πλ/A (with the same A fitting both 633 and 532 nm) is recorded in the Reviewer Companion (§II provenance notes). The canonical numeric value is D_anch=2λ_(C,e)=4.8526 pm, locked in the preamble (<a href="/physics/w0-result-scorecard-one-page-summary/#ssot:master" class="xref" data-ref="ssot:master">master SSOT table</a>).
+<h3>9.4.1 LOCK inputs and reference formula (starting point)</h3>
+<p>This section assumes that the following inputs are fixed (LOCK) by <code>canon_lock</code>.</p>
+<figure class="eq" id="eq:S09_04_Danch_lock"><img src="/physics/eq/physics/phy-09-052.svg" data-eq="phy-09-052" width="384" height="92" loading="lazy" alt="\begin{align} &amp;D_{\mathrm{anch}}=\Danchm, \\ &amp;r_p=\rprotonm, \\ &amp;\pi\ \text{(dimensionless constant, locked)}, \qquad \delta=\frac{1}{\pi^2}. \end{align}"></figure>
+<p>It also applies the canonical event-rate law (theorem) of §9.2 to the proton and uses</p>
+<figure class="eq" id="eq:S09_04_nu_sp_delta"><img src="/physics/eq/physics/phy-09-053.svg" data-eq="phy-09-053" width="109" height="19" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}=s_p\cdot \delta. \end{equation}"></figure>
+<h3>9.4.2 Definition: proton scale factor sₚ</h3>
+<p>Fix the canonical-cell half-length r₀ by the derived definition</p>
+<figure class="eq" id="eq:S09_04_r0_def"><img src="/physics/eq/physics/phy-09-054.svg" data-eq="phy-09-054" width="104" height="38" loading="lazy" alt="\begin{equation} r_0:=\frac{D_{\mathrm{anch}}}{2}. \end{equation}"></figure>
+<p>Define the proton scale factor sₚ as the following <strong>dimensionless ratio</strong>.</p>
+<figure class="eq" id="eq:S09_04_sp_def"><img src="/physics/eq/physics/phy-09-055.svg" data-eq="phy-09-055" width="153" height="43" loading="lazy" alt="\begin{equation} s_p:=\frac{r_0}{r_p}=\frac{D_{\mathrm{anch}}}{2r_p}. \end{equation}"></figure>
+<p>In definition <a href="#eq:S09_04_sp_def" class="xref" data-ref="eq:S09_04_sp_def">(S09_04_sp_def)</a>, the geometric meanings of D_anch and rₚ (diameter/radius/cell geometry) must already be locked; any confusion (overloading) is an immediate <code>FAIL</code>.</p>
+<h4>Note: why sₚ is defined as a linear ratio (dimensionality of the event definition)</h4>
+<p>The sₚ in <a href="#eq:S09_04_sp_def" class="xref" data-ref="eq:S09_04_sp_def">(S09_04_sp_def)</a> is a <strong>scale factor</strong> used in the canonical event-rate law of §9.2; it is not “the number of volume slots” such as (r₀/rₚ)³.
+In this white paper, an event is not defined as “volume filling” but as <strong>turnover on a propagation/inflow backbone path</strong>.
+Effective reduction due to 3D geometry/angle cancellation/phase overlap is already absorbed into the rectification coefficient δ (§5.2 and §9.4.3.1).
+Therefore, interpreting sₚ again as a 3D volume ratio would double-count the same geometric factor.</p>
+<h3>9.4.3 Computation: δ, sₚ, νₚ,can</h3>
+<h4>9.4.3.1 Computing the rectification coefficient δ</h4>
+<p>The rectification coefficient is locked from the unique source of §5.2 as</p>
+<figure class="eq" id="eq:S09_04_delta_numeric"><img src="/physics/eq/physics/phy-09-056.svg" data-eq="phy-09-056" width="451" height="38" loading="lazy" alt="\begin{equation} \delta=\frac{1}{\pi^2} =0.10132118364233778\ldots \qquad (\text{dimensionless}). \end{equation}"></figure>
+<h4>9.4.3.2 Computing the scale factor sₚ</h4>
+<p>Substitute <a href="#eq:S09_04_Danch_lock" class="xref" data-ref="eq:S09_04_Danch_lock">(S09_04_Danch_lock)</a> and <a class="xref" data-ref="eq:S09_04_rp_lock">(S09_04_rp_lock)</a> into definition <a href="#eq:S09_04_sp_def" class="xref" data-ref="eq:S09_04_sp_def">(S09_04_sp_def)</a>.</p>
+<figure class="eq" id="eq:S09_04_sp_numeric"><img src="/physics/eq/physics/phy-09-057.svg" data-eq="phy-09-057" width="526" height="71" loading="lazy" alt="\begin{align} s_p &amp;=\frac{D_{\mathrm{anch}}}{2r_p} =\frac{\Danchm}{2\,\rprotonm} \notag\\ &amp;=2884.3\ldots \qquad (\text{dimensionless; placeholder digits, $D$-limited}). \end{align}"></figure>
+<h4>9.4.3.3 Computing the canonical event rate νₚ,can</h4>
+<p>Substitute <a href="#eq:S09_04_sp_numeric" class="xref" data-ref="eq:S09_04_sp_numeric">(S09_04_sp_numeric)</a> and <a href="#eq:S09_04_delta_numeric" class="xref" data-ref="eq:S09_04_delta_numeric">(S09_04_delta_numeric)</a> into <a href="#eq:S09_04_nu_sp_delta" class="xref" data-ref="eq:S09_04_nu_sp_delta">(S09_04_nu_sp_delta)</a>.</p>
+<figure class="eq" id="eq:S09_04_nup_numeric"><img src="/physics/eq/physics/phy-09-058.svg" data-eq="phy-09-058" width="536" height="70" loading="lazy" alt="\begin{align} \nu_{p,\mathrm{can}} &amp;=s_p\cdot\delta \notag\\ &amp;=\left(2884.3\ldots\right)\times \left(0.10132118364233778\ldots\right) \notag\\ &amp;=292.24\ldots\ \mathrm{s^{-1}}\quad(\text{placeholder digits; $D$-limited to $\sim0.04\%$}). \end{align}"></figure>
+<p>Fix the effective digits (limited by input precision) as</p>
+<figure class="eq" id="eq:S09_04_nup_round"><img src="/physics/eq/physics/phy-09-059.svg" data-eq="phy-09-059" width="582" height="22" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}\approx 292.24\ \mathrm{s^{-1}}\qquad(\text{4 s.f.; $D$-limited to $\sim0.04\%$, not the digit count}). \end{equation}"></figure>
+<p>Or, changing only the unit label,</p>
+<figure class="eq" id="eq:S09_04_nup_hz"><img src="/physics/eq/physics/phy-09-060.svg" data-eq="phy-09-060" width="190" height="18" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}\approx 292.2451560\ \mathrm{Hz} \end{equation}"></figure>
+<p>may be recorded.
+Here “Hz=s⁻¹” reads the canonical second as equivalent to the SI second; the equivalence judgment is performed by the unit-realization (cross-validation) Gate.</p>
+<h3>9.4.4 Equivalent forms (a fully closed single expression)</h3>
+<p>Combining <a href="#eq:S09_04_nu_sp_delta" class="xref" data-ref="eq:S09_04_nu_sp_delta">(S09_04_nu_sp_delta)</a>, <a href="#eq:S09_04_sp_def" class="xref" data-ref="eq:S09_04_sp_def">(S09_04_sp_def)</a>, and <a class="xref" data-ref="eq:S09_04_delta_def">(S09_04_delta_def)</a> yields</p>
+<figure class="eq" id="eq:S09_04_closed_form"><img src="/physics/eq/physics/phy-09-061.svg" data-eq="phy-09-061" width="212" height="55" loading="lazy" alt="\begin{equation} \boxed{ \nu_{p,\mathrm{can}} =\left(\frac{D_{\mathrm{anch}}}{2r_p}\right)\left(\frac{1}{\pi^2}\right) } \end{equation}"></figure>
+<p>The numeric derivation in this section is completed by direct substitution into <a href="#eq:S09_04_closed_form" class="xref" data-ref="eq:S09_04_closed_form">(S09_04_closed_form)</a>; no additional assumptions enter.</p>
+<h4>Equivalent form (reduction to the electron canonical)</h4>
+<p>In the universal regime, using the electron-radius definition rₑ=(D_anch/2)δ from §9.3, <a href="#eq:S09_04_closed_form" class="xref" data-ref="eq:S09_04_closed_form">(S09_04_closed_form)</a> can be written equivalently as</p>
+<figure class="eq" id="eq:S09_04_equiv_re_over_rp"><img src="/physics/eq/physics/phy-09-062.svg" data-eq="phy-09-062" width="353" height="39" loading="lazy" alt="\begin{equation} \nu_{p,\mathrm{can}}=\frac{r_e}{r_p} \qquad (\delta=1/\pi^2\ \text{universal regime}). \end{equation}"></figure>
+<p>That is, “the form derived via the electron” and “the form derived via the anchor-to-proton ratio” are two notations of the same equation; no new assumptions are introduced here.</p>
+<h3>9.4.5 Sensitivity / error budget (LOCK linkage)</h3>
+<h4>9.4.5.1 Differential sensitivity (directly from the definition)</h4>
+<p>From <a href="#eq:S09_04_closed_form" class="xref" data-ref="eq:S09_04_closed_form">(S09_04_closed_form)</a>, ν_p,can is proportional to D_anch and inversely proportional to rₚ.
+Differentiating gives</p>
+<figure class="eq" id="eq:S09_04_sensitivity"><img src="/physics/eq/physics/phy-09-063.svg" data-eq="phy-09-063" width="486" height="48" loading="lazy" alt="\begin{equation} \frac{\partial \nu_{p,\mathrm{can}}}{\partial D_{\mathrm{anch}}} =\frac{1}{2r_p}\cdot\frac{1}{\pi^2}, \qquad \frac{\partial \nu_{p,\mathrm{can}}}{\partial r_p} =-\frac{D_{\mathrm{anch}}}{2r_p^2}\cdot\frac{1}{\pi^2} =-\frac{\nu_{p,\mathrm{can}}}{r_p} \end{equation}"></figure>
+<p>The relative sensitivity is summarized as</p>
+<figure class="eq" id="eq:S09_04_rel_error"><img src="/physics/eq/physics/phy-09-064.svg" data-eq="phy-09-064" width="224" height="45" loading="lazy" alt="\begin{equation} \frac{\Delta \nu_{p,\mathrm{can}}}{\nu_{p,\mathrm{can}}} \approx \frac{\Delta D_{\mathrm{anch}}}{D_{\mathrm{anch}}} -\frac{\Delta r_p}{r_p}, \end{equation}"></figure>
+<p>where the value of δ=1/π² is locked as a rectification constant (within the same version); therefore the only degrees of freedom in the error budget are the input precisions of D_anch and rₚ.</p>
+<h4>9.4.5.2 Example of input variation (importance of LOCK values)</h4>
+<p>If rₚ deviates from the LOCK value, ν_p,can changes immediately.
+For example, as a reference comparison,</p>
+<figure class="eq" id="eq:S09_04_rp_alt"><img src="/physics/eq/physics/phy-09-065.svg" data-eq="phy-09-065" width="160" height="22" loading="lazy" alt="\begin{equation} r_p=0.84\times 10^{-15}\ \mathrm{m} \end{equation}"></figure>
+<p>would give</p>
+<figure class="eq" id="eq:S09_04_nu_alt"><img src="/physics/eq/physics/phy-09-066.svg" data-eq="phy-09-066" width="313" height="71" loading="lazy" alt="\begin{align} \nu_{p}(0.84) &amp;=\left(\frac{D_{\mathrm{anch}}}{2\times 0.84\times 10^{-15}}\right)\left(\frac{1}{\pi^2}\right) \notag\\ &amp;=292.6626491051701\ldots\ \mathrm{s^{-1}}. \end{align}"></figure>
+<p>Therefore the difference is</p>
+<figure class="eq" id="eq:S09_04_diff"><img src="/physics/eq/physics/phy-09-067.svg" data-eq="phy-09-067" width="430" height="70" loading="lazy" alt="\begin{align} \Delta \nu &amp;:=\nu_{p}(0.84)-\nu_{p,\mathrm{can}} \notag\\ &amp;=292.6626491051701\ldots-292.2451560251342\ldots \notag\\ &amp;=0.4174930800359\ldots\ \mathrm{s^{-1}}, \end{align}"></figure>
+<p>with relative difference</p>
+<figure class="eq" id="eq:S09_04_rel_diff"><img src="/physics/eq/physics/phy-09-068.svg" data-eq="phy-09-068" width="381" height="44" loading="lazy" alt="\begin{equation} \frac{\Delta \nu}{\nu_{p,\mathrm{can}}} \approx \frac{0.4174931}{292.2452} \approx 0.00143 \qquad (\approx 0.143\%). \end{equation}"></figure>
+<p>Hence, locking rₚ to <a class="xref" data-ref="eq:S09_04_rp_lock">(S09_04_rp_lock)</a> simultaneously fixes the corresponding ν_p,can to the single value <a href="#eq:S09_04_nup_numeric" class="xref" data-ref="eq:S09_04_nup_numeric">(S09_04_nup_numeric)</a>.</p>
+<nav class="pn"><a rel="prev" href="/physics/08-discrete-proton-structure-82-7/">← §8</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/10-implementing-speed-light-clock-free/">§10 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

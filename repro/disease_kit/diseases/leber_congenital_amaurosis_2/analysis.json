@@ -1,0 +1,188 @@
+{
+ "disease": "Leber congenital amaurosis type 2 (RPE65)",
+ "omim": "204100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Leber congenital amaurosis type 2 (RPE65)",
+  "omim": "204100",
+  "summary": "Severe early-onset inherited retinal dystrophy. Loss-of-function of RPE65 -- the retinal-pigment-epithelium isomerohydrolase (retinoid isomerase) that converts all-trans-retinyl ester to 11-cis-retinol in the visual (retinoid) cycle -- lowers regeneration of the 11-cis-retinal chromophore, so rod and (progressively) cone photoreceptors cannot reconstitute light-sensitive visual pigment -> profound congenital/early-childhood vision loss with a characteristically severe ERG deficit out of proportion to early retinal structure. The disease is read as the retinoid-cycle / 11-cis-retinal-regeneration throughput axis driven DOWN (a deficient catabolic-cycle enzyme whose product fails -- the same enzyme-deficiency shape as the lysosomal storage and HPP reads, here on the RPE retinoid-cycle enzyme; the consequence is chromophore STARVATION rather than substrate storage). Correction is to restore the cycle: replace RPE65 at the locus, or supply the missing cis-retinoid chromophore downstream to bypass the block. The kit re-derives the approved replace arm -- voretigene neparvovec, an AAV2-hRPE65v2 subretinal gene-replacement therapy (the first in-vivo gene therapy approved in the US, 2017). This is the clean case where restoring the deficient gene IS the lead corrective lever -- in contrast to the upstream-restraint diseases (OTC, AIP, PH1) where the lead lever is NOT restoring the deficient gene but diverting an upstream over-accumulating flux; here the deficiency directly starves a needed product, so gene restoration is corrective. A first OCULAR / retinal read for the kit. The gamma read is of the RPE65 locus switch STRUCTURE (an AT-rich promoter, one of the lowest gamma in the kit); the disease lesion is coding (e.g. p.Pro25Leu, p.Tyr368His, founder splice alleles), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "retinoid (visual) cycle 11-cis-retinal chromophore regeneration throughput (RPE65 isomerohydrolase)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "RPE65",
+    "gamma": 1.2842,
+    "spinodal_h_sp": 0.56014,
+    "barrier": 0.41229,
+    "dwell_relative_size": 1.32299,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 68428821,
+     "gene_end": 68449953,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "retinoid isomerohydrolase RPE65"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "RPE65 is the retinal-pigment-epithelium-specific 65 kDa isomerohydrolase that hydrolyses/isomerises all-trans-retinyl ester to 11-cis-retinol -- the rate-limiting regeneration step of the retinoid (visual) cycle that resupplies the 11-cis-retinal chromophore to opsins. LOF lowers 11-cis-retinal regeneration -> photoreceptors cannot reconstitute light-sensitive pigment -> severe early-onset retinal dystrophy (LCA2 / early-onset severe retinal dystrophy / retinitis pigmentosa 20). Located 1p31.3. NCBI official symbol RPE65. Autosomal recessive (biallelic). Coding/splice lesions (e.g. p.Pro25Leu, p.Tyr368His); promoter firewall respected.",
+    "src": "Gu 1997 Nat Genet 17:194 and Marlhens 1997 Nat Genet 17:139 (RPE65 mutations in LCA/EOSRD); Redmond 1998 Nat Genet 20:344 (Rpe65 knockout abolishes 11-cis-retinal); Jin 2005 Cell 122:449 (RPE65 is the isomerohydrolase)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "RPE65",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "fc8e4f152d11"
+ },
+ "treatment_A_switch": {
+  "disease": "Leber congenital amaurosis type 2 (RPE65)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "RPE65",
+    "push_direction": "restore RPE65 isomerohydrolase expression in RPE cells -> regenerate 11-cis-retinal -> photoreceptors reconstitute visual pigment (axis UP toward function)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "subretinal AAV gene replacement (voretigene neparvovec, AAV2-hRPE65v2)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored chromophore-regeneration / visual-response magnitude not derived from sequence",
+    "src": "Maguire 2008 NEJM 358:2240 and Bainbridge 2008 NEJM 358:2231 (RPE65 gene transfer first-in-human); Russell 2017 Lancet 390:849 (phase 3); voretigene neparvovec (Luxturna) FDA 2017 / EMA 2018 -- first in-vivo gene therapy approved in the US"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "11-cis-retinal",
+    "push_direction": "supply a synthetic cis-retinoid chromophore precursor downstream of the missing isomerase step -> bypass the block and resupply opsin chromophore",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "oral synthetic-retinoid replacement (9-cis-retinyl acetate / zuretinol)",
+    "status": "clinical",
+    "mechanism_grade": "[O] chromophore-resupply / visual-recovery magnitude not derived from sequence",
+    "src": "Koenekoop 2014 Lancet 384:1513 (oral 9-cis-retinyl acetate / QLT091001 in RPE65/LRAT retinal dystrophy, phase 1b)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "RPE65",
+   "push_direction": "restore RPE65 isomerohydrolase expression in RPE cells -> regenerate 11-cis-retinal -> photoreceptors reconstitute visual pigment (axis UP toward function)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "subretinal AAV gene replacement (voretigene neparvovec, AAV2-hRPE65v2)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored chromophore-regeneration / visual-response magnitude not derived from sequence",
+   "src": "Maguire 2008 NEJM 358:2240 and Bainbridge 2008 NEJM 358:2231 (RPE65 gene transfer first-in-human); Russell 2017 Lancet 390:849 (phase 3); voretigene neparvovec (Luxturna) FDA 2017 / EMA 2018 -- first in-vivo gene therapy approved in the US"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.32299,
+   "dwell_disease": 0.85605,
+   "dwell_treated": 1.08604,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "ab405f295a8a"
+ },
+ "treatment_B_chem": {
+  "disease": "Leber congenital amaurosis type 2 (RPE65)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "cis-retinoid chromophore supply (downstream product replacement)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "provide the 11-cis (or 9-cis) retinoid the deficient isomerase fails to make -> resupply opsin chromophore independent of RPE65 catalysis",
+    "rationale": "supplies the missing product downstream of the throttled isomerase step; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "clinical",
+    "src": "Van Hooser 2000 PNAS 97:8623 (9-cis-retinoid restores rod function in Rpe65 -/- retina)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "d5171c486769"
+ },
+ "falsifiers": [
+  {
+   "claim": "RPE65 LOF lowers 11-cis-retinal regeneration (chromophore supply fails)",
+   "falsifier": "an RPE65 LOF allele that INCREASED 11-cis-retinal regeneration, or RPE/retina in which RPE65 loss RAISED chromophore supply or improved photoreceptor light response, refutes the throughput-down direction",
+   "measurable_by": "retinal 11-cis-retinal content and rod/cone light response (ERG / single-cell) in RPE65-deficient retina (Rpe65 -/- mouse or dog, patient)"
+  },
+  {
+   "claim": "restoring RPE65 (replace) is the CORRECTIVE direction",
+   "falsifier": "if restoring RPE65 expression REDUCED retinoid-cycle flux or WORSENED photoreceptor response, the 'replace gene' lever sign is wrong",
+   "measurable_by": "11-cis-retinal regeneration, ERG b-wave and full-field light sensitivity threshold response to RPE65 gene transfer in RPE65-deficient retina (the Briard-dog and Rpe65 -/- mouse models, patient)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Leber congenital amaurosis type 2 (RPE65)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "63060212d487"
+ },
+ "determinism_sha": "26e11d19ee27"
+}

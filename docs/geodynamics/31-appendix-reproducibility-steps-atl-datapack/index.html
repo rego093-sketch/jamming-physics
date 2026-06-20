@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix: reproducibility steps and the ATL — Jamming Geodynamics §31 | Jamming Physics</title>
+<meta name="description" content="This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/31-appendix-reproducibility-steps-atl-datapack/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix: reproducibility steps and the ATL — Jamming Geodynamics §31 | Jamming Physics"><meta property="og:description" content="This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in."><meta property="og:url" content="https://jamming-physics.org/geodynamics/31-appendix-reproducibility-steps-atl-datapack/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix: reproducibility steps and the ATL — Jamming Geodynamics §31 | Jamming Physics"><meta name="twitter:description" content="This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Appendix: reproducibility steps and the ATL",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 31,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/31-appendix-reproducibility-steps-atl-datapack/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Appendix: reproducibility steps and the ATL"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§31 DataPack schema"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §31</nav></header>
+<main>
+<h1>Appendix: reproducibility steps and the ATL</h1>
+
+<p class="answer">Appendix: reproducibility steps and the ATL DataPack schema — This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in the reproducibility bundle. Recommended required outputs: (1) UNLOCK_checklist.txt, (2) omega_nogo.json, (3) an RSL summary table (CSV), and (4) a QA report (MD/PDF).</p>
+
+<p class="abstract">This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in the reproducibility bundle.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/31-appendix-reproducibility-steps-atl-datapack/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<aside class="vp-card" data-locked="omega_nogo"><b>Ω-NoGo: μ_eff hold-min = 10⁻²</b> — Physics No-Go floor; a low-friction claim must hold above it (h≥ 10⁻⁶ m, ΔP≤ 500 MPa). <b>[F]</b> forced. <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">Canonical derivation §16</a></aside>
+
+<p>This appendix pins down “who runs what where, and which log/output must appear.” In a real release, paths/file names/hashes below must be finalized in the reproducibility bundle.</p>
+<p><strong>(Example) execution steps</strong></p>
+<pre><code># 0) Environment setup (example): Python 3.11 + requirements.txt
+python -V
+pip install -r requirements.txt
+
+# 1) Verify data integrity
+sha256sum -c checksums/sha256sum.txt
+
+# 2) Verify prereg thresholds (Omega-NoGo) are fixed
+cat config/constraints.yml
+
+# 3) Run hard gates PASS/FAIL
+python tests/tests_hardgate.py --constraints config/constraints.yml --results_dir results/
+
+# 4) Check outputs
+cat results/UNLOCK_checklist.txt</code></pre>
+<p>Recommended required outputs: (1) <code>UNLOCK_checklist.txt</code>, (2) <code>omega_nogo.json</code>, (3) an RSL summary table (CSV), and (4) a QA report (MD/PDF). Without these, the release is “narrative” rather than “reproducible.”</p>
+<h2>ATL DataPack v0.9 (schema stub): file/field/codebook schema</h2>
+<p>This appendix defines the minimum data modules (files/fields) required to make predictions P1–P5 executable. <strong>Important:</strong> file names/fields/units here must be fixed by preregistration before release and checksum-sealed after release.</p>
+<p>{</p>
+<p><figure class="tbl"><table><tr><th>Module</th><th>File (example)</th><th>Key fields (minimum; defined in codebook)</th><th>Linked prediction</th></tr><tr><td>ATL-PB</td><td><code>data/atlantic/atl_pb_boundaries.geojson</code></td><td><code>seg_id</code>, <code>type</code>(<code>ridge/transform/subduction</code>), <code>length_km</code>, <code>basin</code></td><td>P1</td></tr><tr><td>ATL-DEF</td><td><code>data/atlantic/atl_deformation_sites.csv</code></td><td><code>site_id</code>, <code>lat</code>, <code>lon</code>, <code>proxy_type</code>, <code>proxy_value</code>, <code>sigma</code>, <code>r_km</code></td><td>P2</td></tr><tr><td>ATL-RSL</td><td><code>data/rsl/rsl_timeseries.csv</code></td><td><code>basin</code>, <code>basin_type</code>, <code>site</code>, <code>Age_BP</code>, <code>RSL_m</code>, <code>sigma</code>, <code>correction_tag</code></td><td>P3</td></tr><tr><td>ATL-LUB</td><td><code>data/geo/atl_lubrication_markers.csv</code></td><td><code>sample_id</code>, <code>L1..L4</code>, <code>evidence_ref</code>, <code>qa_flag</code></td><td>P4</td></tr><tr><td>ATL-ONSET</td><td><code>data/strat/atl_opening_onset.csv</code></td><td><code>segment_id</code>, <code>onset_age</code>, <code>sigma_age</code>, <code>method</code>, <code>ref</code></td><td>P5</td></tr></table></figure></p>
+<p>}</p>
+<p><strong>Recommended use of an additional field <code>basin_type</code>.</strong> For the P3 contrast (including the Indian Ocean), assign each RSL point a <code>basin_type</code>. Recommended values: <code>PACIFIC</code>, <code>ATLANTIC</code>, <code>INDIAN</code>. (<code>basin</code> is the geographic basin name, while <code>basin_type</code> is the mechanism-class label.)</p>
+<h2>Extension modules (optional): supporting P6/P8 (ATL DataPack v0.2 draft)</h2>
+<p>P6 (spatiotemporal propagation) and P8 (magnetic stripes) can require more complex data composition than P1–P5. Therefore, minimal schemas are separated as optional extension modules (the core compile/hard-gate can run without them).</p>
+<p>{</p>
+<p><figure class="tbl"><table><tr><th>Module</th><th>File (example)</th><th>Key fields (minimum; defined in codebook)</th><th>Linked prediction</th></tr><tr><td>ATL-PROP</td><td><code>data/strat/atl_opening_points.csv</code></td><td><code>point_id</code>, <code>lat</code>, <code>lon</code>, <code>onset_age</code>, <code>sigma_age</code>, <code>segment_id</code>, <code>ref</code></td><td>P6</td></tr><tr><td>ATL-MAG</td><td><code>data/mag/mag_anomaly_profiles.csv</code></td><td><code>profile_id</code>, <code>ridge_seg</code>, <code>x_km</code>, <code>anomaly_nT</code>, <code>sampling_km</code>, <code>proc_tag</code>, <code>ref</code></td><td>P8</td></tr></table></figure></p>
+<p>}</p>
+<h2>Cross-validation extension modules (optional): supporting P9/P10/P11/P12 (ATL DataPack v0.3 draft)</h2>
+<p>The modules below are not mandatory hard gates for C1–C3, but are included for independent cross-validation of “event-like” claims.</p>
+<p>{</p>
+<p><figure class="tbl"><table><tr><th>Module</th><th>File (example)</th><th>Key fields (minimum; defined in codebook)</th><th>Linked prediction</th></tr><tr><td>ORO-UHP</td><td><code>data/orogeny/uhp_exhumation_cases.csv</code></td><td><code>case_id</code>, <code>belt</code>, <code>P_max_GPa</code>, <code>t_peak_Ma</code>, <code>t_exhum_Ma</code>, <code>dt_Myr</code>, <code>ref</code></td><td>P9</td></tr><tr><td>ATL-SED</td><td><code>data/sediment/atl_sed_thickness_transects.csv</code></td><td><code>transect_id</code>, <code>distance_km</code>, <code>crust_age_Ma</code>, <code>sed_thick_m</code>, <code>ref</code>, <code>qa_flag</code></td><td>P10</td></tr><tr><td>ATL-DRILL</td><td><code>data/sediment/atl_drill_sites.csv</code></td><td><code>site_id</code>, <code>lat</code>, <code>lon</code>, <code>basement_age_Ma</code>, <code>sed_rate_m_Myr</code>, <code>method</code>, <code>ref</code></td><td>P10</td></tr><tr><td>MN-NOD</td><td><code>data/sediment/mn_nodule_samples.csv</code></td><td><code>sample_id</code>, <code>lat</code>, <code>lon</code>, <code>size_mm</code>, <code>age_est_Myr</code>, <code>method</code>, <code>ref</code></td><td>P11</td></tr><tr><td>VOLC-AGE</td><td><code>data/volc/volcano_construction_ages.csv</code></td><td><code>volcano_id</code>, <code>name</code>, <code>region</code>, <code>T80_ka</code>, <code>volume_km3</code>, <code>method</code>, <code>ref</code></td><td>P12</td></tr></table></figure></p>
+<p>}</p>
+<p><strong>Minimum codebook/provenance requirements (common to all modules).</strong></p>
+<ul><li><code>docs/codebook.md</code>: field definitions, units, missing-value rules, QC rules (PASS/FAIL).</li><li><code>docs/provenance.md</code>: raw-data sources/access date, cleaning rules, exclusion criteria (pre-registered).</li><li><code>checksums/sha256sum.txt</code>: SHA256 hashes of all files.</li></ul>
+<h2>ATL DataPack v0.8 draft (v1.34): hydro/climate/friction/isotope extension modules</h2>
+<p>This extension schema is not for the base mechanism (C1–C3), but for locking mandatory gates of additional variants (V-SLIP / V-HOLO / V-COUPLED) into data.</p>
+<p>{</p>
+<p><strong>(A) Mechanism / hydro / climate / kinematics modules</strong></p>
+<p><figure class="tbl"><table><tr><th>Module ID</th><th>File (example)</th><th>Key fields (minimum)</th><th>Linked prediction</th></tr><tr><td>FRIC-PAR</td><td><code>data/friction/plate_friction_params.csv</code></td><td><code>region</code>, <code>mu_s</code>, <code>alpha</code>, <code>Pf_MPa</code>, <code>tau_drive_MPa</code>, <code>ref</code></td><td>P13</td></tr><tr><td>KIN-CON</td><td><code>data/kinematics/plate_velocity_constraints.csv</code></td><td><code>plate</code>, <code>v_now_m_yr</code>, <code>S_total_km</code>, <code>T_event_yr</code>, <code>ref</code></td><td>P14</td></tr><tr><td>THERM-BUD</td><td><code>data/thermal/thermal_budget_params.csv</code></td><td><code>tau_MPa</code>, <code>A_km2</code>, <code>S_km</code>, <code>h_eff_km</code>, <code>eta_h</code>, <code>ref</code></td><td>P14</td></tr><tr><td>HYD-VOL</td><td><code>data/hydro/basin_volume_scenarios.csv</code></td><td><code>scenario</code>, <code>deltaV_km3</code>, <code>T_yr</code>, <code>basin</code>, <code>ref</code></td><td>P15</td></tr><tr><td>RSL-CON</td><td><code>data/rsl/holocene_sea_level_constraints.csv</code></td><td><code>site</code>, <code>age_ka</code>, <code>rsl_m</code>, <code>sigma_m</code>, <code>method</code>, <code>ref</code></td><td>P15</td></tr><tr><td>CLIM-FW</td><td><code>data/climate/freshwater_proxy_timeseries.csv</code></td><td><code>record</code>, <code>proxy</code>, <code>region</code>, <code>age_ka</code>, <code>value</code>, <code>unit</code>, <code>ref</code></td><td>P16</td></tr><tr><td>BIO-SPL</td><td><code>data/bio/atlantic_split_candidates.csv</code></td><td><code>taxon</code>, <code>pair</code>, <code>t_div_Ma</code>, <code>method</code>, <code>ref</code></td><td>P17</td></tr><tr><td>ISO-CASE</td><td><code>data/isotopes/open_system_casebook.csv</code></td><td><code>case</code>, <code>known_age_yr</code>, <code>method</code>, <code>apparent_age_Ma</code>, <code>mechanism</code>, <code>ref</code></td><td>P18</td></tr><tr><td>SLB-COMP</td><td><code>data/hydro/sea_level_budget_components.csv</code></td><td><code>date</code>, <code>sl_obs_mm</code>, <code>steric_mm</code>, <code>mass_mm</code>, <code>land_mm</code>, <code>sigma_mm</code>, <code>ref</code></td><td>P19</td></tr><tr><td>BASIN-PRX</td><td><code>data/hydro/basin_volume_change_proxy.csv</code></td><td><code>proxy</code>, <code>basin</code>, <code>date</code>, <code>dV_km3</code>, <code>sigma_km3</code>, <code>ref</code></td><td>P19</td></tr><tr><td>RIV-MIS</td><td><code>data/geomorph/misfit_rivers.csv</code></td><td><code>river</code>, <code>basin</code>, <code>W_valley_m</code>, <code>W_channel_m</code>, <code>Q_m3s</code>, <code>controls</code>, <code>ref</code></td><td>P20</td></tr><tr><td>DELTA-AGE</td><td><code>data/geomorph/mega_delta_ages.csv</code></td><td><code>delta</code>, <code>onset_ka</code>, <code>sigma_ka</code>, <code>method</code>, <code>criterion</code>, <code>ref</code></td><td>P20</td></tr><tr><td>KIN-MOD</td><td><code>data/kinematics/plate_velocity_models.csv</code></td><td><code>plate</code>, <code>model</code>, <code>epoch</code>, <code>frame</code>, <code>vx_mm_yr</code>, <code>vy_mm_yr</code>, <code>ref</code></td><td>P21</td></tr></table></figure></p>
+<p><strong>(B) Resource / sediment / discovery-bias modules</strong></p>
+<p><figure class="tbl"><table><tr><th>Module ID</th><th>File (example)</th><th>Key fields (minimum)</th><th>Linked prediction</th></tr><tr><td>PET-OIL</td><td><code>data/petroleum/oil_provinces.csv</code></td><td><code>province</code>, <code>lat</code>, <code>lon</code>, <code>type</code>, <code>basin</code>, <code>ref</code></td><td>P22</td></tr><tr><td>ICE-PROX</td><td><code>data/glacial/ice_extent_proxies.csv</code></td><td><code>region</code>, <code>proxy</code>, <code>age_ka</code>, <code>value</code>, <code>unit</code>, <code>ref</code></td><td>P22/P23</td></tr><tr><td>REFUGIA</td><td><code>data/glacial/refugia_catalog.csv</code></td><td><code>region</code>, <code>glaciated</code>, <code>heatflow_mWm2</code>, <code>volc_index</code>, <code>clim_controls</code>, <code>ref</code></td><td>P23</td></tr><tr><td>LAKE-END</td><td><code>data/hydro/endorheic_lakes.csv</code></td><td><code>BMN</code>, <code>site</code>, <code>lat</code>, <code>lon</code>, <code>age_kyr</code>, <code>status</code>, <code>trend</code>, <code>num14C</code></td><td>P24</td></tr><tr><td>SHELF-W</td><td><code>data/geomorph/shelf_width_profiles.csv</code></td><td><code>profile</code>, <code>margin_type</code>, <code>shelf_width_km</code>, <code>canyon_density</code>, <code>drainage_area_km2</code>, <code>ref</code></td><td>P25</td></tr><tr><td>UNCON-S</td><td><code>data/strat/unconformity_sites.csv</code></td><td><code>site</code>, <code>age_min_Ma</code>, <code>age_max_Ma</code>, <code>weathering</code>, <code>hiE_marker</code>, <code>ref</code></td><td>P26</td></tr><tr><td>POLY-CASE</td><td><code>data/strat/polystrate_cases.csv</code></td><td><code>case</code>, <code>env</code>, <code>unit</code>, <code>age</code>, <code>notes</code>, <code>ref</code></td><td>P27</td></tr><tr><td>COAL-CASE</td><td><code>data/strat/coal_marine_cases.csv</code></td><td><code>case</code>, <code>coal_type</code>, <code>marine_fossils</code>, <code>rootlets</code>, <code>sed_struct</code>, <code>ref</code></td><td>P28</td></tr><tr><td>EVT-WIN</td><td><code>data/meta/event_window_estimates.csv</code></td><td><code>module</code>, <code>proxy_class</code>, <code>t_center_ka</code>, <code>sigma_ka</code>, <code>sign</code>, <code>weight</code>, <code>method</code>, <code>ref</code>, <code>include</code></td><td>P29</td></tr><tr><td>CTRL-REG</td><td><code>data/meta/controls_registry.csv</code></td><td><code>module</code>, <code>control_type</code>, <code>control_id</code>, <code>selector</code>, <code>notes</code>, <code>ref</code></td><td>P30</td></tr><tr><td>COAL-RANK</td><td><code>data/geo/coal_rank_stress_cases.csv</code></td><td><code>basin</code>, <code>country</code>, <code>tectonic_setting</code>, <code>rank</code>, <code>Ro</code>, <code>stress_proxy</code>, <code>burial_proxy</code>, <code>ref</code></td><td>P31</td></tr><tr><td>PET-BUDG</td><td><code>data/petroleum/oil_source_budget_cases.csv</code></td><td><code>case_id</code>, <code>province</code>, <code>oil_in_place_bbl</code>, <code>recoverable_bbl</code>, <code>basin_area_km2</code>, <code>source_thickness_m</code>, <code>toc_frac</code>, <code>eta_conv</code>, <code>eta_exp</code>, <code>ref</code></td><td>P32</td></tr><tr><td>PET-THERM</td><td><code>data/petroleum/oil_thermal_context.csv</code></td><td><code>province</code>, <code>geothermal_gradient_C_km</code>, <code>heatflow_mWm2</code>, <code>intrusion_distance_km</code>, <code>Ro</code>, <code>tmax_C</code>, <code>phase</code>, <code>ref</code></td><td>P33</td></tr><tr><td>PET-AGE</td><td><code>data/petroleum/petroleum_chronometers.csv</code></td><td><code>province</code>, <code>age_Ma</code>, <code>sigma_Ma</code>, <code>method</code>, <code>material</code>, <code>interpretation</code>, <code>qa_flag</code>, <code>ref</code></td><td>P34</td></tr><tr><td>PET-DISC</td><td><code>data/petroleum/oil_discovery_bias_cases.csv</code></td><td><code>basin</code>, <code>sed_flux_proxy</code>, <code>shelf_sed_thickness_m</code>, <code>wells</code>, <code>seismic_km2</code>, <code>exploration_years</code>, <code>discovered_bboe</code>, <code>giant_fields</code>, <code>ref</code></td><td>P35</td></tr></table></figure></p>
+<p>}</p>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/30-appendix-vp-frame-mapping-4/">← §30</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/32-appendix-pre-registration-files-skeletons/">§32 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

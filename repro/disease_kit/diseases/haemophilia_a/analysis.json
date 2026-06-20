@@ -1,0 +1,173 @@
+{
+ "disease": "Haemophilia A (F8, factor VIII deficiency)",
+ "omim": "306700",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Haemophilia A (F8, factor VIII deficiency)",
+  "omim": "306700",
+  "summary": "An X-linked single-gene F8 loss-of-function lowers coagulation factor VIII, the non-enzymatic COFACTOR that, once activated (FVIIIa), partners activated factor IX (FIXa) in the intrinsic tenase to activate factor X. Without functional factor VIII the intrinsic-tenase step is crippled, thrombin/fibrin generation is under-driven and haemostasis fails -> spontaneous and trauma-related bleeding (haemarthroses, soft-tissue and other bleeds), severity tracking residual factor VIII -> the coagulation-cascade axis is driven DOWN. This COMPLETES the coagulation A/B pair with haemophilia B (F9): the SAME haemostasis axis broken one component over -- F8 is the cofactor, F9 the protease of the same intrinsic-tenase step (so both are read as lost ACCELERATORS of the cascade -> axis DOWN). Read as a lost ACCELERATOR (factor VIII drives clot formation as FIXa's cofactor; LOF -> under-driven haemostasis), the deficiency-driven DOWN shape. The kit re-derives the corrective direction with a NEW LEVER CLASS not previously in the kit -- the cofactor MIMIC: emicizumab, a bispecific antibody that bridges FIXa and factor X, performing factor VIIIa's bridging FUNCTION WITHOUT being factor VIII (so it works even in people who have developed neutralising anti-FVIII inhibitors). This is distinct from 'replace' (supplying the same molecule) and from 'correct' (rescuing the native protein): the corrective molecule is a DIFFERENT entity doing the missing element's job. The established direction-consistent arms are also re-derived: factor VIII protein replacement (recombinant / plasma-derived, including extended-half-life fusions) and valoctocogene roxaparvovec, an AAV F8 gene-transfer therapy that restores endogenous factor VIII (the first approved haemophilia A gene therapy). The gamma read is of the F8 locus switch STRUCTURE (an AT-leaning Xq28 promoter, sitting above its haemophilia-B partner F9 in gamma); the disease lesion is coding/structural -- most commonly the intron-22 inversion that disrupts the F8 ORF, plus missense/nonsense -- outside the structural promoter-window read. X-linked, so penetrance/severity are zygosity-dependent (males hemizygous; carrier females variable by X-inactivation) and held [O]. Magnitude [O].",
+  "emergent_axis": "coagulation-cascade output (factor-VIIIa-cofactored intrinsic-tenase / thrombin-fibrin generation) -- the same haemostasis axis as haemophilia B, broken at the cofactor instead of the protease",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "F8",
+    "gamma": 1.3155,
+    "spinodal_h_sp": 0.58074,
+    "barrier": 0.43264,
+    "dwell_relative_size": 1.37165,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 154835791,
+     "gene_end": 155022722,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "coagulation factor VIII"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "F8 encodes coagulation factor VIII, a large non-enzymatic cofactor; activated FVIIIa is a positive DRIVER of the coagulation cascade -- it is the obligatory cofactor for FIXa in the intrinsic tenase that activates factor X. As an ACCELERATOR of clot formation, its LOF LOSES the drive -> thrombin/fibrin generation under-driven -> bleeding. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the COAGULATION OUTPUT (it goes DOWN), so the corrective levers RAISE it. Xq28 (OMIM 300841). NCBI official symbol F8. X-linked recessive. The commonest severe lesion is the intron-22 inversion (plus intron-1 inversion, missense, nonsense), all outside the promoter window.",
+    "src": "Gitschier 1984 Nature 312:326 (F8 cloned); Lakich 1993 Nat Genet 5:236 (intron-22 inversion); Bolton-Maggs and Pasi 2003 Lancet 361:1801 (the haemophilias)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "F8",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "e9c057b3c5c4"
+ },
+ "treatment_A_switch": {
+  "disease": "Haemophilia A (F8, factor VIII deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "mimic",
+    "target_gene": "F8",
+    "push_direction": "substitute factor VIIIa's FUNCTION with a different molecule -- a bispecific antibody that bridges FIXa and factor X -> restore intrinsic-tenase activity and coagulation drive (axis UP toward haemostasis) WITHOUT supplying factor VIII (so it bypasses anti-FVIII inhibitors)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "FVIIIa-mimetic bispecific antibody (emicizumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored coagulation / bleed-rate magnitude not derived from sequence",
+    "src": "Oldenburg 2017 NEJM 377:809 (HAVEN 1, emicizumab); emicizumab (Hemlibra) FDA 2017 / EMA 2018 -- the cofactor-mimic class, active with or without FVIII inhibitors"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "F8",
+    "push_direction": "restore endogenous factor VIII expression by AAV F8 gene transfer -> raise factor VIII -> restore coagulation drive (axis UP toward haemostasis)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AAV F8 gene replacement (valoctocogene roxaparvovec)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored factor-VIII level / durability not derived from sequence",
+    "src": "Ozelo 2022 NEJM 386:1013 (GENEr8-1); valoctocogene roxaparvovec (Roctavian) FDA 2023 / EMA 2022 -- first approved haemophilia A gene therapy"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "F8",
+    "push_direction": "supply exogenous factor VIII protein -> raise factor VIII -> restore coagulation drive (the long-standing established replace arm)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "factor VIII protein replacement (recombinant / plasma-derived; extended-half-life Fc / PEG / single-chain)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored factor-VIII activity / bleed-protection magnitude not derived from sequence",
+    "src": "recombinant factor VIII (octocog alfa) FDA 1992; extended-half-life rFVIIIFc (efmoroctocog alfa) and others approved"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "mimic",
+   "target_gene": "F8",
+   "push_direction": "substitute factor VIIIa's FUNCTION with a different molecule -- a bispecific antibody that bridges FIXa and factor X -> restore intrinsic-tenase activity and coagulation drive (axis UP toward haemostasis) WITHOUT supplying factor VIII (so it bypasses anti-FVIII inhibitors)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "FVIIIa-mimetic bispecific antibody (emicizumab)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored coagulation / bleed-rate magnitude not derived from sequence",
+   "src": "Oldenburg 2017 NEJM 377:809 (HAVEN 1, emicizumab); emicizumab (Hemlibra) FDA 2017 / EMA 2018 -- the cofactor-mimic class, active with or without FVIII inhibitors"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.37165,
+   "dwell_disease": 0.88754,
+   "dwell_treated": 1.12598,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "84151f44cb34"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "F8 LOF lowers coagulation-cascade output (haemostasis under-driven)",
+   "falsifier": "an F8 LOF allele that RAISED thrombin generation / shortened clotting time or improved haemostasis would refute the drive-down direction",
+   "measurable_by": "plasma factor VIII activity and thrombin-generation / aPTT clotting assay stratified by F8 genotype"
+  },
+  {
+   "claim": "restoring the cofactor FUNCTION -- by mimic (emicizumab) or by replacing factor VIII -- is the CORRECTIVE direction",
+   "falsifier": "if bridging FIXa/FX with a mimetic, or raising factor VIII, REDUCED coagulation output or WORSENED bleeding, the mimic/replace lever sign is wrong",
+   "measurable_by": "thrombin generation / bleed-rate response to emicizumab or to factor VIII restoration"
+  },
+  {
+   "claim": "the cofactor mimic acts WITHOUT being factor VIII (works past anti-FVIII inhibitors)",
+   "falsifier": "if emicizumab's haemostatic effect required endogenous/infused factor VIII or were neutralised by anti-FVIII inhibitors, the 'mimic, not replace' distinction would be refuted",
+   "measurable_by": "bleed protection on emicizumab in inhibitor-positive vs inhibitor-negative people"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Haemophilia A (F8, factor VIII deficiency)": {
+     "n_falsifiers": 3,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "67d011fab433"
+ },
+ "determinism_sha": "096c088be554"
+}

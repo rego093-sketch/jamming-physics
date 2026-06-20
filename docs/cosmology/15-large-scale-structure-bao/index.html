@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Large-Scale Structure and BAO — Vacuum-Inflow Cosmology §15 | Jamming Physics</title>
+<meta name="description" content="Three statistics summarise large-scale structure. The galaxy two-point correlation function ξ(r) measures the excess probability of finding pairs at separation">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/15-large-scale-structure-bao/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Large-Scale Structure and BAO — Vacuum-Inflow Cosmology §15 | Jamming Physics"><meta property="og:description" content="Three statistics summarise large-scale structure. The galaxy two-point correlation function ξ(r) measures the excess probability of finding pairs at separation"><meta property="og:url" content="https://jamming-physics.org/cosmology/15-large-scale-structure-bao/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Large-Scale Structure and BAO — Vacuum-Inflow Cosmology §15 | Jamming Physics"><meta name="twitter:description" content="Three statistics summarise large-scale structure. The galaxy two-point correlation function ξ(r) measures the excess probability of finding pairs at separation">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Large-Scale Structure and BAO", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": 15, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/15-large-scale-structure-bao/", "knowsAbout": ["vacuum inflow", "jamming lattice", "large-scale structure"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§15 Large-Scale Structure and BAO"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §15</nav></header>
+<main><!--vp-v1.8-->
+<h1>Large-Scale Structure and BAO</h1>
+<p class="answer">Galaxy clustering shows a two-point correlation function, a power spectrum with a turnover, and—most sharply—a baryon-acoustic-oscillation bump near 150 Mpc, the standard ruler. Broad clustering can form by deficit-coupled gravity in a static medium, and a follow-up simulation shows the sharp BAO feature arises from a fixed inflow-shell length. Deriving that length is the one open input.</p>
+<p class="abstract" data-phase2="abstract">Three statistics summarise large-scale structure: the galaxy two-point correlation function ξ(r), which measures the excess probability of finding pairs at separation r; the matter power spectrum P(k), which rises and turns over near k ≈ 0.02 h Mpc⁻¹; and the baryon-acoustic-oscillation bump at a comoving separation of about 150 Mpc.</p>
+<aside class="claim-strip page"><span class="g g-conflicting" data-phase2="grade">Conflicting</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/15-large-scale-structure-bao/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<em>The distribution of galaxies is not random: it has a two-point correlation function, a
+matter power spectrum with a turnover, and—most sharply—a baryon-acoustic-oscillation (BAO) bump
+at a comoving separation of about 150Mpc, used as a standard ruler. In the standard model the BAO
+scale is the same sound horizon that sets the microwave-background acoustic peaks. Broad clustering
+can plausibly form by deficit-coupled gravity (Chapter 8) in a static medium, and a follow-up
+simulation shows the sharp 150Mpc BAO feature itself arises from a fixed inflow-shell length—so
+the chapter is an exploratory <em>open program</em> (\textsf{HYP}) whose one missing input is a
+<em>derivation</em> of that length, not a bare conflict. We state the target, separate the part the
+framework reproduces from the part that is open, present the shell mechanism, and record what remains.
+(The computed badge stays <strong>conflicting</strong>: the grade vocabulary has no “open” token, so it marks
+the underived length while the text carries the status.)</em>
+<h2>The raw facts to be explained</h2>
+<p>Three statistics summarise large-scale structure. The galaxy two-point correlation function
+ξ(r) measures the excess probability of finding pairs at separation r and is positive on small
+scales. The matter power spectrum P(k) rises, turns over near
+k≈0.02hMpc⁻¹, and falls, with an amplitude conventionally summarised by
+σ₈≈0.8. Superimposed on ξ(r) is a single sharp bump at
+r≈150Mpc—the baryon acoustic oscillation, the imprint in the matter distribution of the
+same acoustic physics that produces the microwave peaks of the previous chapter. We separate these
+into a part the framework can plausibly reach and a part it cannot.</p>
+<h2>Broad clustering: plausibly reproduced</h2>
+<p>The broad shape of ξ(r) and P(k) reflects gravitational clustering of matter from small initial
+inhomogeneities. The framework has a gravitational mechanism: vacuum deficits attract (Chapter 8),
+with the radial-acceleration relation automatic, and a static medium imposes no 13.8Gyr limit on
+the time available for clustering to grow. The turnover scale of P(k) near
+k≈0.02hMpc⁻¹ could map to a lattice or attenuation scale. To this extent the
+broad clustering is plausibly reproduced, matching the standard growth picture in
+shape, though the growth-rate normalisation σ₈≈0.8 is not derived.</p>
+<h2>The BAO ruler: the sharp conflict</h2>
+<p>The difficulty is the bump. In the standard model the BAO scale is fixed by the comoving sound horizon
+at the drag epoch,</p>
+<figure class="eq" id="eq:lss-bao"><img src="/cosmology/eq/cosmology/cos-15-000.svg" data-eq="cos-15-000" width="146" height="16" loading="lazy" alt="\begin{equation} r_{\mathrm{BAO}}\;\approx\;150\,\mathrm{Mpc}, \end{equation}"></figure>
+<p>the maximum distance a baryon–photon pressure wave travels before decoupling, frozen into the matter
+distribution as a preferred pair separation. A static medium with no recombination and no sound
+horizon has no native mechanism to imprint a sharp preferred scale at 150Mpc; deficit-coupled
+clustering produces a smooth correlation function with no reason for a bump there. This is the same
+acoustic-scale conflict as the microwave peaks, now in the galaxy distribution—the sharp
+<em>conflicting</em> item of the chapter, and the reason its headline grade is conflicting.</p>
+<h2>Simulation: making the target explicit</h2>
+<p>The simulation again fixes the target without claiming to meet it. Simulation A records the BAO scale
+of Eq. <a class="xref" data-ref="eq:lss-bao">(lss-bao)</a> as the feature to be explained, and Simulation B grows a toy deficit-coupled
+density field and shows that it develops broad clustering but no 150Mpc bump unless such a scale is
+inserted by hand:</p>
+<pre class="vb">
+# A: target standard ruler (what must be explained)
+r_BAO = 150 Mpc      (standard: comoving sound horizon at drag epoch)
+# B: toy deficit-coupled growth in a static medium
+broad correlation xi(r) grows  (clustering: plausibly reproduced)
+sharp bump at r=150 Mpc: ABSENT unless a scale is seeded (BAO: conflicting)
+</pre>
+<p>The toy field clusters broadly but shows no acoustic bump, confirming that the broad power spectrum is
+within reach while a bump must, in this first toy, be inserted by hand. A deeper simulation closes
+part of that gap.</p>
+<h2>A fixed inflow length supplies the bump (deeper simulation)</h2>
+<p>The follow-up simulation shared with Chapter 14 (<code>sim_acoustic_peaks.py</code>) tests whether the
+150Mpc ruler can arise statically. If each mass concentration carries an overdensity <em>shell</em>
+at a fixed inflow radius Rₛ—a standing inflow feature, with no recombination and no synchronized
+clock—then the center–shell correlation develops a clean bump exactly at r=Rₛ=150Mpc, and the
+shell power spectrum |sin(kRₛ)/(kRₛ)|² carries oscillation zeros at k=nπ/Rₛ, the
+observed BAO wiggle spacing. So the BAO bump and its wiggle scale <em>do</em> follow from a single fixed
+length; what the simulation does <em>not</em> do is derive the value Rₛ=150Mpc from the lattice
+constants. Notably the standard model is in a comparable position—it does not obtain the sound
+horizon from pure first principles either, but from the measured baryon and matter densities
+Ω_bh²,Ωₘh²—so a single undetermined length is a fair, bounded debt rather
+than a refutation.</p>
+<p>The honest verdict is therefore upgraded: large-scale clustering is plausibly reproduced (degenerate
+with ΛCDM), and the 150Mpc BAO ruler is no longer a bare conflict but an open mechanism
+with one missing input—the same fixed length Chapter 14 needs for the microwave peak spacing.
+Recorded as an exploratory research program (\textsf{HYP}) with the success criterion: derive the
+inflow length L≈150Mpc from the lattice constants. Until that single number is derived the
+ruler is reproduced <em>conditionally</em> (mechanism-shown), not <em>unconditionally</em>
+(value-derived)—the volume's own distinction. A dedicated audit shared with Chapter 14
+(<code>derive_acoustic_length.py</code>) confirms the verdict from the other side: it computes every
+natural length the framework provides and finds none within tuning-free reach of 150Mpc—the
+inflow clock lives near 10³km and the only cosmological scale is the Hubble length
+≈4300Mpc—so the missing input is specifically a cosmological <em>cavity</em> length. The two
+companion sub-criteria of the program (the standing-wave peak heights and the γ-ray dispersion
+check) close there; this single underived length does not. A second diagnostic
+(<code>probe_subhorizon_desert.py</code>) sharpens <em>why</em>: 150Mpc lies in an empty  10-decade
+gap between the framework's microscopic and cosmological scales, and in the standard model it is a
+sound-horizon <em>integral</em> over an expansion history up to recombination—two ingredients (history,
+early epoch) a present-emission lattice rejects by design—so the BAO ruler's missing length is a
+structural object, a present-day sub-horizon correlation length, not a number awaiting a lucky guess.
+A capping interpretation (<code>acoustic_length_hypothesis_interpretation.py</code>) reads that length,
+at hypothesis level, as a 2D-rotational→3D-isotropic crossover—the
+anisotropic-web-to-homogeneity transition—built by the companion volume's selected-length mechanism;
+the mechanism and its forced prefactor 2π√2 close, while the absolute value is recorded as an
+empirical normalisation, not a derived number.</p>
+<nav class="pn"><a rel="prev" href="/cosmology/14-cmb-anisotropies-acoustic-scale/">← §14</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/16-honest-ledger-falsifiable-predictions/">§16 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

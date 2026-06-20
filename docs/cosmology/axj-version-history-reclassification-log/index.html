@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix J — Vacuum-Inflow Cosmology §AXJ | Jamming Physics</title>
+<meta name="description" content="This log records, in one place, how the volume's claims and their grades changed across versions, so that no upgrade is silent (the No-Tuning rule of Appendix">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/axj-version-history-reclassification-log/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix J — Vacuum-Inflow Cosmology §AXJ | Jamming Physics"><meta property="og:description" content="This log records, in one place, how the volume"><meta property="og:url" content="https://jamming-physics.org/cosmology/axj-version-history-reclassification-log/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix J — Vacuum-Inflow Cosmology §AXJ | Jamming Physics"><meta name="twitter:description" content="This log records, in one place, how the volume">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Appendix J", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": "AXJ", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/axj-version-history-reclassification-log/", "knowsAbout": ["vacuum inflow", "jamming lattice", "version history"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§AXJ Appendix J"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §AXJ</nav></header>
+<main><!--vp-v1.8-->
+<h1>Appendix J: Version history and reclassification log</h1>
+<p class="answer">This log records, in one place, how the volume's claims and their grades changed across versions, so that no upgrade is silent. Three strands are tracked: the editorial synchronization of notation and imports with the physics volume, the reclassification of the thirteen open problems as each was worked, and the grade-vocabulary change that accompanied the version 2.1 chapter additions.</p>
+<aside class="claim-strip vps"><span class="io"><strong>v2.1 (time-sector grounding; sync with physics v0.10.0).</strong> Chapter 7 Step 4: the (1+z) light-curve stretch is now <em>grounded</em> in the physics volume's processing-rate clock (§18) rather than posited — the refractive index and the clock rate are the same medium signal speed, so the energy-loss and arrival-rate (1+z) factors are one (eq:timedil-grounding). Import (P4) added; “three results” → “four”. Cross-volume note: the physics gravity sector is degenerate with GR (G-CAP-DEPART), so both volumes locate the testable weight in a₀=cH₀/2π and the γ-ray dispersion. κ_opt=H₀/c stays [INPUT]; ρ_eff(t) evolution stays E-COSMO open. No fit, no free parameter.</span></aside>
+<aside class="vp-card" data-locked="a0"><b>a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²</b> — galactic acceleration scale, derived from the inflow law — the one prediction unique to this framework. <b class="grade g-distinguishing">[distinguishing]</b> <a href="/cosmology/06-galactic-rotation-derivation-a0-ch0/">canonical derivation §6</a></aside>
+<aside class="vp-card" data-locked="kappa_opt"><b>κ_opt = H₀/c</b> — background optical (redshift) rate of the present lattice; its value is taken as input and why ρ_eff evolves is the E-COSMO open question. <b class="grade g-open">[open]</b> <a href="/cosmology/07-non-expanding-lattice-optics-cosmology/">canonical use §7</a></aside>
+<p class="abstract" data-phase2="abstract">This log records, in one place, how the volume's claims and their grades changed across versions, so that no upgrade is silent (the No-Tuning rule of the governance appendix permits change only by logged version-up). Three strands are tracked: the editorial synchronization with the physics volume, the reclassification of the thirteen open problems as each was worked, and the grade-vocabulary change that accompanied the v2.1 chapter additions together with the single page-badge it induced.</p>
+<aside class="claim-strip page"><span class="g g-conflicting" data-phase2="grade">Conflicting</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/axj-version-history-reclassification-log/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<span id="app:versionhistory"></span>
+<p>This log records, in one place, how the volume's claims and their grades changed across versions, so
+that no upgrade is silent (the No-Tuning rule of Appendix <a class="xref" data-ref="app:governance">(governance)</a> permits change only by
+logged version-up). Three strands are tracked: the editorial synchronization with the physics volume,
+the reclassification of the thirteen open problems as each was worked, and the grade-vocabulary
+change that accompanied the v2.1 chapter additions together with the single page-badge it induced.</p>
+<h2>Editorial changes (v1 → v2)</h2>
+<p>The v2 edition synchronized notation and imports with the physics volume (DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}), corrected
+ownership of the light-bending result (now derived in Ch 9 from the river flow, previously
+mis-cited as a physics-volume import), refined the angle-account citations, and added the
+mass-free 633/532 optical-closure note to Ch 2 with its verification module. No headline value
+changed; the changes were attributions and cross-references, each reflected in the affected
+chapter's text.</p>
+<h2>Reclassification log for the thirteen open problems</h2>
+<p>Each row gives the problem, its status in the first edition, its status now, what moved it, and the
+reproducible script (under <code>repro/cosmology/</code>) that did the work. The discipline throughout
+was to upgrade a grade only when a deterministic computation earned it, and to leave honest
+negatives and data-limited residuals exactly where they stand.</p>
+<div class="tblwrap">
+<table><tr><td><strong>Problem</strong></td><td><strong>v1 status</strong></td><td><strong>v2 status</strong></td><td><strong>What moved it (script)</strong></td></tr><tr><td>#1 Gamma broadening</td><td>qualitative</td><td>mechanism resolved</td><td>FPU-β collective front vs linear dispersion (<code>ch2_gamma_collective.py</code>)</td></tr><tr><td>#2 D vs a scales</td><td>flat conflict</td><td>reframed (open)</td><td>angle vs cell; gamma quasi-longitudinal (analysis, Ch 2)</td></tr><tr><td>#3 Origin of 2π</td><td>open</td><td><strong>closed</strong></td><td>2π=α/δ, α=2/π, δ=1/π² (analysis)</td></tr><tr><td>#4 Absolute G, g_(*)</td><td>open \textsf{[O]}</td><td>open \textsf{[O]} (future)</td><td>conceded; hierarchy-problem analogue (Ch 3)</td></tr><tr><td>#5 Mercury 3:2 capture</td><td>open probability</td><td>value computed</td><td>≈7% (const-Q) to ≈55–73% (core friction) (<code>ch5_mercury_capture.py</code>)</td></tr><tr><td>#6 Bullet Cluster</td><td>mechanism only</td><td>magnitude computed</td><td>ram-pressure offset 0.2–0.6Mpc (<code>ch8_bullet_offset.py</code>)</td></tr><tr><td>#7/#8 Lensing sign</td><td>open</td><td>consistency shown</td><td>deficit lenses with γ=1 (<code>ch8_lensing_consistency.py</code>)</td></tr><tr><td>#9 Hubble tension</td><td>mechanism</td><td>demonstrated</td><td>73/67, ηδ_(loc)≈0.08 (<code>ch_hubble_tension.py</code>)</td></tr><tr><td>#10 CMB absolute T</td><td>open</td><td>mechanism+balance</td><td>floor vs absolute-zero cores; u_(CMB)≈80u_(*) (<code>ch9_cmb_floor.py</code>)</td></tr><tr><td>#11 Jet acceleration</td><td>qualitative</td><td>feasibility shown</td><td>relativistic nozzle Γ→w₀ (<code>ch_jet_acceleration.py</code>)</td></tr><tr><td>#12 Spin-rate history</td><td>not derived</td><td>pattern derived</td><td>locking dichotomy 12/12 bodies (<code>ch_spin_locking.py</code>)</td></tr><tr><td>#13 Solar activity</td><td>conjecture \textsf{[HYP]}</td><td><strong>honest negative</strong></td><td>steady inflow cannot clock the cycle (<code>ch_solar_activity.py</code>)</td></tr></table>
+<figcaption>Reclassification log. “Mechanism resolved / shown” means a process is demonstrated;
+“value/magnitude computed” means a number is reproduced from physical parameters; “honest
+negative” means the framework is shown emphnot to account for the phenomenon. Data-limited
+residuals (#6 full χ², #7/#8 joint fit, #9 η–δ, #10 absolute value) remain
+open by missing data, not by mechanism.</figcaption>
+<span id="tab:reclass"></span>
+</div>
+<h2>Grade-vocabulary change (v2 → v2.1) and the single induced reclassification</h2>
+<p>The v2.1 edition added six chapters (Ch 10–15) extending the volume into the post-Newtonian
+sector, gravitational waves, the dissolved cosmological puzzles, primordial nucleosynthesis, the
+CMB acoustic peaks, and large-scale structure. Three of these (Ch 13–15) carry the
+<strong>conflicting</strong> label, and to grade them the controlled grade-vocabulary—the closed token
+list the page-grader counts to assign each page its badge—was extended to include the token
+<em>conflicting</em> alongside the existing <em>degenerate</em> and <em>distinguishing</em>. Per the
+No-Tuning rule, every page's grade was then re-derived against the expanded vocabulary so that no
+badge changed silently.</p>
+<p>Re-deriving against the three-token vocabulary changed the badge of <em>exactly one</em> pre-existing
+page: the governance appendix (Appendix <a class="xref" data-ref="app:governance">(governance)</a>, “Governance: no-tuning, LOCK,
+gate”), whose badge moved from <strong>distinguishing</strong> to <strong>conflicting</strong>. The cause is
+mechanical and is recorded here in full so it cannot be mistaken for a substantive downgrade: the
+page-grader assigns the <em>most frequent</em> grade-token appearing in a page's body, and the
+governance appendix is the volume's falsification page—its subject is precisely the conditions
+under which a result would <em>conflict</em> with data and the chain that would be broken by such a
+conflict. It therefore uses the word “conflict(ing)” more than any other grade-token, and once
+that word became a counted token the modal count tipped to it. The flip is a property of what the
+appendix is <em>about</em> (falsification), not a claim that the governance framework is itself in
+tension with any measurement. Its content, gates, and cross-references are byte-for-byte unchanged
+from v2; only the computed badge moved, and it moved for a reason that is itself an argument for the
+honesty of the labelling scheme. No other page—including Chapter 0 and the other meta-pages, which
+carry no grade badge—was affected, and no headline value changed.</p>
+<h2>v2.1 → v2.2: simulation-driven reclassification of the acoustic-scale chapters</h2>
+<p>The v2.2 edition revisited the three chapters most often graded a flat conflict (Ch 13 light
+elements, Ch 14 CMB peaks, Ch 15 BAO) by <em>simulation rather than argument</em>
+(<code>sim_acoustic_peaks.py</code>, deterministic), and logged the resulting status changes here so
+that no reframing is silent. Three findings drove the changes. (1) The CMB harmonic series is not a
+property of the dispersion law but of <em>phase coherence</em>: synchronized initial phases give peaks
+in the ratio 1:2:3, random phases give a flat spectrum. (2) A <em>single</em> fixed inflow-shell
+length Rₛ reproduces the BAO bump at Rₛ and P(k) oscillation zeros at k=nπ/Rₛ (the
+wiggle spacing), so the observed scale follows from one length—undetermined, but bounded, and no
+worse than ΛCDM's reliance on Ω_bh²,Ωₘh² for the same horizon.
+(3) The loosest “continuous events shake the lattice” route is <em>ruled out</em>: random driving
+yields a smooth spectrum (correlation 0.99 with 1/ω²); peaks require a resonant cavity,
+not noise.</p>
+<p>Accordingly: Ch 14 and Ch 15 are reframed from a bare conflict to an <em>exploratory open program</em>
+(\textsf{HYP}) with explicit, falsifiable success criteria—derive one length L≈150Mpc from
+the lattice constants; realize the 1:2:3 peak heights via a genuine standing wave; and do not
+worsen the Chapter 2 γ-ray dispersion limit. A dedicated calculation
+(<code>derive_acoustic_length.py</code>) then closes two of the three: the standing-wave cavity delivers
+the 1:2:3 height alternation that isolated shells cannot, and the 150Mpc background clears
+the γ-ray limit by 41 orders. The remaining open piece is sharpened, not patched—a scale
+audit shows no framework length lies within tuning-free reach of 150Mpc, so the single missing
+object is named precisely as a cosmological cavity length and the value-derivation stays open. Ch 13 is reframed from “deepest conflict” to an
+<em>out-of-scope origin gap</em>: the production of primordial abundances is inherently a history
+question the volume does not adjudicate, the framework predicts nothing different (so there is no
+clash to record, only an unfilled explanation), and the deuterium calculation is retained for its one
+positive lesson—that long stellar processing drives D/H the wrong way, so that route is <em>not</em>
+adopted. No headline value changed; what changed is the honest status <em>described in the chapter
+text and the reproducibility map</em>. A deliberate caveat on the badges: the controlled grade-vocabulary
+has exactly three tokens (<em>degenerate</em>, <em>distinguishing</em>, <em>conflicting</em>) and no token
+for “open program” or “out-of-scope.” The computed badges for Ch 13–15 therefore remain
+<strong>conflicting</strong>—the coarse-vocabulary floor for “contains an unresolved item versus a standard
+success”—and we did <em>not</em> reword the chapters to force a badge change, since engineering prose
+to move a token would be exactly the kind of tuning the governance rule forbids. The badge flags that
+something is unresolved (true: the length is not derived; the abundance origin is unexplained); the
+chapter text and the map carry the precise, upgraded status (mechanism-shown open program for
+Ch 14–15; out-of-scope origin gap for Ch 13). The \textsf{HYP} overlay is textual, exactly as for the
+Appendix E solar-activity conjecture, which likewise carries a normal badge with its exploratory
+status stated in words.</p>
+<p>Separately, the Big-Bang singularity objection of Chapter 9 was sharpened from “a legitimate
+question” to a <em>conditional impossibility</em>: given finite-volume quanta with a jamming ceiling
+n_(max)  a⁻³, an initial <em>singularity</em> (unbounded density, all energy at a point) is
+impossible, because no state is denser than the jammed core. The claim is bounded precisely—it
+forbids the singularity, not a hot or dense <em>past</em> at sub-jamming densities—so the volume's
+no-origin-claims discipline is preserved: the hot Big Bang and this framework are incompatible at
+exactly one point, the initial singularity, and nowhere else the volume adjudicates.</p>
+<nav class="pn"><a rel="prev" href="/cosmology/axi-common-misreadings-reviewer-doubt-trails/">← §AXI</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/axk-meta-lessons-epistemic-audit/">§AXK →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

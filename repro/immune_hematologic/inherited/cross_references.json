@@ -1,0 +1,267 @@
+{
+  "_doc": "Cross-system seam SSOT for immune_hematologic_vp_site (v0.20.0, sections 16+18+19+20+21). The immune volume is the IMMUNOSURVEILLANCE / TOLERANCE / INFLAMMATION HUB of the VP program: its discriminative primitives -- the tolerance saddle-node (T21 deletion / T23 break / T24 suppressor complement), the systemic cytokine latch (T31), the immunosurveillance escape multiplier (T5/T10), and the hematopoietic root (bone_marrow_hematopoiesis, RUNX1) -- are READ by sibling volumes that instantiate them in a specific tissue or felt register. FIVE declared seams: section 16 wired the original three (gut-immune shared-substrate identity, neuro-immune sign-IN/pointer-OUT, oncology hub); section 18 (v0.17.0) promotes two inherited adjacencies to declared one-way pointers (circulatory leukocyte trafficking; musculoskeletal marrow niche, with a NAMED shared-substrate-identity upgrade candidate). Section 19 (v0.18.0) shows the gut-immune identity is BARRIER-SURFACE-AGNOSTIC -- the tolerance switch's induction = antigen + spinodal and maintenance = antigen - spinodal hold for ANY barrier antigen, so the surface-independent OFFSET is always +/- the spinodal -- and on that footing declares respiratory mucosal immunity and skin barrier immunity as NAMED shared-substrate-identity CANDIDATES (NOT declared seams: each needs its live barrier volume + that volume's owned absolute antigen scale, neither on disk). The two named candidates are the gut seam's identity type re-applied to two other barrier surfaces, with a promotion path + falsifier each. This file is the single source the seam layer (repro/_seams/seam_wiring.py) and the live cross-package harness (repro/_harness/, section 17) read. It vendors faithfully; it imports NO sibling code. Each seam states OWNERSHIP and DIRECTION so neither volume re-derives the other's owned part (SSOT). Sibling owner DOIs are reconciled at cross-vendoring time; an unknown sibling DOI is a stated placeholder, NEVER a fabricated number.",
+  "_grade_legend": "[V] measured in this volume's substrate dynamics; [F] forced / closed-form / architectural; [L] cited external anchor; [O] open (sibling-owned or external-anchor magnitude, obstacle stated).",
+  "_firewall_one_line": "The immune EMERGENCE state (vp_imm_engine.circulate()) is computed with ZERO reference to a sibling quantity and carries no felt/affect/HPA/mind key, exactly as digestive's metabolic state is mind-free and mind is neuro-free. The only crossings are: a SHARED-SUBSTRATE identity (gut), a directional descriptor IN with magnitude left [O] (cortisol->suppressor), and one-way pointers OUT (cytokine->mood; escape->every cancer kernel; effector populations->circulatory transport; hematopoietic root->musculoskeletal marrow niche). The v0.18.0 respiratory/skin barrier-immunity entries are NAMED CANDIDATES, not declared seams: their immune-side endpoint (the T23/T24 tolerance saddle-node + suppressor complement, BARRIER-SURFACE-AGNOSTIC in closed form) is owned and verified HERE, while each surface's absolute antigen scale is owned by its (absent) barrier volume -- so they too consume NO sibling value. Every pointer/candidate consumes NO sibling value. Enforced by an architectural lock (zero sibling imports) + a hashed firewall check, not asserted.",
+  "_barrier_surface_agnostic": {
+    "_doc": "v0.18.0 -- the structural footing for the respiratory/skin candidates below. The gut-immune seam proves induction = luminal antigen + spinodal(1.0) (T23 saddle-node) and maintenance = antigen - spinodal(1.0) (T24 suppressor complement) on the byte-identical mucosal R19 substrate (g = 1.0). This is BARRIER-SURFACE-AGNOSTIC: the relationship holds for ANY barrier-surface antigen, so the surface-independent OFFSET from that surface's own antigen baseline is ALWAYS +/- the spinodal(1.0). The gut (antigen 0.50) is the one vendored, live-verified point on a barrier-agnostic line; other barrier surfaces differ only in the antigen baseline they OWN. The saddle-node / suppressor-complement structure the offset rests on is the MEASURED T23/T24 result; the offset-invariance itself is closed-form [F]/architectural; each real surface's absolute antigen scale is [O], owned by that surface's volume.",
+    "shared_mucosal_R19_scale_g": 1.0,
+    "spinodal_g1": 0.38490018,
+    "induction_closed_form": "antigen + spinodal(1.0)  ==  T23 saddle-node (total drive at the spinodal)",
+    "maintenance_closed_form": "antigen - spinodal(1.0)  ==  T24 suppressor complement",
+    "surface_independent_offset_induction": 0.38490018,
+    "surface_independent_offset_maintenance": -0.38490018,
+    "illustrative_antigen_sweep": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "gut_anchor_point": {
+      "antigen": 0.5,
+      "induction": 0.8849,
+      "maintenance": 0.1151,
+      "is_the_one_vendored_live_verified_point": true
+    },
+    "offset_invariance_grade": "[F] closed-form / architectural offset invariance, resting on the [V] T23 saddle-node + T24 suppressor complement; each real barrier surface's ABSOLUTE antigen scale is [O], owned by that surface's volume",
+    "falsifier": "if the induction-minus-antigen offset were NOT the spinodal(1.0) across the antigen sweep (i.e., the tolerance switch behaved differently at different barrier-antigen baselines), barrier-surface-agnosticism is dead and the respiratory/skin identity candidates fall with it (the gut seam itself, the antigen-0.50 point, survives since it is independently vendored/verified)."
+  },
+  "digestive_gut_immune_interface": {
+    "seam": "immune <-> digestive : the gut mucosal tolerance latch is THIS volume's tolerance machinery (T21/T23/T24) localised to the intestinal mucosa (the gut-immune / GALT axis).",
+    "axis": "gut-immune (GALT, mucosal tolerance, oral tolerance, IBD)",
+    "owner_split": {
+      "immune_owns": "the SYSTEMIC tolerance PRIMITIVE -- the saddle-node structure itself: central deletion (T21), the bistable tolerance break (T23, total drive = spinodal, irreversible pathological memory), and the peripheral suppressor complement (T24, sigma_crit = (residual+insult) - spinodal). This is tissue-independent and is the SSOT for the latch.",
+      "digestive_owns": "the gut LOCALISATION -- the luminal-antigen / dysbiosis load, the mucosal barrier scale, the IBD->colorectal burden->barrier->cancer bridge (UC-CRC RR anchor, Jess 2012), and the gut-specific felt visceral symptom. Digestive section 22 (D9) is the SSOT for the mucosal reading."
+    },
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_digestive": "10.5281/zenodo.20755319",
+    "direction": "SHARED-SUBSTRATE IDENTITY (the strongest seam kind): both volumes read the SAME R19 latch ds/dt = g s - s^3 + h on the byte-identical substrate (spinodal(1.0)=0.3849, barrier=0.25). Immune supplies the saddle-node primitive; digestive instantiates it in the mucosa. Neither re-derives the other's owned part.",
+    "vendored_snapshot": {
+      "source_function": "ibd_relapsing_course() in digestive repro/_disease/disease_modules.py (D9, section 22)",
+      "ibd_mucosal_R19_scale_g": 1.0,
+      "ibd_luminal_antigen_drive": 0.5,
+      "ibd_induction_threshold": 0.8849,
+      "ibd_maintenance_threshold": 0.1151,
+      "ibd_relapsing_hysteresis": true,
+      "ibd_crc_rr_anchor_Jess2012": 2.4,
+      "verified_against_digestive_module_at_vendoring": true
+    },
+    "identity_to_immune_primitives": {
+      "induction_threshold_IS_T23_saddle_node": "0.8849 = antigen 0.50 + spinodal(1.0) 0.3849 == the T23 break boundary TOTAL DRIVE = SPINODAL (luminal antigen plays the residual-self-drive role; the inflammatory insult plays the insult role -- interchangeable ways of reaching the saddle, exactly as T23 measured).",
+      "maintenance_threshold_IS_T24_suppressor_complement": "0.1151 = antigen 0.50 - spinodal(1.0) 0.3849 == the T24 containment threshold sigma_crit = (residual+insult) - spinodal; the induction-vs-maintenance dose asymmetry IS the saddle-node / suppressor-complement asymmetry.",
+      "relapsing_hysteresis_IS_T23_irreversibility": "the IBD flare self-sustains after the trigger recedes == the T23 break is a pathological memory (irreversible persistence); mucosal healing / sustained remission is the T27 re-tolerization pulse (basin-acting cure) read in the gut."
+    },
+    "consumed_by": [
+      "immune section 16 cross-system seams (the gut-immune identity check)",
+      "immune section 17 live cross-package harness (the LIVE digestive engine reproduces this snapshot)"
+    ],
+    "immune_side_open": "the ABSOLUTE mucosal antigen scale, the absolute remission/cancer-incidence rates, and the felt visceral symptom are NOT modelled here -- [O], digestive-owned (felt further deferred to mind, same firewall). Only the saddle-node/suppressor-complement STRUCTURE is the shared [V] identity.",
+    "grade": "[V] shared-substrate latch identity (induction=saddle-node, maintenance=suppressor-complement, relapsing=irreversibility) reproducing this volume's T23/T24 on the byte-identical R19 / [O] the absolute mucosal antigen scale + gut-specific incidence + felt visceral symptom (digestive- / mind-owned)"
+  },
+  "mind_neuroimmune_interface": {
+    "seam": "immune <-> mind : the neuro-immune axis (psychoneuroimmunology). TWO firewall-respecting directions -- a stress->immunosuppression descriptor IN, and a cytokine->mood pointer OUT.",
+    "axis": "neuro-immune (HPA / cortisol immunosuppression; cytokine sickness-behaviour / inflammatory contribution to mood)",
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_mind": "10.5281/zenodo.20694404",
+    "direction_IN_stress_to_suppression": {
+      "what": "mind's HPA/cortisol cascade (M18: PVN/SIM1 -> ACTH -> cortisol; kinetics cited [L] Dickerson & Kemeny 2004) RAISES the peripheral regulatory suppressor tone sigma of T24 -- glucocorticoids are broadly immunosuppressive, so a sustained stress/cortisol drive deepens peripheral tolerance and lowers immunosurveillance.",
+      "consumed_value": "DIRECTION / SIGN ONLY (cortisol -> +sigma). The immune volume consumes NO numeric magnitude: how much cortisol maps to how much sigma stays [O]. This keeps the no-tuning discipline -- the immune hashed core takes no mind value; only the directional descriptor is read, the magnitude is open.",
+      "owner": "mind (HPA/cortisol is mind-owned; the cited HPA kinetics are mind's M18 [L]); immune owns the T24 suppressor sigma it maps onto.",
+      "boundary_clause": "a SIGN-ONLY directional descriptor is NOT a numeric dependency: the immune engine never imports a cortisol value, and sigma in T24 is swept (anti-tuning), not set from mind. The map is the claim; the magnitude is [O]."
+    },
+    "direction_OUT_cytokine_to_mood": {
+      "what": "this volume's systemic cytokine tone M (T31, dM = (alpha*frac_ON*spinodal - M/tau_M) dt -- the positive-feedback inflammatory drive) is ONE of several physical contributors mind reads at its low-coordination depression operating point (mind section 27 lists 'monoaminergic, HPA-axis, INFLAMMATORY, circadian and psychosocial contributors -- NOT one mechanism'). Sickness behaviour / inflammation-associated low mood is the felt face of a high cytokine tone.",
+      "consumed_value": "NONE -- a one-way pointer. The record carries no mind snapshot; the immune cytokine tone M is the OWNED mechanism, the felt low mood is mind's [O].",
+      "owner": "immune owns the cytokine latch M (T31, [V]); mind owns the felt contribution behind its Axis-A firewall (consciousness_claim=0; the inflammatory contributor to depression is [O]).",
+      "mind_side_endpoint": "mind's depression chronification (section 27): the inflammatory term enters as one bias contributor among several to the sustained low-coordination operating point. Mind consumes the cytokine tone as a contributor; immune does not re-emerge mood or affect."
+    },
+    "firewall_invariant": "the immune engine (vp_imm_engine.circulate()) and the emergence/dynamics path take NO mind/HPA/cortisol/felt input: organ emergence, the tolerance saddle-node, the cytokine latch and the surveillance seam are computed with zero reference to a mind quantity, and carry no felt/affect/HPA/mind key. The only crossings are the SIGN-ONLY cortisol->sigma descriptor IN (magnitude [O]) and the cytokine->mood pointer OUT.",
+    "grade": "[V] the cytokine tone M as the owned inflammatory contributor (T31) / [F] the firewall (zero sibling imports; emergence state mind-free; cortisol map is sign-only, magnitude swept) / [O] the cortisol->sigma magnitude (mind-/external-anchor-owned) and the felt low mood (mind-owned, deferred by pointer)"
+  },
+  "immunosurveillance_oncology_hub": {
+    "seam": "immune -> ALL volumes : immune_escape_factor is a cross-cutting multiplier on every site's cancer kernel (the immunosurveillance hub spoke; the original OUT seam of this volume).",
+    "axis": "immunosurveillance (cross-cutting onco modulator)",
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "direction": "one-way OUT (immune -> every other volume's oncology kernel). Net malignant burden = crossing-rate x immune-escape factor; the escape factor is the SAME multiplier for every site (T10 measured: AML and lymphoma burden curves collapse onto one 1/(1-escape) multiplier). Lever D (surveillance restoration, T15) is the therapy face.",
+    "consumed_by": [
+      "every sibling volume's carcinogen kernel (the escape factor scales their RR(dose))",
+      "this volume's own oncology modules (repro/_oncology) and Lever D therapy"
+    ],
+    "owner_open": "the ABSOLUTE incidence (population constant K, clearance scale mu0) is uncalibrated [O]; only the multiplicative SEAM SHAPE (1/(1-escape), site-independent) is [V].",
+    "grade": "[V] the multiplicative site-independent escape seam (T10, measured from a coupled influx-clearance process) / [O] absolute incidence (K, mu0)"
+  },
+  "circulatory_leukocyte_trafficking_interface": {
+    "seam": "immune -> circulatory : this volume's leukocyte EFFECTOR POPULATIONS (the ON-committed clones of the R19 switch, produced at the bone_marrow_hematopoiesis root) TRAFFIC THROUGH the circulatory vasculature to reach peripheral tissue. A one-way POINTER OUT -- it states WHERE the cells travel; it consumes no circulatory value (v0.17.0, promoted from an inherited adjacency to a declared spoke).",
+    "axis": "leukocyte trafficking (immune effector populations -> vascular transport)",
+    "seam_type": "one-way pointer OUT (states where an item travels; consumes no sibling value; weaker than a shared-substrate identity, the same kind as the oncology hub and the cytokine->mood pointer)",
+    "owner_split": {
+      "immune_owns": "the leukocyte EFFECTOR POPULATIONS themselves -- the ON-committed clones of the R19 switch, rooted at bone_marrow_hematopoiesis (RUNX1, gamma=1.3225, the HSC->lineage branching that produces every blood cell) and selected/expanded through lymphoid_adaptive (PAX5). The production primitive is this volume's own measured organ ([V]); the populations are emitted by circulate() with ZERO circulatory input.",
+      "circulatory_owns": "the ABSOLUTE vascular TRANSPORT scale -- vessel geometry, blood flow, transit kinetics, margination/extravasation rates -- the units in which 'where the cells travel' is physically measured. Owned by the circulatory volume; [O] here."
+    },
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_circulatory": "10.5281/zenodo.20754354",
+    "direction": "one-way OUT (immune effector populations -> circulatory transport). The pointer carries NO circulatory snapshot and consumes NO circulatory value; it is not a numeric dependency. The shared byte-identical R19 substrate (spinodal 2(g/3)^1.5, barrier g^2/4) means neither volume re-derives the other's part -- but unlike the gut seam this is NOT a closed-form identity, only a directional pointer, because no closed-form equality between an immune quantity and a circulatory quantity is asserted.",
+    "immune_side_endpoint": {
+      "production_root_organ": "bone_marrow_hematopoiesis",
+      "production_root_master_gene": "RUNX1",
+      "production_root_gamma": 1.3225,
+      "production_root_spinodal_g": 0.58538506,
+      "production_root_barrier_g": 0.43725156,
+      "effector_population_definition": "the ON-committed fraction of the R19 switch (a selected/activated clone), the same committed state measured throughout T11/T16",
+      "endpoint_is_real_in_this_zip": true
+    },
+    "consumed_by": [
+      "the circulatory volume's transport layer (it reads WHERE the immune effector populations enter the vasculature; it reads no immune internal value either -- a mutual pointer at the trafficking boundary)",
+      "immune section 18 cross-system spokes (the circulatory leukocyte-trafficking pointer check)"
+    ],
+    "immune_side_open": "the ABSOLUTE vascular transport scale (vessel geometry, flow, transit/margination kinetics) is NOT modelled here -- [O], circulatory-owned. Only the EFFECTOR POPULATIONS (this volume's measured R19-committed output) and the DIRECTION of the pointer are owned here.",
+    "grade": "[V] the leukocyte effector populations are this volume's measured R19-committed output rooted at bone_marrow_hematopoiesis (RUNX1) / [F] the one-way trafficking pointer (no circulatory value consumed, architectural) / [O] the absolute vascular transport scale (circulatory-owned)"
+  },
+  "musculoskeletal_marrow_niche_interface": {
+    "seam": "immune -> musculoskeletal : this volume's HEMATOPOIETIC ORIGIN -- bone_marrow_hematopoiesis (RUNX1, gamma=1.3225), the HSC->lineage branching that is the SOURCE of every immune cell -- is physically HOUSED in the bone-marrow NICHE, the bone compartment owned by the musculoskeletal volume. A one-way POINTER (states WHERE hematopoiesis is housed; consumes no musculoskeletal value). v0.17.0 promoted it from an inherited adjacency to a declared spoke; v0.19.0 LIVE-VERIFIED it against musculoskeletal_vp_site v0.7.0 (substrate drift 0) and RETIRED the identity-upgrade candidate on live evidence (see identity_upgrade_RETIRED).",
+    "axis": "marrow niche (immune hematopoietic origin <- housed in -> musculoskeletal bone compartment)",
+    "seam_type": "one-way pointer -- LIVE-VERIFIED against musculoskeletal_vp_site v0.7.0 (substrate drift 0 against the live MSK engine). The shared-substrate-identity UPGRADE candidate is RETIRED on live evidence: the MSK niche is built by osteoblasts (RUNX2, a DIFFERENT master gene and spinodal from the hematopoietic RUNX1), so the niche HOUSES hematopoiesis but is not the same R19 switch -- the threshold-equality identity does not reduce (falsifier fired). The pointer survives; no identity is claimed.",
+    "owner_split": {
+      "immune_owns": "the HEMATOPOIETIC PRIMITIVE -- bone_marrow_hematopoiesis (RUNX1, gamma=1.3225), the HSC->lineage branching, with its R19 spinodal 2(1.3225/3)^1.5 = 0.58538506 and barrier 1.3225^2/4 = 0.43725156 on the byte-identical substrate. This is this volume's own measured organ ([V]); the SSOT for the hematopoietic root.",
+      "musculoskeletal_owns": "the ABSOLUTE bone-NICHE scale -- trabecular bone architecture, niche capacity, marrow volume, the physical compartment that houses the hematopoietic root. Owned by the musculoskeletal volume; [O] here."
+    },
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_musculoskeletal": "TO-RECONCILE (musculoskeletal_vp_site -- now CONFIRMED present on disk at v0.7.0, paper_id musculoskeletal_vp_site / code msk; it has NOT yet registered its own concept DOI (it currently inherits only the analgesic-technique DOI 10.5281/zenodo.20733420), so this stays a placeholder -- never a fabricated DOI -- to reconcile when the MSK volume registers its concept DOI)",
+    "direction": "one-way pointer (immune hematopoietic origin -> musculoskeletal bone-marrow niche), now LIVE-VERIFIED: the MSK engine's R19 substrate is byte-identical to this volume's (drift 0 at gamma in {1.0, 1.3225, 1.4892}), so the pointer lands on a real organ on one shared substrate. The pointer carries NO musculoskeletal snapshot and consumes NO musculoskeletal value; it states WHERE the hematopoietic root is housed.",
+    "immune_side_endpoint": {
+      "hematopoietic_root_organ": "bone_marrow_hematopoiesis",
+      "hematopoietic_root_master_gene": "RUNX1",
+      "hematopoietic_root_gamma": 1.3225,
+      "hematopoietic_root_spinodal_g": 0.58538506,
+      "hematopoietic_root_barrier_g": 0.43725156,
+      "endpoint_is_real_in_this_zip": true
+    },
+    "consumed_by": [
+      "immune section 18 cross-system spokes (the declared one-way marrow-niche pointer)",
+      "immune section 20 musculoskeletal live verification (the drift-0 pointer confirmation + the retired identity, honest negative)"
+    ],
+    "immune_side_open": "the ABSOLUTE bone-niche scale (trabecular architecture, niche capacity, marrow volume) is NOT modelled here -- [O], musculoskeletal-owned. Only the HEMATOPOIETIC ROOT (this volume's measured bone_marrow_hematopoiesis organ) and the DIRECTION of the pointer are owned here.",
+    "grade": "[V] the hematopoietic origin is this volume's measured organ (bone_marrow_hematopoiesis, RUNX1 gamma=1.3225, spinodal 0.58538506, barrier 0.43725156) AND the one-way niche-housing pointer is now LIVE-VERIFIED against musculoskeletal_vp_site v0.7.0 (substrate drift 0) / [F] the one-way niche-housing pointer (no musculoskeletal value consumed, architectural) / [O] the absolute bone-niche scale (musculoskeletal-owned). The shared-substrate-identity UPGRADE is RETIRED on live evidence (RUNX2 niche != RUNX1 hematopoiesis; 0.53237264 != 0.58538506) -- falsifier fired, pointer survives.",
+    "live_verification": {
+      "verified_on": "2026-06-19",
+      "musculoskeletal_paper_id": "musculoskeletal_vp_site",
+      "musculoskeletal_version": "0.7.0",
+      "harness": "repro/run_harness.py with VP_SIBLING_MUSCULOSKELETAL set (section 18 live harness, out of gate)",
+      "substrate_drift": 0.0,
+      "substrate_drift_is_zero": true,
+      "substrate_drift_note": "max |MSK.spinodal(g) - immune.spinodal(g)| over g in {1.0, 1.3225, 1.4892} = 0.0 (byte-identical R19: spinodal 2(g/3)^1.5, barrier g^2/4)",
+      "exposes_marrow_niche_threshold": false,
+      "live_niche_threshold": null,
+      "identity_would_hold": false,
+      "vendored_msk_bone_snapshot": {
+        "note": "the MSK volume's load-bearing bone organ -- the compartment that BUILDS the niche -- verified against the live MSK engine at vendoring time",
+        "msk_bone_organ": "bone",
+        "msk_bone_master_gene": "RUNX2",
+        "msk_bone_gamma": 1.2414,
+        "msk_bone_gamma_provenance": "MEASURED by MSK from NC_000006.12 (TSS-2000..+500, MANE NM_001024630.4); vendored, never fitted",
+        "msk_bone_spinodal_g": 0.53237264,
+        "msk_bone_barrier_g": 0.38526849,
+        "verified_against_msk_engine_at_vendoring": true
+      }
+    },
+    "identity_upgrade_RETIRED": {
+      "status": "RETIRED on live evidence (v0.19.0). The shared-substrate-identity upgrade -- 'the MSK niche hematopoietic-commit threshold == this volume's bone_marrow_hematopoiesis spinodal 0.58538506' -- is NOT supported by the live musculoskeletal engine. The one-way pointer is retained and is now LIVE-VERIFIED; only the stronger identity claim is retired.",
+      "what_was_predicted": "if the MSK marrow-niche reading rode the SAME RUNX1 hematopoietic substrate, the niche's hematopoietic-commit threshold would equal 0.58538506 in closed form (a shared-substrate identity analogous to the gut seam).",
+      "what_the_live_engine_shows": "the MSK volume models the bone-marrow niche via OSTEOBLASTS (master gene RUNX2, gamma=1.2414, spinodal 0.53237264), NOT via the hematopoietic switch (RUNX1, gamma=1.3225, spinodal 0.58538506). RUNX2 and RUNX1 are DIFFERENT master genes (paralogues on different chromosomes -- RUNX2 chr6, RUNX1 chr21) with DIFFERENT measured gamma and DIFFERENT spinodals (0.53237264 != 0.58538506, gap 0.05301242). The MSK engine exposes no marrow_niche_threshold() function, and even the closest niche-building organ (bone, RUNX2) sits at a different spinodal. So the niche HOUSES hematopoiesis but is not the same R19 switch -- the threshold-equality identity does not reduce.",
+      "verdict": "FALSIFIER FIRED -> identity candidate dead; one-way pointer SURVIVES (a pointer asserts no equality, only housing). This is the falsifiable discipline working as designed: a named candidate met its live test and was retired honestly, with nothing tuned to rescue it.",
+      "biological_corroboration": "this is the biologically correct outcome: the osteoblastic bone-marrow niche (RUNX2) SUPPORTS haematopoietic stem cells (RUNX1) but is a distinct cell type with a distinct master regulator -- a housing/support relationship, not an identity. The VP structural verdict (different switch, different spinodal -> pointer not identity) matches the known niche<->HSC distinction.",
+      "falsifier_for_the_surviving_pointer": "if the MSK substrate had NOT been byte-identical (drift != 0), even the one-way pointer would fail; the measured drift 0 is what keeps the housing pointer live-verified."
+    }
+  },
+  "respiratory_mucosal_immunity_candidate": {
+    "seam": "immune <-> respiratory (FUTURE) : a respiratory/lung VP volume would localise THIS volume's tolerance switch (T21/T23/T24) to the AIRWAY MUCOSA -- the gut-immune shared-substrate identity re-applied to a second barrier surface. NAMED CANDIDATE (v0.18.0), NOT a declared seam.",
+    "axis": "respiratory mucosal immunity (airway tolerance, inhaled-antigen tolerance, asthma/hypersensitivity as the airway localisation of the tolerance switch)",
+    "seam_type": "NAMED shared-substrate-identity CANDIDATE (the strongest seam kind in principle -- both volumes would read the SAME R19 -- but NOT claimed: it needs the live respiratory volume + that volume's owned absolute airway-antigen scale, neither on disk in this session)",
+    "owner_split": {
+      "immune_owns": "the SYSTEMIC tolerance PRIMITIVE -- the saddle-node structure itself (T21 central deletion / T23 break / T24 suppressor complement), proven BARRIER-SURFACE-AGNOSTIC in _barrier_surface_agnostic (induction = antigen + spinodal(1.0), maintenance = antigen - spinodal(1.0), surface-independent offset +/- spinodal). This is tissue-independent and is the SSOT for the latch, verified from THIS zip.",
+      "respiratory_owns": "the airway LOCALISATION -- the inhaled-antigen / aeroallergen load, the airway mucosal barrier scale, and the absolute airway-antigen scale (the real units behind the dimensionless antigen drive). Owned by the (future) respiratory volume; [O] here."
+    },
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_respiratory": "TO-RECONCILE (respiratory_vp_site -- a FUTURE volume, not yet built / not on disk; a placeholder, NEVER a fabricated DOI, reconciled at cross-vendoring time exactly as the gut/neuro owner DOIs were)",
+    "direction": "would be a SHARED-SUBSTRATE IDENTITY (both volumes read the SAME R19 tolerance latch on the byte-identical substrate). Declared NOW only as a NAMED CANDIDATE because verifying a shared-substrate identity needs the LIVE respiratory engine (as the gut identity is verified against digestive's live ibd_relapsing_course()).",
+    "immune_side_endpoint": {
+      "tolerance_primitive": "T23 saddle-node (induction = antigen + spinodal) + T24 suppressor complement (maintenance = antigen - spinodal)",
+      "barrier_surface_agnostic": true,
+      "surface_independent_offset": 0.38490018,
+      "endpoint_is_real_in_this_zip": true
+    },
+    "identity_candidate": {
+      "what": "the STRUCTURAL prediction (not asserted as verified here): if the respiratory volume's airway-mucosa tolerance reading rides the SAME R19 substrate, then its airway induction threshold EQUALS airway-antigen + spinodal(1.0) and its maintenance threshold EQUALS airway-antigen - spinodal(1.0) in closed form -- a shared-substrate identity exactly analogous to the gut seam, differing only in the surface-owned antigen baseline.",
+      "why_not_claimed_now": "the respiratory volume is NOT on disk (it is a FUTURE volume), so neither a vendored airway snapshot nor a live airway engine exists to verify the identity or supply the absolute airway-antigen scale. The honest move is to declare it as a NAMED candidate grounded by the barrier-surface-agnosticism proof, NOT as a verified seam.",
+      "how_to_promote": "when a respiratory_vp_site volume exists, add it to the section-17 live harness SIBLINGS, run repro/run_harness.py with it present, confirm (a) substrate drift 0 and (b) its airway induction/maintenance thresholds == airway-antigen +/- spinodal(1.0); on success, promote from a named candidate to a declared shared-substrate-identity seam.",
+      "falsifier": "if the airway tolerance threshold did NOT reduce to airway-antigen + spinodal(1.0) on the shared substrate, the identity candidate is dead (the barrier-surface-agnosticism proof and the gut seam both survive -- they assert nothing about a surface that has not been built)."
+    },
+    "consumed_by": [
+      "immune section 19 barrier-surface mucosal immunity (the named respiratory candidate, grounded by barrier-surface-agnosticism)"
+    ],
+    "immune_side_open": "the ABSOLUTE airway-antigen scale (the real units behind the dimensionless antigen drive) and the airway-specific felt symptom are NOT modelled here -- [O], respiratory-owned. Only the tissue-independent tolerance PRIMITIVE (T23/T24, barrier-surface-agnostic) is owned here.",
+    "grade": "[F] NAMED shared-substrate-identity candidate (the barrier-surface-agnostic tolerance primitive is owned/verified here; the identity is NOT claimed -- it needs the live respiratory volume) / [O] the absolute airway-antigen scale (respiratory-owned, future volume)"
+  },
+  "skin_barrier_immunity_candidate": {
+    "seam": "immune <-> skin : a skin/epidermal VP volume localises THIS volume's tolerance switch (T21/T23/T24) to the EPIDERMAL BARRIER -- the gut-immune shared-substrate identity re-applied to a third barrier surface. Named as a candidate in v0.18.0; v0.20.0 LIVE substrate-verified it against integumentary_vp_site v1.0.0 (substrate drift 0) and confirmed a RECIPROCAL immune-seam handshake (the skin volume independently declares an out-seam to immune_hematologic). The epidermal-tolerance IDENTITY remains immune-owned closed-form (barrier-agnosticism): the skin supplies the real barrier surface but defers the immune tolerance switch as an out-seam, so the identity is neither engine-verified nor contradicted.",
+    "axis": "skin barrier immunity (epidermal tolerance; atopic/contact sensitisation as the T29 latch + T23/T24 tolerance localised to skin)",
+    "seam_type": "barrier-surface seam -- LIVE substrate-verified against integumentary_vp_site v1.0.0 (cross-volume substrate drift 0) + RECIPROCAL immune-seam handshake (the skin volume's own seam manifest declares out__immune_hematologic__urticaria, recognising the barrier<->immune adjacency from its side). The epidermal-tolerance IDENTITY (induction = epidermal-antigen + spinodal(1.0)) is an IMMUNE-OWNED CLOSED-FORM prediction (barrier-surface agnosticism), with the real epidermal barrier surface now CONFIRMED and NOT contradicted -- but NOT engine-verified, because the skin volume models the barrier STRUCTURE (epidermis TP63, keratinocyte KRT14) and explicitly does NOT implement the immune tolerance switch (it names immune effects as un-modelled out-seams). A THIRD distinct cross-package outcome: adjacency-verified + reciprocal handshake, identity stands closed-form (gut = verified identity; musculoskeletal = retired identity).",
+    "owner_split": {
+      "immune_owns": "the SYSTEMIC tolerance PRIMITIVE -- the saddle-node structure itself (T21 / T23 / T24), proven BARRIER-SURFACE-AGNOSTIC in _barrier_surface_agnostic (induction = antigen + spinodal(1.0), maintenance = antigen - spinodal(1.0)). Verified from THIS zip; the SSOT for the latch.",
+      "skin_owns": "the epidermal LOCALISATION -- the contact/epicutaneous-antigen load, the epidermal barrier scale, and the absolute epidermal-antigen scale. Owned by the (future) skin volume; [O] here."
+    },
+    "owner_concept_doi_immune": "10.5281/zenodo.20755280",
+    "owner_concept_doi_skin": "10.5281/zenodo.20754541 (integumentary_vp_site CONCEPT DOI, minted 2026-06-19; per-version v1.0.0 DOI 10.5281/zenodo.20754542). The skin volume is REGISTERED and on disk -- this is the RESOLVED owner DOI, no longer a placeholder.",
+    "direction": "immune <-> skin barrier-surface adjacency, now LIVE substrate-verified (drift 0) and reciprocated from the skin side. The epidermal-tolerance identity would be a shared-substrate identity IF the skin volume implemented the tolerance switch; it does not (it owns the barrier structure + absolute epidermal scale and defers immune tolerance as an out-seam), so the identity stays immune-owned closed-form.",
+    "immune_side_endpoint": {
+      "tolerance_primitive": "T23 saddle-node (induction = antigen + spinodal) + T24 suppressor complement (maintenance = antigen - spinodal); T29 sensitisation latch is the allergic face",
+      "barrier_surface_agnostic": true,
+      "surface_independent_offset": 0.38490018,
+      "endpoint_is_real_in_this_zip": true,
+      "reciprocal_skin_seam_id": "out__immune_hematologic__urticaria"
+    },
+    "consumed_by": [
+      "immune section 19 barrier-surface mucosal immunity (the skin candidate, grounded by barrier-surface-agnosticism)",
+      "immune section 21 integumentary barrier seam live verification (substrate drift 0 + reciprocal immune-seam handshake; identity immune-owned closed-form, not contradicted)"
+    ],
+    "immune_side_open": "the ABSOLUTE epidermal-antigen scale and the skin-specific felt symptom are NOT modelled here -- [O], skin-owned. Only the tissue-independent tolerance PRIMITIVE (T23/T24, barrier-surface-agnostic) is owned here.",
+    "grade": "[V] the barrier-surface adjacency is LIVE substrate-verified against integumentary_vp_site v1.0.0 (drift 0) and reciprocated by the skin volume's own immune out-seam / [F] the barrier-surface-agnostic tolerance primitive (T23/T24, offset = +/-spinodal(1.0)) is owned/verified here and is the immune-owned closed-form identity, confirmed-real-surface and NOT contradicted (the skin volume supplies the real epidermal barrier but defers the immune tolerance switch as an out-seam) / [O] the absolute epidermal-antigen scale (skin-owned; integumentary_vp_site concept DOI 10.5281/zenodo.20754541)",
+    "live_verification": {
+      "verified_on": "2026-06-19",
+      "skin_paper_id": "integumentary_vp_site",
+      "skin_version": "1.0.0",
+      "skin_concept_doi": "10.5281/zenodo.20754541",
+      "harness": "repro/run_harness.py with VP_SIBLING_INTEGUMENTARY set (section 18 live harness, out of gate)",
+      "substrate_drift": 0.0,
+      "substrate_drift_is_zero": true,
+      "substrate_drift_note": "max |skin.spinodal(g) - immune.spinodal(g)| over g in {1.0, 1.3225, 1.4892} = 0.0 (byte-identical R19: spinodal 2(g/3)^1.5, barrier g^2/4)",
+      "real_epidermal_barrier_surface": {
+        "note": "the skin volume's epidermal barrier organs -- the real surface the immune tolerance switch localises to -- verified present in the live skin engine; gamma vendored, spinodal computed on the byte-identical substrate at vendoring time",
+        "epidermis_master_gene": "TP63",
+        "epidermis_gamma": 1.3643,
+        "epidermis_spinodal_g": 0.61335644,
+        "keratinocyte_master_gene": "KRT14",
+        "keratinocyte_gamma": 1.4894,
+        "keratinocyte_spinodal_g": 0.69962471
+      },
+      "reciprocal_immune_seam": {
+        "present": true,
+        "skin_declared_seam_id": "out__immune_hematologic__urticaria",
+        "skin_declares": "mast-cell / histamine effector (urticaria / angioedema) -> immune_hematologic",
+        "note": "the skin volume's own seam manifest (repro/_seam/seam_manifest.py declared_out_seams) independently declares an OUT seam to immune_hematologic -- a bidirectional handshake closing the barrier<->immune cross-reference from the skin side. The skin emphasises the mast-cell EFFECTOR pathway; the immune-side v0.18.0 candidate emphasises epidermal TOLERANCE -- related immune functions at the same barrier surface."
+      },
+      "skin_implements_immune_tolerance_switch": false,
+      "skin_models_instead": "barrier STRUCTURE (epidermis/keratinocyte), physical/thermal insult tolerance (TEWL threshold, abs_insult_tolerance ~ gamma^1.5), pigment photoprotection, appendages, vasomotor, and autoantibody-driven ADHESION saddle-nodes (pemphigus anti-DSG3 / pemphigoid anti-BP180 driving the desmosomal/hemidesmosomal bond below its spinodal, with hysteresis) -- the SAME R19 saddle-node formalism applied to a DIFFERENT compartment (adhesion cohesion, immune-effector-driven), not the antigen tolerance switch.",
+      "identity_engine_verified": false,
+      "identity_contradicted": false
+    },
+    "identity_disposition": {
+      "status": "the epidermal-tolerance IDENTITY remains an IMMUNE-OWNED CLOSED-FORM prediction (barrier-surface agnosticism, v0.18.0). With the live skin volume present it is CONFIRMED-REAL-SURFACE and NOT CONTRADICTED, but NOT engine-verified -- a third distinct outcome, between the gut (verified identity) and the musculoskeletal niche (retired identity).",
+      "what_was_predicted": "if the skin volume implemented epidermal tolerance on the same R19 substrate, its epidermal induction threshold would equal epidermal-antigen + spinodal(1.0) and maintenance epidermal-antigen - spinodal(1.0) in closed form (the gut-seam identity at a third barrier surface).",
+      "what_the_live_engine_shows": "the skin substrate is byte-identical (drift 0), so the barrier surface and the immune tolerance machinery share one R19 substrate; the epidermal barrier surface is REAL (epidermis TP63, keratinocyte KRT14); and the skin volume INDEPENDENTLY declares a reciprocal immune out-seam. But the skin volume does NOT implement the immune tolerance switch -- it models the barrier structure and names immune effects as un-modelled out-seams -- so there is no epidermal tolerance threshold in the skin engine to equate. The identity is therefore neither verified nor contradicted by the skin engine; it stands as the immune-owned closed-form result with a confirmed real surface.",
+      "verdict": "ADJACENCY LIVE-VERIFIED + RECIPROCAL HANDSHAKE; identity stands as immune-owned closed-form (premise confirmed: a real epidermal barrier on the shared substrate, reciprocally recognised), NOT over-claimed as engine-verified, NOT retired (no contradiction). Nothing tuned; the absolute epidermal-antigen scale stays skin-owned [O].",
+      "corroboration": "the skin volume independently applies the SAME R19 saddle-node (with hysteresis) to its own adhesion targets (pemphigus/pemphigoid), driven by immune effectors -- confirming the shared substrate carries the same bistable switch on both sides, applied to different compartments.",
+      "falsifier_if_skin_later_implements_tolerance": "if a future skin tolerance module exposed an epidermal threshold that did NOT reduce to epidermal-antigen + spinodal(1.0), the identity would be retired (the barrier-agnosticism proof + the gut seam survive); if it DID, the identity would be promoted to engine-verified."
+    }
+  }
+}

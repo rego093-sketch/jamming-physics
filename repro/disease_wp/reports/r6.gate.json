@@ -1,0 +1,148 @@
+{
+  "phase": "R6",
+  "kind": "investigation_gate",
+  "title": "natural-history registry pass (Orphanet) — onset/mortality/progression lift",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "6e9017984291"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "da6aabf41034"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "59fd22716c82"
+    },
+    "orphanet_fetch_log": {
+      "path": "data/raw/orphanet/_fetch_log.json",
+      "sha12": "66e585a30c27"
+    }
+  },
+  "lift_counts": {
+    "O_L_corroborated": 9,
+    "S_kept_H": 16,
+    "D_O_kept_no_tier": 19,
+    "O_L_extended": 6,
+    "S_kept_L": 2,
+    "D_kept_L": 4,
+    "disease_no_exact_mapping": 8,
+    "D_kept_H": 4,
+    "S_O_kept_no_tier": 9,
+    "M_H_to_L": 1,
+    "O_H_to_L": 2,
+    "O_O_to_L": 1
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[H]": 9,
+      "[L]": 5
+    },
+    "S": {
+      "[H]": 22,
+      "[O]": 11,
+      "[L]": 2
+    },
+    "M": {
+      "[L]": 8,
+      "[H]": 9,
+      "[O]": 18
+    },
+    "D": {
+      "[O]": 27,
+      "[H]": 4,
+      "[L]": 4
+    }
+  },
+  "promotions": [],
+  "order_locked": [
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    }
+  ],
+  "registry_set_sha12": "855b9cc2a154",
+  "summary": "14/14 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->r6 chain registry-set sha 855b9cc2a154 == 855b9cc2a154"
+    },
+    {
+      "name": "orphanet_sources_pinned",
+      "pass": true,
+      "detail": "3/3 products match pin; en_product1=11456, en_product9_ages=7374, en_product4=4337"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "join_exact_only",
+      "pass": true,
+      "detail": "every Orphanet-sourced axis carries an Exact OMIM<->ORPHA mapping (0 bad)"
+    },
+    {
+      "name": "onset_tier_map_a_priori",
+      "pass": true,
+      "detail": "declared map matches; every Orphanet-[L] onset value in the a-priori tier set (0 bad)"
+    },
+    {
+      "name": "frequency_gate_enforced",
+      "pass": true,
+      "detail": "declared gate = Obligate/Very frequent/Frequent; every Orphanet M/P-[L] has a qualifying term (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R5 (0 violations)"
+    },
+    {
+      "name": "supersede_only_on_registry",
+      "pass": true,
+      "detail": "every axis value change is registry [L] Orphanet-backed (0 bad)"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (0 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule",
+      "pass": true,
+      "detail": "order_locked == (rankable & all scored axes [L]/[V]) for all (1 locked; 0 bad)"
+    },
+    {
+      "name": "sensitivity_present",
+      "pass": true,
+      "detail": "5 weightings; equal_default rho = 1.0"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

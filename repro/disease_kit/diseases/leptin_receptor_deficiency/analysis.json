@@ -1,0 +1,157 @@
+{
+ "disease": "Leptin receptor deficiency (severe early-onset obesity)",
+ "omim": "614963",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Leptin receptor deficiency (severe early-onset obesity)",
+  "omim": "614963",
+  "summary": "An autosomal-recessive cause of severe early-onset obesity -- the RECEPTOR-side partner of congenital leptin deficiency. LEPR encodes the leptin receptor on hypothalamic POMC / AgRP neurons; it TRANSDUCES the leptin satiety signal that ACCELERATES the satiety / energy-expenditure programme (LEPR -> JAK2/STAT3 -> POMC -> alpha-MSH -> MC4R). Biallelic LEPR loss-of-function leaves the receptor unable to transduce leptin -> the satiety drive is lost DESPITE high (often markedly elevated) circulating leptin -> the emergent hormone-signalling axis falls -> intense hyperphagia and severe early-onset obesity (with hypogonadotropic hypogonadism). Because the axis is driven DOWN the corrective direction is UP -- but the KEY CONTRAST to congenital leptin deficiency is that REPLACING THE LIGAND DOES NOT WORK: leptin is already present, so metreleptin cannot rescue a broken receptor. Instead the kit re-derives a DOWNSTREAM BYPASS -- the melanocortin-4-receptor (MC4R) agonist setmelanotide drives the node BELOW the missing receptor, restoring the satiety signal the broken receptor failed to transduce; setmelanotide is FDA-approved (2020) and EMA-approved (2021) for obesity due to LEPR deficiency (and POMC / PCSK1 deficiency), re-deriving the receptor-bypass lever as the approved lead. This is the EXACT CONTRAST PARTNER to congenital leptin deficiency on the SAME satiety cascade: LEP-ligand deficiency -> REPLACE the ligand (metreleptin); LEPR-receptor deficiency -> BYPASS the receptor downstream (setmelanotide) -- a clean ligand-replace vs receptor-bypass pair, the boundary the congenital-leptin-deficiency entry already named, now resolved on its own DNA. The switch-level corrective (restore LEPR itself) is investigational. Leptin replacement is deliberately NOT listed as a lever here (ligand present, receptor broken). The gamma read is of the LEPR promoter switch STRUCTURE; the disease lesions are coding/splice (e.g. the original homozygous splice allele; truncating variants), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "leptin-receptor satiety-signalling tone (the hypothalamic energy-balance set-point transduced from leptin) -- a hormone-signalling axis; the receptor-side partner of LEP-ligand deficiency",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "LEPR",
+    "gamma": 1.4554,
+    "spinodal_h_sp": 0.67581,
+    "barrier": 0.52955,
+    "dwell_relative_size": 1.59618,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 65420651,
+     "gene_end": 65641558,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "leptin receptor"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "LEPR encodes the leptin receptor (a type-I cytokine receptor) on hypothalamic POMC / AgRP neurons that TRANSDUCES the leptin signal accelerating the satiety / energy-expenditure programme (JAK2 / STAT3 -> POMC -> alpha-MSH -> MC4R). It is a signal-transducing ACCELERATOR of satiety; biallelic LOF leaves leptin unable to signal (despite high circulating leptin) -> the satiety drive is under-driven -> the hormone-signalling axis falls (axis DOWN), giving hyperphagia and severe early-onset obesity. 1p31.3 (OMIM 601007). NCBI official symbol LEPR. Autosomal recessive. Coding/splice lesions; promoter firewall respected.",
+    "src": "Clement 1998 Nature 392:398 (LEPR mutation -> morbid obesity); Farooqi 2007 NEJM 356:237 (clinical spectrum of LEPR deficiency)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "LEPR",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "ff713bb665a6"
+ },
+ "treatment_A_switch": {
+  "disease": "Leptin receptor deficiency (severe early-onset obesity)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "MC4R",
+    "push_direction": "agonise MC4R, the node downstream of the missing receptor -> restore the satiety signal the broken LEPR failed to transduce -> raise the under-driven axis toward normal (axis UP). A DOWNSTREAM receptor-bypass: it does NOT repair LEPR",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "MC4R agonist (setmelanotide)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of hyperphagia / adiposity normalisation not derived from sequence; downstream bypass of the receptor defect",
+    "src": "Clement 2020 Lancet Diabetes Endocrinol 8:960 (setmelanotide in LEPR / POMC deficiency); setmelanotide (Imcivree) FDA 2020 / EMA 2021 (approved for LEPR deficiency obesity)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "LEPR",
+    "push_direction": "restore the leptin receptor itself -> re-enable leptin signal transduction -> raise the satiety axis (axis UP); the switch-level corrective, repairing the deficient receptor rather than bypassing it",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "LEPR gene/expression restoration (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-receptor signalling not derived from sequence; investigational",
+    "src": "leptin-melanocortin pathway gene-restoration principle; no approved LEPR gene therapy"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "MC4R",
+   "push_direction": "agonise MC4R, the node downstream of the missing receptor -> restore the satiety signal the broken LEPR failed to transduce -> raise the under-driven axis toward normal (axis UP). A DOWNSTREAM receptor-bypass: it does NOT repair LEPR",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "MC4R agonist (setmelanotide)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of hyperphagia / adiposity normalisation not derived from sequence; downstream bypass of the receptor defect",
+   "src": "Clement 2020 Lancet Diabetes Endocrinol 8:960 (setmelanotide in LEPR / POMC deficiency); setmelanotide (Imcivree) FDA 2020 / EMA 2021 (approved for LEPR deficiency obesity)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.59618,
+   "dwell_disease": 1.03282,
+   "dwell_treated": 1.31029,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "29f2773de4e4"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "LEPR loss lowers transduced satiety-signal tone (axis DOWN) producing hyperphagia despite high circulating leptin",
+   "falsifier": "a LEPR LOF genotype that REDUCED food intake / adiposity, or in which leptin replacement normalised intake (which would mean the receptor was dispensable), refutes the receptor-deficiency (axis-DOWN) direction",
+   "measurable_by": "ad-libitum energy intake / satiety and fat mass versus serum leptin, and the (absent) response to metreleptin, stratified by LEPR genotype"
+  },
+  {
+   "claim": "bypassing the broken receptor with a downstream MC4R agonist is the CORRECTIVE direction",
+   "falsifier": "if setmelanotide failed to reduce hyperphagia / body weight in genetically confirmed LEPR deficiency, the potentiate-MC4R bypass lever sign is wrong",
+   "measurable_by": "change in hunger score and body weight on setmelanotide in LEPR deficiency (the Clement 2020 design)"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Leptin receptor deficiency (severe early-onset obesity)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "fc14914b7938"
+ },
+ "determinism_sha": "53cede98a186"
+}

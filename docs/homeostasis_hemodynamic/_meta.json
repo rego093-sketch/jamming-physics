@@ -1,0 +1,228 @@
+{
+  "paper_id": "homeostasis_hemodynamic_vp_site",
+  "code": "hmd",
+  "title": "Hemodynamic Homeostasis: Arterial Pressure, Volume, and Hypertension as Setpoint Reset",
+  "short": "Hemodynamic Homeostasis",
+  "doi": "10.5281/zenodo.20756801",
+  "hub_url": "/homeostasis_hemodynamic/",
+  "branch": "integrative",
+  "abstract": "MAP is owned by no single organ; the CO x SVR x volume loop is closed from the per-system seams and read through the PIEZO1/2 and NKCC2 sensors. Fast baroreflex and slow pressure-natriuresis defense are reproduced; essential hypertension is a setpoint reset and chronic heart failure a saddle-node basin collapse.",
+  "headline_results": [
+    "MAP = CVP + CO x SVR = 93 mmHg",
+    "P* = P0 + dPset (+20 mmHg)",
+    "spinodal(k*) = |load|, k* = 1.629"
+  ],
+  "chapters": [
+    {
+      "no": 1,
+      "slug": "hmd-overview",
+      "title": "Mean arterial pressure is owned by no single organ",
+      "one_liner": "Mean arterial pressure obeys MAP = CVP + CO&times;SVR, closing across the cardiac and vascular seams to a resting 93 mmHg; no single organ owns it. Relation [V], scale [O].",
+      "grade": "sim-reproduced",
+      "words": 443,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 2,
+      "slug": "hmd-dna-grounding",
+      "title": "Node identities grounded in real DNA: master-gene &gamma; from nearest-neighbour thermodynamics",
+      "one_liner": "Node identities come from master-gene stacking &gamma; measured from real human promoters (SantaLucia 1998): SIX2 reproduces the DNA atlas, REN &gamma;=1.3634, never fitted [V].",
+      "grade": "sim-reproduced",
+      "words": 559,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 3,
+      "slug": "hmd-sensory-layer",
+      "title": "Sensory transduction: PIEZO1/2 baroreceptor and NKCC2 macula densa",
+      "one_liner": "Two molecular transducers read the loop variables: PIEZO1/2 (arterial stretch) and NKCC2 (luminal NaCl); renin falls and TGF rises with NaCl. Identity [L].",
+      "grade": "cited",
+      "words": 478,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 4,
+      "slug": "hmd-fast-loop",
+      "title": "The baroreflex fast buffer and PIEZO knockout",
+      "one_liner": "The baroreflex buffers ~75% of a 20 mmHg step (residual = step/(1+G), G = 3); PIEZO knockout removes transduction and pressure is labile. Buffering shape [V], gain [L].",
+      "grade": "sim-reproduced",
+      "words": 299,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 5,
+      "slug": "hmd-slow-loop",
+      "title": "Pressure-natriuresis as an integral controller (Guyton)",
+      "one_liner": "Renal pressure-natriuresis is integral control dV/dt = intake &minus; k(P&minus;P_set); two transient loads return to the same 93 mmHg (spread 0, Guyton infinite gain). Shape [V].",
+      "grade": "sim-reproduced",
+      "words": 303,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 6,
+      "slug": "hmd-hypertension-reset",
+      "title": "Essential hypertension as a setpoint reset",
+      "one_liner": "Essential hypertension is an integral-controller setpoint reset: the defended attractor shifts up by &Delta;P_set (+20 mmHg); operating-point drugs are opposed back. Shape [V].",
+      "grade": "sim-reproduced",
+      "words": 274,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 7,
+      "slug": "hmd-heart-failure-basin",
+      "title": "Chronic heart failure as a saddle-node basin collapse",
+      "one_liner": "Chronic heart failure is a saddle-node basin collapse: the high-output basin annihilates at spinodal(&kappa;*) = |load|; closed-form &kappa;* = 1.629 matches the sweep. Shape [V].",
+      "grade": "sim-reproduced",
+      "words": 290,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 8,
+      "slug": "hmd-interaction-map",
+      "title": "The hemodynamic interaction map (sensor to MAP to feedback)",
+      "one_liner": "The hemodynamic map: 7 nodes, 11 edges link the PIEZO/NKCC2 sensors through fast baroreflex and slow RAAS/kidney loops to MAP and back. Edges [L], loop shapes [V].",
+      "grade": "cited",
+      "words": 354,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 9,
+      "slug": "hmd-fundamental-therapy",
+      "title": "Fundamental vs symptomatic treatment of hypertension and heart failure",
+      "one_liner": "Loop structure splits fundamental from symptomatic therapy: hypertension tracks a renal reset (&minus;17 vs 0 mmHg); HF mortality tracks margin M = spinodal(&kappa;)&minus;|load|. [V].",
+      "grade": "sim-reproduced",
+      "words": 381,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 10,
+      "slug": "hmd-hypotension",
+      "title": "Hypotension as a node decomposition of the pressure loop",
+      "one_liner": "Hypotension is not one disease but a node decomposition of the pressure loop: orthostatic, adrenal, distributive, hypovolemic, cardiogenic &mdash; distinct node failures. [V]",
+      "grade": "sim-reproduced",
+      "words": 431,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 11,
+      "slug": "hmd-universality",
+      "title": "Universality: defended pressure as an emergent property of loop accretion",
+      "one_liner": "A defended pressure setpoint is emergent: open systems have incidental pressure, a fast reflex leaves error, only circuit + effector + integrator defend it. [V]",
+      "grade": "sim-reproduced",
+      "words": 328,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 12,
+      "slug": "hmd-absolute-calibration",
+      "title": "Absolute-scale calibration: anchoring the model to clinical units without deriving it",
+      "one_liner": "Absolute mmHg, Hz, gain, NaCl/GFR, reset and effect-size scales are anchored to cited clinical values and cross-checked; first-principles derivation stays open. [CAL]",
+      "grade": "calibrated",
+      "words": 668,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 13,
+      "slug": "hmd-comfort-logic",
+      "title": "The comfort principle: counter-regulation is the structural origin of the side-effect class",
+      "one_liner": "An operating-point antihypertensive is opposed back to the reference by the kidney integrator; that rejection is the structural origin of the side-effect class [V].",
+      "grade": "sim-reproduced",
+      "words": 363,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 14,
+      "slug": "hmd-lever-reset-reference",
+      "title": "Lever H1: reset the integrator reference down (the counter-regulation-free direction)",
+      "one_liner": "Lever H1 lowers the renal pressure-natriuresis / RAAS reference itself, so the loop target moves with it; two H1 axes are DNA-grounded (REN, SIX2) [V].",
+      "grade": "sim-reproduced",
+      "words": 259,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 15,
+      "slug": "hmd-lever-restore-buffer",
+      "title": "Lever H2: restore the fast restoring buffer (raise the loop&rsquo;s own correcting current)",
+      "one_liner": "Lever H2 strengthens the baroreflex buffer (PIEZO1/2 stretch transduction) so excursions self-correct toward the lower setpoint; counter-regulation stays low [V].",
+      "grade": "sim-reproduced",
+      "words": 266,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 16,
+      "slug": "hmd-lever-unload-effector",
+      "title": "Lever H3: unload the effector &mdash; paired-only, because alone it is the side-effect class",
+      "one_liner": "Lever H3 unloads the effector; alone it is the operating-point push the loop opposes back (RP4) &mdash; the side-effect class &mdash; so it is a paired-only lever [V].",
+      "grade": "sim-reproduced",
+      "words": 260,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 17,
+      "slug": "hmd-comfort-proposal",
+      "title": "Comfort proposal: seven structural hypotheses, stated as directions, not treatments",
+      "one_liner": "Seven hypotheses (HP1-HP7) stated as structural directions read off the proven loop, never as treatments: setpoint, perfusion floor, axis ranking, pairing rule [F].",
+      "grade": "forced",
+      "words": 444,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 18,
+      "slug": "hmd-comfort-prioritisation",
+      "title": "Comfort prioritisation: rank target axes by declared weights, never agents",
+      "one_liner": "Target axes are ranked by declared weights (burden, unmet, counter-regulation-freedom, grounding); reference-reset axes lead and &gamma; is carried, never scored [F].",
+      "grade": "forced",
+      "words": 251,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 19,
+      "slug": "hmd-comfort-falsification",
+      "title": "Comfort falsification: every hypothesis is refutable, including the framework",
+      "one_liner": "Every comfort hypothesis carries a named falsifier, and so does the framework itself; HP1, HP6 and the framework-level refutation conditions are stated explicitly [V].",
+      "grade": "sim-reproduced",
+      "words": 444,
+      "eq_inline": 1,
+      "eq_display": 0
+    },
+    {
+      "no": 20,
+      "slug": "hmd-comfort-firewall",
+      "title": "Comfort firewall: a structural prediction, with no medical responsibility",
+      "one_liner": "The firewall is fail-closed: the package states a structural prediction about loop counter-regulation but asserts no molecule, regimen, or safety result [O].",
+      "grade": "open",
+      "words": 440,
+      "eq_inline": 1,
+      "eq_display": 0
+    }
+  ],
+  "determinism": {
+    "sha256": "08a11846d481a849034a5d97ca8b8d4e43280f6965738d5e93e40caea4f65ce4",
+    "two_x_identical": true
+  },
+  "totals": {
+    "words": 7535,
+    "eq": 20,
+    "figures": 0,
+    "tables": 3,
+    "sections": 20
+  }
+}

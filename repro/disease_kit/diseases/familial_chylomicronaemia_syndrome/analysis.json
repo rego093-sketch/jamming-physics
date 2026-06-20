@@ -1,0 +1,181 @@
+{
+ "disease": "Familial chylomicronaemia syndrome (LPL deficiency)",
+ "omim": "238600",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Familial chylomicronaemia syndrome (LPL deficiency)",
+  "omim": "238600",
+  "summary": "A rare autosomal-recessive disorder of extreme hypertriglyceridaemia. Lipoprotein lipase (LPL) is the endothelial enzyme that hydrolyses triglyceride in circulating chylomicrons and VLDL -- functionally a BRAKE that keeps plasma triglyceride low by clearing it. Biallelic LPL loss-of-function (the commonest cause; GPIHBP1, APOA5, LMF1, APOC2 give the same syndrome) RELEASES that brake, so chylomicrons are not cleared and plasma triglyceride over-accumulates -- the emergent lipid-metabolite axis is driven UP (fasting chylomicronaemia, recurrent acute pancreatitis, eruptive xanthomata, lipaemia retinalis). This is read with the released-brake -> downstream over-accumulation pattern already used for the toxic-metabolite diseases (tyrosinaemia, porphyria, hyperoxaluria, OTC), now carried onto a NEW lipid metabolite -- triglyceride -- and is the OPPOSITE mode to familial hypercholesterolaemia, where the defect is loss of LDL-cholesterol clearance read on the level-restore (axis-DOWN) side. Because the axis is driven UP, the corrective direction is to RESTRAIN it. The lead lever the switch re-derives is to RESTRAIN apolipoprotein C-III (APOC3): ApoC-III is an endogenous INHIBITOR of LPL, so lowering it DE-REPRESSES LPL and restores triglyceride clearance -- the approved hepatocyte-targeted APOC3 antisense oligonucleotide olezarsen, and the EU-approved APOC3 ASO volanesorsen, both act this way (the APOC3-siRNA plozasiran is late-stage clinical). Restoring LPL itself (gene therapy) is recorded as a restrain-coded lever because its NET effect on the emergent triglyceride axis is DOWN (the OTC net-effect convention); alipogene tiparvovec, an AAV1-LPL gene therapy, was historically the first gene therapy approved in the Western world (EMA 2012) and was later commercially withdrawn, so current LPL gene-therapy programmes are investigational. Conventional very-low-fat diet and fibrates/omega-3 are recorded as supportive / largely ineffective in true LPL-null FCS and are NOT switch levers. The gamma read is of the LPL promoter switch STRUCTURE; the disease lesions are coding (e.g. LPL p.Gly188Glu, p.Asp9Asn), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "circulating triglyceride / chylomicron burden (plasma triglyceride clearance) -- a lipid-metabolite axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "LPL",
+    "gamma": 1.3322,
+    "spinodal_h_sp": 0.59184,
+    "barrier": 0.44369,
+    "dwell_relative_size": 1.39785,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000008.11",
+     "gene_start": 19939252,
+     "gene_end": 19967258,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "lipoprotein lipase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "LPL encodes lipoprotein lipase, the endothelial-surface enzyme (anchored via GPIHBP1) that hydrolyses core triglyceride in chylomicrons and VLDL, clearing plasma triglyceride. It is the physiological BRAKE on circulating triglyceride. Biallelic LOF (null/severe-hypomorph) abolishes clearance -> the brake is released -> the triglyceride axis is pushed UP (fasting chylomicronaemia). Located 8p21.3 (OMIM 609708). NCBI official symbol LPL. Autosomal recessive. Coding lesions (e.g. p.Gly188Glu founder allele; p.Asp9Asn); promoter firewall respected.",
+    "src": "Brunzell (GeneReviews, Familial LPL deficiency); Okubo 2007 (LPL Gly188Glu); Burnett/Hooper LPL deficiency reviews"
+   }
+  ],
+  "primary_switch": {
+   "gene": "LPL",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "01bfb5a66ed9"
+ },
+ "treatment_A_switch": {
+  "disease": "Familial chylomicronaemia syndrome (LPL deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "APOC3",
+    "push_direction": "lower ApoC-III (an endogenous LPL inhibitor) -> DE-REPRESS LPL -> restore triglyceride clearance -> the over-accumulated plasma triglyceride axis is brought DOWN toward normal",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "hepatocyte-targeted APOC3 antisense oligonucleotide (olezarsen)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of triglyceride lowering / pancreatitis-risk reduction not derived from sequence",
+    "src": "Stroes 2024 (BALANCE, olezarsen in FCS); olezarsen (Tryngolza) FDA Dec 2024, EMA 2025 -- first therapy specifically approved for FCS"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "APOC3",
+    "push_direction": "lower ApoC-III -> de-repress LPL -> restore triglyceride clearance (EU-approved APOC3 ASO)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "APOC3 antisense oligonucleotide (volanesorsen)",
+    "status": "approved",
+    "mechanism_grade": "[O] magnitude of triglyceride lowering not derived from sequence",
+    "src": "Witztum 2019 NEJM 381:531 (APPROACH, volanesorsen in FCS); volanesorsen (Waylivra) EMA 2019"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "APOC3",
+    "push_direction": "lower ApoC-III via RNA interference -> de-repress LPL -> restore triglyceride clearance",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "APOC3 small interfering RNA (plozasiran)",
+    "status": "clinical",
+    "mechanism_grade": "[O] magnitude not derived from sequence; late-stage clinical",
+    "src": "Watts 2023/2024 (PALISADE, plozasiran APOC3 siRNA in FCS)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "LPL",
+    "push_direction": "restore LPL at the locus -> re-impose the triglyceride-clearance brake; NET effect on the emergent triglyceride axis is DOWN (restrain-coded by axis effect, the OTC gene-restoration convention)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "LPL gene therapy (AAV1-LPL; alipogene tiparvovec was EMA-approved 2012, the first gene therapy approved in the West, since commercially withdrawn -- current programmes investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] expression / triglyceride-normalisation magnitude not derived from sequence",
+    "src": "Gaudet 2013 Gene Ther 20:361 (alipogene tiparvovec / AAV1-LPL-S447X); Glybera EMA 2012 (withdrawn 2017 for commercial reasons)"
+   }
+  ],
+  "n_corrective": 4,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "APOC3",
+   "push_direction": "lower ApoC-III (an endogenous LPL inhibitor) -> DE-REPRESS LPL -> restore triglyceride clearance -> the over-accumulated plasma triglyceride axis is brought DOWN toward normal",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "hepatocyte-targeted APOC3 antisense oligonucleotide (olezarsen)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of triglyceride lowering / pancreatitis-risk reduction not derived from sequence",
+   "src": "Stroes 2024 (BALANCE, olezarsen in FCS); olezarsen (Tryngolza) FDA Dec 2024, EMA 2025 -- first therapy specifically approved for FCS"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.39785,
+   "dwell_disease": 1.92205,
+   "dwell_treated": 1.56902,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "152fa04f27ef"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "biallelic LPL loss-of-function raises the plasma-triglyceride axis (releases the clearance brake)",
+   "falsifier": "an LPL null/severe-LOF genotype that LOWERED fasting plasma triglyceride, or restoration of LPL activity that RAISED it, refutes the released-brake (axis-UP) direction",
+   "measurable_by": "post-heparin plasma LPL activity versus fasting plasma triglyceride, stratified by LPL genotype"
+  },
+  {
+   "claim": "lowering ApoC-III is the CORRECTIVE direction (de-represses LPL -> lowers triglyceride)",
+   "falsifier": "if reducing ApoC-III RAISED plasma triglyceride or failed to accelerate chylomicron clearance, the restrain-APOC3 lever sign is wrong",
+   "measurable_by": "fasting plasma triglyceride and chylomicron clearance response to an APOC3-lowering oligonucleotide in FCS"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Familial chylomicronaemia syndrome (LPL deficiency)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "a80251add013"
+ },
+ "determinism_sha": "386dd6326eb4"
+}

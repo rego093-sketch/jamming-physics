@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reach and universality: the same mechanism — Configured Continuum §10 | Jamming Physics</title>
+<meta name="description" content="The same mechanisms run unchanged in foreign domains: Burgers dissipation saturates as ν→0 (the events are shocks), the capacity identity holds in d=2–5 to…">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/10-reach-universality-same-mechanism-foreign/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Reach and universality: the same mechanism — Configured Continuum §10 | Jamming Physics"><meta property="og:description" content="The same mechanisms run unchanged in foreign domains: Burgers dissipation saturates as ν→0 (the events are shocks), the capacity identity holds in d=2–5 to…"><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/10-reach-universality-same-mechanism-foreign/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Reach and universality: the same mechanism — Configured Continuum §10 | Jamming Physics"><meta name="twitter:description" content="The same mechanisms run unchanged in foreign domains: Burgers dissipation saturates as ν→0 (the events are shocks), the capacity identity holds in d=2–5 to…">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Reach and universality: the same mechanism", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 10, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/10-reach-universality-same-mechanism-foreign/", "knowsAbout": ["jamming lattice", "configured continuum", "Reach and universality: the same mechanism"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"\u00a710 Reach and universality: the same mechanism"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §10</nav></header>
+<main>
+<h1>Reach and universality: the same mechanism in foreign domains</h1>
+<p class="answer">The same mechanisms run unchanged in foreign domains: Burgers dissipation saturates as ν→0 (the events are shocks), the capacity identity holds in d=2–5 to 10⁻¹⁶, and a Turing reaction–diffusion system locks onto the dispersion-selected k_★ to 6–8%. <span class="grade g-gate">[GATE]</span></p>
+<p class="abstract">The same mechanisms run unchanged in foreign domains: Burgers dissipation saturates as ν→0 (the events are shocks), the capacity identity holds in d=2–5 to 10⁻¹⁶, and a Turing reaction–diffusion system locks onto the dispersion-selected k_★ to 6–8%.</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/10-reach-universality-same-mechanism-foreign/" rel="noopener">Reproduction code (GitHub)</a><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/10-reach-universality-same-mechanism-foreign/agc-rotating-core-contraction/" rel="noopener">AGC reach exhibit (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>Before deepening any single pillar, we ask the prior question: how far
+does "form follows arrangement" reach? A thesis that explains only fluids is a
+curiosity; a thesis whose mechanisms recur, unchanged, in unrelated domains is a
+foundation. We therefore <em>transplant</em> each of the three substantive
+mechanisms into a domain it was not built for, and ask whether it survives. It
+does. Crucially, the underlying mathematical structures are ones physics already
+knows to be universal; the contribution of the configurational reading is to show
+that they are <em>the same statement</em>.</p>
+<h2>Dissipation transplanted: Burgers shocks are events</h2>
+<p>The cleanest test of Pillar IV outside vortex dynamics is one-dimensional Burgers
+turbulence, where anomalous dissipation is classically exact. A shock is a
+rearrangement event: the field reorganizes discontinuously and sheds energy. The
+configurational prediction is that the dissipation rate is set by the shock, not
+by the viscosity, so it must <em>saturate</em> as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib693e9a378dd.svg" loading="lazy" alt="\nu\to0">.</p>
+<div class="box repro"><p class="box-title">Universality U1 — Burgers anomalous dissipation (<code>universality.py</code>)</p><p>Decaying Burgers <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id5c9a5ace2da.svg" loading="lazy" alt="u_t+uu_x=\nu u_{xx}"> from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i45d05217cc70.svg" loading="lazy" alt="u=\sin x"> (a single shock forms at
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2f99a757df98.svg" loading="lazy" alt="t=1">); viscous dissipation <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i87c528ca124f.svg" loading="lazy" alt="\eps_\nu=\nu\langle u_x^2\rangle"> measured at
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia0fad05e0c4b.svg" loading="lazy" alt="t=1.6">. As <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu"> falls <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie5e828f5c050.svg" loading="lazy" alt="0.04\to0.006"> (a factor <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i546ef56daf5c.svg" loading="lazy" alt="\sim7">):
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i10a58c13d85f.svg" loading="lazy" alt="\eps_\nu=0.088,\,0.098,\,0.102,\,0.104">. <span class="pass">PASS</span>\\
+The dissipation does <em>not</em> fall with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu">; it saturates toward the inviscid
+shock value (relative spread <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifd672cd2dd79.svg" loading="lazy" alt="6\%"> over the small-<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu"> runs). The dissipation is
+set by the event (the shock), exactly as Pillar IV claims.</p></div>
+<p>This is not a coincidence of the model. The defect-measure formulation
+of anomalous dissipation—a nonnegative measure that appears in the energy
+balance of rough Euler/Navier–Stokes limits, concentrating at singular
+events—is precisely the object Pillar IV calls the event measure
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id9b37ed16b2f.svg" loading="lazy" alt="\mu_{\rm events}">. Burgers shows it where it is exactly computable; the same
+structure (defect concentrated on shocks, vortex sheets, reconnection) is what the
+field literature documents in compressible and three-dimensional turbulence. The
+VP reading gives that defect a configurational origin: it is the energy released
+when the arrangement rearranges.</p>
+<h2>Geometry transplanted: the capacity identity is dimension-general</h2>
+<p>Pillar II was stated for two-dimensional cores. But the identity is
+measure-accounting, and accounting does not know the dimension. In <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7d5b78691fd2.svg" loading="lazy" alt="d"> dimensions,
+with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i17f8b897399e.svg" loading="lazy" alt="V_d"> the volume of the unit ball,
+<figure class="eq"><img data-eq="flu-10-001" src="/fluid-dynamics/eq/fluid-dynamics/flu-10-001.svg" loading="lazy" alt="\begin{equation} N_\star\,r_{\rm eff}^{\,d}=\phi\,s\,L_{\rm core}^{\,d},\qquad r_{\rm eff}^{\,d}=\frac{1}{N_\star}\frac{1}{V_d}\sum_k \mathrm{vol}_k. \label{eq:capacity_d} \end{equation}"></figure></p>
+<div class="box repro"><p class="box-title">Universality U2 — capacity identity in dimension <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i7d5b78691fd2.svg" loading="lazy" alt="d"> (<code>universality.py</code>)</p><p>Synthetic packings, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie3ddbde6edb1.svg" loading="lazy" alt="40"> blobs, core shape factor <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1fa58b8b9eaa.svg" loading="lazy" alt="s=0.6">. Identity residual of
+(eq.): <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8bb62bb6ab43.svg" loading="lazy" alt="d{=}2{:}\,1.4\times10^{-16}">; <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i86edbbf2b551.svg" loading="lazy" alt="d{=}3{:}\,0">;
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i022202ed9ea5.svg" loading="lazy" alt="d{=}4{:}\,1.6\times10^{-16}">; <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if7065efbe44f.svg" loading="lazy" alt="d{=}5{:}\,0">. <span class="pass">PASS</span>\\
+Replacing <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1b5bc480d9da.svg" loading="lazy" alt="r_{\rm eff}"> by a single-core measurement and varying the packing from
+single-scale to heavy-tailed reproduces the fluid audit's signature: median
+residual grows from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i68dfac451849.svg" loading="lazy" alt="\sim150\%"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id15a09589013.svg" loading="lazy" alt="\sim400\%"> and the mean-minus-median gap
+widens (multiscale arrangements are large and skewed).</p></div>
+<p>Equation (eq.) is the integer-packing case of the
+Minkowski–Bouligand (box-counting) relation <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i399417d9f13c.svg" loading="lazy" alt="N(r)\sim(L/r)^d"> that defines
+fractal dimension. The RCCI residual is therefore a coarse multifractality probe:
+small for arrangements that fill a single scale, large and heavy-tailed for those
+that do not. "Arrangement fixes length" is geometric universality—true in any
+dimension, with the failure of one length being the signature of fractal,
+multiscale packing.</p>
+<h2>Selection transplanted: chemistry selects the same length</h2>
+<p>Pillar III's binding-versus-penalty selection was demonstrated in a
+Swift–Hohenberg flow surrogate. The strongest universality statement is that the
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i64c5fd83fae6.svg" loading="lazy" alt="k^2">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2c1eb73e06d8.svg" loading="lazy" alt="k^4"> dispersion is the <em>generic normal form</em> near any
+finite-wavelength instability, so a system of entirely different physical
+origin—chemistry—must select its length the same way.</p>
+<div class="box repro"><p class="box-title">Universality U3 — reaction–diffusion Turing selection (<code>universality.py</code>)</p><p>Schnakenberg reaction–diffusion (a chemical morphogenesis model), <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9555299da7a9.svg" loading="lazy" alt="a=0.1">,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i998dd8e0319c.svg" loading="lazy" alt="b=0.9">, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0d5f0fb2ab4b.svg" loading="lazy" alt="\gamma=80">. The spontaneously selected wavelength of the Turing pattern
+matches the linear-dispersion maximizer <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2ebbc7c28e25.svg" loading="lazy" alt="k_\star">: <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic6f5f44b6628.svg" loading="lazy" alt="d{=}35{:}\,k_\star^{\rm lin}=3.87">
+vs <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i44a555e14954.svg" loading="lazy" alt="k_\star^{\rm pat}=3.56"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i34c78b718afe.svg" loading="lazy" alt="8\%">); <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1c9fa8dfaacd.svg" loading="lazy" alt="d{=}45{:}\,3.67"> vs <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i170eff0db0a2.svg" loading="lazy" alt="3.44"> (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifd672cd2dd79.svg" loading="lazy" alt="6\%">). <span class="pass">PASS</span>\\
+A chemical system, with no fluid in it, selects the dispersion-predicted length.</p></div>
+<p>The Swift–Hohenberg normal form generically captures stationary
+finite-wavelength pattern formation: convection rolls, Turing patterns in
+morphogenesis, Faraday waves, buckling sheets, directional solidification,
+nonlinear optics, and even segregation in flowing granular media all reduce to it
+near onset, and in each the selected band scales as the <em>square root</em> of the
+control parameter—the one-half law of Proposition <a href="/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/">§8</a>. "Arrangement
+selects length" is as broad as pattern formation itself; the configurational
+reading is that the selected length is always the geometric mean of the
+arrangement's binding and penalty scales.</p>
+<h2>What the reach test establishes</h2>
+<div class="box claim"><p class="box-title">Universality finding</p><p>The three substantive mechanisms are not three borrowings from three fields. Each
+is an instance of a structure physics already treats as universal—the
+pattern-selection normal form (dynamical), box-counting/measure-accounting
+(geometric), and the anomalous-dissipation defect measure (dissipative)—and the
+configurational postulate A0 is what makes them <em>one statement seen three
+ways</em>. The reach of "form follows arrangement" is therefore the union of
+pattern formation, packing geometry, and anomalous dissipation; its content is the
+claim that these are the same phenomenon, because each is what an arrangement must
+do.</p></div>
+<p><strong>Honest limits of reach.</strong> (i) The framing reinterprets; it does
+not replace the operational tools (Swift–Hohenberg, box-counting, Duchon–Robert
+remain the calculators). (ii) Selection requires a genuine finite-wavelength
+instability—a binding/penalty competition; systems with monotone dispersions or
+pure cascades do not select a length this way. (iii) The dissipative universality
+is established at the level of the <em>defect measure</em> (a phenomenological
+certainty), while the configurational <em>mechanism</em>—that rearrangement events
+carry the flux to the dissipation scale—remains the open <span class="grade g-gate">[GATE]</span> of
+Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>. The reach is wide; the frontier is the mechanism.</p>
+<p>A further foreign-domain instance is the anomalous geometric contraction of hyper-rotating cores under shockwave confinement in high-density stiff media: the confinement turns the usual centrifugal expansion into a net inward contraction. This reach exhibit—compressible Euler with an HLLC scheme and a stiff (Tait) equation of state—is reproduced in the accompanying bundle for this section.</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/09-pillar-iv-dissipative-arrangement-sets/">&larr; §9</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/11-cross-scale-extensibility-one-arrangement/">§11 &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

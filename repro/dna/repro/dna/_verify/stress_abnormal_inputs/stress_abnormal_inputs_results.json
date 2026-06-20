@@ -1,0 +1,162 @@
+{
+  "by_engine": {
+    "bulk_contexts": {
+      "flags": [],
+      "grade": "GRACEFUL"
+    },
+    "gamma": {
+      "flags": [],
+      "grade": "GRACEFUL"
+    },
+    "run_key": {
+      "flags": [
+        {
+          "class": "RAISE_OPAQUE",
+          "input": "sub_window"
+        },
+        {
+          "class": "RAISE_OPAQUE",
+          "input": "empty"
+        }
+      ],
+      "grade": "FLAGGED"
+    }
+  },
+  "cells": {
+    "bulk_contexts": {
+      "IUPAC_codes": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      },
+      "all_N": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      },
+      "empty": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      },
+      "half_N": {
+        "class": "VALUE",
+        "detail": "cg=4.0040"
+      },
+      "lowercase": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      },
+      "normal_ctrl": {
+        "class": "VALUE",
+        "detail": "cg=4.0040"
+      },
+      "single_base": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      },
+      "sub_window": {
+        "class": "NAN",
+        "detail": "cg=nan"
+      }
+    },
+    "gamma": {
+      "IUPAC_codes": {
+        "class": "VALUE",
+        "detail": "1.6833"
+      },
+      "all_N": {
+        "class": "NAN",
+        "detail": "nan"
+      },
+      "empty": {
+        "class": "NAN",
+        "detail": "nan"
+      },
+      "half_N": {
+        "class": "VALUE",
+        "detail": "1.4079"
+      },
+      "lowercase": {
+        "class": "VALUE",
+        "detail": "1.4078"
+      },
+      "normal_ctrl": {
+        "class": "VALUE",
+        "detail": "1.4078"
+      },
+      "single_base": {
+        "class": "VALUE",
+        "detail": "1.0000"
+      },
+      "sub_window": {
+        "class": "VALUE",
+        "detail": "1.4117"
+      }
+    },
+    "run_key": {
+      "IUPAC_codes": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "all_N": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "empty": {
+        "class": "RAISE_OPAQUE",
+        "detail": "IndexError: index 2000 is out of bounds for axis 0 with size 1"
+      },
+      "half_N": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "lowercase": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "normal_ctrl": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "single_base": {
+        "class": "VALUE",
+        "detail": "shells=1 anchors=2 interior=0"
+      },
+      "sub_window": {
+        "class": "RAISE_OPAQUE",
+        "detail": "IndexError: index 2000 is out of bounds for axis 0 with size 201"
+      }
+    }
+  },
+  "engine_sha256": {
+    "clade_reader_engine.py": "61f32837ec56578ecaf87cba7a8b39edf3a0aee4793709b80440e543123da481",
+    "dna_interpreter.py": "4929932d9032179009e9b6cf5b0abd6d390a03f09867f0d06d8e9fd7e83f2cd0",
+    "key_pipeline_full.py": "3141fa22cfe34a94d9fc36b447ceffa951dc5964629abf30aae024fa475cdced"
+  },
+  "notes": {
+    "case_sensitivity": {
+      "asymmetric": true,
+      "bulk_contexts_lowercase": "NAN",
+      "comment": "gamma() normalizes via .upper() (lowercase==uppercase); bulk_contexts() is case-sensitive and returns nan on soft-masked (lowercase) input. Both graceful (neither returns a wrong number), but a soft-masked FASTA must be upper-cased before methylation calls.",
+      "gamma_lowercase": "VALUE"
+    },
+    "content_free_runkey": {
+      "all_N": "shells=1 anchors=2 interior=0",
+      "comment": "run_key() gives content-free all-N input the same minimal (1 shell / trivial edge anchors) result as a featureless-but-valid sequence. That minimal result is correct for featureless input, so this is not silent-wrong; but all-N is not separately flagged as content-free. Minor interpretability note, not a grade-down.",
+      "featureless_valid_ctrl": "shells=1 anchors=2 interior=0",
+      "indistinguishable": true
+    },
+    "sub_window_crash": {
+      "behavior": "RAISE_OPAQUE",
+      "comment": "run_key() assumes len >= W (2000 bp). Shorter input raises an opaque IndexError rather than a clean [O]/ValueError ('region shorter than window'). Loud (not silent-wrong) but ungraceful.",
+      "detail": "IndexError: index 2000 is out of bounds for axis 0 with size 201"
+    }
+  },
+  "summary": {
+    "engines_flagged": 1,
+    "engines_graceful": 2,
+    "grades": {
+      "bulk_contexts": "GRACEFUL",
+      "gamma": "GRACEFUL",
+      "run_key": "FLAGGED"
+    }
+  }
+}

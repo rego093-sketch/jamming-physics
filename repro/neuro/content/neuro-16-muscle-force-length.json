@@ -1,0 +1,71 @@
+{
+  "no": 16,
+  "slug": "16-muscle-force-length",
+  "subject": "Muscle force-length from filament geometry",
+  "headline": "The muscle force-length law, derived from locked filament dimensions and validated against Gordon-Huxley-Julian 1966",
+  "h1": "Muscle force from molecular structure - the force-length law derived, not trusted",
+  "description": "The skeletal-muscle force-length law derived from locked filament dimensions by overlap geometry, matching the Gordon-Huxley-Julian 1966 measured landmarks to within 0.02 micrometres.",
+  "grade": "model",
+  "grade_class": "g-calibrated",
+  "answer": "The skeletal-muscle force-length law is derived here from locked filament dimensions, not taken from measurement. Overlap geometry alone gives zero tension at 3.65 micrometres, a plateau whose floor sits at 2.05 and whose top is the derived range 2.20 to 2.25, and a steepening where the thick filament meets the Z-disc at 1.65. The three single-valued landmarks match Gordon-Huxley-Julian 1966 to within 0.02 micrometres, and the measured plateau top of 2.20 is not forced to an exact hit but shown to fall at the lower edge of the derived 2.20 to 2.25 range.",
+  "abstract": "The reproduction locks only measured structural constants - thick filament 1.6, thin 1.0, bare zone 0.15 to 0.2, and Z-band 0.05 micrometres - the muscle analogue of a measured parameter set, not a fitted output. From filament-overlap geometry it derives every force-length landmark: zero overlap at thick plus two thin plus Z equals 3.65, a plateau floor at two thin plus Z equals 2.05, a plateau top at two thin plus Z plus the measured bare zone spanning the range 2.20 to 2.25, a steepening where the thick filament ends reach the Z-discs at 1.65, and a descending limb linear in overlap. Gordon-Huxley-Julian 1966 measured the floor at 2.05, zero at 3.65, and the steepening near 1.67; the three single-valued landmarks match the derived values to a maximum 0.02 micrometres, while the measured plateau top of 2.20 is validated by containment, falling at the lower edge of the derived 2.20 to 2.25 range rather than being tuned to an exact match, so the measured law is reproduced from molecular structure rather than trusted. The short-side zero near 1.27, the ascending-limb tension values, and the absolute force scale are filament-compliance effects, marked open.",
+  "sections": [
+    {
+      "h2": "The law, stated",
+      "paras": [
+        "Muscle force as a function of length is derived here from the sarcomere's measured structure, not copied from a measured force curve. The only locked inputs are the filament dimensions; the force-length law and all its landmarks fall out of how the actin and myosin filaments overlap, and the classic measurement is used only as an independent check.",
+        "This inverts the earlier write-up, which trusted the Gordon-Huxley-Julian landmarks as inputs. A reproduction must derive, then validate: the structural constants go in, the overlap geometry runs, and the measured landmarks are the target the derivation must hit, never a number it is handed."
+      ],
+      "cards": [
+        {
+          "locked": "filament",
+          "html": "<b>filament dimensions: thick 1.6, thin 1.0, bare 0.15-0.2, Z-band 0.05 micrometres</b> - the electron-microscope structure of the sarcomere, the locked measured input from which the force-length law is derived (the muscle analogue of a measured parameter set, not a fitted output). <b>[F]</b> forced (measured structural constant). <a href=\"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/neuro/16-muscle-force-length/\" rel=\"noopener\">reproduction</a>"
+        }
+      ]
+    },
+    {
+      "h2": "Derived from filament-overlap geometry",
+      "paras": [
+        "A cross-bridge can form only where a thin filament overlaps the head-bearing part of the thick filament with correct polarity, and active tension is proportional to that overlap length. From this one rule the landmarks are fixed by the dimensions.",
+        "Zero tension comes at thick plus two thin plus Z-band, 1.6 plus 1.0 plus 1.0 plus 0.05 equals 3.65 micrometres, where the thin tips just clear the thick ends. The plateau runs from two thin plus Z-band equals 2.05, where opposing thin filaments meet, up to that plus the measured bare zone, the derived range 2.20 to 2.25, where the thin tips reach the head-free zone. The decline steepens at thick plus Z-band equals 1.65, where the thick filament ends bump the Z-discs.",
+        "Between the plateau top and the long zero the tension is linear in the overlap length, which is the core Gordon-Huxley-Julian result reproduced from structure: each cross-bridge contributes equally, so tension tracks the number in overlap."
+      ],
+      "cards": []
+    },
+    {
+      "h2": "Validated against Gordon-Huxley-Julian 1966",
+      "paras": [
+        "The 1966 single-fibre frog measurements are the validation target, not an input. They found a plateau between 2.05 and 2.20 micrometres, zero tension at or above 3.65, and a decline that steepens near 1.67.",
+        "The derived landmarks match: 3.65 against 3.65 and 2.05 against 2.05 exactly, the plateau top 2.20 to 2.25 spanning the measured 2.20 by containment rather than by an exact-endpoint hit, and the steepening 1.65 against the measured 1.67, a difference of 0.02 micrometres. The maximum discrepancy across the three single-valued landmarks is 0.02 micrometres, inside a 0.05 tolerance set by bare-zone and filament-end detail; the plateau top is validated separately by containment, the measured 2.20 falling at the lower edge of the derived range.",
+        "Because the numbers are regenerated deterministically and the same on every run, and the only inputs are the measured dimensions, the measured macroscopic law is reproduced from the molecular root cause rather than asserted from the literature."
+      ],
+      "cards": []
+    },
+    {
+      "h2": "What is not derivable - the open items",
+      "paras": [
+        "The ascending limb below the plateau is not fixed by overlap length. Opposing thin filaments double-overlap, drag with the wrong polarity, and the lattice compresses, so the tension there depends on filament compliance, not geometry, and is marked open rather than fabricated.",
+        "The short-side zero near 1.27 micrometres is a thick-filament crumpling limit set by buckling mechanics, again not a length. The absolute force scale needs the cross-bridge number times the unitary force times the activation fraction, none fixed by filament length. Reducing the filament dimensions themselves to nebulin and titin ruler lengths is an open structural-biology step.",
+        "Each open item is listed with its obstacle in the irreproducibility ledger, so the reproducible core and the open remainder are separated and neither is rounded into the other."
+      ],
+      "cards": []
+    },
+    {
+      "h2": "The trigger is the action potential, the force is the cross-bridge",
+      "paras": [
+        "What initiates contraction is the action potential, an ionic and therefore electromagnetic signal, through excitation-contraction coupling: the T-tubule depolarises, calcium is released from the sarcoplasmic reticulum, calcium binds troponin, tropomyosin shifts, and the actin sites open.",
+        "The force itself is then cross-bridge cycling powered by myosin ATP hydrolysis, not the field. The electromagnetic signal is the trigger and the overlap geometry sets the magnitude; this chapter derives the magnitude, while the signal that gates it is the electrical-is-electromagnetic chain of the emission chapters."
+      ],
+      "cards": [
+        {
+          "locked": "c",
+          "html": "<b>light speed c-squared = B/rho</b> - the same elastic lattice that carries light carries the ionic action potential that triggers contraction; the trigger is electromagnetic, the force is cross-bridge work. <b>[F]</b> forced. <a href=\"/neuro/15-em-link-full/\" rel=\"noopener\">EM link section 15</a>"
+        }
+      ]
+    }
+  ],
+  "prev": {
+    "slug": "15-em-link-full",
+    "no": 15
+  }
+}

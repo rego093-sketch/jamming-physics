@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix C. Archive schema & file tree — VP Theory §AXC | Jamming Physics</title>
+<meta name="description" content="The following tree is locked as the minimal immutable structure. — VP Theory, Jamming Physics.">
+<link rel="canonical" href="https://jamming-physics.org/physics/axc-archive-schema-file-tree/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix C. Archive schema & file tree — VP Theory §AXC | Jamming Physics"><meta property="og:description" content="The following tree is locked as the minimal immutable structure. — VP Theory, Jamming Physics."><meta property="og:url" content="https://jamming-physics.org/physics/axc-archive-schema-file-tree/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix C. Archive schema & file tree — VP Theory §AXC | Jamming Physics"><meta name="twitter:description" content="The following tree is locked as the minimal immutable structure. — VP Theory, Jamming Physics.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix C. Archive schema & file tree",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXC",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXC Appendix C. Archive schema & file tree"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXC</nav></header>
+<main>
+<h1>Appendix C. Archive schema &amp; file tree</h1>
+<p class="answer">Appendix C. Archive schema & file tree: The following tree is locked as the minimal immutable structure.</p>
+<p class="abstract" data-phase2="abstract">The following tree is locked as the minimal immutable structure. 2/pi.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axc-archive-schema-file-tree/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>C.0 Directory tree (immutable conventions)</h2>
+<p>The following tree is locked as the minimal immutable structure.</p>
+<pre class="vb">
+repo_root/
+  registry/
+    canon_lock.json
+    realization_lock.json
+    analysis_lock.json
+    gate_lock.json
+    protocol_lock.json
+    registry_snapshot.json
+  protocol/
+    protocol.yaml
+    pass.rules.yaml
+  runs/
+    run_&lt;run_id&gt;/
+      inputs/
+      logs/
+      metrics/
+      figures/
+      tables/
+      manifest.json
+      checksums.sha256
+  releases/
+    v4.&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/
+      release_manifest.json
+      checksums.sha256
+      registry_snapshot.json
+      artifacts/
+</pre>
+<code>registry/</code> is the SSOT, <code>runs/</code> stores artifacts, and <code>releases/</code> is the distribution unit.
+<h2>C.1 registryₛnapshot schema (SSOT sealing)</h2>
+<pre class="vb">
+{
+  "registry_snapshot_id": "sha256:&lt;64hex&gt;",
+  "created_utc": "YYYY-MM-DDThh:mm:ssZ",
+  "code_version": "git:&lt;commit&gt;",
+  "locks": {
+    "canon_lock_id": "canon_lock:v4.x.y:sha256:&lt;64hex&gt;",
+    "realization_lock_id": "realization_lock:v4.x.y:sha256:&lt;64hex&gt;",
+    "analysis_lock_id": "analysis_lock:v4.x.y:sha256:&lt;64hex&gt;",
+    "gate_lock_id": "gate_lock:v4.x.y:sha256:&lt;64hex&gt;",
+    "protocol_lock_id": "protocol_lock:v4.x.y:sha256:&lt;64hex&gt;"
+  },
+  "files": [
+    {"path": "registry/canon_lock.json", "sha256": "&lt;64hex&gt;"},
+    {"path": "registry/realization_lock.json", "sha256": "&lt;64hex&gt;"},
+    {"path": "registry/analysis_lock.json", "sha256": "&lt;64hex&gt;"},
+    {"path": "registry/gate_lock.json", "sha256": "&lt;64hex&gt;"},
+    {"path": "registry/protocol_lock.json", "sha256": "&lt;64hex&gt;"}
+  ]
+}
+</pre>
+<h2>C.2 canonₗock schema (canonical inputs)</h2>
+<pre class="vb">
+{
+  "lock_type": "canon_lock",
+  "lock_id": "canon_lock:v4.x.y:sha256:&lt;64hex&gt;",
+  "version": "v4.x.y",
+  "constants": {
+    "pi": 3.141592653589793,
+    "alpha_rect": "2/pi",
+    "delta_rect": "1/pi^2"
+  },
+  "inputs": {
+    "D_anch_m": "&lt;float&gt;",
+    "r_p_m": 0.8412e-15,
+    "l_rot_m": "&lt;float|optional&gt;",
+    "geometry_meaning": "diameter|radius",
+    "cell_geometry": "cube"
+  },
+  "hash_policy": {
+    "float_format": "decimal_string",
+    "unit_strings": "SI",
+    "ordering": "sorted_keys"
+  }
+}
+</pre>
+<h2>C.3 realizationₗock schema (unit realization)</h2>
+<pre class="vb">
+{
+  "lock_type": "realization_lock",
+  "lock_id": "realization_lock:v4.x.y:sha256:&lt;64hex&gt;",
+  "version": "v4.x.y",
+  "inputs": {
+    "a_m": 6.3299121257859865746e-19,
+    "dt_s": 1.86e-21,
+    "c_ref_m_s": 299792458
+  },
+  "anchors": {
+    "lambda_ref_nm": [633.0, 532.0],
+    "rcross_ref_id": "R-mean|R-633|R-532"
+  }
+}
+</pre>
+<h2>C.4 analysisₗock schema (choice/regime/definition locking)</h2>
+<pre class="vb">
+{
+  "lock_type": "analysis_lock",
+  "lock_id": "analysis_lock:v4.x.y:sha256:&lt;64hex&gt;",
+  "version": "v4.x.y",
+  "definitions": {
+    "event_definition_id": "&lt;string&gt;",
+    "closure_stack_id": "&lt;string&gt;",
+    "regime_map_id": "&lt;string&gt;"
+  },
+  "choices": {
+    "cell_geometry": "cube",
+    "geometry_meaning": "diameter",
+    "normalization_length_id": "a|Lq|lambda_C",
+    "report_unit_energy": "GeV",
+    "rounding_rule_id": "&lt;string&gt;"
+  },
+  "numerics": {
+    "kahan_sum": true,
+    "window_size": "&lt;int&gt;",
+    "replicas": "&lt;int&gt;"
+  }
+}
+</pre>
+<h2>C.5 gateₗock schema (thresholds/judgment rules)</h2>
+<pre class="vb">
+{
+  "lock_type": "gate_lock",
+  "lock_id": "gate_lock:v4.x.y:sha256:&lt;64hex&gt;",
+  "version": "v4.x.y",
+  "tolerances": {
+    "eps_abs": "&lt;float&gt;",
+    "eps_rel": "&lt;float&gt;",
+    "dev_tol_max": "&lt;float&gt;"
+  },
+  "fail_codes": [
+    {"code":"F-LOCK-MIX","meaning":"mixed lock_id"},
+    {"code":"F-NOTUNING","meaning":"post-hoc tuning/fitting detected"},
+    {"code":"F-REP-MISSING","meaning":"sealing/reproducibility info missing"},
+    {"code":"F-SYM-UNIT","meaning":"symbol/unit/meaning conflict"}
+  ]
+}
+</pre>
+<h2>C.6 protocolₗock schema (unit conversion/reporting conventions)</h2>
+<pre class="vb">
+{
+  "lock_type": "protocol_lock",
+  "lock_id": "protocol_lock:v4.x.y:sha256:&lt;64hex&gt;",
+  "version": "v4.x.y",
+  "unit_conversions": {
+    "GeV_to_J": 1.602176634e-10
+  },
+  "hashes": {
+    "sha256_impl": "sha256",
+    "encoding": "utf-8"
+  }
+}
+</pre>
+<h2>C.7 run manifest schema (input/artifact sealing)</h2>
+<pre class="vb">
+{
+  "run_id": "&lt;tuple-string-or-hash&gt;",
+  "created_utc": "YYYY-MM-DDThh:mm:ssZ",
+  "registry_snapshot_id": "sha256:&lt;64hex&gt;",
+  "protocol_id": "&lt;string&gt;",
+  "seed_id": "sha256:&lt;64hex&gt;",
+  "artifacts": [
+    {"path":"logs/run.log","sha256":"&lt;64hex&gt;"},
+    {"path":"metrics/metrics.json","sha256":"&lt;64hex&gt;"},
+    {"path":"tables/table.csv","sha256":"&lt;64hex&gt;"}
+  ]
+}
+</pre>
+<nav class="pn"><a rel="prev" href="/physics/axb-numerical-protocol-details-gates-seeds/">← §AXB</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axd-glossary-index/">§AXD →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

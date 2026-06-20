@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix: pre-registration files — Jamming Geodynamics §32 | Jamming Physics</title>
+<meta name="description" content="Below is an excerpt of config/constraints.yml for inspection within TeX. In the release bundle, config/constraints.yml is authoritative and is sealed by.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/32-appendix-pre-registration-files-skeletons/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix: pre-registration files — Jamming Geodynamics §32 | Jamming Physics"><meta property="og:description" content="Below is an excerpt of config/constraints.yml for inspection within TeX. In the release bundle, config/constraints.yml is authoritative and is sealed by."><meta property="og:url" content="https://jamming-physics.org/geodynamics/32-appendix-pre-registration-files-skeletons/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix: pre-registration files — Jamming Geodynamics §32 | Jamming Physics"><meta name="twitter:description" content="Below is an excerpt of config/constraints.yml for inspection within TeX. In the release bundle, config/constraints.yml is authoritative and is sealed by.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Appendix: pre-registration files",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 32,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/32-appendix-pre-registration-files-skeletons/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Appendix: pre-registration files"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§32 Prereg files"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §32</nav></header>
+<main>
+<h1>Appendix: pre-registration files</h1>
+
+<p class="answer">Appendix: pre-registration files and skeletons — Below is an excerpt of config/constraints.yml for inspection within TeX. In the release bundle, config/constraints.yml is authoritative and is sealed by checksums (checksums/sha256sum.txt). If TeX and the bundle file disagree, always prioritize the bundle file.</p>
+
+<p class="abstract">Below is an excerpt of config/constraints.yml for inspection within TeX. In the release bundle, config/constraints.yml is authoritative and is sealed by checksums ( checksums/sha256sum.txt ).</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/32-appendix-pre-registration-files-skeletons/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<aside class="vp-card" data-locked="omega_nogo"><b>Ω-NoGo: μ_eff hold-min = 10⁻²</b> — Physics No-Go floor; a low-friction claim must hold above it (h≥ 10⁻⁶ m, ΔP≤ 500 MPa). <b>[F]</b> forced. <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">Canonical derivation §16</a></aside>
+
+<p>Below is an excerpt of <code>config/constraints.yml</code> for inspection within TeX. In the release bundle, <strong><code>config/constraints.yml</code> is authoritative</strong> and is sealed by checksums (<code>checksums/sha256sum.txt</code>). If TeX and the bundle file disagree, <strong>always prioritize the bundle file</strong>.</p>
+<pre><code>version: atlantic_expansion_constraints_v0_10
+
+scenario:
+  variant_id: V_BASE
+  variant_requirements:
+    V_BASE:    [P1, P2, P3, P4, P5, P6]
+    V_REC:     [P1, P2, P3, P4, P5, P6, P10, P11]
+    V_PULSE:   [P1, P2, P3, P4, P5, P6, P10, P11, P12]
+    V_SLIP:    [P1, P2, P3, P4, P5, P6, P13, P14]
+    V_HOLO:    [P1, P2, P3, P4, P5, P6, P10, P11, P15, P16]
+    V_COUPLED: [P1, P2, P3, P4, P5, P6, P10, P11, P12, P18]
+    V_HOLOX:   [P1, P2, P3, P4, P5, P6, P10, P11, P15, P16, P19, P20, P21, P25]
+    V_STRATA:  [P1, P2, P3, P4, P5, P6, P10, P11, P15, P16, P19, P20, P21, P25, P26]
+    V_EVID:    [P1, P2, P3, P4, P5, P6, P10, P11, P12, P15, P16, P18, P19, P20, P21, P25, P29, P30]
+    V_RES:     [P1, P2, P3, P4, P5, P6, P15, P16, P19, P20, P21, P25, P22, P31, P32, P33, P34, P35]
+
+omega_nogo:
+  deltaR_stop_km: 50
+  deltaP_stop_MPa: 500
+  mu_eff_hold_min: 1e-2
+  h_stop_m: 1e-6
+  tau_hold_s: 1e3
+  undrained_required: true
+
+predictions:
+  P1: {...}
+  P2: {...}
+  ...</code></pre>
+<p><strong>Operational rules.</strong></p>
+<ul><li>Any change to <code>constraints.yml</code> implies a <strong>new version</strong> (to prevent reproducibility breakage).</li><li>Variant selection and mandatory gates are fixed by <code>scenario.variant_id</code>.</li><li>All PASS/FAIL decisions are automatically checked by <code>tests/tests_hardgate.py</code> reading this file.</li></ul>
+<h2>P8 prereg skeleton <code>config/p8_prereg.yml</code> (optional)</h2>
+<p>P8 is optional, but because analyst degrees of freedom are large, file-based preregistration is practically mandatory. Below is a minimal template; concrete values can only be updated before a release and then checksum-sealed.</p>
+<pre><code>version: p8_prereg_v0_1
+enabled: false
+
+data_selection:
+  ridge_segments: []
+  profile_min_count: 3
+  preprocessing:
+    detrend: true
+    filter:
+      type: bandpass
+      low_km: 5
+      high_km: 200
+    resample_km: 0.5
+
+H0_model:
+  gpts_version: GPTS2020
+  v_spread_source: independent
+  asymmetry_rule: mirror
+
+H2_features:
+  spectrum_method: welch
+  lambda_band_km: [5, 200]
+  peak_stat: median
+  symmetry_metric: left_right_corr
+
+metrics:
+  H0:
+    rho_unlock_min: 0.70
+    transition_rmse_unlock_max: 0.20
+  H2:
+    cv_lambda_peak_unlock_max: 0.20
+    coherence_unlock_min: 0.50
+
+priority:
+  rule: if_H0_unlock_then_H2_fail
+
+outputs:
+  json: results/p8_mag_compare.json
+  log: logs/TEST-P8.log</code></pre>
+<p><strong>Note.</strong> This template does not enforce a “correct answer”. Its purpose is to <strong>seal analyst degrees of freedom</strong> in advance.</p>
+<h2>P10 prereg skeleton <code>config/p10_sed_prereg.yml</code> (optional)</h2>
+<p>P10 (sediment thickness / budget) has large freedom due to data and model choices. At minimum, the following items must be fixed in a prereg file (checksum-sealed).</p>
+<pre><code>version: p10_sed_prereg_v0_1
+enabled: false
+
+data_sources:
+  sediment_thickness_grid: null   # external reference (to be pinned in provenance)
+  crust_age_grid: null            # external reference (to be pinned in provenance)
+  transects_table: data/sediment/atl_sed_thickness_transects.csv
+  drill_sites_table: data/sediment/atl_drill_sites.csv
+
+models:
+  thickness_age_relation:
+    form: "power_law"
+    y: "a * t^b"
+  shelf_budget:
+    form: "mass_balance"
+
+metrics:
+  regression_R2_unlock_min: 0.60
+  regression_R2_fail_max: 0.20
+  budget_closure_unlock_min: 0.70
+
+outputs:
+  json: results/p10_sed_gate.json
+  log: logs/TEST-P10.log</code></pre>
+<h2>P11 prereg skeleton <code>config/p11_nodule_prereg.yml</code> (optional)</h2>
+<pre><code>version: p11_nodule_prereg_v0_1
+enabled: false
+
+data_sources:
+  nodule_table: data/sediment/mn_nodule_samples.csv
+  water_depth_grid: null
+
+models:
+  growth_rate:
+    form: "kappa * f(oxygen, productivity, depth)"
+  boundary_conditions:
+    include_marine_snow: true
+    include_bottom_current: true
+
+metrics:
+  bc_consistency_unlock_min: 0.70
+  bc_consistency_fail_max: 0.30
+
+outputs:
+  json: results/p11_nodule_bc.json
+  log: logs/TEST-P11.log</code></pre>
+<h2>P12 prereg skeleton <code>config/p12_volc_prereg.yml</code> (optional)</h2>
+<pre><code>version: p12_volc_prereg_v0_1
+enabled: false
+
+data_sources:
+  volcano_catalog: data/volc/volcano_construction_ages.csv
+  baseline_catalog: null  # e.g., GVP (to be pinned in provenance)
+
+models:
+  onset_cluster:
+    statistic: "scan"
+    window_ka: 2.0
+
+metrics:
+  p_value_unlock_max: 0.05
+  effect_size_unlock_min: 0.30
+
+outputs:
+  json: results/p12_volc_cluster.json
+  log: logs/TEST-P12.log</code></pre>
+<h2>P13 (optional) friction threshold / stick-slip prereg template</h2>
+<pre><code>version: p13_friction_prereg_v0_1
+enabled: false
+
+data_sources:
+  # Literature / model inputs (must be pinned in provenance)
+  driving_stress_refs: []
+  friction_coeff_refs: []
+  pore_pressure_refs: []
+
+selection:
+  regions: []   # e.g., "Himalaya", "Nazca", "Mid-Atlantic"
+  time_window: null
+
+definitions:
+  tau_drive_MPa:
+    method: "literature_range"
+  tau_crit_MPa:
+    formula: "mu_s*(sigma_n - alpha*Pf)"
+  R_tau:
+    formula: "tau_drive / tau_crit"
+
+metrics:
+  R_tau_unlock_min: 1.0
+  R_tau_hold_max: 0.3
+
+outputs:
+  json: results/p13_friction_gate.json
+  log: logs/TEST-P13.log</code></pre>
+<h2>P14 (optional) thermo-kinematic afterimage prereg template</h2>
+<pre><code>version: p14_thermo_kinematic_prereg_v0_1
+enabled: false
+
+data_sources:
+  plate_velocity_constraints: data/kinematics/plate_velocity_constraints.csv
+  heatflow_constraints: null  # to be pinned in provenance
+
+models:
+  kinematic_tail:
+    form: "power_law"   # power_law | exponential
+    v_t: "v0*(1+t/t0)^(-p)"
+  heat_budget:
+    W_fric: "eta_h*tau*A*S"
+    dT: "W_fric/(rho*cp*A*h_eff)"
+
+parameters:
+  v0_m_s: null
+  t0_s: null
+  p: null
+  tau_MPa: null
+  A_km2: null
+  S_km: null
+  h_eff_km: null
+  rho_kg_m3: 3300
+  cp_J_kgK: 1200
+  eta_h: 0.5
+
+metrics:
+  dT_hold_K: 300
+  dT_fail_K: 1200
+
+outputs:
+  json: results/p14_tail_heat.json
+  log: logs/TEST-P14.log</code></pre>
+<h2>P15 (optional) Great Drainage prereg template</h2>
+<pre><code>version: p15_drainage_prereg_v0_1
+enabled: false
+
+data_sources:
+  basin_volume_scenarios: data/hydro/basin_volume_scenarios.csv
+  sea_level_constraints: data/rsl/holocene_sea_level_constraints.csv
+  canyon_markers: data/hydro/submarine_canyon_markers.csv
+
+models:
+  sea_level_gate:
+    dSL: "-deltaV / A_ocean"
+  discharge_gate:
+    Qbar: "deltaV / T"
+
+metrics:
+  closure_unlock_min: 0.70
+  canyon_cluster_p_unlock_max: 0.05
+
+outputs:
+  json: results/p15_drainage_gate.json
+  log: logs/TEST-P15.log</code></pre>
+<h2>P16 (optional) North Atlantic freshwater shock prereg template</h2>
+<pre><code>version: p16_freshwater_prereg_v0_1
+enabled: false
+
+data_sources:
+  proxy_timeseries: data/climate/freshwater_proxy_timeseries.csv
+  amoc_proxy: null
+
+models:
+  joint_inflection:
+    window_ka: 2.0
+    method: "changepoint"
+
+metrics:
+  synch_unlock_min: 0.70
+  synch_fail_max: 0.30
+
+outputs:
+  json: results/p16_freshwater_amoc.json
+  log: logs/TEST-P16.log</code></pre>
+<h2>P17 (exploratory) biogeographic split prereg template</h2>
+<pre><code>version: p17_bio_prereg_v0_1
+enabled: false
+
+data_sources:
+  split_candidates: data/bio/atlantic_split_candidates.csv
+
+models:
+  divergence_time:
+    method: "molecular_clock"
+
+metrics:
+  cluster_p_unlock_max: 0.05
+
+outputs:
+  json: results/p17_bio_split.json
+  log: logs/TEST-P17.log</code></pre>
+<h2>P18 (optional) coupling to Pacific expansion V2 (open-system isotopes) prereg template</h2>
+<pre><code>version: p18_isotope_open_system_prereg_v0_1
+enabled: false
+
+data_sources:
+  casebook: data/isotopes/open_system_casebook.csv
+  pacific_v2_notes: docs/user_notes_pacific_expansion_v2_extracted.txt
+
+tests:
+  TEST_ISO1:
+    requirement: "modern_sample_reproducibility"
+    tolerance_percent: 2.0
+
+models:
+  open_system_age_shift:
+    form: "A(t) = A0 + deltaA(t)"
+
+metrics:
+  fail_if_TEST_ISO1_fails: true
+
+outputs:
+  json: results/p18_isotope_gate.json
+  log: logs/TEST-P18.log</code></pre>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/31-appendix-reproducibility-steps-atl-datapack/">← §31</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/33-appendix-p29-prereg-data-source/">§33 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

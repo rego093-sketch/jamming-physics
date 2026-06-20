@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galactic Rotation and the Derivation — Vacuum-Inflow Cosmology §6 | Jamming Physics</title>
+<meta name="description" content="Three model-independent facts define the problem. (i) Flat rotation curves: the orbital speed in the outer parts of disk galaxies does not fall as Kepler's v∝">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/06-galactic-rotation-derivation-a0-ch0/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Galactic Rotation and the Derivation — Vacuum-Inflow Cosmology §6 | Jamming Physics"><meta property="og:description" content="Three model-independent facts define the problem. (i) Flat rotation curves: the orbital speed in the outer parts of disk galaxies does not fall as Kepler"><meta property="og:url" content="https://jamming-physics.org/cosmology/06-galactic-rotation-derivation-a0-ch0/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Galactic Rotation and the Derivation — Vacuum-Inflow Cosmology §6 | Jamming Physics"><meta name="twitter:description" content="Three model-independent facts define the problem. (i) Flat rotation curves: the orbital speed in the outer parts of disk galaxies does not fall as Kepler">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Galactic Rotation and the Derivation", "isPartOf": {"@type": "CreativeWorkSeries", "name": "Vacuum-Inflow Cosmology", "identifier": "10.5281/zenodo.20568874", "sameAs": "https://doi.org/10.5281/zenodo.20568874"}, "position": 6, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20568874", "datePublished": "2026-06-13", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/06-galactic-rotation-derivation-a0-ch0/", "knowsAbout": ["vacuum inflow", "jamming lattice", "galactic rotation curve"], "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§6 Galactic Rotation and the Derivation"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §6</nav></header>
+<main><!--vp-v1.8-->
+<h1>Galactic Rotation and the Derivation $a₀=cH₀/2π$</h1>
+<p class="answer">This is the first chapter whose central result is distinguishing rather than degenerate. Once the cosmic background inflow is included, the same inflow law departs from Newton in the weak field of galaxies and derives the galactic acceleration scale a₀ ≈ 1.08×10⁻¹⁰ m s⁻²—a quantity MOND must take as a free constant. It is confirmed on NGC 2403.</p>
+<p class="abstract" data-phase2="abstract">Three model-independent facts define the problem. (i) Flat rotation curves: the orbital speed in the outer parts of disk galaxies does not fall as Kepler's v∝ r^(-1/2) but levels off to a constant.</p>
+<aside class="claim-strip page"><span class="g g-distinguishing" data-phase2="grade">Distinguishing</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/06-galactic-rotation-derivation-a0-ch0/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="nu_p"><b>νₚ = 3π⁴ ≈ 292.227 s⁻¹</b> — per-nucleon vacuum-annihilation rate, fixed geometrically by the n-fold rectification law (imported from the physics volume, P2). <b class="grade g-imported">[imported]</b> <a href="/cosmology/axd-index-imports-physics-volume/">import index (physics vol. P2)</a></aside>
+<aside class="vp-card" data-locked="kappa_opt"><b>κ_opt = H₀/c</b> — background optical (redshift) rate of the present lattice; its value is taken as input and why ρ_eff evolves is the E-COSMO open question. <b class="grade g-open">[open]</b> <a href="/cosmology/07-non-expanding-lattice-optics-cosmology/">canonical use §7</a></aside>
+<aside class="vp-card" data-locked="massratio"><b>mₚ/mₑ = 6π⁵ ≈ 1836.118</b> — proton-to-electron mass ratio, π-fixed by the same n-fold law (imported from the physics volume). <b class="grade g-imported">[imported]</b> <a href="/cosmology/axd-index-imports-physics-volume/">import index (physics vol.)</a></aside>
+<em>This is the first chapter whose central result is <strong>distinguishing</strong> rather
+than degenerate. Chapters 3–5 reproduced Newtonian gravity (orbits, spin, tides) and made the
+same predictions as standard theory; their value was economy. Here the <em>same</em> inflow law,
+once the cosmic background inflow is included, departs from Newton in the weak field of
+galaxies—and, crucially, it <em>derives</em> the galactic acceleration scale
+a₀=cH₀/2π, a quantity that Modified Newtonian Dynamics must take as a free constant of
+nature and that particle dark matter has no reason to produce at all. We give the derivation
+with no step omitted, confirm it on the radial acceleration relation and on the measured
+rotation curve of NGC 2403, and are explicit about exactly which parts are distinguishing,
+which remain degenerate, and which (the precise 2π) are still open.</em>
+<h2>The raw facts to be explained</h2>
+<p>Three model-independent facts define the problem. (i) <em>Flat rotation curves</em>: the orbital
+speed in the outer parts of disk galaxies does not fall as Kepler's v∝ r^(-1/2) but
+levels off to a constant. (ii) The <em>radial acceleration relation</em> (RAR): the measured
+centripetal acceleration g_(obs)=v²/r is a tight, one-to-one function of the
+acceleration g_N computed from the visible (baryonic) matter alone, with a characteristic
+scale near 1.2×10⁻¹⁰ms⁻² separating two behaviours. (iii) The
+<em>baryonic Tully–Fisher relation</em> (BTFR): the flat speed obeys v⁴∝ M_(bar).
+A successful theory must produce all three, and—if it is to be more than a fit—should
+explain <em>why</em> the scale in (ii) takes the value it does.</p>
+<h2>The logical chain (no step omitted)</h2>
+<ol>
+<li> <strong>The local inflow.</strong> A galaxy's baryons are sinks of the medium (Chapter 3), so
+they set up a local inflow whose Newtonian acceleration at radius r is
+g_N=GM_(bar)(<r)/r², with GM_(bar)=κQ_(bar) as in
+Chapter 3. This term alone gives Kepler and is what dark-matter advocates compute as
+“baryons only.”
+<li> <strong>The background inflow.</strong> The medium is not static. The cosmological redshift
+(developed in Chapter 7) is, in this framework, light losing energy to the medium at the rate
+<figure class="eq" id="eq:kopt"><img src="/cosmology/eq/cosmology/cos-06-000.svg" data-eq="cos-06-000" width="377" height="38" loading="lazy" alt="\begin{equation} \kappa_{\mathrm{opt}} \;=\; \frac{H_{0}}{c}\qquad[\text{redshift per unit path length}], \end{equation}"></figure>
+<p>which is a property of the medium itself: everywhere, the lattice is being processed at a rate
+tied to H₀. There is therefore a <em>universal background inflow</em>, present in every
+galaxy, characterised by the single rate κₒₚₜ.</p>
+<li> <strong>The background acceleration scale.</strong> A rate-per-length κₒₚₜ combined with the
+medium's wave speed c defines an acceleration,
+<figure class="eq" id="eq:abg"><img src="/cosmology/eq/cosmology/cos-06-001.svg" data-eq="cos-06-001" width="271" height="38" loading="lazy" alt="\begin{equation} a_{\mathrm{bg}} \;=\; c^{2}\,\kappa_{\mathrm{opt}} \;=\; c^{2}\,\frac{H_{0}}{c}\;=\; c\,H_{0}, \end{equation}"></figure>
+<p>(dimensionally [m²s⁻²][m⁻¹]=ms⁻²). This is
+the acceleration below which the background processing of the medium is no longer negligible
+compared with a body's own inflow.</p>
+<li> <strong>The crossover scale: the full background wave-cycle.</strong> The dynamics crosses over from
+“local-dominated” (g_Ngg a_(bg)) to “background-dominated”
+(g_Nll a_(bg)) at an acceleration of order cH₀. The precise crossover carries
+the factor 2π of one full wave cycle:
+<figure class="eq" id="eq:a0"><img src="/cosmology/eq/cosmology/cos-06-002.svg" data-eq="cos-06-002" width="212" height="52" loading="lazy" alt="\begin{equation} \boxed{\;a_{0} \;=\; \frac{c^{2}\kappa_{\mathrm{opt}}}{2\pi}\;=\;\frac{c\,H_{0}}{2\pi}.\;} \end{equation}"></figure>
+<p>This 2π is the <em>wave-cycle</em> factor, and in this framework it is <em>derived</em>, not
+inserted. The redshift rate κₒₚₜ=H₀/c (Eq. <a class="xref" data-ref="eq:kopt">(kopt)</a>) is the background lattice wave's
+spatial frequency—a wavenumber. One full cycle of that wave (the cosine completing its 2π
+period) spans the wavelength λ_(bg)=2π/κₒₚₜ=2π c/H₀=2π R_H;
+equivalently the angular processing rate ω_(bg)=cκₒₚₜ=H₀ corresponds to the
+cyclic frequency f_(bg)=H₀/2π. The acceleration set by one full background cycle is
+then a₀=c²/λ_(bg)=cf_(bg)=cH₀/2π. (Step 3's
+a_(bg)=c²κₒₚₜ=cH₀ is the per-radian value; one full cycle is 2π radians, hence
+the division.) The factor is therefore the framework's <em>canonical full-cycle constant</em>,</p>
+<figure class="eq" id="eq:2pi-alphadelta"><img src="/cosmology/eq/cosmology/cos-06-003.svg" data-eq="cos-06-003" width="770" height="47" loading="lazy" alt="\begin{equation} 2\pi \;=\; \frac{\alpha}{\delta}\;=\;\frac{2/\pi}{1/\pi^{2}},\qquad \alpha=\langle|\cos\theta|\rangle=\tfrac{1}{2\pi}\!\int_{0}^{2\pi}\!|\cos\theta|\,d\theta=\tfrac{2}{\pi}, \quad \delta=\Big(\tfrac{1}{2\pi}\!\int_{0}^{2\pi}\![\cos\theta]_{+}\,d\theta\Big)^{2}=\tfrac{1}{\pi^{2}}, \end{equation}"></figure>
+<p>the derived ratio of the two cosine-integral rectification constants (physics volume,
+DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}, §5.1–5.2 and §13.5.5)—the <em>same</em> 2π that gives
+mₚ/mₑ=2π·3π⁴=6π⁵. The horizon route is a consistency cross-check, not the
+source: the de Sitter horizon at R_H=c/H₀ returns the same a≃ cH₀/2π through the
+Unruh relation (Verlinde), and its 2π—the periodicity of the Euclidean thermal cycle—is this
+same full-cycle constant. What remains a <em>modelling</em> choice, honestly flagged (Status, §5), is
+the identification of the relevant length as the full wavelength λ_(bg) rather than
+the reduced barλ=1/κₒₚₜ=R_H (which would give the bare cH₀); the wave picture and
+the  90% empirical match (Table <a class="xref" data-ref="tab:a0">(a0)</a>) support the full-cycle reading.</p>
+<li> <strong>The combined law and its two limits.</strong> With a₀ fixed, the effective
+acceleration is the one-parameter interpolation
+<figure class="eq" id="eq:law"><img src="/cosmology/eq/cosmology/cos-06-004.svg" data-eq="cos-06-004" width="481" height="46" loading="lazy" alt="\begin{equation} a \;=\; g_{N}\,\nu\!\left(\frac{g_{N}}{a_{0}}\right), \qquad \nu(x)=\frac{1}{1-e^{-\sqrt{x}}}\;\xrightarrow{x\gg1}1,\;\xrightarrow{x\ll1}\frac{1}{\sqrt{x}} . \end{equation}"></figure>
+<p>The two limits are forced, not chosen:</p>
+<ul>
+<li> g_Ngga₀ (Solar System, inner galaxy): ν→1, so a=g_N=GM/r² —
+<strong>Kepler</strong>, recovering Chapter 4 exactly.
+<li> g_Nlla₀ (outer galaxy): ν→√a₀/g_N, so
+a=√a₀g_N=√a₀GM/r, giving v²=ar=√a₀GM=const —
+a <strong>flat rotation curve</strong>, and v⁴=a₀GM_(bar) — the <strong>BTFR</strong>.
+</ul>
+<li> <strong>The number.</strong> Equation <a class="xref" data-ref="eq:a0">(a0)</a> evaluates (Table <a class="xref" data-ref="tab:a0">(a0)</a>) to
+a₀≈1.08×10⁻¹⁰ms⁻² for H₀=70, i.e. 90% of the
+empirical RAR scale 1.2×10⁻¹⁰, with the value rising from 0.87× to 0.94×
+across the measured range of H₀.
+</ol>
+<div class="tblwrap">
+<figcaption>The derived acceleration scale a₀=cH₀/2π for the measured range of H₀,
+compared with the empirical RAR value 1.2×10⁻¹⁰ms⁻².</figcaption>
+<span id="tab:a0"></span>
+<table><tr><td>H₀ [km s⁻¹Mpc⁻¹]</td><td>cH₀ [m s⁻²]</td><td>a₀=cH₀/2π</td><td>ratio to 1.2×10⁻¹⁰</td></tr><tr><td>67.4</td><td>6.55×10⁻¹⁰</td><td>1.042×10⁻¹⁰</td><td>0.87</td></tr><tr><td>70.0</td><td>6.80×10⁻¹⁰</td><td>1.082×10⁻¹⁰</td><td>0.90</td></tr><tr><td>73.0</td><td>7.09×10⁻¹⁰</td><td>1.129×10⁻¹⁰</td><td>0.94</td></tr></table>
+</div>
+<h2>Simulation and verification</h2>
+<p>Two checks, both reproducible (<code>ch6_galaxy_rar.py</code>).</p>
+<h4>The RAR over  10 decades.</h4>
+ Figure <a class="xref" data-ref="fig:gal">(gal)</a> (left) plots the single
+law <a class="xref" data-ref="eq:law">(law)</a>. The Solar-System points (Mercury through Neptune, g_N 10⁰ to
+10⁻⁵ms⁻²) lie on the Newtonian diagonal a=g_N; the data of NGC 2403
+(g_N 10⁻¹¹ms⁻²) lie on the deep branch a=√a₀ g_N; one curve
+connects them across about ten decades in acceleration, with the bend at a₀. The framework
+thus places the Solar System and galaxies on the <em>same</em> acceleration relation, the inner
+and outer limits of one inflow law.
+<h4>NGC 2403.</h4>
+ Figure <a class="xref" data-ref="fig:gal">(gal)</a> (right) fits the measured rotation curve of NGC 2403
+(73 points, SPARC) with the law <a class="xref" data-ref="eq:law">(law)</a> at the derived a₀, the only adjustable
+quantity being the stellar disk mass-to-light ratio Υ. The fit gives
+Υ=0.567 (a normal stellar value) and χ²/dof=1.99; the outer speed is
+reproduced (v_(obs)≃134kms⁻¹ against a baryons-only Newtonian
+≃53kms⁻¹, the inflow model giving ≃126kms⁻¹). The
+flat curve emerges with no dark-matter halo and no per-point tuning.
+<h4>The full SPARC sample, and an honest comparison with MOND.</h4>
+ NGC 2403 is one galaxy.
+The same law, with the <em>same</em> universal parameters and <em>no</em> per-galaxy tuning, was run
+across the entire SPARC Rotmod sample of 175 rotation-dominated late-type galaxies in a five-fold
+cross-validation (companion archive, DOI <code>10.5281/zenodo.17622357</code>); it reproduces the
+rotation curves with a median RMS of ≈13kms⁻¹ at the derived a₀, fixed
+mass-to-light ratios, and a single gas-thickness prescription. The honest comparison with MOND must
+be made on <em>matched</em> assumptions: when MOND's standard interpolation is evaluated with the same
+mass-to-light ratios and gas treatment (rather than the unit mass-to-light, no-thickness defaults,
+which inflate its residuals), the two are <em>statistically indistinguishable</em>—median RMS within
+ 0.1kms⁻¹ and a roughly even split galaxy-by-galaxy. On the rotation curves
+the inflow law <em>is</em> MOND's fit. We therefore claim no advantage from the curve fit; the
+advantage is solely that a₀ is derived rather than postulated.
+<figure class="fig"><img src="/cosmology/assets/img/ch6_galaxy.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h2>Why this is distinguishing</h2>
+<p>The central claim of this chapter is not that it fits rotation curves—several frameworks
+do—but that it <em>derives the scale</em> at which they bend.</p>
+<ul>
+<li> <strong>Against MOND.</strong> Modified Newtonian Dynamics uses exactly the interpolation
+<a class="xref" data-ref="eq:law">(law)</a>, but a₀ is in MOND a <em>fundamental constant of nature</em> with no
+derivation; the long-noted numerical near-coincidence a₀≈ cH₀/2π is, in MOND, a
+coincidence. Here it is the <em>content</em> of Eq. <a class="xref" data-ref="eq:a0">(a0)</a>: a₀ is the cosmic background
+inflow rate κₒₚₜ=H₀/c promoted to an acceleration. The galactic scale and the cosmic
+expansion rate are one quantity.
+<li> <strong>Against particle dark matter.</strong> A halo of collisionless particles has no reason to
+produce a characteristic <em>acceleration</em> at all, and the tightness of the RAR—baryons
+predicting the full rotation with little scatter—is a standing puzzle for it. In the inflow
+picture there is a single acceleration scale by construction (Eq. <a class="xref" data-ref="eq:a0">(a0)</a>), and the
+baryon–rotation coupling is automatic because the extra acceleration is sourced by the same
+inflow as the baryons (the deficit microphysics is Chapter 8).
+<li> <strong>Unification.</strong> The same law, the same a₀, spans the Solar System (Chapter 4,
+Kepler) to galaxies (here, flat) on one curve over ten decades—a single principle, not two
+regimes glued together.
+</ul>
+<h2>Status of this chapter</h2>
+<ul>
+<li> <strong>Distinguishing (the result).</strong> a₀=cH₀/2π is <em>derived</em> from the cosmic
+inflow rate, not fitted; it reproduces the empirical RAR scale to  90% and ties the
+galactic scale to H₀. This is something MOND cannot do and particle dark matter has no
+mechanism for.
+<li> <strong>Degenerate (what the fit alone shows).</strong> The <em>shape</em> of the rotation
+curves—NGC 2403, and the full 175-galaxy SPARC sample under matched assumptions—is reproduced
+equally well by MOND (statistically indistinguishable, median RMS within  0.1km
+s⁻¹) and by tuned dark-matter halos; the curve fit does not by itself select the inflow
+picture. We claim no advantage from the curve fit as such—only from the derived scale and the
+unification.
+<li> <strong>Derived, with one flagged identification.</strong> The factor 2π in
+Eq. <a class="xref" data-ref="eq:a0">(a0)</a> is <em>not</em> a free or borrowed number: it is the framework's canonical
+full-cycle constant 2π=α/δ=(2/π)/(1/π²), the derived ratio of the two
+cosine-integral rectification constants (physics volume §5.1–5.2, §13.5.5), and the <em>same</em>
+2π as in mₚ/mₑ=2π·3π⁴. In the wave picture it is the
+wavenumber→full-wavelength factor (λ_(bg)=2π/κₒₚₜ), giving
+a₀=c²/λ_(bg)=cH₀/2π (Step 4). The remaining <em>modelling</em> step is the
+identification of the relevant length as the full wavelength rather than the reduced
+barλ=R_H (which would give the bare cH₀); the wave concept and the  90%
+empirical match support it, and the empirical scale independently places the coefficient in the
+consistent band k≈5–7 (<code>ch6_galaxy_rar.py</code>, part D). The interpolation function
+ν is taken in the standard RAR form rather than derived. And the <em>reason</em> the deficit
+tracks the baryons—the microphysics behind the law—is deferred to Chapter 8.
+</ul>
+<h2>Anticipated objections</h2>
+<h4>“This is just MOND.”</h4>
+ At the level of the rotation-curve fit, the formula is
+MOND's, and we say so (degenerate). The difference is that MOND <em>postulates</em> a₀ whereas
+this framework <em>derives</em> it from cosmology, Eq. <a class="xref" data-ref="eq:a0">(a0)</a>. That difference is not
+cosmetic: it converts a free constant into a prediction and yields a falsifiable test (§7).
+<h4>“Where does the 2π come from?”</h4>
+ From one full wave cycle. The redshift rate
+κₒₚₜ=H₀/c is the background wave's spatial frequency (a wavenumber); one full cycle of the
+cosine spans the wavelength λ_(bg)=2π/κₒₚₜ, and the acceleration over that full
+cycle is a₀=c²/λ_(bg)=cH₀/2π (Step 4). The factor is the framework's
+<em>derived</em> full-cycle constant 2π=α/δ=(2/π)/(1/π²)—the ratio of the two
+cosine-integral rectification constants (physics volume §5.1–5.2, §13.5.5)—the same 2π
+that fixes mₚ/mₑ=2π·3π⁴, not a number adjusted to fit. Horizon thermodynamics
+returns the <em>same</em> value as a cross-check: the de Sitter horizon's Unruh relation gives
+a₀≃ cH₀/2π (Verlinde), its 2π being the periodicity of the Euclidean thermal
+cycle—the same full-cycle constant. What is a modelling choice (flagged) is reading the relevant
+length as the full wavelength rather than the reduced R_H; the wave picture supports it, and
+the empirical scale sits consistently in the band k≈5–7 around it.
+<h4>“Dark matter fits rotation curves too.”</h4>
+ Yes, with a halo tuned per galaxy, so on
+any one curve the two are degenerate. But dark matter supplies no acceleration scale and no
+reason for the RAR's baryon-coupling; the inflow law supplies both from one derived number.
+The competition is therefore decided not on single curves but on (a) whether an acceleration
+scale exists and equals cH₀/2π, and (b) the test in §7.
+<h2>The distinguishing prediction</h2>
+<p>Equation <a class="xref" data-ref="eq:a0">(a0)</a> makes a test that separates this framework from MOND without any distance
+ladder: <strong>a₀ should track H₀.</strong> If a₀=cH₀/2π, then in regions or epochs
+with a different effective H₀ the galactic acceleration scale should differ in proportion,
+and a₀ should have evolved with cosmic time as H(z). MOND predicts a₀ is a universal
+constant, independent of environment and epoch. A measured correlation of the per-galaxy a₀
+with local/cosmic H₀ would confirm the inflow derivation and exclude constant-a₀ MOND;
+its absence would falsify Eq. <a class="xref" data-ref="eq:a0">(a0)</a>. This is the cleanest near-term discriminator the
+volume offers and is recorded in the ledger (Chapter 16).</p>
+<h2>Reproducibility</h2>
+<p>The script <code>ch6_galaxy_rar.py</code> (reproducibility package) does three things: (1)
+evaluates a₀=cH₀/2π for H₀=67.4,70,73, printing Table <a class="xref" data-ref="tab:a0">(a0)</a>; (2) tabulates
+the law <a class="xref" data-ref="eq:law">(law)</a> in both limits (Newtonian ratio →1 at high g_N; deep value
+→√a₀ g_N at low g_N); (3) reads the SPARC file <code>NGC2403_rotmod.dat</code>,
+fits the single stellar Υ by χ² (with a 3kms⁻¹ error floor),
+and reports Υ=0.567, χ²/dof=1.99, and the figure. Expected output:
+a₀(70)=1.08×10⁻¹⁰; high-g_N ratio 1.000; deep-branch equality;
+Υ=0.567, χ²/dof=1.99. The only adjustable quantity is the stellar
+Υ; a₀ is <em>not</em> fitted.</p>
+<em>Next stage: Chapter 7 (the non-expanding lattice-optics redshift and the
+angular-size discriminator), which supplies the κₒₚₜ=H₀/c used here. Foundations continue
+to be imported from the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}.</em>
+<nav class="pn"><a rel="prev" href="/cosmology/05-axial-spin-tidal-locking-inflow/">← §5</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/07-non-expanding-lattice-optics-cosmology/">§7 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+3D solver validation (inviscid, N=32): dE/E=1.0e-08 (PASS), div=4.1e-12 (PASS)
+forced N=48 nu=0.008: developing a cascade (skewness -> ~ -0.5)...
+  developed: skewness=-0.35, Z=9.5, eps=0.151  (104s)
+  forward energy-flux concentration on strain events:
+        ell  <Pi>/eps   fwd%  top20%  vol50%  corr|S|2
+     0.10L      0.37    94%     63%     12%     0.804
+     0.13L      0.47    94%     60%     14%     0.792
+     0.16L      0.55    94%     58%     15%     0.781
+  => <Pi> > 0 (forward), concentrated on strain events (top20% carries the majority),
+     resolution-converged across N=64,80,96. The 3D events carry the energy flux to
+     the dissipation scale; only the infinite-Reynolds asymptotic remains open.

@@ -1,0 +1,170 @@
+{
+ "disease": "Primary hyperoxaluria type 1",
+ "omim": "259900",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Primary hyperoxaluria type 1",
+  "omim": "259900",
+  "summary": "A single-gene AGXT loss-of-function. The liver-peroxisomal enzyme alanine-glyoxylate aminotransferase normally detoxifies glyoxylate by transaminating it to glycine; when AGXT is deficient, glyoxylate is instead oxidised to oxalate, so endogenous oxalate is OVER-produced -> the toxic oxalate burden is driven UP (calcium-oxalate nephrolithiasis, nephrocalcinosis, and ultimately systemic oxalosis). Read as a released BRAKE on oxalate accumulation (AGXT brakes the build-up; LOF releases it -> burden UP) -- the tyrosinaemia / porphyria pattern. The kit re-derives the approved therapy, which RESTRAINS the UPSTREAM oxalate-producing flux rather than restoring AGXT: lumasiran (an HAO1/glycolate-oxidase-knockdown siRNA) lowers glyoxylate supply, and nedosiran (an LDHA-knockdown siRNA) lowers the final glyoxylate->oxalate step; both reduce oxalate production. Restoring AGXT itself (liver transplantation, historically the definitive correction; AGXT gene / hepatocyte therapy investigational) is the function-restoring lever. The gamma read is of the AGXT locus switch STRUCTURE; the disease lesion (e.g. the Gly170Arg peroxisome-to-mitochondrion mistargeting allele) is coding, outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "toxic oxalate burden (glyoxylate -> oxalate over-production)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "AGXT",
+    "gamma": 1.4207,
+    "spinodal_h_sp": 0.65178,
+    "barrier": 0.5046,
+    "dwell_relative_size": 1.53943,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000002.12",
+     "gene_start": 240868823,
+     "gene_end": 240880499,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "alanine--glyoxylate aminotransferase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "AGXT (alanine-glyoxylate aminotransferase) is the liver-peroxisomal enzyme that transaminates glyoxylate to glycine, keeping oxalate production in check. As a BRAKE on oxalate accumulation, its LOF RELEASES the brake -> glyoxylate is oxidised to oxalate and the toxic oxalate burden accumulates. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the TOXIC OXALATE BURDEN (it goes UP), so the corrective levers LOWER it.",
+    "src": "Danpure & Jennings 1986 (AGXT deficiency / peroxisomal mistargeting); Williams 2009 (AGXT mutation spectrum)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "AGXT",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "c1ed7b763f0e"
+ },
+ "treatment_A_switch": {
+  "disease": "Primary hyperoxaluria type 1",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "HAO1",
+    "push_direction": "knock down the UPSTREAM glycolate oxidase (HAO1) so less glyoxylate is made -> lower oxalate production -> lower the toxic oxalate burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HAO1/glycolate-oxidase-knockdown siRNA (lumasiran)",
+    "status": "approved",
+    "mechanism_grade": "[O] oxalate-lowering / stone-rate magnitude not derived from sequence",
+    "src": "Garrelfs 2021 NEJM 384:1216 (ILLUMINATE-A, lumasiran); lumasiran FDA/EMA 2020"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "LDHA",
+    "push_direction": "knock down LDHA so the final glyoxylate->oxalate step is reduced -> lower oxalate production",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "LDHA-knockdown siRNA (nedosiran)",
+    "status": "approved",
+    "mechanism_grade": "[O] oxalate-lowering magnitude not derived from sequence",
+    "src": "Mandrile 2023 (PHYOX, nedosiran); nedosiran FDA 2023"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "AGXT",
+    "push_direction": "restore AGXT so glyoxylate is detoxified to glycine again -> oxalate production falls -> lower the toxic burden (function-restoring / definitive)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AGXT restoration (liver transplantation; AGXT gene / hepatocyte therapy investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree/durability of restored AGXT flux not derived from sequence",
+    "src": "Cochat & Rumsby 2013 NEJM (liver / combined transplant in PH1); Zheng 2020 (AAV-AGXT preclinical)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "HAO1",
+   "push_direction": "knock down the UPSTREAM glycolate oxidase (HAO1) so less glyoxylate is made -> lower oxalate production -> lower the toxic oxalate burden",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "HAO1/glycolate-oxidase-knockdown siRNA (lumasiran)",
+   "status": "approved",
+   "mechanism_grade": "[O] oxalate-lowering / stone-rate magnitude not derived from sequence",
+   "src": "Garrelfs 2021 NEJM 384:1216 (ILLUMINATE-A, lumasiran); lumasiran FDA/EMA 2020"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.53943,
+   "dwell_disease": 2.11672,
+   "dwell_treated": 1.72794,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "b9db4a7ada81"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "AGXT LOF (released brake) raises the toxic oxalate burden (axis UP)",
+   "falsifier": "an AGXT deficiency allele that LOWERED urinary / plasma oxalate would refute the released-brake direction",
+   "measurable_by": "urinary oxalate excretion / plasma oxalate by AGXT genotype"
+  },
+  {
+   "claim": "knocking down the upstream oxalate-producing flux (lumasiran HAO1 / nedosiran LDHA) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if HAO1 or LDHA knockdown RAISED or failed to lower oxalate production, the restrain-upstream lever sign is wrong",
+   "measurable_by": "urinary / plasma oxalate response to HAO1 or LDHA knockdown"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Primary hyperoxaluria type 1": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "6e68dd3e8aa2"
+ },
+ "determinism_sha": "97c48297cabb"
+}

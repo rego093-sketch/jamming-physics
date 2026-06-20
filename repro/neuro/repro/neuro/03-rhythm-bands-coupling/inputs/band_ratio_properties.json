@@ -1,0 +1,45 @@
+{
+ "_meta": {
+  "title": "Theta / slow-gamma band edges - locked, cited inputs for the dimensionless gamma/theta ratio (neuro \u00a703)",
+  "what": "The two band edges that let the WORKING-MEMORY span ratio gamma/theta be DERIVED (geometric-mean band centres) instead of asserted, then VALIDATED by containment in Miller's independently-measured 7+-2.",
+  "derivation": "ratio = geomean(slow_gamma_lo, slow_gamma_hi) / geomean(theta_lo, theta_hi) = sqrt((25*50)/(4*8)) = sqrt(39.0625) = 6.25; the geometric-mean band centre is the package's own non-tuned method (the same construction the \u00a714 'geometric-mean cell' uses).",
+  "validated_claim": "the dimensionless count of slow-gamma sub-cycles nested in one theta cycle (= the theta-gamma working-memory span, Lisman & Jensen 2013) is CONTAINED in Miller's measured 7+-2 = [5,9]. The band edges come from electrophysiology; the 7+-2 bound comes from psychophysics - independent sources that AGREE, so the agreement (not a fit) is the claim.",
+  "falsifiability_note": "the containment has teeth: BROAD gamma (30-100 Hz) gives geomean ratio sqrt((30*100)/(4*8)) = sqrt(93.75) = 9.6825, OUTSIDE [5,9] -> FAIL. The check therefore SELECTS the biologically-correct theta-coupled SLOW gamma (Colgin 2009); it does not assume it.",
+  "open_O": "the ABSOLUTE theta and gamma frequencies in Hz: they depend on the absolute inhibitory time-constant tau_inh (an external calibration), so only the dimensionless ratio is pinned (matches the \u00a703 chapter's [O]).",
+  "no_tuning_note": "no number here is chosen to hit 7. The four band edges are canonical/measured inputs; the ratio is derived; the validation is containment in an independent bound. If the edges had been the broad gamma band, the gate would FAIL - which is the point.",
+  "payload_sha256_note": "sha256 over json.dumps(measured, sort_keys=True, separators=(',',':')) - the gate asserts this on load; any silent edit fails it.",
+  "payload_sha256": "e95435b59e5ff990cde13930d2c0c9bf3d3cd660ec4ad67bdc6261cdf11a7d9a"
+ },
+ "measured": {
+  "theta_band_hz": {
+   "lo": 4.0,
+   "hi": 8.0,
+   "ref": "canonical human theta band (standard clinical EEG taxonomy; oscillation-class review Buzsaki & Draguhn 2004, Science 304:1926-1929)",
+   "doi": "10.1126/science.1099745",
+   "pmid": "15218136",
+   "note": "theta 4-8 Hz is the standard clinical human theta range used for the theta-gamma code (Lisman & Jensen 2013)."
+  },
+  "slow_gamma_band_hz": {
+   "lo": 25.0,
+   "hi": 50.0,
+   "ref": "Colgin LL, Denninger T, Fyhn M, Hafting T, Bonnevie T, Jensen O, Moser MB, Moser EI (2009) Nature 462(7271):353-357",
+   "doi": "10.1038/nature08573",
+   "pmid": "19924214",
+   "note": "the SLOW gamma component (25-50 Hz) is the band that couples to theta (CA3->CA1 storage pathway); fast gamma (80-140 Hz) couples to medial entorhinal cortex instead. The theta-NESTED gamma is therefore the slow band."
+  },
+  "miller_capacity_items": {
+   "centre": 7,
+   "plus_minus": 2,
+   "ref": "Miller GA (1956) Psychol Rev 63(2):81-97, 'The magical number seven, plus or minus two'",
+   "doi": "10.1037/h0043158",
+   "pmid": "13310704",
+   "note": "human immediate-memory / channel-capacity span 7+-2 = [5,9]; an INDEPENDENT psychophysical measurement (no EEG), used here only as the containment bound."
+  },
+  "mechanism_ref": {
+   "ref": "Lisman JE, Jensen O (2013) Neuron 77(6):1002-1016, 'The Theta-Gamma Neural Code'",
+   "doi": "10.1016/j.neuron.2013.03.007",
+   "pmid": "23522038",
+   "note": "the number of gamma sub-cycles nested in one theta cycle = f_gamma/f_theta = the working-memory span. This identity makes the dimensionless ratio the load-bearing quantity, not the absolute Hz."
+  }
+ }
+}

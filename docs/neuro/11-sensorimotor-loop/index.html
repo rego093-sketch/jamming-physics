@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The sensorimotor loop as modules — Neural Emergence §11 | Jamming Physics</title>
+<meta name="description" content="Light→eye→ionic axon→cerebrum (θ/γ, capacity ~7)→cerebellum→muscle→reflex run as data-passing modules; the eye itself emerges from the R19 switch.">
+<link rel="canonical" href="https://jamming-physics.org/neuro/11-sensorimotor-loop/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The sensorimotor loop as modules — Neural Emergence §11 | Jamming Physics"><meta property="og:description" content="Light→eye→ionic axon→cerebrum (θ/γ, capacity ~7)→cerebellum→muscle→reflex run as data-passing modules; the eye itself emerges from the R19 switch."><meta property="og:url" content="https://jamming-physics.org/neuro/11-sensorimotor-loop/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The sensorimotor loop as modules — Neural Emergence §11 | Jamming Physics"><meta name="twitter:description" content="Light→eye→ionic axon→cerebrum (θ/γ, capacity ~7)→cerebellum→muscle→reflex run as data-passing modules; the eye itself emerges from the R19 switch.">
+<link rel="stylesheet" href="/neuro/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle",
+ "headline":"The sensorimotor loop: modules that exchange data",
+ "isPartOf":{"@type":"CreativeWork","name":"From Ion Channels to Behaviour: A Falsifiable Neural Emergence Chain",
+   "sameAs":"https://doi.org/10.5281/zenodo.17979015"},
+ "position":11,
+ "author":{"@type":"Person","name":"Young Jae Lee",
+   "sameAs":"https://orcid.org/0009-0002-7535-8245"},
+ "license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Neural Emergence","item":"https://jamming-physics.org/neuro/"},
+ {"@type":"ListItem","position":3,"name":"\u00a711 The sensorimotor loop: modules that exchange data"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/neuro/">Neural Emergence</a> › §11</nav></header>
+<main>
+<h1>The sensorimotor loop — the modules close the loop by exchanging data</h1>
+
+<p class="answer">The chain runs as modules passing typed messages: light → eye → ionic axon (8.3 ms, ~10⁶× slower than light) → cerebrum, where the inhibitory clock walks θ→γ and the θ/γ ratio gives a working-memory capacity near seven → cerebellum, whose supervised error falls to zero → muscle → a stretch reflex that closes the loop.</p>
+
+<p class="abstract">The whole chain is assembled as modules that exchange data over a bus and react, so the input layer (§10), the rhythm and memory code (§3–§5), the control and morality layer (§6–§7) and the motor output (§8) run as one closed loop. A 565 nm stimulus drives the eye to 23 spikes; the ionic axon adds an 8.3 ms delay; the cerebrum walks θ ≈ 8 to γ ≈ 55 in arbitrary units for a capacity γ/θ ≈ 6.9 slots; the cerebellum's error falls 0.500 → 0.000 with an opposite-sign after-effect; the muscle rises from 11.6 to 268 force units; the reflex returns −0.94. The loop structure is forced and simulation-verified [V]; every absolute latency, gain and rate is open [O].</p>
+
+<aside class="claim-strip">
+  <span class="grade g-calibrated">direction</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/neuro/11-sensorimotor-loop/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17979015" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h2>The bus</h2>
+<p>The modules do not share state; they pass typed messages. Each step publishes a payload — spikes, a delayed train, a drive, a command, a force, a correction — and the next module reads it and reacts, which is what makes the chain modular rather than monolithic. The trace is a fixed sequence: stimulus → eye → axon → cerebrum → cerebellum → muscle → world, with a stretch-feedback edge back to the input.</p>
+
+<h2>Afferent: stimulus to cerebrum</h2>
+<p>The forward arm carries a sensory spike train into the cortical population. A 565 nm visible stimulus at intensity 0.9 drives the L-cone to 23 spikes (§10), which the ionic axon delivers after an 8.3 ms conduction delay at 60 m/s — about 10⁶× slower than light, because conduction is switching and not optics. The cerebrum's excitatory–inhibitory population then reads this afferent rate as a drive within its rhythmic window.</p>
+
+<h2>The θ/γ read</h2>
+<p>Inside the cerebrum the inhibitory clock sets the band, and the band sets the memory capacity. Lengthening the inhibitory recovery slows the population to a θ-like 8 units; shortening it speeds the population to a γ-like 55; the number of γ cycles nested in one θ cycle is the working-memory capacity, here γ/θ ≈ 6.9, matching the 7±2 result that is the chain's one causally-confirmed link by tACS (§4). The absolute frequencies are arbitrary units and open; the ratio is the structural claim.</p>
+
+<aside class="vp-card" data-locked="theta-gamma"><b>capacity = θ/γ ratio → 7±2</b> — each γ cycle nested in a θ frame is one working-memory slot; the only causal link, by tACS. <b>[F]</b> forced / causal. <a href="/neuro/04-code-working-memory/">derivation §4</a></aside>
+
+<h2>Efferent: cerebellum to muscle</h2>
+<p>The return arm turns a drive into graded force through learning and recruitment. The cerebellum is supervised: a climbing-fibre error drives a delta-rule correction, so the motor error falls 0.500 → 0.000 over trials and flips sign as an after-effect when the perturbation is removed (§8). The muscle is the final common path: the size principle recruits small units first and firing rate sets the force on recruited units (twitch → tetanus ≈ 3.9×), so force rises from 11.6 to 268 units — low force by recruitment, high force by rate.</p>
+
+<h2>The reflex closes the loop</h2>
+<p>A stretch reflex returns the output to the input as negative feedback. A 0.10 stretch produces a −0.94 correction (a ≈9.4× setpoint gain, §7), so the loop opposes its own perturbation and is closed rather than open. This is the same setpoint control seen at the hypothalamic and spinal scales, reused at the loop scale.</p>
+
+<h2>Emergence of the organ</h2>
+<p>The eye that begins this loop is itself emerged from the same switch. On a measured stacking stiffness γ for the eye master control, the R19 switch sets a discontinuous threshold (spinodal ≈ 0.512, barrier ≈ 0.366); with the master cis drive on, the switch settles on and the eye is present, but with the drive off the eye is absent even when every downstream part exists — parts present is not the trait (DNA §3–§4). The organ and the neuron are the same primitive read at two scales: STATE, not γ, decides presence.</p>
+
+<h2>Forced and open</h2>
+<p>What is forced is that the loop closes and each module reacts to the next, verified by a deterministic module whose two runs are bit-identical [V]. What is open is the entire calibration: the 8.3 ms latency, the cerebellar gain, the force-per-Hz, the absolute band frequencies and the organ's absolute timing are all [O] in the ledger, needing separate data, and none is presented as evidence here. The loop locks the input and output structure of the chain; the numbers wait for measurement.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/neuro/10-sensory-input-transduction/">← §10</a>
+  <a href="/neuro/">paper contents</a>
+  <a rel="next" href="/neuro/12-sensory-organ-emergence-4d/">§12 →</a>
+</nav>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.17979015">10.5281/zenodo.17979015</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

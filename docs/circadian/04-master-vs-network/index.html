@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master vs network: coupled clocks synchronise, master-led — Chronobiology §4 | Jamming Physics</title>
+<meta name="description" content="Is the circadian system one clock or many? Eight coupled oscillators synchronise as coupling rises (coherence climbs monotonically — a synchronisation transition), and a stronger SCN master pulls peripheral clocks into phase (drift falls). One network, master-led.">
+<meta name="keywords" content="circadian rhythm, circadian clock, chronobiology, limit-cycle oscillator, BMAL1, CLOCK gene, PER CRY feedback loop, suprachiasmatic nucleus, SCN, FitzHugh-Nagumo, jamming physics, VP theory, deterministic model, measured gamma, synchronisation transition, coupled clocks, peripheral clocks, Kuramoto coherence, master oscillator">
+<meta name="author" content="Young Jae Lee">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://jamming-physics.org/circadian/04-master-vs-network/">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jamming Physics">
+<meta property="og:title" content="Master vs network: coupled clocks synchronise, master-led — Chronobiology §4">
+<meta property="og:description" content="Is the circadian system one clock or many? Eight coupled oscillators synchronise as coupling rises (coherence climbs monotonically — a synchronisation transition), and a stronger SCN master pulls peripheral clocks into phase (drift falls). One network, master-led.">
+<meta property="og:url" content="https://jamming-physics.org/circadian/04-master-vs-network/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Master vs network: coupled clocks synchronise, master-led — Chronobiology §4">
+<meta name="twitter:description" content="Is the circadian system one clock or many? Eight coupled oscillators synchronise as coupling rises (coherence climbs monotonically — a synchronisation transition), and a stronger SCN master pulls peripheral clocks into phase (drift falls). One network, master-led.">
+<link rel="stylesheet" href="/circadian/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle",
+ "headline":"Master vs network: coupled clocks synchronise, master-led — Chronobiology §4",
+ "isPartOf":{"@type":"CreativeWorkSeries","name":"Chronobiology: the Circadian Oscillator Network, Entrainment, and Clock-Disruption Disease","url":"https://jamming-physics.org/circadian/","sameAs":"https://doi.org/10.5281/zenodo.20755413","identifier":"10.5281/zenodo.20755413"},
+ "position":4,
+ "identifier":"10.5281/zenodo.20755413",
+ "datePublished":"2026-06-19","dateModified":"2026-06-19",
+ "isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/04-master-vs-network/",
+ "knowsAbout":["circadian rhythm","circadian clock","chronobiology","limit-cycle oscillator","BMAL1","CLOCK gene","PER CRY feedback loop","suprachiasmatic nucleus","SCN","FitzHugh-Nagumo","jamming physics","VP theory","deterministic model","measured gamma","synchronisation transition","coupled clocks","peripheral clocks","Kuramoto coherence","master oscillator"],
+ "author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+ "publisher":{"@type":"Organization","name":"Zenodo"},
+ "license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Chronobiology","item":"https://jamming-physics.org/circadian/"},
+ {"@type":"ListItem","position":3,"name":"§4 Master vs network"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/circadian/">Chronobiology</a> &rsaquo; §4 Master vs network</nav></header>
+<main>
+<h1>Master vs network &mdash; coupled clocks synchronise, master-led</h1>
+<!-- vp:answer:start -->
+<p class="answer">The body's clocks are <strong>one coupled network</strong>, not independent timers: eight oscillators synchronise as coupling rises (coherence 0.596406&nbsp;&rarr;&nbsp;0.999925, a synchronisation transition), and a stronger <strong>SCN master</strong> pulls the periphery into phase (drift 0.003823&nbsp;&rarr;&nbsp;0.002956). Master-led, by coupling, not by assumption.</p>
+<!-- vp:answer:end -->
+<p class="abstract">Timekeeping is distributed but hierarchical. Coupling drives a synchronisation transition among oscillators with different natural periods, and raising the SCN master's gain tightens the periphery's phase-locking to it. The system is one network with a dominant hub &mdash; the reason a misaligned master drags the whole gated periphery off schedule in the next chapter. The ordering is verified; absolute inter-tissue phase lags stay open.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">verified</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/04-master-vs-network/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20755413" rel="noopener">DOI snapshot</a>
+</aside>
+<!-- vp:cards:start -->
+<aside class="vp-card" data-locked="master_vs_network"><b>timekeeping = ONE coupled network, master-led, not a single clock or independent timers</b> = eight oscillators coupled through a mean field synchronise as coupling rises &mdash; coherence climbs monotonically 0.596406&rarr;0.999925 (a synchronisation transition); raising the SCN master's gain pulls peripheral clocks into phase &mdash; their drift vs the master FALLS 0.003823&rarr;0.002956; so the body clocks are one network with a dominant SCN hub (the periphery follows the master), which is why a misaligned master drags the gated periphery with it; transition + master-led entrainment [V], absolute SCN&rarr;periphery lags [O] <b>[V mech]</b>. <a href="/circadian/04-master-vs-network/">this chapter</a></aside>
+<!-- vp:cards:end -->
+<h2>Coupling buys synchrony: a transition, not a tweak</h2>
+<p>Is timekeeping one clock or many? Take eight oscillators with slightly different natural periods and couple them through a mean field, sweeping the coupling strength from zero upward. The coherence of the population <strong>rises monotonically</strong> with coupling &mdash; from <span class="mono">0.596406</span> uncoupled to <span class="mono">0.999925</span> at strong coupling &mdash; a synchronisation transition. Decoupled peripheral clocks drift apart; coupling pulls them into a single coherent rhythm. So the body's clocks are a <em>network</em>, not a bag of independent timers.</p>
+<h2>The SCN is the master: a stronger hub pulls the periphery into phase</h2>
+<p>A network still has a hierarchy. Raise the gain of one node &mdash; the SCN master &mdash; and measure how far the peripheral clocks drift from it. The peripheral phase drift relative to the master <strong>falls</strong> as the master's gain rises (<span class="mono">0.003823</span> &rarr; <span class="mono">0.002956</span>): a stronger master entrains the periphery more tightly. That is the master&ndash;periphery architecture of the real system &mdash; the SCN sets the phase that liver, muscle and adipose clocks follow &mdash; reproduced as a property of coupling, not assumed.</p>
+<h2>One network, master-led</h2>
+<p>Both results are <span class="mono">[V]</span>: the synchronisation transition and the master-led entrainment. The <strong>absolute</strong> phase lags between SCN and periphery depend on tissue conduction the substrate does not model, so only their <em>ordering</em> is claimed (<span class="mono">[O]</span> on the absolute lags). The picture is one coupled network with a dominant hub &mdash; which is exactly why a misaligned master (next chapter) drags the whole gated periphery off the external schedule with it.</p>
+<nav class="pn">
+  <a rel="prev" href="/circadian/03-entrainment-prc/">&larr; §3 Entrainment &amp; the PRC</a>
+  <a href="/circadian/">paper contents</a>
+  <a rel="next" href="/circadian/05-setpoint-gating/">§5 Setpoint gating &rarr;</a>
+</nav>
+</main>
+<footer>Part of <a href="/circadian/">Chronobiology</a> &middot; <a href="https://doi.org/10.5281/zenodo.20755413" rel="noopener">DOI 10.5281/zenodo.20755413</a> &middot; seam cites mind <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

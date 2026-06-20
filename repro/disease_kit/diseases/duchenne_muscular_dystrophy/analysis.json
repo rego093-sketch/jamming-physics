@@ -1,0 +1,179 @@
+{
+ "disease": "Duchenne muscular dystrophy",
+ "omim": "310200",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Duchenne muscular dystrophy",
+  "omim": "310200",
+  "summary": "A single-gene DMD loss-of-function (X-linked): out-of-frame deletions/duplications or nonsense alleles abolish dystrophin, the protein that anchors the muscle cytoskeleton to the sarcolemmal dystroglycan complex, so the membrane becomes fragile and muscle degenerates progressively -> the supply of FUNCTIONAL dystrophin (sarcolemmal structural integrity) is driven DOWN. The frame-disrupting lesion is a CODING change, not a promoter change (like sickle cell's coding missense): the promoter gamma read here is of the DMD LOCUS switch structure, and the disease direction is forced by the structural loss-of-function biology. In-frame deletions (Becker MD) leave a partial dystrophin -> milder, which is the dosage axis the corrective levers exploit. Magnitude [O].",
+  "emergent_axis": "sarcolemmal structural integrity (supply of functional dystrophin to muscle)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "DMD",
+    "gamma": 1.2388,
+    "spinodal_h_sp": 0.5307,
+    "barrier": 0.38366,
+    "dwell_relative_size": 1.25346,
+    "role": "structural",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "structural element deficient -> tissue integrity reduced",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 31119221,
+     "gene_end": 33339387,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "dystrophin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "Dystrophin links F-actin to the dystrophin-glycoprotein complex at the sarcolemma; out-of-frame/null alleles abolish functional dystrophin -> membrane fragility and contraction-induced damage. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the frame-disrupting coding lesion (firewall). In-frame (Becker) deletions yield a shorter but partly functional dystrophin -> milder phenotype, consistent with a functional-dystrophin dosage axis.",
+    "src": "Hoffman 1987 Cell 51:919; Koenig 1987 Cell 50:509"
+   }
+  ],
+  "primary_switch": {
+   "gene": "DMD",
+   "role": "structural",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "structural element deficient -> tissue integrity reduced"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "5a05ef865ff0"
+ },
+ "treatment_A_switch": {
+  "disease": "Duchenne muscular dystrophy",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "DMD",
+    "push_direction": "deliver a functional micro-dystrophin transgene -> restore a partial dystrophin at the sarcolemma",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "micro-dystrophin gene transfer (delandistrogene moxeparvovec)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored functional-dystrophin fraction / membrane-stabilisation magnitude not derived from sequence",
+    "src": "Mendell 2023 JAMA Neurol; delandistrogene moxeparvovec (Elevidys) FDA 2023"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "DMD",
+    "push_direction": "exon-skipping antisense restores the reading frame around the deletion -> a Becker-like internally-truncated but functional dystrophin",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "exon-skipping antisense oligonucleotide (eteplirsen / golodirsen / viltolarsen / casimersen; exon-specific)",
+    "status": "approved",
+    "mechanism_grade": "[O] frame-restored dystrophin level / clinical magnitude not derived from sequence; benefit is exon-specific",
+    "src": "Mendell 2013 Ann Neurol; eteplirsen FDA 2016 (accelerated)"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "DMD",
+    "push_direction": "promote ribosomal read-through of a premature stop codon -> full-length dystrophin (nonsense-allele subset only)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "stop-codon read-through agent (ataluren; conditional/region-specific)",
+    "status": "clinical",
+    "mechanism_grade": "[O] read-through efficiency / dystrophin recovery not derived from sequence; nonsense-mutation subset only",
+    "src": "Bushby 2014 Muscle Nerve; ataluren EMA conditional 2014"
+   },
+   {
+    "lever": "potentiate",
+    "target_gene": "UTRN",
+    "push_direction": "up-regulate the dystrophin paralogue utrophin to compensate for absent dystrophin (mutation-independent)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "utrophin modulator (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] utrophin-compensation magnitude not derived; the lead modulator did not meet its primary endpoint -- direction-only",
+    "src": "Tinsley 1996 Nature 384:349; PhaseOut DMD (ezutromid) 2018"
+   }
+  ],
+  "n_corrective": 4,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "DMD",
+   "push_direction": "deliver a functional micro-dystrophin transgene -> restore a partial dystrophin at the sarcolemma",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "micro-dystrophin gene transfer (delandistrogene moxeparvovec)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored functional-dystrophin fraction / membrane-stabilisation magnitude not derived from sequence",
+   "src": "Mendell 2023 JAMA Neurol; delandistrogene moxeparvovec (Elevidys) FDA 2023"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.25346,
+   "dwell_disease": 0.81106,
+   "dwell_treated": 1.02896,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "d06a688e3a24"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "DMD LOF lowers the sarcolemmal structural-integrity axis (functional dystrophin supply DOWN)",
+   "falsifier": "a DMD out-of-frame/null allele that PRESERVED or INCREASED sarcolemmal integrity / functional dystrophin would refute the structural-loss direction",
+   "measurable_by": "sarcolemmal dystrophin immunostaining and membrane-integrity (serum CK / Evans-blue dye uptake) by genotype in a Dmd-null model"
+  },
+  {
+   "claim": "restoring partial dystrophin (replace / exon-skip / read-through) is the CORRECTIVE direction",
+   "falsifier": "if supplying micro-dystrophin or frame-restored dystrophin WORSENED or failed to improve sarcolemmal integrity, the restore-dystrophin lever sign is wrong",
+   "measurable_by": "membrane-integrity / muscle-function response to micro-dystrophin transfer or exon-skipping in a Dmd-null model"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Duchenne muscular dystrophy": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "9b8651723310"
+ },
+ "determinism_sha": "a6467edcb3c6"
+}

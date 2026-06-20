@@ -1,0 +1,1329 @@
+disease_wp — Genetic & Rare Disease Whitepaper
+==============================================
+
+v0.1  (bootstrap)  — this session
+  - Project skeleton created under VP-SPEC v1.8 governance.
+  - Emergence engine carried verbatim from dna_vp_site_INTEGRATED_v1_9_1_FINAL
+    (repro/dna/ax-a-universal-morphogenesis-gene-clock/code/emergence_v2 → code/emergence_v2).
+    * Source package SHA256 verified against sidecar: OK
+      (7f863b1d479a5bb108ec918dbd03917fa70998c52449e693ce65606aa3151e6b).
+    * Drift 0 across relocation: 5/5 emergence gates re-pass at new path.
+      verify_emergence 7/7 · verify_emergence_organs 6/6 · verify_emergence_trajectory 7/7 ·
+      verify_emergence_organs_wide 8/8 · verify_emergence_morphogen 8/8.
+      morphogen validation sha 01b0b6ea8b10 / band sha 4ea1c7b4111c — identical to DNA closeout.
+  - Governed pin MANIFEST_governed.sha256 created over 15 .py/.json engine files; self-verify OK.
+  - NCBI E-utilities reachability confirmed (HTTP 200; clinvar·omim·medgen·gene·dbvar·gtr·snp·pubmed·mesh).
+  - Governance + methodology docs authored:
+      ROADMAP.md · CONSTITUTION_disease.md · SCOPE.md ·
+      methodology/{DISEASE_TAXONOMY,BURDEN_INDEX,DATA_PROVENANCE}.md.
+  - No disease data collected yet. Investigation begins at Phase R1 (ROADMAP.md).
+
+Authoring language: English (constitution). Author reporting: Korean.
+Status: R0 complete. Next: R1 — disease_index.csv from NCBI (investigation only).
+
+v0.2  (R1 — disease universe & classification scaffold)  — this session
+  - Phase R1 executed (investigation only, no whitepaper prose).
+  - Raw enumeration pool: ClinVar gene_condition_source_id (13,447 associations, pulled 2026-06-17).
+  - Base index data/curated/disease_index_base.csv: 7,672 unique diseases (by MedGen CUI).
+      in-scope (systemic) 6,170 · excluded (neuro 1,282 / cardiac 170 / psych 37, all flagged).
+      built by code/pipeline/r1_build_index.py — deterministic, sha ddfbcac71d6b.
+  - R1 investigation gate reports/r1.gate.json — PASS (5/5).
+  - Enriched seed data/curated/disease_index_seed.csv: 18 flagship diseases with mode-of-inheritance
+      + clinical definition + semantic type from NCBI MedGen esummary (inheritance graded [L]/[O], cited).
+  - Pipeline added under code/pipeline/ (living code; not in the frozen engine pin).
+  - Engine pin MANIFEST_governed.sha256 unchanged, still verifies OK (drift 0).
+  - Handover: reports/R1_NOTES_AND_HANDOVER.md (next = R2 bulk enrichment, still investigation).
+
+v0.3  (R2 — disease enrichment, mechanism, and per-disease dossiers)  — this session
+  - Phase R2 executed (investigation only, no whitepaper prose).
+  - Bulk inheritance enrichment over all 6,170 in-scope CUIs via MedGen esummary
+      (code/pipeline/r2_enrich_inscope.py) → data/curated/disease_index.csv (the ROADMAP
+      R2 deliverable). Mode-of-inheritance graded [L] where MedGen states it (2,011) /
+      [O] with named obstacle where it does not (4,159). Deterministic.
+  - Conservative CNS-primacy boundary review (code/pipeline/r2_boundary_review.py):
+      3 pure-CNS GM2 diseases moved out of scope (Tay-Sachs C0039373, Tay-Sachs variant AB
+      C0268275, Sandhoff C0036161), each logged; 31 boundary cases kept in with a new
+      cns_cross_reference column. In-scope now 6,167.
+  - Molecular-mechanism assignment (code/pipeline/r2_mechanism.py) by a cited, no-tuning
+      cascade: curated class rules [L] → ClinGen dosage scores (HI=3 haploinsufficiency /
+      TS=3 dosage, PMID-cited) [L] → pure-recessive loss-of-function [H] (ClinGen AR-corroborated)
+      → else [O] not_curated with a named obstacle (never guessed). Distribution
+      [L]=697 / [H]=1046 / [O]=4424. Index sha a274e25a00bb.
+  - methodology/mechanism_rules.csv — 8 curated cited class rules (collagen, FBN1, CFTR,
+      HBB sickle/thalassemia, imprinting loci, repeat-expansion, FGFR3 GoF).
+  - 35 per-disease dossiers data/curated/dossiers/<slug>.json (schema disease_wp.dossier/v1),
+      pre-registered cohort (methodology/dossier_cohort.csv: 18 flagship + 17 extension). Each
+      dossier field is a graded object {value, grade, source|obstacle}: identity, inheritance,
+      molecular_mechanism, gene_function (NCBI RefSeq summary per gene), variant_spectrum (ClinVar
+      germline-classification distribution per gene), and clinical {organ_systems, cardinal_symptoms,
+      age_of_onset, prevalence, clinical_definition} joined from HPO phenotype.hpoa + hp.obo
+      (v2026-06-06). Cached, self-contained, no network at build time. Dossier-set sha aba06f038e4d.
+  - methodology/omim_join_supplement.csv — cited curation artifact mapping 6 cohort concepts whose
+      MedGen conceptmeta lacks a usable OMIM (or is a phenotypic-series number, e.g. osteogenesis
+      imperfecta 120150) to HPO-name-verified type-level OMIMs; each row validated against hpoa at runtime.
+  - R2 investigation gate reports/r2.gate.json — PASS (7/7): inheritance_complete,
+      mechanism_graded_no_guess, boundary_resolved, provenance_complete, dossier_schema_valid,
+      dossier_cohort_complete, grade_vocab_consistent. Mechanism + dossier stages confirmed
+      deterministic by repeated identical runs.
+  - Engine pin MANIFEST_governed.sha256 unchanged, verifies OK (drift 0, 15/15).
+  - Handover: reports/R2_NOTES_AND_HANDOVER.md (next = R3 burden indexing per methodology/BURDEN_INDEX.md).
+
+Status: R2 complete (PASS 7/7). Next: R3 — reproducible burden ordering (investigation only).
+
+v0.4  (R3 — reproducible burden ordering / deterministic "suffering order")  — this session
+  - Phase R3 executed (investigation only, no whitepaper prose).
+  - Deterministic burden index over the 35 dossiers (code/pipeline/r3_burden_index.py) →
+      data/curated/burden_scores.{csv,json} (schema disease_wp.burden_scores/v1). Five graded
+      burden components per disease — O onset · P progression · S severity · M mortality ·
+      D disability — each a {value, grade, source|obstacle} object on a fixed a-priori tier scale
+      (methodology/BURDEN_INDEX.md, finalized this phase).
+  - Per-axis sourcing precedence (recorded on every value): [L] HPO annotation where one exists →
+      [H] value read from a declared fixed lexicon over the cited MedGen clinical_definition (matched
+      phrase recorded) → [O] obstacle named, never guessed. Grade coverage (over 35):
+      O [L]20/[H]11/[O]4 · P [L]1/[H]13/[O]21 · S [H]24/[O]11 · M [L]1/[H]16/[O]18 · D [H]8/[O]27.
+      HONEST FRAMING: only onset is registry-grade for most diseases; P/S/M/D are mostly [H]
+      definition-inferences (HPO clinical-course/mortality branches sparse, no severity/disability
+      branch). The order is a provisional [H]-grade prioritization device, not a registry-locked
+      ranking; a natural-history registry pass is the validation path (see handover).
+  - Composite raw_burden = renormalised mean of the axes actually scored (missing excluded, never
+      imputed); two floor grades reported (grade_floor over all 5 axes → [O] if any missing;
+      grade_present over scored axes). Declared equal weights 0.20 each, recorded in output.
+  - Treatability deferred to R4: R_treat = 1.0, [O] (treatments.csv not yet built); primary order is
+      the pre-treatment raw_burden. burden_score floors to [O].
+  - Declared rankability cut rankable = (axes_scored >= 3 of 5): 17 placed in the order (contiguous
+      ranks, raw_burden non-increasing), 18 reported as "not placed — insufficient axis coverage"
+      (rank null). Corrects a real artifact (a single-axis disease reading raw_burden 1.00).
+  - methodology/BURDEN_LEXICON.md generated from the builder SSOT (regex tiers + mortality classifier).
+  - Sensitivity pass: order recomputed under 5 weightings, Spearman vs equal default over the placed
+      order = equal 1.00 / onset 0.949 / mortality 0.944 / severity 0.938 / drop-disability 0.974
+      (order stable under reweighting).
+  - 6 developmental diseases linked to the emergence engine quantity they perturb (citing the pinned
+      read-only code/emergence_v2/); 2 stale CUIs corrected this phase so all six attach.
+  - R3 investigation gate reports/r3.gate.json — PASS (9/9): components_graded_no_guess,
+      floor_rule_correct, composite_renormalised_mean, treatability_deferred_R4, weights_recorded,
+      ranking_deterministic_2x (gate re-executes the builder twice), sensitivity_present,
+      cohort_complete_35, rankability_consistent. Burden-set sha 0f788821e0fc (determinism PASS 2×).
+  - R3 pipeline is living code (post-dates the R2 freeze); engine pin MANIFEST_governed.sha256
+      unchanged, verifies OK (drift 0, 15/15).
+  - Handover: reports/R3_NOTES_AND_HANDOVER.md (next = R4 treatment-mechanism survey → treatments.csv
+      populating R_treat, plus a parallel registry natural-history pass; both investigation only).
+
+v0.5  (R4 — treatment-mechanism survey & residual-burden offset)  — this session
+  - Phase R4 executed (investigation only, no whitepaper prose).
+  - Treatment survey over the 35 dossiers (code/pipeline/r4_treatment_survey.py) →
+      data/curated/treatments.{csv,json} (schema disease_wp.treatments/v1, the ROADMAP R4
+      deliverable). For each disease: the established disease-directed therapy (modality),
+      its mechanism stated ONLY where mechanistically established (constitution C-D3), an
+      evidence_status, and the efficacy offset e it maps to. Deterministic, no network.
+  - HONEST GRADING — two [H] tiers, never a fabricated [L] (constitution C-D3 / VP-SPEC C3):
+      * [H] definition (12/35): the in-package, already-[L]-cited MedGen clinical_definition
+        itself discusses the therapy + effect. The builder INDEPENDENTLY re-reads each
+        definition and records the matched treatment-efficacy phrase as the row's basis
+        (runtime corroboration, like R2's runtime-validated omim_join_supplement). 12/12
+        corroborate (gate-enforced).
+      * [H] standard_of_care (23/35): where the definition is silent, the established SoC
+        therapy class from methodology/treatment_rules.csv — named modality + mechanism +
+        source CLASS (GeneReviews Management / FDA label / OMIM clinical management) WITHOUT
+        a fabricated accession, plus obstacle_for_L naming the deferred accession-dated check.
+      The grade is uniformly [H]; no row claims [L]. The accession-dated [L] pass (FDA label /
+      GeneReviews / OMIM / Orphanet) is the documented validation path — the exact analogue of
+      R3's deferred natural-history registry pass.
+  - Treatment-efficacy detection lexicon methodology/TREATMENT_LEXICON.md generated from the
+      builder SSOT (PATTERNS) so it cannot drift from code; used only to confirm the cited
+      definition discusses therapy, NOT to infer the efficacy class.
+  - evidence_status distribution: disease-modifying substantial 21 / partial 9 / symptomatic 3 /
+      none 2. CONSERVATISM: no disease assigned 'curative' at the disease level (HSCT/transplant/
+      gene addition are donor-/timing-/genotype-limited, not universal SoC); strongest class used
+      is disease-modifying (substantial). evidence_status=none (e=0) is a positive [H] finding (no
+      disease-directed therapy alters the course), distinct from [O]: NPD-A (lethal neurologic
+      course not amenable to ERT, text-corroborated) and perinatal-lethal achondrogenesis type II.
+      Offset map e (single source of truth, builder + gate): curative .85 / substantial .55 /
+      partial .30 / symptomatic .10 / none .00; R_treat = 1 − e. treatments sha f5ba4f0e438d.
+  - Residual burden (code/pipeline/r4_burden_residual.py) → data/curated/burden_residual.{csv,json}
+      (schema disease_wp.burden_residual/v1). Reads the BANKED R3 raw_burden UNCHANGED (gate-verified
+      not mutated) and applies burden_score = raw_burden · (1 − e), then RE-RANKS the 17 placed
+      diseases by residual burden_score (the post-treatment order); the 18 not-placed stay null. The
+      residual grade is [H] (was [O] in R3 while treatability was deferred). The order shifts as
+      expected: untreatable diseases rise (achondrogenesis II #1, NPD-A #5→#2), symptomatic-only rise
+      (Becker MD #15→#4), substantially-treated metabolic diseases fall (tyrosinemia I #2→#8, classic
+      homocystinuria #3→#10, cystic fibrosis #6→#11). residual sha d41d4e95b8b1.
+  - Residual sensitivity under the 5 R3 weightings: Spearman vs equal-weight residual default =
+      equal 1.00 / onset 0.980 / mortality 0.976 / severity 0.985 / drop-disability 0.993 (order
+      stable under reweighting).
+  - R4 investigation gate reports/r4.gate.json — PASS (11/11): treatments_graded_no_guess,
+      evidence_status_in_vocab, efficacy_offset_correct, definition_corroboration_consistent,
+      residual_composite_correct, raw_burden_unchanged_from_R3, residual_ranking_deterministic_2x
+      (re-runs both builders twice), cohort_complete_35, treatability_no_fabricated_cure (no curative,
+      no claimed [L]), residual_sensitivity_present, engine_pin_drift_zero.
+  - R3 untouched: reports/r3.gate.json still PASS (9/9) after R4. R4 pipeline is living code
+      (post-dates the R2 freeze); engine pin MANIFEST_governed.sha256 unchanged, verifies OK
+      (drift 0, 15/15).
+  - Handover: reports/R4_NOTES_AND_HANDOVER.md (next = R1–R4 consolidation gate before Phase W1
+      authoring, plus the accession-dated [L] treatment pass and the R3 natural-history registry
+      pass; all investigation only).
+
+Status: R4 complete (PASS 11/11; R3 still PASS 9/9). Next: R1–R4 consolidation gate → Phase W1 authoring, with the deferred [L] passes (treatment accession-dating + natural-history registry) as the path to lift the order from provisional [H] to registry-locked.
+
+
+v0.5.1  (R2 erratum E1 — FAH gene resolution)  — this session
+  - Fixed a banked-R2 data error surfaced during R4: the tyrosinemia type I dossier's gene_function
+      had resolved symbol FAH to Entrez 2175 (FANCA) instead of 2184 (fumarylacetoacetate hydrolase),
+      so that one RefSeq-summary narrative was FANCA's. Disease identity / CUI / definition / HPO and
+      all of R3+R4 were unaffected (FAH named correctly throughout; ClinVar variant_spectrum used a
+      separate FAH[gene] query that did not collide — 940 records, not FANCA's 7144).
+  - Root cause: code/pipeline/r2_cohort_gene_resources.py:gene_info() took esearch ids[0] from a
+      symbol query, but NCBI [sym] also matches historical aliases of other genes (FAH is a legacy
+      alias FA-H of FANCA), so FANCA returned first. Fix hardens the resolver to select the candidate
+      whose OFFICIAL symbol equals the query (else record an obstacle) — protecting every cohort gene,
+      not just FAH. The stale FAH cache entry was deleted and rebuilt, so the correction is a genuine
+      builder output (authentic NCBI summary), not a manual patch.
+  - Regeneration was surgical: exactly one dossier changed (tyrosinemia_type_i.json); the other 34 are
+      byte-identical. Dossier-set sha aba06f038e4d -> b70b12d01e75. Downstream digests UNCHANGED
+      (burden_scores, treatments, burden_residual all byte-identical) since no R3/R4 stage reads
+      gene_function. All gates re-pass: R1 5/5, R2 7/7, R3 9/9, R4 11/11; engine pin drift 0 (15/15).
+  - Detail: reports/R4_NOTES_AND_HANDOVER.md (Erratum E1, RESOLVED).
+
+Status: R4 complete + R2 erratum E1 resolved (R1 5/5, R2 7/7, R3 9/9, R4 11/11; engine pin drift 0). Next: R1–R4 consolidation gate → Phase W1 authoring, with the deferred [L] passes (treatment accession-dating + natural-history registry) as the path to lift the order from provisional [H] to registry-locked.
+
+
+v0.5.2  (consolidation gate PASS + R2 erratum E2 — Gaucher variant_spectrum grade)  — this session
+  - ▣ CONSOLIDATION GATE built and PASSED (10/10): code/pipeline/consolidation_gate.py (living code;
+      not in the frozen engine pin), report reports/consolidation.gate.json. This is the explicit
+      R→W pivot ("stop investigating, start writing"). It writes NO whitepaper prose and introduces
+      NO new facts; it re-derives — independently of any recorded digest — that the R1–R4 datasets
+      jointly meet the four ROADMAP criteria, and it SUBSUMES the four investigation gates by
+      re-running them and asserting each PASSes (R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11).
+      Ten checks: r_phase_gates_all_pass · cohort_identity_consistent_35 · provenance_complete ·
+      grade_complete_no_summary_drift · class_consistency_cross_artifact · scope_clean_cohort ·
+      exclusions_logged_not_dropped · gene_function_symbol_sweep (Erratum-E1 confirmation) ·
+      treatability_no_fabricated_cure (C-D3) · engine_pin_drift_zero (15/15).
+  - W1-READINESS DECISION (recorded in the gate report): READY for Phase W1. The two deferred [L]
+      passes are NOT consolidation prerequisites — they are accuracy upgrades scheduled as early-W1
+      tasks: (1) treatment accession-dating (FDA label / GeneReviews Management / OMIM clinical
+      management / Orphanet → lift treatments.csv [H]→[L]) and (2) natural-history registry pass
+      (lift burden P/S/M/D [H]→[L]/[V]). UNTIL both land, any W-phase prose MUST carry the
+      burden/residual ORDER as a provisional [H]-grade prioritisation device, not a registry-locked
+      ranking. This is the explicit W1-entry condition.
+
+  - ERRATUM E2 (RESOLVED) — Gaucher disease variant_spectrum grade-completeness.
+      Symptom. Running the consolidation gate surfaced one grade-completeness gap: the "Gaucher
+        disease" dossier (CUI C0017205) — a MedGen aggregate concept with no causative gene
+        annotated (n_genes=0) — carried variant_spectrum as an empty list, so its _cohort_index
+        field_grades.variant_spectrum was an empty string '' rather than a grade. Constitution C-D2
+        (every field carries a grade) and ROADMAP criterion 3 (unavailable values are [O], not
+        guessed) require a graded, self-describing field.
+      Root cause. code/pipeline/r2_build_dossiers.py built gene_function with an "if not genes"
+        fallback that emits a single [O] record with a named obstacle, but variant_spectrum had no
+        such fallback — with an empty gene list its build loop never ran and the field stayed []. The
+        field_grades summary "/".join(sorted({grade...})) over an empty set then yielded ''.
+      Fix (root cause, not a hand-edit). Added the symmetric "if not genes" [O] fallback to
+        variant_spectrum (obstacle: "causative gene not annotated at this MedGen aggregate concept;
+        no ClinVar gene query possible; see gene-resolved subtype dossier(s)"), mirroring the
+        existing gene_function fallback exactly. This hardens the whole gene-less-aggregate class,
+        not just Gaucher. Dossiers were regenerated by re-running the builder, so the corrected field
+        is a genuine builder output, not a manual patch.
+      Containment verified. Regeneration was surgical: exactly ONE dossier changed
+        (gaucher_disease.json) plus the derived _cohort_index.json; the other 34 dossiers are
+        byte-identical. Downstream digests are UNCHANGED (burden_scores, treatments, burden_residual,
+        disease_index all byte-identical) because no R3/R4 stage reads variant_spectrum. Dossier-set
+        sha b70b12d01e75 → 94818007c9cc (expected and documented). After the fix, ALL gates re-pass:
+        R1 5/5, R2 7/7, R3 9/9, R4 11/11, consolidation 10/10; engine pin drift 0 (15/15). The
+        corrected variant_spectrum is graded [O] with a named obstacle.
+      Detail: reports/CONSOLIDATION_NOTES_AND_HANDOVER.md (Erratum E2, RESOLVED).
+
+  - Digests (this version): consolidation_gate.py sha df8f3c393816; consolidation.gate.json sha
+      e84b88420db0; gaucher_disease.json sha ef126039bb93; dossier-set sha 94818007c9cc.
+      Engine pin MANIFEST_governed.sha256 unchanged, verifies OK (drift 0, 15/15).
+
+Status: Consolidation gate PASS (10/10), erratum E2 resolved; R1 5/5, R2 7/7, R3 9/9, R4 11/11; engine pin drift 0. CLEARED for Phase W1 authoring — with the two deferred [L] passes (treatment accession-dating + natural-history registry) as early-W1 tasks and the burden order carried as provisional [H] until they land.
+
+
+v0.6  (W1.1 — Phase W1 authoring begins: canonical per-disease site for the rankable cohort)  — this session
+  - ▶ PHASE W1 AUTHORING ON (the first phase that writes prose). Full VP-SPEC v1.8 discipline engaged
+      (answer-first, claim grades, repro strip, JSON-LD, search gate). The two deferred [L] passes are NOT
+      done yet, so per the recorded W1-entry condition EVERY W page carries the burden/residual order as a
+      provisional [H]-grade prioritisation device, not a registry-locked ranking.
+  - STRUCTURE (author directive, honored): ONE standalone canonical HTML per disease —
+      docs/disease/<slug>/index.html — never grouped, so Google/RAG can extract and rank each disease as
+      its own passage (C4). 19 pages emitted: volume hub docs/disease/index.html · framework chapter
+      §1 (docs/disease/01-classification-burden-treatment-framework/) · the 17 PLACED (rankable, ≥3/5 axes)
+      diseases §2–§18 in residual-burden order, each its own page. (The 18 not-placed diseases and the
+      cross-cutting class chapters are W1.2+, each still to be its own page.)
+  - REPRODUCIBLE BUILD (C1): tools/w1_build.py (living code; NOT in the frozen engine pin) deterministically
+      emits the whole site from the curated graded artifacts. EVERY analytical number shown on a page —
+      O/P/S/M/D axis values, raw_burden, efficacy offset e, R_treat, residual burden_score, residual rank —
+      is READ FROM the curated CSVs at build time and never typed into prose. Same inputs → same HTML
+      (site-set sha c97175f90cb1, 2× identical; gate re-runs the builder twice). Clinical facts (gene
+      function, inheritance, symptoms, onset, definitions) are OBSERVED inputs, cited per page, never
+      "reproduced" (C-D1); the reproducible contribution is the classification + burden + residual layer.
+  - PER-DISEASE PAGE (C4 retrieval surface, Google-first): disease-name-leading <title>; unique
+      meta description (80–160 chars, conclusion-first); answer-first <p class="answer"> (40–60 words,
+      self-contained, carrying the provisional-[H] flag); plain abstract with the residual figure;
+      claim-strip (grade + LOCK→Derive→Gate + reproduce link + DOI-pending); a self-contained burden
+      vp-card linking the §1 canonical derivation; an emergence-baseline vp-card on the 3 developmental
+      diseases (achondrogenesis type II, osteogenesis imperfecta, Marfan) citing the read-only engine;
+      JSON-LD MedicalCondition + ScholarlyArticle + BreadcrumbList (ORCID, CC BY); ≤3-sentence paragraphs.
+  - SCOPE.md boundary honored: excluded-organ features are named + cross-referenced to the sibling
+      neuro/mind volumes, not duplicated — Marfan aortic root, DMD/BMD dilated cardiomyopathy, Pompe (IOPD)
+      hypertrophic cardiomyopathy, and the CNS course of NPD-A / neuronopathic Gaucher / severe-end Hurler /
+      classic homocystinuria.
+  - HONESTY GATES held: no treatment row claims [L] (uniformly [H]); no disease assigned a fabricated cure
+      (C-D3); the volume DOI is shown "pending registration (VP-SPEC §2)" with no fabricated Zenodo accession.
+      IRREPRODUCIBILITY_LEDGER.md created (C3): aggregates the volume-level provisional-[H] condition (order +
+      treatment evidence + DOI) and the per-field [O] items (PKD2 structured inheritance [O]; open burden
+      axes per disease; Gaucher-aggregate gene-less fields [O]).
+  - Retrieval access: docs/robots.txt (Googlebot·Bingbot·OAI-SearchBot·GPTBot·PerplexityBot·ClaudeBot·
+      Google-Extended allowed) · docs/sitemap.xml (19 URLs) · docs/llms.txt (<5KB) · docs/disease/_meta.json
+      summary card (sha b4f28df8e6e5) · docs/assets/css/site.css (no inline CSS/JS, no katex residue,
+      max page 15 KB, DOM < 3000).
+  - W1 GATE reports/w1.gate.json — PASS (15/15): build_deterministic_2x · structure_one_page_per_disease ·
+      answer_first_40_60 · abstract_and_claimstrip · jsonld_valid · burden_drift_zero (C1) ·
+      axis_values_match (C1) · treatment_match · provisional_H_flag (C3) · no_fabricated_cure (C-D3) ·
+      no_fabricated_doi · retrieval_access · hub_links_no_orphan · engine_pin_drift_zero (C-D8) ·
+      description_seo_length. (One latent gate-self-leak found and fixed during development: JSON-LD was
+      emitted with indented spacing so a regex page-map matched nothing and several checks passed vacuously;
+      the map was rebuilt to be format-independent (slug section number) and JSON-LD emitted compact, so the
+      drift-0 checks now verify against real pages.)
+  - All prior gates still green after W1: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10.
+      Engine pin MANIFEST_governed.sha256 unchanged, verifies OK (drift 0, 15/15) — W1 tools/ and docs/ are
+      living artifacts, intentionally not in the frozen engine pin.
+  - Digests: site-set sha c97175f90cb1; w1_build.py sha d9e39b356c24; w1_gate.py sha 95e2d8cb7f4f;
+      w1.gate.json sha 2ad5cb2322ea.
+
+Status: Phase W1 underway — W1.1 complete (PASS 15/15; all prior gates still green; engine pin drift 0).
+The canonical per-disease site for the 17-disease rankable cohort is built under full VP-SPEC v1.8 discipline,
+with the burden order carried as provisional [H]. Next: W1.2 — the two deferred [L] passes (treatment
+accession-dating + natural-history registry) to lift the order toward registry-locked, then author the 18
+not-placed diseases and the cross-cutting class chapters, each disease on its own page.
+
+------------------------------------------------------------------------------------------------
+v0.7 — W1.2: GeneReviews accession-dating + not-placed pages + mechanism-class chapters
+------------------------------------------------------------------------------------------------
+Phase W1.2. Single author. English deliverables. VP-SPEC v1.8 discipline. All gates green; drift 0.
+
+  - R5 STAGE 1 — code/pipeline/r5_genereviews_fetch.py (sha f1fbcbb5ea81; network, cached under
+      data/raw/genereviews/): pulls each disease's GeneReviews chapter via NCBI E-utilities, extracting
+      NBK accession, initial-posting + last-revision dates, page sha256, and Management/Natural-History/
+      Summary text. Curated cui→NBK map + title-only auto-discovery; 35/35 matched. Two fetch bugs found
+      and fixed: (a) Pompe/GSD II matched NBK599589 "GAA-FGF14-Related Ataxia" via the GAA gene-symbol
+      collision → corrected to curated NBK1261 "Pompe Disease"; (b) vosoritide lives in the achondroplasia
+      chapter Summary box, missed by the section extractor → Summary-section extraction added.
+  - R5 STAGE 2 — code/pipeline/r5_accession_apply.py (sha ea0aeaffdc9a; no network; imports the FROZEN R3
+      lexicon). Writes SEPARATE data/curated/*_registry.{json,csv} so the R3/R4 banked files stay
+      byte-identical. CORROBORATION-ONLY policy (honesty > completeness; pre-registered rule honoured):
+        · Treatments 33 [H]→[L] (accession-dated to GeneReviews Management/Summary, drug-term verified) +
+          2 [H] (Achondrogenesis II, Niemann-Pick A — evidence_status=none, no therapy to accession-date).
+        · Burden axes 21 [H]→[L] corroborated (lexicon read of the NH text AGREES with the definition
+          tier; value unchanged so raw_burden cannot move), 28 kept [H] (discrepancy), 0 [O]-fill,
+          81 [O] kept. [O]-fill WITHHELD by policy (full-chapter first-match over-triggers and is the only
+          path that would move raw_burden / promote a not-placed disease); withheld suggestion + accession
+          recorded on each open axis's basis.
+        · NO promotions; residual ORDER and placed/not-placed split numerically identical to R4
+          (burden_residual_registry byte-identical to banked R4). order_locked = 0/35 (every placed disease
+          keeps ≥1 [H] axis since HPO has no severity/disability branch) → provisional-[H] flag held
+          cohort-wide. Registry digests: burden_scores_registry 0413f0fd66cd · treatments_registry
+          8b3eb63b1496 · burden_residual_registry c90bbf871848.
+  - SITE GENERATOR tools/w1_build.py (sha 9956701facd5) extended: reads registry CSVs (fallback to banked);
+      placed pages show the GeneReviews accession in the treatment tier when [L]; 18 NOT-PLACED disease
+      pages authored (§19–36, honest "not placed — N/5 axes; remaining axes [O] not guessed", full SEO
+      surface + MedicalCondition/ScholarlyArticle/Breadcrumb JSON-LD); 2 MECHANISM-CLASS chapters authored
+      (§37 Lysosomal storage & transport, 7 members; §38 Fibrillar collagenopathies, 4 members) that LINK
+      member pages (ScholarlyArticle + ItemList + Breadcrumb, [F] marker) without restating them.
+      Repeat-expansion requested but has ZERO systemic-cohort members (neurological → sibling neuro volume),
+      so collagenopathy substituted and the absence stated on the hub. Hub/_meta/sitemap/llms/ledger updated:
+      sitemap now 39 URLs (b sha 71abdd0058c8); llms.txt 4479 B (sha 3555e7bb65a8); _meta sha dc00043d45bb;
+      IRREPRODUCIBILITY_LEDGER sha 26c60aacac2a (treatment row now 33×[L]/2×[H]-none; [O]-fill-withheld row
+      added).
+  - GATE tools/w1_gate.py (sha 323e203e1d8c) rewritten — PASS (17/17): build_deterministic_2x ·
+      structure_full_set (17+18+2) · answer_first_40_60 · abstract_and_claimstrip · jsonld_valid ·
+      burden_drift_zero (C1) · axis_values_match (C1) · treatment_match · provisional_H_flag (C3) ·
+      treatment_grade_honest (every [L] carries an NBK accession shown on-page; hedged "curative intent"
+      allowed, unhedged cure claim banned — C-D3) · not_placed_honest · class_links_members (no orphan,
+      membership read from w1_build.CLASSES) · retrieval_access (sitemap count derived from _meta) ·
+      hub_links_no_orphan · no_fabricated_doi · description_seo_length · engine_pin_drift_zero (C-D8).
+      Page-role mapping is format-independent (by JSON-LD content), not by slug guesswork.
+  - All prior gates still green: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15). Determinism: site-set sha 0aaa244a7a09 (2×).
+
+Status: Phase W1 — W1.1 + W1.2 COMPLETE (W1 gate PASS 17/17; all prior gates green; engine pin drift 0).
+The full 35-disease page set is built: 17 placed (rankable, provisional-[H] order), 18 not-placed (honest
+open-axis framing), 2 mechanism-class cross-references, plus the framework and hub. Treatments are now
+accession-dated [L] for 33/35 (2 honestly [H], no therapy exists). The ONE remaining [L] upgrade is the
+natural-history registry pass (Orphanet/OMIM clinical synopsis/published survival) — until it lands the
+burden order stays provisional [H] cohort-wide, and not-placed promotions await ≥3 registry-grade axes.
+
+
+------------------------------------------------------------------------------------------------
+v0.8 — W1.3: Orphanet natural-history registry pass (onset → registry [L]) + prose/ledger update
+------------------------------------------------------------------------------------------------
+Phase W1.3. Single author. English deliverables. VP-SPEC v1.8 discipline. All gates green; drift 0.
+This closes the SECOND (and last named) deferred [L] pass. Both upgrades flagged since R3/R4 have now
+landed: R5 accession-dated the treatment effect (→ [L] 33/35); R6 here lifts the burden axes from the
+natural-history register. The R3/R4 BANKED files stay byte-identical (gate-verified); the registry layer
+(cumulative R5+R6) is what advances.
+
+  - R6 STAGE 1 — code/pipeline/r6_orphanet_fetch.py (sha 2d8bf0101cdb; network, cached under
+      data/raw/orphanet/, idempotent, sha-pinned, writes _fetch_log.json): pulls three Orphadata products
+      (CC BY 4.0, citeable, retrieved 2026-06-17): en_product1.xml (sha fb2fbe8cc3f0, 11,456 disorders;
+      OMIM↔ORPHA cross-refs with mapping relation), en_product9_ages.xml (sha c8dba4d4a424, 7,374;
+      AverageAgeOfOnset + inheritance), en_product4.xml (sha 82079cfb9e6f, 4,337; HPO phenotypes per
+      ORPHAcode WITH Orphanet frequency). Chosen over OMIM clinical synopsis (licensed/copyrighted, no key)
+      precisely because Orphanet's fields are STRUCTURED and entity-anchored — every value attaches to an
+      ORPHAcode, so the "entity-anchored read" R5 deferred is automatic, not a free-text first-match.
+  - R6 STAGE 2 — code/pipeline/r6_naturalhistory_registry.py (sha ed20bb4830fb; no network; imports the
+      FROZEN R3 builder via importlib for tier maps / HPO subtrees / composite / sensitivity). Writes the
+      SEPARATE data/curated/*_registry.{json,csv} (cumulative R5+R6); self-healing/idempotent (if its input
+      already carries R6, it regenerates the clean R5 base first, so re-runs are byte-stable). DECLARED,
+      A-PRIORI rules (recorded in the output + BURDEN_INDEX.md; no tuning):
+        · JOIN exact-only — a disease lifts only from an Orphanet concept its OMIM maps to with relation E
+          (en_product1); BTNT/NTBT recorded as context, NO lift. 27/35 exact-mapped; 8 have no exact
+          mapping and take no lift (PKD2, α1-antitrypsin, β-thal, hemochromatosis, factor IX, MSUD,
+          cystinosis, EDS-classic).
+        · ONSET (O) ← earliest en_product9 AverageAgeOfOnset on a fixed earliness tier map
+          {Antenatal/Neonatal 1.0 · Infancy 0.85 · Childhood 0.7 · Adolescent 0.55 · Adult 0.35 ·
+          Elderly 0.2}; "All ages"/"No data" record but DO NOT lift. UNLIKE R5 (value frozen), a registry
+          [L] SUPERSEDES a prior [H]/[O] and MAY MOVE raw_burden — the intended upgrade. Onset [L] 25→28
+          (9 corroborated · 6 extended-earlier · 2 [H]→[L] · 1 [O]→[L]; 4 stay [H] "All ages"-only; 3 [O]).
+        · MORTALITY (M) ← en_product4 HPO Mortality/Aging (HP:0040006) with an R3 MORT_VAL tier AND
+          Orphanet frequency ≥ Frequent. M [L] 7→8 (only Hurler 0.7[H]→1.0[L]).
+        · PROGRESSION (P) ← en_product4 HPO Clinical-course (HP:0031797), same tier+frequency gate.
+          UNCHANGED (5 [L]) — no qualifying course term at ≥Frequent for this cohort. Honest null.
+        · FREQUENCY GATE = {Obligate, Very frequent, Frequent} (rarer phenotypes do not characterise
+          typical natural history); ADD-ONLY — Orphanet absence never downgrades a banked value.
+        · SEVERITY (S) / DISABILITY (D) NOT lifted — Orphadata carries no structured magnitude tier; the
+          obstacle is SHARPENED on each [O] axis (consulted, no tier, deferred — not guessed).
+      RESULT — promotions 0 (onset was already scored for most placed diseases; no not-placed disease
+      reached ≥3 registry-grade axes, since S/D have no Orphanet tier). order_locked 0→1 = Tyrosinemia
+      type II (its 3 scored axes O[L]/S[L]/D[L] are all registry-grade; S/D were R5-corroborated): its
+      burden VALUE is now registry-locked, though the cohort ORDER stays provisional-[H] (its RANK still
+      depends on [H]-valued neighbours), so the provisional flag is held cohort-wide and the page adds a
+      precise value-vs-rank note. Axis VALUE changes (registry supersedes, raw_burden re-derived & gate-
+      checked): NPD-A O 0.85→1.0 · Becker O 0.35→0.7 · Fabry O 0.55→0.7 · Hurler O 0.85→1.0 & M 0.7→1.0 ·
+      GSD-II/Pompe O 0.35→1.0 · Tyr-II O 0.85→1.0 · 21-OH-CAH O 0.35→1.0 · AIP O 0.35→0.55 ·
+      factor VIII O —→1.0. Axis-grade coverage after R6 (over 35): O [L]28/[H]4/[O]3 · P [L]5/[H]9/[O]21 ·
+      S [L]2/[H]22/[O]11 · M [L]8/[H]9/[O]18 · D [L]4/[H]4/[O]27. Sensitivity (Spearman vs equal default):
+      equal 1.00 · onset 0.917 · mortality 0.995 · severity 0.944 · drop-disability 0.985. Registry digests:
+      burden_scores_registry 6e9017984291 · burden_residual_registry 59fd22716c82 · treatments_registry
+      8b3eb63b1496 (byte-identical to R5 — R6 does not touch the treatment layer).
+  - R6 GATE — code/pipeline/r6_gate.py (sha a03033bc1588) PASS (14/14), report reports/r6.gate.json
+      (sha ae2ed3e3dc75). Re-derives every claim independently of any recorded digest and proves the
+      r5→r6 chain deterministic (2× identical, registry-set sha fd5f750c9141): determinism_chain_2x ·
+      orphanet_sources_pinned (3/3 products match pin) · banked_unchanged (R3/R4 byte-identical) ·
+      join_exact_only · onset_tier_map_a_priori · frequency_gate_enforced (re-checked against en_product4) ·
+      addonly_no_downgrade (no grade weakened / no scored value dropped vs R5) · supersede_only_on_registry
+      (every value change is registry-[L] Orphanet-backed) · raw_burden_rederived · rankability_and_promotions
+      · residual_correct · order_lock_rule (1 locked) · sensitivity_present · engine_pin_drift_zero. R6 is
+      living code (post-dates the R2 freeze), intentionally not in the frozen engine pin.
+  - W1.3 SITE UPDATE — tools/w1_build.py (sha 074f2f13b201). The W1 prose, which still called the
+      natural-history pass "deferred / the one remaining upgrade," is brought into line with reality:
+        · Per-disease pages now state WHICH axes are registry [L] for THAT disease (onset cited to the
+          Orphanet AverageAgeOfOnset register), and Tyrosinemia type II carries the order_locked VALUE note
+          (value registry-locked; cohort rank still provisional). The precise remaining obstacle is named on
+          every page: no Orphadata severity/disability magnitude tier and no frequent typical-course term →
+          severity/disability/most-progression stay [H]/[O], deferred to OMIM clinical synopsis (licensed) /
+          GBD / published functional & survival literature — not guessed.
+        · Framework honest-limitation, hub reading-order, the 18 not-placed upgrade-path notes, _meta.json
+          (registry_passes + order_locked recorded), llms.txt, and the builder-generated
+          IRREPRODUCIBILITY_LEDGER.md (counts now computed from the registry: 80 [O] axis cells, onset [L]
+          28, order_locked 1) are all updated.
+        · TWO builder bugs fixed in this pass. (a) The build never cleaned its output, so when R6 reordered
+          the residual ranking the stale <rank>-<slug>/ page dirs from prior builds lingered as orphans
+          (55 dirs / 17 duplicate slugs, e.g. an old 14-hurler-syndrome beside the correct 12-); main() now
+          prunes every VOLDIR subdirectory before regenerating (38 page dirs, no dups) so the site is
+          reproducible across reorders. (b) The framework treatment paragraph still read "uniformly [H] …
+          deferred" (stale since the R5 accession-dating); corrected to 33/35 [L] accession-dated, matching
+          the per-disease pages.
+  - W1 GATE — tools/w1_gate.py (sha 323e203e1d8c, unchanged) PASS (17/17) with the R6 numbers; site-set
+      sha 5c81ff0c14cb (2× identical). Retrieval surface unchanged in shape: sitemap 39 URLs
+      (sha d734700c04c3) · llms.txt (sha c943d9ada64a) · _meta.json (sha c8df6d990a36) ·
+      IRREPRODUCIBILITY_LEDGER.md (sha 4ece586b9482).
+  - All prior gates still green: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+
+Status: Phase W1 — W1.1 + W1.2 + W1.3 COMPLETE (W1 gate PASS 17/17; R6 gate PASS 14/14; all prior gates
+green; engine pin drift 0). BOTH deferred [L] passes have now landed: treatments accession-dated [L] (33/35)
+and onset lifted to registry-grade [L] (28/35, Orphanet) with one mortality axis and one order-locked
+disease (Tyrosinemia type II). Severity, disability, and most progression have no structured tier in
+Orphadata and remain [H]/[O], so the burden ORDER is still carried as a provisional [H] prioritisation
+device cohort-wide; the remaining [L] lift (OMIM clinical synopsis (licensed) / GBD / published functional &
+survival literature) is named on every page and in the ledger.
+
+
+v0.9 — R7: open-source natural-history pass (GBD disability weights + PMC survival) + prose/ledger update
+--------------------------------------------------------------------------------------------------------
+Phase R7 (with W1.4 site sync). Single author. English deliverables. VP-SPEC v1.8 discipline. All gates
+green; drift 0. R6 named two still-open axes with no structured registry source — DISABILITY and SEVERITY.
+R7 closes the open DISABILITY axis from the canonical, openly published GBD 2013 disability-weights table,
+and attempts the open MORTALITY path from PMC survival literature. The intended SEVERITY source (the OMIM
+clinical synopsis) is WORKED AROUND, not used: OMIM is not an institutional licensee and no short-term API
+key is obtainable, and its canonical reproduction path (bash/curl) is datacenter-IP-blocked (403) — baking
+scraped values in would break bit-reproducibility. So the OMIM stage is coded to CLEAN-SKIP without a key
+(obstacle named, S not guessed), and R7 substitutes open sources for what they can honestly carry. The
+R3/R4 BANKED files stay byte-identical (gate-verified); the registry layer (cumulative R5+R6+R7) advances.
+
+  - R7 STAGE 1 (disability source) — code/pipeline/r7_gbd_dw_fetch.py (sha a5b609b656ed; network, cached
+      under data/raw/gbd/, idempotent, sha-pinned, writes _fetch_log.json): downloads the Salomon JA et al.
+      "Disability weights for the Global Burden of Disease 2013 study," Lancet Glob Health 2015;3(11):e712-23
+      appendix (mmc1.pdf, Elsevier gold-OA CDN, CC BY) — PDF sha c7d22442bad8 (695,121 B) — runs
+      pdftotext -layout, and deterministically parses the two-column table taking the GBD2013 estimate
+      (LEFT column; GBD2010 is the right). 233 health states → gbd_disability_weights.json (sha b7791f57b4ae).
+      SIX anchor self-checks guard the GBD2013-vs-2010 column read and the parser (Anemia-severe 0.149,
+      Anemia-moderate 0.052, Motor-severe 0.402, Musculoskeletal-generalised-moderate 0.317, Intellectual-
+      disability-severe 0.160, Motor+cognitive-severe 0.542); the stage exits nonzero on any mismatch. 6/6 pass.
+  - R7 STAGE 2 (OMIM, worked around) — code/pipeline/r7_omim_synopsis_fetch.py (sha 573f8f89513b): reads
+      OMIM_API_KEY; ABSENT → writes data/raw/omim/_fetch_log.json (sha 1b27d6cb7f62) with status SKIPPED and
+      the obstacle ("no key; OMIM datacenter-IP-blocked; S not guessed"), exits 0 (clean-skip). Full key-present
+      fetch logic is included but dormant. Severity therefore takes no lift from OMIM — by design.
+  - R7 STAGE 3 (mortality source) — code/pipeline/r7_litsurvival_fetch.py (sha ce781c0eeca1; NCBI E-utilities,
+      no key, <3 req/s): for each disease, title-anchored PMC OA query (disease token must appear in the
+      article-title), full-text XML cached + sha-pinned per CUI to data/raw/litsurvival/ (_fetch_log.json sha
+      9ecf8b64ebd8). 30/35 articles cached; 5 not found (Hb SS, factor VIII, factor IX, hemochromatosis,
+      β-thalassemia — of which β-thal/FVIII/FIX are promoted by the disability pass, so mortality is moot).
+  - R7 STAGE 4 — code/pipeline/r7_naturalhistory_registry2.py (sha 353e8e7d9ee6; no network; imports the
+      FROZEN R3 builder via importlib for tier maps / composite / sensitivity). Writes the SEPARATE
+      data/curated/*_registry.{json,csv} (cumulative R5+R6+R7); self-healing/idempotent (if its input already
+      carries R7, it regenerates the clean R5→R6 base first, so re-runs are byte-stable). DECLARED, A-PRIORI
+      rules (recorded in the output + BURDEN_INDEX.md; no tuning):
+        · DISABILITY (D) ← the GBD 2013 disability weight of the disease's single dominant untreated-natural-
+          history functional sequela, via the CITED curation join methodology/gbd_dw_join.csv (sha 2314174f7379;
+          10 rows, one disease → one named GBD health state, each carrying the clinical evidence basis). The
+          published dw (a [V]-quality value) is binned to the BURDEN_INDEX disability tier by cut-points declared
+          a priori: dw<0.10→0.2 · 0.10–0.30→0.5 · 0.30–0.55→0.75 · >0.55→1.0. GRADE = [L] (curation join, not a
+          disease-specific measured distribution — the same conservative call R6 made for onset); the raw dw +
+          95% UI are recorded for provenance and the join is validated at runtime against the pinned DW table
+          (a state/weight not reproducible from the pin is a hard error). Multi-domain / variable / mortality-
+          dominant diseases are NOT mapped (methodology/gbd_dw_excluded.csv, sha 5a810f379a97; 9 rows, each with
+          a specific reason) and D keeps its banked grade — never guessed. Registry [L] SUPERSEDES a prior
+          [H]/[O]; an existing [L] is corroborated (max, add-only). Result: 6 [O]→[L] · 3 [H]→[L] · 1 [L]
+          corroborated; PKU correctly LOWERED 0.75[H]→0.5[L] (the definition tier had overstated it; GBD
+          Intellectual-disability-severe dw=0.160 → tier 0.5).
+        · MORTALITY (M) ← PMC open-access survival literature, CORROBORATION ONLY. An entity-verified article
+          whose text contains a sentence with a quantitative disease-typical survival / age-of-death / explicit-
+          lifespan figure AGREEING with the banked M band adds the published citation (PMCID + exact sentence)
+          and promotes an [H] M to [L]. A fixed EXCLUDE filter drops model/treated/subgroup/comparison-artifact
+          sentences (assumption, model, QALY, hazard ratio, transplant, operative, interquartile, recipients,
+          follow-up, surgical, …). Free text does NOT fill an [O] mortality axis — the over-trigger risk R5
+          withheld for, confirmed empirically here (most matched sentences were treated-cohort / comparison /
+          non-mortality). M values are never changed. Result: 2 corroborations, both already [L] (Achondrogenesis
+          type II ↔ PMC12692501 "death usually in utero or the early neonatal period"; Hurler ↔ PMC13090637
+          "untreated median lifespan … under 10 years") — added citations, no grade/coverage change; conservative
+          misses (e.g. OI's reduced-life-expectancy statement) left uncited rather than loosen the extractor.
+        · SEVERITY (S) / PROGRESSION (P) NOT lifted — no structured open source; OMIM synopsis skipped without a
+          key and free-text adjectives too context-dependent to extract safely. The obstacle is recorded on each
+          [O] axis (no open magnitude tier; OMIM unavailable; not guessed). ADD-ONLY throughout.
+      RESULT — promotions (not-placed → placed) 4: Beta-thalassemia, Hereditary factor IX deficiency, Hereditary
+      factor VIII deficiency, Maple syrup urine disease (each crosses the ≥3-axis cut on the new disability axis;
+      now 3/5). order_locked unchanged at 1 (Tyrosinemia type II) — a disability lift alone does not create new
+      locks while S/P/M stay [H] for the rest, and a new lock now needs SEVERITY, which has no open source.
+      Axis-grade coverage after R7 (over 35): O [L]28/[H]4/[O]3 · P [L]5/[H]9/[O]21 · S [L]2/[H]22/[O]11 ·
+      M [L]8/[H]9/[O]18 · D [L]13/[H]1/[O]21 (was D [L]4/[H]4/[O]27 at R6 — the headline advance). Sensitivity
+      (Spearman vs equal default): equal 1.00 · onset 0.921 · mortality 0.990 · severity 0.924 · disability 0.937
+      · drop-disability-core4 0.892. Registry digests: burden_scores_registry 9a7e1a82cde9 · burden_residual_
+      registry 8d39d36ef9f5 · treatments_registry 8b3eb63b1496 (byte-identical to R5/R6 — R7 does not touch the
+      treatment layer).
+  - R7 GATE — code/pipeline/r7_gate.py (sha b357ee652d47) PASS (16/16), report reports/r7.gate.json. Re-derives
+      every claim independently of any recorded digest and proves the r5→r6→r7 chain deterministic (2× identical,
+      registry-set sha 5641ac51b00f): determinism_chain_2x · banked_unchanged (R3/R4 byte-identical) ·
+      gbd_source_pinned_anchored (PDF sha==pin; re-parses the PDF and reproduces 6/6 GBD2013 anchors; 233 states) ·
+      gbd_join_anchored_cited (every join cui in cohort, state in the pinned DW table, evidence_basis + sequela
+      present, tier from the a-priori cut-points) · disability_cutpoints_a_priori · gbd_excluded_recorded (9
+      declined, in cohort, not GBD-lifted) · addonly_no_downgrade (no grade weakened / no scored value dropped vs
+      R6) · supersede_corroborate_only (D changes GBD-[L]-backed & existing-[L] D non-decreasing; M values
+      unchanged) · pmc_corroboration_verified (each corroboration re-found in the cached text, passes the
+      signal+exclude+direction filter; 0 [O] mortality filled from free text) · s_p_not_lifted (S/P identical to
+      R6) · omim_skip_recorded · raw_burden_rederived · rankability_and_promotions (4 promoted) · residual_correct
+      · order_lock_and_sensitivity (1 locked) · engine_pin_drift_zero. R7 is living code (post-dates the R2
+      freeze), intentionally not in the frozen engine pin.
+  - W1.4 SITE UPDATE — tools/w1_build.py (sha 39fc427a7c70). The W1 prose, which still called disability part of
+      "the remaining lift," is brought into line with reality:
+        · Per-disease pages now name the GBD 2013 disability-weights table as the source when disability is
+          registry [L], and the registry-note paragraph credits R6 (onset) + R7 (disability + PMC mortality
+          corroboration) and states that severity/most-progression have no open structured source (OMIM
+          licensed/keyless).
+        · Framework honest-limitation, hub reading-order, the not-placed upgrade-path notes, _meta.json
+          (sha 4e9acfca4a5f; registry_passes now lists R7, deferred_L_passes reduced to severity), llms.txt
+          (sha 95791a01c0f9), and the builder-generated IRREPRODUCIBILITY_LEDGER.md (sha 9cd3fea1ab24; counts
+          now from the registry: 74 [O] axis cells (was 80), onset [L] 28, disability [L] 13, order_locked 1)
+          are all updated. Numbers remain data-bound from the curated CSVs — only narrative framing was edited.
+  - W1 GATE — tools/w1_gate.py (sha 323e203e1d8c, unchanged) PASS (17/17) with the R7 numbers; site-set sha
+      6d319dd166f8 (2× identical; was 5c81ff0c14cb at v0.8). Retrieval surface: sitemap 39 URLs (sha 8cd2d054f427)
+      · llms.txt < 5 KB (4,829 B) · _meta.json (sha 4e9acfca4a5f) · IRREPRODUCIBILITY_LEDGER.md (sha 9cd3fea1ab24).
+  - All prior gates still green: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10 · R6 14/14. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R7_NOTES_AND_HANDOVER.md.
+
+Status: Phase R7 COMPLETE (R7 gate PASS 16/16; W1 gate PASS 17/17; all prior gates green; engine pin drift 0).
+The open DISABILITY axis is closed from the GBD 2013 disability-weights table — disability registry-grade [L]
+4→13/35, four diseases promoted into the placed order, PKU's definition-overstated tier corrected downward by
+the published weight. The OMIM clinical-synopsis path is WORKED AROUND (no obtainable key; clean-skipped;
+obstacle named) and the PMC mortality path is corroboration-only (the free-text [O]-fill is an honest null,
+over-trigger confirmed). The ONE remaining named [L] lift is SEVERITY (and most progression / remaining
+mortality), which has no open structured source; raising it — and creating any new order_locked disease —
+now depends on the OMIM clinical synopsis (licensed) or curated published functional/severity literature.
+The burden ORDER stays a provisional [H] prioritisation device cohort-wide; every page and the ledger name
+the precise remaining obstacle — not guessed.
+
+
+v0.9.1 — R7 severity investigation closeout (obstacle sharpened; no analytical change)
+--------------------------------------------------------------------------------------
+Phase R7 patch. Single author. English deliverables. VP-SPEC v1.8 discipline. All gates green; drift 0.
+NO analytical change — every grade, value, rank, raw_burden, residual, and order_lock is byte-identical to
+v0.9 (severity stays [H]/[O]). This patch records, in-package, the exhaustive severity investigation so a
+future session does not repeat the same dead ends — the project's "obstacle named, never guessed" discipline
+applied to the one remaining open axis.
+
+  - SEVERITY investigated across every open source reachable from NCBI / this environment; finding: NO open
+    source carries a disease-level severity-magnitude tier. Each path and why it fails:
+      · Orphadata (R6) — no severity-magnitude field.
+      · HPO severity modifiers (phenotype.hpoa, cached) — only 4/35 cohort diseases carry any modifier, and
+        each is a single FEATURE-level tag on one phenotype (OI→"Mild", Achondrogenesis-II→"Severe",
+        homocystinuria→"Mild", Fabry→"Mild"), not a disease-level assessment. Category error to use as a
+        disease tier. Honest null.
+      · GeneReviews Clinical-characteristics (R5 cache) + PMC OA (R7 cache) — disease-level severity statements
+        are overwhelmingly SPECTRUM/RANGE language ("ranges from mild to severe"); a single 0.25/0.5/0.75/1.0
+        tier cannot be read without inference (= [H], not [L]). Entity-specific "severe" mentions (Hurler,
+        MSUD-classic) would change the banked value on one free-text word — same inference problem. A
+        free-text severity pass is therefore DELIBERATELY NOT DONE (it would relabel inference as registry-grade).
+      · OMIM clinical synopsis (only disease-level source) — RE-TESTED with a correction: api.omim.org IS
+        reachable from this environment (earlier "403/IP-blocked" was the WEBSITE www.omim.org, bot-blocked; the
+        API is a separate Cloudflare-fronted host). Keyless → HTTP 400 "An API key is required"; malformed key →
+        "Invalid API key string length, expected 22 characters" — i.e. AUTH-gated, not IP-blocked: a valid 22-char
+        OMIM key would work directly from here. Key is unobtainable (no institutional registration), so OMIM stays
+        closed and r7_omim_synopsis_fetch.py continues to clean-skip. Even with OMIM, the synopsis is a categorised
+        feature list (not a numeric tier), so severity would be a declared curation mapping → [L], not [V].
+  - CHANGE — the SEVERITY [O] obstacle string in r7_naturalhistory_registry2.py (sha now 5e3c…) is sharpened to
+    record all four exhausted sources (Orphadata / HPO modifiers 4-of-35 feature-level / GeneReviews+PMC
+    spectrum-language / OMIM key-gated-unobtainable). The PROGRESSION [O] obstacle is likewise made source-specific.
+    Only obstacle PROSE changes; S/P values + grades are byte-identical (gate s_p_not_lifted confirms 0 changed).
+    (r7_naturalhistory_registry2.py sha 8404f8a888a2.)
+  - reports/R7_NOTES_AND_HANDOVER.md §7 rewritten as the severity investigation closeout (the corrected OMIM
+    finding + the four exhausted sources + the two discipline-compatible R8 paths: an OMIM key, or a deliberate
+    human-in-the-loop per-disease curation from citeable sources).
+  - All gates re-verified green on the sharpened build: R7 16/16 · W1 17/17 · R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11
+    · consolidation 10/10 · R6 14/14; engine pin drift 0 (15/15). R3/R4 BANKED files byte-identical.
+
+Status: Phase R7 COMPLETE — honest endpoint. Disability closed from GBD 2013 ([L] 13/35, 4 promotions); mortality
+corroborated from PMC (2, honest [O]-fill null); OMIM worked around (auth-gated, key unobtainable, clean-skipped).
+The one remaining axis, SEVERITY, has NO open disease-level magnitude source (Orphadata/HPO/GeneReviews/PMC all
+exhausted and documented in-package) — it stays [H]/[O] with a precisely named obstacle, never guessed, and the
+burden ORDER stays a provisional [H] prioritisation device cohort-wide. Raising severity requires an OMIM key
+(confirmed it would work from this environment) or a deliberate human-curated, citeable per-disease severity
+register — deferred to R8.
+
+
+v0.10 — R8: open-source SEVERITY pass (HPO clinical-modifier Severity subtree → severity [L]; 2nd order-lock)
+-----------------------------------------------------------------------------------------------------------
+Phase R8 (with W1.5 site sync). Single author. English deliverables. VP-SPEC v1.8 discipline. All gates
+green; drift 0. This raises the one axis R7 left open — SEVERITY — using an OPEN, citeable source, after
+an author directive corrected the R8 framing: the OMIM API key is PERMANENTLY unobtainable for an
+individual researcher, so it is REMOVED as a path (not "deferred"); but reliable open data (HPO) should be
+used, flexibly AND honestly. R8 does exactly that. The R3/R4 BANKED files stay byte-identical
+(gate-verified); the registry layer (cumulative R5+R6+R7+R8) advances.
+
+  - HANDOVER CORRECTION (factual): the R7 closeout recorded "HPO severity modifiers are feature-level" — true
+      for the cohort at large, but it under-stated the ontology. The HPO clinical-modifier *Severity* branch
+      HP:0012824 EXISTS and maps 1:1 to the BURDEN_INDEX S tiers (Mild HP:0012825→0.25 · Moderate
+      HP:0012826→0.5 · Severe HP:0012828→0.75 · Profound HP:0012829→1.0 · Borderline HP:0012827→no tier),
+      and it is already carried, per-feature, in the pinned phenotype.hpoa (v2026-06-06, sha 1effb4e06afe).
+      So severity CAN be wired from the same open source that already powers onset/organs — where an
+      annotation honestly represents the disease.
+  - THE OPEN-SOURCE, FLEXIBLE-AND-HONEST DESIGN. Severity lifts ONLY through a cited DOMINANT-sequela
+      curation join over the open HPO Severity subtree (methodology/severity_hpo_join.csv, sha 0b2fa7847cc5;
+      1 row) — the exact discipline R7 used for the GBD disability join. A disease's S lifts iff, in the
+      pinned hpoa, it carries a Severity-modifier annotation that is (i) OBLIGATE on the annotated feature
+      (HPO frequency 100% / term HP:0040280) — so the modifier reflects the whole disease, not a
+      sub-phenotype — (ii) on the disease's cited dominant sequela, and (iii) for a non-spectrum entity.
+      (i) is checked programmatically against the open source at BUILD and GATE time; (ii)–(iii) are cited
+      curatorial inputs recorded per row. This a-priori inclusion criterion is declared in the registry
+      (severity_inclusion_criterion) — the selection is criterion-driven and machine-auditable against open
+      data, NOT a bare hand-pick, and NOT fitted to any target order.
+  - DISCIPLINED 1-INCLUDE / 6-EXCLUDE. All 7 annotation-bearing cohort diseases were reviewed; methodology/
+      severity_hpo_excluded.csv (sha 1f9b7e85c1f6; 6 rows) records, per disease, why the other annotations are
+      FEATURE-level and would be a CATEGORY ERROR as a disease tier: OI ×2 (umbrella spectrum — Mild on
+      type-I osteopenia vs Severe on type-III osteoporosis, contradictory on one entity); classic
+      homocystinuria (Mild on tall stature — morphological, severity-uninformative); Fabry (Mild on airway
+      obstruction — non-dominant); achondroplasia (Severe on platyspondyly — one feature; disease is mild-mod,
+      banked M=0.4); DMD (Mild on intellectual disability — non-dominant; would catastrophically understate).
+        · INCLUDED (the unique disease meeting the criterion): Achondrogenesis type II — Severe (HP:0012828)
+          on its DEFINING sequela Short long bone (HP:0003026), OBLIGATE (frequency 1/1), cited PMID:34573377;
+          the disease is uniformly perinatal-lethal (non-spectrum), consistent with its banked M=1.0 [L].
+          S 0.75 [H]→[L] — VALUE UNCHANGED (0.75), grade lifted (so raw_burden does not move).
+  - RESULT. add-only throughout; an absent/declined annotation never downgrades a value. S-axis grade
+      coverage (over 35): [L] 2→3 · [H] 22→21 · [O] 11 (unchanged). The single grade lift CREATES THE 2ND
+      ORDER-LOCKED DISEASE: order_locked 1→2 = Achondrogenesis type II (O[L]/S[L]/M[L], all scored axes now
+      registry-grade) + Tyrosinemia type II (unchanged). NO promotions (a grade lift on an already-scored
+      axis moves no rankability); the placed/not-placed split and the residual ORDER are numerically
+      identical to R7. O/P/M/D are byte-identical to R7 (R8 touches only S). Sensitivity (Spearman vs equal
+      default): equal 1.00 · onset 0.921 · mortality 0.990 · severity 0.924 · disability 0.937 ·
+      drop-disability-core4 0.892. Registry digests: burden_scores_registry.json 8d3775ca14ac /
+      .csv 27050cda5674 · burden_residual_registry.json c362b29f0e66 · treatments_registry.json 8b3eb63b1496
+      (byte-identical to R5/R6/R7 — R8 does not touch the treatment layer). Registry-set sha c40c6942872d (2×).
+  - HONEST BOUND (not over-claimed). Severity is only PARTIALLY liftable from the open data: exactly ONE
+      cohort disease has a defensible obligate dominant-sequela Severity annotation. Six other diseases are
+      each ONE S-lift from an order-lock (Hurler, factor VIII, Gaucher type I, Gaucher, beta-thalassemia,
+      PKD2) but carry NO defensible open severity annotation, so they stay [H] — not guessed. The OMIM
+      clinical synopsis (the only disease-level alternative) is API-key-gated and the key is unobtainable for
+      an individual researcher: that path is REMOVED, not deferred. The remaining severity/progression lift,
+      if ever, is via curated published functional & survival literature.
+  - R8 PIPELINE. code/pipeline/r8_severity_registry.py (sha 259ec1d65413; no network; imports the FROZEN R3
+      builder via importlib; self-healing/idempotent — if its input already carries R8 it regenerates the
+      clean R5→R6→R7 base first, so re-runs are byte-stable). Each join row is re-validated against the
+      pinned hpoa (phenotype + Severity modifier + frequency + reference) at build time or the build exits
+      nonzero; the obligate criterion is asserted in-builder. Living code (post-dates the R2 freeze),
+      intentionally NOT in the frozen engine pin.
+  - R8 GATE — code/pipeline/r8_gate.py (sha 6db8b1ff0a2d) PASS (16/16), report reports/r8.gate.json
+      (sha e4400eddf765). Re-derives every claim independently of any recorded digest and proves the
+      r5→r6→r7→r8 chain deterministic (2× identical, registry-set sha c40c6942872d): determinism_chain_2x ·
+      banked_unchanged (R3/R4 byte-identical) · cumulative_over_r7 · severity_join_anchored_cited (the join
+      re-found in the pinned hpoa: phenotype+modifier+frequency+reference; cited basis present; tier from the
+      a-priori cut-points; audit binds tier) · severity_annotation_obligate (declared a-priori criterion
+      present; every lifted feature OBLIGATE in the pinned source) · severity_cutpoints_a_priori ·
+      severity_excluded_recorded (6 declined, in cohort, reason present, S not HPO-lifted) · addonly_no_downgrade
+      (no grade weakened / no scored value dropped vs R7) · s_lift_only_where_joined (O/P/M/D identical to R7;
+      S changed only for the joined disease) · new_order_lock_proven (Achondrogenesis II order_locked
+      R7=False→R8=True; count 1→2) · raw_burden_rederived · rankability_and_promotions (0 new promotions) ·
+      residual_correct · order_lock_rule_and_sensitivity (2 locked) · omim_path_removed_documented (status
+      SKIPPED; path documented REMOVED, key unobtainable; no S value sourced from OMIM) · engine_pin_drift_zero.
+  - W1.5 SITE SYNC — tools/w1_build.py (sha 301baffc09af). The W1 prose, which still called severity "the one
+      remaining [L] lift / no open structured source," is brought into line with reality (numbers stay
+      data-bound from the curated CSVs; only narrative framing + the now-dynamic order_locked names/count were
+      edited): four registry passes now stated (R5/R6/R7/R8); per-disease pages credit the HPO Severity subtree
+      where S is registry [L] and the methodology/framework/hub/ledger state that the rest of severity is
+      feature-level in the open annotations (a category error if read as a disease tier) and that the OMIM
+      path is REMOVED (key unobtainable for an individual), not deferred; the order_locked note now names both
+      locked diseases dynamically. The Achondrogenesis type II page now shows S registry [L] and carries the
+      order-locked value note. IRREPRODUCIBILITY_LEDGER.md counts recompute from the registry (severity [L] 3,
+      order_locked 2). Retrieval surface unchanged in shape: sitemap 39 URLs (sha 8cd2d054f427) · llms.txt
+      < 5 KB (4,988 B, sha e9095fc45b53) · _meta.json (sha 783690f9eb60).
+  - W1 GATE — tools/w1_gate.py (unchanged) PASS (17/17) with the R8 numbers; site-set sha 4f614681a165 (2×
+      identical). w1.gate.json sha 440d2ee0e96c. (The registry .json gained the criterion field but the
+      site reads the registry .csv, which is unchanged, so the site is byte-identical to the pre-criterion
+      R8 build.)
+  - All prior gates still green: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10 · R6 14/14 ·
+      R7 16/16. Engine pin MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R8_NOTES_AND_HANDOVER.md.
+
+v0.11  (R9 — curated severity/progression literature + unmet-need surface)  — this session
+  - Phase R9 raises PROGRESSION to registry-grade [L] from curated PMC OPEN-ACCESS literature, through a
+      cited dominant-sequela join (code/pipeline/r9_severity_litcurate.py) identical in kind to the R7
+      disability and R8 severity joins — with one decisive safeguard: the tier is NOT hand-asserted, it is
+      DERIVED by the FROZEN R3 tier function (first_match over PATTERNS["P_progression"]/["S_severity"])
+      applied to the verbatim cited sentence. No new cut-points → the no-tuning invariant holds by
+      construction. A-priori inclusion criterion (declared, gate-enforced): S or P → [L] iff a cited
+      PMC-OA source states a DISEASE-LEVEL magnitude for the DOMINANT untreated sequela (non-spectrum,
+      non-comparative, non-treated-cohort) and frozen R3 yields the declared tier; the build/gate fail if
+      the sentence is not re-found verbatim in the pinned OA cache, the tier disagrees, or the R3 spectrum
+      override trips.
+  - R9 fetch + pin — code/pipeline/r9_litcurate_fetch.py caches 7 cited PMC-OA articles to
+      data/raw/litcurate/<PMCID>.json (text_sha256 + open_access flag), idempotent; the gate re-validates
+      each snapshot against its own sha.
+  - Two lifts (cited, frozen-R3-derived, non-spectrum): Niemann-Pick disease type A P 0.5 [H] → 1.0 [L]
+      (PMC8903814 / PMID 35282558; tier 1.0 = progressive-with-fatal-outcome) → NEW 3rd order_locked
+      disease (O,P,S,D all [L]; M [O]); raw_burden 0.75 → 0.875; residual rank 5 → 2. Duchenne muscular
+      dystrophy P 0.5 [H] → 0.5 [L] (PMC13008492 / PMID 41871622; grade-only corroboration, value
+      unchanged) — does NOT lock, its S was honestly declined at R8 and stays [H].
+  - Five declines recorded with decline_class + per-disease reason (methodology/
+      severity_litcurate_excluded.csv): Hurler S ×2 (comparative; spectrum), Pompe/GSD II P
+      (umbrella_spectrum), MSUD P (historical), Tyrosinemia I P (form_specific). Lift only where
+      defensible; decline transparently; never fish for a lock.
+  - R9 GATE — code/pipeline/r9_gate.py PASS (15/15): determinism (r5→r9, 2×); banked unchanged;
+      cumulative-over-R8; join re-anchored + tier-from-frozen-R3 + non-spectrum; cut-points a-priori;
+      declines recorded; add-only no-downgrade; S/P-only (O/M/D byte-identical to R8) changed only where
+      joined; new order-lock proven (NPD-A locks, 2→3; DMD does not); raw_burden re-derived; rankability;
+      residual; order-lock rule + sensitivity (equal ρ=1.0); sources open-access + source-bound; engine
+      pin drift 0. Registry-set sha d07a544475dc (2× identical). reports/r9.gate.json.
+  - §4 DELIVERABLE — UNMET-NEED / TREATMENT-GAP SURFACE (code/pipeline/w_unmet_need_surface.py →
+      data/curated/unmet_need_surface.{json,csv}). A read-only, fully-graded research-PRIORITISATION
+      signal: residual_unmet_need = burden_score = raw_burden·(1−e); a treatment_gap_class per disease;
+      grades carried; burden_order_provisional kept intact wherever not order-locked. HONEST HEADLINE
+      (burden [L] AND evidence_status none) = Achondrogenesis type II + Niemann-Pick type A — both
+      no-therapy, both [L]-burden, both now order-locked (NPD-A is a LOCKED headline precisely because R9
+      lifted its progression). Explicitly NOT clinical advice, NOT a diagnosis/prognosis, NOT a
+      cure/outcome claim. Surface sha 9aa184ff3dc2 (2× identical).
+  - UNMET-NEED GATE — code/pipeline/w_unmet_need_gate.py PASS (6/6): determinism; every cell re-derived
+      from the registry (residual == registry burden_score, gap-class, provisional flag, all grades);
+      sorted by residual desc; headline rule exact; no cure/outcome claim; read-only (banked + engine pin
+      untouched). reports/unmet_need.gate.json.
+  - W1.6 SITE SYNC — tools/w1_build.py. Prose brought to R9 (numbers stay data-bound; order_locked count
+      made dynamic via _locked_n_names()): five registry passes now stated; per-disease + framework + hub +
+      ledger pages credit the curated PMC-OA progression lift (frozen-R3-derived tier), name Niemann-Pick A
+      as the 3rd order-lock and DMD as corroborated-not-locked, and reference the unmet-need surface;
+      llms.txt + _meta.json updated. Page-set contract unchanged (39 pages); the surface ships as a data
+      artifact, not a new HTML page. W1 GATE PASS (17/17); llms.txt < 5 KB (4,998 B).
+  - FORWARD PLAN IN THE WHITEPAPER — per standing directive, the next-task forward plan is now carried
+      INSIDE the whitepaper itself: a new data-bound "Forward plan and completion criteria" section on the
+      framework page (site §1, /disease/01-classification-burden-treatment-framework/#forward) states what
+      has landed (per-axis [L] coverage + order_locked, all dynamic), the NEXT TASK (R10: remaining
+      severity/progression/mortality via curated PMC-OA dominant-sequela joins under the frozen-R3-derived
+      tier rule, cut-points never widened), and the explicit COMPLETION-DECLARATION criterion (every placed
+      disease either order_locked or every open axis carrying a permanent obstacle irreducible from open
+      data). An in-package FUTURE_WORK.md mirrors it (the uploaded planning doc was external; it now ships
+      with the volume). The forward plan is carried in every version until a dated completion declaration
+      replaces it. W1 gate still PASS (17/17).
+  - All prior gates still green: R1 5/5 · R2 7/7 · R3 9/9 · R4 11/11 · consolidation 10/10 · R6 14/14 ·
+      R7 16/16 · R8 16/16. Engine pin MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R9_NOTES_AND_HANDOVER.md.
+
+v0.12  (R10 — curated severity/progression literature, round 2)  — this session
+  - Phase R10 lifts REMAINING severity/progression axes for the placed cohort via additional curated PMC
+      OPEN-ACCESS dominant-sequela joins, under the EXACT R9 rule and the SAME frozen R3 tier function
+      (first_match over PATTERNS["P_progression"]/["S_severity"] on the verbatim cited sentence). No new
+      cut-points -> the no-tuning invariant holds by construction. R10 is implemented as a dedicated
+      cumulative stage OVER R9 (code/pipeline/r10_severity_litcurate.py), exactly as R7 was a separate
+      cumulative stage over R6 - it imports R9's frozen helpers so the locked logic cannot drift, and it
+      leaves every R9 artifact (and R9's recorded registry-set sha d07a544475dc) byte-identical and
+      immutable.
+  - R10 fetch + pin - code/pipeline/r10_litcurate_fetch.py caches the round-2 cited PMC-OA articles to
+      data/raw/litcurate/<PMCID>.json (text_sha256 + open_access flag), idempotent; the gate re-validates
+      each snapshot against its own sha.
+  - Two lifts (cited, frozen-R3-derived, non-spectrum, GRADE-ONLY - value unchanged, no lock):
+      Fabry disease P 0.5 [H] -> 0.5 [L] (PMC9967779 / PMID 37259462; tier 0.5 via \bprogressive\b,
+      non-spectrum) and Marfan syndrome P 0.5 [H] -> 0.5 [L] (PMC9772687 / PMID 36543362; tier 0.5,
+      non-spectrum). Neither locks: Fabry retains S 0.5 [H] + M 0.7 [H]; Marfan retains S 0.5 [H]. No new
+      order-lock, no new placement - honest.
+  - Three declines recorded with decline_class + per-disease reason (methodology/
+      severity_litcurate2_excluded.csv), each with its OA sentence found and verbatim-pinned but
+      scope-disqualified: Hb SS disease P (umbrella_spectrum - the only retrievable OA disease-level
+      progression sentence is scoped to the SICKLE CELL DISEASE umbrella, not the homozygous-SS entity;
+      a deliberate entity-specific OA search found none exposed in retrievable full text) and S (spectrum -
+      "varies widely ... very severe ... others go unnoticed", the R3 spectrum_S override trips);
+      Alpha-1-antitrypsin deficiency P (umbrella_spectrum - progression predicated as genotype-dependent,
+      two distinct dominant sequelae). Hb SS disease and AATD therefore stay NOT-placed; their open axes
+      carry these as permanent, open-data-irreducible obstacles (surfaced in IRREPRODUCIBILITY_LEDGER.md).
+      Lift only where defensible; decline transparently; never fish for a lock.
+  - R10 GATE - code/pipeline/r10_gate.py PASS (16/16): determinism (r5->r10, 2x); banked unchanged;
+      cumulative-over-R9; round-2 join re-anchored + tier-from-frozen-R3 + non-spectrum; cut-points
+      a-priori; round-2 declines recorded; add-only no-downgrade vs R9; S/P-only changed only for the 2
+      round-2 joined pairs (O/M/D byte-identical to R9); NO new order-lock (lock set unchanged R9=3 ->
+      R10=3; the two Fabry/Marfan [H]->[L] grade lifts do not lock); raw_burden re-derived; rankability;
+      residual; order-lock rule + sensitivity (equal rho=1.0); round-2 sources open-access + source-bound;
+      R9 artifacts preserved (R9 join/excluded CSVs byte-identical to their recorded R9 digests - R10 is
+      additive); engine pin drift 0. Registry-set sha e77c0bf0e887 (2x identical). reports/r10.gate.json.
+  - W1 SITE SYNC - tools/w1_build.py. The two grade-only progression corroborations surface automatically
+      (Fabry + Marfan disease pages: P [H] -> [L], value unchanged; framework "Landed so far" progression
+      count 7 -> 9 of 35); progression provenance corrected to R9+R10 across the framework page, the ledger
+      and llms.txt; and a new SSOT-read "Round-2 literature-curation declines (R10)" table is auto-generated
+      into IRREPRODUCIBILITY_LEDGER.md straight from severity_litcurate2_excluded.csv (so HbSS/AATD carry
+      their accurate umbrella/spectrum obstacle, not a generic one). Page-set contract unchanged (39 pages);
+      no new placement, so no new page. W1 GATE PASS (17/17); llms.txt < 5 KB (4,991 B). Site-set sha
+      b13d8cf7a936 -> 3b0ebe982945 (the honest consequence of the two surfaced grade lifts; deterministic,
+      2x identical).
+  - The unmet-need surface is UNCHANGED - R10 is grade-only, the residual burden_score values do not move,
+      so unmet_need_surface.* stays byte-identical (surface sha 9aa184ff3dc2). Unmet-need gate still PASS
+      (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15. Engine pin MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R10_NOTES_AND_HANDOVER.md.
+
+Status: Phase R10 COMPLETE (R10 gate PASS 16/16; R9 gate PASS 15/15; unmet-need gate PASS 6/6; W1 gate
+PASS 17/17; all prior gates green; engine pin drift 0). Round 2 of the curated PMC-OA progression lift adds
+two GRADE-ONLY corroborations - Fabry disease and Marfan syndrome, each progression [H] -> [L] with the
+value unchanged and the tier DERIVED by the frozen R3 function (no new cut-points) - and neither locks, so
+there is NO new order-lock and NO new placement (order_locked stays 3/35). Three considered statements were
+declined and recorded (Hb SS disease progression + severity, Alpha-1-antitrypsin deficiency progression):
+in each the OA sentence was found and verbatim-pinned but is umbrella/genotype-scoped or spectrum, so no
+disease-level tier is defensibly isolable; HbSS and AATD stay not-placed with these as permanent,
+open-data-irreducible obstacles. R10 ships as a dedicated cumulative stage that leaves every R9 artifact and
+R9's recorded registry-set sha (d07a544475dc) byte-identical - the historical record is preserved, the new
+registry-set sha is e77c0bf0e887. The burden ORDER remains a provisional [H] prioritisation device
+cohort-wide; the OMIM clinical-synopsis path stays REMOVED (key unobtainable for an individual researcher),
+not deferred. Next: continue R-series lift only where a cited disease-level OA magnitude is defensible under
+the frozen-R3 rule, toward the completion-declaration criterion (every placed disease either order_locked or
+every open axis carrying a permanent obstacle).
+
+v0.13  (R11 — curated severity/progression literature, round 3)  — this session
+  - Phase R11 continues lifting REMAINING severity/progression axes for the placed cohort via additional
+      curated PMC OPEN-ACCESS dominant-sequela joins, under the EXACT R9/R10 rule and the SAME frozen R3
+      tier function (first_match over PATTERNS["P_progression"]/["S_severity"] on the verbatim cited
+      sentence). No new cut-points -> the no-tuning invariant holds by construction. R11 is implemented as a
+      dedicated cumulative stage OVER R10 (code/pipeline/r11_severity_litcurate.py), exactly as R10 was a
+      separate cumulative stage over R9 and R7 over R6 - it imports R10's helpers (which import R9's frozen
+      helpers) so the locked tier/spectrum/decline logic cannot drift, and it leaves every R9 AND R10
+      artifact (and their recorded registry-set shas) byte-identical and immutable.
+  - R11 fetch + pin - code/pipeline/r11_litcurate_fetch.py caches the round-3 cited PMC-OA articles to
+      data/raw/litcurate/<PMCID>.json (text_sha256 + open_access flag), idempotent; the gate re-validates
+      each snapshot against its own sha. Three articles pinned, all open-access.
+  - ONE lift (cited, frozen-R3-derived, non-spectrum, VALUE+GRADE) - the first severity lift since R8 that
+      completes an order-lock: Marfan syndrome S 0.50 [H] -> 0.75 [L] (PMC13239629 / PMID 42229999; tier
+      0.75 "severe / debilitating" via 'life-threatening', non-spectrum), the disease-level sentence
+      defining MFS itself ("Marfan syndrome (MFS) ... predisposing to progressive dilation of the aortic
+      root, valvular dysfunction and life-threatening aortic dissection"). Marfan's onset (0.35 [L]),
+      progression (0.50 [L], the R10 grade lift) and mortality (0.70 [L]) were already registry-[L], so this
+      single severity lift makes Marfan ORDER-LOCKED (every scored axis [L], 4/5 axes) - the 4th order-lock.
+      raw_burden 0.5125 -> 0.575; residual burden_score -> 0.25875 (x R_treat 0.45).
+  - Two declines recorded with decline_class + per-disease reason (methodology/
+      severity_litcurate3_excluded.csv), each with its OA sentence found and verbatim-pinned but
+      scope-disqualified: Gaucher disease type I S (comparative - the only retrievable OA disease-level
+      severity framing places GD1 as the LEAST severe of the three GD types, "type 1 (GD1) ... having the
+      least severe manifestations"; the R3 function pattern-matches 'severe' inside 'least severe' to tier
+      0.75 but the statement is comparative, not a clean GD1 magnitude; PMC13254898 / PMID 42293157) and
+      Gaucher disease umbrella S (comparative - the retrievable "devastating" magnitude is explicitly
+      attributed to GD TYPE 3, the neuronopathic form, not the umbrella entity, "particularly devastating in
+      GD type 3 (GD3)"; tier 1.0 by frozen R3 but comparative and umbrella-spanning, not defensibly
+      isolable; PMC13045098 / PMID 41821052). Both Gaucher severities therefore stay [H], not lifted. Lift
+      only where defensible; decline transparently; never fish for a lock.
+  - R11 GATE - code/pipeline/r11_gate.py PASS (16/16): determinism (r5->r11, 2x); banked unchanged;
+      cumulative-over-R10; round-3 join re-anchored + tier-from-frozen-R3 + non-spectrum; cut-points
+      a-priori; round-3 declines recorded; add-only no-downgrade vs R10; S/P-only changed only for the 1
+      round-3 joined pair (O/M/D byte-identical to R10); EXACTLY ONE new order-lock proved (lock set grows
+      R10=3 -> R11=4, the single added lock is EXACTLY Marfan syndrome C0024796, completed by its S [H]->[L]
+      with onset/progression/mortality already [L], no lock removed); raw_burden re-derived; rankability;
+      residual; order-lock rule + sensitivity (equal rho=1.0); round-3 sources open-access + source-bound;
+      R9 + R10 artifacts preserved (all four prior join/excluded CSVs byte-identical to their recorded
+      digests - R11 is additive); engine pin drift 0. Registry-set sha 32cf48334233 (2x identical).
+      reports/r11.gate.json.
+  - W1 SITE SYNC - tools/w1_build.py. The Marfan severity lift surfaces automatically (Marfan disease page:
+      S [H] -> [L], value 0.50 -> 0.75, page now states order_locked; framework "Landed so far" severity
+      count +1 and order_locked 3 -> 4 of 35; forward plan §1 auto-advanced to "R11 continues ..."); and a
+      new SSOT-read "Round-3 literature-curation declines (R11)" block is auto-generated into
+      IRREPRODUCIBILITY_LEDGER.md straight from severity_litcurate3_excluded.csv (so the two Gaucher
+      severities carry their accurate comparative obstacle). Page-set contract unchanged (39 pages); the
+      lift completes a lock but adds no new placement, so no new page. W1 GATE PASS (17/17); llms.txt < 5 KB.
+      Site-set sha 3b0ebe982945 -> 06952f4af84e (the honest consequence of the surfaced severity lift +
+      order-lock; deterministic, 2x identical).
+  - The unmet-need surface CHANGES this round - unlike R10's grade-only lifts, R11 raises Marfan's
+      raw_burden (0.5125 -> 0.575), so its residual burden_score moves and its residual rank shifts (raw
+      rank 19 -> residual rank 20). unmet_need_surface.* is recomputed: surface-set sha 9aa184ff3dc2 ->
+      bc5ae3db6967. The headline rule is unaffected (Marfan carries a treatment offset, so it is not a
+      "no disease-directed therapy" headline disease; headline stays Achondrogenesis type II +
+      Niemann-Pick disease type A). Unmet-need gate still PASS (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16. Engine pin MANIFEST_governed.sha256 verifies OK (drift 0,
+      15/15).
+  - Handover: reports/R11_NOTES_AND_HANDOVER.md.
+
+Status: Phase R11 COMPLETE (R11 gate PASS 16/16; R10 gate PASS 16/16; R9 gate PASS 15/15; unmet-need gate
+PASS 6/6; W1 gate PASS 17/17; all prior gates green; engine pin drift 0). Round 3 of the curated PMC-OA lift
+adds ONE severity lift - Marfan syndrome severity 0.50 [H] -> 0.75 [L], the tier DERIVED by the frozen R3
+function from the disease-defining sentence (via 'life-threatening', no new cut-points) - and because
+Marfan's onset, progression and mortality were already registry-[L], this single lift makes Marfan
+ORDER-LOCKED: the 4th order-lock (order_locked 3 -> 4 of 35). Two considered severity statements were
+declined and recorded (Gaucher disease type I, Gaucher disease umbrella): in each the OA sentence was found
+and verbatim-pinned but is comparative (least-severe-of-three / devastating-attributed-to-GD3), so no clean
+disease-level severity tier is defensibly isolable; both Gaucher severities stay [H]. R11 ships as a
+dedicated cumulative stage that leaves every R9 and R10 artifact and their recorded registry-set shas
+(d07a544475dc, e77c0bf0e887) byte-identical - the historical record is preserved, the new registry-set sha
+is 32cf48334233. The burden ORDER remains a provisional [H] prioritisation device cohort-wide; the OMIM
+clinical-synopsis path stays REMOVED (key unobtainable for an individual researcher), not deferred. Next:
+continue R-series lift only where a cited disease-level OA magnitude is defensible under the frozen-R3 rule,
+toward the completion-declaration criterion (every placed disease either order_locked or every open axis
+carrying a permanent obstacle).
+
+
+v0.13.1  (governance — sibling-package ownership boundary embedded)  — this session
+  - GOVERNANCE PATCH. NO analytical change: every grade, value, rank, raw_burden, residual, order_lock,
+      curated CSV, registry file, and the W1 site are BYTE-IDENTICAL to v0.13. This patch only EMBEDS the
+      cross-package ownership boundary in the package so the next session does not redundantly research a
+      disease owned by a sibling body-system package (author directive: "carry the framework map inside the
+      package and establish that this volume does not overstep it, to prevent redundant research").
+  - WHAT THE BOUNDARY IS. The VP body framework now has 13 body-system packages (7 machine-dynamics, 3
+      integrated-homeostasis, 2 time/cross-cut, 1 special-sensory) that own ACQUIRED / COMMON / MULTIFACTORIAL
+      / loop-dysregulation disease (incl. carcinogen-driven cancers), keyed by DYNAMICS. This volume owns
+      MONOGENIC / RARE / GENETIC disease, keyed by GENE. The dividing axis is ETIOLOGIC CLASS, not body region
+      (both touch every region — dividing by region collides). This is the SECOND sibling boundary, the first
+      being neuro/mind (brain/nerve/heart/affect), which is unchanged.
+  - WHAT WAS ADDED / EDITED (all governance, no data):
+      * VP_FRAMEWORK_MAP.md — the cross-package master map (author, Korean) is now CARRIED AT PACKAGE ROOT so
+        the boundary travels with the volume. Its §6 is the ownership contract (etiologic-class table, the
+        §6.1 overlap tie-break, §6.2 synthesis seam, §6.3 this-volume status block).
+      * SCOPE.md — new section "Sibling body-system packages — etiologic-class ownership boundary": the
+        binding rule BOUNDARY-1 (monogenic-defining+rare => this volume; acquired/common/dynamics => OUT,
+        recorded in_scope=false reason "acquired/common -> body-system package", cross-reference only, do NOT
+        re-derive dynamics here), the tie-break (monogenic subset of a common disease; carcinogen cancer vs
+        hereditary cancer syndrome), and BOUNDARY-2 (this volume exports the gene-lesion parameter by gene
+        key; it does NOT compute systemic-loop trajectories — the body-system package's layer).
+      * CONSTITUTION_disease.md — new binding clause C-D10 (sibling-package boundary, anti-redundancy;
+        subordinate to VP-SPEC §0); C-D6 now points to C-D10 + the map for the second boundary.
+      * README.md — intro + tree updated to name the second boundary, the carried map, and the boundary gate;
+        title bumped to v0.13.1.
+      * FUTURE_WORK.md — short governance note recording the embedded boundary (carried in every version).
+  - NEW WIRING GUARD. tools/boundary_gate.py (living tool; NOT in the frozen engine pin; stdlib-only,
+      deterministic, no network) — PASS 6/6, report reports/boundary.gate.json (byte-identical 2x). It checks
+      that the boundary is DECLARED and EMBEDDED (map present at root + carries the §6 contract; SCOPE.md
+      carries the section + BOUNDARY-1/BOUNDARY-2 + the etiology-not-region axis + the anti-redundancy
+      purpose + the in_scope=false reason string; CONSTITUTION carries C-D10 referencing the map +
+      anti-redundancy; README references the map). HONEST SCOPE OF THE GATE: it verifies WIRING/PRESENCE,
+      NOT that any specific disease was classified into the correct volume — semantic scope compliance stays
+      the author's call at index time under BOUNDARY-1. Marker checks are whitespace-normalised so a marker
+      that wraps across lines still matches (layout-independent).
+  - FULL GATE SUITE RE-RUN GREEN after the patch (cached, no network): R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 .
+      consolidation 10/10 . R6 14/14 . R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16 . R11 16/16 . unmet-need
+      6/6 . W1 site 17/17 . boundary 6/6 . 5/5 emergence engine gates. Engine pin MANIFEST_governed.sha256
+      verifies OK (drift 0, 15/15) — governance docs + the new living tool are intentionally not in the
+      frozen pin. R3/R4 BANKED files and the registry layer byte-identical to v0.13.
+
+Status: v0.13.1 COMPLETE — governance only. The sibling-package ownership boundary (monogenic/rare HERE vs
+acquired/common/loop-dysregulation in the 13 body-system packages, divided by etiology not region) is now
+EMBEDDED in the package (map at root + SCOPE.md BOUNDARY-1/2 + constitution C-D10 + README) and its wiring is
+gate-checked (boundary 6/6). No analytical value changed; all 19 gates green; engine pin drift 0. This
+prevents redundant research across the body framework. The R-series completion-declaration criterion
+(every placed disease either order_locked or every open axis carrying a permanent obstacle) is unchanged.
+
+
+v0.14  (R12 — curated severity/progression literature, round 4)  — this session
+  - Phase R12 continues lifting REMAINING severity/progression axes for the placed cohort via additional
+      curated PMC OPEN-ACCESS dominant-sequela joins, under the EXACT R9/R10/R11 rule and the SAME frozen
+      R3 tier function (first_match over PATTERNS["S_severity"]/["P_progression"] on the verbatim cited
+      sentence). No new cut-points -> the no-tuning invariant holds by construction. R12 is implemented as
+      a dedicated cumulative stage OVER R11 (code/pipeline/r12_severity_litcurate.py), exactly as R11 was a
+      separate cumulative stage over R10, R10 over R9, and R7 over R6 - it imports R11's helpers (which
+      import R10's, which import R9's frozen helpers) so the locked tier/spectrum/decline logic cannot
+      drift, and it leaves every R9, R10 AND R11 artifact (and their recorded registry-set shas) byte-
+      identical and immutable.
+  - R12 fetch + pin - code/pipeline/r12_litcurate_fetch.py caches the round-4 cited PMC-OA articles to
+      data/raw/litcurate/<PMCID>.json (text_sha256 + open_access flag), idempotent; the gate re-validates
+      each snapshot against its own sha. Four PMCIDs pinned, all open-access (one, PMC13090637, was already
+      cached from R11's Hurler decline and is re-found byte-identical).
+  - TWO severity lifts (cited, frozen-R3-derived, non-spectrum):
+      * Duchenne muscular dystrophy S 0.50 [H] -> 0.75 [L] (PMC13205412 / PMID 42194990; tier 0.75
+        "severe / debilitating" via 'severe', non-spectrum), from the disease-defining sentence "Duchenne
+        muscular dystrophy (DMD) is a severe, progressive neuromuscular disorder characterized by the
+        gradual deterioration and weakening of skeletal and cardiac muscle tissue." This is a VALUE+GRADE
+        lift (0.50 -> 0.75) and it COMPLETES DMD's order-lock: DMD's onset (0.70 [L]), progression (0.50
+        [L], the R9 grade lift), mortality (0.70 [L]) and disability (0.75 [L], the R7 GBD lift) were
+        already registry-[L], so this single severity lift makes Duchenne MD ORDER-LOCKED - the 5th
+        order-lock, and the ONLY cohort disease with all FIVE axes scored AND every one registry-grade [L].
+        raw_burden 0.630 -> 0.680; burden_score 0.476 (x R_treat 0.70).
+      * Tyrosinemia type I S 0.75 [H] -> 0.75 [L] (PMC12844047 / PMID 41590629; tier 0.75 "severe /
+        debilitating" via 'severe', non-spectrum), from "Tyrosinemia type 1 (HT-1) is a treatable inherited
+        disorder characterized by disrupted tyrosine metabolism, leading to severe liver, renal, and
+        occasionally neurological dysfunction." This is a GRADE-ONLY corroboration (value unchanged at
+        0.75) and it does NOT lock: HT-1 retains onset 0.70 [H] and mortality 1.00 [H] (and progression /
+        disability [O]), so it stays placed-but-unlocked - honest.
+  - Two declines recorded with decline_class + per-disease reason (methodology/
+      severity_litcurate4_excluded.csv), each with its OA sentence found and verbatim-pinned but
+      scope-disqualified:
+      * Hurler syndrome S (comparative - the retrievable OA disease-level severity framing defines Hurler
+        AS "the severe phenotype" of MPS I in explicit contrast to the "attenuated" forms (Hurler-Scheie,
+        Scheie); the frozen R3 function pattern-matches 'severe' but the word is the phenotype-CLASS label
+        separating Hurler from the milder MPS I forms, not a clean disease-level magnitude for Hurler's own
+        dominant untreated sequela; the only other retrievable 'severe' is a property of the MPS disorder
+        class generally; PMC13090637 / PMID 42004902).
+      * Beta-thalassemia HBB/LCRB S (umbrella_spectrum - the retrievable OA severity framing is an UMBRELLA
+        SPECTRUM ranging from asymptomatic (silent/minor) through intermedia to transfusion-dependent
+        beta-thalassemia major, with 'severe' explicitly attached to the MAJOR form, not the umbrella
+        entity's own single dominant sequela; the frozen R3 spectrum override trips on this within-entity
+        range, so a clean disease-level umbrella severity tier is not defensibly isolable; PMC13262897 /
+        PMID 42201229). Both severities therefore stay [H], not lifted.
+  - Frontier OBSERVATION (honestly NOT forced into the excluded CSV): Hemophilia A (C0019069) - the only
+      retrievable OA 'severe' framing is "severe hemophilia A (FVIII < 1%)," a FACTOR-ACTIVITY sub-phenotype
+      label (a severity STRATUM defined by residual clotting-factor level), not a disease-level magnitude
+      for the entity's own dominant sequela; no clean disease-level severity sentence was retrievable, so
+      severity is left [H] and the case is recorded as a sub_phenotype frontier observation rather than
+      manufactured into a decline. Lift only where defensible; decline transparently; never fish for a lock.
+  - R12 GATE - code/pipeline/r12_gate.py PASS (16/16): determinism (r5->r12, 2x); banked unchanged;
+      cumulative-over-R11; round-4 join re-anchored + tier-from-frozen-R3 + non-spectrum; cut-points
+      a-priori; round-4 declines recorded; add-only no-downgrade vs R11; S/P-only changed only for the 2
+      round-4 joined diseases (O/M/D byte-identical to R11); EXACTLY ONE new order-lock proved (lock set
+      grows R11=4 -> R12=5, the single added lock is EXACTLY Duchenne muscular dystrophy C0013264, completed
+      by its S [H]->[L] with onset/progression/mortality/disability already [L], no lock removed);
+      raw_burden re-derived; rankability; residual; order-lock rule + sensitivity (equal rho=1.0); round-4
+      sources open-access + source-bound; R9 + R10 + R11 artifacts preserved (all six prior join/excluded
+      CSVs byte-identical to their recorded digests - R12 is additive); engine pin drift 0. Registry-set
+      sha 8c5dbae815f7 (2x identical). reports/r12.gate.json.
+  - W1 SITE SYNC - tools/w1_build.py. The two severity lifts surface automatically (Duchenne MD disease
+      page: S [H] -> [L], value 0.50 -> 0.75, page now states order_locked with all five axes [L];
+      Tyrosinemia type I disease page: S [H] -> [L], value unchanged; framework "Landed so far" severity
+      count 4 -> 6 of 35 and order_locked 4 -> 5 of 35; forward plan section auto-advanced to "R12
+      continues ..."); and a new SSOT-read "Round-4 literature-curation declines (R12)" block is auto-
+      generated into IRREPRODUCIBILITY_LEDGER.md straight from severity_litcurate4_excluded.csv (so the
+      Hurler comparative and Beta-thalassemia umbrella obstacles render with their accurate per-disease
+      reasons). Page-set contract unchanged (39 pages); the DMD lift completes a lock but adds no new
+      placement, so no new page. W1 GATE PASS (17/17); llms.txt < 5 KB. Site-set sha 06952f4af84e ->
+      c5dd896d4fe6 (the honest consequence of the surfaced DMD severity lift + order-lock; deterministic,
+      2x identical).
+  - The unmet-need surface CHANGES this round - R12 raises Duchenne MD's raw_burden (0.630 -> 0.680), so
+      its residual burden_score moves; unmet_need_surface.* is recomputed: surface sha bc5ae3db6967 ->
+      ec01978d5919. The headline rule is UNAFFECTED (DMD carries a treatment offset, so it is not a "no
+      disease-directed therapy" headline disease; headline stays Achondrogenesis type II + Niemann-Pick
+      disease type A). Unmet-need gate still PASS (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16 . R11 16/16 . boundary 6/6. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R12_NOTES_AND_HANDOVER.md.
+
+Status: Phase R12 COMPLETE (R12 gate PASS 16/16; R11 gate PASS 16/16; R10 gate PASS 16/16; R9 gate PASS
+15/15; unmet-need gate PASS 6/6; W1 gate PASS 17/17; boundary gate PASS 6/6; all prior gates green; engine
+pin drift 0). Round 4 of the curated PMC-OA lift adds TWO severity lifts - Duchenne muscular dystrophy
+severity 0.50 [H] -> 0.75 [L] (VALUE+GRADE) and Tyrosinemia type I severity 0.75 [H] -> 0.75 [L] (GRADE-
+ONLY), each tier DERIVED by the frozen R3 function via 'severe' from the disease-defining sentence (no new
+cut-points). Because Duchenne MD's onset, progression, mortality AND disability were already registry-[L],
+the DMD severity lift COMPLETES its order-lock: the 5th order-locked disease (order_locked 4 -> 5 of 35),
+and the only cohort disease with all five axes scored and every one registry-grade. HT-1's grade-only lift
+does not lock (onset + mortality stay [H]). Two considered severity statements were declined and recorded
+(Hurler syndrome = comparative phenotype-class label; Beta-thalassemia = umbrella spectrum), and Hemophilia
+A's only retrievable 'severe' framing is a factor-activity sub-phenotype, recorded as a frontier observation
+rather than forced into a decline - lift only where defensible, decline transparently, never fish for a
+lock. R12 ships as a dedicated cumulative stage that leaves every R9, R10 and R11 artifact and their
+recorded registry-set shas (d07a544475dc, e77c0bf0e887, 32cf48334233) byte-identical - the historical
+record is preserved, the new registry-set sha is 8c5dbae815f7. The burden ORDER remains a provisional [H]
+prioritisation device cohort-wide; the OMIM clinical-synopsis path stays REMOVED (key unobtainable for an
+individual researcher), not deferred. Next: continue R-series lift only where a cited disease-level OA
+magnitude is defensible under the frozen-R3 rule, toward the completion-declaration criterion (every placed
+disease either order_locked or every open axis carrying a permanent obstacle).
+
+
+v0.15  (R13 — curated severity/progression literature, round 5)  — this session
+  - Phase R13 (ROADMAP R-series) is a FIFTH cumulative curated-literature lift over the SAME a-priori
+      inclusion criterion and the SAME frozen R3 tier function as R9/R10/R11/R12, applied through a fresh,
+      separately-auditable curation join (methodology/severity_litcurate5_join.csv) plus a recorded decline
+      set (severity_litcurate5_excluded.csv) on top of the R12 registry. Like R12 over R11, R11 over R10,
+      R10 over R9 and R7 over R6, R13 is a dedicated stage (code/pipeline/r13_severity_litcurate.py) that
+      imports R12's helpers (which import R11's, R10's and R9's frozen helpers) so the locked
+      tier/spectrum/decline logic cannot drift, and it leaves every R9, R10, R11 AND R12 artifact (and
+      their recorded registry-set shas) byte-identical and immutable.
+  - R13 fetch + pin — code/pipeline/r13_litcurate_fetch.py caches the round-5 cited PMC-OA articles to
+      data/raw/litcurate/<PMCID>.json (text_sha256 + open_access flag), idempotent; the gate re-validates
+      each snapshot against its own sha. Five PMCIDs pinned, all open-access (PMC12861732, PMC13110062,
+      PMC13142844, PMC13266223, PMC13089801).
+  - THREE lifts (cited, frozen-R3-derived, non-spectrum) — and not one of them completes an order-lock:
+      * Maple syrup urine disease S 0.50 [H] -> 0.75 [L] (PMC12861732 / PMID 41635633; tier 0.75
+        "severe / debilitating" via 'life-threatening', non-spectrum), from the disease-defining sentence
+        "Maple syrup urine disease (MSUD, OMIM # 248600 ) is a life-threatening metabolic disorder caused by
+        biallelic pathogenic variants in the BCKDHA , BCKDHB, DBT , and DLD genes, which encode the E1α, E1β,
+        E2 and E3 subunits (respectively) of the branched-chain amino acid (BCKD) enzyme complex [ 11 , 12 ]."
+        This is a VALUE+GRADE lift (0.50 -> 0.75); raw_burden 0.667 -> 0.750, burden_score 0.300 -> 0.3375
+        (x R_treat 0.45). It does NOT lock: MSUD retains onset 1.00 [H] (progression / mortality [O]), so it
+        stays placed-but-unlocked — honest.
+      * Cystic fibrosis P 0.50 [H] -> 0.50 [L] (PMC13110062 / PMID 42039762; tier 0.50 "slowly
+        progressive / progressive" via 'progressive', non-spectrum), from "Cystic fibrosis (CF) is a
+        progressive genetic disease characterized by defective ion transport, mucus accumulation, chronic
+        infection, and inflammation that drive airway damage and ultimately end-stage lung failure."
+        GRADE-ONLY corroboration (value unchanged at 0.50); it does NOT lock: CF retains mortality 0.70 [H],
+        so it stays placed-but-unlocked.
+      * Glycogen storage disease, type II (Pompe) P 0.50 [H] -> 0.50 [L] (PMC13142844 / PMID 40261290;
+        tier 0.50 "slowly progressive / progressive" via 'progressive', non-spectrum), from the umbrella
+        disease-level sentence "Pompe disease is a rare neuromuscular disorder caused by acid
+        alpha-glucosidase deficiency, leading to glycogen accumulation and progressive striated muscle
+        weakness." The form-specific (infantile-onset / late-onset) sentences in the same article were
+        explicitly NOT used. GRADE-ONLY corroboration (value unchanged at 0.50); it does NOT lock: Pompe
+        retains mortality 1.00 [H], so it stays placed-but-unlocked.
+  - Two declines recorded with decline_class + per-disease reason (methodology/
+      severity_litcurate5_excluded.csv), each with its OA sentence found and verbatim-pinned but
+      scope-disqualified:
+      * Osteogenesis imperfecta S (comparative — the retrievable OA disease-level severity framing,
+        "Severe osteogenesis imperfecta is often diagnosed earlier than milder disease," uses 'severe' as a
+        Sillence phenotype-CLASS label separating the severe OI types from milder ones, in explicit
+        contrast to "milder disease," not a clean disease-level magnitude for OI's own dominant untreated
+        sequela; PMC13266223 / PMID 42305572).
+      * alpha Thalassemia S (umbrella_spectrum — the retrievable OA severity framing is an UMBRELLA
+        SPECTRUM, "Clinical presentation can vary widely in severity from resulting in stillbirth to being
+        asymptomatic, correlating with the number of functional alpha globin genes inherited," spanning the
+        whole entity rather than naming a single dominant-sequela magnitude;
+        the frozen R3 spectrum override trips on this within-entity range, so a clean disease-level
+        umbrella severity tier is not defensibly isolable; PMC13089801 / PMID 42004318). Both severities
+        therefore stay [H], not lifted.
+  - Frontier OBSERVATIONS (honestly NOT forced into the excluded CSV, mirroring R12's Hemophilia A
+      handling): Hemophilia B (C0008533) — the only retrievable OA 'severe' framing is a factor-activity
+      sub-phenotype stratum (severe/moderate/mild by residual FIX level), not a disease-level magnitude for
+      the entity's own dominant sequela; and Becker muscular dystrophy (C0917713) — the only retrievable
+      'severe' jointly groups Duchenne + Becker (the dystrophinopathy class), with BMD characteristically
+      milder and more variable than DMD and no isolable BMD-specific disease-level magnitude. Both left [H]
+      and recorded as frontier observations rather than manufactured into declines. Lift only where
+      defensible; decline transparently; never fish for a lock.
+  - R13 GATE — code/pipeline/r13_gate.py PASS (16/16): determinism (r5->r13, 2x); banked unchanged;
+      cumulative-over-R12; round-5 join re-anchored + tier-from-frozen-R3 + non-spectrum; cut-points
+      a-priori; round-5 declines recorded; add-only no-downgrade vs R12; S/P-only changed only for the 3
+      round-5 joined diseases (O/M/D byte-identical to R12); NO new order-lock proved (lock set UNCHANGED
+      R12=5 -> R13=5, nothing added, nothing removed, and the three lifts each raise grade [H]->[L] without
+      completing a lock — MSUD retains onset [H], CF and Pompe each retain mortality [H]); raw_burden
+      re-derived; rankability; residual; order-lock rule + sensitivity (equal rho=1.0); round-5 sources
+      open-access + source-bound; R9 + R10 + R11 + R12 artifacts preserved (all eight prior join/excluded
+      CSVs byte-identical to their recorded digests — R13 is additive); engine pin drift 0. Registry-set
+      sha 49af5f824afa (2x identical). reports/r13.gate.json.
+  - W1 SITE SYNC — tools/w1_build.py. The three lifts surface automatically (Maple syrup urine disease
+      page: S [H] -> [L], value 0.50 -> 0.75; Cystic fibrosis page: P [H] -> [L], value unchanged; Glycogen
+      storage disease type II page: P [H] -> [L], value unchanged; framework "Landed so far" severity [L]
+      count 6 -> 7 of 35 and progression [L] count 9 -> 11 of 35; order_locked unchanged at 5 of 35;
+      forward plan section auto-advanced to "R13 continues ..." -> R14); and a new SSOT-read "Round-5
+      literature-curation declines (R13)" block is auto-generated into IRREPRODUCIBILITY_LEDGER.md straight
+      from severity_litcurate5_excluded.csv (so the Osteogenesis imperfecta comparative and alpha
+      Thalassemia umbrella obstacles render with their accurate per-disease reasons). Page-set contract
+      unchanged (39 pages); no lift completes a lock and none adds a new placement, so no new page. W1 GATE
+      PASS (17/17); llms.txt < 5 KB. Site-set sha c5dd896d4fe6 -> 98ac7c62bcef (the honest consequence of
+      the three surfaced S/P lifts; deterministic, 2x identical).
+  - The unmet-need surface CHANGES this round — R13 raises Maple syrup urine disease's raw_burden (0.667 ->
+      0.750), so its residual burden_score moves; unmet_need_surface.* is recomputed: surface sha
+      ec01978d5919 -> 8c5643c21efd. The headline rule is UNAFFECTED (MSUD, CF and Pompe each carry a
+      treatment offset, so none is a "no disease-directed therapy" headline disease; headline stays
+      Achondrogenesis type II + Niemann-Pick disease type A). Unmet-need gate still PASS (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16 . R11 16/16 . R12 16/16 . boundary 6/6. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R13_NOTES_AND_HANDOVER.md.
+
+v0.16  (R14 — curated PMC-OA severity/progression literature pass, ROUND 6)  — this session
+  - Phase R14 executed as a dedicated CUMULATIVE stage on top of the R13 registry, reusing the SAME
+      a-priori inclusion criterion and the SAME frozen R3 tier function (code/pipeline/r3_burden_index.py)
+      — no new cut-points, no tuning. Lifts severity(S)/progression(P) ONLY where a cited PMC open-access
+      DISEASE-LEVEL magnitude sentence for a disease's dominant untreated sequela maps, via the frozen-R3
+      function, to a tier (non-spectrum, non-comparative, non-sub-phenotype, non-treated-cohort).
+  - THREE honest lifts (each tier DERIVED from the disease-defining sentence by the frozen R3 function;
+      each leaves another scored axis at [H], so NONE completes an order-lock):
+      * Classic homocystinuria (C0751202) severity 0.50 [H] -> 0.75 [L] (VALUE+GRADE) via 'life-threatening'
+          — PMC12055052 / PMID 40337434 (open-access). Retains mortality [H] and disability [H].
+      * Fabry disease (C0002986) severity 0.50 [H] -> 0.75 [L] (VALUE+GRADE) via 'severe'
+          — PMC13252739 / PMID 42268866 (open-access). Retains mortality [H].
+      * Becker muscular dystrophy (C0917713) progression 0.50 [H] -> 0.50 [L] (GRADE-ONLY) via 'progressive'
+          — PMC13151537 / PMID 41760395 (open-access). Retains severity [H]. Note: R13 had left BMD's
+          SEVERITY [H] as a frontier observation (the only 'severe' framing jointly grouped Duchenne+Becker,
+          no isolable BMD-specific magnitude); R14 does NOT touch that — it lifts a DIFFERENT axis
+          (progression) from a clean BMD-specific 'progressive muscle weakness and wasting' sentence. The
+          frontier was advanced where newly defensible, not re-litigated where it was not.
+  - TWO considered statements DECLINED and recorded (verbatim-pinned, decline_class in the declared vocab):
+      * Polycystic kidney disease 2 (C2751306) severity — decline_class=comparative: the OA 'more severe'
+          framing is a PKD1-vs-PKD2 comparison (PKD1 earlier ESRD ~53 vs PKD2 ~72), not a disease-level
+          magnitude for PKD2's own dominant sequela. PMC12986390 / PMID 41828581.
+      * Osteogenesis imperfecta (C0029434) progression — decline_class=spectrum: the OA statement ranges a
+          17-patient cohort from moderate (progressive deformities) to mild, an umbrella phenotype range
+          rather than a single disease-level progression magnitude. PMC13188992 / PMID 42170682.
+      Lift only where defensible; decline transparently; never fish for a lock.
+  - R14 GATE — code/pipeline/r14_gate.py PASS (16/16): determinism (r5->r14, 2x); banked unchanged;
+      cumulative-over-R13; round-6 join re-anchored verbatim in the pinned PMC-OA cache + tier-from-frozen-R3
+      + non-spectrum; cut-points a-priori; round-6 declines recorded; add-only no-downgrade vs R13; S/P-only
+      changed only for the 3 round-6 joined diseases (O/M/D byte-identical to R13); NO new order-lock proved
+      (lock set UNCHANGED R13=5 -> R14=5, nothing added, nothing removed, and the three lifts each raise grade
+      [H]->[L] without completing a lock — Classic homocystinuria retains mortality+disability [H], Fabry
+      retains mortality [H], Becker retains severity [H]); raw_burden re-derived; rankability; residual;
+      order-lock rule + sensitivity (equal rho=1.0); round-6 sources open-access + source-bound; R9 + R10 +
+      R11 + R12 + R13 artifacts preserved (all ten prior join/excluded CSVs byte-identical to their recorded
+      digests — R14 is additive); engine pin drift 0. Registry-set sha fa60be77f767 (2x identical).
+      reports/r14.gate.json.
+  - W1 SITE SYNC — tools/w1_build.py. The three lifts surface automatically (Classic homocystinuria page:
+      S [H] -> [L], value 0.50 -> 0.75; Fabry disease page: S [H] -> [L], value 0.50 -> 0.75; Becker muscular
+      dystrophy page: P [H] -> [L], value unchanged; framework "Landed so far" severity [L] count 7 -> 9 of 35
+      and progression [L] count 11 -> 12 of 35; order_locked unchanged at 5 of 35; forward plan auto-advanced
+      "R14 continues ..." -> R15); the SSOT-read literature-curation declines block in
+      IRREPRODUCIBILITY_LEDGER.md regenerates straight from severity_litcurate6_excluded.csv (PKD2 comparative
+      + OI spectrum render with their accurate per-disease reasons). Page-set contract unchanged (39 pages); no
+      lift completes a lock and none adds a new placement, so no new page. W1 GATE PASS (17/17); llms.txt < 5 KB.
+      Site-set sha 98ac7c62bcef -> 69d1e33b7b20 (the honest consequence of the three surfaced S/P lifts;
+      deterministic, 2x identical).
+  - The unmet-need surface CHANGES this round — R14 raises Fabry disease's and Classic homocystinuria's
+      raw_burden, so their residual burden_scores move (Fabry rises into the placed residual order at
+      0.662 [H] x 0.70 = 0.464); unmet_need_surface.* is recomputed: surface sha 8c5643c21efd -> 2ee20784582e.
+      The headline rule is UNAFFECTED (Fabry and Classic homocystinuria each carry a treatment offset, so
+      neither is a "no disease-directed therapy" headline disease; headline stays Achondrogenesis type II +
+      Niemann-Pick disease type A). Unmet-need gate still PASS (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16 . R11 16/16 . R12 16/16 . R13 16/16 . boundary 6/6. Engine pin
+      MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R14_NOTES_AND_HANDOVER.md.
+
+v0.17  (R15 — curated PMC-OA severity/progression literature pass, ROUND 7)  — this session
+  - Phase R15 executed as a dedicated CUMULATIVE stage on top of the R14 registry, reusing the SAME
+      a-priori inclusion criterion and the SAME frozen R3 tier function (code/pipeline/r3_burden_index.py)
+      — no new cut-points, no tuning. Lifts severity(S)/progression(P) ONLY where a cited PMC open-access
+      DISEASE-LEVEL magnitude sentence for a disease's dominant untreated sequela maps, via the frozen-R3
+      function, to a tier (non-spectrum, non-comparative, non-sub-phenotype, non-treated-cohort).
+  - THREE honest severity lifts (all to the SAME severe / tier-0.75 bucket — each tier DERIVED from the
+      disease-defining sentence by the frozen R3 function via the operative word 'severe'; they differ only
+      in prior grade):
+      * Acute intermittent porphyria (C0162565) severity 0.50 [H] -> 0.75 [L] (VALUE+GRADE) via 'severe'
+          — PMC13091603 / PMID 42005216 (open-access). The cited sentence defines AIP's dominant
+          neurovisceral sequela ("most commonly severe abdominal pain"), resolving the prior mild-to-severe
+          MedGen-range [H] midpoint to the entity's own severe magnitude (the penetrance issue is WHO
+          manifests, not the magnitude of manifest disease). Stays only 2 scored axes (O [L] + S [L]) —
+          below the 3-axis rankability cut — so NO order-lock: a severity coverage + raw_burden advance only.
+      * Achondroplasia (C0001080) severity [O] -> 0.75 [L] (VALUE+GRADE, previously-unscored axis) via 'severe'
+          — PMC13046303 / PMID 41615893 (open-access). The definitional sentence ("a rare skeletal dysplasia
+          characterized by severe disproportionate short stature") scores a previously-unscored axis.
+          Achondroplasia BECOMES rankable (now 3 scored axes: O 1.0 [L] + S 0.75 [L] + M 0.40 [H]) and is
+          promoted into the placed order, but does NOT order-lock — mortality M 0.40 [H] (the qualified
+          foramen-magnum / cervicomedullary infant-mortality risk) remains [H] on a scored axis.
+      * Phenylketonuria (C0031485) severity [O] -> 0.75 [L] (VALUE+GRADE, previously-unscored axis) via 'severe'
+          — PMC13259324 / PMID 42280447 (open-access). The cited sentence frames the UNTREATED magnitude in
+          classical PKU ("untreated blood Phe levels ... resulting in severe intellectual disability and
+          irreversible brain damage if not managed promptly"). This lift COMPLETES AN ORDER-LOCK (5 -> 6);
+          see the dedicated disclosure below.
+  - PKU ORDER-LOCK (5 -> 6) — disclosed as an honest CONSEQUENCE, NOT engineered. PKU's onset O 1.0 [L] (HPO
+      congenital onset) and disability D 0.50 [L] (GBD severe-intellectual-disability weight) were ALREADY
+      [L] before R15; the R15 severity lift makes S [L], so PKU's three scored axes are now all [L] and it
+      becomes order_locked — the SAME 3-scored-axes-all-[L] pattern as the existing Achondrogenesis type II
+      and Tyrosinemia type II locks (with P and M unscored [O]). This is NOT lock-fishing: (1) the S and D
+      axes are orthogonal by design (severity-of-disease vs functional-dependence); (2) the sources differ
+      (PMC-OA severity literature for S vs the GBD disability weight for D); (3) the cited sentence passes
+      every inclusion criterion independently; (4) PKU's untreated severity is the single most robustly
+      documented disease-level magnitude in the cohort (universal newborn screening exists precisely for it).
+      The order-lock is the honest consequence of a maximally defensible lift — disclosed and gated, not
+      reverse-engineered to hit a target. The R15 gate's order_lock_change_documented check asserts the delta
+      is EXACTLY +Phenylketonuria (added=['C0031485'], removed=[]), and that Acute intermittent porphyria
+      (2 axes < 3) and Achondroplasia (retains mortality [H]) each correctly do NOT lock.
+  - TWO considered statements DECLINED and recorded (verbatim-pinned, decline_class in the declared vocab):
+      * 21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia (C2936858) severity — decline_class=form_specific:
+          the OA "life-threatening" magnitude attaches to the SEVEREST FORM (classic salt-wasting SW-CAH), one
+          allelic sub-form, not to the 21-OHD CAH entity as a whole (which also comprises the simple-virilizing
+          classic form and the characteristically mild non-classic late-onset form); the entity's own registry
+          basis already records a mild-to-severe variable-severity spectrum, so no clean isolable disease-level
+          magnitude is retrievable. Consistent with the umbrella/form declines already recorded for
+          alpha-thalassaemia, beta-thalassaemia and Hb SS. PMC13214666 / PMID 42201219. S left [H], not lifted.
+      * Hemochromatosis type 1 (C3469186) severity — decline_class=comparative: the OA "severe clinical
+          outcomes" framing is a BETWEEN-STRATUM contrast (high- vs low-TSAT-predisposed HFE C282Y homozygotes),
+          not a clean disease-level magnitude for the HFE-HH entity's dominant untreated sequela (progressive
+          parenchymal iron overload -> cirrhosis / HCC / cardiomyopathy / diabetes); type 1 HH is
+          characteristically LOW-PENETRANCE and the other retrievable 'severe' framings are a C282Y-heterozygote
+          case report and a non-dominant arthropathy hedge. PMC13019597 / PMID 41951274. S left [H] at value
+          0.75, grade NOT lifted.
+      Lift only where defensible; decline transparently; never fish for a lock.
+  - R15 GATE — code/pipeline/r15_gate.py PASS (16/16): determinism (r5->r15, 2x); banked unchanged;
+      cumulative-over-R14; round-7 join re-anchored verbatim in the pinned PMC-OA cache + tier-from-frozen-R3
+      + non-spectrum; cut-points a-priori; round-7 declines recorded; add-only no-downgrade vs R14; S/P-only
+      changed only for the 3 round-7 joined diseases (O/M/D byte-identical to R14); order-lock CHANGE
+      documented (lock set 5 -> 6, added=Phenylketonuria, removed=none — disclosed as an honest consequence:
+      PKU's O+D were already [L] and the round-7 S lift completes the all-[L] >=3-axis pattern; AIP stays
+      sub-rankable at 2 axes; Achondroplasia becomes rankable but retains mortality [H], so neither of those
+      two locks); raw_burden re-derived; rankability + promotions (6 promoted); residual; order-lock rule +
+      sensitivity (equal rho=1.0); round-7 sources open-access + source-bound; R9 + R10 + R11 + R12 + R13 +
+      R14 artifacts preserved (all twelve prior join/excluded CSVs byte-identical to their recorded digests —
+      R15 is additive); engine pin drift 0. Registry-set sha efe81b447194 (2x identical). reports/r15.gate.json.
+  - W1 SITE SYNC — tools/w1_build.py. The three severity lifts surface automatically (Acute intermittent
+      porphyria page: S [H] -> [L], value 0.50 -> 0.75; Achondroplasia page: S [O] -> [L], value -> 0.75, now
+      placed; Phenylketonuria page: S [O] -> [L], value -> 0.75, with its burden value now registry-locked
+      (order_locked); framework "Landed so far" severity [L] count 9 -> 12 of 35, progression [L] unchanged at
+      12 of 35, order_locked 5 -> 6 of 35; forward plan auto-advanced "R15 continues ..." -> R16); the
+      SSOT-read literature-curation declines block in IRREPRODUCIBILITY_LEDGER.md regenerates a new Round-7
+      (R15) section straight from severity_litcurate7_excluded.csv (21-OHD CAH form_specific + Hemochromatosis
+      type 1 comparative render with their accurate per-disease reasons). Two w1_build.py maintenance edits
+      this round: (a) the "Registry passes" llms.txt summary line was STALE (it still described an R10 /
+      3-locks state) and was corrected to the accurate "severity & progression [L] via curated PMC-OA
+      literature, frozen-R3 tier (R8-R15, 12+12/35)" wording, which also brought docs/llms.txt back under the
+      5 KB gate limit (5009 -> 4954 bytes); (b) the framework-page retrospective narrative was advanced
+      R9-R14 -> R9-R15 with the R15 round (3 lifts + the PKU 6th-lock disclosed + 2 declines) inserted, the
+      now-historical live order-lock count pinned to its R14-era value, and forward framing repointed to R16.
+      Page-set contract unchanged (39 pages). W1 GATE PASS (17/17); llms.txt < 5 KB. Site-set sha
+      69d1e33b7b20 -> c5559c704a75 (the honest consequence of the three surfaced severity lifts; deterministic,
+      2x identical).
+  - The unmet-need surface CHANGES this round — R15 raises Achondroplasia's and Phenylketonuria's raw_burden
+      (and Acute intermittent porphyria's), so their residual burden_scores move and Achondroplasia enters the
+      placed residual order; unmet_need_surface.* is recomputed: surface sha 2ee20784582e -> a3c6c16fdeeb. The
+      headline rule is UNAFFECTED (each lifted disease carries a treatment offset, so none is a "no
+      disease-directed therapy" headline disease; headline stays Achondrogenesis type II + Niemann-Pick disease
+      type A, both burden [L]). Unmet-need gate still PASS (6/6).
+  - All prior gates still green: R1 5/5 . R2 7/7 . R3 9/9 . R4 11/11 . consolidation 10/10 . R6 14/14 .
+      R7 16/16 . R8 16/16 . R9 15/15 . R10 16/16 . R11 16/16 . R12 16/16 . R13 16/16 . R14 16/16 . boundary
+      6/6. Engine pin MANIFEST_governed.sha256 verifies OK (drift 0, 15/15).
+  - Handover: reports/R15_NOTES_AND_HANDOVER.md.
+
+Status: Phase R15 COMPLETE (R15 gate PASS 16/16; R14 gate PASS 16/16; R13 gate PASS 16/16; R12 gate PASS
+16/16; R11 gate PASS 16/16; R10 gate PASS 16/16; R9 gate PASS 15/15; unmet-need gate PASS 6/6; W1 gate PASS
+17/17; boundary gate PASS 6/6; all prior gates green; engine pin drift 0). Round 7 of the curated PMC-OA lift
+adds THREE severity lifts, all to the severe / tier-0.75 bucket — Acute intermittent porphyria 0.50 [H] ->
+0.75 [L] (VALUE+GRADE, via 'severe'), Achondroplasia [O] -> 0.75 [L] (previously-unscored axis, via 'severe')
+and Phenylketonuria [O] -> 0.75 [L] (previously-unscored axis, via 'severe') — each tier DERIVED by the frozen
+R3 function from the disease-defining sentence (no new cut-points). This round CHANGES the order-lock set
+5 -> 6: Phenylketonuria completes a lock as an HONEST CONSEQUENCE (its onset O 1.0 [L] and disability D 0.50
+[L] were already [L] before R15; the severity lift makes the three scored axes all [L], rankable >=3 ->
+order_locked, the same pattern as Achondrogenesis type II and Tyrosinemia type II), disclosed and gated, NOT
+reverse-engineered — the S and D axes are orthogonal, the sources differ, and the cited sentence passes every
+inclusion criterion independently. Acute intermittent porphyria stays sub-rankable (2 scored axes < 3, no
+lock) and Achondroplasia becomes rankable but retains mortality [H] (no lock), so the delta is EXACTLY
++Phenylketonuria. Two considered statements were declined and recorded (21-Hydroxylase-Deficient CAH =
+form-specific 'severest form' salt-wasting framing; Hemochromatosis type 1 = high-vs-low-TSAT comparative
+framing) — lift only where defensible, decline transparently, never fish for a lock. R15 ships as a dedicated
+cumulative stage that leaves every R9, R10, R11, R12, R13 and R14 artifact and their recorded registry-set
+shas (d07a544475dc, e77c0bf0e887, 32cf48334233, 8c5dbae815f7, 49af5f824afa, fa60be77f767) byte-identical —
+the historical record is preserved, the new registry-set sha is efe81b447194. The burden ORDER remains a
+provisional [H] prioritisation device cohort-wide; the OMIM clinical-synopsis path stays REMOVED (key
+unobtainable for an individual researcher), not deferred. Next: continue R-series lift only where a cited
+disease-level OA magnitude is defensible under the frozen-R3 rule, toward the completion-declaration criterion
+(every placed disease either order_locked or every open axis carrying a permanent obstacle).

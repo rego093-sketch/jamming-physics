@@ -1,0 +1,32 @@
+{
+ "_atlas": "VP visceral + morphogenesis + energy master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact TSS -> window TSS-2000..+500). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit.",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)",
+  "obesity_gamma.json (energy)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma MEASURED [V], never fitted; identity + order owned by DNA. _to_measure entries are named masters whose gamma is an honest research input still to fetch (e.g. clock genes, parathyroid/CaSR/VDR, senescence genes) -- deferred, not invented.",
+ "genes": {
+  "BMAL1": {
+   "gamma": 1.33348,
+   "resolved_symbol": "ARNTL (alias BMAL1)",
+   "gene_id": "406",
+   "accession": "NC_000011.10",
+   "strand": "+",
+   "promoter_window_1based": [
+    13274652,
+    13277152
+   ],
+   "window_def": "TSS-2000..+500",
+   "n_dinucleotides": 2500,
+   "method": "gamma = -mean(NN stacking dG37, SantaLucia 1998)",
+   "grade": "[V] measured, never fitted",
+   "cache": "inherited/clock_promoters.cache.json"
+  }
+ },
+ "_to_measure": [],
+ "_fetched_log": [
+  "BMAL1/ARNTL gamma=1.33348 fetched via DNA SantaLucia pipeline (gene 406, NC_000011.10, 2500 dinucleotides); cached for offline reproduction."
+ ]
+}

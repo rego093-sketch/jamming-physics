@@ -1,0 +1,148 @@
+{
+ "_what": "Integumentary -- emerge organs from measured gamma, then circulate class dynamics.",
+ "dynamics": {
+  "T1": {
+   "abs_insult_tolerance": 0.701957,
+   "claim": "TEWL crosses a permeability threshold as the barrier thins; collapses discontinuously at the spinodal under insult",
+   "gamma": 1.4894,
+   "gamma1p5_tolerance_order": [
+    "KRT14",
+    "MITF",
+    "EDAR",
+    "TP63"
+   ],
+   "grade_absolute": "[O] absolute TEWL (g/m^2/h) needs lipid permeability D + dC calibration",
+   "grade_shape": "[V]",
+   "insult_discontinuous": true,
+   "insult_robust_until_frac": 1.0033,
+   "spinodal": 0.69962471,
+   "target": "T1",
+   "thinning_crosses_2x_at_layers": 7,
+   "thinning_monotone": true,
+   "thinning_threshold_at_half": true
+  },
+  "T2": {
+   "chronic_wound_critical_drive": 0.15,
+   "claim": "injury -> unjamming (q>q*) -> collective migration -> re-jamming (q<q*) closure",
+   "closed": true,
+   "closure_time": 0.8,
+   "gamma": 1.3643,
+   "grade_absolute": "[O] absolute closure rate needs cell-speed calibration",
+   "grade_qstar": "[L] q*=3.81 cited (vertex model, Bi/Manning 2015-16)",
+   "grade_shape": "[V]",
+   "q_final": 3.54643,
+   "q_max": 4.06577,
+   "q_star": 3.81,
+   "rejammed_at_confluence": true,
+   "residual_gap": 0.0,
+   "target": "T2",
+   "unjammed_during": true
+  },
+  "T3": {
+   "claim": "UV raises melanin concavely toward a plateau (negative feedback); melanin screens UV (partial photoprotection)",
+   "control_no_feedback_attenuation": 1.0,
+   "delivered_uv_attenuation": 0.20848,
+   "feedback_causes_protection": true,
+   "gamma": 1.3945,
+   "grade_absolute": "[O] absolute MED / melanin optical density needs extinction-coeff calibration",
+   "grade_shape": "[V]",
+   "melanin_at_uvmax": 1.567888,
+   "melanin_concave": true,
+   "melanin_plateaus": true,
+   "photoprotects": true,
+   "sublinear_ratio_hi_over_mid": 1.09279,
+   "target": "T3",
+   "uv_max": 8.0
+  },
+  "T4": {
+   "claim": "turnover = sum of comparable substrate-dwell phases; ~28 d lands in the cited 28-40 d window",
+   "conveyor_is_sum": true,
+   "dwell_order_gamma1p5": [
+    "KRT14",
+    "MITF",
+    "EDAR",
+    "TP63"
+   ],
+   "gamma": 1.3643,
+   "grade_absolute": "[O] absolute basal cycle time needs per-cell calibration",
+   "grade_rate": "[L] one cited calibration (SC transit ~14 d)",
+   "grade_structure": "[V]",
+   "in_cited_window_28_40": true,
+   "phase_dwell_ratio": 1.0,
+   "sc_transit_days": 14.0,
+   "target": "T4",
+   "total_turnover_days": 28.0,
+   "viable_phase_days": 14.0
+  },
+  "T5": {
+   "claim": "sweat is recruited past a thermal threshold; the evaporative interface flux regulates core temp until capacity saturates",
+   "flux_regulated": true,
+   "gamma": 1.3696,
+   "grade_absolute": "[L]/[O] set-point (37C) and absolute sweat rate need per-gland + heat-capacity calibration",
+   "grade_shape": "[V]",
+   "onset_load": 0.3,
+   "runaway_above_capacity": true,
+   "slope_passive": 2.0,
+   "slope_runaway": 2.0,
+   "slope_sweating": 0.76923,
+   "target": "T5",
+   "thresholded_onset": true
+  },
+  "_class": "jamming (barrier/interface + external insult)"
+ },
+ "dynamics_status": "COMPLETE: T1..T5 class dynamics emerged on the R19 substrate",
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "epidermis",
+   "skin_appendage",
+   "melanocyte",
+   "keratinocyte"
+  ],
+  "order_grade": "[V] order is a gamma readout over MEASURED organs; SIGN to validate vs cited timing",
+  "organs": [
+   {
+    "dyn_class": "barrier",
+    "functional_spinodal": 0.613356,
+    "gamma": 1.3643,
+    "gamma_state": "vendored",
+    "master": "TP63",
+    "organ": "epidermis",
+    "rel_size_dwell": 1.448679,
+    "role": "stratified barrier: basal->cornified transit"
+   },
+   {
+    "dyn_class": "barrier",
+    "functional_spinodal": 0.699625,
+    "gamma": 1.4894,
+    "gamma_state": "vendored",
+    "master": "KRT14",
+    "organ": "keratinocyte",
+    "rel_size_dwell": 1.652435,
+    "role": "keratin barrier mechanics / structural integrity"
+   },
+   {
+    "dyn_class": "defense",
+    "functional_spinodal": 0.633835,
+    "gamma": 1.3945,
+    "gamma_state": "vendored",
+    "master": "MITF",
+    "organ": "melanocyte",
+    "rel_size_dwell": 1.497046,
+    "role": "melanin synthesis + UV photoprotection"
+   },
+   {
+    "dyn_class": "appendage",
+    "functional_spinodal": 0.616934,
+    "gamma": 1.3696,
+    "gamma_state": "vendored",
+    "master": "EDAR",
+    "organ": "skin_appendage",
+    "rel_size_dwell": 1.457129,
+    "role": "hair follicle / sweat gland (thermoregulation interface)"
+   }
+  ]
+ },
+ "oscillators": {},
+ "targets_ref": "see CHARTER.md and repro/_verify/stress_tests.py"
+}

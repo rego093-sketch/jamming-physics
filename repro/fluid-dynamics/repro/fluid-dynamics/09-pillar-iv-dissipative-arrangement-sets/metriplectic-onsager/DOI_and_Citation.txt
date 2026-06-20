@@ -1,0 +1,38 @@
+Title:
+  Reproducibility Package for
+  "Vortex-Merger Thermodynamics in 2D Turbulence:
+   A Metriplectic Scenario for the Onsager Anomaly"
+
+Version:
+  3.0.0
+
+DOI:
+  10.5281/zenodo.17758705
+
+Description:
+  Minimal code and data required to reproduce the dissipation–saturation
+  plot (viscous, event, and total dissipation vs effective Reynolds
+  number) and the robustness diagnostics (ensemble and N-scans)
+  discussed in the Letter.  The raw metriplectic ensemble was generated
+  offline using the production Average Discrete Gradient (ADG) solver,
+  while the Python scripts in this archive handle summarisation,
+  post-processing, and a lightweight Navier--Stokes reference.
+
+Quick usage (Fig. 2):
+  python -m src.parameter_sweep
+  python NS_reference/generate_viscous_data.py   # optional; regenerates NS data
+  python -m src.plot_dissipation_saturation
+
+Robustness plots:
+  python -m src.plot_robustness
+
+Additional Navier--Stokes data:
+  Besides the modest $64^2$ pseudo-spectral dataset
+  (`NS_reference/viscous_dissipation_vs_Re.csv`) used as a
+  laptop-friendly demo, this archive includes precomputed high-resolution
+  Navier--Stokes runs at $256^2$ and $512^2$ resolution
+  (`NS_reference/viscous_dissipation_vs_Re_highres_256.csv`,
+   `NS_reference/viscous_dissipation_vs_Re_highres_512.csv`). These
+  datasets show that the viscous dissipation--Re curve is effectively
+  converged with respect to grid resolution in the parameter range
+  relevant to the Letter.

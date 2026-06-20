@@ -1,0 +1,299 @@
+#!/usr/bin/env python3
+# tools/inventory.py — VP-SPEC Phase 0 tool 1/4.
+# Single-source library: section parsing, deterministic section codes & slugs (SPEC ch.3),
+# LaTeX→unicode inline math, body→HTML/text conversion shared by split.py and gate.py,
+# manifest/{paper}.csv + slugs.csv generation. Deterministic; stdlib only.
+import re, csv, sys, os, json, hashlib, unicodedata
+
+STOP={"the","a","an","of","and","as","its","for","to","in","on","with","from"}
+GREEK={"alpha":"α","beta":"β","gamma":"γ","delta":"δ","epsilon":"ε","varepsilon":"ε","zeta":"ζ","eta":"η",
+"theta":"θ","iota":"ι","kappa":"κ","lambda":"λ","mu":"μ","nu":"ν","xi":"ξ","pi":"π","rho":"ρ","sigma":"σ",
+"tau":"τ","upsilon":"υ","phi":"φ","varphi":"φ","chi":"χ","psi":"ψ","omega":"ω","Gamma":"Γ","Delta":"Δ",
+"Theta":"Θ","Lambda":"Λ","Xi":"Ξ","Pi":"Π","Sigma":"Σ","Upsilon":"Υ","Phi":"Φ","Psi":"Ψ","Omega":"Ω","ell":"ℓ",
+"hbar":"ħ","infty":"∞","partial":"∂","nabla":"∇"}
+SYM={"cdot":"·","times":"×","pm":"±","mp":"∓","le":"≤","leq":"≤","ge":"≥","geq":"≥","ne":"≠","neq":"≠",
+"approx":"≈","simeq":"≃","sim":"~","propto":"∝","to":"→","rightarrow":"→","Rightarrow":"⇒","mapsto":"↦",
+"leftarrow":"←","Leftrightarrow":"⇔","langle":"⟨","rangle":"⟩","lceil":"⌈","rceil":"⌉","lfloor":"⌊",
+"rfloor":"⌋","ldots":"…","cdots":"⋯","dots":"…","equiv":"≡","subset":"⊂","subseteq":"⊆","in":"∈","notin":"∉",
+"cup":"∪","cap":"∩","forall":"∀","exists":"∃","ast":"*","star":"*","circ":"∘","bullet":"•","int":"∫",
+"sum":"Σ","prod":"Π","sqrt":"√","prime":"′","degree":"°","angle":"∠","parallel":"∥","perp":"⊥","oplus":"⊕",
+"otimes":"⊗","setminus":"∖","mid":"|","quad":" ","qquad":"  ","textdegree":"°","deg":"°","checkmark":"✓","Hmplus":"[H]+","dag":"†",
+"Fm":"[F]","Hm":"[H]","Vm":"[V]","Om":"[O]"}
+SUP=dict(zip("0123456789+-=()ni","⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ"))
+SUB=dict(zip("0123456789+-=()aeoxhklmnpst","₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₕₖₗₘₙₚₛₜ"))
+WPMAC={"\\WPZenodoURL":"https://doi.org/10.5281/zenodo.17932566",
+"\\WPZenodoDOI":"10.5281/zenodo.17932566","\\WPZenodoConceptDOI":"10.5281/zenodo.17932566",
+"\\WPZenodoConceptURL":"https://doi.org/10.5281/zenodo.17932566"}
+
+def _script(txt,table,mark):
+    if txt and all(c in table for c in txt): return "".join(table[c] for c in txt)
+    return mark+"("+txt+")" if len(txt)>1 else mark+txt
+
+def brace_arg(s,i):
+    d=0; j=i
+    while j<len(s):
+        if s[j]=="{": d+=1
+        elif s[j]=="}":
+            d-=1
+            if d==0: return s[i+1:j], j+1
+        j+=1
+    return s[i+1:], len(s)
+
+def latex2unicode(s):
+    s=re.sub(r"\\left(?![A-Za-z])|\\right(?![A-Za-z])|\\Bigg?[lr]?(?![A-Za-z])|\\bigg?[lr]?(?![A-Za-z])","",s)
+    s=re.sub(r"\\(?:boxed|mathbf|bm|mathcal|mathbb|mathrm|mathit|mathsf|text(?:rm|bf|it|tt|normal)?|operatorname\*?|mbox)\s*\{",r"{",s)
+    def frac(m):
+        a,b=m.group(1),m.group(2)
+        pa=a if re.fullmatch(r"[\w\\^_⁰¹²³⁴⁵⁶⁷⁸⁹₀-₉]+",a) else "("+a+")"
+        pb=b if re.fullmatch(r"[\w\\^_⁰¹²³⁴⁵⁶⁷⁸⁹₀-₉]+",b) else "("+b+")"
+        return pa+"/"+pb
+    for _ in range(6):
+        new=re.sub(r"\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}",frac,s)
+        if new==s: break
+        s=new
+    s=re.sub(r"\\sqrt\s*\{([^{}]*)\}",r"√(\1)",s)
+    s=re.sub(r"\\sqrt\s*(\w)",r"√\1",s)
+    s=re.sub(r"\^\{([^{}]*)\}",lambda m:_script(m.group(1),SUP,"^"),s)
+    s=re.sub(r"\^(\w)",lambda m:_script(m.group(1),SUP,"^"),s)
+    s=re.sub(r"_\{([^{}]*)\}",lambda m:_script(m.group(1),SUB,"_"),s)
+    s=re.sub(r"_(\w)",lambda m:_script(m.group(1),SUB,"_"),s)
+    s=re.sub(r"\\(?:hat|bar|tilde|vec|dot|ddot|widehat|widetilde|overline)\s*\{([^{}]*)\}",r"\1",s)
+    def cmd(m):
+        n=m.group(1)
+        return GREEK.get(n) or SYM.get(n) or ("" if n in (",",";","!"," ") else ("%" if n=="%" else "&" if n=="&" else "_" if n=="_" else "#" if n=="#" else "$" if n=="$" else "{" if n=="{" else "}" if n=="}" else n))
+    s=re.sub(r"\\([A-Za-z]+|.)",cmd,s)
+    s=s.replace("{","").replace("}","")
+    return re.sub(r"[ \t]+"," ",s).strip()
+
+# ---------- 섹션 코드/슬러그 (SPEC ch.3 + 물리 확장표 F3) ----------
+def classify(title_u):
+    t=title_u.strip()
+    m=re.match(r"^(\d+)\.\s*(.*)",t)
+    if m: return f"{int(m.group(1)):02d}", m.group(2)
+    m=re.match(r"^W\.(\d)\s*(.*)",t)
+    if m: return "w"+m.group(1), m.group(2)
+    if t.startswith("W. "): return "wsum", t[3:]
+    if t.startswith("Read First"): return "rf", t
+    if t.startswith("Jamming Spine"): return "sp", t
+    if re.match(r"^Appendix E/P/M/R",t): return "axepmr", t
+    if t.startswith("Appendix G-LINK"): return "axglink", t
+    m=re.match(r"^Appendix ([A-Z])[\.:\s]\s*(.*)",t)
+    if m: return "ax"+m.group(1).lower(), m.group(2)
+    if t.startswith("Appendix: Version history"): return "vh", t
+    for pre,c in (("Overview","ov"),("Bedrock Trail","bt"),("Epistemic Audit","ea"),
+                  ("The 5-Line Reproducibility","r5"),("Common Misreadings","cm"),
+                  ("Meta-Lessons","ml")):
+        if t.startswith(pre): return c, t
+    return "zz"+re.sub(r"\W","",(t.split() or ["x"])[0].lower())[:6], t
+
+def slugify(title_clean,code):
+    t=unicodedata.normalize("NFKD",title_clean)
+    t="".join(c for c in t if ord(c)<128).lower()
+    t=re.sub(r"[^a-z0-9]+","-",t).strip("-")
+    ws=[w for w in t.split("-") if w and w not in STOP][:5]
+    return code+("-"+"-".join(ws) if ws else "")
+
+# ---------- 본문 변환 (split/gate 공유 단일 소스) ----------
+META_DROP=[r"\\noindent\\fbox\{\\parbox\{\\linewidth\}\{\\scriptsize\\texttt\{\[VP-S-[^\n]*",
+           r"\\noindent\{\\scriptsize\\texttt\{\[VP-S-[^\n]*",
+           r"(?s)\\noindent\\fbox\{\\parbox\{\\linewidth\}\{\\small \\textbf\{Entity:\}.*?\\par\\medskip"]
+BANNER=r"\\noindent\\texttt\{\[(?:SUPERSEDED|COINCIDENCE/NON-EVIDENCE|OPEN-TIER)[^\n]*"
+ENV_DISPLAY=r"\\begin\{(equation|align|gather|multline)\*?\}.*?\\end\{\1\*?\}"
+
+def unwrap_boxes(b):
+    out=""; i=0
+    while True:
+        j=b.find("\\fbox{",i)
+        if j<0: out+=b[i:]; break
+        out+=b[i:j]; arg,k=brace_arg(b,j+5)
+        m=re.match(r"\s*\\parbox\{[^{}]*\}\s*\{",arg)
+        if m:
+            inner,_=brace_arg(arg,m.end()-1)
+            out+='\n<div class="box">'+inner+"</div>\n"
+        else:
+            out+='\n<div class="box">'+arg+"</div>\n"
+        i=k
+    b2=out; out=""; i=0
+    while True:
+        j=b2.find("\\parbox{",i)
+        if j<0: out+=b2[i:]; break
+        out+=b2[i:j]
+        _w,k=brace_arg(b2,j+7)
+        if k<len(b2) and b2[k]=="{":
+            inner,k2=brace_arg(b2,k)
+            out+='\n<div class="box">'+inner+"</div>\n"; i=k2
+        else:
+            out+=b2[j:k]; i=k
+    return out
+
+def find_sections(tex):
+    secs=[]
+    for m in re.finditer(r"^\\section(\*)?\{",tex,re.M):
+        title,end=brace_arg(tex,m.end()-1)
+        secs.append({"star":bool(m.group(1)),"title":title.strip(),"hstart":m.start(),"bstart":end})
+    endpos=tex.find("\\end{document}")
+    for i,s in enumerate(secs):
+        s["bend"]=secs[i+1]["hstart"] if i+1<len(secs) else (endpos if endpos>0 else len(tex))
+        s["body"]=tex[s["bstart"]:s["bend"]]
+        tu=latex2unicode(re.sub(r"\\label\{[^}]*\}","",s["title"]))
+        s["title_u"]=tu
+        s["code"],clean=classify(tu)
+        s["slug"]=slugify(clean,s["code"])
+    return secs
+
+def convert_body(body, asset_prefix="/assets/img/"):
+    b=body
+    for k,v in WPMAC.items(): b=b.replace(k,v)
+    vbs=[]
+    def vgrab(m): vbs.append(m.group(1)); return f"\n⟦VB{len(vbs)-1}⟧\n"
+    b=re.sub(r"\\begin\{verbatim\}(.*?)\\end\{verbatim\}",vgrab,b,flags=re.S)
+    b=re.sub(r"(?<!\\)%[^\n]*","",b)
+    b=b.replace("\\$","⟦DLR⟧")
+    displays=[]
+    def grab(m): displays.append(m.group(0)); return f"\n⟦EQ{len(displays)-1}⟧\n"
+    b=re.sub(ENV_DISPLAY,grab,b,flags=re.S)
+    def grab2(m): displays.append(m.group(1)); return f"\n⟦EQ{len(displays)-1}⟧\n"
+    b=re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]",grab2,b,flags=re.S)
+    banners=[]
+    def ban(m):
+        banners.append(latex2unicode(m.group(0).replace("\\par\\smallskip","")))
+        return f"\n⟦BAN{len(banners)-1}⟧\n"
+    b=re.sub(BANNER,ban,b)
+    asides=[]
+    for pat in META_DROP:
+        for m in re.finditer(pat,b): asides.append(m.group(0))
+        b=re.sub(pat+r"\n?","",b)
+    b=unwrap_boxes(b)
+    figures=len(re.findall(r"\\begin\{figure",b)); tables=len(re.findall(r"\\begin\{(?:tabular|longtable)\}",b))
+    b=re.sub(r"\\hyperref\[([^\]]*)\]\{([^{}]*)\}",lambda m:f'<a class="xref" data-ref="{m.group(1)}">{m.group(2)}</a>',b)
+    b=re.sub(r"\\href\{([^{}]*)\}\{([^{}]*)\}",r'<a href="\1" rel="noopener">\2</a>',b)
+    b=re.sub(r"\\(?:eq)?ref\{([^}]*)\}",lambda m:f'<a class="xref" data-ref="{m.group(1)}">({m.group(1).split(":")[-1]})</a>',b)
+    b=re.sub(r"\\label\{([^}]*)\}",r'<span id="\1"></span>',b)
+    b=re.sub(r"\\part\*?\{([^{}]*)\}",lambda m:"\n<h2 class=\"part\">"+latex2unicode(m.group(1))+"</h2>\n",b)
+    b=re.sub(r"\\(?:sub)?paragraph\*?\{",r"⟦H4⟧{",b)
+    b=re.sub(r"\\subsubsection\*?\{",r"⟦H3⟧{",b); b=re.sub(r"\\subsection\*?\{",r"⟦H2⟧{",b)
+    def heads(mark,tag,s):
+        out=""; i=0
+        while True:
+            j=s.find(mark+"{",i)
+            if j<0: out+=s[i:]; return out
+            out+=s[i:j]; arg,k=brace_arg(s,j+len(mark))
+            out+=f"\n<{tag}>"+latex2unicode(arg)+f"</{tag}>\n"; i=k
+    b=heads("⟦H2⟧","h2",b); b=heads("⟦H3⟧","h3",b); b=heads("⟦H4⟧","h4",b)
+    b=re.sub(r"\\begin\{itemize\}(\[[^\]]*\])?","\n<ul>",b); b=re.sub(r"\\end\{itemize\}","</ul>\n",b)
+    b=re.sub(r"\\begin\{enumerate\}(\[[^\]]*\])?","\n<ol>",b); b=re.sub(r"\\end\{enumerate\}","</ol>\n",b)
+    b=re.sub(r"\\item\s*\[([^\]]*)\]",lambda m:"\n<li><strong>"+latex2unicode(m.group(1))+"</strong> ",b)
+    b=re.sub(r"\\item\b","\n<li>",b)
+    b=re.sub(r"\\begin\{description\}(\[[^\]]*\])?","\n<ul class=\"desc\">",b); b=re.sub(r"\\end\{description\}","</ul>\n",b)
+    b=re.sub(r"\\begin\{quot(?:e|ation)\}","\n<blockquote>",b); b=re.sub(r"\\end\{quot(?:e|ation)\}","</blockquote>\n",b)
+    b=re.sub(r"\\begin\{table\}(\[[^\]]*\])?","\n<div class=\"tblwrap\">",b); b=re.sub(r"\\end\{table\}","</div>\n",b)
+    b=re.sub(r"\\begin\{mdframed\}(\[[^\]]*\])?","\n<div class=\"box\">",b); b=re.sub(r"\\end\{mdframed\}","</div>\n",b)
+    b=re.sub(r"\\begin\{center\}",'<div class="c">',b); b=re.sub(r"\\end\{center\}","</div>",b)
+    def tab_html(body):
+        body=re.sub(r"\\(?:hline|toprule|midrule|bottomrule|arrayrulecolor\{[^}]*\}|multicolumn\{\d+\}\{[^}]*\})","",body)
+        rows=[r for r in re.split(r"\\\\",body) if r.strip()]
+        return "<table>"+"".join("<tr>"+"".join(f"<td>{c.strip()}</td>" for c in r.split("&"))+"</tr>" for r in rows)+"</table>"
+    out2=""; i2=0
+    TB=re.compile(r"\\begin\{(tabular|longtable)\}")
+    while True:
+        m=TB.search(b,i2)
+        if not m: out2+=b[i2:]; break
+        out2+=b[i2:m.start()]
+        _spec,k=brace_arg(b,m.end())
+        endtok="\\end{"+m.group(1)+"}"; e=b.find(endtok,k)
+        out2+=tab_html(b[k:e] if e>=0 else b[k:])
+        i2=(e+len(endtok)) if e>=0 else len(b)
+    b=out2
+    b=re.sub(r"\\caption\{([^{}]*)\}",lambda m:"<figcaption>"+latex2unicode(m.group(1))+"</figcaption>",b)
+    b=re.sub(r"\\renewcommand\{[^}]*\}\{[^}]*\}|\\addcontentsline\{[^}]*\}\{[^}]*\}\{[^}]*\}|\\phantomsection|\\vspace\*?\{[^}]*\}|\\hspace\*?\{[^}]*\}","",b)
+    def fig(m):
+        fb=m.group(1); img=re.search(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}",fb)
+        cap=re.search(r"\\caption\{",fb)
+        c=latex2unicode(brace_arg(fb,cap.end()-1)[0]) if cap else ""
+        src=asset_prefix+os.path.basename(img.group(1)) if img else ""
+        return f'\n<figure class="fig"><img src="{src}" loading="lazy" alt="{c[:120]}"><figcaption>{c}</figcaption></figure>\n'
+    b=re.sub(r"\\begin\{figure\}(?:\[[^\]]*\])?(.*?)\\end\{figure\}",fig,b,flags=re.S)
+    b=re.sub(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}",lambda m:f'<img src="{asset_prefix+os.path.basename(m.group(1))}" loading="lazy" alt="">',b)
+    for _ in range(5):
+        b0=b
+        b=re.sub(r"\\textbf\{([^{}]*)\}",r"<strong>\1</strong>",b)
+        b=re.sub(r"\\(?:emph|textit)\{([^{}]*)\}",r"<em>\1</em>",b)
+        b=re.sub(r"\\texttt\{((?:\\.|[^{}\\])*)\}",lambda m:"<code>"+latex2unicode(m.group(1))+"</code>",b)
+        b=re.sub(r"\\path\{([^{}]*)\}",r"<code>\1</code>",b)
+        if b==b0: break
+    b=re.sub(r"\\footnote\{([^{}]*)\}",r" (\1)",b)
+    b=re.sub(r"\\(?:footnotesize|scriptsize|small|large|Large|noindent|centering|smallskip|medskip|bigskip|clearpage|newpage|tableofcontents|maketitle|par|raggedright|hfill)\b","",b)
+    inline=[0]
+    def inl(m): inline[0]+=1; return latex2unicode(m.group(1))
+    b=re.sub(r"\$([^$]+)\$",inl,b)
+    b=re.sub(r"\\\((.+?)\\\)",inl,b,flags=re.S)
+    for _ in range(4):
+        b0=b
+        b=re.sub(r"\\textbf\{([^{}]*)\}",r"<strong>\1</strong>",b)
+        b=re.sub(r"\\(?:emph|textit)\{([^{}]*)\}",r"<em>\1</em>",b)
+        b=re.sub(r"\\texttt\{((?:\\.|[^{}\\])*)\}",lambda m:"<code>"+latex2unicode(m.group(1))+"</code>",b)
+        if b==b0: break
+    b=re.sub(r"\\mathrm\{([^{}]*)\}",r"\1",b)
+    b=b.replace("\\newline","<br>")
+    b=re.sub(r"\\([A-Za-z]+)\b",lambda m:GREEK.get(m.group(1)) or SYM.get(m.group(1)) or m.group(0),b)
+    b=text_mode(b).replace("⟦DLR⟧","$")
+    paras=[]
+    for chunk in re.split(r"\n\s*\n",b):
+        c=chunk.strip()
+        if not c: continue
+        if c.startswith("<") or c.startswith("⟦"): paras.append(c)
+        else: paras.append("<p>"+c+"</p>")
+    html="\n".join(paras)
+    for k,v in enumerate(vbs):
+        ve=v.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+        html=html.replace(f"⟦VB{k}⟧","<pre class=\"vb\">"+ve+"</pre>")
+    text=re.sub(r"⟦[^⟧]*⟧","",re.sub(r"<aside.*?</aside>","",html,flags=re.S))
+    text=re.sub(r"<[^>]+>"," ",text)
+    return dict(html=html,text=text,displays=[d.strip() for d in displays],
+                inline_count=inline[0],figures=figures,tables=tables,banners=banners,asides=asides)
+
+def text_mode(s):
+    s=s.replace("\\\\","<br>")
+    s=s.replace("\\&","&amp;").replace("\\%","%").replace("\\_","_").replace("\\#","#")
+    s=s.replace("``","“").replace("''","”").replace("---","—").replace("--","–").replace("~"," ")
+    s=re.sub(r"\\S\s*","§",s)
+    s=s.replace("\\textdegree","°").replace("\\ldots","…").replace("\\dots","…").replace("\\textbackslash","\\")
+    s=re.sub(r"\\,|\\;|\\!|\\ "," ",s)
+    s=re.sub(r"\\(?:textnormal|textrm|mbox|text)\{([^{}]*)\}",r"\1",s)
+    s=re.sub(r"\\(Fm|Hm|Vm|Om)\{\}",lambda m:SYM[m.group(1)],s)
+    return s
+
+def word_count(text): return len(re.findall(r"[A-Za-z0-9][A-Za-z0-9\-'’/×·]*",text))
+
+def build(paper_id,src):
+    tex=open(src,encoding="utf-8").read()
+    secs=find_sections(tex)
+    rows=[]
+    for s in secs:
+        cv=convert_body(s["body"]); s["cv"]=cv
+        rows.append(dict(paper_id=paper_id,code=s["code"],slug=s["slug"],title=s["title_u"],
+            star=int(s["star"]),words=word_count(cv["text"]),eq_inline=cv["inline_count"],
+            eq_display=len(cv["displays"]),figures=cv["figures"],tables=cv["tables"]))
+    return tex,secs,rows
+
+def main():
+    paper_id,src=sys.argv[1],sys.argv[2]
+    tex,secs,rows=build(paper_id,src)
+    os.makedirs("manifest",exist_ok=True)
+    cols=["paper_id","code","slug","title","star","words","eq_inline","eq_display","figures","tables"]
+    with open(f"manifest/{paper_id}.csv","w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,cols,lineterminator="\n"); w.writeheader(); [w.writerow(r) for r in rows]
+    old=[]
+    if os.path.exists("manifest/slugs.csv"):
+        old=[r for r in csv.DictReader(open("manifest/slugs.csv",encoding="utf-8")) if r["paper_id"]!=paper_id]
+    old+=[dict(paper_id=paper_id,code=r["code"],slug=r["slug"]) for r in rows]
+    with open("manifest/slugs.csv","w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,["paper_id","code","slug"],lineterminator="\n"); w.writeheader(); [w.writerow(r) for r in old]
+    dup=len(rows)-len({r["slug"] for r in rows})
+    sha=hashlib.sha256(open(src,'rb').read()).hexdigest()[:16]
+    print(f"[inventory] {paper_id}: sections={len(rows)} dup_slugs={dup} src_sha16={sha}")
+    print(f"  words={sum(r['words'] for r in rows)} inline={sum(r['eq_inline'] for r in rows)} display={sum(r['eq_display'] for r in rows)} fig={sum(r['figures'] for r in rows)} tab={sum(r['tables'] for r in rows)}")
+    zz=[r["code"] for r in rows if r["code"].startswith("zz")]
+    if dup or zz: print(f"  !! GATE-FLAG dup={dup} unclassified={zz}")
+
+if __name__=="__main__": main()

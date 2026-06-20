@@ -1,0 +1,19 @@
+== refine: decay at L=80000, T=20000 ==
+  lam=1.2536 |curv|=0.0220 slope=-0.1978 eff(win)=['0.170', '0.196', '0.242'] extrap=0.2871
+  lam=1.2544 |curv|=0.0041 slope=-0.1577 eff(win)=['0.167', '0.135', '0.183'] extrap=0.1769
+  lam=1.2552 |curv|=0.0114 slope=-0.1227 eff(win)=['0.113', '0.078', '0.177'] extrap=0.1915
+lambda_c = 1.2544  delta_raw=0.1577 delta_extrap=0.1769 (DP 0.1595)   [94s]
+GATE[2'] decay: PASS
+== spreading at refined lambda_c (R=512, Lw=1280, T=3000) ==
+theta_s=+0.3860 (DP +0.3137)   delta_surv=0.0994 (DP 0.1595)
+hyperscaling theta_s+delta+delta' = 0.6624  (DP d/z = 0.6326)
+GATE[3'] spreading: FAIL   GATE[3b] hyperscaling: PASS   [122s]
+== SOC at refined lambda_c (per-avalanche cap 25000, lattice reset) ==
+  avalanches: 98  censored(giant): 18
+  insufficient stats; reported as-is
+== M2(r) on refined critical snapshots ==
+  mu_eff = 0.245 +- 0.004  (DP 1+1d 2beta/nu_perp = 0.504)
+== refined summary ==
+lambda_c=1.2544: delta_ext=0.1769(.1595) theta_s=0.3860(.3137) delta_surv=0.0994(.1595) hyp=0.6624(.6326) nu_par=1.637(1.734, prev run) tau_av=nan mu_eff=0.245
+hard gates: decay P / spreading F / hyperscaling P / lifetime P (prev)
+runtime 183s

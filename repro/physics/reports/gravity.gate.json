@@ -1,0 +1,48 @@
+{
+  "gate": "gravity",
+  "paper": "physics",
+  "section": "17.4",
+  "spec": "VP_SPEC_v1.7",
+  "status": "PASS",
+  "checks": {
+    "G-GRAV-FREEAIR": {
+      "value_mGal_per_m": -0.3079,
+      "baseline": -0.3086,
+      "residual_pct": 0.24,
+      "pass": true
+    },
+    "G-GRAV-LAT": {
+      "eq_pole_mGal": 5186.0,
+      "rot_pct": 65.0,
+      "obl_pct": 35.0,
+      "pass": true
+    },
+    "G-GRAV-TERRAIN": {
+      "tc_summit_mGal": 21.46,
+      "vp_newton_residual_mGal": 0.0,
+      "pass": true
+    },
+    "G-GRAV-BODY": {
+      "g_moon_ms2": 1.62,
+      "moon_fraction": 0.1652,
+      "baseline": 1.62,
+      "residual_pct": -0.01,
+      "pass": true
+    },
+    "G-GRAV-SCOPE": {
+      "v_in_over_c": "5.299e-28",
+      "N_samples": "3.56e+54",
+      "four_wall_theorem": "absolute g open (alpha_em class)",
+      "pass": true
+    }
+  },
+  "no_tuning": "no coefficient migrated to close a residual",
+  "dem": {
+    "source": "SRTM30m Pikes Peak",
+    "grid": "33x33@250m",
+    "z0_m": 4300.0,
+    "sha256": "bbe987307d5dcbb9e0f9f98318a5b9c6d49e50705a76cfc7ae3d167fd61dcd41"
+  },
+  "reproduce": "python3 tools/vp_gravity_ssot.py",
+  "tools_hash": "d31d719a00c3c878"
+}

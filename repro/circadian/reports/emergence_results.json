@@ -1,0 +1,312 @@
+{
+ "_what": "Chronobiology (Circadian) -- emerge nodes from measured gamma, then circulate the dynamics.",
+ "clock_probe": {
+  "discriminant": "see findings.RC1..TX1",
+  "free_running_freq_arb": 0.01266667,
+  "grades": "mechanism [V] / period [L] / absolute phase [O]",
+  "question": "circadian timing: a self-sustained limit cycle; entrainment + master-vs-network",
+  "status": "RESEARCH BODY LIVE"
+ },
+ "dynamics_status": "EMERGED: RC1-RC6 + TX1 are live discriminants on the shared FHN substrate",
+ "findings": {
+  "RC1": {
+   "control_block_beats": 1,
+   "control_silent": true,
+   "free_running_beats": 76,
+   "free_running_cv": 0.003691,
+   "free_running_freq_arb": 0.01266667,
+   "grades": "oscillator mechanism [V] / period 24h [L] / absolute phase [O]",
+   "passes": true,
+   "period_anchor": "absolute period ~24 h is the [L] anchor (cited), NOT emergent; arb freq is the mechanism readout",
+   "question": "RC1: does the molecular TTFL self-sustain a rhythm with zero external drive?",
+   "self_sustained": true
+  },
+  "RC2a": {
+   "biphasic_prc": true,
+   "grades": "PRC shape [V] / absolute phase reference [O]",
+   "interpretation": "advance + delay regions with a dead zone = the canonical circadian light PRC; morning light advances, evening light delays (sign across phase)",
+   "max_advance": 0.185022,
+   "max_delay": -0.129012,
+   "passes": true,
+   "phase_shifts_cycles": [
+    0.00944,
+    0.006923,
+    0.008811,
+    0.011328,
+    0.015104,
+    0.020138,
+    0.029578,
+    0.047829,
+    0.058527,
+    0.032096,
+    -0.011957,
+    -0.064821,
+    -0.129012,
+    -0.011328,
+    0.185022,
+    0.143486,
+    0.095028,
+    0.045312
+   ],
+   "phases": [
+    0.0,
+    0.349066,
+    0.698132,
+    1.047198,
+    1.396263,
+    1.745329,
+    2.094395,
+    2.443461,
+    2.792527,
+    3.141593,
+    3.490659,
+    3.839724,
+    4.18879,
+    4.537856,
+    4.886922,
+    5.235988,
+    5.585054,
+    5.934119
+   ],
+   "question": "RC2a: does a brief light pulse advance OR delay the clock depending on phase (biphasic PRC)?"
+  },
+  "RC2b": {
+   "arnold_tongue_widens": true,
+   "grades": "entrainment + tongue [V] / absolute period [L]",
+   "interpretation": "stronger light -> wider range of external periods the clock can lock to (the Arnold tongue); weak light entrains only near the natural period",
+   "locking_range_count": [
+    5,
+    11,
+    15,
+    15,
+    15
+   ],
+   "n_detunings": 15,
+   "passes": true,
+   "question": "RC2b: does a periodic zeitgeber entrain the clock, with the locking range WIDENING as zeitgeber strength rises (an Arnold tongue)?",
+   "zeitgeber_amplitudes": [
+    0.02,
+    0.08,
+    0.18,
+    0.32,
+    0.5
+   ]
+  },
+  "RC3": {
+   "coherence_R": [
+    0.596406,
+    0.990298,
+    0.997118,
+    0.999346,
+    0.999821,
+    0.999925
+   ],
+   "coherence_rises_with_coupling": true,
+   "coupling_K": [
+    0.0,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5
+   ],
+   "grades": "synchronisation transition + master-led entrainment [V] / absolute phase lags [O]",
+   "interpretation": "decoupled peripheral clocks drift (low R); coupling synchronises them (R rises); a stronger SCN master pulls the periphery into phase -- one network, master-led",
+   "master_entrains_periphery": true,
+   "master_gain": [
+    1.0,
+    2.0,
+    4.0
+   ],
+   "passes": true,
+   "peripheral_phase_drift_vs_master": [
+    0.003823,
+    0.003351,
+    0.002956
+   ],
+   "question": "RC3: is timekeeping one MASTER oscillator or a COUPLED NETWORK? coupling strength vs synchrony, and does the SCN master pull peripheral clocks into phase?"
+  },
+  "RC4": {
+   "ablated_cortisol_amplitude": 0.0,
+   "cited_hpa_kinetics": "mind M18 biexponential cascade; ACTH->cortisol peak window [15, 40] min (Dickerson & Kemeny 2004, cited [L])",
+   "clock_creates_rhythm": true,
+   "cortisol_acrophase_min": 61,
+   "cross_cutting": "same gating sets the daily rhythm of core temperature & blood pressure (thermometabolic / hemodynamic seams) -- cortisol is the worked mind seam",
+   "gated_cortisol_amplitude": 0.976237,
+   "grades": "gating mechanism [V] / cortisol kinetics + window [L] / absolute cortisol level [O]",
+   "mind_seam_doi": "10.5281/zenodo.20694404",
+   "passes": true,
+   "question": "RC4: does the clock IMPOSE a daily rhythm on a defended setpoint (the HPA cortisol axis, mind M18 cited)? does ablating the clock flatten it?"
+  },
+  "RC5": {
+   "aligned_rhythm_degrades": true,
+   "externally_aligned_cortisol_amp": [
+    1.227923,
+    0.836137,
+    0.207864,
+    -0.458322,
+    -1.02672,
+    -1.364039
+   ],
+   "grades": "re-entrainment + degradation SIGN [V] / shift-work RR [L] / absolute incidence [O]",
+   "interpretation": "the clock re-aligns only ~1 h/day (PRC-limited), so a big shift takes many days; during misalignment the gated rhythm peaks at the wrong external time -> the defended setpoint is dysregulated (the disease state)",
+   "passes": true,
+   "phase_shift_hours": [
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0
+   ],
+   "question": "RC5: when the internal clock and external time decouple (shift work / jet lag), does re-entrainment lengthen and the externally-aligned cortisol rhythm degrade?",
+   "reentrainment_cycles": [
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0
+   ],
+   "reentrainment_grows_with_shift": true
+  },
+  "RC6": {
+   "exported_to_mind": "circadian_misalignment -> HPA_rhythm_flattening -> (mind: sustained withdrawal bias b<0 -> hypo-coordination -> chronification under E0 plasticity)",
+   "firewall": "SIGN only; efficacy=0; magnitude [O]; the FELT quality of low mood stays in mind (consciousness_claim=0, hard problem OPEN). This package models the TIMING perturbation of the HPA setpoint, not depression itself.",
+   "flattening_grows_with_misalignment": true,
+   "grades": "flattening SIGN + mind-direction consistency [V] / magnitude of the handle [O]",
+   "hpa_flattening_index": [
+    0.0,
+    0.319064,
+    0.830719,
+    1.37325,
+    1.836144,
+    2.11085
+   ],
+   "mind_locked_contributor": "mind 27 LOCKED the CIRCADIAN depression contributor; this package supplies it",
+   "mind_seam_doi": "10.5281/zenodo.20694404",
+   "passes": true,
+   "phase_shift_hours": [
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    12.0
+   ],
+   "question": "RC6: circadian misalignment flattens the gated HPA cortisol rhythm; is that sustained HPA dysregulation the CIRCADIAN depression contributor mind LOCKED (the withdrawal-bias handle)?",
+   "sign_consistent_with_mind_depression_handle": true
+  },
+  "TX1": {
+   "correct_phase_re_aligns": true,
+   "corrected_delay_h_correct_phase": [
+    2.56,
+    1.12,
+    0.0,
+    0.0
+   ],
+   "firewall": "efficacy=0; not medical advice; direction/timescale only. Chronotherapy timing is the control law of the clock (the PRC), not a dose or an efficacy claim.",
+   "grades": "re-alignment direction + antiphase PRCs [V] / clinical timing windows [L] / efficacy [O]=0",
+   "initial_phase_delay_h": 4.0,
+   "light_advance_phase_h": 6.0,
+   "light_melatonin_antiphase": true,
+   "melatonin_advance_phase_h": 18.0,
+   "no_new_constant": "the correction is the RC2 PRC applied in reverse; the per-pulse gain is [O], the DIRECTION (correct phase advances, wrong phase delays) is the asserted result",
+   "passes": true,
+   "pulse_strengths": [
+    0.1,
+    0.2,
+    0.35,
+    0.5
+   ],
+   "question": "TX1: can a PHASE-correct zeitgeber (light / melatonin / wake therapy) re-align the clock and reverse misalignment? does the WRONG phase worsen it? (derived from the RC2 PRC)",
+   "resulting_delay_h_wrong_phase": [
+    5.44,
+    6.88,
+    9.04,
+    11.2
+   ],
+   "wake_therapy": {
+    "durability": "transient -- relapses after recovery sleep (no clock re-alignment)",
+    "effect_direction": "transient lift of the low-coordination operating point (mind seam)",
+    "grade": "[V] direction / [O] magnitude; efficacy=0"
+   },
+   "wrong_phase_worsens": true
+  }
+ },
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "core_clock_loop"
+  ],
+  "order_grade": "[V] order is a gamma readout over MEASURED nodes; SIGN to validate vs cited timing",
+  "organs": [
+   {
+    "dyn_class": "oscillator",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(SCN_master_clock)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "scn_master_oscillator",
+    "role": "suprachiasmatic ~24h master limit-cycle (light-entrained)"
+   },
+   {
+    "dyn_class": "oscillator",
+    "functional_spinodal": 0.59269,
+    "gamma": 1.33348,
+    "gamma_state": "vendored",
+    "master": "BMAL1",
+    "organ": "core_clock_loop",
+    "rel_size_dwell": 1.399868,
+    "role": "BMAL1/CLOCK<->PER/CRY transcription-translation feedback loop (the molecular oscillator)"
+   },
+   {
+    "dyn_class": "coupled-oscillator",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(peripheral_clocks)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "peripheral_clock_network",
+    "role": "liver/muscle/adipose peripheral clocks (cite organ packages)"
+   },
+   {
+    "dyn_class": "entrainment",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(retinal_entrainment)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "light_entrainment_input",
+    "role": "retinal light -> SCN phase reset (seam to sensory/neuro)"
+   }
+  ]
+ },
+ "oscillators": {
+  "core_clock_loop": {
+   "beats": 8,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "rate_anchor": "TTFL period ~24 h [L]; BMAL1 gamma measured = 1.33348 (gene 406, NC_000011.10)",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.001,
+   "tau_s": 480.0
+  },
+  "peripheral_clock_network": {
+   "beats": 8,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "rate_anchor": "peripheral phase lag [L]; circuit",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.001,
+   "tau_s": 480.0
+  },
+  "scn_master_oscillator": {
+   "beats": 8,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "rate_anchor": "circadian period ~24 h [L] TO-ANCHOR",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.001,
+   "tau_s": 480.0
+  }
+ }
+}

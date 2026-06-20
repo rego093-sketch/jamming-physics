@@ -1,0 +1,170 @@
+{
+ "disease": "Deficiency of the interleukin-1 receptor antagonist (DIRA)",
+ "omim": "612852",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Deficiency of the interleukin-1 receptor antagonist (DIRA)",
+  "omim": "612852",
+  "summary": "A single-gene IL1RN loss-of-function. IL1RN encodes the interleukin-1 receptor antagonist (IL-1Ra), the secreted endogenous BRAKE on IL-1 signalling: it occupies the type-1 IL-1 receptor (IL1R1) without triggering it, competitively blocking IL-1alpha and IL-1beta. IL1RN LOF (null/truncating alleles) removes this brake, so IL-1alpha/IL-1beta signal UNOPPOSED -> the IL-1 signalling drive is pushed UP, giving neonatal-onset sterile multifocal osteomyelitis, periostitis and a pustular/ichthyosiform skin eruption (the DIRA / 'osteomyelitis, sterile multifocal, with periostitis and pustulosis' phenotype). This is read on the kit's inflammasome/autoinflammatory (IL-1) axis -- the SAME axis as CAPS but driven UP by a DIFFERENT lesion: CAPS is IL-1beta OVER-PRODUCTION (NLRP3-GOF over-active inflammasome), DIRA is LOSS OF THE IL-1 BRAKE (IL1RN-LOF). As a released brake the axis goes UP and the corrective direction is to RESTRAIN IL-1 signalling. The kit re-derives the approved restrain arm: anakinra (recombinant IL-1 receptor antagonist) -- which here literally SUPPLIES the missing IL-1Ra, restoring the lost brake at IL1R1; canakinumab (anti-IL-1beta mAb) and rilonacept (IL-1 trap) are established alternatives. Recorded as the ELEGANT 'one drug (anakinra), two opposite IL-1 lesions' pairing with CAPS: anakinra RESTRAINS over-produced IL-1 in CAPS but REPLACES the absent antagonist in DIRA -- the same IL-1 pathway, opposite lesion, both coded restrain by NET axis effect (lower the IL-1 drive). The Wilson/Menkes and CLD/LEPR pair logic (same axis, opposite lesion) carried onto the inflammasome axis. The gamma read is of the IL1RN locus switch STRUCTURE; the disease lesion is coding/structural (null/truncating alleles, e.g. the founder genomic deletion at 2q14.1), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "IL-1 signalling drive (loss of the endogenous IL-1 receptor antagonist -> unopposed IL-1alpha/IL-1beta signalling at IL1R1 -> systemic autoinflammation) -- the inflammasome/IL-1 axis read as a released brake",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "IL1RN",
+    "gamma": 1.3702,
+    "spinodal_h_sp": 0.61734,
+    "barrier": 0.46936,
+    "dwell_relative_size": 1.45809,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000002.12",
+     "gene_start": 113099359,
+     "gene_end": 113134013,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "interleukin 1 receptor antagonist"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "IL1RN encodes the interleukin-1 receptor antagonist (IL-1Ra), the secreted competitive antagonist that binds the type-1 IL-1 receptor (IL1R1) without activating it -- the endogenous BRAKE that tunes down IL-1alpha/IL-1beta signalling. DIRA alleles are loss-of-function (null/truncating), removing the brake so IL-1 signals unopposed -> the IL-1 inflammatory drive is pushed UP. As a RELEASED BRAKE the pathological axis goes UP and the corrective levers LOWER it. Autosomal recessive, 2q14.1 (OMIM 147679). NCBI official symbol IL1RN. The promoter gamma reads the locus switch STRUCTURE only; the null/truncating coding/structural lesions (including the recurrent IL1RN genomic deletion) are outside the promoter firewall.",
+    "src": "Aksentijevich 2009 NEJM 360:2426 (IL1RN mutations cause DIRA); Reddy 2009 NEJM 360:2438 (autoinflammation with IL1RN deletion, anakinra response); Eisenberg 1990 Nature 343:341 (IL-1 receptor antagonist cloning)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "IL1RN",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "4af007d1928d"
+ },
+ "treatment_A_switch": {
+  "disease": "Deficiency of the interleukin-1 receptor antagonist (DIRA)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "IL1R1",
+    "push_direction": "supply the recombinant IL-1 receptor antagonist (replacing the missing IL-1Ra) so IL-1alpha/IL-1beta can no longer signal -> restore the lost brake -> lower the IL-1 drive (net axis effect DOWN toward healthy)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "recombinant IL-1 receptor antagonist (anakinra)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1 signalling blockade / inflammation control not derived from sequence",
+    "src": "Reddy 2009 NEJM 360:2438 (anakinra induces remission in IL1RN-deficient DIRA); anakinra (Kineret) FDA/EMA"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1B",
+    "push_direction": "neutralise IL-1beta with a monoclonal antibody -> lower the unopposed IL-1 drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "anti-IL-1beta monoclonal antibody (canakinumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1beta neutralisation not derived from sequence",
+    "src": "Lachmann 2009 NEJM 360:2416 (canakinumab in IL-1-mediated autoinflammation); canakinumab (Ilaris) FDA/EMA 2009"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "IL1B",
+    "push_direction": "trap circulating IL-1 with a decoy-receptor fusion so less reaches IL1R1 -> lower the IL-1 drive",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "IL-1 trap (rilonacept)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of IL-1 sequestration not derived from sequence",
+    "src": "Hoffman 2008 Arthritis Rheum 58:2443 (rilonacept in IL-1-driven autoinflammation); rilonacept (Arcalyst)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "IL1R1",
+   "push_direction": "supply the recombinant IL-1 receptor antagonist (replacing the missing IL-1Ra) so IL-1alpha/IL-1beta can no longer signal -> restore the lost brake -> lower the IL-1 drive (net axis effect DOWN toward healthy)",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "recombinant IL-1 receptor antagonist (anakinra)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of IL-1 signalling blockade / inflammation control not derived from sequence",
+   "src": "Reddy 2009 NEJM 360:2438 (anakinra induces remission in IL1RN-deficient DIRA); anakinra (Kineret) FDA/EMA"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.45809,
+   "dwell_disease": 2.00487,
+   "dwell_treated": 1.63663,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "ead91b60c0a3"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "IL1RN LOF (loss of the IL-1 brake) raises IL-1 signalling (axis UP)",
+   "falsifier": "a DIRA IL1RN null allele that LOWERED IL-1-driven signalling / inflammatory output would refute the released-brake direction",
+   "measurable_by": "IL-1-responsive readouts (NF-kB activation, IL-6/CXCL8 output, neutrophil recruitment) in IL1RN-deficient vs control cells, and the documented flare on withdrawal vs control of IL-1 blockade"
+  },
+  {
+   "claim": "restraining IL-1 (supplying the antagonist / IL-1 blockade) is the CORRECTIVE direction",
+   "falsifier": "if giving recombinant IL-1Ra (anakinra), neutralising IL-1beta, or trapping IL-1 RAISED or failed to lower the autoinflammatory readouts in DIRA, the restrain lever sign is wrong",
+   "measurable_by": "CRP / SAA and clinical osteomyelitis/pustulosis activity response to anakinra (and relapse on its withdrawal) in IL1RN-deficient DIRA"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Deficiency of the interleukin-1 receptor antagonist (DIRA)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "590ac8c51509"
+ },
+ "determinism_sha": "c22bc4eb424b"
+}

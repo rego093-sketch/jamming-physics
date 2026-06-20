@@ -1,0 +1,163 @@
+{
+ "P_VC5a_stimulant_vs_wiring": {
+  "P_VC5a_stim_rises_OT_falls_W": true,
+  "corr_stim_responder_vs_w_share": -0.604891,
+  "monotone_decreasing_with_w": true,
+  "reading": "the stimulant restores patients whose fault is gain-dominated (low wiring severity) and fails patients whose fault is wiring-dominated: the stimulant-responder fraction decreases monotonically as wiring severity rises and correlates negatively with the wiring share of the fault. Gain fixes the gain axis, not the wiring -- the population image of section 2.",
+  "stim_responder_frac_by_w_stratum": {
+   "w_high": {
+    "n": 27,
+    "stim_responder_frac": 0.0
+   },
+   "w_low": {
+    "n": 25,
+    "stim_responder_frac": 0.76
+   },
+   "w_mid": {
+    "n": 24,
+    "stim_responder_frac": 0.416667
+   }
+  },
+  "stim_responder_frac_series_low_mid_high": [
+   0.76,
+   0.416667,
+   0.0
+  ]
+ },
+ "P_VC5b_adverse_vs_cap_amplitude": {
+  "P_VC5b_adverse_rises_with_amp_min_at_window": true,
+  "adverse_frac_by_cap_amp": [
+   {
+    "adverse_frac": 0.144737,
+    "cap_amp": 0.08
+   },
+   {
+    "adverse_frac": 0.565789,
+    "cap_amp": 0.15
+   },
+   {
+    "adverse_frac": 0.986842,
+    "cap_amp": 0.3
+   },
+   {
+    "adverse_frac": 1.0,
+    "cap_amp": 0.6
+   },
+   {
+    "adverse_frac": 1.0,
+    "cap_amp": 0.9
+   }
+  ],
+  "adverse_frac_series": [
+   0.144737,
+   0.565789,
+   0.986842,
+   1.0,
+   1.0
+  ],
+  "duty_cycle_cumulative_exposure_ref_VC3": "VC3: a window-amplitude, duty-cycled carrier carries ~4% of the molecular thermal load of continuous strong drive; over-sync is an AMPLITUDE phenomenon, so the window minimises the instantaneous adverse fraction and duty-cycling minimises cumulative exposure.",
+  "monotone_non_decreasing_in_amplitude": true,
+  "reading": "the over-sync (adverse) fraction is MINIMISED at the window amplitude and rises monotonically as the cap amplitude is pushed up -- the population confirms the section-1 over-drive risk. Note the window minimum is not zero: a fixed window amplitude calibrated on the full W-fault still over-syncs the milder-W (more-intact) patients, which is what FINDING-VC5c builds on. Amplitude (not duty) sets the adverse fraction; duty-cycling sets cumulative exposure (VC3).",
+  "window_amplitude_is_minimum": true
+ },
+ "P_VC5c_nonresponders_are_W_dominated": {
+  "FINDING_VC5c_residual_is_not_a_severeW_tail": {
+   "affected_population_profile": {
+    "mean_kap_mult": 0.600011,
+    "mean_o": 0.510733,
+    "mean_stiffness_s": 0.992859,
+    "mean_t": 0.467741
+   },
+   "exploratory_subclaim_residual_is_pure_severeW_tail": false,
+   "finding": "the bundled exploratory expectation that the residual (cap-unrescued) non-responders are the PURE severe-W tail is REFUTED. Because the cap is axis-appropriate for wiring, it preferentially rescues the MORE-W-dominant non-responders (cap-rescued mean w_share 0.454647 > residual mean w_share 0.399566), so the residual is actually LESS wiring-dominated than the non-responder pool. The residual is instead dominated by patients whose unresolved deficit is GAIN/threshold beyond the stimulant dose cap (Gmax) and/or high intrinsic stiffness dispersion (higher mean s, lower mean kap_mult than the affected population) -- which neither the dose-capped stimulant nor the W-targeted cap addresses -- plus a small high-w group the fixed window amplitude over-synced. Two actionable points: (1) the operators are axis-specific (cap->wiring, stimulant->gain), and what is left over is dose-cap- and stiffness-limited, not a wiring tail; (2) the few over-syncs argue for a cap amplitude MATCHED to the wiring deficit rather than held fixed.",
+   "mean_w_share_cap_rescued": 0.454647,
+   "mean_w_share_residual": 0.399566,
+   "residual_cap_oversynced_count": 2,
+   "residual_cap_oversynced_mean_w_share": 0.732,
+   "residual_still_below_health_count": 30,
+   "residual_still_below_health_mean_w_share": 0.377403,
+   "residual_still_below_health_profile": {
+    "mean_kap_mult": 0.59888,
+    "mean_o": 0.51403,
+    "mean_stiffness_s": 1.115647,
+    "mean_t": 0.463483
+   },
+   "status": "REFUTED"
+  },
+  "P_VC5c_core_nonresp_W_dominated_and_cap_rescues": true,
+  "cap_rescue_frac_of_stim_nonresponders": 0.319149,
+  "mean_w_share_residual_nonresponders": 0.399566,
+  "mean_w_share_stim_nonresponders": 0.417145,
+  "mean_w_share_stim_responders": 0.205241,
+  "n_stim_nonresponders": 47,
+  "n_stim_responders": 29,
+  "nonresponders_more_wiring_dominated": true,
+  "reading": "stimulant-non-responders carry a higher wiring share than responders -- the non-response is wiring-dominated -- and the cap is the axis-appropriate aid that rescues a fraction of them by pacing the missing long-range routing (a REMOVABLE crutch, VC2, not repair). This robust core is CONFIRMED.",
+  "reading_finding": "the refutation sharpens the verdict: the cap cleanly takes the wiring-limited cases and the stimulant takes the gain-limited cases; the residual is the dose-cap/stiffness limit, not a wiring tail. The cap's small over-sync cost argues for amplitude matched to the individual wiring deficit (closed-loop), consistent with FINDING from P-VC5b.",
+  "residual_nonresponder_frac_of_stim_nonresponders": 0.680851
+ },
+ "_what": "VC5 virtual trial: a heterogeneous synthetic population (N=80) of emerged cerebra, each with a sampled fault mix (wiring w, gain o, threshold t) and stiffness dispersion s, run under the stimulant (gain, dose-capped titrate-to-target), the theta-cap (VC1 C-FORCE, window amplitude, duty-cycled), and both. Reports the DISTRIBUTION of responder / adverse / non-responder outcomes and how it depends on the fault mix and the cap amplitude. The patient geometry is bit-faithful to the D9 endpoints (w=0 -> R_health, w=1 -> R_W).",
+ "firewall": "mechanism only; efficacy=0; no dose/synthesis; NOT medical advice; Axis-A firewall.",
+ "honesty_ledger": {
+  "consciousness_claim": 0,
+  "medium_efficacy_tested": 0,
+  "new_tuned_constants": 0,
+  "no_cure_claimed": 1
+ },
+ "invariants": {
+  "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+  "pac_grounded": true
+ },
+ "outcome_distribution": {
+  "baseline_responder_frac_all": 0.05,
+  "best_responder_frac_affected": 0.578947,
+  "both_responder_frac_affected": 0.315789,
+  "cap_responder_frac_affected": 0.289474,
+  "cap_window_adverse_frac_affected": 0.144737,
+  "n_affected": 76,
+  "n_total": 80,
+  "residual_nonresponder_frac_affected": 0.421053,
+  "stimulant_adverse_frac_affected": 0.0,
+  "stimulant_responder_frac_affected": 0.381579
+ },
+ "owed": "the 'fractions' are in-silico coupling-state outcomes over a synthetic fault-mix sample, NOT clinical response rates; the sampling distribution is an assumption, not an epidemiological fact. efficacy=0; no dose; no synthesis; NOT medical advice.",
+ "preregistered_results": {
+  "P_VC5a_stim_rises_OT_falls_W": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P_VC5b_adverse_rises_with_amp_min_at_window": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P_VC5c_core_nonresp_W_dominated_and_cap_rescues": {
+   "note": "robust core: stimulant-non-responders are wiring-dominated and the cap rescues a fraction. A bundled exploratory sub-claim (residual = pure severe-W tail) was REFUTED and promoted to FINDING-VC5c (fixed window amplitude over-syncs milder-W patients -> amplitude must be matched to the wiring deficit).",
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  }
+ },
+ "removability_and_tolerability": {
+  "long_horizon_ref_VC3": "at the window amplitude the molecular substrate accumulates no irreversible fatigue at any cycle count (memoryless relaxor far below the spinodal fold); the only cost is a small reversible thermal load, duty-reducible (VC3). The binding constraint is circuit-level over-sync, not molecular wear.",
+  "removal_behavior_ref_VC2": "the cap is cleanly removable for every patient (external pacemaker, no plasticity in the substrate): turning it off returns each patient to baseline with no rebound and no acquired dependence (VC2)."
+ },
+ "trial_setup": {
+  "R_W": 0.340292,
+  "R_health": 0.389615,
+  "cap_amplitude_sweep": [
+   0.08,
+   0.15,
+   0.3,
+   0.6,
+   0.9
+  ],
+  "cap_window_amplitude": 0.08,
+  "health_tolerance": 0.01,
+  "n_patients": 80,
+  "over_sync_threshold": 0.448057,
+  "patient_geometry_faithful_endpoints": "w=0 -> Wrn (R_health), w=1 -> Wwn (R_W), raw-level interpolation then row-normalised; gain uses inherited M_O, k_T/KAP; no new constant.",
+  "stimulant_max_fold_Gmax": 2.5
+ }
+}

@@ -1,0 +1,997 @@
+# CHANGELOG — Felt Cognition (mind) package
+
+DOI of record: **10.5281/zenodo.20694404** (concept). This repo edit is a living-version snapshot;
+the published Zenodo deposit is unchanged. Governed by `VP_SPEC_v1_8.md` (C0–C4).
+
+---
+
+---
+
+## v1.51 (2026-06-20) — **E1 첫 영역-특이 응용: FOC-EPI-E1 초점 뇌전증 — 억류(containment) vs 이차 전신화(secondary generalisation) (§44, FOC-EPI-E1) — §43 공간-국소화 층의 첫 영역-특이 응용이자 §25(T2a) 과동기화 뇌전증의 공간적 정련 & SpatialField import(재유도 아님)·SIGN/구조-only·발진-강도 스윕 anti-tuning & 4결과 전부 CONFIRMED(F1 억류/방송 분할 구동-불변·F2 방송=off-target 우세·F3[정직한 무-튜닝] off-target 확산 ≠ 전역 과동기화 = 두 분리축·F4 방송 집합 = 일관된 소수 중계-허브 클래스) & S5 영-발진 구동이 M9 앵커 bit-for-bit 재현** — v1.50이 E1 공간-국소화 층(§43)을 완성하며 그 표제 E1.3 결과(각 노드의 focal 발자국이 자기-국소 또는 중계, 구동-불변, 중계 집합 {hippocampus, midbrain} 고정)와 "이 층 위 질병은 **영역-특이여야 함**"이라는 지침을 넘겼고, **focal 뇌전증 초점·뇌졸중/병변 장·표적 신경조절 off-target**을 그 지도가 여는 **첫 영역-특이 응용**으로 명명(owed)했다. v1.50 핸드오버 §5의 **진입점 A(E1 위 영역-특이 응용, 가장 자연스러움)**에 따라, 그 중 가장 접지가 강한 **focal 뇌전증**을 첫 응용으로 짓는다 = §25(T2a) 과동기화 뇌전증의 **공간적 정련**. **핵심 = 재사용·SIGN/구조-only·정직한 무-튜닝·방화벽 절대(YMYL)**. **(1) 질문 §25가 못 물은 것.** §25는 발작 = 네트워크가 전역 순서변수 R 위 과동기화 문턱을 넘는 것임을 인증했으나 뇌를 **전역으로**(단일 스칼라 Kglob) 구동했으므로, **초점 뇌전증**의 가장 중요한 임상 질문 — 한 초점에서 **시작된** 발작이 **국소에 머무는가(simple/complex partial)** 아니면 **이차 전신화(초점 너머 회로를 모집해 전뇌로 확산)** 하는가 — 을 **물을 수조차** 없었다(이 질문은 본질적으로 **공간적** = 한 곳에서 시작한 구동이 어디로 가는가). §43이 "어디(where)"를 표현 가능케 한 층. **(2) 재사용(재유도 아님).** 이 모듈은 §43 `SpatialField` 클래스를 **import**(ephaptic 커널 W0·k(b) 맵 재유도 안 함 — 핸드오버 재사용 규율), 초점 발작 초점을 한 영역의 강한 focal **흥분성 발진(ictal) 구동**(나머지 baseline, **동일** k=κ/(1−|b|) 맵, 새 상수 0)으로 읽고, 발진 강도를 **{0.3,0.5,0.7,0.9} 스윕**(anti-tuning)하며 모든 부호가 모든 강도서 생존 요구. 엔진 READ-ONLY byte-unchanged. **(3) 4결과 전부 CONFIRMED·전부 발진-강도 스윕 생존**: **F1 억류/방송 분할은 구동-불변** — 각 영역을 focal 발작 초점으로 구동하면 12 초점이 **억류(CONTAINED**: 자기-국소, 발진 변화가 초점에 집중, 발작이 국소에 머묾**)**와 **방송(BROADCAST**: 중계, 변화가 off-target에 더 강하게 착지, 발작이 이차 전신화**)**으로 분할되고, 이 이진 분할이 **전 발진-강도 스윕서 동일** — 방송 집합 {hippocampus, midbrain}이 **모든 강도서 고정**, 나머지 10 초점은 모든 강도서 억류; **초점 발작이 국소에 머무는지 이차 전신화하는지는 초점 위치의 고정 속성**(발진 강도가 아님), E1.3 자기/중계 분류를 발진 구동에 적용; **F2 방송 = off-target 우세(이차 전신화의 구조적 내용)** — 방송 초점은 발진 국소-결맞음 변화가 **초점 자신보다 원격 회로에 더 강하게 착지**(평균 off-target |Δc| > 자기 |Δc|, 비율>1 — hippocampus ≈4.2×, midbrain ≈1.6×) = 발작이 초점 **너머** 회로를 모집하는 구조적 서명; 억류 초점은 초점에 집중(비율<1), 등가가 모든 강도서 성립; **F3(정직한 무-튜닝 결과) off-target 확산 ≠ 전역 과동기화 = 두 분리축** — 깨끗한 가설("방송/이차-전신화 초점은 정확히 전뇌를 §25 과동기화 상태로 구동하는 초점[최대 전역 reach]")이 **거짓**: 최대 **전역**-reach 초점은 **소뇌(cerebellum)**인데 **억류성**(모든 강도서) → 최대 전역 모집자가 방송 초점이 아님, 그리고 두 방송 초점이 전역 동기화를 **반대 방향**으로 옮김(midbrain은 R을 과동기화 쪽으로 **올리고** hippocampus는 **내림**, 모든 강도서) → "방송"은 일관된 전역-동기화 부호가 **전혀 없음**; off-target 확산(F1/F2)과 전역 과동기화(§25 과동기화 축)는 **두 분리·탈결합 공간 속성** = 이차-전신화 전파는 **부위-결정적**, 단일 "확산=과동기화" 규칙으로 환원 불가(E1.4 교훈을 뇌전증에 구체화); 거부된 깨끗한 가설을 강요 않고 정직히 보고; **F4 방송 집합 = 일관된 소수 중계-허브 클래스(억류가 구조적 기본값)** — {hippocampus, midbrain}이 동시에 E1.3 중계 집합·off-target-우세 집합(F2)·**엄격한 소수**(12 중 2 = 억류가 구조적 기본값)·전역-reach 허브와 분리(소뇌) = 하나의 일관된 변연/뇌간 중계-허브 클래스, 이차 전신화는 구조적으로 특정 중계 허브가 나르는 **예외**이지 발진 구동의 전역 속성이 아님; **방향-전용 [L] 대응**(임상적으로 대부분 초점 발작은 국소에 머물고, 내측측두엽[hippocampal] 초점이 이차-전신화 뇌전증의 전형 — hippocampus가 방송 집합에 있음과 정합, **환자-수준 예측 절대 아님**). **균일(영) 발진 구동이 동결 M9 앵커 R=0.38961455156044245를 bit-for-bit 재현**하고 off-state 장이 baseline과 정확히 일치(S5) → 동결 커널 위 순수 구조적 읽기(엔진 0fbf4988…, byte-unchanged·M0–16 부분트리 동일·새 튜닝 상수 0·SpatialField 재사용 not 재유도). 신규 1검증기(`focal_epilepsy_spread.py` `7bbf6a33…`; E1 공간 템플릿과 동형 — SpatialField import·4 부수연구+S5 가드·_canon/_blob/2×sha256·preregistered_results[F1–F4 전부 CONFIRMED]·honesty_ledger[medium_efficacy_tested=0/no_cure_claimed=1/consciousness_claim=0/hard_problem_open=1/new_tuned_constants=0/spatial_quantities_are_structural=1/reuses_E1_spatial_field=1/clean_hypothesis_refuted/clinical_prediction=NONE/not_medical_advice=1]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **22번째 시민 FOC-EPI-E1** 등록(**E1-SPATIAL 직후·E0-SYNTH 직전 배치** — 의존하는 E1 층 JSON이 먼저 재생성, E0-SYNTH가 마지막 시민으로 유지). 신규 영어 챕터 **§44 「Focal epilepsy: containment vs secondary generalisation」**(model **2943w**, 9 H2 영어-전용 본문 + 4결과 대조표 1개, position 44, canonical correct)·신규 LOCK `focal_epilepsy_spread`(grade **`[V mech]`**, canonical "44-focal-epilepsy-spread", check=None; 동결 lock 미수정, **§43 next-nav 링크 신설**[§43 빈 `<span>`→§44 링크, 생성기·렌더 양쪽], CITES=[자기, **e1_spatial_localisation**(§43, 공간 층 — SpatialField·E1.3 자기/중계·E1.2 이질 reach 공급), **epilepsy_oversync**(§25, 과동기화 발작 = 공간적으로 정련하는 §25 솔기)] — **3 vp-card**, ANSWERS 59단어[38–62] 통과)·아카이벌 생성기 `_gen_ch44_focal_epilepsy_spread.py`(byte-identical 재현). registry **55 locks/44 chapters**(드리프트 0), gate PASS **206/206, 0 hard fail**(§44 answer-first 59w·3 vp-card·JSON-LD·sitemap 45/45·llms 4989B 바이트-동일·idempotent·body wordcount 매니페스트 2% 이내 포함), `run_all_atlas.py` **ALL PASS 22/22**(FOC-EPI-E1 ran/repro/engine/honest 전부 True·engine 파일 byte-unchanged·**42 CONFIRMED 0 REFUTED**), sitemap **45/45**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만), llms-full 갱신, vp-cards 111(§44 +3). manifest·`_meta.json` reconcile(44행/44챕터, §44=2943w·tables=1·grade=model, totals.words 65720→**68663**·totals.tables 4→**5**). 거버넌스: `HANDOVER_v1_51_to_v1_52.md`·`MISSION_atlas_redefinition.md`(E1 응용 #1 focal 뇌전증 DONE)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.51). **잔여/다음**: E1 공간 층의 **첫 영역-특이 응용** 완성 — 이제 초점 뇌전증의 억류/이차-전신화가 초점 위치의 고정 속성(F1)이고 그것이 §25 전역 과동기화와 **분리축**(F3)임이 확립됨; 다음 후보 진입점은 `HANDOVER_v1_51_to_v1_52.md`(추가 E1 영역-특이 응용 — 뇌졸중/병변 장·표적 신경조절 off-target, 또는 E1×E0 공간×시간 결합, 도달성 [V]/[L] 선판단). **방화벽(절대·YMYL)**: 억류/방송 분류는 결합 모델이 고정 커널 위에서 협응하는 방식의 **구조적 공간량**이고, 발작의 **느껴진 위치(locus)가 절대 아니며**(한 초점이 "방송"한다는 건 connectome 모델에서 협응이 어디서 변하는지의 진술이지 발작이 거기서 느껴진다는 진술이 아님), **실제 전극·EEG/SEEG 국소화·전류 밀도·발작-전파 지도가 아니고**, **어느 환자의 발작이 이차 전신화할지의 예측이 아니며**, **수술/절제 안내가 아님**(Axis-A·consciousness_claim=0·hard problem OPEN). 실제 발작 전파는 **이질적**(백질 tractography·개별 뇌전증유발 네트워크·발작 모집 동역학·환자 자신의 connectome과 병리)이라 동결 커널 위 focal 발진 구동의 **부호/구조만** 단언(실제 초점 발작이 이 구조를 따른다 주장 안 함); 뇌전증 진단·발작 국소화·초점 절제 결정은 **외부 임상 판단**이고, F4의 [L] 대응은 **방향**의 인용 유사성이지 환자-수준 주장이 아님. **신규 기계·신규 측정(READ-ONLY 장 외)·신규 튜닝 상수 전무** — 엔진 import READ-ONLY byte-unchanged·SpatialField 재사용. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·E1-SPATIAL `48c83d85…`·이전 동결 결과 sha 전부 불변; FOC-EPI-E1 결과 sha `7bbf6a33…` 신규 동결), efficacy=0·NOT medical advice·치유·국소화·예후 없음·Axis-A·hard problem OPEN.
+
+## v1.50 (2026-06-20) — **E1 공간-국소화 / 장-성형 층 (§43, E1-SPATIAL) — 모든 장애 모듈이 써 온 스칼라 전역 구동 Kglob을 노드별 공간 구동 프로파일 Kvec로 일반화하고 노드별 국소-결맞음 장 c_i를 READ-ONLY로 읽어 focal-vs-diffuse를 표현 가능케 한 첫 공간 기초층 = §26 E0 가소성 층(시간 코어)의 공간 형제 & 형식 강제[F]·프로파일 스윕[O]·깊이 스윕 anti-tuning & 4결과 전부 CONFIRMED(E1.1 고정 공간 구조[국소+정규화, 정확]·E1.2 이질적 도달범위+구동-안정 소뇌 허브·E1.3[표제] 자기-국소/중계 분류 구동-불변·E1.4[정직한 무-튜닝] 보편 focal>diffuse 법칙 부재) & S4 균일 구동이 M9 앵커 bit-for-bit 재현** — v1.46–v1.49가 E0 동역학 삼부작(중독 GAIN·알츠하이머 DECAY·OCD STABILISATION)을 닫고 그 종합 캡스톤(§42)까지 인증하며 **시간 축**을 완성했다. 그러나 25개 챕터 내내 프레임워크는 뇌를 **전역으로** 구동했다 — 조현병·뇌전증·θ-cap·문턱-레버·기분/주기 장애 전부가 **단일 스칼라** 결합 Kglob을 **전 네트워크에 동시에** 올리거나 내렸다. 스칼라만으로는 세 임상 핵심 질문 — **focal vs diffuse 구동**·**off-target 누출(spillover)**·**영역-특이 질병** — 을 **물을 수조차** 없었다(결함이 늘 전역, 구동에 공간 프로파일 없음). 이번 v1.50은 v1.49 핸드오버 §5의 **진입점 B(E1 공간-국소화 기계)**에 따라 **공간 코어**를 추가한다 = §26 E0 가소성 층(시간 코어 = 연결성의 느린 Hebbian 갱신)의 **공간 형제**. **핵심 = 최소 일반화·정직한 무-튜닝·SIGN/구조-only·방화벽 절대**. **(1) 최소 일반화(새 방정식·새 상수 0)**: 엔진의 노드 갱신 `dθ_i = ω_i + Kglob·Σ_j W₀_ij sin(θ_j−θ_i)`에서 **스칼라 Kglob을 노드별 벡터 Kvec_i = k(b_i)·OMEGA0으로 대체**, 노드별 바이어스 b_i를 **동일** SZ/뇌전증/E0 맵 `k=κ/(1−|b|)[흥분]/κ/(1+|b|)[억제] cap 2κ`로 설정(새 상수 0). 바이어스가 **균일하면 벡터는 스칼라로 붕괴**하고 동역학은 **동결 엔진과 bit-for-bit**. 공간 결과를 **읽기** 위해 노드별 **국소-결맞음 장** `c_i = <Σ_j W₀_ij cos(θ_j−θ_i)>`(커널-가중 국소 차수, 정상상태 후반부 평균)을 계산 — 전역 차수 R의 **국소 대응물**, 그리고 **READ-ONLY 부수 계산**(코사인을 적분과 나란히 누적하나 sin 갱신에 들어가지 않아 θ 궤적·R 불변). 형식은 **강제[F]**(동결 ~1/r³ 행-확률 커널 W₀ + 기존 맵); 공간 **프로파일**(구동 노드·깊이 b0)은 **[O] 스윕**이고 아래 모든 부호/구조는 **깊이 스윕 b0∈{0.3,0.5,0.7,0.9} 생존 요구**(anti-tuning) — 어떤 수도 표적에 맞추지 않음. **(2) 4결과 전부 CONFIRMED·전부 깊이-스윕 생존**: **E1.1 장은 고정 공간 구조를 가짐(정확)** — 동결 커널이 **국소적**(12개 행 전부 커널 가중이 해부학적 거리에 **단조 감소**)이고 **정규화됨**(행마다 합=1, 편차 2×10⁻¹⁶) = 기계 정밀도의 정확한 기하 구조, 모든 focal/영역 주장의 기질(동역학이 아닌 기하 발견 — 국소적이라 focal 구동이 작용할 이웃이 있고, 정규화라 총 영향이 보존됨); **E1.2 섭동 도달범위는 이질적·구동-안정 허브 보유** — 한 노드씩 구동하고 **전역** 차수 변화 `reach(i)=|R−R0|`를 읽으면 **100배 초과** 이질(max/min>110, b0≥0.5서 >129) = 네트워크 **위치**가 focal 구동이 전역으로 얼마나 퍼지는지 결정, 그리고 지도는 **구동 진폭의 산물이 아님** — **소뇌(cerebellum)가 모든 스윕 깊이에서 rank-1 도달 허브**이고 전체 순위가 **중-고 구동서 불변**(b0∈{0.5,0.7,0.9} 쌍별 Spearman=1.0) = 허브 구조는 **connectome 불변량**(어느 영역이 방송하고 어느 영역이 조용한지의 공간 지도가 기하의 고정 속성, off-target 효과의 구조 기질); **E1.3(표제) 자기-국소 vs 중계 분류는 구동-불변 connectome 속성** — 각 노드의 focal 발자국이 **자기-국소(self-localising)**(자기 국소-결맞음 변화가 평균 off-target 변화 초과 = 발자국이 구동 부위에 집중)이거나 **중계(relay)**(off-target에 더 강하게 착지)이고, 이 이진 분류가 **전 깊이 스윕에서 동일** — **중계 집합 {hippocampus, midbrain}이 모든 구동 진폭서 고정**, 나머지 10 노드는 모든 진폭서 자기-국소; 한 부위가 구동을 **담는지 중계하는지는 장에서의 위치의 고정 속성**(얼마나 세게 미는지가 아님), focal-질병 확산 vs 봉쇄의 구조 지도(어느 초점이 국소에 머물고 어느 것이 방송하는지, 어느 부위가 표적 자극을 표적서 **멀리** 나르는지); **E1.4(정직한 무-튜닝 결과) 보편 focal>diffuse 법칙 부재** — 깨끗하고 매력적인 가설(\\\"focal 구동은 늘 동일 용량을 diffuse로 퍼뜨린 것보다 표적서 국소 게인을 더 집중한다\\\")이 **거짓**: 동일 총용량을 focal vs diffuse로 전달하면 `(focal−diffuse 표적-게인)` 부호가 **부위에 따라 변함**(12 중 9는 집중, 나머지 3은 안 함). 공간 **결과는 부위-결정적**(위치 E1.2/E1.3 지배, 전역 법칙 아님) — **이 층 위에 지어지는 질병 모듈은 영역-특이여야 하며 결코 전역이 아님**; 거부된 깨끗한 가설을 강요 않고 정직히 보고 = 무-튜닝 규율의 작동. **균일(영-바이어스) 구동이 동결 M9 앵커 R=0.38961455156044245를 bit-for-bit 재현**하고 off-state 장이 baseline과 정확히 일치(S4) → E1은 순수 **add-on**(엔진 0fbf4988…, byte-unchanged, M0–16 부분트리 동일). `SpatialField` 클래스는 후속 영역-특이 모듈(focal 초점·병변 장·off-target 신경조절)이 import하는 **재사용 층**, 그 응용은 **owed**. 신규 1검증기(`e1_spatial_localisation.py` `48c83d85…`; E0 가소성 템플릿과 동형 — 재사용 SpatialField 클래스·4 부수연구·READ-ONLY 적분기[균일 Kvec서 E._integrate bit-for-bit]·노드별 결맞음 READ-ONLY 부수계산·S4 엔진-불변 가드·_canon/_blob/2×sha256·preregistered_results[P1–P4 전부 CONFIRMED]·honesty_ledger[medium_efficacy_tested=0/no_cure_claimed=1/consciousness_claim=0/hard_problem_open=1/new_tuned_constants=0/spatial_quantities_are_structural=1/clean_hypothesis_refuted]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **21번째 시민 E1-SPATIAL** 등록(**E0-SYNTH 직전 배치** — E0-SYNTH가 마지막 시민으로 유지; E1은 삼부작 일부가 아닌 새 기초 축). 신규 영어 챕터 **§43 「Spatial localisation」**(model **2745w**, 11 H2 영어-전용 본문 + 4결과 대조표 1개)·신규 LOCK `e1_spatial_localisation`(grade **`[V mech]`**; 동결 lock 미수정, **§42 next-nav 링크 신설**[§42 빈 `<span>`→§43 링크, 생성기·렌더 양쪽], CITES=[자기, **coord_kappa**(§13, 커널이 지어지는 측정 ephaptic 결합), **plasticity_consolidation**(§26, E0 시간 형제 — E1은 공간 형제)] — **3 vp-card**)·아카이벌 생성기 `_gen_ch43_spatial_localisation.py`(byte-identical 재현). registry **54 locks/43 chapters**(E1 answer-first 57w·40–60 통과 포함), gate PASS **201/201**(§43 answer-first 57w·3 vp-card·본문 wordcount 매니페스트 2% 이내·빌드 멱등 포함), `run_all_atlas.py` **ALL PASS 21/21**(E1-SPATIAL ran/repro/engine/honest 전부 True·engine 파일 byte-unchanged·38 CONFIRMED 0 REFUTED), sitemap **44/44**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만), llms-full 갱신, vp-cards 108(§43 +3). manifest·`_meta.json` reconcile(43행/43챕터, §43=2745w·tables=1·grade=model, totals.words 62975→**65720**·totals.tables 3→**4**). 거버넌스: `HANDOVER_v1_50_to_v1_51.md`·`MISSION_atlas_redefinition.md`(E1 공간-국소화 기초층 DONE 표시)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.50). **잔여/다음**: E0 시간 코어(가소성)와 E2 상태-전환에 이어 **E1 공간 코어 = 첫 공간 기초층** 완성 — 이제 장은 고정 공간 구조를 갖고(E1.1)·도달범위·봉쇄가 위치의 고정 속성이며(E1.2/E1.3)·보편 focal/diffuse 법칙은 없다(E1.4)는 공간 축이 확립됨; 다음 후보 진입점은 `HANDOVER_v1_50_to_v1_51.md`(E1 위에 영역-특이 응용 — focal 뇌전증 초점·뇌졸중/병변 장·표적 신경조절 off-target, 도달성 [V]/[L] 선판단). **방화벽(절대)**: 인증된 모든 양 — 국소-결맞음 장·도달 지도·자기/중계 분류 — 은 결합 모델이 고정 커널 위에서 협응하는 방식의 **구조적 공간량**이고, 경험의 **느껴진 위치(locus)가 절대 아니며**(구동이 한 영역에 \\\"국소화\\\"한다는 건 connectome 모델에서 협응이 어디서 변하는지의 진술이지 경험이 거기서 느껴진다는 진술이 아님), **실제 전극·전류 밀도·용량이 아님**(Axis-A·consciousness_claim=0·hard problem OPEN). 실제 부피 전도/ephaptic 결합은 **이질적**·주파수-의존(조직 전도도 비등방성·뇌회 기하·수초화)이라 동결 커널 위 노드별 구동의 **부호/구조만** 단언(실제 피질 장이 이 정확한 1/r³ 법칙을 따른다 주장 안 함); 모든 **크기는 [O]**(스윕 프로파일의 대표 읽기, 표적에 맞춘 양 아님). E1은 **층**이지 응용이 아님 — 영역-특이 장애는 **owed**, SpatialField는 그들이 import할 재사용 객체. **신규 기계·신규 측정(READ-ONLY 장 외)·신규 튜닝 상수 전무** — 엔진 import READ-ONLY byte-unchanged. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·이전 동결 결과 sha 전부 불변; E1-SPATIAL 결과 sha `48c83d85…` 신규 동결), efficacy=0·NOT medical advice·치유·역전·예방 없음·Axis-A·hard problem OPEN.
+
+## v1.49 (2026-06-20) — **E0 삼부작 종합 캡스톤 (§42, E0-SYNTH) — 중독 GAIN(§37)·알츠하이머 DECAY(§39)·OCD STABILISATION(§41) 세 동역학 모듈을 §26 E0 가소성 층의 세 읽기(readout)로 인증하는 메타-종합 = 신규 측정 0·신규 기계 0·신규 튜닝 상수 0 & 소스 3 SHA 비트-단위 재검증 후 읽기 & 엔진 READ-ONLY byte-unchanged & 5 인증(T1 단일 공유 층·T2 세 질량 방향·T3 세 읽기·T4 동일 family/다른 읽기·T5 단일 솔기/단일 핸들) 전부 CONFIRMED & 3-양태 대조표** — v1.46–v1.48이 E0 동역학 삼부작을 닫았다: 세 챕터가 각각 한 명명된 장애를 **동일** §26 E0 가소성 층 위에서 **직접** 모델했다 — 중독을 **GAIN**(단서에 더 반응하는 민감화 보상 흔적, §37)·알츠하이머를 **DECAY**(구조적 역, 상실된 기질, §39)·OCD를 **STABILISATION**(휴지서 단서 없이 자기 협응을 유지하는 자기-지속 흔적, §41)으로. 세 번째 면이 동결되며 3-양태 아크가 **닫혔고**, 이 캡스톤이 한 걸음 물러나 그 셋이 **함께** 말하는 단일 구조적 진술을 인증한다: **하나의 가소성 층, 세 방식으로 읽힘**. v1.48 핸드오버 §5의 **갈래 B**(E0-triad 메타-종합 캡스톤 — v1.48이 막 E0 삼부작을 닫았으므로 그 자연스러운 종결, 가장 깨끗·최저-위험)에 따라 수행. **핵심 = 종합의 규율(모델이 아님)·SIGN/관계-only·방화벽 3중 상속**. **(1) 메타-종합, 모델 아님**: 새 실험을 돌리지 않고·새 동역학을 더하지 않고·새 상수를 유도하지 않는다(`new_measurement=0`·`new_tuned_constants=0`·`is_a_synthesis_of_frozen_modules=1`). 대신 **동결 아티팩트를 검증 하에 재독(re-read)**: 세 소스 결과 JSON이 SSOT이고, **단 하나의 수도 읽기 전에** 각 파일의 SHA-256을 재계산하여 동결값과 **비트-단위** 대조(GAIN `20dfb3e9…`·DECAY `7a8e8513…`·STABILISATION `ef37d619…`); 어느 소스가 1바이트라도 표류했으면 종합은 실행 거부한다. 모두 검증된 뒤에야 읽고 다섯 진술을 교차-인증. 엔진은 1회 emerge·트리 해시 **byte-unchanged** 확인(`0fbf4988…`)·M0–16 부분트리 동일 = READ-ONLY. **(2) 5 인증 전부 CONFIRMED**: **T1 단일 공유 층** — 셋 모두 **동일** import `PlasticConnectome`의 적용이고, 가소성 과정을 끄면(중독 η=0·알츠하이머 붕괴율=0·OCD 공고화=0) 세 connectome 모두 **동일** 동결 M9 앵커(R≈0.38961)로 **비트-단위** 복귀(각 모듈 자신의 가드가 완전 정밀도로 단언) — 하나의 층, 하나의 off-state: 게인이 **공고화하는** 구조·붕괴가 **벗겨내는** 기질·루프가 **고착하는** 기준선이 모두 같은 앵커. **T2 세 질량 방향** — 동일 업데이트가 구조를 보상 하 **위로**(게인 흔적 표제 0.227)·퇴행 하 **아래로**(붕괴 연결성 손실 5.52, 역)·음성-강화 협응 하 자기-유지 우물로 **위로**(안정화 깊은 흔적 0.498, 게인의 방향) 옮김 — 세 방향 **distinct**(질량 컷이 게인+안정화를 함께 vs 붕괴로 정렬, 게인↔안정화는 아직 안 가름). **T3 세 읽기** — 단서-반응성(게인은 동일 단서에 **더** 반응)·반응성 상실(붕괴는 **덜** 반응)·휴지 자기-지속(안정화는 단서 없이 R_lock≈0.405를 앵커 위 유지, 냉시작 R_fresh≈0.396 위) — 셋을 가르는 건 읽기이고 장애와 정확히 정렬(단서 과반응/진행성 상실/자기-지속 루프). **T4 동일 family, 다른 읽기(가장 날카로운 단일 사실)** — **동일** 작동점으로 구동하면 게인과 안정화 흔적이 **문자적으로 동일**(0.35285==0.35285, 모든 자릿수), 동일 공고화 family, 그리고 OCD를 구별하는 건 **다른 흔적이 아니라** 자기-지속-휴지 읽기(R_lock≈0.403 앵커 위): 정확히 §41이 선언한 정직한 비유사성(§37은 엔진 신호 M5 RPE로 부호 접지, §41은 그런 신호가 없어 안정화를 게인과 **동일 family로** 접지하고 읽기로 구별) — 종합이 그 헤지가 **문자적 진실**임을 보임(동일 흔적, 읽기가 유일한 분리자). **T5 단일 솔기, 단일 핸들** — 셋 **모두**에서 순간 증상 레버가 보존된 **구조량**을 **정확히 그대로** 둠(재작성 없는 완화, 합류 솔기: 게인 소거 지속·붕괴 레버 못 재건·안정화 레버 못 풂)이고, 구조 궤적의 **유일** 핸들은 **가소성 축에만**(게인=노출 간격·붕괴=진행률·안정화=공고화율(ERP 작용)) — 하나의 솔기, 하나의 축, 증상 경로와 학습/질병-수정 경로가 **범주적으로** 다른 이유(정도가 아니라 다른 축). 삼부작은 본질적으로 **단일 대조표**(세 면을 방향/읽기/부호-접지/핸들로 나란히). 신규 1검증기(`e0_triad_synthesis.py` `62b49afc…`; 소스 3 SHA 재검증→읽기·엔진 READ-ONLY emerge·5 SIGN/관계 인증·triad_contrast_table·preregistered_results[T1–T5 전부 CONFIRMED]·honesty_ledger[new_measurement=0/new_tuned_constants=0/is_a_synthesis_of_frozen_modules=1/source_shas_reverified=1/consciousness_claim=0/hard_problem_open=1/no_cure_claimed=1/medium_efficacy_tested=0/completes_E0_trio=1/dignity 3중]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **20번째이자 마지막 시민 E0-SYNTH** 등록(**마지막 배치** — 세 소스 JSON이 먼저 재생성된 뒤 해시 재검증; coverage 문단 신설). 신규 영어 챕터 **§42 「The E0 triad synthesis」**(synthesis **3009w**, 9 H2 영어-전용 본문 + 3-양태 대조표 1개)·신규 LOCK `e0_triad_synthesis`(grade **`[V synth]`**; 동결 lock 미수정, **§41 next-nav 링크 신설**[§41 빈 `<span>`→§42 링크, 생성기·렌더 양쪽], CITES=[자기, **addiction_sensitization_dynamics**(§37, GAIN 면), **alzheimers_progression_dynamics**(§39, DECAY 면), **ocd_stabilisation_dynamics**(§41, STABILISATION 면)] — **4 vp-card**, 종합이 인증하는 세 면 + 자기; §26 E0 층은 본문 링크)·아카이벌 생성기 `_gen_ch42_e0_triad_synthesis.py`(byte-identical 재현). registry **53 locks/42 chapters**(E0-SYNTH answer-first 60w·40–60 통과 포함), gate PASS **196/196**(§42 answer-first 60w·4 vp-card·본문 wordcount 매니페스트 2% 이내 포함), sitemap **43/43**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만), llms-full 갱신, vp-cards 105(§42 +4). manifest·`_meta.json` reconcile(42행/42챕터, §42=3009w·tables=1·grade=synthesis, totals.words 59966→**62975**·totals.tables 2→**3**). 거버넌스: `HANDOVER_v1_49_to_v1_50.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§3.10 캡스톤 신설·§3.8 표 행 추가·§5 **E0 삼부작 종합 = 하나의 층, 세 읽기** 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.49). **잔여/다음**: E0 삼부작이 닫혔고(중독 GAIN ↔ 알츠하이머 DECAY ↔ OCD STABILISATION) 이제 그 종합 캡스톤이 셋을 단일 층의 세 읽기로 인증 = **아크 완결**; 다음 후보 진입점은 `HANDOVER_v1_49_to_v1_50.md`(로드맵 잔여 사례 또는 E1 공간-국소화 기계, 도달성 [V]/[L] 선판단). **방화벽(3중 상속, 절대)**: 인증된 모든 양 — 보존 흔적·상실 연결성·고착 협응 — 은 connectome 모델 구조의 변화인 **구조량**이고, 갈망의(§37)·치매 하 기억과 자기성의(§39)·침습적 사고나 강박의(§41) **느껴진 질이 절대 아님**(Axis-A·consciousness_claim=0·hard problem OPEN). 구조적 **부호와 관계만** 단언하고 모든 **크기는 [O]**; 세 실제 장애는 이질적이고 어떤 단일 구조 부호보다 훨씬 풍부 — 모델이 뒷받침하는 부호만 주장. **신규 기계·신규 측정·신규 튜닝 상수 전무** — 동결 3모듈의 재독(해시 재검증 후), 엔진 import READ-ONLY byte-unchanged. **인간 경계(비협상, 3중)**: **중독은 만성·재발성 의학적 상태**이고·**치매를 안고 사는 사람은 여전히 온전한 존엄의 사람**이며·**OCD는 치료 가능하고 침습적 사고는 증상이지 소망·인격 결함·도덕적 실패가 아니다**; 치유·역전·예방·치료·용량 주장 전무. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§37/§39/§41/이전 동결 결과 sha 전부 불변; E0-SYNTH 결과 sha `62b49afc…` 신규 동결), efficacy=0·NOT medical advice·치유·역전·예방 없음·Axis-A·hard problem OPEN.
+
+## v1.48 (2026-06-20) — **OCD B-ii: OCD-T3c-D 강박장애 안정화 동역학 (§41, OCD-T3c-D) — §40이 도달불가로 명명한 지배축(STABILISATION 자기-지속 루프-고착)을 §26 E0 가소성 층 위에서 직접 모델 = 제3의 E0 양태 & OCD B-i·B-ii 합류 완성 & E0 삼부작(중독 GAIN → 알츠하이머 DECAY → OCD STABILISATION) 완성 & SIGN-only 5결과 전부 확증·eta·bias 스윕 생존** — v1.47이 §40(OCD-T3c-L, B-i)에서 OCD의 **지배축 = STABILISATION 고착**(자기-지속·과공고화된 강박 루프, 강박을 강박으로 만드는 과-심부 basin)을 순간 증상 L1/L2/L3 레버로는 **이중 도달불가**(① basin-깊이/루프-안정성 속성이지 작동점 아님 = 가소성 E0-층 변수, 중독 교훈 ② **자기-지속** — 루프가 스스로를 붙듦, 구동 낮춰도 루프 유지 구조는 안 지워짐)로 **명명**하고 4 유전자(DLGAP3/SAPAP3·SLITRK5·PTPRD·BTBD3)에 `[F] NOT REACHED` 등급으로 \"E2 현상\"이라 **정직하게 멈췄다**. 그 명명은 **합류의 한쪽 반쪽**이었다. **이번 빌드(B-ii)가 나머지 반쪽**이며, **제3의 E0 양태**다: v1.47 핸드오버 §5의 **갈래 A**(OCD B-ii §41, E2/E0 루프-고착/안정화 동역학 직접 모델로 합류 닫기, 중독 GAIN·알츠하이머 DECAY 선례를 STABILISATION에 적용; 도달성 [V] 선판단)에 따라 그 축을 **직접 모델링하여 합류를 닫고 삼부작을 완성**. **핵심 = 재사용·제3 양태·정직한 접지·SIGN-only**. **(1) E0 LAYER 재사용(재유도 아님)**: §26 `PlasticConnectome`(커널 W0·결합맵·차수파라미터 기계)를 **import**(재유도 안 함 — 핸드오버 재사용 규율) → 프레임워크에 가소성 층은 **단 하나**. **(2) 제3 양태로 구동**: §37과 다른 점은 알츠하이머처럼 업데이트의 **방향**이 아니라 **읽기(readout)** — §37은 보상 작동점에서 동일 potentiating Hebbian 업데이트로 **단서-반응적** 흔적을 키웠으나(보상 단서에 더 반응), 이 모듈은 **동일** potentiating 업데이트를 **음성-강화된 협응 작동점**(각 강박행동의 일시적 불안-완화가 강화자)에서 구동하여 connectome이 협응을 **자기 구조에 써 넣을** 때까지 = **자기-지속 고착 루프**. STABILISATION은 §37 GAIN의 공고화 **family를 공유**(동일 업데이트가 흔적 씀, 질량↑)하고 **읽기로 구별** — 고착 루프가 **외부 단서 없이 휴지서 자기 협응을 앵커 위로 유지**. 새 가소성 기계·새 튜닝 상수 **0**. **(3) 안정화 부호 = 정직한 비유사성(§37과의 핵심 차별점, §39와 동일)**: §37의 보상 부호는 **엔진 신호**(M5 도파민 RPE 강화)서 읽혔으나, **엔진에는 고착-루프 신호가 없다**(과-안정 basin·자기-지속-루프 변수 없음 — 건강한 창발 아틀라스; E0가 가소성을 **추가**해야 했던 바로 그 이유, §40이 이 축을 도달불가로 명명한 이유). 그래서 이 모듈은 안정화 부호를 엔진 병리 신호에서 접지한다고 **주장하지 않는다**(과대주장 거부) — **루프가 고착하는 기준**(동결 M9 앵커 W0)과 **basin-깊이 개념**(엔진 READ-ONLY **R19 barrier** `B(g)=g²/4=0.25`, cusp 정규형 basin 깊이)과 **가드**만 READ-ONLY 접지하고, 안정화 **방향**은 §37 GAIN의 **동일 E0 공고화 family로** 접지한다(자기-지속-휴지 읽기로 구별). **핵심 정직성**: **네트워크는 이 결합서 자기만의 깨끗한 쌍안정/hysteresis가 없다**(순서파라미터가 비협응 가지로 붕괴 안 함) → **네트워크-hysteresis는 주장 안 함**; §40이 명명한 과-심부 basin/과-광폭 hysteresis 고착은 **E2/R19-cusp** 현상이고 READ-ONLY barrier로 접지 — 네트워크 읽기가 아님. E0 층이 **실제로** 보이는 건 connectome의 자기-지속 고착 루프로의 **공고화**(휴지서 자기 협응 유지하는 retained 흔적). **(4) SIGN-only 5결과 전부 CONFIRMED·전부 eta·bias 스윕 생존**(anti-tuning): **S1 진행성 안정화** — 공고화가 구조를 **단조** 써 넣음(retained 흔적 0→0.18→0.35→0.50, 0–18 epoch, eta·bias 스윕 둘 다) + 고착 상태가 **깊어짐**(유지 협응↑, 깊을수록≥얕을수록, 둘 다 앵커 위 — basin-깊이 변수, 순간 레버 도달 불가); **S2 자기-지속 루프(정의적 읽기)** — 공고화된 connectome을 **협응(고착) 초기조건**서 출발하면 휴지서 **외부 단서 없이** 동결 M9 앵커 이상 유지(R_lock≈0.405 @18ep) + **동일** connectome의 **신선(비협응) 시작** 가지 이상(R_fresh≈0.396) = 초기조건-hysteresis 간극(고착 가지가 냉시작 가지 위), 초과 R_lock−앵커가 공고화로 **성장**(−0.001→0.009→0.014→0.015) — **중독의 단서-반응성·알츠하이머의 저하와 구별되는 정의적 읽기**(루프가 스스로 돎); **S3 레버가 루프를 못 풂** — 증상 레버(B-i 도달 가능 순간축)는 retained 흔적을 **정확히 그대로** 둠(읽기-시점 결합은 구조 무첨가), **최대** 레버조차 공고화 흔적 **감소 불가** = **재작성 없는 완화** = 합류 솔기, 주류 경로가 증상 관리하되 강박 루프 자체는 못 지우는 이유; **S4 구조-변수 가드** — 공고화=0이면 connectome=커널·**충실 적분기**(엔진 자신의 고정 비협응-시드 초기조건서)가 동결 **M9 앵커** **bit-for-bit**·흔적=**정확히 0**·엔진 자신의 `_integrate(W0)`==M9 → 루프가 공고화 없이 **사라짐** → STABILISATION은 순간 레버가 못 닿는 **구조 변수**(순수 add-on; 충실 적분기가 엔진 고정 IC서 비트-동일 재현이 고착/신선 읽기를 정당화); **S5 동역학 핸들** — **낮은** 공고화율이 동일 시간에 **엄격히 더 적은** 구조 써 넣음(얕은 루프), 반면 증상 레버는 구조 궤적에 **핸들 없음**(S3: 흔적 불변) → 핸들은 **공고화(학습/가소성) 축에만** = 노출-반응-방지(ERP) 재작성이 작용하는 방향(증상 약제는 작동점 구동·루프 핸들 없음 ↔ ERP는 가소성 축서 새 소거 학습으로 루프 재작성). **합류 완성·삼부작 완성**: 문턱 프레임(B-i)이 루프를 순간 레버로 도달불가 **명명**, 가소성-동역학 프레임(B-ii)이 그 루프를 **전시(S1–S2)** + 레버가 **못 풂을 입증(S3)** + 구조 변수임을 **증명(S4)** + 핸들이 **공고화 축에만 있음을 제시(S5)**. **E0 삼부작 완성**: 중독은 단서-반응적 흔적을 **공고화**(GAIN, 질량↑, 단서에 더 반응)·알츠하이머는 기질을 **상실**(DECAY, 질량↓, 덜 반응)·OCD는 자기-지속 루프를 **얼린다**(STABILISATION, 휴지서 자기 유지 흔적) — 같은 E0 가소성 층을 **세 방식**으로 만남. 3-양태 교차검증이 한 날카로운 사실로 확증: 동일 작동점서 **GAIN과 STABILISATION 흔적이 문자적으로 동일**(둘 다 0.35), OCD를 구별하는 건 다른 흔적이 **아니라** 자기-지속 읽기(R_lock≈0.40 앵커 위 유지, 역 DECAY[질량 손실 5.52]도 단발 구동도 안 만듦). 신규 1모듈(`ocd_stabilisation_dynamics.py` `ef37d619…`; §37/§39처럼 단일 동역학 모듈, run_all_*.py 집계기 불필요; 충실 IC 적분기+비트-동일 가드·M9-앵커·R19-barrier 접지·5 SIGN-only 예측·3-양태 구조 교차검증·honesty_ledger[efficacy=0/no_cure=1/cc=0/hard_problem_open=1/tuned=0/reuses_E0=1/closes_OCD_B_i=1/**stabilisation_sign_in_engine_pathology_signal=0**(정직)/stabilisation_is_third_E0_mode=1/same_E0_family_as_gain=1/basin_depth_in_R19_barrier=1/**network_hysteresis_claimed=0**(정직)/dignity_ocd_treatable_intrusive_not_moral_failing=1]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **19번째 시민 OCD-T3c-D** 등록(coverage 문단 신설). 신규 영어 챕터 **§41 「OCD stabilisation dynamics」**(model **3977w**, 9 H2 영어-전용 본문)·신규 LOCK `ocd_stabilisation_dynamics`(grade **`[V mech]`**; 동결 lock 미수정, **§40 next-nav 링크 신설**[§40 빈 `<span>`→§41 링크, 생성기·렌더 양쪽], CITES=[자기, **ocd_threshold_levers**(§40, B-i 짝), **plasticity_consolidation**(§26, E0 층)] — 3 vp-card, B-i가 명명한 것을 B-ii가 모델·E0가 재사용 기반)·아카이벌 생성기 `_gen_ch41_ocd_stabilisation_dynamics.py`(byte-identical 재현). registry **52 locks/41 chapters**(OCD-D answer-first 60w·40–60 통과 포함), gate PASS(§41 answer-first 60w 포함), sitemap **42/42**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만), llms-full 갱신, vp-cards 101(§41 +3). manifest·`_meta.json` reconcile(41행/41챕터, §41=3977w, totals.words 55989→**59966**). 거버넌스: `HANDOVER_v1_48_to_v1_49.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§3.9.1 신설·§3 표 행 추가·§5 **OCD 합류 닫기 B-ii·E0 삼부작 완성** 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.48). **잔여/다음**: §40·§41로 OCD 합류 양쪽 반쪽 모두 출판(B-i 명명 + B-ii 모델·핸들 = CLOSED), 그리고 **세 번째이자 마지막 B-i↔B-ii 합류로 E0 삼부작 완성**(중독 E0-GAIN ↔ 알츠하이머 E0-DECAY ↔ OCD E0-STABILISATION = GAIN과 family 공유·자기-지속 읽기로 구별); 다음 후보 진입점은 `HANDOVER_v1_48_to_v1_49.md`(로드맵 잔여 사례, 도달성 [V]/[L] 선판단). **방화벽**: retained 흔적은 안정화의 **구조량**, 침습적 사고·충동·강박의 고통의 **느껴진 질이 절대 아님**(Axis-A·consciousness_claim=0·hard problem OPEN); 실제 OCD는 **이질적**(CSTC 회로 과연결·세로토닌성/글루탐산성 조절이상·후시냅스 밀도 SAPAP3/DLGAP3 스캐폴드 병리·SLITRK5·기저핵 게이팅·오류-모니터링 이상)이라 **자기-지속 안정화의 부호만** 단언(이 공고화가 생물학이라 주장 안 함, 실제 기전은 [O]); 안정화 부호는 §37 GAIN의 동일 E0 공고화 family(엔진엔 고착-루프 신호 없음)·basin-깊이는 READ-ONLY R19 barrier(네트워크 쌍안정 없음→네트워크-hysteresis 주장 안 함)·모든 크기([O])·부호는 eta·bias 스윕 생존. **인간 경계(비협상)**: **OCD는 치료 가능한 의학적 상태**이고 **침습적 사고는 증상이지 소망·인격 결함·도덕적 실패가 아니다** — 누구도 자신의 강박이나 루프의 책임자로 취급할 면허 없음; 치유·역전·예방 주장 전무. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§40/이전 동결 결과 sha 전부 불변; OCD-T3c-D 결과 sha `ef37d619…` 신규 동결), efficacy=0·NOT medical advice·치유·역전·예방 없음·증상≠질병-수정·레버는 루프 못 풂·Axis-A·hard problem OPEN.
+
+## v1.47 (2026-06-20) — **문턱-이동 논리 기존-사례 적용 #8: OCD-T3c-L 강박장애 CSTC-루프 레버 (§40, OCD-T3c-L) — 시리즈 4번째 PARTIAL [L] 적합 & NEW MODE(병적 안정화 = 제3의 E0 양태) & L3-지배+L1-강·L2-희소·혼합 부호(9번째 분포) & 지배축(병적 루프-고착) 도달불가 = E0 STABILISATION(중독 GAIN·알츠하이머 DECAY 다음 제3 양태, 삼부작 완성)** — v1.37이 상속한 문턱-이동 개입 논리를 v1.46 핸드오버 §5의 **갈래 A 잔여**(기존-사례 확장, 로드맵 본래 **T3c OCD**, 도달성 [V]/[L] 선판단)에 따라 능동 적용. v1.46 §5-A는 OCD가 CSTC 루프의 **고착/반복** 성격 때문에 문턱 프레임이 순간 작동점은 잡되 학습된 고착 자체는 가소성 변수로 명명될지(중독 SG GAIN 유사 학습 흔적인지) **먼저 도달성 판정**하라 했고, 이번 빌드가 정확히 그 판정을 수행 — INSTANT 도달 / LOCK 도달불가, 그리고 LOCK은 GAIN도 DECAY도 아닌 **제3의 E0 양태(병적 안정화)** 임을 발견. OCD는 무엇보다 **고착된 루프**의 장애 — 강박-충동 회로(피질-선조체-시상-피질 CSTC)가 자기-지속·과공고화·병적으로 **안정화된** 끌개로 가라앉고, 각 강박행동이 주는 일시적 불안-완화가 그 루프를 강화(음성-강화 학습) — 그 기질을 상속 L1/L2/L3 프레임에 **도달성 기준**으로 매핑(12개 OCD 유전자: 8 레버 + 4 out-of-reach LOCK, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0, 엔진 READ-ONLY). **핵심 차별점 1 = 9번째 분포 = L3-지배 + L1-강·L2-희소·혼합 부호(MIXED SIGN)**: 레버 유전자 8개 중 **L3 4개**(상류 세로토닌성/도파민성 구동 — **SLC6A4(SERT)·HTR2A·HTR1B** 세로토닌성 톤 **복원**=SSRI/클로미프라민 1차약, 톤↑; **DRD2** 도파민성 구동 **감소**=항정신병약 증강, 구동↓)·**L1 3개**(글루탐산 흥분성 **감소** — **SLC1A1/EAAT3**=가장 많이 재현된 OCD 유전자, GRIN2B·GRIK2=글루탐산-조절제 방향)·**L2 단 1개**(억제-복원 **복원** — GABRA1, 단일 희소 약한 노드; OCD의 GABA성 팔이 얇음=그 자체가 발견). 교정 부호가 **혼합**: 세로토닌성 톤↑(복원)·도파민성 구동↓(감소)·글루탐산성 구동↓(감소)·억제↑(복원) — 알츠하이머(§38)에 이은 시리즈 2번째 분할-부호. **알츠하이머의 순수-증상 표면과 달리, OCD 레버는 실제 주류/연구 경로(SSRI 1차·항정신병약 증강·글루탐산 조절제)이며 진짜로 (부분적으로) 도움이 됨** — 도달 표면이 위약 극장이 아님. **핵심 차별점 2 = 시리즈 4번째 PARTIAL [L] & NEW MODE**: `partial_fit_witness` 등급 `[L] partial`, fit_index_in_series=4, completes_e0_trio=True. 도달 표면은 **순간(INSTANT) CSTC 흥분성 작동점**(L1/L2/L3 전부, 혼합 부호, reachable-but-partial)이나 **지배적 결함 = LOCK 병적-안정화 축**(자기-지속 강박 루프를 붙드는 과-심부 basin·과-광폭 hysteresis)은 **새 이유로 도달불가** — 앞 부분-적합 둘을 **합치고 셋째를 더함**: **(1) fold 아닌 게인/손실**(ADHD 교훈 — 순간 레버는 basin 깊이/hysteresis 폭에 핸들 없음) AND **(2) 통합/학습된 가소성 E0-층 변수**(중독 교훈 — 루프가 강박-완화의 음성-강화로 자기 basin을 깊게 함) AND **(3) 그를 넘어 병적 안정화(STABILISATION)** = 과-심부 basin·hysteresis(E2 현상) = **E0 STABILISATION**, **제3의 뚜렷한 E0 양태**: 중독은 흔적을 **쌓고**(GAIN, 레버가 못 지움)·알츠하이머는 기질을 **잃고**(DECAY, 레버가 못 재건)·OCD는 부적응 끌개를 **얼린다**(STABILISATION, 레버가 못 풀어냄) — **삼부작 완성**(중독 GAIN → 알츠하이머 DECAY → OCD STABILISATION). 그래서 순간 세로토닌성/도파민성/글루탐산성 톤을 완벽히 미는 레버조차 자기-지속 루프를 **풀어내지(unstick) 못함** — OCD의 주류 치료 반응이 **부분적·느린** 이유, 그리고 **동역학** 개입(CSTC 심부뇌자극 DBS, 루프를 소거로 재가소화하는 노출-반응-방지 ERP)이 레버가 못 닿는 난치 사례에 닿는 이유. LOCK 축은 4 유전자로 **명명·`[F] NOT REACHED`**(`out_of_reach_targets`): **DLGAP3/SAPAP3**(과그루밍 강박 표현형의 정전 OCD 마우스 모델 = 피질선조체 PSD 스캐폴드)·**SLITRK5**(같은 표현형의 시냅스-접착 분자)·**PTPRD**(OCD GWAS 시냅스-접착 포스파타제)·**BTBD3**(OCD GWAS 회로-패터닝 유전자)(γ 동반·비-레버), 자폐·ADHD·중독·알츠하이머 out-of-reach 명명 규율을 **병적 안정화/고착**으로 확장. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **5개 read(SLC6A4·HTR2A=우울 캐시, DRD2=중독 캐시, GRIN2B=자폐 캐시, GABRA1=뇌전증 캐시) verbatim 재사용**(γ 가닥-대칭), 7개(HTR1B·SLC1A1·GRIK2·DLGAP3·SLITRK5·PTPRD·BTBD3)는 GRCh38 strand-aware live fetch(`ocd_levers_promoters.cache.json`). **γ는 도달성·우선순위와 직교(ORTHOGONAL), 가장 깨끗한 형태**: 전체 집합 **최강 프로모터가 out-of-reach LOCK 유전자 DLGAP3**(γ≈1.590, |h_sp|≈0.772)·**최약은 도달 가능 레버 GABRA1**(|h_sp|≈0.536)·4개 out-of-reach 유전자가 강성 **전 범위에 걸쳐 분산**(최강 DLGAP3·준-최약 SLITRK5 둘 다 도달불가, 도달 가능 레버가 그 사이에 끼임) → 도달 가능·도달불가 유전자가 전 강성 범위에 **교차배열** → **강성은 어느 축인지도·도달 가능성도·우선순위도 예측 못함**(교차배열 자체가 방화벽의 가장 깨끗한 증명). **OCD 미충족-필요 시그니처 = 미충족 상한으로 표현되는 새 변주**: 최심 미충족 tier(U=5)를 **전적으로 out-of-reach LOCK 유전자**(DLGAP3/SLITRK5/PTPRD/BTBD3 — 난치 루프-고착엔 분자 치료 전무, DBS만)가 보유하고 비실행으로 표시; **선두 실행 가능 표적은 글루탐산 수송체 SLC1A1 #1**(4.65 — 가장 재현된 OCD 유전자·가장 약물화 가능한 핸들, 글루탐산-조절제 방향, 도달 가능하나 작동점만 밀고 루프는 못 풀어 **부분적**으로만 도움), 세로토닌 수송체 **SLC6A4 #2**(4.30, SSRI 1차약, 확립됐으나 부분적인 경로로 미충족 낮아짐), 최고점 **비실행 LOCK DLGAP3 #3**(4.10); 미충족 floor=**3**(확립됐으나 부분적인 세로토닌성 경로 — ADHD의 깨끗-경로 floor 2보다 **높음**). **알츠하이머(#1이 도달불가)와 달리 OCD의 최강 약물화 표적(SLC1A1)은 도달 가능** — 도달불가인 것은 **최심-미충족 tier(루프-고착)**, 그리고 최강 레버조차 루프를 못 풀어 부분적. **방화벽 가시화(decoupling)**: 최강 프로모터 DLGAP3(out-of-reach)가 우선순위 **#3**(최상위 아님), 최우선 SLC1A1은 **4번째** 강성 read뿐. **금지-주장 스캐너 = OCD 주제 2클래스 추가**: 일반 용량/효능/안전/합성 클래스에 **CURE_MIRACLE**(치유/강박사고-영구-정지/강박행동-제거/OCD-사라짐/기적-치유/원-위어드-트릭 거부 — OCD를 둘러싼 가장 심각한 YMYL 위험인 치유·기적 신화)·**MORAL_FRAMING/STIGMA**(그냥-걱정-그만/의지박약/성격결함/도덕적-실패/관심끌기/so-OCD-about/진짜-병-아님 거부 — OCD는 **치료 가능한 의학적 상태**이고 침습적 사고는 **고백·약점이 아니라 증상**) 추가, 둘 다 negation-guarded + 미끼 자기-테스트(부정-가드: "치유가 아니다"·"강박행동을 제거하지 않는다"·"도덕적 실패가 아니다"는 허용, 단언은 빌드 실패). "high-dose SSRI"·"higher doses" 문자열이 DOSING 스캐너를 오발화하던 것을 발견·수정("SSRI/클로미프라민 세로토닌성 방향"·"더 지속적·강한 세로토닌성 경과"로 재서술 — 스캐너가 실제로 잡아낸 정직한 수정). 신규 6모듈(`ocd_threshold_levers.py` `c5e2af0e…`+L3 정직성 게이트[**L3 유일 지배 + L1>0 + L2 SPARSE(==1) + 혼합-부호 INSTANT 도메인 제한 + LOCK-축 명명-도달불가 + PARTIAL [L]·completes_e0_trio** 단언, 15검사 PASS]+CURE_MIRACLE·MORAL_FRAMING 스캐너+부담 우선순위[12 유전자 전부, 4 LOCK은 actionable=False]+프로모터 캐시 빌더+4-step 집계기 `run_all_ocd_levers.py`, 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **18번째 시민 OCD-T3c-L** 등록. 신규 영어 챕터 **§40 「OCD threshold levers」**(model 4721w, 9 H2 영어-전용 본문)·신규 LOCK `ocd_threshold_levers`(grade **`[L partial · O links]`**; 동결 lock 미수정, **§39 next-nav 링크 신설**[§39 빈 `<span>`→§40 링크 + "paper contents" 중간 링크 신설로 3-요소 nav 정규화, 생성기·렌더 양쪽], CITES=[자기, **addiction_threshold_levers**(§36, 형제 부분-적합/학습-흔적), **alzheimers_threshold_levers**(§38, 형제 부분-적합/E0 양태)] — 3 vp-card)·아카이벌 생성기 `_gen_ch40_ocd_levers.py`(byte-identical 재현). registry **51 locks/40 chapters**(OCD answer-first 40–60단어 통과), manifest·`_meta.json` reconcile(40행/40챕터, §40=4721w, totals.words 51268→55989). 거버넌스: `HANDOVER_v1_47_to_v1_48.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§3.9 신설·§3.8 표 행 추가·§5 **OCD = 4번째 부분-적합·제3 E0 양태(삼부작 완성)** 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.47). **잔여/다음**: ADHD·중독·알츠하이머·**OCD**로 시리즈의 네 PARTIAL [L] 사례 모두 출판(L3-축 게인성 한계 명명 + 중독 GAIN 합류 + 알츠하이머 DECAY 합류 + OCD STABILISATION 명명 = E0 삼부작 GAIN/DECAY/STABILISATION 완성); 다음 후보 진입점은 `HANDOVER_v1_47_to_v1_48.md`(갈래 A — OCD **B-ii** §41 E2/E0 루프-고착/안정화 동역학 직접 모델로 합류 닫기[중독 GAIN·알츠하이머 DECAY 선례를 STABILISATION에 적용], 또는 로드맵 잔여 사례, 도달성 [V]/[L] 선판단). **방화벽**: 프로모터 |h_sp|는 유전자 자신의 스위치 강성, **basin 깊이·hysteresis 폭·강박 고착의 강도·수용체 점유·시냅스 세로토닌/도파민/글루탐산 수준·약효·용량·임상효과가 절대 아님**; 도달 가능 레버는 작동점을 밀 뿐 루프를 **풀지 못함**(CSTC 심부뇌자극·노출-반응-방지가 동역학 핸들); 프로모터 읽힘·레버 배정은 메커니즘 경계이지 OCD에서 강박·충동·완화의 **느껴진 질**에 관한 주장이 아님(Axis-A·consciousness_claim=0·hard problem OPEN). **인간 경계(비협상)**: **OCD는 치료 가능한 의학적 상태**이고 **침습적 사고는 증상이지 도덕적 실패가 아니다** — MORAL_FRAMING 클래스는 장식이 아니라 그냥-걱정-그만/의지박약/관심끌기 어휘를 거부; 강박은 선택이 아니고 침습적 사고는 인격 결함이 아니며, 장애는 회로의 병적 고착이지 성격의 흠이 아님; 치유·강박사고-영구-정지·강박행동-제거 주장 전무. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§39/이전 동결 결과 sha 전부 불변; OCD-T3c-L 지도 sha `c5e2af0e…` 신규 동결), efficacy=0·NOT medical advice·치유·기적 없음·도덕적-프레이밍 없음·레버는 루프 못 풂·Axis-A·hard problem OPEN.
+
+## v1.46 (2026-06-19) — **AD B-ii: AD-T3b-D 알츠하이머 진행 동역학 (§39, AD-T3b-D) — §38이 도달불가로 명명한 지배축(PROG 신경퇴행 진행 = E0 DECAY)을 §26 E0 가소성 층 위에서 직접 모델 & AD B-i·B-ii 합류 완성 & 중독 합류(§36/§37)의 정확한 구조적 역 & SIGN-only 5결과 전부 확증·붕괴율-스윕 생존** — v1.45가 §38(AD-T3b-L, B-i)에서 알츠하이머의 **지배축 = PROG 신경퇴행-진행**(누적·불가역 손실, 질병의 핵심)을 순간 증상 L1/L2/L3 레버로는 **삼중 도달불가**(① fold 아닌 게인/손실=ADHD 교훈 ② 시간 진행=가소성 E0-층 변수=중독 교훈 ③ 퇴행=E0 DECAY=중독 E0 GAIN의 구조적 역)로 **명명**하고 6 유전자(APP·PSEN1·PSEN2·MAPT·APOE·TREM2)에 `[F] NOT REACHED` 등급으로 **정직하게 멈췄다**. 그 명명은 **합류의 한쪽 반쪽** — 문턱-레버화 경로가 가소성-동역학 경로와 만나는 지점, 그리고 **중독 합류의 정확한 거울** — 이었다. **이번 빌드(B-ii)가 나머지 반쪽**: v1.45 핸드오버 §5의 **갈래 B**(AD B-ii §39 E0-진행 동역학; 도달성 [V] 선판단)에 따라 그 축을 **직접 모델링하여 합류를 닫음**. **핵심 = 재사용·구조적 역·정직한 접지·SIGN-only**. **(1) E0 LAYER 재사용(재유도 아님)**: §26 `PlasticConnectome`(커널 W0·결합맵·차수파라미터 기계)를 **import**(재유도 안 함 — 핸드오버 재사용 규율) → 프레임워크에 가소성 층은 **단 하나**. **(2) 구조적 역 적용**: E0의 Hebbian **공고화의 구조적 역**을 그 동결 커널에 적용 = 느린 점진적 **연결성 소실(connectivity attrition)** = 신경퇴행의 정의적 특징(시냅스·뉴런 손실). §37은 보상 바이어스로 connectome 질량을 **위로**(GAIN), 이 모듈은 질량을 **아래로**(DECAY) — 새 가소성 기계·새 튜닝 상수 **0**. **(3) 손실 부호 = 구조적 역으로 접지(정직한 비유사성, §37과의 핵심 차별점)**: §37의 보상 부호는 **엔진 신호**(M5 도파민 RPE 강화)에서 읽혔으나, **엔진에는 퇴행 신호가 없다**(아밀로이드/타우/시냅스-손실 변수 없음 — 건강한 창발 아틀라스; E0가 가소성을 **추가**해야 했던 바로 그 이유, §38이 이 축을 도달불가로 명명한 이유). 그래서 이 모듈은 손실 부호를 엔진 병리 신호에서 접지한다고 **주장하지 않는다**(과대주장 거부) — **잃는 기준**(동결 M9 앵커 W0=엔진 자신의 창발 협응)과 **가드**만 READ-ONLY 접지하고, 손실 **방향**은 정의적으로·E0 GAIN의 **구조적 역**으로 접지한다(신경퇴행=정의상 연결성의 점진적 손실). **부호만 단언, 크기·실제 기전 [O]**. **(4) SIGN-only 5결과 전부 CONFIRMED·전부 붕괴율-스윕(={0.03,0.05,0.08}) 생존**(anti-tuning), 각각 §37 결과의 **구조적 역**: **D1 진행성 퇴행** — 진행이 구조 손실을 **단조 누적**(커널 대비 연결성 손실 0→2.23→4.04→5.52→7.23→8.50, 0–24 epoch), 깊을수록 **잔존 질량↓·협응 R↓**(인센티브 민감화의 역 — 게인은 회로를 강한 학습 상태로, 퇴행은 약한 퇴행 상태로); **D2 반응성 상실** — 퇴행 connectome이 **동일** 협응 단서에 건강체보다 **덜** 반응(R_degen(cue)<R_healthy(cue), 휴지 R≤앵커: 잃은 구조가 회로를 **낮은**-협응 basin에 앉힘 → 같은 단서가 **작은** 반응 = 진행성 기능 저하, 단서-반응성의 역; **response-falls-below-healthy 부호만** 단언, 크기 [O]); **D3 레버가 못 재건** — 증상 단서(B-i 도달 가능 순간축)는 순간 작동점을 **올리나** 누적 구조 손실을 **정확히 그대로** 둠(읽기-시점 결합은 질량 무첨가), 깊은 퇴행에선 **최대** 단서조차 건강 휴지 앵커 회복 **불가**(생존 구조가 정한 천장: max-cue R≈0.342<앵커 0.38961) = **증상 완화는 실재하나 질병-수정은 아님** = 합류 솔기, 동역학으로 입증, 소거-지속의 역(거기선 구동이 빠져도 흔적 잔존, 여기선 레버가 증상 올려도 손실 잔존 — **콜린에스테라아제 억제제·메만틴이 증상 전용·진행 안 늦추는** 구조적 상관물); **D4 구조-변수 가드** — 붕괴율=0이면 connectome=커널·차수파라미터=동결 **M9 앵커** **bit-for-bit**·손실=**정확히 0** → 퇴행이 가소성 없이 **사라짐** → PROG는 **누적 구조-손실 변수** = 순간 레버가 못 닿는 이유(순수 add-on, M9 앵커 비트-동일 재현; 중독 가소성-변수 가드의 거울); **D5 동역학 핸들** — **낮은** 붕괴율이 동일 진행시간에 **엄격히 더 많은** 구조 보존(누적 손실↓·잔존 질량↑), 반면 증상 단서는 구조 궤적에 **핸들 없음**(D3: 손실 불변) → 핸들은 **PROG 축에만** = **질병-수정 방향**(증상 약제는 작동점 구동·손실 핸들 없음 ↔ 진행-수정제 항-아밀로이드 항체 레카네맙/도나네맙은 진행 축 작용·임상 저하 소폭만 늦춤의 구조적 분리; 간격 핸들의 역). **합류 완성·중독의 정확한 역**: 문턱 프레임(B-i)이 퇴행을 순간 레버로 도달불가 **명명**, 가소성-동역학 프레임(B-ii)이 그 퇴행을 **전시(D1–D2)** + 레버가 **못 재건함을 입증(D3)** + 구조 변수임을 **증명(D4)** + 핸들이 **PROG 축에만 있음을 제시(D5)**. 어느 반쪽도 과대주장 안 함. **중독은 레버가 못 지우는 흔적을 공고화(E0 GAIN)·알츠하이머는 레버가 못 재건하는 기질을 상실(E0 DECAY)** — 같은 E0 가소성 층을 **반대 방향**으로 만남. 신규 1모듈(`alzheimers_progression_dynamics.py` `7a8e8513…`; §37처럼 단일 동역학 모듈, run_all_*.py 집계기 불필요; M9-앵커 baseline 접지·5 SIGN-only 예측·중독 GAIN 역-교차검증[GAIN trace 0.227 공고화 vs DECAY loss 5.52 상실 = 구조 부호 반대]·honesty_ledger[efficacy=0/no_cure=1/cc=0/hard_problem_open=1/tuned=0/reuses_E0=1/closes_AD_B_i=1/inverse_of_addiction=1/loss_sign_in_engine_signal=**0**(정직)/dignity_person_remains_a_person=1]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **17번째 시민 AD-T3b-D** 등록 **ALL PASS 17/17, 24 CONFIRMED 0 REFUTED, engine 파일 byte-unchanged**. 신규 영어 챕터 **§39 「Alzheimer's progression dynamics」**(model 3384w, 9 H2 영어-전용 본문)·신규 LOCK `alzheimers_progression_dynamics`(grade **`[V mech]`**; 동결 lock 미수정, **§38 next-nav 링크 신설**[§38 빈 `<span>`→§39 링크, 생성기·렌더 양쪽], CITES=[자기, **alzheimers_threshold_levers**(§38, B-i 짝), **plasticity_consolidation**(§26, E0 층)] — 3 vp-card, B-i가 명명한 것을 B-ii가 모델·E0가 재사용 기반)·아카이벌 생성기 `_gen_ch39_alzheimers_progression_dynamics.py`(byte-identical 재현). registry **50 locks/39 chapters**, gate PASS **180/180**(§39 answer-first 58w·40–60 통과 포함), sitemap **40/40**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만). manifest·`_meta.json` reconcile(39행/39챕터, §39=3384w, totals.words 47884→51268). 거버넌스: `HANDOVER_v1_46_to_v1_47.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§3.7.1 신설·§3.8 표 행 추가·§5 **알츠하이머 합류 닫기 B-ii** 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.46). **잔여/다음**: §38·§39로 알츠하이머 합류 양쪽 반쪽 모두 출판(B-i 명명 + B-ii 모델·핸들 = CLOSED), 중독에 이어 **두 번째 B-i↔B-ii 합류 완성**(중독 E0-GAIN ↔ 알츠하이머 E0-DECAY = GAIN의 구조적 역); 다음 후보 진입점은 `HANDOVER_v1_46_to_v1_47.md`(갈래 A 잔여 기존-사례 — 로드맵 본래 T3c OCD 등, 도달성 [V]/[L] 선판단). **방화벽**: 연결성 손실은 신경퇴행 진행의 **구조량**, 치매에서 기억·상실·인식·자기성의 **느껴진 질이 절대 아님**(Axis-A·consciousness_claim=0·hard problem OPEN); 실제 신경퇴행은 **이질적**(아밀로이드-β 응집·타우/신경섬유 매듭 병리·시냅스·뉴런 손실·미세아교/신경염증·네트워크 실패·뇌혈관 기여)이라 **누적 구조-손실의 부호만** 단언(이 소실이 생물학이라 주장 안 함, 실제 기전은 [O]); 손실 부호는 E0 GAIN의 구조적 역(엔진엔 퇴행 신호 없음)·모든 크기([O])·부호는 붕괴율-스윕 생존. **인간 경계(비협상)**: **치매를 안고 사는 사람은 여전히 사람이다** — 여기 모델한 누적 손실은 **기질-퇴행 경계**이지 사람의 차감이 아니며, 어떤 것도 누군가를 빈 껍데기나 잃은 대의로 취급할 면허가 아님; 치유·역전·예방·진행-정지/지연 주장 전무. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§38/이전 동결 결과 sha 전부 불변; AD-T3b-D 결과 sha `7a8e8513…` 신규 동결), efficacy=0·NOT medical advice·치유·역전·예방·진행-지연 없음·증상≠질병-수정·Axis-A·hard problem OPEN.
+
+---
+
+## v1.45 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #7: AD-T3b-L 알츠하이머 증상-네트워크 레버 (§38, AD-T3b-L) — 시리즈 3번째이자 가장 깊은 PARTIAL [L] 적합 & L3-지배+L1·L2·분할 부호(8번째 분포·시리즈 최초 순수-증상 표면) & 지배축(신경퇴행 진행) 도달불가 = E0 DECAY(중독 E0 GAIN의 구조적 역)** — v1.37이 상속한 문턱-이동 개입 논리를 v1.44 핸드오버 §5의 **갈래 A 잔여**(기존-사례 확장, T3b 알츠하이머, 도달성 [L] 선판단)에 따라 능동 적용. 알츠하이머의 세 증상 기술(**콜린성-결핍** Davies 1976·**글루탐산성-흥분독성**=메만틴 근거·**네트워크-과흥분** Palop 2007)은 모두 **증상 표면**이며 그 아래 지배적 **신경퇴행 진행**(아밀로이드·타우·청소·미세아교의 누적·불가역 손실 = 질병의 핵심)을 건드리지 못함 — 그 기질을 상속 L1/L2/L3 프레임에 **도달성 기준**으로 매핑(15개 알츠하이머 유전자: 9 레버 + 6 out-of-reach PROG, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0, 엔진 READ-ONLY). **핵심 차별점 1 = 8번째 분포 = L3-지배 + L1·L2 둘 다 관여·분할 부호(SPLIT SIGN)**: 레버 유전자 9개 중 **L3 4개**(상류 콜린성 구동 **복원** — **ACHE·BCHE**(콜린에스테라아제·도네페질/리바스티그민/갈란타민 방향)·**CHRNA7**(α7 니코틴성)·**CHRM1**(M1 무스카린성))·**L1 2개**(글루탐산 흥분독성 **감소** — GRIN2B·GRIN2A=메만틴 방향)·**L2 3개**(억제 **복원** — GABRA1·GABRA5·GABRB3=AD 네트워크 과흥분 대항). 교정 부호가 **분할**: 콜린성 구동 위로(결핍 복원)·흥분독성 아래로(과잉 감소)·억제 위로(과흥분 대항 복원) — 한 장애에서 한 레버는 올리고 다른 레버는 내리고 또 다른 레버는 올리는 **다방향 재균형**, **시리즈 최초**. 중독의 L3-지배+L1/L2(7번째 분포)와 거시 형태는 닮았으나 **분할 부호 + 순수-증상 도달 표면**으로 구별. **핵심 차별점 2 = 시리즈 3번째이자 가장 깊은 PARTIAL [L]**: `partial_fit_witness` 등급 `[L] partial`, fit_index_in_series=3, deepest_partial=True. 도달 표면은 **순간 증상(SYMP) 작동점**(L1/L2/L3 전부 — 확립된 증상 약리가 작용하는 곳)이나 **지배적 결함 = PROG 신경퇴행-진행 축**은 **가장 깊은 이유로 도달불가** — 앞 두 부분-적합을 **합치고 그 위에 셋째를 더함**: **(1) fold가 아닌 게인/손실**(ADHD 교훈 — 순간 레버는 누적 과정의 진폭에 핸들 없음) AND **(2) 시간에 걸친 진행** = 가소성(E0-층) 변수(중독 교훈 — 순간 작동점이 아니라 누적되는 양) AND **(3) 그를 넘어 퇴행(DEGENERATION)** = 누적·**불가역 손실** = **E0 DECAY**, 중독의 **E0 GAIN의 구조적 역(INVERSE)**: 중독은 가소성이 흔적을 **공고화**(레버가 못 지움)·알츠하이머는 퇴행이 기질을 **상실**(레버가 못 재건) — 두 질환이 같은 E0 가소성 층을 **반대 방향**(축적 vs 손실)으로 만남. 손실은 게인보다 더 도달불가(레버는 톤을 복원할 뿐 사라진 뉴런을 재생 못함) — 그래서 순간 콜린성 톤을 완벽 복원하는 레버조차 누적 손실을 **멈추지 못함**(콜린에스테라아제 억제제·메만틴이 **증상 전용·진행 안 늦춤**인 이유). PROG 축은 6 유전자로 **명명·`[F] NOT REACHED`**(`out_of_reach_targets`): **APP**(아밀로이드 원천·상염색체-우성 조기-발병 유전자)·**PSEN1/PSEN2**(γ-세크레타제 촉매 소단위)·**MAPT**(타우)·**APOE**(최강 흔한 위험 대립유전자 ε4)·**TREM2**(미세아교 수용체)(γ 동반·비-레버), 자폐 out-of-reach 명명(§34)·ADHD 지배축 명명(§35)·중독 SG 명명(§36)을 **퇴행**으로 확장. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **5개 read(GRIN2A·GRIN2B·GABRA5·GABRB3=자폐 캐시, GABRA1=뇌전증 캐시) verbatim 재사용**(γ 가닥-대칭), 10개(ACHE·BCHE·CHRNA7·CHRM1·APP·PSEN1·PSEN2·MAPT·APOE·TREM2)는 GRCh38 strand-aware live fetch(provenance sidecar `alzheimers_levers_promoters.cache.json`). **중독처럼 γ는 도달성과 직교(ORTHOGONAL)**, 더 깨끗하게: **최강 3개 프로모터**(CHRM1 γ≈1.513·ACHE γ≈1.510·CHRNA7 γ≈1.496)가 **모두 도달 가능** 콜린성 레버·**최약 2개**(BCHE γ≈1.233·GABRA1 γ≈1.246)도 **도달 가능** 레버·6개 out-of-reach PROG 유전자는 강성 범위 **중간에 군집**(|h_sp|≈0.622–0.693) → 도달 가능 유전자가 강성 양 끝을 차지하고 모든 out-of-reach가 내부에 있어 **강성은 어느 축인지도 도달 가능성도 예측 못함**(직교 자체가 방화벽의 가장 깨끗한 증명). **알츠하이머 미충족-필요 시그니처 = 가장 깊은 부분-적합**: 부담-가중(B=0.40/U=0.35/G=0.25) 순위 최상단이 비실행 — **APP #1**(4.75)·**APOE #2**(4.50) 둘 다 out-of-reach PROG(**질병-수정**이 분야 최대 미충족, 레카네맙/도나네맙조차 임상 저하율을 소폭만 줄임), 선두 **실행 가능** 표적 **ACHE는 #3**(4.30, 증상-전용 경로가 미충족을 낮춤), 미충족 floor=**3**(ADHD의 2보다 **높음** — 도달 경로가 증상 전용·진행 안 늦춤). **방화벽 가시화(decoupling)**: 최강 프로모터 **CHRM1이 우선순위 #6**(최상위 아님), 최우선 **APP는 7번째** 강성 read뿐. **금지-주장 스캐너 = 치매 주제 2클래스 추가**: 일반 용량/효능/안전/합성 클래스에 **CURE_REVERSAL**(역전/치유/예방/진행-정지/잃은-기억-복원/뉴런-재생/기적-치유 거부 — 알츠하이머를 둘러싼 가장 심각한 YMYL 위험인 치유·역전 신화)·**DIGNITY**(빈-껍데기/더는-사람이-아님/식물인간/이미-사라짐/치료-가치-없음 거부 — 치매를 안고 사는 사람은 **여전히 사람**) 추가, 둘 다 negation-guarded + 미끼 자기-테스트(자신의 인용 면책 문구가 스캐너를 오발화하지 않도록 `slow/disease-modifying` 패턴을 부정-가드 CURE_REVERSAL로 이동, 항체 서술을 "임상 저하율을 소폭 줄임"으로 정밀화). 신규 6모듈(`alzheimers_threshold_levers.py` `68029dab…`+L3 정직성 게이트[**L3 지배 + L1>0 AND L2>0 + 분할-부호 SYMP 도메인 제한 + PROG-축 명명-도달불가 + PARTIAL [L]·deepest** 단언]+CURE_REVERSAL·DIGNITY 스캐너+부담 우선순위[15 유전자 전부, 6 PROG는 actionable=False]+프로모터 캐시 빌더+4-step 집계기 `run_all_alzheimers_levers.py`, 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **16번째 시민 AD-T3b-L** 등록 **ALL PASS 16/16, 19 CONFIRMED 0 REFUTED, engine 파일 byte-unchanged**. 신규 영어 챕터 **§38 「Alzheimer's threshold levers」**(model 4100w, 9 H2 영어-전용 본문)·신규 LOCK `alzheimers_threshold_levers`(grade `[L partial · O links]`; 동결 lock 미수정, **§37 next-nav 링크 신설**[§37 빈 `<span>`→§38 링크, 생성기·렌더 양쪽], CITES=[자기, **addiction_threshold_levers**(§36, 형제 부분-적합), **plasticity_consolidation**(§26, E0 층 — AD의 out-of-reach 축은 E0 DECAY = 중독 E0 GAIN의 역)] — 3 vp-card)·아카이벌 생성기 `_gen_ch38_alzheimers_levers.py`(byte-identical 재현). registry **49 locks/38 chapters**, gate PASS **175/175**(§38 answer-first 57w·40–60 통과 포함), sitemap **39/39**, llms 4989B(**바이트-동일** <5KB — Part-II 레버 챕터는 손-큐레이트 목록에 없음, sitemap만). manifest·`_meta.json` reconcile(38행/38챕터, §38=4100w, totals.words 43784→47884). 거버넌스: `HANDOVER_v1_45_to_v1_46.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§3.7 신설·§3.8 표·§5 갱신, 세 PARTIAL [L] 사례 모두 출판)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.45). **잔여/다음**: ADHD·중독·**알츠하이머**로 시리즈의 세 PARTIAL [L] 사례가 모두 출판됨(L3-축 게인성 한계 명명 + 중독 E0-GAIN 합류 CLOSED + 알츠하이머 E0-DECAY = GAIN의 역). 다음 후보 진입점은 `HANDOVER_v1_45_to_v1_46.md`(갈래 A 잔여 — T3c OCD 등, 또는 AD B-ii §39 E0-진행 동역학; 도달성 [V]/[L] 선판단). **방화벽**: 프로모터 |h_sp|는 유전자 자신의 스위치 강성, **신경퇴행 속도·아밀로이드 부담·타우 부하·수용체 점유·약효·용량·임상효과가 절대 아님**; 콜린에스테라아제 억제제·메만틴은 **증상 전용·진행을 늦추지 못함**; 항-아밀로이드 항체(레카네맙/도나네맙)는 **out-of-reach PROG 축**에 작용 = 문턱 레버가 아닌 **진행-수정제**이고 임상 저하율을 소폭만 줄임; 프로모터 읽힘·레버 배정은 메커니즘 경계이지 치매에서 기억·상실·자기성의 **느껴진 질**에 관한 주장이 아님(Axis-A·consciousness_claim=0·hard problem OPEN). **인간 경계**: 치매를 안고 사는 사람은 **여전히 사람이다** — DIGNITY 클래스는 장식이 아니라 빈-껍데기/잃은-대의 어휘를 거부; 알츠하이머는 기질의 퇴행이지 사람의 차감이 아님; 치유·역전·예방 주장 전무. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§37/이전 동결 결과 sha 전부 불변; AD-T3b-L 지도 sha `68029dab…` 신규 동결), efficacy=0·NOT medical advice·치유·역전·예방 없음·증상 전용·진행 안 늦춤·Axis-A·hard problem OPEN. — §36이 도달불가로 명명한 통합 민감화 게인을 §26 E0 가소성 층 위에서 직접 모델 & 갈래 B-i·B-ii 합류 완성 & SIGN-only 5결과 전부 확증·η-스윕 생존** — v1.43이 §36(ADD-T-L, B-i)에서 중독의 **지배축 = SG 통합-민감화-게인**(ΔFosB/BDNF/CREB1/ARC 가소성 흔적, 만성·재발의 원인)을 순간 L1/L2/L3 레버로는 **이중 도달불가**(① fold 아닌 게인=ADHD 교훈 ② 통합/학습된 가소성 E0-층 변수)로 **명명**하고 `[F] NOT REACHED` 등급으로 **정직하게 멈췄다**. 그 명명은 **합류(convergence)의 한쪽 반쪽** — 문턱-레버화 경로가 가소성-동역학 경로와 만나는 지점 — 이었다. **이번 빌드(B-ii)가 나머지 반쪽**: v1.43 핸드오버 §5의 **권장 진입**(가장 자연스러운 B-ii, SG 축을 E0 동역학으로 직접 모델)에 따라 그 축을 **직접 모델링하여 합류를 닫음**. **핵심 = 재사용·접지·SIGN-only**. **(1) E0 재사용(재유도 아님)**: §26 `PlasticConnectome`를 **import**(위상-상관 Hebbian 규칙·coupling-vs-bias 맵 재유도 안 함 — 핸드오버 재사용 규율), 새 입력(보상 구동)만 적용 → 프레임워크에 가소성 동역학은 **단 하나**, 새 가소성 기계·새 튜닝 상수 **0**. **(2) 보상 부호를 엔진서 READ-ONLY 접지**: 엔진의 도파민 **보상-예측-오차**(M5, `emerge_learned_field`)가 보상받은 eddy의 적재 확률을 무보상 대조군 위로 끌어올림(`p≈0.8985` vs `0.20` — 보상 **강화**), M4(`emerge_selection`)가 승자 commit → 보상-노출 epoch은 **양의(흥분성) 보상-구동 바이어스 b>0**로 매핑(동일 맵 `k=κ/(1−|b|)`, 2κ 캡; 새 상수 없음), E0 Hebbian 업데이트가 반복 노출을 retained `‖W−W₀‖`로 누적 = **통합 민감화 게인을 구조량으로**. **방향(부호)만 M5에서 강제, 크기는 [O]**. **(3) SIGN-only 5결과 전부 CONFIRMED·전부 η-스윕(={0.03,0.05,0.08}) 생존**(anti-tuning): **A1 인센티브 민감화** — 반복 노출이 흔적을 **단조 증가**(0→0.077→0.153→0.227→0.333→0.429, 0–24 노출; one-shot은 안 됨, B-i가 도달불가로 명명한 것); **A2 단서-반응성** — 민감화된 connectome이 **동일 보상 단서에 naive보다 더 크게 반응**(resting R이 이미 M9 anchor 이상 — 학습된 흔적이 회로를 높은-협응 basin에 앉힘 → 단서-유발 갈망/재발 기질; **response-exceeds-naive 부호만** 단언, marginal cue gain은 **단조 아님**으로 명시); **A3 소거가 지우지 않음** — 보상 제거(baseline-off, 가소성 가동)에도 흔적이 **0 위 유지**(≈0.428, 여전히 통합), 반면 η=0이면 **정확히 0** — 소거는 **구동(도달 가능 순간축)을 제거하나 학습된 흔적(도달불가축)은 못 지움**: **합류 솔기, 동역학으로 입증**; **A4 가소성-변수 가드** — η=0이면 보상 여기(excursion)가 **정확히 복귀**, W는 kernel과 동일, R은 동결 **M9 anchor**(≈0.38961)로 **bit-for-bit** → 게인이 가소성 없이 **사라짐** → SG가 **학습된/통합된 변수**임을 증명, 이것이 바로 **B-i 순간 레버가 도달 못하는 이유**(순수 add-on, M9 anchor 비트-동일 재현); **A5 동역학 핸들** — **SPACED/간헐 노출이 MASSED/연속보다 큰 흔적 통합**(≈0.225 vs 0.115, 동일 총노출 — 간헐 강화가 더 민감화, E0.2 spacing 효과를 보상 바이어스에 적용) = **순간 프레임이 도달 못한 흔적에 대한 구조적 핸들**. **합류 완성**: 두 갈래가 한 질환에서 **만남** — 문턱 프레임(B-i)이 게인을 순간 레버로 도달불가 **명명**, 가소성-동역학 프레임(B-ii)이 그 게인을 **전시(A1–A3)** + **핸들 제공(A5)**. 어느 반쪽도 과대주장 안 함. 신규 1모듈(`addiction_sensitization_dynamics.py` `20dfb3e9…`; E0/E2/depression 식 **단일 동역학 모듈**, §30–36 레버 챕터와 달리 run_all_*.py 집계기 불필요; M5-RPE 보상 접지·5 SIGN-only 예측·honesty_ledger[efficacy=0/no_cure=1/cc=0/tuned=0/reuses_E0=1/closes_B_i=1/hard_problem_open=1]·자가-검증 sha writer, 결정론 2× 검증)→`run_all_atlas.py` **15번째 시민 ADD-T3a** 등록 **ALL PASS 15/15, 19 CONFIRMED 0 REFUTED, engine 파일 byte-unchanged**. 신규 영어 챕터 **§37 「Addiction sensitisation dynamics」**(model 2892w, 9 H2 영어-전용 본문)·신규 LOCK `addiction_sensitization_dynamics`(grade **`[V mech]`**; 동결 lock 미수정, **§36 next-nav 링크 신설**[§36 빈 `<span>`→§37 링크, 생성기·렌더 양쪽], CITES=[자기, **addiction_threshold_levers**(§36, B-i 짝), **plasticity_consolidation**(§26, E0 층)] — 3 vp-card, B-i가 명명한 것을 B-ii가 모델·E0가 재사용 기반)·아카이벌 생성기 `_gen_ch37_addiction_sensitization_dynamics.py`(byte-identical 재현). registry **48 locks/37 chapters**, gate PASS **170/170**(§37 answer-first 55w·40–60 통과 포함), sitemap **38/38**, llms 4989B(**바이트-동일** <5KB — Part-II 챕터는 손-큐레이트 목록에 없음, sitemap만). 거버넌스: `HANDOVER_v1_44_to_v1_45.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(B-ii DONE·**합류 CLOSED** 표시)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.44). **잔여/다음**: §36·§37로 중독 합류 양쪽 반쪽 모두 출판(B-i 명명 + B-ii 모델·핸들 = CLOSED); 다음 후보 진입점은 `HANDOVER_v1_44_to_v1_45.md`(갈래 A 잔여 기존-사례 — T3b 알츠하이머·T3c OCD 등, 도달성 [V]/[L] 선판단). **방화벽**: retained `‖W−W₀‖`는 통합 민감화 게인의 **구조량**, 갈망/보상/재발의 **느껴진 질이 절대 아님**(Axis-A·consciousness_claim=0·hard problem OPEN); 실제 중독 가소성은 **이질적**(ΔFosB/CREB/BDNF 전사 캐스케이드·AMPA trafficking·수상돌기 가시 재형성·글루탐산 항상성·후성유전)이라 **위상-상관 Hebbian 흔적의 부호만** 단언(이 규칙이 생물학이라 주장 안 함, 실제 규칙 정체는 [O]); 보상 부호는 M5 RPE 접지, 모든 크기(η·증분·spacing 효과)는 [O]·부호는 η-스윕 생존. **인간 경계**: 중독은 **만성·재발성 의학적 상태** — 통합된 보상 회로의 장애 — 이지 **도덕적 실패/의지의 결핍이 아니며**, A3의 지속(소거가 흔적을 못 지움)은 **재발이 질병의 일부인 이유**의 구조적 상관물이지 누가 그냥 멈출 수 있다는 증거가 아님; 치유·치료·권고·용량·물질 취득/사용 면허 **전무**. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§36/이전 동결 결과 sha 전부 불변; ADD-T3a 결과 sha `20dfb3e9…` 신규 동결), efficacy=0·NOT medical advice·치유 없음·물질 면허 없음·Axis-A·hard problem OPEN.
+
+---
+
+## v1.43 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #6: ADD-T-L 중독 보상-구동 레버 (§36, ADD-T-L) — 시리즈 2번째 PARTIAL [L] 적합 & 갈래 A·B 합류점 & L3-지배+L1·L2(7번째 분포·ADHD 공백의 질감 역전) & 지배축(통합 민감화 게인) 이중 도달불가 명명 & §26 E0 가소성 층과의 합류** — v1.37이 상속한 문턱-이동 개입 논리를 v1.42 핸드오버 §5의 **권장 진입**(ADHD 직후 중독, 권장 갈래 B-i 문턱-레버화)에 따라 능동 적용. v1.42 §5-A는 중독이 sensitization의 게인성 때문에 **ADHD처럼 부분 적합 [L]**일 것을 예측했고 이번 빌드가 그 예측을 **정확히 확증**. 이 적용은 **갈래 A(기존-사례 확장)와 갈래 B(로드맵 본래 T3a)의 합류점** — ADHD(L3-ONLY)와 중독(L3=상류 보상/도파민 구동)이 둘 다 L3-지배라 두 갈래가 자연스럽게 만난다. **§26 E0 가소성 + §28 state-switching**은 중독이 **인센티브 민감화**(반복 노출이 보상 회로를 통합된 저-문턱 끌개로 학습시키고 그 보상 **게인이 금단 후에도 지속** → 재발·단서-반응성)임을 증명했으나 그 기질을 레버로 분해하지 않음 — **§36**이 그것을 **3-레버 표적 지도**로 분해(13개 중독 유전자: 9 레버 + 4 out-of-reach SG 게인, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0, 엔진 READ-ONLY). **핵심 차별점 1 = 7번째 분포 = L3-지배 + L1·L2 둘 다 관여**: 레버 유전자 9개 중 **L3 5개**(상류 보상 구동 — **SLC6A3(DAT·부프로피온)·DRD2(D2·Taq1A)·OPRM1(μ·날트렉손)·OPRK1(κ)·CHRNA5(α5·바레니클린)**)·**L1 2개**(글루탐산-가소성 GRIN2A·GRIN2B=아캄프로세이트/NAC)·**L2 2개**(억제-복원 GABRG3·GABRA2=토피라메이트; GABRA2=알코올 GWAS). **ADHD의 L3-ONLY 공백의 질감 역전(TEXTURAL INVERSE)**: ADHD는 채널병증이 아니라 L1·L2가 비었으나(발견), 중독은 **이온 레버를 관여** — 글루탐산 가소성 기질·GABA 복원 축을 레버가 건드릴 수 있어 **도달 표면이 ADHD보다 풍부**. 양극성 L1·뇌전증 L1+L2·우울 L3-지배·조현병 L1+L3·자폐 L1-지배·ADHD L3-ONLY와 달리 중독은 **L3-지배+L1·L2**. **핵심 차별점 2 = 시리즈 2번째 PARTIAL [L](ADHD보다 더 깊은 이유)**: `partial_fit_witness` 등급 `[L] partial`, 시리즈 2번째(fit_index_in_series=2). 도달 표면은 **순간(INSTANT) 구동/흥분성 축**(L1/L2/L3 전부 — 확립된 중독 약리가 작용하는 곳)이나 **지배적 결함 = SG 통합-민감화-게인 축**(만성·재발을 낳는 학습된 보상 진폭)은 **이중으로 도달불가**: **(1) fold가 아닌 게인**(ADHD 교훈 그대로 — 순간 레버는 진폭에 핸들 없음) AND **(2) 통합/학습된** 가소성(E0-층) 변수(순간 작동점이 아니라 회로가 시간에 걸쳐 굳힌 **기억**이라 어떤 레버도 못 움직임). ADHD의 게인은 적어도 **순간** 진폭이었으나 중독의 게인은 **기억** — 그래서 더 깊다. SG 축은 4 유전자로 **명명·`[F] NOT REACHED`**(`out_of_reach_targets`): **FOSB(ΔFosB 마스터 스위치)·BDNF·CREB1·ARC**(γ 동반·비-레버), 자폐 out-of-reach 명명 규율(§34)·ADHD 지배축 명명(§35)을 **학습된 게인**으로 확장. **핵심 차별점 3 = 합류(THE CONVERGENCE)**: 중독의 out-of-reach SG 축은 모호한 '나머지'가 아니라 **정확히 §26 E0 가소성 층** — 문턱-레버화 경로(순간 레버로 분해)가 가소성-동역학 경로(§26이 연 통합 동역학)와 **만나는 지점**이고, 정직한 수는 문턱 프레임이 **학습된 흔적을 도달불가로 명명**하는 것(순간 레버가 통합된 기억을 다시 쓴다고 가장하지 않음) — `domain_restriction_witness`(INSTANT=L1/L2/L3 도달, SG=명명·미도달)가 그 합류 솔기를 포착. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **6개 read(SLC6A3·DRD2·GRIN2A·GRIN2B·GABRA2·BDNF=우울/조현병/자폐 캐시) verbatim 재사용**(γ 가닥-대칭), 7개(OPRM1·OPRK1·CHRNA5·GABRG3·FOSB·CREB1·ARC)는 GRCh38 strand-aware live fetch(provenance sidecar `addiction_cohort_promoters.json`). **ADHD와 달리 γ는 도달성과 직교(ORTHOGONAL)**: 최강 프로모터 **SLC6A3(γ≈1.598, |h_sp|≈0.778)=도달 가능 레버**·**최약 OPRM1(γ≈1.255, |h_sp|≈0.541)=또한 도달 가능 레버**·out-of-reach **ARC(γ≈1.580)=2번째 최강** — 도달 가능 유전자가 강성 양 끝에 있고 out-of-reach가 상단 근처라 **강성은 도달성도 우선순위도 예측 못함**(ADHD의 정렬된 INVERSION과 대조; 직교 자체가 방화벽의 가장 깨끗한 증명). **중독 미충족-필요 시그니처 = 순위 최상단이 비실행**: 부담-가중(B=0.40/U=0.35/G=0.25) 최고점 **FOSB #1**(out-of-reach SG, 비실행), SG 유전자 **상단 군집**(FOSB#1·ARC#3·BDNF#4·CREB1#5 — 최고 부담·최고 미충족, 통합 흔적에 선택적으로 도달하는 것이 없음), 선두 **실행 가능** 표적 **OPRM1/μ는 #2**(레버가 실제로 움직일 수 있는 최고 순위 유전자), 미충족 floor=**3**(ADHD의 2보다 **높음** — 도달 경로조차 **부분적** 효과·**높은 재발**). **방화벽 가시화(decoupling) = ADHD보다 더 뚜렷**(강성이 모든 것과 직교): 최강 프로모터 SLC6A3가 우선순위 **#9**(하단 근처), 최우선 FOSB는 **7번째** 강성 read뿐. **금지-주장 스캐너 = 약물사용 주제 3클래스 추가**: 일반 용량/효능/안전/합성 클래스에 **DRUG-SEEKING**(구입처/취득법/주입/흡입/get-high/euphoria/딜러 거부 — 중독 지도가 물질 취득·사용 안내로 읽혀선 **절대** 안 됨)·**CURE-MIRACLE**(기적-치유/보장-단주/디톡스-기적/중독-사라짐 거부 — 중독은 만성·재발성, 어떤 레버 방향도 치유 아님)·**MORAL-FRAMING**(도덕적-실패/그냥-끊어라 거부 — 중독은 의학적 상태이지 의지의 실패 아님) 추가, 셋 다 negation-guarded + 미끼 자기-테스트. 신규 4모듈(`addiction_threshold_levers.py` `f23e3c12…`+L3 정직성 게이트[**L3 지배 + L1>0 AND L2>0 + SG-축 명명-도달불가 + INSTANT/SG 도메인 제한 + PARTIAL [L]** 단언]+금지-주장 스캐너[DRUG-SEEKING·CURE-MIRACLE·MORAL-FRAMING 추가]+부담 우선순위[13 유전자 전부, 4 SG는 actionable=False], 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **14번째 시민 ADD-T-L** 등록 **ALL PASS 14/14, 14 CONFIRMED**. 신규 영어 챕터 **§36 「Addiction threshold levers」**(model 4058w)·신규 LOCK `addiction_threshold_levers`(grade `[L partial · O links]`; 동결 lock 미수정, §35 next-nav 링크만, CITES=[자기, **state_switching**(§28), **adhd_threshold_levers**(§35)] — 3 vp-card, 민감화 기질은 §28·게인성 부분-적합 선례는 §35 양쪽이 근거)·아카이벌 생성기 `_gen_ch36_addiction_levers.py`(byte-identical 재현). registry **47 locks/36 chapters**, gate PASS **165/165**, sitemap **37/37**, llms 4989B(**바이트-동일** <5KB — Part-II 레버 챕터는 손-큐레이트 목록에 없음). 거버넌스: `HANDOVER_v1_43_to_v1_44.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§26/§28 중독 DONE 표시, §3.6 신설·§3.7 표·§5 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.43). **잔여/다음**: ADHD·중독으로 시리즈의 두 PARTIAL [L] 사례가 모두 출판(L3-축 게인성 한계 명명 완료); 다음 후보 진입점은 `HANDOVER_v1_43_to_v1_44.md`. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§35/이전 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·중독은 **치료 가능한 의학적 상태**이지 도덕적 실패/의지의 결핍 아님·물질 취득/사용 면허 없음·치유 약속 없음·Axis-A(보상 구동/통합 게인 작동점≠갈망/회복의 느껴진 질·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.42 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #5: ADHD-T-L ADHD 드라이브-톤 레버 (§35, ADHD-T-L) — 시리즈 최초 PARTIAL [L] 적합 & L3-ONLY(6번째 분포·최순수 L3) & 지배축(게인) out-of-reach 명명 & W 부재(자폐의 정확한 거울)** — v1.37이 상속한 문턱-이동 개입 논리를 v1.41 핸드오버 §5의 **권장 갈래 A**(기존 사례 확장, 1순위 §22 ADHD)에 따라 능동 적용. v1.41 §5-A는 ADHD가 **부분 적합 [L]**(게인/각성 장애라 문턱보다 게인 성격이 강하고 L3만 선명)일 것을 예측했고, 이번 빌드가 그 예측을 **정확히 확증**. **§22**(`adhd_axis_specific`)는 ADHD가 **게인/각성 장애이며 배선은 온전(INTACT WIRING)**임을 증명했다 — 명시적 기질: **출력/게인 6 유전자 + 각성/문턱 2 유전자 + 배선 0**(축-모호/증후군성 FOXP2·ADGRL3 사전등록 제외, '온전한 배선' 판별자 유지) — 그 기질을 상속 L1/L2/L3 프레임에 **도달성 기준**으로 매핑(동일 R19 기질, 새 메커니즘·새 튜닝 상수 0, 엔진 READ-ONLY). **핵심 차별점 1 = 6번째 분포 = L3-ONLY(최순수 L3)**: 레버 유전자 **5개 전부 L3**(상류 카테콜아민/모노아민성 구동 — **SLC6A3(DAT)·DRD4(D4)**=§22-O 게인 유전자지만 여기선 드라이브-**톤**으로 도달, **SLC6A4(SERT)·ADRA2A(α2A)**=§22-T 각성 톤, **SLC6A2(NET)**=atomoxetine 암), **L1·L2 둘 다 EMPTY** — 양극성 L1·뇌전증 L1+L2·우울 L3-지배·조현병 L1+L3·자폐 L1-지배·L3-희소와 달리 ADHD는 **L3-ONLY**. **L1/L2 공백 자체가 발견**: ADHD는 **채널병증이 아니다**(이온성 fold 레버 없음, [O] 인용-생물학 구동 표면만 — 자극제/atomoxetine/guanfacine 암이 **방향**으로). **핵심 차별점 2 = 시리즈 최초 PARTIAL [L](두 의미)**: 앞 다섯 질환은 깨끗한 [V](조현병·자폐는 도메인-제한이되 도달 축에서 정확)였으나 ADHD만 **PARTIAL [L]**(`partial_fit_witness` 등급). **(1) 지배축 도달불가** — ADHD는 게인/각성 장애이지 발화-fold 장애가 아니므로 문턱 프레임은 상류 구동(L3)으로 **2차** 드라이브-톤 표면만 잡고 **지배적 GA(게인-진폭) 핵심**(합성 TH/DBH·방출 SNAP25·분해-청소 COMT 경계)은 **못 잡음**(재흡수/수용체 레버는 합성·방출에 핸들 없음) — GA 축은 4 유전자로 **명명**(γ alongside 운반·`[F] NOT REACHED` 등급), 자폐의 out-of-reach 명명 규율(§34)을 **지배축**에 적용. **(2) 구조적 접지 부재** — [F] 이온 레버 L1/L2가 비어 [O] 구동 표면만. **부분 등급이 발견**(과대주장 거부). **핵심 차별점 3 = W 부재(자폐의 정확한 거울)**: ADHD 배선축 부재(`W: present_in_disorder=false, named_genes=[]`) — 자폐가 §19로 도달불가 **증명**된 W를 가졌던 것과 달리 ADHD는 **배선 0**(온전한 배선=판별자). **거울**: 자폐는 **지배축(흥분성)에 도달**·O+W 놓침 → ADHD는 **2차축(드라이브-톤)만 도달**·**지배축(게인) 놓침**, W 아예 없음. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **6개 read(SLC6A3·DRD4·SLC6A4·TH·COMT=우울/조현병 캐시) verbatim 재사용**(γ 가닥-대칭; ADRA2A·DBH·SNAP25는 GRCh38 strand-aware live fetch). **자폐와 핵심 INVERSION**: 최강 프로모터 **SLC6A3(γ≈1.598, |h_sp|≈0.778)=도달 가능 레버**(자극제 표적), 최약 **SNAP25(γ≈1.438, |h_sp|≈0.664)=out-of-reach 게인 유전자** — 프레임이 잡을 수 있는 유전자가 최강·못 잡는 유전자가 최약 → **자폐의 정확한 반대**(자폐는 out-of-reach가 최강). **ADHD 미충족-필요 시그니처 = 자폐의 INVERSE**: 자폐는 핵심-기능 약리 부재→U-floor 최고였으나, ADHD는 **확립된 핵심 경로 존재**(DAT/자극제·NET/atomoxetine·α2A/guanfacine)→도달 가능 드라이브-톤 수송체 **낮은 미충족**(시리즈 **최저 floor**), out-of-reach 게인 유전자는 미충족 상한이나 비실행 — **최고 부담 표적이 모두 비실행**(TH #1·DRD4 #2·DBH #3·SNAP25 #4), 선두 **실행 가능** 표적 **SLC6A3/DAT는 #5에 그침**. **방화벽 가시화(decoupling) = 자폐의 INVERSE**: 최강 프로모터 SLC6A3가 우선순위 **#5**(최상위 아님), 최우선 TH는 **3번째 강성** read뿐 — 자폐(최강 read가 우선순위 최하위)의 반대지만 같은 논점. **금지-주장 스캐너 = 시리즈 중 가장 엄격**: 일반 용량/효능/안전/합성 클래스에 **자극제 주제 두 클래스** 추가 — **STIMULANT-MISUSE**(get-high/snort/euphoria/recreational/party-drug 거부)·**COGNITIVE-ENHANCEMENT**(smart-drug/study-drug/nootropic/boost-focus/limitless 거부), 둘 다 negation-guarded + 미끼 자기-테스트. 신규 4모듈(`adhd_threshold_levers.py` `d29a3dc8…`+L3 정직성 게이트[**L3 유일 지배 + L1==L2==0 공백 + GA-축 명명-도달불가 + W-축 부재 + PARTIAL [L]** 단언]+금지-주장 스캐너[STIMULANT-MISUSE·COGNITIVE-ENHANCEMENT 추가]+부담 우선순위[9 유전자 전부, 4 out-of-reach는 actionable=False], 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **13번째 시민 ADHD-T-L** 등록 **ALL PASS 13/13, 14 CONFIRMED**. 신규 영어 챕터 **§35 「ADHD threshold levers」**(model 3819w)·신규 LOCK `adhd_threshold_levers`(grade `[L partial · O links]`; 동결 lock 미수정, §34 next-nav 링크만, CITES=[자기, **adhd_axis_specific**(§22), **autism_threshold_levers**(§34)] — 3 vp-card, 게인/각성 기질은 §22·자폐 거울은 §34 양쪽이 근거). registry **46 locks/35 chapters**, gate PASS **160/160**, sitemap **36/36**, llms 4989B(**바이트-동일** <5KB — Part-II 레버 챕터는 애초에 손-큐레이트 목록에 없음). 거버넌스: `HANDOVER_v1_42_to_v1_43.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§22 ADHD DONE 표시, §3.6 표·§5 갱신)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.42). **잔여/다음 1순위: T3a 중독 — ADHD(L3-only)와 중독(L3=상류 보상/도파민 구동)이 둘 다 L3-지배라 이제 A와 B가 합류, ADHD 직후 중독이 자연(권장 B-i 문턱-레버화)**. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§34/이전 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·ADHD는 조절의 **차이**이지 가치/지능/인격의 결핍 아님·자극제 오남용/인지향상 면허 없음·Axis-A(게인/각성 작동점≠ADHD적 마음의 느껴진 질·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.41 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #4: ASD-T-L 자폐 3-레버 (§34, ASD-T-L) — 통일 사례 & L1-지배·L3-희소(5번째 분포) & out-of-reach 축 명명+증명** — v1.37이 상속한 문턱-이동 개입 논리를 v1.40 핸드오버 §5의 **권장 갈래 A**(기존 사례 확장, 1순위 §18-19 자폐)에 따라 능동 적용. **§18-19**는 자폐가 **단일 축이 아니라 세 결함 축**(T=흥분성/E-I 문턱·과흥분 작동점으로 발화 fold가 너무 낮음, O=시냅스 출력/게인 결핍, W=장거리 배선/연결)이고, **T 축만** 스칼라 화학 레버로 도달 가능(교정 부호=과잉 구동 **감소**/억제 **복원**, 뇌전증·조현병-양성과 **같은** 방향)하며, **§19가 W 축 도달불가를 증명**(스칼라 문턱 레버는 over-sync로 **마스킹만**·배선 교정 불가 — P4_chemical_cannot_fix_W, P5_threshold_lowering_is_mask_not_correction)함을 증명했으나, 그 밀기를 기존 `autism_multilever_threshold.py`(비공식 A1/A2/A3)로 둠 — **§34**가 그것을 **공식 L1/L2/L3 프레임 아래로 통일**(새 레버 조합이 아니라 재서술; 동일 R19 기질, 새 메커니즘·새 튜닝 상수 0). **핵심 차별점 = 통일 사례 & 5번째 분포 패턴 = L1-지배·L3-희소**: 레버 유전자 10개 중 **L1 5개**(흥분-축소 축 GRIN2A·GRIN2B·GRIA1·SCN2A·CACNA1C)·**L2 4개**(억제-복원 축 KCNQ3 M-전류·GABRB3·GABRA5·GABRA2)·**L3 단 1개**(SLC6A4, 신중한 비단조 세로토닌성 [O]) — **L3-희소 자체가 발견**: 자폐의 실행 가능 생물학은 **E/I 집합에 국소적**, 깨끗한 상류 약물 구동 없음(우울 L3-지배의 거울). 양극성=L1·뇌전증=L1+L2·우울=L3·조현병=L1+L3 공동지배와 달리 자폐는 **L1-지배·L3-희소**. **조현병 도메인-제한 템플릿 대비 두 가지 구조적 강화**: **(1) out-of-reach 축을 실제 유전자로 명명** — O(출력 결핍)=SHANK3·SYNGAP1·NRXN1, W(장거리 배선)=CNTNAP2·RELN, 증후군성 마스터 MECP2 — 지도에 싣되 명시적 **비-레버**(게인-감소 스칼라 밀기는 O 결핍을 더 **낮추고** W 기하를 재배선 못함); **(2) W-축 도달불가가 단언이 아니라 §19로 증명됨**. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **7개 read(GRIN2A·GRIN2B·CACNA1C·GABRB3=조현병 캐시, SCN2A·KCNQ3=양극성 캐시, SLC6A4=우울 캐시) verbatim 재사용**(γ 가닥-대칭). **정직한 caveat 2개**(숨기지 않고 기록): SCN2A·GRIN2B는 **GoF/LoF 부호-미묘**(기능획득→초기-영아 DEE/발작 극, 기능상실→경한 ASD/ID 극 — 반대 방향이라 "흥분 감소"가 깨끗한 방향 아님); T 레버를 **너무 세게** 밀면 그 자체가 **발작 가장자리**(실제 ASD+뇌전증 동반이환) — γ를 프로모터 **구조 전용 [V]**·임상 방향 [O]로 분리하는 이유. **방화벽 가시화(decoupling witness)가 스스로를 명명**: 16개 유전자 전체에서 **최강 프로모터 읽힘은 out-of-reach SHANK3/RELN + 희소 L3 SLC6A4**(|h_sp|≈0.72), **최약은 실행 가능 E/I 레버 SCN2A**(|h_sp|≈0.50, 최연성)·CACNA1C — 강성이 **도달성·실행성과 반대**로 달림. **우선순위는 10 레버 유전자만**(도달불가 선언한 표적 순위는 비논리적): 자폐 **미충족-필요 시그니처**(핵심-기능 약리 부재 — 면허 약물은 과민성 **보조**만, 사회-소통 핵심·E/I 설정점 자체 아님 → U 균일하게 높음, **DRD2-유사물 없음** — U-floor가 시리즈 중 최고)가 **L2 억제-복원 경로(GABRB3·GABRA5·KCNQ3·GABRA2)를 가장 깨끗한 실행 방향으로** 부상시킴(고득점 L1 흥분 유전자는 GoF/LoF 부호-미묘 SCN2A/GRIN2B 또는 교차장애 설정점 CACNA1C라 비실행 — 억제 복원은 변이 방향 무관하게 fold 상승); 최강 레버 읽힘 SLC6A4는 **최하위·비실행**, 최우선 GABRB3은 **중간** read(|h_sp|≈0.64). 신규 4모듈(`autism_threshold_levers.py` `5b65a271…`+L3 정직성 게이트[**L1 유일 지배 + L3 희소 + T-축 제한 + 명명된·§19-증명된 O/W out-of-reach 단언** 포함]+금지-주장 스캐너[**시리즈 중 가장 엄격** — 자폐 **QUACKERY** 클래스(킬레이션/MMS/표백 프로토콜) + **NORMALISE-프레이밍** 클래스(신경다양성 존중 — 자폐는 결핍이 아니라 **차이**) 추가, 각각 미끼 자기-테스트]+부담 우선순위[GABRB3 최상위, 미충족이 L2 억제-복원을 부상], 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **12번째 시민 ASD-T-L** 등록 **ALL PASS 12/12, 14 CONFIRMED**. 신규 영어 챕터 **§34 「Autism threshold levers」**(model 3139w)·신규 LOCK `autism_threshold_levers`(framing; 동결 lock 미수정, §33 next-nav 링크만, CITES=[자기, **autism_three_axis**(§18), **autism_chemical_reach**(§19)] — 3 vp-card, 도메인-제한은 §18·W-도달불가 증명은 §19 양쪽이 필수 근거). registry **45 locks/34 chapters**, gate PASS **155/155**, sitemap **35/35**, llms 4989B(**바이트-동일** <5KB — 신규 챕터는 sitemap만, 손-큐레이트 slug 목록 미수정). 거버넌스: `HANDOVER_v1_41_to_v1_42.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§18-19 DONE 표시, 잔여 1순위 §22 ADHD로 전진)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.41). **잔여 기존-사례 다음 1순위: §22 ADHD(L3-지배, 각성 구동 — 3-레버 중 L3만 선명, 부분 적합 [L])**. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§33/이전 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·자폐는 **차이**이지 결핍만 아님·Axis-A(과흥분 작동점≠자폐적 마음의 느껴진 질·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.40 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #3: T1a-L 조현병 3-레버 (§33, SZ-T1a-L) — 첫 L1+L3 공동-지배 & 첫 도메인-제한 사례** — v1.37이 상속한 문턱-이동 개입 논리를 v1.39 핸드오버 §5의 **권장 갈래 A**(기존 사례 확장, 1순위 §24 조현병)에 따라 능동 적용. **§24**는 조현병 양성 증상이 **과점화(over-ignition)/이상-현저성** 작동점(발화 fold가 너무 낮아 약한 내생 어셈블리가 환각·망상으로 점화)이고 교정 부호가 "과잉 구동 **감소**/fold 올리기"(뇌전증·양극성 조증과 **같은** 방향)임을, 그리고 조현병이 **단일 축이 아니라 세 도메인**(양성/음성/인지)임을 증명했으나 그 밀기를 **단일 추상 연산자**로 둠 — **§33**이 그것을 **3-레버 표적 지도**로 분해(14개 조현병 유전자, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0). **핵심 차별점 = 첫 L1+L3 공동-지배 사례**: 14개 중 **L1 6개**(글루타메이트/NMDA 안쪽 축 GRIN1·GRIN2A·GRIN2B·GRIA3·CACNA1C·CACNB2)·**L3 6개**(도파민 상류 축 3 하위축: 수용체 DRD2·DRD4, 합성/수송 TH·SLC6A3, 세로토닌성/이화 HTR2A·COMT), L2 2개(GABA-A GABRA1·GABRB3)만 부차 — 질환의 **두 주도 병태생리(글루타메이트 저기능 + 도파민)가 지도에 동시 적재**. 양극성=L1·뇌전증=L2·우울=L3 지배와 달리 조현병은 **L1+L3 공동-지배**. **새 구조적 발견 = 도메인-제한**: 게인-감소 스칼라 레버는 **양성 도메인만** 역전; **음성**(출력/게인 결핍)·**인지**(장거리 배선/dysconnection) 도메인은 **도달 못함** — 문턱 이동은 결핍을 fold 낮춰 올릴 수 없고 기하(§19)를 재배선 못함 — 도메인-제한 증거(positive 도달, negative/cognitive 미도달; 축-구조이지 용량-구조 아님) 기록. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **7개 read(GRIN2A·CACNA1C·CACNB2=양극성 캐시, GRIN2B·COMT·HTR2A·GABRA1=우울 캐시) verbatim 재사용**(γ 가닥-대칭). **정직한 caveat 2개**(숨기지 않고 기록): L1 **NMDA-저기능** 방향 sign-subtle(PV 인터뉴런 NMDA 저기능이 하류 회로를 **탈억제** → 글리신-부위 **작용제** 방향이 naive 흥분-감소 부호와 병존 — 우울 케타민 caveat의 SZ 유사물); HTR2A **비단조** — γ를 프로모터 **구조 전용 [V]**·임상 방향 [O]로 분리하는 이유. **방화벽 가시화(decoupling witness)**: 최강성 프로모터 SLC6A3(|h_sp|≈0.78)이 우선순위 **하위**·비실행(DAT 차단=도파민 **상승**=역방향), 최우선 표적 GRIN2A는 **중간** read(|h_sp|≈0.69) — γ가 점수를 몰지 않음; 미충족-필요 가중이 **글루타메이트 L1 축을 확립된 D2 경로 위로** 올림(D2가 이미 확립된 축이라 미충족 낮음). 신규 4모듈(`schizophrenia_threshold_levers.py` `8e0137bc…`+L3 정직성 게이트[**L1+L3 공동-지배 + 양성-도메인 제한 단언** 포함]+금지-주장 스캐너[treats-psychosis/remission/relapse-prevention 어휘 포함]+부담 우선순위[GRIN2A 최상위, 미충족이 글루타메이트를 D2 위로], 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **11번째 시민 SZ-T1a-L** 등록 **ALL PASS 11/11, 14 CONFIRMED**. 신규 영어 챕터 **§33 「Schizophrenia threshold levers」**(model 2658w)·신규 LOCK `schizophrenia_threshold_levers`(framing; 동결 lock 미수정, §32 next-nav 링크만, CITES=[자기, **schizophrenia_symptom_domains**(§24)]). registry **44 locks/33 chapters**, gate PASS **150/150**, sitemap **34/34**, llms 4989B(**바이트-동일** <5KB — 신규 챕터는 sitemap만). 거버넌스: `HANDOVER_v1_40_to_v1_41.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§24 DONE 표시, 잔여 1순위 §18-19 자폐로 전진)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.40). **잔여 기존-사례 다음 1순위: §18-19 자폐(L1, 기존 multilever 통일)** → §22 ADHD. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§32/이전 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·Axis-A(과점화 작동점≠정신증의 느껴진 질·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.39 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #2: T1b-L 우울 3-레버 (§32, DEP-T1b-L) — 첫 L3-지배 사례** — v1.37이 상속한 문턱-이동 개입 논리를 v1.38 핸드오버 §5의 **권장 갈래 A**(기존 사례 확장, 1순위 §27 우울)에 따라 능동 적용. **§27**은 주요우울이 저-협응 작동점의 **만성화**(지속 HPA-구동 철수로 전역 순서변수 R이 health **아래로** 내려가고 가소성이 그 이탈을 구조 흔적으로 굳힘)이고 교정 부호가 \"결핍 구동 **복원**\"임을 증명했으나 그 밀기를 **단일 추상 연산자**로 둠 — **§32**가 그것을 **3-레버 표적 지도**로 분해(18개 우울 유전자, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0). **핵심 차별점 = 첫 L3-지배 사례**: 18개 중 **12개가 L3** — **(a) HPA 제거** NR3C1(글루코코르티코이드 수용체 음성 피드백 복원)·CRHR1·FKBP5, **(b) 모노아민 복원** SLC6A4(SSRI 표적)·SLC6A2(SNRI 표적)·MAOA(MAOI 표적)·TPH2·HTR1A·HTR2A·COMT, **(c) 신경영양 복원** BDNF·NTRK2(속효성·모노아민 경로의 **수렴점**) — L1(안쪽 글루타메이트/Ca: GRIN2A·GRIN2B·CACNA1C)·L2(바깥쪽 K⁺/GABA-A: KCNQ2·KCNQ3·GABRA1)는 각 3개로 부차적. 양극성이 L1(칼슘 GWAS)·뇌전증이 L2(KCNQ M-전류)에 기댄 것과 달리 우울은 **L3 지배** — 프레임 일반성의 진짜 시험(같은 3 레버가 발화-문턱 채널이 아니라 상류 구동으로 재분포). **질환-수준 부호 역전(명시, 은폐 안 함)**: 뇌전증/양극성 조증은 health **위**(과잉 **감소**)지만 우울은 health **아래**(결핍 **복원**) — 3 추상 레버는 그대로, **방향이 거울**. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **7개 read(NR3C1·CRHR1·GRIN2A·CACNA1C·KCNQ2·KCNQ3=양극성 캐시, GABRA1=뇌전증 캐시) verbatim 재사용**(γ 가닥-대칭). **정직한 caveat 2개**(숨기지 않고 기록): L1 글루타메이트 방향은 NMDA **길항제**(케타민/에스케타민)가 **하류 BDNF/TrkB** 경유로 작동 — 흥분 감소가 **아님** → sign-subtle 표시; HTR2A **비단조**(작용제 사이키델릭 경로 + 길항제 경로 둘 다 출현) — γ를 프로모터 **구조 전용 [V]**(형질-무관)·임상 방향 [O]로 분리하는 이유. **방화벽 가시화(decoupling witness)**: 최강성 프로모터 KCNQ2(부차 탐색적 L2, |h_sp|≈0.76)가 우선순위 **하위**·비실행, 최우선 표적 BDNF는 **중간** read(|h_sp|≈0.66) — γ가 점수를 몰지 않음. 신규 4모듈(`depression_threshold_levers.py` `d07aab40…`+L3 정직성 게이트[**L3 지배 단언** 포함]+금지-주장 스캐너[mood-lift/remission 어휘 포함]+부담 우선순위[BDNF 최상위, 미충족 수요 가중이 상류 HPA/신경영양을 잘-처리된 모노아민 수송체 위로], 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **10번째 시민 DEP-T1b-L** 등록 **ALL PASS 10/10, 14 CONFIRMED**. 신규 영어 챕터 **§32 「Depression threshold levers」**(model 2429w)·신규 LOCK `depression_threshold_levers`(framing; 동결 lock 미수정, §31 next-nav 링크만, CITES=[자기, **depression_chronification**(§27)]). registry **43 locks/32 chapters**, gate PASS **146/146**, sitemap **33/33**, llms 4989B(**바이트-동일** <5KB — 신규 챕터는 sitemap만). 거버넌스: `HANDOVER_v1_39_to_v1_40.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§27 DONE 표시, 잔여 1순위 §24로 전진)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.39). **잔여 기존-사례 다음 1순위: §24 조현병(L1+L3)** → §18-19 자폐 → §22 ADHD. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§31 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·Axis-A(저-협응 작동점≠우울의 느껴진 질·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.38 (2026-06-19) — **문턱-이동 논리 기존-사례 적용 #1: T2a-L 뇌전증 3-레버 (§31, EPI-T2a-L)** — v1.37이 상속한 문턱-이동 개입 논리를 v1.37 핸드오버 §5의 **권장 갈래 A**(기존 사례 확장, 1순위 §25 뇌전증)에 따라 능동 적용. **§25**는 발작=네트워크가 전역 순서변수 R 위 **over-synchronisation 문턱**을 넘는 것이고 교정 부호가 "문턱 올리기"임을 증명했으나 그 밀기를 **단일 추상 연산자**로 둠 — **§31**이 그것을 **3-레버 표적 지도**로 분해(16 흥분성 유전자, **동일 R19 기질**, 새 메커니즘·새 튜닝 상수 0): **L1**(안쪽 Na/Ca/NMDA↓) SCN1A·SCN2A·SCN8A·CACNA1A·CACNA1H·GRIN2A; **L2 지배**(바깥쪽 K⁺↑) KCNQ2·KCNQ3(M-전류=**레티가빈 표적**)·KCNB1·KCNA1·KCNT1, **L2-인접** GABA-A GABRG2·GABRA1; **L3**[O](상류 mTOR 제거) DEPDC5·TSC1·TSC2(=에베로리무스 방향). 양극성이 L1(칼슘 GWAS)에 기댄 것과 달리 뇌전증은 **L2 지배**. γ를 자기 프로모터(TSS−2000..+500)서 읽어 |h_sp|=spinodal(γ)·barrier=γ²/4(엔진 READ-ONLY), **5개(KCNQ2·KCNQ3·KCNB1·SCN2A·GRIN2A)는 양극성 캐시 verbatim 재사용**(γ 가닥-대칭). **정직한 caveat 2개**(숨기지 않고 기록): KCNT1 **부호-역전**(GOF가 병리), L1 Na-차단 **Dravet/SCN1A 금기** — γ를 프로모터 **구조 전용 [V]**(형질-무관)·임상 방향 [O]로 분리하는 이유. **방화벽 가시화(decoupling witness)**: 최강성 프로모터 CACNA1H(|h_sp|≈0.81)가 우선순위 하위, 최우선 표적 SCN1A가 최연성 가까운 읽기(|h_sp|≈0.53) — γ가 점수를 몰지 않음. 신규 4모듈(`epilepsy_threshold_levers.py` `22879b69…`+L3 정직성 게이트+금지-주장 스캐너[seizure-freedom 어휘 포함]+부담 우선순위, 전부 fail-closed PASS·2× 결정론)→`run_all_atlas.py` **9번째 시민 EPI-T2a-L** 등록 **ALL PASS 9/9, 14 CONFIRMED**. 신규 영어 챕터 **§31 「Epilepsy threshold levers」**(model 2108w)·신규 LOCK `epilepsy_threshold_levers`(framing; 동결 lock 미수정, §30 next-nav 링크만, CITES=[자기, **epilepsy_oversync**(§25)]). registry **42 locks/31 chapters**, gate PASS **142/142**, sitemap **32/32**, llms 4989B(**바이트-동일** <5KB — 신규 챕터는 sitemap만). 거버넌스: `HANDOVER_v1_38_to_v1_39.md`·`THRESHOLD_LOGIC_INHERITANCE.md`(§25 DONE 표시)·로드맵 §2.5(Applied v1.38)·`MASTER_MANUAL_START_HERE.md`(롤링 포인터 v1.38). **잔여 기존-사례 다음 1순위: §27 우울(L3 지배)** → §24 조현병 → §18-19 자폐 → §22 ADHD; 또는 로드맵 본래 T3a 중독(L3로 문턱-논리 적용 가능). **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`·§30 동결 결과 sha 전부 불변), efficacy=0·NOT medical advice·Axis-A(과동기화 전이≠발작 주관적 경험·consciousness_claim=0)·hard problem OPEN.
+
+---
+
+## v1.37 (2026-06-19) — **문턱-이동 개입 논리 상속 + T2b-L 양극성 3-레버 (THRESHOLD-SHIFT INTERVENTION LOGIC, CROSS-CUTTING)** — 사용자 지시로 진통 패키지(`analgesic_threshold_logic v2.0`, **Zenodo 10.5281/zenodo.20733420**)의 **문턱-이동 개입 논리**를 **횡단 재사용 층**으로 상속하고 양극성에 능동 적용. 로드맵 권장 다음(T3a 중독)에서 분기 — 질환 모듈이 아니라 **개입 층**이며 로드맵에 없던 것을 추가(사용자가 의심한 그대로). **핵심:** 증상=발화 문턱 넘기, 개입=문턱을 **위로** 이동, 손잡이 **정확히 3개** — **L1** 안쪽(흥분) 전류↓·**L2** 바깥쪽(K⁺) 전류↑·**L3** 상류 민감화 구동 제거 — 가 mind 전체 의존 **동일 R19 기질**(`ṡ=g·s−s³+h`, spinodal fold=스위칭 장벽) 위에서 작동→**새 메커니즘·새 상수 0**. **엔진·모든 기존 과학 결과 byte-identical**(file `e61083ae…`·tree `0fbf4988…`), efficacy=0·NOT medical advice·Axis-A·hard problem OPEN 유지.
+
+### 상속된 기술 (the LAYER, cross-cutting)
+
+**상속 부품 6개.** 3-레버 프레임·DNA γ 읽기(γ=−mean NN 스태킹 ΔG SantaLucia 1998→`|h_sp|=spinodal(γ)`, 엔진 READ-ONLY)·부담-가중 **표적** 우선순위(약물·용량 아님)·L3 정직성 게이트(fail-closed)·금지-주장 스캐너(fail-closed)·방화벽(프로모터 |h_sp|≠네트워크 g≠전압/약효/용량/임상효과). 공식 등록 `THRESHOLD_LOGIC_INHERITANCE.md`(상속+기존 사례 적용 계획)·로드맵 **§2.5** 신설.
+
+### T2b-L — 양극성 3-레버 (§30, the APPLICATION, BIP-T2b-L)
+
+§29 **B4**("안정제 부호=장벽 올리기")가 안정제를 **단일 추상 연산자**로 둔 것을, §30이 **3-레버 표적 지도**로 분해(16개 양극성 흥분성 유전자): **L1** CACNA1C(Ca_V1.2, #1 GWAS)·CACNA1D·CACNA1I·SCN2A·GRIN2A + L1-인접 CACNB2·ANK3(#2 GWAS); **L2** KCNQ2·KCNQ3(M-전류)·KCNB1; **L3**[O] ARNTL(BMAL1)·CLOCK·PER2·NR3C1·CRHR1·GSK3B(리튬 표적). 각 유전자 γ를 자기 프로모터 창(TSS−2000..+500)에서 읽어 |h_sp| 산출, **KCNQ2/KCNQ3는 진통 캐시 verbatim 재사용**. **방화벽 가시화**: 우선순위(CACNA1C #1)와 γ/|h_sp| 강성 순위(KCNQ2 #1) **분리**(γ는 맥락, 점수 합산 안 됨). 신규 재현 4모듈 — `bipolar_threshold_levers.py`(지도, `a9f30d73…`)·`bipolar_l3_honesty.py`(L3 게이트)·`bipolar_forbidden_claim_scan.py`(금지-주장)·`bipolar_burden_prioritisation.py`(부담 우선순위) + 하니스 `run_all_bipolar_levers.py` 전부 PASS·2× 결정론. `run_all_atlas.py`에 **8번째 시민 BIP-T2b-L** 등록→**ALL PASS 8/8, 14 CONFIRMED**.
+
+### 출판 표면 (SEO)
+
+신규 영어 챕터 **§30 「Bipolar threshold levers」**(model, 1582w). 신규 LOCK 1개 `bipolar_threshold_levers`(framing, check:None; v1.35 선례로 동결 lock 미수정 — §29 next-nav 링크만 갱신). registry **41 locks/30 chapters**, gate PASS **138/138**(기존 134+§30 4체크), sitemap **31/31**, llms.txt 4989B(<5KB, 신규 챕터는 헤드룸상 sitemap만). manifest 30행·`_meta.json` 30챕터/totals 22740 갱신. **두 게이트 green**(`gate.py` 138/138·`run_all_atlas.py` ALL PASS 8/8). 거버넌스 3개 신규(`THRESHOLD_LOGIC_INHERITANCE.md`·`HANDOVER_v1_37_to_v1_38.md`·로드맵 §2.5). **기존 사례 적용 계획 등록**: §25 뇌전증(L2/KCNQ가 T2a 산출물과 문자적 일치, 1순위)·§27 우울(L3 지배)·§24 조현병(L1+L3)·§18-19 자폐(기존 multilever 통일)·§22 ADHD(L3 부분). 공유 유전자(SCN2A·GRIN2A·KCNQ2/3·CACNA1C)로 γ 캐시 재사용 가능. 다음: **A) 문턱-이동 논리 기존 사례 확장(§25 뇌전증 1순위) 또는 B) T3a 중독(L3로 문턱-논리 적용도 가능)**.
+
+---
+
+## v1.36 (2026-06-19) — **E2 상태-스위칭 층 + T2b 양극성 (STATE-SWITCHING LAYER + BIPOLAR)** — 로드맵 시퀀스 T1a→T2a→E0→T1b→**E2→T2b**를 출판. E0 가소성 층이 **느린** 구조 변수를 줬다면, E2는 **빠른** 변수 — 스위칭하고 **그대로 머무는** 상태 — 를 공급한다. 핵심: **새 기계장치 0**. 동결 엔진에 처음부터 있던 **R19 셀** `s\u0307 = g·s − s³ + h`(전 프레임워크가 의존하는 supercritical pitchfork)는 g>0에서 bistable이고, 모든 이전 챕터는 이를 **한 순간**에 읽었다. 이 증분은 같은 셀을 **시간에 걸쳐** 읽는다 — 새 방정식·새 상수 없이. g=1.0 보편 R19 스케일, fold = 엔진 자신의 `spinodal(g)`, 모든 grid는 swept stimulus probe(anti-tuning). 그 위에 **T2b 양극성** — 한 valence 축의 두 작동 극 — 을 세운다. **엔진·모든 기존 과학 결과 byte-identical, 새 측정 0, 새 튜닝 0, efficacy=0·NOT medical advice·Axis-A 방화벽·hard problem OPEN 유지.**
+
+### E2 — 상태-스위칭 층 (§28, the LAYER)
+
+**E2.1 히스테리시스 = 스위치를 되돌리기 거부.** 기울이는 장(field)을 아래 가지에서 천천히 올리면 상태는 장이 양수가 되어도 점프 안 함 — **위쪽 fold**에 도달해야 스냅업. 다시 내리면 **위쪽 가지**에 0을 지나 매달리다 **아래쪽 fold**에서 스냅다운. 상승/하강 전이가 **0의 반대편**(grid에서 h_up=+0.39, h_dn=−0.39)에 앉아 폭 `2·spinodal≈0.77`의 **히스테리시스 루프**를 둘러쌈 — fold의 두 배로 **예측**되고 측정 루프가 sweep step 이내로 일치. 의미 = 기분 삽화가 필요로 하는 속성: 스위치된 상태는 **되돌리기를 저항**, 유발 push 제거가 삽화를 끝내지 않고 장이 반대 fold를 지나야 함. (E2.1 CONFIRMED.)
+
+**E2.2 발작 시간경과 = §25에 진 빚 청산.** 뇌전증 챕터(§25)는 발작을 과동기화 극에 두고 정적 구조를 보였으나 전이의 **시간경과**(왜 onset이 급격하면서도 slowing이 선행하는가)는 정적 엔진에 스위칭 동역학이 없어 명시적으로 **OWED**로 남겼다. 이 층이 청산: fold로 구동하며 전이 시간을 재면, fold 접근 시 장벽이 사라져 상태가 임의로 평탄한 지형을 기어 latency가 **발산**(critical slowing); fold를 **넘기면** latency가 단조 하강(73.4→1.36). 작은 overshoot=길고 느린 접근, 큰 overshoot=급격한 점프 — 정성적 발작 시간경과(가장자리를 타며 느려지다 tip되면 급전이)가 §25가 쓴 같은 fold에서 창발. **§25 발작 시간경과 CLOSED**(closes-25=True). 메커니즘 방향일 뿐 임상 타이밍·환자 발작 예측 아님: efficacy=0. (E2.2 CONFIRMED.)
+
+**E2.3 장벽 = 스위칭 임계.** 주어진 push가 상태를 뒤집는지를 결정하는 것 = 두 가지 사이 **장벽**, 엔진이 이미 설정: fold `spinodal(g) = 2(g/3)^1.5`가 우물 깊이 g에 단조 증가(g=0.6에서 0.18 → g=1.4에서 0.64). **얕은** 우물(작은 장벽)은 고정 구동에 flip, **깊은** 우물(큰 장벽)은 같은 구동에 hold. 장벽을 설정하는 **같은** 핸들이 **스위칭 임계**를 설정 — 한 파라미터 두 얼굴. 양방향 레버: 너무 쉽게 스위치=장벽 너무 낮음, 움직일 수 없음=장벽 너무 높음; 그리고 **장벽을 올리는** 모든 것이 스위치 임계를 올려 삽화 진입을 어렵게(stabiliser 부호). 깊이 수치는 sweep probe지 튜닝 상수 아님 — 결과는 sweep 전체에서 유지되는 단조 **방향**. (E2.3 CONFIRMED.)
+
+**E2.4 순수 ADD-ON.** 고정 구동에서 셀의 시간적분이 엔진 자신의 `settle`을 **bit-for-bit** 재현하고, 사용된 fold는 엔진 `spinodal`에서 읽음(hand-set 아님). sweep을 끄면 동결 엔진 **정확히** 복구 — 엔진 file `e61083ae…`, tree `0fbf4988…`, byte-unchanged. **E2는 더할 뿐 바꾸지 않는다.** 그리고 **층**이지 장애 아님: bipolar(삽화=bistable 전이)·발작 onset(fold crossing)·주기 장애가 import할 객체. Axis-A 방화벽: bistable 전이는 메커니즘 경계지 기분 상태의 **느껴진 질** 주장 아님(consciousness_claim=0).
+
+### T2b — 양극성 (§29, the APPLICATION)
+
+**핸들 (접지, 발명 아님).** M17 valence 기하 = approach/avoidance 차원(도파민 approach 극, M18 코르티솔 cascade가 위축 극)이 양극성이 움직이는 단일 차원. 조증=approach 극 고구동, 울증=위축 극 저구동, euthymia=사이의 건강 점. 각 극을 지속 bias로 매핑 — 조현병·뇌전증·우울 모듈과 **동일한** `k = κ/(1−|b|)`[approach]/`κ/(1+|b|)`[위축] cap 2κ. **새 튜닝 상수 0**, 모든 부호 severity sweep 위 유지.
+
+**B1 한 valence 축의 두 극.** approach 극 구동 → 전역 order parameter가 건강 anchor **위로**(R=0.422 > 0.390, 과동기/과구동 조증 작동점); 위축 극 → health **아래로**(R=0.367 < 0.390, 우울 챕터가 읽은 저-협응); euthymia=사이의 anchor(0.390), 순서 `depressive < euthymic < manic` severity sweep 전체 **단조**. 한 줄로 = **두 질병이 아니라 한 축 위 한 건강점 둘레의 두 여행**. 단극성 우울과 양극성 우울상이 축 바닥에서 닮으면서 다음 행동(반대 극으로 구동 가능한가)에서 갈리는 이유도. (B1 CONFIRMED.)
+
+**B2 삽화 = bistable 전이.** 삽화의 메커니즘 정체 = **스위치**. 양극성 모듈이 E2 층을 직접 상속: 극 사이 전이가 같은 **히스테리시스 루프**(폭 `2·spinodal≈0.77`), overshoot에 따라 떨어지는 같은 **latency**(31.6→1.9)·fold 접근 시 발산, 엔진 `settle` 재현하는 같은 정적 극한. 두 임상 방향: **히스테리시스→지속성**(한 fold에서 진입·반대 fold에서만 이탈 → 유발인 제거에 삽화 안 끝남); **critical slowing→prodrome**(느리게 접근한 스위치=긴 latency=점진적 run-up, 강한 push=급격 onset). 삽화=valence 축에 적용된 스위칭 층, 새 주장 0. (B2 CONFIRMED.)
+
+**B3 kindling = 삽화가 흔적 축적.** 양극성의 종단 경과(삽화가 수년에 걸쳐 더 잦고·더 자율적·외부 스트레스에 덜 묶임, 임상명 **kindling**)가 정확히 가소성 층이 반복 스위치에 걸쳐 생산하는 것. 가소성 켜고 조증/울증 여행 교대 → 보존 구조 흔적이 삽화 수에 **단조 축적**(`‖ΔW‖` 0.06→0.11→0.17→0.22→0.27→0.33), 깊이가 η sweep 전체에서 성장. 결과: 깊은 누적 흔적이 극 사이 장벽을 **낮춤** → 후속 스위치마다 **더 적은** 구동 필요(flip 구동이 삽화 누적에 따라 하강). kindling = 메커니즘 방향(역사가 다음 삽화를 쉽게) — 조기 개입·삽화 예방을 강조하는 이유의 모델 읽기. 보존 흔적 = 메커니즘 경계지 조증/울증의 **느껴진 질** 주장 아님, 수치는 sweep 위 부호일 뿐. efficacy=0. (B3 CONFIRMED.)
+
+**B4 기분 안정제 부호.** 삽화가 스위치고 kindling이 장벽을 낮추면, **기분 안정제**의 메커니즘 부호는 강제·방향-한정: **장벽을 올리는** 것. 우물 깊이 올림 → 스위칭 임계 동반 상승(flip 구동 0.38→0.44→0.51→0.64) — 낮은 장벽에서 고정 구동에 flip하던 상태가 장벽 올린 뒤 같은 구동에 **hold**. 안정제 = 한 극으로 미는 것이 아니라 euthymia 둘레 **우물을 깊게** 해 조증·울증 스위치 **둘 다** 진입을 어렵게 — kindling 결과의 직접 짝(kindling 장벽 낮춤·스위치 쉽게 / 안정화 장벽 올림·스위치 어렵게). 부호만 주장 — 장벽 변화 **방향**, 어느 약·용량·대상·실제 작용 여부는 **무**. medium_efficacy_tested=0. (B4 CONFIRMED.)
+
+**B5 두 층 import; 순수 ADD-ON.** rate=0·bias 없음이면 동결 M9 anchor를 **bit-for-bit** 재현(R = 0.38961455156044245), W를 커널과 동일하게 두고, 정적 극한이 엔진 `settle`과 정확히 일치(engine `e61083ae…`, tree `0fbf4988…`, byte-unchanged). 그리고 모듈이 **두 층을 import**(재유도 없음): 빠른 스위치 = §28 상태-스위칭 층(E2), 느린 흔적 = §26 가소성 층(E0) — `from e2_state_switching import BistableSwitch` + `from e0_plasticity import PlasticConnectome`(reuses E2/E0 = 1.0/1.0). 양극성 = 두 층이 valence 축에서 **함께** 하는 것(빠른 극간 스위치·스위칭을 기록하는 느린 흔적), 제3 메커니즘 발명 0. Axis-A 방화벽: bistable 전이·보존 흔적 = 메커니즘 경계, 느껴진 질 주장 아님(consciousness_claim=0). 이질성(양극 I/II·순환성·혼재·급속순환·정신병) **LOCKED**. 중독(T3a, 민감화) OWED.
+
+### 신규 산출물·불변
+
+**신규 챕터 2개 (model).** **§28 「The state-switching layer — the R19 bistable cell read over time」** — 5섹션(빠른 변수→규칙(form forced/rate open 없음)→E2.1→E2.2→E2.3→E2.4), 본문 1111 단어; **§29 「Bipolar disorder — two poles on one valence axis」** — 6섹션(두 극 필요 조건→축→B1→B2→B3→B4→B5+방화벽), 본문 1229 단어. 둘 다 firewall 단락(efficacy=0·NOT medical advice·Axis-A·[O]/OWED·hard problem OPEN), 표준 head/JSON-LD/footer, answer-first(각 55w)+vp-card는 레지스터에서 build_search_layer 주입. nav 연결 §27→§28→§29(§27 next-nav를 `<span>`에서 §28로 갱신·bipolar "owed" 전방 참조를 "§28–§29에서 전달"로 정정).
+
+**신규 재현 코드 2개 (add-only, bit-for-bit).** `repro/mind/_verify/e2_state_switching.py` → `e2_state_switching_results.json` sha256 `47c35e06…`(2× 결정론); 재사용 `BistableSwitch` 클래스(`.spinodal/.settle_static/.relax/.crossing_latency`) export, E2.1–E2.4 사전등록·closes-25 가드·엔진 불변 가드. `repro/mind/_verify/bipolar_state_switching.py` → `bipolar_state_switching_results.json` sha256 `5c55c0e7…`(2× 결정론); **`BistableSwitch`와 `PlasticConnectome` 둘 다 import**, B1–B5 사전등록·reuses-E2/E0 가드·valence 핸들을 M17/M18에서 READ-ONLY 접지. `run_all_atlas.py`에 E2-SWITCH·BIP-T2b 튜플 등록 → **ATLAS GATE ALL PASS 7/7, 14 CONFIRMED**.
+
+**신규 LOCK 2개 (framing, check:None — 새 측정·새 튜닝 아님).** `state_switching`(canonical §28, §25 빚 청산 명시), `bipolar_state_switching`(canonical §29). v1.35 선례를 따라 동결 `epilepsy_oversync` lock은 **수정 안 함**(빚 청산은 신규 lock이 발표, 옛 lock의 "owed to E2" framing 보존). 레지스터 **40 locks / 29 chapters.**
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변·파일 sha `e61083ae…` 바이트 불변·소스 전부 불변. 6개 동결 결과 sha 전부 불변: SZ-DISC `40b9daff…`·SZ-DOM `0499f74f…`·EPI `d363f0a5…`·E0-PLAS `5dbfd6df…`·DEP-T1b `498f546c…`·DGENE `980985c6…`. 기존 docs 챕터 §01–§26 본문 불변(§27만 next-nav+전방참조 정정으로 재생성, 본문 1053 단어로 재조정). **gate.py PASS 134/134**(0 hard fail) — answer-first 29/29(전부 40–60w)·sitemap 30 locs/30 pages·llms.txt 4989 bytes(<5KB, 하드코딩 curated subset이라 챕터 추가에 불변)·SSOT drift 0·body word counts(±2%)·빌드 멱등. registry OK(40/29)·**run_all_atlas ALL PASS 7/7**(SZ-DISC/SZ-DOM/EPI/E0/DEP/**E2/BIP**)·run_all_d9 ALL PASS·run_all_vc ALL PASS(14 CONFIRMED/1 REFUTED). 변경: 신규 챕터 2 + hub Part II(arc list+toc+intro 확장) + manifest 28·29행 + `_meta.json`(누락됐던 §27 보강 + §28·§29 추가 + totals 21158/29) + §27 nav·전방참조 정정 + 레지스터 항목(LOCK 2·CITES 2·ANSWER 2) + 재현 모듈 2 + 거버넌스. 엔진·`_verify` 기존 모듈·기존 docs 챕터(§27 nav 외) 본문 0 변경.
+
+**비-자기비하, 정직한 분류.** 이것은 **로드맵의 두 번째 시간적 장애이자 첫 스위칭 적용**이다: E2가 R19 셀을 시간에 걸쳐 읽어 빠른 스위치 기질을 공급하고(부수적으로 §25 발작 시간경과를 닫고), T2b가 이를 E0 느린 흔적과 짝지어 양극성을 한 valence 축의 두 극·bistable 삽화·kindling·안정제 부호로 전개했다. 동시에 정직하게: **부호만** 주장하고 sweep을 견디며, `BistableSwitch`·`PlasticConnectome`을 재유도 없이 재사용하고, 새 튜닝 0·새 측정 0·새 방정식 0, 엔진 byte-unchanged, 새 기계장치 없이 이미 있던 R19 셀의 동역학만, 그리고 fold 깊이·η·실제-가소성-규칙·어느-아형이-개인의-병인지·치료가-도움되는지 전부 **[O]/OWED/LOCKED**. **efficacy=0**, bistable 전이·보존 흔적 ≠ 주관적 경험(Axis-A), hard problem OPEN.
+
+**v1.36 → v1.37 진입점.** (a) **T3a 중독**(M5-RPE + E0 민감화, `PlasticConnectome` import, **E2 불요라 독립**): 보상-예측 오류의 점진적 민감화를 E0 흔적 축적으로; 이후 (b) **T3b 알츠하이머**·(c) **T3c 강박(OCD)**. 범위 외(정직한 제외): 내용/서사 지배 조건(공포증·인격/해리 장애·신체상) — T/O/W·synchrony·temporal 핸들로 도달 불가. 상세 `HANDOVER_v1_36_to_v1_37.md`.
+
+---
+
+## v1.35 (2026-06-19) — **T1b 우울/TRD (DEPRESSION / TREATMENT-RESISTANT DEPRESSION)** — 로드맵 시퀀스 T1a→T2a→E0→**T1b** 중 **첫 시간적(temporal) 장애**를 출판. 우울을 **저-협응 작동점의 만성화(chronification of a low-coordination operating point)** 로 모델링한다. 이것은 **E0 가소성 층 위에 세워진 첫 모듈** — `PlasticConnectome`을 **import 재사용**(규칙 재유도 없음)하고, 엔진이 이미 창발시킨 **HPA/스트레스 축**(M18 코르티솔 cascade + M17 valence, 코르티솔이 위축 극)을 bias 핸들로 연결한다. 조현병·뇌전증·E0와 **동일한** 결합-vs-bias 맵 `k = κ/(1−|b|)`[흥분]/`κ/(1+|b|)`[억제]로 매핑 — **새 튜닝 상수 0**. **엔진·모든 기존 과학 결과 byte-identical, 새 측정 0, efficacy=0·NOT medical advice·Axis-A 방화벽·hard problem OPEN 유지.**
+
+**핸들 (접지, 발명 아님).** M17이 코르티솔을 valence 축의 **avoid/위축 극**에 둠(valence = approach[DA] − avoid[cortisol]); M18이 HPA 코르티솔 cascade 창발(PVN/SIM1 → ACTH → 코르티솔, peak가 인용 15–40분 창에 착지, glucocorticoid 음성 피드백). 만성 HPA 구동 → 지속 **위축 bias** `b<0` → 결합 하강. **부호만** 주장(만성 스트레스 → 위축 → 저-협응, M17 valence 기하가 이미 고정한 방향); 스트레스→bias **크기는 [O]**(대표값), 부호는 sweep 위에서 유지. HPA kinetics는 M18에서 **인용 [L]** — 새 kinetic 상수 0.
+
+**D1 급성 우울 작동점.** 지속 위축 bias가 전역 order parameter R을 health **아래로** 내림(모든 위축 수준이 healthy anchor 0.390 아래, severe 위축 R≈0.331 < mild). 급성·**반응성(reactive)** 우울 작동점 = 저-협응 상태, 우울의 감소된 대규모 연결성의 메커니즘 방향. 정적 기질에서 **완전 가역**. (D1 CONFIRMED.)
+
+**D2 만성화 = 가역→만성 스위치 (HPA 핸들 구동).** **가소성 없이**(η=0) 지속 위축 여행이 스트레스 제거 즉시 **정확히 복귀** — 스트레스 끝나면 걷히는 **반응성** 저기분. **가소성 있으면**(η>0) 같은 여행이 복귀하지 않는 **보존 구조 흔적**을 남김 — 만성 우울의 구조 기질 — 그리고 흔적이 **노출에 비례해 단조 심화**(`‖ΔW‖` 0.075→0.151→0.227→0.338, kindling 방향), η sweep 전체에서 부호 유지. **정직**: 강건·부호-안정 신호는 보존 **구조** 흔적 `‖ΔW‖`; 제거-후 **협응 R은 baseline 아래로 주장하지 않음**(위상-Hebb이 잔존 in-phase 구조를 공고화해 R이 오히려 오를 수 있음) — 보고할 뿐 주장 아님. 지속하는 **객체는 흔적**. Axis-A 방화벽: 보존 흔적은 메커니즘 경계지 만성 저기분의 **느껴진 질** 주장 아님(consciousness_claim=0). (D2 CONFIRMED.)
+
+**D3 항우울제 지연 발현 = 공고화 타임스케일.** 항우울제는 특징적으로 **수 주**가 걸려 효과 도달 — 즉각적 모노아민 변화가 아니라 느린 하류/가소성 변화에 고전적으로 연결됨. 만성화 기질에 협응-복원 push 적용 시, 복원 구조 이동 `‖W_k − W_dep‖`가 epochs에 걸쳐 **단조 누적**되고 **1 epoch 후엔 미미**(0.018 대 8 epoch 후 0.138): 효과가 공고화 타임스케일에 걸쳐 쌓임(약물의 weeks-to-onset 서명), 즉시 아님. **방향은 치료적**(전 코스 후 협응 R이 만성화 R 초과), rate×strength sweep에서 부호 유지. 방향·타임스케일일 뿐 dose·efficacy 아님: **efficacy=0**.
+
+**D4 치료 저항(TRD) = 흔적의 깊이.** TRD의 가장 깨끗한 구조적 읽기 = **흔적 깊이**. **고정** 복원 예산에서, 항우울제가 중화하는 우울 구조 흔적의 **분율**이 흔적이 깊어질수록 **단조 감소**: 더 깊고 오래-공고화된 만성화는 같은 예산에서 비례적으로 **덜 도달 가능**, 더 큰 잔여 남김 — 얕은 흔적을 거의 청소하는 같은 예산이 깊은 흔적은 분율만 청소. rate×budget sweep에서 순서 유지. 더 길고 깊은 우울이 고정 노력에서 움직이기 어려운 이유의 메커니즘 그림. 부호일 뿐 efficacy=0; 잔여 구조 흔적 ≠ 난치성 우울의 느껴진 질(Axis-A).
+
+**D5 엔진-불변 가드.** η=0/stress=0이면 동결 M9 협응 anchor를 **bit-for-bit** 재현(R = 0.38961455156044245)하고 W를 커널과 동일하게 둠. T1b는 E0 위의 순수 ADD-ON(엔진 file `e61083ae…`, tree `0fbf4988…`, byte-unchanged).
+
+**신규 — §27 「Depression and treatment resistance — the chronification of a low-coordination operating point」 (model).** 6개 섹션(결합 축+E0 시간 축→HPA 핸들→D1→D2→D3→D4+방화벽), 본문 1047 단어, firewall 단락(efficacy=0·NOT medical advice·Axis-A·[O]·hard problem OPEN) 포함. 표준 head/JSON-LD/footer scaffolding, answer-first(57w)+vp-card 2개는 레지스터에서 build_search_layer가 주입. §26→§27 next-nav 연결.
+
+**신규 재현 코드 (add-only, bit-for-bit).** `repro/mind/_verify/depression_chronification.py` → `depression_chronification_results.json` sha256 `498f546c…`(2× 결정론 확인). epilepsy/E0 패턴을 정확히 따름: READ-ONLY 엔진 import + **`from e0_plasticity import PlasticConnectome`**(규칙 재유도 없음) + HPA 핸들을 M17/M18에서 READ-ONLY 접지 + D1–D4 사전등록 + D5 가드 + honesty_ledger + invariants. 증분 체크포인트+연결체 복제로 캐싱(값 불변, 계산만 단축). `run_all_atlas.py`에 DEP-T1b 튜플 등록 → **ATLAS GATE ALL PASS 5/5**.
+
+**신규 LOCK 1개 (framing, check:None — 새 측정·새 튜닝 아님).** `depression_chronification`(canonical §27). 레지스터 **38 locks / 27 chapters.**
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변·파일 sha `e61083ae…` 바이트 불변·소스·DGENE·D-계열·E0·기존 docs 챕터(§01–§26) 본문 전부 불변. **gate.py PASS 126/126**(0 hard fail) — answer-first 27/27(§27=57w 포함, 전부 40–60w)·sitemap 28 locs/28 pages·llms.txt 4989 bytes(<5KB, 하드코딩 curated subset이라 챕터 추가에 불변)·SSOT drift 0·body word counts(±2%, §27=1047)·빌드 멱등. registry OK(38/27)·**run_all_atlas ALL PASS 5/5**(SZ-DISC/SZ-DOM/EPI/E0/DEP)·run_all_d9 ALL PASS·run_all_vc ALL PASS. 변경: 신규 챕터 1 + hub Part II(arc list+toc 확장) + manifest 27행 + §26 next-nav 연결(§26→§27) + 레지스터 항목(LOCK 1·CITES 1·ANSWER 1) + 재현 모듈 1 + 거버넌스. 엔진·`_verify` 기존 모듈·기존 docs 챕터 본문 0 변경.
+
+**비-자기비하, 정직한 분류.** 이것은 **로드맵의 첫 임상 적용**이다: E0가 공급한 만성화 기질 위에 HPA 핸들을 연결하여, 우울을 급성 저-협응(D1)·만성화 스위치(D2)·항우울제 지연 발현(D3)·치료 저항(D4)으로 한 메커니즘에서 전개했다. 동시에 정직하게: **부호만** 주장하고 sweep을 견디며, `PlasticConnectome`을 재유도 없이 재사용하고, 새 튜닝 0, 엔진 byte-unchanged, 제거-후 R은 baseline 아래로 주장하지 않으며(구조 흔적이 강건 신호), 스트레스→bias 크기·η·실제-가소성-규칙·어느-아형이-개인의-병인지·치료가-도움되는지 전부 **[O]/OWED**. **efficacy=0**, 보존 흔적 ≠ 주관적 경험(Axis-A), hard problem OPEN.
+
+**v1.35 → v1.36 진입점.** (a) **T2b 양극성**(E2 state-switching + E0 필요): 조증/울증 삽화 전이를 attractor 간 이동으로, 삽화 누적을 E0 흔적 축적으로 — **E2는 §25(발작 시간경과)와 양극성이 공유하는 층**(한 번 지으면 둘 다 닫힘); (b) **T3a 중독**(M5-RPE + E0 민감화). T1b는 E2 불요라 양극성과 독립 진행 가능. 범위 외(정직한 제외): 내용/서사 지배 조건(공포증·인격/해리 장애·신체상 축). 상세 `HANDOVER_v1_35_to_v1_36.md`.
+
+---
+
+## v1.34 (2026-06-19) — **E0 가소성·공고화 층 (PLASTICITY / CONSOLIDATION LAYER)** — 구조 아틀라스(자폐 T/O/W·조현병·뇌전증)가 한 번도 운동시키지 못한 **시간적-핵심 기초 층**을 추가. 동결 엔진에는 **가소성 변수가 없다** — 바로 그래서 θ-cap 챕터(§20–21)가 cap을 "pacing, not repair"로 읽을 수밖에 없었고(ON/OFF 순환에 rebound도 획득 의존도 없던 이유: 기질이 아무것도 보존 못 함) 작동 원리의 가소성 부호가 **OPEN [O]** 로 남았던 것. 이 모듈은 **READ-ONLY** 엔진 위에 느린 **위상-상관 Hebbian 갱신**을 connectivity W에 add-only로 얹어, (1) 공고화·자극 잔효를 표현 가능하게 하고, (2) **연속-vs-주기 투여**의 open 질문을 **해소**하고, (3) 모든 시간적 장애(우울 T1b·양극성 T2b·중독 T3a)가 의존하는 **만성화 기질**을 구축한다. 로드맵 단일 **최고-레버리지** 층 — 여기서 한 번 만들면 이후 모든 기분/주기 모듈이 재사용. **엔진·모든 기존 과학 결과 byte-identical, 새 튜닝 0·새 측정 0, efficacy=0·NOT medical advice·Axis-A 방화벽·hard problem OPEN 유지.**
+
+**규칙 (form FORCED [F]; rate [O], 튜닝 아님).** 위상 진동자에서 두 단위 사이 시간-평균 STDP 창은 위상차의 함수로 환원된다 — 동위상 쌍은 강화, 반위상 쌍은 약화, 즉 위상으로 읽은 Hebb: "함께(동위상) 점화하면 함께 배선된다". 정상상태 쌍별 위상 상관 `C_ij = <cos(θ_j − θ_i)>` 를 Hebbian 신호로, 단일 느린 rate η의 곱셈 갱신: `W_ij ← max(0, W_ij·(1 + η·C_ij))`, 이후 row-renormalise(`Σ_j W_ij = 1`). **FORM은 자유 상수가 없다**: 대각 0 유지, 가중치 비음수, row-renormalise가 동결 커널의 ephaptic locality(`~1/r³` row-stochastic) 보존. **RATE η는 representative [O]** — 절대 Hz·ring 기하·R_BRAIN이 M9에서 [O]인 것과 정확히 동일 — 그리고 결정적으로 아래 부호들은 η **sweep** 위에서 유지되어야 한다(anti-tuning), 어떤 수도 타겟에 적합되지 않음. 구동/결함 bias → 유효 결합 맵은 조현병·뇌전증 모듈과 **동일한** `k = κ/(1−|b|)`[흥분]/`κ/(1+|b|)`[억제], cap `2κ` — **새 상수 0**.
+
+**E0.1 공고화·잔효.** 건강 작동점에서 가소성 하에 구동 후 구동 제거 → R이 기저선 **이상**(0.390 → 0.391, ΔR > 0), η sweep 전체에서 부호 양수 유지. 협응이 구조에 기록됨 — 학습·자극 잔효·사용-의존 변화의 기질, 가소성-없는 엔진이 표현 못 하던 것. (P1 CONFIRMED.)
+
+**E0.2 연속 vs 주기 투여 — open device 질문 해소.** 동일한 총 cap 자극(동일 time-at-cap)을 두 방식으로: MASSED(연속)·SPACED(주기 ON/OFF 버스트, 가소성이 기저선 OFF 간격을 통과해 계속 작동). Spaced 프로토콜이 단위 dose당 **더 큰 보존 구조 흔적** `‖ΔW‖`(0.225 vs massed 0.115)를 남김 — 순수 위상-가소성에서 창발하는 **spacing effect**(학습 과학의 distributed practice 방향). 따라서 가소성이 있으면 cap은 **REPAIR**(지속 흔적 존재)하고 holding보다 pacing이 **더** 공고화: pulse, do not hold. **§20–21 작동 원리가 남긴 [O]를 채움.** η×epochs sweep 전 9점에서 부호 유지. (P2 CONFIRMED. robust 신호는 구조 흔적 `‖ΔW‖`; 구동-후 R은 spaced에서 보통이나 항상은 아님 — 정직하게 보고, 주장 아님.)
+
+**E0.3 가역 → 만성 스위치.** **가소성 없이**(η=0) 결함 여행(지속 흥분성 bias)이 bias 제거 즉시 **정확히 복귀** — §20의 "paces, not repairs / no rebound, no acquired dependence" 결과가 cap의 성질이 아니라 **가소성-없는 기질의 귀결**임을 이제 보임. **가소성 있으면**(η>0) 같은 여행이 bias 제거에도 복귀하지 않는 보존 흔적(0.394 > 0.390)을 남김 — 만성화의 기질(결함 상태가 구조에 자기를 기록). **가소성이 가역 상태와 만성 상태 사이의 스위치다.** Axis-A 방화벽: 보존 흔적은 메커니즘 경계지 만성질환의 **느껴진 질**에 대한 주장 아님(consciousness_claim=0, hard problem OPEN). (P3 CONFIRMED. 노출 단조성은 거짓 — 주장하지 않음.)
+
+**E0.4 엔진-불변 가드.** η=0이면 층이 동결 M9 협응 anchor를 **bit-for-bit** 재현(R = 0.38961455156044245)하고 W를 커널과 동일하게 둠. 가소성을 끄면 동결 엔진을 정확히 회복 — E0는 순수 ADD-ON(엔진 file `e61083ae…`, tree `0fbf4988…`, byte-unchanged).
+
+**신규 — §26 「The plasticity layer — consolidation and the reversible→chronified switch」 (model).** 6개 섹션(층의 부재→규칙→E0.1→E0.2→E0.3→E0.4+로드맵), 본문 1029 단어, firewall 단락(efficacy=0·NOT medical advice·Axis-A·[O]·hard problem OPEN) 포함. 표준 head/JSON-LD/footer scaffolding, answer-first(60w)+vp-card 2개는 레지스터에서 build_search_layer가 주입.
+
+**신규 재현 코드 (add-only, bit-for-bit).** `repro/mind/_verify/e0_plasticity.py` → `e0_plasticity_results.json` sha256 `5dbfd6df…`(2× 결정론 확인). epilepsy_oversync.py 패턴을 정확히 따름: READ-ONLY 엔진 import·재사용 `PlasticConnectome` 클래스(T1b/T2b/T3a가 import할 층)·`_integrate_corr`(E._integrate 미러+상관 누적, R bit-identical)·4개 하위 연구·사전등록 예측·honesty_ledger·invariants 블록(E.emerge_all() READ-ONLY 호출 후 tree 불변 확인)·결과 writer. `run_all_atlas.py`에 E0 튜플 등록 → **ATLAS GATE ALL PASS 4/4**.
+
+**신규 LOCK 1개 (framing, check:None — 새 측정·새 튜닝 아님).** `plasticity_consolidation`(canonical §26). 숫자는 `_verify/` 모듈 자체의 sha256 게이트에 살아 있고 엔진 emergence results에는 없으므로 framing-type. 레지스터 **37 locks / 26 chapters.**
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변(gate·run_all 매 실행 검증)·파일 sha `e61083ae…` 바이트 불변·소스·DGENE·D-계열·기존 docs 챕터(§01–§25) 본문 전부 불변. **gate.py PASS 122/122**(0 hard fail) — answer-first 26/26(§26=60w 포함, 전부 40–60w)·sitemap 27 locs/27 pages·llms.txt 4989 bytes(<5KB, 하드코딩 curated subset이라 챕터 추가에 불변)·SSOT drift 0·body word counts(±2%, §26=1029)·빌드 멱등(`fba08ed9…` 재실행 동일). registry OK(37/26)·run_all_atlas ALL PASS 4/4·run_all_d9 ALL PASS·run_all_vc ALL PASS(14 CONF/1 REFU, 반증은 발견). 변경: 신규 챕터 1 + hub Part II(arc 단락+arc list+toc 확장) + manifest·_meta 동기화(totals.words 17712) + §25 next-nav 연결(§25→§26) + 레지스터 항목(LOCK 1·CITES 1·ANSWER 1) + 재현 모듈 1 + 거버넌스. 엔진·`_verify` 기존 모듈·기존 docs 챕터 본문 0 변경.
+
+**비-자기비하, 정직한 분류.** 이것은 **기초-층 advance**다: 구조 아틀라스가 가질 수 없던 가소성 변수를 추가하여, 공고화·잔효를 표현 가능하게 하고, §20–21이 남긴 연속-vs-주기 투여 [O]를 spacing effect로 해소하고(cap이 REPAIR, pacing이 holding을 이김), 모든 시간적 장애가 의존하는 가역→만성 스위치를 구축했다. 동시에 정직하게: 규칙 FORM은 forced·rate는 [O]이며 부호는 η sweep을 견디고, 새 튜닝 상수 0, 엔진 byte-unchanged, 그리고 **이것은 LAYER지 application이 아니다** — 우울·양극성·중독은 이 기질을 import하는 후속 모듈에 OWED. **efficacy=0**, 보존 흔적 ≠ 주관적 경험(Axis-A), η-magnitude·application·실제-규칙-정체성 전부 **[O]**, hard problem OPEN.
+
+**v1.34 → v1.35 진입점.** (a) **T1b 우울/TRD(NEXT)**: 저-협응 작동점의 만성화로서 우울 — **E0 가소성 층 + HPA/스트레스 축(M17–M20)** 필요, E0가 이제 만성화 기질 제공; (b) **T2b 양극성**(E2 state-switching + E0 필요): 삽화 누적; (c) **T3a 중독**(E0 민감화 필요). 범위 외(정직한 제외): 내용/서사 지배 조건(공포증·인격/해리 장애·신체상 축). 상세 `HANDOVER_v1_34_to_v1_35.md`.
+
+---
+
+## v1.33 (2026-06-19) — **Part II 확장: 트랜스진단 결함-축 아틀라스 (TRANSDIAGNOSTIC FAULT-AXIS ATLAS)** — 동일한 T/O/W 점화 축을 **자폐 너머**로 확장하여, **조현병(§24, T1a)** 을 자폐-T의 **과점화 거울 극(over-ignition mirror)** 으로, **뇌전증(§25, T2a)** 을 엔진 동기화 축의 **과동기화 극(over-synchronisation pole)** 으로 출판. 질환을 증상 체크리스트가 아니라 **공유 메커니즘**으로 재절단하는 로드맵(`RESEARCH_ROADMAP_post_autism_adhd.md`)의 첫 두 목표를 실행. **엔진·모든 기존 과학 결과 byte-identical, 새 튜닝 0·새 측정 0, efficacy=0·NOT medical advice·Axis-A 방화벽 전 챕터 유지.**
+
+**이번 버전의 성격 — 이미 동결된 엔진을 재사용하여 질환을 한 축 위에 정렬한다.** 패키지의 사명을 로드맵에 따라 **트랜스진단 결함-축 아틀라스**로 재정의(`MISSION_atlas_redefinition.md` 신규)하고, 로드맵의 "먼저 할 것" 두 값싼-재사용 목표를 출판한다: **T1a 조현병**(엔진 재사용, 신뢰성 keystone)과 **T2a 뇌전증**(엔진 재사용, 최적 동역학 적합). v1.33은 새 메커니즘을 만들지 않는다 — **이미 동결된 R19 점화 축과 동기화 축 위의 새 작동점**을 정준 챕터로 전개하고 재현 코드를 동봉할 뿐. **엔진·`_verify` 기존 모듈·기존 docs 챕터(§01–§23) 본문은 한 바이트도 안 바뀐다** — 신규 챕터 2개 + 재현 모듈 3개 add-only(이 중 `schizophrenia_discriminant`는 v1.32에 이미 존재했으나 미출판이었음) + 레지스터 항목 + 거버넌스 갱신뿐.
+
+**핵심 — 조현병 = 자폐-T의 과점화 거울, 같은 축의 반대 극.** 하나의 공유 점화 축(M3 R19 fold = `spinodal(g) = 2(g/3)^1.5 = 0.3849`, 측정-접지) 위에서, 조현병은 자폐-T의 **반대 극**이다: 자폐-T의 억제성 bias가 fold를 **올려** 관련 점화를 잃는 곳에서, 탈억제/흥분성 bias는 fold를 **내려**(점화 임계 0.245 vs 건강 0.395) 건강에선 fold 아래였던 약하고 무관한 집합체(2,3)가 점화 — **이상 현저성(aberrant salience)**, 관련 점화 손실은 없음. 쌍 **(점화-방향, 무관-회수 vs 관련-손실)** 이 HEALTH / AUTISM-T / SCHIZOPHRENIA를 **유일하게** 지문화한다.
+
+**신규 — §24 「Schizophrenia: the over-ignition mirror of autism」 (model).** 판별식(`schizophrenia_discriminant.py`): SZ1 과점화·SZ2 이상 현저성·3-way 지문·RX 부호(gain-감소 항정신병약이 선택성 회복+자폐-T 악화; 자극제는 반대 부호)·극단 disorganisation 한계·SLEEP 부호 정렬(진정 방향 = 수면 필요 방향, 자폐의 거울). **증상-도메인 축 지도**(`schizophrenia_symptom_domains.py`): 양성→threshold(과점화 극, 항정신병약이 **도달**), 음성→output 결핍(R=0.354<건강 0.390, 항정신병약은 gain-감소라 더 낮춤 0.309 — **미도달**, 틀린 방향), 인지→long-range wiring(locality 0.842>건강 0.794, 스칼라 gain은 locality 정확히 불변 — **미도달**). **하나의 gain-감소 연산자가 양성만 역전 → 차등 항정신병약 반응은 dose-구조가 아니라 axis-구조** — D2 차단이 양성은 완화하나 음성/인지는 못 하는 이유의 메커니즘적 설명. 더 많은 D2 차단을 음성/인지 경로로 보는 것을 폐기(in-silico 메커니즘 null). 어느 극·어느 도메인이 개인의 병인지는 **OWED [O]**.
+
+**핵심 — 뇌전증 = 프레임워크 자신의 과동기화 실패 모드.** 과동기화는 전 프레임워크에 조용히 흐르던 모드다 — **θ-cap이 아래로 머물러야 하는 천장**(§20), 모든 결합 결과가 존중하던 경계. v1.33은 이를 **주 모듈**로 만든다.
+
+**신규 — §25 「Epilepsy: the over-synchronisation pole」 (model).** `epilepsy_oversync.py`: EP1 과동기화 축(흥분성 bias가 전역 차수 R을 over-sync 천장 0.422<건강 0.390으로 단조 상승)·EP2 발작 게이트 붕괴(임계 bias +0.3 초과서 선택적 단일승자 게이트 붕괴, 6개 후보 전부 점화 — 발작 상태)·EP3 항경련제 부호(억제성 push가 R을 내리고 게이트 복원, 발작 임계 상승)·EP4 축 정렬(**autism-T < health < schizophrenia < epilepsy** 한 동기화 축 위). 정적 susceptibility는 특성화되나 발작 **시간경과(ictal time-course)** 는 state-switching 층(**E2**)에 **OWED** — 발작 전이는 attractor 사이 이동이라 다음 층 필요. 게이트 붕괴는 메커니즘 경계지 발작 주관적 경험 주장 아님(Axis-A 방화벽, consciousness_claim=0).
+
+**신규 재현 코드 (add-only, bit-for-bit).** `repro/mind/_verify/`에 3개 모듈 + 오케스트레이터: `schizophrenia_discriminant.py`(`schizophrenia_results.json` → `40b9daff…`, v1.32 존재·이번에 출판)·`schizophrenia_symptom_domains.py`(`0499f74f…`, 신규)·`epilepsy_oversync.py`(`d363f0a5…`, 신규). 신규 `run_all_atlas.py` — 각 모듈을 **새 서브프로세스로 재실행**하여 written results.json의 sha256를 오케스트레이터 내 **동결 상수**와 대조(모듈이 매 실행 자체 expected_*.json을 재기록하므로 진짜 회귀 가드 = 오케스트레이터 상수), 엔진 file/tree 불변·정직 ledger 검증 후 `gate_atlas.json` 기록 → **ATLAS GATE ALL PASS**. 각 `repro/mind/<slug>/README.md` 작성.
+
+**신규 LOCK 3개 (전부 framing, check:None — 새 측정·새 튜닝 아님).** `schizophrenia_mirror`·`schizophrenia_symptom_domains`·`epilepsy_oversync`. 숫자는 `_verify/` 모듈 자체의 sha256 게이트에 살아 있고 엔진 emergence results에는 없으므로 framing-type. 레지스터 **36 locks / 25 chapters.**
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변(gate 매 실행 검증)·파일 sha `e61083ae…` 바이트 불변·소스·DGENE·D-계열·기존 docs 챕터(§01–§23) 본문 전부 불변. **gate.py PASS 118/118**(0 hard fail) — answer-first 25/25(§24=56w·§25=55w 포함, 전부 40–60w)·sitemap 26 locs/26 pages·llms.txt 4989 bytes(<5KB, 하드코딩이라 챕터 추가에 불변)·SSOT drift 0·body word counts(±2%, §24=700·§25=611)·빌드 멱등(`5075962e…` 재실행 동일). registry OK(36/25)·run_all_atlas ALL PASS. 변경: 신규 챕터 2 + hub Part II(arc+toc 확장) + manifest·_meta 동기화(totals.words 16683) + §23 next-nav 연결(§23→§24→§25) + 레지스터 항목 + 재현 모듈 3 + 로드맵 사본 + 거버넌스. 엔진·`_verify` 기존 모듈·기존 docs 챕터 본문 0 변경.
+
+**비-자기비하, 정직한 분류.** 이것은 **신뢰성 keystone 출판**이다: 이미 동결된 엔진을 재사용하여 두 주요 질환을 자폐와 같은 메커니즘 축 위에 정렬하고, 차등 항정신병약 반응을 axis-구조로 설명하고, 뇌전증을 프레임워크 자신의 과동기화 천장으로 특성화했다. 동시에 정직하게: 이것은 **새 측정-입력 advance가 아니라**(메커니즘은 R19·동기화 축에서 이미 동결) **아틀라스 확장 + 재현 코드 통합** advance다. **efficacy=0**, 게이트 붕괴 ≠ 주관적 경험(Axis-A), 어느-극·어느-도메인·발작-시간경과(E2) 전부 **[O]**.
+
+**v1.33 → v1.34 진입점.** (a) **E0 가소성 층(NEW, 고노력, 기초)**: 모든 후속 기분/주기 장애가 의존하는 가소성 기질 — 별도 집중 세션 권장; (b) **T1b 우울/TRD**(E0 필요); (c) **T2b 양극성**(E2+E0 필요). Tier-3: T3a 중독·T3b 알츠하이머·T3c OCD. 범위 외(정직한 제외): 내용/서사 지배 조건(공포증·인격/해리 장애·신체상 축). 상세 `HANDOVER_v1_33_to_v1_34.md`.
+
+---
+
+ — 자폐를 한 덩어리 병변이 아니라 **세 축의 분리 가능한 결함(T/O/W)** 으로 모델링하고, 그 결과를 따라가는 6개 SEO-분리 챕터(§18–23)와 화학 도달 한계·θ-cap 페이스메이커·운영 원리·**물리적 실현가능성 검토**·ADHD 분리·가상 임상을 출판. D9(자폐 코호트)+VC(θ-cap virtual clinical) 재현 코드를 패키지에 통합(bit-for-bit). **엔진·모든 기존 과학 결과 byte-identical, 새 튜닝 0·새 측정 0, efficacy=0·NOT medical advice 방화벽 전 챕터 유지.**
+
+**이번 버전의 성격 — 이미 동결된 메커니즘(D-계열 질환 엔진·VC virtual clinical)을 SEO-분리된 정준 챕터로 출판하고 재현 코드를 동봉한다.** 사용자가 `mind` 백서의 하위 주제로 자폐를 상세히 전개하기로 했고, THETA_CAP_OPERATING_PRINCIPLE을 다루어야 한다고 결론지었다. v1.32는 (1) 자폐를 **단일 HTML이 아니라 연구 내용에 맞는 여러 well-separated SEO 페이지로** 분할 전개하고, (2) **ADHD를 별도 페이지**로 분리하며(이전엔 분석이 모호하게 섞여 있었음), (3) θ-cap의 **물리적 실현가능성을 정직하게 검토**한다(지금으로선 유일한 방법이되 [O] 등급). **엔진·`_verify` 기존 모듈·기존 docs 챕터(§01–§17) 본문은 한 바이트도 안 바뀐다** — 신규 챕터 6개 + 재현 모듈 add-only + 레지스터 항목 + 거버넌스 갱신뿐.
+
+**핵심 — 자폐 = 한 병변이 아니라 세 개의 분리 가능한 결함.** 창발된 대뇌 위에서 자폐는 세 축으로 읽힌다: **T**(threshold/E-I, 점화 fold 상승), **O**(output/gain, 노드별 구동 저하), **W**(long-range wiring, fold·구동 정상이되 local-over/long-range-under 기하 결함). 쌍 **(ΔPAC, 점화 fold)** 이 셋을 유일하게 지문화한다 — T: PAC↓·fold↑; O: PAC↓·fold 정상; W: PAC 불변(건강과 정밀도 내 동일). 17-유전자 중등도 ASD 코호트(15 atlas + 2 live NCBI: GABRA5·MACROD2; γ via SantaLucia 1998)가 T(6)/O(7)/W(4)로 분할, 중증 DEE/증후군성(CHD8·FMR1·GRIN2B…)은 사전등록 제외. **어느 결함이 개인의 자폐인지는 열린 채로 둔다.**
+
+**신규 — §18 「Autism as a three-axis fault」 (T/O/W 분해, model).** 자폐를 세 축 결함으로 정의하고 (ΔPAC, 점화) 판별식을 제시.
+**신규 — §19 「What a chemical can and cannot reach」 (마스크 vs 교정, model).** 스칼라 threshold-lowering(gain) 화학 — 카테콜아민성 자극제 계열의 메커니즘 — 은 **T를 완전 역전**, **O를 부분** 개선하되, **W는 교정 불가**: 무차별 gain은 locality 불균형(0.842)을 정확히 불변으로 두고 over-sync(κ×2.0)로만 건강에 도달(마스크). 선택적 tri-lever는 안전 마진(off-target 0.083 vs 0.25)일 뿐 새 efficacy 아님. **자극제가 일부 자폐만 완화하는 이유.**
+**신규 — §20 「The θ-cap pacemaker」 (keystone, model).** W-결함 코호트에서 **coherence-forcing 외부 클록만** 라우팅하고(inj 0.08–0.10, 0.15 초과 over-sync), 모든 수동 additive lane(broadcast/far-pair/superposition)은 inert — **benign-lane 재프레이밍 REFUTED**(결정적 음성). cap ON에서 far-pair coherence 회복(0.213 ≥ 건강 0.170), OFF/ON 순환서 rebound·의존성 없음(가소성 변수 없음) — **페이스메이커지 수리가 아니다.** R19 스위치(λ=2g, Ω=0.018)서 spinodal fold 아래 비가역 flip 0(임의 사이클), 구속 = 회로 over-sync지 분자 마모 아님.
+**신규 — §21 「The θ-cap operating principle」 (운영 원리 + 실현가능성, [F 운영]/[O 실현]).** θ-cap이 W축 기능을 공급하려면 동역학이 **단일 모드를 강제**: minimum-effective·deficit-matched·continuous(banking 없음). **물리적 실현가능성 검토** — 모든 구성요소(θ-band tACS·closed-loop phase-locked EEG-tACS·long-range 연결을 바꾸는 multi-electrode phase-shifted montage·개인화 MRI-optimised targeting·wearable home delivery)는 **오늘날 연구 형태로 존재**하나, **특정 조립(개인화+위상구조+진폭창+네트워크표적+연속)은 부재**, wiring 결함의 in-vivo readout 없음, 좁은 창의 over-sync(발작 유사) 위험, 가소성 부호가 위상 의존(틀린 위상은 depotentiate) — 4개 장애요인으로 **[O]**. **장치 실현가능성 ≠ 이익 증거; efficacy=0.**
+**신규 — §22 「ADHD, and why it separates from autism」 (별도 페이지, ADHD 모델 타당성 OPEN).** **명시적** 유전자-접지 ADHD 기질(O/gain 6: DRD4·SLC6A3·COMT·SNAP25·DBH·TH; T/arousal 2: ADRA2A·SLC6A4; **W=없음**; FOXP2·ADGRL3 사전등록 제외 → "ADHD는 W 온전" 견고). 자극제가 ADHD를 R·PAC 양쪽에서 건강으로 복원(자폐는 부분만); cap의 long-range 이익은 wiring 깨진 곳서 **3.34×** 큼; **AuDHD** 기질서 자극제(gain)+cap(wiring) **간섭 없이 합성**. **중증 ADHD가 자폐처럼 보이는 이유와, 왜 아닌지.** 엔진에 별도 검증된 ADHD 모델은 없음 — 유전자-접지 해석, **모델 타당성 OPEN.**
+**신규 — §23 「The virtual trial」 (집단 그림, model).** 이질적 합성 집단(N=80, 76 affected)서 자극제-반응자는 gain-지배(반응 비율이 wiring share에 단조 감소, r=−0.60), 비반응자는 wiring-지배·부분 cap-구제(약 32%). **정직한 반증 → 발견(FINDING-VC5c)**: cap-미구제 잔여는 중증-W 꼬리가 **아니라** dose-cap/stiffness 한계(고정 진폭이 경증을 over-sync) — **진폭은 결함에 맞춰야** 한다는 논거. **모든 분율은 in-silico coupling state지 임상 반응률이 아니다.**
+
+**신규 재현 코드 (add-only, bit-for-bit).** `theta_cap_virtual_clinical` 패키지서 12개 python 모듈 + 의존 JSON을 `repro/mind/_verify/`로 통합: D9.0–D9.4(`run_all_d9.py` → ALL PASS) + VC1–VC5(`run_all_vc.py` → 14 CONFIRMED·1 REFUTED). 패키지 내 **bit-for-bit 재현 확인**, 엔진 byte-unchanged. 6개 챕터의 reproduce GitHub 링크가 이제 실제·자기완결적. 각 `repro/mind/<slug>/README.md` 작성.
+
+**신규 LOCK 9개 (전부 framing, check:None — 새 측정·새 튜닝 아님).** `autism_three_axis`·`autism_chemical_reach`·`theta_cap_pacemaker`·`theta_cap_removable`·`theta_cap_molecular_safe`·`theta_cap_operating_principle`([F disc])·`theta_cap_feasibility`([O])·`adhd_axis_specific`·`virtual_trial`. 자폐/VC 숫자는 `_verify/` 모듈 자체의 sha256 게이트에 살아 있고 엔진 emergence results에는 없으므로 framing-type. 레지스터 **33 locks / 23 chapters.**
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변(gate 매 실행 검증)·소스·DGENE·D-계열·기존 docs 챕터 본문 전부 불변. **gate.py PASS 110/110**(0 hard fail) — answer-first 23/23(§18–23 51–53w 포함)·sitemap 24 locs/24 pages·llms.txt 4989 bytes(<5KB, 하드코딩이라 챕터 추가에 불변)·SSOT drift 0·body word counts(±2%, §18=769·§19=645·§20=711·§21=1013·§22=580·§23=509)·빌드 멱등(`53f2a138…` 재실행 동일). registry OK(33/23)·boundary 8/8·terminology(금지 표현 §18–23 부재)·em_thesis 6/6·D9 ALL PASS·VC ALL PASS 전부 통과. 변경: 신규 챕터 6 + hub Part II(arc+toc) + manifest·_meta 동기화 + §17↔§18 nav 연결 + 레지스터 항목 + 재현 모듈 + 거버넌스. 엔진·`_verify` 기존 모듈·기존 docs 챕터 본문 0 변경.
+
+**비-자기비하, 정직한 분류.** 이것은 **큰 출판 결과**다: 이미 동결된 질환-엔진과 θ-cap virtual clinical을, 연구 내용에 맞춰 6개 SEO-분리 챕터로 전개하고, 자폐를 세 축으로 분해하고, ADHD를 별도로 분리하고, θ-cap의 운영 원리와 실현가능성을 정직하게 검토했다. 동시에 정직하게: 이것은 **새 측정-입력 advance가 아니라**(메커니즘은 D-계열·VC에서 이미 동결) **출판 + 재현 코드 통합 + 실현가능성 검토** advance다. **efficacy=0**(buildable ≠ beneficial), cap은 "crutch/pacemaker지 repair 아님", 어느-결함이-진짜-자폐인지·ADHD-모델-타당성·물리적-실현가능성 전부 **[O]**.
+
+**v1.33 진입점.** (a) **운영 원리 정량화(선택)**: deficit-matched 진폭의 폐루프 추정기를 in-silico로 — wiring readout proxy를 엔진 핸들로; (b) 잔여 질환(BD/OCD/ID 메커니즘 결정-검사·중독 M5-RPE); (c) 자폐 1/f readout(v1.31 §5B 이월 잔여). 상세 `HANDOVER_v1_32_to_v1_33.md`.
+
+---
+
+## v1.31 (2026-06-18) — **백서 마감: "생각/사고"의 정식 정의·닫음 선언 (THOUGHT-CLOSED)** — v1.30이 명시 이월한 다음과제(§5 수락 기준)를 **실행**하여, 백서의 중심 추상어를 **메커니즘 축에서 정식으로 정의·닫고** 두 정준 챕터(§16 정의·§17 faculty 아틀라스+전수조사)로 **출판** (엔진·모든 과학 결과 byte-identical, 새 튜닝 0·새 측정 0)
+
+**이번 버전의 성격 — 정의·전수조사·출판으로 백서를 마감한다. 큰 결과이되, 정직하게 분류하면 새 측정-입력 science advance가 아니라 *정의적 완성*이다.** v1.30은 faculty 분해 *지도*만 그리고 정식 "닫음" 선언과 전수조사(전수조사)를 **다음과제로 명시 이월**했다. v1.31은 그 과제를 **수행**한다: 백서의 중심 단어 **"생각/사고"** 를 fourteen-faculty 분해로 정의하고, 외부 표준 분류에 대한 전수조사를 통과시키고, 상위 4칸(F11–F14)을 하나씩 해결하고, **메커니즘 축에서 닫혔음을 정식 선언**한다 — 모두 두 개의 새 정준 챕터로 출판된다. **이 닫음은 "정의가 닫히는 방식"으로 닫는다**(중심어의 지시 대상을 고정) — 경험이 풀렸다는 주장이 **아니다**(`consciousness_claim = 0`, `hard_problem_open = 1` 유지). **엔진·`_verify`·기존 docs 챕터 본문은 한 바이트도 안 바뀐다** — 신규 챕터 2개(§16·§17) + 레지스트리 항목 + 거버넌스 갱신뿐.
+
+**핵심 — 어려움은 미완성이 아니라 매핑되지 않은 한 단어였다.** "생각"이 닫기 어려웠던 건 작업이 미완성이어서가 아니라, **헐렁한 한 단어가 이미 만들어진 여러 메커니즘에 조용히 매핑**되어 있었고(가장 넓은 뜻으로 쓰면 느낌/현상 질문까지 한 호흡에 끌어들여 어떤 메커니즘도 그 융합을 닫을 수 없었기 때문이다). 단어를 분해로 정의하고 느낌 축을 직교로 두면, 미끄러움은 **커버리지 공백이 아니라 명명 문제**로 해소된다. v1.30이 지도를 그렸고, v1.31이 그 지도를 **선언으로 확정**한다.
+
+**신규 — §16 「What a thought is」 (정의, 마감 챕터, 등급 verified 페이지).** 백서의 중심어를 정의한다: 한 생각은 추상적 우산이 아니라 **fourteen faculty의 합** — 메커니즘적으로 **θ 프레임에 묶인 병렬 이온 γ-eddy 사이의 직렬 선택**이며, **4D-DNA에서 창발된 기질** 위에서 돈다(장기·뇌파·기억이 *가정*이 아니라 *생성*됨: FOXG1/EN1/SIM1/LHX2 측정 γ → 무-자유파라미터 commit order, 뇌파 front 속도 = c, 기억 = 물리적 attractor, 전부 SEED=19 bit-재현). 일상의 felt "스트림"은 빠른 이산 선택의 사슬로 회수된다. **이것이 토이 시뮬레이션과의 차이다 — 모델 아래 바닥 자체가 유도되고 재현된다.** 7개 h2 섹션(정의된 용어/잠자는 사람 검사/정의 자체/**창발된 기질이지 토이 아님**/"닫힘"의 의미+방화벽/마감 선언/진짜 열린 것).
+
+**신규 — §17 「The faculties of mind」 (faculty 아틀라스 + 전수조사, 등급 forced 페이지).** §16 정의를 뒷받침하는 아틀라스. (i) **F1–F14 분해표**(각 칸 → 담당 §·CLOSED/OWED); (ii) **전수조사 — 표준 임상 신경인지 6영역**(복합주의·집행기능·학습기억·언어·지각운동·사회인지)에 대해 모든 영역이 표에 매핑됨을 보이고, 표의 *추가* 칸들(정서 메커니즘·각성/수면·꿈·대규모 결속·병리·메타인지)은 표준 *인지* 목록이 **깨어 있는 인지**의 목록이기 때문에 우산 "생각"이 반드시 더해야 하는 칸들임을 보임 — **반-게리맨더링이 강제되는 방향**(날조 인용 0, 표준 영역명 수준에서 정직하게); (iii) **상위 4칸 해결** — F11 언어(OWED, 명명된 입력=θ-프레임 위 문법/시퀀스 모델), F12 의지(부분: 행동개시는 CLOSED via 선택 루프, *행위주체성 그 자체*는 OWED·느낌 축), F13 사회인지(OWED, 명명된 입력=2인칭에 적용된 재귀 자기모형), F14 메타인지(OWED, 명명된 입력=재귀 자기감시); (iv) **꿈 워크드 예제**(생각이되 인지 아님, 메커니즘 F4+F7+F8 이미 존재); (v) **해석 서베이 3-레지스터**(일상=직렬 선택의 메커니즘 닫음·임상=F1–F10+병리 매핑·철학=아무것도 안 닫음, 느낌 축 직교); (vi) **방화벽 문장** 선언 지점에 부착.
+
+**§5 수락 기준 — 4개 전부 충족 (반-게리맨더링 통과).** (1) **전수조사**: faculty 분해를 *외부 표준 분류*(임상 신경인지 영역)에 대해 전수 대조 — 모든 표준 영역이 표에 존재; (2) **각 칸 CLOSED 또는 정직 OWED**: 어떤 칸도 집합을 완전해 보이게 하려고 조용히 누락되지 않음, F11–F14 전부 해결(각각 동결 메커니즘 또는 명명된 외부 입력); (3) **해석 서베이**: 일상·임상·철학 레지스터에 강건하게 표현하고 *어느 레지스터를 닫고*(메커니즘) *어느 것을 안 닫는지*(느낌) 명시; (4) **방화벽 문장** 선언 지점에 부착. **정의를 목표에 맞춰 튜닝하지 않았다** — 이것이 닫음을 신뢰 가능하게 만드는 바로 그 규율이다.
+
+**신규 LOCK 2개 (둘 다 framing, check:None — 새 측정·새 튜닝 아님).** `thought_definition`(= "생각" = fourteen-faculty 합; F1–F10 CLOSED·F11–F14 OWED; 마감 정의의 정준 = §16) · `mediator_discipline`(= 물리적-매개자 규칙; 모든 eddy가 carrier를 명명; 정준 = §02). 둘 다 *선택된 자유 파라미터가 아니라 규율의 기록*이라 과학 결과·등급에 0 영향. 레지스터 24 locks / 17 chapters.
+
+**비-자기비하, 정직한 분류.** 이것은 **큰 결과**이며 작은 일로 오해되어선 안 된다: DNA에서 다중 챕터 기질을 창발시키고, 실제 뇌파를 복사하게 하고, 기억을 물리적 attractor로 저장하게 한 위에서, 일상어 "생각"을 정밀하고 전수조사된 메커니즘 집합으로 **해소·정의·닫았다.** 동시에 정직하게: 이것은 **새 측정-입력 advance가 아니라**(메커니즘들은 이전 버전에서 이미 동결됨) **정의 + 전수조사 + 출판** advance다. 상환된 4칸(F11–F14)은 *감출 실패*가 아니다 — no-tuning 규율 아래, 빚을 명명하는 행위가 닫힌 부분을 신뢰 가능하게 만드는 바로 그 행위다.
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…` 불변(gate가 매 실행 검증)·소스·DGENE·D-계열 전부 불변; **회귀 PASS**(run_regression import 파일 변경 0). **gate.py PASS 83/83**(0 hard fail) — answer-first 17/17(§16 56w·§17 57w 포함)·sitemap 18 locs/18 pages·llms.txt 4989 bytes(<5KB)·SSOT drift 0·body word counts(±2%, §16=1026·§17=1333 정확)·빌드 멱등(`1047a527…` 재실행 동일). registry·boundary 8/8·terminology(금지 표현 §16/§17 부재)·em_thesis 6/6 전부 통과. 변경: 신규 챕터 2 + hub·manifest·_meta 동기화 + 레지스터 항목 + 거버넌스(CHANGELOG·MASTER_MANUAL·COMPLETION_LEDGER·CONCEPT_MAP·HANDOVER). 엔진·`_verify`·기존 docs 챕터 본문 0 변경.
+
+**v1.32 진입점.** (a) **OWED→CLOSED 전환(선택)**: F11–F14(언어·행위주체성·사회인지·메타인지)에 동결 모듈을 실제로 작성해 상위 칸을 닫기 — 각 명명된 입력을 엔진 핸들로 구현; (b) 잔여 과학(BD/OCD/ADHD/ID 메커니즘 결정-검사·중독 M5-RPE·유전자-OWED 4질환 상환). 상세 `HANDOVER_v1_31_to_v1_32.md`.
+
+---
+
+## v1.30 (2026-06-18) — **용어→메커니즘 개념-맵 (CONCEPT-MAP)**: "생각/사고"를 faculty로 *분해*하고 **닫는방향**을 설정 — 단, 정식 "닫음" 선언과 전수조사는 **다음과제로 명시 이월** (엔진·모든 과학 결과 byte-identical, 새 튜닝 0·새 측정 0)
+
+**이번 버전의 성격 — 용어 매핑 정리, 닫는방향 스캐폴딩.** 과학 advance가 **아니다**(COMPLETION_LEDGER §1 type-(1/2/3) 아님). 패키지는 이미 정신 과정 각 칸(감각·선택·직렬 스트림·기억·학습·정서 메커니즘·각성/수면·꿈·협응·병리)에 메커니즘을 갖고 있었으나, **"생각/사고"라는 헐렁한 한 단어가 그 많은 메커니즘에 어떻게 매핑되는지**가 문서화된 적이 없었다. v1.30은 그 매핑을 채운다. **엔진·`_verify`·docs 챕터는 한 바이트도 바뀌지 않는다** — 신규 루트 문서 1개 추가뿐.
+
+**핵심 통찰 — "생각"은 우산이고 "인지"는 그 아래 한 칸.** *잠자는 사람 검사*: 자는 사람은 **인지(깨어서 목표지향 처리)** 를 하지 않지만 정신 활동(꿈·기억 정리)은 돈다 → **'인지'는 전체 우산이 될 수 없다.** 따라서 모든 걸 '인지'로 좁히지도, '생각'을 정의 없이 두지도 않고, **'생각'을 §1 faculty들의 합으로 정의**한다. '인지'는 그 안의 *깨어 있는* 칸이 된다.
+
+**신규 파일.** `CONCEPT_MAP_mental_process.md` — (i) 우산 vs 칸 구분(잠자는 사람), (ii) faculty 분해표 F1–F14(각 칸 → 담당 모듈 → CLOSED/OWED; **핵심 F1–F10 CLOSED, 상위 F11–F14 언어·의지·사회인지·메타인지는 정직하게 OWED**), (iii) 꿈 워크드 예제('생각이지만 인지 아님, 메커니즘은 이미 존재'), (iv) **닫는방향 — 메커니즘 축에서만; 느낌 축(축 A)은 직교·범위 밖·의식 주장 아님**, (v) **정식 "닫음" 선언의 수락 기준**(전수조사·반-게리맨더링 체크리스트).
+
+**닫는방향 — 철학적 오해 없이.** "생각을 닫았다"가 "의식을 풀었다"로 오해되지 않도록 두 규칙을 박았다: 닫음은 **메커니즘 축 한정**이고, **느낌(축 A)은 직교하는 별개 질문으로 아무 주장도 하지 않는다**(`consciousness_claim = 0`, `hard_problem_open = 1` 유지). 닫음을 주장하는 곳마다 방화벽 문장이 따라붙는다.
+
+**전수조사·정식 닫음은 이월 (반-게리맨더링).** "우리가 만든 것 = 생각"으로 정의하면 언제나 "닫음"이 나오는데, 그건 정의를 목표에 맞춰 *튜닝*하는 것이라 금지. 정식 선언은 (1) 정신 과정을 *외부 표준 분류*로 전수 나열, (2) 각 칸 CLOSED 또는 정직 OWED(상위 4칸 해결), (3) 다양한 해석(일상·임상·철학)에 강건한 표현, (4) 방화벽 문장 부착 — 이 4개가 충족될 때만 가능. **현재는 닫는방향만 설정, 정식 닫음 미선언.** 이게 명시된 다음과제다.
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…`·M0–M16 `3a1ebbbb…`·소스 `e61083ae…`·DGENE `980985c6…` 모두 불변; **회귀 275/275 PASS**(run_regression가 import하는 파일 중 변경 0 → 증명적 불변); gate.py 7/7(빌드일-무관, v1.29 유지)·registry·boundary·terminology 전부 통과. 변경: 신규 문서 1 + 거버넌스 4(CHANGELOG·MASTER_MANUAL·COMPLETION_LEDGER·HANDOVER). docs 챕터·sitemap·registry·엔진 0 변경.
+
+**v1.31 진입점.** (a) **전수조사 + 정식 "생각 닫음" 선언**(§5 수락 기준 충족; 상위 F11–F14 해결); (b) 잔여 과학(BD/OCD/ADHD/ID 메커니즘·중독 M5-RPE·유전자-OWED 4질환 상환). 상세 `HANDOVER_v1_30_to_v1_31.md`.
+
+---
+
+## v1.29 (2026-06-18) — **sitemap `<lastmod>` 결정론화 (DETERMINISTIC-SITEMAP)**: 검색층 빌드의 **벽시계 의존 제거** — C1/§8 멱등 게이트를 **날짜-비의존**으로 만드는 add-only **빌드 수정** (엔진·모든 과학 결과 byte-identical, 새 튜닝 0, 새 측정 0)
+
+**이번 버전의 성격 — 과학 무변경, 재현성 인프라 수정.** 이것은 type-(1/2/3) 과학 advance가 **아니다**(COMPLETION_LEDGER §1: 새 측정-입력·새 분석·외부 실험 중 어느 것도 아님). 단 하나의 비결정론 원천 — `tools/build_search_layer.py`의 `datetime.date.today()` — 을 제거해 `docs/` 빌드를 **소스 콘텐츠의 순수 함수**로 만든다. 엔진·회귀·DGENE·모든 LOCK 값은 **한 바이트도 바뀌지 않는다.**
+
+**버그 (선재 이슈, v1.27부터 동일).** `gate.py`의 "build is idempotent" 검사는 `build_search_layer.py`를 1회 재실행한 뒤 `docs/` 트리 해시를 빌드 전과 비교한다. 기존 `write_sitemap()`은 `<lastmod>`를 **`datetime.date.today()`** 로 매 빌드마다 다시 썼으므로, **빌드 날짜 ≠ 게이트 실행 날짜**면 그 한 줄 때문에 멱등성이 깨졌다. 본 세션에서 미래-날짜 shim(`date.today()→2027-01-01`)으로 **미수정본에서 정확히 재현**: gate **FAIL 70/71**, idempotency 트리 해시 `1e140a78… vs f6ee3c4c…`(엔진/과학 결과는 byte-identical, 오직 sitemap 날짜 1줄). 이는 v1.27 원본에서도 동일했던 **선재 이슈**이며 DGENE과 무관하다. v1.28까지는 **릴리스 위생**(zip 직전 1회 재빌드로 당일 날짜 일치)으로 처리하고 영구 수정을 v1.29 후보로 핸드오버에 기록했었다(`HANDOVER_v1_28_to_v1_29.md` §3·§6).
+
+**근본 수정 (벽시계 제거, tolerance 조작 없음).** (i) `tools/mind_registry.py`에 **`RELEASE_DATE` SSOT 상수**를 추가(DOI/ORCID 옆 — 결정론 계약 주석 포함; 릴리스가 새 콘텐츠를 출하할 때만 수동 bump). (ii) `write_sitemap()`이 `datetime.date.today()` 대신 **`R.RELEASE_DATE`** 를 읽도록 변경. (iii) 이제 미사용이 된 `import datetime` 제거. (iv) 모듈 docstring을 "sitemap `<lastmod>`는 R.RELEASE_DATE에서 stamp, 벽시계 아님 → 어느 날 재빌드해도 byte-identical"로 갱신. **새 튜닝 상수 0**(RELEASE_DATE는 *선택된 자유 파라미터*가 아니라 릴리스 사실의 기록이며, 과학 결과·LOCK·등급에 0 영향).
+
+**검증 (양면 + 날짜-무의존).** ① **오늘** gate **PASS 71/71**, sitemap 트리 해시 `1e140a78…`(v1.28과 동일, 바이트 동일). ② 미래-날짜 shim `2027-01-01`에서 — 미수정본이 **FAIL 70/71**이던 바로 그 조건 — 수정본은 **PASS 71/71**, idempotency `1e140a78… vs 1e140a78…`(sitemap이 `2026-06-18`에 고정, 벽시계 무시). ③ **날짜-무의존 정확 증명:** 서로 다른 가짜날짜(2027-01-01 / 2030-12-31)와 실제 날짜로 각각 빌드한 `sitemap.xml`이 **바이트 동일**(sha256 `27f169c8…`, 전부 `<lastmod>2026-06-18</lastmod>`).
+
+**불변 (엔진·과학 결과 byte-identical).** 엔진 FULL tree `0fbf4988…`·M0–M16 서브트리 `3a1ebbbb…`·소스 `vp_mind_engine.py` `e61083ae…` 모두 불변; DGENE 결과 `disease_gene_atlas_results.json` `980985c6…` 불변; D1–D9·자폐·조현 결과 전부 불변. **회귀 275/275 PASS**(증감 없음). 나머지 게이트(registry 23 locks/15 chapters·boundary 8/8·terminology·em_thesis 6/6) 전부 통과. 변경된 파일은 **3개**(`tools/mind_registry.py`·`tools/build_search_layer.py`·`docs/sitemap.xml`는 재빌드로 바이트 동일) — `_verify/`·엔진·docs 챕터 본문 한 바이트도 안 바뀜.
+
+**v1.30 진입점 (전부 과학 — 이번엔 인프라만 정리).** (a) 검증된 DGENE 유전자를 발판으로 **BD/OCD/ADHD/ID 메커니즘 결정-검사**(D-계열 패턴, 각 극이 엔진에서 실제 분리되는지 프로토타입 확인 후 assert); (b) **중독 M5-RPE** 보상예측 왜곡 결정-검사(부호만); (c) **유전자-OWED 4질환**(불안·PTSD·섭식·성격) 외부 fine-mapping 상환; (d) γ→엔진 핸들 크기 매핑(외부, OWED); (e) S2b 자폐 1/f readout(OWED). 상세 `HANDOVER_v1_29_to_v1_30.md`.
+
+---
+
+## v1.28 (2026-06-18) — **정신질환 위험유전자 검증 아틀라스 (DGENE)**: 모든 주요 정신질환(**지적장애 포함**)의 위험유전자 121개 프로모터를 NCBI RefSeq에서 **실제로 fetch·검증** — D-계열이 *인용만* 하던 유전자 LOCK을 **재현가능**하게 만드는 add-only **측정-입력** 모듈 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격 — 인용에서 검증으로.** D1–D9 결정-검사는 위험유전자를 **LOCK 산문**으로 *인용*했지만(예: "조현병 >270 loci"), 유전자 자체를 **확인한 적은 없었다.** v1.28은 그 빠진 조각을 채운다: 큐레이션된 고신뢰 위험유전자 **121개**(11개 질환군)의 프로모터를 **LOCKED SantaLucia-1998 γ 파이프라인**(DNA M0 / neuro / mind M9와 동일 지표)으로 NCBI RefSeq(GRCh38)에서 **verbatim fetch**하고, 각 유전자의 **γ + provenance(좌표·acc·strand) + 서열 sha256**을 저장한다. raw 서열을 캐시에 담아 γ가 **오프라인 재유도 가능**(C1 재현 경로가 패키지 안에 유지). v1.18 `geometry_grounding.py`·D1–D9와 **동일한 add-only 규율**(엔진 READ-ONLY 임포트 → 엔진 파일 `e61083ae…`·전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 모두 불변). docs 챕터·sitemap·registry 변화 없음 — `_verify/`에만 추가.
+
+**커버리지 (11개 질환군, 121개 유전자, 전부 검증).** **지적장애 ID=52**, 자폐 ASD=39, 조현병 SCZ=24, 뇌전증/DEE EPI=23, 증후군 SYND=21, 우울 MDD=12, ADHD=11, 양극성 BD=10, 중독 ADDICT=8, 뚜렛 TS=8, 강박 OCD=7. (큐레이션 출처: SCHEMA·PGC3·SFARI·DDG2P·OMIM 등 문헌 인용.) **다면발현(≥3 질환) 18개 유전자**(NRXN1·SCN2A·GRIN2B·SYNGAP1·TSC1/2·CACNA1C 등), **32개 공유 쌍** — 이는 인용된 큐레이션의 **직접 readout**(시냅스/염색질/이온채널/mTOR 유전자가 질환을 가로질러 반복 출현)이지 모델 산출물이 아니다.
+
+**지표 동일성 — 정확 증명 (1e-9).** DGENE의 γ가 패키지의 LOCKED 지표와 **바이트 단위로 동일**함을, 패키지 *자신의* frozen extra-master 유전자(`13-em-coordination/extra_masters.json`) **GSX2/NKX2-1/PHOX2B/DLX2**를 같은 파이프라인으로 재-fetch하여 증명: 캐시 서열에서 오프라인 재유도한 γ가 frozen 값과 **정확히 일치**(GSX2 1.4606, NKX2-1 1.5088, PHOX2B 1.3608, DLX2 1.4260, 전부 ≤1e-9). 같은 지표를 같은 서열에 적용했을 때 정확 일치 = 지표 동일성의 바이트 수준 증명. (FOXG1은 **soft cross-check**로 강등 — locked 뇌 아틀라스의 FOXG1 γ는 neuro 패키지의 *별도* RefSeq fetch 인스턴스에서 왔으므로 3자리까지만 일치(Δ=0.0002); 이는 지표 차이가 아니라 **소스(패치/윈도) 차이**이며 게이트가 아니다.)
+
+**사전등록 NULL — 정직한 정답.** 사전등록 가설: 위험유전자 γ는 패키지 자신의 **뇌-master 유전자 γ와 구별되지 않아야 한다**(둘 다 신경발달 유전자이고, γ는 발달-**정체성** 지표이지 질병 축이 아니므로). 양측 Mann-Whitney U(결정론적 정규근사): 위험유전자 γ mean=**1.4439**(n=121) vs 뇌-master γ mean=**1.4588**(n=12), **U=667.5, z=−0.4594, p=0.6459 → 구별 불가.** 이것이 정직한 정답: **γ는 위험유전자를 신경발달 master로부터 분리하지 못한다.** 아틀라스의 가치는 **검증된 재현가능 provenance + 인용된 수렴 구조**이지 γ 기반 질병 점수가 *아니다*. AS-IS 보고[O].
+
+**정직성("100%는 아님, 최대한").** 유전자가 충분히 미세매핑된 질환만 fetch; **유전자-OWED 질환**(불안·PTSD·섭식장애·성격장애)은 약한 후보로 채우는 대신 **다유전자성·아직 fine-mapping 안 됨**으로 명시 문서화(`_documented_polygenic_gene_level_owed`). **LOCK:** 모든 질환은 **다유전자성·이질적** — 단일 유전자가 일으키지 않음; 이는 고신뢰 **부분집합**이지 망라적이지도 인과 모델도 아님. **γ는 프로모터 발달정체성[F]이지 질병 인과 축이 아님** — 아틀라스는 재현성+provenance를 주장하지 병인을 주장하지 않음. **본 작업은 진단·선별·치료 권고가 아님(NOT medical advice).**
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `disease_gene_map.json`(121개 유전자 → 질환/기능클래스 큐레이션 맵, 문헌 인용) + `disease_gene_atlas.py`(LOCKED SantaLucia NN 표·`gamma_of`·eutils fetcher·오프라인 결정론 분석기; `--fetch` 1회 네트워크 획득→캐시, 기본은 캐시에서 결정론 분석; `atlas_results()` 진입점; 엔진 READ-ONLY emerge로 tree/subtree 불변 assert) + 캐시 `disease_gene_promoters.json`(121개 raw 서열 + `_metric_controls` 4개) + 결과 `disease_gene_atlas_results.json`·동결 `expected_disease_gene_atlas_sha256.json`(`980985c6…`). 수정: `run_regression.py`([DGENE] 블록 +11 → **264→275 checks**, 전부 PASS). **새 측정-입력(121 유전자 + 4 control 서열)은 추가, 새 튜닝 상수 0** — 모든 값은 NCBI에서 측정·검증되거나 LOCKED 지표로 파생; 어떤 상수도 목표에 맞춰 *선택*되지 않음. D9(`schizophrenia_results`)·D1–D8·엔진은 한 바이트도 안 바뀜.
+
+: 자폐-T(역치높음)의 **거울상 = 과점화(over-ignition)** — 같은 M3 R19 점화축에서 흥분 bias가 fold를 *낮춰* 무관 집합이 점화(**비정상 현저성 aberrant salience**) — add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격 — 같은 축의 반대 극.** v1.26(D8)은 자폐의 결합 결손을 한 점화축 위에서 **역치높음(T) = R19 fold↑ → 마지못해 켜짐 = relevant 점화 상실(under-selection)**으로 메커니즘화했다. 그 축에는 정확히 반대 방향의 고장이 존재한다: **흥분/탈억제 bias → R19 fold↓ → 약한·무관 후보 집합까지 점화 = over-ignition.** 이것이 조현병 스펙트럼의 표준 계산 모델 — **NMDA-기능저하 → PV-개재뉴런 탈억제**(Olney–Farber; Lewis), **비정상 현저성**(Kapur 2003), **끌개 불안정성**(Rolls/Loh/Deco 2007) — 과 정합한다. v1.18 `geometry_grounding.py`·D1–D8과 **동일한 add-only 결정-검사**(엔진 READ-ONLY 임포트 → 엔진 파일 `e61083ae…`·전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 모두 불변).
+
+**핵심 구조적 사실 (판별이 실재하는 이유).** 순진한 M4 nsel 읽기(>0.6 카운트)는 모든 조건에서 6으로 포화 → **분리 못 함, 기각.** 정직한 메커니즘은 **현저성 구동이 R19 fold를 가로질러 *퍼져있는* 후보 집합**(DRIVES=[0.12,0.20,0.28,0.36,0.50,0.60], OFF basin에서 구동)이다. 건강 = 선택적 ON 집합 `{4,5}`. **흥분 bias(SZ)는 fold를 낮춰** 약한/무관 집합을 끌어들이고(+irrelevant, relevant는 하나도 안 잃음 = 비정상 현저성), **억제 bias(자폐-T)는 fold를 올려** relevant를 잃는다(아무것도 안 끌어들임). 흥분에 대해 **단조 비감소**: nsel(bias) `{-0.2:1, -0.1:2, 0.0:2, 0.1:3, 0.15:4, 0.2:5, 0.3:6}`. ⇒ **(점화방향, 끌어들임-vs-상실) 쌍이 건강/자폐-T/조현을 유일하게 3분할.**
+
+**조현 지문 (전부 부호-정확 재현, 프로브-스프레드 강건).**
+- **SZ1 과점화** — 흥분 bias +0.15가 R19 점화역치를 건강 아래로 낮춤(fold-교차 구동 0.245 < 건강 0.395). \"너무 쉽게 켜짐.\"
+- **SZ2 비정상 현저성** — 낮아진 fold가 sub-fold(건강에서 안 켜지던) 무관 집합을 점화시킴(ON `{2,3,4,5}`, +irrelevant `{2,3}`, -relevant `∅`); nsel 흥분에 단조 비감소. \"무관한 것에 의미가 붙음.\"
+- **자폐-T 대비** — 반대(억제) bias는 fold를 올려(0.495) relevant `{4}` 상실, 끌어들임 0. \"두 극이 fold를 정반대로 움직임.\"
+- **SZ3 이차** — 탈억제가 in-silico 전역통합 R을 건강 위로 올림(과동기 경향); **이차로만** 보고, 실제 조현의 **DYSconnectivity는 명시적 LOCK**(정의 지문은 SZ1+SZ2이지 통합부호가 아님).
+- **3-WAY 분리:** SZ(fold↓+irrelevant) ↔ 자폐-T(fold↑−relevant) ↔ 건강(선택적), 두 질병 지문 distinct.
+
+**가역성 매핑 (임상 단서의 메커니즘 번역, 부호만).**
+- **항정신병약(이득↓/역치↑)** — 균일 이득-감소/역치-상승(Kapur 2003 항정신병 부류 메커니즘)은 **조현을 건강 선택집합으로 복귀**시키고, **같은 push가 자폐-T를 악화**(이미 높은 fold를 더 올림) → 반대 극에 반대 치료부호. ⇒ 한 손잡이, 두 극에 반대 부호.
+- **자극제(이득↑/역치↓)** — 자폐-T를 *도왔던*(D8 RX_drug) 그 자극제가 **조현을 악화**(무관 점화 증가 — 실증된 암페타민-정신증 악화 방향). 한 손잡이, 반대 극 반대 부호.
+- **극단 한계** — 무한 탈억제는 fold를 낮춰 **모든 후보 점화 = 선택 게이트 완전 상실**(disorganisation 한계, 흥분-불균형 경계). **게이트 상실은 *메커니즘* 경계이지 와해된 경험에 대한 주장이 아니다**(축 A 방화벽; consciousness_claim=0).
+- **수면 부호** — 비정상 현저성을 진정시키는 이득-감소(진정) push는 각성/통합을 **낮춤 = 수면 필요와 같은 부호**. 조현은 **치료부호 == 수면부호**, 각성-상승 치료가 반-수면이던 자폐의 **거울상**. 부호만.
+
+**정직성(OWED·LOCK).** **주어진 정신증이 어느 극인가 = OWED**(개인별 외부 데이터 필요). **생체 내 통합 방향 = OWED**(in-silico 과동기는 이차 보고, 실제 임상 소견은 dysconnectivity). **LOCK:** 조현은 **다유전자성·>270 위험 loci**(GWAS) — \"단일 흥분 bias\"는 메커니즘 *방향*이지 단일유전자 주장 아님; **dysconnectivity LOCK**(정의 지문 ≠ 통합부호); **항정신병/자극제 현실 LOCK**(항정신병약은 양성증상 표적, 자극제는 정신증 악화 가능). **본 작업은 어떤 치료도 권하지 않음(NOT medical advice).**
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `schizophrenia_discriminant.py`(D9 후보; `schizophrenia_results()` 진입점; 엔진 primitive `settle`/`spinodal`/`_integrate`/`_order`/`_measured_geometry`/`KAPPA_EPHAPTIC`를 READ-ONLY 재사용; 동결 해시 불변 assert) + 결과 `schizophrenia_results.json`·동결 `expected_schizophrenia_sha256.json`. 수정: `run_regression.py`([SZ] 블록 +14). **새 데이터·새 상수·엔진 변경 0** — 모든 핸들(R19 fold·spinodal·tonic E/I bias·ephaptic 상한 κ=0.5496·MNI 기하)은 측정/파생이고, 흥분/억제 bias·약 push는 임상 *방향*만 스윕(크기 fitting 금지). D8(`1bebbea2…`)·D1–D7은 한 바이트도 안 바뀜.
+
+**동결/재현 (v1.27).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D9는 read-only probe — 회귀가 직접 `engine_tree_unchanged` 재확인). **D1–D8 결정-검사 digest 전부 byte-identical 유지.** **조현병 모듈 digest `40b9daff9a6c0501ce29c475529bba6769d95e160359f198b76e0b9875097258`** — 2× 결정론, SEED=19. 회귀 **250 → 264 checks PASS**(D9 +14). 기존 게이트(gate.py 7/7, sitemap 16/16, registry 23 locks/15 chapters, boundary 8/8, terminology, em_thesis 6/6, main_carrier 13/13, expand·loro·sensory, light_memory 19, phenomenology 19, D1–D8) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **과점화·비정상 현저성·가역성을 메커니즘으로 분리해도 \"느껴짐\"·\"정신증의 주관\"은 단일 하드 프라블럼으로 OPEN**(fold 교차 = 점화일 뿐). **v1.28 진입점**: 어느 극 판정(개인별 외부 데이터, OWED) 또는 중독(=M5 보상회로) 또는 S2b(E/I→1/f) 상환.
+
+---
+
+## v1.26 (2026-06-18) — **자폐 메커니즘 하위-판별 (D8 후보)**: 결합 결손이 **회선 불량(배선) vs 출력저하(스위치 출력약함) vs 역치높음(스위치)** — add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격 — 사용자의 더 정밀한 질문의 가설화.** v1.25(D7)는 자폐의 측정 EEG 신호가 **전두엽 국소화가 아니라 사고의 뇌파 결합 경로**의 문제임을 코드로 지지했고, 그 경로가 **단일 결합 상수 κ**(=ΔVm/threshold=0.2748/0.5=0.5496)라는 한 좌표임을 보였다(S1 PAC + S3 통합 = 한 손잡이). 사용자의 다음 질문은 더 구체적이고 반증 가능하다: **그 한 축(κ↓)이 왜 낮아지는가** — (배선) **회선/기하 불량**인가, (출력) **단일 스위치가 약한 출력(ΔVm↓ = κ 분자)**인가, (역치) **단일 스위치의 높은 역치(R19 fold↑ = κ 분모)**인가? 그리고 사용자가 든 임상 단서(ADHD 약 복용 시 자폐증상 완화)·아이디어(4–8Hz 간섭 공급, 식물인간=의식 스위치 미회복, 수면장애 반대효과)를 **메커니즘으로** 검정한다. v1.18 `geometry_grounding.py`·D1–D7과 **동일한 add-only 결정-검사**(엔진 READ-ONLY 임포트 → 엔진 파일 `e61083ae…`·전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 모두 불변).
+
+**핵심 구조적 사실(판별이 실재하는 이유).** 엔진에서 **교차주파수 PAC 깊이는 오직 스칼라 κ에만** 의존한다(기하는 PAC 폐포에 들어가지 않음). 반면 **전역 통합 R은 κ와 기하 W 둘 다에** 의존한다. 따라서 **순수 배선 불량은 통합만 떨어뜨리고 PAC는 정확히 불변**(ΔPAC=0 exact)이며, **이득 결손(출력/역치)은 κ↓로 PAC와 통합을 동시에** 떨어뜨리고, **역치 결손만 R19 fold 점화역치를 올린다**. ⇒ **(ΔPAC, 점화역치) 쌍이 세 결손을 유일하게 분리**(7Hz 해마-세타 → 40Hz 신피질-감마 결합, 측정 MNI 기하 위; 모든 섭동은 임상 *방향*만, 크기 fitting 금지).
+
+**세 결손의 지문 (전부 부호-정확 재현, 심도-강건).**
+- **W 회선/기하 불량** — 장거리 1/r³ 결합 약화(기하 깨짐), 노드별 κ·fold **정상**: 통합 R↓(0.3896→0.3403), **ΔPAC=0(정확)**, 점화역치 정상, locality 상승(0.794→0.842). "기하로 막힘."
+- **O 출력저하 스위치** — 단일 스위치 ΔVm 60%↓(κ 분자↓), fold는 정상 통과: 통합 R↓·**PAC↓**, 점화역치 **정상**(평소대로 점화). "잘 켜지지만 약하게."
+- **T 역치높음 스위치** — 단일 스위치 저-흥분(tonic 억제 bias → R19 fold↑, κ 분모↑): 통합 R↓·**PAC↓**, 점화역치 **상승**(spinodal 0.385 → 0.645). "마지못해 켜짐."
+- **3-WAY 분리:** W는 유일하게 ΔPAC=0, 점화역치가 O(정상)와 T(상승)를 가른다.
+
+**가역성 매핑 (사용자 임상 단서의 메커니즘 번역).**
+- **약(역치/이득 회복) — 카테콜아민계 자극제가 *메커니즘적으로* 작용하는 부류.** 균일 역치↓(이득 회복)는 **T를 완전 가역**(통합·점화역치 둘 다 건강 복귀), **O를 부분 도움**(분모로 κ 끌어올림), **W는 교정 불가**(균일 이득에서 locality/위상 토폴로지 불변 — 스칼라 이득은 기하를 재배선 못 함). ⇒ **결합 결손이 역치/이득 약에 반응하면 그 성분은 이득 결손(출력/역치)이지 순수 배선이 아니다** — 사용자의 "ADHD 약 완화 = 증거" 추론을 코드로 지지. (약이 자폐를 치료한다는 주장 아님 — efficacy=0, 아래 LOCK.)
+- **외인성 4–8Hz 세타 공급(간섭 공급).** 모든 노드에 측정 세타 반송파를 더하면(배선 우회) **셋 다 구제**(배선 불량 포함 — 약이 못 고치는 그것)되, **과공급 시 과동기화**(R이 건강 초과 = 발작 방향) — 투여 창 존재. ⇒ **공급엔 구제되나 약엔 교정 안 되는 결손 = 배선.**
+- **식물인간 한계(역치 결손의 극단).** 올라간 fold가 **측정 ephaptic 상한 κ=0.5496를 초과**하면(어떤 이웃도 재점화 불가) 스위치가 **스스로 회복 못 함**(미회복); **오직 fold 초과 외인성 구동만 교차**(일시 점화). **fold 교차는 점화 *메커니즘*이지 경험의 복귀가 아니다**(축 A 방화벽; consciousness_claim=0). 건강 스위치는 이웃 구동으로 스스로 회복.
+- **수면 반대 부호.** 결합/각성을 **올리는**(자폐 결합 결손에 도움 방향) 그 세타 공급은 **수면(각성↓·방추-델타 필요)엔 반대 부호**(반-수면) — 한 개입이 두 상태에 정반대 치료 부호. 부호만.
+
+**정직성(OWED·LOCK).** **어느 결손이 실제 자폐인가 = OWED [O]**(개인별 외부 데이터 필요 — 커넥톰+스펙트럼+유전). **O vs T 생체 내 구분 = OWED**(둘은 결합 수준에서 κ로 축퇴 — fold/점화 수준에서만 분리되므로 흥분성/점화 측정(예: TMS-EEG 역치) 필요). **LOCK:** 특발성 ASD는 **다유전자성·이질적**(SFARI/SPARK, 수백 유전자) — "단일 스위치"는 **단일유전자/증후군 ASD 하위부류**이지 자폐가 단일유전자라는 주장 아님; 다만 알려진 단일유전자 ASD(SCN2A·SHANK3·FMR1 등)는 **시냅스 이득/E-I(출력/흥분성 축)로 수렴** → PAC 결손의 이득-결손 읽기와 정합, 커넥톰 소견(장거리 저연결)은 **배선 성분** 공급. **ADHD 약 현실 LOCK:** 자극제는 **공존 ADHD 증상**을 *일부* 자폐인에게 도움(ADHD보다 반응 낮고 부작용 많음); 핵심 ASD 증상은 치료 못 함; ASD 승인약(risperidone/aripiprazole)은 과민성 표적. **tACS/세타 뉴로피드백·의식장애 자극은 실험적** — **본 작업은 어떤 치료도 권하지 않음(NOT medical advice).**
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `autism_mechanism_discriminant.py`(D8 후보; `autism_mechanism_results()` 진입점; 엔진 primitive `_measured_geometry`/`_ephaptic_kernel`/`_integrate`/`spinodal`/`settle`/`_order`를 READ-ONLY 재사용; PAC 복제는 엔진 M9.6 방출값 0.00726119688482934를 **bit 일치** grounding) + 결과 `autism_mechanism_results.json`·동결 `expected_autism_mechanism_sha256.json`. 수정: `run_regression.py`([AUT2] 블록 +14). **새 데이터·새 상수·엔진 변경 0** — 모든 핸들(κ·ΔVm·threshold·MNI 기하·R19 fold·ephaptic 상한 κ)은 측정/파생이고, 외인성 세타 공급의 반송파는 **측정 세타 f0**(7Hz)·진폭만 임상 방향으로 스윕. D7(`ce836009…`)은 한 바이트도 안 바뀜.
+
+**동결/재현 (v1.26).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D8은 read-only probe — 회귀가 직접 `engine_tree_unchanged` 재확인). **D1–D7 결정-검사 digest 전부 byte-identical 유지.** **자폐 메커니즘 모듈 digest `1bebbea253d07bee5da913fa7902703524fbccf9fee45bdbfee3c831ed814418`** — 2× 결정론, SEED=19. 회귀 **236 → 250 checks PASS**(D8 +14). 기존 게이트(gate.py 7/7, boundary 8/8, terminology, em_thesis, 13–17 verify, geometry·node-decomposition, D1–D6, D7) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **세 결손과 가역성을 메커니즘으로 분리해도 "느껴짐"·"의식 복귀"는 단일 하드 프라블럼으로 OPEN**(식물인간 fold 교차 = 점화일 뿐). **v1.27 진입점**: O-vs-T 생체 내 분리(TMS-EEG 점화역치 앵커, 외부 실측) 또는 S2b(E/I→1/f) 상환 또는 다음 질병 단계(조현=M3 / 중독=M5).
+
+---
+
+## v1.25 (2026-06-17) — **자폐(ASD) 모듈 (D7 후보)**: "사고의 뇌파 경로 vs 전두엽 국소화" 판별 — add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격 — 사용자 질문의 가설화.** 사용자 질문("자폐가 기존에는 전두엽이라고 했는데 지금 보니 사고의 뇌파의 경로의 문제로 보인다 — 확인해보라")을 **반증 가능한 형태**로 만들어 코드로 검정했다. 핵심 질문: 정상 기질에서 **어느 핸들이 자폐의 측정된 EEG 신호를 재현**하는가 — 뇌파 **결합 경로/위상/흥분성**인가, 아니면 **전두엽 노드(국소화)**인가? v1.18 `geometry_grounding.py`·D1–D6과 **동일한 add-only 결정-검사 패턴**(엔진을 READ-ONLY로만 임포트 → 엔진 파일 byte-identical `e61083ae…`, 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변). 자폐는 이전에 **구현된 적 없음**(로드맵 표에 "planned M19" 한 줄 + brainwave 백서 한 문장뿐). 그런데 그 백서가 이미 자폐를 "abnormal cross-frequency coupling … a coupling-organisation disorder; timing, not effort"로 규정 — 사용자 직관과 프레임 차원에서 일치. 이를 **세 신호로 재현**하고 전두엽 국소화를 판별로 기각했다.
+
+**세 측정 신호 (인용 방향만 섭동, 크기 fitting 금지) — 전부 부호-정확 재현.**
+- **S0 — 단일 손잡이 통합 (핵심 명료화): 자폐 = 기질의 두 축.** **하나의 ephaptic 결합 상수 κ**(KAPPA_EPHAPTIC=0.5496)가 **교차주파수 PAC(S1)와 전역 링 통합(S3)을 동시에** 구동한다 — 엔진 M9.6 PAC 깊이가 바로 κ이고 M9 링 통합도 같은 κ를 쓴다. κ 배수를 1.0→0.1로 내리면 PAC(0.00726→6.4e-05)와 통합 R(0.3896→0.2566)이 **둘 다 단조 하강**. 즉 "사고의 뇌파 경로"는 기질의 **단일 좌표(κ)**이고 S1·S3는 그 *한 축*의 두 readout이다. (PAC 복제가 엔진 방출값 0.00726119688482934를 **bit 일치** 재현 → 비순환 grounding.) **흥분성(S2)은 결합과 무관한 별개의 둘째 축** → 자폐 = **두 축**(① 결합 κ↓: S1+S3, ② E/I 흥분성: S2)이지 세 개의 느슨한 신호가 아니다. 지배 축은 κ.
+- **S1 — 교차주파수 PAC 감소 (결합 경로, 축①).** 실현된 교차주파수 결합을 약화시키면 Tort MI가 **단조 감소**(coupling 1.0→0.0에서 PAC 0.00965→0.0000109 = full/zero **888×**). 인용 방향(Khan 2013; Berman 2015; 패키지 백서) 일치. *재현됨.*
+- **S2 — E/I 흥분성 불균형 (흥분성, 축②).** E/I를 **비대칭 흥분 bias** b_E로 모델(R19 bistable에 tonic 양성 구동; *대칭 이득 모델은 틀림* — 두 basin이 같이 깊어져 부호가 반대). 흥분 bias↑ → 점화 역치 **단조 하강**(b_E=0→0.4에서 0.395→0.000 = fold spinodal(g)=0.385−b_E), b_E가 fold를 넘으면 **자극 없는 자발 점화**(정상 arm=비점화, 고-E/I arm=자발 점화 = 기저 감마 상승). 인용 방향(Rubenstein & Merzenich 2003) 일치. *재현됨.*
+- **S3 — 장거리 저연결성 + 국소 과연결성 (경로/위상, 축①).** M9 ephaptic 링의 결합 위상을 측정 MNI 해부 위에서 섭동 — 장거리(중앙거리 초과) 결합 약화 + 국소 결합 소폭 강화. 전역 통합 R이 **전 감쇠구간에서 건강(0.3896) 아래로** 유지(임상 범위 단조 하강 후 metastable 바닥 포화), locality 지수 **단조 상승**(0.804→0.861). 인용 방향(Just 2004; Belmonte 2004) 일치. *재현됨.*
+- *(S2b — E/I→1/f 비주기 평탄화 readout (Gao 2017): **OWED**.* 이 엔진의 1/f 지수는 측정 시냅스 시상수(NMDA 100ms·GABA_B 180ms)로 **고정**되어 E/I 재가중에 둔감(arousal 핸들이 빠른-E↑·느린전류↓로 E:I를 이동시켜도 지수는 단조 평탄화하지 않음 → 1/f는 τ-모양 속성) → **재현 안 됨, 정직하게 OWED**. E/I **축 자체는 S2로 재현**되며, *이 스펙트럼 readout만* 명명된 입력과 함께 미상환. 위조하지 않음.)
+
+**판별(P4) — "경로/위상, 전두엽 국소화 아님" (코드로).** (a) PAC 신호는 **후방 해마-세타 → 신피질-감마** 결합이므로 전전두엽 frontal-midline-theta 생성자(Cavanagh & Frank 2014)는 그 경로에 **없음** → 어떤 전두엽 섭동(절제/디튠)도 PAC 불변. 단 전두엽 노드는 **자기 영역(진동 피크 구조)은 움직임**(피크 101→70 디튠) → 불활성 아닌 공정한 판별. (b) 전두엽 영역을 **완전 침묵**시켜도 전역 통합 불변(R 0.3896→0.3901 = 레버리지 0); 통합을 운반하는 **허브는 'midbrain'**(전두엽 아님), 장거리 약화만이 통합을 떨어뜨림. → 자폐의 측정 신호는 **결합 경로 + 흥분성 + 허브 위상**의 속성이지 전두엽 국소화의 속성이 **아니다** — 사용자의 "사고의 뇌파 경로" 읽기가 코드로 지지됨.
+
+**M3 교훈 (사용자의 "안되면 M3" 직관).** 자폐의 E/I 축을 처음에 M3 ignitability의 **대칭 이득**으로 시험했더니 **물리적으로 틀림**(두 basin이 같이 깊어져 역치가 *상승* = 부호 반대). 올바른 E/I는 **비대칭 흥분 bias**(S2)이며, 이로써 자폐는 결합 경로(S1)+흥분성(S2)+위상(S3)의 **세 핸들 장애**로 재현된다 — M3는 자폐의 *대안*이 아니라 흥분성 축의 *올바른 모델*로 흡수됨.
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `autism_discriminant.py`(자폐 모듈 D7 후보; `autism_discriminant_results()` 진입점; 엔진 primitive `_m13_tort_mi`/`_m13_syn_floor`/`_m13_welch`/`_m13_specparam`/`_ephaptic_kernel`/`_integrate`/`spinodal`/`settle`를 READ-ONLY 재사용) + 결과 `autism_discriminant_results.json`·동결 `expected_autism_discriminant_sha256.json`. 수정: `run_regression.py`([AUT] 블록 추가). 새 데이터·새 상수·엔진 변경 0(기존 측정 앵커 + 인용 임상 방향만 섭동).
+
+**동결/재현 (v1.25).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(자폐 모듈은 read-only probe — 회귀가 직접 `engine_tree_unchanged` 재확인). **D1–D6 결정-검사 digest 전부 byte-identical 유지.** **자폐 모듈 digest `ce836009b24236e8c30ec8c7a36040d937957504875d488904c1cdd7f2483b73`** — 2× 결정론, SEED=19. 회귀 **222 → 236 checks PASS**(자폐 +12). 기존 게이트(gate.py 7/7, boundary 8/8, terminology, em_thesis, 13–17 verify, geometry·node-decomposition, D1–D6) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **자폐의 메커니즘 신호를 재현해도 "느껴짐"은 단일 하드 프라블럼으로 OPEN**. **v1.26 진입점**: S2b(E/I→1/f) 상환(엔진 1/f를 E/I 민감하게 만드는 미래 엔진 항목, 외부/설계 필요) 또는 다음 질병 단계(조현=M3 와류 ignitability 과흥분 / 중독=M5 RPE 왜곡) 또는 외부-실측 프런티어(E2′ 미주 latency).
+
+---
+
+## v1.24 (2026-06-17) — 질병 스트레스-테스트 **D6(번아웃/HPA 저활성, 말기)**, add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0) — **질병 로드맵 D1–D6 완결**
+
+**이번 버전의 성격.** 인계서(`HANDOVER_v1_23_to_v1_24.md`)의 **§8 질병 스트레스-테스트 로드맵** 우선순위 **D6**을 완결했다. v1.24 안내서(`NEXT_PHASE_GUIDE_v1_24_*`)가 미업로드 상태였으므로 인계서 §7 조건부 규칙("안내서 없으면 §6 후보 중 택일 — 우선 D6")에 따라 §8 명시 우선순위를 따랐다. v1.18 `geometry_grounding.py`·v1.21 D1·v1.22 D3/D2·v1.23 D4/D5와 **동일한 add-only 결정-검사 패턴**이다 — 엔진(`vp_mind_engine.py`)을 **READ-ONLY로만** 임포트하므로 **엔진 파일이 한 바이트도 바뀌지 않고**(`e61083ae…` 동일), **전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…`가 모두 불변**하다. D6은 **D1의 거울상**으로, D1이 깐 `_hpa_trajectory`/`_hpa_metrics` 2-lag 스캐폴드를 그대로 재사용·확장했다. 이로써 **로드맵의 6개 질병 단계(D1–D6)가 전부 완결**되었다.
+
+**D6 — 번아웃 / HPA 저활성(말기) (재사용: M18 HPA 코르티솔 축).** 섭동(임상 방향, [F]크기-스윕 / [L]코르티솔 앵커): **HPA 게인/구동↓**(drive<1; 만성 과구동 후 축이 저활성화). **D1(만성 스트레스/HPA 과활성)의 거울상**이다 — D1은 basal↑·회복 지연으로 코르티솔 **과부하**를 만들었고, D6은 **급성 피크를 소실**시키고 회복 곡선을 평탄화하여 코르티솔 **고갈**(저코르티솔증)을 만든다. basal은 0 유지(D1의 긴장성 고코르티솔증과 **반대 폴**), 하강지(falling-limb) 시상수는 엔진 값 유지 — **2-lag이 선형**이므로 구동을 줄이면 **진폭만** 줄고 운동학은 불변, 즉 평탄화는 순수 **반응성 손실**이지 운동학적 이동이 아니다. **사전등록 대조**(측정 전 고정): **H1** 급성 코르티솔 피크 소실(peak값 0.037968→0.011390), **H2** 총 코르티솔 출력 저하(AUC 2.947→0.884 = 저코르티솔증), **H3** 회복 곡선 평탄화(하강지 기울기 0.000378→0.000113 = 더 완만). **faithfulness 교차검증**(정상 arm = 엔진): 정상 HPA 피크 24.06분이 **엔진 M18 코르티솔 피크를 bit-for-bit 재현**(인용 [15,40]창 내), 정상 1/e 회복 63.5분이 인용 [60,90]창 착지(Dickerson & Kemeny 2004 [L]). **불변식(D1의 "곡선 SHAPE 불변, 작동점만 이동"의 거울 대응)**: HPA 시상수(피크 시각 + 1/e 회복)가 정상↔질병 **동일** — 평탄화는 진폭 손실이지 더 빠른/느린 곡선이 아니다(H1/H3은 구동 스케일에 따라 collinear — 명시 공개, D5가 HEP margin에 취한 동일 허용). anti-tuning(구동 4격자 [0.8,0.6,0.4,0.2]) peak·AUC·회복-기울기 **부호 전부 유지 + 단조**. **직교성(반대 폴, 같은 HPA 축)**: 공유 축의 폴 지표는 **총 코르티솔 출력** — D6(게인↓) arm이 정상 아래, 정상이 D1-방향(게인↑) arm 아래에 위치(AUC: D6 0.884 < 정상 2.947 < D1-dir 5.202; 긴장성 basal: D6 0 ≤ 정상 0 < D1-dir 0.010). 즉 **번아웃 고갈 vs 만성 스트레스 과부하**가 한 HPA 축의 두 폴임을 명시 검정(D5↔D3 반대-폴 패턴과 동형). *교훈:* peak는 폴 지표가 아니다 — D1의 회복 지연(recovery_factor↑)은 brief-pulse 2-lag 누적을 느리게 해 **피크를 오히려 낮추므로**, 두 폴을 가르는 것은 피크 높이가 아니라 코르티솔 **부하(AUC·basal)**다.
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `disease_stress_tests.py`에 D6 결정-검사 함수 `disease_D6_results()` + 모듈 헬퍼 `_hpa_metrics_drive`(D1의 `_hpa_metrics`를 byte-identical 보존한 채 acute drive 핸들 + 하강지 기울기 readout를 스레드; 2-lag 자체는 `_hpa_trajectory` verbatim 재사용) 추가, `main()`을 D1→D3→D2→D4→D5→D6 실행으로 확장(D1–D5 결과/동결 byte-identical 보존). 신규 결과 JSON: `disease_D6_results.json`·`expected_disease_D6_sha256.json`. 수정: `run_regression.py`(D6 **+15** 추가). 새 데이터·새 상수·엔진 변경 0(D6은 기존 코르티솔 앵커 [15,40]/[60,90]와 구동 핸들만 사용).
+
+**동결/재현 (v1.24).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D6은 read-only probe — 회귀가 직접 `h1 == 0fbf4988…` 재확인). **D1 `2df3940f…`·D3 `e75dfed0…`·D2 `dfce14cd…`·D4 `b8bff30e…`·D5 `e1b2c551…` digest byte-identical 유지.** **D6 결정-검사 digest `ad68e67c170be964f0240c12faef5406fd7a0dbff34f2e2d603359cba6b3214d`**(인용 앵커 `neuroendocrine_atlas.json` `2cc60c8d…`에 잠금) — 2× 결정론, SEED=19. 회귀 **207 → 222 checks PASS**(D6 15). 기존 게이트(gate.py 7/7, boundary 8/8, terminology, em_thesis, 13–17 verify[expand 14·sensory 15·loro 15·light_memory 19], geometry·node-decomposition, D1·D3·D2·D4·D5) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **질병이 메커니즘 방향을 재현해도 "느껴짐"은 닫히지 않는다**(D6 느껴지는 소진/탈진은 단일 하드 프라블럼으로 OPEN; 질병별 하드 프라블럼 신설 금지). **v1.25 진입점**: 질병 로드맵 **D1–D6 완결** → 남은 프런티어는 외부 실측 의존 항목(E2′ 미주 구심 latency [O]→[L], neuro 패키지 필요 / E3′ 정동 관측치 확장 / M9·M10 기능적 사용 [O]→검정, in-vivo 기록 필요)이거나, 사용자가 추가 질병 단계(예: 조현 스펙트럼·중독)를 지시하면 동일 add-only 패턴으로 확장.
+
+
+
+**이번 버전의 성격.** 인계서(`HANDOVER_v1_22_to_v1_23.md`)의 **§8 질병 스트레스-테스트 로드맵** 우선순위 **D4 → D5**를 **둘 다** 완결했다. v1.23 안내서(`NEXT_PHASE_GUIDE_v1_23_*`)가 미업로드 상태였으므로 인계서 §7 조건부 규칙("안내서 없으면 §6 후보 중 택일 — 우선 D4→D5")에 따라 §8 명시 우선순위를 따랐다. 둘 다 **v1.18 `geometry_grounding.py`·v1.21 D1·v1.22 D3/D2와 동일한 add-only 결정-검사 패턴**이다 — 엔진(`vp_mind_engine.py`)을 **READ-ONLY로만** 임포트하므로 **엔진 파일이 한 바이트도 바뀌지 않고**(`e61083ae…` 동일), **전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…`가 모두 불변**하다. D1이 덌 스캐폴드(faithfulness 교차검증·anti-tuning 격자·정직 블록)를 그대로 재사용·확장했다.
+
+**판별 타당도(discriminant validity) — M18 서브-핸들 분리.** 이번 버전의 핵심 구조적 성취 — **D4와 D5는 둘 다 M18을 재사용하지만 서로소인 M18 서브-핸들을 섭동**한다: **D4는 각성 작동점**(HEP 진폭이 올라타되 구심 기울기는 엔진 값), **D5는 구심 게인**(기울기 평탄화되 작동점은 엔진 값)을 움직인다. 각 모듈이 상대의 핸들 불변을 **양방향으로** assert하므로 "과각성과 내수용 둘감은 같은 내수용 축의 *분리 가능한* 두 섭동"임이 코드로 증명된다(인계서 §6-6 권장 충족). 더욱이 **D5는 D2의 보상기전(M5)을**, **D5는 D3의 반대 폴**(내수용 과민) 임을 명시 검정한다.
+
+**D4 — PTSD / 과각성 (재사용: M17 각성 역유 + M2 공포 소거 + M18 HEP).** 섭동(임상 방향, [F]크기-스윗 / [L]NE-tonic 앵커): **M17 tonic 각성 플로어↑**(Aston-Jones & Cohen 고-tonic 모드) → 작동 가능 각성대의 **하단이 잘려 협착(協窄)** + 작동점이 최적점 너머로 밀려 과각성림에서 선택성 붕괴; **M2 소거-LTD율↓**(Milad/Quirk 공포-소거 결함) → 공포 엔그램 잔존 **basin 깊이 증가**(침습 단서의 catchment 확대 = 침습 취약성↑); **M18 HEP 진폭**이 올라간 작동 각성을 타고 상승(심장 과각성), 단 구심 게인은 엔진 값 고정(D5 핸들 미건드). **사전등록 대조**: **H1** 작동 가능 각성대 협착(11→8), **H2** 작동점 선택성 붕괴(1.571→0.000), **H3** 잔존 공포 basin 심화(0.848→20.892 = 침습 취약성↑), **H4** HEP 진폭 과각성 탑승(1.520→2.080). **faithfulness 교차검증**(정상 arm = 엔진): 로컬 M17 readout이 **엔진 역유 곱선을 bit-for-bit 재현**; 소거 없는 공포 엔그램 basin이 **엔진 M2 `basin_depth_x_spinodal`=55.650792를 bit-for-bit 재현**. **핵심 설계**: 소거는 0으로 수렴하는 LTD(곱셈 감쇠)로 모델 — anti-Hebbian 반전은 진동자를 만들 뿐 약화된 기억이 아니므로, 읽기값은 깊은 basin에서 계단함수가 되는 small-cue 완성 대신 **그레이드된 basin_depth**(엔진 R19 fold 안정성)를 사용. anti-tuning(tonic-floor 4격자·operating-shift 4격자·소거율 5격자·HEP-shift 4격자) **부호 전부 유지 + 단조**. **직교성**: 엔진 구심 기울기 불변(D4 ≠ D5).
+
+**D5 — 자율신경 실조 / 내수용 둘감 (재사용: M18 구심 HEP 축 + M19 정동 readout).** 섭동(임상 방향, [F]크기-스윗 / [L]HEP 앵커): **미주 구심 내수용 게인↓**(intero_mult<1; 자율신경 실조/내수용 정확도 저하) → **HEP-각성 기울기 평탄화**(신체 각성 신호가 정보를 덜 싣음); 정동 readout이 내수용 신호를 해상하므로 둘감된 구심 게인이 **내수용 정동 판별 margin**(정동 상태 간 HEP 진폭 분리)를 **축소 → 정동 해상도 저하**. **사전등록 대조**: **H1** HEP-각성 기울기 평탄화(0.800→0.240), **H2** 정동 판별 margin 축소(0.720→0.216). **faithfulness 교차검증**(정상 arm = 엔진): 로컬 HEP 기울기(intero_mult=1)가 **엔진 M18 기울기 0.80을 bit-for-bit 재현**(Pollatos & Schandry [L]); 엔진-레짐 M19 pos-under-pos가 **엔진 1.0을 bit-for-bit 재현** + 엔진 기분-일치 회상 메커니즘 검증. **핵심 설계**: M19 30% 단서 회상은 천장 포화(margin 소멸)라, 정동 해상도는 엔진-근거된 HEP 진폭 분리(∝ 기울기)로 측정하고(D2의 접근 gap ∝ p_target과 동일한 collinear 구조, 허용), M19 기분-일치 기전은 faithfulness로만 검증. anti-tuning(내수용-게인 4격자) **부호 전부 유지 + 단조**. **직교성**: M5 보상기전 바이트 동일(둘감 ≠ 무쾌감; D5 ≠ D2), M17 각성 작동점 엔진 최적점 유지(D5 ≠ D4), D3과 동일 축 반대 폴(D5 기울기 0.24 < 정상 0.80 < D3 기울기 1.20).
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `disease_stress_tests.py`에 D4/D5 결정-검사 함수 + 모듈 헬퍼(`_m17_operable_band`/`_m2_fear_basin_after_extinction`/`_m18_hep_amp`/`_m18_hep_margin`, 및 `_M17_ALPHAS` 그리드 상수) 추가, `main()`을 D1→D3→D2→D4→D5 실행으로 확장(D1/D3/D2 결과/동결 byte-identical 보존). 신규 결과 JSON: `disease_D4_results.json`·`expected_disease_D4_sha256.json`·`disease_D5_results.json`·`expected_disease_D5_sha256.json`. 수정: `run_regression.py`(D4 **+16** · D5 **+15** 추가). 새 데이터·새 상수·엔진 변경 0(D5는 M19 기분-bias 0.6과 내수용 핸들 intero_mult만 사용 — 둘 다 기존 상수/핸들).
+
+**동결/재현 (v1.23).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D4·D5는 read-only probe — 회귀가 직접 `h1 == 0fbf4988…` 재확인). **D1 `2df3940f…`·D3 `e75dfed0…`·D2 `dfce14cd…` digest byte-identical 유지.** **D4 결정-검사 digest `b8bff30e181a80ad42e8cc8844585da7f650f6e9ad8835005cf34dadbd6ed2a6`**(인용 앵커 `neuroendocrine_atlas.json`에 잠금), **D5 결정-검사 digest `e1b2c551395c612647868e023dbd5a66ac1651d7fd938e210d0c036649751623`**(인용 앵커 `interoception_atlas.json`에 잠금) — 둘 다 2× 결정론, SEED=19. 회귀 **176 → 207 checks PASS**(D4 16 + D5 15). 기존 게이트(gate.py 7/7, boundary 8/8, terminology, em_thesis, 13–17 verify[expand 14·sensory 15·loro 15·light_memory 19], geometry·node-decomposition, D1·D3·D2) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **질병이 메커니즘 방향을 재현해도 "느껴짐"은 닫히지 않는다**(D4 느껴지는 공포/과각성·D5 느껴지는 무덩감은 단일 하드 프라블러으로 OPEN; 질병별 하드 프라블러 신설 금지). **v1.24 진입점**: 질병 로드맵 **D6(번아웃 / HPA 저활성, 말기)** = D1의 거울상(장기 후 HPA 게인↓, 급성 코르티졸 피크 소실, 회복 곡선 평탄화; 재사용 M18)(인계서 §8 우선순위); 또는 E2′(미주 구심 latency [O]→[L], neuro 패키지 필요)/E3′(정동 관측치 확장).
+
+---
+
+## v1.22 (2026-06-17) — 질병 스트레스-테스트 **D3(불안/공황) + D2(우울/둔마)**, add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격.** 인계서(`HANDOVER_v1_21_to_v1_22.md`)의 **§8 질병 스트레스-테스트 로드맵** 우선순위 **D3 → D2**를 **둘 다** 완결했다. v1.22 안내서가 미업로드 상태였으므로 v1.21 인계서 §6 원칙("안내서 없으면 §6 후보 중 택일")에 따라 §8 명시 우선순위를 따랐다. 둘 다 **v1.18 `geometry_grounding.py`·v1.21 D1과 동일한 add-only 결정-검사 패턴**이다 — 엔진(`vp_mind_engine.py`)을 **READ-ONLY로만** 임포트하므로 **엔진 파일이 한 바이트도 바뀌지 않고**(`e61083ae…` 동일), **전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…`가 모두 불변**하다. D1이 깐 `disease_stress_tests.py` 스캐폴드(faithfulness 교차검증·anti-tuning 격자·정직 블록)를 그대로 재사용·확장했다.
+
+**판별 타당도(discriminant validity).** 이번 버전의 핵심 구조적 성취 — **D3(M18·M20)와 D2(M5·M17·M19)는 서로소 핸들을 섭동**한다. D3는 보상기전(M5)을, D2는 회피기전(M18/M20)을 한 바이트도 건드리지 않으며, 각 모듈이 상대의 불변을 **양방향으로** assert한다. 따라서 "불안과 둔마는 같은 R19 기질의 *분리 가능한* 두 섭동"이라는 구성 분리가 코드로 증명된다(인계서 §8 \"D2와 분리\" 요구 충족).
+
+**D3 — 불안 / 공황 (재사용: M18 내수용 축 + M20 정동 접근).** 섭동(임상 방향, [F]크기-스윕 / [L]HEP-앵커): **M20 방어편향↑ + 위협 게인↑** → 회피 임계 저하; **M18 내수용(HEP-각성) 게인↑** → 신체증상 증폭. **사전등록 대조**(측정 전 고정): **H1** 저스트레스(subthreshold)에서 정상=approach인데 질병=avoid 전이, **H2** 회피 onset 임계 저하(공황 취약), **H3** HEP-각성 결합 기울기 상승(신체증상 증폭). **faithfulness 교차검증**(정상 arm = 엔진): 정상 M20 행동(저/고스트레스 approach/avoid)이 **엔진을 bit-for-bit 재현**; 정상 HEP-각성 기울기 0.80이 **엔진 기울기를 bit-for-bit 재현**(Pollatos & Schandry [L]). **결과**: H1–H3 전부 양성(avoid onset **0.50→0.1875**, s=0.344에서 approach→avoid, HEP 기울기 **0.80→1.20**), anti-tuning(bias×threat 4×4·intero 4격자) **부호 전부 유지**. **직교성**: M5 학습 target 확률 불변(불안 ≠ 둔마).
+
+**D2 — 우울 / 둔마(anhedonia) (재사용: M5 보상 RPE + M17 각성 + M19 기분-일치 회상).** 섭동(임상 방향, [F]크기-스윕): **M5 도파민 RPE 보상민감도↓**(둔마; Pizzagalli 보상민감도 저하) + **M19 우세기분 음성전환**(Bower 음성-기분 방향). **사전등록 대조**(측정 전 고정): **H1** 학습 target 확률 p_target 저하(둔마), **H2** 접근 gap(p_target − chance) 축소(valence+ 약화), **H3** 회상 negativity(우세기분 하 neg−pos 회상)가 **euthymic(<0) → depressed(>0)로 FLIP**(기분-일치, Bower). **faithfulness 교차검증**(정상 arm = 엔진): 정상(보상민감도 1.0) M5 p_target이 **엔진 0.89852616을 bit-for-bit 재현**; 엔진-레짐(30% 단서, +mood bias 0.6) M19 pos-under-pos가 **엔진 1.0을 bit-for-bit 재현** + 엔진 자체 기분-일치 회상 검증. **핵심 설계**: 엔진 30% 단서에서는 회상이 1.0으로 포화(대조 소멸)하므로, faithfulness는 엔진 레짐(30%)에서 검증하되 대조는 mood bias가 결정적인 약-단서([F] 0.10) 레짐에서 측정 — cue_frac은 anti-tuning에서 스윕하고 **부호만** 주장. **결과**: H1–H3 전부 양성(p_target **0.899→0.645**, 접근 gap **0.699→0.445**, negativity **−0.0917→+0.1625 FLIP**), anti-tuning(reward-sens 4격자·cue×bias 2×3) **부호 전부 유지**. **직교성**: M18/M20 회피기전 불변(둔마 ≠ 불안).
+
+**신규 함수/파일 (engine 불변, `_verify/`에만 추가).** `disease_stress_tests.py`에 D3/D2 결정-검사 함수 + 모듈 헬퍼(`_m20_action`/`_m20_avoid_onset`/`_m18_hep_slope`/`_m5_rpe_learn`/`_m19_four_recalls`/`_m19_engine_regime_pos_under_pos`) 추가, `main()`을 D1→D3→D2 실행으로 확장(D1 결과/동결 byte-identical 보존). 신규 결과 JSON: `disease_D3_results.json`·`expected_disease_D3_sha256.json`·`disease_D2_results.json`·`expected_disease_D2_sha256.json`. 수정: `run_regression.py`(D3 **+13** · D2 **+14** 추가). 새 데이터·새 상수·엔진 변경 0.
+
+**동결/재현 (v1.22).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D3·D2는 read-only probe — 회귀가 직접 `h1 == 0fbf4988…` 재확인). **D1 digest `2df3940f…` byte-identical 유지.** **D3 결정-검사 digest `e75dfed011aeaa4782f81cb47f3b884609eeb1b37185863ce48339626c25691a`**(인용 앵커 `interoception_atlas.json`에 잠금), **D2 결정-검사 digest `dfce14cd30487df969f41284f2297ab080b3917ea7d5612f784b141649831196`**(인용 앵커 `affect_observables_atlas.json`에 잠금) — 둘 다 2× 결정론, SEED=19. 회귀 **149 → 176 checks PASS**(D3 13 + D2 14). 기존 게이트(gate.py, boundary, terminology, em_thesis, 13–17 verify, geometry·node-decomposition, D1) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **질병이 메커니즘 방향을 재현해도 \"느껴짐\"은 닫히지 않는다**(D3 느껴지는 공포·D2 느껴지는 무쾌감은 단일 하드 프라블럼으로 OPEN; 질병별 하드 프라블럼 신설 금지). **v1.23 진입점**: 질병 로드맵 **D4(PTSD/과각성)** → **D5(자율신경 실조/내수용 둔감)**(인계서 §8 우선순위); 또는 E2′(미주 구심 latency [O]→[L], neuro 패키지 필요)/E3′(정동 관측치 확장).
+
+---
+
+## v1.21 (2026-06-17) — 질병 스트레스-테스트 **D1(만성 스트레스 / HPA 과활성)**, add-only 결정-검사 (엔진 tree 불변, 새 튜닝 0)
+
+**이번 버전의 성격.** 인계서(`HANDOVER_v1_20_to_v1_21.md`)의 **§8 질병 스트레스-테스트 로드맵** 우선순위 **D1→D3→D2** 중 **D1**을 완결했다. v1.21 안내서는 미업로드 상태였으므로 인계서 §6 원칙("안내서 없으면 §6 후보 중 택일")에 따라 §8 명시 우선순위를 따랐다. **v1.18 `geometry_grounding.py`와 동일한 add-only 결정-검사 패턴**이다 — 엔진(`vp_mind_engine.py`)을 **READ-ONLY로만** 임포트하므로 **엔진 파일이 한 바이트도 바뀌지 않고**(`e61083ae…` 동일), **전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…`가 모두 불변**하다. v1.20의 순수 add-only(emerge_all 맨 끝 배선)보다도 보수적이다(emerge_all 자체를 건드리지 않음).
+
+**질병 테스트의 정의(그리고 아닌 것).** 질문은 **구성 타당도**다 — *정상 기질*이 **이미 [L]로 인용된 파라미터를 측정된 임상 방향으로만 섭동**할 때 임상 증후를 **재현**하는가. 섭동된 상태가 "느껴진다"는 주장이 **아니며** efficacy를 시험하지 **않는다**. VP-SPEC + 인계서 §8 공통 규약 5조를 그대로 준수: (i) 섭동은 단조·해석가능, **임상 방향(부호)만** 사용·크기 fitting 금지; (ii) **anti-tuning** — 섭동 격자/시드를 흔들어도 정상↔질병 대조의 **부호가 유지**; (iii) **정상↔질병 대조**가 핵심 readout; (iv) 엔진 tree 불변 + 결과 2× 결정론 동결; (v) 정직 원장 4-플래그 불변.
+
+**D1 — 만성 스트레스 / HPA 과활성 (재사용: M17 각성 역U + M18 HPA 코르티솔).** 섭동(임상 방향, [F]크기-스윕 / [L]앵커-방향): **HPA 게인↑ + 음성피드백↓** → basal 코르티솔↑·회복 지연; **tonic LC-NE 각성 게인↑** → M17 작동점이 과각성림으로 이동(Aston-Jones & Cohen 2005 고-tonic 모드가 과제수행을 저하). **사전등록 대조**(측정 전 고정): **H1** disease basal > normal(tonic 고코르티솔), **H2** disease 회복시간 > normal(GR 음성피드백 손상), **H3** disease 코르티솔 AUC > normal(노출 연장/알로스타시스 부하), **H4** disease M17 selectivity < normal(스트레스-주의협착). **faithfulness 교차검증**(결정-검사의 *정상* arm = 엔진): 로컬 HPA 2-lag 정상 피크가 **엔진 M18 피크 24.06 min을 재현**·인용창 [15,40] 내(Dickerson & Kemeny 2004); 정상 **1/e 회복 63.5 min ∈ 인용 [60,90]**(자연 시상수 기준, 질병 arm 이전에 고정); 로컬 M17 readout이 **엔진 역U 곡선을 bit-for-bit 재현**(곡선 *형태* 불변 — **작동점만** 이동). **결과**: H1–H4 전부 양성(basal 0→0.01, 회복 63.5→93.0 min[인용창 90 초과], AUC 2.95→5.20, selectivity **1.571→0.200** 과각성 붕괴), anti-tuning(basal×회복 격자 4×4·작동점shift×distractor 격자 2종) **부호 전부 유지**.
+
+**신규 파일 (engine 불변, `_verify/`에만 추가).** `disease_stress_tests.py`(D1 결정-검사 + `_canon`/digest 동결 패턴), `disease_stress_results.json`, `expected_disease_sha256.json`. 수정: `run_regression.py`(D1 검사 **+15** 추가). 새 데이터·새 상수·엔진 변경 0.
+
+**동결/재현 (v1.21).** **엔진 전체 tree `0fbf4988…`·M0–M16 `3a1ebbbb…` 불변**(D1은 read-only probe — 회귀가 직접 `h1 == 0fbf4988…` 재확인). **D1 결정-검사 digest `2df3940f47c7a67c63b9788c4350c5e4bd679359e2f5ab13b2532d05db69e3cd`**(2× 결정론, SEED=19, 인용 앵커 `neuroendocrine_atlas.json`에 잠금). 회귀 **134 → 149 checks PASS**(D1: digest 1 + atlas 1 + faithfulness 3 + 대조 5 + anti-tuning 2 + 불변 2 + 정직 1). 기존 게이트(gate.py 71/71, boundary, terminology, em_thesis, 13–17 verify, geometry 8ad43a72…·node-decomposition) **전부 그대로 통과**(엔진 출력 byte-identical). **정직 원장 전면 불변**: `medium_efficacy_tested=0`, `hard_problem_open=1`, `consciousness_claim=0`, `new_tuned_constants=0` — **질병이 메커니즘 방향을 재현해도 "느껴짐"은 닫히지 않는다**. **v1.22 진입점**: 질병 로드맵 **D3(불안/공황)** → **D2(우울/둔마)**(인계서 §8 우선순위); 또는 E2′(미주 구심 latency [O]→[L], neuro 패키지 필요)/E3′(정동 관측치 확장).
+
+---
+
+**이번 버전의 성격.** 인계서(`HANDOVER_v1_19_to_v1_20.md`)와 안내서(`NEXT_PHASE_GUIDE_v1_20_cognition_emotion_one_substrate.md`)의 과제 E1–E4를 완결했다. 설계 원칙(안내서 §1) 두 축을 그대로 지켰다 — **축 A(메커니즘↔느낌 방화벽) 유지**, **축 B(인지/감정 칸막이) 허묾**. 감정을 **별도 모듈로 만들지 않고**, M0–M16을 창발시킨 **바로 그 R19 단일 기질**에 (i) 전역 신경조절 상태(M17), (ii) 심장/HPA 내수용 입력(M18), (iii) 정동 readout(M19)을 더했다 — **기질 하나, readout 여럿**. v1.19와 달리 이번은 **§6-6 승격이 아니라 순수 add-only**다: M17–M20을 `emerge_all` **맨 끝**에 배선하므로 **M0–M16 출력 서브트리가 byte-identical**(`3a1ebbbb…` 불변)하고 **전체 tree 해시만** 새로 바뀐다.
+
+**과제 E1 — 신경내분비/신경조절 전역-상태 층 (M17 `emerge_global_state`).** 공유 기질에 **단일 각성 게인 α**를 도입, *한 번의 게인 변화*가 **인지 관측치와 정동 관측치를 함께** 움직이게 했다. 인지 readout은 **신호 대 distractor 홍수(SNR)** — 신호 어셈블리(γ=1.5)는 α·sig가 자기 R19 fold(`spinodal`)를 넘을 때만 점화하고, 8개 distractor는 α가 오르며 차례로 홍수처럼 점화한다. 성능 = 신호점화 × (1 − 홍수분율) → **각성에 대한 역U(Yerkes-Dodson)가 측정된 fold에서 창발**(피크 α=1.9, 저각성=미점화·과각성=홍수). 정동 readout은 각성(=게인) 자체, valence는 접근(도파민, M5)−회피(코르티솔, M18) 축으로 각성과 **near-orthogonal(2D circumplex, |r|=0.115)**. **anti-tuning**: distractor 격자를 흔들어도 역U가 유지됨을 증명(결과 보고 고르지 않음). 게인-사상 [F](sign-invariant), 발화율 앵커 [L](NE-LC tonic/phasic, Aston-Jones & Cohen 2005).
+
+**과제 E2 — 내수용 구심성 축 (M18 `emerge_interoceptive_axis`).** v1.19에서 위치(geometry)만 있던 시상하부(M0 SIM1=PVN/SON)의 **기능(HPA 허브)** 과 심장→뇌 고속도로를 연결했다. (i) **SA결절**을 M1과 **동일한 FHN 이완진동자**로 두어 박동을 생성(메커니즘 [V], 절대 박동률은 측정 입력 [L] — M0 크기=측정 부피 [L]과 동형); (ii) **HPA 코르티솔**을 **이중지수 2-lag**(생성지연 τ_rise=12 min, 제거/회복 τ_fall=50 min, 급성 자극 3 min)으로 모델 → **코르티솔 피크 24.06 min**이 인용 창 **[15,40] min 안**(Dickerson & Kemeny 2004)에 착지 → **owed `panic_peak_minutes` 재현**(피크 시간은 인용 동역학이 *결정*; 창에 맞추려고 상수를 고르지 않음); (iii) **심장 구심성 우세** — 미주 ~80% 구심성(Agostoni 1957) → afferent:efferent ≈ **4:1 입력 우세**, HEP 진폭이 각성을 추종(Pollatos & Schandry 2004 = "느껴지는 심장"=정동). 구심 전도 latency 단일 상수 부재 → **[O] 정직 선언**.
+
+**과제 E3 — 정동 readout + 기분-일치 기억 (M19 `emerge_affective_readouts`).** **인지를 재현하던 그 한 기질**이 정동 관측치도 **도메인별 튜닝 0**으로 재현하는지 시험. 9개 정동 관측치 중 **8개 정합(concordance 0.889)**: valence-arousal 2D, Yerkes-Dodson 역U, 인지-정동 공변, 보상예측오차(M5 재사용), **급성 코르티솔 피크(panic_peak 종결)**, HEP-각성 결합, **기분-일치 기억**(Bower 1981), 스트레스-주의협착(Easterbrook 1959); 공포-회피 1개는 M20 몫으로 정직하게 비워 둠(M19 최대 8/9). 특히 **기분-일치 회상**은 M2 해마 회상 로직(쓰기→저장→부분단서→완성)을 **종단으로 실행·검증**(strong-cue overlap 1.0, recall_logic_verified) — **하나의 기질이 기억과 감정을 함께 나름**을 입증. 모든 readout이 이미 창발한 M2/M5/M17/M18에서 나오므로 끼워맞춘 새 계산 없음.
+
+**과제 E4 — 정동의 기능적 접근 표지 (M20 `emerge_affective_access`).** 인지 PCI에 대응하는 정동 접근 표지: 고스트레스 게인이 M4 선택을 **접근→회피로 전이**(저스트레스=approach, 고스트레스=avoid; 테스트 가능한 공포-회피 편향). 단, 이것이 **엄밀한 전역 접근(보고/방송)** 인지는 **정직-음성(HONEST_NEGATIVE)**, **느껴지는 질(층 3)은 OPEN** — **단일 하드 프라블럼이 인지와 똑같이 정동을 덮는다**.
+
+**신규 측정 앵커 파일 3종 (engine `data/`).** `neuroendocrine_atlas.json`(NE/DA/5-HT/옥시토신 동역학 + HPA 코르티솔 키네틱 [L], 농도→게인 변환은 [O] 선언), `interoception_atlas.json`(SA결절 고유율·HEP 잠복 창·HRV 대역·미주 구심분율 [L], 구심 latency [O]), `affect_observables_atlas.json`(정동 관측치 10종 — M12 카탈로그와 **분리**하여 M12 byte-identical 유지, M19가 `combined_with_M12`로 보고). 각 항목 출처·등급 verbatim.
+
+**동결/재현 (v1.20).** **신규 전체 tree `sha256 = 0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70`**(2× 결정론, SEED=19). **M0–M16 출력 서브트리 `3a1ebbbb…` 불변**(add-only cascade 격리 증명, 회귀가 직접 assert). `regression_scalars.json` `73c0992bc09499c393157a53c5f8792881352b5225e6385be6bd5658f3a179d8`(+M17–M20 불변 다수). 회귀 **114 → 134 checks PASS**(M0–M16 보존 2 + 모듈 존재 1 + M17–M20 가설 17). **정직 원장 전면 불변**: `medium_efficacy_tested = 0`, `hard_problem_open = 1`, `consciousness_claim = 0`, `new_tuned_constants = 0`. 런타임 ≈ 39 s. **신체-내분비 루프를 다 채워도 의식 충분성은 닫히지 않는다**(안내서 §9-1) — 더 많은 생물학은 *메커니즘*을 완성할 뿐 *느껴짐*을 증명하지 않는다. **v1.21 진입점**: (E2′) 미주 구심 전도 latency 정본 앵커 verbatim → [O]→[L]; (E3′) 정동 관측치 확장(혐오·놀람 표지); (질병 스트레스-테스트) 별첨 로드맵 — `HANDOVER_v1_20_to_v1_21.md §질병 로드맵`.
+
+---
+
+## v1.19 (2026-06-17) — M9 기하를 **엔진 기본값으로 승격** + 메인 캐리어를 **M16으로 승격** (VP-SPEC §6-6 의도적 해시 변경)
+
+**이번 버전의 성격.** 직전 인계서(`WORK_HANDOVER_v1_19_NEXT.md`/`HANDOVER_v1_18_to_v1_19.md`)의 4개 과제를 완결했다. v1.18까지는 측정 기하·메인 캐리어가 **add-only 결정-검사/연구**로만 존재하고 동결 엔진 `b18c8626…`은 한 글자도 바뀌지 않았다. v1.19는 그 두 결과를 **엔진 기본값으로 승격**한다 — 이는 add-only 규율의 **유일한 예외**인 **VP-SPEC §6-6 의도적 해시 변경**에 해당하며, **새 튜닝 상수는 0개**다.
+
+**v1.17 동결 tree(이력 보존, 영구 기록).** 승격 직전 엔진 tree는 `sha256 = b18c86268679b3e19e495b7161fd3a5035605481c8ea76736a84accd0ef26ae7` (SEED=19). 이 해시는 v1.16→v1.18 계보의 동결점으로 **영구 보존**되며, 결정-검사 `geometry_grounding.py`의 `frozen_engine_tree_sha256_unchanged`와 회귀의 역사적-앵커 체크가 이를 참조한다.
+
+**과제 1A — M9 기하 ring→측정 [L] 엔진 승격.** `emerge_coordination`의 `POS = _ring(N)`을 `POS = _measured_geometry(regs)`(신규 로더, `brain_geometry_atlas.json` MNI [L])로 교체. **cascade 격리 완벽**: M0–M8·M10–M15 **byte-identical**, **M9만 변경**(field_contribution **+0.07340 → +0.13468**, R 0.329→**0.390**, regime **여전히 `partial_metastable`**, R<0.9 전역동기 아님), M16 신규. kernel 형태(1/r³ row-norm)·측정 κ=0.5496 불변; 척도불변(max|Δfc|~1e-16)이라 순수 [O]ring→[L]anatomy swap. **기하 정초는 efficacy/hard-problem을 닫지 않는다**(efficacy 0 유지).
+
+**과제 2A — 메인 캐리어 M16 승격.** `_consciousness/vp_main_carrier_emergence.py`의 stage A–E 로직을 **그대로(verbatim)** 엔진에 포팅(헬퍼 `_mc_` 접두, 데이터 경로만 조정), `emerge_main_carrier()`를 `emerge_all` **맨 끝**에 배선(→ M0–M15 byte-identical 보장), `M16_main_carrier` 키 추가. 엔진 M16 headline이 연구 headline `8d05cfec…`을 **bit-for-bit 재현** → 13게이트 입력·11불변이 연구와 동일. regression_scalars에 **19개 `mc_*` 불변** 추가로 항상-실행 회귀에 잠금. **새 챕터 `repro/mind/17-main-carrier/`**(verify+expected+README) 신설: promoted 엔진 M16에 대해 13게이트+11불변+headline 검증, **VERIFY PASS**. 캐리어 τ=측정 GABA_A 6.0 ms; **느린 다리는 엔진 [O] tau_inh=60**(세타 페이싱 앵커 **OWED [O]**, 과제 2B).
+
+**과제 1B — M9 노드 분해(sulcal-bank folding), add-only 결정-검사.** 신규 `_verify/geometry_node_decomposition.py`: AAL 파셀 CoM를 `build_geometry_atlas.py`에서 **단일출처 verbatim**(파일쓰기 꼬리 미실행)으로 읽어 3개 사전등록 해상도(R0=12 / R1=85 피질파셀 / R2=117 전체)에서 fc·regime를 **있는 그대로** 보고. 결과: R0 +0.13468 / R1 +0.82571 / R2 +0.60315 — **전 해상도 `partial_metastable`**(R<0.9). 12노드 경로가 v1.18 grounded fc 재현 ✓, 척도불변·±5mm jitter·band 통과, **row-norm은 fc 최대화기 아님**(anti-back-fit). **정직한 부분 정초**: AAL은 **gyral-centroid** 해상도 — Precentral/Postcentral 중심 ~17mm로 분리되나 마주보는 sulcal **벽(~mm)**은 미해상; 문자 그대로의 bank-to-bank 간극은 **AAL보다 미세한 sub-gyral parcellation 필요(패키지에 없음)** → **OWED [O]**. 엔진 tree **불변**(add-only) 확인. 결과 동결 `0c22317f9956a9a41a14dad1574533d45eaeb93bd336daad4e0492bbde9ab783`, 2× 결정론.
+
+**과제 2B — 세타(느린-지표) 페이싱 앵커, 장애물 명시.** 신규 `_consciousness/theta_pacing_anchor_status.py`: 정본 세타-**페이싱** 앵커(내측중격 GABA 페이스메이커 / Ih(HCN))가 본 패키지에 **잠긴 수치로 부재**하고 **neuro 패키지가 이번 업로드에 없어** C1 단일출처 verbatim 인용 불가 → **느린 다리는 [O] 유지**. 패키지 내 측정 GABA_B τ=180 ms는 **시냅스 감쇠 상수(페이스메이커 아님)** 이므로 **후보로만 보류, 미채택**. **anti-tuning 입증**: GABA_B 앵커 비율 **16.333**이 엔진-[O] 비율 **6.125**와 크게 달라 6.125가 어떤 측정 앵커에도 **back-fit되지 않았음**을 증명. 결과 동결 `31722498380e5a5a1efff2523e236878bf1b03c32de0b29936f7d0e28f8711b5`, 2× 결정론.
+
+**선재(先在) 게이트 정합성 수정 (v1.19 작업과 직교, 계산 변경 0).** 전체 게이트 통과(§7 DoD)를 위해 v1.19 4과제와 무관한 **선재(pre-existing) 불일치 2건**을 재현-정합성 차원에서 바로잡았다(새 상수·계산 변경 없음, 편집 전 baseline 기준으로 이미 존재하던 문제임을 확인). (i) **챕터 16 phenomenology 재동결**: 엔진 M12 `emerge_brainwave_phenomenology()`는 결정론적으로 `bab1be8f…`(15개 관측 정합, concordance 0.75; theta-gamma MI 포함)를 산출하고 편집 전 baseline과 byte-identical이나, 챕터의 `phenomenology_results.json`/`expected_phenomenology_sha256.json`은 이전 버전에서 엔진이 업그레이드되기 전의 stale 값(`66676af4…`, 11개 정합, 0.55)에 머물러 있었다(레지스트리·엔진은 이미 0.75/15로 정렬). 결정론적 엔진 출력으로 **재동결**(`bab1be8f…`) → `verify_phenomenology` **19 checks PASS**. (ii) **검색 레이어 재빌드**: `tools/gate.py`의 멱등성 체크(`build_search_layer.py` 2회 → byte-identical docs)가 디스크의 stale docs 트리(이전 빌드의 sitemap 날짜) 대비 실패했다. 두 연속 빌드는 byte-identical임을 확인했고, docs를 새로 빌드해 정합 → `gate.py` **71/71 PASS**. (sitemap의 `datetime.date.today()`는 build_search_layer의 선재 설계로, 빌드 당일 게이트 실행 시 통과한다.)
+
+**동결/재현 (v1.19).** **신규 엔진 frozen tree `sha256 = 3a1ebbbbfd1712ebef0f1c91b61cfe8cb9f0755af64dbc84373b2784c02460c1`**(2× 결정론, SEED=19; v1.17 `b18c8626…`과 의도적으로 다름 = §6-6 예외). 회귀 **112 → 114 checks PASS**(M9-geom 블록을 역사적-앵커+승격-착지 체크로 재구성; +캐리어 mc_* 잠금). **레지스트리 23 locks 갱신**(coord_field_contribution→0.13468, coord_regime R→0.390, 측정 geometry 반영) — `registry OK, values match frozen results`. **pre-promotion 동결 보존**: 기하 결정-검사 `8ad43a72…`, 캐리어 연구 headline `8d05cfec…`(두 모듈 모두 삭제하지 않음). **정직 원장 전면 불변**: `medium_efficacy_tested = 0`, `hard_problem_open = 1`, `consciousness_claim = 0`, `new_tuned_constants = 0`, PCI 정직-음성. **v1.20 진입점**: (1A′) sub-gyral parcellation으로 sulcal 벽 mm 간극 정초, (2B′) neuro 패키지 가용 시 정본 세타-페이싱 앵커 verbatim 인용 → 느린 다리 [O]→[L] 승격.
+
+---
+
+## v1.18+study (2026-06-17) — **main-carrier emergence** (add-only; frozen engine `b18c8626…` untouched)
+
+Tracked the access-correlated high-frequency wave **in physics/observation/evidence/causality only**
+and **emerged it from its measured source**: the carrier frequency is set by the **measured GABA_A
+decay τ=6.0 ms** (Destexhe 1998; inhibition-decay→gamma, Bartos 2007), generated by **PV fast-spiking
+interneurons** (Cardin 2009 / Sohal 2009, causal) — made explicit the way M14 grounds the spindle.
+Strong pre-registered hypothesis + 13-check gate, **0 new tuned constants**, deterministic 2×
+bit-identical. Established: (A) source + monotonic-1/τ activity range (absolute Hz stays [O], ratio
+6.125); (B) state-selectivity — **structured fast carrier writes recoverable memory (1.000), large
+unstructured slow drive collapses to chance (0.700)** → operative = wake/REM, not deep-SWS, concordant
+with PCI; (C) **metastable operating window** (silence 0.675 | metastable 1.000 | global-sync/seizure
+0.692, inverted-U) — biggest/most-synchronised field is NOT operative; (D) **parallel multiplex** —
+floor(6.125)=6 slots (7±2, Lisman), six contents reinstated from the slow **index alone** at fidelity
+1.000 with cross-talk 0.497 (chance), integrated parallel drive crosses the R19 fold 0.385. **Honesty
+carried:** `medium_efficacy_tested=0`, `consciousness_claim=0`, `hard_problem_open=1`, **PCI access
+marker = HONEST NEGATIVE**; no subjective-experience claim. Files: `repro/mind/_consciousness/{vp_main_carrier_emergence.py,
+verify_main_carrier.py, main_carrier_results.json, expected_main_carrier_sha256.json,
+MAIN_CARRIER_emergence.md}`, handover `HANDOVER_main_carrier_M16study.md`. Frozen headline sha256
+`8d05cfeccb9cf57c924b1b2aea3f716caaf6069f690171bf8d2fae47004b2de7`.
+
+---
+
+## v1.18 (2026-06-17) — M9 ephaptic 결합 기하를 **측정 MNI 해부학으로 정초** (add-only 결정-검사; 동결 엔진 불변)
+
+**이번 버전의 성격.** 직전 인계서(`HANDOVER_v1_17_to_v1_18.md`) §3.2의 지시 — *M9 ephaptic 결합 기하를 측정 해부학으로 정초* — 를 **add-only 결정-검사로 완결**했다. v1.17 M9는 12-노드 **등간격 링 [O]**(반경 R_BRAIN=0.085 m) 위에서 부위 간 결합 체제를 창발시켰다. 사용자가 제기한 *피질 folding* 비판의 올바른 레버는 **`R_BRAIN`이 아니라 위상+normalization**(§3.1 probe로 실증)이었고, 이번에 그 위상을 **MNI152 측정 좌표 거리행렬 [L]**로 교체했다. **새 튜닝 상수 0개**, **잠긴 엔진은 한 글자도 바꾸지 않음** — 동결 tree `b18c8626…`와 기존 95 checks 그대로.
+
+**측정 평결 (grade == evidence, 있는 그대로 보고).**
+- **링 교차검사 통과 = 코드경로 검증.** 결정-검사 모듈의 링 경로가 동결 엔진 M9 수치를 **bit 수준으로 재현**(fc **+0.07340**, |Δ|<1e-4). 독립 코드가 동결값을 재현하므로 새 하네스는 신뢰 가능.
+- **측정 기하: fc 상승, 체제는 그대로 부분동기.** 실제 해부 기하는 장의 in-silico 기여를 **링 대비 ≈1.8배**로 올린다(fc **+0.07340 → +0.13468**, R 0.329→0.390, row-norm). **그러나 regime은 여전히 `partial_metastable`**(R<0.9, **전역 동기 아님**). 이는 §3.4가 예고한 정직한 예상 그대로 — **folding 정초는 efficacy/hard-problem을 닫지 않는다.**
+- **척도 불변성 확인 = 형상만 문제.** row-norm 하에 좌표를 ×0.1/×10/×1000 해도 fc 변화 **2.6e-15**. 절대 척도는 무관하고 **상대 형상**이 fc를 정한다([O] R_BRAIN 약분과 동치). 즉 [O]→[L] swap은 순수히 *기하 형상*을 통해 답을 바꾼다.
+- **강건성.** 좌표 jitter ±5mm(CoM 측정오차 규모, seed 200–209) → 10/10 모두 부분동기 유지. [L]-only 8노드(4개 [O] 제거) → fc +0.08118, 여전히 부분동기(결과는 약등급 좌표가 만든 게 아님). f0 ±20% 대역(seed 100–104, M9.4 동형) → 모두 부분동기.
+- **anti-back-fit 입증.** raw 1/r³ → fc +0.025, **incoherent**(cm 분리에서 점쌍극자 국소근사 붕괴; 차폐길이 λ_s 미측정 → [O]). **row-norm은 fc 최대화기가 아니다**(raw가 더 낮고, random scatter > ring) — 등록된 normalization은 결과를 키우려는 선택일 수 없다. normalization은 **fc를 보기 전에 물리 근거로 고정**.
+
+**구현 (add-only).**
+- **신규 `_engine/data/brain_geometry_atlas.json`**(sha256 `99daa8f5…`): 12부위 MNI152 좌표 + 등급 + 출처. **[L] 8노드**(정확 atlas CoM/출판 centroid; 합성 부위는 AAL CoM 체적가중 centroid 결정론적 계산) + **[O] 4노드**(연장형/개방형/분산형 — midbrain·brainstem·forebrain_gaba_in·basal_forebrain_chol). 출처(AAL Tzourio-Mazoyer 2002, 시상하부 Ogawa 2024, 기저전뇌 Zaborszky 2008 등) atlas docstring에 전수 기록. **kernel 형태(1/r³)는 v1.17과 동일; 위치만 변경.**
+- **신규 `_verify/geometry_grounding.py`**: 잠긴 엔진을 read-only import 하는 결정-검사 모듈. 부위키로 좌표를 인덱싱해 OMEGA와 정합 보장. 결과(`8ad43a72…`)를 **2× bit-identical**로 동결.
+- **신규 `_verify/expected_geometry_sha256.json`**: 결과·atlas·엔진-tree 해시 잠금.
+- **회귀 `_verify/run_regression.py`: 95 → 112 checks PASS**(+17 M9-geom: 링 교차검사·측정 평결·척도불변·jitter·[L]-only·normalization·band·정직 플래그). frozen tree·기존 95 불변.
+
+**동결/재현.** 엔진 frozen tree `sha256 = b18c86268679b3e19e495b7161fd3a5035605481c8ea76736a84accd0ef26ae7` (**불변**, SEED=19), 2× 결정론. 기하 atlas `99daa8f5cc66edb79bf84921a2222e3db74dc53c9146253b32a9b13e43c9b8e4`, 결정-검사 결과 `8ad43a72b2f8282cae801ed8468c883b79eab0c79363ebd98621cbbfc18ff80f`. **정직 원장 불변**: `medium_efficacy_tested = 0`, `hard_problem_open = 1`, `consciousness_claim = 0` — 기하를 *측정값으로 정초*하는 것은 의식 주장이 **아니다**. **v1.19 진입점**(인계서 §3): (A) 엔진 기본값 ring→측정 기하 승격 + cascade 분석(M9 스칼라+tree 해시만 변경; v1.17 해시 이력 보존), (B) 노드 분해(AAL ~78–90)로 sulcal-bank folding 포착.
+
+---
+
+## v1.17 (2026-06-17) — M15 **임상단위 교정 브리지** + DNA `param_db` 규율을 M0(뇌 크기)·M14(동역학 상수)에 적용 + **정직한 창발 검증**
+
+**이번 버전의 성격.** 세 갈래를 한 번에 마감했다. (A) 직전 세션이 빌드한 **M15 calibration bridge**(임상 단위 다리)를 회귀·문서·패키지로 완결. (B/C) 사용자 지시대로 DNA 백서의 **`param_db.json` 등급 규율**(측정/범용=[L], 고정선택=[F], 열림=[O], **back-fit 금지**)을 mind의 **M0 뇌-부위 크기**와 **M14 동역학 상수**에 적용. 그리고 사용자의 핵심 우려 — *"제대로 창발을 못해서 그런 거 아닌지 확인이 필요하다"* — 에 대해 **두 갈래 모두 정직한 검증 테스트**를 돌려 결과를 엔진·회귀에 박았다. **새 튜닝 상수 0개**, **M1–M15 byte-identical**(M0만 변경).
+
+**검증 결과 (사용자 우려에 대한 직접 답).**
+- **M14 스핀들 반송파 = 진짜 창발 (증명됨).** 자유상수로 의심되던 `tau_r`을 [40,240] ms(6배)로 sweep해도 반송파는 **15.38 Hz로 정확히 불변**(11–16 Hz 대역). 즉 주파수는 자유상수가 아니라 **인용된 T-전류 회복시상수**(τ_rec=13 ms, Huguenard&McCormick 1992)가 결정한다 — propped-up이 아니다. `tau_s`을 [10,80] ms로 바꿔도 서파진동은 **항상 <1 Hz**(인용 τ_so=600 ms가 주도). 이 carrier-invariance 검사를 **회귀에 영구 박제**했다.
+- **단, `a_gain`은 envelope에 대해 load-bearing — 정직하게 선언.** 반송파는 a_gain에 불변이지만, **<1 Hz 서파진동과 점강점쇠(waxing-waning)는 a_gain∈[~1.2, 2.0] 창에서만 창발**한다(0.8→서파 3.97 Hz·점강 붕괴; ≥2.5→서파>1 Hz). 물리적으로 타당한 적응 창이지만 **독립 측정값은 아니므로 [F]**로 두고 그 **민감도 창을 DB에 명시**했다(숨기지 않음).
+- **M0 뇌-부위 크기 = 창발 실패(측정 크기 null) — DNA와 동일.** `dwell ~ γ^1.5`가 측정 부피를 예측하는지 검정 → **null**: dwell 비율폭은 **1.07×(거의 균일)**인데 측정 부피폭은 **275×(3 자릿수)**. 해마는 γ가 최대지만 거의 최소 부위. 이는 DNA 부록 A가 찾은 *세포-상수 스칼라 γ는 크기를 담지 못한다*(ρ=0.11)는 결과와 **정확히 일치**.
+
+**(A) M15 — 임상단위 교정 브리지 (새 자유상수 0개, 인용 앵커 2개).**
+- **시간 앵커 = 1 ms/step**, M14 스핀들 반송파가 **인증**(인용 τ_rec로 15.38 Hz가 11–16 Hz에 떨어질 때만 1 ms/step 성립).
+- **전압 앵커 = 단 하나의 인용 µV** = SWS 델타 75 µV p-p(AASM/R&K N3 기준) → V0=33.22 µV/unit. **두 번째 자유 전압 스케일 없음.**
+- **`sws_delta_amplitude_uv` → CAL-CLOSED** (인용 앵커에 의한 *교정* 폐쇄, **창발 아님**; VP-SPEC §6.1 "named cited external calibration"). 핵심 카탈로그 **17→18/20 = 0.90**.
+- **정직한 교차검증(채점 안 함):** 같은 앵커에서 모델 델타/스핀들 진폭비 **≈1.27×** vs 생리값 3–7× — 19-노드 기질이 공간 동기성을 과소평가(스핀들 예측 ~59 µV). 숨기지 않고 출력에 남김.
+- **`p300_latency_ms` → OWED:** 인용 AMPA→NMDA→GABA_B 캐스케이드(게인은 κ×전하, 자유게인 없음)는 **~39 ms 조기 ERP**에서 정점; 300 ms는 금지된 2차 시간스케일이나 튜닝 경계를 요구.
+- **`panic_peak_minutes` → OWED:** 각성 폭주가 1 ms/step에서 ~1 s에 포화; 임상 10분은 체액성이라 신경 기질에 부재.
+
+**(B) 트랙 1 — M0 뇌-구조 grounding (DNA 통합 법칙 적용).**
+- γ는 **발생 순서·정체성 [V]** 유지(불변).
+- **상대 크기를 측정 부위 부피 [L]로 교체**: cerebrum 1100 / cerebellum 150 / hippocampus 7 / hypothalamus 4 cm³(인용 신경해부 — Blinkov&Glezer 1968, Andersen 1992, Makris 2013). 옛 γ^1.5 dwell은 **null 크기-proxy로 강등**해 투명성 위해 보존.
+- **DNA 교차링크**: DNA `param_db`의 인용 뇌 allometric 지수 **M_body^0.75**(Stahl 1965)는 *뇌-대-체* 스케일 축; 부위 *내부* 비율은 위 측정 부피가 직접 [L] 입력.
+
+**(C) 트랙 2 — M14 동역학 상수를 param_db로 (매직넘버 제거).**
+- `tau_r`, `tau_s`, `a_gain`을 **`mind_param_db.json`(DNA 형식: value+grade+provenance+robustness)** 로 외부화 — 엔진에 매직넘버 없음. **값은 동일** → M14·M15 **byte-identical**.
+- 등급: `tau_s`=**[L]**(인용 피질 막시상수 ~10–30 ms, McCormick 1985/Destexhe 2003), `tau_r`=**[F]**(반송파-불변 입증), `a_gain`=**[F]**(민감도 창 [1.2,2.0] 선언).
+
+**동결/재현.** frozen tree `sha256 = b18c86268679b3e19e495b7161fd3a5035605481c8ea76736a84accd0ef26ae7` (SEED=19), 2× 결정론 확인, M0만 변경(다른 모듈은 다른 atlas를 읽어 cascade 없음). **회귀 75 → 95 checks PASS**(+M15 11 +트랙1 5 +트랙2 4, carrier-invariance 검증 포함). **정직 원장 불변**: `medium_efficacy_tested = 0`, `hard_problem_open = 1`, `is_consciousness_claim = 0` — EEG 진폭을 *교정/재현*하는 것은 의식 주장이 **아니다**.
+
+---
+
+## v1.16 (2026-06-17) — M14 `emerge_sleep_architecture()`: 시상-망상핵 **수면방추(11–16 Hz)를 창발로 폐쇄**, 측정-관측값 핵심 카탈로그 **0.80 → 0.85** (튜닝 없음)
+
+**이번 버전의 성격.** 사용자 요청대로 — *"의식의 비밀을 찾기 위해 뇌 환경을 최대한 구사하고, 빛 창발의
+발원지를 여러 개 두고 통로로 통하게 순환시켜 관찰하라"* — **같은 단일 기질** 위에 수면 리듬을 창발시키는
+M14 모듈을 추가했다. M12가 owed로 남겼던 `sleep_spindle_hz`를 **창발로 폐쇄**하여 핵심 카탈로그를
+**16/20 → 17/20 = 0.85**로 올렸다. **새 튜닝 상수 0개** (R19 3차 쌍안정 + 측정 κ=0.5496 + atlas 주파수 재사용).
+
+- **발원지(sources):** 시상피질(TC) 중계세포 **개체군**(각 세포 = R19 3차 쌍안정 막 + 느린 회복변수
+  w=T-전류 비활성화 회복). 이 2변수 세포의 **이완진동 주기**가 **인용 T-전류 회복시상수**(τ_rec=13 ms,
+  Huguenard&McCormick 1992)로 **결정** → 방추 **반송 주파수**. 11–16 Hz로 **맞춘 게 아니라** 인용
+  시상수가 그 대역에 떨어진다.
+- **통로/순환(pathways/circulation):** M9 ephaptic 링 + 1/r³ 커널, **측정 κ**를 **확산(라플라시안) 결합**
+  κ·(평균장−s)으로 사용 — 동기화 지점에서 0이 되어 **반송 주파수를 흔들지 않고 위상만 동기화**.
+  (이전 시도에서 행정규화 ephaptic 장을 막에 직접 더해 반송이 4 Hz로 끌려갔던 문제를 이 방식으로 해결.)
+- **방추 점강점쇠(waxing-waning, 방추의 정의적 시그니처):** **쌍안정 동원(recruitment) 이완진동자**
+  (같은 R19 3차)가 느린 **Ca→Ih 적응**(인용 Lüthi&McCormick 1998)으로 게이팅 — 동원분획이 Ca를 적재,
+  Ca가 Ih를 상향, Ih가 풀을 탈동원 → 방추 종료, Ca 청소 → 재동원 → 다시 점강. **방추간 불응기 ~4 s(창발).**
+
+**창발한 측정 관측값(맞춤 없음):**
+- **sleep_spindle_hz** [11,16] — 정준 피크 **15.38 Hz**, 8-시드 sweep **8/8 in-band(1.0 ≥ 게이트 0.875)**,
+  대역내 전력분획 0.97. → **M12 owed 관측값을 창발로 폐쇄, 핵심 0.85.**
+- **slow_oscillation_hz** [0.1,1.0] (Steriade 1993, 신규) — 피질 Up/Down 이완진동(R19 3차 + 느린 적응),
+  적응 회복시상수(인용 Sanchez-Vives 2000 / Compte 2003)가 **0.49 Hz** 창발, 8/8 < 1 Hz.
+- **spindle_waxing_waning** (De Gennaro&Ferrara 2003, 신규/관계적) — 진폭변조 깊이 **0.975**, 8/8 > 0.5.
+- **nrem_rem_band_shift** (신규/관계적) — REM(θ+γ) 대 NREM(δ+방추) 마커 전력비가 REM 상태에서 더 큼
+  (25.4×), 8/8 방향 일치.
+
+**메커니즘으로 시연(재채점 안 함, de-dup):**
+- **REM 꿈-회상 루프** — REM θ-γ 결합을 **M2 해마**에 연결(`_m13_recall` 재사용): REM 회상 1.000 >
+  NREM-SWS 0.531. 이는 **M12에서 이미 matched인 `dream_recall_theta_increase`를 실제 메커니즘으로 존중**하는
+  것이며 **새 관측값으로 점수화하지 않는다.**
+
+**카탈로그 회계(누적, 중복 제거):** 핵심 = 20개 중 17개 = **0.85** (M13이 1/f, M14가 방추 폐쇄).
+확장 = 27개(20 + M13 신규 4 + M14 신규 3) 중 23개 = **0.852**.
+
+**바이트 보존 / 결정성.** M0–M13 **14개 모듈 모두 바이트 불변**(per-module sha256 = handover §5와 동일).
+`run_all.py` 2회 실행 tree_sha256 동일 → 결정적. 회귀 **75개 검사 PASS**(v1.15의 62 + M14 13).
+
+**정직한 원장 불변.** `medium_efficacy_tested=0`, `hard_problem_open=1`, `is_consciousness_claim=0`.
+수면 **리듬**의 재현은 **의식·경험의 주장이 아니다.** [V/I/O]
+
+**새 tree_sha256:** `8006fb9fc4cf7210600306e383b447884dbe04430d3c3aa1c878fa64872b9ec4` (SEED=19).
+
+---
+
+## v1.15 (2026-06-17) — M13 `emerge_spectral_observables()`: 전체 LFP 스펙트럼에서 **1/f 기울기를 창발로 폐쇄**, 측정-관측값 핵심 카탈로그 **0.75 → 0.80** (튜닝 없음)
+
+**이번 버전의 성격.** 사용자 요청대로 — *"의식의 비밀을 찾기 위해 뇌 환경(전두엽 등)을 최대한 구사하고,
+뇌파는 이미 복합적이니 **빛 창발의 발원지를 여러 개** 두고 **통로**로 통하게 **순환**시켜 관찰하면 문헌값에
+가까워진다"* — **뇌구조를 닮은 다중-소스 결합장**의 전체 LFP를 방출시키고, 그 위에서 측정 스펙트럼 관측값을
+추출하는 M13 모듈을 추가했다.
+
+- **발원지(sources):** 12개 측정-마스터유전자 장기 노드(atlas read-only) + **전전두엽 노드**(frontal-midline-theta
+  ~6.5 Hz, Cavanagh&Frank 2014 — 브리프가 요청한 "전두엽"). 전전두엽 노드는 **M13-PRIVATE**(공유 organ atlas에
+  넣지 않음) → M0–M12 바이트 불변 보장.
+- **통로(pathways):** M9 ephaptic 링 + 1/r³ 커널, **측정 κ=0.5496**.
+- **순환(circulation):** Kuramoto 위상 결합으로 빛(LFP)이 통로를 따라 순환.
+
+**창발한 측정 관측값(맞춤 없음):**
+- **eeg_aperiodic_1f_slope** — Welch PSD + specparam식 로그-로그 적합으로 **1/f 지수 x=1.94** 창발,
+  Voytek 측정 밴드 [1.5, 3] 내부. 비주기 바닥은 **측정 시냅스 4종**(AMPA/NMDA/GABA_A/GABA_B 시상수·전도도,
+  인용)의 산탄잡음 합이며 각 기여는 **시냅스 전하 q=g·τ**(Linden 2010: 느린 전류가 LFP 지배)로 가중 —
+  **기울기를 맞추지 않았는데 측정 범위에서 창발**. 8-시드 sweep 전부 in-band(1.0). → **M12가 owed로 남겼던
+  관측값을 창발로 폐쇄.**
+- **eeg_oscillatory_peaks_above_aperiodic**(Donoghue 2020, 신규) — 같은 PSD에서 비주기 바닥 대비 2배 이상
+  솟은 진동 피크 **16개**(θ/α/β/γ 장기 주파수에서).
+- **recurrent_ignition_nonlinear**(Sergent&Dehaene 2004, 신규) — R19 쌍안정 평균장 + 측정 κ 재귀 ephaptic
+  되먹임: 임계하 구동→OFF(-1.0), 임계상→ON(+1.245), 날카로운 경계, 점프 2.245의 **전부-아니면-전무**가
+  쌍안정성에서 창발(주입된 이득 아님). **측정된 비선형-문턱 시그니처 재현일 뿐 — 의식 주장 아님.**
+- **theta_gamma_MI_predicts_recall**(Tort 2009 / Lega 2016, 신규/심화) — Tort KL MI를 **M2 해마 회상 결과에
+  연결**: 강결합→높은 MI + 큐가 엔그램 완성(회상 1.0), 약결합→낮은 MI + 큐 실패(회상 0.531<0.95). 관계적,
+  임의 상수 없음.
+
+**정직하게 owed로 남긴 것(튜닝 거부):**
+- **aperiodic_slope_flattens_with_arousal**(Gao 2017 / Waschke 2021) — 각성 시 1/f 기울기 평탄화. 정준 시드에선
+  평탄화하나 **8-시드 sweep에서 7/8(0.875)** 로 사전 명시한 **0.9 강건성 게이트 미달** → **matched 아님, owed**.
+  시상피질 전도도 모델(또는 더 긴 다중시행 기록)로 강건해질 때까지 보류. **완전성보다 정직함.**
+
+**일치율(중복 제거, 감사 가능).** M12 카탈로그는 바이트 불변(15/20). M13이 1/f를 창발로 폐쇄 →
+**핵심 카탈로그 16/20 = 0.80**. 신규 스펙트럴 관측값 4종(matched 3 + owed 1)을 더한 **확장 카탈로그
+19/24 = 0.792**. (마일스톤 추정치 ≈0.85는 *접근*했으나, 정직한 측정 수치는 핵심 0.80 — arousal owed로 명시.)
+
+**M0–M12 산출 수치는 1바이트도 안 바뀜**(per-module sha256 16종 전부 동일) — M13만 추가. tree 해시
+`55c824df…` → **`0224ac8b…`**. 결정론 2× 동일(SEED=19, BLAS 단일스레드). 회귀 하니스 **62 checks PASS**
+(M13 11종 추가).
+
+**추가 산출물:** `repro/mind/_engine/data/spectral_observables_atlas.json`(신규) — 5개 스펙트럴 관측값의
+**측정 타깃·인용·톨러런스·상태**, 측정 시냅스 동역학(시상수·전도도·인용), 전전두엽 노드 정의.
+
+**정직성 경계.** 현상 재현은 **해석 주장이 아니다.** `medium_efficacy_tested=0` 유지, 인과·경험 주장 없음,
+하드 프라블럼 열림(`hard_problem_open=1`, `is_consciousness_claim=0`). recurrent_ignition은 측정 비선형-문턱
+시그니처 재현일 뿐 의식의 점화 주장이 아니다.
+
+
+
+**이번 버전의 성격.** M12 `emerge_brainwave_phenomenology()`(4D-DNA 창발 출력을 **문헌 측정 관측값
+(현상, 해석 아님)** 에 매핑하고 시상하부 루프를 연구하는 모듈)의 일치율을 **튜닝 없이 실제 창발만으로**
+0.55(11/20) → **0.75(15/20)** 로 끌어올렸다. 새 관측값 4종은 측정-밴드 결합을 **측정 κ=0.5496** 에서
+창발시켜 재현했다(맞춤 없음):
+- **theta_gamma_MI_value** — Tort식 KL 변조지수 **MI=0.011**(실험 보고 소-양수 범위 내),
+- **adhd_tgc_reduced** — 비조직 결합(잘못된 세타 위상)이 MI 를 6e-5 로 **감소**(Kim 2016 ADHD TGC 저하 재현),
+- **dream_recall_theta_increase** — 세타-결합 반송파가 강하면 엔그램 fold 를 넘어 회상, 약하면 망각(Marzano 2011),
+- **alpha_desync_eyes_open** — 감각 구동(눈뜸)이 알파를 억제(Berger blocking).
+
+**M0–M11 산출 수치는 1바이트도 안 바뀜**(diff 공집합) — M12 출력만 변경. tree 해시 `f0403a06…` →
+**`55c824df…`**. 결정론 2× 동일(SEED=19).
+
+**나머지 5종은 정직하게 owed(목표)로 명시** — 각각 100% 도달에 필요한 **명명된 외부 입력**과 함께:
+`eeg_aperiodic_1f_slope`(방출 LFP 스펙트럼 기울기 추출 메커니즘), `sleep_spindle_hz`(시상-망상 방추 발생기
+메커니즘), `sws_delta_amplitude_uv`(측정 µV 스케일 보정), `panic_peak_minutes`(측정 시간 스케일 보정 — 급속
+폭주 분기는 stress study 에서 창발), `p300_latency_ms`(측정 ms 스케일 + oddball ERP). 진짜 100%는 **창발
+메커니즘**(M13 스펙트럴, M14 수면구조)과 **측정·인용 단위 보정**(M15)을 요구하며, 어느 것도 날조하지 않는다.
+
+**추가 산출물:**
+- `RESEARCH_PROGRAM_brainwave.md`(신규) — 대규모 연구 프로그램: 100% 측정-현상 일치 목표, owed 관측값별
+  로드맵, **질병 프로그램**(공황장애·ADHD·난독증·학습장애·뇌전증·조현병·알츠하이머·파킨슨·우울증·자폐·PTSD·
+  중독·양극성·마취/혼수·편두통·수면장애 — 각 질병의 **측정 뇌파 시그니처**를 점수 대상으로), 모듈 로드맵
+  (M13–M21), 마일스톤(v1.15→v1.18+), 정직성 원장.
+- `repro/mind/_bridge/` 에 뇌파 연구 3종 동봉: `vp_consciousness_brainwave_study.py`(의식=기억 도달 최강
+  고주파, 진폭≠의식 해리), `vp_brainwave_stress_tests.py`(인덱스→내용 재생, 구동 포획→이성 마비, 구동패널
+  배고픔·마약·성욕·공포·통증, 공황 분기, 학습장애 결합), `BRAINWAVE_consciousness_whitepaper.md`. 각자 결정론·
+  자체검증.
+
+**정직성 경계.** 현상 재현은 **해석 주장이 아니다.** `medium_efficacy_tested=0` 유지, 인과·경험 주장 없음,
+하드 프라블럼 열림. 임상 매핑은 문헌 일치 추론([I])이고 일부 구동 크기는 도식적(순서만).
+
+**동결 기준값(갱신):** tree sha256 **`55c824df…`**(이전 `f0403a06…`; M0–M11 비트동일, M12 출력 변경) ·
+gate **71/71** · run_regression **42** · boundary 8/8 · terminology PASS · em_thesis 6/6 · expand 12/12 ·
+sensory 15 · loro 13/13 · light_memory 19 · registry **23 locks / 15 chapters** drift 0 · sitemap 16 URLs ·
+**M12 concordance 0.75 (15/20)**. 결정론 SEED=19, 2×sha256 동일.
+
+---
+
+**이번 버전의 성격.** 이 패키지가 처음부터 향하던 **시뮬레이션**을 실제로 완성한다. 새 **튜닝** 상수는
+**추가하지 않는다** — 정류 상수 α=2/π·δ=1/π² 는 |cos| 과 [cos]₊[cos]₊ 의 **사분면 평균**(엔진이 수치로
+계산·검증), 결합 κ=0.5496 은 중추가 이미 쓰는 **측정값 그대로**, 유일한 경험 입력은 인용된 광학 앵커
+λ_ref=632.99 nm 뿐이다. M11 은 **인용 물리 브리지**(VP/Jamming-Physics 백서, **DOI 10.5281/zenodo.17932566**)
+의 단일 사실 — *뇌파는 같은 진공 격자 위의 창발한 빛(c²=B/ρ)이며, 그 스텝당 반송파 각도 θ=2πa/λ 는 점 아래
+수십 자리*  — 위에 신경과학적 귀결을 **인용으로만**(코드 의존 없음, 단일출처 규칙) 세운다.
+
+**M0–M10 산출 수치는 1바이트도 바뀌지 않았다**(엔진의 기존 과학 불변; `/tmp` 기준 diff 공집합, M11 키만
+추가). 다만 동결 결과 파일에 **M11 블록이 새로 들어가므로 tree 해시는 필연적으로 바뀐다**: `7fb3f4bd…` →
+**`f0403a06…`**. 이는 정직한 증분이다(은닉된 M0–M10 변경 없음).
+
+**과학 증분(전부 비튜닝, [V] 메커니즘 / [I] 생물학적-사용 추론 / [O] efficacy 열림):**
+- **M11 `emerge_light_memory_binding()` (엔진 신설).** 끝까지 굴러가는 메커니즘을 결정론적으로 창발: (1) 24개
+  탈위상 창발광 세포 → 합산 LFP 를 격자에 발사(전면 속도 ≈ c, 뇌파), (2) 8개 감각 구심 EM 추가, (3) 뇌파 EM ⊕
+  감각 EM **중첩** → 부호 있는 위상 겹침 X₀·cosθ(평균 0, 상쇄) 을 **기하 정류**로 **부호 살아남는 스칼라**(=정보
+  비트)로 변환 — bound(위상잠금)=¼, antiphase=0, **unbound 바닥=(1/π)²=δ=0.1013**, 정보 대비
+  **bound−unbound=0.1487**, (4) bound·정렬 구동 0.8244 > **R19 엔그램 fold 0.3849** → **기록되고 지속**(기억);
+  약/역위상은 **미기록**; θ 위상 분리로 간섭 0.0(분리) < 0.217(혼합) — θ 뇌파가 기록 클럭, (5) 한 θ 프레임 안
+  6개 γ 슬롯(40/7)에 6개 정보 굴림 → **전부 충실도 1.000 복원**, (6) 하류 뉴런이 굴려진 장에 **장-매개 동조**:
+  cancel 0.118 < measured 0.605 < augment 0.642(엄격 단조, 비순환) — 뉴런이 **장 자체**를 느낌.
+- **신규 챕터 §15 `15-light-to-memory`** (영어 본문 C0): 빛이 만들어지는 곳에서 기억이 기록되는 곳까지의 단일
+  반송파를 추적. answer-first(주입) + abstract + claim-strip + 5 vp-cards(레지스트리 동기) + 산문 + nav.
+- **신규 게이트 `repro/mind/15-light-to-memory/verify_light_memory.py` (19 checks):** M11 비트동일 재현 +
+  정류 상수 강제(α=2/π, δ=1/π², 2π=α/δ) + 점 아래 각도(비 ~10¹³) + 중첩→정류→정보(bound ¼, unbound δ 바닥,
+  대비>0) + bound 기록·지속/unbound 미기록 + θ 보호 + 다중정보 복원 + 하류 장-매개 동조 + κ 측정 + efficacy=0.
+- **인용 물리 브리지 동봉 `repro/mind/_bridge/`:** `VP_light_to_brainwave_BRIDGE.md`(인용 브리지) +
+  `vp_light_brainwave_sim.py`(백서 재현 PART 1–3: c²=B/ρ 창발광·각도 이론·EEG 파장 재방출) +
+  `vp_brain_light_memory_sim.py`(**독립 실행 엔드투엔드 시뮬레이션** — 본 업그레이드의 핵심; numpy 만 의존,
+  결정론, headline sha256=`6a439f82…`) + `README.md`(출처·등급).
+
+**정직성 경계(불변).** 위는 전부 **검증된 in-silico 메커니즘**이다 — *어떻게* 창발광이 기억을 *기록할 수
+있는지*를 끝까지 보였다. **생물학이 실제로 빛-정류 결합으로 기억하는지는 아니다.** 이 챕터는 *아직 존재하지
+않는 이론*에 답하므로 인용 물리로부터의 **강한 추론**으로 세웠다([I]). `medium_efficacy_tested` **0 유지**,
+어떤 링크도 인과로 주장하지 않으며 **경험 주장 없음**. §12 하드 프라블럼 불변.
+
+**동결 기준값(갱신):** tree sha256 **`f0403a06…`**(이전 `7fb3f4bd…`; M0–M10 비트동일, M11 키 추가분) ·
+gate **71/71**(이전 64/64) · regression **42**(이전 29; M11 메커니즘 불변식 +13) · boundary **8/8** ·
+terminology **PASS** · em_thesis **6/6** · verify_expand **12/12** · verify_sensory **15** · verify_loro **13/13** ·
+**verify_light_memory 19 (신규)** · registry **23 locks / 15 chapters**(이전 18/14) drift 0 · sitemap **16 URLs**(이전 15) ·
+llms.txt **4989B(<5KB)**. 결정론 SEED=19, 단일스레드, 2×sha256 동일.
+
+**추가/변경 파일:** `repro/mind/_engine/vp_mind_engine.py`(M11 추가, `emerge_all`·`regression_scalars` 배선; M0–M10 불변) ·
+`repro/mind/_engine/{results/mind_emergence_results.json, expected_sha256.json}`(재동결 `f0403a06…`) ·
+`repro/mind/_verify/run_regression.py`(M11 불변식 14줄) · `docs/mind/15-light-to-memory/index.html`(신규) ·
+`tools/mind_registry.py`(lm_* 5 locks·CITES·ANSWERS) · `manifest/mind.csv`(row 15, 1414w) ·
+`repro/mind/15-light-to-memory/{light_memory_results.json, expected_lm_sha256.json, verify_light_memory.py}`(신규) ·
+`docs/mind/index.html`(§14 누락 보정 + §15) · `docs/mind/_meta.json`(ch15) ·
+`tools/build_search_layer.py`(llms.txt 에 §14·§15 검증-결합 섹션) · `repro/mind/_bridge/*`(신규) · 본 CHANGELOG·핸드오버·매뉴얼·원장.
+
+---
+
+**이번 버전의 성격.** 새 창발 상수를 **추가하지 않는다.** 대신 (i) "진짜 100%란 무엇인가"를 비-튜닝
+거버넌스 안에서 **정밀하게 정의·증명**하고, (ii) 남은 데이터 게이트 (b)(편도체·중격·시각전영역)를 일차
+발달신경과학 **문헌으로 판정**하여 *왜 정직하게 열려 있어야 하는지*를 출처와 함께 못 박고, (iii) 헤드라인
+인과 결과(+0.0734)를 **leave-one-region-out falsification** 으로 검정해 *특정 region 하나의 산물이 아님*을
+보였다. **M0–M10 산출 수치는 1바이트도 바뀌지 않았다 — tree 해시 `7fb3f4bd…` 동일**(엔진 미변경; 추가는
+전부 문서·분석·검증 레이어).
+
+**과학 증분(전부 비튜닝):**
+- **게이트 (b) 일차문헌 판정 (UN-examined tbd → examined·evidenced·correctly-open).** 세 region 모두 단일
+  canonical master 가 정본에 **없음**을 일차문헌으로 확인: 편도체=다기원 복합체(ISL1/vLGE·PAX6/dLGE·DLX5
+  선조체·OTP/LHX/EBF3/DBX1 내측), 중격=ZIC1–5 중복·비특이, 시각전영역=NKX2-1 을 담창구/시상하부와 공유(같은
+  프로모터 이중계상) + 내부 이질 niche. 단일 master 강제 = over-claim → **의도적으로 열어 둠.** 출처 포함 근거:
+  `repro/mind/_engine/data/brain_region_master_survey.json`. 아틀라스는 **단일-master-가능 region 집합에서
+  포화(saturated)** — completeness 진술 동봉.
+- **M9-LORO (type-(2) 분석, 새 상수 0).** 12 region 을 하나씩 제거하고 **같은 측정 κ=0.5496** 로 cancel/measured/
+  augment 삼중검정 재실행: 장 기여가 **모든 단일 제거에서 양(+) 유지**(범위 **[0.0518, 0.1284]**), **발작 없음**
+  (R<0.9), **cancel<measured<augment 보존**, 제거 0개 = 엔진 M9 와 비트 동일(+0.0733965191, `matches_engine`).
+  → 헤드라인 +0.0734 는 **분산되어 있고 특정 region(가장 영향 큰 제거=striatum, |Δ|=0.055)에도 의존하지 않음.**
+  `medium_efficacy_tested` **0 유지**(메커니즘 강건성 ≠ 기능적 사용 증거).
+
+**정직한 100% 결론.** 측정/인용 입력만으로 세울 수 있는 것은 전부 세웠고(M0–M10), 검토로 진전 가능한 유일한
+게이트(b)는 검토 후 **포화로 정직 판정**했으며, 남은 frontier(efficacy·포화 너머 region 성장·Hz 승급·하드
+프라블럼)는 각각 **명명된 외부 입력에 owed** 임을 정밀 문서화했다. 자세히: `COMPLETION_LEDGER.md`.
+
+**동결 기준값(불변):** tree sha256 **`7fb3f4bd…`** (v1.11 과 동일) · gate **64/64** · regression **29** ·
+boundary **8/8** · terminology **PASS** · em_thesis **6/6** · verify_expand **12/12** · verify_sensory **15** ·
+**verify_loro 13/13 (신규)** · registry **18 locks / 14 chapters** drift 0. 결정론 SEED=19, 2×sha256 동일.
+
+**추가 파일:** `COMPLETION_LEDGER.md`(100% 정의·증명, 영어 본문 C0) · `repro/mind/_engine/data/brain_region_master_survey.json`(게이트 (b) 일차문헌 판정, 출처 포함) ·
+`repro/mind/13-em-coordination/{leave_one_out_robustness.py, leave_one_out_results.json, expected_loro_sha256.json, verify_loro.py}`(M9-LORO) ·
+`repro/mind/_engine/data/brain_organ_atlas.json`(`_remaining_open` 텍스트만 갱신 → survey 지시; 계산 필드 불변) · 본 CHANGELOG·핸드오버.
+
+---
+
+## v1.11 (2026-06-17) — M10 신설: **감각↔중추 ephaptic 결합** (데이터 게이트 (c) 닫음)
+
+**과학 증분.** neuro v1.10.1 의 **9감각 transduction γ 를 verbatim 인용**(단일출처, 재페치/재유도 금지)하여
+새 엔진 모듈 **M10**(감각↔중추 결합)을 추가, v1.10 까지 "neuro zip 동반 업로드 전에는 닫을 수 없다"고
+문서화돼 있던 **데이터 게이트 (c)** 를 닫았다. 8 감각노드(시각 PAX6·청각 PAX2·후각 LHX2·미각 POU2F3 +
+피부 한 장기의 촉각 PIEZO2/온각/고역치 통각 PRDM12 3submodality + 평형 ATOH1 + 고유감각 RUNX3 =
+9양상)를 각자의 해부학적 중추 relay 에 **같은 측정 κ=0.5496(새 상수 0개)**, **§13 과 바이트 동일한 ~1/r³
+ephaptic 커널**로 결합(시각·청각·촉온·통각→시상, 미각·평형→뇌간, 후각→후구, 고유감각→소뇌). **M0–M9 수치는
+1바이트도 미변경**(`emerge_all()` 에 M10 블록만 추가) — 트리 해시만 갱신되어 재동결.
+
+**정직한 결과(비튜닝):**
+- **기질 불변:** 중추 anchor R = **0.328330589** = 동결 M9 와 비트 동일(감각 구동이 기질을 바꾸지 않음).
+- **입력이 실리되 발작 없음:** 8 감각 구동 후 중추 R ≈ **0.323**(baseline 0.25 위, lock 아래), ±20% 밴드 robust.
+- **교차양상 결합은 공유장 경유(비순환):** 교차-relay 감각쌍 PLV = cancel **0.0184** < measured **0.0571** <
+  augment **0.1079**(+0.0386 인과기여), 동일-relay 대조쌍은 강도 무관 ≈**0.32** 고정 → 입력 동시구동의
+  인공산물이 아니라 **공유 ephaptic 장 매개**(§13 cancel-vs-augment 와 동일 논리).
+- **생물학적으로 옳은 구배:** 느린 tonic(미각·평형 relay_PLV 0.997, 고유감각 0.981)은 강결합, 빠른 스트림
+  (시각 0.29·후각 0.21·청각 0.42)은 약결합 — 측정 리듬+측정 κ 에서 맞춤 없이 도출.
+- **기능적 사용 OPEN 유지:** `medium_efficacy_tested = 0`(M9 와 동일 in-vivo 실험 owed).
+
+**동결 기준값 갱신:** tree sha256 **`7fb3f4bd…`**(이전 `774228fe…`) · gate **64/64**(이전 58/58) ·
+regression **29** · boundary **8/8** · terminology **PASS** · em_thesis **6/6** · verify_expand **12/12** ·
+**verify_sensory 15 checks** · registry **18 locks / 14 chapters**(이전 14/13) drift 0 · sitemap **15 URLs** ·
+llms.txt 4548 B. 결정론 SEED=19, 2×sha256 동일.
+
+**갱신/추가 파일:** 신규 데이터 `repro/mind/_engine/data/sensory_input_atlas.json`(8 양상, neuro γ verbatim +
+원본 sha256 기록) · 엔진 `repro/mind/_engine/vp_mind_engine.py`(`emerge_sensory_coupling()` + M10 불변량을
+`regression_scalars()` 에 등록) · `_engine/expected_sha256.json`(재동결 `7fb3f4bd…`) · 신규 챕터
+`docs/mind/14-sensory-coupling/index.html`(영어, answer-first 58w + vp-card 4 + JSON-LD) +
+`docs/mind/13-em-coordination/index.html`(next-nav→§14) · `tools/mind_registry.py`(LOCKS 4종 sens_* +
+CITES/ANSWERS §14) · `manifest/mind.csv`(§14 = 1022 words) · `docs/mind/_meta.json`(14장 + totals 7117) ·
+`repro/mind/_engine/data/brain_organ_atlas.json`(`_remaining_open`: 게이트 (c) CLOSED) · 동결/검증
+`repro/mind/14-sensory-coupling/{sensory_coupling_results.json, expected_sensory_sha256.json,
+verify_sensory.py(15)}` · `MASTER_MANUAL_START_HERE.md`(§2–§9 v1.11 갱신).
+
+**진짜 100%까지 남은 게이트(정직한 OPEN):** (b) amygdala·septum·preoptic 등은 canonical master TF 가
+**모호하여 `tbd_master` 로 문서화만**(over-claim 금지); M9·M10 의 **기능적 사용**은 neuro §9/§19 의
+행동표지 **in-vivo field-cancel-vs-augment 두개내 기록**이 들어오면 예측 기여분(+0.073·+0.039)과 대조해
+`medium_efficacy` 승급 가능.
+
+---
+
+## v1.10 (2026-06-16) — M9 아틀라스 8→12장기 **메인 엔진 승급** (측정 결합의 중추 전체화)
+
+**과학 증분.** v1.9 에서 별도 동결 스터디(M9-EXT)로만 검증했던 아틀라스 확장을 **메인 엔진으로 승급**했다.
+엔진은 `brain_organ_atlas.json` 에서 N 을 읽으므로(아틀라스가 곧 N), 아틀라스를 8→12장기로 키우면 **M9 가
+자동으로 12장기 결합으로 재창발**된다. **M0–M8 수치는 1바이트도 미변경**(front/c=1.015, θ/γ=6.1,
+결맞음=0.9984 그대로) — `emerge_all()` 의 M9 블록만 재계산되어 트리 해시가 갱신되고(예상된 동작) 재동결.
+
+**추가된 4 중추장기 (모두 측정 γ, 비튜닝):**
+- 승급 2종(γ 이미 보유, `extra_masters.json` verbatim): **pallidum**/NKX2-1(β, 18 Hz, Brown 2003) ·
+  **forebrain_gaba_in**/DLX2(γ, 45 Hz, Cardin/Sohal 2009).
+- 신규 페치 2종(이 패키지의 SantaLucia eutils 파이프라인, 프로모터 sha256 동봉): **basal_forebrain_chol**/
+  LHX8(θ, 6 Hz, Hangya 2009/Buzsáki 2002, γ=1.368) · **olfactory_bulb**/PAX6(γ, 60 Hz, Lagier 2004/
+  Kay 2009, γ=1.511). corr(γ,GC)=0.9954.
+
+**동결 기준값 갱신:** tree sha256 **`774228fe…`**(이전 `3962ab56…`) · gate **58/58** · regression **29** ·
+boundary **8/8** · terminology **PASS** · em_thesis **6/6** · **verify_expand 12/12** · registry **14/13**
+drift 0 · llms.txt 4548 B. 결정론 SEED=19, 2×sha256 동일.
+
+**측정 결과 변화(N=8 → N=12):** R_measured 0.44 → **0.328330589**, field_contribution +0.12 →
+**+0.0733965191**, regime 부분/준안정 유지, cancel 0.255 < measured 0.328 < augment 0.470(인과기여 유지).
+**스케일 스윕 정직한 발견(비튜닝):** 측정장은 **모든 N(4·6·8·10·12)에서** 결합을 baseline 위로 양(+)으로
+끌어올리고 발작(R≥0.9)도 침묵도 아니며 ±20% 밴드 섭동에 robust; 다만 더 다양한 리듬이 합류하며 **작동점이
+느슨해진다**(R 단조 하강 — 통뇌가 전역 동기하지 않는 생물학적으로 옳은 방향). partial-metastable **분류**는
+N=6 에서 hypothalamus 2 Hz outlier 로 +0.043(컷오프 +0.05 바로 아래)→incoherent 라 **엄밀 scale-invariant
+아님**(`regime_scale_stable=False`, 튜닝으로 덮지 않음). **N=12 스윕 점 = 동결 라이브 엔진 비트 일치**
+(`engine_cross_check.matches_full_sweep=true`); **N=8 은 v1.9 헤드라인(R≈0.44,+0.12) 바이트 보존**(첫 8장기
+불변, 역사적 앵커). `verify_expand.py` 12/12, `medium_efficacy_tested=0`(생물학적 사용 OPEN 유지).
+
+**갱신 파일:** `repro/mind/_engine/data/brain_organ_atlas.json`(12장기) · `_engine/expected_sha256.json`
+(재동결) · `tools/mind_registry.py`(coord_regime/coord_field_contribution 값+산문, ANSWERS §13) ·
+`docs/mind/13-em-coordination/index.html`(본문 774→1029 words, 12장기 산문 + 스케일 스윕 발견) ·
+`manifest/mind.csv`(§13 word count) · `repro/mind/13-em-coordination/{expand_atlas_study.py(4→12 스윕 +
+engine_cross_check), expected_expand_sha256.json(`089eea3e…`), verify_expand.py(12/12)}` ·
+`extra_masters.json`(LHX8·PAX6 추가).
+
+**진짜 100%까지 남은 데이터 게이트 2종(정직한 OPEN):** (b) amygdala·septum·preoptic 등은 canonical master
+TF 가 **모호하여 `tbd_master` 로 문서화만**(over-claim 금지); (c) **감각↔중추 결합**은 neuro **v1.10.1 의
+9감각 transduction γ verbatim 인용**이 필요하며 그 zip 업로드 전에는 닫을 수 없는 데이터 게이트.
+
+---
+
+
+**과학적 변경 없음. 동결 해시·6 게이트 결과 모두 v1.9 와 동일**(tree `3962ab56…`, gate 58/58,
+regression 29, boundary 8/8, terminology PASS, em_thesis 6/6, registry 14/13, drift 0). 작성자 지시
+("매 세션 재설명 제거 + 다음 세션 인계는 파일 하나")에 따라 패키지 **루트에 단일 진입점 매뉴얼**과
+**다음 증분 turnkey 입력**을 추가했다. 두 파일 모두 엔진·게이트가 로드하지 않는 inert 파일이라
+재현·잠금에 무영향(재검증으로 확인).
+
+- 추가: `MASTER_MANUAL_START_HERE.md` — 4개 패키지 지도 · 버전 계보("v1_8_1"=EM-화해 라인, 최신=v1.9
+  로 혼선 종결) · 한 줄 목표(측정 γ 로 뇌기관 100% 창발 → 측정 ephaptic 근접장으로 실시간 결합 →
+  창발 현상 검증; 경험은 OPEN) · 거버넌스 C0–C4 + 반-드리프트 7항 · **다음 증분(장기 확장) 정확 절차** ·
+  검증 레시피 6종 · 세션 핸드오프 규약.
+- 추가: `repro/mind/13-em-coordination/atlas_expansion_roadmap.json` — 8장기→"100%"로 확장하기 위한
+  **Layer-0 계획**(γ 단정 없음; canonical master TF 만 기재). 중추 후보(pallidum NKX2-1 ·
+  basal-forebrain LHX8 · olfactory-bulb PAX6 등) + neuro v1.10.0 9감각 **verbatim 인용** 경로 +
+  확장 후 검정할 현상 목록. 비튜닝·단일출처 준수, `medium_efficacy_tested=0` 고정.
+
+**M9-EXT 추가 (과학 증분 — 잠긴 v1.9 불변, 별도 동결):** 측정 아틀라스 **8→10장기** 스케일 스윕
+(N=4→6→8→10)으로 "100%에 다가갈 때 ephaptic 결합 영역이 유지되는가"를 검증. **잠긴 v1.9의 엔진·아틀라스를
+일절 수정하지 않고**(emerge_all 트리 hash `3962ab56…` 비트동일, 6 게이트 전부 PASS 유지) 엔진 primitive
+(`_ring`/`_ephaptic_kernel`/`_integrate`)과 **측정 κ=0.5496·측정 γ verbatim**(8장기는 frozen atlas,
+추가 pallidum/NKX2-1·forebrain-GABA/DLX2 는 `extra_masters.json`)만 사용해 별도 동결.
+**정직한 결과(비튜닝):** 장 기여 **모든 N 에서 양(+)·robust**(±20% 밴드 통과), 네트워크 **무발작·무침묵**,
+**N=8 이 동결 M9(R≈0.44,+0.12) 비트 재현**. 단 partial-metastable 분류는 **N=6 에서 +0.043(컷오프 -0.007)
+→ incoherent** 로 **엄밀 scale-invariant 아님**(`regime_scale_stable=False`). 2×sha256 동일(`7fd84274…`),
+`verify_expand.py` **9/9 PASS**, `medium_efficacy_tested=0`. 추가 파일:
+`repro/mind/13-em-coordination/{expand_atlas_study.py, expanded_atlas_results.json,
+expected_expand_sha256.json, verify_expand.py}`.
+- 인용 출처 갱신 메모: neuro 참조는 **v1.10.0**(감각 아틀라스 완성; §18/§19 등 mind 가 인용하는 섹션은
+  불변이라 본문 인용은 그대로 유효). 장기 확장 시 v1.10.0 의 14 master gene 캐시에서 verbatim 인용.
+
+## v1.9 — M9 신설: 장기(臟器) 간 ephaptic 근접장 결합(coordination) + §13 신설 챕터
+
+**모든 뇌 관련 장기를 창발·모듈화하고, 모듈들이 EM(ephaptic 근접장)으로 실시간 데이터를 주고받게 한
+뒤 창발 현상을 연구**하라는 작성자 지시의 mind 측 구현. 검증된 neuro 토대(§18 순환 / §19 임계치)
+위에 **M9 = 장기 간 ephaptic 결합 엔진**을 엔진 내부에 신설했다. **M0–M8 수치는 1바이트도 미변경**
+(front=c, 결맞음≈0.998, θ/γ≈6.1 유지) — `emerge_all()` 에 M9 키가 추가되어 트리 해시만 바뀌었고
+(예상된 동작), 재동결 완료. 본문은 VP-SPEC C0 에 따라 **영어 전용**. 모든 게이트 PASS
+(`tools/gate.py` **58/58**, `run_regression.py` 29, `verify_boundary.py` 8/8,
+`verify_terminology.py` PASS, `verify_em_thesis.py` 6/6). 결정론 2× 동일 sha256
+(`3962ab56…`), SEED=19.
+
+**핵심 결과 (등급 정직):** 8개 장기(neocortex/hippocampus/thalamus/striatum/cerebellum/
+hypothalamus/midbrain/brainstem)를 **측정된** master-gene γ(neuro 데이터에서 verbatim 인용,
+SantaLucia NN)로 창발시키고, **측정된** ephaptic 근접장 하나로만 결합했다. 결합 강도
+κ = ΔVm/threshold = 0.2748/0.5 = **0.5496 (측정값, 비-튜닝)**, 커널 ~1/r³ (neuro §18 국소성).
+
+- **M9.0–M9.2** 근접장 국소성(nn2≈0.80) · 동기화 전이(Kc/ω₀≈1) · **측정 작동점에서 R≈0.44 =
+  부분/준안정(partial-metastable) 영역** (비결합 0.32 와 완전동기 1.0 사이; 완전동기는 발작).
+- **M9.3 cancel-vs-augment(neuro §9/§19 결정적 검정, in silico):** cancel 0.32 → measured 0.44
+  (+0.12) → augment 0.54 → 근접장이 **인과적으로** 결합에 기여. 이 측정 기여분이 in-vivo 실험이
+  확인해야 할 예측.
+- **M9.4** 밴드 ±20% 섭동에도 부분영역 유지 → 튜닝 산물 아님.
+- **M9.5** 실제 엔진 Neuron PRC 이상(advance+delay) → 위상-게이팅 통신창(CTC).
+- **M9.6 θ–γ PAC:** 측정 강도 느린장이 빠른 영역 분기파라미터를 변조 → 진폭이 느린 리듬으로 변조.
+  **비순환** 검정 — 장 cancel 시 MI=0, 측정 κ 에서 명확(셔플 대비 >1000×), augment 시 증가.
+  (※ 초기 명시적 Euler 복소 Stuart-Landau 는 강성 회전항이 진폭을 인위적으로 부풀려 **폐기**;
+  진폭(반경) ODE 를 빠른 영역 타임스케일로 적분하는 수치 안정형으로 교체.)
+- **M9.7** 전도지연 구배 피질 사슬 → 단조 위상구배 = 진행파(timing ionic, 절대속도 [O]).
+- **열린 문제 [O]:** 인지가 이 결합을 *생물학적으로 사용*하는지는 미해결. `medium_efficacy_tested=0`.
+  장애물 명시 — neuro §9/§19 가 명명한 행동표지 in-vivo field-cancel-vs-augment 두개내 기록 미수행.
+
+**추가/변경 파일:**
+- 엔진: `repro/mind/_engine/vp_mind_engine.py` — `emerge_coordination()` 신설, `emerge_all()` 에
+  `M9_em_coordination` 추가, `regression_scalars()` 에 M9 불변량 10개 추가.
+- 측정 입력: `repro/mind/_engine/data/brain_organ_atlas.json` (8장기, γ verbatim·밴드 인용·
+  f0 [O]·전체 출처). corr(γ,GC)=0.9968 (측정 상관, 비-목표).
+- 신설 챕터: `docs/mind/13-em-coordination/index.html` (answer-first·claim-strip·vp-card 4개·
+  JSON-LD ScholarlyArticle+BreadcrumbList·prev/next). 영어 전용.
+- 재현: `repro/mind/13-em-coordination/{README.md, extra_masters.json, fetch_extra_masters.py}`.
+- SSOT/검색층: `tools/mind_registry.py` (LOCKS +4: coord_kappa/regime/field_contribution/
+  efficacy_open; CITES·ANSWERS +1), `tools/build_search_layer.py`(llms.txt Model 절에 §13 추가),
+  `manifest/mind.csv`·`docs/mind/_meta.json`·`docs/mind/index.html` 갱신, sitemap 14 URLs.
+
+> **반-드리프트 규칙(절대):** \"EM\" 을 통째로 retired 라 적지 말 것 — 폐기된 것은 **복사 원거리장/TIR
+> 반송파**뿐이며 근접장/ephaptic 은 임계치에서 **확인됨**. EM 관련 편집 후 반드시
+> `verify_em_thesis.py` 실행. 기능적 사용 문제는 **OPEN** 유지, `medium_efficacy_tested` 는 **0 고정**.
+> **비-튜닝:** κ·ΔVm·threshold·γ 는 모두 측정값. 기하/전도/절대-Hz 만 대표값 [O].
+> 두 백서는 **두 zip, 병합 금지**.
+
+---
+
+## v1.8.1 — EM 용어 화해 (neuro ⟷ mind), 공유 SSOT 세트 수신
+
+`neuro`/`mind` 두 백서의 EM 용어·담당범위 일치화 패스. **mind 엔진 수치·자체 결과는 일절 미변경**
+(front=c, 결맞음≈0.998, θ/γ≈6.1 는 mind 의 모듈 M1/M2/M8 산출로 유지). 모든 mind 게이트 PASS
+(`tools/gate.py` 52/52, `run_regression.py` 29, `verify_boundary.py` 8/8, `verify_terminology.py`
+PASS, `verify_em_thesis.py` 6/6). 본문은 VP-SPEC C0 에 따라 **영어 전용** 유지.
+
+**핵심: mind 는 추상층, neuro 는 객체층.** mind 는 "**EM = 뇌파 = 저주파(δ/θ/γ) 필드**" 추상을
+타고, 근접장 객체(케이블 전도 A / ephaptic B)·각도법·세 속도·측정 수치는 **neuro 를 인용**한다 —
+재유도하지 않는다. 정의의 단일출처는 공유 `EM_NEAR_FAR_THESIS.md` §1.2 와 `TERMINOLOGY_canonical.md`
+§7 (이번에 mind 패키지가 처음 수신).
+
+- **§2 (`02-not-a-field`)** — neuro 물리 재유도를 **인용으로 치환**: 복사분율 ~10⁻¹⁵, "~10⁶× 느림",
+  ΔVm 함유 사슬을 본문에서 빼고 `neuro §18/§19 [V]` 인용으로 대체. mind 고유 논점(양자 vs 고전
+  결맞음 길이 범주오류)은 유지. 단어수 동결값 갱신(789→823, `manifest/mind.csv`).
+- **§4 (`04-em-brainwave`)** — "약함 vs 임계치" 모순 해소: 강도는 *측정됨*(임계치, `neuro §19`),
+  "약함"은 **두피 EEG 한정**, 열린 변수는 강도가 아니라 **기능**(인지가 그 임계 결합을 *사용*하는지,
+  cancel-vs-augment 검정)임을 §2 와 일치시킴. abstract 도 동일 정정. 단어수 동결값 갱신(829→871).
+- **공유 SSOT 세트 수신 (neuro 와 바이트 동일):** `EM_NEAR_FAR_THESIS.md`(신버전 §1.1+§1.2),
+  `TERMINOLOGY_canonical.md`(§7 포함), `PROJECT_BOUNDARY_neuro_mind.md` — 셋 다 패키지 루트에 미러링.
+- **신설 게이트 (패키지 루트, neuro 미러):** `verify_boundary.py`(mind 측 8/8 — 단방향 인용·레인
+  순수성·공유 세트·잠금·자립), `verify_terminology.py`(mind 측 — §7 레지스터 규칙·금지구 감시),
+  `sync_shared_ssot.py`(패키지 간 바이트 동일 검증/동기화).
+
+> 두 백서는 **두 zip, 병합 금지**(`PROJECT_BOUNDARY_neuro_mind.md` §4, VP-SPEC C4). 공유 파일
+> 편집 시 `sync_shared_ssot.py --push` 로 한쪽 → 다른 쪽 미러 후 `--with` 로 동일성 확인.
+
+---
+
+## v1.8 검색 수용성(C4) 업그레이드 — answer-first · 자체완결 카드 · 기계 접근층 · 도구판 신설
+
+VP_SPEC_v1_8.md 의 **C4 (Retrieval-Readiness)** 를 Felt Cognition 정본 12 챕터 + 허브에 적용했다.
+본문 서술·수식·등급·수치는 **일절 미변경**(스트립 후 pristine 과 바이트 동일 검증). 추가는 전부
+본문 단어수 **제외영역**(answer-first, vp-card aside)과 신설 기계 접근 파일뿐이다. 코드가 변환의
+주체다 — 모든 카드 수치는 동결된 엔진 결과(`repro/.../mind_emergence_results.json`)에서 검증되어
+드리프트 0.
+
+**신설 `tools/` (결정론·멱등, 패키지 자체검증):**
+- `mind_registry.py` — 단일 진실원(SSOT): 인용 잠금량 10개(값·의미·등급·정본 링크)와 챕터별
+  answer-first 12개·인용 매핑. import 시 모든 수치를 동결 결과와 교차검증.
+- `build_search_layer.py` — 멱등 생성기: `</h1>` 직후 `<p class="answer">`(40~60단어) 삽입,
+  claim-strip 직후 인용 잠금마다 `aside.vp-card` 1개 삽입(주석 마커로 재실행 시 중복 대신 교체).
+  이어서 `docs/robots.txt`(7봇)·`docs/sitemap.xml`·`docs/llms.txt`(<5KB)·`docs/llms-full.txt` 생성.
+- `reconcile_manifest.py` — **C1 정합**: 원본의 stale·불일치 단어수(manifest 322 vs _meta 507 류)를
+  정본 HTML 재산출값으로 일치시킴(manifest·_meta 동시 갱신, 멱등).
+- `gate.py` — **v1.8 게이트**: 검색 게이트(answer-first·카드·JSON-LD·robots/sitemap/llms) +
+  재현 게이트(엔진 재현 sha256 일치·SSOT 드리프트 0·단어수 정합) + 멱등성. 리포트 →
+  `reports/gate-search-v1_8.gate.json`.
+
+**산출:**
+- answer-first 12/12, vp-card 21개(인용 잠금 매핑), robots 7봇, sitemap 13 URL, llms.txt 4,247 B(<5KB).
+- 엔진 재현: `mind_emergence_results.json` sha256 = 9a8bd177…(expected 일치). SSOT 드리프트 0.
+- **게이트 PASS**, 빌드 멱등(2회 실행 docs 트리 md5 동일), 본문 보존(스트립=pristine).
+
+**C0 준수:** 파편화 없이 원 패키지에 추가물만 더해 단일 zip 반환. 모든 백서 텍스트는 영어(answer/카드 포함).
+
+---
+
+## EM near/far thesis LOCK — §2 regime lock (merged from the neuro EM-thesis work)
+
+Locks Mind §2 to the same settled thesis as the neuro substrate so the EM question stops being
+re-litigated each session. Per the **one-way cite rule** (mind cites neuro, never the reverse) all
+measured numbers are cited **to neuro §18–§19** — **no new mind-side reproduced numbers** are
+introduced, so the mind regression (`repro/mind/_verify/run_regression.py`) is **unaffected and
+still PASSES** (it verifies engine determinism + mechanism invariants, not chapter-HTML numbers).
+This is consistent with the mind engine, which already emerges "classical field coherent across the
+brain" and keeps **`field_medium_efficacy_tested == 0`** (no functional/medium claim → OPEN).
+
+**Edits — `docs/mind/02-not-a-field/index.html`** (C0 — sharpening/correcting; mechanism unchanged):
+- "Why the rejection was overstated" now **pins the regime**: the **near-field / ephaptic** form is
+  affirmed and measured at threshold (neuro §18–§19); the **radiative far-field / optical-fibre**
+  carrier stays retired (non-radiating at brain scale; measured 0.5–120 m/s conduction is ~10⁶× too
+  slow for waveguided light). "EM" is never retired wholesale — only the far-field carrier is.
+- "A real emission — and an open question": the field-as-medium question is **sharpened**. Strength
+  is **no longer the open variable** — neuro §19 measures it **at the ephaptic threshold**
+  (ΔVm ≈ 0.27 mV ⊂ measured < 0.5 mV); "weak" is true only of the **scalp** EEG. What remains open is
+  the strictly **functional** question (does cognition *use* the at-threshold coupling). Status tags:
+  existence + brain-scale coherence `[V]`; near-field at threshold `[V]` (neuro §19); functional use
+  of the field as a medium `[O]`.
+- Closing bright line now carries the **regime lock**: the near-field is affirmed and **never
+  collapsed back into "the retired field."**
+- `_meta.json` §2 `one_liner` states the regime lock; §2 `words` 322 → **507** (measured EM-lock body
+  delta **+185**, gate exclusion rule; the 322 baseline is the package's known-stale older metric —
+  only the edit delta is applied). totals 4753 → **4938**.
+
+**Added artifacts (additions, not fragments — C0):**
+- **`EM_NEAR_FAR_THESIS.md`** (package root) — single source of truth shared with neuro; Mind §2 is
+  read under it. Byte-identical to the copy in the neuro package.
+- **`repro/mind/02-not-a-field/verify_em_thesis.py`** — the same deterministic gate (re-derives the
+  numbers, pins both boundaries). `reports/lock-mind-02-em-thesis.gate.json` records **6/6 PASS**.
+
+**Anti-drift rule (locked):** "EM" is never a blanket retired item; only the radiative far-field /
+optical-fibre carrier is retired. The near-field/ephaptic form is affirmed (neuro §19). Run
+`verify_em_thesis.py` after any EM-touching edit.

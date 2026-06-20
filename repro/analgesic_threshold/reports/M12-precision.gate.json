@@ -1,0 +1,174 @@
+{
+ "title": "Precision (pain-selective) local-anaesthesia map",
+ "mechanism": "precision local anaesthesia = (nociceptor-selective entry port) x (firing-threshold raiser)",
+ "anchor_cited": "Binshtok, Bean & Woolf, Nature 2007 (charged Na_V blocker entering via TRPV1 produces differential nociceptive-vs-motor block; TRPV1-KO-attenuated). Charged-blocker tool compounds (QX-314, chloroprocaine) are cited experimental anchors, not proposed therapeutics.",
+ "firewall": "READS the threshold/selectivity STRUCTURE of the two halves. The mechanism SHAPE is [F]; every clinical magnitude and any formulation/concentration/route/dose is [O], asserted nowhere. No molecule is designed.",
+ "precision_metric": {
+  "name": "differential block ratio",
+  "definition": "duration/strength of nociceptive block versus motor block",
+  "target_property": "a genuine precision agent MAXIMISES nociceptive block while MINIMISING motor block",
+  "grade": "[O] target property stated as a PREDICTION, not a measured result"
+ },
+ "falsifier": "If opening the nociceptor-selective port does NOT produce a differential (pain-selective) block \u2014 i.e. motor/touch are blocked as much as pain \u2014 the entry-port-selectivity premise is wrong for that port/tissue.",
+ "entry_ports": {
+  "TRPV1": {
+   "gene": "TRPV1",
+   "gamma": 1.456,
+   "spinodal_h_sp": 0.676223,
+   "barrier": 0.529984,
+   "role": "primary nociceptor-restricted large-pore entry port",
+   "selectivity_cited": "expressed on C-fibre nociceptors; absent from large touch afferents / motor efferents",
+   "src": "Caterina 1997 Nature 389:816; Binshtok 2007 Nature 449:607"
+  },
+  "TRPA1": {
+   "gene": "TRPA1",
+   "gamma": 1.2297,
+   "spinodal_h_sp": 0.524864,
+   "barrier": 0.378041,
+   "role": "nociceptor-restricted large-pore entry port",
+   "selectivity_cited": "nociceptor-enriched; co-expressed with TRPV1 on C-fibres",
+   "src": "Story 2003 Cell 112:819; Brackley 2017 (TRPA1 as a QX-314 entry route)"
+  },
+  "P2RX3": {
+   "gene": "P2RX3",
+   "gamma": 1.4421,
+   "spinodal_h_sp": 0.666563,
+   "barrier": 0.519913,
+   "role": "alternative nociceptor-selective entry port (ATP-gated large pore)",
+   "selectivity_cited": "nociceptor-restricted (DRG); ATP-gated",
+   "src": "Cockayne 2000 Nature 407:1011"
+  },
+  "ASIC3": {
+   "gene": "ASIC3",
+   "gamma": 1.4818,
+   "spinodal_h_sp": 0.694277,
+   "barrier": 0.548933,
+   "role": "alternative entry port (proton-gated; acidic tissue)",
+   "selectivity_cited": "DRG/muscle acid sensor; engaged in acidic/inflamed tissue",
+   "src": "Sutherland 2001 PNAS 98:711"
+  },
+  "TRPM8": {
+   "gene": "TRPM8",
+   "gamma": 1.2719,
+   "spinodal_h_sp": 0.552112,
+   "barrier": 0.404432,
+   "role": "alternative entry port (cold-gated)",
+   "selectivity_cited": "cold-sensing subset; for cold-responsive fibres",
+   "src": "Bautista 2007 Nature 448:204"
+  }
+ },
+ "blocker_targets": {
+  "SCN10A": {
+   "gene": "SCN10A",
+   "gamma": 1.3136,
+   "spinodal_h_sp": 0.579486,
+   "barrier": 0.431386,
+   "channel": "Na_V1.8",
+   "selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "src": "Akopian 1996 Nature 379:257"
+  },
+  "SCN9A": {
+   "gene": "SCN9A",
+   "gamma": 1.4014,
+   "spinodal_h_sp": 0.638545,
+   "barrier": 0.49098,
+   "channel": "Na_V1.7",
+   "selectivity_cited": "nociceptor-enriched AP-threshold channel",
+   "src": "Cox 2006 Nature 444:894"
+  }
+ },
+ "n_pairings": 7,
+ "pairings": [
+  {
+   "entry_port": "TRPV1",
+   "entry_port_h_sp": 0.676223,
+   "entry_port_selectivity_cited": "expressed on C-fibre nociceptors; absent from large touch afferents / motor efferents",
+   "blocker_target": "SCN10A",
+   "blocker_channel": "Na_V1.8",
+   "blocker_target_h_sp": 0.579486,
+   "blocker_target_selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "tier": "primary",
+   "hypothesis": "Open the nociceptor-restricted TRPV1 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.8 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "TRPV1",
+   "entry_port_h_sp": 0.676223,
+   "entry_port_selectivity_cited": "expressed on C-fibre nociceptors; absent from large touch afferents / motor efferents",
+   "blocker_target": "SCN9A",
+   "blocker_channel": "Na_V1.7",
+   "blocker_target_h_sp": 0.638545,
+   "blocker_target_selectivity_cited": "nociceptor-enriched AP-threshold channel",
+   "tier": "primary",
+   "hypothesis": "Open the nociceptor-restricted TRPV1 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.7 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "TRPA1",
+   "entry_port_h_sp": 0.524864,
+   "entry_port_selectivity_cited": "nociceptor-enriched; co-expressed with TRPV1 on C-fibres",
+   "blocker_target": "SCN10A",
+   "blocker_channel": "Na_V1.8",
+   "blocker_target_h_sp": 0.579486,
+   "blocker_target_selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "tier": "primary",
+   "hypothesis": "Open the nociceptor-restricted TRPA1 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.8 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "TRPA1",
+   "entry_port_h_sp": 0.524864,
+   "entry_port_selectivity_cited": "nociceptor-enriched; co-expressed with TRPV1 on C-fibres",
+   "blocker_target": "SCN9A",
+   "blocker_channel": "Na_V1.7",
+   "blocker_target_h_sp": 0.638545,
+   "blocker_target_selectivity_cited": "nociceptor-enriched AP-threshold channel",
+   "tier": "primary",
+   "hypothesis": "Open the nociceptor-restricted TRPA1 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.7 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "P2RX3",
+   "entry_port_h_sp": 0.666563,
+   "entry_port_selectivity_cited": "nociceptor-restricted (DRG); ATP-gated",
+   "blocker_target": "SCN10A",
+   "blocker_channel": "Na_V1.8",
+   "blocker_target_h_sp": 0.579486,
+   "blocker_target_selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "tier": "alternative",
+   "hypothesis": "Open the nociceptor-restricted P2RX3 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.8 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "ASIC3",
+   "entry_port_h_sp": 0.694277,
+   "entry_port_selectivity_cited": "DRG/muscle acid sensor; engaged in acidic/inflamed tissue",
+   "blocker_target": "SCN10A",
+   "blocker_channel": "Na_V1.8",
+   "blocker_target_h_sp": 0.579486,
+   "blocker_target_selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "tier": "alternative",
+   "hypothesis": "Open the nociceptor-restricted ASIC3 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.8 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  },
+  {
+   "entry_port": "TRPM8",
+   "entry_port_h_sp": 0.552112,
+   "entry_port_selectivity_cited": "cold-sensing subset; for cold-responsive fibres",
+   "blocker_target": "SCN10A",
+   "blocker_channel": "Na_V1.8",
+   "blocker_target_h_sp": 0.579486,
+   "blocker_target_selectivity_cited": "TTX-resistant, HIGH nociceptor-selectivity (DRG) \u2014 cleanest target once delivery is selective",
+   "tier": "alternative",
+   "hypothesis": "Open the nociceptor-restricted TRPM8 port so a permanently-charged Na_V blocker enters only nociceptors, then raise the firing threshold by shutting Na_V1.8 there \u2014 confining the block to the pain fibre.",
+   "mechanism_shape_grade": "[F] structural: selective ENTRY (nociceptor-restricted port) -> selective BLOCK (entered Na_V) \u2014 anchored to Binshtok 2007",
+   "magnitude_grade": "[O] OPEN: differential-block margin, duration, toxicity, formulation, concentration, dose, route \u2014 asserted nowhere"
+  }
+ ]
+}

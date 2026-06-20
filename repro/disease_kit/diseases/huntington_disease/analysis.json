@@ -1,0 +1,168 @@
+{
+ "disease": "Huntington disease",
+ "omim": "143100",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Huntington disease",
+  "omim": "143100",
+  "summary": "A single-gene HTT CAG-repeat EXPANSION in exon 1 produces a polyglutamine huntingtin with a dominant TOXIC gain-of-function that progressively impairs striatal (medium spiny) neuron homeostasis and survival -- a pathological BRAKE on the neuronal program -- so the striatal-neuron axis is driven DOWN. The lesion is a CODING repeat expansion, not a promoter change (exactly like sickle cell's coding missense): the promoter gamma read here is of the HTT LOCUS switch structure, and the disease direction is forced by the toxic gain-of-function biology. Longer repeats -> earlier onset (the repeat-length/dosage axis), but the repeat tract itself is not read from the promoter window. An approved SYMPTOMATIC therapy for chorea exists (VMAT2 inhibitors) but does not address the HTT switch; no disease-modifying therapy is yet approved. Magnitude [O].",
+  "emergent_axis": "striatal (medium spiny) neuron homeostasis / survival",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "HTT",
+    "gamma": 1.6142,
+    "spinodal_h_sp": 0.78938,
+    "barrier": 0.65141,
+    "dwell_relative_size": 1.86442,
+    "role": "brake",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "brake over-active -> target over-suppressed",
+    "ncbi": {
+     "acc": "NC_000004.12",
+     "gene_start": 3074680,
+     "gene_end": 3243959,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "huntingtin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "An expanded CAG tract (commonly >36 repeats) in HTT exon 1 yields polyglutamine-huntingtin that acts as a dominant TOXIC gain-of-function -- a pathological brake on striatal neuronal homeostasis (proteostasis / mitochondrial / transcriptional dysregulation and aggregation) -> neuronal function and survival suppressed. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the CAG-repeat coding lesion (firewall), exactly as for HBB's coding missense. Repeat length sets onset but is not read from the promoter window.",
+    "src": "MacDonald 1993 Cell 72:971 (HDCRG); DiFiglia 1997 Science 277:1990"
+   }
+  ],
+  "primary_switch": {
+   "gene": "HTT",
+   "role": "brake",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "brake over-active -> target over-suppressed"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "614a4d8f55d5"
+ },
+ "treatment_A_switch": {
+  "disease": "Huntington disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "reduce",
+    "target_gene": "HTT",
+    "push_direction": "lower mutant huntingtin transcript -> relieve the toxic gain-of-function brake on striatal neurons",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HTT-lowering antisense oligonucleotide (tominersen; intrathecal; investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] HTT-lowering magnitude and neuronal-rescue extent not derived from sequence; no disease-modifying therapy is yet approved",
+    "src": "Tabrizi 2019 NEJM 380:2307; GENERATION HD program"
+   },
+   {
+    "lever": "reduce",
+    "target_gene": "HTT",
+    "push_direction": "AAV-delivered microRNA durably lowers huntingtin in striatum -> relieve the toxic brake",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AAV HTT-lowering gene therapy (AMT-130; investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] durable-knockdown magnitude / clinical effect not derived from sequence; investigational",
+    "src": "Spronck 2019 Mol Ther Methods Clin Dev; uniQure AMT-130 program"
+   },
+   {
+    "lever": "reduce",
+    "target_gene": "HTT",
+    "push_direction": "allele-selective lowering directed at the expanded allele (repeat/SNP context) -> spare wild-type huntingtin",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "allele-selective HTT-lowering oligonucleotide (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] allele selectivity / wild-type sparing not derived from sequence; direction-only",
+    "src": "Carroll 2011 Mol Ther; Southwell 2014 Mol Ther"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "reduce",
+   "target_gene": "HTT",
+   "push_direction": "lower mutant huntingtin transcript -> relieve the toxic gain-of-function brake on striatal neurons",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "HTT-lowering antisense oligonucleotide (tominersen; intrathecal; investigational)",
+   "status": "clinical",
+   "mechanism_grade": "[O] HTT-lowering magnitude and neuronal-rescue extent not derived from sequence; no disease-modifying therapy is yet approved",
+   "src": "Tabrizi 2019 NEJM 380:2307; GENERATION HD program"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.86442,
+   "dwell_disease": 1.20639,
+   "dwell_treated": 1.53049,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "cd9d2f4ed105"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "mutant HTT (CAG expansion, toxic GOF) lowers the striatal-neuron homeostasis/survival axis",
+   "falsifier": "a CAG-expanded HTT allele that PRESERVED or IMPROVED striatal neuron survival/function would refute the toxic-brake direction",
+   "measurable_by": "striatal medium-spiny-neuron survival / striatal volume by CAG-length genotype in an HTT-expansion model"
+  },
+  {
+   "claim": "lowering mutant huntingtin (reduce HTT) is the CORRECTIVE direction",
+   "falsifier": "if HTT-lowering WORSENED or failed to improve striatal neuronal survival/function, the reduce-HTT lever sign is wrong",
+   "measurable_by": "striatal neuron survival / motor-behaviour response to HTT-lowering in an HTT-expansion model"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Huntington disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "1f3c234d15c9"
+ },
+ "determinism_sha": "42ca14c9cabb"
+}

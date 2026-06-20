@@ -1,0 +1,33 @@
+============================================================================
+unjam_inflow.py -- rotation unjams the margin; forced radius attractor
+============================================================================
+  phi=0.652 sd=0: z=6.512  P=2.481e-01  gamma*_min=5.00e-05  q05=8.85e-04  med=8.77e-03  rigid-ext=1e-17
+  phi=0.652 sd=1: z=6.704  P=4.588e-01  gamma*_min=2.79e-04  q05=2.53e-03  med=1.54e-02  rigid-ext=1e-17
+  phi=0.652 sd=2: z=6.656  P=3.677e-01  gamma*_min=9.54e-06  q05=1.30e-03  med=1.25e-02  rigid-ext=1e-17
+  phi=0.660 sd=0: z=6.740  P=4.788e-01  gamma*_min=9.74e-06  q05=1.81e-03  med=1.62e-02  rigid-ext=3e-17
+  phi=0.660 sd=1: z=6.819  P=5.729e-01  gamma*_min=1.03e-04  q05=2.34e-03  med=2.10e-02  rigid-ext=1e-17
+  phi=0.660 sd=2: z=6.984  P=8.196e-01  gamma*_min=6.11e-04  q05=3.55e-03  med=3.09e-02  rigid-ext=1e-17
+  phi=0.672 sd=0: z=7.402  P=1.307e+00  gamma*_min=6.08e-05  q05=3.33e-03  med=3.19e-02  rigid-ext=1e-17
+  phi=0.672 sd=1: z=7.266  P=1.260e+00  gamma*_min=8.36e-05  q05=3.44e-03  med=3.85e-02  rigid-ext=1e-17
+  phi=0.672 sd=2: z=7.291  P=1.411e+00  gamma*_min=2.00e-05  q05=4.46e-03  med=4.69e-02  rigid-ext=1e-17
+  phi=0.690 sd=0: z=7.484  P=1.788e+00  gamma*_min=4.61e-04  q05=3.91e-03  med=4.78e-02  rigid-ext=1e-17
+  phi=0.690 sd=1: z=7.719  P=2.412e+00  gamma*_min=2.43e-04  q05=7.25e-03  med=8.36e-02  rigid-ext=3e-17
+  phi=0.690 sd=2: z=7.516  P=2.139e+00  gamma*_min=3.96e-04  q05=5.79e-03  med=6.74e-02  rigid-ext=1e-17
+  phi=0.720 sd=0: z=8.203  P=3.644e+00  gamma*_min=2.58e-03  q05=1.39e-02  med=1.03e-01  rigid-ext=3e-17
+  phi=0.720 sd=1: z=8.189  P=3.556e+00  gamma*_min=1.16e-05  q05=1.49e-02  med=9.43e-02  rigid-ext=1e-17
+  phi=0.720 sd=2: z=8.078  P=3.407e+00  gamma*_min=1.40e-03  q05=1.01e-02  med=8.71e-02  rigid-ext=1e-17
+[1] rigid rotation is free: max bond extension per unit theta = 2.8e-17  (== 0 to machine precision): PASS
+[2] zero shear reserve (distribution level): the contact-breaking strain falls with pressure --
+    q05: lowest-P 5 = 1.774e-03 vs highest-P 5 = 1.039e-02 (ratio 5.9x); corr(log q05, log P) = 0.96, corr(log med, log P) = 0.99: PASS
+    (The very first break, gamma*_min, is an extreme-value statistic and is reported per packing
+    above for honesty; the physical reserve is the overlap *distribution*, which vanishes at the
+    margin: as P -> 0 any rotational shear exceeds it -- rotation unjams, and real unjamming is
+    an avalanche of such breaks, not a single bond.)
+[3] forced-radius attractor dx/dt = a x^-5 - x^-4 (a = 2/pi, inherited constant):
+    from x0 in {0.2,0.5,1,2,5} all converge to x* = 0.636620; max |x-x*| = 1.0e-15
+    F'(x*) = -a^-5 = -9.5631  (= -(pi/2)^5 = -9.5631) < 0, unique positive root: PASS
+----------------------------------------------------------------------------
+OVERALL: PASS (3/3)
+Provenance: Step-0/attractor structure inherited from the companion
+whitepaper (concept DOI 10.5281/zenodo.17932566); alpha = 2/pi is an
+inherited constant, not derived or fitted here.

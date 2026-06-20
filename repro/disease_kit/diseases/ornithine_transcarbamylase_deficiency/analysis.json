@@ -1,0 +1,170 @@
+{
+ "disease": "Ornithine transcarbamylase deficiency",
+ "omim": "311250",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Ornithine transcarbamylase deficiency",
+  "omim": "311250",
+  "summary": "The commonest urea-cycle disorder. Ornithine transcarbamylase (OTC), the mitochondrial enzyme that condenses carbamoyl phosphate with ornithine to make citrulline, is the second committed step of the urea cycle that disposes of waste nitrogen as urea. OTC loss-of-function STALLS the cycle, so ammonia (and its upstream carrier glutamine) is no longer cleared and the toxic waste-nitrogen burden is driven UP -> hyperammonaemia (neonatal encephalopathy in hemizygous males; episodic decompensation in heterozygous females). Read as a released BRAKE on ammonia accumulation (OTC brakes the build-up by feeding the detoxifying cycle; LOF releases it -> burden UP) -- the tyrosinaemia / porphyria toxic-metabolite pattern. The kit re-derives the approved therapy, which RESTRAINS the waste-nitrogen burden rather than restoring OTC: nitrogen scavengers (glycerol phenylbutyrate; sodium phenylbutyrate; sodium benzoate + sodium phenylacetate) open an alternative excretion route (phenylacetate conjugates glutamine to phenylacetylglutamine; benzoate conjugates glycine to hippurate; both excreted in urine), and urea-cycle substrate repletion (citrulline / arginine) feeds the distal cycle past the block; both lower the ammonia burden. Restoring OTC itself (liver transplantation, the definitive correction; AAV-OTC / OTC-mRNA gene therapy investigational) is the function-restoring lever. The gamma read is of the OTC locus switch STRUCTURE; the disease lesion is coding/splice (e.g. the milder late-onset Arg40His missense allele), outside the promoter firewall. X-linked (Xp11.4), so penetrance/severity are zygosity- and X-inactivation-dependent and held [O] (the B10 X-linked caveat). Magnitude [O].",
+  "emergent_axis": "toxic waste-nitrogen burden (urea-cycle ammonia disposal)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "OTC",
+    "gamma": 1.4107,
+    "spinodal_h_sp": 0.64491,
+    "barrier": 0.49752,
+    "dwell_relative_size": 1.52321,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 38327683,
+     "gene_end": 38422927,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "ornithine transcarbamylase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "OTC (ornithine transcarbamylase) is the mitochondrial enzyme catalysing carbamoyl phosphate + ornithine -> citrulline, the second step of the urea cycle that detoxifies ammonia. As a BRAKE on waste-nitrogen accumulation, its LOF RELEASES the brake -> the cycle stalls and ammonia/glutamine accumulate -> the toxic waste-nitrogen burden goes UP. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding/splice lesion (firewall). The pathological axis is the TOXIC WASTE-NITROGEN BURDEN (it goes UP), so the corrective levers LOWER it. X-linked (Xp11.4).",
+    "src": "Hata 1988 J Biochem 103:302 (OTC gene structure); Yamaguchi 2006 Hum Mutat 27:626 (OTC mutation spectrum); Brusilow & Horwich OMMBID (urea-cycle disorders)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "OTC",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "edf7f972696e"
+ },
+ "treatment_A_switch": {
+  "disease": "Ornithine transcarbamylase deficiency",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "waste-nitrogen",
+    "push_direction": "divert waste nitrogen through an alternative excretion route (phenylacetate conjugates glutamine -> phenylacetylglutamine; benzoate conjugates glycine -> hippurate; both excreted in urine) -> lower the ammonia/glutamine burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "nitrogen scavenger (glycerol phenylbutyrate; sodium phenylbutyrate; sodium benzoate + sodium phenylacetate)",
+    "status": "approved",
+    "mechanism_grade": "[O] ammonia-lowering magnitude not derived from sequence",
+    "src": "Batshaw 2014 Mol Genet Metab 113:127 (nitrogen scavengers in UCD); glycerol phenylbutyrate (Ravicti) FDA 2013; sodium phenylacetate + sodium benzoate (Ammonul) FDA 2005"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "ASS1",
+    "push_direction": "replete the distal urea-cycle intermediate pool (citrulline / arginine) so residual cycle flux past the OTC block proceeds -> lower the ammonia burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "urea-cycle substrate repletion (citrulline, arginine)",
+    "status": "approved",
+    "mechanism_grade": "[O] residual-flux / ammonia-lowering magnitude not derived from sequence",
+    "src": "Haberle 2019 J Inherit Metab Dis 42:1192 (UCD guidelines); citrulline/arginine standard of care in proximal UCD"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "OTC",
+    "push_direction": "restore OTC so the cycle clears ammonia again -> the waste-nitrogen burden falls (function-restoring / definitive)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "OTC restoration (liver transplantation; AAV-OTC / OTC-mRNA gene therapy investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree/durability of restored urea-cycle flux not derived from sequence",
+    "src": "Kido 2012 J Inherit Metab Dis 35:777 (liver transplant in UCD); DTX301 AAV-OTC clinical program (Ultragenyx)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "waste-nitrogen",
+   "push_direction": "divert waste nitrogen through an alternative excretion route (phenylacetate conjugates glutamine -> phenylacetylglutamine; benzoate conjugates glycine -> hippurate; both excreted in urine) -> lower the ammonia/glutamine burden",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "nitrogen scavenger (glycerol phenylbutyrate; sodium phenylbutyrate; sodium benzoate + sodium phenylacetate)",
+   "status": "approved",
+   "mechanism_grade": "[O] ammonia-lowering magnitude not derived from sequence",
+   "src": "Batshaw 2014 Mol Genet Metab 113:127 (nitrogen scavengers in UCD); glycerol phenylbutyrate (Ravicti) FDA 2013; sodium phenylacetate + sodium benzoate (Ammonul) FDA 2005"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.52321,
+   "dwell_disease": 2.09441,
+   "dwell_treated": 1.70972,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "e375437e5882"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "OTC LOF (released brake) raises the toxic waste-nitrogen burden (axis UP)",
+   "falsifier": "an OTC deficiency allele that LOWERED plasma ammonia / glutamine would refute the released-brake direction",
+   "measurable_by": "plasma ammonia and glutamine by OTC genotype / hemizygosity"
+  },
+  {
+   "claim": "diverting waste nitrogen (scavenger) or repleting the distal cycle (citrulline/arginine) is the CORRECTIVE direction (lowers the burden)",
+   "falsifier": "if a nitrogen scavenger or citrulline/arginine repletion RAISED or failed to lower plasma ammonia, the restrain lever sign is wrong",
+   "measurable_by": "plasma ammonia response to nitrogen-scavenger therapy or to citrulline/arginine repletion"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Ornithine transcarbamylase deficiency": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "0d2d8c638a28"
+ },
+ "determinism_sha": "864669f88e0f"
+}

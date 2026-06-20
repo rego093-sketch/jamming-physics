@@ -1,0 +1,188 @@
+{
+ "disease": "Cerebrotendinous xanthomatosis (CTX)",
+ "omim": "213700",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Cerebrotendinous xanthomatosis (CTX)",
+  "omim": "213700",
+  "summary": "A single-gene CYP27A1 loss-of-function. CYP27A1 encodes sterol 27-hydroxylase, the mitochondrial enzyme that 27-hydroxylates sterol intermediates in the PRIMARY (classic and alternative) bile-acid synthesis pathway, a step required to make the primary bile acids chenodeoxycholic acid (CDCA) and cholic acid from cholesterol. CYP27A1 LOF lowers primary bile-acid synthesis THROUGHPUT, so (i) CDCA falls and (ii) -- because CDCA is the strongest feedback inhibitor of cholesterol 7alpha-hydroxylase (CYP7A1) -- that feedback is lost, DE-REPRESSING CYP7A1 and diverting flux down a 25-hydroxylation shunt that over-produces cholestanol and bile alcohols, which ACCUMULATE in brain, tendons (xanthomas), lens (juvenile cataracts) and arteries -> the CTX phenotype: infantile cholestasis/diarrhoea, juvenile cataracts, tendon xanthomas, and progressive adult neurodegeneration (ataxia, spasticity, cognitive decline). The emergent axis is PRIMARY BILE-ACID SYNTHESIS, driven DOWN by the deficient enzyme; the correction is to restore the missing end-product. The kit re-derives the approved replace arm: chenodeoxycholic acid (CDCA; chenodiol) -- which SUPPLIES the deficient primary bile acid AND, by restoring feedback inhibition of CYP7A1, suppresses the abnormal cholestanol-producing flux (lowering plasma cholestanol and urinary bile alcohols). This is a NEW bile-acid-synthesis metabolic axis -- distinct from the kit's other lipid reads (familial hypercholesterolaemia's LDL-cholesterol LEVEL axis; sitosterolaemia's sterol-ABSORPTION axis; LAL deficiency's lysosomal neutral-lipid CATABOLISM axis) -- with an END-PRODUCT-REPLACEMENT lever (replace the missing bile acid, which also restores its own feedback). Statins / LDL apheresis lower the cholesterol substrate but do NOT restore bile-acid synthesis and are recorded as downstream-symptomatic NON-levers (the XLH/Rett downstream-agent discipline). The gamma read is of the CYP27A1 locus switch STRUCTURE; the disease lesions are coding/splice (missense/nonsense/splice across the gene), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "primary bile-acid synthesis (sterol 27-hydroxylase / CYP27A1 throughput to chenodeoxycholic acid + cholic acid; LOF -> bile-acid synthesis down, loss of CDCA feedback on CYP7A1 -> cholestanol/bile-alcohol over-production and tissue accumulation) -- a bile-acid-synthesis metabolic axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CYP27A1",
+    "gamma": 1.4132,
+    "spinodal_h_sp": 0.64663,
+    "barrier": 0.49928,
+    "dwell_relative_size": 1.52726,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000002.12",
+     "gene_start": 218782146,
+     "gene_end": 218815292,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "cytochrome P450 family 27 subfamily A member 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "CYP27A1 encodes sterol 27-hydroxylase, the mitochondrial cytochrome-P450 that 27-hydroxylates sterol intermediates in primary bile-acid synthesis -- the step needed to form chenodeoxycholic acid and cholic acid from cholesterol. LOF lowers primary bile-acid synthesis throughput -> CDCA falls, its feedback inhibition of CYP7A1 is lost, and flux is diverted to over-produce cholestanol and bile alcohols that accumulate in tissues. As a deficient ENZYME the pathway throughput goes DOWN (with downstream accumulation of the aberrant shunt products), so the corrective lever RESTORES the end-product. Autosomal recessive, 2q35 (OMIM 606530). NCBI official symbol CYP27A1. The promoter gamma reads the locus switch STRUCTURE only; the coding/splice lesions are outside the promoter firewall.",
+    "src": "Cali 1991 J Biol Chem 266:7779 (CYP27A1 mutations cause CTX); Bjorkhem 2013 J Intern Med 273:520 (CTX sterol-27-hydroxylase pathophysiology)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CYP27A1",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "5c901b3d4ff7"
+ },
+ "treatment_A_switch": {
+  "disease": "Cerebrotendinous xanthomatosis (CTX)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "CYP27A1",
+    "push_direction": "supply chenodeoxycholic acid (the missing primary bile-acid end-product) -> restore the bile-acid pool AND re-impose CDCA feedback on CYP7A1, suppressing the abnormal cholestanol-producing flux (axis UP toward function; lowers plasma cholestanol and urinary bile alcohols)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "primary bile-acid replacement (chenodeoxycholic acid / chenodiol)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of cholestanol/bile-alcohol lowering and clinical benefit not derived from sequence",
+    "src": "Berginer 1984 NEJM 311:1649 (CDCA reverses CTX biochemistry/clinical course); RESTORE phase-3 withdrawal trial (cholestanol/bile-alcohol rise on CDCA withdrawal); chenodiol (Ctexli) FDA 2025-02-21 -- first US approval for CTX; CDCA-Leadiant EMA 2017"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "CYP27A1",
+    "push_direction": "restore the deficient sterol 27-hydroxylase itself (gene/enzyme), correcting bile-acid synthesis at source",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "CYP27A1 gene/enzyme restoration (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] feasibility/magnitude not derived from sequence",
+    "src": "Bjorkhem 2013 J Intern Med 273:520 (rationale for restoring sterol-27-hydroxylase function)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "CYP27A1",
+   "push_direction": "supply chenodeoxycholic acid (the missing primary bile-acid end-product) -> restore the bile-acid pool AND re-impose CDCA feedback on CYP7A1, suppressing the abnormal cholestanol-producing flux (axis UP toward function; lowers plasma cholestanol and urinary bile alcohols)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "primary bile-acid replacement (chenodeoxycholic acid / chenodiol)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of cholestanol/bile-alcohol lowering and clinical benefit not derived from sequence",
+   "src": "Berginer 1984 NEJM 311:1649 (CDCA reverses CTX biochemistry/clinical course); RESTORE phase-3 withdrawal trial (cholestanol/bile-alcohol rise on CDCA withdrawal); chenodiol (Ctexli) FDA 2025-02-21 -- first US approval for CTX; CDCA-Leadiant EMA 2017"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.52726,
+   "dwell_disease": 0.98823,
+   "dwell_treated": 1.25372,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "835263b83dee"
+ },
+ "treatment_B_chem": {
+  "disease": "Cerebrotendinous xanthomatosis (CTX)",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "cholic acid (alternative primary bile-acid replacement)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "supply cholic acid as an alternative/added primary bile acid to restore the bile-acid pool and feedback (CDCA is the stronger CYP7A1 feedback inhibitor; pathway-B reports DIRECTION only)",
+    "rationale": "an end-product-replacement direction parallel to CDCA; measured thermodynamics not supplied here -> [O] (no number -> hold it). Feasibility direction, NOT a quantitative claim.",
+    "status": "preclinical",
+    "src": "Ellis 2003 Hepatology 38:930 (relative feedback potency of bile acids)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "94d7c87bd62a"
+ },
+ "falsifiers": [
+  {
+   "claim": "CYP27A1 LOF lowers primary bile-acid synthesis (CDCA down; cholestanol/bile alcohols accumulate via de-repressed CYP7A1)",
+   "falsifier": "a CYP27A1 LOF allele that RAISED CDCA / primary bile-acid output, or that LOWERED cholestanol, would refute the throughput-down + shunt-accumulation direction",
+   "measurable_by": "plasma CDCA and cholestanol and urinary bile-alcohol levels in CYP27A1-deficient patients vs controls"
+  },
+  {
+   "claim": "replacing the end-product (CDCA) is the CORRECTIVE direction",
+   "falsifier": "if giving chenodeoxycholic acid RAISED cholestanol/bile alcohols or failed to lower them (and worsened the course), the 'replace end-product' lever sign is wrong",
+   "measurable_by": "plasma cholestanol and urinary bile-alcohol response to CDCA, and the documented rebound on CDCA withdrawal (RESTORE), in CTX patients"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Cerebrotendinous xanthomatosis (CTX)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "01bb1f4f626f"
+ },
+ "determinism_sha": "5215cf12c4d2"
+}

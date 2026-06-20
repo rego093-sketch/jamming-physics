@@ -1,0 +1,159 @@
+{
+ "disease": "Hereditary tyrosinaemia type I",
+ "omim": "276700",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hereditary tyrosinaemia type I",
+  "omim": "276700",
+  "summary": "A single-gene FAH loss-of-function removes fumarylacetoacetate hydrolase, the LAST enzyme of tyrosine catabolism. FAH normally consumes (detoxifies) fumarylacetoacetate; without it, fumarylacetoacetate and succinylacetone ACCUMULATE and are hepato- and nephro-toxic -> the toxic-catabolite burden is driven UP. Read as a released BRAKE on toxic accumulation (FAH brakes the build-up; LOF releases it -> burden UP). The approved therapy is COUNTER-INTUITIVE and the kit re-derives it: nitisinone blocks the UPSTREAM enzyme HPD so the toxic intermediate is never formed (an upstream RESTRAINT), rather than restoring FAH. Definitive correction is restoring FAH (liver transplantation; FAH gene therapy investigational), with dietary tyrosine/phenylalanine restriction as adjunct. The gamma read is of the FAH locus switch structure; the disease lesion is coding, outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "toxic upstream tyrosine-catabolite burden (fumarylacetoacetate / succinylacetone accumulation)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "FAH",
+    "gamma": 1.451,
+    "spinodal_h_sp": 0.67274,
+    "barrier": 0.52635,
+    "dwell_relative_size": 1.58894,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000015.10",
+     "gene_start": 80152788,
+     "gene_end": 80186948,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "fumarylacetoacetate hydrolase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "FAH (fumarylacetoacetate hydrolase) is the terminal tyrosine-catabolism enzyme; it consumes fumarylacetoacetate. As a BRAKE on toxic-catabolite accumulation, its LOF RELEASES the brake -> fumarylacetoacetate and succinylacetone accumulate (toxic). The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is the TOXIC BURDEN (it goes UP), so the corrective levers LOWER it.",
+    "src": "Lindblad 1977 PNAS 74:4641 (succinylacetone); Phaneuf 1992 (FAH mutations)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "FAH",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "3ce764d95452"
+ },
+ "treatment_A_switch": {
+  "disease": "Hereditary tyrosinaemia type I",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "HPD",
+    "push_direction": "inhibit the UPSTREAM HPD step so the toxic intermediate is never formed -> lower the toxic-catabolite burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "HPD / 4-HPPD inhibitor (nitisinone / NTBC)",
+    "status": "approved",
+    "mechanism_grade": "[O] succinylacetone-lowering magnitude / outcome not derived from sequence",
+    "src": "Lindstedt 1992 Lancet 340:813; nitisinone (Orfadin) FDA 2002"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "FAH",
+    "push_direction": "restore FAH so the accumulating fumarylacetoacetate is consumed again -> lower the toxic burden (definitive)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "FAH restoration (liver transplantation; FAH gene therapy investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree/durability of restored FAH activity not derived from sequence",
+    "src": "Mohan 1999 (transplant); Paulk 2010 Hepatology (FAH gene-correction models)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "HPD",
+   "push_direction": "inhibit the UPSTREAM HPD step so the toxic intermediate is never formed -> lower the toxic-catabolite burden",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "HPD / 4-HPPD inhibitor (nitisinone / NTBC)",
+   "status": "approved",
+   "mechanism_grade": "[O] succinylacetone-lowering magnitude / outcome not derived from sequence",
+   "src": "Lindstedt 1992 Lancet 340:813; nitisinone (Orfadin) FDA 2002"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.58894,
+   "dwell_disease": 2.1848,
+   "dwell_treated": 1.78351,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "54717b5c65ff"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "FAH LOF (released brake) raises the toxic tyrosine-catabolite burden (axis UP)",
+   "falsifier": "a FAH null allele that LOWERED fumarylacetoacetate / succinylacetone accumulation would refute the released-brake direction",
+   "measurable_by": "succinylacetone / fumarylacetoacetate levels by FAH genotype"
+  },
+  {
+   "claim": "blocking the upstream HPD step (nitisinone) is the CORRECTIVE direction (lowers the toxic burden)",
+   "falsifier": "if inhibiting HPD RAISED or failed to lower succinylacetone, the restrain-HPD lever sign is wrong",
+   "measurable_by": "succinylacetone response to HPD inhibition"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hereditary tyrosinaemia type I": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "f2525f6794c5"
+ },
+ "determinism_sha": "97495f42e3ca"
+}

@@ -1,0 +1,86 @@
+{
+ "suite": "theta-cap virtual-clinical (VC1-VC5)",
+ "n_modules": 5,
+ "engine_file_sha256_ok": true,
+ "engine_file_sha256": "e61083ae956206e943ed292f5f69f9d3964ef50778e2d7344de93207ade48371",
+ "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+ "modules": [
+  {
+   "tag": "VC1",
+   "module": "vc1_carrier_interference",
+   "sha256": "eae5e190a9adafe826affbd9f292a9c4a42da512b173fb462d09e0556bcf545a",
+   "reproduced": true,
+   "engine_tree_ok": true,
+   "pac_grounded": true,
+   "honesty_ledger_ok": true,
+   "preregistered": {
+    "P_VC1a_C_FORCE_narrow_window_oversync_beyond": "CONFIRMED",
+    "P_VC1b_additive_lane_supplies_usable_lane": "REFUTED",
+    "P_VC1c_unstructured_does_not_route": "CONFIRMED"
+   }
+  },
+  {
+   "tag": "VC2",
+   "module": "vc2_highway_removability",
+   "sha256": "51362445d37296d2fa5bf526a7c92d7603477f604676e122522b03c9ef85b0dc",
+   "reproduced": true,
+   "engine_tree_ok": true,
+   "pac_grounded": true,
+   "honesty_ledger_ok": true,
+   "preregistered": {
+    "P_VC2a_routes_without_oversync": "CONFIRMED",
+    "P_VC2b_clean_removal_no_dependence_no_rebound": "CONFIRMED",
+    "P_VC2c_cycling_leaves_baseline_invariant": "CONFIRMED"
+   }
+  },
+  {
+   "tag": "VC3",
+   "module": "vc3_molecular_fatigue",
+   "sha256": "d045928fa9a09e8e0b2f5ee5d40df9445bc1e0af70c47e6c5e36fa6295daa4cb",
+   "reproduced": true,
+   "engine_tree_ok": true,
+   "pac_grounded": true,
+   "honesty_ledger_ok": true,
+   "preregistered": {
+    "P_VC3a_irreversible_fatigue_bounded_below_fold": "CONFIRMED",
+    "P_VC3b_reasonable_dutycycled_materially_lower": "CONFIRMED",
+    "P_VC3c_oversync_accelerates_fatigue": "CONFIRMED"
+   }
+  },
+  {
+   "tag": "VC4",
+   "module": "vc4_adhd_coemergence",
+   "sha256": "aed19bc2346baaa3cec32386ace0d98d36d743babe236ae48cfadb775952d7bb",
+   "reproduced": true,
+   "engine_tree_ok": true,
+   "pac_grounded": true,
+   "honesty_ledger_ok": true,
+   "preregistered": {
+    "P_VC4a_stim_restores_adhd_not_autism_W": "CONFIRMED",
+    "P_VC4b_cap_is_for_W_not_adhd": "CONFIRMED",
+    "P_VC4c_combined_covers_more_no_oversync": "CONFIRMED"
+   }
+  },
+  {
+   "tag": "VC5",
+   "module": "vc5_virtual_trial",
+   "sha256": "527ee1df65c1e67ec66680ae88a2a52febdd1fa589989bb266ec6c19371b6ccc",
+   "reproduced": true,
+   "engine_tree_ok": true,
+   "pac_grounded": true,
+   "honesty_ledger_ok": true,
+   "preregistered": {
+    "P_VC5a_stim_rises_OT_falls_W": "CONFIRMED",
+    "P_VC5b_adverse_rises_with_amp_min_at_window": "CONFIRMED",
+    "P_VC5c_core_nonresp_W_dominated_and_cap_rescues": "CONFIRMED"
+   }
+  }
+ ],
+ "preregistered_tally": {
+  "confirmed": 14,
+  "refuted": 1,
+  "note": "refutations are findings, not gate failures (see VC5 FINDING-VC5c)"
+ },
+ "all_pass": true,
+ "gate_meaning": "every VC module reproduces bit-for-bit, the engine is byte-unchanged (file sha and frozen tree 0fbf4988...), PAC stays grounded to the engine's measured kappa, and the honesty ledger holds (efficacy=0, no cure claimed, no tuned constants, no consciousness claim). The gate certifies reproducibility and discipline; the scientific verdicts (incl. refutations) live in the module results and THETA_CAP_VIRTUAL_CLINICAL_HONEST.md."
+}

@@ -1,0 +1,438 @@
+{
+  "paper_id": "musculoskeletal_vp_site",
+  "code": "msk",
+  "title": "Musculoskeletal Emergence: Muscle Actuation, Cartilage and Bone as Load-Bearing Jammed Matter",
+  "abbr": "Musculoskeletal Emergence",
+  "author": "Young Jae Lee",
+  "orcid": "https://orcid.org/0009-0002-7535-8245",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "doi": "10.5281/zenodo.20755760",
+  "doi_url": "https://doi.org/10.5281/zenodo.20755760",
+  "doi_status": "concept DOI (all versions)",
+  "inherited_analgesic_technique_doi": "10.5281/zenodo.20733420",
+  "canonical": "https://jamming-physics.org/musculoskeletal/",
+  "repro": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/musculoskeletal/",
+  "branch": "jamming (solid-mechanics / load-bearing)",
+  "generated": "2026-06-19",
+  "measured_gamma": {
+    "bone": 1.2414,
+    "cartilage": 1.4598,
+    "limb_skeleton": 1.4392,
+    "skeletal_muscle": 1.4933
+  },
+  "gamma_order_ascending": [
+    "bone",
+    "limb_skeleton",
+    "cartilage",
+    "skeletal_muscle"
+  ],
+  "discriminant_targets_all_pass": true,
+  "disease_targets_all_pass": true,
+  "disease_targets": [
+    {
+      "target": "T7a",
+      "disease": "Cleidocranial dysplasia (CCD)",
+      "perturbs": "master switch (emergence)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism [V]; threshold shift forced by the spinodal cliff [F]; absolute timing/morphology [O]"
+    },
+    {
+      "target": "T7b",
+      "disease": "Campomelic dysplasia",
+      "perturbs": "master switch (emergence)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism [V]; threshold shift forced by the spinodal cliff [F]; absolute timing/morphology [O]"
+    },
+    {
+      "target": "T7c",
+      "disease": "Holt-Oram syndrome (limb component)",
+      "perturbs": "master switch (emergence)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism [V]; threshold shift forced by the spinodal cliff [F]; absolute timing/morphology [O]"
+    },
+    {
+      "target": "T7d",
+      "disease": "MYOD1-related myogenic-factor myopathy",
+      "perturbs": "master switch (emergence)",
+      "secondary": true,
+      "status": "PASS",
+      "grade": "mechanism [V?]; threshold shift forced by the spinodal cliff [F]; absolute timing/morphology [O]"
+    },
+    {
+      "target": "T6",
+      "disease": "Disuse & post-menopausal osteoporosis",
+      "perturbs": "T3",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mirror of T3 [F] (barrier-limited escape); setpoint [L] (Frost); absolute BMD & %/month [O]"
+    },
+    {
+      "target": "T6b",
+      "disease": "Osteopetrosis",
+      "perturbs": "T3",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism (down-branch removed) [V]; brittleness / material strength [O]"
+    },
+    {
+      "target": "T8",
+      "disease": "Myasthenia gravis",
+      "perturbs": "T1",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "T1 perturbation, decrement direction+threshold [V]; clinical threshold cited [L]; high-frequency post-activation potentiation not modelled (depression-only NMJ) [O]"
+    },
+    {
+      "target": "T8b",
+      "disease": "Lambert-Eaton myasthenic syndrome (LEMS)",
+      "perturbs": "T1",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "T1 perturbation, increment direction [V]; clinical sign cited [L]"
+    },
+    {
+      "target": "T10",
+      "disease": "Metabolic / mitochondrial myopathy",
+      "perturbs": "T5",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "T5 perturbation, faster-decline + incomplete-recovery direction [V]; anchor [L]; absolute magnitude [O]"
+    },
+    {
+      "target": "T9",
+      "disease": "Osteoarthritis (OA)",
+      "perturbs": "T2",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "shape (monotone, convex, sub-threshold-protected) [V]; damage-law FORM cited [L]; absolute progression rate [O] (the rate constant A is not fixed by the substrate)"
+    },
+    {
+      "target": "T4-ext",
+      "disease": "Achondroplasia & chondrodysplasias",
+      "perturbs": "T4",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism (suppressive drive shifts the chondrocyte threshold) [V]; absolute length [O]"
+    },
+    {
+      "target": "T11",
+      "disease": "Muscular dystrophy (Duchenne / Becker)",
+      "perturbs": "T2 (contractile contact number)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "contractile contact-number cyclic-fatigue mechanism [V]; reading-frame severity ordering [L]; absolute timeline / age-at-milestone [O]"
+    },
+    {
+      "target": "T12",
+      "disease": "Channelopathies: myotonia & periodic paralysis",
+      "perturbs": "excitability substrate (FHN membrane)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "depolarization-block-threshold perturbation of the FHN substrate [V]; clinical signs (myotonic discharge / periodic paralysis) [L]; absolute membrane parameters [O]"
+    },
+    {
+      "target": "T13",
+      "disease": "Stress fracture (bone fatigue) & fracture healing",
+      "perturbs": "T3 (sub-yield cyclic fatigue + remodeling re-cross)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "sub-yield fatigue SHAPE + load-driven healing re-cross [V]; endurance-limit + Paris/Basquin form [L]; absolute cycles-to-fracture [O]"
+    },
+    {
+      "target": "T14",
+      "disease": "Tendinopathy",
+      "perturbs": "T2 (tendon collagen contact number)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "shape (sub-threshold protected, accelerating) [V]; damage-law form [L]; absolute progression rate [O]"
+    },
+    {
+      "target": "T15",
+      "disease": "Sarcopenia",
+      "perturbs": "T1/T2/T5 (multi-axis ageing decline)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "multi-axis decline DIRECTION [V]; absolute force and rate-of-loss [O]"
+    },
+    {
+      "target": "T16",
+      "disease": "Osteomalacia / rickets",
+      "perturbs": "T3 (mineralization ceiling)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism (mineralization ceiling; load-unrescuable; osteoporosis contrast) [V]; ceiling form [L]; absolute mineral density [O]"
+    },
+    {
+      "target": "T17",
+      "disease": "Osteolytic bone disease (multiple myeloma; giant-cell tumour)",
+      "perturbs": "T3/T6 (osteoclast/osteoblast uncoupling)",
+      "secondary": false,
+      "status": "PASS",
+      "grade": "mechanism (formation-arm disabled = osteolysis; mirror of osteopetrosis; RANKL resorptive drive) [V]; absolute lesion size / incidence [O]"
+    }
+  ],
+  "oncology_shape_ok": true,
+  "oncology_sites": [
+    "osteosarcoma",
+    "soft-tissue sarcoma (rhabdomyosarcoma-type)",
+    "chondrosarcoma",
+    "Ewing sarcoma"
+  ],
+  "chapters": [
+    {
+      "no": 1,
+      "slug": "01-organ-emergence-measured-gamma",
+      "title": "Organ Emergence from Measured Gamma",
+      "h1": "Organ Emergence from Measured Master-Gene Gamma",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/01-organ-emergence-measured-gamma/",
+      "one_liner": "Four organs emerge from measured master-gene &gamma; (RUNX2 1.2414 &lt; TBX5 1.4392 &lt; SOX9 1.4598 &lt; MYOD1 1.4933); &gamma; is read-only, never fitted."
+    },
+    {
+      "no": 2,
+      "slug": "02-force-frequency-twitch-summation-fused",
+      "title": "Force-Frequency: Twitch Summation to Fused Tetanus",
+      "h1": "Force-Frequency: Twitch Summation to Fused Tetanus",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/02-force-frequency-twitch-summation-fused/",
+      "one_liner": "Twitches superpose into fused tetanus at 25&nbsp;Hz (band 20&ndash;100) and fusion tracks 1/&tau; [V]; amplitude ratio uncalibrated [O]."
+    },
+    {
+      "no": 3,
+      "slug": "03-length-tension-filament-overlap",
+      "title": "Length-Tension from Filament Overlap",
+      "h1": "Length-Tension as a Filament-Overlap Contact Number",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/03-length-tension-filament-overlap/",
+      "one_liner": "Active force = filament overlap (contact number); plateau 2.05&ndash;2.25&nbsp;&micro;m, zero near 3.625&nbsp;&micro;m, matching the cited length-tension curve [V]."
+    },
+    {
+      "no": 4,
+      "slug": "04-wolff-remodelling-yield-threshold",
+      "title": "Wolff Remodelling as a Yield Threshold",
+      "h1": "Wolff Remodelling as a Jamming Yield Threshold",
+      "grade": "[F] forced",
+      "url": "https://jamming-physics.org/musculoskeletal/04-wolff-remodelling-yield-threshold/",
+      "one_liner": "Bone density = R19 state, load = drive, spinodal 0.5324 = yield threshold; supra-threshold load flips density with hysteresis (memory) [F]."
+    },
+    {
+      "no": 5,
+      "slug": "05-growth-plate-ordering-gamma-rank",
+      "title": "Growth-Plate Ordering by Gamma Rank",
+      "h1": "Growth-Plate Developmental Order from Gamma Rank",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/05-growth-plate-ordering-gamma-rank/",
+      "one_liner": "&gamma;-rank reproduces limb&rarr;cartilage&rarr;muscle (TBX5&rarr;SOX9&rarr;MYOD1) [V]; bone ossification timing is drive-gated [O]."
+    },
+    {
+      "no": 6,
+      "slug": "06-muscle-fatigue-reversible-decline",
+      "title": "Muscle Fatigue as Reversible Decline",
+      "h1": "Muscle Fatigue as a Reversible Exponential Decline",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/06-muscle-fatigue-reversible-decline/",
+      "one_liner": "Sustained drive &rarr; reversible exponential force decline, &tau;&asymp;59.75&nbsp;s (band 20&ndash;120), recovery to 97% [V]; magnitude [O]."
+    },
+    {
+      "no": 7,
+      "slug": "07-carcinogen-dose-response-bone-soft",
+      "title": "Carcinogen Dose-Response in Bone and Soft Tissue",
+      "h1": "Carcinogen Dose-Response: a Barrier-Lowering Kernel",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/07-carcinogen-dose-response-bone-soft/",
+      "one_liner": "Carcinogen = barrier-lowering drive &rarr; Kramers RR(dose) collapses to universal convex RR=edose/dose* [V] across four sites; radiation anchor [L]; incidence + fusion/metabolic aetiology [O]."
+    },
+    {
+      "no": 8,
+      "slug": "08-master-gene-dosage-dysplasias",
+      "title": "Master-Gene Dosage Dysplasias (CCD, Campomelic, Holt-Oram)",
+      "h1": "Master-Gene Dosage Dysplasias as a Forced Crossing Cliff",
+      "grade": "[F] forced threshold-shift",
+      "url": "https://jamming-physics.org/musculoskeletal/08-master-gene-dosage-dysplasias/",
+      "one_liner": "Haploinsufficiency (dosage 0.5) drops the master switch below a &gamma;-independent crossing cliff at &#8532; WT drive: CCD/RUNX2, campomelic/SOX9, Holt-Oram/TBX5 fail to cross [F]; timing [O]."
+    },
+    {
+      "no": 9,
+      "slug": "09-mechanostat-disease-osteoporosis-osteopetrosis",
+      "title": "Mechanostat Disease: Osteoporosis and Osteopetrosis",
+      "h1": "Mechanostat Disease: Osteoporosis and Osteopetrosis as the Mirror of Wolff's Law",
+      "grade": "[F] forced",
+      "url": "https://jamming-physics.org/musculoskeletal/09-mechanostat-disease-osteoporosis-osteopetrosis/",
+      "one_liner": "Disuse osteoporosis = sub-threshold load lowering the dense-basin barrier; loss rate rises 1.00&rarr;2.59&times; with unloading [F]; osteopetrosis removes the loop's down-branch [V]; BMD [O]."
+    },
+    {
+      "no": 10,
+      "slug": "10-neuromuscular-transmission-mg-lems",
+      "title": "Neuromuscular Transmission: Myasthenia and Lambert-Eaton",
+      "h1": "Neuromuscular Transmission Failure: Myasthenia Gravis and Lambert-Eaton",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/10-neuromuscular-transmission-mg-lems/",
+      "one_liner": "MG raises the NMJ threshold &rarr; 18.4% low-frequency force decrement (&gt;10% clinical) [V]; LEMS gives the opposite high-frequency increment (+46.7%) [V]; synaptic cause cited [L]."
+    },
+    {
+      "no": 11,
+      "slug": "11-metabolic-mitochondrial-myopathy",
+      "title": "Metabolic and Mitochondrial Myopathy",
+      "h1": "Metabolic and Mitochondrial Myopathy as a Fatigue Perturbation",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/11-metabolic-mitochondrial-myopathy/",
+      "one_liner": "Metabolic myopathy shortens the T5 fatigue &tau; (60&rarr;25&nbsp;s) and leaves recovery incomplete (0.835&lt;0.95) [V]; magnitude [O]."
+    },
+    {
+      "no": 12,
+      "slug": "12-osteoarthritis-cartilage-unjamming",
+      "title": "Osteoarthritis as Cartilage Unjamming",
+      "h1": "Osteoarthritis as Cyclic-Fatigue Unjamming of the Cartilage Contact Network",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/12-osteoarthritis-cartilage-unjamming/",
+      "one_liner": "OA = cyclic-fatigue unjamming of the cartilage contact number (cited Paris/Basquin m=2): sub-threshold protected, loss convex in load+BMI [V]; absolute rate [O]."
+    },
+    {
+      "no": 13,
+      "slug": "13-achondroplasia-growth-plate-suppression",
+      "title": "Achondroplasia as Growth-Plate Suppression",
+      "h1": "Achondroplasia and Chondrodysplasias as Growth-Plate Switch Suppression",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/13-achondroplasia-growth-plate-suppression/",
+      "one_liner": "Achondroplasia = FGFR3-GOF suppressive drive on the SOX9 growth-plate switch; graded shortening WT 1.00&rarr;0.09 with a cliff [V]; absolute length [O]."
+    },
+    {
+      "no": 14,
+      "slug": "14-muscular-dystrophy-and-sarcopenia",
+      "title": "Muscular Dystrophy and Sarcopenia",
+      "h1": "Progressive Muscle Loss: Dystrophy (Contractile-Contact Fatigue) and Sarcopenia",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/14-muscular-dystrophy-and-sarcopenia/",
+      "one_liner": "Dystrophy = contractile-contact fatigue with reading-frame severity (DMD 0.46 &lt; BMD 0.85 &lt; normal 1.00) [V]; sarcopenia = gradual multi-axis ageing decline [V]; absolute timeline/force [O]."
+    },
+    {
+      "no": 15,
+      "slug": "15-muscle-channelopathies-myotonia-paralysis",
+      "title": "Muscle Channelopathies: Myotonia and Periodic Paralysis",
+      "h1": "Muscle Channelopathies as Depolarization-Block-Threshold Shifts",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/15-muscle-channelopathies-myotonia-paralysis/",
+      "one_liner": "Myotonia raises the depolarization-block threshold (1.30), periodic paralysis lowers it (0.10) vs normal (0.80) &mdash; opposite excitability signs from one FHN membrane [V]; absolute [O]."
+    },
+    {
+      "no": 16,
+      "slug": "16-stress-fracture-and-fracture-healing",
+      "title": "Stress Fracture and Fracture Healing",
+      "h1": "Stress Fracture as Sub-Yield Bone Fatigue, and Fracture Healing as Remodeling Re-Cross",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/16-stress-fracture-and-fracture-healing/",
+      "one_liner": "Stress fracture = sub-yield cyclic bone fatigue above an endurance limit (S-N), sub-endurance protected [V]; and the fracture HEALS via T3 re-cross (0.00&rarr;1.00) unlike OA; absolute cycles [O]."
+    },
+    {
+      "no": 17,
+      "slug": "17-tendinopathy-collagen-network-unjamming",
+      "title": "Tendinopathy as Collagen-Network Unjamming",
+      "h1": "Tendinopathy as Cyclic-Fatigue Unjamming of the Tendon Collagen Network",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/17-tendinopathy-collagen-network-unjamming/",
+      "one_liner": "Tendinopathy = cyclic-fatigue unjamming of the tendon collagen contact number (OA kernel): sub-threshold protected, loss convex in overuse [V]; absolute rate [O]."
+    },
+    {
+      "no": 18,
+      "slug": "18-osteomalacia-rickets-mineralization-ceiling",
+      "title": "Osteomalacia and Rickets as a Mineralization Ceiling",
+      "h1": "Osteomalacia and Rickets as a Mineralization Ceiling (Load Cannot Rescue)",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/18-osteomalacia-rickets-mineralization-ceiling/",
+      "one_liner": "Osteomalacia/rickets = mineralization ceiling (density = matrix &times; mineral supply); load rescues osteoporosis but NOT osteomalacia [V]; absolute mineral density [O]."
+    },
+    {
+      "no": 19,
+      "slug": "19-osteolytic-bone-disease-uncoupling",
+      "title": "Osteolytic Bone Disease as Osteoclast/Osteoblast Uncoupling",
+      "h1": "Osteolytic Bone Disease (Myeloma, Giant-Cell Tumour) as Osteoclast/Osteoblast Uncoupling",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/19-osteolytic-bone-disease-uncoupling/",
+      "one_liner": "Osteolytic bone disease = osteoclast/osteoblast uncoupling: myeloma disables formation (locked lytic 0.15), the mirror of osteopetrosis; GCT's RANKL drive resorbs dense bone (&rarr;0.00) [V]; absolute lesion [O]."
+    },
+    {
+      "no": 20,
+      "slug": "20-out-of-class-and-material-register",
+      "title": "Out-of-Class and Material Disease Register",
+      "h1": "Out-of-Class and Material Diseases: Honest Open Grades and Seam Routing",
+      "grade": "[O] open / routed",
+      "url": "https://jamming-physics.org/musculoskeletal/20-out-of-class-and-material-register/",
+      "one_liner": "Material diseases (OI, EDS/Marfan) and signatureless ones (Paget, scoliosis) carried as honest [O] (tendinopathy now §17); degenerative disc disease deferred to the existing OA/tendinopathy kernel to avoid duplication; autoimmune, crystal, pain, infection and distant-primary tumours routed to siblings via named seams (SSOT)."
+    },
+    {
+      "no": 21,
+      "slug": "21-treatment-axis-barrier-restoration",
+      "title": "Treatment Axis: Barrier Restoration",
+      "h1": "The Treatment Axis: Disease Run in Reverse on a DNA-Grounded Switch (Barrier Restoration)",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/21-treatment-axis-barrier-restoration/",
+      "one_liner": "Treatment = disease run in reverse on a DNA-grounded switch (each organ emerged from a measured gene parameter gamma read from the human genome): restore the barrier / drive / branch / supply. 13 reversible mirror treatments restore the healthy attractor by direction (No-Tuning), each citing the real drug or load; developmental cliffs, cartilage regeneration and established-tumour chemotherapy are honest [O]. Engine hash unchanged."
+    },
+    {
+      "no": 22,
+      "slug": "22-treatment-bone-and-cartilage",
+      "title": "Bone and Cartilage Treatments",
+      "h1": "Bone and Cartilage Treatments as Mirror Operations on the RUNX2/SOX9 Switch",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/22-treatment-bone-and-cartilage/",
+      "one_liner": "Bone / cartilage mirror treatments on the RUNX2 / SOX9 switch: loading + antiresorptive reverse osteoporosis, vitamin D refills osteomalacia, HSCT re-enables resorption (osteopetrosis), denosumab removes the osteolytic / giant-cell-tumour RANKL drive, rest + load heals stress fracture, vosoritide partially relieves achondroplasia, unloading arrests osteoarthritis (no cartilage regen [O])."
+    },
+    {
+      "no": 23,
+      "slug": "23-treatment-muscle-and-neuromuscular",
+      "title": "Muscle and Neuromuscular Treatments",
+      "h1": "Muscle and Neuromuscular Treatments: Restoring Excitability and Contractile Knobs",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/23-treatment-muscle-and-neuromuscular/",
+      "one_liner": "Muscle / neuromuscular mirror treatments: pyridostigmine restores the myasthenic safety factor (decrement below 10%), amifampridine raises Lambert-Eaton quantal content, mexiletine normalises channelopathy excitability, steroids + gene therapy modify muscular dystrophy (Duchenne toward Becker), resistance training partially reverses sarcopenia (ageing floor [O]), eccentric loading rebuilds tendinopathy."
+    },
+    {
+      "no": 24,
+      "slug": "24-treatment-honest-limits-and-scope",
+      "title": "Honest Treatment Limits and Scope",
+      "h1": "Honest Treatment Limits: Where the Kernel Has No Restoration Knob (Results, Not Failures)",
+      "grade": "[O] open / scope",
+      "url": "https://jamming-physics.org/musculoskeletal/24-treatment-honest-limits-and-scope/",
+      "one_liner": "Honest treatment limits (results, not failures): developmental dosage cliffs are not postnatally reversible (closed window), osteoarthritis cartilage does not regenerate (arrest-only), established-tumour chemotherapy is out of the initiation kernel&rsquo;s scope while primary prevention is verified [V], and only a cofactor-responsive subset of metabolic myopathy reverses; every open item names its obstacle."
+    },
+    {
+      "no": 25,
+      "slug": "25-analgesic-three-lever-threshold-logic",
+      "title": "Analgesic Axis: Three-Lever Threshold Logic",
+      "h1": "Non-Opioid Analgesia as a Threshold-Crossing Rate: The Inherited Three-Lever Technique",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/25-analgesic-three-lever-threshold-logic/",
+      "one_liner": "Non-opioid analgesia = pull one of three levers on the nociceptive THRESHOLD-CROSSING rate on the same DNA-grounded R19 barrier (L1 raise the peripheral barrier / L2 lower the noxious drive / L3 cut the central gain). Technique inherited from the VP non-opioid analgesic volume (DOI 10.5281/zenodo.20733420); the noxious drive is read from each disease kernel (single source). PASS = crossing rate falls monotonically (DIRECTION, No-Tuning). L3 central gain is a neuro/mind seam; opioid lever out of scope. Engine hash unchanged."
+    },
+    {
+      "no": 26,
+      "slug": "26-analgesic-l2-drive-load-bearing-convergence",
+      "title": "L2 on Load-Bearing Disease: Analgesia-Disease Convergence",
+      "h1": "Lever L2 on the Load-Bearing Diseases: Where Analgesia and Disease-Modification Converge",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/26-analgesic-l2-drive-load-bearing-convergence/",
+      "one_liner": "L2 (lower the noxious drive) on osteoarthritis, tendinopathy and stress fracture: the noxious drive is the mechanical load the disease kernel perturbs, so unloading lowers BOTH the nociceptive crossing rate AND the structural contact loss (verified by DIRECTION). Analgesia and disease-modification converge on one knob; the mirror treatment (offload) is the dominant analgesic. No-Tuning."
+    },
+    {
+      "no": 27,
+      "slug": "27-analgesic-l1-threshold-coupled-decoupled-discriminant",
+      "title": "L1 and the Coupled/Decoupled Discriminant",
+      "h1": "Lever L1 and the Falsifiable Coupled/Decoupled Discriminant (with Osteolytic Bone Pain)",
+      "grade": "[V] verified",
+      "url": "https://jamming-physics.org/musculoskeletal/27-analgesic-l1-threshold-coupled-decoupled-discriminant/",
+      "one_liner": "L1 (raise the peripheral barrier) lowers the crossing rate but leaves the lesion FLAT (structure-decoupled), while L2 lowers both (structure-coupled) -- that contrast is the decisive falsifiable discriminant. Osteolytic/myeloma bone pain is the clean L2 case where the antiresorptive that relieves the RANKL drive is both the mirror treatment and the analgesic; cancer bone pain is opioid-first-line and the opioid lever is honestly out of the non-opioid scope."
+    },
+    {
+      "no": 28,
+      "slug": "28-analgesic-limits-and-central-gain-seam",
+      "title": "Analgesic Limits and the Central-Gain Seam",
+      "h1": "Analgesic Limits and the Central-Gain Seam: What Is Routed Out and Why (Results, Not Failures)",
+      "grade": "[O] open / scope",
+      "url": "https://jamming-physics.org/musculoskeletal/28-analgesic-limits-and-central-gain-seam/",
+      "one_liner": "Honest limits: L3 central gain is owned by neuro/mind and cited as a seam (not re-emerged); the opioid descending/mu lever is outside the non-opioid logic; exertional muscle pain is DIRECTION-only with no structural cross-check; neuropathic pain and fibromyalgia are routed to sibling volumes (SSOT). The axis stays strictly inside the load-bearing class -- results stated as scope, not failures."
+    }
+  ]
+}

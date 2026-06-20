@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix H: Theory of Geometric Rigidity — VP Theory §AXH | Jamming Physics</title>
+<meta name="description" content="Define the geometric gap. Assume a minimal inverse-gap barrier for rearrangement.">
+<link rel="canonical" href="https://jamming-physics.org/physics/axh-theory-geometric-rigidity-v2-1/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix H: Theory of Geometric Rigidity — VP Theory §AXH | Jamming Physics"><meta property="og:description" content="Define the geometric gap. Assume a minimal inverse-gap barrier for rearrangement."><meta property="og:url" content="https://jamming-physics.org/physics/axh-theory-geometric-rigidity-v2-1/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix H: Theory of Geometric Rigidity — VP Theory §AXH | Jamming Physics"><meta name="twitter:description" content="Define the geometric gap. Assume a minimal inverse-gap barrier for rearrangement.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix H: Theory of Geometric Rigidity",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXH",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXH Appendix H: Theory of Geometric Rigidity"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXH</nav></header>
+<main>
+<h1>Appendix H: Theory of Geometric Rigidity (v2.1)</h1>
+<p class="answer">Appendix H: Theory of Geometric Rigidity: Define the geometric gap. With a Boltzmann-type escape probability P_escape ∝ exp(-U_barrier/E_th), define rigidity as inverse failure: Ψ ∝ 1/P_escape. Assume a minimal inverse-gap barrier for rearrangement. This yields an exponential rigidity law, normalized at N=3.</p>
+<p class="abstract" data-phase2="abstract">Define the geometric gap. With a Boltzmann-type escape probability P_escape ∝ exp(-U_barrier/E_th), define rigidity as inverse failure: Ψ ∝ 1/P_escape.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axh-theory-geometric-rigidity-v2-1/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<span id="app:geom_rigidity_v2_1"></span>
+This appendix records a compact, self-contained derivation that links an effective coordination number N (jamming state) to a rigidity measure Ψ.
+It is intended as an extension note: the algebra is locked and reproduced by a script in the DOI bundle, while the physical interpretation can be debated and improved.
+<h2>H.1 Geometric gap and barrier</h2>
+<p>Define the geometric gap</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axh-000.svg" data-eq="phy-axh-000" width="87" height="15" loading="lazy" alt="\begin{equation} \delta \equiv 4 - N. \end{equation}"></figure>
+<p>Assume a minimal inverse-gap barrier for rearrangement:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axh-001.svg" data-eq="phy-axh-001" width="139" height="41" loading="lazy" alt="\begin{equation} U_{\mathrm{barrier}} = \frac{C_{\mathrm{geo}}}{4-N}. \end{equation}"></figure>
+<h2>H.2 Statistical stability and the rigidity form</h2>
+<p>With a Boltzmann-type escape probability P_escape ∝ exp(-U_barrier/E_th), define rigidity as inverse failure: Ψ ∝ 1/P_escape.
+This yields an exponential rigidity law, normalized at N=3:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axh-002.svg" data-eq="phy-axh-002" width="288" height="39" loading="lazy" alt="\begin{equation} \Psi(N) = \Psi_{\mathrm{base}} \exp\Big[k \Big(\frac{1}{4-N} - 1\Big)\Big], \end{equation}"></figure>
+<p>where k ≡ C_geo/E_th is a dimensionless geometric coupling constant.</p>
+<h2>H.3 Diagnostic inversion: effective coordination from modulus ratios</h2>
+<p>If a material-specific mapping allows Ψ to be compared via a measurable rigidity proxy (e.g., a bulk-modulus ratio R ≈ Kₛ/Kₗ across a transition), then the equation inverts to</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axh-003.svg" data-eq="phy-axh-003" width="212" height="43" loading="lazy" alt="\begin{equation} N_{\mathrm{eff}} = 4 - \frac{1}{1 + (1/k)\ln R}. \end{equation}"></figure>
+<h2>H.4 DOI reproducibility artifacts (LOCK)</h2>
+<p>The following files fully reproduce the numerical table used in this appendix:</p>
+<ul>
+<li> LOCK: <code>04_vp_whitepaper/LOCK/rigidity_theory_v2_1_lock.json</code>
+<li> Data: <code>04_vp_whitepaper/data/rigidity/rigidity_case_studies_v1.csv</code>
+<li> Script: <code>04_vp_whitepaper/scripts/run_rigidity_theory_v2_1.py</code>
+</ul>
+
+<blockquote>
+    [LOCK] Appendix H table is missing. In the DOI bundle it is regenerated by running <code>04_vp_whitepaper/scripts/run_rigidity_theory_v2_1.py</code>.
+    </blockquote>
+
+<nav class="pn"><a rel="prev" href="/physics/axg-geometric-derivation-gravity-lattice-yield/">← §AXG</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axk-methodological-validation-via-classical-gas/">§AXK →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

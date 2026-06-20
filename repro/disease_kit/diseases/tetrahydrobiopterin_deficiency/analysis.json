@@ -1,0 +1,168 @@
+{
+ "disease": "Tetrahydrobiopterin (BH4) deficiency (PTPS-deficient hyperphenylalaninaemia)",
+ "omim": "261640",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Tetrahydrobiopterin (BH4) deficiency (PTPS-deficient hyperphenylalaninaemia)",
+  "omim": "261640",
+  "summary": "PTS encodes 6-pyruvoyltetrahydropterin synthase, the second (committed) enzyme of de novo tetrahydrobiopterin (BH4) biosynthesis from GTP. Loss-of-function collapses the BH4 cofactor supply. BH4 is the obligate cofactor of THREE aromatic-amino-acid hydroxylases -- phenylalanine hydroxylase (PAH), tyrosine hydroxylase (TH) and tryptophan hydroxylase (TPH) -- so BH4 deficiency produces (a) hyperphenylalaninaemia, the SAME accumulating metabolite as classic PKU but arising from a COFACTOR lesion rather than the PAH apoenzyme, AND (b) central monoamine-neurotransmitter (dopamine, serotonin) depletion that PKU does NOT cause, giving a severe encephalopathy with dystonia/seizures historically called 'malignant hyperphenylalaninaemia'. This is read as an enzyme/LOF lowering BH4-supply throughput -> the cofactor-supply axis is pushed DOWN, so the corrective direction RESTORES it. The kit re-derives the approved lever: supply the missing cofactor exogenously -- sapropterin (synthetic BH4, Kuvan, FDA 2007) -- which HERE acts to REPLACE the deficient cofactor itself. This is the elegant 'one drug, two lever roles' contrast to PKU, where the SAME sapropterin acts instead as a CORRECT / chaperone arm stabilising residual PAH apoenzyme (BH4 is not the lesion there). Because BH4 deficiency ALSO starves TH and TPH, the read adds a monoamine-replacement arm -- L-dopa + carbidopa and 5-hydroxytryptophan -- that PKU never needs. The promoter gamma reads the locus switch STRUCTURE only (firewall); the coding lesions are outside the promoter firewall and every magnitude is held [O].",
+  "emergent_axis": "tetrahydrobiopterin (BH4) cofactor supply (PTPS enzyme switch) -> aromatic-amino-acid hydroxylation (phenylalanine clearance) + monoamine-neurotransmitter (dopamine/serotonin) synthesis -- a cofactor-supply axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "PTS",
+    "gamma": 1.4033,
+    "spinodal_h_sp": 0.63984,
+    "barrier": 0.49231,
+    "dwell_relative_size": 1.51124,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 112226427,
+     "gene_end": 112233972,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "6-pyruvoyltetrahydropterin synthase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "PTS encodes 6-pyruvoyltetrahydropterin synthase, the committed (rate-limiting) step of de novo BH4 biosynthesis (GTP -> dihydroneopterin triphosphate -> 6-pyruvoyl-tetrahydropterin -> BH4). Biallelic LOF (PTPS deficiency, the commonest BH4-synthesis defect, ~60% of BH4-deficient hyperphenylalaninaemia) abolishes BH4 supply, so EVERY BH4-dependent hydroxylase loses its cofactor -> phenylalanine accumulates (as in PKU) AND dopamine/serotonin synthesis fails. As a deficient ENZYME the pathway throughput falls and the cofactor-supply axis goes DOWN, so the corrective levers RAISE it. Autosomal recessive, 11q23.1 (OMIM 261640). NCBI official symbol PTS. The promoter gamma reads the locus switch STRUCTURE only; the coding lesions are outside the promoter firewall.",
+    "src": "Thony 2000 Hum Mutat 16:54 (PTPS deficiency mutations); Opladen 2012 Mol Genet Metab 105:35 (BH4-deficiency genotype-phenotype); Blau 2010 Lancet 376:1417 (hyperphenylalaninaemia spectrum)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "PTS",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "37595e608da3"
+ },
+ "treatment_A_switch": {
+  "disease": "Tetrahydrobiopterin (BH4) deficiency (PTPS-deficient hyperphenylalaninaemia)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "PTS",
+    "push_direction": "supply the missing BH4 cofactor exogenously, bypassing the deficient PTPS -> restore the PAH/TH/TPH cofactor and lift the cofactor-supply axis back UP toward healthy",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "synthetic tetrahydrobiopterin (sapropterin dihydrochloride / BH4)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of cofactor restoration / phenylalanine lowering not derived from sequence",
+    "src": "Opladen 2012 Mol Genet Metab 105:35; sapropterin (Kuvan) FDA 2007 / EMA 2008"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "TH",
+    "push_direction": "replace the depleted dopamine downstream of the BH4-starved tyrosine-hydroxylase block -> restore monoaminergic (dopaminergic) signalling that cofactor supply alone may not fully rescue",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "L-dopa with a peripheral DOPA-decarboxylase inhibitor (carbidopa)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of central dopamine restoration not derived from sequence",
+    "src": "Blau 2010 Lancet 376:1417 (monoamine replacement in BH4 deficiency)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "TPH1",
+    "push_direction": "replace the depleted serotonin downstream of the BH4-starved tryptophan-hydroxylase block -> restore serotonergic signalling",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "5-hydroxytryptophan (5-HTP)",
+    "status": "clinical",
+    "mechanism_grade": "[O] degree of central serotonin restoration not derived from sequence",
+    "src": "Blau 2010 Lancet 376:1417 (5-HTP arm in BH4 deficiency)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "PTS",
+   "push_direction": "supply the missing BH4 cofactor exogenously, bypassing the deficient PTPS -> restore the PAH/TH/TPH cofactor and lift the cofactor-supply axis back UP toward healthy",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "synthetic tetrahydrobiopterin (sapropterin dihydrochloride / BH4)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of cofactor restoration / phenylalanine lowering not derived from sequence",
+   "src": "Opladen 2012 Mol Genet Metab 105:35; sapropterin (Kuvan) FDA 2007 / EMA 2008"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.51124,
+   "dwell_disease": 0.97786,
+   "dwell_treated": 1.24057,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "ad3db0518a75"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "PTS LOF lowers BH4 cofactor supply -> hyperphenylalaninaemia AND monoamine deficiency (cofactor-supply axis DOWN)",
+   "falsifier": "a PTPS-deficiency allele that left BH4 levels and phenylalanine / dopamine / serotonin handling normal would refute the cofactor-loss direction",
+   "measurable_by": "urinary and CSF pterin profile (neopterin/biopterin), plasma phenylalanine, and CSF HVA and 5-HIAA (dopamine/serotonin metabolites) in PTPS-deficient vs control"
+  },
+  {
+   "claim": "supplying BH4 (sapropterin) is the CORRECTIVE direction (it replaces the deficient cofactor)",
+   "falsifier": "if exogenous BH4 failed to lower phenylalanine or to restore pterin-dependent hydroxylation, the replace-cofactor lever sign is wrong",
+   "measurable_by": "plasma phenylalanine fall and CSF monoamine-metabolite response to a sapropterin (BH4) loading challenge"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Tetrahydrobiopterin (BH4) deficiency (PTPS-deficient hyperphenylalaninaemia)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "3584a008dbaa"
+ },
+ "determinism_sha": "c61959849c74"
+}

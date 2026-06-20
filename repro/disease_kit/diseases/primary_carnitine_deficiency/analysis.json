@@ -1,0 +1,146 @@
+{
+ "disease": "Primary (systemic) carnitine deficiency (carnitine transporter OCTN2 deficiency)",
+ "omim": "212140",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Primary (systemic) carnitine deficiency (carnitine transporter OCTN2 deficiency)",
+  "omim": "212140",
+  "summary": "An autosomal-recessive fatty-acid-oxidation disorder caused by loss-of-function mutations in SLC22A5, which encodes OCTN2 (chr5q31.1) -- the high-affinity, sodium-dependent carnitine transporter that actively DRIVES carnitine into heart, skeletal-muscle, kidney and other cells, and reabsorbs filtered carnitine in the renal tubule. Carnitine is required to shuttle long-chain fatty acids across the inner mitochondrial membrane for beta-oxidation, the main energy source for heart and muscle during fasting. When OCTN2 fails, carnitine is wasted in the urine, plasma and tissue carnitine fall sharply, and long-chain fatty-acid oxidation collapses -- presenting as hypoketotic hypoglycaemia and hepatic encephalopathy in infants, hypertrophic / dilated cardiomyopathy and skeletal myopathy in children, and arrhythmia, fatigue or sudden death later. The kit reads this as the intracellular-carnitine-availability / long-chain-fatty-acid-oxidation-flux axis driven DOWN (an active importer / accelerator LOF -> the drive that loads cellular carnitine is lost -> the downstream pathway is under-supplied). Correction is a REPLACE by mass action: high-dose oral levocarnitine (L-carnitine; Carnitor, FDA-approved for primary and secondary carnitine deficiency) floods the system to restore intracellular and tissue carnitine through residual / low-affinity uptake, re-enabling fatty-acid oxidation. This is a once-lethal disease made survivable: started early, levocarnitine REVERSES the cardiomyopathy, myopathy and hypoglycaemic episodes; affected individuals are lifelong dependent on supplementation. IMPORTANT HONESTY: the corrective DIRECTION (replace the missing substrate) is forced [F]; the realised MAGNITUDE is [O] and TIMING-limited (reversal is documented when treatment precedes irreversible organ damage), and the dose is [O] (a clinical / runtime quantity, never sequence-derived). The SLC22A5 coding lesions (and a frequent 5'-UTR uORF-creating variant) sit outside the promoter firewall; the gamma read is of the SLC22A5 promoter switch STRUCTURE (chr5, gamma 1.3724). Magnitude [O].",
+  "emergent_axis": "intracellular carnitine availability / long-chain fatty-acid beta-oxidation flux -- OCTN2 (SLC22A5) actively imports carnitine into heart/muscle/kidney cells and reabsorbs it in the renal tubule. LOF wastes carnitine in the urine and depletes cellular carnitine, so long-chain fatty-acid import into mitochondria fails (axis DOWN; hypoketotic hypoglycaemia, cardiomyopathy, myopathy). An active-importer LOF whose corrective is to flood the missing substrate",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SLC22A5",
+    "gamma": 1.3724,
+    "spinodal_h_sp": 0.61883,
+    "barrier": 0.47087,
+    "dwell_relative_size": 1.4616,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000005.10",
+     "gene_start": 132369709,
+     "gene_end": 132395611,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "solute carrier family 22 member 5"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SLC22A5 encodes OCTN2, the high-affinity Na+-dependent organic cation / carnitine transporter that actively DRIVES cellular carnitine uptake and renal carnitine reabsorption -- an active import 'drive'. LOF wastes carnitine in urine and depletes tissue carnitine, collapsing long-chain fatty-acid oxidation. chr5q31.1. autosomal recessive. NCBI official symbol SLC22A5. OMIM 212140.",
+    "src": "Nezu 1999 Nat Genet 21:91 (SLC22A5 / OCTN2 mutations cause primary carnitine deficiency); Stanley 1991 N Engl J Med 325:1308; Magoulas 2012 Orphanet J Rare Dis 7:68 (overview, levocarnitine)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SLC22A5",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "5306a3c26af8"
+ },
+ "treatment_A_switch": {
+  "disease": "Primary (systemic) carnitine deficiency (carnitine transporter OCTN2 deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "SLC22A5",
+    "push_direction": "supply high-dose oral levocarnitine -> restore intracellular and tissue carnitine by mass-action through residual / low-affinity uptake -> re-enable long-chain fatty-acid beta-oxidation (axis UP toward normal)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "oral levocarnitine (L-carnitine; Carnitor) -- FDA-approved for primary and secondary carnitine deficiency",
+    "status": "approved",
+    "mechanism_grade": "[O] MAGNITUDE / reversibility OPEN -- lifesaving and REVERSES cardiomyopathy / myopathy / hypoglycaemia when started before irreversible organ damage (a TIMING-limited rescue); lifelong dependence; dose [O]. Direction (replace the missing substrate) forced [F].",
+    "src": "Magoulas 2012 Orphanet J Rare Dis 7:68 (high-dose oral levocarnitine, reverses cardiomyopathy if early); Longo 2016 (GeneReviews, Primary Carnitine Deficiency); Carnitor (levocarnitine) FDA label, primary carnitine deficiency"
+   }
+  ],
+  "n_corrective": 1,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "SLC22A5",
+   "push_direction": "supply high-dose oral levocarnitine -> restore intracellular and tissue carnitine by mass-action through residual / low-affinity uptake -> re-enable long-chain fatty-acid beta-oxidation (axis UP toward normal)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "oral levocarnitine (L-carnitine; Carnitor) -- FDA-approved for primary and secondary carnitine deficiency",
+   "status": "approved",
+   "mechanism_grade": "[O] MAGNITUDE / reversibility OPEN -- lifesaving and REVERSES cardiomyopathy / myopathy / hypoglycaemia when started before irreversible organ damage (a TIMING-limited rescue); lifelong dependence; dose [O]. Direction (replace the missing substrate) forced [F].",
+   "src": "Magoulas 2012 Orphanet J Rare Dis 7:68 (high-dose oral levocarnitine, reverses cardiomyopathy if early); Longo 2016 (GeneReviews, Primary Carnitine Deficiency); Carnitor (levocarnitine) FDA label, primary carnitine deficiency"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.4616,
+   "dwell_disease": 0.94574,
+   "dwell_treated": 1.19982,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "0473bb1152df"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "SLC22A5 LOF moves the cellular-carnitine / fatty-acid-oxidation axis DOWN (the active carnitine importer / renal reabsorber is lost)",
+   "falsifier": "an SLC22A5 loss-of-function allele that RAISED plasma / tissue carnitine or preserved long-chain fatty-acid oxidation would refute the import-drive-lost (axis DOWN) read",
+   "measurable_by": "plasma free carnitine, fibroblast carnitine-transport assay (<10% of control), and fatty-acid-oxidation flux in SLC22A5-deficient cells / patients"
+  },
+  {
+   "claim": "REPLACING carnitine (levocarnitine) is the CORRECTIVE direction",
+   "falsifier": "if high-dose levocarnitine failed to raise tissue carnitine / failed to improve fatty-acid oxidation or cardiomyopathy in OCTN2 deficiency, the replace lever sign is wrong",
+   "measurable_by": "plasma/tissue carnitine, echocardiographic cardiomyopathy and metabolic decompensation on levocarnitine in primary carnitine deficiency"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Primary (systemic) carnitine deficiency (carnitine transporter OCTN2 deficiency)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "9f452479f494"
+ },
+ "determinism_sha": "7e286350acd1"
+}

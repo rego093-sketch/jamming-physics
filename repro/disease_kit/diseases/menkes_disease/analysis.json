@@ -1,0 +1,162 @@
+{
+ "disease": "Menkes disease (ATP7A copper-transport deficiency)",
+ "omim": "309400",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Menkes disease (ATP7A copper-transport deficiency)",
+  "omim": "309400",
+  "summary": "An X-linked single-gene ATP7A loss-of-function disables the copper-transporting P-type ATPase that drives dietary copper OUT of enterocytes into the portal blood, transports copper across the blood-brain barrier, and delivers copper to the secretory pathway for cuproenzymes. Without it, absorbed copper is trapped in the gut mucosa and cannot reach the body and brain, so SYSTEMIC and CNS copper is DEFICIENT and copper-dependent enzymes (lysyl oxidase, dopamine-beta-hydroxylase, cytochrome-c oxidase) fail -> connective-tissue, vascular and severe neurodegenerative disease (the axis -- systemic/CNS copper delivery -- is driven DOWN). Read as a lost ACCELERATOR of systemic copper delivery (ATP7A DRIVES copper into the body; LOF -> drive lost -> copper delivery under-driven), the deficiency-driven DOWN shape. This is the EXACT CONTRAST to Wilson disease, the sibling copper ATPase ATP7B: Wilson is copper axis UP (released brake -> toxic copper accumulation -> RESTRAIN/chelate), Menkes is copper axis DOWN (lost accelerator -> copper deficiency -> REPLACE) -- the SAME metal, the OPPOSITE sign AND the OPPOSITE lever (replace vs chelate). The kit re-derives the corrective direction, which SUPPLIES copper downstream of the broken transporter rather than restoring it: parenteral copper-histidine (copper histidinate) delivers copper directly into the blood, bypassing the intestinal ATP7A defect. HONEST status caveat: copper-histidine is a long-standing clinical / orphan therapy (used since Sarkar's work in the 1970s-80s), NOT a conventional small-molecule regulatory approval, and its benefit is partial and genotype-dependent -- it helps mainly when started very early and where residual transporter or accessible CNS delivery remains (the blood-brain-barrier ATP7A defect limits CNS rescue); efficacy is held [O]. Restoring ATP7A itself (gene / transporter therapy) is investigational. The gamma read is of the ATP7A locus switch STRUCTURE (an AT-leaning promoter, beside its Wilson sibling ATP7B); the disease lesion is coding/structural (missense / splice / deletion), outside the promoter firewall. X-linked, so penetrance/severity are zygosity-dependent and held [O]. Magnitude [O].",
+  "emergent_axis": "systemic and CNS copper delivery (intestinal copper efflux into the body + blood-brain-barrier transport feeding the cuproenzymes) -- the copper-DEFICIENCY contrast to Wilson's copper-accumulation axis",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "ATP7A",
+    "gamma": 1.3072,
+    "spinodal_h_sp": 0.57526,
+    "barrier": 0.42719,
+    "dwell_relative_size": 1.35869,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 77910692,
+     "gene_end": 78050394,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "ATPase copper transporting alpha"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "ATP7A is a copper-transporting P-type ATPase that drives dietary copper out of enterocytes into the portal circulation, transports copper across the blood-brain barrier, and delivers copper to the trans-Golgi secretory pathway for cuproenzyme loading. As a positive DRIVER (accelerator) of systemic copper delivery, its LOF LOSES the drive -> copper is trapped in the gut and cannot reach the body/brain -> systemic and CNS copper DEFICIENCY and cuproenzyme failure. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding lesion (firewall). The pathological axis is COPPER DELIVERY (it goes DOWN), so the corrective levers RAISE it. Xq21.1 (OMIM 300011). NCBI official symbol ATP7A. The sibling efflux ATPase ATP7B (Wilson) brakes copper accumulation -> the exact opposite-sign copper disease.",
+    "src": "Vulpe 1993 Nat Genet 3:7; Chelly 1993 Nat Genet 3:14; Mercer 1993 Nat Genet 3:20 (ATP7A / Menkes cloned)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "ATP7A",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "5e29653ff6e4"
+ },
+ "treatment_A_switch": {
+  "disease": "Menkes disease (ATP7A copper-transport deficiency)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "copper",
+    "push_direction": "supply copper directly into the blood (parenteral copper-histidine), bypassing the broken intestinal ATP7A efflux step -> raise systemic copper delivery toward normal (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "parenteral copper-histidine / copper histidinate (long-standing clinical / orphan therapy; NOT a conventional small-molecule approval; benefit partial and early-treatment/genotype dependent)",
+    "status": "clinical",
+    "mechanism_grade": "[O] copper-repletion magnitude / clinical benefit not derived from sequence; benefit limited by the blood-brain-barrier ATP7A defect and treatment timing; efficacy [O]",
+    "src": "Sarkar 1993; Kaler 2008 NEJM 358:605 (early copper-histidine in Menkes, genotype-dependent response)"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "ATP7A",
+    "push_direction": "restore ATP7A copper-transporter function so endogenous copper delivery resumes -> raise systemic/CNS copper (definitive, addresses the blood-brain-barrier step copper-histidine cannot)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "ATP7A restoration (AAV gene therapy / transporter therapy, investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored-transport magnitude not derived from sequence; investigational",
+    "src": "Donsante 2011 Mol Ther 19:2114 (AAV-ATP7A + copper in mouse models)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "copper",
+   "push_direction": "supply copper directly into the blood (parenteral copper-histidine), bypassing the broken intestinal ATP7A efflux step -> raise systemic copper delivery toward normal (axis UP)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "parenteral copper-histidine / copper histidinate (long-standing clinical / orphan therapy; NOT a conventional small-molecule approval; benefit partial and early-treatment/genotype dependent)",
+   "status": "clinical",
+   "mechanism_grade": "[O] copper-repletion magnitude / clinical benefit not derived from sequence; benefit limited by the blood-brain-barrier ATP7A defect and treatment timing; efficacy [O]",
+   "src": "Sarkar 1993; Kaler 2008 NEJM 358:605 (early copper-histidine in Menkes, genotype-dependent response)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.35869,
+   "dwell_disease": 0.87915,
+   "dwell_treated": 1.11534,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "b25a54fcc7c6"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "ATP7A LOF (lost accelerator) LOWERS systemic/CNS copper delivery (axis DOWN)",
+   "falsifier": "an ATP7A null allele that RAISED systemic/CNS copper or cuproenzyme activity would refute the lost-accelerator/deficiency direction",
+   "measurable_by": "serum copper / ceruloplasmin and cuproenzyme activity (lysyl oxidase, dopamine-beta-hydroxylase) by ATP7A genotype"
+  },
+  {
+   "claim": "supplying copper downstream of the transporter (replace) is the CORRECTIVE direction (raises delivery)",
+   "falsifier": "if parenteral copper-histidine LOWERED, or failed to raise, systemic copper / cuproenzyme activity, the replace-copper lever sign is wrong",
+   "measurable_by": "serum copper / cuproenzyme response to parenteral copper-histidine"
+  },
+  {
+   "claim": "Menkes is the OPPOSITE-sign copper disease to Wilson (deficiency vs accumulation; replace vs chelate)",
+   "falsifier": "if copper chelation (the Wilson lever) improved Menkes, or copper repletion improved Wilson, the opposite-sign pairing of the two copper ATPases would be refuted",
+   "measurable_by": "tissue copper and clinical course under copper repletion vs chelation in each disorder"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Menkes disease (ATP7A copper-transport deficiency)": {
+     "n_falsifiers": 3,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "757a370d0cff"
+ },
+ "determinism_sha": "7f6f2d20ba04"
+}

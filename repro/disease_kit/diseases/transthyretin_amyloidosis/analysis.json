@@ -1,0 +1,168 @@
+{
+ "disease": "Hereditary transthyretin amyloidosis",
+ "omim": "105210",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Hereditary transthyretin amyloidosis",
+  "omim": "105210",
+  "summary": "A single-gene TTR proteinopathy: destabilising TTR variants (e.g. Val30Met, Val122Ile) let the transthyretin tetramer dissociate, misfold and deposit as amyloid fibrils in peripheral nerve and heart, progressively SUPPRESSING nerve and cardiac function. Like Huntington, the toxic GAIN is read as an over-active pathological BRAKE on organ function (brake/GOF -> axis DOWN), and the kit re-derives the approved therapies, which REMOVE the toxic species rather than treating symptoms: TTR-lowering silencers (patisiran / vutrisiran siRNA; inotersen / eplontersen antisense) and a tetramer STABILISER (tafamidis) that blocks dissociation/misfolding; in-vivo CRISPR knockdown is clinical. The gamma read is of the TTR locus switch structure; the destabilising point mutations are coding changes outside the promoter firewall. (The non-hereditary wild-type form, ATTRwt, is an age/conformational aggregation of normal TTR, not a germline sequence lesion, and is outside this single-gene read.) Magnitude [O].",
+  "emergent_axis": "nerve and cardiac tissue function (progressively suppressed by TTR amyloid deposition)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "TTR",
+    "gamma": 1.3098,
+    "spinodal_h_sp": 0.57697,
+    "barrier": 0.42889,
+    "dwell_relative_size": 1.36275,
+    "role": "brake",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "brake over-active -> target over-suppressed",
+    "ncbi": {
+     "acc": "NC_000018.10",
+     "gene_start": 31591876,
+     "gene_end": 31598820,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "transthyretin"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "TTR encodes transthyretin, normally a stable tetrameric transport protein (thyroxine / retinol-binding protein). Destabilising variants promote tetramer dissociation and misfolding into amyloid; the deposited fibrils act as a toxic GAIN that SUPPRESSES nerve and cardiac function -- read here as an over-active pathological BRAKE on organ function (brake/GOF -> axis DOWN), the same proteinopathy framing used for Huntington. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the destabilising coding lesion's magnitude (firewall).",
+    "src": "Saraiva 1984 (Val30Met); Jacobson 1997 (Val122Ile); Coelho 2013 NEJM (silencing/stabiliser)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "TTR",
+   "role": "brake",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "brake over-active -> target over-suppressed"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "96aa060a8aaf"
+ },
+ "treatment_A_switch": {
+  "disease": "Hereditary transthyretin amyloidosis",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "reduce",
+    "target_gene": "TTR",
+    "push_direction": "lower circulating TTR so less amyloidogenic protein is available to deposit -> relieve the suppression of organ function",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "TTR-lowering siRNA / antisense (patisiran / vutrisiran; inotersen / eplontersen)",
+    "status": "approved",
+    "mechanism_grade": "[O] TTR-lowering magnitude / progression-slowing not derived from sequence",
+    "src": "Adams 2018 NEJM (patisiran); Benson 2018 NEJM (inotersen); APOLLO-B / vutrisiran"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "TTR",
+    "push_direction": "stabilise the TTR tetramer so it does not dissociate and misfold -> less amyloid -> relieve organ suppression",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "TTR tetramer stabiliser (tafamidis)",
+    "status": "approved",
+    "mechanism_grade": "[O] stabilisation / progression-slowing magnitude not derived from sequence",
+    "src": "Maurer 2018 NEJM (ATTR-ACT, tafamidis)"
+   },
+   {
+    "lever": "reduce",
+    "target_gene": "TTR",
+    "push_direction": "knock down TTR at the source (in-vivo gene editing) -> durable lowering of amyloidogenic protein",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "in-vivo CRISPR TTR knockdown (clinical)",
+    "status": "clinical",
+    "mechanism_grade": "[O] knockdown depth / durability not derived from sequence; clinical",
+    "src": "Gillmore 2021 NEJM (NTLA-2001 in-vivo CRISPR)"
+   }
+  ],
+  "n_corrective": 3,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "reduce",
+   "target_gene": "TTR",
+   "push_direction": "lower circulating TTR so less amyloidogenic protein is available to deposit -> relieve the suppression of organ function",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "TTR-lowering siRNA / antisense (patisiran / vutrisiran; inotersen / eplontersen)",
+   "status": "approved",
+   "mechanism_grade": "[O] TTR-lowering magnitude / progression-slowing not derived from sequence",
+   "src": "Adams 2018 NEJM (patisiran); Benson 2018 NEJM (inotersen); APOLLO-B / vutrisiran"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.36275,
+   "dwell_disease": 0.88178,
+   "dwell_treated": 1.11867,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "bf3875f789fb"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "TTR amyloid acts as an over-active brake suppressing nerve / cardiac function (axis DOWN)",
+   "falsifier": "if reducing or stabilising TTR (removing the aggregate) WORSENED organ function, the suppressing-brake direction would be refuted",
+   "measurable_by": "neuropathy / cardiac function vs amyloid burden under TTR lowering or stabilisation"
+  },
+  {
+   "claim": "lowering or stabilising TTR (reduce / correct) is the CORRECTIVE direction",
+   "falsifier": "if lowering circulating TTR or stabilising the tetramer failed to slow, or accelerated, amyloid progression, the lever sign is wrong",
+   "measurable_by": "amyloid deposition / clinical progression vs TTR-lowering or stabilisation"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Hereditary transthyretin amyloidosis": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "8af731c70abd"
+ },
+ "determinism_sha": "3b44cfcbf8f1"
+}

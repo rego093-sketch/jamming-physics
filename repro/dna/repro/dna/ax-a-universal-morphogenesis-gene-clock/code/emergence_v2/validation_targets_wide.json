@@ -1,0 +1,16 @@
+{
+  "_meta": {
+    "purpose": "ADD-ONLY companion to validation_targets.json. Holds the MEASURED ICRP-89 newborn and adult masses for the three tissues added in the Phase-5 widening (skeleton, blood, skeletal_muscle). Kept SEPARATE from every engine file so the wide engine never reads it; touched only by the post-hoc falsifiable test in verify_emergence_organs_wide.py to GRADE predictions -- never to choose an exponent. The body-mass anchors are unchanged from validation_targets.json (adult male 73000 g, newborn 3500 g).",
+    "grade": "[L] locked measured anchors",
+    "discipline": "If emergence_organs_wide.py ever reads this file, the wide gate's NON-FIT check FAILS by design.",
+    "body_anchor_note": "adult_body_g and neonate_body_g here MUST equal validation_targets.json (73000 / 3500); the wide gate asserts this so the two organ sets are scored on one identical body-mass span."
+  },
+  "organ_mass_g_wide": {
+    "_provenance": "ICRP Publication 89 (2002), reference adult male (~73 kg) and reference newborn (~3.5 kg) tissue masses. Skeleton: total skeleton (bone + marrow + cartilage + periarticular tissue), ICRP-89 skeletal system tables. Blood: total blood, ICRP-89 (newborn ~0.29 kg, adult male ~5.6 kg). Skeletal muscle: ICRP-89 skeletal-muscle tables (newborn ~0.8 kg, adult male ~29 kg). Read-only reference values.",
+    "adult_body_g": 73000,
+    "neonate_body_g": 3500,
+    "adult":   {"skeleton": 10500, "blood": 5600, "skeletal_muscle": 29000},
+    "neonate": {"skeleton": 370,   "blood": 290,  "skeletal_muscle": 800}
+  },
+  "_note": "These three tissues carry NO gene-clock master gamma in this package. They enter the allometric test purely through their cited interspecific exponent (param_db_wide.json) vs. their measured ICRP fraction-change (here). That is why widening the set makes the test MORE independent of the gamma layer, not a back-fit."
+}

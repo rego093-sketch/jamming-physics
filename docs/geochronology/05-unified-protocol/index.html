@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The unified screening protocol — Cross-Chronometer Limit §5 | Jamming Physics</title>
+<meta name="description" content="One protocol on both clocks: screen → classify → correct → cross-check → report, classifying grains on age-independent grounds, not by picking young ages.">
+<link rel="canonical" href="https://jamming-physics.org/geochronology/05-unified-protocol/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The unified screening protocol — Cross-Chronometer Limit §5 | Jamming Physics"><meta property="og:description" content="One protocol on both clocks: screen → classify → correct → cross-check → report, classifying grains on age-independent grounds, not by picking young ages."><meta property="og:url" content="https://jamming-physics.org/geochronology/05-unified-protocol/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The unified screening protocol — Cross-Chronometer Limit §5 | Jamming Physics"><meta name="twitter:description" content="One protocol on both clocks: screen → classify → correct → cross-check → report, classifying grains on age-independent grounds, not by picking young ages.">
+<link rel="stylesheet" href="/geochronology/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "The unified screening protocol",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "Cross-Chronometer Limit",
+  "identifier": "10.5281/zenodo.20568673",
+  "url": "https://jamming-physics.org/geochronology/"
+ },
+ "position": 5,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.20568673",
+ "datePublished": "2026",
+ "dateModified": "2026-06-15",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geochronology/05-unified-protocol/",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "knowsAbout": [
+  "radiocarbon dating",
+  "zircon U–Pb geochronology",
+  "The unified screening protocol"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Cross-Chronometer Limit",
+   "item": "https://jamming-physics.org/geochronology/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§5 The unified screening protocol"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geochronology/">Cross-Chronometer Limit</a> › §5</nav></header>
+<main>
+<h1>The unified screening protocol</h1>
+
+
+<p class="answer">One protocol runs on both clocks: screen → classify → correct-where-characterisable → cross-check → report honest uncertainty. The decisive move is Step 2 for zircon — grains are classified on age-independent grounds (crystal position, texture, common-Pb f₂₀₆), never by picking the youngest age — which keeps the procedure non-circular. Radiocarbon implements the same steps via an external ΔR offset.</p>
+<p class="abstract">One protocol runs on both clocks: screen → classify → correct-where-characterisable → cross-check → report honest uncertainty. The decisive move is Step 2 for zircon—grains are classified on age-independent grounds (crystal position, texture, common-Pb f₂₀₆), never by picking the youngest age—which is what keeps the procedure non-circular. Radiocarbon implements the same steps via matrix screening and an external ΔR offset.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geochronology/05-unified-protocol/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20568673" rel="noopener">DOI snapshot</a>
+</aside>
+
+<aside class="vp-card" data-locked="fo"><b>N_D = Dτ/L² ≡ Fo</b> — the diffusion (Fourier) number: a characteristic diffusion length over system size, the dimensionless group that also sits inside Dodson’s closure temperature. <b>[I]</b> inferential. <a href="/geochronology/04-shared-physics-closure-exchange-number/#fo">Canonical derivation §4</a></aside>
+
+<p>The protocol applies to both chronometers; only the implementation of each step differs, following the detectability split of <a href="/geochronology/03-one-contamination-mechanism-two-detectabilities/">&sect;3</a>.</p>
+
+<figure class="tbl">
+<table>
+<caption>Table&nbsp;1b. The single protocol, with per-chronometer implementation of each step.</caption>
+<thead><tr><th>Step</th><th>Radiocarbon</th><th>Zircon U–Pb</th></tr></thead>
+<tbody>
+<tr><th>1 Screen</th><td>matrix / diffusion screening<sup class="cite"><a href="/geochronology/#references">[1]</a></sup></td><td>common-Pb (<span class="eq-inline">²⁰⁴Pb / f₂₀₆</span>); concordance; CL</td></tr>
+<tr><th>2 Classify</th><td>clean / correctable / exclude</td><td>autocryst / antecryst / Pb-loss (exclude)</td></tr>
+<tr><th>3 Correct</th><td>reservoir offset ΔR</td><td>²⁰⁴Pb common-Pb; ²³⁰Th-diseq. correction</td></tr>
+<tr><th>4 Cross-check</th><td>paired dating; known-age horizons</td><td>sanidine ⁴⁰Ar/³⁹Ar; (U–Th)/He; stratigraphy</td></tr>
+<tr><th>5 Report</th><td>offset transferability stated</td><td>classification basis stated; ambiguity logged</td></tr>
+</tbody>
+</table>
+</figure>
+
+<p>The decisive design choice is in Step&nbsp;2 for zircon: classification is made on <strong>age-independent</strong> grounds&mdash;crystal position, texture, common-Pb content&mdash;<em>not</em> by selecting the youngest age. This is what keeps the procedure non-circular, and <a href="/geochronology/07-demonstration-ii-zircon-u-pb/">&sect;7</a> demonstrates it on real grains.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/geochronology/04-shared-physics-closure-exchange-number/">← §4</a>
+  <a href="/geochronology/">Contents</a>
+  <a rel="next" href="/geochronology/06-demonstration-i-radiocarbon-homogeneous-case/">§6 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; Foreign-Material Incorporation as a Cross-Chronometer Accuracy Limit</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.20568673" rel="noopener">10.5281/zenodo.20568673</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

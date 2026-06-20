@@ -1,0 +1,23 @@
+{
+  "_grade": "[L] LOCKED external input. Published twin-study heritability (H^2) estimates for human body composition / shape and facial morphology, used ONLY as an order-of-magnitude REGIME anchor for the model's variance decomposition (Var_genetic / Var_total over a genetic-propensity x environment grid). NEVER adjusted to match the model, and the model is NEVER tuned to match these.",
+  "_provenance": "Body composition: Schousboe K et al. (2004) 'Twin study of genetic and environmental influences on adult body size, shape, and composition', Int J Obes 28:39-48 (PubMed 14610529), 325 female + 299 male like-sex adult twin pairs, classical twin variance decomposition. Children: Silventoinen et al., a twin study of 22 anthropometric traits (PMC10023566; Nat Int J Obes 2023), most traits H^2 >= 0.80. BMI population-dependence: a systematic review of 32 twin studies (PMC4346225) showing BMI heritability varies with population and social-environmental factors. Facial morphology: Djordjevic J et al. (2016) 'Genetic and Environmental Contributions to Facial Morphological Variation: A 3D Population-Based Twin Study', PLoS One 11(9):e0162250 (TwinsUK); Weinberg et al. 3D twin study (PubMed 24501696); Naini & Moss (3D twin facial colour maps).",
+  "_caveat": "Heritability is a POPULATION-variance concept: H^2 = Var_genetic / Var_total within a given population and its particular range of environmental variation. The model's 'genetic fraction' is the SAME ratio computed over a CHOSEN genetic-propensity x environment grid, so its absolute value depends on the chosen ranges. The comparison is therefore a REGIME check (do both genes and environment contribute substantially? does H^2 fall as environmental variation widens?), NOT a decimal identity. Notably, the population-dependence of H^2 (PMC4346225) is itself a published fact the model is checked to reproduce.",
+  "body_composition": {
+    "bmi":                 {"h2_range": [0.58, 0.63], "note": "women, men", "ref": "Schousboe 2004 (PubMed 14610529)"},
+    "body_fat_pct":        {"h2_range": [0.59, 0.63], "ref": "Schousboe 2004 (PubMed 14610529)"},
+    "waist_circumference": {"h2_range": [0.48, 0.61], "ref": "Schousboe 2004 (PubMed 14610529)"},
+    "hip_circumference":   {"h2_range": [0.52, 0.58], "ref": "Schousboe 2004 (PubMed 14610529)"},
+    "height":              {"h2_range": [0.69, 0.81], "note": "the near-fixed skeletal axis; highest heritability", "ref": "Schousboe 2004 (PubMed 14610529)"},
+    "children_general":    {"h2_range": [0.80, 0.95], "note": "most of 22 anthropometric traits in children", "ref": "Silventoinen (PMC10023566)"}
+  },
+  "body_composition_overall_band": [0.40, 0.85],
+  "population_dependence": {
+    "fact": "BMI heritability is NOT a fixed constant; it varies across populations and over time with social-environmental factors (e.g. country GDP), because heritability falls as the population's environmental variation rises.",
+    "ref": "systematic review of 32 twin studies (PMC4346225)"
+  },
+  "facial_morphology": {
+    "pattern_genetic":     "central midface bony structures -- nose breadth/length, intercanthal width, infraorbital ridges, nasion projection -- show the STRONGEST heritability (most DNA-fixed).",
+    "pattern_environmental": "cheeks, chin, and lips (soft-tissue, fat-influenced lower/mid face) show the MOST unique-environment variation (least DNA-fixed); MZ twins resemble most in eyebrows/nose-bridge/infraorbital ridges and diverge most in cheeks/chin/lips.",
+    "ref": "Djordjevic 2016 PLoS One e0162250; Naini & Moss; Weinberg 3D twin (PubMed 24501696)"
+  }
+}

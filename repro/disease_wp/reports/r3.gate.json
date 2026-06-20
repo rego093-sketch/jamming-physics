@@ -1,0 +1,98 @@
+{
+  "phase": "R3",
+  "kind": "investigation_gate",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_csv": {
+      "path": "data/curated/burden_scores.csv",
+      "sha12": "c80c25017eb2"
+    },
+    "burden_scores_json": {
+      "path": "data/curated/burden_scores.json",
+      "sha12": "f8792286838c"
+    },
+    "burden_lexicon": {
+      "path": "methodology/BURDEN_LEXICON.md",
+      "sha12": "97165215a1b3"
+    }
+  },
+  "counts": {
+    "records": 35,
+    "rankable_placed": 17,
+    "not_placed": 18,
+    "axis_grade_coverage": {
+      "O": {
+        "[L]": 20,
+        "[H]": 11,
+        "[O]": 4
+      },
+      "P": {
+        "[O]": 21,
+        "[H]": 13,
+        "[L]": 1
+      },
+      "S": {
+        "[H]": 24,
+        "[O]": 11
+      },
+      "M": {
+        "[L]": 1,
+        "[H]": 16,
+        "[O]": 18
+      },
+      "D": {
+        "[O]": 27,
+        "[H]": 8
+      }
+    }
+  },
+  "checks": [
+    {
+      "name": "components_graded_no_guess",
+      "pass": true,
+      "detail": "175 components; 0 graded-field violations"
+    },
+    {
+      "name": "floor_rule_correct",
+      "pass": true,
+      "detail": "35 records floor/present-grade verified"
+    },
+    {
+      "name": "composite_renormalised_mean",
+      "pass": true,
+      "detail": "35 records raw_burden = mean(present axes) verified"
+    },
+    {
+      "name": "treatability_deferred_R4",
+      "pass": true,
+      "detail": "35/35 records defer R_treat=1.0 [O] to R4"
+    },
+    {
+      "name": "weights_recorded",
+      "pass": true,
+      "detail": "weights={'O': 0.2, 'P': 0.2, 'S': 0.2, 'M': 0.2, 'D': 0.2}; sum=1.0"
+    },
+    {
+      "name": "ranking_deterministic_2x",
+      "pass": true,
+      "detail": "run1=0f788821e0fc run2=0f788821e0fc"
+    },
+    {
+      "name": "sensitivity_present",
+      "pass": true,
+      "detail": "5 weightings; equal_default rho=1.0"
+    },
+    {
+      "name": "cohort_complete_35",
+      "pass": true,
+      "detail": "records=35 expected=35"
+    },
+    {
+      "name": "rankability_consistent",
+      "pass": true,
+      "detail": "placed=17 not_placed=18 (rule: >= 3 axes)"
+    }
+  ],
+  "verdict": "PASS (9/9)",
+  "note": "Investigation gate over the R3 burden ordering. Every disease carries five graded burden components {value, grade, source|obstacle}; no grade appears without its evidence (cited source for [L]/[H], named obstacle for [O]). The composite is the renormalised mean of the axes actually scored (missing axes excluded, never imputed); its floor grade is the min over all five axis grades (any missing axis -> [O]), and a second grade_present floors over the scored axes only. Treatability is deferred to R4 (R_treat=1.0, [O]); the primary order is the pre-treatment raw_burden. Determinism is verified here by two fresh builder runs producing an identical burden-set digest. Only majority-coverage diseases (>=3 of 5 axes) are placed in the order; sparser diseases are reported with rank=null. SCOPE/HONESTY: four of five axes (P,S,M,D) are, for most diseases, inferences from the cited MedGen definition ([H]) because the HPO clinical-course/mortality branches are sparse; the order is therefore an [H]-grade provisional prioritisation device, not a registry-locked ranking. A dedicated natural-history registry pass (Orphanet/OMIM clinical synopsis, survival literature) to lift these to [L]/[V] is recommended before any W-phase prose locks the order (see R3 handover)."
+}

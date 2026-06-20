@@ -1,0 +1,188 @@
+{
+ "disease": "Pompe disease",
+ "omim": "232300",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Pompe disease",
+  "omim": "232300",
+  "summary": "Glycogen storage disease type II (acid maltase deficiency) -- the first lysosomal storage disease ever recognised. Loss-of-function of acid alpha-glucosidase (GAA), the lysosomal enzyme that hydrolyses glycogen to glucose, lowers lysosomal glycogen catabolism so glycogen ACCUMULATES in the lysosomes of cardiac and skeletal muscle -> hypertrophic cardiomyopathy and profound hypotonia in the infantile form; progressive limb-girdle and respiratory (diaphragm) weakness in the late-onset form. The catabolic throughput axis is driven DOWN; correction is to restore enzymatic throughput (replace the enzyme / stabilise the delivered enzyme) or to lower the upstream glycogen load. A lysosomal-storage read on the same level axis as Gaucher, A1AT-style level and Fabry -- but AUTOSOMAL recessive (17q25.3), a fourth storage read on a third enzyme that extends the storage class off the X chromosome. The kit re-derives the approved throughput-restore arms -- replace GAA (enzyme replacement: alglucosidase alfa, avalglucosidase alfa) + correct via a chaperone-stabilised co-dose (cipaglucosidase alfa + miglustat, where miglustat stabilises the recombinant enzyme so more active enzyme reaches the lysosome). The gamma read is of the GAA locus switch STRUCTURE; the disease lesion is coding/splice (e.g. the common late-onset leaky-splice IVS1 c.-32-13T>G allele), outside the promoter firewall. Magnitude [O].",
+  "emergent_axis": "lysosomal glycogen catabolism (acid alpha-glucosidase / GAA throughput)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "GAA",
+    "gamma": 1.5067,
+    "spinodal_h_sp": 0.71185,
+    "barrier": 0.56754,
+    "dwell_relative_size": 1.68131,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000017.11",
+     "gene_start": 80101580,
+     "gene_end": 80119880,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "alpha glucosidase"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "GAA (acid alpha-glucosidase / acid maltase) is the lysosomal enzyme that hydrolyses lysosomal glycogen to glucose; LOF lowers glycogen catabolism -> glycogen accumulates in the lysosomes of cardiac and skeletal muscle (and diaphragm). Autosomal recessive (17q25.3). NCBI official symbol GAA. Coding/splice lesions (e.g. the common late-onset IVS1 c.-32-13T>G leaky-splice allele, c.525delT, p.Arg854X); promoter firewall respected.",
+    "src": "Hers 1963 Biochem J 86:11 (acid maltase deficiency, the first lysosomal storage disease); Kroos 2012 Hum Mutat 33:1161 (GAA mutation spectrum)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "GAA",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "1892f11145ea"
+ },
+ "treatment_A_switch": {
+  "disease": "Pompe disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "GAA",
+    "push_direction": "supply recombinant acid alpha-glucosidase -> restore lysosomal glycogen catabolism (axis UP toward function)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme replacement (alglucosidase alfa, avalglucosidase alfa)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored catabolic throughput / glycogen-clearance magnitude not derived from sequence",
+    "src": "Kishnani 2007 Neurology 68:99 (alglucosidase alfa, infantile); Diaz-Manera 2021 Lancet Neurol 20:1012 (avalglucosidase alfa, COMET); alglucosidase alfa (Myozyme/Lumizyme) FDA 2006/2010; avalglucosidase alfa (Nexviazyme) FDA 2021"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "GAA",
+    "push_direction": "stabilise the delivered recombinant enzyme so more active alpha-glucosidase survives in circulation and reaches the lysosome (enzyme-stabiliser co-dose)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme-stabiliser chaperone co-dose (cipaglucosidase alfa + miglustat)",
+    "status": "approved",
+    "mechanism_grade": "[O] enzyme-stabilisation / lysosomal-uptake magnitude not derived from sequence",
+    "src": "PROPEL trial, cipaglucosidase alfa + miglustat (Pombiliti + Opfolda) FDA 2023"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "GAA",
+   "push_direction": "supply recombinant acid alpha-glucosidase -> restore lysosomal glycogen catabolism (axis UP toward function)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme replacement (alglucosidase alfa, avalglucosidase alfa)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored catabolic throughput / glycogen-clearance magnitude not derived from sequence",
+   "src": "Kishnani 2007 Neurology 68:99 (alglucosidase alfa, infantile); Diaz-Manera 2021 Lancet Neurol 20:1012 (avalglucosidase alfa, COMET); alglucosidase alfa (Myozyme/Lumizyme) FDA 2006/2010; avalglucosidase alfa (Nexviazyme) FDA 2021"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.68131,
+   "dwell_disease": 1.08791,
+   "dwell_treated": 1.38018,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "6acdb388d06d"
+ },
+ "treatment_B_chem": {
+  "disease": "Pompe disease",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 1,
+  "n_open_inputs": 2,
+  "candidates": [
+   {
+    "candidate": "substrate-reduction (glycogen-synthesis lowering)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "lower upstream lysosomal glycogen synthesis (e.g. GYS1 knockdown) -> less glycogen substrate for the deficient catabolic step",
+    "rationale": "reduces influx into the throttled catabolic step; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "preclinical",
+    "src": "Douillard-Guilloux 2010 Hum Mol Genet 19:684 (Gys1 suppression in a Pompe model)"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "bd2095c7b735"
+ },
+ "falsifiers": [
+  {
+   "claim": "GAA LOF lowers lysosomal glycogen catabolism (glycogen accumulates)",
+   "falsifier": "a GAA LOF allele that INCREASED acid alpha-glucosidase throughput, or muscle in which GAA loss REDUCED lysosomal glycogen, refutes the throughput-down direction",
+   "measurable_by": "lysosomal acid alpha-glucosidase activity and muscle glycogen content in GAA-deficient cells/muscle"
+  },
+  {
+   "claim": "restoring enzyme throughput (replace / correct) is the CORRECTIVE direction",
+   "falsifier": "if supplying or stabilising the enzyme REDUCED catabolic throughput or RAISED glycogen, the 'replace enzyme' lever sign is wrong",
+   "measurable_by": "muscle glycogen-clearance response to recombinant acid alpha-glucosidase in patient-derived cells / muscle"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Pompe disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "900a8612a8d4"
+ },
+ "determinism_sha": "afad62464dc5"
+}

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implementing the speed of light — VP Theory §10 | Jamming Physics</title>
+<meta name="description" content="Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map.">
+<link rel="canonical" href="https://jamming-physics.org/physics/10-implementing-speed-light-clock-free/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Implementing the speed of light — VP Theory §10 | Jamming Physics"><meta property="og:description" content="Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map."><meta property="og:url" content="https://jamming-physics.org/physics/10-implementing-speed-light-clock-free/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Implementing the speed of light — VP Theory §10 | Jamming Physics"><meta name="twitter:description" content="Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Implementing the speed of light",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"10",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§10 Implementing the speed of light"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §10</nav></header>
+<main>
+<h1>Implementing the speed of light (clock-free $c$) and lattice propagation</h1>
+<p class="answer">Implementing the speed of light: Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map. Spanning failure: for no g does χ_perc(g)=1. Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map. Spanning failure: for no g does χ_perc(g)=1.</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/10-implementing-speed-light-clock-free/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="nu-p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a></aside>
+<aside class="vp-card" data-locked="d-anch"><b>D = 4.8526 pm</b> — Quantum (anchor) diameter that fixes the lattice length scale. <b>[F]</b> forced. <a href="/physics/03-axioms-primitives-volume-particle-lattice/">canonical derivation §3</a></aside>
+<aside class="vp-card" data-locked="anchor"><b>λ_anchor = 632.99 nm</b> — Single empirical anchor (DOF = 1); the only measured length input to the framework. <b>[F]</b> forced. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a></aside>
+<aside class="vp-card" data-locked="spine"><b>c² = B/ρ</b> — Speed of light as the lattice elastic-wave speed (bulk modulus over density); simulation-validated. <b>[V]</b> verified. <a href="/physics/sp-jamming-spine-verified-physical-backbone/">canonical derivation §SP</a></aside>
+<h2>Purpose of this chapter (declared linkage)</h2>
+<p>This chapter defines a “propagating / non-propagating” switch using the jamming lattice (Point-J) and a percolation (critical-throat) structure, and then fixes the linkage so that this switch becomes an <strong>input</strong> to a <strong>clock-free realization of the speed of light c</strong>. It also defines the <strong>amplification coefficient A</strong> that emerges when global propagation exists, and binds both c and A to a <em>verifiable numerical package</em> (reproducible code/logs/Gates).</p>
+<p>This chapter does <em>not</em> introduce c by appealing to external texts. In this document, c is treated only as a <strong>realization</strong> of an internally defined propagation indicator, or as an implemented quantity obtained by combining that internal indicator with an <strong>operational anchor</strong>.</p>
+<h2>Global skeleton: switch → percolation → amplification A → numerical package</h2>
+<p>The skeleton of this chapter is fixed in the following order.</p>
+<figure class="eq" id="eq:S10_chain"><img src="/physics/eq/physics/phy-10-000.svg" data-eq="phy-10-000" width="2075" height="19" loading="lazy" alt="\begin{equation} \text{jamming/Point-J switch} \;\Longrightarrow\; \text{critical-throat (percolation) definition} \;\Longrightarrow\; \text{propagation path extraction (backbone/stream)} \;\Longrightarrow\; \text{define amplification coefficient }A \;\Longrightarrow\; \text{propagation-speed indicator (internal $c$)} \;\Longrightarrow\; \text{numerical package (reproducibility + Gate)}. \end{equation}"></figure>
+<p>Each arrow requires closure and a Gate stack; any linkage whose definition/judgment is not locked is not allowed.</p>
+<h2>Declaration of the c switch (propagating / non-propagating)</h2>
+<p>In this chapter, the “c switch” is <em>not</em> a continuous change of a value; it is fixed as a <strong>defined regime transition</strong>. The switch is declared by the following indicator.</p>
+<figure class="eq" id="eq:S10_chic_def"><img src="/physics/eq/physics/phy-10-001.svg" data-eq="phy-10-001" width="527" height="45" loading="lazy" alt="\begin{equation} \chi_c := \begin{cases} 0,&amp; \text{global propagation is not definable (non-rigid regime)},\\ 1,&amp; \text{global propagation is definable (rigid regime)}. \end{cases} \end{equation}"></figure>
+<p>The decision of χ_c is determined by the jamming lattice mathfrakJ (defined in §3.2), the rigidity indicator χ_ST, and the bottleneck metric κ_(min); the concrete decision rule is locked in <code>analysis_lock</code>.</p>
+<p>In the regime χ_c=0, any attempt to assign a numerical value to c is forbidden. The only allowed record is the boundary statement “not definable” or “0-regime” (CT-LIM).</p>
+<h2>Declaration of the percolation (critical-throat) linkage</h2>
+<p>In the regime where global propagation is definable (χ_c=1), propagation is implemented via connectivity in a critical-throat network. This chapter declares that the critical-throat items are linked in the following structure.</p>
+<ol>
+<li> Definition of the throat object <code>OBJ-THROAT</code> (gap/thickness/bottleneck).
+<li> Definition of the representative effective critical throat δ_eff (aggregation convention).
+<li> Definition of the critical-throat graph/path (node/edge and weight conventions).
+<li> Extraction of a backbone or stream-tube (minimum cut / maximum flow convention).
+</ol>
+<p>Each item must be locked as a closure, and closure dependencies are fixed as a DAG (no cycles; see §4.2).</p>
+<h2>10.5 Declaration of amplification coefficient A (definition slot)</h2>
+<span id="hub:Adef"></span>
+<aside class="claim-strip vps" data-vps="10.5" data-cards="VP-C-010, VP-C-004"><span class="g">definition slot</span><span class="io">in: throat/percolation / out: amplification $A$; clock-free $c:=(a/Δ t)tilde c$</span><q class="one">Where $A$ lives and how speed is realized without a clock.</q><span class="cards">VP-C-010, VP-C-004</span></aside>
+<p>In the global-propagation regime, “amplification” is defined as an indicator of how strongly propagation paths concentrate on the critical-throat network. We declare that the amplification coefficient A is defined in the following slot.</p>
+<figure class="eq" id="eq:S10_A_slot"><img src="/physics/eq/physics/phy-10-002.svg" data-eq="phy-10-002" width="207" height="22" loading="lazy" alt="\begin{equation} A := \mathrm{Amp}\bigl(\mathcal{G}_{\mathrm{throat}},\ \mathcal{B},\ \mathcal{F}\bigr), \end{equation}"></figure>
+<p>where</p>
+<ul>
+<li> G_throat is the critical-throat graph,
+<li> B is the backbone or stream path (the substructure responsible for global propagation),
+<li> F is a flow aggregate based on flux/event rates (it may be linked to the flux definition in §4.1).
+</ul>
+<p>The concrete definition of Amp(·) (e.g., concentration, entropy-type measures, max/mean ratio, etc.) must be locked in <code>analysis_lock</code>. Replacing Amp or moving thresholds after seeing results is forbidden.</p>
+<h2>10.6 Declaration of clock-free c realization (internal propagation indicator → realization)</h2>
+<aside class="claim-strip vps" data-vps="10.6" data-cards="VP-C-045, VP-C-010, VP-C-004"><span class="g">declaration (clock-free realization)</span><span class="io">in: internal indicator $c$ (throat/backbone) + realization map / out: $c:=(a/Δ t)c$ — no external clock assumed</span><q class="one">Speed is realized, not timed: an internal indicator times a unit map.</q><span class="cards">VP-C-045, VP-C-010, VP-C-004</span></aside>
+<p>In this chapter, c denotes a procedure that makes internal propagation <em>comparable</em> without assuming an external clock. “Clock-free” is declared as the combination of the following two components.</p>
+<ol>
+<li> <strong>Internal propagation indicator c</strong>: a propagation-speed indicator defined through critical throats/backbone (tick-based or event-based).
+<li> <strong>Realization map</strong>: a mapping from the internal indicator to realized units using a,Δ t and an operational anchor (c_ref or a cross-channel).
+</ol>
+<p>Accordingly, c is fixed to have a realization formula of the form</p>
+<figure class="eq" id="eq:S10_c_realize_form"><img src="/physics/eq/physics/phy-10-003.svg" data-eq="phy-10-003" width="79" height="34" loading="lazy" alt="\begin{equation} c := \frac{a}{\Delta t}\,\tilde{c} \end{equation}"></figure>
+<p>where the lock of a,Δ t belongs to <code>realization_lock</code> in §2.3.</p>
+<p>The definition of c is provided by the percolation/backbone/amplification definitions of this chapter. If the definition of c fails, then c is also not definable.</p>
+<h2>10.7 Numerical package (reproducibility) and Gate stack declaration</h2>
+<aside class="claim-strip vps" data-vps="10.7" data-cards="VP-C-049, VP-C-051"><span class="g">sealing requirements (gate stack)</span><span class="io">in: all Ch.~10 outputs ($χ_c$, $δ_eff$, backbone, $A$, $c$, $c$) / out: mandatory numerical package — registry snapshot, seeds, code+logs, gate report, manifest+checksums</span><q class="one">No seal, no conclusion — the chapter&#x27;s own results are hostage to their package.</q><span class="cards">VP-C-049, VP-C-051</span></aside>
+<p>All conclusions in this chapter (χ_c, δ_eff, backbone, A, c, c) must be sealed as a numerical package. The package must include:</p>
+<ol>
+<li> registry snapshot (<code>registry_snapshot</code>) and the lock_id combination,
+<li> input data / initial conditions / boundary conditions / seeds / drive-condition logs,
+<li> code and logs for critical-throat estimation and graph construction,
+<li> code and logs for backbone/path extraction,
+<li> code and logs for A and c computation,
+<li> Gate report (PASS/FAIL/INCONCLUSIVE) and FAIL labels,
+<li> sealing via <code>manifest</code> and <code>checksums</code>.
+</ol>
+<p>The Gate stack of this chapter must include at least:</p>
+<ol>
+<li> G-SYM: no conflicts in symbols/units/cell geometry/diameter–radius meanings,
+<li> G-LOCK: lock_id consistency and snapshot sealing,
+<li> G-REG: regime suitability (rigid/non-rigid, drive conditions, etc.),
+<li> G-STR: structural invariants of graph/backbone/path definitions,
+<li> G-NUM: numerical stability (convergence/sensitivity/repeatability),
+<li> G-RCROSS (if applicable): cross-channel consistency,
+<li> G-REP: reproducibility (re-running the same package yields the same verdict),
+<li> G-NT: detection of post hoc tuning.
+</ol>
+<p>Any result that does not achieve <code>PASS</code> has no status as a conclusion and cannot be used as support in later sections.</p>
+<h2>10.1 Operational definition of c (Bₑff/ρₑff) + switch</h2>
+<aside class="claim-strip vps" data-vps="10.1" data-cards="VP-C-045, VP-C-033"><span class="g">operational definition + switch</span><span class="io">in: locked domain/graph / out: spanning indicator $χ_span$ and the propagation switch; $c$ as $B_eff/ρ_eff$ defined only when the switch is on</span><q class="one">Before speed exists, the lattice must first vote that it spans.</q><span class="cards">VP-C-045, VP-C-033</span></aside>
+<h3>10.1.1 Premise: define a propagation switch (regime switch)</h3>
+<p>Let the canonical domain (a cell or a union of cells) be D, with locked boundary sets ∂D⁻,∂D⁺. Given a locked contact (or adjacency) graph G_c=(V,E_c), define the global-spanning indicator as</p>
+<figure class="eq" id="eq:S10_01_chi_span"><img src="/physics/eq/physics/phy-10-004.svg" data-eq="phy-10-004" width="386" height="45" loading="lazy" alt="\begin{equation} \chi_{\mathrm{span}} := \begin{cases} 1, &amp; \exists\, i\in\mathcal{V}^{-},\exists\, j\in\mathcal{V}^{+}\ \text{s.t.}\ i\leadsto j\ \text{in }\mathcal{G}_c,\\ 0, &amp; \text{otherwise}, \end{cases} \end{equation}"></figure>
+<p>where V^(±) are the sets of boundary-contact nodes, and ileadsto j denotes the existence of a path.</p>
+<p>Define a bottleneck-based rigidity switch via a minimum cut:</p>
+<figure class="eq" id="eq:S10_01_kappa_min"><img src="/physics/eq/physics/phy-10-005.svg" data-eq="phy-10-005" width="504" height="22" loading="lazy" alt="\begin{equation} \kappa_{\min} :=\min\left\{|\mathcal{C}|\ \middle|\ \mathcal{C}\subseteq\mathcal{E}_c,\ \mathcal{V}^{-}\ \text{and }\ \mathcal{V}^{+}\ \text{are separated in }\ \mathcal{E}_c\setminus\mathcal{C}\right\}, \end{equation}"></figure>
+<p>and let the integer threshold κ_ST∈Z_(≥ 1) be a locked value. Define the rigidity indicator as</p>
+<figure class="eq" id="eq:S10_01_chi_ST"><img src="/physics/eq/physics/phy-10-006.svg" data-eq="phy-10-006" width="303" height="45" loading="lazy" alt="\begin{equation} \chi_{\mathrm{ST}} := \begin{cases} 1, &amp; \chi_{\mathrm{span}}=1\ \wedge\ \kappa_{\min}\ge \kappa_{\mathrm{ST}},\\ 0, &amp; \text{otherwise}. \end{cases} \end{equation}"></figure>
+<p>Define the c switch as</p>
+<figure class="eq" id="eq:S10_01_chi_c"><img src="/physics/eq/physics/phy-10-007.svg" data-eq="phy-10-007" width="152" height="19" loading="lazy" alt="\begin{equation} \chi_{c}:=\chi_{\mathrm{ST}}\in\{0,1\}. \end{equation}"></figure>
+<p>Therefore, in the regime χ_c=0 we <em>do not</em> numerically define c. The only allowed record is the limit statement “propagation not definable (out of regime)”.</p>
+<h3>10.1.2 Common structure for the operational definition: domain, deformation, relaxation</h3>
+<p>In the regime where the Stone/plenum/local rules apply, denote by A(D) the set of admissible configurations inside the domain D (satisfying non-penetration/plenum/local rules). An admissible configuration C∈A(D) consists of the set of VP-occupied regions (or their representative coordinates/graph representation).</p>
+<p>Define an external manipulation (probe) applied to the domain as a “deformation operator”, and define the procedure that restores admissibility after deformation as a “relaxation operator”.</p>
+<figure class="eq" id="eq:S10_01_TR_ops"><img src="/physics/eq/physics/phy-10-008.svg" data-eq="phy-10-008" width="363" height="19" loading="lazy" alt="\begin{equation} \mathcal{T}_{\varepsilon}:\mathcal{A}(\mathcal{D})\to \mathcal{A}_{\varepsilon}(\mathcal{D}), \qquad \mathcal{R}:\mathcal{A}_{\varepsilon}(\mathcal{D})\to \mathcal{A}(\mathcal{D}), \end{equation}"></figure>
+<p>where ε is a dimensionless probe size and A_(ε)(D) is an intermediate state space after deformation (mixing admissible and inadmissible states). Relaxation is defined only as a composition of local updates (local-rule axiom). If relaxation fails, the quantity is recorded as “not definable”.</p>
+<p>Define the relaxation cost (energy unit) as follows. The unit energy U_lat is a locked reference energy unit via <code>realization_lock</code>, and the update weight ω_upd(k) is locked via <code>analysis_lock</code>.</p>
+<figure class="eq" id="eq:S10_01_Work_def"><img src="/physics/eq/physics/phy-10-009.svg" data-eq="phy-10-009" width="405" height="59" loading="lazy" alt="\begin{equation} W(\varepsilon) := U_{\mathrm{lat}}\, \min_{\mathcal{R}} \left(\sum_{k=1}^{N_{\mathrm{upd}}(\varepsilon)} \omega_{\mathrm{upd}}(k)\right), \qquad W(0)=0, \end{equation}"></figure>
+<p>where the minimization is performed under the constraint “return to an admissible configuration”, and the search/termination rules must be locked in <code>analysis_lock</code>.</p>
+<h3>10.1.3 Operational definition of Bₑff (static isotropic-compression curvature)</h3>
+<h4>10.1.3.1 Isotropic compression probe and volumetric strain</h4>
+<p>Let the isotropic compression parameter ε∈(0,ε_(max)) be in a locked range. Define an isotropic scaling deformation on domain coordinates by</p>
+<figure class="eq" id="eq:S10_01_iso_map"><img src="/physics/eq/physics/phy-10-010.svg" data-eq="phy-10-010" width="180" height="22" loading="lazy" alt="\begin{equation} \mathbf{x}\ \mapsto\ \mathbf{x}^{(\varepsilon)}:=(1-\varepsilon)\mathbf{x}, \end{equation}"></figure>
+<p>and define the corresponding domain volume by</p>
+<figure class="eq" id="eq:S10_01_Veps"><img src="/physics/eq/physics/phy-10-011.svg" data-eq="phy-10-011" width="287" height="21" loading="lazy" alt="\begin{equation} V(\varepsilon):=V_0(1-\varepsilon)^3, \qquad V_0:=V(0), \end{equation}"></figure>
+<p>Define the volumetric strain as</p>
+<figure class="eq" id="eq:S10_01_eta_def"><img src="/physics/eq/physics/phy-10-012.svg" data-eq="phy-10-012" width="274" height="43" loading="lazy" alt="\begin{equation} \eta(\varepsilon):=\frac{V_0-V(\varepsilon)}{V_0}=1-(1-\varepsilon)^3. \end{equation}"></figure>
+<p>Thus η(0)=0 and, for small ε, η(ε)=3ε+O(ε²).</p>
+<h4>10.1.3.2 Isotropic compression cost function</h4>
+<p>For an admissible configuration C∈A(D), define the relaxation cost after isotropic compression as</p>
+<figure class="eq" id="eq:S10_01_Wiso"><img src="/physics/eq/physics/phy-10-013.svg" data-eq="phy-10-013" width="130" height="19" loading="lazy" alt="\begin{equation} W_{\mathrm{iso}}(\varepsilon):=W(\varepsilon) \end{equation}"></figure>
+<p>where W_iso(ε) is the cost obtained from <a href="#eq:S10_01_Work_def" class="xref" data-ref="eq:S10_01_Work_def">(S10_01_Work_def)</a>. For the definition to hold, relaxation must return to an admissible configuration for all ε; if return fails at any ε, the definition is not valid.</p>
+<h4>10.1.3.3 Definition of Bₑff (curvature with respect to volumetric strain)</h4>
+<p>Define the effective stiffness (curvature) B_eff by</p>
+<figure class="eq" id="eq:S10_01_Beff_def"><img src="/physics/eq/physics/phy-10-014.svg" data-eq="phy-10-014" width="184" height="50" loading="lazy" alt="\begin{equation} B_{\mathrm{eff}} := \left.\frac{1}{V_0}\frac{d^2 W_{\mathrm{iso}}}{d\eta^2}\right|_{\eta=0}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S10_01_Beff_def" class="xref" data-ref="eq:S10_01_Beff_def">(S10_01_Beff_def)</a> is an <em>operational</em> definition of “the cost curvature under isotropic compression” and uses no external justification. The dimension of B_eff is locked as energy/volume.</p>
+<p>In actual computation, small η samples η_j_(j=1)^J must be preregistered (<code>analysis_lock</code>) and the quadratic curvature is estimated by a discrete approximation. For example, with a three-point symmetric difference,</p>
+<figure class="eq" id="eq:S10_01_Beff_est"><img src="/physics/eq/physics/phy-10-015.svg" data-eq="phy-10-015" width="480" height="47" loading="lazy" alt="\begin{equation} \widehat{B}_{\mathrm{eff}} := \frac{1}{V_0}\frac{W_{\mathrm{iso}}(\eta_+)-2W_{\mathrm{iso}}(0)+W_{\mathrm{iso}}(\eta_-)}{\eta_+^2}, \qquad \eta_-=-\eta_+, \end{equation}"></figure>
+<p>where the sample values and the choice of estimator must be locked in <code>analysis_lock</code>. (If a protocol does not allow negative η, an asymmetric estimator is used and that selection rule must also be locked.)</p>
+<h3>10.1.4 Operational definition of ρₑff (dynamic drift curvature)</h3>
+<p>To define a propagation indicator of the form B_eff/ρ_eff, we operationally define ρ_eff as a “cost curvature under a dynamic drift probe”.</p>
+<h4>10.1.4.1 Drift probe and velocity-like parameter</h4>
+<p>Define the drift parameter u∈(-u_(max),u_(max)) as a dimensionless probe. Define the boundary-driven displacement over one tick by</p>
+<figure class="eq" id="eq:S10_01_dx_u"><img src="/physics/eq/physics/phy-10-016.svg" data-eq="phy-10-016" width="115" height="19" loading="lazy" alt="\begin{equation} \Delta x(u):=u\,L_q \end{equation}"></figure>
+<p>where L_q is a locked canonical length (or a canonically identified length), and u is a dimensionless coefficient of “displacement per tick”.</p>
+<p>Define the drift deformation operator T_u as</p>
+<figure class="eq" id="eq:S10_01_drift_map"><img src="/physics/eq/physics/phy-10-017.svg" data-eq="phy-10-017" width="382" height="22" loading="lazy" alt="\begin{equation} \mathcal{T}_u:\ \mathbf{x}\ \mapsto\ \mathbf{x}^{(u)}:=\mathbf{x}+\Delta x(u)\,\mathbf{n}_u, \qquad \|\mathbf{n}_u\|=1, \end{equation}"></figure>
+<p>where n_u is a unit vector giving the drift direction, and must be locked in <code>analysis_lock</code>.</p>
+<h4>10.1.4.2 Drift cost function</h4>
+<p>Define the relaxation cost required to return to an admissible configuration after drift as</p>
+<figure class="eq" id="eq:S10_01_Wdrift"><img src="/physics/eq/physics/phy-10-018.svg" data-eq="phy-10-018" width="458" height="59" loading="lazy" alt="\begin{equation} W_{\mathrm{drift}}(u) := U_{\mathrm{lat}}\, \min_{\mathcal{R}} \left(\sum_{k=1}^{N_{\mathrm{upd}}(u)} \omega_{\mathrm{upd}}(k)\right), \qquad W_{\mathrm{drift}}(0)=0. \end{equation}"></figure>
+<p>If relaxation fails in <a href="#eq:S10_01_Wdrift" class="xref" data-ref="eq:S10_01_Wdrift">(S10_01_Wdrift)</a>, then W_drift(u) is not definable; in that regime, ρ_eff cannot be defined.</p>
+<h4>10.1.4.3 Definition of ρₑff (drift curvature)</h4>
+<p>Define the effective density ρ_eff by</p>
+<figure class="eq" id="eq:S10_01_rhoeff_def"><img src="/physics/eq/physics/phy-10-019.svg" data-eq="phy-10-019" width="190" height="48" loading="lazy" alt="\begin{equation} \rho_{\mathrm{eff}} := \left.\frac{1}{V_0}\frac{d^2 W_{\mathrm{drift}}}{du^2}\right|_{u=0}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S10_01_rhoeff_def" class="xref" data-ref="eq:S10_01_rhoeff_def">(S10_01_rhoeff_def)</a> is an operational definition of “the cost curvature under a drift probe” and uses no external justification. The dimension of ρ_eff is locked as energy·time²/length⁵, and is later rearranged into a velocity unit via a,Δ t in the Realization chapter.</p>
+<p>In computation, the u samples u_j_(j=1)^J and the curvature estimator (central difference, etc.) must be locked in <code>analysis_lock</code>. For example, with a central difference,</p>
+<figure class="eq" id="eq:S10_01_rhoeff_est"><img src="/physics/eq/physics/phy-10-020.svg" data-eq="phy-10-020" width="510" height="47" loading="lazy" alt="\begin{equation} \widehat{\rho}_{\mathrm{eff}} := \frac{1}{V_0}\frac{W_{\mathrm{drift}}(u_+)-2W_{\mathrm{drift}}(0)+W_{\mathrm{drift}}(u_-)}{u_+^2}, \qquad u_-=-u_+. \end{equation}"></figure>
+<h3>10.1.5 Operational definition of c (internal propagation indicator) and realization</h3>
+<h4>10.1.5.1 Internal propagation indicator c</h4>
+<p>When χ_c=1 and both B_eff and ρ_eff are definable and positive, define the internal propagation indicator c by</p>
+<figure class="eq" id="eq:S10_01_ctilde_def"><img src="/physics/eq/physics/phy-10-021.svg" data-eq="phy-10-021" width="230" height="57" loading="lazy" alt="\begin{equation} \tilde{c}^2 := \frac{B_{\mathrm{eff}}}{\rho_{\mathrm{eff}}}, \qquad \tilde{c}:=\sqrt{\frac{B_{\mathrm{eff}}}{\rho_{\mathrm{eff}}}}. \end{equation}"></figure>
+<p>c is a propagation indicator in internal units (tick / normalized length) and is not defined when χ_c=0.</p>
+<h4>10.1.5.2 Realized c</h4>
+<p>When the realization length scale a and the realization time tick Δ t are locked via <code>realization_lock</code>, define the realized c by</p>
+<figure class="eq" id="eq:S10_01_c_real_def"><img src="/physics/eq/physics/phy-10-022.svg" data-eq="phy-10-022" width="85" height="34" loading="lazy" alt="\begin{equation} c := \frac{a}{\Delta t}\,\tilde{c}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S10_01_c_real_def" class="xref" data-ref="eq:S10_01_c_real_def">(S10_01_c_real_def)</a> is a realization map; post hoc changes of a or Δ t are forbidden (changes are allowed only by versioning).</p>
+<h3>10.1.6 Regime conditions (conditions for definability)</h3>
+<p>For the c definition in this section to hold, all of the following regime conditions must be satisfied.</p>
+<ol>
+<li> <strong>(R-c1) Rigid regime</strong>: χ_c=χ_ST=1.
+<li> <strong>(R-c2) Return to admissibility</strong>: in the isotropic-compression probe and the drift probe, relaxation returns to an admissible configuration so that W_iso(ε) and W_drift(u) are defined.
+<li> <strong>(R-c3) Curvature definable</strong>: W_iso has a second-order curvature at η=0, and W_drift has a second-order curvature at u=0 (the discrete estimator is locked).
+<li> <strong>(R-c4) Positive curvatures</strong>: B_eff>0 and ρ_eff>0.
+<li> <strong>(R-c5) Lock consistency</strong>: the domain/boundary/contact convention/probe samples/estimators/thresholds all belong to the same lock_id combination.
+</ol>
+<p>If any of (R-c1)–(R-c5) is violated, then c is not definable and cannot be used as a conclusion.</p>
+<h3>10.1.7 FAIL conditions (immediate failure and labels)</h3>
+<p>This section fixes the failures related to the c definition by the following FAIL labels (multiple labels allowed).</p>
+<h4>10.1.7.1 Switch failure (out of regime)</h4>
+<figure class="eq" id="eq:S10_01_fail_switch"><img src="/physics/eq/physics/phy-10-023.svg" data-eq="phy-10-023" width="262" height="16" loading="lazy" alt="\begin{equation} \chi_c=0 \quad\Longrightarrow\quad \texttt{FAIL-C-SWITCH}. \end{equation}"></figure>
+<p>In this case c is not defined and c is also not defined.</p>
+<h4>10.1.7.2 Relaxation failure (not definable)</h4>
+<p>If an admissible configuration cannot be recovered in isotropic compression or drift, it is an immediate failure.</p>
+<figure class="eq" id="eq:S10_01_fail_relax_iso"><img src="/physics/eq/physics/phy-10-024.svg" data-eq="phy-10-024" width="461" height="19" loading="lazy" alt="\begin{equation} \exists\,\varepsilon\ \text{s.t.}\ W_{\mathrm{iso}}(\varepsilon)\ \text{not definable} \quad\Longrightarrow\quad \texttt{FAIL-C-RELAX-ISO}, \end{equation}"></figure>
+<figure class="eq" id="eq:S10_01_fail_relax_drift"><img src="/physics/eq/physics/phy-10-025.svg" data-eq="phy-10-025" width="494" height="19" loading="lazy" alt="\begin{equation} \exists\,u\ \text{s.t.}\ W_{\mathrm{drift}}(u)\ \text{not definable} \quad\Longrightarrow\quad \texttt{FAIL-C-RELAX-DRIFT}. \end{equation}"></figure>
+<h4>10.1.7.3 Curvature-estimation failure (numerical instability)</h4>
+<p>If curvature estimation does not satisfy preregistered stability conditions, treat it as failure.</p>
+<figure class="eq" id="eq:S10_01_fail_Bnum"><img src="/physics/eq/physics/phy-10-026.svg" data-eq="phy-10-026" width="526" height="24" loading="lazy" alt="\begin{equation} \widehat{B}_{\mathrm{eff}}\ \text{fails to converge or has unstable sign} \quad\Longrightarrow\quad \texttt{FAIL-C-B-NUM}, \end{equation}"></figure>
+<figure class="eq" id="eq:S10_01_fail_RHOnum"><img src="/physics/eq/physics/phy-10-027.svg" data-eq="phy-10-027" width="541" height="20" loading="lazy" alt="\begin{equation} \widehat{\rho}_{\mathrm{eff}}\ \text{fails to converge or has unstable sign} \quad\Longrightarrow\quad \texttt{FAIL-C-RHO-NUM}. \end{equation}"></figure>
+<h4>10.1.7.4 Positivity failure (definition violation)</h4>
+<figure class="eq" id="eq:S10_01_fail_Bnonpos"><img src="/physics/eq/physics/phy-10-028.svg" data-eq="phy-10-028" width="293" height="16" loading="lazy" alt="\begin{equation} B_{\mathrm{eff}}\le 0 \quad\Longrightarrow\quad \texttt{FAIL-C-B-NONPOS}, \end{equation}"></figure>
+<figure class="eq" id="eq:S10_01_fail_RHOnonpos"><img src="/physics/eq/physics/phy-10-029.svg" data-eq="phy-10-029" width="308" height="16" loading="lazy" alt="\begin{equation} \rho_{\mathrm{eff}}\le 0 \quad\Longrightarrow\quad \texttt{FAIL-C-RHO-NONPOS}. \end{equation}"></figure>
+<p>A positivity failure collapses the square-root definition <a href="#eq:S10_01_ctilde_def" class="xref" data-ref="eq:S10_01_ctilde_def">(S10_01_ctilde_def)</a> itself, so it is an immediate failure.</p>
+<h4>10.1.7.5 Lock/meaning conflicts and post hoc tuning</h4>
+<p>The following are immediate failures.</p>
+<ol>
+<li> Symbol-meaning conflicts (cell geometry, diameter/radius, unit-dimension mismatch): <code>FAIL-C-SYM</code>.
+<li> Mixing different lock_id combinations: <code>FAIL-C-LOCK-MIX</code>.
+<li> Post hoc changes of probe samples/estimators/thresholds/relaxation rules: <code>FAIL-C-NT</code>.
+</ol>
+<h2>10.2 δₑff and percolation closure</h2>
+<aside class="claim-strip vps" data-vps="10.2" data-cards="VP-C-010, VP-C-002"><span class="g">closure (premise-locked)</span><span class="io">in: $χ_c=χ_ST=1$, locked boundaries/coordinates / out: critical-throat $δ_eff$ percolation estimator</span><q class="one">The effective gap is measured at the critical throat, under premises that are themselves locked.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
+<h3>10.2.1 Premises (regime and input locks)</h3>
+<p>The definitions and procedures of this section apply <em>only</em> when all of the following premises are simultaneously satisfied.</p>
+<ol>
+<li> Propagation switch: χ_c=χ_ST=1.
+<li> Domain D, opposing boundary sets ∂D⁻,∂D⁺, and boundary node sets V⁻,V⁺ are locked.
+<li> Node coordinates x_i, center x_c, and normalized length L_q are locked.
+<li> Adjacency/contact graph G_c=(V,E_c) and contact-judgment conventions are locked.
+<li> Minimum separation length (or reference length) d₀>0 is locked (including diameter/radius meaning).
+</ol>
+<p>If any item above is not locked, then the definition of δ_eff and the percolation procedure are not valid.</p>
+<h3>10.2.2 Definition of throats and gaps</h3>
+<p>In this section, a “throat” is a candidate edge that can constitute a global propagation path, and a “gap” is a length-type scalar weight assigned to a candidate edge.</p>
+<h4>10.2.2.1 Candidate edge set (throat candidates)</h4>
+<p>Define the set of candidate throat edges by</p>
+<figure class="eq" id="eq:S10_02_Eth_def"><img src="/physics/eq/physics/phy-10-030.svg" data-eq="phy-10-030" width="76" height="16" loading="lazy" alt="\begin{equation} \mathcal{E}_{\mathrm{th}} :=\mathcal{E}_c. \end{equation}"></figure>
+<p>That is, in this section, the contact graph edges are the single source of truth (SSOT) for throat candidates. Extending the candidate set (e.g., by adding a k-nearest-neighbor graph) requires a separate closure definition and is not allowed here.</p>
+<h4>10.2.2.2 Gap (throat weight) g_(ij)</h4>
+<p>For each edge (i,j)∈E_th, define the distance and the gap by</p>
+<figure class="eq" id="eq:S10_02_gap_def"><img src="/physics/eq/physics/phy-10-031.svg" data-eq="phy-10-031" width="361" height="19" loading="lazy" alt="\begin{equation} d_{ij}:=\|\mathbf{x}_i-\mathbf{x}_j\|, \qquad g_{ij}:=\max\!\left(0,\ d_{ij}-d_0\right). \end{equation}"></figure>
+<p>Here d₀ is a locked reference length. The dimension of g_(ij) is length and g_(ij)≥ 0. The definition of g_(ij) cannot be replaced within the same version by an alternative (e.g., squared distance, normalization, nonlinear transforms).</p>
+<h4>10.2.2.3 Normalized gap (optional derived quantity)</h4>
+<p>Define the normalized gap as</p>
+<figure class="eq" id="eq:S10_02_gap_norm"><img src="/physics/eq/physics/phy-10-032.svg" data-eq="phy-10-032" width="84" height="40" loading="lazy" alt="\begin{equation} \tilde{g}_{ij}:=\frac{g_{ij}}{L_q}. \end{equation}"></figure>
+<p>g_(ij) is dimensionless and can be used only when L_q is locked.</p>
+<h3>10.2.3 Percolation (global propagation) definition: threshold g and open graph</h3>
+<p>Percolation is defined as the procedure that selects “open edges” according to a gap threshold g≥ 0 and judges whether global connectivity holds.</p>
+<h4>10.2.3.1 Threshold g and open edges</h4>
+<p>For g∈R_(≥ 0), define the set of open edges as</p>
+<figure class="eq" id="eq:S10_02_Eopen_def"><img src="/physics/eq/physics/phy-10-033.svg" data-eq="phy-10-033" width="267" height="19" loading="lazy" alt="\begin{equation} \mathcal{E}_{\mathrm{open}}(g) := \left\{(i,j)\in\mathcal{E}_{\mathrm{th}}\ \middle|\ g_{ij}\le g\right\}. \end{equation}"></figure>
+<p>Define the open graph as</p>
+<figure class="eq" id="eq:S10_02_Gopen_def"><img src="/physics/eq/physics/phy-10-034.svg" data-eq="phy-10-034" width="197" height="22" loading="lazy" alt="\begin{equation} \mathcal{G}_{\mathrm{open}}(g) := \bigl(\mathcal{V},\mathcal{E}_{\mathrm{open}}(g)\bigr). \end{equation}"></figure>
+<p>By definition, as g increases, E_open(g) grows monotonically.</p>
+<h4>10.2.3.2 Global-percolation indicator χₚerc(g)</h4>
+<p>For opposing boundary node sets V⁻,V⁺, define the percolation indicator as</p>
+<figure class="eq" id="eq:S10_02_chi_perc"><img src="/physics/eq/physics/phy-10-035.svg" data-eq="phy-10-035" width="451" height="45" loading="lazy" alt="\begin{equation} \chi_{\mathrm{perc}}(g) := \begin{cases} 1, &amp; \exists\, i\in\mathcal{V}^{-},\exists\, j\in\mathcal{V}^{+}\ \text{s.t.}\ i\leadsto j\ \text{in }\mathcal{G}_{\mathrm{open}}(g),\\ 0, &amp; \text{otherwise}. \end{cases} \end{equation}"></figure>
+<p>If χ_perc(g)=1, then at threshold g global propagation (existence of a path) holds.</p>
+<h3>10.2.4 Critical-throat threshold g_c and definition of δₑff</h3>
+<p>Define the critical-throat threshold g_c as the minimum threshold at which global propagation holds <em>for the first time</em>.</p>
+<h4>10.2.4.1 Definition of the critical threshold g_c</h4>
+<figure class="eq" id="eq:S10_02_gc_def"><img src="/physics/eq/physics/phy-10-036.svg" data-eq="phy-10-036" width="251" height="19" loading="lazy" alt="\begin{equation} g_c := \inf\{\, g\ge 0\mid \chi_{\mathrm{perc}}(g)=1\,\}. \end{equation}"></figure>
+<p>Since edge weights form a finite set (finite nodes/finite edges), the following discrete definition is locked in actual implementations.</p>
+<figure class="eq" id="eq:S10_02_gc_discrete"><img src="/physics/eq/physics/phy-10-037.svg" data-eq="phy-10-037" width="708" height="19" loading="lazy" alt="\begin{equation} \mathcal{G}:=\{g_{ij}\mid (i,j)\in\mathcal{E}_{\mathrm{th}}\}\ \text{(sorted after deduplication)}, \qquad g_c:=\min\{\, g\in\mathcal{G}\mid \chi_{\mathrm{perc}}(g)=1\,\}. \end{equation}"></figure>
+<h4>10.2.4.2 Definition of δₑff (length-type)</h4>
+<p>Define the effective critical-throat thickness (gap) as</p>
+<figure class="eq" id="eq:S10_02_deltaeff_def"><img src="/physics/eq/physics/phy-10-038.svg" data-eq="phy-10-038" width="76" height="17" loading="lazy" alt="\begin{equation} \delta_{\mathrm{eff}} := g_c. \end{equation}"></figure>
+<p>Thus δ_eff has dimension of length and equals the percolation critical threshold.</p>
+<h4>10.2.4.3 Dimensionless effective critical throat (optional derived quantity)</h4>
+<p>Define the dimensionless effective critical throat as</p>
+<figure class="eq" id="eq:S10_02_deltaeff_tilde"><img src="/physics/eq/physics/phy-10-039.svg" data-eq="phy-10-039" width="145" height="44" loading="lazy" alt="\begin{equation} \tilde{\delta}_{\mathrm{eff}}:=\frac{\delta_{\mathrm{eff}}}{L_q}=\frac{g_c}{L_q}. \end{equation}"></figure>
+<p>δ_eff can be used only when L_q is locked.</p>
+<h3>10.2.5 Computation procedure: global percolation/critical throat (Union-Find) + backbone extraction</h3>
+<p>This section fixes the computation procedure as a deterministic algorithm. Randomness, arbitrary choices, and result-dependent choices are forbidden.</p>
+<h4>10.2.5.1 Preprocessing: edge list and weight table</h4>
+<ol>
+<li> Fix the edge list as E_th (<a href="#eq:S10_02_Eth_def" class="xref" data-ref="eq:S10_02_Eth_def">(S10_02_Eth_def)</a>).
+<li> For each edge compute (i,j,g_(ij)) (<a href="#eq:S10_02_gap_def" class="xref" data-ref="eq:S10_02_gap_def">(S10_02_gap_def)</a>).
+<li> Sort the edge list by the following key to lock a deterministic order.
+<figure class="eq" id="eq:S10_02_edge_key"><img src="/physics/eq/physics/phy-10-040.svg" data-eq="phy-10-040" width="308" height="22" loading="lazy" alt="\begin{equation} \mathrm{key}(i,j):=\bigl(g_{ij},\ \min(i,j),\ \max(i,j)\bigr). \end{equation}"></figure>
+</ol>
+<h4>10.2.5.2 Union-Find</h4>
+<p>Compute g_c by the following deterministic procedure.</p>
+<pre class="vb">
+ALG-PERC-GC (inputs: V, E_th with weights g_ij, boundary sets V-, V+)
+
+1) initialize Union-Find structure UF over nodes V
+2) mark boundary membership:
+     tag_minus(i)=1 if i in V-, else 0
+     tag_plus(i)=1 if i in V+, else 0
+   store for each UF component:
+     has_minus(component), has_plus(component)
+3) sort edges (i,j) by key(i,j)=(g_ij, min(i,j), max(i,j))
+
+4) for each edge (i,j) in sorted order:
+     UF.union(i,j)
+     update has_minus/has_plus for the merged component
+     if exists a component with has_minus=1 and has_plus=1:
+         g_c := g_ij of the current edge
+         STOP
+
+5) if loop ends without connection:
+     FAIL-PERC-NOSPAN
+</pre>
+<p>The g_c at the stopping time is equivalent to the discrete definition <a href="#eq:S10_02_gc_discrete" class="xref" data-ref="eq:S10_02_gc_discrete">(S10_02_gc_discrete)</a>, and it connects directly to the δ_eff definition <a href="#eq:S10_02_deltaeff_def" class="xref" data-ref="eq:S10_02_deltaeff_def">(S10_02_deltaeff_def)</a>.</p>
+<h4>10.2.5.3 Definition of the percolation backbone</h4>
+<p>Let the open graph at the critical threshold be G_open(g_c), and define the backbone as the set of edges that <em>actually contribute</em> to boundary-to-boundary connectivity.</p>
+<h4>(1) Boundary-spanning component</h4>
+<p>Define the connected component that contains both V⁻ and V⁺ at the critical threshold as</p>
+<figure class="eq" id="eq:S10_02_Cspan_def"><img src="/physics/eq/physics/phy-10-041.svg" data-eq="phy-10-041" width="105" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{span}}(g_c)\subseteq \mathcal{V} \end{equation}"></figure>
+<p>(which can be determined from the final Union-Find component).</p>
+<h4>(2) Two-terminal contribution of an edge (deterministic judgment)</h4>
+<p>Define the subgraph of G_open(g_c) restricted to C_span(g_c) as</p>
+<figure class="eq" id="eq:S10_02_Gspan_def"><img src="/physics/eq/physics/phy-10-042.svg" data-eq="phy-10-042" width="225" height="27" loading="lazy" alt="\begin{equation} \mathcal{G}_{\mathrm{span}}(g_c) := \mathcal{G}_{\mathrm{open}}(g_c)\big|_{\mathcal{C}_{\mathrm{span}}(g_c)} \end{equation}"></figure>
+<p>An edge e=(u,v) “contributes to boundary-to-boundary connectivity” if removing e destroys all paths from V⁻ to V⁺. For this purpose define the deterministic decision function</p>
+<figure class="eq" id="eq:S10_02_bridgeTT_def"><img src="/physics/eq/physics/phy-10-043.svg" data-eq="phy-10-043" width="290" height="56" loading="lazy" alt="\begin{equation} \mathrm{BridgeTT}(e) := \begin{cases} 1,&amp; \chi_{\mathrm{perc}}^{(-e)}(g_c)=0,\\ 0,&amp; \chi_{\mathrm{perc}}^{(-e)}(g_c)=1, \end{cases} \end{equation}"></figure>
+<p>where χ_perc^((-e))(g_c) is the value of <a href="#eq:S10_02_chi_perc" class="xref" data-ref="eq:S10_02_chi_perc">(S10_02_chi_perc)</a> computed on the graph obtained from G_span(g_c) by removing e.</p>
+<p>Because this can be expensive, in practical implementation the following deterministic algorithm (dominant-edge extraction) is locked to produce the same result.</p>
+<h4>10.2.5.4 Backbone extraction algorithm (two-terminal mandatory edge set)</h4>
+<p>Define the backbone edge set E_bb by the following algorithm.</p>
+<pre class="vb">
+ALG-BACKBONE-TT (inputs: G_span(g_c), boundary sets V-, V+)
+
+1) choose deterministic start node s in V-:
+     s := min index in (V- CAP C_span)
+2) BFS from s in G_span to compute parent tree and levels.
+3) choose deterministic target node t in V+ reachable:
+     t := min index in (V+ CAP C_span) among reachable nodes
+4) extract one canonical path P0 from s to t using parent pointers.
+   E_bb := edges of P0
+
+5) augment backbone by mandatory two-terminal edges:
+   For each edge e in E_open(g_c) within G_span, in sorted key order:
+      Temporarily remove e
+      Check reachability from any node in V- to any node in V+ (BFS):
+         if disconnected: mark e as mandatory and add to E_bb
+      Restore e
+
+6) output E_bb
+</pre>
+<p>The algorithm is locked to satisfy:</p>
+<ol>
+<li> <strong>Determinism</strong>: start node / target node / edge order are all locked by convention.
+<li> <strong>Definitional minimality</strong>: contains at least one boundary-to-boundary path (P₀).
+<li> <strong>Mandatory-edge augmentation</strong>: includes edges whose removal breaks connectivity.
+</ol>
+<p>Define the backbone node set V_bb as</p>
+<figure class="eq" id="eq:S10_02_Vbb_def"><img src="/physics/eq/physics/phy-10-044.svg" data-eq="phy-10-044" width="437" height="19" loading="lazy" alt="\begin{equation} \mathcal{V}_{\mathrm{bb}} := \{\, v\in\mathcal{V}\mid \exists\, e=(u,v)\in\mathcal{E}_{\mathrm{bb}}\ \text{or}\ e=(v,w)\in\mathcal{E}_{\mathrm{bb}}\,\}. \end{equation}"></figure>
+<h3>10.2.6 Global-propagation outputs (definition-result form)</h3>
+<p>The output artifacts of this section are fixed to the following four items.</p>
+<ol>
+<li> critical threshold g_c (length),
+<li> effective critical throat δ_eff:=g_c (length) and optional dimensionless δ_eff,
+<li> critical open graph G_open(g_c) (open-edge set),
+<li> backbone edge set E_bb and backbone node set V_bb.
+</ol>
+<p>These artifacts must belong to the same <code>analysis_lock</code> and the same <code>regime_id</code>, and must be sealed by <code>manifest+checksums</code> to be used as inputs for later sections (amplification A, propagation indicator c, and realized c).</p>
+<h3>10.2.7 Failure modes and FAIL conditions</h3>
+<p>If any of the following occurs, the artifacts of this section lose their conclusion status.</p>
+<ol>
+<li> <strong>Regime violation</strong>: χ_c=0 or boundary/node sets are not locked.
+<li> <strong>Spanning failure</strong>: for no g does χ_perc(g)=1.
+<figure class="eq" id="eq:S10_02_fail_nospan"><img src="/physics/eq/physics/phy-10-045.svg" data-eq="phy-10-045" width="399" height="19" loading="lazy" alt="\begin{equation} \forall g\ge 0,\ \chi_{\mathrm{perc}}(g)=0 \quad\Longrightarrow\quad \texttt{FAIL-PERC-NOSPAN}. \end{equation}"></figure>
+<li> <strong>Meaning conflict</strong>: ambiguity in g_(ij) due to conflicts in the meaning of d₀ (diameter/radius) or coordinate/unit conventions.
+<li> <strong>Procedure not locked</strong>: any of boundary-node definitions, edge-sorting key, tiebreaking, or backbone-extraction rules is not locked.
+<li> <strong>Post hoc tuning</strong>: result-dependent changes to the candidate edge set, changes to d₀ or the definition of g_(ij), changes to threshold-selection rules, or changes to backbone-selection rules.
+</ol>
+<h2>10.3 SOC percolation and backbone concentration κ_bb</h2>
+<aside class="claim-strip vps" data-vps="10.3" data-cards="VP-C-010, VP-C-002"><span class="g">operational definition + gates</span><span class="io">in: critical-throat graph, backbone, event logs / out: amplification $A$ = SOC-transmission concentration on the backbone ($κ_bb$), estimators + steady/pinning/robustness gates</span><q class="one">$A$ is not assumed — it is the lattice caught concentrating its own traffic.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
+<h3>10.3.1 Purpose</h3>
+<p>This section (i) fixes SOC (self-organized criticality) events as an operational definition on top of a percolation (critical-throat) structure, (ii) defines the <strong>amplification coefficient A</strong> as the degree to which global transmission of SOC events concentrates on a path, (iii) fixes estimators for A, and (iv) fixes the Gates (steady state / pinning / robustness) required for A to have conclusion status.</p>
+<p>The A of this section is a measurable quantity computed from the critical-throat graph/backbone/event logs, without external justification.</p>
+<h3>10.3.2 Inputs (LOCK): critical-throat graph, backbone, event logs</h3>
+<p>Assume the artifacts of §10.2 are qualified by <code>PASS</code> and are given as inputs.</p>
+<ol>
+<li> Critical threshold and effective critical throat:
+<figure class="eq" id="eq:S10_03_deltaeff_in"><img src="/physics/eq/physics/phy-10-046.svg" data-eq="phy-10-046" width="76" height="17" loading="lazy" alt="\begin{equation} \delta_{\mathrm{eff}}:=g_c, \end{equation}"></figure>
+<li> Critical open graph:
+<figure class="eq" id="eq:S10_03_Gopen_in"><img src="/physics/eq/physics/phy-10-047.svg" data-eq="phy-10-047" width="204" height="19" loading="lazy" alt="\begin{equation} \mathcal{G}_{\mathrm{open}}(g_c)=(\mathcal{V},\mathcal{E}_{\mathrm{open}}(g_c)), \end{equation}"></figure>
+<li> Backbone (two-terminal contributing edge set):
+<figure class="eq" id="eq:S10_03_backbone_in"><img src="/physics/eq/physics/phy-10-048.svg" data-eq="phy-10-048" width="363" height="19" loading="lazy" alt="\begin{equation} \mathcal{E}_{\mathrm{bb}}\subseteq \mathcal{E}_{\mathrm{open}}(g_c), \qquad \mathcal{V}_{\mathrm{bb}}\ \text{(backbone node set)}. \end{equation}"></figure>
+</ol>
+<p>In addition, to define SOC events, an event log E must be provided under a locked schema (see the definitions in Chapter 9). Since SOC events are defined as subsets of the event log, missing logs make the definition invalid.</p>
+<h3>10.3.3 Operational definition of SOC events</h3>
+<p>Define an SOC event as a “bundle of events in which consecutive local updates are connected within a time window and are aggregated into an avalanche.” This section defines SOC events by the following procedure.</p>
+<h4>10.3.3.1 Event set and event graph</h4>
+<p>Let the event set on the tick axis be E. Each event e is assumed to have the following fields:</p>
+<figure class="eq" id="eq:S10_03_event_fields"><img src="/physics/eq/physics/phy-10-049.svg" data-eq="phy-10-049" width="142" height="22" loading="lazy" alt="\begin{equation} e \mapsto \bigl(n(e),\ \mathcal{V}(e)\bigr), \end{equation}"></figure>
+<p>where n(e) is the tick, and V(e) is the set of nodes (or VPs) involved in the event. The meaning of V(e) (e.g., throat nodes vs core nodes) must be locked in <code>analysis_lock</code>.</p>
+<p>To decide whether two events e,e' belong to the same SOC cluster, define “event adjacency.” Lock a time threshold Δ n_soc∈Z_(≥ 0) and a spatial threshold (node-intersection convention) τ_soc∈Z_(≥ 1).</p>
+<figure class="eq" id="eq:S10_03_soc_thresholds"><img src="/physics/eq/physics/phy-10-050.svg" data-eq="phy-10-050" width="264" height="19" loading="lazy" alt="\begin{equation} \Delta n_{\mathrm{soc}}\ \text{(locked)}, \qquad \tau_{\mathrm{soc}}\ \text{(locked)}. \end{equation}"></figure>
+<p>Define the event-adjacency decision function as</p>
+<figure class="eq" id="eq:S10_03_soc_adj"><img src="/physics/eq/physics/phy-10-051.svg" data-eq="phy-10-051" width="542" height="45" loading="lazy" alt="\begin{equation} \mathrm{Adj}_{\mathrm{soc}}(e,e&#x27;) := \begin{cases} 1,&amp; |n(e)-n(e&#x27;)|\le \Delta n_{\mathrm{soc}}\ \wedge\ |\mathcal{V}(e)\cap \mathcal{V}(e&#x27;)|\ge \tau_{\mathrm{soc}},\\ 0,&amp; \text{otherwise}. \end{cases} \end{equation}"></figure>
+<p>The definition of Adj_soc cannot be replaced after seeing results.</p>
+<p>Define the event graph as</p>
+<figure class="eq" id="eq:S10_03_Gsoc"><img src="/physics/eq/physics/phy-10-052.svg" data-eq="phy-10-052" width="499" height="20" loading="lazy" alt="\begin{equation} \mathcal{G}_{\mathrm{soc}}:=(\mathcal{E},\mathcal{E}_{\mathrm{soc}}), \qquad \mathcal{E}_{\mathrm{soc}}:=\{(e,e&#x27;)\mid e\neq e&#x27;,\ \mathrm{Adj}_{\mathrm{soc}}(e,e&#x27;)=1\}. \end{equation}"></figure>
+<h4>10.3.3.2 SOC clusters (avalanches)</h4>
+<p>Define an SOC cluster (avalanche) C as a connected component of the event graph G_soc.</p>
+<figure class="eq" id="eq:S10_03_clusters"><img src="/physics/eq/physics/phy-10-053.svg" data-eq="phy-10-053" width="429" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{soc}}:=\{\text{connected components of }\mathcal{G}_{\mathrm{soc}}\}, \qquad C\in\mathcal{C}_{\mathrm{soc}}. \end{equation}"></figure>
+<p>Define the cluster size (number of events) and duration by</p>
+<figure class="eq" id="eq:S10_03_cluster_size_duration"><img src="/physics/eq/physics/phy-10-054.svg" data-eq="phy-10-054" width="451" height="31" loading="lazy" alt="\begin{equation} S(C):=|C|, \qquad T(C):=\bigl(\max_{e\in C}n(e)-\min_{e\in C}n(e)+1\bigr)\Delta t. \end{equation}"></figure>
+<p>Here Δ t is the realized time tick locked in <code>realization_lock</code>. If Δ t is not definable, then T(C) is recorded only in tick units.</p>
+<h3>10.3.4 Preparing to define a flux-concentration (amplification) observable</h3>
+<p>Amplification A is defined as a scalar quantifying “how much SOC clusters concentrate on the backbone within the critical-throat network.” For this purpose define the “active node set” of a cluster C.</p>
+<h4>10.3.4.1 Cluster active node set</h4>
+<p>Define the active node set of cluster C by</p>
+<figure class="eq" id="eq:S10_03_active_nodes"><img src="/physics/eq/physics/phy-10-055.svg" data-eq="phy-10-055" width="121" height="41" loading="lazy" alt="\begin{equation} \mathcal{V}_C := \bigcup_{e\in C}\mathcal{V}(e). \end{equation}"></figure>
+<p>If V(e) refers to objects other than nodes (e.g., edges or throats), then the definition of V_C must be transformed by a locked mapping from those objects to nodes.</p>
+<h4>10.3.4.2 Backbone occupancy fraction of a cluster (concentration ratio)</h4>
+<p>For cluster C, define the backbone occupancy fraction as</p>
+<figure class="eq" id="eq:S10_03_pbb"><img src="/physics/eq/physics/phy-10-056.svg" data-eq="phy-10-056" width="366" height="45" loading="lazy" alt="\begin{equation} p_{\mathrm{bb}}(C) := \frac{|\mathcal{V}_C\cap \mathcal{V}_{\mathrm{bb}}|}{|\mathcal{V}_C|}, \qquad \text{provided }|\mathcal{V}_C|&gt;0. \end{equation}"></figure>
+<p>By definition, 0≤ p_bb(C)≤ 1.</p>
+<p>Also define the “geometric backbone fraction” (baseline fraction) of the critical-throat network by</p>
+<figure class="eq" id="eq:S10_03_pbb0"><img src="/physics/eq/physics/phy-10-057.svg" data-eq="phy-10-057" width="109" height="45" loading="lazy" alt="\begin{equation} p_{\mathrm{bb}}^{(0)} := \frac{|\mathcal{V}_{\mathrm{bb}}|}{|\mathcal{V}|}. \end{equation}"></figure>
+<p>The baseline p_bb⁽⁰⁾ is the fraction of nodes occupied by the backbone and is used as a reference for concentration.</p>
+<h3>10.3.5 Definition of backbone concentration κ_bb (definition-result form)</h3>
+<h4>10.3.5.1 Cluster-wise backbone concentration</h4>
+<p>Define the amplification of cluster C by</p>
+<figure class="eq" id="eq:S10_03_A_of_C"><img src="/physics/eq/physics/phy-10-058.svg" data-eq="phy-10-058" width="153" height="52" loading="lazy" alt="\begin{equation} \kappa_{\mathrm{bb}}(C) := \frac{p_{\mathrm{bb}}(C)}{p_{\mathrm{bb}}^{(0)}}. \end{equation}"></figure>
+<p>Definition <a href="#eq:S10_03_A_of_C" class="xref" data-ref="eq:S10_03_A_of_C">(S10_03_A_of_C)</a> is a pure ratio meaning “how many times the backbone occupancy exceeds the baseline fraction” and uses no external justification.</p>
+<em>Disambiguation.</em> This κ_bb — a backbone-occupancy ratio — is <em>distinct</em> from the optical-to-quantum amplification A=a_med/g^* 10⁵ of <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>/§3.4/§11.6 that fixes D=2πλ/A. In versions ≤v0.4 both quantities shared the symbol A; they are now separated. The released percolation code computes A=a_med/g^* (median neighbour spacing over the critical percolation throat), <em>not</em> this occupancy ratio.
+<p>By definition, p_bb⁽⁰⁾>0 is required. If p_bb⁽⁰⁾=0, then the backbone is empty and κ_bb is not definable.</p>
+<h4>10.3.5.2 Window-aggregated backbone concentration</h4>
+<p>Let the SOC cluster set within a time window (or a sample set) be C_soc. Lock one of the following two estimators (exclusive choice).</p>
+<ol>
+<li> <strong>Mean-type estimator</strong>:
+<figure class="eq" id="eq:S10_03_Amean"><img src="/physics/eq/physics/phy-10-059.svg" data-eq="phy-10-059" width="377" height="50" loading="lazy" alt="\begin{equation} \kappa_{\mathrm{bb,mean}} := \frac{1}{|\mathcal{C}_{\mathrm{soc}}|} \sum_{C\in\mathcal{C}_{\mathrm{soc}}} \kappa_{\mathrm{bb}}(C), \qquad (|\mathcal{C}_{\mathrm{soc}}|&gt;0). \end{equation}"></figure>
+<li> <strong>Weighted-mean estimator (weighted by event count)</strong>:
+<figure class="eq" id="eq:S10_03_Aw"><img src="/physics/eq/physics/phy-10-060.svg" data-eq="phy-10-060" width="425" height="56" loading="lazy" alt="\begin{equation} \kappa_{\mathrm{bb,w}} := \frac{\sum_{C\in\mathcal{C}_{\mathrm{soc}}} S(C)\,\kappa_{\mathrm{bb}}(C)}{\sum_{C\in\mathcal{C}_{\mathrm{soc}}} S(C)}, \qquad \left(\sum_{C}S(C)&gt;0\right). \end{equation}"></figure>
+</ol>
+<p>Which estimator is adopted (and whether weights other than S(C) are allowed) must be locked in <code>analysis_lock</code> and cannot be changed after seeing results.</p>
+<p>In this section, “backbone concentration coefficient κ_bb” is defined as the output of the selected estimator (e.g., κ_bb,mean or κ_bb,w).</p>
+<h3>10.3.6 G-SS-STAT</h3>
+<p>Amplification κ_bb has conclusion status only on a steady-state interval. The steady-state Gate is defined as follows.</p>
+<h4>10.3.6.1 Lock warm-up and observation windows</h4>
+<p>Let the total run length (in ticks) be N_tot. Lock the warm-up length N_warm and the observation length N_obs by</p>
+<figure class="eq" id="eq:S10_03_warm_obs"><img src="/physics/eq/physics/phy-10-061.svg" data-eq="phy-10-061" width="591" height="19" loading="lazy" alt="\begin{equation} N_{\mathrm{warm}}\in\mathbb{Z}_{\ge 0}\ \text{(locked)}, \qquad N_{\mathrm{obs}}\in\mathbb{Z}_{&gt;0}\ \text{(locked)}, \qquad N_{\mathrm{warm}}+N_{\mathrm{obs}}\le N_{\mathrm{tot}}. \end{equation}"></figure>
+<p>Define the observation window as</p>
+<figure class="eq" id="eq:S10_03_Wobs"><img src="/physics/eq/physics/phy-10-062.svg" data-eq="phy-10-062" width="272" height="19" loading="lazy" alt="\begin{equation} W_{\mathrm{obs}}:=W[N_{\mathrm{warm}},\,N_{\mathrm{warm}}+N_{\mathrm{obs}}). \end{equation}"></figure>
+<h4>10.3.6.2 Steady-state decision metric</h4>
+<p>Split the observation window into M equal blocks and lock the block count M.</p>
+<figure class="eq" id="eq:S10_03_block_split"><img src="/physics/eq/physics/phy-10-063.svg" data-eq="phy-10-063" width="329" height="23" loading="lazy" alt="\begin{equation} M\in\mathbb{Z}_{\ge 2}\ \text{(locked)}, \qquad W_{\mathrm{obs}}=\dot\cup_{m=1}^{M} W_m. \end{equation}"></figure>
+<p>Compute the amplification estimate Aₘ on each block (same estimator). Define the block mean and variance as</p>
+<figure class="eq" id="eq:S10_03_A_block_stats"><img src="/physics/eq/physics/phy-10-064.svg" data-eq="phy-10-064" width="519" height="55" loading="lazy" alt="\begin{equation} \overline{A}:=\frac{1}{M}\sum_{m=1}^{M}A_m, \qquad \sigma_A^2:=\frac{1}{M}\sum_{m=1}^{M}(A_m-\overline{A})^2, \qquad \sigma_A:=\sqrt{\sigma_A^2}. \end{equation}"></figure>
+<p>Lock the steady-state threshold ε_SS>0 in <code>gate_lock</code>, and define the steady-state Gate by</p>
+<figure class="eq" id="eq:S10_03_gate_SS"><img src="/physics/eq/physics/phy-10-065.svg" data-eq="phy-10-065" width="281" height="39" loading="lazy" alt="\begin{equation} \texttt{G-SS-STAT}=\texttt{PASS} \Longleftrightarrow \frac{\sigma_A}{\overline{A}}\le \varepsilon_{\mathrm{SS}}. \end{equation}"></figure>
+<p>If A=0, then the steady-state judgment is not definable (<code>INCONCLUSIVE</code>).</p>
+<h3>10.3.7 G-SS-PIN</h3>
+<p>In SOC-percolation, “pinning” refers to the phenomenon where events become fixed to the backbone or a local region so that global SOC collapses. This section defines pinning by an operational metric.</p>
+<h4>10.3.7.1 Pinning metric</h4>
+<p>Within the observation window W_obs, define the visit frequency (hit count) of active nodes by</p>
+<figure class="eq" id="eq:S10_03_hitcount"><img src="/physics/eq/physics/phy-10-066.svg" data-eq="phy-10-066" width="292" height="44" loading="lazy" alt="\begin{equation} H(v):=\sum_{e\in \mathcal{E}(W_{\mathrm{obs}})} \mathbf{1}_{\{v\in \mathcal{V}(e)\}}, \qquad v\in\mathcal{V}, \end{equation}"></figure>
+<p>where E(W_obs) is the set of events in the observation window and 1 is an indicator function.
+Define the normalized hit distribution as</p>
+<figure class="eq" id="eq:S10_03_pv"><img src="/physics/eq/physics/phy-10-067.svg" data-eq="phy-10-067" width="167" height="46" loading="lazy" alt="\begin{equation} p(v):=\frac{H(v)}{\sum_{u\in\mathcal{V}}H(u)}. \end{equation}"></figure>
+<p>Define the pinning metric by</p>
+<figure class="eq" id="eq:S10_03_Pmax"><img src="/physics/eq/physics/phy-10-068.svg" data-eq="phy-10-068" width="143" height="29" loading="lazy" alt="\begin{equation} P_{\max}:=\max_{v\in\mathcal{V}} p(v). \end{equation}"></figure>
+<p>P_(max) is an operational metric of how excessively events concentrate on a single node.</p>
+<h4>10.3.7.2 Pinning Gate</h4>
+<p>Lock a pinning threshold P_pin∈(0,1) in <code>gate_lock</code>, and define the pinning Gate by</p>
+<figure class="eq" id="eq:S10_03_gate_PIN"><img src="/physics/eq/physics/phy-10-069.svg" data-eq="phy-10-069" width="286" height="18" loading="lazy" alt="\begin{equation} \texttt{G-SS-PIN}=\texttt{PASS} \Longleftrightarrow P_{\max}\le P_{\mathrm{pin}}. \end{equation}"></figure>
+<p>If <code>G-SS-PIN</code>=<code>FAIL</code>, the observation window is classified as pinned, and A cannot be used as a conclusion about SOC amplification (only CT-LIM is allowed).</p>
+<h3>10.3.8 G-SS-ROBUST</h3>
+<p>Amplification A must be consistent under a preregistered set of estimator variations (rerun set). Robustness is defined as follows.</p>
+<h4>10.3.8.1 Rerun set</h4>
+<p>Lock the rerun set by</p>
+<figure class="eq" id="eq:S10_03_RA_set"><img src="/physics/eq/physics/phy-10-070.svg" data-eq="phy-10-070" width="370" height="19" loading="lazy" alt="\begin{equation} \mathcal{R}_{A}:=\{r_1,r_2,\ldots,r_K\}, \qquad K\in\mathbb{Z}_{\ge 2}\ \text{(locked)}. \end{equation}"></figure>
+<p>Each rₖ means one of the following under the same inputs (which mode is used must be locked in <code>analysis_lock</code>).</p>
+<ol>
+<li> Different block splitting of the observation window W_obs.
+<li> Recalculation of the same data (same code/environment, same snapshot).
+<li> Preregistered subsampling (e.g., fixed subsample rule).
+</ol>
+<h4>10.3.8.2 Robustness decision metric</h4>
+<p>Let A^((k)) be the amplification estimate in rerun rₖ, and define the relative variation width by</p>
+<figure class="eq" id="eq:S10_03_RA_metric"><img src="/physics/eq/physics/phy-10-071.svg" data-eq="phy-10-071" width="573" height="44" loading="lazy" alt="\begin{equation} A_{\min}:=\min_{1\le k\le K}A^{(k)}, \qquad A_{\max}:=\max_{1\le k\le K}A^{(k)}, \qquad R_A:=\frac{A_{\max}-A_{\min}}{\max(A_{\min},\varepsilon_A)}. \end{equation}"></figure>
+<p>where ε_A>0 is a denominator-protection constant locked in <code>analysis_lock</code>.</p>
+<p>Lock a robustness threshold ε_ROB>0 in <code>gate_lock</code>, and define the robustness Gate by</p>
+<figure class="eq" id="eq:S10_03_gate_ROB"><img src="/physics/eq/physics/phy-10-072.svg" data-eq="phy-10-072" width="310" height="16" loading="lazy" alt="\begin{equation} \texttt{G-SS-ROBUST}=\texttt{PASS} \Longleftrightarrow R_A\le \varepsilon_{\mathrm{ROB}}. \end{equation}"></figure>
+<p>If the rerun set is not locked, then <code>G-SS-ROBUST</code> is <code>INCONCLUSIVE</code>.</p>
+<h3>10.3.9 Final Gate stack and conclusion status</h3>
+<p>Define the final Gate for A to have conclusion status in this section as</p>
+<figure class="eq" id="eq:S10_03_gate_final"><img src="/physics/eq/physics/phy-10-073.svg" data-eq="phy-10-073" width="988" height="19" loading="lazy" alt="\begin{equation} \texttt{G-AMP-A}=\texttt{PASS} \Longleftrightarrow (\chi_c=1)\ \wedge\ (\texttt{G-SS-STAT}=\texttt{PASS})\ \wedge\ (\texttt{G-SS-PIN}=\texttt{PASS})\ \wedge\ (\texttt{G-SS-ROBUST}\in\{\texttt{PASS},\texttt{INCONCLUSIVE}\}). \end{equation}"></figure>
+<p>That is, robustness must be <code>PASS</code> when it is locked; if it is not locked, it may remain <code>INCONCLUSIVE</code>, but then the sentence “robustness was passed” is forbidden (restricted by PASS.rules).</p>
+<h3>10.3.10 Log (mandatory records) specification</h3>
+<p>The computation of A and the Gate decisions must include the following logs (format locked in <code>protocol_lock</code>).</p>
+<ol>
+<li> <code>inputs</code>: δ_eff, G_open(g_c), E_bb, V_bb, <code>lock_refs</code>.
+<li> <code>soc_params</code>: Δ n_soc,τ_soc and the event-adjacency convention.
+<li> <code>clusters</code>: summary for each cluster C of (S(C),T(C),p_bb(C),κ_bb(C)).
+<li> <code>A_estimator</code>: selected estimator ID (<code>Amean</code> or <code>Aw</code>) and result A.
+<li> <code>steady_state</code>: block-wise Aₘ, A, σ_A, ε_SS, Gate decision.
+<li> <code>pinning</code>: P_(max), P_pin, Gate decision.
+<li> <code>robust</code>: A^((k)), R_A, ε_ROB, Gate decision.
+<li> <code>verdict</code>: final decision of <code>G-AMP-A</code> and FAIL label list.
+</ol>
+<p>Without log sealing (manifest/checksums) no conclusion status is granted.</p>
+<h3>10.3.11 Reproducibility addendum: N-scaling reruns (supplementary)</h3>
+<p>To check that the operational definition</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-10-076.svg" data-eq="phy-10-076" width="87" height="37" loading="lazy" alt="A := \frac{a_\mathrm{med}}{g_\ast}"></figure>
+<p>behaves consistently under system-size changes, this deposit includes supplementary SOC percolation pinning reruns at
+N=750 (seeds 45–48). These reruns are <strong>NON-LOCK</strong> and do not update any locked constants; they serve as a robustness sanity check.</p>
+<strong>Artifacts.</strong> Raw CSV logs and summaries are provided in
+<code>02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/soc_N750/</code>,
+including <code>02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/soc_N750/soc_N750_summary.json</code>.
+<p>Across seeds 45–48 (104 avalanches; 98 with g_*>0), we observe
+Aₘₑₐₙ≈ 5.693e+05 and A_(median)≈ 4.764e+05.
+Using the unit-realization anchor A_(geo) from
+<code>02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/mst_unit_realization.json</code>
+and the expected geometric scaling A∝ N^(-1/3) under fixed g₀ in a unit box, the predicted value at N=750 is
+A_(pred)≈ 5.684e+05 (relative error   1.63e-03); see
+<code>02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/soc_N750/soc_N750_scaling_check.json</code>.</p>
+<h2>10.4 Numerical experiment package (2D throat / 3D jamming / SOC pinning)</h2>
+<aside class="claim-strip vps" data-vps="10.4" data-cards="VP-C-051, VP-C-049"><span class="g">sealing specification</span><span class="io">in: all Ch.~10 artifacts / out: numerical-experiment package conventions (2D throat / 3D jamming / SOC pinning), file list, manifest/checksums/registry_snapshot</span><q class="one">Chapter 10 ships as files with fingerprints, not as claims.</q><span class="cards">VP-C-051, VP-C-049</span></aside>
+<h3>10.4.1 Purpose</h3>
+<p>To ensure that every artifact of Chapter 10 (propagation/percolation/c/amplification A) is sealed as a <strong>reproducible numerical experiment package</strong>, this section fixes (i) the reproducibility conventions, (ii) the list of file artifacts, and (iii) the manifest/checksums/registry_snapshot system.</p>
+<p>This section presents no computational results; it only defines “which file is generated with which role under which conventions, and how it is sealed.”</p>
+<h3>10.4.2 Reproducibility conventions (mandatory locked items)</h3>
+<p>A numerical experiment package is recognized as reproducible only when all of the following items are fixed under the <strong>same lock_id combination</strong>.</p>
+<ol>
+<li> <strong>Registry fixation</strong>: <code>canon_lock_id</code>, <code>realization_lock_id</code>, <code>analysis_lock_id</code>, <code>gate_lock_id</code>, <code>protocol_lock_id</code>.
+<li> <strong>Regime fixation</strong>: <code>regime_id</code> and regime-axis values (dimension/drive/spanning/bottleneck/initial conditions/observation axes).
+<li> <strong>Domain/boundary fixation</strong>: domain D, boundary sets ∂D^(±), boundary node sets V^(±) definitions and implementation conventions.
+<li> <strong>Graph fixation</strong>: contact judgments, candidate edge set, gap definition g_(ij) (including reference length d₀), edge-sorting key.
+<li> <strong>Probe fixation</strong>: isotropic compression samples ε_j, drift samples u_j, curvature estimator, termination criteria.
+<li> <strong>SOC fixation</strong>: event adjacency (Δ n_soc,τ_soc), cluster definition, amplification estimator choice, steady-state/pinning/robustness Gate thresholds.
+<li> <strong>Execution environment fixation</strong>: executable hashes, library versions, randomness usage (the default for this package is <em>no randomness</em>), OS/architecture summary.
+</ol>
+<p>If any item is missing, reproducibility does not hold and the result cannot have conclusion status.</p>
+<h3>10.4.3 Package structure (top-level tree)</h3>
+<p>Let the package root be <code>exp10/</code>, and fix the following directory tree.</p>
+<pre class="vb">
+exp10/
+  registry/
+    canon_lock.(yaml|json)
+    realization_lock.(yaml|json)
+    analysis_lock.(yaml|json)
+    gate_lock.(yaml|json)
+    protocol_lock.(yaml|json)
+    registry_snapshot/   (frozen copy; filled at snapshot time)
+  configs/
+    regime.yaml
+    domain.yaml
+    probes.yaml
+    soc.yaml
+    thresholds.yaml
+  inputs/
+    geometry/
+    graphs/
+    events/
+  scripts/
+    run_2d_throat.(py|sh)
+    run_3d_jamming.(py|sh)
+    run_soc_pinning.(py|sh)
+    compute_deltaeff.(py|sh)
+    compute_backbone.(py|sh)
+    compute_A.(py|sh)
+    compute_B_rho_c.(py|sh)
+    utils/
+  outputs/
+    2d_throat/
+    3d_jamming/
+    soc_pinning/
+    derived/
+    gates/
+  snapshot/
+    manifest.(json|yaml|csv)
+    checksums.(txt|json)
+    release_tag.(txt|json)
+    registry_snapshot/   (complete frozen copy of registry/)
+</pre>
+<p>Each directory has a fixed role; generating duplicate role files in other locations is forbidden.</p>
+<h3>10.4.4 Experiment 1: 2D throat (critical-throat) package</h3>
+<p>This experiment is a package for reproducing the throat-gap distribution and the δ_eff computation procedure in a 2D domain.</p>
+<h4>10.4.4.1 2D inputs</h4>
+<ol>
+<li> <code>configs/regime.yaml</code>: regime-axis values for <code>DIM-2</code>.
+<li> <code>configs/domain.yaml</code>: 2D domain size/boundaries/node-generation conventions.
+<li> <code>configs/thresholds.yaml</code>: d₀,γ_c and percolation/backbone thresholds.
+<li> <code>inputs/geometry/nodes2d.csv</code>: (i,x_i,y_i).
+<li> <code>inputs/graphs/edges2d.edgelist</code>: candidate edges (contact graph).
+</ol>
+<p>These files must have their generation conventions locked in <code>analysis_lock</code>; they cannot be modified after seeing results.</p>
+<h4>10.4.4.2 2D outputs</h4>
+<ol>
+<li> <code>outputs/2d_throat/gaps2d.csv</code>: (i,j,d_(ij),g_(ij)).
+<li> <code>outputs/2d_throat/gc2d.txt</code>: g_c value (critical threshold).
+<li> <code>outputs/2d_throat/deltaeff2d.txt</code>: δ_eff value (definition: g_c).
+<li> <code>outputs/2d_throat/Gopen2d.edgelist</code>: E_open(g_c).
+<li> <code>outputs/2d_throat/backbone2d.edgelist</code>: E_bb.
+<li> <code>outputs/2d_throat/report_perc2d.json</code>: percolation/Gate report.
+</ol>
+<h3>10.4.5 Experiment 2: 3D jamming package (switch χ_c and c probes)</h3>
+<p>This experiment is a package for reproducing, in 3D, the jamming lattice/Point-J/rigidity switch and the probe-based definitions of B_eff, ρ_eff, and c.</p>
+<h4>10.4.5.1 3D inputs</h4>
+<ol>
+<li> <code>configs/regime.yaml</code>: regime-axis values for <code>DIM-3</code> and the switch threshold κ_ST.
+<li> <code>configs/domain.yaml</code>: 3D domain size/boundaries/boundary-node judgment conventions.
+<li> <code>configs/probes.yaml</code>: isotropic compression samples ε_j, drift samples u_j, curvature-estimator choice.
+<li> <code>inputs/geometry/nodes3d.csv</code>: (i,x_i,y_i,z_i).
+<li> <code>inputs/graphs/edges3d.edgelist</code>: contact graph edges.
+</ol>
+<h4>10.4.5.2 3D outputs</h4>
+<ol>
+<li> <code>outputs/3d_jamming/switch.json</code>: χ_span,κ_(min),χ_ST(=χ_c) and decision logs.
+<li> <code>outputs/3d_jamming/Wiso.csv</code>: (ε,η(ε),W_iso).
+<li> <code>outputs/3d_jamming/Wdrift.csv</code>: (u,W_drift).
+<li> <code>outputs/3d_jamming/Beff.txt</code>: B_eff estimate and estimator ID.
+<li> <code>outputs/3d_jamming/rhoeff.txt</code>: ρ_eff estimate and estimator ID.
+<li> <code>outputs/3d_jamming/ctilde.txt</code>: c value.
+<li> <code>outputs/3d_jamming/c.txt</code>: c=(a/Δ t)c value (including realization reference).
+<li> <code>outputs/3d_jamming/report_c.json</code>: Gate report for c (switch/positivity/numerical stability/lock integrity).
+</ol>
+<h3>10.4.6 Experiment 3: SOC pinning package (clusters, amplification A, Gates)</h3>
+<p>This experiment is a package for defining SOC clusters on top of a critical-throat graph/backbone, estimating amplification A, and judging conclusion status via steady-state/pinning/robustness Gates.</p>
+<h4>10.4.6.1 SOC inputs</h4>
+<ol>
+<li> <code>configs/soc.yaml</code>: Δ n_soc,τ_soc, cluster definition (connected components), estimator choice (<code>Amean</code> or <code>Aw</code>).
+<li> <code>configs/thresholds.yaml</code>: ε_SS,P_pin,ε_ROB, block count M, and rerun-set R_A construction conventions.
+<li> <code>inputs/events/events.csv</code>: event log (tick, participating node sets, etc.; schema locked in <code>protocol_lock</code>).
+<li> <code>inputs/graphs/Gopen.edgelist</code>: critical open graph.
+<li> <code>inputs/graphs/backbone.edgelist</code>: backbone edges.
+</ol>
+<h4>10.4.6.2 SOC outputs</h4>
+<ol>
+<li> <code>outputs/soc_pinning/clusters.json</code>: cluster list and each cluster's (S,T,p_bb,κ_bb(C)).
+<li> <code>outputs/soc_pinning/A.txt</code>: selected estimator output A.
+<li> <code>outputs/soc_pinning/steady.json</code>: block-wise Aₘ, A, σ_A/A and Gate decision.
+<li> <code>outputs/soc_pinning/pinning.json</code>: P_(max) and Gate decision.
+<li> <code>outputs/soc_pinning/robust.json</code>: rerun A^((k)), R_A and Gate decision.
+<li> <code>outputs/soc_pinning/report_A.json</code>: final Gate <code>G-AMP-A</code> decision and FAIL labels.
+</ol>
+<h3>10.4.7 Manifest (artifact list) conventions</h3>
+<code>snapshot/manifest</code> is a list enumerating all files in the package with the following fields (format locked as one of JSON/YAML/CSV).
+<ol>
+<li> <strong>path</strong>: relative path.
+<li> <strong>role</strong>: one of <code>registry</code>, <code>config</code>, <code>input</code>, <code>script</code>, <code>output</code>, <code>gate_report</code>, <code>figure</code>, <code>table</code>.
+<li> <strong>producer</strong>: <code>manual</code> or <code>script:<name></code>.
+<li> <strong>lock_refs</strong>: referenced lock_id combination.
+<li> <strong>regime_id</strong>: regime to which the file belongs.
+<li> <strong>depends_on</strong>: list of input file paths.
+<li> <strong>hash_ref</strong>: reference key into checksums.
+<li> <strong>bytes</strong>: file size.
+</ol>
+<p>The manifest is the anchor for immediately detecting omissions/duplications/substitutions, and cannot be edited after seeing results.</p>
+<h3>10.4.8 Checksums conventions</h3>
+<code>snapshot/checksums</code> is a hash list ensuring content identity for all files in the bundle. Fix the following conventions.
+<ol>
+<li> Default algorithm: <code>sha256</code> (mandatory).
+<li> Target: all files under <code>exp10/</code> (if any exclusion exists, lock it separately in a <code>checksum_exclusions</code> file, and include that file itself in the hash list).
+<li> Representation: either “hash-value<space>file-path” per line or JSON key-values (format locked in <code>protocol_lock</code>).
+<li> Cross-reference: the manifest's <code>hash_ref</code> must correspond 1:1 with a checksums entry.
+</ol>
+<p>If checksums are missing or inconsistent, the reproducibility Gate is <code>FAIL</code>/<code>INCONCLUSIVE</code>.</p>
+<h3>10.4.9 Registryₛnapshot conventions</h3>
+<code>snapshot/registry_snapshot/</code> is a frozen copy of the registries (the five locks) used in the release. Fix the following principles.
+<ol>
+<li> Registry files enter the snapshot only by copying, not by modification.
+<li> The snapshot is sealed by inclusion in <code>manifest</code> and <code>checksums</code>.
+<li> Without a snapshot the basis cannot be restored, so no conclusion status is granted.
+</ol>
+<h3>10.4.10 Final sealing conditions (necessary for conclusion status)</h3>
+<p>All numerical results produced by this package (δ_eff, backbone, A, χ_c, B_eff, ρ_eff, c, c) have conclusion status only when:</p>
+<ol>
+<li> <code>snapshot/manifest</code> exists and is complete.
+<li> <code>snapshot/checksums</code> exists and all file hashes match.
+<li> <code>snapshot/registry_snapshot</code> exists and the lock_id combination matches.
+<li> Gate reports (<code>outputs/.../report_*.json</code>) are sealed and the final verdict is <code>PASS</code>.
+</ol>
+<p>If these conditions are not met, the result is judged <code>INCONCLUSIVE</code> or <code>FAIL</code>, and cannot be used as support in later sections.</p>
+<h2>10.8 Lattice friction and redshift — relocated to S17.5</h2>
+<aside class="claim-strip vps" data-vps="10.8" data-cards="VP-C-N04"><span class="g">pointer (relocated v0.5.0)</span><span class="io">in: — / out: the redshift module lives in S17.5 (Open tier, hard Gates unmet); physical development owned by the companion Earth–Cosmos volume</span><q class="one">A number kept as a signpost: nothing cosmological is concluded here.</q><span class="cards">VP-C-N04</span></aside>
+<p>This Open-tier phenomenology module (a redshift–distance map whose hard Gates are registered but
+unmet) was relocated in v0.5.0 out of the Forced part to §17.5, under the <em>Mechanism</em> part. The number
+10.8 is retained here as a pointer only; the mechanism stub, the κ-lock protocol, and all Gate registrations live in §17.5, while the physical development and the data confrontation are owned by the companion Earth–Cosmos volume (Ch. 7; v0.6.0 handover).</p>
+<h2>10.9 Light propagation angle: the geometric basis of the wavelength mapping</h2>
+<span id="hub:lightangle"></span>
+<aside class="claim-strip vps" data-vps="10.9" data-cards="VP-C-032, VP-C-020"><span class="g">[F]+[V] light angle</span><span class="io">in: $λ/D$ / out: $sinχ=λ/(mD)$, $m=⌈λ/D⌉$; committed $χ(633)/χ(532)$; v0.8 input-convention note</span><q class="one">Light rides an integer dent chain; the committed angles are the armed falsifier.</q><span class="cards">VP-C-032, VP-C-020</span></aside>
+<em> Concept links: uses the quantum diameter D of <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a> (dynamical origin <a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6</a>); the π/2 reading convention is <a href="/physics/05-geometric-rectification-constants-single-source/#hub:decoder" class="xref" data-ref="hub:decoder">§5.0</a>; the non-circularity argument is <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>; registered as a falsifiable prediction in <a href="/physics/01-governance-no-tuning-lock-gate/#hub:falsify" class="xref" data-ref="hub:falsify">§1.10</a>.</em>
+<p>This section supplies the geometric reason the wavelength-to-scale mapping of §11 works, and with it a first-principles account of what a light wavelength <em>is</em> on the jammed lattice.</p>
+<h4>Light as a transverse oscillation of rotating quanta.</h4>
+<p>On the jammed lattice, light propagates as a transverse oscillation of the rotating quanta (each of effective diameter D=ℓ_rot). The propagation direction makes a geometric angle χ with the local lattice axis, fixed by how one wavelength packs into integer counts of the quantum diameter:</p>
+<figure class="eq" id="eq:lightangle_master"><img src="/physics/eq/physics/phy-10-074.svg" data-eq="phy-10-074" width="428" height="54" loading="lazy" alt="\begin{equation} \boxed{\;\sin\chi=\frac{\lambda}{m\,D},\qquad m=\left\lceil \frac{\lambda}{D}\right\rceil,\qquad D=\Danchpm.\;} \end{equation}"></figure>
+<p>The integer m counts how many quantum diameters span one carrier wavelength. Because m≥ λ/D by construction, sinχ≤ 1 holds automatically; χ=90^(∘) (pure transverse) is never reached, since it would require cosχ=0 and leave no longitudinal component with which to propagate.</p>
+<h4>Geometric construction (made explicit, v0.2.1).</h4>
+ Equation <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a> follows from a single right triangle, stated here so the relation is <em>constructed</em> rather than asserted. A carrier of wavelength λ is realized as a chain of m rotating quanta in series; laid along the propagation ray the chain has length mD and is the <strong>hypotenuse</strong>. Its projection on the local lattice axis is the longitudinal scaffold (<strong>adjacent</strong> side), and the transverse swing accumulated over the chain — one carrier wavelength — is the <strong>opposite</strong> side of length λ. Hence
+<figure class="eq" id="eq:lightangle_triangle"><img src="/physics/eq/physics/phy-10-075.svg" data-eq="phy-10-075" width="231" height="42" loading="lazy" alt="\begin{equation} \sin\chi=\frac{\text{opposite}}{\text{hypotenuse}}=\frac{\lambda}{mD}. \end{equation}"></figure>
+<p>Two modelling identifications are required and are the <em>sole</em> non-forced content, of the same meaning-layer status as [MAP-1]/[MAP-2] (<a href="/physics/08-discrete-proton-structure-82-7/#hub:nucleon_integral" class="xref" data-ref="hub:nucleon_integral">§8.0.6</a>): <strong>(i)</strong> the assignment “λ= transverse/opposite, mD= propagation/hypotenuse” — this is what selects sin (rather than tan or cos) and hence the near-transverse behaviour of long wavelengths; and <strong>(ii)</strong> m=⌈λ/D⌉, the smallest integer count of quantum diameters that covers one wavelength, chosen so a chain shorter than λ cannot carry it (sinχ≤1). Given (i)–(ii) the formula is forced; D is independently triangulated (<a href="/physics/03-axioms-primitives-volume-particle-lattice/#hub:lrot" class="xref" data-ref="hub:lrot">§3.4</a>: 2λ_(C,e)=6π⁶rₚ=2πλ/A), so the map D→χ is a genuine forward prediction (length in, angle out; <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>), not a fit.</p>
+<h4>Why the 633 nm mapping works.</h4>
+<p>The unit-realization mapping of §11 — the length anchor a=λ_ref/N together with D=2πλ/A from the jamming amplification — is not an arbitrary choice of units. It is the statement that a carrier of wavelength λ rides m rotating quanta in series. Equation <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a> is the geometric content <em>behind</em> that mapping: the wavelength attaches to the lattice precisely through the quantum-diameter count m. The same amplification A (hence the same D) reproduces the relation at both 632.99 and 532nm (RCROSS two-wavelength cross-check, §11), which is why the mapping is wavelength-consistent rather than a single-line fit.</p>
+<h4>What a wavelength is, geometrically.</h4>
+<p>On this picture a light wavelength is the transverse pitch of a chain of m rotating quanta. Long wavelengths (radio) span enormous m and arrive almost purely transverse (χ→90^(∘)); short wavelengths (gamma) span m=1 and run nearly along the lattice axis (χ→0^(∘)). Visible light occupies a narrow near-transverse window. This is a structural — not fitted — account of why different wavelengths behave as they do.</p>
+<div class="c">
+<table><tr><td>Band</td><td>wavelength λ</td><td>angle χ to lattice axis</td></tr><tr><td>Gamma</td><td>1fm–1pm</td><td>  0.01^(∘)–12^(∘) (quasi-longitudinal)</td></tr><tr><td>X-ray</td><td>1pm–10nm</td><td>  12^(∘)–88^(∘)</td></tr><tr><td>Visible</td><td>380–750nm</td><td>  89.8^(∘)–89.9^(∘) (near-transverse)</td></tr><tr><td>Radio</td><td>≥ 1m</td><td>→ 90^(∘) (essentially transverse)</td></tr></table>
+</div>
+<h4>Non-circularity.</h4>
+<p>The relation takes a <em>length</em> (D) in and returns an <em>angle</em> (χ) — a different kind of quantity. This is exactly the structure that §W.5 (prong B) identifies as non-circular: “length in, different-kind-of-quantity out.” Back-solving D from a measured χ would be the circular direction; the forward map D→χ is a genuine prediction, structurally identical to “length in, Higgs mass out.”</p>
+<h4>Falsifiable prediction (narrow-sense candidate).</h4>
+<p>Near χ  90^(∘), cosχ is tiny, so χ is extremely sensitive to D: a 0.03% change in D shifts the visible-light angle by more than a degree. A direct measurement of the transverse angle of visible light against a lattice/anisotropy axis would therefore pin D to   0.001% — closing the open narrow-sense-prediction item (B1) and simultaneously deciding among the candidate D values. The criterion is registered in <a href="/physics/01-governance-no-tuning-lock-gate/#hub:falsify" class="xref" data-ref="hub:falsify">§1.10</a>.</p>
+<h4>The angle is a distribution, not a single number.</h4>
+<p>Because D=ℓ_rot is itself a <em>selected</em> length carrying a distribution (the SOC rotation-circumference spread; see <a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6</a>), the angle χ at fixed λ is also a distribution rather than a single sharp value. The observable signature is thus a spread in transverse angle — a line-width or scattering-angle distribution — which is more robustly measurable than one exact angle, and which ties the optical observable back to the lattice's selection dynamics.</p>
+<h3>10.9.1 Quantum-base light-emergence verification (mass-free; the 633/532 closure)</h3>
+<span id="hub:lightmapQ"></span>
+<em> Status: numerical verification [V] of <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a>; boundary
+calibration [H] (§13.5.4); the quantum tick τ_q:=D/c is a DERIVED convenience unit (NON-LOCK; no second
+anchor; <code>realization_lock</code> untouched). Bundle: <code>06_light_mapping_massfree/</code> (deterministic,
+seed-free); gate <code>G-LIGHT-MAP-Q</code>. Complementary to bundle module <code>05_light_emergence_quantum_D</code>
+(which <em>produces</em> D from jamming; this module <em>consumes</em> D to produce the wave).</em>
+<h4>Setup (no mass injected).</h4>
+ The medium is specified only by density ρ=1 (the sole inertial
+property), perfect elasticity, stiffness B=c², zero friction, and the void-forbidden (jammed-plenum)
+condition; light is its elastic wave, c=√(B/ρ). The sole mapping input is the dimensionless ratio
+λ/D. No mass value enters the dynamics anywhere; mₑ appears exactly once, as the SI <em>unit
+reference</em> of the §13.5.4 calibration node when the absolute scale is reported. Mass effects — inertia (from
+ρ=1), the absolute length scale (jamming), the event rate νₚ=3π⁴, gravity-as-inflow — are
+<em>outputs</em> of the lattice, never inputs.
+<h4>Result (deterministic; reproduced bit-exactly from the bundled script).</h4>
+ With the canonical
+D_anch=4.852620477 pm:
+<div class="c">
+<table><tr><td>λ</td><td>λ/D</td><td>m=⌈λ/D⌉</td><td>χ</td><td>longitudinal scaffold mcosχ</td></tr><tr><td>632.99 nm</td><td>130442.9232</td><td>130443</td><td>89.9378^(∘)</td><td>141.59D</td></tr><tr><td>532.0 nm</td><td>109631.4873</td><td>109632</td><td>89.8248^(∘)</td><td>335.30D</td></tr></table>
+</div>
+Both channels recover λ/D exactly (transverse swing msinχ=λ/D, match 1.0000000), the carrier
+phase speed is c (1.000000 in natural units), and the ratio
+(λ/D)₆₃₃/(λ/D)₅₃₂=1.189831=633/532 cancels D <em>and</em> any mass scale — the relative
+mapping is anchor-free and falsifiable. <strong>These two boldface angles are the pre-registered B1 commitment</strong>
+(see §1.9 B1 and Kill criterion 3, §1.10); their stated width is the χ-distribution induced by the
+ℓ_rot spread (<a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6</a>).
+<h4>Input convention for the committed angles (added v0.8; reproducibility note — no numeral moves).</h4>
+<p>The committed table above is computed with the <em>reporting-precision</em> wavelength inputs λ₆₃₃=632.99 nm and λ₅₃₂=532.0 nm at D_anch=4.852620477 pm, giving λ/D=130442.9232 (m=130443) and 109631.4873 (m=109632); these are exactly the inputs sealed in the bundle script <code>06_light_mapping_massfree/light_emergence_massfree.py</code> (<code>CH="633": 632.99e-9</code>). Using the full-precision anchor λ_ref=632.99121257859865746 nm instead shifts λ/D to 130443.1730, crossing the integer ceiling to m=130444 and χ=89.7960^(∘) — a concrete instance of the hypersensitivity already declared in this section (0.03% in D ⇒ >1^(∘) in χ). This note fixes the reproduction convention only (G-REP strengthening; G-NT untouched).</p>
+<h4>Negative control (not a confirmation).</h4>
+ A standard scalar continuum wave on the <em>same</em> medium
+(ρ=1, B=c², friction 0), launched at the same angle χ, measures transverse wavelengths
+6.750D and 14.250D where <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a> requires 4.5D and 9.5D: generic continuum
+dispersion (|mathbf k|=ω/c) does <em>not</em> reproduce the relation. Equation <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a>
+is therefore a specific rotating-chain geometry, not generic dispersion; and the pure-transverse limit
+χ=90^(∘) cannot propagate (cosχ=0), confirming the angle is structural. This contrast must not be
+read as a confirmation of the mapping; it shows only what the mapping is <em>not</em>.
+<h4>Derived quantum tick (NON-LOCK).</h4>
+ Define
+τ_q:=D/c=2h/(mₑc²)=1.618659959×10⁻²⁰s (one quantum tick;
+τ_q/Δ t=8.70, two independent clocks). <em>Anti-circularity rule:</em> τ_q is <em>defined</em> from D
+and c; re-deriving “c=D/τ_q” is forbidden (it would read the definition backwards). In natural units
+c:=1, time is an integer count of quantum ticks: the 633 nm carrier is 130443 ticks
+=2.11143fs=λ/c; the SI numeral 2.998×10⁸ enters exactly once, at the final SI
+conversion t_SI=n_tickD/c. τ_q adds <em>no</em> input: it is the §13.5.4 node
+restated, registered as DERIVED in <code>canon_derived</code> (<code>tau_q_s</code>); a, Δ t,
+c_ref in <code>realization_lock</code> are untouched, so no realization versioning (§2.3.7) is triggered.
+<h4>Pinned interpretive rule (added 2026-06-11): dimensionless mapping uses the quantum basis, because D and τ_q are rotation/event units, not kinematic units.</h4>
+<span id="par:qbasis-pinned"></span>
+Practice has shown that the following point, though implied by the definitions
+above, is easy to miss — it was missed even by a careful machine reading of
+this document — so it is pinned here explicitly. <em>Dimensionless
+statements of the theory are to be formed in the quantum basis — lengths in
+D, times in τ_q, rates per τ_q — and the SI bridges
+(1m=2.060742×10¹¹D, 1s=6.177950×10¹⁹
+ticks) are applied only at the final reporting step.</em> The reason is not
+convenience but semantics: D and τ_q are the only units the framework
+defines <em>internally</em>, and neither is kinematic.
+(i) <strong>Size:</strong> D is not a traversal distance; it is the rotation length
+— one 2π phase winding, D=2πλ/A=ℓ_rot (§3.4,
+§11.6). A metre is a translation unit; D is a winding unit.
+(ii) <strong>Time:</strong> τ_q is not the time to cross a distance; it is the
+period of one winding — the rhythm at which rotation breaks a quantum's
+contacts and the particle becomes <em>free</em> (rotational unjamming; overview
+and Ch. 17). Time native to VP is a release/event clock: “time is an
+integer count of quantum ticks” (above), with no distance in its definition.
+The anti-circularity rule above exists for exactly this reason: re-deriving
+“c=D/τ_q” would re-import a travel-time semantics that the definition
+does not carry; likewise the two-clock structure (τ_q/Δ t=8.70)
+states that time is not the shadow of length.
+Consequences: (a) the bridges are translation dictionaries with no dynamical
+content — they must never be used to re-read τ_q as a flight time over
+D, nor D as a flight path; (b) sentences of the form “in one tick a
+signal travels D” are admissible only as <em>derived</em> lattice-wave
+statements (after c²=B/ρ), never as definitions; (c) <em>caution
+for reduced simulations:</em> engines that treat the tick as a continuous elastic
+time step are an approximation — the native clock is release-gated (one
+unjamming per τ_q) — so response-time estimates made on the
+continuous-tick approximation (e.g. contact-slaving rates) must be flagged
+as approximation-grade and not promoted to native-clock conclusions;
+(d) realization-layer units (a, Δ t) remain reserved for
+realization-protocol quantities, and the two bases are not mixed within one
+dimensionless statement. This note adds <em>no</em> input and touches no
+<code>realization_lock</code> item; no realization versioning (§2.3.7) is
+triggered.
+<h4>Scale-up rule (declared; G-UP pending).</h4>
+ A macroscopic carrier is an integer chain of quantum
+anchors: length =mD, period =mτ_q=λ/c, so c=mD/(mτ_q) is preserved at every scale
+(1m=2.060742×10¹¹ quanta; 1s=6.177950×10¹⁹ ticks). This is the
+application-base statement of the framework (the quantum layer, not the VP layer, is the practical simulation
+base: (D/a)³≈4.5×10²⁰ VPs per quantum make VP-resolution application work computationally
+inaccessible). <em>No macroscopic conclusion may cite this rule before <code>G-UP</code> passes</em> (§0.2.5;
+<code>FAIL-REG-EXTRAP</code>, §4.3.5).
+<h4>Gate G-LIGHT-MAP-Q (deterministic; registered in gate_lock).</h4>
+ PASS requires all of:
+(1) canon assert |D/4.852620477×10⁻¹²-1|<10⁻⁹; (2) both channels
+|msinχ· D/λ-1|<10⁻⁷; (3) ratio identity to 10⁻⁶; (4) carrier phase speed =c;
+(5) negative control deviates from the <a href="#eq:lightangle_master" class="xref" data-ref="eq:lightangle_master">(lightangle_master)</a> target by >10% in both test cases;
+(6) console-output integrity (sha256 of the deterministic console output, bundled as <code>RESULTS.txt</code> (109 lines), equals the registered hash <code>cfa6b40b…900c</code>; the 92 result lines recorded in the mapping document match bit-exactly).
+Fail codes: <code>FAIL-LIGHTMAP-CANON/-CLOSE/-RATIO/-SPEED/-NEGCTRL/-HASH</code>.
+<h3>10.9.2 Observation-coexistence conditions for the angle prediction (registered open; G-ISO)</h3>
+<p>The committed angles of §10.9.1 presuppose a lattice/anisotropy axis. Before any laboratory comparison the
+framework must state — and has not yet stated — four things: (i) what fixes the axis orientation and over what
+scale it is coherent; (ii) under which protocols the angle signature averages away (which is why isotropy-class
+precision propagation experiments need not have seen it); (iii) the explicit observable window in which the
+§10.9.1 numbers apply; (iv) the consistency conditions with the existing body of precision propagation data.
+These four items are registered as the open gate <code>G-ISO</code>. <em>No experimental claim about χ may be
+advanced before <code>G-ISO</code> is locked and passed</em>; conversely, the B1 commitment of §10.9.1 stands regardless,
+as a number awaiting a protocol. (This subsection exists so that the framework's strongest prediction cannot be
+read as ignoring the strongest existing constraints.)</p>
+<nav class="pn"><a rel="prev" href="/physics/09-event-quantum-definition-canonical-event/">← §9</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/14-force-lattice-tension-1-r2/">§14 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

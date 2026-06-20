@@ -1,0 +1,39 @@
+{
+  "1 ONE SWITCH (organ fold == body fold)": {
+    "pass_": true,
+    "msg": "max|delta spinodal| = 2.22e-16; organ_atlas one-switch = 2.22e-16 (both < 1e-12)"
+  },
+  "2 COMPLETE AT tau=1 (body fills with all 8 organs)": {
+    "pass_": true,
+    "msg": "8 organs: a_f(1)>=0.999=True, all realised in spec=True, positive radii=True; voxel-present 8/8 (min=40 vox) -> body complete=True"
+  },
+  "3 FILL ORDER == gamma readout (organs appear in gamma-order)": {
+    "pass_": true,
+    "msg": "order==argsort(spinodal)=True; anatomy appearance order==schedule order=True; voxel fill at onset midpoints nested-in-order=True (counts [1, 2, 3, 4, 5, 6, 7] -> 1..7)"
+  },
+  "4 OVERLAY INVARIANTS (bbox-cull == naive; surface untouched)": {
+    "pass_": true,
+    "msg": "build_tissue==naive_tissue (byte-for-byte)=True; body surface occ unchanged by overlay=True; body voxels 15404==15404 (organs relabel interior only)=True"
+  },
+  "5 DETERMINISM (2x build identical)": {
+    "pass_": true,
+    "msg": "organ-geometry sha 73e016df0d7b==73e016df0d7b (True); build_tissue re-run identical=True"
+  },
+  "overall": "5/5",
+  "headline": {
+    "n_organs": 8,
+    "fill_order": [
+      "spleen",
+      "gut",
+      "pancreas",
+      "lung",
+      "heart",
+      "liver",
+      "kidney",
+      "stomach"
+    ],
+    "order_is_gamma_readout": true,
+    "complete_at_tau1": true,
+    "grade": "[V] order is gamma readout; [F] new-organ placement + dwell size; [O] timing-vs-biology unchanged (organ_timing null)"
+  }
+}

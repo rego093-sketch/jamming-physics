@@ -1,0 +1,266 @@
+{
+  "phase": "R14",
+  "kind": "investigation_gate",
+  "title": "curated severity/progression literature pass, round 6 (PMC-OA dominant-sequela join) — three honest S/P lifts that add no new order-lock",
+  "generated": "2026-06-18",
+  "inputs": {
+    "burden_scores_registry_json": {
+      "path": "data/curated/burden_scores_registry.json",
+      "sha12": "70da53df0e90"
+    },
+    "burden_scores_registry_csv": {
+      "path": "data/curated/burden_scores_registry.csv",
+      "sha12": "ef8d8d1b31b4"
+    },
+    "burden_residual_registry_json": {
+      "path": "data/curated/burden_residual_registry.json",
+      "sha12": "dfe6bbd982f4"
+    },
+    "litcurate6_join_csv": {
+      "path": "methodology/severity_litcurate6_join.csv",
+      "sha12": "c80306f00590"
+    },
+    "litcurate6_excluded_csv": {
+      "path": "methodology/severity_litcurate6_excluded.csv",
+      "sha12": "7ea10e0b9097"
+    },
+    "litcurate_fetch_log_r14": {
+      "path": "data/raw/litcurate/_fetch_log_r14.json",
+      "sha12": "3a065e82f10c"
+    }
+  },
+  "lift_counts": {
+    "S_H_to_L": 2,
+    "P_H_to_L": 1,
+    "S_excluded_recorded": 1,
+    "P_excluded_recorded": 1
+  },
+  "axis_grade_coverage_registry": {
+    "O": {
+      "[L]": 28,
+      "[H]": 4,
+      "[O]": 3
+    },
+    "P": {
+      "[O]": 21,
+      "[L]": 12,
+      "[H]": 2
+    },
+    "S": {
+      "[L]": 9,
+      "[O]": 11,
+      "[H]": 15
+    },
+    "M": {
+      "[L]": 8,
+      "[O]": 18,
+      "[H]": 9
+    },
+    "D": {
+      "[O]": 21,
+      "[L]": 13,
+      "[H]": 1
+    }
+  },
+  "litcurate6_join": [
+    {
+      "entity": "Classic homocystinuria",
+      "cui": "C0751202",
+      "axis": "S",
+      "pmcid": "PMC12055052",
+      "pmid": "40337434",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Classical homocystinuria (HCU) is a rare but life-threatening autosomal recessive metabolic disorder resulting in buildup of amino acid methionine and homocysteine in urine and blood due to cystathionine-β-synthase lack (CBS deficiency, OMIM 236200), which catalyzes the conversion of homocysteine to cystathionine [ 1 ] .",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Fabry disease",
+      "cui": "C0002986",
+      "axis": "S",
+      "pmcid": "PMC13252739",
+      "pmid": "42268866",
+      "tier": 0.75,
+      "tier_label": "severe / debilitating",
+      "exact_sentence": "Fabry disease (FD) in an inherited lysosomal storage disorder with severe lifelong issues if not therapeutically managed.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    },
+    {
+      "entity": "Becker muscular dystrophy",
+      "cui": "C0917713",
+      "axis": "P",
+      "pmcid": "PMC13151537",
+      "pmid": "41760395",
+      "tier": 0.5,
+      "tier_label": "progressive course",
+      "exact_sentence": "Becker muscular dystrophy (BMD) is an X-linked recessive neuromuscular disorder characterised by progressive muscle weakness and wasting.",
+      "prior_value": 0.5,
+      "prior_grade": "[H]",
+      "open_access": true
+    }
+  ],
+  "litcurate6_excluded": [
+    {
+      "entity": "Polycystic kidney disease 2",
+      "cui": "C2751306",
+      "axis": "S",
+      "considered_pmcid": "PMC12986390",
+      "considered_pmid": "41828581",
+      "decline_class": "comparative",
+      "considered_statement": "Although PKD1 and PKD2 cause a similar phenotype, PKD1 variants are associated with more severe disease and earlier ESRD (around age 53), compared to PKD2 mutations, in which the disease progression is less severe, with fewer renal cysts, and late-onset hypertension and ESRD (around age 72) [ 71 , 72 , 73 ].",
+      "exclusion_reason": "the retrievable OA disease-level severity framing for polycystic kidney disease 2 (PKD2-gene ADPKD, C2751306) is COMPARATIVE -- 'PKD1 variants are associated with more severe disease and earlier ESRD (around age 53), compared to PKD2 mutations, in which the disease progression is less severe' frames PKD2's magnitude only RELATIVE to PKD1 (PKD2 = the milder, later-ESRD form of ADPKD), using 'more severe' / 'less severe' as a between-genotype contrast rather than a clean disease-level magnitude for PKD2's own dominant untreated sequela (progressive cystic kidney enlargement to end-stage renal disease); the frozen R3 severity function does not even pattern-match this (its 'severe' tier is blocked by the 'more '/'less ' negative lookbehinds), and no non-comparative disease-level PKD2 magnitude is retrievable; S left [H], not lifted"
+    },
+    {
+      "entity": "Osteogenesis imperfecta",
+      "cui": "C0029434",
+      "axis": "P",
+      "considered_pmcid": "PMC13188992",
+      "considered_pmid": "42170682",
+      "decline_class": "spectrum",
+      "considered_statement": "The phenotypes of these 17 OI patients varied widely, ranging from moderate (multiple fractures with progressive skeletal deformities) to mild (variable number of fractures with minimal skeletal deformities).",
+      "exclusion_reason": "the retrievable OA progression framing for osteogenesis imperfecta (C0029434) is a within-entity SPECTRUM -- 'The phenotypes of these 17 OI patients varied widely, ranging from moderate (multiple fractures with progressive skeletal deformities) to mild (variable number of fractures with minimal skeletal deformities)' -- in which 'progressive' attaches only to the MODERATE Sillence sub-form inside a cohort that varies widely from moderate to mild, not to the OI entity itself; OI's dominant untreated sequela is heritable bone fragility / recurrent fractures (a fragility disorder, not a disease-level progressive entity), and 'progressive deformity' is a feature of the severe/moderate Sillence types only; although the frozen R3 progression function pattern-matches 'progressive' to tier 0.50 and the R3 spectrum override does not trip (no fatal-pole marker), the statement is a Sillence-type-stratified spectrum/form-specific description, not an isolable disease-level progression magnitude; P left [H], not lifted"
+    }
+  ],
+  "axis_value_changes": [
+    {
+      "entity": "Classic homocystinuria",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Fabry disease",
+      "axis": "S",
+      "old": 0.5,
+      "new": 0.75,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    },
+    {
+      "entity": "Becker muscular dystrophy",
+      "axis": "P",
+      "old": 0.5,
+      "new": 0.5,
+      "old_grade": "[H]",
+      "new_grade": "[L]"
+    }
+  ],
+  "order_locked": [
+    {
+      "entity": "Achondrogenesis type II",
+      "cui": "C0220685",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Niemann-Pick disease, type A",
+      "cui": "C0268242",
+      "axes_scored": 4
+    },
+    {
+      "entity": "Duchenne muscular dystrophy",
+      "cui": "C0013264",
+      "axes_scored": 5
+    },
+    {
+      "entity": "Tyrosinemia type II",
+      "cui": "C0268487",
+      "axes_scored": 3
+    },
+    {
+      "entity": "Marfan syndrome",
+      "cui": "C0024796",
+      "axes_scored": 4
+    }
+  ],
+  "registry_set_sha12": "fa60be77f767",
+  "summary": "16/16 checks PASS",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "determinism_chain_2x",
+      "pass": true,
+      "detail": "r5->...->r13->r14 chain registry-set sha fa60be77f767 == fa60be77f767"
+    },
+    {
+      "name": "banked_unchanged",
+      "pass": true,
+      "detail": "burden_scores/burden_residual/treatments banked digests unchanged"
+    },
+    {
+      "name": "cumulative_over_r13",
+      "pass": true,
+      "detail": "registry_passes = ['R5_genereviews_accession_dating', 'R6_orphanet_natural_history', 'R7_open_naturalhistory', 'R8_open_severity', 'R9_litcurate_severity_progression', 'R10_litcurate2', 'R11_litcurate3', 'R12_litcurate4', 'R13_litcurate5', 'R14_litcurate6']"
+    },
+    {
+      "name": "litcurate6_join_anchored_cited",
+      "pass": true,
+      "detail": "3 round-6 join(s): cited sentence re-found verbatim in pinned OA cache, source open-access, basis present, tier == frozen-R3-derived, non-spectrum (0 bad)"
+    },
+    {
+      "name": "litcurate6_cutpoints_a_priori",
+      "pass": true,
+      "detail": "recorded P/S cut-points equal the BURDEN_INDEX map; every round-6 curated S/P == frozen-R3 derived tier (0 bad)"
+    },
+    {
+      "name": "litcurate6_excluded_recorded",
+      "pass": true,
+      "detail": "2 round-6 decline(s): in cohort, decline_class in vocab, reason present, statement re-found in pinned cache, axis not curation-lifted (0 bad)"
+    },
+    {
+      "name": "addonly_no_downgrade",
+      "pass": true,
+      "detail": "no axis grade weakened and no scored value removed vs R13 (0 violations)"
+    },
+    {
+      "name": "sp_lift_only_where_joined",
+      "pass": true,
+      "detail": "O/M/D identical to R13; S/P changed only for the 3 round-6 joined (disease,axis) pair(s) (0 illicit)"
+    },
+    {
+      "name": "no_new_order_lock",
+      "pass": true,
+      "detail": "order-lock set UNCHANGED at 5 -> 5 (added=[], removed=[]); the three round-6 lifts (Classic homocystinuria S, Fabry disease S, Becker muscular dystrophy P) each raise grade [H]->[L] WITHOUT completing a lock (each retains an [H] on another scored axis); no fishing for an order-lock"
+    },
+    {
+      "name": "raw_burden_rederived",
+      "pass": true,
+      "detail": "renormalised-mean recompute matches stored raw_burden (0 mismatch)"
+    },
+    {
+      "name": "rankability_and_promotions",
+      "pass": true,
+      "detail": "rankable == (axes>=3) for all (0 bad); promotions recompute matches (4 promoted)"
+    },
+    {
+      "name": "residual_correct",
+      "pass": true,
+      "detail": "burden_score == raw*(1-e) (0 bad); residual order monotone non-increasing"
+    },
+    {
+      "name": "order_lock_rule_and_sensitivity",
+      "pass": true,
+      "detail": "order_locked rule holds for all (0 bad); 6 weightings, equal_default rho=1.0"
+    },
+    {
+      "name": "litcurate6_sources_open_access_and_bound",
+      "pass": true,
+      "detail": "all 5 round-6 cited sources open-access + sha-pinned; every round-6 S/P [L] is bound to a join row (no inference); inclusion criterion declared (0 bad)"
+    },
+    {
+      "name": "prior_round_artifacts_preserved",
+      "pass": true,
+      "detail": "R9 + R10 + R11 + R12 + R13 recorded join/excluded CSVs byte-identical to their digests (0 modified) -- R14 is additive"
+    },
+    {
+      "name": "engine_pin_drift_zero",
+      "pass": true,
+      "detail": "15/15 governed files match (drift 0)"
+    }
+  ]
+}

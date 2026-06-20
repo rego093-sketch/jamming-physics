@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "purpose": "Locked, INDEPENDENTLY-MEASURED morphogen gradient decay lengths (lambda, micrometres) for the Phase-7 length-scale cross-validation. Each value is a directly-measured exponential decay length of a REAL morphogen gradient in a living embryo, taken from primary literature, fixed by a pre-registered inclusion rule BEFORE comparison with the model band. NONE was chosen to match the model. This file is read ONLY by verify_emergence_morphogen.py (the gate's post-hoc cross-check); the engine (emergence_morphogen_validation.py) NEVER reads it -- NON-FIT asserted. This mirrors the Phase-5 pattern: param_db morphogen biophysics is the locked engine input; these measured gradient lengths are the locked validation targets, read only by the gate.",
+    "grades": {
+      "[L]": "locked: independently measured/published value, cited; legitimate to use as a validation target",
+      "[F]": "fixed modelling choice; documented",
+      "[O]": "open: the entity-specific measured value is unavailable; residual declared open"
+    },
+    "preregistered_inclusion_rule": "Fixed BEFORE the wide statistics were computed: include every morphogen that (a) is a canonical, textbook vertebrate/invertebrate developmental morphogen, (b) has a directly-measured EXPONENTIAL gradient decay length reported in primary live-imaging/FCS literature with a single representative value, and (c) patterns a well-characterised embryonic axis. ALL qualifying morphogens are reported, INCLUDING any whose lambda falls outside the model band. No morphogen was added or dropped on the basis of whether it lands in the band. (Wingless is the shortest-range qualifying morphogen and is reported as a band miss, not excluded.)",
+    "model_band_note": "The model's first-principles lambda-band is derived PURELY from param_db.json generic measured biophysics: D in [0.1, 10] um^2/s and clearance tau ~ 60 min, via the screened-Poisson intrinsic length lambda = sqrt(D*tau). Band = [18.97, 189.74] um, central 60.0 um. It does NOT depend on any value in THIS file. That separation is the whole point: a generic biophysical band, set without reference to any single morphogen's measured gradient length, is then tested for whether it brackets directly-measured gradients.",
+    "independence_note": "param_db D,tau were set from GENERIC morphogen biophysics citing Kicheva 2007 (which measured Dpp/Wg) and Yu 2009 (which measured Fgf8). Morphogens whose lambda comes from THOSE SAME studies are flagged informs_db=true; their band-containment is partly non-independent and is reported for completeness only. Morphogens flagged informs_db=false (Bicoid, Nodal, Shh) come from studies that did NOT set the DB biophysics and provide the strictly NON-CIRCULAR test of whether the band generalises.",
+    "honesty_note": "Each lambda is a single REPRESENTATIVE published value (exact figures vary modestly between studies/conditions); the primary verdict is therefore a REGIME/order-of-magnitude test (geometric-mean agreement + band overlap + independent-set containment), which is robust to +-30% perturbation of any single lambda (gate check 8). Per-morphogen band membership is reported as a secondary, edge-sensitive detail. Lambda near the lower band edge (Dpp, Shh ~ 20 um vs edge 18.97 um) is flagged as boundary-adjacent."
+  },
+  "morphogen_decay_length_um": {
+    "Bicoid": {
+      "lambda_um": 100.0, "grade": "[L]", "informs_db": false,
+      "system": "Drosophila anterior-posterior embryo",
+      "provenance": "Houchmandzadeh, Wieschaus & Leibler 2002, Nature 415:798; Gregor, Wieschaus, McGregor, Bialek & Tank 2007, Cell 130:141. Exponential AP nuclear gradient with length constant ~1/5 of the ~480-510 um embryo, i.e. ~100 um; D ~ 0.3 um^2/s."
+    },
+    "Dpp": {
+      "lambda_um": 20.0, "grade": "[L]", "informs_db": true,
+      "system": "Drosophila wing imaginal disc",
+      "provenance": "Kicheva, Pantazis, Bollenbach, Kalaidzidis, Bittig, Juelicher & Gonzalez-Gaitan 2007, Science 315:521. GFP-Dpp exponential decay length ~20 um (the longer-range of the two disc morphogens)."
+    },
+    "Wingless": {
+      "lambda_um": 6.0, "grade": "[L]", "informs_db": true,
+      "system": "Drosophila wing imaginal disc",
+      "provenance": "Kicheva et al. 2007, Science 315:521. GFP-Wingless exponential decay length ~5-6 um (short-range; the shortest qualifying morphogen)."
+    },
+    "Fgf8": {
+      "lambda_um": 50.0, "grade": "[L]", "informs_db": true,
+      "system": "zebrafish embryo",
+      "provenance": "Yu, Burkhardt, Nowak, Ries, Petrasek, Scholpp, Schwille & Brand 2009, Nature 461:533. FCS-measured freely-diffusing Fgf8 source-sink gradient; representative decay length ~tens of um."
+    },
+    "Nodal": {
+      "lambda_um": 80.0, "grade": "[L]", "informs_db": false,
+      "system": "zebrafish embryo",
+      "provenance": "Mueller, Rogers, Jordan, Lee, Robson, Ramanathan & Schier 2012, Science 336:721. Squint/Nodal exponential gradient decay length ~50-90 um (its inhibitor Lefty is longer-range)."
+    },
+    "Shh": {
+      "lambda_um": 20.0, "grade": "[L]", "informs_db": false,
+      "system": "vertebrate (mouse/chick) neural tube",
+      "provenance": "Chamberlain, Jeong, Guo, Allen & McMahon 2008, Development 135:1097; Zagorski et al. 2017, Science 356:1379. Ventral neural-tube Shh exponential gradient decay length ~20 um, approximately constant over developmental time while amplitude rises."
+    }
+  }
+}

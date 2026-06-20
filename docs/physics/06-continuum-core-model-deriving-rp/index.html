@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Continuum Core Model: Deriving Rₚ — VP Theory §6 | Jamming Physics</title>
+<meta name="description" content="Agreement with data is a result here, never a reason. The one identification the continuum chain needs, declared and gated.">
+<link rel="canonical" href="https://jamming-physics.org/physics/06-continuum-core-model-deriving-rp/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Continuum Core Model: Deriving Rₚ — VP Theory §6 | Jamming Physics"><meta property="og:description" content="Agreement with data is a result here, never a reason. The one identification the continuum chain needs, declared and gated."><meta property="og:url" content="https://jamming-physics.org/physics/06-continuum-core-model-deriving-rp/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Continuum Core Model: Deriving Rₚ — VP Theory §6 | Jamming Physics"><meta name="twitter:description" content="Agreement with data is a result here, never a reason. The one identification the continuum chain needs, declared and gated.">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Continuum Core Model: Deriving Rₚ",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"6",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§6 Continuum Core Model: Deriving Rₚ"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §6</nav></header>
+<main>
+<h1>Continuum Core Model: Deriving $Rₚ$</h1>
+<p class="answer">Continuum Core Model: Deriving Rₚ: Agreement with data is a result here, never a reason. The one identification the continuum chain needs, declared and gated. LOCK: fix the identification rule L_q=λ_C and η=L_q/λ_C=1 in canon_lock (SSOT and No-Tuning). Grade [F] forced.</p>
+<p class="abstract" data-phase2="abstract">Agreement with data is a result here, never a reason. The one identification the continuum chain needs, declared and gated. LOCK: fix the identification rule L_q=λ_C and η=L_q/λ_C=1 in canon_lock (SSOT and No-Tuning).</p>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/06-continuum-core-model-deriving-rp/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<aside class="vp-card" data-locked="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a></aside>
+<h2>Purpose (locking the outputs)</h2>
+<p>The purpose of this chapter is to construct a continuum (continuous-approximation) core model that determines the core radius Rₚ using internal definitions only, and to derive and lock the following outputs.</p>
+<ol>
+<li> The <strong>defining expression</strong> of the core radius, Rₚ:=R[core state] (including definition and regime).
+<li> A <strong>formal statement</strong> of the core stability condition (locked as one of: rest condition / equilibrium condition / switch condition).
+<li> The <strong>dimensionless conclusion</strong> for the length-selection ratio:
+<figure class="eq" id="eq:S06_goal_ratio"><img src="/physics/eq/physics/phy-06-000.svg" data-eq="phy-06-000" width="116" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\alpha=\frac{2}{\pi}, \end{equation}"></figure>
+<p>where L_q is the core selection length (an internal length scale) and α is the rectification constant whose unique source is fixed in Chapter 5.</p>
+<li> The <strong>insertion points</strong> for downstream derivations (event rates, mass/force scales) and an explicit statement of <strong>forbidden retroactive justification</strong>.
+</ol>
+<p>This chapter does not introduce Rₚ by appealing to external texts. The only admissible inputs are internal definitions and internal conventions locked in <code>canon_lock</code>/<code>analysis_lock</code>. If a comparison to external numerics is required, that comparison is treated <strong>only</strong> as a validation (Gate) item; it is never used as a premise of the derivation.</p>
+<h2>Inputs (LOCK) and regime (scope)</h2>
+<p>The derivation of Rₚ is carried out only when the following input items are locked.</p>
+<h3>Substrate (Stone) regime and VP axioms</h3>
+<p>This chapter assumes the VP axiom set locked in §3.1 (infinite rigidity / impenetrability / plenum / local rule / adjacency). In particular, we fix the following two conditions as regime conditions.</p>
+<ol>
+<li> <strong>Stone regime</strong>: the volume invariance and impenetrability of VP are maintained as global constraints.
+<li> <strong>Plenum regime</strong>: no “empty space” is introduced as an independent degree of freedom; “deficits/throats/gaps” at the core boundary appear only as derived structural quantities of placement and adjacency.
+</ol>
+<p>If these regime conditions are not locked, the continuum approximation in this chapter loses its scope, and its conclusions are judged <code>INCONCLUSIVE</code>.</p>
+<h3>Canonical cell (Anchor Cell) and length scales</h3>
+<p>The canonical cell is locked to <code>CELL-CUBE</code>, and the representative cell length D_anch is locked as the edge length (<code>edge</code>). The half-length scale must be fixed by the following derived definition.</p>
+<figure class="eq" id="eq:S06_r0_lock"><img src="/physics/eq/physics/phy-06-001.svg" data-eq="phy-06-001" width="104" height="38" loading="lazy" alt="\begin{equation} r_0:=\frac{D_{\mathrm{anch}}}{2}. \end{equation}"></figure>
+<p>The continuum coordinate R in this chapter is used as the radial distance inside the canonical cell; the unit and coordinate convention of R are locked by the coordinate convention in <code>analysis_lock</code>.</p>
+<h3>Rectification constant α as an input</h3>
+<p>This chapter uses, as an input, the rectification constant whose unique source is fixed in §5.1:</p>
+<figure class="eq" id="eq:S06_alpha_lock"><img src="/physics/eq/physics/phy-06-002.svg" data-eq="phy-06-002" width="61" height="38" loading="lazy" alt="\begin{equation} \alpha=\frac{2}{\pi}. \end{equation}"></figure>
+<p>α is not re-derived in this chapter; it is inserted only into the dimensionless ratio conclusion <a href="#eq:S06_goal_ratio" class="xref" data-ref="eq:S06_goal_ratio">(S06_goal_ratio)</a> for core length selection.</p>
+<h3>Status of the core selection length L_q</h3>
+<p>L_q is an internal length scale defined as the “selection length” in the core model. The status of L_q must be locked as one of the following.</p>
+<ol>
+<li> <strong>CANON-INPUT</strong>: lock L_q as a canonical input in <code>canon_lock</code> (including meaning/unit/scope).
+<li> <strong>CANON-DERIVED</strong>: define L_q as a canonical derived quantity and lock its derivation rule (from which structural quantity it is derived and how) in <code>analysis_lock</code>.
+</ol>
+<p>If the status of L_q is not locked, the dimensionless conclusion Rₚ/L_q is itself undefined, and the derivation in this chapter does not stand.</p>
+<h2>Internal definition of the continuum core model (a continuous approximation of geo-structure)</h2>
+<p>In this chapter, “continuum” does not mean importing an external field theory. It means an internal procedure that <em>aggregates</em> discrete structural quantities of VP placement into functions of a radial variable R. The continuous approximation is fixed by the following rules.</p>
+<h3>Definition of the core region and the core boundary</h3>
+<p>The core is a region defined with respect to the domain center x_c. The core boundary is defined by the following <strong>switch condition</strong>.</p>
+<ol>
+<li> For radius R, define an indicator χ_core(R)∈0,1 that judges whether the discrete structural index inside radius R satisfies a “rigidity/transfer” condition.
+<li> Define the core radius Rₚ as a transition point of χ_core(R). The discrete/continuous decision rule for the transition point (first transition / threshold transition / stable transition) must be locked in <code>analysis_lock</code>.
+</ol>
+<p>Therefore Rₚ is not an “arbitrary geometric length” but an <em>operationally defined</em> length determined by a transition of a discrete structural indicator.</p>
+<h3>Standard form of radial aggregates</h3>
+<p>A radial aggregate S(R) at radius R is defined only in the following standard form.</p>
+<figure class="eq" id="eq:S06_radial_aggregate"><img src="/physics/eq/physics/phy-06-003.svg" data-eq="phy-06-003" width="309" height="33" loading="lazy" alt="\begin{equation} S(R) := \mathcal{A}\Bigl(\{\Omega_i\}_{i\in\mathcal{V}(R)},\ \mathcal{G}_c(R),\ \mathcal{P}(R)\Bigr), \end{equation}"></figure>
+<p>where</p>
+<ul>
+<li> V(R) is the subset of VP included inside radius R (inclusion/exclusion convention locked),
+<li> G_c(R) is the contact graph inside radius R (boundary-handling convention locked),
+<li> P(R) is the protocol/drive/relaxation state at radius R (regime/initial conditions/log convention locked),
+<li> A is the aggregation algorithm (mean/sum/min-cut/backbone selection, etc.; locked as a closure).
+</ul>
+<p>All continuum expressions in this chapter must be reducible to the form <a href="#eq:S06_radial_aggregate" class="xref" data-ref="eq:S06_radial_aggregate">(S06_radial_aggregate)</a>; if the reduction rule is not locked, the continuum expressions are undefined.</p>
+<h2>Internal definition of the stability condition (selection radius as an intersection of two scaling laws)</h2>
+<p>This chapter adopts the internal principle that the core radius Rₚ is selected as the intersection of <strong>two radial scaling laws</strong>. This is not an external justification; it is implemented by <em>defining</em> the scaling laws of the “aggregate cost” at the core boundary under the VP Stone and plenum constraints, and then <em>locking</em> their intersection as the selection rule.</p>
+<h3>Where the two aggregate cost functions are defined</h3>
+<p>For radius R, define the following two costs (or pressure-like scalar aggregates):</p>
+<figure class="eq" id="eq:S06_two_scalings"><img src="/physics/eq/physics/phy-06-004.svg" data-eq="phy-06-004" width="272" height="40" loading="lazy" alt="\begin{equation} \Pi_{4}(R) := \frac{C_{4}}{R^{4}}, \qquad \Pi_{5}(R) := \frac{C_{5}}{R^{5}}, \end{equation}"></figure>
+<p>where C₄,C₅ are constants derived from internal aggregation (or locked coefficients), and the exponents R⁻⁴ and R⁻⁵ are derived and locked internally from <em>domain/boundary/counting conventions</em>.
+This overview fixes only the definition slot and role of <a href="#eq:S06_two_scalings" class="xref" data-ref="eq:S06_two_scalings">(S06_two_scalings)</a>; the explicit derivation of C₄,C₅ and the internal derivation of the exponents are completed in later sections of this chapter.</p>
+<h3>Stability condition for the selection radius (core radius)</h3>
+<p>The selection (stability) condition for the core radius Rₚ must be locked as one of the following (exclusive choice; forbidden to swap depending on results).</p>
+<ol>
+<li> <strong>Intersection condition</strong>: Π₄(Rₚ)=Π₅(Rₚ).
+<li> <strong>Rest condition</strong>: for some locked energy-like aggregate U(R), dU/dR|_(R=Rₚ)=0, and U is defined so that this condition is equivalent to the intersection in <a href="#eq:S06_two_scalings" class="xref" data-ref="eq:S06_two_scalings">(S06_two_scalings)</a>.
+<li> <strong>Switch condition</strong>: define a switch observable so that the transition point of a structural indicator χ_core(R) coincides with the intersection point of <a href="#eq:S06_two_scalings" class="xref" data-ref="eq:S06_two_scalings">(S06_two_scalings)</a>.
+</ol>
+<p>The canonical choice of this chapter is the intersection condition. Under the intersection condition,</p>
+<figure class="eq" id="eq:S06_Rp_Cratio"><img src="/physics/eq/physics/phy-06-005.svg" data-eq="phy-06-005" width="274" height="41" loading="lazy" alt="\begin{equation} \Pi_{4}(R_p)=\Pi_{5}(R_p) \ \Longrightarrow\ R_p=\frac{C_{5}}{C_{4}}. \end{equation}"></figure>
+<p>Therefore the dimensionless ratio conclusion <a href="#eq:S06_goal_ratio" class="xref" data-ref="eq:S06_goal_ratio">(S06_goal_ratio)</a> is completed once the internal derivation of C₅/C₄ is completed.</p>
+<h2>6.5 Allowed conclusion forms in this chapter (implementation of the ban on external justification)</h2>
+<aside class="claim-strip vps" data-vps="6.5" data-cards="VP-C-018, VP-C-049"><span class="g">allowed conclusion forms</span><span class="io">in: — / out: dimensionless ratios, internal selection formulas $Rₚ=α L_q$, numerics only under REALIZATION/Gate; external doctrines banned as grounds</span><q class="one">Agreement with data is a result here, never a reason.</q><span class="cards">VP-C-018, VP-C-049</span></aside>
+<p>The conclusions of this chapter are permitted only in the following forms.</p>
+<ol>
+<li> Derivations of <strong>dimensionless ratios</strong> such as Rₚ/L_q (including insertion of the rectification constant α).
+<li> <strong>Internal length-selection formulas</strong> of the form Rₚ=α L_q (only when the status of L_q is locked).
+<li> Numerical values may be presented only when <strong>REALIZATION</strong> or <strong>validation (Gate)</strong> items are locked; numerical agreement must not be used to justify a definition/axiom/rectification convention.
+</ol>
+<p>Therefore this chapter does not use external doctrines (equations of other theories, definitions of other constants, or external justifications) as grounds for the derivation of Rₚ. Correspondence with external texts is handled only in a separate “correspondence table / non-use scope declaration” section and does not affect the conclusion status of this chapter.</p>
+<h2>LOCK/Gate connections for this section (none if empty)</h2>
+<ul>
+<li> LOCK: Stone regime (VP infinite rigidity / plenum / local rule), canonical cell (<code>CELL-CUBE</code>) with D_anch meaning (<code>edge</code>), and the derived scale r₀=D_anch/2.
+<li> LOCK: the rectification constant α=2/π is used only as an input by referencing the unique source in Chapter 5.
+<li> LOCK: the status of L_q (CANON-INPUT or CANON-DERIVED) and the output form Rₚ/L_q=α are fixed as chapter outputs.
+<li> Gate: regime violations (Stone/plenum/cell-meaning mismatch), rectification-convention violations, and <code>lock_id</code> mixing are judged <code>FAIL</code> (G-REG/G-RECT/G-LOCK/G-SYM).
+<li> Gate: importing external justification or post-hoc adjustment is judged <code>FAIL</code> (G-NT).
+</ul>
+<h2>6.1 Linking L_q and λ_C (L_q=λ_C)</h2>
+<aside class="claim-strip vps" data-vps="6.1" data-cards="VP-C-018"><span class="g">LOCK $L_q=λ_C$ (G1–G4; $η:=1$)</span><span class="io">in: phase completion / out: identification with no new constant</span><q class="one">The one identification the continuum chain needs, declared and gated.</q><span class="cards">VP-C-018</span></aside>
+<h3>6.1.1 Purpose</h3>
+<p>This section fixes the two length symbols L_q and λ_C appearing in the continuum core model as internal definitions, and then confirms the identification rule</p>
+<figure class="eq" id="eq:S06_Lq_eq_lC"><img src="/physics/eq/physics/phy-06-006.svg" data-eq="phy-06-006" width="67" height="18" loading="lazy" alt="\begin{equation} L_q=\lambda_C \end{equation}"></figure>
+<p>as a <strong>canonical lock (LOCK)</strong>. The outputs of this section are (i) the definition of L_q, (ii) the definition of λ_C, (iii) the internal basis for the identification (axiom-based), and (iv) the substitution rules after the identification.</p>
+<h3>6.1.2 Definition: L_q (core selection length)</h3>
+<h4>[D-6.1-1] Dimensionless radial coordinate</h4>
+<p>Lock the core center x_c inside the canonical cell and define the radial distance as</p>
+<figure class="eq" id="eq:S06_R_def"><img src="/physics/eq/physics/phy-06-007.svg" data-eq="phy-06-007" width="120" height="19" loading="lazy" alt="\begin{equation} R := \|\mathbf{x}-\mathbf{x}_c\|. \end{equation}"></figure>
+<p>The coordinate system of R and the selection convention of x_c are locked in <code>analysis_lock</code>.</p>
+<p>The radial description of the core model proceeds in a dimensionless coordinate ξ; define its normalization length as L_q:</p>
+<figure class="eq" id="eq:S06_xi_def"><img src="/physics/eq/physics/phy-06-008.svg" data-eq="phy-06-008" width="72" height="43" loading="lazy" alt="\begin{equation} \xi := \frac{R}{L_q}. \end{equation}"></figure>
+<h4>[D-6.1-2] Meaning of L_q (selection length)</h4>
+<p>Define L_q as the <strong>unique</strong> length scale in the core model that simultaneously satisfies the following two conditions.</p>
+<ol>
+<li> (Normalization) It is the normalization reference length such that every radial aggregate of the core model can be expressed not as a function of R but only as a function of ξ=R/L_q.
+<li> (Transition) It is the selection length such that the boundary transition of the core (a transition of the core indicator or a transition of a cost function) occurs at a <strong>single value</strong> ξ=ξₚ.
+</ol>
+<p>Therefore L_q is not “an arbitrary length,” but is defined as “the normalization length that fixes the core transition at a single dimensionless value.” This is an internal definition needed for the continuum core model to stand and does not use external-text justification.</p>
+<h3>6.1.3 Definition: λ_C (core phase-completion length)</h3>
+<h4>[D-6.1-3] Core phase variable</h4>
+<p>Define a phase variable ψ(R) describing a radial unfolding of an internal core state as</p>
+<figure class="eq" id="eq:S06_phasepsi_def"><img src="/physics/eq/physics/phy-06-009.svg" data-eq="phy-06-009" width="243" height="19" loading="lazy" alt="\begin{equation} \psi:\ [0,\infty)\to\mathbb{R}, \qquad \psi(0)=0, \end{equation}"></figure>
+<p>where ψ is an internal variable used to represent a “phase cycle” inside the core. The protocol for generating ψ (which aggregate is used as a phase) is locked in <code>analysis_lock</code>. This section uses only (i) the existence of ψ as an internal variable of the continuum core model and (ii) the fact that “cycle completion” is locked at 2π.</p>
+<h4>[D-6.1-4] Meaning of λ_C (first cycle-completion radius)</h4>
+<p>Define λ_C as the <strong>first</strong> positive length that satisfies</p>
+<figure class="eq" id="eq:S06_lambdaC_def"><img src="/physics/eq/physics/phy-06-010.svg" data-eq="phy-06-010" width="252" height="19" loading="lazy" alt="\begin{equation} \lambda_C := \inf\{\, R&gt;0\ |\ \psi(R)=2\pi\,\}. \end{equation}"></figure>
+<p>In <a href="#eq:S06_lambdaC_def" class="xref" data-ref="eq:S06_lambdaC_def">(S06_lambdaC_def)</a>, 2π is the full-cycle canonical constant locked in Chapter 5 (the reference used by the rectification convention), and λ_C is the length scale at which that full cycle <strong>first</strong> completes in the radial unfolding of the core.
+Therefore λ_C is not an “external constant” but an “internal length defined by core phase completion.”</p>
+<h3>6.1.4 Basis for the identification (axiom-based)</h3>
+<p>The identification L_q=λ_C is not an extra assumption but a <strong>canonical selection (lock)</strong> needed to satisfy the global rules of this document (No-Tuning, SSOT, single-transition definition). The basis consists of the following four items.</p>
+<h4>(G1) Single-transition principle: the core boundary must be unique</h4>
+<p>The core radius Rₚ is defined as a <strong>single</strong> boundary indicating the transition “core interior→core exterior” (a transition of the core indicator or a transition of a cost function).
+If L_q and λ_C exist as independent lengths, the length that normalizes the core transition (L_q) and the length that defines phase completion (λ_C) can point to different transitions. Then the definition of the core boundary becomes <strong>duplicated</strong>, Rₚ cannot be fixed as a single length, and the core boundary becomes an ambiguous object depending on procedures.
+Therefore, to preserve the definition that the core boundary is unique, the two lengths must be identified so that they point to the same boundary.</p>
+<h4>(G2) SSOT principle: keep only one length for the same meaning</h4>
+<p>L_q and λ_C are defined by <a href="#eq:S06_xi_def" class="xref" data-ref="eq:S06_xi_def">(S06_xi_def)</a> and <a href="#eq:S06_lambdaC_def" class="xref" data-ref="eq:S06_lambdaC_def">(S06_lambdaC_def)</a>, respectively, but the physical meaning they indicate must converge to the same slot (the core selection length).
+In the core model, “radial scale selection” and “phase-cycle completion” both indicate the point where internal organization ends and a boundary forms. If two lengths that indicate the same slot are kept simultaneously, the same meaning is split across multiple symbols, violating SSOT.
+To satisfy SSOT, the two symbols must be unified into one canonical entry; the unification rule is <a href="#eq:S06_Lq_eq_lC" class="xref" data-ref="eq:S06_Lq_eq_lC">(S06_Lq_eq_lC)</a>.</p>
+<h4>(G3) No-Tuning principle: do not leave L_q/λ_C as a tunable degree of freedom</h4>
+<p>If L_q and λ_C are treated as independent inputs, an additional dimensionless degree of freedom appears:</p>
+<figure class="eq" id="eq:S06_eta_def"><img src="/physics/eq/physics/phy-06-011.svg" data-eq="phy-06-011" width="75" height="42" loading="lazy" alt="\begin{equation} \eta := \frac{L_q}{\lambda_C}. \end{equation}"></figure>
+<p>This ratio η can directly enter the core-radius ratios Rₚ/L_q, Rₚ/λ_C and subsequent derivations (event rate/mass/force), opening a path to adjust η to match outcomes.
+However, this document forbids adjusting degrees of freedom after seeing results (No-Tuning). To close the core selection without introducing a free knob, η must be fixed by a lock. This section declares</p>
+<figure class="eq" id="eq:S06_eta_one"><img src="/physics/eq/physics/phy-06-012.svg" data-eq="phy-06-012" width="54" height="16" loading="lazy" alt="\begin{equation} \eta := 1, \end{equation}"></figure>
+<p>which is equivalent to <a href="#eq:S06_Lq_eq_lC" class="xref" data-ref="eq:S06_Lq_eq_lC">(S06_Lq_eq_lC)</a>.</p>
+<h4>(G4) Compatibility with the unique source of rectification constants: do not introduce a new universal constant beyond π</h4>
+<p>In Chapter 5, the rectification constants α=2/π and δ=1/π² are locked with a unique source. If one separates L_q and λ_C, one needs an <strong>additional constant</strong> or an <strong>additional convention</strong> to determine η in <a href="#eq:S06_eta_def" class="xref" data-ref="eq:S06_eta_def">(S06_eta_def)</a>.
+This document does not introduce a new universal constant beyond the rectification-constant system. Therefore the only canonical choice that removes redundancy in the core selection length is η=1, i.e., L_q=λ_C.</p>
+<h3>6.1.5 Substitution rules after the identification</h3>
+<p>After the identification <a href="#eq:S06_Lq_eq_lC" class="xref" data-ref="eq:S06_Lq_eq_lC">(S06_Lq_eq_lC)</a> is locked, fix the following reuse rules globally.</p>
+<ol>
+<li> L_q and λ_C are two notations for the same entry, and <code>canon_lock</code> records them as a single entry (single value / single meaning under one <code>lock_id</code>).
+<li> In formula manipulations, any occurrence of L_q may be replaced by λ_C, and vice versa. The replacement is only a notational substitution following a defined identification; it is not a new derivation or a new premise.
+<li> Within the same version, it is forbidden to treat L_q and λ_C as different values or to split them into different object assignments/geometric meanings.
+<li> To release the identification or to change to a different ratio (η≠ 1), one must version-bump <code>canon_lock</code> and perform full re-derivation / full re-validation.
+</ol>
+<h2>LOCK/Gate connections for this section (none if empty)</h2>
+<ul>
+<li> LOCK: fix the definition of L_q (normalization length in ξ=R/L_q) and the definition of λ_C (phase-completion length, ψ(λ_C)=2π) in <code>canon_lock</code>/<code>analysis_lock</code>.
+<li> LOCK: fix the identification rule L_q=λ_C and η=L_q/λ_C=1 in <code>canon_lock</code> (SSOT and No-Tuning).
+<li> Gate: using L_q≠λ_C within the same version, or mixing object assignment / geometric meaning between the two symbols, is immediate <code>FAIL</code> (G-SYM/G-LOCK).
+<li> Gate: releasing the identification or changing the ratio requires a version bump followed by full re-derivation / full re-validation; unauthorized changes are <code>FAIL</code> (G-NT).
+</ul>
+<h2>6.2 Balance of 1/R⁴ vs 1/R⁵ → Rₚ/L_q=2/π</h2>
+<span id="hub:RpLq"></span>
+<aside class="claim-strip vps" data-vps="6.2" data-cards="VP-C-027, VP-C-026"><span class="g">[F] balance</span><span class="io">in: $Π₄$ collapse (with $1/α$) vs $Π₅$ rigidity / out: $Rₚ/L_q=α=2/π$</span><q class="one">Two pressures cross once; the crossing is the proton radius.</q><span class="cards">VP-C-027, VP-C-026</span></aside>
+<em> Concept links: the ratio equals the rectification α=2/π of <a href="/physics/05-geometric-rectification-constants-single-source/#hub:alpha" class="xref" data-ref="hub:alpha">§5.1</a>; the same balance reappears in the gravity cap (<a href="/physics/17-extensions-optional-reading/#hub:gravity" class="xref" data-ref="hub:gravity">§17.4</a>).</em>
+<h3>6.2.1 Radial aggregation geometry and standard symbols</h3>
+<p>Lock the core center as x_c and define the radial distance by</p>
+<figure class="eq" id="eq:S06_02_R"><img src="/physics/eq/physics/phy-06-013.svg" data-eq="phy-06-013" width="115" height="19" loading="lazy" alt="\begin{equation} R:=\|\mathbf{x}-\mathbf{x}_c\| \end{equation}"></figure>
+<p>R is an <em>aggregation coordinate</em> inside the canonical cell (<code>CELL-CUBE</code>); the cell geometry is not replaced by a sphere.
+Define the radial aggregation surface (a level set) at radius R by</p>
+<figure class="eq" id="eq:S06_02_sphere_area"><img src="/physics/eq/physics/phy-06-014.svg" data-eq="phy-06-014" width="470" height="21" loading="lazy" alt="\begin{equation} \mathbb{S}_R := \{\mathbf{x}\ |\ \|\mathbf{x}-\mathbf{x}_c\|=R\}, \qquad A(R):=\mathrm{Area}(\mathbb{S}_R)=4\pi R^2. \end{equation}"></figure>
+<p>Here A(R) is the area of the radial aggregation surface; it is a definition of the aggregation surface and is independent of the canonical cell definition (cube).</p>
+<p>The core selection length L_q is the length scale locked in §6.1. In this section, we use L_q in two roles.</p>
+<ol>
+<li> <strong>Unit length</strong> for radial aggregation: the reference length for making R dimensionless.
+<li> <strong>Unit patch length</strong> on the radial aggregation surface: the minimal linear scale used to partition the aggregation surface.
+</ol>
+<p>Fix the unit patch linear size as L_q and define the unit patch area as</p>
+<figure class="eq" id="eq:S06_02_patch_area"><img src="/physics/eq/physics/phy-06-015.svg" data-eq="phy-06-015" width="78" height="24" loading="lazy" alt="\begin{equation} A_0 := L_q^2. \end{equation}"></figure>
+<p>A₀ is the minimal aggregation unit on the radial aggregation surface and must not be changed after seeing results.</p>
+<h3>6.2.2 Insertion point of the direction rectification factor α</h3>
+<p>When a directional component is aggregated into a scalar in radial aggregation, we use the direction rectification factor α as an input from the unique source in §5.1:</p>
+<figure class="eq" id="eq:S06_02_alpha"><img src="/physics/eq/physics/phy-06-016.svg" data-eq="phy-06-016" width="150" height="38" loading="lazy" alt="\begin{equation} \alpha=\left\langle |\cos\theta| \right\rangle=\frac{2}{\pi}. \end{equation}"></figure>
+<p>Here θ is an angular variable aggregated with the uniform measure over one full cycle [0,2π); the averaging convention is locked in §5.1.
+In this section, α is used only as the rectification factor meaning “the effective contribution of the radial component survives only by a factor α on average”; α itself is not re-derived here.</p>
+<h3>6.2.3 Definition and expansion of the 1/R⁴ collapse term Π₄(R)</h3>
+<p>This section defines the “collapse term” (a pressure-like constraint indicator) Π₄(R) at the core boundary by <strong>two rounds of geometric dilution</strong> and an <strong>inverse correction for rectification loss</strong>.</p>
+<h4>6.2.3.1 Geometric dilution 1: area dilution (number of patches)</h4>
+<p>Partition the aggregation surface S_R at radius R by the unit patch area A₀. Define the number of patches as</p>
+<figure class="eq" id="eq:S06_02_NA"><img src="/physics/eq/physics/phy-06-017.svg" data-eq="phy-06-017" width="215" height="48" loading="lazy" alt="\begin{equation} N_A(R) := \frac{A(R)}{A_0}=\frac{4\pi R^2}{L_q^2}. \end{equation}"></figure>
+<p>Therefore the area fraction of a single patch on the full aggregation surface (the area-dilution factor) is</p>
+<figure class="eq" id="eq:S06_02_fA"><img src="/physics/eq/physics/phy-06-018.svg" data-eq="phy-06-018" width="297" height="49" loading="lazy" alt="\begin{equation} f_A(R) := \frac{1}{N_A(R)}=\frac{A_0}{A(R)}=\frac{L_q^2}{4\pi R^2}. \end{equation}"></figure>
+<p>We fix f_A(R) as a purely geometric factor representing “the average share received by a unit patch” on the aggregation surface.</p>
+<h4>6.2.3.2 Geometric dilution 2: angular dilution (directional window to hit a fixed patch)</h4>
+<p>Define the degree of directional alignment toward a fixed patch (linear size L_q) as the “directional window” to hit that patch.
+At radius R, viewing a patch of linear size L_q on the unit sphere, define a representative polar-angle width by</p>
+<figure class="eq" id="eq:S06_02_dtheta"><img src="/physics/eq/physics/phy-06-019.svg" data-eq="phy-06-019" width="113" height="40" loading="lazy" alt="\begin{equation} \Delta\vartheta(R) := \frac{L_q}{R} \end{equation}"></figure>
+<p>and define the corresponding representative solid angle by</p>
+<figure class="eq" id="eq:S06_02_dOmega"><img src="/physics/eq/physics/phy-06-020.svg" data-eq="phy-06-020" width="261" height="48" loading="lazy" alt="\begin{equation} \Delta\Omega(R) := \bigl(\Delta\vartheta(R)\bigr)^2 = \left(\frac{L_q}{R}\right)^2. \end{equation}"></figure>
+<p>Normalize the full directional space by the total solid angle 4π. The angular dilution factor is then</p>
+<figure class="eq" id="eq:S06_02_fOmega"><img src="/physics/eq/physics/phy-06-021.svg" data-eq="phy-06-021" width="266" height="48" loading="lazy" alt="\begin{equation} f_\Omega(R) := \frac{\Delta\Omega(R)}{4\pi} = \frac{1}{4\pi}\left(\frac{L_q}{R}\right)^2. \end{equation}"></figure>
+<p>We fix f_Ω(R) as the geometric factor representing “the directional window required by a unit patch.”</p>
+<h4>6.2.3.3 Rectification-loss correction (inverse factor 1/α)</h4>
+<p>Even when the direction is aligned, the radial component is a signed projection so cancellations occur on average. Since the effective contribution of the radial component survives only by α (<a href="#eq:S06_02_alpha" class="xref" data-ref="eq:S06_02_alpha">(S06_02_alpha)</a>), an inverse correction factor 1/α is required to secure the same “effective contribution.”
+This correction is not an ad hoc fit but a direct consequence of the rectification convention (§5.1).</p>
+<h4>6.2.3.4 Definition of the collapse term Π₄(R)</h4>
+<p>Define the collapse term (pressure-like constraint indicator) Π₄(R) at the core boundary as</p>
+<figure class="eq" id="eq:S06_02_Pi4_def"><img src="/physics/eq/physics/phy-06-022.svg" data-eq="phy-06-022" width="235" height="38" loading="lazy" alt="\begin{equation} \Pi_{4}(R) := \Pi_\star\, \frac{1}{\alpha}\, f_A(R)\, f_\Omega(R), \end{equation}"></figure>
+<p>where Π_* is the “unit constraint strength” locked inside the regime (dimensionless or internal unit) and is a reference value independent of R. Π_* is a common factor that cancels in this section; its magnitude does not affect the ratio conclusion.</p>
+<p>Substitute <a href="#eq:S06_02_fA" class="xref" data-ref="eq:S06_02_fA">(S06_02_fA)</a> and <a href="#eq:S06_02_fOmega" class="xref" data-ref="eq:S06_02_fOmega">(S06_02_fOmega)</a> into <a href="#eq:S06_02_Pi4_def" class="xref" data-ref="eq:S06_02_Pi4_def">(S06_02_Pi4_def)</a> to fully expand:</p>
+<figure class="eq" id="eq:S06_02_Pi4_final"><img src="/physics/eq/physics/phy-06-023.svg" data-eq="phy-06-023" width="327" height="223" loading="lazy" alt="\begin{align} \Pi_{4}(R) &amp;= \Pi_\star\, \frac{1}{\alpha}\, \left(\frac{L_q^2}{4\pi R^2}\right) \left(\frac{1}{4\pi}\left(\frac{L_q}{R}\right)^2\right) \notag\\ &amp;= \Pi_\star\, \frac{1}{\alpha}\, \left(\frac{L_q^2}{4\pi R^2}\right) \left(\frac{L_q^2}{4\pi R^2}\right) \notag\\ &amp;= \Pi_\star\, \frac{1}{\alpha}\, \frac{L_q^4}{(4\pi)^2 R^4} \notag\\ &amp;= \Pi_\star\, \frac{1}{\alpha}\, \frac{L_q^4}{16\pi^2}\, \frac{1}{R^4}. \end{align}"></figure>
+<p>Therefore the collapse term is fixed to the 1/R⁴ scaling, and its coefficient includes the inverse factor 1/α.</p>
+<h3>6.2.4 Definition and expansion of the 1/R⁵ rigidity term Π₅(R)</h3>
+<p>This section defines the “rigidity term” (a pressure-like constraint indicator) Π₅(R) in the substrate (Stone) regime by adding a <strong>radial-chain lock factor</strong> to the <strong>same two rounds of geometric dilution</strong>.</p>
+<h4>6.2.4.1 Radial-chain lock factor η_R(R)</h4>
+<p>Define the number of unit lengths L_q stacked along the radial direction up to radius R (the number of radial layers) by</p>
+<figure class="eq" id="eq:S06_02_NR"><img src="/physics/eq/physics/phy-06-024.svg" data-eq="phy-06-024" width="118" height="43" loading="lazy" alt="\begin{equation} N_R(R) := \frac{R}{L_q}. \end{equation}"></figure>
+<p>Under the local rule (§3.1), radial transfer is represented as a chain of unit layers, and the average contribution of the chain is fixed by a rectification factor inversely proportional to the layer count. Define this as the “radial-chain lock factor”</p>
+<figure class="eq" id="eq:S06_02_etaR"><img src="/physics/eq/physics/phy-06-025.svg" data-eq="phy-06-025" width="200" height="44" loading="lazy" alt="\begin{equation} \eta_R(R) := \frac{1}{N_R(R)}=\frac{L_q}{R}. \end{equation}"></figure>
+<p>η_R(R) is a geometric factor determined by the definition <a href="#eq:S06_02_NR" class="xref" data-ref="eq:S06_02_NR">(S06_02_NR)</a> and must not be adjusted after seeing results.</p>
+<h4>6.2.4.2 Definition of the rigidity term Π₅(R)</h4>
+<p>Define the rigidity term Π₅(R) as</p>
+<figure class="eq" id="eq:S06_02_Pi5_def"><img src="/physics/eq/physics/phy-06-026.svg" data-eq="phy-06-026" width="264" height="19" loading="lazy" alt="\begin{equation} \Pi_{5}(R) := \Pi_\star\, f_A(R)\, f_\Omega(R)\,\eta_R(R). \end{equation}"></figure>
+<p>Unlike the collapse term, the rigidity term does not include 1/α. The attenuation of the rigidity term is determined not by “rectification loss of a directional projection” but only by “radial-chain locking.”</p>
+<p>Substitute <a href="#eq:S06_02_fA" class="xref" data-ref="eq:S06_02_fA">(S06_02_fA)</a>, <a href="#eq:S06_02_fOmega" class="xref" data-ref="eq:S06_02_fOmega">(S06_02_fOmega)</a>, and <a href="#eq:S06_02_etaR" class="xref" data-ref="eq:S06_02_etaR">(S06_02_etaR)</a> into <a href="#eq:S06_02_Pi5_def" class="xref" data-ref="eq:S06_02_Pi5_def">(S06_02_Pi5_def)</a> to fully expand:</p>
+<figure class="eq" id="eq:S06_02_Pi5_final"><img src="/physics/eq/physics/phy-06-027.svg" data-eq="phy-06-027" width="366" height="222" loading="lazy" alt="\begin{align} \Pi_{5}(R) &amp;= \Pi_\star\, \left(\frac{L_q^2}{4\pi R^2}\right) \left(\frac{1}{4\pi}\left(\frac{L_q}{R}\right)^2\right) \left(\frac{L_q}{R}\right) \notag\\ &amp;= \Pi_\star\, \left(\frac{L_q^2}{4\pi R^2}\right) \left(\frac{L_q^2}{4\pi R^2}\right) \left(\frac{L_q}{R}\right) \notag\\ &amp;= \Pi_\star\, \frac{L_q^5}{(4\pi)^2 R^5} \notag\\ &amp;= \Pi_\star\, \frac{L_q^5}{16\pi^2}\, \frac{1}{R^5}. \end{align}"></figure>
+<p>Therefore the rigidity term is fixed to the 1/R⁵ scaling. It shares the same geometric coefficient (4π)⁻² with the collapse term and has one additional order of attenuation by the factor L_q/R.</p>
+<h3>6.2.5 Balance condition and the complete derivation of Rₚ/L_q=2/π</h3>
+<p>Define the core radius Rₚ as the transition point where the “collapse term” and the “rigidity term” balance. Lock the balance condition as</p>
+<figure class="eq" id="eq:S06_02_balance_condition"><img src="/physics/eq/physics/phy-06-028.svg" data-eq="phy-06-028" width="147" height="19" loading="lazy" alt="\begin{equation} \Pi_{4}(R_p)=\Pi_{5}(R_p). \end{equation}"></figure>
+<p>Substitute <a href="#eq:S06_02_Pi4_final" class="xref" data-ref="eq:S06_02_Pi4_final">(S06_02_Pi4_final)</a> and <a href="#eq:S06_02_Pi5_final" class="xref" data-ref="eq:S06_02_Pi5_final">(S06_02_Pi5_final)</a> into <a href="#eq:S06_02_balance_condition" class="xref" data-ref="eq:S06_02_balance_condition">(S06_02_balance_condition)</a>:</p>
+<figure class="eq" id="eq:S06_02_balance_sub"><img src="/physics/eq/physics/phy-06-029.svg" data-eq="phy-06-029" width="261" height="52" loading="lazy" alt="\begin{align} \Pi_\star\, \frac{1}{\alpha}\, \frac{L_q^4}{16\pi^2}\, \frac{1}{R_p^4} &amp;= \Pi_\star\, \frac{L_q^5}{16\pi^2}\, \frac{1}{R_p^5}. \end{align}"></figure>
+<p>Cancel the common factors Π_* and 16π² on both sides:</p>
+<figure class="eq" id="eq:S06_02_balance_cancel1"><img src="/physics/eq/physics/phy-06-030.svg" data-eq="phy-06-030" width="161" height="46" loading="lazy" alt="\begin{equation} \frac{1}{\alpha}\,L_q^4\,\frac{1}{R_p^4} = L_q^5\,\frac{1}{R_p^5}. \end{equation}"></figure>
+<p>Divide both sides by L_q⁴/Rₚ⁴:</p>
+<figure class="eq" id="eq:S06_02_balance_cancel2"><img src="/physics/eq/physics/phy-06-031.svg" data-eq="phy-06-031" width="80" height="45" loading="lazy" alt="\begin{equation} \frac{1}{\alpha} = \frac{L_q}{R_p}. \end{equation}"></figure>
+<p>Therefore the dimensionless ratio of the core radius is</p>
+<figure class="eq" id="eq:S06_02_Rp_over_Lq_alpha"><img src="/physics/eq/physics/phy-06-032.svg" data-eq="phy-06-032" width="72" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\alpha. \end{equation}"></figure>
+<p>Since α is fixed in §5.1 as α=2/π,</p>
+<figure class="eq" id="eq:S06_02_Rp_over_Lq_final"><img src="/physics/eq/physics/phy-06-033.svg" data-eq="phy-06-033" width="79" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\frac{2}{\pi}. \end{equation}"></figure>
+<p>Moreover, since L_q=λ_C is locked in §6.1, the following substitution is allowed within the same locked version:</p>
+<figure class="eq" id="eq:S06_02_Rp_lambdaC"><img src="/physics/eq/physics/phy-06-034.svg" data-eq="phy-06-034" width="163" height="38" loading="lazy" alt="\begin{equation} R_p=\frac{2}{\pi}\,L_q=\frac{2}{\pi}\,\lambda_C. \end{equation}"></figure>
+<p>Equations <a href="#eq:S06_02_Rp_over_Lq_final" class="xref" data-ref="eq:S06_02_Rp_over_Lq_final">(S06_02_Rp_over_Lq_final)</a> and <a href="#eq:S06_02_Rp_lambdaC" class="xref" data-ref="eq:S06_02_Rp_lambdaC">(S06_02_Rp_lambdaC)</a> are fixed as the conclusions of this section.</p>
+<h3>6.2.6 Validity conditions (regime prerequisites) and handling violations</h3>
+<p>For the conclusion <a href="#eq:S06_02_Rp_over_Lq_final" class="xref" data-ref="eq:S06_02_Rp_over_Lq_final">(S06_02_Rp_over_Lq_final)</a> to hold, the following items must be locked.</p>
+<ol>
+<li> The aggregation convention that adopts L_q as the unit patch length must be locked (A₀=L_q²).
+<li> The direction rectification factor α must be locked by the canonical convention in §5.1 (α=2/π).
+<li> The radial-chain lock factor η_R(L_q/R) must be locked by the regime convention.
+</ol>
+<p>If any of the above items is not locked, or if they are mixed within the same output, the definitions <a href="#eq:S06_02_Pi4_def" class="xref" data-ref="eq:S06_02_Pi4_def">(S06_02_Pi4_def)</a>–<a href="#eq:S06_02_Pi5_def" class="xref" data-ref="eq:S06_02_Pi5_def">(S06_02_Pi5_def)</a> collapse and the corresponding conclusion loses conclusion status.</p>
+<h2>LOCK/Gate connections for this section (none if empty)</h2>
+<ul>
+<li> LOCK: fix the unit patch A₀=L_q², aggregation-surface area A(R)=4π R², dilution factors f_A,f_Ω, and the chain factor η_R=L_q/R in <code>analysis_lock</code>.
+<li> LOCK: fix the definitions of the collapse term Π₄(R) and rigidity term Π₅(R) in <a href="#eq:S06_02_Pi4_def" class="xref" data-ref="eq:S06_02_Pi4_def">(S06_02_Pi4_def)</a>, <a href="#eq:S06_02_Pi5_def" class="xref" data-ref="eq:S06_02_Pi5_def">(S06_02_Pi5_def)</a>, and the balance condition <a href="#eq:S06_02_balance_condition" class="xref" data-ref="eq:S06_02_balance_condition">(S06_02_balance_condition)</a> in <code>analysis_lock</code>.
+<li> LOCK: α=2/π is used only as an input by referencing the unique source in §5.1 and is recorded via <code>canon_lock</code>.
+<li> Gate: cell-meaning/diameter-vs-radius/scope conflicts are immediate <code>FAIL</code> (G-SYM); regime mismatch is <code>FAIL</code>/<code>INCONCLUSIVE</code> (G-REG).
+<li> Gate: re-deriving α or swapping the rectification convention is <code>FAIL</code> (G-RECT); inconsistency in mixing L_q and λ_C is <code>FAIL</code> (G-LOCK).
+</ul>
+<h2>6.3 Numeric substitution for Rₚ and a summary of invariants</h2>
+<aside class="claim-strip vps" data-vps="6.3" data-cards="VP-C-007, VP-C-018"><span class="g">[F] numbers</span><span class="io">in: $λ_C=1.32135$ fm / out: $Rₚ=0.8412$ fm; $σ/L_q²=4/π$</span><q class="one">The locked radius and its invariant, two lines from the balance.</q><span class="cards">VP-C-007, VP-C-018</span></aside>
+<h3>6.3.1 Inputs (LOCK) and reference equations (starting point)</h3>
+<p>In this section, lock the following inputs and reference equations.</p>
+<ol>
+<li> Rectification constant:
+<figure class="eq" id="eq:S06_03_alpha"><img src="/physics/eq/physics/phy-06-035.svg" data-eq="phy-06-035" width="61" height="38" loading="lazy" alt="\begin{equation} \alpha=\frac{2}{\pi}. \end{equation}"></figure>
+<li> Length identification:
+<figure class="eq" id="eq:S06_03_Lq_eq_lC"><img src="/physics/eq/physics/phy-06-036.svg" data-eq="phy-06-036" width="72" height="18" loading="lazy" alt="\begin{equation} L_q=\lambda_C. \end{equation}"></figure>
+<li> Ratio conclusion for the core radius (derived in §6.2):
+<figure class="eq" id="eq:S06_03_Rp_over_Lq"><img src="/physics/eq/physics/phy-06-037.svg" data-eq="phy-06-037" width="72" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\alpha. \end{equation}"></figure>
+</ol>
+<p>The three equations above are not re-derived here. This section combines them to (i) compute a numerical value of Rₚ, (ii) define and compute the geometric cross section σ_geom, and (iii) summarize the invariant 4/π.</p>
+<h3>6.3.2 Full expansion of the Rₚ formula</h3>
+<p>From <a href="#eq:S06_03_Rp_over_Lq" class="xref" data-ref="eq:S06_03_Rp_over_Lq">(S06_03_Rp_over_Lq)</a>,</p>
+<figure class="eq" id="eq:S06_03_Rp_alpha_Lq"><img src="/physics/eq/physics/phy-06-038.svg" data-eq="phy-06-038" width="232" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\alpha \quad\Longrightarrow\quad R_p=\alpha\,L_q. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S06_03_Lq_eq_lC" class="xref" data-ref="eq:S06_03_Lq_eq_lC">(S06_03_Lq_eq_lC)</a> into <a href="#eq:S06_03_Rp_alpha_Lq" class="xref" data-ref="eq:S06_03_Rp_alpha_Lq">(S06_03_Rp_alpha_Lq)</a>:</p>
+<figure class="eq" id="eq:S06_03_Rp_alpha_lC"><img src="/physics/eq/physics/phy-06-039.svg" data-eq="phy-06-039" width="89" height="18" loading="lazy" alt="\begin{equation} R_p=\alpha\,\lambda_C. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S06_03_alpha" class="xref" data-ref="eq:S06_03_alpha">(S06_03_alpha)</a> into <a href="#eq:S06_03_Rp_alpha_lC" class="xref" data-ref="eq:S06_03_Rp_alpha_lC">(S06_03_Rp_alpha_lC)</a>:</p>
+<figure class="eq" id="eq:S06_03_Rp_final_form"><img src="/physics/eq/physics/phy-06-040.svg" data-eq="phy-06-040" width="96" height="38" loading="lazy" alt="\begin{equation} R_p=\frac{2}{\pi}\,\lambda_C. \end{equation}"></figure>
+<p>Therefore, the numerical substitution for Rₚ in this section is fixed as the procedure “evaluate <a href="#eq:S06_03_Rp_final_form" class="xref" data-ref="eq:S06_03_Rp_final_form">(S06_03_Rp_final_form)</a> using the locked value of λ_C.”</p>
+<h3>6.3.3 Substituting the locked value of λ_C → Rₚ=0.8412fm</h3>
+<p>λ_C is the “core phase-completion length” defined in §6.1. In this section, assume that the following value is locked by <code>canon_lock</code>:</p>
+<figure class="eq" id="eq:S06_03_lC_value_lock"><img src="/physics/eq/physics/phy-06-041.svg" data-eq="phy-06-041" width="241" height="16" loading="lazy" alt="\begin{equation} \lambda_C = 1.3213538700998668\ \mathrm{fm}. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S06_03_lC_value_lock" class="xref" data-ref="eq:S06_03_lC_value_lock">(S06_03_lC_value_lock)</a> into <a href="#eq:S06_03_Rp_final_form" class="xref" data-ref="eq:S06_03_Rp_final_form">(S06_03_Rp_final_form)</a>:</p>
+<figure class="eq" id="eq:S06_03_Rp_value_fm"><img src="/physics/eq/physics/phy-06-042.svg" data-eq="phy-06-042" width="346" height="62" loading="lazy" alt="\begin{align} R_p &amp;=\frac{2}{\pi}\,\lambda_C =\frac{2}{\pi}\times 1.3213538700998668\ \mathrm{fm} \notag\\ &amp;= 0.8412\ \mathrm{fm}. \end{align}"></figure>
+<p>With the unit-conversion convention 1fm=10⁻¹⁵m,</p>
+<figure class="eq" id="eq:S06_03_Rp_value_m"><img src="/physics/eq/physics/phy-06-043.svg" data-eq="phy-06-043" width="343" height="22" loading="lazy" alt="\begin{equation} R_p = 0.8412\times 10^{-15}\ \mathrm{m} = 8.412\times 10^{-16}\ \mathrm{m}. \end{equation}"></figure>
+<h3>6.3.4 Back-calculation (consistency): reconstructing λ_C from Rₚ=0.8412fm</h3>
+<p>Equation <a href="#eq:S06_03_Rp_final_form" class="xref" data-ref="eq:S06_03_Rp_final_form">(S06_03_Rp_final_form)</a> is equivalent to</p>
+<figure class="eq" id="eq:S06_03_lC_from_Rp"><img src="/physics/eq/physics/phy-06-044.svg" data-eq="phy-06-044" width="96" height="33" loading="lazy" alt="\begin{equation} \lambda_C=\frac{\pi}{2}\,R_p. \end{equation}"></figure>
+<p>Substituting <a href="#eq:S06_03_Rp_value_fm" class="xref" data-ref="eq:S06_03_Rp_value_fm">(S06_03_Rp_value_fm)</a> into <a href="#eq:S06_03_lC_from_Rp" class="xref" data-ref="eq:S06_03_lC_from_Rp">(S06_03_lC_from_Rp)</a> gives</p>
+<figure class="eq" id="eq:S06_03_lC_backcalc"><img src="/physics/eq/physics/phy-06-045.svg" data-eq="phy-06-045" width="241" height="57" loading="lazy" alt="\begin{align} \lambda_C &amp;=\frac{\pi}{2}\times 0.8412\ \mathrm{fm} \notag\\ &amp;= 1.3213538700998668\ \mathrm{fm}, \end{align}"></figure>
+<p>which matches <a href="#eq:S06_03_lC_value_lock" class="xref" data-ref="eq:S06_03_lC_value_lock">(S06_03_lC_value_lock)</a>. Therefore the locks Rₚ/L_q=α and L_q=λ_C are numerically consistent within the same version (this check is used only as a Gate input and not as a justification).</p>
+<h3>6.3.5 Definition and numerics of the geometric cross section σ_geom</h3>
+<h4>[D-6.3-1] Definition of geometric cross section</h4>
+<p>Once the core radius Rₚ is defined, define the geometric cross section (geometric area) as</p>
+<figure class="eq" id="eq:S06_03_sigma_def"><img src="/physics/eq/physics/phy-06-046.svg" data-eq="phy-06-046" width="110" height="24" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{geom}} := \pi R_p^2. \end{equation}"></figure>
+<p>Definition <a href="#eq:S06_03_sigma_def" class="xref" data-ref="eq:S06_03_sigma_def">(S06_03_sigma_def)</a> is purely geometric and must not be reinterpreted as a different notion (effective cross section, etc.). If an effective cross section is needed, it must be introduced as a separate symbol with a separate definition.</p>
+<h4>Numerical substitution</h4>
+<p>Substitute <a href="#eq:S06_03_Rp_value_fm" class="xref" data-ref="eq:S06_03_Rp_value_fm">(S06_03_Rp_value_fm)</a> into <a href="#eq:S06_03_sigma_def" class="xref" data-ref="eq:S06_03_sigma_def">(S06_03_sigma_def)</a>:</p>
+<figure class="eq" id="eq:S06_03_sigma_value_fm2"><img src="/physics/eq/physics/phy-06-047.svg" data-eq="phy-06-047" width="259" height="76" loading="lazy" alt="\begin{align} \sigma_{\mathrm{geom}} &amp;=\pi\,(0.8412\ \mathrm{fm})^2 \notag\\ &amp;=\pi\times 0.70761744\ \mathrm{fm}^2 \notag\\ &amp;=2.223045751056016\ \mathrm{fm}^2. \end{align}"></figure>
+<p>With the unit-conversion convention (1fm)²=10⁻³⁰m²,</p>
+<figure class="eq" id="eq:S06_03_sigma_value_m2"><img src="/physics/eq/physics/phy-06-048.svg" data-eq="phy-06-048" width="320" height="22" loading="lazy" alt="\begin{equation} \sigma_{\mathrm{geom}} = 2.223045751056016\times 10^{-30}\ \mathrm{m}^2. \end{equation}"></figure>
+<h3>6.3.6 Summary of the 4/π invariant (definition–expansion–conclusion)</h3>
+<p>In this section, an “invariant” means a <strong>dimensionless</strong> or <strong>normalized</strong> combination that remains valid inside the regime regardless of unit choices as long as the lock on the ratio Rₚ/L_q is maintained.</p>
+<h4>6.3.6.1 Invariant I: σ_geom/L_q²=4/π</h4>
+<p>From the conclusion <a href="#eq:S06_03_Rp_over_Lq" class="xref" data-ref="eq:S06_03_Rp_over_Lq">(S06_03_Rp_over_Lq)</a> of §6.2,</p>
+<figure class="eq" id="eq:S06_03_Rp_alphaLq_repeat"><img src="/physics/eq/physics/phy-06-049.svg" data-eq="phy-06-049" width="79" height="18" loading="lazy" alt="\begin{equation} R_p=\alpha L_q \end{equation}"></figure>
+<p>and since α=2/π,</p>
+<figure class="eq" id="eq:S06_03_Rp_2overpi_Lq"><img src="/physics/eq/physics/phy-06-050.svg" data-eq="phy-06-050" width="91" height="38" loading="lazy" alt="\begin{equation} R_p=\frac{2}{\pi}L_q. \end{equation}"></figure>
+<p>Substitute <a href="#eq:S06_03_Rp_2overpi_Lq" class="xref" data-ref="eq:S06_03_Rp_2overpi_Lq">(S06_03_Rp_2overpi_Lq)</a> into <a href="#eq:S06_03_sigma_def" class="xref" data-ref="eq:S06_03_sigma_def">(S06_03_sigma_def)</a>:</p>
+<figure class="eq" id="eq:S06_03_sigma_in_Lq"><img src="/physics/eq/physics/phy-06-051.svg" data-eq="phy-06-051" width="209" height="142" loading="lazy" alt="\begin{align} \sigma_{\mathrm{geom}} &amp;=\pi R_p^2 =\pi\left(\frac{2}{\pi}L_q\right)^2 \notag\\ &amp;=\pi\left(\frac{4}{\pi^2}\right)L_q^2 \notag\\ &amp;=\frac{4}{\pi}\,L_q^2. \end{align}"></figure>
+<p>Therefore the following invariant holds.</p>
+<figure class="eq" id="eq:S06_03_invariant_4overpi"><img src="/physics/eq/physics/phy-06-052.svg" data-eq="phy-06-052" width="247" height="55" loading="lazy" alt="\begin{equation} \boxed{ \frac{\sigma_{\mathrm{geom}}}{L_q^2} = \frac{4}{\pi} } \qquad (\text{Invariant I}). \end{equation}"></figure>
+<p>Applying the lock L_q=λ_C from §6.1 gives the equivalent form</p>
+<figure class="eq" id="eq:S06_03_invariant_4overpi_lC"><img src="/physics/eq/physics/phy-06-053.svg" data-eq="phy-06-053" width="383" height="56" loading="lazy" alt="\begin{equation} \boxed{ \frac{\sigma_{\mathrm{geom}}}{\lambda_C^2} = \frac{4}{\pi} } \qquad (\text{Invariant I, equivalent form}). \end{equation}"></figure>
+<h4>6.3.6.2 Numerical check (Invariant I)</h4>
+<p>From <a href="#eq:S06_03_lC_value_lock" class="xref" data-ref="eq:S06_03_lC_value_lock">(S06_03_lC_value_lock)</a>, since L_q=λ_C, we have</p>
+<figure class="eq" id="eq:S06_03_Lq2_value"><img src="/physics/eq/physics/phy-06-054.svg" data-eq="phy-06-054" width="483" height="24" loading="lazy" alt="\begin{equation} L_q^2 = (1.3213538700998668\ \mathrm{fm})^2 = 1.7459760500278958\ \mathrm{fm}^2. \end{equation}"></figure>
+<p>Using <a href="#eq:S06_03_sigma_value_fm2" class="xref" data-ref="eq:S06_03_sigma_value_fm2">(S06_03_sigma_value_fm2)</a> and <a href="#eq:S06_03_Lq2_value" class="xref" data-ref="eq:S06_03_Lq2_value">(S06_03_Lq2_value)</a>,</p>
+<figure class="eq" id="eq:S06_03_ratio_numeric"><img src="/physics/eq/physics/phy-06-055.svg" data-eq="phy-06-055" width="246" height="70" loading="lazy" alt="\begin{align} \frac{\sigma_{\mathrm{geom}}}{L_q^2} &amp;= \frac{2.223045751056016}{1.7459760500278958} \notag\\ &amp;= 1.2732395447351628, \end{align}"></figure>
+<p>and since</p>
+<figure class="eq" id="eq:S06_03_4overpi_numeric"><img src="/physics/eq/physics/phy-06-056.svg" data-eq="phy-06-056" width="211" height="38" loading="lazy" alt="\begin{equation} \frac{4}{\pi}=1.2732395447351628, \end{equation}"></figure>
+<p>the numerical ratio agrees with <a href="#eq:S06_03_invariant_4overpi" class="xref" data-ref="eq:S06_03_invariant_4overpi">(S06_03_invariant_4overpi)</a>. This check is a <strong>validation computation</strong>; it does not use external texts as a basis for the invariant.</p>
+<h3>6.3.7 Where the invariant is used (locking insertion points)</h3>
+<p>Invariant I can be used as a <em>geometric normalization</em> in derivations of the following form, and its use must have its insertion point locked.</p>
+<ol>
+<li> In every expression where σ_geom appears, when normalizing σ_geom by L_q², use <a href="#eq:S06_03_invariant_4overpi" class="xref" data-ref="eq:S06_03_invariant_4overpi">(S06_03_invariant_4overpi)</a> to fix the constant as 4/π.
+<li> For expressions written in terms of λ_C, use the equivalent form <a href="#eq:S06_03_invariant_4overpi_lC" class="xref" data-ref="eq:S06_03_invariant_4overpi_lC">(S06_03_invariant_4overpi_lC)</a>.
+</ol>
+<p>This use is permitted only as a geometric consequence of the already-locked ratio Rₚ/L_q=α and α=2/π, not as an “ad hoc constant correction.”</p>
+<h2>LOCK/Gate connections for this section (none if empty)</h2>
+<ul>
+<li> LOCK: fix Rₚ/L_q=α, L_q=λ_C, α=2/π, and the numeric value of λ_C in <a href="#eq:S06_03_lC_value_lock" class="xref" data-ref="eq:S06_03_lC_value_lock">(S06_03_lC_value_lock)</a> within the same <code>canon_lock</code> version.
+<li> LOCK: fix the definition σ_geom:=π Rₚ² and the invariant σ_geom/L_q²=4/π.
+<li> Gate: mixing meanings/units among Rₚ,L_q,λ_C or mixing <code>lock_id</code> is immediate <code>FAIL</code> (G-SYM/G-LOCK).
+<li> Gate: re-deriving/re-defining α and δ is immediate <code>FAIL</code> (G-RECT).
+<li> Gate: numerical checks (ratios/invariants) are recorded only as validation inputs (not as justification), and the validation stack must be registered in advance in <code>gate_lock</code>.
+</ul>
+<h2>6.4 Continuum→Discrete (82+7) stability conditions</h2>
+<aside class="claim-strip vps" data-vps="6.4" data-cards="VP-C-023"><span class="g">admissibility [C-82/7]</span><span class="io">in: discrete structure / out: conditions incl. tetra-$K₄$ rigidity certificate</span><q class="one">What the continuum result requires the integer core to satisfy.</q><span class="cards">VP-C-023</span></aside>
+<h3>6.4.1 Purpose</h3>
+<p>This section declares a <strong>list of minimal stability conditions</strong> required when the core radius Rₚ and related invariants derived in Chapter 6 (e.g., Rₚ/L_q=2/π, σ_geom/L_q²=4/π) <em>descend</em> to the discrete structure “core 82 + shell 7” in Chapter 8.
+This section does not derive the detailed coordinates or coupling conventions of the discrete structure. It fixes only the <strong>necessary conditions</strong> imposed by the continuum results on the discrete structure, in the form of (i) condition identifier, (ii) condition content, and (iii) handling on violation.</p>
+<h3>6.4.2 Premises (locked continuum-side results)</h3>
+<p>The continuum-side locked results referenced in this section are as follows.</p>
+<ol>
+<li> Core radius ratio:
+<figure class="eq" id="eq:S06_04_Rp_ratio"><img src="/physics/eq/physics/phy-06-057.svg" data-eq="phy-06-057" width="79" height="45" loading="lazy" alt="\begin{equation} \frac{R_p}{L_q}=\frac{2}{\pi}. \end{equation}"></figure>
+<li> Length identification:
+<figure class="eq" id="eq:S06_04_Lq_eq_lC"><img src="/physics/eq/physics/phy-06-058.svg" data-eq="phy-06-058" width="72" height="18" loading="lazy" alt="\begin{equation} L_q=\lambda_C. \end{equation}"></figure>
+<li> Geometric cross-section invariant:
+<figure class="eq" id="eq:S06_04_invariant_sigma"><img src="/physics/eq/physics/phy-06-059.svg" data-eq="phy-06-059" width="249" height="46" loading="lazy" alt="\begin{equation} \frac{\sigma_{\mathrm{geom}}}{L_q^2}=\frac{4}{\pi}, \qquad \sigma_{\mathrm{geom}}:=\pi R_p^2. \end{equation}"></figure>
+</ol>
+<p>These results are chapter outputs of the continuum model and belong to <code>canon_lock</code>. If the discrete structure fails to satisfy them, the continuum→discrete link does not hold.</p>
+<h3>6.4.3 Minimal stability conditions for the discrete structure (82+7)</h3>
+<p>The discrete structure consists of the combination “core 82” and “shell 7.” The continuum results require the following conditions as <strong>mandatory</strong>. Each condition is independent; violating any one of them judges the continuum→discrete link as <code>FAIL</code>.</p>
+<h3>[C-82/7-01] Core-boundary radius consistency (radius lock condition)</h3>
+<p>Given a discrete core (82) coordinate set x_i_(i=1)⁸² and a center x_c, the radial aggregate of the key boundary layer (boundary-candidate set B₈₂⊆1,…,82) must be consistent with Rₚ. Declare the consistency in the following form:</p>
+<figure class="eq" id="eq:S06_04_R82_match"><img src="/physics/eq/physics/phy-06-060.svg" data-eq="phy-06-060" width="295" height="33" loading="lazy" alt="\begin{equation} R_{82} := \mathrm{Agg}\Bigl(\{\|\mathbf{x}_i-\mathbf{x}_c\|\}_{i\in\mathcal{B}_{82}}\Bigr) \equiv R_p, \end{equation}"></figure>
+<p>where the aggregation operator Agg (e.g., median, mean, center of a min–max band) must be locked in <code>analysis_lock</code>. If Agg is not locked, R₈₂ is non-unique; the condition is undefined and judged <code>INCONCLUSIVE</code>.
+The tolerance (allowable error) ε_R must be registered in advance in <code>gate_lock</code>, and</p>
+<figure class="eq" id="eq:S06_04_R82_fail"><img src="/physics/eq/physics/phy-06-061.svg" data-eq="phy-06-061" width="387" height="19" loading="lazy" alt="\begin{equation} |R_{82}-R_p|&gt;\varepsilon_{R} \quad\Longrightarrow\quad \texttt{FAIL-CORE82-RADIUS}. \end{equation}"></figure>
+<h3>[C-82/7-02] Cross-section invariant consistency (geometric cross-section condition)</h3>
+<p>In the discrete core (82), it must be possible to define a “discrete cross section” through the boundary-candidate set B₈₂, and its normalization must be consistent with the invariant <a href="#eq:S06_04_invariant_sigma" class="xref" data-ref="eq:S06_04_invariant_sigma">(S06_04_invariant_sigma)</a>. Define the discrete cross section σ₈₂ in the following form:</p>
+<figure class="eq" id="eq:S06_04_sigma82_def"><img src="/physics/eq/physics/phy-06-062.svg" data-eq="phy-06-062" width="259" height="33" loading="lazy" alt="\begin{equation} \sigma_{82} := \mathrm{ProjArea}\Bigl(\{\mathbf{x}_i\}_{i\in\mathcal{B}_{82}};\ \mathbf{n}_\sigma\Bigr), \end{equation}"></figure>
+<p>where n_σ is the projection axis and is locked in <code>analysis_lock</code>. The definition of the projection-area operator ProjArea (convex hull / lattice-cell count / pixelization, etc.) must also be locked in <code>analysis_lock</code>.</p>
+<p>Define the normalized cross-section ratio as</p>
+<figure class="eq" id="eq:S06_04_I_sigma82"><img src="/physics/eq/physics/phy-06-063.svg" data-eq="phy-06-063" width="102" height="41" loading="lazy" alt="\begin{equation} I_{\sigma,82}:=\frac{\sigma_{82}}{L_q^2}. \end{equation}"></figure>
+<p>The requirement from the continuum invariant is declared as</p>
+<figure class="eq" id="eq:S06_04_sigma_fail"><img src="/physics/eq/physics/phy-06-064.svg" data-eq="phy-06-064" width="379" height="41" loading="lazy" alt="\begin{equation} \left|I_{\sigma,82}-\frac{4}{\pi}\right|&gt;\varepsilon_{\sigma} \quad\Longrightarrow\quad \texttt{FAIL-CORE82-SIGMA}. \end{equation}"></figure>
+<p>where ε_(σ) is a threshold locked in <code>gate_lock</code>.</p>
+<h3>[C-82/7-03] Uniqueness of boundary transition (single core-boundary condition)</h3>
+<p>The continuum model locks the core boundary as a single transition point. The discrete structure must also have a single transition. Define a “core indicator” χ₈₂(r) for radius r and require that there is only one transition point:</p>
+<figure class="eq" id="eq:S06_04_single_transition"><img src="/physics/eq/physics/phy-06-065.svg" data-eq="phy-06-065" width="515" height="19" loading="lazy" alt="\begin{equation} \chi_{82}(r)\in\{0,1\}, \qquad r\mapsto \chi_{82}(r)\ \text{has exactly one }0\to 1\text{ transition}. \end{equation}"></figure>
+<p>The decision rule for the transition (which structural quantity defines χ₈₂, and the thresholds that judge “one transition”) must be locked in <code>analysis_lock</code>.
+If two or more transitions occur, or if there is no transition, treat it as a failure of the continuum→discrete link:</p>
+<figure class="eq" id="eq:S06_04_transition_fail"><img src="/physics/eq/physics/phy-06-066.svg" data-eq="phy-06-066" width="460" height="17" loading="lazy" alt="\begin{equation} \text{transition count}\neq 1 \quad\Longrightarrow\quad \texttt{FAIL-CORE82-TRANSITION}. \end{equation}"></figure>
+<h3>[C-82/7-04] Locality of shell (7) attachment (preservation of the local rule)</h3>
+<p>Shell (7) must form attachment/cancellation/survival structures <em>locally</em> near the core boundary. This is the requirement that the discrete construction is compatible with the local-rule axiom in §3.1. Declare the following condition:</p>
+<figure class="eq" id="eq:S06_04_shell_local_attach"><img src="/physics/eq/physics/phy-06-067.svg" data-eq="phy-06-067" width="428" height="20" loading="lazy" alt="\begin{equation} \forall k\in\{1,\ldots,7\},\ \exists i(k)\in\mathcal{B}_{82}\ \text{s.t.}\ \|\mathbf{s}_k-\mathbf{x}_{i(k)}\|\le \rho_{\mathrm{attach}}. \end{equation}"></figure>
+<p>Here sₖ is a shell vector or shell marker point (locked in Chapter 8), and ρ_attach is the attachment-radius threshold. Lock ρ_attach by normalizing it with the length scale L_q:</p>
+<figure class="eq" id="eq:S06_04_attach_radius_lock"><img src="/physics/eq/physics/phy-06-068.svg" data-eq="phy-06-068" width="352" height="18" loading="lazy" alt="\begin{equation} \rho_{\mathrm{attach}} := \eta_{\mathrm{attach}}\,L_q, \qquad \eta_{\mathrm{attach}}&gt;0\ \text{is locked}. \end{equation}"></figure>
+<p>Handle violation as</p>
+<figure class="eq" id="eq:S06_04_shell_local_fail"><img src="/physics/eq/physics/phy-06-069.svg" data-eq="phy-06-069" width="489" height="30" loading="lazy" alt="\begin{equation} \exists k\ \text{s.t.}\ \min_{i\in\mathcal{B}_{82}}\|\mathbf{s}_k-\mathbf{x}_i\|&gt;\rho_{\mathrm{attach}} \quad\Longrightarrow\quad \texttt{FAIL-SHELL7-LOCAL}. \end{equation}"></figure>
+<h3>[C-82/7-05] Non-degeneracy of the cancellation–survival convention (existence of a survival vector)</h3>
+<p>When the continuum results descend to the discrete structure, the cancellation–survival convention of shell (7) must remain <em>non-degenerate</em>. This means that a survival vector V is definable (not non-unique/ambiguous) and must not collapse to the zero vector.</p>
+<figure class="eq" id="eq:S06_04_survival_nondeg"><img src="/physics/eq/physics/phy-06-070.svg" data-eq="phy-06-070" width="237" height="56" loading="lazy" alt="\begin{equation} \mathbf{V}:=\sum_{k=1}^{7}\mathbf{s}_k, \qquad \|\mathbf{V}\|\ge V_{\min}. \end{equation}"></figure>
+<p>V_(min) is a threshold locked in <code>gate_lock</code> in internal units or normalized by L_q.
+If |V|<V_(min), the definition of “survival sign/charge/emission direction” collapses, so treat it as a link failure:</p>
+<figure class="eq" id="eq:S06_04_survival_fail"><img src="/physics/eq/physics/phy-06-071.svg" data-eq="phy-06-071" width="342" height="19" loading="lazy" alt="\begin{equation} \|\mathbf{V}\|&lt;V_{\min} \quad\Longrightarrow\quad \texttt{FAIL-SHELL7-DEGEN}. \end{equation}"></figure>
+<h3>[C-82/7-06] Regime consistency (Stone/plenum/jamming prerequisites)</h3>
+<p>The continuum core model assumes the Stone/plenum regime. The discrete core (82+7) must also be defined under the same regime. Declare the following conditions.</p>
+<ol>
+<li> The discrete placement does not violate impenetrability.
+<li> The discrete placement does not conflict with the plenum convention (do not treat void as an independent object).
+<li> The contact graph and backbone decision are consistent with the locked regime coordinate axes (§4.3).
+</ol>
+<p>If any of the above is violated, treat it as a regime mismatch:</p>
+<figure class="eq" id="eq:S06_04_regime_fail"><img src="/physics/eq/physics/phy-06-072.svg" data-eq="phy-06-072" width="385" height="17" loading="lazy" alt="\begin{equation} \text{regime mismatch} \quad\Longrightarrow\quad \texttt{FAIL-REG-MISMATCH}. \end{equation}"></figure>
+<h3>[C-82/7-07] Scale-normalization consistency (single length unit)</h3>
+<p>All coordinates and length judgments of the discrete structure must be normalized by the same length scale L_q (or the identified λ_C). The following mixes are forbidden within the same output.</p>
+<ol>
+<li> Using L_q and λ_C as different values.
+<li> Re-introducing Rₚ via a separate definition to evade the R₈₂ matching.
+<li> Mixing the cell geometry (cube) and a visualization sphere when computing cross sections or radii.
+</ol>
+<p>If a mix is detected, it is an immediate <code>FAIL</code> as a <code>lock_id</code> mix or a meaning conflict:</p>
+<figure class="eq" id="eq:S06_04_norm_fail"><img src="/physics/eq/physics/phy-06-073.svg" data-eq="phy-06-073" width="508" height="13" loading="lazy" alt="\begin{equation} \text{normalization mix} \quad\Longrightarrow\quad \texttt{FAIL-LOCK-MIX}\ \text{or}\ \texttt{FAIL-GEO-CONF}. \end{equation}"></figure>
+<h3>[C-82/7-08] Existence of tetrahedral locking (a 4-point rigidity certificate)</h3>
+<p>This condition locks the <strong>minimal structural certificate</strong> needed to state that “core (82) has full jamming rigidity” (i.e., that one can logically claim the c² stiffness corresponding to Ψ_(rm yield) in the unjamming trigger <a href="/physics/03-axioms-primitives-volume-particle-lattice/#eq:unjamming_trigger" class="xref" data-ref="eq:unjamming_trigger">(unjamming_trigger)</a>).</p>
+<p>In 3D, four points are the minimal non-coplanar simplex. If the contact network does not contain this tetrahedral (simplex) backbone, shear rigidity can remain zero or regime-out. Therefore the contact graph of core 82, G_c=(V_c,E_c), must satisfy</p>
+<figure class="eq" id="eq:S06_04_tetra_lock_exist"><img src="/physics/eq/physics/phy-06-074.svg" data-eq="phy-06-074" width="356" height="19" loading="lazy" alt="\begin{equation} \exists\ (i_1,i_2,i_3,i_4)\subset \mathcal{B}_{82} \ \text{s.t.}\ (i_a,i_b)\in \mathcal{E}_c\ \forall\ a&lt;b. \end{equation}"></figure>
+<p>That is, there must exist a 4-point backbone corresponding to the complete graph K₄ within B₈₂. Denote the corresponding 4-point set by T₄.</p>
+<p>To claim “rigidity in full,” this tetrahedron must also be non-degenerate (not coplanar or near-coplanar). In coordinate form, judge this by a threshold on tetrahedral volume (mixed product):</p>
+<figure class="eq" id="eq:S06_04_tetra_volume"><img src="/physics/eq/physics/phy-06-075.svg" data-eq="phy-06-075" width="519" height="38" loading="lazy" alt="\begin{equation} V_{\mathrm{tet}}(i_1,i_2,i_3,i_4) :=\frac{1}{6}\left|\det\left[\mathbf{x}_{i_2}-\mathbf{x}_{i_1},\ \mathbf{x}_{i_3}-\mathbf{x}_{i_1},\ \mathbf{x}_{i_4}-\mathbf{x}_{i_1}\right]\right| \ge V_{\min}^{\mathrm{tet}}. \end{equation}"></figure>
+<p>Here V_(min)^tet is a threshold locked in <code>gate_lock</code> after normalization by L_q³.</p>
+<p>If the condition holds, the fact that core (82) has a jamming backbone containing “tetrahedral locking” is secured, and it becomes the minimal basis to claim the <em>jamming regime (ξ≈ 1)</em> in the dynamic rigidity-mixing narrative (ξ∈[0,1]) of this document. Conversely, if this condition is violated, sentences such as “core rigidity = c²” or “no further contraction” lose conclusion status; only limit claims (CT-LIM) are permitted.</p>
+<figure class="eq" id="eq:S06_04_tetra_fail"><img src="/physics/eq/physics/phy-06-076.svg" data-eq="phy-06-076" width="417" height="20" loading="lazy" alt="\begin{equation} \neg\exists\ \mathcal{T}_4\ \ \text{or}\ \ V_{\mathrm{tet}}&lt;V_{\min}^{\mathrm{tet}} \quad\Longrightarrow\quad \texttt{FAIL-CORE82-TETRA}. \end{equation}"></figure>
+<h3>6.4.4 Handling violations (conclusion status and limit statements)</h3>
+<p>If any of the conditions [C-82/7-01]~[C-82/7-08] is violated, the continuum→discrete link loses conclusion status. In that case, only “limit statements (CT-LIM)” are permitted, and one must record the FAIL label together with the causal condition ID.
+Patching violations by “interpretation,” or changing condition definitions (aggregation operator, thresholds, boundary-candidate set, etc.) after seeing results, violates No-Tuning and is forbidden. If changes are necessary, the only allowed path is a version bump followed by full re-validation.</p>
+<h2>LOCK/Gate connections for this section (none if empty)</h2>
+<pre class="vb">
+  \item LOCK: Fix the continuum outputs ($R_p/L_q=2/\pi$, $L_q=\lambda_C$, $\sigma_{\mathrm{geom}}/L_q^2=4/\pi$) as upstream inputs.
+  \item LOCK: Lock the definitions of the discrete stability-condition list [C-82/7-01]\textasciitilde[C-82/7-08] (aggregation operators, projection axis, thresholds, normalization conventions) in \texttt{analysis\_lock}/\texttt{gate\_lock}.
+  \item Gate: On any condition violation, immediately assign \texttt{FAIL-CORE82-*}/\texttt{FAIL-SHELL7-*}/\texttt{FAIL-REG-*} labels and revoke conclusion status.
+  \item Gate: If condition definitions are not locked (aggregation/threshold/boundary-candidate missing), judge \texttt{INCONCLUSIVE}; if conditions are modified post hoc based on outcomes, judge \texttt{FAIL} in G-NT.
+  \item Gate: Mixing different \texttt{lock\_id} combinations or confusing cell geometry is immediate \texttt{FAIL} (G-LOCK/G-SYM).
+
+</pre>
+<nav class="pn"><a rel="prev" href="/physics/05-geometric-rectification-constants-single-source/">← §5</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/07-3-sector-integerization-120-build/">§7 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

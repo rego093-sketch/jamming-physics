@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducibility bundle and file map — Jamming Geodynamics §7 | Jamming Physics</title>
+<meta name="description" content="Every quantitative claim added in r17 is reproducible from a single bundle, atl_bundle/ . This section is the file map required by the r17 principles: it.">
+<link rel="canonical" href="https://jamming-physics.org/geodynamics/07-reproducibility-bundle-file-map/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Reproducibility bundle and file map — Jamming Geodynamics §7 | Jamming Physics"><meta property="og:description" content="Every quantitative claim added in r17 is reproducible from a single bundle, atl_bundle/ . This section is the file map required by the r17 principles: it."><meta property="og:url" content="https://jamming-physics.org/geodynamics/07-reproducibility-bundle-file-map/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Reproducibility bundle and file map — Jamming Geodynamics §7 | Jamming Physics"><meta name="twitter:description" content="Every quantitative claim added in r17 is reproducible from a single bundle, atl_bundle/ . This section is the file map required by the r17 principles: it.">
+<link rel="stylesheet" href="/geodynamics/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "Reproducibility bundle and file map",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "A Jamming–Unjamming Mechanism for Rapid Continental Break-up",
+  "identifier": "10.5281/zenodo.17978934",
+  "sameAs": "https://doi.org/10.5281/zenodo.17978934"
+ },
+ "position": 7,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "identifier": "10.5281/zenodo.17978934",
+ "datePublished": "2026",
+ "dateModified": "2026",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/07-reproducibility-bundle-file-map/",
+ "knowsAbout": [
+  "jamming–unjamming transition",
+  "void suction",
+  "effective stress",
+  "continental break-up",
+  "Reproducibility bundle and file map"
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Jamming Geodynamics",
+   "item": "https://jamming-physics.org/geodynamics/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "§7 Repro bundle"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/geodynamics/">Jamming Geodynamics</a> › §7</nav></header>
+<main>
+<h1>Reproducibility bundle and file map</h1>
+
+<p class="answer">Reproducibility bundle and file map — Every quantitative claim added in r17 is reproducible from a single bundle, atl_bundle/. This section is the file map required by the r17 principles: it introduces each file, states what it computes, and links it to the in-text claim and to an automated check.</p>
+
+<p class="abstract">Every quantitative claim added in r17 is reproducible from a single bundle, atl_bundle/ . This section is the file map required by the r17 principles: it introduces each file, states what it computes, and links it to the in-text claim and to an automated check.</p>
+
+<aside class="claim-strip">
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/geodynamics/07-reproducibility-bundle-file-map/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">DOI snapshot</a>
+</aside>
+
+<aside class="vp-card" data-locked="mu_eff"><b>μ_eff ≈ 2.2×10⁻³ (no melt)</b> — Effective basal friction after unjamming–liquefaction; reached at ΔT≈ 25 K with no melting. <b>[V]</b> verified. <a href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">Canonical derivation §14</a></aside>
+<aside class="vp-card" data-locked="phi_jam"><b>φ_jam = 0.840</b> — Jamming-onset packing fraction (2D bidisperse; classical ≈ 0.842), from first-principles soft-disk simulation. <b>[F]</b> forced. <a href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">Canonical derivation §14</a></aside>
+<aside class="vp-card" data-locked="omega_nogo"><b>Ω-NoGo: μ_eff hold-min = 10⁻²</b> — Physics No-Go floor; a low-friction claim must hold above it (h≥ 10⁻⁶ m, ΔP≤ 500 MPa). <b>[F]</b> forced. <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">Canonical derivation §16</a></aside>
+<aside class="vp-card" data-locked="z_iso"><b>z_iso = 2d (= 6 in 3D)</b> — Isostatic coordination number; the shear backbone and yield stress vanish as z → z_iso. <b>[F]</b> forced. <a href="/geodynamics/14-resistance-collapse-by-unjamming-liquefaction/">Canonical derivation §14</a></aside>
+
+<p>Every quantitative claim added in r17 is reproducible from a single bundle, <code>atl_bundle/</code>. This section is the <strong>file map</strong> required by the r17 principles: it introduces each file, states what it computes, and links it to the in-text claim and to an automated check.</p>
+<p><strong>How to reproduce (two commands).</strong></p>
+<ol><li><code>python atl_bundle/validate_all.py</code> <span class="eq-inline">→</span> prints a ledger and the line <strong>39/39 PASS</strong> (each check re-derives a number used in this paper or anchors it to independent data; several checks verify an honest HOLD/negative verdict; seeds are fixed; pure <code>numpy</code>/<code>scipy</code>).</li><li><code>sha256sum -c atl_bundle/SHA256SUMS.txt</code> <span class="eq-inline">→</span> <strong>OK</strong> for every engine script, result array, and figure (integrity).</li></ol>
+<p>Each engine script writes a <code>.npz</code> into <code>atl_bundle/results/</code> and (where relevant) a <code>.png</code> into <code>atl_bundle/figures/</code>; <code>atl_bundle/LEDGER.md</code> tabulates claim <span class="eq-inline">→</span> script <span class="eq-inline">→</span> result <span class="eq-inline">→</span> expected/tolerance <span class="eq-inline">→</span> grade, and <code>atl_bundle/README.md</code> narrates the chain. The authoritative PASS/FAIL thresholds remain in <code>config/constraints.yml</code> (YAML overrides TeX).</p>
+<p><strong>Engine file map.</strong></p>
+<p><figure class="tbl"><table><tr><th>File (<code>atl_bundle/engine/</code>)</th><th>Computes / establishes</th><th>Checks;</th></tr><tr><td>File</td><td>Computes / establishes</td><td>Checks;</td></tr><tr><td><code>vp_jamming_friction.py</code></td><td>Liquefaction-by-unjamming friction; <span class="eq-inline">μ_eff≈2.2×10⁻³</span>, <span class="eq-inline">Δ T≈25 K</span> (no melt)</td><td>C1;</td></tr><tr><td><code>tp_dilatancy_prototype.py</code></td><td>Thermal-pressurization corroboration; <span class="eq-inline">~82%</span> undrained weakening, sign-rule <span class="eq-inline">R_md</span></td><td>C2;</td></tr><tr><td><code>feasibility_map.py</code></td><td>Suction–friction <span class="eq-inline">Λ∝ d²</span>; critical depth <span class="eq-inline">~12</span> km; window <span class="eq-inline">12</span>–<span class="eq-inline">26</span> km</td><td>C3;</td></tr><tr><td><code>jamming_microderive.py</code></td><td>Soft-disk derivation: <span class="eq-inline">φ_jam=0.840</span>, <span class="eq-inline">zᵢₛₒ=2d</span>, <span class="eq-inline">(z-zᵢₛₒ)∝(φ-φ_jam)⁽1/2)</span></td><td>C4;</td></tr><tr><td><code>jamming_shear_modulus.py</code></td><td>Hessian/Maloney–Lemaitre: <span class="eq-inline">G_relaxed→0</span>, <span class="eq-inline">G_Born</span> finite (spine S2.4)</td><td>C5;</td></tr><tr><td><code>p8_magnetic_test.py</code></td><td>GTS2020 barcode non-periodic (CV<span class="eq-inline">≈</span>0.86) <span class="eq-inline">⇒</span> H2 (resonance) FAIL</td><td>C6;</td></tr><tr><td><code>c3b_braking_and_stripe_logic.py</code></td><td>Stripe time-rescaling degeneracy (<span class="eq-inline">~10⁻¹⁴</span> km); brake logic</td><td>C7;</td></tr><tr><td><code>c5_velocity_history.py</code></td><td>Relative-rate deceleration (<span class="eq-inline">×2</span>–<span class="eq-inline">3</span> in compilations; ); kyr opening physics-permitted; re-jam brake</td><td>C8;</td></tr><tr><td><code>jamming_bistability.py</code></td><td><span class="eq-inline">V_crit~</span>mm/s–m/s; velocity-weakening <span class="eq-inline">⇒</span> stick–slip; “slow”=time-average</td><td>C9;</td></tr><tr><td><code>c2_trigger.py</code></td><td>Antipodal trigger <span class="eq-inline">Δ R</span> (0.6–25 km) <span class="eq-inline"><50</span> km <span class="eq-inline">Ω</span>-NoGo</td><td>C10;</td></tr><tr><td><code>c4_scalability.py</code></td><td>Master-gate split; <span class="eq-inline">d_crit∝√(W)</span> (Red Sea 3.3 km, Afar 1.9 km)</td><td>C11;</td></tr><tr><td><code>omega_nogo_check.py</code></td><td>All <span class="eq-inline">Ω</span>-NoGo limits (<span class="eq-inline">Δ R,Δ P,μ_eff,h</span>, undrained): 5/5 PASS</td><td>C12;</td></tr><tr><td><code>p1_plate_boundaries.py</code></td><td>Atlantic active subduction only Lesser Antilles+S.Sandwich <span class="eq-inline">~</span>1815 km; <span class="eq-inline">R_sub≈0.06</span> (UNLOCK)</td><td>C13;</td></tr><tr><td><code>p9_orogeny_deborah.py</code></td><td>UHP exhumation <span class="eq-inline">De≪1</span> (viscous, <span class="eq-inline">Δ t~</span>Myr) <span class="eq-inline">⇒</span> HOLD; slip <span class="eq-inline">De≫1</span> brittle (prediction)</td><td>C14;</td></tr><tr><td><code>c7_scaling_field_test.py</code></td><td>P7 field test: observed BDT depth thermal (not <span class="eq-inline">√(W)</span>); master gate stays HOLD; cold-craton siting corroborated</td><td>C15;</td></tr><tr><td><code>c16_energy_ledger.py</code></td><td>Unified ledger <span class="eq-inline">Wᵢₙ=Δ PE_basin+Q_fric+W_frac</span>; heat <span class="eq-inline">~</span>few\,% of input; conduction insufficient <span class="eq-inline">⇒</span> advective flux <span class="eq-inline">~10⁴</span>–<span class="eq-inline">10⁶ km³</span> (falsifiable P4-thermal)</td><td>C16;</td></tr><tr><td><code>c17_energy_source.py</code></td><td>AR-1 source bounds: H-E1 (stored-energy release) sole admissible class; H-E2-generation (<span class="eq-inline">20</span>–<span class="eq-inline">200×</span> global heat) &amp; H-E3 (<span class="eq-inline">4</span>–<span class="eq-inline">6</span> orders short) &amp; impact (signature) excluded; HOLD</td><td>C17;</td></tr><tr><td><code>c18_p29_coherence.py</code></td><td>P29 corrected statistics: range null (not value-permutation), look-elsewhere <span class="eq-inline">p_LEE</span>, <span class="eq-inline">N_eff</span>, jackknife; machinery only (illustrative data) <span class="eq-inline">⇒</span> HOLD</td><td>C18; P29</td></tr><tr><td><code>c19_master_scale.py</code></td><td>lab<span class="eq-inline">→</span>Earth bounds: dense regime (<span class="eq-inline">I≪1</span>) &amp; continuum limit transfer; exact <span class="eq-inline">φ_jam</span> &amp; <span class="eq-inline">μ_eff=0.002</span> (needs <span class="eq-inline">λ≈0.996</span>) HOLD</td><td>C19;</td></tr><tr><td><code>validate_all.py</code></td><td>Orchestrator; re-runs all checks and prints <strong>39/39 PASS</strong></td><td>all</td></tr></table></figure></p>
+<p>Supporting files: <code>atl_bundle/results/*.npz</code> (saved arrays per script), <code>atl_bundle/figures/*.png</code> (15 figures: jamming friction, TP/dilatancy, feasibility, micro-derivation, P8 spectrum, brake logic, velocity history, bistability, P1 boundaries, P9 orogeny, P7 field scaling, energy ledger, energy source, P29 coherence, master-scale), <code>atl_bundle/LEDGER.md</code>, <code>atl_bundle/SHA256SUMS.txt</code>, <code>atl_bundle/README.md</code>.</p>
+<p><strong>Gate gauntlet (honest verdicts).</strong> The mechanism was challenged against every available gate. Verdicts use this paper's semantics (PASS/HOLD/FAIL/UNLOCK/STOP); “39/39 PASS” above refers to <strong>reproducibility checks</strong> (internal numerical consistency plus a few independent data anchors, several of them verifying an honest HOLD/negative verdict), distinct from the scientific <strong>gate</strong> verdicts below.</p>
+<p><figure class="tbl"><table><tr><th>Gate</th><th>Content</th><th>Verdict</th></tr><tr><td>Friction (liquefaction)</td><td><span class="eq-inline">μ_eff</span> collapse, no melt (C1)</td><td>PASS</td></tr><tr><td>Thermal-pressurization</td><td>undrained weakening (C2)</td><td>PASS (corrob.)</td></tr><tr><td><span class="eq-inline">Λ</span> feasibility</td><td>suction <span class="eq-inline">></span> friction window (C3)</td><td>UNLOCK-eligible</td></tr><tr><td>Jamming rule derivation</td><td><span class="eq-inline">σ_y∝Δ z→0</span> (C4–C5)</td><td>PASS</td></tr><tr><td>P8 magnetic stripes (H2)</td><td>periodic resonance (C6)</td><td>FAIL (and a non-refutation)</td></tr><tr><td>Timescale (kyr)</td><td>physics-permitted (C8)</td><td>PASS (permitted)</td></tr><tr><td>Bistability</td><td>no slow-liquefied state (C9)</td><td>PASS</td></tr><tr><td>Trigger <span class="eq-inline">Δ R</span></td><td><span class="eq-inline"><50</span> km <span class="eq-inline">Ω</span>-NoGo (C10)</td><td>PASS</td></tr><tr><td>Master gate — material law</td><td>jamming scale-invariant (C11a)</td><td>PASS</td></tr><tr><td>Master gate — system <span class="eq-inline">Λ</span></td><td><span class="eq-inline">∝ d²/W</span>, not lab-reproducible (C11b)</td><td><strong>HOLD</strong></td></tr><tr><td><span class="eq-inline">Ω</span>-NoGo (6 items)</td><td>all limits (C12)</td><td>PASS (5/5)</td></tr><tr><td>P1 Atlantic rim (data)</td><td>subduction <span class="eq-inline">R_sub≈0.06</span> (C13)</td><td>UNLOCK (PASS)</td></tr><tr><td>P9 orogeny / Deborah (data)</td><td>UHP <span class="eq-inline">De≪1</span>, <span class="eq-inline">Δ t~</span>Myr (C14)</td><td>HOLD (cross-check)</td></tr><tr><td>P7 scaling field test (data)</td><td>observed depth thermal, not <span class="eq-inline">√(W)</span> (C15)</td><td><strong>HOLD</strong> (master)</td></tr><tr><td>P29 event-window coherence</td><td>corrected null + LEE + jackknife (C18)</td><td><strong>HOLD</strong> (method-ready; data pending)</td></tr><tr><td>Energy ledger / heat disposal</td><td>input vs heat vs advective sink (C16)</td><td>PASS (heat bounded; sink falsifiable)</td></tr><tr><td>Energy source (AR-1)</td><td>H-E1 release vs H-E2/H-E3 (C17)</td><td><strong>HOLD</strong> (H-E1 only; falsifiable)</td></tr><tr><td>Master-scale (lab<span class="eq-inline">→</span>Earth)</td><td>regime/continuum transfer; <span class="eq-inline">μ_eff</span> extreme (C19)</td><td><strong>HOLD</strong> (magnitude gated; falsifiable)</td></tr><tr><td>Absolute chronology</td><td>kyr vs Myr absolute</td><td>external firewall</td></tr></table></figure></p>
+<p><strong>Two genuinely open items (stated, not hidden).</strong> <strong>(i) Master-scale system extrapolation (HOLD):</strong> <span class="eq-inline">Λ</span> is geometry-explicit, so the lab-to-Earth step is not closed by laboratory reproduction (Section <a href="/geodynamics/16-scale-checks-omega-nogo-constraints/">&sect;16</a>). <strong>(ii) Absolute chronology (firewall):</strong> the kyr-scale <strong>absolute</strong> timescale is contested by independent radiometric/astrochronologic dating and is adjudicated outside geodynamics, in the Variant registry and P17/P34 (Section <a href="/geodynamics/20-p8-magnetic-striping-chronology-firewall/">&sect;20</a>). P8 is resolved as a <strong>non-refutation</strong> (relative-time degeneracy), not as positive proof of any timescale.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/geodynamics/06-evidence-dossier/">← §6</a>
+  <a href="/geodynamics/">Contents</a>
+  <a rel="next" href="/geodynamics/08-verified-empirical-inputs-primary-sources/">§8 →</a>
+</nav>
+</main>
+<footer>
+  <p>Young Jae Lee &middot; A Jamming–Unjamming Mechanism for Rapid Continental Break-up</p>
+  <p>DOI <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">10.5281/zenodo.17978934</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemistry from a single anchor — VP Chemistry &amp; EM §2 | Jamming Physics</title>
+<meta name="description" content="From the electron as a rotational dent, chemistry follows by sphere geometry: the tetrahedral bond angle arccos(−1/3), valence and oxidation, periodic structu">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/02-chemistry-single-anchor/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Chemistry from a single anchor — VP Chemistry &amp; EM §2 | Jamming Physics"><meta property="og:description" content="From the electron as a rotational dent, chemistry follows by sphere geometry: the tetrahedral bond angle arccos(−1/3), valence and oxidation, periodic structu"><meta property="og:url" content="https://jamming-physics.org/chemistry/02-chemistry-single-anchor/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Chemistry from a single anchor — VP Chemistry &amp; EM §2 | Jamming Physics"><meta name="twitter:description" content="From the electron as a rotational dent, chemistry follows by sphere geometry: the tetrahedral bond angle arccos(−1/3), valence and oxidation, periodic structu">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Chemistry from a single anchor", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 2, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/02-chemistry-single-anchor/", "knowsAbout": ["jamming lattice", "chemical bonding", "tetrahedral angle", "sphere geometry"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§2 Chemistry from a single anchor"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §2</nav></header>
+<main>
+<h1>Chemistry from a single anchor</h1>
+
+<p class="answer">Chemistry follows from sphere geometry on the jamming substrate with zero free parameters: maximally separated points on a sphere give the tetrahedral bond angle arccos(−1/3) = 109.47°, temperature is rotational excitation, equilibrium is ΔG = ΔH − TΔS, and the Daniell cell sits at 1.10 V. Every forced result is parameter-free.</p>
+
+<p class="abstract">On the jamming substrate, chemistry follows from sphere geometry and rotation. Points on a sphere give molecular shape (the tetrahedral angle arccos(−1/3) = 109.47°); temperature is rotational excitation; equilibrium is ΔG = ΔH − TΔS; and electrochemistry is rotational-dent transfer (the Daniell cell at 1.10 V). Every forced result has zero free parameters.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/02-chemistry-single-anchor/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+<aside class="vp-card" data-locked="c2_brho"><b>c² = B/ρ</b> — light is the single longitudinal wave that survives at the jammed lattice's isostatic point (shear modulus → 0); reproduced to 0.06%. <b>[V]</b> verified. <a href="/chemistry/01-electromagnetism-jammed-lattice-light/#em.2-light-emergence-the-keystone-fv" rel="noopener">Canonical derivation §1 (EM.2)</a></aside>
+
+<p>Status grades: <strong>[F]</strong> forced (zero free parameters) ·
+<strong>[F?]</strong> forced-candidate (model-dependent or &lt;1.5%) ·
+<strong>[CAL]</strong> calibration input (measured constant, used
+consistently) · <strong>[V]</strong> simulation-measured ·
+<strong>[O]</strong> open (honestly unsolved). Every numeric claim is
+reproduced by a deterministic, standard-library module (2× sha256
+identical); module and case-ledger anchors are given inline. Verified
+numbers quoted below are the actual module outputs.</p>
+<blockquote>
+<p>Everything starts locked, is derived, and is settled by a verdict.
+One table separates what is <em>forced</em> from what is <em>measured
+input</em> from what is <em>open</em>. Chemistry unfolds from the
+electron (a rotational dent) using only π-geometry and the
+electromagnetic 1/r² — the same substrate from which light emerges
+(Chapter EM).</p>
+</blockquote>
+<h2 id="ch.0-governance-and-grading-inherited-from-vp-theory-1">CH.0
+Governance and grading (inherited from VP Theory §1)</h2>
+<p>This chapter inherits No-Tuning / LOCK / Gate.
+<strong>No-Tuning:</strong> changing an input after seeing a result to
+hit a target is forbidden. The clean final logic is presented here; the
+trial-and-error of development lives, reproducibly, in the modules and
+the case ledger. Forced results <strong>[F]</strong> have no adjustable
+parameter — they cannot be tuned, so they are <em>refuted</em> if they
+disagree with measurement.</p>
+<h2 id="ch.1-the-anti-tuning-chain-the-central-defense">CH.1 The
+anti-tuning chain — the central defense</h2>
+<p>A trained reviewer immediately suspects parameter-fitting. The
+rebuttal has three prongs.</p>
+<p><strong>Prong A — forced results are dimensionless geometry with
+nothing to adjust.</strong> The tetrahedral angle arccos(-1/3), the
+ratio Δₜₑₜ/Δ₍oct) = 4/9, the FCC packing fraction π/(3√2), the
+shell-filling integers [2,8,8,18,18,32] — these are pure
+geometry/integers with no knob.</p>
+<p><strong>Prong B — calibration inputs are used as forward
+predictions.</strong> Measured constants (spectroscopic B,ν; bond
+enthalpy Δ H; mathrm pKₐ; standard potential E^∘) are each fixed
+<em>once</em> and used consistently. Quantities <em>derived</em> from
+them — standard entropy, equilibrium constants, cell potentials — then
+match measurement; that is prediction, not fitting.</p>
+<p><strong>Prong C — honest open items prove no tuning.</strong> A tuner
+would have “solved” absolute multi-electron ionization energies; instead
+the failure is recorded (mean ~22% for main group, electron affinity
+wrong in sign 8/18 by the Slater method) and marked
+<strong>[O]</strong>.</p>
+<h2 id="ch.2-foundation-anchor-atomic-scale-f">CH.2 Foundation: anchor →
+atomic scale <strong>[F]</strong></h2>
+<p>The only observational input is the electron mass mₑ (the anchor).
+With the EM coupling αₑₘ <strong>[CAL]</strong> and π (using the
+<em>reduced</em> Compton wavelength barλ₍C,e) = ℏ/(mₑ c) =
+λ₍C,e)/2π):</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-001.svg" width="349" height="46" alt="a_0 = \frac{\bar\lambda_{C,e}}{\alpha_{\mathrm{em}}} = \frac{\hbar}{m_e c\,\alpha_{\mathrm{em}}},
+   \qquad \mathrm{Ry} = \frac{\alpha_{\mathrm{em}}^2 m_e c^2}{2}." loading="lazy"></figure>
+<p>Module <code>vp_atomic.py</code> gives a₀ = 0.529177 Å (Δ +0.0000%)
+and Ry = 13.6057 eV (Δ −0.0001%); hydrogenic IE = Ry Z² to &lt;0.06%.
+Shell structure follows from the Aufbau degeneracy 2(2l+1), giving
+noble-gas closures [2,10,18,36,54,86] and period lengths
+[2,8,8,18,18,32] exactly <strong>[F]</strong>. Absolute many-electron IE
+is only approximate (screening) and is <strong>[O]</strong>.</p>
+<h2 id="ch.3-periodic-structure-valence-and-oxidation-ff">CH.3 Periodic
+structure: valence and oxidation <strong>[F]/[F?]</strong></h2>
+<p>Valence equals the number of outer-shell electrons (1–8, main group)
+<strong>[F]</strong>. The octet rule fixes ionic-compound stoichiometry:
+module <code>vp_valence.py</code> predicts 9/9 formulas (NaCl, MgCl₂,
+Al₂O₃, CaO, …). Periodic trends (radius ↓, electronegativity ↑ across a
+period; radius ↑ down a group) are <strong>[F?]</strong>. Transition
+metals have valence 4s+3d with variable oxidation states (Mn +2…+7) from
+the partially filled d-shell; the half/fully-filled exceptions Cr
+(3d⁵4s¹), Cu (3d¹⁰4s¹) follow from sub-shell stability
+<strong>[F]</strong>.</p>
+<h2 id="ch.4-chemical-bonding-and-vsepr-geometry-f">CH.4 Chemical
+bonding and VSEPR geometry <strong>[F]</strong></h2>
+<p>Geometry is the electromagnetic 1/r² repulsion of electron domains on
+a sphere (the Thomson problem). Module
+<code>vp_molecular_geometry.py</code> <em>computes</em>
+(seed-independent) the angles:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-002.svg" width="659" height="32" alt="\text{linear } 180^\circ,\quad \text{trigonal } 120^\circ,\quad
+   \boxed{\text{tetrahedral } \arccos(-\tfrac13) = 109.47^\circ},\quad \text{octahedral } 90^\circ." loading="lazy"></figure>
+<p>All have zero free parameters <strong>[F]</strong>; the simulation
+reproduces the closed form arccos(-1/3)=109.47^∘. Lone-pair compression
+(CH₄ → NH₃ → H₂O: 109.5^∘ → 107^∘ → 104.5^∘) has the correct direction
+<strong>[F?]</strong>; the precise magnitude is <strong>[O]</strong>.
+Bond rupture follows a scale-invariant √2 diagonal-stretch geometry
+shared with nuclear fission (Chapter EM links the same 1/r²); absolute
+bond energy needs per-bond anharmonicity and is
+<strong>[O]</strong>.</p>
+<h2 id="ch.5-coordination-chemistry-color-and-magnetism-f">CH.5
+Coordination chemistry: color and magnetism <strong>[F]</strong></h2>
+<p>Ligand point charges (EM 1/r²) split the geometric d-orbitals
+(spherical harmonics). Module <code>vp_crystal_field.py</code> gives the
+octahedral e_g↑ / t₍2g)↓ pattern (tetrahedral inverted) and the analytic
+ratio</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-003.svg" width="236" height="40" alt="\frac{\Delta_{\text{tet}}}{\Delta_{\text{oct}}} = \frac{4}{9} = 0.4444 \quad\text{(exact)}." loading="lazy"></figure>
+<p>High/low-spin unpaired-electron counts give magnetic moments (Fe³⁺
+5/1 unpaired) <strong>[F]</strong>. Color is the d–d transition Δ → λ
+(interpreted optically via Chapter EM); multi-band precise color is
+<strong>[O]</strong>, the spectrochemical series is
+<strong>[CAL]</strong>.</p>
+<h2 id="ch.6-light-optics-color-see-chapter-em-fcal">CH.6 Light, optics,
+color — see Chapter EM <strong>[F]/[CAL]</strong></h2>
+<p>The optical consequences (propagation angle sinχ = λ/(mD), Snell,
+rainbow 42.1^∘, total-internal-reflection critical angle, blackbody, d–d
+color) are developed in <strong>Chapter EM</strong>. Chemistry
+<em>consumes</em> the electromagnetic mechanism from physics §10/§14; it
+does not re-derive it. The boundary is explicit: fundamental EM (light
+as rotational transverse wave, c²=B/ρ, the 1/r² Green function) is
+physics; the chemical/optical consequences are here.</p>
+<h2 id="ch.7-thermodynamics-rotational-energy-temperature-ff">CH.7
+Thermodynamics: rotational energy → temperature
+<strong>[F]/[F?]</strong></h2>
+<p>Temperature is a rotational-energy scale; rotational levels E_J = B
+hc J(J+1). Heat-capacity degrees-of-freedom: monatomic tfrac32 R,
+diatomic tfrac52 R, solid Dulong–Petit 3R (&lt;3%). Module
+<code>vp_statistical_thermo.py</code> reproduces the H₂ heat-capacity
+<strong>staircase</strong> (tfrac32 R at 20 K → tfrac52 R at 298 K →
+tfrac72 R above ~6332 K) with activation temperatures Tᵣₒₜ = 88 K,
+T₍vib) = 6332 K from B,ν; Cᵥ(H₂) 20.81 vs 20.4 (+2.0%)
+<strong>[F]</strong>. Standard molar entropy (Sackur–Tetrode + rotation
++ vibration + electronic) is &lt;0.3% for H₂·N₂·CO·O₂; O₂ includes the
+known triplet (paramagnetic) Rln 3 <strong>[F?]</strong>. The
+spectroscopic constants B,ν are per-molecule <strong>[CAL]</strong>.</p>
+<h2 id="ch.8-chemical-equilibrium-f">CH.8 Chemical equilibrium
+<strong>[F]</strong></h2>
+<p>Direction is set by Δ G = Δ H - TΔ S; dissociation occurs when TΔ S
+&gt; Δ H. The dissociation temperature is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-004.svg" width="90" height="38" alt="T^* = \frac{\Delta H}{\Delta S}." loading="lazy"></figure>
+<p>Module <code>vp_equilibrium.py</code> gives T^<em>: N₂ 8214 K &gt; H₂
+4400 K &gt; O₂ 4210 K &gt; Cl₂ 2272 K — the <strong>bond-strength
+order</strong> <strong>[F]</strong>. Reaction entropies from partition
+functions are &lt;0.4%. The van ’t Hoff K(T) (H₂ ⇌ 2H, with K=1 at
+T^</em>) is <strong>[F?]</strong> (Δ H is <strong>[CAL]</strong>). Le
+Chatelier directions (dissociation Δ S&gt;0 high-T driven; Haber Δ
+S&lt;0 high-T reversed) <strong>[F]</strong>.</p>
+<h2 id="ch.9-reaction-kinetics-f">CH.9 Reaction kinetics
+<strong>[F]</strong></h2>
+<p>The activation energy is the threshold to reach the transition state
+(a √2 bond-stretch); the fraction crossing is the Boltzmann tail
+exp(-Eₐ/RT). Module <code>vp_kinetics.py</code> reproduces the Arrhenius
+temperature dependence, the room-temperature <strong>10 K doubling
+rule</strong> (Eₐ≈ 50 kJ/mol gives ×1.9 per 10 K), and recovery of Eₐ
+from the Arrhenius slope -Eₐ/R. Mean molecular speed √(8k_BT/π m) (N₂
+298 K → 475 m/s) and the Eyring universal factor k_BT/h = 6.2×10¹² s⁻¹
+follow <strong>[F]</strong>. Absolute Eₐ (transition-state structure)
+and tunneling are <strong>[O]</strong>.</p>
+<h2 id="ch.10-solution-chemistry-proton-transfer-equilibrium-f">CH.10
+Solution chemistry: proton-transfer equilibrium
+<strong>[F]</strong></h2>
+<p>With K_w = 10⁻¹⁴, pure water has pH 7. The weak-acid pH solves Kₐ =
+x²/(C-x); module <code>vp_solution_chemistry.py</code> gives acetic acid
+0.1 M → pH 2.88 (measured 2.87). Henderson–Hasselbalch buffering pH =
+mathrm pKₐ + log([A⁻]/[HA]) and titration equivalence-point jumps follow
+<strong>[F]</strong>. Individual mathrm pKₐ are <strong>[CAL]</strong>;
+absolute mathrm pKₐ prediction (solvation) is <strong>[O]</strong>.</p>
+<h2
+id="ch.11-electrochemistry-electron-rotational-dent-transfer-f">CH.11
+Electrochemistry: electron (rotational dent) transfer
+<strong>[F]</strong></h2>
+<p>Charge is rotation (Chapter EM); redox is rotational-dent transfer,
+symmetric with proton transfer (CH.10). The cell potential is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-005.svg" width="551" height="37" alt="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}, \qquad
+   \Delta G^\circ = -nFE^\circ,\qquad E = E^\circ - \frac{RT}{nF}\ln Q." loading="lazy"></figure>
+<p>Module <code>vp_electrochemistry.py</code> gives the Daniell cell
+E^∘₍cell) = 1.10 V (matches measured) and Δ G^∘ = -212 kJ/mol
+<strong>[F]</strong>. The standard-potential series (Li −3.04 → F₂
++2.87) links to IE and electronegativity; individual values are
+<strong>[CAL]</strong>.</p>
+<h2 id="ch.12-organic-chemistry-carbon-skeleton-on-em-geometry-f">CH.12
+Organic chemistry: carbon skeleton on EM geometry
+<strong>[F]</strong></h2>
+<p>Carbon’s tetravalence plus EM repulsion gives hybridization geometry
+(the same VSEPR engine as CH.4): module
+<code>vp_organic_chemistry.py</code> gives sp³ tetrahedral 109.5^∘, sp²
+planar 120^∘, sp linear 180^∘. Bond order–length–strength:</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-006.svg" width="381" height="94" alt="\begin{array}{lccc}
+ &amp; \text{order} &amp; \text{length} &amp; \text{strength (kJ/mol)}\\
+\text{C–C} &amp; 1\ (1\sigma) &amp; 154\ \text{pm} &amp; 348\\
+\text{C=C} &amp; 2\ (1\sigma+1\pi) &amp; 134\ \text{pm} &amp; 614\\
+\text{C≡C} &amp; 3\ (1\sigma+2\pi) &amp; 120\ \text{pm} &amp; 839
+\end{array}" loading="lazy"></figure>
+<p>The degree of unsaturation (2C+2+N-H-X)/2 gives benzene 4
+<strong>[F]</strong>. Functional-group reactivity (acid–base, redox
+applied) is <strong>[F?]</strong>; absolute rates and stereoselectivity
+are <strong>[O]</strong>.</p>
+<h2 id="ch.13-materials-and-nuclear-summary-ff">CH.13 Materials and
+nuclear (summary) <strong>[F]/[F?]</strong></h2>
+<p>Crystal packing fractions are pure geometry: FCC/HCP π/(3√2) =
+0.7405, BCC 0.6802, SC 0.5236 (module
+<code>vp_crystal_packing.py</code>); FCC metal densities &lt;2%
+<strong>[F]/[F?]</strong>. Nuclear magic-number skeleton from
+Gauss-lattice point counts N(R²)+1: module
+<code>vp_gauss_shells.py</code> gives <strong>2, 8, 20, 28, 82</strong>
+(5/7 parameter-free); 50, 126 require spin–orbit <strong>[CAL]</strong>.
+SEMF fission/fusion gives the iron peak A=58 and the critical Z²/A
+<strong>[F?]</strong>. Theoretical bounds (σₜₕ, γₛ) are bounds, not
+predictions — honestly <strong>[F]+[O]</strong>.</p>
+<h2 id="ch.14-master-ledger-forced-measured-input-open">CH.14 Master
+ledger — forced / measured input / open</h2>
+<p><strong>[F] forced (zero free parameters — cannot be tuned):</strong>
+shell filling and period lengths; valence, oxidation, ionic formulas;
+all VSEPR angles (arccos(-1/3) etc.); Δₜₑₜ/ Δ₍oct)=4/9; packing
+fractions; propagation angle sinχ=λ/(mD); rainbow 42^∘; Snell, critical
+angle; Cᵥ(T) staircase and activation temperatures; dissociation-
+temperature order and Le Chatelier; Arrhenius, 10 K doubling, k_BT/h;
+pH, buffers, titration; E^∘₍cell), Δ G=-nFE^∘, Nernst; hybridization,
+bond order, unsaturation; Gauss magic-number skeleton.</p>
+<p><strong>[CAL] calibration input (measured constants, used
+consistently — never tuned per case):</strong> spectroscopic B,ν; bond
+enthalpy Δ H; mathrm pKₐ; standard potential E^∘; spectrochemical
+series; absolute refractive index n; spin–orbit strength (magic 50,
+126); the fine-structure coupling αₑₘ.</p>
+<p><strong>[O] open (honest — not disguised as solved):</strong>
+absolute multi-electron IE (screening); electron affinity (Slater sign
+failure); absolute mathrm pKₐ, E^∘ (solvation); multi-band precise
+color; absolute bond energy (anharmonicity); d-block absolute IE;
+absolute rates and stereoselectivity; nuclear shell-correction masses;
+pure-π geometry of 50, 126.</p>
+<h2 id="ch.15-two-unifications-sphere-geometry-and-rotation">CH.15 Two
+unifications — sphere geometry and rotation</h2>
+<p><strong>Sphere geometry:</strong> molecular shape = points
+<em>on</em> a sphere (Thomson/VSEPR) → arccos(-1/3); nuclear shells =
+lattice points <em>inside</em> a sphere (Gauss) → magic-number skeleton;
+crystal density = sphere <em>packing</em> (Kepler) → 0.7405; d-orbital
+splitting = spherical harmonics × ligand EM → 4/9.</p>
+<p><strong>Rotation:</strong> the electron is a rotational dent; charge
+is rotation handedness; light is the rotational transverse wave (Chapter
+EM); temperature is rotational excitation; equilibrium, rate, and
+electrochemistry all ride on rotational energy. The single anchor
+(electron = rotational dent) opens, and the last sector
+(electrochemistry = rotational-dent transfer) closes the circle.</p>
+<h2 id="ch.16-falsification-criteria-f">CH.16 Falsification criteria
+<strong>[F]</strong></h2>
+<p>Forced results cannot be re-fitted, so they are refuted on
+disagreement:</p>
+<ul>
+<li>If the tetrahedral angle is not arccos(-1/3)=109.47^∘, the VSEPR-EM
+derivation is discarded.</li>
+<li>If Δₜₑₜ/Δ₍oct) ≠ 4/9, the crystal-field geometry is discarded.</li>
+<li>If the rainbow angle is not ≈ 42^∘, the light-angle/refraction
+derivation is discarded.</li>
+<li>If H₂ heat capacity shows no tfrac32→tfrac52→tfrac72 R staircase, or
+the activation temperatures disagree with B,ν, the partition-function
+account is discarded.</li>
+<li>If dissociation temperatures do not follow the bond-strength order,
+the equilibrium derivation is discarded.</li>
+<li>The committed light-angle predictions χ(632.8 nm)=89.892^∘, χ(532
+nm)=89.825^∘ are falsifiable forward predictions (Chapter EM).</li>
+</ul>
+<h2 id="ch.17-reproducibility">CH.17 Reproducibility</h2>
+<p>Thirty deterministic, standard-library modules and a 114-row case
+ledger (<code>cases_fixed.csv</code>) reproduce this logic; the light/EM
+additions add a 16-row ledger (<code>cases_em.csv</code>). Determinism
+is verified by running each module twice and comparing the stdout
+sha256.</p>
+<pre><code>python3 research/foundation/vp_molecular_geometry.py   # tetrahedral 109.47°
+python3 research/foundation/vp_crystal_field.py        # 4/9
+python3 verify_chemistry.py --root &lt;package root&gt;      # all modules + ledger integrity gate</code></pre>
+<p>The harness reports execution, determinism, standard-library-only
+dependency, and case-ledger integrity. With the light and
+electromagnetism modules included, <strong>32/32 PASS</strong>.</p>
+<p><em>Together with Chapter EM, this completes the program: light
+emerges from the jammed lattice and the electromagnetic 1/r² follows
+(Chapter EM); on that substrate, atoms, bonds, geometry, color, heat,
+equilibrium, rate, solution, electrochemistry, and organic structure are
+forced by sphere geometry and rotation (this chapter). What is forced is
+falsifiable; what is measured is labelled; what is open is admitted —
+and all of it is reproducible.</em></p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/01-electromagnetism-jammed-lattice-light/">← §1</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/03-conduction-copper-magnetism-iron/">§3 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

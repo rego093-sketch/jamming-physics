@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platinum catalysis — VP Chemistry &amp; EM §5 | Jamming Physics</title>
+<meta name="description" content="Why platinum is the optimal hydrogen catalyst, and how the early electron-amplitude resonance picture was refuted (a Bragg band edge, not a resonance) and rep">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/05-platinum-catalysis-d-band-descriptor/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Platinum catalysis — VP Chemistry &amp; EM §5 | Jamming Physics"><meta property="og:description" content="Why platinum is the optimal hydrogen catalyst, and how the early electron-amplitude resonance picture was refuted (a Bragg band edge, not a resonance) and rep"><meta property="og:url" content="https://jamming-physics.org/chemistry/05-platinum-catalysis-d-band-descriptor/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Platinum catalysis — VP Chemistry &amp; EM §5 | Jamming Physics"><meta name="twitter:description" content="Why platinum is the optimal hydrogen catalyst, and how the early electron-amplitude resonance picture was refuted (a Bragg band edge, not a resonance) and rep">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Platinum catalysis and the d-band descriptor", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 5, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/05-platinum-catalysis-d-band-descriptor/", "knowsAbout": ["d-band centre", "heterogeneous catalysis", "platinum", "hydrogen evolution"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§5 Platinum catalysis"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §5</nav></header>
+<main>
+<h1>Platinum catalysis and the d-band descriptor</h1>
+
+<p class="answer">Platinum sits at the apex of the hydrogen-evolution volcano because its d-band centre gives near-zero ΔG_H. The early electron-amplitude resonance picture (λ_e/2 ≈ d_Pt-Pt) is shown to be a Bragg band edge, not a resonance, and is refuted; the catalysis is reproduced by the Newns–Anderson d-band energy descriptor.</p>
+
+<p class="abstract">Platinum sits at the apex of the hydrogen-evolution volcano because its d-band centre gives near-zero ΔG_H. An early electron-amplitude resonance picture (λ_e/2 ≈ d_Pt-Pt) is shown to be a Bragg band edge, not a resonance, and is refuted; the catalysis is reproduced correctly by the Newns–Anderson d-band energy descriptor.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-hypothesis">[H] hypothesis</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/05-platinum-catalysis-d-band-descriptor/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>Chapter CM. Related to the VP Application whitepaper
+(10.5281/zenodo.18043066: Pt catalyst / electrolysis / desalination).
+Numbers reproduced by <code>vp_platinum_catalysis.py</code>
+(deterministic, standard-library). Grades distinguish
+<strong>established</strong> surface science ([CAL]/[F?]) from the
+<strong>VP-framework hypothesis</strong> ([H]).</p>
+<blockquote>
+<p>A catalyst is a matchmaker: it must hold a reagent firmly enough to
+activate it, yet loosely enough to release the product. Platinum sits at
+that balance for hydrogen. This chapter asks whether the balance can be
+read as a <em>resonance</em> of the electron’s amplitude wavelength with
+the metal surface — and whether that picture helps purify water.</p>
+</blockquote>
+<h2 id="ct.0-the-question">CT.0 The question</h2>
+<p>Why is platinum such a good catalyst, and can the “electron amplitude
+wavelength” of the VP framework illuminate the mechanism? The motivation
+is practical: platinum catalyses the hydrogen-evolution reaction in
+water electrolysis, which is central to producing clean hydrogen and to
+purifying water — the application this chapter targets.</p>
+<h2 id="ct.1-why-platinum-states-at-the-fermi-level-f">CT.1 Why platinum
+— states at the Fermi level <strong>[F?]</strong></h2>
+<p>Platinum is [Xe]4f¹⁴5d⁹ 6s¹: its 5d shell has a single hole, so there
+are d-states right at the Fermi level. Electrons are therefore always
+available both to donate to an adsorbate and to accept back-donation
+from it. This is the prerequisite for surface catalysis, and it is
+exactly what gold (5d¹⁰, filled) lacks — a filled d-shell makes gold
+comparatively inert, the same “filled versus unfilled d-shell” hinge
+that separated conductor from magnet in Chapter CM.</p>
+<h2 id="ct.2-the-sabatier-principle-and-the-volcano-calf">CT.2 The
+Sabatier principle and the volcano <strong>[CAL]/[F?]</strong></h2>
+<p>The Sabatier principle states that the best catalyst binds the key
+intermediate at <em>intermediate</em> strength: too weak and it cannot
+activate the reagent, too strong and it cannot release the product (it
+is poisoned). Plotting the hydrogen-evolution exchange current against
+the hydrogen adsorption free energy Δ G₍mathrm H^<em>) gives a
+<strong>volcano</strong> peaking at Δ G₍mathrm H^</em>)≈ 0
+(<code>vp_platinum_catalysis.py</code>, §1):</p>
+<table>
+<thead>
+<tr class="header">
+<th>metal</th>
+<th>Δ G₍mathrm H^*) (eV)</th>
+<th>log₁₀ j₀ (A/cm²)</th>
+<th>regime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pt</strong></td>
+<td><strong>−0.09</strong></td>
+<td><strong>−3.1</strong></td>
+<td><strong>peak (optimal)</strong></td>
+</tr>
+<tr class="even">
+<td>Ir</td>
+<td>−0.10</td>
+<td>−3.7</td>
+<td>good</td>
+</tr>
+<tr class="odd">
+<td>Pd</td>
+<td>−0.20</td>
+<td>−3.5</td>
+<td>good</td>
+</tr>
+<tr class="even">
+<td>Ni</td>
+<td>−0.28</td>
+<td>−5.2</td>
+<td>good</td>
+</tr>
+<tr class="odd">
+<td>Au</td>
+<td>+0.30</td>
+<td>−5.4</td>
+<td>too weak</td>
+</tr>
+<tr class="even">
+<td>W</td>
+<td>−0.55</td>
+<td>−5.9</td>
+<td>too strong</td>
+</tr>
+<tr class="odd">
+<td>Hg</td>
+<td>+0.50</td>
+<td>−12.6</td>
+<td>too weak</td>
+</tr>
+</tbody>
+</table>
+<p>Platinum has Δ G₍mathrm H^*) closest to zero and the highest exchange
+current — it sits at the apex of the volcano. Tungsten and molybdenum
+bind hydrogen too strongly (cannot release it); gold and mercury too
+weakly (cannot activate it). The volcano data are calibration
+<strong>[CAL]</strong>; the Sabatier balance is the established
+organizing principle <strong>[F?]</strong>.</p>
+<h2 id="ct.3-the-d-band-center-calf">CT.3 The d-band center
+<strong>[CAL]/[F?]</strong></h2>
+<p>The Hammer–Nørskov d-band-center model refines the picture:
+adsorption strength correlates with the mean energy ε_d of the d-band
+relative to the Fermi level. A higher ε_d (closer to the Fermi level)
+binds adsorbates more strongly. Platinum’s ε_d ≈ -2.25 eV lands in the
+optimal window, between the over-reactive early transition metals (high
+ε_d) and the noble metals such as gold (ε_d ≈ -3.56 eV, too low, weak
+binding) (<code>vp_platinum_catalysis.py</code>, §2).</p>
+<h2
+id="ct.4-the-electron-amplitude-wavelength-a-vp-resonance-picture-h">CT.4
+The electron amplitude wavelength — a VP resonance picture
+<strong>[H]</strong></h2>
+<p>The VP framework adds a complementary, geometric reading. The
+catalytically active electron has a de Broglie <em>amplitude
+wavelength</em></p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-05-001.svg" width="117" height="43" alt="\lambda_e = \frac{h}{\sqrt{2 m_e E}}," loading="lazy"></figure>
+<p>where E is the energy scale at which the electron engages the
+adsorbate — naturally the work function φ = 5.65 eV for platinum. This
+gives λₑ = 5.16 AA, so the <strong>half-wavelength is λₑ/2 =
+2.58 AA</strong>, commensurate with the platinum nearest-neighbour
+spacing d₍Pt-Pt) = 2.77 AA — a matching ratio of <strong>0.93</strong>
+(<code>vp_platinum_catalysis.py</code>, §3).</p>
+<p>The hypothesis: when the electron’s half-wavelength fits the surface
+geometry (one half-wave per surface bond), the active electron couples
+<em>resonantly</em> into the adsorbate’s antibonding orbital, so
+back-donation is enhanced and the adsorbate bond is weakened — the
+activation step of catalysis. Platinum’s particular combination of work
+function and lattice spacing places it inside this resonance window.
+This is a VP-framework picture, graded <strong>[H]</strong>: it
+reproduces the qualitative fact (platinum is exceptional) and supplies a
+geometric <em>why</em>, but it is a scale-matching argument, not a
+quantitative activity prediction. <strong>§CT.7 puts it to a direct
+quantum simulation — which does not support the simple geometric form,
+and revises the picture accordingly.</strong></p>
+<h2
+id="ct.5-tuning-the-resonance-with-potential-the-electrolysis-lever-h">CT.5
+Tuning the resonance with potential — the electrolysis lever
+<strong>[H]</strong></h2>
+<p>The amplitude-wavelength picture suggests a control knob. An applied
+electrode potential V shifts the effective energy of the active electron
+by eV, and therefore shifts λₑ (<code>vp_platinum_catalysis.py</code>,
+§4): a cathodic bias raises the electron energy and shortens the
+half-wavelength, an anodic bias lengthens it. Because catalysis happens
+<em>at</em> an electrode under applied potential, the electrode
+potential is precisely the lever that tunes the proposed resonance. At
+the thermodynamic water-splitting potential of 1.23 V the
+half-wavelength moves to 2.92 AA — a few percent off the lattice match —
+which the picture would read as a small detuning to be compensated by
+catalyst geometry. This makes the hypothesis <em>actionable</em> for
+electrode design rather than merely descriptive.</p>
+<h2 id="ct.6-application-water-splitting-and-purification-fcal">CT.6
+Application — water splitting and purification
+<strong>[F]/[CAL]</strong></h2>
+<p>The target application is water. In electrolysis the platinum cathode
+runs the hydrogen-evolution reaction 2mathrm H₂mathrm O + 2e⁻ → mathrm
+H₂ + 2OH⁻ with an overpotential of only ∼ 30 mV — essentially zero —
+versus ∼ 300 mV for nickel (<code>vp_platinum_catalysis.py</code>, §5),
+so the cathodic energy loss is minimised. By Faraday’s law a current of
+1 A for one hour produces 18.66 mmol (∼ 418 mL at STP) of hydrogen (n =
+2).</p>
+<p>For purification, electrolysis contributes three ways: (i) anodic
+oxidation breaks down microbes and organic contaminants (disinfection);
+(ii) the evolved hydrogen and reactive species reduce pollutants; and
+(iii) combined with the application whitepaper’s
+electromagnetic/electric-field desalination, it forms an integrated
+purification train. The thread back to this chapter: platinum’s
+catalytic efficiency — read in the VP picture as
+electron-amplitude-wavelength resonance — is what makes the low-voltage
+electrolysis (and hence the energy-efficient purification) feasible.</p>
+<h2 id="ct.7-simulation-test-of-the-resonance-hypothesis-vrefuted">CT.7
+Simulation test of the resonance hypothesis
+<strong>[V]/refuted</strong></h2>
+<p>Rather than rest on the scale coincidence, the hypothesis is put to a
+direct quantum simulation (<code>vp_pt_resonance_sim.py</code>): a 1D
+finite-difference Schrödinger model of a periodic platinum surface
+(wells spaced d = 2.77 AA) with an adsorbate site, computing the
+adsorbate’s local density of states — the back-donation capacity — as a
+function of electron energy, hence wavelength, via the retarded Green’s
+function G = [(E+iη) - H]⁻¹.</p>
+<p>The result <strong>does not support the simple geometric
+resonance</strong>, and the simulation says why:</p>
+<ol type="1">
+<li><strong>λₑ = 2d is a Bragg <em>band edge</em>, not a
+resonance.</strong> A transfer-matrix band-structure calculation places
+the bottom of the first conduction band at ≈ 4.5 eV; the Bragg
+wavelength λₑ = 2d (E = 4.90 eV) sits at that edge, with a gap below.
+The Bragg condition is where electrons are <em>reflected</em>, not
+resonantly transmitted.</li>
+<li><strong>The adsorbate LDOS does not peak at λₑ = 2d</strong> — there
+it is only ∼ 2% of its maximum. The simple “half-wavelength fits the
+lattice spacing → enhanced back-donation” picture is therefore not borne
+out: geometric commensurability is not a dynamical resonance.</li>
+<li><strong>What governs back-donation</strong> is the metal density of
+states at the adsorbate energy together with the adsorbate’s own
+resonance — i.e. the established Newns–Anderson / d-band-center picture,
+not a geometric wavelength match. Platinum is exceptional because its
+partly filled 5d band puts states at the Fermi level <em>and</em> its
+hydrogen binding sits at the Sabatier optimum, exactly the §CT.2–CT.3
+account.</li>
+<li><strong>Where a wavelength effect legitimately enters is quantum
+confinement.</strong> Sweeping the slab thickness M (the confinement
+length L = Md) at a fixed Fermi energy, the adsorbate LDOS
+<em>oscillates</em> strongly (coefficient of variation ≈ 0.84, several
+reversals) — the real quantum-well-state effect known to modulate the
+reactivity of thin metal films. The wavelength that matters is matched
+to the film <em>thickness</em>, not to the in-plane Pt–Pt spacing.</li>
+</ol>
+<p>So the simulation refines the chapter rather than confirming it: the
+λₑ/2 ≈ d₍Pt-Pt) coincidence of §CT.4 is a coincidence, not a
+back-donation resonance.</p>
+<h2
+id="ct.8-is-reproduction-impossible-energy-resonance-reproduces-platinum-v">CT.8
+Is reproduction impossible? — energy resonance reproduces platinum
+<strong>[V]</strong></h2>
+<p>The right question, having refuted the geometric form, is <em>whether
+platinum’s catalysis can be reproduced at all, or whether the failure is
+fundamental.</em> It is not fundamental: the failure was a <strong>wrong
+choice of resonance variable</strong>, and the correct one reproduces
+platinum (<code>vp_pt_reproduction.py</code>).</p>
+<p>The catalytic resonance is in <strong>energy</strong>, not geometry:
+the adsorbate orbital εₐ resonates with the metal’s <strong>d-band
+centre</strong> ε_d (the Newns–Anderson picture). A Newns–Anderson
+simulation with a semi-elliptical d-band self-energy Σ = V² g_d shows
+the sharp adsorbate level broadening into a resonance on the d-band —
+the energy-resonance mechanism. Crucially, the <strong>d-band centre
+predicts the hydrogen binding</strong>: across Ni, Rh, Pd, Ir, Pt, Cu,
+Au, the (independently determined) ε_d correlates with the measured Δ
+G₍mathrm H^<em>) at r = -0.91 (a non-circular test, since ε_d comes from
+band structure, not from the binding). Reconstructing the Sabatier
+volcano (activity ∝ exp(-|Δ G₍mathrm H^</em>)|/kT)) then places
+<strong>platinum (with iridium) at the apex</strong> — the experimental
+result, reproduced from the electronic structure.</p>
+<p>So the answer to “why couldn’t we reproduce it, and is it
+impossible?” is:</p>
+<ul>
+<li><strong>The geometric resonance failed because it is genuinely
+wrong</strong> — λₑ = 2d is a Bragg band edge in any dimension and any
+model (robust solid-state physics), not a limitation of the 1D
+simulation.</li>
+<li><strong>Platinum’s catalysis is fully reproducible</strong> — but
+through the <em>energy</em> resonance (εₐ rightarrow ε_d), which
+reproduces the binding (r=-0.91) and the volcano apex (Pt).</li>
+<li><strong>The “electron amplitude wavelength” must be
+reinterpreted</strong>: not the de Broglie wavelength matched to the
+lattice constant, but the <strong>d-electron energy</strong> matched to
+the adsorbate orbital. Read that way, the resonance intuition is correct
+and platinum is reproduced.</li>
+</ul>
+<p>The catalytic essence of platinum is therefore the
+<strong>energy</strong> of the d-states that its one-hole-short 5d shell
+places at the Fermi level — exactly the §CT.1–CT.3 account, now shown to
+be a resonance, just an energetic one.</p>
+<h2 id="ct.9-assessment-of-the-possibility-hreframed">CT.9 Assessment of
+the possibility <strong>[H]→reframed</strong></h2>
+<p>Honestly weighed across both simulations:</p>
+<ul>
+<li><strong>The resonance intuition was right; the variable was
+wrong.</strong> Catalysis <em>is</em> a resonance — of the adsorbate
+orbital with the d-band (energy), not of the electron wavelength with
+the lattice (geometry). The energy version reproduces platinum at the
+volcano apex (r=-0.91); the geometric version is a band edge.</li>
+<li><strong>What survives of the amplitude-wavelength idea.</strong> Two
+things: (i) the correct reading of “amplitude wavelength” as d-electron
+<em>energy</em>, which is the established and predictive d-band-centre
+descriptor; and (ii) a genuine, simulable <em>quantum-confinement</em>
+effect (thin-film quantum-well states, §CT.7) by which electron
+wavelength modulates reactivity through film thickness — an actionable
+lever for the water-splitting electrodes of §CT.6.</li>
+<li><strong>Verdict.</strong> Reproduction is not impossible; it is
+achieved here through the energy resonance. The honest, predictive
+descriptor is the d-band centre, and the constructive engineering levers
+are the d-band position (alloying, strain) and quantum confinement (film
+thickness, potential) — both tied directly to designing efficient
+catalyst layers for water electrolysis and purification.</li>
+</ul>
+<p>This is the value of pressing past “refuted” to “why, and is it
+possible”: the geometric coincidence is discarded, the energy resonance
+is shown to reproduce platinum, and the amplitude-wavelength idea is
+corrected into its working form rather than abandoned.</p>
+<h2 id="ct.10-falsification-and-reproducibility-fv">CT.10 Falsification
+and reproducibility <strong>[F]/[V]</strong></h2>
+<ul>
+<li>Established: if the hydrogen-evolution volcano did not peak near Δ
+G₍mathrm H^*) = 0, or if platinum were not near that peak, the Sabatier
+account fails.</li>
+<li>Hypothesis (now tested): the §CT.4 amplitude-wavelength resonance
+predicted that the adsorbate back-donation capacity would peak when λₑ/2
+matches the Pt–Pt spacing. The simulation of §CT.7 finds the opposite —
+λₑ = 2d is a band edge and the adsorbate LDOS does not peak there — so
+this specific form is <strong>refuted</strong>, and the surviving,
+testable claim is the quantum- confinement one: thin-film reactivity
+should oscillate with layer thickness (and with E_F under applied
+potential).</li>
+</ul>
+<pre><code>python3 code/foundation/vp_platinum_catalysis.py   # volcano, d-band, λ_e scale-matching, electrolysis
+python3 code/foundation/vp_pt_resonance_sim.py     # geometric resonance test: band edge (refuted)
+python3 code/foundation/vp_pt_reproduction.py      # energy resonance: reproduces Pt at volcano apex</code></pre>
+<p>All three modules are deterministic (stdout sha256 identical on
+re-run) and standard-library only.</p>
+<p><em>Platinum extends the metals thread of Chapter CM — filled d gives
+conduction (copper), unfilled d gives magnetism (iron), and a d-shell
+one hole short of full gives catalysis (platinum). The VP reading
+proposed a resonance of the electron’s amplitude wavelength with the
+surface. Put to a quantum simulation, the </em>geometric* form fails
+(the Bragg match is a band edge), but pressing on to ask whether
+reproduction is possible shows that it is: the <em>energy</em> resonance
+— the adsorbate orbital with the d-band centre — reproduces platinum at
+the volcano apex (r=-0.91). The resonance intuition was right; the
+variable was energy, not geometry. What this buys for water electrolysis
+and purification is concrete: the levers are the d-band position and
+quantum confinement of thin catalyst layers, both tuning the Fermi-level
+d-states whose energy is the true seat of platinum’s catalysis.*</p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/04-color-molecules/">← §4</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/06-applications-catalysis-fertilizer-water-energy/">§6 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{
+ "_what": "Mineral / Acid-Base Homeostasis -- emerge nodes from measured gamma, then circulate the dynamics.",
+ "dynamics_status": "SKELETON: setpoint loops / couplings / disease attractor-shifts NOT yet emerged",
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "bone_mineral_reservoir",
+   "calcium_sensing_receptor",
+   "vitamin_d_axis",
+   "parathyroid_pth",
+   "kidney_mineral_acidbase"
+  ],
+  "order_grade": "[V] order is a gamma readout over MEASURED nodes; SIGN to validate vs cited timing",
+  "organs": [
+   {
+    "dyn_class": "setpoint-loop",
+    "functional_spinodal": 0.681944,
+    "gamma": 1.4642,
+    "gamma_state": "vendored",
+    "master": "GCM2",
+    "organ": "parathyroid_pth",
+    "rel_size_dwell": 1.610675,
+    "role": "PTH secretion: the fast calcium-raising effector"
+   },
+   {
+    "dyn_class": "setpoint-comparator",
+    "functional_spinodal": 0.590305,
+    "gamma": 1.3299,
+    "gamma_state": "vendored",
+    "master": "CASR",
+    "organ": "calcium_sensing_receptor",
+    "rel_size_dwell": 1.394234,
+    "role": "the calcium SENSOR (setpoint comparator)"
+   },
+   {
+    "dyn_class": "slow-loop",
+    "functional_spinodal": 0.65426,
+    "gamma": 1.4243,
+    "gamma_state": "vendored",
+    "master": "VDR",
+    "organ": "vitamin_d_axis",
+    "rel_size_dwell": 1.545288,
+    "role": "slow calcium-absorption control (gut/kidney)"
+   },
+   {
+    "dyn_class": "reservoir",
+    "functional_spinodal": 0.532373,
+    "gamma": 1.2414,
+    "gamma_state": "vendored",
+    "master": "RUNX2",
+    "organ": "bone_mineral_reservoir",
+    "rel_size_dwell": 1.257404,
+    "role": "bone as the calcium/phosphate buffer (remodeling stores/releases)"
+   },
+   {
+    "dyn_class": "setpoint-loop",
+    "functional_spinodal": 0.746784,
+    "gamma": 1.5556,
+    "gamma_state": "vendored",
+    "master": "SIX2",
+    "organ": "kidney_mineral_acidbase",
+    "rel_size_dwell": 1.76382,
+    "role": "renal Ca/PO4 handling + HCO3 regeneration (acid-base integrator)"
+   }
+  ]
+ },
+ "oscillators": {},
+ "targets_todo": "see CHARTER.md research program and repro/_verify/stress_tests.py"
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chronobiology — the circadian oscillator network, entrainment, and clock-disruption disease | Jamming Physics</title>
+<meta name="description" content="The ~24h circadian clock as a self-sustained coupled limit-cycle oscillator network on the R19 substrate, seeded by a measured BMAL1/ARNTL gamma (never fitted): free-running, entrainment (PRC + Arnold tongue), master-vs-network synchrony, HPA setpoint gating, clock-environment misalignment disease, the mind depression seam, and PRC-based chronotherapy. Deterministic, reproducible (seed=19); efficacy=0.">
+<meta name="keywords" content="circadian rhythm, circadian clock, chronobiology, limit-cycle oscillator, BMAL1, CLOCK gene, PER CRY feedback loop, suprachiasmatic nucleus, SCN, FitzHugh-Nagumo, jamming physics, VP theory, deterministic model, measured gamma, phase-response curve, Arnold tongue, shift work disorder, jet lag, chronotherapy, HPA axis, circadian depression, measured DNA emergence, reproducible model">
+<meta name="author" content="Young Jae Lee">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://jamming-physics.org/circadian/">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jamming Physics">
+<meta property="og:title" content="Chronobiology — the circadian oscillator network (VP / Jamming Physics)">
+<meta property="og:description" content="A deterministic, DNA-seeded circadian model: free-running, PRC + Arnold tongue, master-vs-network synchrony, HPA gating, misalignment disease, the mind depression seam, PRC chronotherapy.">
+<meta property="og:url" content="https://jamming-physics.org/circadian/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chronobiology — the circadian oscillator network">
+<meta name="citation_title" content="Chronobiology: the Circadian Oscillator Network, Entrainment, and Clock-Disruption Disease">
+<meta name="citation_author" content="Young Jae Lee">
+<meta name="citation_publication_date" content="2026/06/19">
+<meta name="citation_doi" content="10.5281/zenodo.20755413">
+<meta name="citation_abstract_html_url" content="https://jamming-physics.org/circadian/">
+<meta name="citation_fulltext_html_url" content="https://jamming-physics.org/circadian/">
+<meta name="citation_language" content="en">
+<link rel="stylesheet" href="/circadian/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWorkSeries",
+ "name":"Chronobiology: the Circadian Oscillator Network, Entrainment, and Clock-Disruption Disease",
+ "headline":"Chronobiology — the circadian oscillator network",
+ "url":"https://jamming-physics.org/circadian/",
+ "identifier":"10.5281/zenodo.20755413","sameAs":"https://doi.org/10.5281/zenodo.20755413",
+ "datePublished":"2026-06-19","dateModified":"2026-06-19",
+ "inLanguage":"en","knowsAbout":["circadian rhythm","circadian clock","chronobiology","limit-cycle oscillator","BMAL1","CLOCK gene","PER CRY feedback loop","suprachiasmatic nucleus","SCN","FitzHugh-Nagumo","jamming physics","VP theory","deterministic model","measured gamma","phase-response curve","Arnold tongue","circadian misalignment","chronotherapy","HPA cortisol gating"],
+ "author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+ "publisher":{"@type":"Organization","name":"Zenodo"},
+ "license":"https://creativecommons.org/licenses/by/4.0/",
+ "hasPart":[
+  {"@type":"ScholarlyArticle","name":"Grounding: measured DNA emergence & determinism","position":0,"url":"https://jamming-physics.org/circadian/00-grounding-measured-dna-emergence/"},
+  {"@type":"ScholarlyArticle","name":"Scope: the clock as an oscillator network","position":1,"url":"https://jamming-physics.org/circadian/01-scope-clock-oscillator/"},
+  {"@type":"ScholarlyArticle","name":"Free-running: a rhythm with no input","position":2,"url":"https://jamming-physics.org/circadian/02-free-running/"},
+  {"@type":"ScholarlyArticle","name":"Entrainment: the PRC and the Arnold tongue","position":3,"url":"https://jamming-physics.org/circadian/03-entrainment-prc/"},
+  {"@type":"ScholarlyArticle","name":"Master vs network: coupled, master-led","position":4,"url":"https://jamming-physics.org/circadian/04-master-vs-network/"},
+  {"@type":"ScholarlyArticle","name":"Setpoint gating: the clock gates the HPA axis","position":5,"url":"https://jamming-physics.org/circadian/05-setpoint-gating/"},
+  {"@type":"ScholarlyArticle","name":"Misalignment: shift work, jet lag, disease","position":6,"url":"https://jamming-physics.org/circadian/06-misalignment-disease/"},
+  {"@type":"ScholarlyArticle","name":"The circadian–mood seam (mind's locked contributor)","position":7,"url":"https://jamming-physics.org/circadian/07-circadian-mood-seam/"},
+  {"@type":"ScholarlyArticle","name":"Chronotherapy: re-aligning with the PRC","position":8,"url":"https://jamming-physics.org/circadian/08-chronotherapy/"}
+ ]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Chronobiology","item":"https://jamming-physics.org/circadian/"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; Chronobiology</nav></header>
+<main>
+<h1>Chronobiology &mdash; the circadian oscillator network</h1>
+
+<p class="lede">The ~24&nbsp;hour circadian clock is a <strong>self-sustained coupled limit-cycle oscillator network</strong> (SCN master + peripheral clocks) on the shared R19 substrate &mdash; it free-runs, is entrained by light, and gates nearly every defended setpoint. Disease is <strong>clock&ndash;environment misalignment</strong>. This is a <strong>deterministic derivation seeded by a measured clock-gene &gamma;</strong>, not a toy simulation: the molecular loop carries a measured BMAL1/ARNTL well (&gamma;&nbsp;=&nbsp;1.33348, never fitted), every number is produced by one engine (seed&nbsp;=&nbsp;19, result sha256 <span class="mono">417823934d6e&hellip;</span>, 2&times; identical) across 8 falsifiable discriminants, the absolute ~24&nbsp;h period is the only cited anchor, and the felt quality of mood stays in the mind volume (efficacy&nbsp;=&nbsp;0, not medical advice).</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] reproducible</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="/circadian/00-grounding-measured-dna-emergence/">how this is grounded &rarr;</a>
+  <a href="https://doi.org/10.5281/zenodo.20755413" rel="noopener">DOI 10.5281/zenodo.20755413</a>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/" rel="noopener">reproduce (GitHub)</a>
+</aside>
+
+<h2>How this volume is grounded (not a toy model)</h2>
+<p>The molecular clock node is seeded by a <strong>measured</strong> property of the <em>real</em> human clock gene: the well depth &gamma;&nbsp;=&nbsp;1.33348 of <strong>ARNTL (alias BMAL1)</strong> (NCBI Gene ID 406, accession NC_000011.10), computed as &minus;mean(NN stacking &Delta;G37, SantaLucia 1998) over the 2500 dinucleotides of the gene's proximal promoter (TSS-2000..+500) through the <em>same</em> nearest-neighbour DNA pipeline the whole framework uses &mdash; a measured input graded <strong>[V]</strong>, never chosen to hit a target. The 2501-base promoter is cached (sha256 <span class="mono">7293be92e4ad&hellip;</span>) so the &gamma; reproduces offline byte-for-byte. Every dynamical claim below is produced by one deterministic engine (seed&nbsp;=&nbsp;19) whose aggregate result hashes <strong>identically twice</strong> (sha256 <span class="mono">417823934d6e&hellip;</span>), and the 8 discriminants (RC1&ndash;RC6&nbsp;+&nbsp;TX1) are <strong>falsifiable</strong> &mdash; each could have failed on the substrate and did not. No new physical constant is introduced anywhere; the FitzHugh&ndash;Nagumo (R19) substrate is vendored byte-identical and merely run in its oscillatory window. The full evidence, with the discriminant table and grades, is the <a href="/circadian/00-grounding-measured-dna-emergence/">grounding chapter</a>.</p>
+
+<h2>The thesis</h2>
+<p>A clock is not a stopwatch the sun winds. It is an <strong>oscillator</strong> &mdash; the BMAL1/CLOCK &harr; PER/CRY transcription&ndash;translation feedback loop &mdash; run in the oscillatory window of the same FitzHugh&ndash;Nagumo cell the rest of the framework uses. The one node with a named master gene carries a <strong>measured</strong> BMAL1 well (&gamma;&nbsp;=&nbsp;1.33348, gene 406, NC_000011.10), fetched through the framework's DNA pipeline and never fitted. On top of that vendored substrate the package adds exactly the dynamics a clock needs &mdash; coupling, entrainment, setpoint gating &mdash; and shows that each one is a property of the substrate, not an assumption: self-sustension inside a drive window, a biphasic light phase-response curve, an Arnold tongue, a synchronisation transition with a master-led hierarchy, and clock-imposed daily rhythm on the HPA axis.</p>
+
+<h2>The disease and treatment axis</h2>
+<p>Because the clock re-aligns only ~1&nbsp;hour per day (a hard bound set by the PRC), a phase shift leaves the internal clock running at the wrong external time for days. The gated setpoints then keep a clean rhythm at the wrong phase &mdash; the disease state. This one mechanism covers circadian sleep-wake disorders, shift-work cardiometabolic disease, and (through the shared Kramers oncology kernel, as a rate multiplier) the IARC class&nbsp;2A night-shift cancer association. Treatment is the same control law run forwards: a PRC-correct zeitgeber re-aligns the clock, and the <em>wrong</em> phase worsens it &mdash; chronotherapy is a timing discipline, efficacy&nbsp;=&nbsp;0.</p>
+
+<h2>The seam into mind</h2>
+<p>The volume's sharpest result is a seam, not a standalone disease. The mind paper modelled depression on an HPA withdrawal handle and <strong>explicitly locked the circadian contributor</strong>; this volume supplies it. Circadian misalignment flattens the gated HPA cortisol rhythm, and that sustained, demand-misaligned signal is mind's withdrawal bias (b&nbsp;&lt;&nbsp;0). Only the <strong>sign</strong> crosses the seam &mdash; the magnitude is owned by mind, and the felt quality of low mood stays behind mind's Axis-A firewall (consciousness_claim&nbsp;=&nbsp;0, the hard problem open). The same timing seam aggravates mind's coupling-organisation reading of autism, where circadian and sleep disruption is common.</p>
+
+<h2>The chapters</h2>
+<ul>
+<li><strong><a href="/circadian/00-grounding-measured-dna-emergence/">Grounding: measured DNA emergence &amp; determinism</a></strong> <span class="note">methods · start here</span></li>
+<li><strong><a href="/circadian/01-scope-clock-oscillator/">Scope: the clock as an oscillator network</a></strong> <span class="note">scope</span></li>
+<li><strong><a href="/circadian/02-free-running/">Free-running: a rhythm with no input</a></strong> <span class="note">verified</span></li>
+<li><strong><a href="/circadian/03-entrainment-prc/">Entrainment: the PRC and the Arnold tongue</a></strong> <span class="note">verified</span></li>
+<li><strong><a href="/circadian/04-master-vs-network/">Master vs network: coupled, master-led</a></strong> <span class="note">verified</span></li>
+<li><strong><a href="/circadian/05-setpoint-gating/">Setpoint gating: the clock gates the HPA axis</a></strong> <span class="note">verified</span></li>
+<li><strong><a href="/circadian/06-misalignment-disease/">Misalignment: shift work, jet lag, disease</a></strong> <span class="note">verified</span></li>
+<li><strong><a href="/circadian/07-circadian-mood-seam/">The circadian&ndash;mood seam (mind's locked contributor)</a></strong> <span class="note">model · seam</span></li>
+<li><strong><a href="/circadian/08-chronotherapy/">Chronotherapy: re-aligning with the PRC</a></strong> <span class="note">model · efficacy=0</span></li>
+</ul>
+
+<p class="note">Grades (VP-SPEC C3): oscillator mechanism / PRC shape / synchronisation transition&nbsp;=&nbsp;<strong>[V]</strong>; the ~24&nbsp;h period and cited clinical windows&nbsp;=&nbsp;<strong>[L]</strong>; absolute phase / inter-tissue lags / absolute incidence / the depression-handle magnitude&nbsp;=&nbsp;<strong>[O]</strong> (each with a stated obstacle in the irreproducibility ledger). DOI for this volume: <a href="https://doi.org/10.5281/zenodo.20755413">10.5281/zenodo.20755413</a> (concept; resolves to the latest version). The mind affect seam cites <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a>.</p>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.20755413">10.5281/zenodo.20755413</a> &middot; ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> &middot; reproduce: <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/circadian/">GitHub</a></footer>
+<!--VP-SEAM-CONNECTIONS-->
+<section class="vp-connections" id="vp-connections" style="margin-top:3rem;padding:1.25rem 1.5rem;border:1px solid #d8dee4;border-radius:10px;background:#fafbfc;font-size:.92rem;line-height:1.5"><h2 style="margin:.2rem 0 .8rem;font-size:1.05rem">Cross-package connections</h2><style>.vp-connections .rel{color:#5a6b7b;font-variant:small-caps}.vp-connections .gr{color:#8a949e;font-size:.82em}.vp-connections ul{margin:.3rem 0 1rem;padding-left:1.2rem}.vp-connections .none{list-style:none;color:#aab;margin-left:-1.2rem}</style><h3 style="font-size:.92rem;margin:.3rem 0">Builds on / references</h3><ul><li><a href="/cardioresp/">Cardiorespiratory Emergence</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/circulatory/">Circulatory Flow and Clearance</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/digestive/">Digestive Slow-Transport and Metabolism</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/musculoskeletal/">Musculoskeletal Structure and Mechanical Load</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/immune_hematologic/">Immune and Hematologic Population Thresholds</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/integumentary/">Integumentary Barrier and External Stimulus</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/reproductive_endocrine/">Reproductive and Endocrine Cycles</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/homeostasis_thermometabolic/">Thermometabolic Homeostasis</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/homeostasis_hemodynamic/">Hemodynamic Homeostasis</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/homeostasis_ionic/">Ionic Homeostasis</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li>
+<li><a href="/mind/">Felt Cognition</a> &mdash; <span class="rel">gates_setpoint</span> gates the defended setpoint on a ~24h cycle <span class="gr">[O]</span></li></ul><h3 style="font-size:.92rem;margin:.3rem 0">Cited by</h3><ul><li class="none">none</li></ul><p style="color:#8a949e;font-size:.8rem;margin:.2rem 0 0">Mesh projected from <code>registry/seam_edges.csv</code> &middot; machine-readable at <a href="/circadian/seams.json">seams.json</a></p></section>
+<!--VP-SEAM-CONNECTIONS-->
+</body>
+</html>

@@ -1,0 +1,170 @@
+{
+  "_about": "Integumentary cross-package seam manifest (HANDOFF 5.3): labelled IN / INTERNAL-LIVE / OUT seams for the 'one body' runner. No new mechanism, no new constant; the internal coupling is re-exported from the verified pathology layer, the rest are declarations.",
+  "_classes": {
+    "inherited_in": "read-only inputs vendored from a sibling (never re-derived here)",
+    "internal_live": "cross-target couplings computed live in this package, exposed as labelled outputs",
+    "declared_out": "contracts to sibling packages -- DECLARED, not yet live wiring"
+  },
+  "internal_live": [
+    {
+      "seam_id": "pigment_loss__to__oncology",
+      "from_target": "T3 (melanin photoprotection)",
+      "from_organ": "melanocyte (MITF)",
+      "to_target": "oncology (UV multistage Kramers kernel)",
+      "mechanism": "a melanocyte-target lesion removes the melanin screen, so the UV reaching DNA stays full, and the shared multistage hazard rises (RR>1); restoring an (exogenous) screen lowers it again -- the screen is the causal lever",
+      "scc_hazard_RR_screen_removed": 2.58101,
+      "scc_incidence_RR_screen_removed": 2.23883,
+      "scc_hazard_RR_with_sunscreen": 1.12995,
+      "melanoma_burst_RR_pigment_loss": 10.59115,
+      "lesion_delivered_uv_attenuation": 1.0,
+      "source_fields": {
+        "scc_hazard_RR_screen_removed": "skin_pathology.albinism().hazard_RR_albino_vs_pigmented",
+        "scc_incidence_RR_screen_removed": "skin_pathology.albinism().incidence_RR_albino_vs_pigmented",
+        "scc_hazard_RR_with_sunscreen": "skin_pathology.albinism().intervention_hazard_RR",
+        "melanoma_burst_RR_pigment_loss": "skin_pathology.skin_cancer().pigment_loss_burst_RR",
+        "lesion_delivered_uv_attenuation": "skin_pathology.vitiligo().disease_attenuation"
+      },
+      "screen_is_causal_lever": true,
+      "coupling_sign_raises_hazard": true,
+      "grade_shape": "[V] cross-target coupling: a T3 screen-loss lesion raises the oncology hazard (sign + direction verified)",
+      "grade_anchor": "[L] albinism markedly elevates cSCC/melanoma; vitiligo patches are photoprotection-deficient; Gandini 2005 intermittent SRR 1.61",
+      "grade_absolute": "[O] absolute RR magnitude: inherits the oncology obstacle (population baseline rate + absolute dose calibration)"
+    }
+  ],
+  "inherited_in": [
+    {
+      "seam_id": "in__circulatory__dermal_perfusion",
+      "direction": "IN",
+      "kind": "inherited_citation",
+      "source_package": "circulatory",
+      "imported": "dermal-perfusion MAGNITUDE (cited)",
+      "consumed_by": "T9 (neurovascular reactivity)",
+      "live": true,
+      "note": "the vasomotor layer adds only the reactivity dynamics and leaves the perfusion magnitude an inherited citation -- the SSOT seam it was careful not to cross",
+      "grade": "[L] cited (owned by circulatory)"
+    },
+    {
+      "seam_id": "in__DNA__organ_identity",
+      "direction": "IN",
+      "kind": "inherited_result",
+      "source_package": "DNA (morphogenesis gene-clock)",
+      "imported": "organ IDENTITY + emergence ORDER + measured master-gene gamma (TP63/KRT14/MITF/EDAR/PRDM1)",
+      "consumed_by": "every target (each organ rides its measured gamma)",
+      "live": true,
+      "note": "identity + order live in DNA; gamma is measured, read-only, never fitted; vendored in inherited/organ_gamma.json + organ_identity.md and re-vendored on change",
+      "grade": "[V] emergence (owned by DNA); gamma measured [V]"
+    },
+    {
+      "seam_id": "in__substrate__R19",
+      "direction": "IN",
+      "kind": "vendored_primitive",
+      "source_package": "substrate",
+      "imported": "the FHN / R19 bistable switch ds/dt = g*s - s^3 + h (+ spinodal/barrier/dwell)",
+      "consumed_by": "every target + every additive layer",
+      "live": true,
+      "note": "the one shared primitive; vendored in inherited/vp_substrate.py",
+      "grade": "[F] substrate primitive"
+    }
+  ],
+  "declared_out": [
+    {
+      "seam_id": "out__disease_wp__gene_lesion",
+      "direction": "OUT",
+      "kind": "declared_contract",
+      "target_package": "disease_wp",
+      "status": "DECLARED (not live -- awaits the integration harness)",
+      "owns": "the single-gene gene->lesion FACT (gene-key SSOT)",
+      "this_package_owns": "the dynamics-side TRAJECTORY each lesion drives (already covered)",
+      "entities": [
+        {
+          "entity": "genetic ichthyoses (FLG / TGM1 / ABCA12 / STS)",
+          "dynamics_side": "T1+T4 (retention near the spinodal)"
+        },
+        {
+          "entity": "ectodermal dysplasias (EDA / EDAR / EDARADD)",
+          "dynamics_side": "T5 (capped-sweat danger band)"
+        },
+        {
+          "entity": "oculocutaneous albinism (TYR / OCA2 / TYRP1 / SLC45A2)",
+          "dynamics_side": "T3->oncology (screen removed -> hazard RR)"
+        },
+        {
+          "entity": "xeroderma pigmentosum (XPA-XPG / POLH)",
+          "dynamics_side": "oncology (an extreme of the same UV multistage kernel)"
+        },
+        {
+          "entity": "hereditary skin-cancer syndromes (Gorlin/PTCH1, familial melanoma/CDKN2A)",
+          "dynamics_side": "oncology (sporadic UV cancers are ours; hereditary syndromes are gene-key)"
+        },
+        {
+          "entity": "other genodermatoses (Netherton/SPINK5, Darier/ATP2A2, Hailey-Hailey/ATP2C1, epidermolysis bullosa/COL7A1·KRT5·KRT14·LAMB3)",
+          "dynamics_side": "T8 cell-adhesion (acquired autoimmune bullous is ours; congenital EB is gene-key)"
+        }
+      ],
+      "note": "master map Section 6.2 bidirectional cross-reference: register each gene-lesion on the disease_wp side with a back-pointer to the dynamics section here",
+      "grade": "contract (no number); dynamics side already [V] in this package"
+    },
+    {
+      "seam_id": "out__immune_hematologic__urticaria",
+      "direction": "OUT",
+      "kind": "declared_contract",
+      "target_package": "immune_hematologic",
+      "status": "DECLARED (not live)",
+      "owns": "mast-cell / histamine effector (urticaria / angioedema)",
+      "this_package_owns": "nothing -- not a skin jamming-class target",
+      "note": "named sibling seam, not modelled in this package",
+      "grade": "contract"
+    },
+    {
+      "seam_id": "out__immune_effector__lichen_planus",
+      "direction": "OUT",
+      "kind": "declared_contract",
+      "target_package": "immune_effector",
+      "status": "DECLARED (not live)",
+      "owns": "interface inflammation (lichen planus / inflammatory dermatoses)",
+      "this_package_owns": "nothing -- needs an immune-effector seam",
+      "note": "named sibling seam, not modelled in this package",
+      "grade": "contract"
+    },
+    {
+      "seam_id": "out__rheumatology__secondary_raynaud",
+      "direction": "OUT",
+      "kind": "declared_contract",
+      "target_package": "immune_rheumatology",
+      "status": "DECLARED (not live)",
+      "owns": "the FIXED digital-ischemia / ulcer of SECONDARY Raynaud (connective-tissue disease)",
+      "this_package_owns": "PRIMARY Raynaud's reversible vasospasm (T9, already covered)",
+      "note": "the T9 layer models primary (reversible) Raynaud and names the fixed secondary state as this seam",
+      "grade": "contract; primary side [V] here"
+    },
+    {
+      "seam_id": "out__immune_effector__rosacea_inflammation",
+      "direction": "OUT",
+      "kind": "declared_contract",
+      "target_package": "immune_effector",
+      "status": "DECLARED (not live)",
+      "owns": "rosacea inflammatory effector chemistry BEYOND the LL-37 / Demodex amplifier flag",
+      "this_package_owns": "the vasomotor reactivity + the papulopustular amplifier flag (T9, already covered)",
+      "note": "the T9 layer carries the dilation/fixation + amplifier flag; deeper effector chemistry is the seam",
+      "grade": "contract; vasomotor side [V] here"
+    },
+    {
+      "seam_id": "out__none__cutaneous_infection",
+      "direction": "OUT",
+      "kind": "out_of_class",
+      "target_package": null,
+      "status": "OUT-OF-CLASS (no seam target)",
+      "owns": "pathogen-driven infections (impetigo, cellulitis, dermatophytosis, herpes, warts)",
+      "this_package_owns": "nothing -- these are not an R19-dynamics failure",
+      "note": "outside the package's physical (jamming) class entirely; named so the boundary is explicit",
+      "grade": "out-of-class"
+    }
+  ],
+  "_counts": {
+    "inherited_in": 3,
+    "internal_live": 1,
+    "declared_out": 6
+  },
+  "_no_new_constant": true,
+  "_grades": "internal coupling shape [V] / cited epidemiology [L] / absolute RR [O] (oncology obstacle); inherited + declared seams carry the owning package's grade"
+}

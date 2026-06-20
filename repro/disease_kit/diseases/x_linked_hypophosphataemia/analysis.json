@@ -1,0 +1,159 @@
+{
+ "disease": "X-linked hypophosphataemia",
+ "omim": "307800",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "X-linked hypophosphataemia",
+  "omim": "307800",
+  "summary": "The commonest heritable form of rickets/osteomalacia. PHEX (a membrane endopeptidase expressed by osteocytes/osteoblasts) normally restrains the bone hormone FGF23; PHEX loss-of-function RELEASES that restraint, so circulating FGF23 is OVER-produced. Excess FGF23 downregulates the renal sodium-phosphate cotransporters (NaPi-2a/2c) and suppresses 1-alpha-hydroxylase, causing renal phosphate wasting with inappropriately low calcitriol -> hypophosphataemic rickets, bowing, short stature, dental abscesses and enthesopathy. Read as a released BRAKE on FGF23 (PHEX brakes FGF23; LOF releases it -> FGF23 burden UP) -- the same released-brake -> downstream-over-production pattern as the toxic-metabolite axis-UP diseases, here on a HORMONE axis. The kit re-derives the approved targeted therapy, which RESTRAINS the FGF23 axis: burosumab, an anti-FGF23 monoclonal antibody, neutralises the excess hormone and restores renal phosphate reabsorption. Restoring PHEX itself (gene therapy preclinical) is the function-restoring lever. Conventional oral phosphate + active vitamin D (calcitriol/alfacalcidol) is the older symptomatic standard that repletes the downstream phosphate/calcitriol deficit but does NOT lower FGF23 (it can raise it), so it sits OUTSIDE this FGF23 switch axis and is noted as downstream-symptomatic, not a switch lever. The gamma read is of the PHEX locus switch STRUCTURE; the disease lesion is coding/deletion (loss-of-function variants across PHEX), outside the promoter firewall. X-linked dominant (Xp22.11); the link PHEX-loss -> FGF23-excess is functionally established while the precise enzymatic substrate is still investigated. Magnitude [O].",
+  "emergent_axis": "circulating FGF23 (phosphate-wasting hormone) burden",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "PHEX",
+    "gamma": 1.3471,
+    "spinodal_h_sp": 0.60179,
+    "barrier": 0.45367,
+    "dwell_relative_size": 1.42137,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000023.11",
+     "gene_start": 22032324,
+     "gene_end": 22251309,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "phosphate regulating endopeptidase X-linked"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "PHEX (phosphate-regulating endopeptidase, X-linked) is expressed by osteocytes/osteoblasts and functionally RESTRAINS circulating FGF23. As a BRAKE on FGF23, its LOF RELEASES the brake -> FGF23 is over-produced -> renal phosphate wasting + low calcitriol -> the FGF23 hormone burden goes UP. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the coding/deletion lesion (firewall). The pathological axis is the FGF23 BURDEN (it goes UP), so the corrective lever LOWERS it. X-linked dominant (Xp22.11).",
+    "src": "The HYP Consortium 1995 Nat Genet 11:130 (PHEX identified); Martin 2011 Physiol Rev / Liu 2006 (PHEX-FGF23 axis)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "PHEX",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "4e685166f7cd"
+ },
+ "treatment_A_switch": {
+  "disease": "X-linked hypophosphataemia",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "FGF23",
+    "push_direction": "neutralise the over-produced FGF23 with an anti-FGF23 antibody -> restore renal phosphate reabsorption and calcitriol -> lower the FGF23-driven phosphate-wasting burden",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "anti-FGF23 monoclonal antibody (burosumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] phosphate-restoration / FGF23-neutralisation magnitude not derived from sequence",
+    "src": "Carpenter 2018 NEJM 378:1987 (burosumab in children); Imel 2019 Lancet 393:2416 (burosumab vs conventional therapy); burosumab (Crysvita) FDA 2018"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "PHEX",
+    "push_direction": "restore PHEX so FGF23 is restrained again -> FGF23 falls -> renal phosphate handling normalises (function-restoring)",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "PHEX restoration (gene therapy preclinical)",
+    "status": "investigational",
+    "mechanism_grade": "[O] degree of restored PHEX function / FGF23 lowering not derived from sequence",
+    "src": "preclinical PHEX-restoration models (Hyp mouse)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "FGF23",
+   "push_direction": "neutralise the over-produced FGF23 with an anti-FGF23 antibody -> restore renal phosphate reabsorption and calcitriol -> lower the FGF23-driven phosphate-wasting burden",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "anti-FGF23 monoclonal antibody (burosumab)",
+   "status": "approved",
+   "mechanism_grade": "[O] phosphate-restoration / FGF23-neutralisation magnitude not derived from sequence",
+   "src": "Carpenter 2018 NEJM 378:1987 (burosumab in children); Imel 2019 Lancet 393:2416 (burosumab vs conventional therapy); burosumab (Crysvita) FDA 2018"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.42137,
+   "dwell_disease": 1.95438,
+   "dwell_treated": 1.59542,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "36104d993c55"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "PHEX LOF (released brake) raises circulating FGF23 and drives renal phosphate wasting (axis UP)",
+   "falsifier": "a PHEX loss-of-function variant that LOWERED circulating FGF23 / RAISED serum phosphate would refute the released-brake direction",
+   "measurable_by": "circulating intact FGF23 and renal phosphate handling (TmP/GFR) by PHEX genotype"
+  },
+  {
+   "claim": "neutralising the excess FGF23 (burosumab) is the CORRECTIVE direction (restores phosphate, lowers the burden)",
+   "falsifier": "if an anti-FGF23 antibody FAILED to raise serum phosphate / TmP/GFR, or worsened phosphate wasting, the restrain-FGF23 lever sign is wrong",
+   "measurable_by": "serum phosphate and TmP/GFR response to an anti-FGF23 antibody"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "X-linked hypophosphataemia": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "e11865acfc24"
+ },
+ "determinism_sha": "5fbd83454d51"
+}

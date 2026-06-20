@@ -1,0 +1,69 @@
+{
+  "_README": "M15 calibration-bridge atlas. The dimensionless emergence engine is moved into CLINICAL UNITS by introducing exactly TWO auditable, cited anchors and NOTHING else (VP-SPEC C0-C4, no new free constant): (1) ONE voltage scale -- the cited SWS delta peak-to-peak amplitude -- and (2) ONE time scale -- 1 engine step = 1.000 ms -- which is NOT a new constant but is INHERITED and CERTIFIED by M14 (the cited T-current recovery tau_rec=13 ms makes the spindle carrier emerge at 15.38 Hz, inside the cited 11-16 Hz band, only at fs=1000 Hz). Because there is exactly ONE time scale, the P300 latency and the panic peak-time CANNOT be given their own time scales; they are PREDICTIONS at the single inherited 1 ms/step scale. HONESTY BEFORE COMPLETENESS: of the three owed-calibration observables, only sws_delta_amplitude_uv legitimately closes -- and it closes BY CITED EXTERNAL CALIBRATION (VP-SPEC 6.1), i.e. the voltage scale IS the cited anchor; this is labelled closure_type=calibration_cited_anchor, DISTINCT from M14's closure_type=emergence, and is NOT a claim that the engine independently predicts 75 uV. p300_latency_ms and panic_peak_minutes remain OWED: at the single 1 ms/step time scale the model predicts an early-ERP evoked peak (~39 ms) and a millisecond-scale arousal runaway, neither of which matches the clinical target; matching them would require either a second, target-chosen time scale (a forbidden free constant) or un-modelled machinery (large-scale context-updating for P300; humoral/endocrine feedback for panic). These OWED determinations are reported, not hidden. Reproducing or calibrating an EEG amplitude is NOT a consciousness claim: medium_efficacy_tested=0, hard_problem_open=1, is_consciousness_claim=0.",
+  "units": {
+    "voltage": "microvolt (uV), scalp/LFP equivalent",
+    "time": "millisecond (ms); 1 engine integration step = 1.000 ms",
+    "amplitude_convention": "peak-to-peak measured as the 0.5th-to-99.5th percentile span (robust p-p)"
+  },
+  "time_scale_anchor": {
+    "engine_step_ms": 1.0,
+    "status": "INHERITED_AND_CERTIFIED (not a new constant)",
+    "certified_by": "M14 spindle carrier emerges at 15.38 Hz in the cited 11-16 Hz band ONLY at fs=1000 Hz",
+    "setting_time_constant": "T-current de-inactivation recovery tau_rec = 13 ms",
+    "source": "Huguenard & McCormick 1992 (tau_rec); De Gennaro & Ferrara 2003 (11-16 Hz spindle band)",
+    "consequence": "there is exactly ONE time scale; absolute ms/minute observables are PREDICTIONS at this scale, never re-anchored to hit a target"
+  },
+  "voltage_scale_anchor": {
+    "name": "sws_delta_peak_to_peak_uv",
+    "value_uv": 75.0,
+    "status": "CITED_EXTERNAL_CALIBRATION (the single voltage scale)",
+    "source": "AASM/Rechtschaffen-Kales N3 scoring criterion: slow-wave sleep delta >= 75 uV peak-to-peak at 0.5-2 Hz",
+    "derivation": "V0 [uV per model-unit] = 75 uV / (model SWS slow-oscillation robust p-p at SEED); every other uV value is then DERIVED from V0, no further free constant",
+    "note": "this anchor DEFINES the voltage unit; it is NOT an independent emergent prediction of 75 uV"
+  },
+  "synaptic_kinetics_cited": {
+    "_note": "REUSED from the M13 spectral atlas (Destexhe 1998; Jonas 1993). Not re-fitted. Used to build the P300 evoked cascade. Recurrent gains are DERIVED from the cited synaptic charge q=g*tau and the MEASURED ephaptic coupling kappa=0.5496 -- no free gain.",
+    "AMPA":   {"tau_ms": 2.0,   "g_nS": 0.7, "role": "fast stimulus-driven excitation"},
+    "NMDA":   {"tau_ms": 100.0, "g_nS": 0.5, "role": "slow recurrent excitation"},
+    "GABA_A": {"tau_ms": 6.0,   "g_nS": 1.0, "role": "fast recurrent inhibition"},
+    "GABA_B": {"tau_ms": 180.0, "g_nS": 0.4, "role": "slow second-messenger inhibition (latest current)"}
+  },
+  "observables": {
+    "sws_delta_amplitude_uv": {
+      "measured": 75.0,
+      "tol": 25.0,
+      "band": [50.0, 100.0],
+      "kind": "amplitude_uv",
+      "closure_type": "calibration_cited_anchor",
+      "status": "CAL-CLOSED",
+      "source": "AASM/Rechtschaffen-Kales N3: SWS delta >= 75 uV peak-to-peak",
+      "honest_note": "CLOSED BY CITED EXTERNAL CALIBRATION (VP-SPEC 6.1), not by independent emergence. The engine EMERGENTLY supplies the existence and spectral dominance of the <1 Hz SWS rhythm (M14); the cited 75 uV anchor supplies the voltage scale. Cross-check: under the SAME single anchor the model predicts a spindle amplitude of ~59 uV and a delta/spindle p-p ratio of ~1.27x, whereas physiology is ~3-7x; the 19-node substrate underestimates the whole-cortex spatial coherence that amplifies real SWS delta. Hence absolute NON-anchor uV values are not yet trustworthy -- noted limitation, does not affect the (definitional) delta closure."
+    },
+    "p300_latency_ms": {
+      "measured": 300.0,
+      "tol": 50.0,
+      "band": [250.0, 350.0],
+      "kind": "latency_ms",
+      "closure_type": "owed_structural",
+      "status": "OWED",
+      "source": "P300 ERP latency ~300 ms to an oddball stimulus",
+      "honest_note": "OWED. At the single inherited 1 ms/step time scale, the cited AMPA->NMDA->GABA_B cascade (recurrent gains from kappa*charge, no free gain) produces an evoked slow-current peak at ~39 ms -- an EARLY sensory ERP latency (P50/N100 range), with only a monotonically decaying slow-inhibition tail and NO distinct late positive deflection near 300 ms. The late cognitive P300 reflects stimulus-evaluation / context-updating over a large-scale fronto-parietal network that the single-substrate model does not contain. Forcing the peak to 300 ms would require either a second, target-chosen time scale (a forbidden free constant) or a tuned distance-to-bifurcation chosen to hit 300 ms (forbidden tuning). Reported, not closed."
+    },
+    "panic_peak_minutes": {
+      "measured": 10.0,
+      "tol": 5.0,
+      "band": [5.0, 15.0],
+      "kind": "minutes",
+      "closure_type": "owed_structural",
+      "status": "OWED",
+      "source": "DSM-5: a panic attack peaks within ~10 minutes",
+      "honest_note": "OWED. The interoceptive arousal positive-feedback loop (gain from the measured kappa) DOES emerge a runaway bifurcation to saturation -- the qualitative fact is reproduced. But at the single inherited 1 ms/step time scale the runaway saturates in ~1 s (~0.017 min), orders of magnitude faster than the clinical ~10 min. The minute-scale escalation of a real panic attack is set by HUMORAL/ENDOCRINE feedback (sympatho-adrenal and HPA-axis catecholamine/cortisol dynamics) -- a slow physiological subsystem absent from the neural-field substrate. Obtaining 10 min would require injecting a ~600 s time constant chosen to hit the target (a forbidden free constant / target echo). Reported, not closed."
+    }
+  },
+  "scorecard": {
+    "calibration_closed": ["sws_delta_amplitude_uv"],
+    "owed_structural": ["p300_latency_ms", "panic_peak_minutes"],
+    "core_catalogue_effect": "closing sws_delta by cited calibration lifts the core catalogue 17/20 -> 18/20 = 0.90; p300 and panic remain owed",
+    "anti_overclaim": "M15 raises match-rate by ONE legitimately calibration-closed observable and HONESTLY leaves two owed with stated structural obstacles, in the same discipline that left M13 arousal-flattening owed at 7/8 < gate"
+  }
+}

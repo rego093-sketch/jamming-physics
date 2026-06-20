@@ -1,0 +1,109 @@
+{
+  "_provenance": "M10 sensory<->central coupling atlas (v1.11). EVERY gamma here is CITED VERBATIM (read-only, copied digit-for-digit, NEVER re-fetched and NEVER re-derived) from the neuro v1.10.1 cached sensory atlas -- this is the single-source rule (PROJECT_BOUNDARY_neuro_mind.md / VP-SPEC C1): mind cites the measured object, neuro owns it. The eight sensory receptor/organ nodes are exactly the nodes neuro EMERGES in its sensory _atlas dictionaries: five from repro/neuro/_engine/data/sensory_organ_gamma.json (eye/PAX6, ear/PAX2, olfactory/LHX2, taste/POU2F3, skin/TP63) and three from repro/neuro/_engine/data/full_sensory_gamma.json (nociceptor/PRDM12, proprioceptor/RUNX3, vestibular/ATOH1). They cover the canonical NINE human sensory modalities: the skin organ (TP63) hosts the low-threshold somatosensory submodalities touch (PIEZO2) and warmth (thermoreceptor, neutral 32C), pain is the high-threshold nociceptor (PRDM12), and the special senses are vision, hearing, smell, taste, and balance -- exactly neuro v1.10.1 sec 20's 'one organ, three submodalities' inventory. corr(gamma,GC) over these masters is the same lawful read-out neuro reports (organ atlas 0.994, the four sec 20 modalities 0.997). The gamma layer is Layer-1 [F]. f0_hz is the modality's empirically-dominant input/processing band: its BAND IDENTITY is cited to the experimental literature, but the absolute centre frequency in Hz is Layer-2 [O] (a representative value, NOT read from the gamma window and NOT tuned to any model target; guarded by the +/-20% band-perturbation robustness check). The central relay is the modality's first anatomical central target; the afferent couples to it at the SAME measured ephaptic threshold fraction kappa=0.5496 (neuro 19) -- no new tuned constant is introduced.",
+  "_single_source": "neuro v1.10.1 -- repro/neuro/_engine/data/{sensory_organ_gamma.json, full_sensory_gamma.json}",
+  "_neuro_source_sha256": {
+    "sensory_organ_gamma.json": "cd9d37ad276991ffcce3082d81ffbd1d67a3cda02eef2e9feaf2ae1617392d59",
+    "full_sensory_gamma.json": "acb0801fca5284f1155982524cb75820c85e0e00e9ad2160fdb3ad9d99e259de"
+  },
+  "_metric": "gamma = mean(-NN dG37), SantaLucia 1998 (read-only; identical to DNA/neuro/M0/M9). NOT recomputed here -- copied verbatim from the neuro files above.",
+  "_grading": "gamma [F measured input, cited verbatim from neuro]; band identity [cited]; absolute f0 in Hz [O representative]; central relay [anatomical, cited]; afferent coupling kappa is the SAME MEASURED ephaptic fraction (neuro 19), NOT per-edge tuned; ring geometry [O]. medium_efficacy_tested stays 0 -- whether cognition USES sensory<->central coupling is OPEN.",
+  "_relay_rationale": "Each sensory afferent projects to its first central relay among the twelve M9 central organs: the special exteroceptive senses (vision/LGN, hearing/MGN, touch+warmth/VPL, pain/spinothalamic-VPL) enter through the thalamus (the sensory gateway); taste (NTS) and balance (vestibular nuclei) enter through the brainstem; smell bypasses the thalamus and enters the olfactory bulb directly; proprioception (muscle spindle) projects to the cerebellum. The afferent is reciprocal (thalamo-/relay-cortical style) at the measured kappa -- the same threshold fraction used everywhere, never re-tuned.",
+  "modalities": {
+    "vision": {
+      "organ": "retina/eye",
+      "master": "PAX6",
+      "gamma": 1.511,
+      "gc": 0.6058,
+      "central_relay": "thalamus",
+      "f0_hz": 50.0,
+      "band": "gamma",
+      "band_citation": "Gray & Singer 1989, PNAS 86:1698-1702 (stimulus-specific visual gamma 30-70 Hz)",
+      "transducer": "opsin phototransduction",
+      "source": "neuro v1.10.1 sensory_organ_gamma.json genes.PAX6 (eye master, _atlas.eye)"
+    },
+    "hearing": {
+      "organ": "cochlea/ear",
+      "master": "PAX2",
+      "gamma": 1.4639,
+      "gc": 0.5574,
+      "central_relay": "thalamus",
+      "f0_hz": 40.0,
+      "band": "gamma",
+      "band_citation": "Galambos, Makeig & Talmachoff 1981, PNAS 78:2643-2647 (40 Hz auditory steady-state response)",
+      "transducer": "hair-cell mechanotransduction",
+      "source": "neuro v1.10.1 sensory_organ_gamma.json genes.PAX2 (ear master, _atlas.ear)"
+    },
+    "smell": {
+      "organ": "olfactory_epithelium",
+      "master": "LHX2",
+      "gamma": 1.5172,
+      "gc": 0.5986,
+      "central_relay": "olfactory_bulb",
+      "f0_hz": 5.0,
+      "band": "theta/sniff",
+      "band_citation": "Kay 2009, Ann N Y Acad Sci 1170:269-274; Adrian 1942, J Physiol 100:459-473 (respiration-locked sniff theta drives olfactory input)",
+      "transducer": "olfactory-receptor GPCR transduction",
+      "source": "neuro v1.10.1 sensory_organ_gamma.json genes.LHX2 (olfactory master, _atlas.olfactory)"
+    },
+    "taste": {
+      "organ": "taste_bud",
+      "master": "POU2F3",
+      "gamma": 1.3991,
+      "gc": 0.5118,
+      "central_relay": "brainstem",
+      "f0_hz": 2.0,
+      "band": "delta/slow",
+      "band_citation": "Katz, Simon & Nicolelis 2002, J Neurosci 22:1850-1857 (slow temporal dynamics of gustatory coding)",
+      "transducer": "TAS1R/TAS2R + TRPM5 (PLCB2)",
+      "source": "neuro v1.10.1 sensory_organ_gamma.json genes.POU2F3 (taste master, _atlas.taste)"
+    },
+    "touch_warmth": {
+      "organ": "skin",
+      "master": "TP63",
+      "gamma": 1.3643,
+      "gc": 0.4658,
+      "central_relay": "thalamus",
+      "f0_hz": 25.0,
+      "band": "beta/flutter",
+      "band_citation": "Mountcastle, Talbot, Sakata & Hyvarinen 1969, J Neurophysiol 32:452-484 (flutter-vibration 5-40 Hz mechanoreception)",
+      "transducer": "PIEZO2 (low-threshold mechano) + TRP thermo (neutral 32C)",
+      "source": "neuro v1.10.1 sensory_organ_gamma.json genes.TP63 (skin organ master, _atlas.skin; hosts touch+warmth low-threshold submodalities per neuro sec 20)"
+    },
+    "pain": {
+      "organ": "nociceptor",
+      "master": "PRDM12",
+      "gamma": 1.5955,
+      "gc": 0.6757,
+      "central_relay": "thalamus",
+      "f0_hz": 4.0,
+      "band": "theta/slow",
+      "band_citation": "Ploner, Sorg & Gross 2017, Trends Cogn Sci 21:100-110 (slow/theta-band nociceptive cortical dynamics)",
+      "transducer": "TRPV1>43C / Nav1.7 (high-threshold polymodal)",
+      "source": "neuro v1.10.1 full_sensory_gamma.json genes.PRDM12 (nociceptor master, _atlas.nociceptor)"
+    },
+    "proprioception": {
+      "organ": "muscle_spindle",
+      "master": "RUNX3",
+      "gamma": 1.466,
+      "gc": 0.5606,
+      "central_relay": "cerebellum",
+      "f0_hz": 10.0,
+      "band": "alpha/tremor",
+      "band_citation": "McAuley & Marsden 2000, Brain 123:1545-1567 (8-12 Hz physiological tremor / proprioceptive loop)",
+      "transducer": "PIEZO2 stretch (muscle spindle Ia)",
+      "source": "neuro v1.10.1 full_sensory_gamma.json genes.RUNX3 (proprioceptor master, _atlas.proprioceptor; closes neuro sec 11 reflex loop)"
+    },
+    "balance": {
+      "organ": "vestibular_hair_cell",
+      "master": "ATOH1",
+      "gamma": 1.4309,
+      "gc": 0.5198,
+      "central_relay": "brainstem",
+      "f0_hz": 1.0,
+      "band": "delta/tonic",
+      "band_citation": "Angelaki & Cullen 2008, Annu Rev Neurosci 31:125-150 (tonic/low-frequency vestibular self-motion coding)",
+      "transducer": "OTOP1 / hair-cell mechanotransduction (directional, signed)",
+      "source": "neuro v1.10.1 full_sensory_gamma.json genes.ATOH1 (vestibular master, _atlas.vestibular)"
+    }
+  }
+}

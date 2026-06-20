@@ -1,0 +1,43 @@
+{
+ "_atlas": "VP visceral + morphogenesis master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact TSS -> window TSS-2000..+500). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit.",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma is MEASURED [V] and never fitted; organ IDENTITY + emergence ORDER are owned by DNA. FOXL2/DAZL/WT1 were named TO-MEASURE masters and have now been RECEIVED via the identical DNA fetch_morpho_gamma pipeline (see _reception_note); _to_measure is therefore empty.",
+ "genes": {
+  "SOX9": {
+   "gamma": 1.4598,
+   "gc": 0.545,
+   "src": "NC_000017.11 + TSS-2000..+500",
+   "_source": "morpho_gamma.json (morphogenesis)"
+  },
+  "FOXL2": {
+   "gamma": 1.4829,
+   "gc": 0.5754,
+   "src": "NC_000003.12 - TSS-2000..+500",
+   "_source": "fetch_gamma.py reception (DNA fetch_morpho_gamma pipeline; measured, never fitted)"
+  },
+  "DAZL": {
+   "gamma": 1.3803,
+   "gc": 0.479,
+   "src": "NC_000003.12 - TSS-2000..+500",
+   "_source": "fetch_gamma.py reception (DNA fetch_morpho_gamma pipeline; measured, never fitted)"
+  },
+  "WT1": {
+   "gamma": 1.5182,
+   "gc": 0.601,
+   "src": "NC_000011.10 - TSS-2000..+500",
+   "_source": "fetch_gamma.py reception (DNA fetch_morpho_gamma pipeline; measured, never fitted)"
+  }
+ },
+ "_to_measure": [],
+ "_reception_note": "FOXL2/DAZL/WT1 received via repro/_gamma/fetch_gamma.py using the DNA fetch_morpho_gamma pipeline (NN-stacking dG37, SantaLucia 1998, promoter TSS-2000..+500). Sequences cached in organ_promoters.cache.json for offline bit-for-bit reproduction. Pipeline validated by reproducing SOX9 (1.4598/0.545).",
+ "_measured_order_gamma_asc": [
+  "DAZL",
+  "SOX9",
+  "FOXL2",
+  "WT1"
+ ]
+}

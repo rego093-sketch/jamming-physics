@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colorectal processed-meat dose-response — Digestive/Metabolic §8 | Jamming Physics</title>
+<meta name="description" content="Processed-meat exposure raises colorectal-cancer risk along a monotone convex curve anchored to IARC RR≈1.18 per 50 g/day, reaching 1.63 at 150 g/day.">
+<link rel="canonical" href="https://jamming-physics.org/digestive/08-colorectal-processed-meat-dose-response/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Colorectal processed-meat dose-response — Digestive/Metabolic §8 | Jamming Physics"><meta property="og:description" content="Processed-meat exposure raises colorectal-cancer risk along a monotone convex curve anchored to IARC RR≈1.18 per 50 g/day, reaching 1.63 at 150 g/day."><meta property="og:url" content="https://jamming-physics.org/digestive/08-colorectal-processed-meat-dose-response/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Colorectal processed-meat dose-response — Digestive/Metabolic §8 | Jamming Physics"><meta name="twitter:description" content="Processed-meat exposure raises colorectal-cancer risk along a monotone convex curve anchored to IARC RR≈1.18 per 50 g/day, reaching 1.63 at 150 g/day.">
+<link rel="stylesheet" href="/digestive/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Colorectal processed-meat dose-response","identifier":{"@type":"PropertyValue","propertyID":"DOI","value":"10.5281/zenodo.20755319"},"sameAs":"https://doi.org/10.5281/zenodo.20755319","isPartOf":{"@type":"CreativeWorkSeries","name":"Digestive/Metabolic"},"position":8,"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"datePublished":"2026-06-19","dateModified":"2026-06-19","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/08-colorectal-processed-meat-dose-response/","license":"https://creativecommons.org/licenses/by/4.0/","knowsAbout":["colorectal carcinoma", "processed meat", "N-nitroso", "dose-response"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Digestive/Metabolic","item":"https://jamming-physics.org/digestive/"},{"@type":"ListItem","position":3,"name":"\u00a78 Colorectal processed-meat dose-response"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/digestive/">Digestive/Metabolic</a> › §8</nav></header>
+<main>
+<h1>Colorectal processed-meat dose-response</h1>
+<p class="answer">Processed-meat exposure raises colorectal-cancer risk along a monotone, convex dose-response anchored to the IARC figure RR≈1.18 per 50 g/day. The shared barrier-lowering kernel, with a single calibrated slope κ, reproduces RR from 1.00 to 1.18 at 50 g/day and 1.63 at 150 g/day. The anchor is cited [L]; the shape is verified [V]; absolute incidence is open [O].</p>
+<p class="abstract">Heme iron and N-nitroso compounds act as a sustained bias on the colonocyte fate switch. Calibrating one dose-to-bias slope to the IARC anchor RR≈1.18 per 50 g/day reproduces a monotone convex curve reaching RR 1.63 at 150 g/day. Anchor [L], shape [V], absolute incidence [O].</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] simulation-verified</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/digestive/08-colorectal-processed-meat-dose-response/" rel="noopener">reproduction code (GitHub)</a><span class="doi">DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a></span></aside>
+
+<p>Processed-meat exposure raises colorectal-cancer risk along a monotone, convex dose-response anchored to the IARC figure <span class="m">RR ≈ 1.18 per 50 g/day</span>. The shared barrier-lowering kernel, with a single calibrated slope, reproduces this curve from one anchor point.</p>
+<p>The mechanistic drive is heme iron and N-nitroso compounds (plus heterocyclic amines from high-temperature cooking) acting as a sustained bias on the colonocyte fate switch. Calibrating only the dose-to-bias slope <span class="m">κ</span> to the <span class="m">50 g/day</span> anchor fixes the whole curve.</p>
+<aside class="vp-card" data-locked="kernel"><b>RR(dose) = rate(dose)/rate(0), rate ∝ exp(−barrier/D)</b> — the shared carcinogen kernel: a sustained drive lowers the R19 barrier; one noise scale D for every site. <b>[F]</b> forced. <a href="/digestive/07-carcinogen-barrier-kramers-kernel/">canonical derivation</a></aside>
+<table><thead><tr><th>processed meat (g/day)</th><th>relative risk</th></tr></thead><tbody><tr><td>0</td><td>1.000</td></tr><tr><td>25</td><td>1.087</td></tr><tr><td>50</td><td>1.180</td></tr><tr><td>100</td><td>1.390</td></tr><tr><td>150</td><td>1.635</td></tr></tbody></table>
+<p>The epidemiological anchor is cited <span class="m">[L]</span>; the reproduced dose-response shape is verified <span class="m">[V]</span> — monotone and convex, rising to <span class="m">1.63</span> at <span class="m">150 g/day</span>; absolute incidence is open <span class="m">[O]</span>. The convexity is a prediction of the kernel, not an input: barrier lowering is faster than linear as the bias grows.</p>
+
+<nav class="pn"><a rel="prev" href="/digestive/07-carcinogen-barrier-kramers-kernel/">← §7</a><a href="/digestive/">contents</a><a rel="next" href="/digestive/09-pancreatic-smoking-dose-response/">§9 →</a></nav>
+</main>
+<footer><p>Young Jae Lee · ORCID <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">0009-0002-7535-8245</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20755319" rel="noopener">10.5281/zenodo.20755319</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener license">CC BY 4.0</a></p></footer>
+</body>
+</html>

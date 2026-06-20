@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive summary — Configured Continuum §1 | Jamming Physics</title>
+<meta name="description" content="Fluid form follows arrangement: from one marginal jammed structure, four pillars derive the equations, fix and select the lengths, and set the dissipation.">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/01-executive-summary/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Executive summary — Configured Continuum §1 | Jamming Physics"><meta property="og:description" content="Fluid form follows arrangement: from one marginal jammed structure, four pillars derive the equations, fix and select the lengths, and set the dissipation."><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/01-executive-summary/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Executive summary — Configured Continuum §1 | Jamming Physics"><meta name="twitter:description" content="Fluid form follows arrangement: from one marginal jammed structure, four pillars derive the equations, fix and select the lengths, and set the dissipation.">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Executive summary", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 1, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/01-executive-summary/", "knowsAbout": ["jamming lattice", "configured continuum", "Executive summary"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"\u00a71 Executive summary"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §1</nav></header>
+<main>
+<h1>Executive summary</h1>
+<p class="answer">One thesis, forced four ways from a single measured structure: fluid form follows arrangement. At the isostatic margin (G_relaxed→0, B finite at z=2d) the medium is a fluid; from that one arrangement Pillars I–IV then derive its governing equations, fix and select its lengths (L_★∝(σ/ε)¹/2), and set its dissipation — phenomena standard mechanics leaves unexplained. <span class="grade g-derive">[DERIVE]</span></p>
+<p class="abstract">One thesis, forced four ways from a single measured structure: fluid form follows arrangement. At the isostatic margin (G_relaxed→0, B finite at z=2d) the medium is a fluid; from that one arrangement Pillars I–IV then derive its governing equations, fix and select its lengths (L_★∝(σ/ε)¹/2), and set its dissipation — phenomena standard mechanics leaves unexplained.</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/01-executive-summary/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<aside class="vp-card" data-locked="cs2"><b>c² = B/ρ</b> — substrate sound speed — at the isostatic margin the relaxed shear modulus vanishes while the bulk modulus B stays finite, leaving exactly one elastic (longitudinal sound) wave, the defining acoustic signature of a fluid. <b>[LOCK]</b> <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">canonical derivation §3 (marginal substrate)</a></aside>
+<p>This whitepaper makes one move and follows it to the end: it replaces the unexamined premise of
+fluid mechanics—<em>that there is a fluid</em>—with a measured structure, and
+shows that the equations, the geometry, the selected lengths, and the
+dissipation are all forced by that structure rather than standing beside it. Four
+lines of the author's work turn out to be four faces of this one claim. Each is
+summarized here and developed in its own chapter.</p>
+<h4>The reframing (Section~\ref{sec:thesis}).</h4>
+<p>Four textbook facts—that the medium <em>flows</em> at all, core size, length
+selection, anomalous dissipation—are
+usually treated as outputs of a dynamics whose origin is left open. We invert
+the order of explanation: we posit an <em>arrangement</em> (a jammed configuration
+of finite-volume particles), and show that the four facts are forced by it. The
+move is deliberately conservative about phenomena and deliberately strong about
+interpretation.</p>
+<h4>The marginal substrate (Section~\ref{sec:substrate}).</h4>
+<p>Before any pillar there is a zeroth question the field description cannot even
+pose: <em>why is the medium a fluid at all?</em> The answer is inherited from
+the companion whitepaper and reproduced locally in this bundle. A jammed
+arrangement at the isostatic margin <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d"> has zero shear reserve—the relaxed
+shear modulus vanishes, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idbec93efb93d.svg" loading="lazy" alt="G_{\rm relaxed}\propto(z-2d)\to0">, while the bulk
+modulus stays finite—so it shears freely, resists compression, and carries
+one elastic (sound) speed <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia99afa37f164.svg" loading="lazy" alt="c_s^2=B/\rho">. Fluidity is not an assumption of A0;
+it is a measured property of the marginal arrangement (bootstrap <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1a953b0aad72.svg" loading="lazy" alt="z_0">
+confidence interval containing <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9617db6c6626.svg" loading="lazy" alt="2d">; <code>marginal_fluidity.py</code>). The
+same marginality makes <em>rotation</em> the unjamming switch: a rigid rotation
+costs the packing nothing, while any differential rotation is a shear that
+exceeds the vanishing reserve and breaks contacts (<code>unjam_inflow.py</code>).
+The same two rules, taken alone, fix the universality class of the
+laminar–turbulent transition—directed percolation, the class experiments
+confirmed in 2016–2024 (\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>).</p>
+<h4>The axiomatic core (Section~\ref{sec:axiomatic}).</h4>
+<p>Underneath the four pillars is a single structural fact about rotating media: a
+two-body interaction is provably insufficient (a No-Go theorem—a co-rotating
+pair cannot self-propel), so the minimal interaction is an irreducible
+<em>three-body</em> term whose minimal unit is a triangle. Energy leaves the
+conservative core only through rearrangement <em>events</em>, by the law
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaff1b9fc2aa6.svg" loading="lazy" alt="\eps_{\rm bind}=\Theta\sigma">. This core is what the lattice <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i272a631dff5a.svg" loading="lazy" alt="C_3"> co-rotation
+and the entire dissipation story rest on, and its key statements reproduce to
+machine precision.</p>
+<h4>Dimensionless diagnosis (Section~\ref{sec:pi}).</h4>
+<p>A selected arrangement is recognized by three dimensionless invariants
+(<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9046b5afc7ae.svg" loading="lazy" alt="\Pi_T,\Pi_L,\Pi_{ST}">) lying on a line, and is <em>explained</em> by an event
+renormalization group whose fixed point—where <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i13d05ae9c2d3.svg" loading="lazy" alt="\Pi_L"> stops flowing,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iac8022a57ea8.svg" loading="lazy" alt="(1+\alpha_\star)=\psi+\chi">—is the configuration the medium settles into. This
+is the operational, falsifiable form of the thesis, and it is the same statement
+the one-half law of Pillar III makes in real space.</p>
+<h4>Pillar I --- Structural: arrangement forces the equations
+(Section~\ref{sec:structural}).</h4>
+<p>From a VP configuration <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i13ed5c2ec635.svg" loading="lazy" alt="\{(\xv_i,\vv_i,m_i)\}"> and a coarse-graining kernel, the
+continuity and momentum balances are <em>exact identities</em>—the
+Irving–Kirkwood construction—so the <em>form</em> of fluid dynamics is not an
+assumption but a consequence of having mass and pairwise interaction
+(<span class="grade g-derive">[DERIVE]</span>). The Newtonian (Navier–Stokes) closure is then a <em>conditional</em>
+implication: it follows from local isotropic linear response in a declared
+regime (<span class="grade g-gate">[GATE]</span>). A pseudo-spectral solver confirms the two exact corollaries that
+matter—conservation of the inviscid invariants and the energy-budget identity
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id27d2dc8dcce.svg" loading="lazy" alt="\dot E=-\eps_\nu">—to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i512a2dc0dbb7.svg" loading="lazy" alt="3\times10^{-8}"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if3dcc85f7da6.svg" loading="lazy" alt="4\times10^{-6}">. Its
+compressible specialization carries the substrate sound speed <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia99afa37f164.svg" loading="lazy" alt="c_s^2=B/\rho">,
+measured at the margin in Section <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>.</p>
+<h4>Pillar II --- Geometric: arrangement fixes length
+(Section~\ref{sec:geometric}).</h4>
+<p>For any rotationally dominated core, the rotational core capacity identity
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i210f398921c9.svg" loading="lazy" alt="N_\star r_{\rm eff}^2=\phi\,s\,L_{\rm core}^2"> is an exact accounting equality
+(<span class="grade g-lock">[LOCK]</span>/<span class="grade g-derive">[DERIVE]</span>): once the arrangement <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id847323bb45c.svg" loading="lazy" alt="(L_{\rm core},\phi,s,N_\star)"> is fixed,
+the effective length is determined. A cross-regime audit (tropical cyclone,
+ocean eddy, two-dimensional turbulence, multi-vortex surrogate) shows precisely
+when a single length is an adequate summary and when the arrangement is
+irreducibly multiscale; the published tables reproduce from the sample-level
+data to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i69d54e78dedd.svg" loading="lazy" alt="3\times10^{-12}">, and the identity itself to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie841f22e72c2.svg" loading="lazy" alt="10^{-15}">.</p>
+<h4>Pillar III --- Dynamical: arrangement selects length
+(Section~\ref{sec:dynamical}).</h4>
+<p>When a binding tendency (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i64c5fd83fae6.svg" loading="lazy" alt="k^2">) competes with a penalty (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2c1eb73e06d8.svg" loading="lazy" alt="k^4">), the linear
+dispersion <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9a69c3640e1a.svg" loading="lazy" alt="\lambda(k)=\mu+\varepsilon k^2-\sigma k^4"> has a stationary extremum
+that <em>selects</em> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i96b6f7ea41f9.svg" loading="lazy" alt="k_\star=\sqrt{\varepsilon/2\sigma}">, hence a selected length
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i242b250ff5c7.svg" loading="lazy" alt="L_\star\propto(\sigma/\varepsilon)^{1/2}"> <em>independent of the growth offset</em>
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iaaa5706b801c.svg" loading="lazy" alt="\mu">, with an exact one-half control exponent (<span class="grade g-derive">[DERIVE]</span>). A nonlinear pattern
+locks onto <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2ebbc7c28e25.svg" loading="lazy" alt="k_\star"> and reproduces the one-half slope; the companion
+spectrally-rotating DNS recovers <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9c4aa27504e3.svg" loading="lazy" alt="\hat\beta\approx 0.501"> with a confidence
+interval containing <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idca6b807a48b.svg" loading="lazy" alt="1/2">.</p>
+<h4>Pillar IV --- Dissipative: arrangement sets dissipation
+(Section~\ref{sec:dissipative}).</h4>
+<p>Rearrangement events (jamming/unjamming/merger) release binding energy as a
+nonnegative space–time measure. In a forced steady window, energy conservation
+forces the budget <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie1d2e206226c.svg" loading="lazy" alt="\langle\eps_{\rm inj}\rangle=\langle\eps_\nu\rangle+\langle \eps_{\rm events}\rangle"> (<span class="grade g-derive">[DERIVE]</span>, exact bookkeeping); as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib693e9a378dd.svg" loading="lazy" alt="\nu\to 0"> the
+dissipation migrates from the smooth channel into the event channel and
+<em>saturates</em> at the injection rate—an Onsager-type anomaly in which the
+dissipation is set by the large-scale arrangement, not by the microscopic
+viscosity. The mean-field budget closes exactly and the saturation is
+reproduced; the stronger statement that the event channel physically carries the
+inertial flux to the dissipation scale is <em>exact in 1D Burgers</em>,
+<em>resolution-stable in 2D</em>, and <em>resolution-converged in developed 3D
+turbulence</em> (the forward energy flux concentrates on strain events,
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4f5af8c3ac6e.svg" loading="lazy" alt="\mathrm{corr}\approx0.80">, across <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0cb905c2e7a8.svg" loading="lazy" alt="N=64,80,96,128">), leaving only the infinite-Reynolds
+asymptotic limit as an explicit <span class="grade g-gate">[GATE]</span>. At substrate level the events now have
+a face: they are <em>local unjamming avalanches</em> of the marginal arrangement
+(Section <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>).</p>
+<h4>Reach --- the same mechanism in foreign domains
+(Section~\ref{sec:universality}).</h4>
+<p>With the four pillars in place, we test how far the thesis reaches, by
+transplanting each mechanism into a domain it was not built for. Event-dissipation
+reappears in 1D Burgers, where shocks are the events and the dissipation saturates
+as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ib693e9a378dd.svg" loading="lazy" alt="\nu\to0">; the capacity identity holds in any dimension (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i765161f14c33.svg" loading="lazy" alt="d=2,3,4,5"> to
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic9e75ac5a2b6.svg" loading="lazy" alt="10^{-16}">); and length selection reappears in a chemical reaction–diffusion
+system, whose Turing pattern locks onto the dispersion-predicted length. Each
+mechanism is, in fact, an instance of a structure physics already treats as
+universal—the pattern-selection normal form, box-counting geometry, and the
+anomalous-dissipation defect measure—and A0 is what unifies them.</p>
+<h4>Extensibility across scale (Section~\ref{sec:extensibility}).</h4>
+<p>The reach is not only across domains but across scale. An independent line of work
+on genomes arrives at the <em>same</em> capacity identity (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i78961f448f83.svg" loading="lazy" alt="N v_{\rm eff}=\phi V_{\rm core}">, i.e. the RCCI in <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibd24b21376f1.svg" loading="lazy" alt="d=3">), the same two knobs (interfacial tension and
+fill fraction), and the same minimum-residual-stress selection; droplet formation
+is the Rayleigh–Plateau realization of Pillar III; and a planar vortex breathes
+while a spherical core closes, by continuity alone. This section also develops
+<em>Mechanism M</em>, the co-rotation chain that the axiomatic triangle predicts:
+small rotations are frustrated into forced co-rotation, merge into one large
+rotation, and pump a through-flow—demonstrated, and tested on the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia65dd4dc65bf.svg" loading="lazy" alt="81{+}1">
+lattice. Bridges to the quantum core (the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic7eef79ae5fa.svg" loading="lazy" alt="82">-lattice; rigid-shell birth setting
+a length) are stated as graded conjectures with explicit falsification routes.</p>
+<h4>The thesis at work (Section~\ref{sec:nature}).</h4>
+<p>Five long-studied phenomena are then read as selected arrangements rather than
+solved from first principles: the Great Red Spot's size and longevity as one
+fixed-point fact, Saturn's hexagon as a locked integer symmetry, the typhoon as
+Mechanism M at planetary scale, convection as plumes carrying the event flux, and
+ocean and zonal jets as a selected staircase spacing. The empirical phenomena are
+untouched; the claim is only that one sentence organizes them.</p>
+<h4>Synthesis and honesty (Sections~\ref{sec:synthesis}--\ref{sec:claims}).</h4>
+<p>The four pillars cohere into one statement and one reproducibility spine
+(Section <a href="/fluid-dynamics/13-synthesis-reproducibility-spine/">§13</a>, with a consolidated ledger). We then state plainly
+what the framework <em>claims</em> and what it <em>does not</em>
+(Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>): the Navier–Stokes equations are derived, not overturned; the two open frontiers are named with equal precision — global regularity (recast, not yet proved) and the unique-substrate question (the VP arrangement is a sufficient, falsifiable model, not asserted as unique) — and each pillar carries an explicit falsification criterion.</p>
+<p><strong>Scope of coverage.</strong> The reach is deliberately wide: from a single arrangement premise the same construction delivers the continuum balance laws, the fixed core length, the selected length, the dissipation law, and the laminar–turbulent transition class — phenomena normally handled by separate, unconnected models. What it does not yet close is named with equal precision: exactly two gates remain — global regularity in the zero-width limit, and the infinite-Reynolds flux-localization of the dissipation mechanism. Breadth of derivation and sharpness of the open frontier are stated together, by design.</p>
+<nav class="pn"><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/02-reframing-mystery-necessity/">§2 &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

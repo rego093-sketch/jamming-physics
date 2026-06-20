@@ -1,0 +1,157 @@
+{
+ "disease": "SOD1 amyotrophic lateral sclerosis (ALS1)",
+ "omim": "105400",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "SOD1 amyotrophic lateral sclerosis (ALS1)",
+  "omim": "105400",
+  "summary": "A single-gene SOD1 TOXIC gain-of-function form of amyotrophic lateral sclerosis: dominant SOD1 variants (e.g. Ala5Val / A4V, Gly94Ala / G93A, Asp91Ala / D90A) do NOT act mainly by losing dismutase activity but by conferring a toxic misfolding/aggregation GAIN that progressively kills motor neurons, suppressing motor-neuron survival and function -> progressive paralysis (the motor-neuron-function axis is driven DOWN). Read with the proteinopathy framing already used for Huntington (HTT) and transthyretin amyloidosis (TTR): the toxic GAIN is an over-active pathological BRAKE on motor-neuron function (brake/GOF -> axis DOWN), and the kit re-derives the approved therapy, which REMOVES the toxic species rather than treating symptoms -- tofersen, a SOD1 antisense oligonucleotide that lowers SOD1 mRNA/protein (FDA 2023 accelerated approval; the first genetically targeted ALS therapy). This extends the toxic-aggregate 'reduce the poison' pattern (HTT, TTR) onto MOTOR NEURONS, and sits as the toxic-GOF contrast to spinal muscular atrophy's structural-LOF on the SAME cell type (SMA: restore the missing SMN; SOD1-ALS: remove the toxic SOD1). The gamma read is of the SOD1 locus switch STRUCTURE; the disease-causing point mutations are coding changes outside the promoter firewall, and their toxicity is a protein-misfolding GAIN, not a transcriptional change. (Most ALS is sporadic and non-SOD1; the commonest familial cause is the C9orf72 repeat expansion -- a separate, non-promoter structural lesion outside this single-gene read. This entry is the SOD1 subtype only.) Magnitude [O].",
+  "emergent_axis": "motor-neuron survival and function (progressively suppressed by toxic misfolded-SOD1 aggregation) -- the motor-neuron toxic-GAIN contrast to SMA's motor-neuron loss-of-function",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "SOD1",
+    "gamma": 1.4443,
+    "spinodal_h_sp": 0.66809,
+    "barrier": 0.5215,
+    "dwell_relative_size": 1.57795,
+    "role": "brake",
+    "disease_mechanism": "GOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "brake over-active -> target over-suppressed",
+    "ncbi": {
+     "acc": "NC_000021.9",
+     "gene_start": 31659692,
+     "gene_end": 31668930,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "superoxide dismutase 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "SOD1 encodes Cu/Zn superoxide dismutase 1. The ALS-causing variants act predominantly through a TOXIC gain-of-function: the mutant protein misfolds and aggregates, conferring motor-neuron toxicity (mitochondrial, proteostatic, prion-like propagation) rather than by loss of dismutase activity -- read here as an over-active pathological BRAKE that SUPPRESSES motor-neuron survival/function (brake/GOF -> axis DOWN), the same proteinopathy framing as Huntington and TTR. The promoter gamma reads the locus switch STRUCTURE only; it does NOT encode the toxic coding lesion's magnitude (firewall). 21q22.11 (OMIM 147450). NCBI official symbol SOD1.",
+    "src": "Rosen 1993 Nature 362:59 (SOD1 mutations in familial ALS); Gurney 1994 Science 264:1772 (toxic-GOF mouse); Bruijn 1998 Science 281:1851 (toxicity independent of dismutase activity)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "SOD1",
+   "role": "brake",
+   "mechanism": "GOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "brake over-active -> target over-suppressed"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "663be3bb73cc"
+ },
+ "treatment_A_switch": {
+  "disease": "SOD1 amyotrophic lateral sclerosis (ALS1)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "reduce",
+    "target_gene": "SOD1",
+    "push_direction": "lower SOD1 mRNA/protein so less toxic misfolded SOD1 is produced and aggregates -> relieve the suppression of motor-neuron survival/function (axis UP toward function)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "SOD1-lowering antisense oligonucleotide (tofersen)",
+    "status": "approved",
+    "mechanism_grade": "[O] SOD1-lowering magnitude / progression-slowing not derived from sequence",
+    "src": "Miller 2022 NEJM 387:1099 (VALOR, tofersen); tofersen (Qalsody) FDA 2023 accelerated approval -- first genetically targeted ALS therapy"
+   },
+   {
+    "lever": "reduce",
+    "target_gene": "SOD1",
+    "push_direction": "durably knock down SOD1 at the source (AAV-delivered microRNA / gene editing) -> sustained lowering of the toxic protein",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "AAV SOD1-knockdown microRNA / in-vivo editing (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] knockdown depth / durability not derived from sequence; investigational",
+    "src": "Mueller 2020 NEJM 383:151 (AAV-miR-SOD1 first-in-human report)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "reduce",
+   "target_gene": "SOD1",
+   "push_direction": "lower SOD1 mRNA/protein so less toxic misfolded SOD1 is produced and aggregates -> relieve the suppression of motor-neuron survival/function (axis UP toward function)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "SOD1-lowering antisense oligonucleotide (tofersen)",
+   "status": "approved",
+   "mechanism_grade": "[O] SOD1-lowering magnitude / progression-slowing not derived from sequence",
+   "src": "Miller 2022 NEJM 387:1099 (VALOR, tofersen); tofersen (Qalsody) FDA 2023 accelerated approval -- first genetically targeted ALS therapy"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.57795,
+   "dwell_disease": 1.02103,
+   "dwell_treated": 1.29533,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "dbdac5a597eb"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "mutant SOD1 acts as an over-active brake suppressing motor-neuron survival/function (axis DOWN) via a toxic gain, not loss of dismutase activity",
+   "falsifier": "if reducing SOD1 (removing the toxic protein) WORSENED motor-neuron survival, or if a complete SOD1 dismutase-null with no misfolding caused the same ALS, the toxic-suppressing-brake direction would be refuted",
+   "measurable_by": "motor-neuron survival / motor function vs SOD1 level under SOD1 lowering; phenotype of dismutase-dead-but-stable vs aggregation-prone alleles"
+  },
+  {
+   "claim": "lowering SOD1 (reduce) is the CORRECTIVE direction",
+   "falsifier": "if lowering SOD1 failed to slow, or accelerated, motor-neuron loss / ALS progression, the reduce-SOD1 lever sign is wrong",
+   "measurable_by": "ALS progression (ALSFRS-R / survival / neurofilament) vs SOD1-lowering"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "SOD1 amyotrophic lateral sclerosis (ALS1)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "bd1df06e817c"
+ },
+ "determinism_sha": "c730e2548ec0"
+}

@@ -1,0 +1,195 @@
+{
+  "B1_two_poles_one_axis": {
+    "R_health": 0.389615,
+    "R_vs_valence_bias": {
+      "-0.15": 0.366578,
+      "-0.3": 0.365343,
+      "-0.5": 0.357384,
+      "0.0": 0.389615,
+      "0.15": 0.400988,
+      "0.3": 0.41113,
+      "0.5": 0.422482
+    },
+    "depressive_below_health": true,
+    "depressive_bias": -0.3,
+    "depressive_pole_R": 0.366578,
+    "manic_above_health": true,
+    "manic_bias": 0.3,
+    "manic_pole_R": 0.422482,
+    "model": "a sustained approach (manic-pole) bias raises the global order parameter R ABOVE health; a sustained withdrawal (depressive-pole) bias lowers it BELOW; euthymia between -- bipolarity is the same valence axis traversed in both directions",
+    "monotone_over_bias_sweep": true,
+    "reading": "the manic pole sits ABOVE health (over-coordination, the over-pole unipolar depression never reaches) and the depressive pole BELOW health (T1b's pole); R is monotone across the valence bias from depression through euthymia to mania. Bipolar disorder is the SAME axis traversed in both directions. Reuses the SZ/epilepsy/T1b k-bias map -- no new constant.",
+    "two_poles_reproduced": true
+  },
+  "B2_episode_transition": {
+    "_what": "an episode is a bistable STATE TRANSITION (E2), not a drift: hysteresis (the euthymic interval is bistable) and a finite, overshoot-shortened crossing latency",
+    "crossing_latency_vs_overshoot": {
+      "0.005": 31.64,
+      "0.035": 10.62,
+      "0.115": 4.96,
+      "0.415": 1.88
+    },
+    "down_transition_drive": -0.39,
+    "episode_transition_reproduced": true,
+    "fold_spinodal": 0.3849,
+    "hysteresis_loop_width": 0.78,
+    "latency_monotone_decreasing_in_overshoot": true,
+    "loop_width_matches_two_spinodal": true,
+    "reading": "modelling mood as the R19 bistable cell, an episode onset is a discontinuous TRANSITION between basins (a switch, not a gradual drift), the euthymic interval shows HYSTERESIS (manic->depressive and depressive->manic transitions at different drives -- a loop of width 2*spinodal), and the crossing latency shortens as the valence drive overshoots the fold. Reuses the E2 BistableSwitch; forced [F]; a state transition is a mechanism boundary, NOT a claim about the felt quality of an episode (Axis-A).",
+    "static_limit_matches_E_settle_bitwise": true,
+    "transitions_on_opposite_sides": true,
+    "two_spinodal": 0.7698,
+    "up_transition_drive": 0.39
+  },
+  "B3_kindling_accumulation": {
+    "_what": "recurrence / KINDLING = episode accumulation (E0 trace): alternating manic/depressive episodes deepen the connectome trace, and a lower barrier makes the next switch easier (cycle acceleration)",
+    "deepening_holds_over_eta_sweep": true,
+    "deepening_holds_over_eta_sweep_detail": {
+      "0.03": true,
+      "0.05": true,
+      "0.08": true
+    },
+    "episode_count": 6,
+    "flip_drive_decreases_as_barrier_lowers": true,
+    "flip_drive_vs_lowered_barrier": {
+      "0.6": 0.178885,
+      "0.8": 0.275412,
+      "1.0": 0.3849,
+      "1.2": 0.505964,
+      "1.4": 0.637588
+    },
+    "kindling_reproduced": true,
+    "manic_depressive_bias_magnitude": 0.3,
+    "reading": "each episode (a sustained excursion under plasticity) writes a retained structural trace; alternating manic/depressive episodes DEEPEN the connectome trace ||dW|| monotonically with episode count -- the kindling / cycle-acceleration direction -- and the sign holds over an eta sweep. The barrier to the next switch is the bistable fold: a LOWER barrier lowers the flip drive, so IF accumulated episodes lower the barrier THEN cycling accelerates. The SIGN is asserted; the MAGNITUDE of the trace->barrier coupling is [O]. Reuses the E0 PlasticConnectome (no re-derivation); a retained trace is a mechanism boundary, NOT a claim about the felt quality of recurrent episodes (Axis-A).",
+    "trace_deepens_with_episodes": true,
+    "trace_depth_per_episode_dW": [
+      0.059161,
+      0.111661,
+      0.168336,
+      0.221109,
+      0.274737,
+      0.326527
+    ]
+  },
+  "B4_mood_stabiliser_sign": {
+    "_what": "a barrier-RAISING push (mood-stabiliser-class direction) raises the fold/flip threshold -- transitions need a larger drive, so episodes become less frequent",
+    "fixed_drive": 0.45,
+    "flip_threshold_monotone_up": true,
+    "flip_threshold_vs_stabiliser_strength": {
+      "0.0": 0.3849,
+      "0.1": 0.444055,
+      "0.2": 0.505964,
+      "0.4": 0.637588
+    },
+    "flips_vs_stabiliser_strength": {
+      "0.0": true,
+      "0.1": true,
+      "0.2": false,
+      "0.4": false
+    },
+    "mood_stabiliser_sign_reproduced": true,
+    "reading": "a barrier-raising operator (the mood-stabiliser-class direction -- lithium and valproate are cited as reducing episode frequency) raises the fold/flip threshold monotonically: transitions require a LARGER drive, so episodes become LESS frequent (a longer euthymic dwell), and a fixed drive that flips the unstabilised well fails to flip the raised one. Reuses the E2 barrier handle -- no new constant; SIGN / direction only; efficacy = 0; this is NOT a dose, a protocol, or a claim that any drug treats anyone.",
+    "strong_stabiliser_holds": true,
+    "unstabilised_well_flips": true
+  },
+  "B5_engine_invariance_guard": {
+    "R_direct_measured": "0.38961455156044245",
+    "_what": "eta=0/drive=0 reproduce the frozen M9 anchor bit-for-bit and the static-limit switch reproduces E.settle bit-for-bit -- T2b is a pure add-on on top of E2+E0",
+    "eta0_W_identical_to_kernel": true,
+    "eta0_epoch_R": "0.38961455156044245",
+    "eta0_matches_direct_bitwise": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "guard": true,
+    "matches_frozen_anchor_bitwise": true,
+    "static_limit_switch_matches_E_settle_bitwise": true
+  },
+  "_what": "Bipolar disorder (T2b): a BISTABLE mood system whose episodes KINDLE, built ON TOP of two layers and importing both -- the E2 state-switching layer (BistableSwitch, for the manic<->depressive episode TRANSITIONS) and the E0 plasticity layer (PlasticConnectome, for episode ACCUMULATION). It re-derives neither rule. Where unipolar depression (T1b) visited only the withdrawal pole, bipolar disorder is the SAME valence axis traversed in BOTH directions: a manic pole ABOVE health and a depressive pole BELOW it, with the euthymic interval bistable between them. The handle is the M17 valence geometry (approach[DA] - avoid[cortisol], already emerged), mapped to the SAME coupling map as the SZ/epilepsy/E0/T1b modules (no new constant). An episode is a bistable state TRANSITION (E2); recurrence KINDLES as episodes accumulate a connectome trace (E0); a mood-stabiliser raises the switch barrier. MECHANISM only -- NOT a disorder subtype, NOT felt, NOT efficacy, NOT medical advice.",
+  "axis": {
+    "depressive_pole": "sustained withdrawal (cortisol) bias b<0 -> coupling DOWN -> R BELOW health (hypo-coordination) -- T1b's pole",
+    "manic_pole": "sustained approach (DA) bias b>0 -> coupling UP -> R ABOVE health (over-coordination/over-arousal) -- the over-pole T1b never reaches",
+    "recurrence_axis": "the E0 plasticity layer: each episode writes a retained connectome trace, and alternating episodes deepen it monotonically (kindling)",
+    "relation_to_atlas": "autism-T under-ignites, schizophrenia over-ignites, epilepsy over-synchronises (the synchrony axis); depression (T1b) sits on the low-coupling part of the coupling axis plus the E0 chronification axis; bipolar is the FIRST condition on the E2 state-switching axis -- its defining feature is the transition between two mood states",
+    "shared_axis": "the measured ephaptic coupling (global Kuramoto order parameter R) read in BOTH directions of the M17 valence axis, plus the E2 state-switching layer (the R19 bistable mood cell over time) and the E0 plasticity layer (episode trace accumulation)",
+    "transition_axis": "the E2 state-switching layer: episodes are bistable transitions between the two basins (hysteresis loop width 2*spinodal); the euthymic interval is bistable, not a single set-point"
+  },
+  "baseline_health": {
+    "R19_fold_spinodal": 0.3849,
+    "R_health": 0.389615,
+    "bistable_g": 1.0,
+    "kappa_measured": 0.5496,
+    "n_regions": 12,
+    "plasticity_rate_eta": 0.05,
+    "reused_from_E0": "PlasticConnectome (phase-correlation Hebbian update); the coupling-vs-bias map k=kappa/(1-|b|)[excit]/kappa/(1+|b|)[inhib] cap 2*kappa -- no new constant",
+    "reused_from_E2": "BistableSwitch (the R19 cell over time); the fold is E.spinodal(g) -- no new constant"
+  },
+  "cited_and_locked": {
+    "applications_owed_LOCK": "addiction (T3a) needs E0 sensitisation; Alzheimer (T3b) and OCD (T3c) are owed to later modules; the dynamic ictal onset of a particular epilepsy is owed to the module that uses E2",
+    "bipolar_heterogeneous_LOCK": "real bipolar disorder is HETEROGENEOUS -- bipolar I vs II vs cyclothymia vs mixed states, with rapid-cycling, seasonal and post-partum patterns and genetic, circadian, monoaminergic and psychosocial contributors -- NOT one mechanism or one cause",
+    "bipolar_is_two_poles_cited": "bipolar disorder is defined, in DIRECTION, by episodes at BOTH poles of mood -- mania/hypomania (elevated arousal and activity) and depression -- distinguishing it from unipolar depression; this module reproduces the SIGN (a manic pole above health and a depressive pole below it on one valence axis), NOT any magnitude or any individual's mood",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; which bipolar subtype any individual has, and whether any treatment helps them, is held OPEN",
+    "kindling_cited": "the kindling / cycle-acceleration model of bipolar progression (Post 1992) holds that episodes beget episodes -- recurrence lowers the threshold for the next episode and can accelerate cycling; E0 reproduces a kindling-DIRECTION sign (alternating episodes deepen a retained structural trace; a lower barrier eases the next switch), a mechanism direction, NOT an efficacy or a magnitude claim",
+    "mood_stabiliser_cited": "mood stabilisers (lithium, valproate) are cited as REDUCING episode frequency in bipolar disorder; this module reproduces a barrier-raising SIGN (raising the switch threshold makes transitions need a larger drive, so episodes become less frequent), NOT efficacy, NOT a dose, NOT a protocol",
+    "rate_is_open_LOCK": "the plasticity RATE eta is [O] (the E0 representative rate); only the SIGNS are asserted and they hold over an eta sweep -- no magnitude is fit",
+    "trace_to_barrier_magnitude_OPEN_LOCK": "the magnitude of the trace->barrier coupling (how much accumulated kindling lowers the switch barrier) is [O]; only the SIGN (more episodes -> easier switching -> faster cycling) is asserted, and both halves (traces accumulate; a lower barrier eases switching) are demonstrated -- no coupling constant is fit",
+    "valence_to_bias_magnitude_OPEN_LOCK": "the gain mapping the valence poles to the bias magnitudes is [O] (representative); only the SIGNS (approach -> over-coupling, withdrawal -> under-coupling) are asserted, consistent with the M17 valence geometry, and the signs hold over a sweep -- no magnitude is fit"
+  },
+  "honesty_ledger": {
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "plasticity_rate_eta": "OPEN [O] -- the E0 representative rate; signs hold over an eta sweep",
+    "reuses_e0_plasticity": 1.0,
+    "reuses_e2_state_switching": 1.0,
+    "trace_to_barrier_magnitude": "OPEN [O] -- only the sign (more episodes -> easier switching) is asserted; both halves demonstrated, no coupling constant fit",
+    "valence_to_bias_magnitude": "OPEN [O] -- representative; only the signs are asserted, over a bias sweep",
+    "which_subtype_individual": "OWED [O] -- requires per-individual data; the model asserts the bistable-mood / kindling mechanism and the valence signs, NOT which bipolar any individual has or whether any treatment helps them"
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_reproduced_bitwise": true,
+    "reuses_e0_layer": true,
+    "reuses_e2_layer": true,
+    "static_limit_is_E_settle": true
+  },
+  "overall": {
+    "engine_invariance_guard": true,
+    "episode_transition_reproduced": true,
+    "is_full_module": true,
+    "kindling_reproduced": true,
+    "mood_stabiliser_sign_reproduced": true,
+    "two_poles_reproduced": true,
+    "verdict": "bipolar disorder is a bistable mood system whose episodes kindle. The manic pole sits above health (over-coordination -- the over-pole unipolar depression never reaches) and the depressive pole below it (T1b's pole), so bipolarity is the same valence axis traversed in both directions. An episode is a bistable state TRANSITION (E2: hysteresis loop of width 2*spinodal, a crossing latency that shortens as the drive overshoots the fold); recurrence KINDLES as alternating episodes accumulate a connectome trace (E0), and a lower barrier eases the next switch; a mood-stabiliser raises the switch barrier so episodes need a larger drive. All signs hold over eta / bias / barrier sweeps; the module reuses the E2 BistableSwitch and the E0 PlasticConnectome (no re-derivation) and adds no new tuned constant; eta=0/drive=0 reproduces the frozen M9 anchor and the static-limit switch reproduces E.settle bit-for-bit, engine byte-unchanged. Addiction (T3a) and the Tier-3 conditions remain owed. efficacy=0; not medical advice; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "B1_two_poles_one_axis": {
+      "claim": "a manic-pole bias raises R above health and a depressive-pole bias lowers it below (the same valence axis traversed in both directions), monotone over a bias sweep",
+      "status": "CONFIRMED"
+    },
+    "B2_episode_transition": {
+      "claim": "an episode is a bistable state transition (E2): a hysteresis loop of width 2*spinodal and a crossing latency that shortens as the drive overshoots the fold; the static limit reproduces E.settle bit-for-bit",
+      "status": "CONFIRMED"
+    },
+    "B3_kindling_accumulation": {
+      "claim": "alternating manic/depressive episodes deepen the connectome trace monotonically with episode count (kindling), over an eta sweep, and a lower barrier lowers the flip drive (cycle acceleration)",
+      "status": "CONFIRMED"
+    },
+    "B4_mood_stabiliser_sign": {
+      "claim": "a barrier-raising (mood-stabiliser-class) push raises the flip threshold monotonically so episodes need a larger drive (less frequent); a fixed drive stops flipping past a strong-enough barrier",
+      "status": "CONFIRMED"
+    }
+  },
+  "valence_handle": {
+    "circumplex_2d": 1.0,
+    "cortisol_peak_in_cited_window": 1.0,
+    "cortisol_peak_min": 24.06,
+    "mapping": "approach(manic) -> b>0 -> k=kappa/(1-|b|) (higher coupling, R above health); withdrawal(depressive) -> b<0 -> k=kappa/(1+|b|) (lower coupling, R below health). SIGNS asserted (consistent with M17 valence), MAGNITUDES [O].",
+    "valence_arousal_corr": -0.11543101,
+    "valence_axis": "approach(DA) - avoid(cortisol) (M17); approach extreme = manic pole, avoid/cortisol extreme = depressive pole (T1b's pole)"
+  }
+}

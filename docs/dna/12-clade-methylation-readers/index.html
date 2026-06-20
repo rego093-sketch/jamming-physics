@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clade-specific methylation readers — 4D DNA Blueprint §12 | Jamming Physics</title>
+<meta name="description" content="Methylation has three architectures: plants read CG, CHG and CHH in bulk; insects need per-gene resolution for targeted gene-body methylation; an auto-detector">
+<link rel="canonical" href="https://jamming-physics.org/dna/12-clade-methylation-readers/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Clade-specific methylation readers — 4D DNA Blueprint §12 | Jamming Physics"><meta property="og:description" content="Methylation has three architectures: plants read CG, CHG and CHH in bulk; insects need per-gene resolution for targeted gene-body methylation; an auto-detector"><meta property="og:url" content="https://jamming-physics.org/dna/12-clade-methylation-readers/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Clade-specific methylation readers — 4D DNA Blueprint §12 | Jamming Physics"><meta name="twitter:description" content="Methylation has three architectures: plants read CG, CHG and CHH in bulk; insects need per-gene resolution for targeted gene-body methylation; an auto-detector">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Clade-specific methylation readers", "isPartOf": {"@type": "CreativeWorkSeries", "name": "4D DNA Blueprint", "identifier": "https://doi.org/10.5281/zenodo.20471407", "url": "https://jamming-physics.org/dna/"}, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "https://doi.org/10.5281/zenodo.20471407", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/", "license": "https://creativecommons.org/licenses/by/4.0/", "knowsAbout": ["reading DNA from sequence", "deterministic DNA interpretation", "DNA stacking stiffness", "A4 coordinate grammar", "R19 double-well switch", "anchor-relative helical phase", "CpG O/E methylation", "readable layer of DNA", "sequence-to-trait reading", "reproducible genomics", "jamming lattice", "4D DNA Blueprint"]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "4D DNA Blueprint", "item": "https://jamming-physics.org/dna/"}, {"@type": "ListItem", "position": 3, "name": "§12 Clade-specific methylation readers"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › §12</nav></header>
+<main>
+<h1>Clade-specific methylation readers</h1>
+
+<p class="answer">Methylation is read in clade-specific ways because it has three architectures, not one. Plants are read at the bulk level across CG, CHG, and CHH contexts; insects need per-gene resolution, since their methylation, where it exists, is targeted to gene bodies and invisible to a bulk reading. An auto-detector routes each genome.</p>
+
+<p class="abstract">The methylation substrate of §9 is vertebrate-shaped, reading global CpG depletion, but methylation has three architectures that each need a different reading. Plants are read at the bulk level across CG, CHG, and CHH — six genomes including the basal moss show depletion in CG (0.52–0.77) and CHG (0.68–0.94), the RdDM signature — while insects show no bulk depletion at all (even the methylating honeybee sits near 1.4), so their targeted gene-body methylation is legible only per gene, where honeybee carries a low-CpG gene class that Diptera lack. An auto-detector reads bulk first and escalates to per-gene only when no global signal is present, correctly routing vertebrate, plant, targeted-insect, and non-methylating-insect genomes.</p>
+
+<aside class="vp-card" data-register="12-clade-methylation-readers">
+  <h4 class="vp-q">Read the substrate the way the clade writes it</h4>
+  <p class="vp-value">plants: CG+CHG depleted across 6 species (incl. moss) · insects: no bulk signal, honeybee per-gene spread 0.31 (12% low-CpG) vs Diptera ≈0 · auto-detector 5/5 · ledger 14/16 evidenced</p>
+  <p class="vp-meaning">A single vertebrate-style bulk-CpG reader returns a false negative for the honeybee, whose methylation is real but targeted to a gene subset; the fix is to match the reading to the methylation architecture. Plants are read across three contexts in bulk, insects per gene, and an auto-detector picks the strategy from the sequence itself.</p>
+  <p class="vp-grade">Grade: principle-demonstration (architecture-matched reading; not clinical prediction)</p>
+  <p class="vp-canonical"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/12-clade-methylation-readers/" rel="noopener">Canonical reproduction → repro/dna/12-clade-methylation-readers/</a></p>
+</aside>
+<aside class="vp-card" data-locked="methylation">
+  <b>M — environment-written methylation layer</b> — the CpG substrate of §9 is vertebrate-shaped; this section generalises it to plant and insect architectures <span class="grade g-calibrated">principle-demonstration</span>. <a href="/dna/09-environment-methylation-layer/" rel="noopener">canonical layer §9</a>
+</aside>
+<aside class="claim-strip">
+  <span class="grade g-calibrated">principle-demonstration</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/12-clade-methylation-readers/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h3>Methylation is an architecture, not just a context</h3>
+<p>The methylation substrate is not only which context is marked but how the marking is laid down, and that organising scheme differs by clade. Vertebrates lay a global CG blanket whose depletion shows in any window; plants lay a global CG, CHG, and CHH pattern; insects, where they methylate at all, target only a subset of gene bodies.</p>
+<p>Reading the wrong way gives a false negative. A bulk-CpG reading, the natural instrument for the global vertebrate blanket, sees nothing in the honeybee because its mark is targeted, so the clade reader must first ask which architecture is present.</p>
+
+<h3>Plants: read CG, CHG, and CHH at the bulk level</h3>
+<p>The plant reader measures all three methylation contexts in bulk, and the non-CG depletion is the plant signature. Across six genomes — Arabidopsis, rice, maize, soybean, tomato, and the basal moss <i>Physcomitrium</i> — CG O/E falls to 0.52–0.77 and CHG O/E to 0.68–0.94, both depleted, while CHH stays near 1.1 as the sparse asymmetric context.</p>
+<p>That a vertebrate-style CpG-only reader would miss the entire CHG axis is the point. The depletion in CHG is written by the RdDM pathway and is absent from animals, so it is the clade-distinguishing mark a general reader must capture.</p>
+
+<h3>Insects: targeted gene-body methylation, read per gene</h3>
+<p>No insect shows bulk methylation depletion, so the insect reader works at per-gene resolution. Even the honeybee, which has functional DNA methylation, sits at bulk CG O/E near 1.4 — its mark is targeted, not global — while the non-methylating fly and mosquito sit near 1.0.</p>
+<p>The signal appears only when genes are read one by one. The honeybee carries a low-CpG, body-methylated gene class — per-gene CpG O/E spread of 0.31 with 12% of genes below 0.6, the established bimodal signature — that Diptera lack entirely, marking their substrate as inert and their regulation as methylation-independent.</p>
+
+<h3>One auto-detector routes every regime</h3>
+<p>A single detector reads the bulk contexts first and escalates to per-gene resolution only when no global signal is present. With that order it routes all four regimes correctly: vertebrate global CG, plant global CG with CHG and CHH, targeted insect gene-body, and non-methylating insect.</p>
+<p>The principle is to read the substrate the way the clade writes it. Bulk reading suits the global blankets of vertebrates and plants; per-gene reading recovers the targeted insect mark that bulk reading would discard as absent.</p>
+
+<h3>What no gray zone means here</h3>
+<p>No gray zone means nothing is silent, not that there are zero unknowns. Of sixteen quantities, fourteen are positively evidenced, and the two open items name their closing datasets — per-context bisulfite levels, and the larger gene panels that would resolve the weak-signal insects such as wasp, silkmoth, and beetle that sit below the per-gene detection threshold at this sample size.</p>
+<nav class="pn"><a rel="prev" href="/dna/11-cross-kingdom-stress-test/">← §11</a><a href="/dna/">contents</a><a rel="next" href="/dna/13-unified-deterministic-interpreter/">§13 →</a></nav>
+</main>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.12)</footer>
+</body>
+</html>

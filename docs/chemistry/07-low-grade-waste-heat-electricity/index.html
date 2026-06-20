@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low-grade waste heat to electricity — VP Chemistry &amp; EM §7 | Jamming Physics</title>
+<meta name="description" content="Three 'heat + magnet → electricity' mechanisms refuted and replaced by a Carnot-bounded thermomagnetic engine that runs on low-grade waste heat (η ≈ 2.6–4.4%).">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/07-low-grade-waste-heat-electricity/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Low-grade waste heat to electricity — VP Chemistry &amp; EM §7 | Jamming Physics"><meta property="og:description" content="Three "><meta property="og:url" content="https://jamming-physics.org/chemistry/07-low-grade-waste-heat-electricity/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Low-grade waste heat to electricity — VP Chemistry &amp; EM §7 | Jamming Physics"><meta name="twitter:description" content="Three ">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Low-grade waste heat to electricity: refuted magnet mechanisms and a thermomagnetic engine", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 7, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/07-low-grade-waste-heat-electricity/", "knowsAbout": ["thermomagnetic engine", "waste heat recovery", "Carnot bound", "Curie temperature"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§7 Low-grade waste heat to electricity"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §7</nav></header>
+<main>
+<h1>Low-grade waste heat to electricity: refuted magnet mechanisms and a thermomagnetic engine</h1>
+
+<p class="answer">Below 60 °C the heat engines of CA.5 stall, tempting heat-plus-magnet-plus-copper electricity claims. Three are tested and refuted, a static magnet does no work (Lorentz force ⊥ v), a heat pump and an engine are inverses (COP·η_Carnot = 1), and black copper only absorbs, replaced by a Carnot-bounded thermomagnetic engine reaching η ≈ 2.6–4.4%.</p>
+
+<p class="abstract">Chapter CA.5 left heat-to-electricity to a thermoelectric or Stirling engine and marked the "rotation-amplitude → electric field" generator as unproven. This chapter takes the case down to low-grade waste heat (40–60 °C: air-conditioner condensers, data centres), where those engines stall and a family of "heat + magnet + copper → electricity" claims becomes tempting. Three such mechanisms are tested and refuted — a static magnet does no work (Lorentz force ⊥ v), a heat pump and an engine are inverses (COP·η_Carnot = 1), and black copper is an absorber, not a converter — and replaced by a thermomagnetic engine in which heat switches a Curie-point ferromagnet's magnetisation across Tc. It is Carnot-bounded (1−T_c/T_h = 7.7% at ΔT = 25 K) yet operates on low-grade heat; with regeneration it reaches η ≈ 2.6–4.4%.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-verified">[V] verified</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/07-low-grade-waste-heat-electricity/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+
+<p>CA (chemistry applications), CM (conduction/magnetism, Chapter 3). Status grades:
+<strong>[F]</strong> forced (zero free parameters) ·
+<strong>[F?]</strong> forced-candidate · <strong>[CAL]</strong>
+calibration input (measured constant) · <strong>[V]</strong>
+simulation-measured · <strong>[H]</strong> hypothesis ·
+<strong>[O]</strong> open / refuted. Every numeric claim is reproduced
+by a deterministic, standard-library module (2× sha256 identical);
+module and sha256 anchors are given inline and collected in CA.13.</p>
+
+<blockquote>
+<p>This chapter continues the discipline of CA.0 and platinum (Chapter
+CT): where a speculative mechanism is proposed, it is tested by direct
+simulation; what does not survive is reported as <strong>refuted</strong>
+and re-grounded on validated physics; what survives is kept and
+labelled. Here three device claims fail and one is kept — and the kept
+device is a <em>heat engine</em>, not a violation of one. Its active
+element is a Curie-point ferromagnet, not copper; copper stays
+non-magnetic (3d¹⁰, Chapter CM) throughout.</p>
+</blockquote>
+
+<h2 id="ca.8-the-question-where-the-heat-engines-of-ca.5-stall">CA.8 The
+question: where the heat engines of CA.5 stall</h2>
+<p>CA.5 bounded heat-to-electricity by Carnot and used a thermoelectric
+(Seebeck, ZT = 1 → ~5.5%) or a Stirling engine (~½ Carnot) at a hot
+store. Those numbers assume a <em>hot</em> source. The waste heat that is
+actually abundant is <strong>low-grade</strong>: an air-conditioner
+condenser at ~50 °C, a data-centre coolant loop at ~40 °C. Two facts
+govern this regime. First, the absolute ceiling is the exergy of the
+source: η_max = 1 − T₀/T = 4.8% for 40 °C heat against a 25 °C ambient,
+7.8% for 50 °C <strong>[F]</strong>. No collection scheme exceeds it —
+"collecting better" raises the <em>quantity</em> of heat, never the
+<em>efficiency</em>, which temperature fixes. Second, a real
+thermoelectric or Stirling engine reaches only a fraction of that ceiling
+and, mechanically, a Stirling barely runs on a 15–25 K span. This is the
+gap a tempting family of claims tries to fill: take the abundant
+low-grade heat, add a magnet and the free-electron sea of copper
+(Chapter CM), and "make electricity." The claims are tested below.</p>
+
+<h2 id="ca.9-three-refuted-mechanisms">CA.9 Three refuted mechanisms
+<strong>[O]</strong></h2>
+
+<h3 id="ca.9a-a-static-magnet-aligns-the-conduction-electrons">CA.9a A
+static magnet aligns copper's conduction electrons into a current
+<strong>[O]</strong></h3>
+<p>Module <em>vp_magnet_lorentz.py</em> integrates the conduction
+electrons in a static field with the Boris pusher (energy-exact for a
+magnetic force). The Lorentz force F = q(E + v×B) with a static B = B ẑ
+is perpendicular to the velocity, so it does no work: in the simulation
+the mean kinetic energy is constant to machine precision while each
+electron traces a closed cyclotron circle ω_c = qB/m. The electrons
+<em>do</em> keep oscillating — but the motion is circular, so the
+ensemble drift ⟨v_x⟩ ≈ 0 and the net current is zero. Adding an
+electric field instead produces a steady drift (a current) and rising
+kinetic energy. The conclusion is forced: a current is driven by an
+<strong>E-field</strong> — from a changing flux (Faraday), a junction's
+built-in field, or a thermal gradient (Seebeck) — and never by a static
+magnet. Copper compounds the failure twice: it is non-magnetic (3d¹⁰
+closed shell, Chapter CM, so a magnet does not magnetise it) and its
+Seebeck coefficient ≈ 1.8 µV/K is negligible. A magnet has N/S poles, not
+the ± that an E-field uses to push charge. Module sha256
+7c8246ab… (2× identical) <strong>[V]</strong>.</p>
+
+<h3 id="ca.9b-a-heat-pump-concentrates-the-heat-then-an-engine-generates">CA.9b
+A heat pump "concentrates" the waste heat, then an engine generates from
+it <strong>[O]</strong></h3>
+<p>Module <em>vp_heatpump_exergy.py</em> evaluates the loop. A heat pump
+and a heat engine are thermodynamic inverses: for the same reservoir
+pair, COP·η_Carnot = 1. Chaining them — pump the heat up, then run an
+engine down — therefore recovers, in the reversible limit, exactly the
+waste heat's exergy (4.8% at 40 °C) and returns the pumping work with no
+net gain; with a real pump (COP ≈ 2) and a real low-temperature engine
+(~10%) the loop is strongly negative (≈ −65% of the processed heat). The
+heat pump's celebrated "300–400% efficiency" is real but is heat
+<em>moved</em>, not energy created (4 units of heat = 1 of electricity +
+3 of moved ambient heat), so it cannot be converted back to more
+electricity than was spent. The honest use of the condenser is the
+opposite of generation: lowering its temperature raises the
+air-conditioner's own COP, and the electricity <em>saved</em> exceeds
+anything generated. Module sha256 64e26ee6… (2× identical)
+<strong>[V]</strong>.</p>
+
+<h3 id="ca.9c-black-copper-generates-electricity-from-the-collected-heat">CA.9c
+Black copper "generates" electricity from the collected heat
+<strong>[O]</strong></h3>
+<p>This is the CA.5/CA.6 verdict carried one step further. Black copper
+is an <strong>absorber</strong> — α ≈ 0.96 by graded-index impedance
+matching and intrinsic CuO absorption (CA.6), pure optics — and converts
+radiation into heat. It is not a <strong>converter</strong> of heat into
+electricity: it has no thermoelectric, photovoltaic, or engine mechanism,
+its Seebeck is negligible, and it melts at 1085 °C, so it cannot even
+serve as the high-temperature emitter of a thermophotovoltaic cell (whose
+converter is the semiconductor cell, not the copper). The "rotation-
+amplitude → electric field" generator of CA.5 remains <strong>[H]</strong>;
+the absorber-as-generator reading is refuted outright. Module
+<em>vp_blackcu_absorber_not_generator.py</em>, sha256 0067cbe1…
+(2× identical) <strong>[V]</strong>.</p>
+
+<h2 id="ca.10-the-thermomagnetic-engine-kept-and-quantified">CA.10 The
+thermomagnetic engine, kept and quantified <strong>[V]</strong></h2>
+<p>The valid "heat + magnet → electricity" device replaces the static
+field with a <em>changing</em> one, produced by heat itself. A
+soft-magnetic element with Curie temperature Tc tuned into the waste-heat
+band (Gd has Tc = 293 K; La(Fe,Si,Mn)₁₃ or rare-earth-free Mn-Fe-P-Si
+tune Tc to 40–60 °C with a sharp magnetisation step) sits on a spring
+between a hot surface near a permanent magnet and a cold sink. Below Tc
+the element is magnetised and the magnet pulls it onto the hot surface;
+there it heats above Tc, its magnetisation M collapses, the spring
+returns it to the cold side, it cools below Tc, M recovers, and the
+magnet pulls it in again. The thermal lag makes the magnetic force
+stronger on the inward (cold, high-M) stroke than the outward (hot,
+low-M) stroke, so it does net positive work each cycle — a self-sustained
+relaxation oscillation — and the moving magnetised element induces an EMF
+in a copper pick-up coil. Module <em>vp_thermomagnetic_oscillator.py</em>
+exhibits the limit cycle and a positive cycle-averaged harvested power
+(sha256 d6d8a9ab…, 2× identical) <strong>[V]</strong>. The decisive
+property is that the relevant temperature scale is the <em>Curie
+point</em>, not a large ΔT: the device operates on a 15–25 K span around
+Tc, exactly where a Stirling engine stalls. The active element is the
+Curie-point ferromagnet; copper is only the coil winding.</p>
+<p>The bare-device efficiency is set by the magnetic work against the
+sensible-plus-latent heat shuttled each cycle: η ≈ ΔM·ΔB ⁄
+[ρ(c_pΔT_sw + L)]. With a sharp-transition alloy (ΔM ≈ 0.7×10⁶ A/m,
+ΔB ≈ 0.35 T from an NdFeB N42), this is ≈ 0.4% at ΔT = 25 K — small, and
+bounded by Carnot 1 − T_c/T_h = 7.7%. The sensible/latent heat, not the
+magnetic work, is the loss. Module <em>vp_thermomagnetic_design.py</em>,
+sha256 0a3af6ec… (2× identical) <strong>[V]</strong>.</p>
+
+<h2 id="ca.11-regeneration-and-the-practical-ceiling">CA.11 Regeneration
+and the practical ceiling <strong>[V]</strong>/<strong>[F?]</strong></h2>
+<p>Because the loss is the heat shuttled to change the element's
+temperature, recovering it raises efficiency. Run the device as an
+<strong>active magnetic regenerator</strong> (AMR) — the mechanism of
+magnetic refrigeration, in reverse: a stack of thin magnetocaloric films
+with an oscillating water flow through a counterflow microchannel matrix
+that passes the released heat from a cooling film to a heating one. The
+regenerative efficiency is η = Carnot⁄[1 + (1−ε)R], with R ≈ 18 the ratio
+of shuttled to isothermal-magnetic heat: ε = 0.90 → 2.7%, ε = 0.95 →
+4.0%, approaching Carnot as ε → 1 <strong>[V]</strong>. Thin films
+(f ∝ 1/thickness) give ~10× the power density and make a high-ε
+regenerator physically realisable. The microchannel is governed by two
+forced relations: effectiveness ε = K/(K+f) with K = Nu·k_f ⁄
+(2 d_c² ρ_f c_f) (smaller channels run faster at a given ε), and pumping
+loss P_pump/P_gen = 48 μ f L² ⁄ (d_c t_p w), which a short flow length
+(L ≈ 20 mm) holds to 2–5% — so pumping is not the limiter. The practical
+window is η ≈ 2.6–4.4% (34–58% of Carnot) at f ≈ 1.5–4 Hz, the choice set
+by material cost versus output. Modules
+<em>vp_thermomagnetic_regenerative.py</em> (sha256 aa45e145…) and
+<em>vp_regenerator_microchannel.py</em> (sha256 aa296c82…), each 2×
+identical <strong>[V]</strong>. The Carnot ceiling itself (7.7% at
+ΔT = 25 K) is the wall no design crosses <strong>[F]</strong>.</p>
+
+<h2 id="ca.12-application-scale-and-the-honest-order">CA.12 Application
+scale and the honest order <strong>[H]</strong>/<strong>[CAL]</strong></h2>
+<p>For a 10 kW air-conditioner rejecting ~13 kW at ~50 °C, the
+efficiency-optimised harvester yields ~290 W — about 9% of the unit's
+cooling electricity, and peak-coincident (most output on the hottest
+hours). Across India's ~110 million room air-conditioners this is of
+order 30 TWh/yr <strong>[CAL]</strong>. But the discipline of CA.9b
+applies: <em>efficiency first</em>. Better heat rejection and a
+higher-COP unit save ~30% of the same electricity — three to four times
+the harvester — so the harvester is an add-on, not the lever, for cooling
+in general. Its economic case is the always-on large load with no
+heat-reuse demand: a 1 MW data centre in a hot region (where the waste
+heat cannot be sold as district heating because nothing needs heating)
+gives ~23 kW continuous, ~205 MWh/yr, with a payback of ~4–6 years
+<strong>[H]</strong>. Module <em>vp_datacenter_economics.py</em>, sha256
+13d054c5…; fleet module <em>vp_waste_heat_scale.py</em>, sha256
+b59d22a5… (each 2× identical). The honest split mirrors CA.5: a
+Carnot-bounded conversion, the wrong mechanisms refuted, the validated
+one kept and sized — and the larger saving left where it actually is, in
+not spending the electricity in the first place.</p>
+
+<h2 id="ca.13-master-ledger-waste-heat-to-electricity">CA.13 Master
+ledger — waste heat to electricity</h2>
+<p><strong>[F]</strong> forced (zero free parameters): exergy ceiling
+1 − T₀/T (4.8% at 40 °C, 7.8% at 50 °C); Lorentz force ⊥ v does no work;
+heat-pump/engine inversion COP·η_Carnot = 1; Carnot ceiling 1 − T_c/T_h
+= 7.7% at ΔT = 25 K; microchannel ε = K/(K+f) and pumping
+48 μ f L²/(d_c t_p w). <strong>[V]</strong> simulation-measured (2×
+sha256): cyclotron drift ≈ 0 and constant kinetic energy
+(7c8246ab…); heat-pump loop −65% real (64e26ee6…);
+black-copper absorber/non-converter (0067cbe1…); self-sustained
+thermomagnetic oscillation (d6d8a9ab…); bare η ≈ 0.4%
+(0a3af6ec…); regenerative η 2.7–4.0% (aa45e145…); microchannel
+window η 2.6–4.4% at 1.5–4 Hz (aa296c82…). <strong>[CAL]</strong>
+calibration inputs: Gd Tc = 293 K; copper Seebeck 1.8 µV/K; NdFeB N42
+ΔB ≈ 0.35 T; water properties; India fleet ~110 M units. <strong>[H]</strong>
+hypothesis: device-level performance and economics projections
+(per-unit ~290 W; data-centre ~23 kW, payback ~4–6 yr). <strong>[O]</strong>
+refuted: static-magnet current; heat-pump-upgrade generation;
+black-copper-as-generator. Anchors: CA.9–CA.12; repro folder
+repro/chemistry/07-low-grade-waste-heat-electricity/.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/06-applications-catalysis-fertilizer-water-energy/">← §6</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/ax-o-open-items-register-what-is-honestly/">§8 →</a>
+</nav>
+</main>
+<footer>DOI 10.5281/zenodo.20680540 · ORCID 0009-0002-7535-8245 · CC BY 4.0</footer>
+</body>
+</html>

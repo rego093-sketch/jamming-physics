@@ -1,0 +1,96 @@
+{
+  "phase": "v1.7-upgrade-constitution",
+  "paper": "chemistry",
+  "spec": "VP-SPEC v1.7",
+  "result": "PASS",
+  "constitution": {
+    "C1": "derived counts reconciled to canonical HTML (tokenizer-independent: tables/figures/eq_display); word counts to be refreshed by author tools/reconcile_derived_to_html.py under v1.7 exclusion rule",
+    "C2": "single canonical HTML; LaTeX moved into img alt; eq_list.csv removed; code che->chm",
+    "C3": "IRREPRODUCIBILITY_LEDGER.md aggregates all 16 [O] items with reasons+locations; every [O] states obstacle in body"
+  },
+  "tool_versions": {
+    "reconcile_note": "counts verified this session; author reconcile_derived_to_html.py authoritative for word tokenizer"
+  },
+  "checks": [
+    {
+      "check": "C2_no_tex_sources",
+      "pass": true,
+      "detail": ".tex=0 eq_list=0 txt/=0"
+    },
+    {
+      "check": "C2_svg_canonical_with_latex_alt",
+      "pass": true,
+      "detail": "28 imgs carry LaTeX alt, 0 placeholder, svg=28"
+    },
+    {
+      "check": "C2_code_chm_no_che_remnant",
+      "pass": true,
+      "detail": "che- remnants=0"
+    },
+    {
+      "check": "C1_eq_display_eq_svg",
+      "pass": true,
+      "detail": "meta eq_display sum=28, svg=28"
+    },
+    {
+      "check": "C1_tables_match_html",
+      "pass": true,
+      "detail": "meta=11 html=11"
+    },
+    {
+      "check": "C1_figures_match_html",
+      "pass": true,
+      "detail": "meta=0 non-eq html=0"
+    },
+    {
+      "check": "C3_ledger_present",
+      "pass": true,
+      "detail": "IRREPRODUCIBILITY_LEDGER.md at package root"
+    },
+    {
+      "check": "C3_all_O_have_reason",
+      "pass": true,
+      "detail": "16 [O] items audited; each states obstacle/reason in body (see ledger)"
+    },
+    {
+      "check": "section_count==manifest",
+      "pass": true,
+      "detail": "8 pages, 8 rows"
+    },
+    {
+      "check": "meta_chapters==pages",
+      "pass": true,
+      "detail": "8 vs 8"
+    },
+    {
+      "check": "new_h1_one",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "new_title_pattern_len",
+      "pass": true,
+      "detail": "subj 35c full 80c"
+    },
+    {
+      "check": "new_description_80_160",
+      "pass": true,
+      "detail": "159c"
+    },
+    {
+      "check": "internal_links_resolve",
+      "pass": true,
+      "detail": "14 links, 0 broken"
+    },
+    {
+      "check": "hub_links_all_chapters",
+      "pass": true,
+      "detail": "8 hub links / 8 chapters"
+    },
+    {
+      "check": "no_katex_residue",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

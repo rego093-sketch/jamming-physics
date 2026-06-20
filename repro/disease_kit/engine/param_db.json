@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "purpose": "Locked parameter database for the dynamical emergence engine. Every entry is an INDEPENDENTLY measured/published value or a UNIVERSAL law or a documented modelling choice -- NEVER a value chosen by us to match an organ mass or a developmental stage. The engine reads ONLY this DB for physical parameters; it never reads the validation targets when selecting them. This is the difference between a LOCKED measured input [L] and a back-fit.",
+    "grades": {
+      "[L]": "locked: independently measured/published value or universal law, cited; legitimate to use",
+      "[F]": "fixed modelling choice (functional form / generic central value of a cited range); documented",
+      "[O]": "open: the entity-specific measured value does not exist in literature accessible here; a generic [F] placeholder stands in and the residual is declared open"
+    },
+    "rule": "UNIVERSAL or CITED-MEASURED => not a violation. PER-TARGET-TUNED => forbidden. No entry below was tuned to a target.",
+    "non_fit_invariant": "verify_emergence.py asserts the engine produces identical parameters whether or not the target tables are present (params are target-independent)."
+  },
+
+  "kinetics": {
+    "_axis": "WHEN (developmental timing) -- general mammalian transcription/translation timescales, measured independently of any cardiac stage",
+    "pol2_elongation_kb_per_min": {
+      "value": 2.5, "grade": "[L]", "universal": true,
+      "range": [1.5, 4.3],
+      "provenance": "RNA Pol II in-vivo elongation ~1.5-4.3 kb/min: Darzacq et al. 2007 (Nat Struct Mol Biol); Singh & Padgett 2009 (Nat Struct Mol Biol ~3.8 kb/min). Central value of the cited range."
+    },
+    "mrna_halflife_h": {
+      "value": 9.0, "grade": "[L]", "universal": true,
+      "provenance": "Median mammalian mRNA half-life ~9 h: Schwanhausser et al. 2011, 'Global quantification of mammalian gene expression control', Nature 473:337. Measured genome-wide, target-independent."
+    },
+    "protein_halflife_h": {
+      "value": 46.0, "grade": "[L]", "universal": true,
+      "provenance": "Median mammalian protein half-life ~46 h: Schwanhausser et al. 2011, Nature 473:337. Genome-wide, target-independent."
+    },
+    "translation_aa_per_s": {
+      "value": 4.0, "grade": "[L]", "universal": true,
+      "range": [2.0, 6.0],
+      "provenance": "Mammalian ribosome elongation ~2-6 aa/s: Ingolia et al. 2011; Schwanhausser 2011. Central value."
+    },
+    "relay_threshold_theta": {
+      "value": 0.5, "grade": "[F]", "universal": true,
+      "provenance": "Activation threshold (fraction of steady state) at which a regulator is counted ON. Modelling choice; engine is required to be theta-robust over [0.3,0.7] (asserted in gate)."
+    }
+  },
+
+  "allometry": {
+    "_axis": "HOW BIG (size) -- universal scaling laws + general mammalian organ-scaling exponents, measured independently of human organ masses",
+    "kleiber_metabolic_exponent": {
+      "value": 0.75, "grade": "[L]", "universal": true,
+      "provenance": "Basal metabolic rate ~ M^(3/4): Kleiber 1932 ('Body size and metabolism', Hilgardia). A universal interspecific law."
+    },
+    "growth_supply_exponent_alpha": {
+      "value": 1.0, "grade": "[F]", "universal": true,
+      "provenance": "Dosage(size supply) ~ (developmental time available)^alpha, single UNIVERSAL exponent applied to ALL organs identically (not per-organ). alpha=1 is the documented modelling choice; not tuned to any mass."
+    },
+    "organ_scaling_exponent_reference": {
+      "_grade": "[L] reference table (NOT used to fit; available grounded inputs)",
+      "_provenance": "General mammalian organ-mass vs body-mass scaling exponents, compiled from comparative physiology (Stahl 1965 Science 'Organ weights in primates and other mammals'; Prothero 'The Design of Mammals'). These are external measured general relationships; if used, they enter as [L] grounded inputs, never as tuned coefficients.",
+      "heart": 0.98, "liver": 0.87, "lung": 0.99, "kidney": 0.85, "spleen": 0.92, "pancreas": 0.91, "brain": 0.75, "stomach": 0.94
+    }
+  },
+
+  "morphogen": {
+    "_axis": "TRAJECTORY (reduced-order reaction-diffusion) -- general morphogen biophysics",
+    "diffusion_um2_per_s": {
+      "value": 1.0, "grade": "[L]", "universal": true,
+      "range": [0.1, 10.0],
+      "provenance": "Typical morphogen effective diffusion ~0.1-10 um^2/s (e.g. Bicoid, FGF, Nodal): Kicheva et al. 2007 (Science); Yu et al. 2009. Central value; target-independent."
+    },
+    "morphogen_decay_min": {
+      "value": 60.0, "grade": "[L]", "universal": true,
+      "provenance": "Morphogen clearance timescale ~tens of minutes-hours: Kicheva et al. 2007. Generic central value."
+    }
+  },
+
+  "_open": {
+    "_axis": "[O] data-blocked specifics (NOT in this DB; declared open, generic placeholders used)",
+    "per_gene_transcription_rate": "[O] exact per-cardiac-gene kinetic constants -> generic mammalian medians stand in",
+    "tissue_mechanical_properties": "[O] cardiac tissue stiffness/viscosity time-course -> not modelled at continuum fidelity",
+    "organ_growth_rate_atlas": "[O] measured per-organ developmental growth-rate trajectories -> universal supply rule stands in"
+  }
+}

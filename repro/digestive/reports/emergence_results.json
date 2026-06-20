@@ -1,0 +1,116 @@
+{
+ "_what": "Digestive / Metabolic -- organs emerge from measured gamma; one gastric clock + a closed metabolic loop drive the dynamics.",
+ "dynamics": {
+  "glucose_homeostat": {
+   "fasting_fixed_point_mM": 5.0,
+   "homeostasis_grade": "[V]",
+   "insulin_kick2_final_mM": 4.9926,
+   "insulin_kick2_nadir_mM": 4.2476,
+   "meal_amp3_final_mM": 5.247,
+   "meal_amp3_peak_mM": 7.5782,
+   "setpoint_grade": "[L]",
+   "setpoint_mM": 5.0
+  },
+  "intestinal_chain_cpm_N12": [
+   11.1,
+   10.5,
+   10.2,
+   9.9,
+   9.6,
+   9.0,
+   8.7,
+   8.7,
+   8.4,
+   8.1,
+   7.8,
+   7.5
+  ],
+  "peristalsis": {
+   "grade": "[V]",
+   "physiologic_aboral_disp": 12.0,
+   "reversed_oral_disp": -1.0
+  },
+  "slow_wave_clock": {
+   "K_time_cpm_per_modelHz": 2400.0,
+   "cited_duodenum": 12.0,
+   "cited_gastric": 3.0,
+   "cited_ileum": 8.0,
+   "cited_jejunum": 10.0,
+   "duodenum_cpm": 11.1,
+   "gastric_cpm": 3.0,
+   "ileum_cpm": 7.5,
+   "jejunum_cpm": 9.0,
+   "mechanism_grade": "[V]",
+   "rate_grade": "[L]"
+  }
+ },
+ "organs": {
+  "gamma_order_ascending": [
+   "intestine",
+   "pancreas",
+   "liver",
+   "stomach"
+  ],
+  "order_grade": "[V] order is a pure gamma readout; SIGN validated vs cited timing anchor",
+  "organs": [
+   {
+    "dyn_class": "oscillator",
+    "functional_spinodal": 0.750604,
+    "gamma": 1.5609,
+    "master": "BARX1",
+    "organ": "stomach",
+    "rel_size_dwell": 1.772842,
+    "role": "gastric ICC slow-wave + mixing"
+   },
+   {
+    "dyn_class": "oscillator",
+    "functional_spinodal": 0.672048,
+    "gamma": 1.45,
+    "master": "CDX2",
+    "organ": "intestine",
+    "rel_size_dwell": 1.587301,
+    "role": "intestinal ICC slow-wave + peristaltic propulsion"
+   },
+   {
+    "dyn_class": "control-loop",
+    "functional_spinodal": 0.688241,
+    "gamma": 1.4732,
+    "master": "PDX1",
+    "organ": "pancreas",
+    "rel_size_dwell": 1.625548,
+    "role": "endocrine islet: insulin/glucagon glucose homeostat"
+   },
+   {
+    "dyn_class": "control-loop",
+    "functional_spinodal": 0.724858,
+    "gamma": 1.525,
+    "master": "HHEX",
+    "organ": "liver",
+    "rel_size_dwell": 1.712033,
+    "role": "hepatic glucose storage/release (glycogen buffer)"
+   }
+  ]
+ },
+ "oscillators": {
+  "intestine": {
+   "beats": 19,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "predicted_cpm": 10.8,
+   "rate_anchor": "duodenal slow wave ~12 cpm = 0.2 Hz [L] PREDICTED from clock",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.0045,
+   "tau_s": 95.0
+  },
+  "stomach": {
+   "beats": 5,
+   "mechanism_grade": "[V]",
+   "oscillates": true,
+   "predicted_cpm": 3.0,
+   "rate_anchor": "gastric slow wave ~3 cpm = 0.05 Hz [L] ANCHOR",
+   "rate_grade": "[L]",
+   "relaxation_freq_arb": 0.00125,
+   "tau_s": 380.0
+  }
+ }
+}

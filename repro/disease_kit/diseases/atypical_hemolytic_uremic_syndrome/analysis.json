@@ -1,0 +1,159 @@
+{
+ "disease": "Atypical haemolytic uraemic syndrome (CFH-related; complement-mediated thrombotic microangiopathy; aHUS)",
+ "omim": "235400",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Atypical haemolytic uraemic syndrome (CFH-related; complement-mediated thrombotic microangiopathy; aHUS)",
+  "omim": "235400",
+  "summary": "Complement factor H (CFH) is the principal FLUID-PHASE and host-surface BRAKE on the ALTERNATIVE complement pathway: it accelerates decay of the C3bBb convertase and is the cofactor for factor-I (CFI) cleavage of C3b. Loss-of-function (most pathogenic aHUS variants cluster in the C-terminal recognition domains SCR19-20, impairing regulation on endothelial surfaces) releases the convertase -> uncontrolled alternative-pathway amplification on microvascular endothelium -> C5b-9 / membrane-attack-complex injury -> thrombotic microangiopathy (microangiopathic haemolytic anaemia, thrombocytopenia, acute kidney injury). Complement-activation axis UP.",
+  "emergent_axis": "alternative-complement-pathway activation on endothelial surfaces (C3 convertase amplification)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "CFH",
+    "gamma": 1.2845,
+    "spinodal_h_sp": 0.56034,
+    "barrier": 0.41249,
+    "dwell_relative_size": 1.32345,
+    "role": "brake",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "UP",
+    "perturbation_int": 1,
+    "perturbation_reason": "brake released -> target over-driven",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 196652042,
+     "gene_end": 196747503,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "complement factor H"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "Factor H is the master negative regulator (BRAKE) of the alternative complement pathway: it accelerates dissociation of the C3bBb convertase (decay-accelerating activity) and is the obligate cofactor for CFI-mediated proteolysis of C3b. Pathogenic aHUS variants are predominantly in the C-terminal short-consensus-repeats SCR19-20 that mediate recognition of host glycan / surface-bound C3b, so the brake fails specifically on self endothelial surfaces -> the convertase amplifies unchecked (loss-of-regulation = a functional loss on the complement-restraint axis).",
+    "src": "Warwicker 1998 Kidney Int 53:836 (CFH in HUS); Caprioli 2006 Blood 108:1267 (CFH/MCP/CFI genotype-phenotype); Noris & Remuzzi 2009 NEJM 361:1676"
+   }
+  ],
+  "primary_switch": {
+   "gene": "CFH",
+   "role": "brake",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "UP",
+   "reason": "brake released -> target over-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "312423c3a251"
+ },
+ "treatment_A_switch": {
+  "disease": "Atypical haemolytic uraemic syndrome (CFH-related; complement-mediated thrombotic microangiopathy; aHUS)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "UP",
+  "corrective_axis_direction": "DOWN",
+  "levers": [
+   {
+    "lever": "restrain",
+    "target_gene": "C5",
+    "push_direction": "block TERMINAL complement at C5 (no C5 cleavage -> no C5a chemoattractant and no C5b-9 membrane-attack complex), pushing the over-activated complement axis back DOWN toward normal -> the endothelial thrombotic microangiopathy is halted. Acts DOWNSTREAM at C5 and does NOT restore factor-H regulation of the convertase (it bypasses the causal switch defect rather than repairing it); net axis effect RESTRAIN.",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "terminal-complement (anti-C5) monoclonal antibody (eculizumab; long-acting ravulizumab)",
+    "status": "approved",
+    "mechanism_grade": "[O] off-causal-gene DOWNSTREAM terminal-complement blockade; the link from C5 inhibition to the corrected complement axis is complement pharmacology the gamma read does not capture. Approved for aHUS (the manifestation) -- NOT a CFH-targeted agent; degree/duration of benefit, the (boxed) meningococcal-infection risk and its vaccination/prophylaxis management, relapse on withdrawal, and whether/when to treat any individual are clinical decisions asserted nowhere here.",
+    "src": "Legendre 2013 NEJM 368:2169 (eculizumab in aHUS); Rondeau 2020 Kidney Int 97:1287 (ravulizumab)"
+   },
+   {
+    "lever": "restrain",
+    "target_gene": "CFH",
+    "push_direction": "restore factor-H regulation of the alternative-pathway C3 convertase AT THE CAUSAL SWITCH -- re-impose the brake that the SCR19-20 lesion disables -> convertase amplification held down toward normal; net axis effect RESTRAIN (gene/function-level correction of the causal gene, the DIRECTION the switch forces).",
+    "axis_effect": "DOWN",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "factor-H regulatory restoration (CFH protein repletion / gene restoration / mini-FH constructs; investigational, no approved agent)",
+    "status": "investigational",
+    "mechanism_grade": "[O] degree of restored regulation not derived from sequence; this is the forced switch-level direction, but NO approved factor-H-restoring agent exists -- investigational only (recombinant/mini-FH and CFH gene therapy are preclinical/early).",
+    "src": "Ferreira 2010 J Immunol 185:5328 (factor H regulation); Hebecker 2013 (mini-FH); plasma exchange/infusion is supportive, not an FH-restoring corrective"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "restrain",
+   "target_gene": "C5",
+   "push_direction": "block TERMINAL complement at C5 (no C5 cleavage -> no C5a chemoattractant and no C5b-9 membrane-attack complex), pushing the over-activated complement axis back DOWN toward normal -> the endothelial thrombotic microangiopathy is halted. Acts DOWNSTREAM at C5 and does NOT restore factor-H regulation of the convertase (it bypasses the causal switch defect rather than repairing it); net axis effect RESTRAIN.",
+   "axis_effect": "DOWN",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "terminal-complement (anti-C5) monoclonal antibody (eculizumab; long-acting ravulizumab)",
+   "status": "approved",
+   "mechanism_grade": "[O] off-causal-gene DOWNSTREAM terminal-complement blockade; the link from C5 inhibition to the corrected complement axis is complement pharmacology the gamma read does not capture. Approved for aHUS (the manifestation) -- NOT a CFH-targeted agent; degree/duration of benefit, the (boxed) meningococcal-infection risk and its vaccination/prophylaxis management, relapse on withdrawal, and whether/when to treat any individual are clinical decisions asserted nowhere here.",
+   "src": "Legendre 2013 NEJM 368:2169 (eculizumab in aHUS); Rondeau 2020 Kidney Int 97:1287 (ravulizumab)"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.32345,
+   "dwell_disease": 1.81975,
+   "dwell_treated": 1.48551,
+   "axis_direction": "UP",
+   "ordering_healthy_lt_treated_lt_disease": true,
+   "restraint_fraction_of_excess": 0.6735,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "axis": "UP",
+    "grade": "[F] ordering forced (over-shoot) ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "5d47af63e8c3"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "CFH loss-of-regulation moves the alternative-complement axis UP (the convertase amplifies unchecked on endothelial surfaces)",
+   "falsifier": "a CFH SCR19-20 loss-of-function variant that REDUCES alternative-pathway activation / endothelial C5b-9 deposition, or lowers TMA incidence, refutes the axis-UP direction",
+   "measurable_by": "ex-vivo modified-Ham test / endothelial C5b-9 deposition assay and serum sC5b-9 + C3 consumption, stratified by CFH genotype; aHUS incidence by genotype"
+  },
+  {
+   "claim": "terminal-complement (anti-C5) blockade is the CORRECTIVE direction (restrains the over-driven axis) but does NOT restore factor-H regulation",
+   "falsifier": "if C5 inhibition raised rather than reduced TMA the 'restrain the axis' lever sign is wrong; if an anti-C5 agent were shown to restore factor-H convertase regulation the 'downstream / does-not-repair-the-switch' classification is wrong",
+   "measurable_by": "haematologic (platelet/LDH/haemoglobin) and renal TMA response on vs off eculizumab/ravulizumab; sC5b-9 and CFH-dependent convertase-regulation assays before/after"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Atypical haemolytic uraemic syndrome (CFH-related; complement-mediated thrombotic microangiopathy; aHUS)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "7b5ecca415ae"
+ },
+ "determinism_sha": "f97e90cf1cb5"
+}

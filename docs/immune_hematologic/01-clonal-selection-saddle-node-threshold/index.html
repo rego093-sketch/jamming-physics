@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clonal Selection as a Saddle-Node Threshold — Immune/Hematologic §1 | Jamming Physics</title>
+<meta name="description" content="Lymphocyte clonal selection is an R19 saddle-node crossing: a clone activates exactly when antigen-affinity drive exceeds the spinodal, and stays tolerant below it.">
+<link rel="canonical" href="https://jamming-physics.org/immune_hematologic/01-clonal-selection-saddle-node-threshold/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Clonal Selection as a Saddle-Node Threshold — Immune/Hematologic §1 | Jamming Physics"><meta property="og:description" content="Lymphocyte clonal selection is an R19 saddle-node crossing: a clone activates exactly when antigen-affinity drive exceeds the spinodal, and stays tolerant below it."><meta property="og:url" content="https://jamming-physics.org/immune_hematologic/01-clonal-selection-saddle-node-threshold/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Clonal Selection as a Saddle-Node Threshold — Immune/Hematologic §1 | Jamming Physics"><meta name="twitter:description" content="Lymphocyte clonal selection is an R19 saddle-node crossing: a clone activates exactly when antigen-affinity drive exceeds the spinodal, and stays tolerant below it.">
+<link rel="stylesheet" href="/immune_hematologic/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Clonal Selection as a Saddle-Node Threshold", "isPartOf": {"@type": "CreativeWork", "name": "Immune & Hematologic Emergence (VP / Jamming Physics)", "sameAs": ["https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic", "https://doi.org/10.5281/zenodo.20755280"], "identifier": "10.5281/zenodo.20755280"}, "position": 1, "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.20755280"}, "sameAs": "https://doi.org/10.5281/zenodo.20755280", "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Immune/Hematologic", "item": "https://jamming-physics.org/immune_hematologic/"}, {"@type": "ListItem", "position": 3, "name": "§1 Clonal Selection as a Saddle-Node Thresh"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/immune_hematologic/">Immune/Hematologic</a> › §1</nav></header>
+<main>
+<h1>Clonal Selection as a Saddle-Node Threshold</h1>
+
+<p class="answer">Clonal selection is a saddle-node crossing of the R19 switch. Rather than assume the threshold, this volume simulates a rising antigen-affinity signal under noise and measures it: the commit-drive equals each organ&#x27;s spinodal |h|=2(γ/3)^1.5 and orders by γ, while sub-spinodal drive stays tolerant. Immunodominance, maturation, imprinting, tolerance and exhaustion follow from the same shared-pool competition. Grade [V].</p>
+
+<p class="abstract">The activation threshold is measured, not posited: a rising-affinity simulation commits at the spinodal organ-by-organ (marrow ratio 0.999×, lymphoid 0.996×, approached from below by thermal activation), and a sub-spinodal drive stays tolerant (P(commit)=0.010). Immunodominance emerges from competition for a shared antigen pool: a subdominant clone that commits with probability 1.00 alone is competitively excluded to 0.22 while the dominant clone commits first (P=0.89).</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] grade</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/01-clonal-selection-saddle-node-threshold/" rel="noopener">reproduction code (GitHub)</a>
+  <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
+</aside>
+
+<aside class="vp-card" data-locked="gamma"><b>γ (promoter stacking)</b> — −mean SantaLucia-1998 nearest-neighbour stacking ΔG37 over the promoter window TSS−2000..+500; owned by the DNA volume (SSOT), measured here for the four master genes (RUNX1 1.3225, TLX1 1.4228, FOXN1 1.4533, PAX5 1.4892). All four promoter sequences are byte-exact verified against the live NCBI reference assembly (GRCh38.p14), so γ is primary-source grounded, not just cached. <b>[L]</b> canonical derivation: DNA volume §γ</aside>
+<aside class="vp-card" data-locked="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>[F]</b> canonical derivation: substrate R19</aside>
+
+<h2>The switch, not a dial</h2>
+<p>Clonal selection is discontinuous by construction. A clone is a single R19 switch whose drive is set by
+antigen affinity; the saddle-node at the spinodal means there is no graded half-activated clone, only a
+committed crossing.</p>
+<p>Self-tolerance is the same statement read backwards: any clone whose affinity drive stays below the
+spinodal never leaves the OFF basin, so it cannot be activated against self. No separate tolerance rule is
+needed — it is the sub-spinodal region of the one switch.</p>
+<h2>The activation threshold is measured, not assumed</h2>
+<p>Rather than read the threshold off the closed-form spinodal, the volume <em>simulates</em> it. A resting
+clone is driven by a slowly rising antigen-affinity signal under independent cellular noise, and the drive at
+which it first crosses the ridge is <em>measured</em>. The commit-drive that comes out equals each organ's own
+spinodal (commit-drive ÷ spinodal = 0.999, 1.000, 1.001, 0.996 for marrow, spleen, thymus, lymphoid), so the
+saddle-node threshold is confirmed dynamically. It is approached from just below the spinodal because thermal
+activation lets a clone cross while the shrinking barrier still exists; the ratio rises toward 1 as the noise
+falls.</p>
+<p>The measured thresholds order by γ — a higher-γ (deeper-well) compartment demands a stronger affinity
+signal to activate. And the bracket straddles the spinodal: a drive clearly below it essentially never commits
+however long it is held (self-tolerance, P(commit)=0.010 on marrow), while a drive clearly above it commits with
+probability 1.000. Only the absolute noise scale D is left [O].</p>
+<h2>Immunodominance emerges from clonal competition</h2>
+<p>A real response is not one clone in isolation but many clones of the adaptive compartment racing for one
+finite antigen pool. The volume simulates two clones of the same γ, differing only in affinity, sharing one
+pool that committed clones deplete. Immunodominance is then <em>measured</em>, not imposed: the higher-affinity
+clone reaches its spinodal first, commits, and consumes the shared antigen, which starves the lower-affinity
+clone. A subdominant clone that would commit with probability 1.00 on its own is competitively excluded to
+0.22, and the dominant clone commits first with probability 0.89.</p>
+<p>The hierarchy sharpens monotonically with the affinity gap and — honestly — vanishes when the gap does: at
+equal affinity the contest is a symmetric coin-flip (P(first)≈0.47), with no spurious winner. The depth of the
+hierarchy, set by the consumption rate and the noise scale, is [O]; its existence, direction, and monotonicity
+are measured.</p>
+<h2>A repertoire concentrates on a few clones</h2>
+<p>Scaling the two-clone contest to a full repertoire — N clones of the adaptive compartment with a spread of
+affinities sharing one pool — turns dominance into a measured concentration. With N=12 clones the response
+collapses onto an effective 5.8 clones (the participation ratio of the measured commit probabilities): the
+high-affinity clones capture it and the rest are competitively excluded. Widening the affinity spread sharpens
+the focus — the effective number falls from 11.8 at equal affinity to 6.2 at the widest spread — and a larger
+repertoire concentrates further still relative to its size, the shared pool sustaining only a few committers.
+At equal affinity the response stays evenly shared, with no spurious winner. The absolute depth is [O]; the
+concentration and its scaling with spread and repertoire size are measured.</p>
+<h2>Affinity maturation matures the repertoire round over round</h2>
+<p>A germinal centre is the repertoire contest run as a Darwinian loop. Each round the higher-affinity clones
+commit first and deplete the shared pool — excluding the slow clones exactly as immunodominance does — and the
+committed parents are re-seeded with <em>symmetric</em> somatic hypermutation before the next round. Nothing
+about &ldquo;improvement&rdquo; is imposed: mutation is an unbiased random walk and selection is only the
+competition outcome. Yet the measured mean affinity of the responding set <em>rises</em> round over round,
+climbing from 0.857 to 1.088 over 7 rounds (gain 0.231).</p>
+<p>The rise is causally dissected, not assumed. It needs mutation: at zero hypermutation the gain stalls
+(0.0262), and it accelerates as the mutation step grows (gain 0.066 → 0.211 → 0.403). It needs competition: an
+effectively unlimited pool removes the selection pressure and the affinity drifts neutrally (gain -0.0028 ≈ 0).
+And the pressure itself has an honest optimum — too tight a pool starves even the winners, so the gain peaks at
+an intermediate pool (0.214 at the optimum vs 0.036 in the weak regime) rather than rising forever. Direction,
+mutation-dependence, competition-dependence and the inverted-U are measured; the absolute maturation rate stays
+[O].</p>
+<h2>Imprinting biases recall toward experienced clones</h2>
+<p>Re-exposure to a drifted antigen is a two-clone contest of a different kind: an experienced memory clone
+with a recall head-start (it starts nearer the ridge) against a fresh naïve clone that is fully OFF but better
+matched to the new antigen. The memory clone's affinity degrades with antigenic distance, so beyond a crossover
+distance (here d≈0.375) the naïve clone is strictly the better fit. The bias is then <em>measured</em>: at an
+intermediate distance the experienced clone is still preferentially recalled even though the naïve clone is
+better matched — P(memory wins)=0.767 at the first distance where the naïve clone already holds the affinity
+edge. This is original antigenic sin emerging from competition, not a fitted rule.</p>
+<p>The bias is bounded and causally controlled. It decays monotonically with antigenic distance — P(memory)
+falls 0.767 → 0.493 → 0.183 across the better-matched zone — until the naïve clone takes over (P(naïve)=0.753 at the
+farthest distance). And it is experience-driven, not affinity-driven: removing the recall head-start abolishes
+it entirely, so in the same zone the better-matched naïve clone always wins (P(memory) collapses to 0.197, 0.037,
+0.000). The existence of the imprint, its decay with distance and the head-start control are measured; the
+absolute imprinting magnitude stays [O].</p>
+<h2>Central tolerance deletes self-reactive clones</h2>
+<p>Negative selection is clonal selection read with the opposite sign. The same rising-affinity ramp is run on a
+self-reactive clone in the thymic context, but now a crossing to ON marks the clone for <em>deletion</em>, not
+activation. The measured deletion drive is again each organ's spinodal (deletion-drive ÷ spinodal = 0.998, 0.997,
+0.997, 0.997 for marrow, spleen, thymus, lymphoid) and orders by γ exactly as activation does — the very same
+saddle-node, now culling rather than committing. A sub-threshold self-drive is ignored (P(delete)=0.006 on
+marrow) and a supra-threshold one is reliably deleted (P=1.000).</p>
+<p>The consequence is a measured tolerance ceiling on what leaves the thymus. Educating a uniform spread of
+self-affinities through the deletion channel caps the exported self-affinity at the spinodal (max exported =
+0.980× spinodal) and empties the autoreactive tail (exported-autoreactive fraction 0.000 with the channel on),
+while 54.9% of the self-reactive repertoire is deleted. Switching the channel off lets that tail straight
+through — exported-autoreactive jumps to 0.450 and the ceiling rises to 1.50× — so central tolerance is
+<em>required</em>, not incidental. Only the absolute deletion rate and the width of the escaped near-threshold
+sliver are [O].</p>
+<h2>Prime-boost scheduling has an interior optimum</h2>
+<p>A vaccination campaign is the maturation loop asked a temporal question: at a fixed campaign length, how does
+the matured affinity depend on the <em>spacing</em> of the boosts? The only added physics is antigen
+pharmacokinetics — each boost tops up a slowly-clearing depot, and every round runs the measured maturation
+competition at the current depot level. The answer is <em>measured</em>, an inverted-U in the boost interval with
+an interior optimum: boosting every round over-supplies the depot (mean pool 4.23) into the weak large-pool
+regime of maturation, so the gain is starved to 0.154; the optimum sits at an intermediate interval (gain 0.439 at
+interval 4); and spacing the boosts too far under-uses the fixed campaign (gain 0.292).</p>
+<p>The interior optimum is the temporal face of the maturation inverted-U, and it is causally controlled.
+Clamping the depot's carrying capacity down to the productive pool removes the over-supply penalty — now even the
+most frequent schedule only ever holds a productive pool, so more boosts is strictly better and the optimum
+collapses to the most-frequent boundary (gain 0.493 at interval 1). The existence of an interior optimum and the
+over-supply mechanism are measured; the absolute optimal interval (depot clearance, dose, campaign length, noise
+scale D) stays [O].</p>
+<h2>Peripheral tolerance re-contains the escaped clone</h2>
+<p>Central deletion leaves an escaped near-threshold sliver, and (next volume) an inflammatory insult can break it.
+A second, peripheral layer of tolerance &mdash; regulatory suppression &mdash; guards exactly that sliver. The
+volume models it as a suppressor field that subtracts from the escaped self-clone's drive, and <em>measures</em>
+the suppression at which the clone is re-contained. The threshold that comes out is the saddle-node
+<em>complement</em>: &sigma;<sub>crit</sub> = (residual self-drive + insult) &minus; spinodal, organ by organ
+(&sigma;<sub>crit</sub> = 0.250, 0.254 for marrow and lymphoid, both matching the 0.250&times; overshoot). The
+regulatory field cancels exactly the amount by which the escaped clone's total drive overshoots the switch &mdash;
+suppression and drive are one currency read with opposite sign.</p>
+<p>The two tolerance layers add. Sweeping the escapee's residual self-drive (its negative-selection depth), the
+required suppression rises one-for-one with it (measured slope 0.931 &asymp; 1): a deeper escapee, closer to having
+broken through central deletion, needs proportionally more peripheral suppression to stay quiescent. And
+suppression is <em>required</em> &mdash; with the field off the escaped clone driven by a supra-threshold insult
+breaks (P=0.980), and engaging sufficient suppression re-contains it (P=0.096). Only the absolute suppression
+strength (the map from &sigma; to a regulatory-cell count) and the escaped-sliver width are [O].</p>
+<h2>Chronic antigen exhausts the response, reversibly</h2>
+<p>Affinity maturation is the productive arc of a response; exhaustion is its dynamical mirror. The volume drives a
+committed clone under <em>persistent</em> antigen and couples in an accumulating feedback &mdash; an inhibitory
+tone that builds while the cell is ON and antigen is present, and relaxes only when antigen is withdrawn. The
+response is <em>measured</em> to rise to a peak (1.000) and then collapse to a hyporesponsive floor (0.000, drop
+1.000) as the feedback accumulates: chronic stimulation extinguishes the very response it drives. The collapse needs
+the feedback &mdash; with the coupling off the same chronic drive holds the response up indefinitely (floor
+1.000).</p>
+<p>The silencing is reversible, and gated by the switch's own bifurcation. Because the committed cell sits in a
+bistable ON basin, the feedback must push it past its <em>negative</em> saddle-node to force it OFF &mdash; so the
+onset is <em>measured</em> at a coupling (1.685) near the closed-form reverse-saddle-node estimate (1.875). And it is
+a functional silencing, not a deletion: withdrawing antigen lets the feedback decay, so a re-challenge recovers the
+response (1.000) while a continuously-stimulated clone stays extinguished (0.000). Only the absolute exhaustion rate
+(accumulation time, coupling, noise scale D) is [O].</p>
+
+<nav class="pn">
+  <span></span>
+  <a href="/immune_hematologic/">paper contents</a>
+  <a rel="next" href="/immune_hematologic/02-inflammation-bistable-hysteresis/">§2 →</a>
+</nav>
+</main>
+<footer>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · <a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> · §1 of 21</footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{
+ "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy)",
+ "omim": "209900",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy)",
+  "omim": "209900",
+  "summary": "A multi-system primary ciliopathy: loss-of-function of BBS1 (the commonest BBS gene, archetype allele M390R) destabilises the BBSome ciliary-trafficking complex, so leptin-receptor / melanocortin signalling at the hypothalamic primary cilium fails -> the satiety drive is lost (hyperphagia, severe early-onset obesity), alongside rod-cone retinal degeneration, post-axial polydactyly and renal anomalies. Read on the hypothalamic melanocortin satiety axis: axis DOWN.",
+  "emergent_axis": "hypothalamic melanocortin satiety signalling (energy-balance / adiposity set-point)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "BBS1",
+    "gamma": 1.4268,
+    "spinodal_h_sp": 0.65598,
+    "barrier": 0.50894,
+    "dwell_relative_size": 1.54936,
+    "role": "accelerator",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "drive lost -> target under-driven",
+    "ncbi": {
+     "acc": "NC_000011.10",
+     "gene_start": 66510634,
+     "gene_end": 66533597,
+     "strand": "+",
+     "window": "TSS-2000..+500",
+     "description": "Bardet-Biedl syndrome 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "M390R (the single commonest BBS allele, ~ a quarter of all BBS) destabilises the BBSome core; loss of BBSome-dependent ciliary trafficking of the leptin receptor / melanocortin machinery removes the DRIVE on the hypothalamic satiety axis (an accelerator whose loss under-drives the axis) -> hyperphagic obesity (plus the syndromic retinal / renal / skeletal features of the wider ciliopathy)",
+    "src": "Mykytyn 2002 Nat Genet 31:435 (BBS1 / M390R); Seo 2009 PNAS 106:1488 (BBSome leptin-receptor trafficking)"
+   }
+  ],
+  "primary_switch": {
+   "gene": "BBS1",
+   "role": "accelerator",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "drive lost -> target under-driven"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "cde3d4ffaae1"
+ },
+ "treatment_A_switch": {
+  "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy)",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "potentiate",
+    "target_gene": "MC4R",
+    "push_direction": "agonise MC4R, the satiety node DOWNSTREAM of the BBSome-dependent leptin-receptor trafficking defect -> restore the satiety signal the broken ciliary trafficking failed to deliver -> raise the under-driven satiety axis toward normal (axis UP). A DOWNSTREAM receptor bypass: it does NOT repair the BBSome / BBS1",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "MC4R agonist (setmelanotide / Imcivree)",
+    "status": "approved",
+    "mechanism_grade": "[O] degree of hyperphagia / adiposity normalisation not derived from sequence; downstream bypass of the ciliary-trafficking defect. Approved (FDA 2022) for BBS-associated obesity / hyperphagia ONLY -- the retinal degeneration and renal disease of the ciliopathy have NO approved therapy and are not addressed by this lever",
+    "src": "Haqq 2022 Lancet Diabetes Endocrinol 10:859 (setmelanotide in BBS); setmelanotide (Imcivree) FDA 2022 / EMA for BBS obesity"
+   },
+   {
+    "lever": "replace",
+    "target_gene": "BBS1",
+    "push_direction": "restore BBS1 / BBSome assembly and ciliary trafficking itself -> re-enable leptin-receptor / melanocortin trafficking at the cilium -> raise the satiety axis (axis UP); the switch-level corrective, repairing the deficient ciliary machinery rather than bypassing it (and, unlike the downstream bypass, the only arm that could also address the retinal / renal features)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "BBS1 gene/function restoration (investigational)",
+    "status": "investigational",
+    "mechanism_grade": "[O] restored BBSome trafficking not derived from sequence; investigational, no approved BBS1 gene therapy",
+    "src": "BBSome ciliary-trafficking restoration principle; no approved BBS1 gene therapy"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "potentiate",
+   "target_gene": "MC4R",
+   "push_direction": "agonise MC4R, the satiety node DOWNSTREAM of the BBSome-dependent leptin-receptor trafficking defect -> restore the satiety signal the broken ciliary trafficking failed to deliver -> raise the under-driven satiety axis toward normal (axis UP). A DOWNSTREAM receptor bypass: it does NOT repair the BBSome / BBS1",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "MC4R agonist (setmelanotide / Imcivree)",
+   "status": "approved",
+   "mechanism_grade": "[O] degree of hyperphagia / adiposity normalisation not derived from sequence; downstream bypass of the ciliary-trafficking defect. Approved (FDA 2022) for BBS-associated obesity / hyperphagia ONLY -- the retinal degeneration and renal disease of the ciliopathy have NO approved therapy and are not addressed by this lever",
+   "src": "Haqq 2022 Lancet Diabetes Endocrinol 10:859 (setmelanotide in BBS); setmelanotide (Imcivree) FDA 2022 / EMA for BBS obesity"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.54936,
+   "dwell_disease": 1.00253,
+   "dwell_treated": 1.27186,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "7d97be1812f2"
+ },
+ "treatment_B_chem": null,
+ "falsifiers": [
+  {
+   "claim": "BBS1 LOF moves the hypothalamic satiety axis DOWN (loss of BBSome-dependent leptin-melanocortin drive)",
+   "falsifier": "a BBS1 LOF allele that INCREASES satiety / reduces adiposity, or a BBSome-deficient hypothalamus in which leptin-melanocortin signalling is enhanced rather than lost, refutes the under-driven (axis DOWN) direction",
+   "measurable_by": "food-intake / body-weight and hypothalamic melanocortin-pathway readouts in a Bbs1-M390R model; adiposity by genotype in BBS cohorts"
+  },
+  {
+   "claim": "agonising MC4R (setmelanotide) is the CORRECTIVE direction (raises the under-driven satiety axis) and acts downstream of the BBSome defect",
+   "falsifier": "if MC4R agonism reduced rather than restored satiety signalling the 'potentiate downstream' lever sign is wrong; if setmelanotide were shown to repair BBSome trafficking the 'downstream bypass / does-not-repair-the-switch' classification is wrong",
+   "measurable_by": "hyperphagia / weight response to setmelanotide in BBS; BBSome-trafficking assays before/after exposure"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy)": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "cc8eecbbab00"
+ },
+ "determinism_sha": "f41dea9d3f07"
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix B. Numerical protocol details — VP Theory §AXB | Jamming Physics</title>
+<meta name="description" content="A Run is a single execution unit identified by the following tuple. The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP).">
+<link rel="canonical" href="https://jamming-physics.org/physics/axb-numerical-protocol-details-gates-seeds/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Appendix B. Numerical protocol details — VP Theory §AXB | Jamming Physics"><meta property="og:description" content="A Run is a single execution unit identified by the following tuple. The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP)."><meta property="og:url" content="https://jamming-physics.org/physics/axb-numerical-protocol-details-gates-seeds/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Appendix B. Numerical protocol details — VP Theory §AXB | Jamming Physics"><meta name="twitter:description" content="A Run is a single execution unit identified by the following tuple. The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP).">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Appendix B. Numerical protocol details",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"AXB",
+"author":{"@type":"Person","name":"Young jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§AXB Appendix B. Numerical protocol details"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §AXB</nav></header>
+<main>
+<h1>Appendix B. Numerical protocol details (gates, seeds, sampling)</h1>
+<p class="answer">Appendix B. Numerical protocol details: A Run is a single execution unit identified by the following tuple. The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP). An Artifact is the file bundle produced by a Run.</p>
+<p class="abstract" data-phase2="abstract">A Run is a single execution unit identified by the following tuple. The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP). Ω=0,…,M-1.</p>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axb-numerical-protocol-details-gates-seeds/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<h2>B.0 Execution unit and logging unit (definitions)</h2>
+<h4>Run</h4>
+<p>A Run is a single execution unit identified by the following tuple.</p>
+<figure class="eq" id="eq:AppB_runid"><img src="/physics/eq/physics/phy-axb-000.svg" data-eq="phy-axb-000" width="641" height="22" loading="lazy" alt="\begin{equation} \mathrm{run\_id} := \bigl(\mathrm{code\_version},\mathrm{registry\_snapshot\_id},\mathrm{protocol\_id},\mathrm{seed\_id},\mathrm{dataset\_id}\bigr). \end{equation}"></figure>
+<p>The same run_id must reproduce the same outputs; this is judged by the Gate (G-REP).</p>
+<h4>Artifact</h4>
+<p>An Artifact is the file bundle produced by a Run.</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-005.svg" data-eq="phy-axb-005" width="506" height="19" loading="lazy" alt="\mathrm{artifact} := \{\mathrm{logs},\mathrm{metrics},\mathrm{figures},\mathrm{tables},\mathrm{manifests},\mathrm{checksums}\}."></figure>
+<p>An Artifact must be sealed with <code>manifest+checksums+registry_snapshot</code>; if sealing is missing, the Gate revokes the conclusion eligibility.</p>
+<h4>SSOT</h4>
+<p>SSOT (Single Source of Truth) means that no constant/definition/threshold of the same meaning exists in more than one place. SSOT violations are classified as (i) duplicate definitions of the same key, (ii) defining the same concept with different values in different files, and (iii) “ghost constants” that exist only in logs but not in the registry.</p>
+<h2>B.1 Seed convention (determinism)</h2>
+<h4>seed_id</h4>
+<figure class="eq" id="eq:AppB_seedid"><img src="/physics/eq/physics/phy-axb-001.svg" data-eq="phy-axb-001" width="415" height="19" loading="lazy" alt="\begin{equation} \mathrm{seed\_id}:=\mathrm{SHA256}(\mathrm{seed\_namespace}\Vert \mathrm{seed\_payload}) \end{equation}"></figure>
+<p>Here, Vert denotes byte-string concatenation. <code>seed_namespace</code> is a fixed string (e.g., <code>"v4.seed"</code>), and <code>seed_payload</code> is the byte sequence formed by concatenating the following in order.</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-006.svg" data-eq="phy-axb-006" width="1007" height="19" loading="lazy" alt="\mathrm{seed\_payload}:= \mathrm{UTF8}(\mathrm{code\_version})\Vert \mathrm{UTF8}(\mathrm{registry\_snapshot\_id})\Vert \mathrm{UTF8}(\mathrm{protocol\_id})\Vert \mathrm{UTF8}(\mathrm{dataset\_id})\Vert \mathrm{UTF8}(\mathrm{user\_tag})."></figure>
+<code>user_tag</code> is an experiment label. It cannot be changed after seeing the result (only via version bump); changing it generates a new <code>seed_id</code>.
+<h4>Definition B.1.2 (mapping to 32-bit / 64-bit seeds)</h4>
+<p>Split the 32-byte hash digest into the upper 8 bytes and the lower 8 bytes,</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-007.svg" data-eq="phy-axb-007" width="466" height="26" loading="lazy" alt="s_{64}^{(0)}:=\mathrm{uint64}(\mathrm{digest}[0:8]),\quad s_{64}^{(1)}:=\mathrm{uint64}(\mathrm{digest}[8:16])"></figure>
+<p>and define the initial state accordingly. Thereafter, the RNG uses only this state as input.</p>
+<h4>Deterministic RNG (standard independent of external libraries)</h4>
+<p>To eliminate implementation differences across external RNG libraries, we lock the following xorshift128+ as the standard generator.</p>
+<figure class="eq" id="eq:AppB_xorshift"><img src="/physics/eq/physics/phy-axb-002.svg" data-eq="phy-axb-002" width="195" height="166" loading="lazy" alt="\begin{equation} \begin{aligned} &amp;\texttt{uint64 next():}\\ &amp;s_1\leftarrow s_0,\;\; s_0\leftarrow s_1\\ &amp;s_1 \leftarrow s_1 \oplus (s_1 \ll 23)\\ &amp;s_1 \leftarrow s_1 \oplus (s_1 \gg 17)\\ &amp;s_1 \leftarrow s_1 \oplus s_0\\ &amp;s_1 \leftarrow s_1 \oplus (s_0 \gg 26)\\ &amp;\text{return } (s_1+s_0)\bmod 2^{64} \end{aligned} \end{equation}"></figure>
+<p>The state (s₀,s₁) consists of two 64-bit integers, and the initial state is set only by the convention <a href="#eq:AppB_seedid" class="xref" data-ref="eq:AppB_seedid">(AppB_seedid)</a>–<a href="#eq:AppB_xorshift" class="xref" data-ref="eq:AppB_xorshift">(AppB_xorshift)</a>.</p>
+<h2>B.2 Sampling convention (windows / seeds / repetitions)</h2>
+<h4>Definition B.2.1 (window partition)</h4>
+<p>The time axis or event axis is partitioned into windows of length W, and the partition rule is fixed as</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-008.svg" data-eq="phy-axb-008" width="235" height="19" loading="lazy" alt="\mathrm{window}(j):=[jW,(j+1)W)"></figure>
+<p>as above. The unit of W (ticks/seconds/event-count) is locked in <code>analysis_lock</code>.</p>
+<h4>Definition B.2.2 (replica index)</h4>
+<p>Lock the number of repetitions R∈N and let the replica index be r∈0,…,R-1.
+Each replica shares the same <code>run_id</code>, but branches the seed by appending <code>replica=r</code> to <code>seed_payload</code>.</p>
+<h4>Definition B.2.3 (sample selection function)</h4>
+<p>For a finite population Ω=0,…,M-1, define the function S that selects a sample of size K by</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-009.svg" data-eq="phy-axb-009" width="600" height="19" loading="lazy" alt="\mathcal{S}(\Omega,K; s_0,s_1):=\text{the first }K\text{ elements of the permutation generated by }\texttt{RNG}"></figure>
+<p>as follows. Specifically,</p>
+<ol>
+<li> Generate M 64-bit values via xorshift128+: u₀,…,u_(M-1).
+<li> Sort key-value pairs (u_i,i) by increasing key.
+<li> Take the first K indices of the sorted list as the sample.
+</ol>
+<p>The stability of sorting (tie handling) is fixed by the comparison rule locked in <code>analysis_lock</code> (e.g., lexicographic order on (u_i,i)).</p>
+<h2>B.3 Numerical operation conventions (tolerance / stability)</h2>
+<h4>Definition B.3.1 (relative/absolute tolerance)</h4>
+<p>The closeness test for two reals x,y is fixed by the following convention.</p>
+<figure class="eq" id="eq:AppB_close"><img src="/physics/eq/physics/phy-axb-003.svg" data-eq="phy-axb-003" width="470" height="19" loading="lazy" alt="\begin{equation} \mathrm{close}(x,y;\varepsilon_{\mathrm{abs}},\varepsilon_{\mathrm{rel}}) \;\Longleftrightarrow\; |x-y|\le \varepsilon_{\mathrm{abs}}+\varepsilon_{\mathrm{rel}}\max\{|x|,|y|\}. \end{equation}"></figure>
+<p>ε_abs,ε_rel are locked in <code>gate_lock</code>.</p>
+<h4>Definition B.3.2 (summation stabilization: compensated sum)</h4>
+<p>For a long sum Σ_i a_i, Kahan compensated summation is adopted as the standard for numerical stability.</p>
+<pre class="vb">
+sum = 0.0
+c = 0.0
+for a in a_list:
+    y = a - c
+    t = sum + y
+    c = (t - sum) - y
+    sum = t
+return sum
+</pre>
+<p>The scope of this procedure (e.g., event-rate estimation, frequency accumulation, energy/tension accumulation) is locked in <code>analysis_lock</code>.</p>
+<h2>B.4 Gate evaluation conventions (order / logging / sealing)</h2>
+<h4>Gate DAG</h4>
+<p>A Gate is a directed acyclic graph (DAG); each Gate G_i has inputs (artifact, locks, metrics) and an output status.
+The Gate stack is evaluated only in topological order.</p>
+<h4>Definition B.4.2 (Gate output)</h4>
+<p>The output of each Gate is restricted to</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-010.svg" data-eq="phy-axb-010" width="301" height="19" loading="lazy" alt="\mathrm{status}\in\{\texttt{PASS},\texttt{FAIL},\texttt{INCONCLUSIVE}\}"></figure>
+<p>as shown. <code>INCONCLUSIVE</code> means deferral and cannot be used as evidence for conclusions.</p>
+<h4>Definition B.4.3 (Gate log)</h4>
+<p>Each Gate generates a log object containing the following keys.</p>
+<figure class="eq" id="eq:AppB_gatelog"><img src="/physics/eq/physics/phy-axb-004.svg" data-eq="phy-axb-004" width="608" height="19" loading="lazy" alt="\begin{equation} \mathrm{gate\_log}:=\{ \mathrm{gate\_id},\mathrm{inputs},\mathrm{thresholds},\mathrm{metrics},\mathrm{status},\mathrm{timestamp},\mathrm{hashes} \}. \end{equation}"></figure>
+<code>inputs</code> must include the lock_id used, the manifest hashes, and the schema version.
+<h2>B.5 FAIL triggers (falsification-trigger record format)</h2>
+<h4>Definition B.5.1 (FAIL code)</h4>
+<p>FAIL is recorded as a single string code, and the code must exist in the pre-registered list in <code>gate_lock</code>.
+Example format:</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-011.svg" data-eq="phy-axb-011" width="449" height="15" loading="lazy" alt="\texttt{F-LOCK-MIX},\texttt{F-NOTUNING},\texttt{F-REP-MISSING},\texttt{F-SYM-UNIT}."></figure>
+<p>The code list and meanings are maintained as SSOT; temporary codes that exist only in logs are forbidden.</p>
+<h4>Definition B.5.2 (falsification-trigger object)</h4>
+<p>When a FAIL occurs, record the following object.</p>
+<figure class="eq"><img src="/physics/eq/physics/phy-axb-012.svg" data-eq="phy-axb-012" width="546" height="19" loading="lazy" alt="\mathrm{falsify\_trigger}:= \{\mathrm{fail\_code},\mathrm{fail\_evidence},\mathrm{scope},\mathrm{lock\_ids},\mathrm{artifacts}\}."></figure>
+<code>scope</code> specifies the impact range (single section/chapter/global).
+<nav class="pn"><a rel="prev" href="/physics/axa-mathematical-lemmas-proof-sketches/">← §AXA</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/axc-archive-schema-file-tree/">§AXC →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

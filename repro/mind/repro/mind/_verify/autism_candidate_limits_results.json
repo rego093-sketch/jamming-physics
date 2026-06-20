@@ -1,0 +1,236 @@
+{
+ "P4_chemical_on_W": {
+  "P4_chemical_cannot_fix_W": true,
+  "R_W_drug": 0.376941,
+  "R_still_below_health": true,
+  "drug_gain_factor": 1.666667,
+  "loc_W_drug": 0.842216,
+  "locality_invariant_routing_untouched": true,
+  "pac_W_drug": 0.026954,
+  "pac_overshoots_health_overcoupling_mask": true
+ },
+ "P5_threshold_lowering_bridge": {
+  "P5_threshold_lowering_is_mask_not_correction": true,
+  "R_max_in_sweep": 0.439433,
+  "R_saturates_below_health": false,
+  "kappa_mult_where_R_reaches_health": 2.0,
+  "pac_at_reach_point": 0.049557,
+  "reach_only_via_oversync_mask": true,
+  "sweep": [
+   {
+    "R_W": 0.340292,
+    "R_reaches_health": false,
+    "kappa_mult": 1.0,
+    "pac": 0.007261,
+    "pac_past_health": false
+   },
+   {
+    "R_W": 0.34347,
+    "R_reaches_health": false,
+    "kappa_mult": 1.1,
+    "pac": 0.009046,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.343281,
+    "R_reaches_health": false,
+    "kappa_mult": 1.25,
+    "pac": 0.012302,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.350466,
+    "R_reaches_health": false,
+    "kappa_mult": 1.5,
+    "pac": 0.019821,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.385263,
+    "R_reaches_health": false,
+    "kappa_mult": 1.75,
+    "pac": 0.031411,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.399958,
+    "R_reaches_health": true,
+    "kappa_mult": 2.0,
+    "pac": 0.049557,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.408148,
+    "R_reaches_health": true,
+    "kappa_mult": 2.5,
+    "pac": 0.106566,
+    "pac_past_health": true
+   },
+   {
+    "R_W": 0.439433,
+    "R_reaches_health": true,
+    "kappa_mult": 3.0,
+    "pac": 0.162681,
+    "pac_past_health": true
+   }
+  ]
+ },
+ "_what": "D9.4 boundary nulls: a threshold-lowering chemical is a scalar gain/bias operator -- it CANNOT correct the wiring (W) fault (locality/routing invariant; pushing kappa only over-couples PAC past health, a mask). The bridge idea -- lower the switch so the residual long-range signal crosses it -- buys only partial, MASKING recovery (R saturates below the healthy-geometry value or reaches it only by over-synchronisation). By contrast a sustained exogenous theta SUPPLY rescues the same W-fault by bypassing the broken routing. This closes the wave-supply vs uniform-chemical-E/I discriminant for the W fault type.",
+ "baselines": {
+  "R_W": 0.340292,
+  "R_health": 0.389615,
+  "loc_W": 0.842216,
+  "loc_health": 0.793949,
+  "pac_health": 0.007261
+ },
+ "contrast_wave_supply_on_W": {
+  "ERRATUM": "E-D9.4-1 — v1.0.0 reported 'supply rescues W (R 0.340→0.730)' using a coarse ΔR>0.02 check at injection 0.9; that point is OVER-SYNCHRONISATION (R = health×1.87), the global-sync/seizure analogue, NOT a healthy rescue. Corrected below to a window analysis.",
+  "R_at_injection_0_9_v100_point": 0.729624,
+  "first_oversync_injection": 0.15,
+  "health_window_injection_range": [
+   0.08,
+   0.1
+  ],
+  "injection_0_9_was_oversync": true,
+  "loc_W_under_supply_invariant": 0.842216,
+  "reading": "the theta supply closes the W integration deficit only inside a NARROW injection window (R returns to the healthy metastable value); beyond it the supply OVER-SYNCHRONISES (seizure analogue). Even inside the window it is an EXTERNAL PACEMAKER (locality/geometry invariant) -- a functional crutch, not an anatomical repair -- and it must be STRUCTURED (an unstructured drive of the same amplitude does not lift R).",
+  "structure_required": true,
+  "structured_R_at_window": 0.393266,
+  "supply_has_health_window": true,
+  "supply_is_external_pacemaker_crutch_not_repair": true,
+  "sweep": [
+   {
+    "R": 0.340292,
+    "gap_to_health": -0.049323,
+    "in_health_window": false,
+    "inj": 0.0,
+    "over_sync": false
+   },
+   {
+    "R": 0.349101,
+    "gap_to_health": -0.040514,
+    "in_health_window": false,
+    "inj": 0.02,
+    "over_sync": false
+   },
+   {
+    "R": 0.363283,
+    "gap_to_health": -0.026332,
+    "in_health_window": false,
+    "inj": 0.05,
+    "over_sync": false
+   },
+   {
+    "R": 0.393266,
+    "gap_to_health": 0.003652,
+    "in_health_window": true,
+    "inj": 0.08,
+    "over_sync": false
+   },
+   {
+    "R": 0.407794,
+    "gap_to_health": 0.018179,
+    "in_health_window": true,
+    "inj": 0.1,
+    "over_sync": false
+   },
+   {
+    "R": 0.436232,
+    "gap_to_health": 0.046617,
+    "in_health_window": false,
+    "inj": 0.12,
+    "over_sync": false
+   },
+   {
+    "R": 0.461145,
+    "gap_to_health": 0.07153,
+    "in_health_window": false,
+    "inj": 0.15,
+    "over_sync": true
+   },
+   {
+    "R": 0.543763,
+    "gap_to_health": 0.154148,
+    "in_health_window": false,
+    "inj": 0.2,
+    "over_sync": true
+   },
+   {
+    "R": 0.568509,
+    "gap_to_health": 0.178895,
+    "in_health_window": false,
+    "inj": 0.3,
+    "over_sync": true
+   },
+   {
+    "R": 0.666581,
+    "gap_to_health": 0.276966,
+    "in_health_window": false,
+    "inj": 0.5,
+    "over_sync": true
+   },
+   {
+    "R": 0.729624,
+    "gap_to_health": 0.34001,
+    "in_health_window": false,
+    "inj": 0.9,
+    "over_sync": true
+   },
+   {
+    "R": 0.744474,
+    "gap_to_health": 0.354859,
+    "in_health_window": false,
+    "inj": 1.2,
+    "over_sync": true
+   }
+  ],
+  "unstructured_R_at_window": 0.358645,
+  "window_is_narrow": true
+ },
+ "discriminant_chemical_vs_supply_on_W": {
+  "chemical_threshold_lowering_cannot_fix_W": true,
+  "discriminant_holds": true,
+  "reading": "the discriminant survives but is restated honestly: a scalar chemical (gain/threshold) cannot fix W AT ALL; a sustained STRUCTURED theta supply can close the W integration deficit, but only inside a narrow injection window (too much over-synchronises into the seizure analogue), and even then as an external-pacemaker CRUTCH that does not rebuild the wiring. The threshold-lowering drug is for the T fault; the theta cap is a narrow-window functional aid for the W fault, not a repair.",
+  "supply_closes_deficit_only_in_narrow_structured_window": true,
+  "supply_is_crutch_not_repair": true
+ },
+ "firewall": "mechanism only; efficacy=0; no dose/synthesis; NOT medical advice; Axis-A firewall.",
+ "honesty_ledger": {
+  "consciousness_claim": 0,
+  "medium_efficacy_tested": 0,
+  "new_tuned_constants": 0,
+  "no_cure_claimed": 1
+ },
+ "invariants": {
+  "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+  "pac_grounded": true
+ },
+ "preregistered_results": {
+  "P4_chemical_cannot_fix_W": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P5_threshold_lowering_is_mask": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P6_supply_has_health_window_not_blanket_rescue": {
+   "note": "supersedes v1.0.0 'contrast_supply_rescues_W' (E-D9.4-1): rescue exists only in a narrow window; the old high-injection point was over-synchronisation.",
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P7_supply_is_crutch_not_repair": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  },
+  "P8_supply_must_be_structured": {
+   "observed": true,
+   "predicted": true,
+   "status": "CONFIRMED"
+  }
+ }
+}

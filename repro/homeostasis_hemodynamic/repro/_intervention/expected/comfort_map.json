@@ -1,0 +1,146 @@
+{
+ "title": "Three-lever hemodynamic comfort map (proven-loop directions + cited axis frame)",
+ "imported_from": "analgesic_threshold_logic v2.0 (Zenodo concept DOI 10.5281/zenodo.20733420)",
+ "primitive": "the analgesic three-lever frame applied to the defended-MAP setpoint: LOWER the setpoint durably without provoking the loop's counter-regulation, by any of three levers",
+ "comfort_principle": "operating-point antagonism is REJECTED back by the integral controller (RP4: opposed_back=True, durable drop=0 mmHg) -- that rejection is the structural origin of the side-effect class; a reference-reset direction provokes no rejection (T1: reference reset durable=True, durable drop=17 mmHg). 'Counter-regulation-free' is a STRUCTURAL property of the lever, NOT a tolerability/safety claim ([O]).",
+ "cross_package_contrast": "the nociceptor gate has no integral controller, so the analgesic L1 lever works ALONE; the MAP loop HAS one (the kidney reference), so the H3 analogue is rejected alone (RP4) and must be paired with an H1 reference reset. Same lever frame; the integrator is the difference.",
+ "levers": {
+  "H1": "reset the integrator reference DOWN -- lower the renal pressure-natriuresis / RAAS setpoint itself; the loop's target moves WITH the intervention so nothing opposes it (counter-regulation-free). Analgesic L3 analogue.",
+  "H2": "restore the fast restoring buffer -- strengthen baroreflex buffer gain so excursions self-correct toward the lower setpoint; raises the loop's own error-correcting current. Analgesic L2 analogue.",
+  "H3": "unload the effector, PAIRED-ONLY -- reduce SVR/volume pressor drive; alone it is rejected back (counter-regulation = the side-effect class), paired with H1 it is not. Analgesic L1 analogue, with the integrator caveat."
+ },
+ "proven_loop_anchors": {
+  "operating_point_opposed_back": true,
+  "operating_point_durable_drop_mmHg": 0.0,
+  "reference_reset_durable": true,
+  "reference_reset_durable_drop_mmHg": 17.0,
+  "hf_inotrope_margin_shrinks": true,
+  "hf_fourpillar_margin_grows": true
+ },
+ "firewall": "READS loop STRUCTURE (the proven RP4/T1 counter-regulation direction) and PLACES each axis in the lever map. NOT a drug, dose, efficacy, safety, tolerability, PK, or in-vivo selectivity (those are [O]). The per-axis molecular mechanism link is [O] cited biology, never derived from the loop read. 'Counter-regulation-free' is structural, not a safety/tolerability claim. No medical responsibility.",
+ "n_axes": 6,
+ "axes_by_lever": {
+  "H1": [
+   "renal_sympathetic",
+   "raas_ren",
+   "sodium_volume_reference"
+  ],
+  "H2": [
+   "baroreflex_piezo"
+  ],
+  "H3": [
+   "svr_effector"
+  ],
+  "H1-like (HF)": [
+   "hf_margin_fourpillar"
+  ]
+ },
+ "dna_grounded_axes": [
+  "raas_ren",
+  "sodium_volume_reference"
+ ],
+ "entries": [
+  {
+   "axis": "renal_sympathetic",
+   "lever": "H1",
+   "push_direction": "lower the renal sympathetic drive that holds the pressure-natriuresis reference high",
+   "node": "renal efferent sympathetic nerves",
+   "master_gene": null,
+   "measured_gamma": null,
+   "dna_grounded": false,
+   "counter_regulation": "free (reference moves; no operating-point error to reject)",
+   "selectivity_tier": "renal-reference axis (cited): renal denervation lowers the defended reference",
+   "burden_tier": "Tier-1 resistant/essential hypertension",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "Bohm 2020 Lancet 395:1444 (SPYRAL-HTN-ON-MED); FDA approval of renal denervation 2023"
+  },
+  {
+   "axis": "raas_ren",
+   "lever": "H1",
+   "push_direction": "down-regulate the RAAS drive (renin-angiotensin-aldosterone) that raises the renal reference",
+   "node": "raas_endocrine",
+   "master_gene": "REN",
+   "measured_gamma": 1.3634,
+   "dna_grounded": true,
+   "counter_regulation": "free (reference axis; RAAS blockade resets the defended pressure, T1)",
+   "selectivity_tier": "RAAS reference axis (cited): the slow integrator's hormonal arm; REN node is DNA-grounded",
+   "burden_tier": "Tier-1 essential hypertension + HF overlap",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "Guyton 1972 (pressure-natriuresis/RAAS integral control); ACEi/ARB/MRA renal-reference backbone [L]"
+  },
+  {
+   "axis": "sodium_volume_reference",
+   "lever": "H1",
+   "push_direction": "lower the sustained Na+/volume load that sets the renal pressure-natriuresis reference",
+   "node": "kidney_volume_integrator",
+   "master_gene": "SIX2",
+   "measured_gamma": 1.5556,
+   "dna_grounded": true,
+   "counter_regulation": "free (the integrator's own reference is lowered, RP3/RP4)",
+   "selectivity_tier": "volume-reference axis (cited): sustained Na/weight reduction resets the integrator",
+   "burden_tier": "Tier-1 essential hypertension (population-attributable)",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "INTERSALT / DASH-sodium (Na-BP exposure-response) [L]; the kidney integrator is SIX2-grounded"
+  },
+  {
+   "axis": "baroreflex_piezo",
+   "lever": "H2",
+   "push_direction": "restore baroreflex buffer gain (PIEZO1/2 stretch transduction) so excursions self-correct",
+   "node": "baroreceptor",
+   "master_gene": null,
+   "measured_gamma": null,
+   "dna_grounded": false,
+   "counter_regulation": "low (improves the loop's own error correction; does not fight the setpoint, RP2/RP6)",
+   "selectivity_tier": "fast-buffer axis (cited): baroreflex activation; PIEZO1/2 is the stretch sensor",
+   "burden_tier": "Tier-2 resistant hypertension / autonomic lability",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "Zeng 2018 Science 362:464 (PIEZO1/2 baroreceptor); baroreflex activation therapy [L]"
+  },
+  {
+   "axis": "svr_effector",
+   "lever": "H3",
+   "push_direction": "reduce SVR / volume pressor drive at the effector -- PAIRED with H1 only",
+   "node": "vascular_resistance",
+   "master_gene": null,
+   "measured_gamma": null,
+   "dna_grounded": false,
+   "counter_regulation": "PRONE alone (operating-point push is rejected back, RP4 -> the side-effect class); FREE only when paired with an H1 reference reset",
+   "selectivity_tier": "effector axis (cited): vasodilators/diuretics; durable ONLY with a renal/volume arm",
+   "burden_tier": "adjunct (paired); monotherapy escapes",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "vasodilator-monotherapy escape without a volume/renal arm; the diuretic/renal backbone [L]"
+  },
+  {
+   "axis": "hf_margin_fourpillar",
+   "lever": "H1-like (HF)",
+   "push_direction": "grow the basin margin M=spinodal(kappa)-|load| by load-reduce + cycle-break, never effector-flog",
+   "node": "cardiac high-output basin",
+   "master_gene": null,
+   "measured_gamma": null,
+   "dna_grounded": false,
+   "counter_regulation": "margin grows (T2): load reduction + neurohormonal cycle-break restores the basin; inotrope flogging SHRINKS the margin (accelerated collapse)",
+   "selectivity_tier": "HF margin axis (cited): the four-pillar direction (ARNI/BB/MRA/SGLT2i)",
+   "burden_tier": "Tier-1 chronic heart failure",
+   "grade_lever": "[V] structural direction read off the PROVEN loop (RP4 reject / T1 durable; no new math)",
+   "grade_mechanism": "[O] cited biology: the loop read PLACES the axis in the lever map; the receptor/transporter/channel pharmacology is NOT derived from the read",
+   "grade_clinical_map": "[O] OPEN -- not a drug, dose, efficacy, safety, tolerability, or in-vivo selectivity",
+   "context_grade": "CITED Layer-2 biology (not a loop output)",
+   "src": "PROMISE milrinone +28% mortality (Packer 1991) vs four pillars (PARADIGM-HF/CIBIS-II/RALES/DAPA-HF) [L]"
+  }
+ ]
+}

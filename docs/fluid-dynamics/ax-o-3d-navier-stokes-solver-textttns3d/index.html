@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 3D Navier–Stokes solver (ns3d.py) — Configured Continuum Appendix O | Jamming Physics</title>
+<meta name="description" content=")} A 3D pseudo-spectral solver (velocity/rotational form, 2/3 dealiasing, integrating-factor RK4) with low-k forcing and the filtered (Germano) energy-flux…">
+<link rel="canonical" href="https://jamming-physics.org/fluid-dynamics/ax-o-3d-navier-stokes-solver-textttns3d/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The 3D Navier–Stokes solver (ns3d.py) — Configured Continuum Appendix O | Jamming Physics"><meta property="og:description" content=")} A 3D pseudo-spectral solver (velocity/rotational form, 2/3 dealiasing, integrating-factor RK4) with low-k forcing and the filtered (Germano) energy-flux…"><meta property="og:url" content="https://jamming-physics.org/fluid-dynamics/ax-o-3d-navier-stokes-solver-textttns3d/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The 3D Navier–Stokes solver (ns3d.py) — Configured Continuum Appendix O | Jamming Physics"><meta name="twitter:description" content=")} A 3D pseudo-spectral solver (velocity/rotational form, 2/3 dealiasing, integrating-factor RK4) with low-k forcing and the filtered (Germano) energy-flux…">
+<link rel="stylesheet" href="/fluid-dynamics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The 3D Navier–Stokes solver (ns3d.py)", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Configured Continuum", "identifier": "10.5281/zenodo.17972568", "sameAs": "https://doi.org/10.5281/zenodo.17972568"}, "position": 29, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "license": "https://creativecommons.org/licenses/by/4.0/", "identifier": "10.5281/zenodo.17972568", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/", "knowsAbout": ["jamming lattice", "configured continuum", "The 3D Navier–Stokes solver (ns3d.py)"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+ {"@type":"ListItem","position":2,"name":"Configured Continuum","item":"https://jamming-physics.org/fluid-dynamics/"},
+ {"@type":"ListItem","position":3,"name":"Appendix O The 3D Navier\u2013Stokes solver (ns3d.py)"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; Appendix O</nav></header>
+<main>
+<h1>The 3D Navier–Stokes solver (ns3d.py)</h1>
+<p class="answer">A 3D pseudo-spectral solver (velocity/rotational form, 2/3 dealiasing, integrating-factor RK4) with low-k forcing and the filtered (Germano) energy-flux diagnostic—the 3D version of Pillar IV's flux test (ledger row IV/3D). The solver is validated by inviscid energy conservation to machine precision (Δ E/E∼10⁻¹⁶) and divergence-freeness (∼10⁻¹⁴).</p>
+<p class="abstract">)} A 3D pseudo-spectral solver (velocity/rotational form, 2/3 dealiasing, integrating-factor RK4) with low-k forcing and the filtered (Germano) energy-flux diagnostic—the 3D version of Pillar IV's flux test (ledger row IV/3D). The solver is validated by inviscid energy conservation to machine precision (Δ E/E∼10⁻¹⁶) and divergence-freeness (∼10⁻¹⁴).</p>
+<aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
+<p>)}
+A 3D pseudo-spectral solver (velocity/rotational form, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/idba1a5955a25.svg" loading="lazy" alt="2/3"> dealiasing,
+integrating-factor RK4) with low-<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i201c8ce0670e.svg" loading="lazy" alt="k"> forcing and the filtered (Germano) energy-flux
+diagnostic—the 3D version of Pillar IV's flux test (ledger row IV/3D). The solver
+is validated by inviscid energy conservation to machine precision (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i262c3e0589ee.svg" loading="lazy" alt="\Delta E/E\sim10^{-16}">) and divergence-freeness (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i2b683d105b59.svg" loading="lazy" alt="\sim10^{-14}">). Forcing drives a
+developed cascade (velocity-derivative skewness <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/icf9bd20c67db.svg" loading="lazy" alt="\approx-0.5">, the canonical
+value), in which the forward energy flux <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia073556b01e3.svg" loading="lazy" alt="\Pi=-\tau_{ij}\bar S_{ij}"> is <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i009a53a87a4b.svg" loading="lazy" alt="94">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8d81c1dad459.svg" loading="lazy" alt="95\%">
+forward and concentrates on intense-strain events: the top <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id45db06dd5bb.svg" loading="lazy" alt="20\%"> of the strain
+field carries <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia039415bee77.svg" loading="lazy" alt="\approx60">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8d2fb0e18ddd.svg" loading="lazy" alt="66\%"> of the forward flux, <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iade12628abeb.svg" loading="lazy" alt="\approx10">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4bf52f1bf01f.svg" loading="lazy" alt="14\%"> of the
+volume carries half, and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i20bcda07fb68.svg" loading="lazy" alt="\mathrm{corr}(\Pi,|\bar S|^2)\approx0.80"> (the flux is
+strain-aligned, not vorticity-aligned). The result is resolution-converged across
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0cb905c2e7a8.svg" loading="lazy" alt="N=64,80,96,128"> at fixed physical filter scale. The shipped <code>__main__</code> runs
+a lighter <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifef620f629f7.svg" loading="lazy" alt="N=48"> developed case (still skewness <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie7b2bb949168.svg" loading="lazy" alt="{\approx}{-}0.4">, same
+concentration) for quick reproduction; the converged <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0cb905c2e7a8.svg" loading="lazy" alt="N=64,80,96,128"> figures were
+obtained with the accompanying checkpointed forced driver <code>run3d.py</code> and the
+flux-concentration measurement tool <code>measure3d.py</code> (the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i93e790d396f9.svg" loading="lazy" alt="N=128"> field was
+reached by spectral prolongation of the developed <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i52ae462fd14d.svg" loading="lazy" alt="N=96"> field, energy preserved to
+machine precision, then equilibrated under identical physics). Full source is shipped
+as <code>ns3d.py</code> (solver), <code>run3d.py</code> (checkpointed driver), and
+<code>measure3d.py</code> (measurement). The only residual is the infinite-Reynolds asymptotic, the open
+Onsager/Duchon–Robert problem.</p>
+<nav class="pn"><a rel="prev" href="/fluid-dynamics/ax-n-multidimensional-flux-module-textttmultid-flux/">&larr; Appendix N</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/ax-p-event-rg-module-textttevent-rg/">Appendix P &rarr;</a></nav>
+</main>
+<footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
+<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></footer>
+</body>
+</html>

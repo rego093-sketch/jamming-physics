@@ -1,0 +1,54 @@
+{
+ "_meta": {
+  "title": "Ephaptic / endogenous near-field properties — locked, cited measured inputs for neuro §19",
+  "what": "Three independent measured anchors that pin the ABSOLUTE near-field magnitude §15/§18 left as [O] (alpha_em) and let the induced membrane polarization be DERIVED, not asserted.",
+  "derivation": "induced somatic polarization dVm = (Bikson 2004 sensitivity) x (Frohlich&McCormick 2010 endogenous field); validated by CONTAINMENT in Anastassiou 2011's independently-measured <0.5 mV.",
+  "validated_claim": "the endogenous cortical near-field is AT the measured ephaptic-effect threshold (dVm ~0.275 mV, contained in Anastassiou <0.5 mV; entrainment threshold within the endogenous range) - it is NOT negligibly weak. This CORRECTS the '§18 incidental EEG field is weak' framing (which is true only of the SCALP signal).",
+  "open_O": "the ABSOLUTE field in the package's own dimensionless §18 units (= the measured-input alpha_em); the in-vitro(0.87)/in-vivo(2.29) state dependence; whether the measured spike-timing entrainment is FUNCTIONALLY USED by cognition (-> Mind).",
+  "retired_unchanged": "the FAR-field radiative carrier stays retired (radiated fraction ~1e-16, §18 PART 0); light-speed axon stays retired; coherent radiative broadcast stays retired (tissue decoherence). §19 concerns ONLY the quasi-static NEAR field (instantaneous, 1/r^3, local) - orthogonal to the radiative claims.",
+  "payload_sha256_note": "sha256 over json.dumps(measured, sort_keys=True, separators=(',',':')) - the §19 module asserts this on load; any silent edit fails the gate.",
+  "payload_sha256": "efcce331a9af9cad4b38d83ed873fcdd2f6054d25f77353113a9a9aba2451e4a"
+ },
+ "measured": {
+  "frohlich_mccormick_2010": {
+   "ref": "Frohlich F, McCormick DA (2010) Neuron 67(1):129-143",
+   "doi": "10.1016/j.neuron.2010.06.005",
+   "pmid": "20624597",
+   "endogenous_E_field_mV_per_mm": {
+    "in_vivo_avg_abs": 2.29,
+    "in_vivo_avg_abs_sd": 0.27,
+    "in_vivo_pos_peak": 2.36,
+    "in_vivo_pos_peak_sd": 0.28,
+    "in_vitro_avg_abs": 0.87,
+    "in_vitro_avg_abs_sd": 0.095,
+    "cortex_max": 4.52,
+    "n_penetrations_in_vivo": 7
+   },
+   "entrainment_threshold_note": "weak EFs enhance and entrain the neocortical slow oscillation with an amplitude threshold WITHIN the range of in-vivo endogenous field strengths (i.e. the endogenous field sits at, not below, the entraining threshold)"
+  },
+  "bikson_2004": {
+   "ref": "Bikson M, Inoue M, Akiyama H, Deans JK, Fox JE, Miyakawa H, Jefferys JGR (2004) J Physiol 557(Pt 1):175-190",
+   "doi": "10.1113/jphysiol.2003.055772",
+   "pmid": "14978199",
+   "somatic_polarization_sensitivity_mV_per_mV_per_mm": 0.12,
+   "somatic_polarization_sensitivity_sd": 0.05,
+   "linear_field_range_mV_per_mm": 40,
+   "membrane_time_constant_ms_range": [
+    15,
+    70
+   ],
+   "note": "uniform DC field parallel to somato-dendritic axis; field->somatic polarization is LINEAR at 0.12 +/- 0.05 mV per (mV/mm)"
+  },
+  "anastassiou_2011": {
+   "ref": "Anastassiou CA, Perin R, Markram H, Koch C (2011) Nat Neurosci 14(2):217-223",
+   "doi": "10.1038/nn.2727",
+   "induced_somatic_dVm_subthreshold_mV_upper_bound": 0.5,
+   "note": "extracellular fields induced ephaptically-mediated somatic dVm < 0.5 mV under subthreshold conditions; despite the small size these fields strongly ENTRAIN spike timing, particularly for slow oscillations"
+  },
+  "buzsaki_anastassiou_koch_2012": {
+   "ref": "Buzsaki G, Anastassiou CA, Koch C (2012) Nat Rev Neurosci 13(6):407-420 (origin of EEG/ECoG/LFP/spikes)",
+   "doi": "10.1038/nrn3241",
+   "note": "canonical account: scalp EEG is the volume-conducted, strongly attenuated far signal; the LFP near the sources is orders of magnitude larger. 'EEG is weak' refers to the SCALP signal, not the local near-field."
+  }
+ }
+}

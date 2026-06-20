@@ -1,0 +1,30 @@
+# VP Time-Gravity SSOT ledger (deterministic; standard-library)
+# provenance: C=299792458 exact; G=6.67430e-11 (magnitude=[O] m_q);,NU_E=1[F]; NU_P=3*pi^4[F]; MP_ME=6*pi^5[F]
+
+quantity,closed_form,value,unit,grade,note
+NU_E,1 (eq phy-12-014),1.0,-,[F],electron clock unit
+NU_P,3*pi^4,292.227273,s^-1,[F],proton grind (LOCK-NU-N)
+m_p/m_e,6*pi^5 = 2*pi*NU_P,1836.118109,-,[F],mass-rate identity; -19 ppm vs measured 1836.153
+
+# G-RIVER : sqrt(1 - v_river^2/c^2) == exact Schwarzschild sqrt(1 - 2GM/rc^2)
+body,R_m,v_river_mps,v_river_over_c,f_river,f_schwarzschild,abs_diff,identical,grade
+Moon,1.737e+06,2375.06,7.922358e-06,0.999999999968618,0.999999999968618,0.000e+00,True,[F?]
+Earth,6.371e+06,11186.2,3.731303e-05,0.999999999303869,0.999999999303869,0.000e+00,True,[F?]
+Sun,6.963e+08,617500,2.059759e-03,0.999997878694752,0.999997878694752,0.000e+00,True,[F?]
+WhiteDwarf,7e+06,6.15866e+06,2.054308e-02,0.999788968693247,0.999788968693247,0.000e+00,True,[F?]
+NeutronStar,1.2e+04,1.75998e+08,5.870674e-01,0.809538079345378,0.809538079345378,0.000e+00,True,[F?]
+
+# REL-MATCH : leading combined (GPS expr) vs exact medium-kinematic; O(x^2) departure
+body,x=GM/Rc^2,f_leading_GPS,f_exact_river*motion,grav_depart_lead_vs_exact,predicted_O(x^2)=x^2/2,grade
+Moon,3.138187e-11,0.999999999885126,0.999999999885126,0.000e+00,4.924e-22,[F]@O(c^-2)
+Earth,6.961311e-10,0.999999999220376,0.999999999220376,0.000e+00,2.423e-19,[F]@O(c^-2)
+Sun,2.121303e-06,0.999997878613509,0.999997878611260,2.250e-12,2.250e-12,[F]@O(c^-2)
+WhiteDwarf,2.110090e-04,0.999788990876861,0.999788968609772,2.227e-08,2.226e-08,[F]@O(c^-2)
+NeutronStar,1.723240e-01,0.827675950871609,0.809538079277787,1.814e-02,1.485e-02,[F]@O(c^-2)
+
+"# TWO-V : mass-current (~1/r^2, bookkeeping) vs river (~1/sqrt r, time-dilation)"
+body,r_over_R,v_masscurrent,vmc_over_vriverR,v_river_at_r,vriv_over_vriverR,grade
+Earth,1.0,11186.2,1.000000e+00,11186.2,1.000000,[F] shapes
+Earth,2.0,2796.54,2.500000e-01,7909.81,0.707107,[F] shapes
+Earth,4.0,699.135,6.250000e-02,5593.08,0.500000,[F] shapes
+Earth,8.0,174.784,1.562500e-02,3954.91,0.353553,[F] shapes

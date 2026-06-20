@@ -1,0 +1,202 @@
+{
+ "disease": "Gaucher disease",
+ "omim": "230800",
+ "status": "RESOLVED",
+ "emergence": {
+  "disease": "Gaucher disease",
+  "omim": "230800",
+  "summary": "Loss-of-function of lysosomal acid beta-glucosidase (GBA1 / glucocerebrosidase) lowers the catabolism of glucosylceramide, so the substrate accumulates in macrophages. The throughput axis is driven DOWN; correction is to restore enzymatic throughput (replace the enzyme / stabilise residual enzyme) or to lower the substrate load upstream.",
+  "emergent_axis": "lysosomal glucosylceramide catabolism (acid beta-glucosidase throughput)",
+  "organism": "Homo sapiens",
+  "n_causal_genes": 1,
+  "n_emerged": 1,
+  "suspended_genes": [],
+  "per_gene": [
+   {
+    "gene": "GBA1",
+    "gamma": 1.4158,
+    "spinodal_h_sp": 0.64841,
+    "barrier": 0.50112,
+    "dwell_relative_size": 1.53148,
+    "role": "enzyme",
+    "disease_mechanism": "LOF",
+    "perturbation_direction": "DOWN",
+    "perturbation_int": -1,
+    "perturbation_reason": "pathway throughput down -> substrate accumulates",
+    "ncbi": {
+     "acc": "NC_000001.11",
+     "gene_start": 155234451,
+     "gene_end": 155244626,
+     "strand": "-",
+     "window": "TSS-2000..+500",
+     "description": "glucosylceramidase beta 1"
+    },
+    "grades": {
+     "gamma_read": "[V] reproducible promoter switch-threshold read",
+     "switch_threshold": "[V] R19 |h_sp| and barrier (locked forms)",
+     "perturbation_direction": "[F] forced by (role x mechanism); cited biology",
+     "perturbation_magnitude": "[O] OPEN -- how far the switch moves is runtime/Layer-2, not sequence-derivable"
+    },
+    "note": "lysosomal acid beta-glucosidase (glucocerebrosidase); LOF lowers glucosylceramide catabolism -> substrate accumulates (Gaucher cells). NCBI official symbol GBA1 (formerly GBA).",
+    "src": "Brady 1965 (enzyme defect); Beutler & Grabowski 2001 OMMBID"
+   }
+  ],
+  "primary_switch": {
+   "gene": "GBA1",
+   "role": "enzyme",
+   "mechanism": "LOF",
+   "emergent_axis_direction": "DOWN",
+   "reason": "pathway throughput down -> substrate accumulates"
+  },
+  "firewall": "gamma reads promoter switch-threshold STRUCTURE only; perturbation DIRECTION is forced+cited; MAGNITUDE is [O] (runtime/Layer-2, not sequence-derivable).",
+  "determinism_sha": "6e30a00efb32"
+ },
+ "treatment_A_switch": {
+  "disease": "Gaucher disease",
+  "pathway": "A: switch adjustment",
+  "pathology_axis_direction": "DOWN",
+  "corrective_axis_direction": "UP",
+  "levers": [
+   {
+    "lever": "replace",
+    "target_gene": "GBA1",
+    "push_direction": "supply recombinant acid beta-glucosidase -> restore catabolic throughput (axis UP)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "enzyme replacement (imiglucerase, velaglucerase alfa, taliglucerase alfa)",
+    "status": "approved",
+    "mechanism_grade": "[O] restored throughput / substrate-clearance magnitude not derived from sequence",
+    "src": "Barton 1991 NEJM 324:1464; imiglucerase (Cerezyme) FDA 1994"
+   },
+   {
+    "lever": "correct",
+    "target_gene": "GBA1",
+    "push_direction": "stabilise the residual mutant enzyme fold so more functional enzyme reaches the lysosome (chaperone-style rescue; allele-dependent)",
+    "axis_effect": "UP",
+    "verdict_vs_pathology": "CORRECTS",
+    "agent_class": "pharmacological chaperone (ambroxol -- investigational)",
+    "status": "clinical",
+    "mechanism_grade": "[O] fold-stabilisation magnitude / allele responsiveness not derived from sequence",
+    "src": "Maegawa 2009 JBC 284:23502; Narita 2016 (ambroxol)"
+   }
+  ],
+  "n_corrective": 2,
+  "n_worsening": 0,
+  "lead_corrective_lever": {
+   "lever": "replace",
+   "target_gene": "GBA1",
+   "push_direction": "supply recombinant acid beta-glucosidase -> restore catabolic throughput (axis UP)",
+   "axis_effect": "UP",
+   "verdict_vs_pathology": "CORRECTS",
+   "agent_class": "enzyme replacement (imiglucerase, velaglucerase alfa, taliglucerase alfa)",
+   "status": "approved",
+   "mechanism_grade": "[O] restored throughput / substrate-clearance magnitude not derived from sequence",
+   "src": "Barton 1991 NEJM 324:1464; imiglucerase (Cerezyme) FDA 1994"
+  },
+  "switch_state_emergence": {
+   "dwell_healthy": 1.53148,
+   "dwell_disease": 0.99096,
+   "dwell_treated": 1.25718,
+   "ordering_disease_lt_treated_lt_healthy": true,
+   "recovery_fraction_of_deficit": 0.4925,
+   "modelling": {
+    "delta": 0.6,
+    "treat_frac": 0.6,
+    "grade": "[F] ordering forced ; delta/treat_frac documented choices ; realised magnitude [O]"
+   }
+  },
+  "firewall": "levers are DIRECTION + cited agent CLASS; not dose/potency/efficacy/safety, not a recommendation to treat any individual.",
+  "determinism_sha": "4abe15fc9ac7"
+ },
+ "treatment_B_chem": {
+  "disease": "Gaucher disease",
+  "pathway": "B: drug development (VP chemistry feasibility)",
+  "geometry_primitive_deg": 109.4712,
+  "body_T_K": 310.15,
+  "n_candidates": 2,
+  "n_open_inputs": 4,
+  "candidates": [
+   {
+    "candidate": "substrate-reduction (glucosylceramide-synthase inhibition)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "lower glucosylceramide synthesis upstream -> less substrate for the deficient catabolic step",
+    "rationale": "reduces influx into the throttled catabolic step; pathway-B reports the equilibrium-feasibility DIRECTION only. Measured thermodynamics not supplied here -> [O] (no number -> hold it).",
+    "status": "approved",
+    "src": "Cox 2000 Lancet 355:1481 (miglustat); eliglustat (Cerdelga) FDA 2014"
+   },
+   {
+    "candidate": "pharmacological chaperone (ambroxol)",
+    "T_K": 310.15,
+    "reads": {},
+    "open": [
+     "dH/dS not supplied -> equilibrium feasibility [O]",
+     "measured dG_bind not supplied -> Sabatier window [O]"
+    ],
+    "firewall": "VP-chemistry feasibility/geometry primitives only; NOT affinity, potency, dose, selectivity, ADMET, efficacy, or safety.",
+    "modality": "stabilise residual mutant GCase fold (cofactor/chaperone-style stabilisation)",
+    "rationale": "a stabilising binder would restore partial fold/throughput for chaperone-responsive missense alleles; the feasibility QUESTION is reported, the thermodynamics are not supplied -> [O].",
+    "status": "clinical",
+    "src": "Narita 2016; Maegawa 2009"
+   }
+  ],
+  "firewall": "VP-chemistry feasibility/geometry only; NOT affinity/potency/dose/selectivity/ADMET/efficacy/safety; NOT a treatment recommendation.",
+  "determinism_sha": "ec18c8b2eb03"
+ },
+ "falsifiers": [
+  {
+   "claim": "GBA1 LOF lowers lysosomal glucosylceramide catabolism (substrate accumulates)",
+   "falsifier": "a GBA1 LOF allele that INCREASES glucocerebrosidase throughput, or macrophages in which GBA1 loss REDUCES glucosylceramide, refutes the throughput-down direction",
+   "measurable_by": "lysosomal glucocerebrosidase activity and glucosylceramide level in GBA1-deficient macrophages"
+  },
+  {
+   "claim": "restoring enzyme throughput (replace / correct) is the CORRECTIVE direction",
+   "falsifier": "if supplying or stabilising the enzyme REDUCED catabolic throughput or RAISED substrate, the 'replace enzyme' lever sign is wrong",
+   "measurable_by": "substrate-clearance response to recombinant glucocerebrosidase in patient-derived macrophages"
+  }
+ ],
+ "honesty_gates": {
+  "OVERALL": "PASS",
+  "gate_forbidden": {
+   "gate": "forbidden-claim scan",
+   "PASS": true,
+   "per_artifact": {
+    "emergence": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_A": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    },
+    "treatment_B": {
+     "forbidden_hits": [],
+     "has_firewall": true,
+     "discloses_open": true,
+     "PASS": true
+    }
+   }
+  },
+  "gate_falsifiers": {
+   "gate": "falsifier register (>=1 measurable falsifier per disease)",
+   "PASS": true,
+   "per_disease": {
+    "Gaucher disease": {
+     "n_falsifiers": 2,
+     "PASS": true
+    }
+   }
+  },
+  "determinism_sha": "b02f17c79fcc"
+ },
+ "determinism_sha": "ba791a066580"
+}

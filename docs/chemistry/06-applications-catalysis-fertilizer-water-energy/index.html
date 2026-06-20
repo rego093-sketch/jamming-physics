@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applications — VP Chemistry &amp; EM §6 | Jamming Physics</title>
+<meta name="description" content="One d-band engine across applications: ammonia synthesis, water electrolysis, energy storage, new materials, and CO₂ reduction (uniqueness of copper for hydro">
+<link rel="canonical" href="https://jamming-physics.org/chemistry/06-applications-catalysis-fertilizer-water-energy/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="Applications — VP Chemistry &amp; EM §6 | Jamming Physics"><meta property="og:description" content="One d-band engine across applications: ammonia synthesis, water electrolysis, energy storage, new materials, and CO₂ reduction (uniqueness of copper for hydro"><meta property="og:url" content="https://jamming-physics.org/chemistry/06-applications-catalysis-fertilizer-water-energy/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Applications — VP Chemistry &amp; EM §6 | Jamming Physics"><meta name="twitter:description" content="One d-band engine across applications: ammonia synthesis, water electrolysis, energy storage, new materials, and CO₂ reduction (uniqueness of copper for hydro">
+<link rel="stylesheet" href="/chemistry/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Applications: catalysis, fertilizer, water, energy, materials", "isPartOf": {"@type": "CreativeWorkSeries", "name": "VP Chemistry & EM", "identifier": "10.5281/zenodo.20680540", "sameAs": "https://doi.org/10.5281/zenodo.20680540"}, "position": 6, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "10.5281/zenodo.20680540", "datePublished": "2026-06-15", "dateModified": "2026-06-15", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/06-applications-catalysis-fertilizer-water-energy/", "knowsAbout": ["d-band descriptor", "ammonia synthesis", "water electrolysis", "CO2 reduction"], "license": "https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "VP Chemistry & EM", "item": "https://jamming-physics.org/chemistry/"}, {"@type": "ListItem", "position": 3, "name": "§6 Applications"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §6</nav></header>
+<main>
+<h1>Applications: catalysis, fertilizer, water, energy, materials</h1>
+
+<p class="answer">A single d-band descriptor spans the applications: it places the ammonia apex at Fe/Ru, bounds water electrolysis by the OER scaling floor, and explains why copper alone converts CO₂ into hydrocarbons. Energy storage is Dulong–Petit real and Carnot-bounded; magnetic desalination fails and is refuted and replaced.</p>
+
+<p class="abstract">A single d-band descriptor spans the applications: it places the ammonia apex at Fe/Ru, bounds water electrolysis by the OER scaling floor, and explains why copper alone converts CO₂ into hydrocarbons. Energy storage is real in its Dulong–Petit heat capacity and Carnot-bounded in conversion; mechanisms that fail (magnetic desalination) are refuted and replaced.</p>
+
+<aside class="claim-strip page">
+  <span class="grade g-forced">[F] forced</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/06-applications-catalysis-fertilizer-water-energy/" rel="noopener">Reproduction code (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
+</aside>
+<aside class="vp-card" data-locked="d_band"><b>d-band centre ε_d</b> — the d-band centre relative to the Fermi level sets adsorbate binding strength, so it predicts catalytic activity (Sabatier optimum). <b>[CAL]→[F]</b> calibrated descriptor, forced trend. <a href="/chemistry/05-platinum-catalysis-d-band-descriptor/#ct.3-the-d-band-center-calf" rel="noopener">Canonical derivation §5 (CT.3)</a></aside>
+
+<p>CT (catalysis), EM (electromagnetism). Status grades:
+<strong>[F]</strong> forced (zero free parameters) ·
+<strong>[F?]</strong> forced-candidate · <strong>[CAL]</strong>
+calibration input (measured constant) · <strong>[V]</strong>
+simulation-measured · <strong>[H]</strong> hypothesis ·
+<strong>[O]</strong> open / refuted. Every numeric claim is reproduced
+by a deterministic, standard-library module (2× sha256 identical);
+module and case-ledger anchors are given inline.</p>
+<blockquote>
+<p>This chapter carries the metals account (CM/CT) into five practical
+domains: <strong>catalysts, fertilizer, water purification, energy
+storage, and new materials</strong>. Its method is the one that already
+succeeded for platinum (Chapter CT): where a speculative
+<em>amplitude/geometry</em> mechanism was proposed, it is tested; what
+does not survive is reported as refuted and <strong>re-grounded on
+validated physics</strong>; what does survive is kept and labelled. The
+result is a single thread — the <strong>d-band energy resonance</strong>
+— running through catalysis, fertilizer, and water electrolysis, with
+honest negative verdicts for two device claims that do not hold.</p>
+</blockquote>
+<h2 id="ca.0-the-central-method-re-grounding-not-decoration">CA.0 The
+central method: re-grounding, not decoration</h2>
+<p>The prior application materials built catalysis, desalination, and an
+energy device on an <em>electron amplitude</em> variable (fm-scale).
+Chapter CT showed by direct simulation that this variable is the wrong
+one: the geometric/amplitude resonance is a Bragg band edge (refuted),
+and platinum is reproduced only by the <strong>energy</strong> resonance
+— the d-band center (ε_d) coupling to the adsorbate level
+(Newns–Anderson / Hammer–Nørskov). This chapter applies that verdict
+everywhere: each application is rebuilt on the validated mechanism, and
+any device claim whose mechanism fails testing is reported as
+<strong>refuted</strong> or <strong>[H]</strong> with a working
+alternative supplied. Honesty about the two negative results (magnetic
+desalination; the ESS “amplitude → electricity” generator) is not a
+footnote — it is the chapter’s spine.</p>
+<h2 id="ca.1-the-d-band-engine-one-variable-for-three-reactions-vf">CA.1
+The d-band engine — one variable for three reactions
+<strong>[V]/[F?]</strong></h2>
+<p>Module <code>vp_dband_catalysis.py</code> generalises the platinum
+result into a reusable engine. A sharp adsorbate level broadens on
+coupling to the metal d-band (Newns–Anderson) <strong>[V]</strong>; the
+d-band center ε_d then <em>predicts</em> binding. For hydrogen the
+correlation with measured adsorption is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-06-001.svg" width="402" height="18" alt="r(\varepsilon_d,\ \Delta G_H) = -0.915 \quad\text{(strong, non-circular)} \;[\mathbf{F?}]," loading="lazy"></figure>
+<p>and the Sabatier volcano (activity peaked at Δ G_H≈ 0) reproduces the
+<strong>Pt apex</strong>. The <em>same engine</em> applied to nitrogen
+adsorption gives a different optimum and the <strong>Fe/Ru apex</strong>
+of the ammonia volcano. Crucially, the real tuning lever is the
+<strong>energy</strong>, not the lattice spacing: shifting ε_d by
+alloying or strain moves a metal along the volcano
+(<code>vp_dband_catalysis.py</code> §4). This <em>replaces</em> the
+refuted geometric resonance with a design rule that is actually used for
+electrodes. <strong>Falsifiable:</strong> HER apex at Δ G_H≈0 (Pt),
+ammonia apex at E_N≈-0.5 eV (Fe/Ru); break either ordering and the
+d-band picture is discarded.</p>
+<h2 id="ca.2-fertilizer-ammonia-synthesis-ff">CA.2 Fertilizer — ammonia
+synthesis <strong>[F]/[F?]</strong></h2>
+<p>Nitrogen fixation N₂ + 3H₂ leftharpoons 2NH₃ underpins half the human
+food supply. Module <code>vp_ammonia_synthesis.py</code> closes it with
+the two VP pillars — equilibrium (CH.8) and the d-band catalyst engine
+(CA.1).</p>
+<p><strong>Equilibrium forces the conditions [F].</strong> With Δ
+H^∘=-91.8 kJ/mol (exothermic) and Δ S^∘=-198.1 J/mol·K (gas moles 4→2),
+Δ G^∘=Δ H-TΔ S gives the crossover T⁽*) = Δ H/Δ S = 463 K, where
+K=1.000. Below it the reaction is favoured but N₂ is kinetically inert;
+above it the equilibrium yield collapses. The module solves the
+stoichiometric equilibrium and reproduces the <strong>Le Chatelier
+compromise</strong> quantitatively — e.g. equilibrium NH₃ rises with
+pressure (Δ n=-2) and falls with temperature:</p>
+<table>
+<thead>
+<tr class="header">
+<th>condition</th>
+<th>1 atm</th>
+<th>100 atm</th>
+<th>200 atm</th>
+<th>400 atm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>500 K</td>
+<td>10.8%</td>
+<td>76.3%</td>
+<td>82.6%</td>
+<td>87.3%</td>
+</tr>
+<tr class="even">
+<td>700 K</td>
+<td>0.6%</td>
+<td>29.1%</td>
+<td>40.7%</td>
+<td>52.4%</td>
+</tr>
+</tbody>
+</table>
+<p>This is exactly why industry runs ≈450 °C / 150–300 atm / Fe catalyst
+— a forced three-way compromise, not a tuned choice.</p>
+<p><strong>Catalysis selects the metal [F?].</strong> The rate-limiting
+step is dissociation of N≡ N (945 kJ/mol, among the strongest bonds; the
+bond-energy sum reproduces Δ H≈-93 kJ/mol, sign and magnitude correct).
+The catalyst volcano in the nitrogen-binding descriptor peaks at
+<strong>Fe/Ru/Os</strong> — the industrial Haber–Bosch catalysts — with
+Mo/W too strong (N trapped) and Ni/Pt too weak (no dissociation). The
+volcano comes from the d-band energy of CA.1, one thread with catalysis
+and water-splitting. Absolute rates, promoter (K₂O/Al₂O₃) effects, and
+surface microkinetics remain <strong>[O]</strong>.</p>
+<h2 id="ca.3-water-purification-i-electrolysis-electrodes-ff">CA.3 Water
+purification I — electrolysis electrodes <strong>[F]/[F?]</strong></h2>
+<p>Module <code>vp_water_electrolysis.py</code> carries the d-band
+engine to clean hydrogen and electrochemical water treatment. Water
+splitting 2H₂O→2H₂+O₂ has a reversible minimum E^∘₍cell)=1.229 V (Δ
+G=237 kJ/mol H₂) and a thermoneutral voltage Vₜₙ=Δ H/(nF)=1.481 V; the
+difference TΔ S=48.6 kJ/mol is supplied as heat <strong>[F]</strong>.
+The real cell voltage decomposes as V₍cell)=1.23+η₍HER)+η₍OER)+iR, and
+the single largest loss is the <strong>anode (OER)</strong>. The HER
+volcano (CA.1) places the cathode near solved (Pt apex). The OER is
+bounded by a <em>fundamental</em> limit: the universal scaling relation
+Δ G₍<em>OOH)-Δ G₍</em>OH)≈ 3.2 eV ties the intermediates, so the two
+middle steps cannot both be 1.23 eV and the best achievable
+overpotential is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-06-002.svg" width="271" height="21" alt="\eta_{\text{OER}}^{\min} = 1.6 - 1.23 = 0.37\ \text{V} \quad[\mathbf{F?}]," loading="lazy"></figure>
+<p>with the apex at <strong>RuO₂/IrO₂</strong> (the industrial OER
+catalysts). This 0.37 V is <em>why water-splitting is permanently
+expensive</em> on single-site catalysts — beating it requires breaking
+the scaling relation (bifunctional / 3D sites), an honest
+<strong>[O]</strong>. Faraday’s law gives 18.66 mmol H₂ per A·h
+<strong>[F]</strong> and a thermoneutral voltage efficiency Vₜₙ/V₍cell)≈
+81%. Electrocoagulation, electrodialysis, and capacitive deionization
+(CDI) extend the same electrode science to treatment and desalination —
+all charge/membrane/potential based, <strong>[F?]/[CAL]</strong>.</p>
+<h2
+id="ca.4-water-purification-ii-magnetic-desalination-an-honest-verdict-f-orefuted">CA.4
+Water purification II — magnetic desalination: an honest verdict
+<strong>[F] · [O]/refuted</strong></h2>
+<p>The prior materials proposed separating H₂O from Na⁺/Cl⁻ at 0.45 T by
+an <em>amplitude</em> difference. Module
+<code>vp_magnet_desalination.py</code> replaces the prose with the
+actual magnetic force. Water is weakly diamagnetic (χᵥ≈-9.05×10⁻⁶); its
+magnetic energy in a 0.45 T field is</p>
+<figure class="eq"><img src="/chemistry/eq/chemistry/chm-06-003.svg" width="197" height="41" alt="\frac{U_{\text{mag}}}{k_BT} \approx 5.3\times10^{-9} \quad[\mathbf{F}]," loading="lazy"></figure>
+<p>nine orders of magnitude below thermal energy — thermal motion
+overwhelms any magnetic ordering, so <strong>no separation
+occurs</strong>. To reach U₍mag)≈ k_BT would need B≈ 6173 T, physically
+impossible for a purifier (cf. ~45 T continuous, ~1200 T
+pulsed-destructive). The Lorentz force on flowing ions is real but ∼10⁻²
+k_BT across a channel: a field can stir (MHD) but cannot <em>desalinate
+by amplitude</em>. <strong>Verdict: the amplitude-separation device is
+refuted [O].</strong> The working alternatives are supplied with real
+numbers: reverse osmosis (seawater osmotic pressure π=i cRT≈ 30 bar,
+matching the measured ~27 bar; thermodynamic minimum ≈0.83 kWh/m³),
+electrodialysis, and CDI. This is the platinum pattern again — refute
+the wrong mechanism, keep the validated one.</p>
+<h2
+id="ca.5-energy-storage-black-copper-solar-ess-split-honestly-ff-halt">CA.5
+Energy storage — black-copper solar ESS, split honestly <strong>[F]/[F?]
+· [H]→alt</strong></h2>
+<p>Module <code>vp_ess_thermal.py</code> separates the device into a
+<strong>real storage part</strong> and a <strong>hypothetical generation
+part</strong>.</p>
+<p><strong>Storage is real and quantified.</strong> A black-copper
+absorber (αge0.98) at 800 W/m² collects ~4.7 kWh/day per m².
+High-heat-capacity media (alumina/sand) store it; the heat capacity is
+the Dulong–Petit 3R per atom of Chapter CH.7 (cₚ≈1223 J/kg·K at the
+high-T limit; measured 880 J/kg·K at room temperature), so a 1 m³ store
+holds <strong>~46 kWh</strong> of heat over a 118 K rise
+<strong>[F?]</strong>. Vacuum insulation gives a thermal time constant
+τ=mc/(UA)≈ 5.4 days <strong>[F?]</strong> — ample for overnight
+delivery.</p>
+<p><strong>Generation is hypothesis, with a working
+alternative.</strong> The claimed “rotation-amplitude → electric field”
+generator has no validated mechanism and is marked <strong>[H]</strong>.
+Heat-to-electricity is bounded by Carnot, η=1-T_c/Tₕ=28.2% at the
+storage temperature; realistic conversion uses a thermoelectric
+(Seebeck, ZT=1 → ~5.5%, ~2.5 kWh) or a Stirling engine (~½ Carnot →
+~14%, ~6.5 kWh) <strong>[F]</strong>. The honest split — real
+thermodynamic storage, unproven generator replaced by a heat engine — is
+the same discipline as CA.4.</p>
+<h2 id="ca.6-new-materials-black-copper-and-d-band-design-ff">CA.6 New
+materials — black copper and d-band design
+<strong>[F]/[F?]</strong></h2>
+<p>Module <code>vp_new_materials.py</code> explains the black-copper
+absorber by <em>optics</em>, not amplitude, and ties materials design to
+the d-band. Polished copper reflects (R≈0.97, absorptance α=0.03)
+because of its free-electron plasma (Chapter CM);
+nanostructured/oxidised copper raises α to ~0.96 (a ~32× gain) by
+graded-index impedance matching, light-trapping, and intrinsic CuO
+absorption <strong>[F?]</strong> — the same electromagnetic physics as
+the copper plasma/skin effect, not an fm-scale amplitude. A
+<strong>selective absorber</strong> then needs <em>low</em> infrared
+emittance: the Stefan–Boltzmann re-radiation P=εσ A(T⁴-T₍amb)⁴) at the
+storage temperature is +704 W net for ε=0.05 but <strong>−377 W for a
+blackbody surface</strong> (ε=0.90) — the latter <em>cannot even heat
+up</em> <strong>[F]</strong>. Thus low IR emittance is essential, a
+concrete falsifiable design rule. Beyond coatings, the d-band of CA.1 is
+the materials lever (alloying/strain tunes catalytic, electronic, and
+magnetic properties — the CM/CT trilogy), and crystal packing fractions
+remain pure geometry (FCC/HCP π/(3√2)=0.7405, <strong>[F]</strong>,
+CH.13).</p>
+<h2 id="ca.7-master-ledger-applications">CA.7 Master ledger —
+applications</h2>
+<p><strong>[F] forced (zero free parameters):</strong> ammonia T⁽*)=Δ
+H/Δ S, Le Chatelier directions, bond-energy Δ H sign; water-splitting
+1.23/1.48 V and Faraday 18.66 mmol/A·h; magnetic energy ≪ k_BT and the
+infeasible B; seawater osmotic pressure and desalination minimum energy;
+Dulong–Petit storage, thermal time constant, Carnot/Seebeck/Stirling
+efficiencies; Stefan–Boltzmann selective-absorber balance; crystal
+packing fractions.</p>
+<p><strong>[F?] forced-candidate:</strong> ε_d rightarrow binding
+correlations and volcano apexes (HER→Pt, NH₃→Fe/Ru, OER→RuO₂/IrO₂);
+d-band strain/alloy tuning; OER scaling-relation limit 0.37 V; absorber
+enhancement and selectivity.</p>
+<p><strong>[V] simulation-measured:</strong> Newns–Anderson
+adsorbate-DOS broadening; volcano reconstructions.</p>
+<p><strong>[CAL] calibration inputs:</strong> ε_d, Δ G_H, E_N, OER
+descriptors, Δ H/Δ S, bond energies, E^∘, susceptibility, emittance,
+insolation.</p>
+<p><strong>[H] hypothesis → alternative:</strong> the ESS “amplitude →
+electricity” generator (replaced by a heat engine).</p>
+<p><strong>[O] open / refuted:</strong> magnetic amplitude-desalination
+(refuted); absolute reaction rates and microkinetics; promoter effects;
+scaling-relation circumvention.</p>
+<h2 id="ca.8-falsification-criteria-f">CA.8 Falsification criteria
+<strong>[F]</strong></h2>
+<ul>
+<li>If the HER apex is not Pt (Δ G_H≈0) or the ammonia apex is not Fe/Ru
+(E_N≈-0.5 eV), the d-band volcano account is discarded.</li>
+<li>If exothermic ammonia equilibrium does not fall with temperature and
+rise with pressure, the equilibrium account is discarded.</li>
+<li>If a single-site OER catalyst stably shows η&lt;0.3 V, the
+scaling-relation limit needs revision.</li>
+<li>If a 0.45 T field measurably desalinates seawater, the
+magnetic-energy analysis is wrong (it is not: U₍mag)/k_BT∼10⁻⁹).</li>
+<li>If a non-selective (high-ε) black absorber maintains the storage
+temperature under the stated flux, the radiative-balance rule is
+wrong.</li>
+</ul>
+<h2 id="ca.9-reproducibility">CA.9 Reproducibility</h2>
+<p>Six deterministic, standard-library modules and three case ledgers
+(29 rows) reproduce this chapter; <code>verify_applications.py</code>
+checks execution, determinism (2× sha256), standard-library-only
+dependency, and ledger integrity in one pass (<strong>6/6 PASS, 29
+rows</strong>).</p>
+<pre><code>python3 verify_applications.py        # all modules + ledgers
+python3 vp_dband_catalysis.py         # HER→Pt, NH3→Fe/Ru, d-band tuning lever
+python3 vp_ammonia_synthesis.py       # Haber compromise, T*, catalyst volcano
+python3 vp_water_electrolysis.py      # 1.23/1.48 V, OER 0.37 V limit, Faraday
+python3 vp_magnet_desalination.py     # magnetic separation refuted; RO/ED/CDI
+python3 vp_ess_thermal.py             # thermal storage (CH.7); generation [H] + heat engine
+python3 vp_new_materials.py           # black-copper optics; selective absorber; packing</code></pre>
+<p><em>The five applications close on one idea carried from the metals
+trilogy: the <strong>d-electron energy</strong> (not a lattice geometry,
+not an amplitude) governs catalysis, and the same energy thread reaches
+fertilizer and water-splitting; thermodynamics governs equilibrium and
+storage; optics governs the absorber. Where a device mechanism could not
+be validated it is refuted or marked hypothesis and a working
+alternative is supplied. What is forced is falsifiable, what is measured
+is labelled, what is open is admitted — and all of it is
+reproducible.</em></p>
+<h2
+id="application-co₂-electrocatalytic-reduction-the-d-band-co-binding-descriptor-ff">Application:
+CO₂ Electrocatalytic Reduction — the d-band CO-binding descriptor
+<strong>[F]/[F?]</strong></h2>
+<p><em>Numbers reproduced by <code>vp_co2_reduction.py</code>
+(deterministic, standard-library, 2× sha256). This section re-grounds
+the carbon-dioxide problem on the verified d-band energy descriptor,
+replacing the refuted electron-amplitude account (in which CO₂
+“dissociated” when an amplitude exceeded ∼ 300 fm &gt;√2). The amplitude
+figure had no measured basis; the controlling variable is the ^</em>CO
+adsorption energy, exactly as for the hydrogen and nitrogen volcanoes
+(Chapter CT, §CA).*</p>
+<h2 id="the-mechanism-selectivity-is-set-by-co-binding-f">The mechanism
+— selectivity is set by ^*CO binding <strong>[F?]</strong></h2>
+<p>Electrochemical CO₂ reduction (CO₂RR) proceeds through adsorbed
+intermediates, and its <em>product selectivity</em> is governed by a
+single descriptor: the binding energy of adsorbed CO, Δ E₍CO) — the same
+d-band quantity that orders hydrogen (Δ G_H, apex Pt) and nitrogen (E_N,
+apex Fe/Ru). The rate-limiting first electron transfer to ^<em>CO₂⁻ /
+^</em>COOH / ^*OCHO is what a catalyst must stabilize; how well it does
+so tracks Δ E₍CO). The module finds Δ E₍CO) correlated with the Hammer–
+Nørskov d-band centre ε_d at r = -0.97 — confirming the descriptor and
+reusing the same engine, not a new one.</p>
+<h2
+id="thermodynamics-equilibria-near-0-v-onset-far-below-f">Thermodynamics
+— equilibria near 0 V, onset far below <strong>[F]</strong></h2>
+<p>The multi-electron product potentials (vs RHE) cluster near zero, yet
+the observed onset is much more negative (-0.8 to -1.1 V) because the
+CO₂⁽bullet-) radical anion lies near -1.9 V:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>n (e⁻)</th>
+<th>E^∘ (V vs RHE)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CO</td>
+<td>2</td>
+<td>-0.10</td>
+</tr>
+<tr class="even">
+<td>HCOOH (formate)</td>
+<td>2</td>
+<td>-0.12</td>
+</tr>
+<tr class="odd">
+<td>CH₃OH</td>
+<td>6</td>
+<td>+0.03</td>
+</tr>
+<tr class="even">
+<td>C₂H₄</td>
+<td>12</td>
+<td>+0.08</td>
+</tr>
+<tr class="odd">
+<td>CH₄</td>
+<td>8</td>
+<td>+0.17</td>
+</tr>
+<tr class="even">
+<td>(competing) H₂</td>
+<td>2</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p>These equilibria are forced from formation free energies by E^∘ = -Δ
+G^∘/(nF); the numeric gate independently reproduces E^∘(CO₂ → CO) =
+-0.104 V and E^∘(CO₂ → CH₄) = +0.169 V from Δ G_f data.</p>
+<h2 id="coppers-uniqueness-the-falsifiable-headline-f">Copper’s
+uniqueness — the falsifiable headline <strong>[F?]</strong></h2>
+<p>Sorting metals by Δ E₍CO) reproduces Hori’s four-group
+classification:</p>
+<ul>
+<li><strong>Strong binding</strong> (Pt, Pd, Ni, Rh, Co, Ru): the
+surface is CO-poisoned and evolves H₂.</li>
+<li><strong>Intermediate binding</strong> (Δ E₍CO) ≈ -0.5 eV): CO stays
+long enough to be reduced further to <strong>hydrocarbons and
+alcohols</strong> — this is <strong>copper, and copper alone</strong>
+among pure metals.</li>
+<li><strong>Weak binding</strong> (Au, Ag, Zn): CO desorbs and is the
+product (CO-selective).</li>
+<li><strong>sp-metals</strong> (Sn, Pb, Bi, In, Cd): bind ^*OCHO through
+oxygen and give <strong>formate</strong>.</li>
+</ul>
+<p>That copper is the only pure metal producing significant C₂+
+hydrocarbons is the central, established experimental fact (Hori),
+reproduced here as a consequence of intermediate ^*CO binding — the
+CO₂RR analogue of “Pt is the HER apex.”</p>
+<h2 id="the-scaling-relation-ceiling-f">The scaling-relation ceiling
+<strong>[F?]</strong></h2>
+<p>Because ^<em>COOH, ^</em>CO, and ^<em>CHO all bind through carbon,
+their energies scale together with a nearly constant offset Δ E₍CHO) ≈ Δ
+E₍CO) + 0.74 eV. The ^</em>CO → ^*CHO step is therefore
+potential-limiting, giving a methane limiting potential on copper of U_L
+≈ -0.74 V (Peterson–Nørskov). This 0.74 eV floor cannot be removed by
+tuning ε_d alone — a linear-scaling constraint that is the direct cousin
+of the OER 0.37 V overpotential floor in the water chapter. It is the
+reason CO₂RR is intrinsically difficult, stated as forced geometry of
+the scaling lines, not as a fitted loss.</p>
+<h2 id="grade-and-falsification">Grade and falsification</h2>
+<p><strong>Forced [F]:</strong> the equilibrium potentials and electron
+counts. <strong>Candidate-forced [F?]:</strong> the ε_d rightarrow Δ
+E₍CO) descriptor, copper’s uniqueness, the volcano, and the scaling
+ceiling. <strong>Calibration [CAL]:</strong> Δ E₍CO), ε_d, the
+equilibrium potentials, and the scaling offset. <strong>Open
+[O]:</strong> absolute current densities and the full C–C coupling
+microkinetics. <strong>Falsifier:</strong> copper is the apex for
+hydrocarbons and CO₂RR selectivity follows the ^*CO-binding order; if a
+pure non-copper metal produces more hydrocarbons at the same
+overpotential, or the binding order is broken, the d-band CO descriptor
+is refuted.</p>
+
+
+<nav class="pn">
+  <a rel="prev" href="/chemistry/05-platinum-catalysis-d-band-descriptor/">← §5</a>
+  <a href="/chemistry/">Paper contents</a>
+  <a rel="next" href="/chemistry/07-low-grade-waste-heat-electricity/">§7 →</a>
+</nav>
+</main>
+<footer>VP Chemistry &amp; Electromagnetism · <a href="https://doi.org/10.5281/zenodo.20680540">DOI 10.5281/zenodo.20680540</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID</a> · CC BY 4.0</footer>
+</body>
+</html>

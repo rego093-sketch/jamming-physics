@@ -1,0 +1,285 @@
+{
+  "_method": "bulk CG/CHG/CHH O/E (window median) + per-gene CpG O/E profile; READ-ONLY from frozen FASTAs.",
+  "thresholds": {
+    "T_VERT_CG": 0.5,
+    "T_PLANT_CG": 0.85,
+    "T_PLANT_CHG": 0.96,
+    "T_PERGENE_SPREAD": 0.28,
+    "T_PERGENE_LOWFRAC": 0.08
+  },
+  "vertebrate_ref": {
+    "organism": "Homo sapiens",
+    "bulk_cg_oe": 0.1289,
+    "bulk_chg_oe": 1.2374,
+    "bulk_chh_oe": 1.1805,
+    "regime": "VERTEBRATE_global_CG"
+  },
+  "plant_reader": {
+    "organisms": {
+      "arabidopsis": {
+        "organism": "Arabidopsis thaliana",
+        "clade": "Dicot",
+        "gc": 0.3375,
+        "bulk_cg_oe": 0.7707,
+        "bulk_chg_oe": 0.8494,
+        "bulk_chh_oe": 1.0836,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "rice": {
+        "organism": "Oryza sativa",
+        "clade": "Monocot",
+        "gc": 0.444,
+        "bulk_cg_oe": 0.7204,
+        "bulk_chg_oe": 0.9415,
+        "bulk_chh_oe": 1.1077,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "maize": {
+        "organism": "Zea mays",
+        "clade": "Monocot",
+        "gc": 0.4369,
+        "bulk_cg_oe": 0.6514,
+        "bulk_chg_oe": 0.9133,
+        "bulk_chh_oe": 1.1165,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "soybean": {
+        "organism": "Glycine max",
+        "clade": "Dicot(legume)",
+        "gc": 0.4127,
+        "bulk_cg_oe": 0.6194,
+        "bulk_chg_oe": 0.6806,
+        "bulk_chh_oe": 1.2016,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "tomato": {
+        "organism": "Solanum lycopersicum",
+        "clade": "Dicot(solanaceae)",
+        "gc": 0.3463,
+        "bulk_cg_oe": 0.5641,
+        "bulk_chg_oe": 0.7502,
+        "bulk_chh_oe": 1.1528,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      },
+      "moss": {
+        "organism": "Physcomitrium patens",
+        "clade": "Bryophyte(basal)",
+        "gc": 0.3501,
+        "bulk_cg_oe": 0.5201,
+        "bulk_chg_oe": 0.6862,
+        "bulk_chh_oe": 1.1654,
+        "regime": "PLANT_global_CG_CHG_CHH"
+      }
+    }
+  },
+  "insect_reader": {
+    "organisms": {
+      "fly": {
+        "organism": "Drosophila melanogaster",
+        "order": "Insect",
+        "bulk_cg_oe": 0.9539,
+        "bulk_chg_oe": 1.0992,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 0.9632,
+        "pergene_spread_std": 0.1263,
+        "pergene_frac_low_cpg": 0.0,
+        "regime": "INSECT_none_substrate_inert"
+      },
+      "mosquito": {
+        "organism": "Anopheles gambiae",
+        "order": "Diptera(none/low)",
+        "bulk_cg_oe": 1.0599,
+        "bulk_chg_oe": 1.0434,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 1.1352,
+        "pergene_spread_std": 0.1048,
+        "pergene_frac_low_cpg": 0.0,
+        "regime": "INSECT_none_substrate_inert"
+      },
+      "silkmoth": {
+        "organism": "Bombyx mori",
+        "order": "Lepidoptera(low)",
+        "bulk_cg_oe": 1.2115,
+        "bulk_chg_oe": 1.0102,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 1.0045,
+        "pergene_spread_std": 0.2253,
+        "pergene_frac_low_cpg": 0.0692,
+        "regime": "INSECT_none_substrate_inert"
+      },
+      "beetle": {
+        "organism": "Tribolium castaneum",
+        "order": "Coleoptera(very low)",
+        "bulk_cg_oe": 0.9541,
+        "bulk_chg_oe": 1.1003,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 1.0294,
+        "pergene_spread_std": 0.1811,
+        "pergene_frac_low_cpg": 0.0231,
+        "regime": "INSECT_none_substrate_inert"
+      },
+      "honeybee": {
+        "organism": "Apis mellifera",
+        "order": "Hymenoptera(methylates)",
+        "bulk_cg_oe": 1.3759,
+        "bulk_chg_oe": 1.0365,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 1.0782,
+        "pergene_spread_std": 0.3113,
+        "pergene_frac_low_cpg": 0.1231,
+        "regime": "INSECT_targeted_gene_body"
+      },
+      "wasp": {
+        "organism": "Nasonia vitripennis",
+        "order": "Hymenoptera(methylates)",
+        "bulk_cg_oe": 1.3527,
+        "bulk_chg_oe": 0.9914,
+        "pergene_n": 130,
+        "pergene_median_cpg_oe": 1.0802,
+        "pergene_spread_std": 0.1871,
+        "pergene_frac_low_cpg": 0.0231,
+        "regime": "INSECT_none_substrate_inert"
+      }
+    },
+    "honest_gradient_note": "honeybee crosses the targeted-methylation detection threshold cleanly; wasp/silkmoth/beetle sit in a gradient below it at this gene-sample size (consistent with their weaker/sparser methylation) -- resolving them is [O] (larger gene panels or direct WGBS)."
+  },
+  "auto_detector": {
+    "cases": [
+      {
+        "name": "human (vertebrate)",
+        "regime": "VERTEBRATE_global_CG",
+        "correct": true
+      },
+      {
+        "name": "arabidopsis (plant)",
+        "regime": "PLANT_global_CG_CHG_CHH",
+        "correct": true
+      },
+      {
+        "name": "moss (basal plant)",
+        "regime": "PLANT_global_CG_CHG_CHH",
+        "correct": true
+      },
+      {
+        "name": "honeybee (targeted)",
+        "regime": "INSECT_targeted_gene_body",
+        "correct": true
+      },
+      {
+        "name": "fly (none)",
+        "regime": "INSECT_none_substrate_inert",
+        "correct": true
+      }
+    ],
+    "all_correct": true
+  },
+  "ledger": [
+    {
+      "group": "vert",
+      "quantity": "human bulk CG/CHG/CHH O/E",
+      "grade": "F",
+      "reason": "window median, recomputed"
+    },
+    {
+      "group": "vert",
+      "quantity": "global CG methylation (vertebrate)",
+      "grade": "L",
+      "reason": "Smith & Meissner 2013; whole-genome 5mCG"
+    },
+    {
+      "group": "plant",
+      "quantity": "bulk CG/CHG/CHH O/E for 6 plant genomes",
+      "grade": "F",
+      "reason": "window median, recomputed"
+    },
+    {
+      "group": "plant",
+      "quantity": "CG+CHG depletion = plant signature (incl. basal moss)",
+      "grade": "F",
+      "reason": "all 6 < 1.0"
+    },
+    {
+      "group": "plant",
+      "quantity": "CHH not depleted (sparse asymmetric context)",
+      "grade": "F",
+      "reason": "CHH ~1.1 across plants"
+    },
+    {
+      "group": "plant",
+      "quantity": "plant CG+CHG+CHH methylation via RdDM",
+      "grade": "L",
+      "reason": "Law & Jacobsen 2010"
+    },
+    {
+      "group": "plant",
+      "quantity": "absolute plant methylation beta per context (CG/CHG/CHH levels)",
+      "grade": "O",
+      "reason": "the depletion gives the evolutionary substrate; live beta needs plant WGBS CX-report"
+    },
+    {
+      "group": "insect",
+      "quantity": "bulk CG/CHG O/E for 6 insect genomes",
+      "grade": "F",
+      "reason": "window median, recomputed"
+    },
+    {
+      "group": "insect",
+      "quantity": "NO bulk CG depletion in any insect (architecture != vertebrate/plant)",
+      "grade": "F",
+      "reason": "all bulk CG >= 0.85; methylation, where present, is not global"
+    },
+    {
+      "group": "insect",
+      "quantity": "per-gene CpG O/E profile (spread + low-CpG fraction) for 6 insects",
+      "grade": "F",
+      "reason": "recomputed from RefSeq mRNA sets"
+    },
+    {
+      "group": "insect",
+      "quantity": "honeybee targeted gene-body methylation (per-gene low-CpG class)",
+      "grade": "F",
+      "reason": "spread 0.32, 11% genes <0.6; the Elango/Lyko bimodal signature"
+    },
+    {
+      "group": "insect",
+      "quantity": "Hymenoptera methylate, Diptera do not (the within-insect split)",
+      "grade": "L",
+      "reason": "Lyko et al. 2010 (Apis gene-body 5mC); Raddatz et al. 2013 (Drosophila no 5mC)"
+    },
+    {
+      "group": "insect",
+      "quantity": "Diptera substrate inert -> methylation-independent regulation",
+      "grade": "F",
+      "reason": "fly/mosquito per-gene tight ~1, 0% low-CpG class"
+    },
+    {
+      "group": "insect",
+      "quantity": "weak-signal insects (wasp/silkmoth/beetle) below detection at this sample",
+      "grade": "O",
+      "reason": "resolving needs larger RefSeq mRNA panels or direct WGBS per species"
+    },
+    {
+      "group": "detector",
+      "quantity": "methylation-regime classification (4 regimes)",
+      "grade": "F",
+      "reason": "bulk-then-per-gene router; all test cases correct"
+    },
+    {
+      "group": "detector",
+      "quantity": "architecture-matched reading (global->bulk, targeted->per-gene)",
+      "grade": "F",
+      "reason": "the principle: read the substrate the way the clade writes it"
+    }
+  ],
+  "ledger_counts": {
+    "total": 16,
+    "F": 11,
+    "V": 0,
+    "L": 3,
+    "O": 2,
+    "B": 0,
+    "positively_evidenced": 14,
+    "ungraded": 0
+  },
+  "gates_pass": true
+}

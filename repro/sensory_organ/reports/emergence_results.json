@@ -1,0 +1,270 @@
+{
+ "_what": "Special-Sense Organs -- emerge nodes from measured gamma, then circulate the dynamics.",
+ "cochlear_amplifier": {
+  "active_force_gene": [
+   "SLC26A5/prestin",
+   "NCBI Gene 375611; UniProt P58743"
+  ],
+  "cited_BM_compression_exponent": "~0.3-0.5 (mapped [L]; model gives exactly 1/3 at the bifurcation [V])",
+  "critical_compression_exponent": 0.3333,
+  "cube_root_compression_ok": true,
+  "expected_at_criticality": 0.3333,
+  "gain_rises_toward_criticality": true,
+  "grade": "[V] exponent parameter-free at criticality ; [L] cited compression range",
+  "linear_offcriticality_ok": true,
+  "pass_": true,
+  "smallsignal_gain_vs_mu": {
+   "mu=-0.01": 99.0289,
+   "mu=-0.1": 9.9999,
+   "mu=-1": 1.0,
+   "mu=0": 464.1589
+  },
+  "subcritical_smallsignal_slope": 1.0
+ },
+ "developmental_order": {
+  "broad_prediction": "taste organ specified latest",
+  "broad_validated": true,
+  "fine_ordering_status": "[L]-pending: fine order among early eye/ear nodes not robustly validated vs cited timing (PAX6/RAX eye-field and EYA1/SOX2 otic placode co-occur early); honest partial",
+  "gamma_order_ascending": [
+   "cochlea_frequency_map",
+   "eye_photoreceptor",
+   "inner_ear_haircell",
+   "eye_retina_optics",
+   "taste_chemodetection"
+  ],
+  "grade": "[V] broad signal (taste latest) ; [O]->[L] fine ordering needs cited stage timing"
+ },
+ "dynamics_status": "RESEARCH: organ instruments (classical) + transducer switches (R19) + Hopf amplifier emerged and circulated",
+ "organ_optics_acoustics": {
+  "accommodation_D_age15": 19.0,
+  "accommodation_D_age60": 1.0,
+  "axial_length_match": true,
+  "canal_velocity_band_flatness_ratio": 0.018,
+  "canal_velocity_band_ok": true,
+  "diopters_per_mm_axial": 2.695,
+  "diopters_per_mm_match": true,
+  "grade": "classical optics/acoustics (cited, NOT R19); arithmetic reproduces the anchor [V-arith]",
+  "greenwood_apex_hz": 19.8,
+  "greenwood_base_hz": 20677.0,
+  "greenwood_range_match": true,
+  "pass_": true,
+  "presbyopia_match": true,
+  "reduced_eye_axial_length_mm": 22.267,
+  "vor_gain_cited": 1.0
+ },
+ "organs": {
+  "deferred_gamma": [],
+  "gamma_order_ascending": [
+   "cochlea_frequency_map",
+   "eye_photoreceptor",
+   "inner_ear_haircell",
+   "eye_retina_optics",
+   "taste_chemodetection"
+  ],
+  "order_grade": "[V] order is a gamma readout over MEASURED nodes; SIGN to validate vs cited timing",
+  "organs": [
+   {
+    "dyn_class": "sensor",
+    "functional_spinodal": 0.714899,
+    "gamma": 1.511,
+    "gamma_state": "vendored",
+    "master": "PAX6",
+    "organ": "eye_retina_optics",
+    "rel_size_dwell": 1.688511,
+    "role": "retinal photoreceptor mosaic + the ocular dioptric system (optics classical; switch R19)"
+   },
+   {
+    "dyn_class": "sensor-switch",
+    "functional_spinodal": 0.6749,
+    "gamma": 1.4541,
+    "gamma_state": "vendored",
+    "master": "RAX",
+    "organ": "eye_photoreceptor",
+    "rel_size_dwell": 1.594038,
+    "role": "photoreceptor phototransduction switch (R19 cellular)"
+   },
+   {
+    "dyn_class": "sensor",
+    "functional_spinodal": 0.613019,
+    "gamma": 1.3638,
+    "gamma_state": "vendored",
+    "master": "EYA1",
+    "organ": "cochlea_frequency_map",
+    "rel_size_dwell": 1.447883,
+    "role": "basilar-membrane tonotopic frequency analysis (mechanics classical; switch R19)"
+   },
+   {
+    "dyn_class": "sensor-switch",
+    "functional_spinodal": 0.677129,
+    "gamma": 1.4573,
+    "gamma_state": "vendored",
+    "master": "SOX2",
+    "organ": "inner_ear_haircell",
+    "rel_size_dwell": 1.599303,
+    "role": "cochlear/vestibular hair-cell mechanotransduction (R19 switch)"
+   },
+   {
+    "dyn_class": "sensor",
+    "gamma": null,
+    "gamma_state": "diffuse",
+    "master": "(vestibular_system)",
+    "note": "no single master gene (circuit/derived/diffuse)",
+    "organ": "vestibular_balance",
+    "role": "semicircular-canal + otolith inertial sensing (balance)"
+   },
+   {
+    "dyn_class": "sensor",
+    "functional_spinodal": 0.746712,
+    "gamma": 1.5555,
+    "gamma_state": "vendored",
+    "master": "TAS1R3",
+    "organ": "taste_chemodetection",
+    "rel_size_dwell": 1.76365,
+    "role": "taste receptor chemodetection (sweet/umami; bitter via TAS2R)"
+   }
+  ]
+ },
+ "oscillators": {},
+ "targets_todo": "see CHARTER.md research program and repro/_verify/stress_tests.py",
+ "transduction": {
+  "all_switches_bistable_and_discontinuous": true,
+  "thesis": "every special-sense transducer is an R19 bistable/cooperative channel switch [V structure / L threshold]",
+  "transducer_genes_to_measure_gamma": [
+   "ADCY3",
+   "CDH23",
+   "CNGA1",
+   "CNGA2",
+   "CNGB1",
+   "PCDH15",
+   "TAS1R2",
+   "TAS1R3",
+   "TMC1",
+   "TRPM5"
+  ],
+  "transducers": [
+   {
+    "channel": "rod CNG channel (cyclic-nucleotide-gated, non-selective cation)",
+    "channel_genes": [
+     [
+      "CNGA1",
+      "NCBI Gene 1259; UniProt P29973"
+     ],
+     [
+      "CNGB1",
+      "NCBI Gene 1258; UniProt Q14028"
+     ]
+    ],
+    "cited_behaviour": "single-photon response is discrete and reproducible; light->PDE->cGMP drop->channels shut (<1 ms)",
+    "cited_threshold": "cGMP K1/2 ~ 10-40 uM (Ca2+-dependent); Hill coefficient ~3",
+    "gamma_state": "vendored",
+    "master": "RAX",
+    "node": "eye_photoreceptor",
+    "ref": "Kaupp & Seifert 2002; Yau 1994; Fu Webvision",
+    "switch": {
+     "barrier": 0.528602,
+     "bistable": true,
+     "discontinuous_flip": true,
+     "gamma": 1.4541,
+     "grade_structure": "[V]",
+     "grade_threshold": "[L] (cited physiology, mapped not derived)",
+     "hysteresis_width": 1.3498,
+     "sigmoid_max_slope": 3.320645,
+     "spinodal_drive": 0.6749
+    },
+    "switch_kind": "cooperative ligand gate"
+   },
+   {
+    "channel": "hair-cell MET channel (mechano-electrical transduction; gating-spring gated)",
+    "channel_genes": [
+     [
+      "TMC1",
+      "NCBI Gene 117531; UniProt Q8TDI8"
+     ],
+     [
+      "PCDH15",
+      "NCBI Gene 65217; UniProt Q96QU1 (tip link)"
+     ],
+     [
+      "CDH23",
+      "NCBI Gene 64072; UniProt Q9H251 (tip link)"
+     ]
+    ],
+    "cited_behaviour": "two states (open/closed), negligible transit; channel opening lowers bundle stiffness -> NEGATIVE stiffness -> active amplification",
+    "cited_threshold": "bundle deflection ~0.1-1 nm at hearing threshold; ~10-20% channels open at rest (poised)",
+    "gamma_state": "vendored",
+    "master": "SOX2",
+    "node": "inner_ear_haircell",
+    "ref": "Howard & Hudspeth 1988; Corey & Hudspeth 1983; Markin & Hudspeth 1995; Martin/Mehta/Hudspeth 2000",
+    "switch": {
+     "barrier": 0.530931,
+     "bistable": true,
+     "discontinuous_flip": true,
+     "gamma": 1.4573,
+     "grade_structure": "[V]",
+     "grade_threshold": "[L] (cited physiology, mapped not derived)",
+     "hysteresis_width": 1.354258,
+     "sigmoid_max_slope": 3.31407,
+     "spinodal_drive": 0.677129
+    },
+    "switch_kind": "two-state mechanical gate (gating spring)"
+   },
+   {
+    "channel": "taste GPCR (T1R2/T1R3 sweet, T1R1/T1R3 umami; T2R bitter) -> PLCb2 -> TRPM5 cation channel",
+    "channel_genes": [
+     [
+      "TAS1R3",
+      "NCBI Gene 83756; UniProt Q7RTX0"
+     ],
+     [
+      "TAS1R2",
+      "NCBI Gene 80834; UniProt Q8TE23"
+     ],
+     [
+      "TRPM5",
+      "NCBI Gene 29850; UniProt Q9NZQ8 (downstream cation channel)"
+     ]
+    ],
+    "cited_behaviour": "receptor activation past a concentration threshold opens the downstream cation channel (switch)",
+    "cited_threshold": "sweet/umami EC50 in mM (ligand-specific); bitter (TAS2R) nM-mM; concentration-response sigmoidal",
+    "gamma_state": "vendored",
+    "master": "TAS1R3",
+    "node": "taste_chemodetection",
+    "ref": "Chandrashekar et al. 2006 Nature 444:288; Zhang et al. 2003",
+    "switch": {
+     "barrier": 0.604895,
+     "bistable": true,
+     "discontinuous_flip": true,
+     "gamma": 1.5555,
+     "grade_structure": "[V]",
+     "grade_threshold": "[L] (cited physiology, mapped not derived)",
+     "hysteresis_width": 1.493424,
+     "sigmoid_max_slope": 3.12415,
+     "spinodal_drive": 0.746712
+    },
+    "switch_kind": "GPCR + cooperative cation gate"
+   },
+   {
+    "channel": "olfactory CNG channel (same CNG superfamily as rod) downstream of OR GPCR -> cAMP",
+    "channel_genes": [
+     [
+      "CNGA2",
+      "NCBI Gene 1260; UniProt Q16280"
+     ],
+     [
+      "ADCY3",
+      "NCBI Gene 109; UniProt O60266 (cAMP generator)"
+     ]
+    ],
+    "cited_behaviour": "same CNG channel family as phototransduction -- one shared switch primitive across two senses",
+    "cited_threshold": "odorant->OR->cAMP->CNG; combinatorial coding across ~400 human ORs",
+    "gamma_state": "to_measure",
+    "master": "(OR family / diffuse)",
+    "node": "olfaction_chemodetection",
+    "note": "master gamma not in atlas -> DNA pipeline fetch (measured input, not fitted)",
+    "ref": "Kaupp 2010 Nat Rev Neurosci 11:188; Buck & Axel 1991",
+    "switch": null,
+    "switch_kind": "cooperative ligand gate (cAMP)"
+   }
+  ]
+ }
+}

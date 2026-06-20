@@ -1,0 +1,241 @@
+{
+ "title": "Cross-disease repurposing scanner -- same-axis approved agent as a candidate direction for a no-approved-therapy disease",
+ "native_to": "vp_disease_emergence_kit (ROADMAP III-A2); read-only over frozen analysis.json + registry",
+ "principle": "for a single-gene disease with NO approved therapy, the cheapest credible path to a treatment is repurposing an agent already approved for a disease that shares the same druggable axis; the scanner surfaces (axis_family x corrective-direction x lever-class) buckets that hold both a no-approved RECIPIENT and an approved DONOR, and proposes the donor's MECHANISM CLASS as the recipient's testable direction -- the catalytic novelty the bare forced direction lacks.",
+ "firewall": "MECHANISM-CLASS DIRECTION ONLY; never dose, potency, efficacy, response rate, or a specific-product efficacy claim; every hypothesis is [O] + falsifier + 'same-axis != same-disease' caveat; a recipient already pursuing the donor class is demoted to low-novelty (a sanity check, not a new claim); read-only, perturbs no per-disease hash.",
+ "grade": "[F] shared-axis direction forced + cited ; [O] all magnitude / efficacy / repurposing-success",
+ "n_resolved": 72,
+ "n_axis_families": 43,
+ "axis_family_counts": {
+  "calcium_sensing_gpcr": 1,
+  "cardiac_contractility_restraint": 1,
+  "cardiac_ion_channel": 1,
+  "carnitine_transport_replacement": 1,
+  "coagulation_anticoagulation": 2,
+  "coagulation_factor_restore": 2,
+  "cofactor_recycling_replacement": 1,
+  "cofactor_responsive_enzyme": 1,
+  "complement_cascade_restraint": 1,
+  "copper_delivery_deficiency": 1,
+  "endothelial_angiogenesis": 1,
+  "erythroid_globin_output": 2,
+  "gpcr_water_signalling": 2,
+  "growth_plate_brake": 1,
+  "hif_pseudohypoxia": 1,
+  "hormone_fgf23_restraint": 1,
+  "hormone_leptin_replace": 1,
+  "inflammasome_IL1_restraint": 3,
+  "kinin_bradykinin_restraint": 1,
+  "ldl_cholesterol_level": 1,
+  "lysosomal_enzyme_replacement": 7,
+  "lysosomal_substrate_reduction": 2,
+  "metabolic_enzyme_replacement": 4,
+  "mineralization_enzyme": 1,
+  "mitochondrial_biogenesis": 1,
+  "motor_neuron_smn": 1,
+  "mtor_growth_signalling": 1,
+  "muscle_dystrophin": 1,
+  "neuronal_ion_channel": 1,
+  "nuclear_TF_dosage": 2,
+  "peroxisomal_substrate_load": 1,
+  "regulated_channel_potentiation": 2,
+  "retinal_gene_replacement": 3,
+  "satiety_melanocortin": 2,
+  "sensory_structural_scaffold": 1,
+  "serpin_level_replace": 1,
+  "skeletal_muscle_sodium_channel": 1,
+  "sterol_absorption": 1,
+  "toxic_gof_protein": 4,
+  "toxic_metabolite_upstream_restraint": 5,
+  "toxic_metal_overload": 2,
+  "triglyceride_clearance": 1,
+  "urinary_cystine_restraint": 1
+ },
+ "n_no_approved_lead": 10,
+ "no_approved_lead": [
+  "choroideremia",
+  "dravet_syndrome",
+  "hereditary_haemorrhagic_telangiectasia",
+  "huntington_disease",
+  "mecp2_duplication_syndrome",
+  "menkes_disease",
+  "nephrogenic_diabetes_insipidus_x_linked",
+  "rho_autosomal_dominant_retinitis_pigmentosa",
+  "usher_syndrome_type_2a",
+  "x_linked_retinitis_pigmentosa"
+ ],
+ "n_hypotheses": 4,
+ "repurposing_hypotheses": [
+  {
+   "recipient": "choroideremia",
+   "recipient_axis": "photoreceptor / RPE / choroid Rab-prenylation-dependent intracellular vesicular-trafficking maintenance (REP1-supported Rab geranylgeranylation) -- a THIRD ocular axis, the Rab-prenylation/vesicular-trafficking contrast to LCA2's retinoid-cycle enzyme axis and XLRP's ciliary-trafficking axis",
+   "recipient_lead_target": "CHM",
+   "recipient_lead_status": "clinical",
+   "shared_axis_family": "retinal_gene_replacement",
+   "shared_corrective_direction": "UP",
+   "shared_lever_class": "replace",
+   "donors": [
+    {
+     "donor": "leber_congenital_amaurosis_2",
+     "donor_axis": "retinoid (visual) cycle 11-cis-retinal chromophore regeneration throughput (RPE65 isomerohydrolase)",
+     "approved_agent_class": [
+      "subretinal AAV gene replacement"
+     ],
+     "donor_lead_target": "RPE65"
+    }
+   ],
+   "hypothesis": "On the shared 'retinal_gene_replacement' axis, the corrective direction is UP via 'replace'.  An agent of this class is APPROVED for leber_congenital_amaurosis_2 but NOT for choroideremia; that approved mechanism class is therefore a candidate UP-direction repurposing hypothesis for choroideremia.",
+   "novelty": "low-novelty (confirmatory: the recipient already pursues this mechanism class -- the scanner here merely VALIDATES its same-axis logic, a sanity check)",
+   "grade": "[F] shared-axis direction forced + cited ; [O] magnitude / efficacy / dose / repurposing-success-probability NOT asserted",
+   "falsifier": "If a class-'replace' agent that moves the 'retinal_gene_replacement' axis UP in the donor disease(s) fails to move choroideremia's axis UP in its own tissue (e.g. allele-specificity, delivery, or choroideremia-specific biology defeats it), the same-axis repurposing hypothesis for choroideremia is false.",
+   "honesty_caveat": "same-axis != same-disease -- this is a mechanism-CLASS DIRECTION hypothesis, not a prediction; the donor and recipient differ in tissue / delivery / allele / off-target biology, any of which may defeat repurposing.  No magnitude is claimed [O]."
+  },
+  {
+   "recipient": "x_linked_retinitis_pigmentosa",
+   "recipient_axis": "photoreceptor connecting-cilium protein-trafficking / outer-segment-maintenance throughput (RPGR-organised ciliary transport) -- a SECOND ocular axis, the ciliary-trafficking/maintenance contrast to LCA2's retinoid-cycle enzyme axis",
+   "recipient_lead_target": "RPGR",
+   "recipient_lead_status": "clinical",
+   "shared_axis_family": "retinal_gene_replacement",
+   "shared_corrective_direction": "UP",
+   "shared_lever_class": "replace",
+   "donors": [
+    {
+     "donor": "leber_congenital_amaurosis_2",
+     "donor_axis": "retinoid (visual) cycle 11-cis-retinal chromophore regeneration throughput (RPE65 isomerohydrolase)",
+     "approved_agent_class": [
+      "subretinal AAV gene replacement"
+     ],
+     "donor_lead_target": "RPE65"
+    }
+   ],
+   "hypothesis": "On the shared 'retinal_gene_replacement' axis, the corrective direction is UP via 'replace'.  An agent of this class is APPROVED for leber_congenital_amaurosis_2 but NOT for x_linked_retinitis_pigmentosa; that approved mechanism class is therefore a candidate UP-direction repurposing hypothesis for x_linked_retinitis_pigmentosa.",
+   "novelty": "low-novelty (confirmatory: the recipient already pursues this mechanism class -- the scanner here merely VALIDATES its same-axis logic, a sanity check)",
+   "grade": "[F] shared-axis direction forced + cited ; [O] magnitude / efficacy / dose / repurposing-success-probability NOT asserted",
+   "falsifier": "If a class-'replace' agent that moves the 'retinal_gene_replacement' axis UP in the donor disease(s) fails to move x_linked_retinitis_pigmentosa's axis UP in its own tissue (e.g. allele-specificity, delivery, or x_linked_retinitis_pigmentosa-specific biology defeats it), the same-axis repurposing hypothesis for x_linked_retinitis_pigmentosa is false.",
+   "honesty_caveat": "same-axis != same-disease -- this is a mechanism-CLASS DIRECTION hypothesis, not a prediction; the donor and recipient differ in tissue / delivery / allele / off-target biology, any of which may defeat repurposing.  No magnitude is claimed [O]."
+  },
+  {
+   "recipient": "huntington_disease",
+   "recipient_axis": "striatal (medium spiny) neuron homeostasis / survival",
+   "recipient_lead_target": "HTT",
+   "recipient_lead_status": "clinical",
+   "shared_axis_family": "toxic_gof_protein",
+   "shared_corrective_direction": "UP",
+   "shared_lever_class": "reduce",
+   "donors": [
+    {
+     "donor": "sod1_amyotrophic_lateral_sclerosis",
+     "donor_axis": "motor-neuron survival and function (progressively suppressed by toxic misfolded-SOD1 aggregation) -- the motor-neuron toxic-GAIN contrast to SMA's motor-neuron loss-of-function",
+     "approved_agent_class": [
+      "SOD1-lowering antisense oligonucleotide"
+     ],
+     "donor_lead_target": "SOD1"
+    },
+    {
+     "donor": "transthyretin_amyloidosis",
+     "donor_axis": "nerve and cardiac tissue function (progressively suppressed by TTR amyloid deposition)",
+     "approved_agent_class": [
+      "TTR-lowering siRNA / antisense"
+     ],
+     "donor_lead_target": "TTR"
+    }
+   ],
+   "hypothesis": "On the shared 'toxic_gof_protein' axis, the corrective direction is UP via 'reduce'.  An agent of this class is APPROVED for sod1_amyotrophic_lateral_sclerosis, transthyretin_amyloidosis but NOT for huntington_disease; that approved mechanism class is therefore a candidate UP-direction repurposing hypothesis for huntington_disease.",
+   "novelty": "low-novelty (confirmatory: the recipient already pursues this mechanism class -- the scanner here merely VALIDATES its same-axis logic, a sanity check)",
+   "grade": "[F] shared-axis direction forced + cited ; [O] magnitude / efficacy / dose / repurposing-success-probability NOT asserted",
+   "falsifier": "If a class-'reduce' agent that moves the 'toxic_gof_protein' axis UP in the donor disease(s) fails to move huntington_disease's axis UP in its own tissue (e.g. allele-specificity, delivery, or huntington_disease-specific biology defeats it), the same-axis repurposing hypothesis for huntington_disease is false.",
+   "honesty_caveat": "same-axis != same-disease -- this is a mechanism-CLASS DIRECTION hypothesis, not a prediction; the donor and recipient differ in tissue / delivery / allele / off-target biology, any of which may defeat repurposing.  No magnitude is claimed [O]."
+  },
+  {
+   "recipient": "rho_autosomal_dominant_retinitis_pigmentosa",
+   "recipient_axis": "rod photoreceptor outer-segment maintenance / proteostatic throughput -- a toxic misfolded rhodopsin species (the P23H class-II majority) acts as an over-active pathological brake on photoreceptor homeostasis, the maintenance axis pushed DOWN (the proteinopathy pattern: HTT, TTR, SOD1 -> remove the toxic species). The kit's first ocular proteinopathy and first toxic-GAIN ocular read, the gain contrast to the three loss-of-function ocular reads (RPE65 enzyme, RPGR cilia, CHM Rab-prenylation)",
+   "recipient_lead_target": "RHO",
+   "recipient_lead_status": "clinical",
+   "shared_axis_family": "toxic_gof_protein",
+   "shared_corrective_direction": "UP",
+   "shared_lever_class": "reduce",
+   "donors": [
+    {
+     "donor": "sod1_amyotrophic_lateral_sclerosis",
+     "donor_axis": "motor-neuron survival and function (progressively suppressed by toxic misfolded-SOD1 aggregation) -- the motor-neuron toxic-GAIN contrast to SMA's motor-neuron loss-of-function",
+     "approved_agent_class": [
+      "SOD1-lowering antisense oligonucleotide"
+     ],
+     "donor_lead_target": "SOD1"
+    },
+    {
+     "donor": "transthyretin_amyloidosis",
+     "donor_axis": "nerve and cardiac tissue function (progressively suppressed by TTR amyloid deposition)",
+     "approved_agent_class": [
+      "TTR-lowering siRNA / antisense"
+     ],
+     "donor_lead_target": "TTR"
+    }
+   ],
+   "hypothesis": "On the shared 'toxic_gof_protein' axis, the corrective direction is UP via 'reduce'.  An agent of this class is APPROVED for sod1_amyotrophic_lateral_sclerosis, transthyretin_amyloidosis but NOT for rho_autosomal_dominant_retinitis_pigmentosa; that approved mechanism class is therefore a candidate UP-direction repurposing hypothesis for rho_autosomal_dominant_retinitis_pigmentosa.",
+   "novelty": "low-novelty (confirmatory: the recipient already pursues this mechanism class -- the scanner here merely VALIDATES its same-axis logic, a sanity check)",
+   "grade": "[F] shared-axis direction forced + cited ; [O] magnitude / efficacy / dose / repurposing-success-probability NOT asserted",
+   "falsifier": "If a class-'reduce' agent that moves the 'toxic_gof_protein' axis UP in the donor disease(s) fails to move rho_autosomal_dominant_retinitis_pigmentosa's axis UP in its own tissue (e.g. allele-specificity, delivery, or rho_autosomal_dominant_retinitis_pigmentosa-specific biology defeats it), the same-axis repurposing hypothesis for rho_autosomal_dominant_retinitis_pigmentosa is false.",
+   "honesty_caveat": "same-axis != same-disease -- this is a mechanism-CLASS DIRECTION hypothesis, not a prediction; the donor and recipient differ in tissue / delivery / allele / off-target biology, any of which may defeat repurposing.  No magnitude is claimed [O]."
+  }
+ ],
+ "n_orphan_directions": 6,
+ "orphan_directions_no_donor": [
+  {
+   "slug": "dravet_syndrome",
+   "axis_family": "neuronal_ion_channel",
+   "axis": "GABAergic-interneuron NaV1.1 sodium current / cortical inhibitory tone -- SCN1A haploinsufficiency lowers NaV1.1 in fast-spiking inhibitory interneurons so they cannot fire repetitively, collapsing GABAergic inhibition (axis DOWN) and disinhibiting cortical networks (downstream excitation up). The kit's first NEURONAL ion-channel (epilepsy) axis, the inhibitory-interneuron contrast to LQT3's cardiac NaV1.5 gain",
+   "corrective_direction": "UP",
+   "lead_lever": "replace",
+   "lead_status": "investigational",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  },
+  {
+   "slug": "hereditary_haemorrhagic_telangiectasia",
+   "axis_family": "endothelial_angiogenesis",
+   "axis": "endothelial vascular-quiescence signalling output (BMP9/10 -> ALK1[ACVRL1] / endoglin[ENG] -> SMAD1/5/8) that restrains endothelial activation and aberrant angiogenesis -- a NEW endothelial / TGF-beta-superfamily vascular axis; the released brake -> arteriovenous-malformation (axis UP) read",
+   "corrective_direction": "DOWN",
+   "lead_lever": "restrain",
+   "lead_status": "clinical",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  },
+  {
+   "slug": "mecp2_duplication_syndrome",
+   "axis_family": "nuclear_TF_dosage",
+   "axis": "MeCP2-dependent neuronal regulation program (MeCP2 dosage)",
+   "corrective_direction": "DOWN",
+   "lead_lever": "restrain",
+   "lead_status": "investigational",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  },
+  {
+   "slug": "menkes_disease",
+   "axis_family": "copper_delivery_deficiency",
+   "axis": "systemic and CNS copper delivery (intestinal copper efflux into the body + blood-brain-barrier transport feeding the cuproenzymes) -- the copper-DEFICIENCY contrast to Wilson's copper-accumulation axis",
+   "corrective_direction": "UP",
+   "lead_lever": "replace",
+   "lead_status": "clinical",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  },
+  {
+   "slug": "nephrogenic_diabetes_insipidus_x_linked",
+   "axis_family": "gpcr_water_signalling",
+   "axis": "renal collecting-duct urine-concentrating drive -- the vasopressin V2 receptor (V2R) -> Gs -> cAMP -> PKA -> AQP2 apical water-channel insertion axis. AVPR2 LOF (mostly receptor misfolding / ER retention) removes the vasopressin-response drive so water reabsorption fails despite hormone (axis DOWN). The kit's first GPCR axis and first second-messenger (cAMP) receptor-signalling axis, the metabotropic-GPCR contrast to the ion-channel reads (CFTR, K_ATP, NaV)",
+   "corrective_direction": "UP",
+   "lead_lever": "correct",
+   "lead_status": "investigational",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  },
+  {
+   "slug": "usher_syndrome_type_2a",
+   "axis_family": "sensory_structural_scaffold",
+   "axis": "photoreceptor outer-segment / periciliary-membrane-complex maintenance throughput (and, in the cochlea, the hair-cell stereocilia ankle-link integrity). USH2A LOF removes usherin, the structural-adhesion scaffold of the connecting-cilium periciliary region, so photoreceptor maintenance fails (progressive RP) and cochlear stereocilia development is disrupted (congenital sensorineural hearing loss) -- axis DOWN. The kit's FIFTH ocular read, its FIRST syndromic audio-visual read, and a structural-adhesion ocular gene class (the contrast to the retinoid-cycle enzyme / ciliary-trafficking / Rab-prenylation / rhodopsin-proteinopathy ocular reads)",
+   "corrective_direction": "UP",
+   "lead_lever": "correct",
+   "lead_status": "clinical",
+   "why_orphan": "no OTHER resolved disease shares this (axis_family, corrective_direction, lever_class) with an APPROVED agent -- the forced direction stands, but the kit honestly reports there is no same-axis approved donor to repurpose from"
+  }
+ ],
+ "overall": "PASS",
+ "failures": []
+}

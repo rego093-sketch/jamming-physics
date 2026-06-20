@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The baroreflex fast buffer and PIEZO knockout &mdash; Hemodynamic Homeostasis &sect;4 | Jamming Physics</title>
+<meta name="description" content="The baroreflex buffers ~75% of a 20 mmHg step (residual = step/(1+G), G = 3); PIEZO knockout removes transduction and pressure is labile. Buffering shape [V], gain [L].">
+<meta name="keywords" content="baroreflex, autonomic blood pressure control, negative feedback, labile hypertension, PIEZO knockout, sympathetic withdrawal, blood pressure buffering, open-loop gain">
+<link rel="canonical" href="https://jamming-physics.org/homeostasis_hemodynamic/hmd-fast-loop/"><meta property="og:type" content="article"><meta property="og:site_name" content="Jamming Physics"><meta property="og:locale" content="en_US"><meta property="og:title" content="The baroreflex fast buffer and PIEZO knockout &mdash; Hemodynamic Homeostasis &sect;4 | Jamming Physics"><meta property="og:description" content="The baroreflex buffers ~75% of a 20 mmHg step (residual = step/(1+G), G = 3); PIEZO knockout removes transduction and pressure is labile. Buffering shape [V], gain [L]."><meta property="og:url" content="https://jamming-physics.org/homeostasis_hemodynamic/hmd-fast-loop/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The baroreflex fast buffer and PIEZO knockout &mdash; Hemodynamic Homeostasis &sect;4 | Jamming Physics"><meta name="twitter:description" content="The baroreflex buffers ~75% of a 20 mmHg step (residual = step/(1+G), G = 3); PIEZO knockout removes transduction and pressure is labile. Buffering shape [V], gain [L].">
+<link rel="stylesheet" href="/homeostasis_hemodynamic/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "The baroreflex fast buffer and PIEZO knockout",
+ "isPartOf": {
+  "@type": "CreativeWorkSeries",
+  "name": "Hemodynamic Homeostasis",
+  "url": "https://jamming-physics.org/homeostasis_hemodynamic/"
+ },
+ "position": 4,
+ "author": {
+  "@type": "Person",
+  "name": "Young Jae Lee",
+  "sameAs": "https://orcid.org/0009-0002-7535-8245"
+ },
+ "datePublished": "2026-06-19",
+ "dateModified": "2026-06-19",
+ "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/homeostasis_hemodynamic/hmd-fast-loop/",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "keywords": "baroreflex, autonomic blood pressure control, negative feedback, labile hypertension, PIEZO knockout, sympathetic withdrawal, blood pressure buffering, open-loop gain",
+ "about": [
+  {
+   "@type": "Thing",
+   "name": "baroreflex"
+  },
+  {
+   "@type": "Thing",
+   "name": "autonomic blood pressure control"
+  },
+  {
+   "@type": "Thing",
+   "name": "negative feedback"
+  },
+  {
+   "@type": "Thing",
+   "name": "labile hypertension"
+  },
+  {
+   "@type": "Thing",
+   "name": "PIEZO knockout"
+  },
+  {
+   "@type": "Thing",
+   "name": "sympathetic withdrawal"
+  },
+  {
+   "@type": "Thing",
+   "name": "blood pressure buffering"
+  },
+  {
+   "@type": "Thing",
+   "name": "open-loop gain"
+  }
+ ],
+ "knowsAbout": [
+  "jamming-lattice substrate",
+  "arterial pressure setpoint",
+  "blood pressure homeostasis",
+  "DNA-grounded master-gene gamma",
+  "baroreflex",
+  "autonomic blood pressure control",
+  "negative feedback",
+  "labile hypertension",
+  "PIEZO knockout",
+  "sympathetic withdrawal",
+  "blood pressure buffering",
+  "open-loop gain"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://jamming-physics.org/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Hemodynamic Homeostasis",
+   "item": "https://jamming-physics.org/homeostasis_hemodynamic/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "&sect;4 The baroreflex fast buffer and PIEZO knockout"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/homeostasis_hemodynamic/">Hemodynamic Homeostasis</a> <span>&rsaquo;</span> &sect;4</nav></header>
+<main>
+<p class="eyebrow">Hemodynamic Homeostasis &middot; &sect;4 &middot; residual = step / (1 + G)</p>
+<h1>The baroreflex fast buffer and PIEZO knockout</h1>
+
+<p class="answer">The baroreflex is the seconds-scale negative-feedback buffer. A 20 mmHg step is buffered about 75%, leaving a residual of 5 mmHg, because the closed-loop residual is step/(1 + G) with gain G = 3; settling takes ~1.35 s. Removing the PIEZO sensor abolishes transduction and pressure goes labile. Buffering shape sim-reproduced [V]; gain and latency cited [L].</p>
+
+<p class="abstract">On the fast track, the baroreceptor&ndash;baroreflex arc opposes pressure excursions within seconds. A step is buffered to a residual = step/(1 + G); with G = 3 a 20 mmHg step leaves 5 mmHg (75% buffered). Loss of PIEZO transduction removes the buffer and produces labile pressure; the shape is reproduced [V], absolute gain/latency cited [L].</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">[V] sim-reproduced</span>
+  <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/homeostasis_hemodynamic/hmd-fast-loop/" rel="noopener">Reproduction (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20756801" rel="noopener">Concept DOI: 10.5281/zenodo.20756801</a>
+</aside>
+
+<aside class="vp-card" data-locked="piezo"><b>PIEZO1/2 baroreceptor</b> &mdash; mechanically activated channels read arterial stretch; double-knockout &rarr; labile pressure. <span class="grade g-cited">[L] cited</span> <a href="/homeostasis_hemodynamic/hmd-sensory-layer/">sensory layer &sect;3</a></aside>
+<aside class="vp-card" data-locked="map-rest"><b>MAP<sub>rest</sub> = 93 mmHg</b> &mdash; the steady pressure the loops defend; set by MAP = CVP + CO&times;SVR, owned by no single organ. <span class="grade g-cited">[L] cited</span> <a href="/homeostasis_hemodynamic/hmd-overview/">overview &sect;1</a></aside>
+
+
+<h2>Fast negative feedback buffers a pressure step</h2>
+<p>The fast loop is a proportional negative-feedback controller acting on a seconds timescale. Rising
+pressure raises baroreceptor firing, which travels to the nucleus tractus solitarius and withdraws
+sympathetic outflow, lowering SVR and heart rate and opposing the excursion (research target RP2). This is
+the reflex that keeps standing, coughing or a transient surge from translating one-to-one into pressure.</p>
+<p>For a step disturbance the steady residual is step/(1 + G). With open-loop gain G = 3 a 20 mmHg step
+is reduced to 5 mmHg, i.e. about 75% buffered, and settles in roughly 1.35 s. The buffer
+attenuates but does not eliminate the disturbance: a proportional controller always leaves a finite residual,
+which is exactly why a second, integral loop is required to drive the long-run steady error to zero. The fast
+loop buys time; the slow loop sets the reference.</p>
+
+<h2>Knock out the sensor and the buffer disappears</h2>
+<p>The buffer depends on intact mechanotransduction, and removing the sensor is not the same as removing the
+controller. When the PIEZO1/2 sensor is double-knocked-out, afferent firing no longer tracks pressure and the
+fast correction vanishes, leaving labile pressure &mdash; the model phenotype that matches the cited labile
+hypertension after baroreceptor PIEZO loss. The downstream arc (NTS, sympathetic outflow, vessels) is intact;
+there is simply nothing left to read the disturbance.</p>
+<p>This cleanly separates a transduction failure from a controller failure, and it is the mirror image of the
+orthostatic case treated later, where the same buffer loss shows up as a failure to defend against a
+<em>downward</em> postural step. The buffering shape and the knockout phenotype are reproduced [V]; the
+absolute open-loop gain and closed-loop latency are cited anchors [L], not derived here, and are anchored to
+clinical units in the calibration chapter.</p>
+
+
+
+<nav class="pn">
+  <a rel="prev" href="/homeostasis_hemodynamic/hmd-sensory-layer/">&larr; &sect;3</a>
+  <a href="/homeostasis_hemodynamic/">Contents</a>
+  <a rel="next" href="/homeostasis_hemodynamic/hmd-slow-loop/">&sect;5 &rarr;</a>
+</nav>
+</main>
+<footer>
+  <p>Hemodynamic Homeostasis &middot; Young Jae Lee &middot; <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> &middot;
+  <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></p>
+  <p class="tiny">Canonical HTML (VP-SPEC v1.8). Displayed quantities are regenerated deterministically; open scales [O] are listed in the irreproducibility ledger.</p>
+</footer>
+</body>
+</html>
