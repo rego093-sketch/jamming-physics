@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E10 — Light/dark adaptation — gain control as the switch on its saturating branch | VP Eye Volume</title>
+<meta name="description" content="Adaptation needs no new machinery: it is the same R19 switch on its steady-state ON branch, where the cubic makes the response saturate (s* → h^(1/3)) — so a huge background range is log-compressed (by the cubic order n=3), the incremental gain falls automatically as the surround brightens, and the FRACTIONAL (contrast) gain is constant at exactly 1/n = 1/3, a Weber-Fechner-like law forced by the cube and independent of γ.">
+<link rel="canonical" href="https://jamming-physics.org/eye/e10-light-dark-adaptation/">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/volume.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "E10 — Light/dark adaptation — gain control as the switch on its saturating branch",
+      "description": "Adaptation needs no new machinery: it is the same R19 switch on its steady-state ON branch, where the cubic makes the response saturate (s* → h^(1/3)) — so a huge background range is log-compressed (by the cubic order n=3), the incremental gain falls automatically as the surround brightens, and the FRACTIONAL (contrast) gain is constant at exactly 1/n = 1/3, a Weber-Fechner-like law forced by the cube and independent of γ.",
+      "inLanguage": "en",
+      "url": "https://jamming-physics.org/eye/e10-light-dark-adaptation/",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "VP — The Eye Volume: the high→low down-conversion ladder (E0→E8) + mechanism extensions (E9–E12)",
+        "url": "https://jamming-physics.org/eye/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Young Jae Lee",
+        "identifier": "https://orcid.org/0009-0002-7535-8245"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creativeWorkStatus": "theoretical research, non-clinical"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jamming-physics.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Eye Volume",
+          "item": "https://jamming-physics.org/eye/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "E10 — Light/dark adaptation",
+          "item": "https://jamming-physics.org/eye/e10-light-dark-adaptation/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://jamming-physics.org/eye/">VP · The Eye Volume</a>
+<span class="tag">theoretical research · non-clinical · CC BY 4.0</span></header>
+<main class="chapter">
+<nav class="crumb" aria-label="Breadcrumb"><a href="https://jamming-physics.org/eye/">VP Eye Volume</a> / <span>E10</span></nav>
+<h1>E10 <span class="sub">Light/dark adaptation — gain control as the switch on its saturating branch</span></h1>
+<p class="lead">Adaptation needs no new machinery: it is the same R19 switch on its steady-state ON branch, where the cubic makes the response saturate (s* → h^(1/3)) — so a huge background range is log-compressed (by the cubic order n=3), the incremental gain falls automatically as the surround brightens, and the FRACTIONAL (contrast) gain is constant at exactly 1/n = 1/3, a Weber-Fechner-like law forced by the cube and independent of γ.</p>
+
+<section><h2>What this rung establishes</h2>
+<p>Adaptation needs no new machinery. The eye works from starlight to noon — a range of many orders
+of magnitude — and the reason is already in the E2 switch. The steady state of the frozen field
+γ·s−s³+h, read on its upper (light-adapted) branch, is the real root of s³−γ·s−h = 0;
+for a large background drive the cubic dominates, so <strong>s*(h) → h^(1/3)</strong> — a
+<em>compressive</em> response. On the rod pigment RHO (γ = 1.4719, fold h* = 0.68733) the
+ON-branch steady state saturates onto that cube root: s*/h^(1/3) runs 1.467434 → 1.105351
+→ 1.022769 → 1.004906 → 1.001057 → 1.000228 as the background climbs.
+Every one of those is a <em>true</em> zero of the frozen field (residual ≈ 0). This is normal
+physiology — no clinical magnitude is produced. <span class="grade gF">[F]</span><span class="grade gV">[V]</span></p></section>
+
+<section><h2>Key results</h2>
+<dl class="kvlist"><div class="kv"><dt>Anchor switch (rod pigment RHO)</dt><dd>γ = 1.4719, fold h* = spinodal(γ) = 0.68733</dd></div><div class="kv"><dt>ON-branch steady state saturates</dt><dd>s*/h^(1/3) → 1.000228 (onto the cube root)</dd></div><div class="kv"><dt>Dynamic range (operating sweep)</dt><dd>5.000000 background decades → 1.500207 response decades</dd></div><div class="kv"><dt>Deep-saturation log-compression</dt><dd>6.000000 → 1.990223 decades = 3.014737 → n=3</dd></div><div class="kv"><dt>Incremental gain falls (light adapt.)</dt><dd>2.004737e-01 (dim) → 1.546844e-04 (bright), 1296.0×</dd></div><div class="kv"><dt>Contrast gain → 1/n (Weber)</dt><dd>0.136615 → … → 0.333182; pure-cube limit 0.333333</dd></div></dl>
+<p>A ~5-decade background range is squeezed into a ~1.5-decade response, and deep in the saturated branch
+the log-compression is exactly the cubic order <strong>n = 3</strong> (3.014737). That is how one
+switch spans the eye’s enormous intensity range without pinning at either end.
+<span class="grade gF">[F]</span></p></section>
+
+<section><h2>Gain control, and the Weber law it forces</h2>
+<p>The incremental gain is ds*/dh = 1/(3s*²−γ) (the frozen field’s own slope). It <em>falls</em>
+monotonically as the background rises — 2.004737e-01 in dim light down to 1.546844e-04 in
+bright, about 1296.0× — so a bright surround automatically turns the switch down. No separate
+machinery is invoked; gain control is a property of the cube’s steady-state curve. The deeper consequence
+is the <strong>contrast</strong> gain (the response to a <em>fractional</em> change), (h/s*)·ds*/dh: on the
+saturated branch s*→h^(1/3), so it tends to (h^(2/3))/(3h^(2/3)) = <strong>1/n = 1/3 exactly</strong>. In the
+pure-cube limit it is 0.333333 for any background; the real γ-carrying field converges to it
+(0.136615 → 0.270194 → 0.318497 → 0.330078 → 0.332629 →
+0.333182). Equal fractional steps feel equal — a Weber-Fechner-like law, <em>forced by the cube and
+independent of γ</em>: a different gene’s threshold gives the same limit (0.333301 for RHO,
+0.333306 for CNGB3 at a large background). <span class="grade gF">[F]</span><span class="grade gV">[V]</span></p>
+<p class="muted">Honest scope: this is the <em>saturated</em> branch. Near the fold (small background) the
+γ·s term still matters and the response is steeper than a clean power law — the Weber regime is the
+cube-root tail, stated, not hidden.</p></section>
+
+<section><h2>Two regimes; where γ and τ sit</h2>
+<p><strong>Dark</strong> (operating point near the fold h* = 0.68733): the incremental gain is
+highest (2.004737e-01) and the single-photon <em>flip</em> (E2) gives the detection threshold.
+<strong>Bright</strong> (driven deep into the cube root): low gain (1.546844e-04), the response
+compressed against saturation. Adaptation is the operating point <em>sliding</em> from the fold into the
+cube-root tail. γ is read <strong>read-only</strong>: γ(RHO) = 1.4719 sets <em>where</em> the dark
+fold sits (a sensitivity offset), not the compression law — which is γ-independent, exactly as the band
+was τ-not-γ in E7 and γ was an offset in E8. The <em>time course</em> of dark re-sensitisation runs on the
+frozen Neuron’s recovery τ_s = 40.0 (β = 0.5), the same constant that set the band (E7) and
+the rate code (E8); its structure is forced, the absolute seconds are the inherited
+<span class="grade gO">[O]</span>. The felt brightness percept is the mind volume’s.
+<span class="grade gF">[F]</span></p></section>
+
+<section class="grades"><h2>Grades <span class="muted">(VP-SPEC C3 — honest)</span></h2><table class="gtable"><tbody><tr><td class="grade gF">[F]</td><td>Light/dark adaptation is the same R19 switch on its steady-state ON branch, where the cubic makes the response saturate (s*→h^(1/3)); the incremental gain ds*/dh = 1/(3s*²−γ) falls with the background (gain control); the CONTRAST gain → 1/n = 1/3 exactly (a Weber-like law), independent of γ; deep-saturation log-compression → the cubic order n=3; γ is an offset, not the law.</td></tr><tr><td class="grade gV">[V]</td><td>Every s* is a true zero of the frozen field (residual ≈ 0); s*/h^(1/3) → 1 monotonically; the gain falls monotonically dim→bright; the contrast gain rises to 1/3 and the pure-cube limit is exactly 0.333333; the two-gene asymptote agrees; τ_s/β and γ are byte-equal to the frozen substrate/atlas.</td></tr><tr><td class="grade gL">[L]</td><td>γ(RHO), γ(CNGB3) from NCBI promoters (cached, read-only); Weber’s law and the brightness power-law exponent (~1/3) are the cited psychophysics this matches.</td></tr><tr><td class="grade gO">[O]</td><td>The absolute background→drive→firing scale (inherited E2/E5) — so no absolute threshold, Weber fraction, or luminance unit is produced; the absolute τ→seconds of dark adaptation (inherited E7/E8); the molecular adaptation machinery (Ca²⁺ feedback, pigment bleaching/regeneration) — the substrate captures the compression, not that feedback loop; the felt brightness percept (→ mind volume). Each obstacle named.</td></tr></tbody></table></section>
+<section class="reproduction"><h2>Reproducibility</h2><p class="muted">Every number on this page is the code’s own output. The transcript below is the verbatim, hash-pinned stdout of the listed module(s); <code>tools/gate_volume.py</code> re-runs them and asserts HTML↔code drift 0.</p><details class="repro"><summary><span class="mono">research/E10-light-dark-adaptation/run.py</span><span class="sha">sha256 7e3685b15c96d7148209d153…</span></summary><pre class="transcript" data-run="research/E10-light-dark-adaptation/run.py" data-sha="7e3685b15c96d7148209d15333cd2c87511aac9c6b2fbe79233163c7c4add516">================================================================================
+E10 — LIGHT/DARK ADAPTATION   (gain control = the R19 switch on its saturating ON branch)
+================================================================================
+SCOPE: theoretical, NON-CLINICAL — a NORMAL mechanism (not a disease chapter).
+consumes (frozen): vp_substrate.sdot/spinodal (the R19 field) · Neuron τ_s,β · organ_gamma.json γ
+re-derives: nothing; adds no γ. γ measured, never fitted; γ = promoter STRUCTURE only (firewall).
+anchor gene RHO (rod pigment): γ = 1.4719  →  fold h*(γ) = spinodal(γ) = 0.68733
+the steady state of γ·s − s³ + h = 0 (E2's switch, ON branch) is the real root of s³ − γ·s − h = 0;
+for a large background drive h the cubic dominates ⇒ s*(h) → h^(1/3): a COMPRESSIVE response.
+
+--------------------------------------------------------------------------------
+PART A — the ON-branch steady state s*(h) SATURATES onto the cube root (s*/h^(1/3) → 1)
+--------------------------------------------------------------------------------
+    h (bg)     s*           h^(1/3)      s*/h^1/3     gain=1/(3s^2-g) contrast  
+    1          1.467434     1.000000     1.467434     2.004737e-01    0.136615  
+    10         2.381407     2.154435     1.105351     6.434429e-02    0.270194  
+    100        4.747275     4.641589     1.022769     1.511991e-02    0.318497  
+    1000       10.049063    10.000000    1.004906     3.316980e-03    0.330078  
+    10000      21.567120    21.544347    1.001057     7.173858e-04    0.332629  
+    100000     46.426459    46.415888    1.000228     1.546844e-04    0.333182  
+
+    s*/h^(1/3) decreases monotonically toward 1 (saturation onto the cube root): True
+    every s* is a true zero of the FROZEN field (max |γ·s−s³+h| = 2.3e-13). [V]
+
+    operating sweep  1 → 100000: background = 5.000000 decades, response = 1.500207 decades
+    → compression = 3.332873 (a 5-decade background fits a ~1.5-decade response)
+    saturated sweep  100 → 100000000: background = 6.000000 decades, response = 1.990223 decades
+    → compression = 3.014737 → the cubic order n=3 (pure cube-root log-compression). [F]
+
+--------------------------------------------------------------------------------
+PART B — gain control: the incremental gain ds*/dh = 1/(3s*²−γ) FALLS with the background
+--------------------------------------------------------------------------------
+    gain at dim background   (h=1):    2.004737e-01
+    gain at bright background (h=100000): 1.546844e-04
+    gain falls monotonically dim → bright: True
+    dim/bright gain ratio = 1296.0  (the bright surround turns the switch DOWN)
+    gain·h^(2/3) (≈ const ⇒ gain ∝ h^(−2/3)): 0.325749 (h=100) … 0.333257 (h=100000) → 1/3
+    → a saturating response gives AUTOMATIC gain control: no separate machinery is invoked. [F]
+
+--------------------------------------------------------------------------------
+PART C — contrast gain (response to a FRACTIONAL change) → 1/n = 1/3 EXACTLY (Weber-like)
+--------------------------------------------------------------------------------
+    contrast gain (h/s*)·ds*/dh along the sweep:
+        0.136615 → 0.270194 → 0.318497 → 0.330078 → 0.332629 → 0.333182
+    rises monotonically toward a constant: True
+
+    pure-cube limit (γ-term off ⇒ s*=h^(1/3) exactly): contrast = (h/s*)/(3s*²) for any h —
+        h=8            s*=2.000000     contrast = 0.333333
+        h=1000         s*=10.000000    contrast = 0.333333
+        h=1e+09        s*=1000.000000  contrast = 0.333333
+    → the cube-root response makes the contrast gain EXACTLY 1/n = 0.333333  (n=3, the cubic). [F]
+
+    γ-INDEPENDENCE (the compression is the cubic ORDER, not the threshold γ):
+        RHO   (γ=1.4719): contrast gain at h=1000000 = 0.333301 → 1/3
+        CNGB3 (γ=1.2425): contrast gain at h=1000000 = 0.333306 → 1/3
+    → equal fractional steps feel equal regardless of γ: a Weber-Fechner-like law, FORCED not fitted.
+    [honest scope] this is the SATURATED branch; near the fold (small h) the γ·s term matters and the
+    response is steeper than a clean power law — the Weber regime is the cube-root tail, stated not hidden.
+
+--------------------------------------------------------------------------------
+PART D — two regimes (dark/fold vs bright/saturated); γ sets the offset, τ sets the recovery
+--------------------------------------------------------------------------------
+    DARK  (operating point near the fold h*): high incremental gain + the single-photon FLIP
+          (E2 detection threshold at h*=0.68733); the ON-branch gain here is the
+          largest in the sweep (2.004737e-01 at h=1).
+    BRIGHT (driven deep into the cube root): low gain (1.546844e-04), the response
+          compressed against saturation. Adaptation = the operating point SLIDING fold → cube-root.
+
+    γ READ-ONLY: γ(RHO)=1.4719 sets the fold/offset (where dark sensitivity sits); the
+    compression law (contrast gain → 1/3) is γ-INDEPENDENT (PART C) — γ is an OFFSET, as in E7/E8.
+    τ READ-ONLY: dark re-sensitisation runs on the FROZEN Neuron's recovery τ_s = 40.0 (β = 0.5),
+    the same time-constant that set the band (E7) and the rate code (E8). Structure [F]; absolute
+    seconds are the inherited [O]. The felt brightness percept is OUT OF SCOPE (→ mind volume).
+
+    [no-drift] anchor γ byte-equal to frozen atlas (no fitting): True
+
+================================================================================
+E10 GRADES (VP-SPEC C3) — honest
+================================================================================
+  [F] forced   : the ON-branch steady state saturates onto the cube root s*→h^(1/3); the
+                 incremental gain ds*/dh = 1/(3s*²−γ) falls with the background (gain control);
+                 the CONTRAST gain → exactly 1/n = 1/3 (a Weber-like law) and is γ-independent;
+                 deep-saturation log-compression → the cubic order n=3; γ is an offset, not the law.
+  [V] verified : every s* is a true zero of the FROZEN field (residual ≈ 0); s*/h^(1/3) → 1
+                 monotonically; the gain falls monotonically dim→bright; the contrast gain rises to
+                 1/3 and the pure-cube limit is exactly 0.333333; τ_s/β byte-equal; γ byte-equal.
+  [L] measured : γ(RHO), γ(CNGB3) (NCBI promoters, cached, read-only); Weber's law and the
+                 brightness power-law exponent (~1/3) are the cited psychophysics this matches.
+  [O] open     : the absolute background→drive→firing scale (inherited E2/E5) — so no absolute
+                 threshold, Weber fraction, or luminance unit is produced; the absolute τ→seconds
+                 of dark adaptation (inherited E7/E8); the molecular adaptation machinery (Ca²⁺
+                 feedback on guanylate cyclase, pigment bleaching/regeneration) — the substrate
+                 captures the COMPRESSION, not that feedback loop; the felt brightness percept
+                 (→ mind volume). Each obstacle named, not invented.
+
+LEARNED: light/dark adaptation needs no new machinery — it is the SAME R19 switch read on its
+         steady-state ON branch, where the cube makes the response saturate (s*→h^(1/3)). That one
+         fact gives all three signatures: a huge background range is log-compressed by the cubic
+         order n=3 (dynamic range), the incremental gain falls automatically as the surround
+         brightens (gain control), and — the headline — the FRACTIONAL (contrast) gain is constant
+         at exactly 1/n = 1/3, a Weber-Fechner-like law FORCED by the cube and INDEPENDENT of γ.
+         γ only sets where the dark fold sits (an offset, as in E7/E8); τ sets the dark-recovery
+         time course (E7/E8); the absolute scales and the felt percept stay honestly open.
+
+sha256: 97f9611cee3346554c5dcb266317758eb72091c7f7ff7b1c8dc13bdfd97c8c1d
+</pre></details></section>
+<nav class="pager"><a class="prev" href="../e9-red-green-dichromacy/">← E9</a><a class="up" href="../">Volume contents</a><a class="next" href="../e11-accommodation-refraction/">E11 →</a></nav>
+</main>
+<footer class="foot">
+<p>VP — The Eye Volume: the high→low down-conversion ladder (E0→E8) + mechanism extensions (E9–E12) · Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a>)
+· <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · concept DOI 10.5281/zenodo.20790134.</p>
+<p class="muted">Mechanism-layer theory only. No diagnosis, no treatment, no clinical magnitudes. The felt
+percept of sight is deferred to the mind volume.</p>
+</footer>
+</body>
+</html>

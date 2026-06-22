@@ -1,0 +1,206 @@
+/* Jamming Physics — Wave-Substrate Computer
+   House style: instrument-grade academic. The signature is the claim-strip:
+   every claim carries a grade badge ([F]/[V]/[L]/[O]) and a reproduction path.
+   No build step, no JS dependency: static, accessible, reduced-motion-safe. */
+
+:root{
+  --ink:#1a1d21; --ink-soft:#414750; --faint:#6b7280;
+  --paper:#fbfaf7; --panel:#f3f1ea; --line:#dcd8cf; --line-soft:#e9e6df;
+  --accent:#0f5d63;            /* deep teal — the one accent */
+  --accent-soft:#0f5d6314;
+  --g-forced:#7a4d00;  --g-forced-bg:#f3e6cf;
+  --g-verified:#0f5d63; --g-verified-bg:#d8ecec;
+  --g-calibrated:#3a4a8c; --g-calibrated-bg:#e2e6f4;
+  --g-open:#7a2f2f;     --g-open-bg:#f1ddd8;
+  --g-hyp:#5a4a6a;      --g-hyp-bg:#ece4f1;
+  --maxw:46rem;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:"Inter","Helvetica Neue",Arial,system-ui,sans-serif;
+  --mono:"SF Mono","Roboto Mono","DejaVu Sans Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{font-size:18px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);line-height:1.62;
+  font-feature-settings:"kern" 1,"liga" 1,"onum" 1;
+}
+
+/* ---- shell ---- */
+header{border-bottom:1px solid var(--line);background:var(--paper)}
+nav.crumb{
+  max-width:var(--maxw);margin:0 auto;padding:.85rem 1.25rem;
+  font-family:var(--sans);font-size:.78rem;letter-spacing:.02em;color:var(--faint);
+}
+nav.crumb a{color:var(--accent);text-decoration:none}
+nav.crumb a:hover{text-decoration:underline}
+main{max-width:var(--maxw);margin:0 auto;padding:2.4rem 1.25rem 1rem}
+footer{
+  max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.25rem 3rem;
+  border-top:1px solid var(--line-soft);margin-top:2.5rem;
+  font-family:var(--sans);font-size:.76rem;color:var(--faint);line-height:1.7;
+}
+footer a{color:var(--accent);text-decoration:none}
+
+/* ---- type ---- */
+h1{
+  font-size:1.92rem;line-height:1.2;font-weight:600;letter-spacing:-.01em;
+  margin:.2rem 0 1.1rem;text-wrap:balance;
+}
+h2{
+  font-family:var(--sans);font-size:1.12rem;font-weight:650;letter-spacing:-.005em;
+  margin:2.3rem 0 .7rem;padding-top:.2rem;color:var(--ink);
+}
+h2::before{
+  content:"";display:block;width:2.2rem;height:2px;background:var(--accent);
+  margin-bottom:.7rem;opacity:.5;
+}
+h3{
+  font-family:var(--sans);font-size:1rem;font-weight:650;letter-spacing:-.003em;
+  margin:1.6rem 0 .55rem;color:var(--ink-soft);
+}
+p{margin:0 0 1rem}
+a{color:var(--accent)}
+strong,b{font-weight:650}
+sup,sub{line-height:0}
+
+/* answer-first: the lede the retrieval engine extracts */
+p.answer{
+  font-family:var(--sans);font-size:1.06rem;line-height:1.55;font-weight:450;
+  color:var(--ink);background:var(--accent-soft);
+  border-left:3px solid var(--accent);border-radius:0 4px 4px 0;
+  padding:1rem 1.15rem;margin:0 0 1.15rem;
+}
+p.abstract{color:var(--ink-soft);font-size:1.02rem;margin:0 0 1.2rem}
+
+/* ---- claim-strip: the signature device ---- */
+aside.claim-strip{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.55rem .85rem;
+  font-family:var(--sans);font-size:.78rem;
+  border:1px solid var(--line);background:var(--panel);border-radius:6px;
+  padding:.6rem .85rem;margin:0 0 1.6rem;
+}
+aside.claim-strip a{color:var(--accent);text-decoration:none;font-weight:550}
+aside.claim-strip a:hover{text-decoration:underline}
+.claim-strip .gate{color:var(--faint);letter-spacing:.01em}
+.claim-strip .doi{color:var(--accent);font-weight:550}
+
+.grade{
+  font-weight:700;letter-spacing:.02em;padding:.12rem .5rem;border-radius:999px;
+  font-size:.72rem;text-transform:uppercase;white-space:nowrap;
+}
+.g-forced{color:var(--g-forced);background:var(--g-forced-bg)}
+.g-verified{color:var(--g-verified);background:var(--g-verified-bg)}
+.g-calibrated{color:var(--g-calibrated);background:var(--g-calibrated-bg)}
+.g-open{color:var(--g-open);background:var(--g-open-bg)}
+.g-hypothesis{color:var(--g-hyp);background:var(--g-hyp-bg)}
+
+/* ---- vp-card: a locked quantity restated self-containedly ---- */
+aside.vp-card{
+  font-family:var(--sans);font-size:.84rem;line-height:1.5;color:var(--ink-soft);
+  border:1px solid var(--line-soft);border-left:3px solid var(--g-calibrated);
+  background:#fff;border-radius:0 5px 5px 0;padding:.7rem .9rem;margin:1.1rem 0;
+}
+aside.vp-card b{color:var(--ink);font-family:var(--mono);font-size:.86rem}
+aside.vp-card a{color:var(--accent);text-decoration:none;font-weight:550}
+aside.vp-card a:hover{text-decoration:underline}
+
+/* honest-boundary callout */
+.bound{
+  font-family:var(--sans);font-size:.85rem;line-height:1.55;color:var(--ink-soft);
+  border:1px dashed var(--line);border-radius:5px;background:var(--panel);
+  padding:.65rem .9rem;margin:1.1rem 0;
+}
+.bound b{color:var(--ink)}
+
+/* ---- tables ---- */
+.tbl-wrap{overflow-x:auto;margin:1.1rem 0}
+table{
+  border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.82rem;
+  line-height:1.45;
+}
+caption{
+  caption-side:top;text-align:left;font-family:var(--sans);font-size:.78rem;
+  color:var(--faint);margin-bottom:.4rem;
+}
+th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--line-soft);vertical-align:top}
+thead th{
+  border-bottom:1.5px solid var(--line);color:var(--ink);font-weight:650;
+  white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:1px solid var(--line)}
+td code,th code,p code,li code{
+  font-family:var(--mono);font-size:.84em;background:var(--panel);
+  padding:.05rem .3rem;border-radius:3px;
+}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---- lists ---- */
+ul,ol{margin:0 0 1.1rem;padding-left:1.3rem}
+li{margin:.3rem 0}
+
+/* ---- prev/next nav ---- */
+nav.pn{
+  display:flex;flex-wrap:wrap;gap:.6rem 1rem;justify-content:space-between;
+  align-items:center;font-family:var(--sans);font-size:.84rem;
+  border-top:1px solid var(--line);padding-top:1.1rem;margin-top:2.4rem;
+}
+nav.pn a{color:var(--accent);text-decoration:none;font-weight:550}
+nav.pn a:hover{text-decoration:underline}
+nav.pn a[href*="/wave-computer/"]:not([rel]){color:var(--faint);font-weight:500}
+
+/* ---- hub & index ---- */
+.lede{font-size:1.12rem;color:var(--ink-soft);margin:0 0 1.4rem;text-wrap:pretty}
+.derive-line{
+  font-family:var(--sans);font-size:.86rem;color:var(--ink-soft);
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:.6rem .9rem;border-radius:0 4px 4px 0;margin:0 0 1.8rem;
+}
+.derive-line a{font-weight:600;text-decoration:none}
+
+ol.toc{list-style:none;padding:0;margin:1.2rem 0 0;counter-reset:ch}
+ol.toc li{
+  margin:0;border-bottom:1px solid var(--line-soft);padding:.7rem 0;
+  display:grid;grid-template-columns:2.1rem 1fr auto;gap:.5rem 1rem;align-items:baseline;
+}
+ol.toc li::before{
+  counter-increment:ch;content:"§" counter(ch);
+  font-family:var(--mono);font-size:.82rem;color:var(--faint);
+}
+ol.toc a{font-family:var(--serif);font-size:1.02rem;text-decoration:none;color:var(--ink);font-weight:500}
+ol.toc a:hover{color:var(--accent);text-decoration:underline}
+ol.toc .one{display:block;font-family:var(--sans);font-size:.8rem;color:var(--ink-soft);margin-top:.2rem;font-weight:400}
+ol.toc .gcell{justify-self:end}
+
+.card-grid{display:grid;gap:1rem;margin:1.4rem 0}
+.paper-card{
+  border:1px solid var(--line);border-radius:8px;background:#fff;padding:1.1rem 1.2rem;
+}
+.paper-card h3{margin:.1rem 0 .4rem;font-family:var(--sans);font-size:1.04rem;font-weight:650}
+.paper-card .res{font-family:var(--mono);font-size:.86rem;color:var(--accent);margin:.2rem 0 .5rem}
+.paper-card a{text-decoration:none;font-family:var(--sans);font-size:.84rem;font-weight:550}
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:.5rem .8rem;font-family:var(--sans);font-size:.76rem;
+  color:var(--ink-soft);margin:1.4rem 0;padding:.8rem .9rem;
+  border:1px solid var(--line-soft);border-radius:6px;background:var(--panel);
+}
+.legend span.k{display:inline-flex;align-items:center;gap:.4rem}
+
+/* ---- responsive ---- */
+@media (max-width:34rem){
+  html{font-size:17px}
+  main{padding:1.8rem 1.05rem 1rem}
+  h1{font-size:1.6rem}
+  ol.toc li{grid-template-columns:1.8rem 1fr;}
+  ol.toc .gcell{grid-column:2;justify-self:start;margin-top:.35rem}
+}
+
+/* ---- a11y ---- */
+a:focus-visible,.toc a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+@media print{
+  body{background:#fff}
+  aside.claim-strip,nav.pn,nav.crumb{break-inside:avoid}
+}

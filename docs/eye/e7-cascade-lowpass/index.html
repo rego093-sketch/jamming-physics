@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E7 — The cascade as the band-setting low-pass — f_c = β/(2πτ) | VP Eye Volume</title>
+<meta name="description" content="The frozen recovery law w ← w + dt·(s−βw)/τ_s IS a single-pole low-pass; the surviving band is the cutoff f_c = β/(2πτ_s), invariant to both the carrier and γ — it is τ that fixes the band.">
+<link rel="canonical" href="https://jamming-physics.org/eye/e7-cascade-lowpass/">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../assets/volume.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "E7 — The cascade as the band-setting low-pass — f_c = β/(2πτ)",
+      "description": "The frozen recovery law w ← w + dt·(s−βw)/τ_s IS a single-pole low-pass; the surviving band is the cutoff f_c = β/(2πτ_s), invariant to both the carrier and γ — it is τ that fixes the band.",
+      "inLanguage": "en",
+      "url": "https://jamming-physics.org/eye/e7-cascade-lowpass/",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "VP — The Eye Volume: the high→low down-conversion ladder (E0→E8) + mechanism extensions (E9–E12)",
+        "url": "https://jamming-physics.org/eye/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Young Jae Lee",
+        "identifier": "https://orcid.org/0009-0002-7535-8245"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creativeWorkStatus": "theoretical research, non-clinical"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jamming-physics.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Eye Volume",
+          "item": "https://jamming-physics.org/eye/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "E7 — The cascade as the band-setting low-pass",
+          "item": "https://jamming-physics.org/eye/e7-cascade-lowpass/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://jamming-physics.org/eye/">VP · The Eye Volume</a>
+<span class="tag">theoretical research · non-clinical · CC BY 4.0</span></header>
+<main class="chapter">
+<nav class="crumb" aria-label="Breadcrumb"><a href="https://jamming-physics.org/eye/">VP Eye Volume</a> / <span>E7</span></nav>
+<h1>E7 <span class="sub">The cascade as the band-setting low-pass — f_c = β/(2πτ)</span></h1>
+<p class="lead">The frozen recovery law w ← w + dt·(s−βw)/τ_s IS a single-pole low-pass; the surviving band is the cutoff f_c = β/(2πτ_s), invariant to both the carrier and γ — it is τ that fixes the band.</p>
+
+<section><h2>What this rung establishes</h2>
+<p>The band the eye speaks in is the cutoff of the transduction low-pass. The frozen recovery law
+w ← w + dt·(s − βw)/τ_s (quoted verbatim) <em>is</em> a first-order leaky integrator — a single-pole
+low-pass H(f) = 1/(β + i·2πf·τ_s). Its one claim, the band is set by the recovery time-constant
+f_c = β/(2πτ_s), is read off the substrate four ways that agree. <span class="grade gF">[F]</span>
+<span class="grade gV">[V]</span></p></section>
+
+<section><h2>Four agreeing reads, and band ∝ 1/τ</h2>
+<dl class="kvlist"><div class="kv"><dt>DC gain = 1/β</dt><dd>closed form 2.0000, measured 1.99902</dd></div><div class="kv"><dt>Measured cutoff vs β/(2πτ)</dt><dd>0.001993 vs 0.001989</dd></div><div class="kv"><dt>Phase lag at cutoff</dt><dd>44.99° (one pole ⇒ 45°)</dd></div><div class="kv"><dt>High-frequency roll-off</dt><dd>-19.96 dB/decade (one pole ⇒ −20)</dd></div><div class="kv"><dt>f_c·τ invariant (= β/2π)</dt><dd>0.079577, spread 0.27%</dd></div><div class="kv"><dt>Cutoff halves with τ (20→80)</dt><dd>0.003985 → 0.000999</dd></div></dl>
+<p>Sweeping τ gives f_c ∝ 1/τ exactly, and the recovery law carries no γ term and no carrier term —
+so the band is purely τ: orthogonal to the carrier (E5) and to γ. The full frozen neuron inherits this
+(its rhythm falls monotonically in τ); γ is a secondary mover via dwell ∝ γ^1.5. The single-pole
+idealisation vs. the real multi-stage cascade and the absolute τ→Hz are named
+<span class="grade gO">[O]</span>. <span class="grade gF">[F]</span></p></section>
+
+<section class="grades"><h2>Grades <span class="muted">(VP-SPEC C3 — honest)</span></h2><table class="gtable"><tbody><tr><td class="grade gF">[F]</td><td>The surviving band is f_c = β/(2πτ_s), set by the recovery time-constant; it is invariant to both the carrier and γ — τ, not the carrier and not γ, fixes the band.</td></tr><tr><td class="grade gV">[V]</td><td>DC gain 1/β; the measured cutoff matches β/(2πτ); phase lag 44.99°; roll-off −19.96 dB/decade; f_c·τ constant ⇒ f_c ∝ 1/τ.</td></tr><tr><td class="grade gL">[L]</td><td>The frozen Neuron constants β=0.5, τ_f=1.0, τ_s=40.0; γ(GUCY2D)=1.365 read byte-equal from the atlas.</td></tr><tr><td class="grade gO">[O]</td><td>The single-pole idealisation vs. the real multi-stage cascade (rhodopsin→transducin→PDE→cGMP→CNG); the absolute τ→Hz calibration; the full-neuron rhythm is only approximately ∝1/τ. Each obstacle named.</td></tr></tbody></table></section>
+<section class="reproduction"><h2>Reproducibility</h2><p class="muted">Every number on this page is the code’s own output. The transcript below is the verbatim, hash-pinned stdout of the listed module(s); <code>tools/gate_volume.py</code> re-runs them and asserts HTML↔code drift 0.</p><details class="repro"><summary><span class="mono">research/E7-cascade-lowpass/run.py</span><span class="sha">sha256 2c1e4c8ae0076c86247f550b…</span></summary><pre class="transcript" data-run="research/E7-cascade-lowpass/run.py" data-sha="2c1e4c8ae0076c86247f550bab496cabaaa9eacd86958834d126417dd31609b2">==========================================================================
+E7 — THE CASCADE AS THE BAND-SETTING LOW-PASS   (cutoff f_c = β/(2π·τ))
+==========================================================================
+(0) THE FILTER IS THE SUBSTRATE'S RECOVERY (verbatim):  w ← w + dt·(s − β·w)/τ_s
+    ⇒ a single-pole low-pass  H(f) = 1/(β + i·2πf·τ_s),  β=0.5 (frozen Neuron β); SEED=19
+    forced (closed form):  DC gain = 1/β = 2.0000 ;  cutoff f_c = β/(2π·τ_s) ;  f_c·τ_s = β/2π = 0.079577
+                           phase(f_c) = −45° ;  roll-off = −20 dB/decade  (one pole)
+
+(1) MEASURED transfer function on the FROZEN recovery law (τ_s=40 = Neuron default):
+    (1a) passband  DC gain = 1.99902   (closed form 1/β = 2.00000)            [V]
+    (1b) cutoff    f_c(meas) = 0.001993   vs  β/(2π·τ) = 0.001989   ratio = 1.0016   [V]
+    (1c) phase     lag at f_c = 44.99°   (single-pole ⇒ 45°)                      [V]
+    (1d) roll-off  high-f slope = -19.96 dB/decade   (one pole ⇒ −20)               [V]
+    → the cascade IS a first-order low-pass; its band edge is the explicit number β/(2π·τ). [F]/[V]
+
+(2) THE BAND ∝ 1/τ — sweep the recovery τ_s, the cutoff halves with it (carrier never enters):
+    τ_s=   20   f_c = 0.003985   β/(2π·τ) = 0.003979   f_c·τ_s = 0.079695
+    τ_s=   40   f_c = 0.001993   β/(2π·τ) = 0.001989   f_c·τ_s = 0.079702  (↓ with τ)
+    τ_s=   80   f_c = 0.000999   β/(2π·τ) = 0.000995   f_c·τ_s = 0.079913  (↓ with τ)
+    f_c·τ_s constant = 0.079770  (β/2π = 0.079577);  spread 0.27%  ⇒ f_c ∝ 1/τ EXACTLY
+    the recovery law carries NO γ and NO carrier term ⇒ the band is PURELY τ: ⟂ carrier (E5) and ⟂ γ. [F]
+
+(3) THE LOW-PASS *IS* E5's CARRIER-REJECTION (closed-form |H| at E5's fast carriers, τ_s=40):
+    carrier f= 1.0  (=    503× f_c)  →  |H|/DC = 0.00199  (rejected ∝ 1/f)
+    carrier f= 5.0  (=   2513× f_c)  →  |H|/DC = 0.00040  (rejected ∝ 1/f)
+    E5 said the carrier is 'averaged away (out/f_c→0)'; here it IS the −20 dB/dec roll-off. [F]
+    the REAL ~10¹⁴ Hz carrier sits ~17 orders above any plausible f_c ⇒ rejection is total
+    (the RATIO is forced; the absolute f_c in Hz is the ladder's standing [O]).
+
+(4) THE FULL FROZEN NEURON inherits the band — emergent rhythm vs τ_s (constant drive d0=0.4):
+    τ_s=   20   out_dom = 0.018750   out_dom·τ_s = 0.3750
+    τ_s=   40   out_dom = 0.010500   out_dom·τ_s = 0.4200
+    τ_s=   80   out_dom = 0.005750   out_dom·τ_s = 0.4600
+    τ_s=  160   out_dom = 0.003000   out_dom·τ_s = 0.4800
+    out_dom ↓ monotonically with τ; out_dom·τ DRIFTS upward to an asymptote ⇒ only APPROX ∝ 1/τ:
+    a relaxation period = (slow recovery ∝ τ) + (τ-independent fast transit). The CLEAN 1/τ is the
+    explicit filter's; the neuron inherits it. [V]
+
+    γ is the SECONDARY mover (the switch nonlinearity; dwell ∝ γ^1.5), not the band-setter — at
+    fixed τ_s=40 the eye γ's shift the rhythm only mildly while τ sets the decade:
+      CNGB3   γ=1.2425  dwell∝γ^1.5=1.2591  out_dom=0.009000
+      RPE65   γ=1.2842  dwell∝γ^1.5=1.3230  out_dom=0.008750
+      GUCY2D  γ=1.3650  dwell∝γ^1.5=1.4498  out_dom=0.008250
+      RHO     γ=1.4719  dwell∝γ^1.5=1.6234  out_dom=0.007500
+    (γ READ-ONLY from the frozen atlas; band channel = τ, size/settle channel = γ. [F]/[V])
+
+LADDER PLACEMENT (E7 fixes the low-pass rung):
+    ν_light ~10¹⁴ Hz ──(E=hν → ONE flip; R19 event-detector, §E2)──▶ discrete flip-events
+    discrete flips    ──(THIS low-pass, cutoff f_c=β/(2π·τ); carrier ∝1/f rejected)──▶ graded band
+    graded band       ──(spike-rate re-quantisation, §E8)─────────────────────────────▶ ~10–100 Hz
+    the output band is the FILTER's (set by τ), never the light's. RATIO forced [F]; absolute Hz [O].
+
+LEARNED: the band the eye speaks in is not chosen by the photon — it is the cutoff of the
+         transduction low-pass, f_c = β/(2π·τ). Raise the recovery τ and the band drops with it;
+         the carrier (and γ) leave the cutoff untouched. The carrier is detected as one event and
+         then filtered out; what survives is the recovery's own band. ONE pole vs the real cascade
+         (multi-stage) and the absolute τ→Hz are named [O].
+
+sha256: 094fc06ab8d727bc46a66e830069ea159d98a1274ef647a4c92c8be49a14f2e8
+</pre></details></section>
+<nav class="pager"><a class="prev" href="../e6-why-visible/">← E6</a><a class="up" href="../">Volume contents</a><a class="next" href="../e8-graded-to-spike-rate/">E8 →</a></nav>
+</main>
+<footer class="foot">
+<p>VP — The Eye Volume: the high→low down-conversion ladder (E0→E8) + mechanism extensions (E9–E12) · Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a>)
+· <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · concept DOI 10.5281/zenodo.20790134.</p>
+<p class="muted">Mechanism-layer theory only. No diagnosis, no treatment, no clinical magnitudes. The felt
+percept of sight is deferred to the mind volume.</p>
+</footer>
+</body>
+</html>

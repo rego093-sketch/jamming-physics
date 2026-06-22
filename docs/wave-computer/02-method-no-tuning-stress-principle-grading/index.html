@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No tuning, stress tests, repro — Wave Computer §2 | Jamming Physics</title>
+<meta name="description" content="Every result is governed by four rules: no tuning (inherited numbers are principles, never fitting targets, so new_tuned_constants = 0), a stress test">
+<link rel="canonical" href="https://jamming-physics.org/wave-computer/02-method-no-tuning-stress-principle-grading/">
+<link rel="stylesheet" href="/wave-computer/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Method: no tuning, a stress test for every claim, and bit-for-bit reproduction","name":"Method: no tuning, a stress test for every claim, and bit-for-bit reproduction","inLanguage":"en","isPartOf":{"@type":"CreativeWorkSeries","name":"A Wave-Substrate Computer: Phase-Coded Information, Settling as Computation, and a Layered Test of Functional General Intelligence","alternateName":"Wave Computer","identifier":"https://doi.org/10.5281/zenodo.20783570"},"identifier":"https://doi.org/10.5281/zenodo.20783570","sameAs":"https://doi.org/10.5281/zenodo.20783570","position":2,"abstract":"A claim earns [V] only by passing a test built to falsify it; a break is recorded and the line restarts with the break applied (the inherited Stress Principle). Honest negatives are kept, never hidden or tuned away. The frozen L0 substrate is read-only — every upper layer reuses it unchanged — and each version’s result is reproduced bit-for-bit from a fixed SEED (verify with python3 repro/check_completeness.py).","author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"publisher":{"@type":"Organization","name":"Jamming Physics"},"datePublished":"2026-06-21","dateModified":"2026-06-21","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer","license":"https://creativecommons.org/licenses/by/4.0/","keywords":"no tuning, stress principle, reproducibility, grading vocabulary, deterministic simulation, falsifiability, SEED","knowsAbout":["no-tuning discipline","stress principle","bit-for-bit reproducibility","grading vocabulary","falsifiability"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Wave Computer","item":"https://jamming-physics.org/wave-computer/"},{"@type":"ListItem","position":3,"name":"§2 Method"}]}</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/wave-computer/">Wave Computer</a> › §2</nav></header>
+<main>
+<h1>Method: no tuning, a stress test for every claim, and bit-for-bit reproduction</h1>
+<p class="answer">Every result is governed by four rules: no tuning (inherited numbers are principles, never fitting targets, so new_tuned_constants = 0), a stress test designed to break each new claim before it earns a grade, an explicit grading vocabulary ([V] verified / [L] cited / [O] open), and bit-for-bit reproduction — twelve deterministic sims, each pinned by a SHA-256 digest.</p>
+<p class="abstract">A claim earns [V] only by passing a test built to falsify it; a break is recorded and the line restarts with the break applied (the inherited Stress Principle). Honest negatives are kept, never hidden or tuned away. The frozen L0 substrate is read-only — every upper layer reuses it unchanged — and each version’s result is reproduced bit-for-bit from a fixed SEED (verify with python3 repro/check_completeness.py).</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] verified discipline</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer" rel="noopener">Reproduce (GitHub)</a><a class="doi" href="https://doi.org/10.5281/zenodo.20783570" rel="noopener">DOI: 10.5281/zenodo.20783570</a></aside>
+<p>The method is what makes the program falsifiable rather than illustrative. Four invariant rules run through all twelve sessions, and each is enforced by the reproduction harness, not by narration.</p>
+
+<h2>No tuning</h2>
+<p>No constant is fit to make a result come out. Numbers inherited from the two source whitepapers are used as <i>principle and provenance</i>, never as targets to hit — the brain’s order parameter R = 0.39 and working-memory ~7 are cited as directions, not reproduced by adjustment. Every session reports <code>new_tuned_constants = 0</code>, and a sweep accompanies each claim so the reader sees the whole curve, not a single favourable point.</p>
+
+<h2>The Stress Principle</h2>
+<p>A new claim earns [V] or [L] only by passing a test specifically designed to break it. When a test breaks a hypothesis, the break is recorded and that line restarts with the break built in — so honest negatives drive the work forward instead of being discarded. Examples carried on the books: L1’s shallow binding depth (which motivated L3), L4’s capacity⊥derivability trade-off (closed in L5), and L6’s prediction-sufficiency limit (resolved in L7).</p>
+
+<h2>The grading vocabulary</h2>
+<div class="tbl-wrap"><table><caption>Three grades make every claim legible</caption><thead><tr><th>grade</th><th>meaning</th><th>example in this paper</th></tr></thead><tbody>
+<tr><td><span class="grade g-verified">[V]</span></td><td>verified mechanism, reproduced in-sim under a breaking test</td><td>one-shot recall 1.0; gate derived from a raw cue</td></tr>
+<tr><td><span class="grade g-calibrated">[L]</span></td><td>locked to a cited input / principle, not re-derived here</td><td>inherited B1–B5, P1–P3; the brain R, WM ~7</td></tr>
+<tr><td><span class="grade g-open">[O]</span></td><td>open, or an honest negative, with the obstacle named</td><td>O(1) physical parallelism; exact arithmetic needs a digital hand-off</td></tr>
+</tbody></table></div>
+
+<h2>Bit-for-bit reproduction</h2>
+<p>Each version’s simulation is deterministic from a fixed SEED and pinned by a SHA-256 digest over its result file. Re-running the module reproduces the digest exactly; the canonical artifact is this HTML, and every number shown is loaded from that verified result. The audit <code>python3 repro/check_completeness.py</code> checks all files are present, re-runs all twelve sims, and compares digests.</p>
+<div class="bound"><b>Frozen substrate.</b> The L0 module is <b>read-only</b>. Every layer above it reuses the same primitives (<code>hebbian_field</code>, <code>relax</code>, <code>overlap</code>, <code>global_R</code>, <code>pattern_to_phase</code>, <code>corrupt_phase</code>) unchanged — even the axiom-audit knock-outs are broken <i>substitutes</i> built beside L0, never edits to it. The reproduction anchors: v0.1 <code>e9fdd3bc…</code> through v0.12 <code>7f59ced6…</code>.</div>
+<nav class="pn"><a rel="prev" href="/wave-computer/01-wave-substrate-thesis-compute-by-phase/">← §1</a><a href="/wave-computer/">Contents</a><a rel="next" href="/wave-computer/03-l0-substrate-store-compute-pattern-communicate/">§3 →</a></nav>
+</main>
+<footer><p><b>Wave Computer</b> · A Wave-Substrate Computer: Phase-Coded Information, Settling as Computation, and a Layered Test of Functional General Intelligence. Part of the Jamming Physics whitepaper family. Single-author, no-tuning, bit-for-bit reproducible (SEED-fixed, 2×sha256 identical).</p><p>Author: Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a>) · License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20783570">10.5281/zenodo.20783570</a> · <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer">Reproduction code (GitHub)</a></p></footer>
+</body>
+</html>

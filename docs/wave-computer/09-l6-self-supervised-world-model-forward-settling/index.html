@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prediction is forward settling — Wave Computer §9 | Jamming Physics</title>
+<meta name="description" content="The substrate predicts itself. Prediction is forward settling — the learned asymmetric transition field acts on the present, the L0 attractor cleans up the">
+<link rel="canonical" href="https://jamming-physics.org/wave-computer/09-l6-self-supervised-world-model-forward-settling/">
+<link rel="stylesheet" href="/wave-computer/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"L6 — a self-supervised world model: prediction is forward settling, error is the learning wave","name":"L6 — a self-supervised world model: prediction is forward settling, error is the learning wave","inLanguage":"en","isPartOf":{"@type":"CreativeWorkSeries","name":"A Wave-Substrate Computer: Phase-Coded Information, Settling as Computation, and a Layered Test of Functional General Intelligence","alternateName":"Wave Computer","identifier":"https://doi.org/10.5281/zenodo.20783570"},"identifier":"https://doi.org/10.5281/zenodo.20783570","sameAs":"https://doi.org/10.5281/zenodo.20783570","position":9,"abstract":"Predict-next is the universal self-supervised training signal, and a large error wave is a novelty / surprise signal. All four milestones pass: the model learns an unlabeled stream from its own error (W1), rolls out plausible continuations to horizon 12 then drifts honestly (W2), grades novelty by error magnitude (W3), and — the headline — a forward model anticipates where a reactive store that saw every transition only returns the present (W4). The honest [O]: error-gating halts at prediction-sufficiency (the operator is directionally, not magnitude-identically, the L2 coupling, cosine ≈ 0.81).","author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"publisher":{"@type":"Organization","name":"Jamming Physics"},"datePublished":"2026-06-21","dateModified":"2026-06-21","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer","license":"https://creativecommons.org/licenses/by/4.0/","keywords":"self-supervised learning, world model, prediction error, forward model, generative rollout, novelty detection, difference wave","knowsAbout":["self-supervised learning","world model","prediction error","forward model","generative rollout"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Wave Computer","item":"https://jamming-physics.org/wave-computer/"},{"@type":"ListItem","position":3,"name":"§9 L6 world model"}]}</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/wave-computer/">Wave Computer</a> › §9</nav></header>
+<main>
+<h1>L6 — a self-supervised world model: prediction is forward settling, error is the learning wave</h1>
+<p class="answer">The substrate predicts itself. Prediction is forward settling — the learned asymmetric transition field acts on the present, the L0 attractor cleans up the next state — and learning is the difference wave (an error-gated update). Held-out next-step error falls monotonically 0.978 → 0.126, generative rollout stays faithful to a 12-step horizon, and a forward model beats a reactive store by directionality.</p>
+<p class="abstract">Predict-next is the universal self-supervised training signal, and a large error wave is a novelty / surprise signal. All four milestones pass: the model learns an unlabeled stream from its own error (W1), rolls out plausible continuations to horizon 12 then drifts honestly (W2), grades novelty by error magnitude (W3), and — the headline — a forward model anticipates where a reactive store that saw every transition only returns the present (W4). The honest [O]: error-gating halts at prediction-sufficiency (the operator is directionally, not magnitude-identically, the L2 coupling, cosine ≈ 0.81).</p>
+<aside class="claim-strip"><span class="grade g-verified">[V] met &amp; graded (4/4)</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer" rel="noopener">Reproduce (GitHub)</a><a class="doi" href="https://doi.org/10.5281/zenodo.20783570" rel="noopener">DOI: 10.5281/zenodo.20783570</a></aside>
+<aside class="vp-card"><b>difference wave</b> — the prediction error itself: forecast minus outcome, used directly as the Hebbian learning signal via an error-gated delta rule. A large difference wave = surprise / novelty. <b>[V]</b> verified. <a href="/wave-computer/05-l2-time-metastable-trajectories-working-memory/">L2 forward trajectory</a></aside>
+<p>L6 makes the substrate a self-supervised learner: it predicts its own next state and turns its own error into the learning signal, with no external labels (session v0.7, digest <code>41e81a7f…</code>). This is the free-energy-like core — a generative world model built from the frozen L0 and the L2 trajectory.</p>
+
+<h2>Prediction is forward settling; learning is the difference wave</h2>
+<p>The forward step is the learned asymmetric coupling acting on the present (thresholded), followed by L0 clean-up onto the next attractor. The error — prediction minus outcome — is a difference wave that drives an error-gated delta update. Held-out next-step error falls monotonically from 0.978 to 0.126, sign-stable across stream length (m ∈ {4,6,8}) and learning rate (η ∈ {0.25,0.5,1.0}).</p>
+
+<h2>Four milestones, all verified</h2>
+<div class="tbl-wrap"><table><caption>L6 world-model capabilities</caption><thead><tr><th>milestone</th><th>result</th><th>grade</th></tr></thead><tbody>
+<tr><td>W1 learn an unlabeled stream</td><td>held-out error <span class="num">0.978 → 0.126</span>, monotone</td><td>[V]</td></tr>
+<tr><td>W2 generative rollout</td><td>faithful to horizon <span class="num">12</span>, honest drift at step 13</td><td>[V]</td></tr>
+<tr><td>W3 novelty / surprise</td><td>graded: familiar ≈ 0, full violation ≈ <span class="num">0.97</span>, boundary 0.1</td><td>[V]</td></tr>
+<tr><td>W4 forward &gt; reactive <b>(headline)</b></td><td>forward anticipates; reactive only returns the present</td><td>[V]</td></tr>
+</tbody></table></div>
+
+<h2>Why the forward model wins</h2>
+<p>W4 is the key result and it honours the L5 break. A reactive store that has seen <i>every</i> transition can only return the present state; a forward model anticipates the next. The advantage is therefore <b>directionality / structure</b>, not a missing abstraction — confirmed by controls: on a fixed-point stream the gap vanishes, and an untrained model has no real advantage.</p>
+
+<h2>The honest limit, resolved one layer up</h2>
+<div class="bound"><b>[O] prediction-sufficiency, not magnitude-identity.</b> Error-gating halts when predictions are good enough: the learned operator is <i>directionally</i> the L2 transition coupling (cosine ≈ 0.803) but not magnitude-identical. This is recorded as the seed for L7 — and <a href="/wave-computer/10-embodiment-control-continuous-settling/">L7 resolves it</a>: for closed-loop control, prediction-sufficiency is all that is needed.</div>
+<nav class="pn"><a rel="prev" href="/wave-computer/08-l5-dual-learning-fast-slow-stores/">← §8</a><a href="/wave-computer/">Contents</a><a rel="next" href="/wave-computer/10-embodiment-control-continuous-settling/">§10 →</a></nav>
+</main>
+<footer><p><b>Wave Computer</b> · A Wave-Substrate Computer: Phase-Coded Information, Settling as Computation, and a Layered Test of Functional General Intelligence. Part of the Jamming Physics whitepaper family. Single-author, no-tuning, bit-for-bit reproducible (SEED-fixed, 2×sha256 identical).</p><p>Author: Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a>) · License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20783570">10.5281/zenodo.20783570</a> · <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer">Reproduction code (GitHub)</a></p></footer>
+</body>
+</html>

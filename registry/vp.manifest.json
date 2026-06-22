@@ -1,0 +1,1120 @@
+{
+ "schema": "vp.manifest/1.0",
+ "framework": {
+  "name": "VP — Vacuum / Jamming Physics",
+  "site": "https://jamming-physics.org/",
+  "author": {
+   "name": "Young Jae Lee",
+   "orcid": "0009-0002-7535-8245"
+  },
+  "license": "CC-BY-4.0",
+  "kernel": {
+   "substrate": "c^2 = B/rho (vacuum = jammed elastic solid, phi~0.7405)",
+   "switch": "ds/dt = g*s - s^3 + h  (R19 bistable)",
+   "stiffness": "gamma = -mean NN stacking dG  (measured, never fitted)",
+   "emergence": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size"
+  },
+  "governance": [
+   "no-tuning",
+   "LOCK->Derive->Gate",
+   "honest-grading[F/V/L/O]",
+   "magnitude-firewall",
+   "seed=19",
+   "2x-SHA256"
+  ],
+  "contract": [
+   "dna-atlas=single-source-of-truth",
+   "add-only",
+   "selective-inheritance",
+   "provenance-not-targets",
+   "sharp-seams"
+  ],
+  "tiers": {
+   "1": "foundation",
+   "2": "bridge",
+   "3": "inheritance",
+   "4": "neural",
+   "5": "sensory",
+   "6": "organ",
+   "7": "homeostasis-time",
+   "8": "disease"
+  },
+  "guide": "/AGENTS.md"
+ },
+ "primitives": {
+  "R19": {
+   "form": "ds/dt = g*s - s^3 + h",
+   "pattern": "R19|bistable",
+   "count": 22,
+   "volumes": [
+    "geodynamics",
+    "dna",
+    "inheritance",
+    "neuro",
+    "mind",
+    "sensory_organ",
+    "eye",
+    "ear",
+    "nose",
+    "cardioresp",
+    "circulatory",
+    "digestive",
+    "musculoskeletal",
+    "immune_hematologic",
+    "integumentary",
+    "reproductive_endocrine",
+    "homeostasis_thermometabolic",
+    "homeostasis_hemodynamic",
+    "homeostasis_ionic",
+    "circadian",
+    "aging_senescence",
+    "analgesic_threshold"
+   ]
+  },
+  "gamma": {
+   "form": "gamma = -mean NN stacking dG",
+   "pattern": "SantaLucia|stacking|spinodal|ΔG37",
+   "count": 22,
+   "volumes": [
+    "dna",
+    "inheritance",
+    "neuro",
+    "mind",
+    "sensory_organ",
+    "eye",
+    "ear",
+    "nose",
+    "cardioresp",
+    "circulatory",
+    "digestive",
+    "musculoskeletal",
+    "immune_hematologic",
+    "integumentary",
+    "reproductive_endocrine",
+    "homeostasis_thermometabolic",
+    "homeostasis_hemodynamic",
+    "homeostasis_ionic",
+    "circadian",
+    "aging_senescence",
+    "analgesic_threshold",
+    "disease_wp"
+   ]
+  },
+  "emergence": {
+   "form": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size",
+   "pattern": "emerge|emergence|emerges",
+   "count": 27,
+   "volumes": [
+    "physics",
+    "fluid-dynamics",
+    "cosmology",
+    "chemistry",
+    "wave-computer",
+    "dna",
+    "inheritance",
+    "neuro",
+    "mind",
+    "sensory_organ",
+    "eye",
+    "ear",
+    "nose",
+    "cardioresp",
+    "circulatory",
+    "digestive",
+    "musculoskeletal",
+    "immune_hematologic",
+    "integumentary",
+    "reproductive_endocrine",
+    "homeostasis_hemodynamic",
+    "homeostasis_ionic",
+    "circadian",
+    "aging_senescence",
+    "analgesic_threshold",
+    "disease_wp",
+    "disease_kit"
+   ]
+  },
+  "jammed_c2": {
+   "form": "c^2 = B/rho (random close packing)",
+   "pattern": "jammed|random close pack|B/ρ|0\\.7405",
+   "count": 14,
+   "volumes": [
+    "physics",
+    "fluid-dynamics",
+    "cosmology",
+    "chemistry",
+    "geodynamics",
+    "wave-computer",
+    "dna",
+    "neuro",
+    "eye",
+    "circulatory",
+    "digestive",
+    "musculoskeletal",
+    "integumentary",
+    "reproductive_endocrine"
+   ]
+  },
+  "kramers": {
+   "form": "escape over g^2/4",
+   "pattern": "Kramers|Arrhenius|escape rate",
+   "count": 15,
+   "volumes": [
+    "chemistry",
+    "geodynamics",
+    "geochronology",
+    "inheritance",
+    "sensory_organ",
+    "cardioresp",
+    "circulatory",
+    "digestive",
+    "musculoskeletal",
+    "immune_hematologic",
+    "integumentary",
+    "reproductive_endocrine",
+    "homeostasis_thermometabolic",
+    "circadian",
+    "aging_senescence"
+   ]
+  },
+  "fhn": {
+   "form": "relaxation oscillator",
+   "pattern": "FitzHugh|Nagumo|FHN|relaxation oscillat",
+   "count": 11,
+   "volumes": [
+    "chemistry",
+    "neuro",
+    "sensory_organ",
+    "cardioresp",
+    "digestive",
+    "musculoskeletal",
+    "integumentary",
+    "reproductive_endocrine",
+    "homeostasis_thermometabolic",
+    "homeostasis_hemodynamic",
+    "circadian"
+   ]
+  },
+  "cube_root": {
+   "form": "R = (F/beta)^(1/3)",
+   "pattern": "cube-?root|\\(F/β\\)|\\^\\(1/3\\)",
+   "count": 3,
+   "volumes": [
+    "sensory_organ",
+    "eye",
+    "ear"
+   ]
+  }
+ },
+ "volumes": [
+  {
+   "id": "physics",
+   "tier": 1,
+   "short": "VP Theory",
+   "doi": "10.5281/zenodo.17932566",
+   "hub": "/physics/",
+   "headline": "c² = B/ρ ; mₚ/mₑ = 6π⁵ (−19 ppm)",
+   "inherits": [],
+   "adds": [
+    "jammed-substrate",
+    "c2=B/rho",
+    "R19-normal-form",
+    "constants:mp/me=6pi^5"
+   ],
+   "primitives": [
+    "emergence",
+    "jammed_c2"
+   ],
+   "grades": {
+    "forced": 26,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 2
+   },
+   "pages": 48,
+   "content_sha256": "805adbe09f6b54db0e37006f4b9efed68f331e402b8e5a3424f11347ee174fc3"
+  },
+  {
+   "id": "fluid-dynamics",
+   "tier": 1,
+   "short": "Configured Continuum",
+   "doi": "10.5281/zenodo.17972568",
+   "hub": "/fluid-dynamics/",
+   "headline": "∂ρ/∂t + ∇·(ρu) = 0 on the jammed medium",
+   "inherits": [
+    "physics"
+   ],
+   "adds": [
+    "continuum-flow-on-jammed-medium"
+   ],
+   "primitives": [
+    "emergence",
+    "jammed_c2"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 39,
+   "content_sha256": "67e67c68bf9f608a526119f8a2f5f1909fc0b40b11906a78da1ba7b6d2b0bedb"
+  },
+  {
+   "id": "cosmology",
+   "tier": 1,
+   "short": "Vacuum-Inflow Cosmology",
+   "doi": "10.5281/zenodo.20568874",
+   "hub": "/cosmology/",
+   "headline": "a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²",
+   "inherits": [
+    "physics"
+   ],
+   "adds": [
+    "vacuum-inflow",
+    "a0=cH0/2pi"
+   ],
+   "primitives": [
+    "emergence",
+    "jammed_c2"
+   ],
+   "grades": {
+    "forced": 8,
+    "verified": 0,
+    "open": 5,
+    "hypothesis": 0
+   },
+   "pages": 29,
+   "content_sha256": "d7c99751b1173a48d472a39fe303770465a1d64e153ce5c376b864cd8e091667"
+  },
+  {
+   "id": "chemistry",
+   "tier": 1,
+   "short": "VP Chemistry & EM",
+   "doi": "10.5281/zenodo.20680540",
+   "hub": "/chemistry/",
+   "headline": "c²=B/ρ (0.06% sim) ; φ_RCP = 0.7405",
+   "inherits": [
+    "physics"
+   ],
+   "adds": [
+    "EM-on-same-substrate",
+    "phi_RCP=0.7405",
+    "bonding"
+   ],
+   "primitives": [
+    "emergence",
+    "jammed_c2",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 5,
+    "verified": 1,
+    "open": 1,
+    "hypothesis": 1
+   },
+   "pages": 9,
+   "content_sha256": "3eb43e8ba2218db425f022ae2616d0a191a822f16b7f6c1c8acb988dd9f4cf5d"
+  },
+  {
+   "id": "geodynamics",
+   "tier": 1,
+   "short": "Jamming Geodynamics",
+   "doi": "10.5281/zenodo.17978934",
+   "hub": "/geodynamics/",
+   "headline": "break-up when Ψ_eff > Ψ_y",
+   "inherits": [
+    "physics",
+    "fluid-dynamics"
+   ],
+   "adds": [
+    "jamming-unjamming-yield",
+    "plate-breakup"
+   ],
+   "primitives": [
+    "R19",
+    "jammed_c2",
+    "kramers"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 6,
+    "hypothesis": 1
+   },
+   "pages": 34,
+   "content_sha256": "3eafe39c029c363ba29b42558a523d07a76079934f5f16f89bcb7192c876f4c2"
+  },
+  {
+   "id": "geochronology",
+   "tier": 1,
+   "short": "Cross-Chronometer Limit",
+   "doi": "10.5281/zenodo.20568673",
+   "hub": "/geochronology/",
+   "headline": "older material in ⇒ age biased old",
+   "inherits": [
+    "physics",
+    "geodynamics"
+   ],
+   "adds": [
+    "incorporation-dating-limit"
+   ],
+   "primitives": [
+    "kramers"
+   ],
+   "grades": {
+    "forced": 9,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 15,
+   "content_sha256": "a344ac95e18ff1f23b68a2513c7c392ca9bc6ddb4097d88d6ca0bae598064f1c"
+  },
+  {
+   "id": "wave-computer",
+   "tier": 1,
+   "short": "Wave Computer",
+   "doi": "10.5281/zenodo.20783570",
+   "hub": "/wave-computer/",
+   "headline": "compute by phase on a clock-free wave medium",
+   "inherits": [
+    "physics",
+    "neuro"
+   ],
+   "adds": [
+    "clock-free-phase-computation"
+   ],
+   "primitives": [
+    "emergence",
+    "jammed_c2"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 26,
+    "open": 4,
+    "hypothesis": 1
+   },
+   "pages": 15,
+   "content_sha256": "4ecd227ad39bd1b2bbb43525c5e25f215088f1d76d950d05ae30ac395ddbf42f"
+  },
+  {
+   "id": "dna",
+   "tier": 2,
+   "short": "4D DNA Blueprint",
+   "doi": "10.5281/zenodo.20471407",
+   "hub": "/dna/",
+   "headline": "γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998",
+   "inherits": [
+    "physics"
+   ],
+   "adds": [
+    "gamma-ruler",
+    "two-layer-reading:gamma-LEVEL+A4-SHAPE",
+    "R19-in-biology",
+    "node-atlas(single-source-of-truth)"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2"
+   ],
+   "grades": {
+    "forced": 7,
+    "verified": 0,
+    "open": 3,
+    "hypothesis": 0
+   },
+   "pages": 18,
+   "content_sha256": "ba64c5e09a18fdb64e1a45cec5f3a467a48e7b8b097d26a543456439b1fae9d4"
+  },
+  {
+   "id": "inheritance",
+   "tier": 3,
+   "short": "Inheritance · RNA & Gene Therapy",
+   "doi": "10.5281/zenodo.20783547",
+   "hub": "/inheritance/",
+   "headline": "one switch, two channels: γ (SET) + writable A4",
+   "inherits": [
+    "dna"
+   ],
+   "adds": [
+    "writable-A4-vs-unwritable-gamma",
+    "environmental-inheritance",
+    "RNA-layer",
+    "gene-therapy-path"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers"
+   ],
+   "grades": {
+    "forced": 4,
+    "verified": 35,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 20,
+   "content_sha256": "94f9d7bf7baa34d5512b82371c30389b5a7f8217f1b4b50be03079a62f4d74f5"
+  },
+  {
+   "id": "neuro",
+   "tier": 4,
+   "short": "Neural Emergence Chain",
+   "doi": "10.5281/zenodo.17979015",
+   "hub": "/neuro/",
+   "headline": "working memory = θ/γ ≈ 7±2 (tACS-causal)",
+   "inherits": [
+    "physics",
+    "chemistry",
+    "dna"
+   ],
+   "adds": [
+    "neuron=R19+slow-recovery",
+    "brain-rhythms",
+    "working-memory=theta/gamma~7pm2",
+    "memory",
+    "motor"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 2,
+    "verified": 2,
+    "open": 2,
+    "hypothesis": 0
+   },
+   "pages": 27,
+   "content_sha256": "74b44cbea850ba32a0d87d5256f4616704b02e700963c156003a8a222cc3f76e"
+  },
+  {
+   "id": "mind",
+   "tier": 4,
+   "short": "Felt Cognition",
+   "doi": "10.5281/zenodo.20694404",
+   "hub": "/mind/",
+   "headline": "stream of thought = serial select among γ-eddies",
+   "inherits": [
+    "neuro",
+    "dna"
+   ],
+   "adds": [
+    "engram=bistable-attractor",
+    "felt-cognition",
+    "mood=persistent-switch",
+    "stream-of-thought"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence"
+   ],
+   "grades": {
+    "forced": 1,
+    "verified": 7,
+    "open": 1,
+    "hypothesis": 0
+   },
+   "pages": 45,
+   "content_sha256": "b7dc5cfa6d1de532c6a3e21380edccbf52b166eb90511f902f406213f92db89e"
+  },
+  {
+   "id": "sensory_organ",
+   "tier": 5,
+   "short": "Sensory Organs",
+   "doi": "10.5281/zenodo.20755154",
+   "hub": "/sensory_organ/",
+   "headline": "cochlear Hopf: R = (F/β)^⅓, exponent 0.333",
+   "inherits": [
+    "dna",
+    "neuro"
+   ],
+   "adds": [
+    "organ-dynamics:Hopf-cube-root",
+    "instrument-physics"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers",
+    "fhn",
+    "cube_root"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 21,
+    "open": 1,
+    "hypothesis": 1
+   },
+   "pages": 13,
+   "content_sha256": "4c820140b04bb6929808183beca6b9a4bc1d27990be98be89cae52e7c8f8aaf6"
+  },
+  {
+   "id": "eye",
+   "tier": 5,
+   "short": "The Eye",
+   "doi": "10.5281/zenodo.20790134",
+   "hub": "/eye/",
+   "headline": "single-photon R19 flip ; n = √(B/ρ ratio)",
+   "inherits": [
+    "physics:wave",
+    "dna",
+    "neuro"
+   ],
+   "adds": [
+    "high-low-down-conversion-ladder",
+    "single-photon-R19",
+    "Snell:n=sqrt(B/rho)",
+    "cube-root"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "cube_root"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 14,
+   "content_sha256": "480e14967a2e6c8caecfb9a80dc055681938b9e672b194e99fdf764dd1f635c3"
+  },
+  {
+   "id": "ear",
+   "tier": 5,
+   "short": "Hearing & the Ear",
+   "doi": "10.5281/zenodo.20790201",
+   "hub": "/ear/",
+   "headline": "ṡ = g·s − s³ + h → cube-root amplification",
+   "inherits": [
+    "physics:wave+cubic",
+    "dna"
+   ],
+   "adds": [
+    "place-map",
+    "cube-root-cochlear-amplifier",
+    "otoferlin-readout"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "cube_root"
+   ],
+   "grades": {
+    "forced": 35,
+    "verified": 15,
+    "open": 45,
+    "hypothesis": 0
+   },
+   "pages": 11,
+   "content_sha256": "c73b48920d74c448965c45830fd3eaf3027f8425523c24751b6b48df9cdb2d1c"
+  },
+  {
+   "id": "nose",
+   "tier": 5,
+   "short": "Olfaction & the Nose",
+   "doi": "10.5281/zenodo.20790182",
+   "hub": "/nose/",
+   "headline": "smell from R19 switch + measured DNA γ",
+   "inherits": [
+    "dna"
+   ],
+   "adds": [
+    "combinatorial-code",
+    "transduction-switch",
+    "anosmia"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence"
+   ],
+   "grades": {
+    "forced": 2,
+    "verified": 4,
+    "open": 1,
+    "hypothesis": 0
+   },
+   "pages": 7,
+   "content_sha256": "bbe2e09c1838aad8f267b03184c2c00961001e0dc58397a8c692e06f5629f26b",
+   "selective": "inherits no wave module (smell has no wave)"
+  },
+  {
+   "id": "cardioresp",
+   "tier": 6,
+   "short": "Cardiorespiratory",
+   "doi": "10.5281/zenodo.20755371",
+   "hub": "/cardioresp/",
+   "headline": "heart + lung = one FitzHugh–Nagumo oscillator",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence",
+    "homeostasis_hemodynamic"
+   ],
+   "adds": [
+    "heart+lung=one-FitzHugh-Nagumo-oscillator"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 2,
+    "verified": 18,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 13,
+   "content_sha256": "9743bff3520090ba1804cdbf550ca90a90b9adc71ad35e7ee78fb92e5dce106e"
+  },
+  {
+   "id": "circulatory",
+   "tier": 6,
+   "short": "Circulatory Flow & Clearance",
+   "doi": "10.5281/zenodo.20754354",
+   "hub": "/circulatory/",
+   "headline": "MAP = CO × SVR",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "MAP=CO*SVR",
+    "clearance"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "kramers"
+   ],
+   "grades": {
+    "forced": 14,
+    "verified": 24,
+    "open": 0,
+    "hypothesis": 8
+   },
+   "pages": 25,
+   "content_sha256": "5253c59e161ec51952cf2e7d4d630f1fd6a9e8a3baedc986a61e0db48abec30d"
+  },
+  {
+   "id": "digestive",
+   "tier": 6,
+   "short": "Digestive Transport",
+   "doi": "10.5281/zenodo.20755319",
+   "hub": "/digestive/",
+   "headline": "gastric ~3 cpm → duodenum 11.1 cpm (one clock)",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "one-clock:gastric->duodenum"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 2,
+    "verified": 61,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 34,
+   "content_sha256": "6145bf502c8639d9de1b50424e06d8e471356dbb86db6ca1b6d3aa7bad0f01de"
+  },
+  {
+   "id": "musculoskeletal",
+   "tier": 6,
+   "short": "Musculoskeletal Load",
+   "doi": "10.5281/zenodo.20755760",
+   "hub": "/musculoskeletal/",
+   "headline": "structure + mechanical load from measured γ",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "structure+mechanical-load-from-gamma"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 6,
+    "verified": 45,
+    "open": 6,
+    "hypothesis": 0
+   },
+   "pages": 29,
+   "content_sha256": "f0b9ee40a461f479c8a7cd543d787002323e18545ce9d13c8f47b4efb5a59ce1"
+  },
+  {
+   "id": "immune_hematologic",
+   "tier": 6,
+   "short": "Immune & Hematologic",
+   "doi": "10.5281/zenodo.20755280",
+   "hub": "/immune_hematologic/",
+   "headline": "population thresholds on the R19 switch",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "population-thresholds-on-R19"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers"
+   ],
+   "grades": {
+    "forced": 4,
+    "verified": 38,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 22,
+   "content_sha256": "5450705e3a0760f4241bd655be720fae7545f738705a2576efbeabe4ee7ffe6b"
+  },
+  {
+   "id": "integumentary",
+   "tier": 6,
+   "short": "Integumentary Barrier",
+   "doi": "10.5281/zenodo.20754541",
+   "hub": "/integumentary/",
+   "headline": "barrier + external stimulus, UV → melanoma key",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "barrier+external-stimulus",
+    "UV->melanoma-key"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 15,
+    "verified": 40,
+    "open": 91,
+    "hypothesis": 0
+   },
+   "pages": 15,
+   "content_sha256": "7342e4f9099d858def827a868b819cb818d292120a1d69b9058861d5c2880e9e"
+  },
+  {
+   "id": "reproductive_endocrine",
+   "tier": 6,
+   "short": "Reproductive & Endocrine",
+   "doi": "10.5281/zenodo.20754657",
+   "hub": "/reproductive_endocrine/",
+   "headline": "four organs emerge in measured-γ order",
+   "inherits": [
+    "dna",
+    "circadian",
+    "aging_senescence"
+   ],
+   "adds": [
+    "four-organs-in-measured-gamma-order"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "jammed_c2",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 4,
+    "verified": 29,
+    "open": 3,
+    "hypothesis": 0
+   },
+   "pages": 15,
+   "content_sha256": "5357b49d7631e777df3e90630c8f9578d4255185bfda0ff0873f789803a8473f"
+  },
+  {
+   "id": "homeostasis_thermometabolic",
+   "tier": 7,
+   "short": "Thermometabolic Homeostasis",
+   "doi": "10.5281/zenodo.20756934",
+   "hub": "/homeostasis_thermometabolic/",
+   "headline": "endo setpoint sensitivity 0.054 vs ecto 1.394",
+   "inherits": [
+    "digestive",
+    "aging_senescence",
+    "circadian"
+   ],
+   "adds": [
+    "OU-setpoint-three-levers",
+    "endo-vs-ecto-sensitivity"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 33,
+   "content_sha256": "a16e2a650e9e0f8081e3dd21bc75492161d6fbb77e69fbbb474dc0f7cba08c40"
+  },
+  {
+   "id": "homeostasis_hemodynamic",
+   "tier": 7,
+   "short": "Hemodynamic Homeostasis",
+   "doi": "10.5281/zenodo.20756801",
+   "hub": "/homeostasis_hemodynamic/",
+   "headline": "MAP = CVP + CO×SVR = 93 mmHg",
+   "inherits": [
+    "cardioresp",
+    "circulatory",
+    "circadian"
+   ],
+   "adds": [
+    "MAP=CVP+CO*SVR-defended"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 14,
+    "verified": 65,
+    "open": 5,
+    "hypothesis": 0
+   },
+   "pages": 21,
+   "content_sha256": "eb0249fedf93514cc68f57c57507359e6c165c5ce89bd57bc86cd225bd97287a"
+  },
+  {
+   "id": "homeostasis_ionic",
+   "tier": 7,
+   "short": "Ionic Homeostasis",
+   "doi": "10.5281/zenodo.20755910",
+   "hub": "/homeostasis_ionic/",
+   "headline": "mineral / acid-base / electrolyte setpoints",
+   "inherits": [
+    "musculoskeletal",
+    "circadian"
+   ],
+   "adds": [
+    "mineral/acid-base/electrolyte-setpoints"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence"
+   ],
+   "grades": {
+    "forced": 18,
+    "verified": 31,
+    "open": 17,
+    "hypothesis": 0
+   },
+   "pages": 17,
+   "content_sha256": "1113a4d50fcbf7c57f5d8f1d55cf8af4c813c04fc543de446dddff5889e4ab8d"
+  },
+  {
+   "id": "circadian",
+   "tier": 7,
+   "short": "Circadian Oscillator",
+   "doi": "10.5281/zenodo.20755413",
+   "hub": "/circadian/",
+   "headline": "measured BMAL1/ARNTL γ = 1.33348 (never fitted)",
+   "inherits": [
+    "dna"
+   ],
+   "adds": [
+    "time-layer:measured-BMAL1-gamma=1.33348"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers",
+    "fhn"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 7,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 10,
+   "content_sha256": "7e4b4759c9676728f4bcba69eb1896e6516dbcf0613a6e509584c4e267c5d40d"
+  },
+  {
+   "id": "aging_senescence",
+   "tier": 7,
+   "short": "Aging & Senescence",
+   "doi": "10.5281/zenodo.20756155",
+   "hub": "/aging_senescence/",
+   "headline": "human aging genes not special (|z|<1)",
+   "inherits": [
+    "dna"
+   ],
+   "adds": [
+    "setpoint-drift-over-time",
+    "aging-genes-not-special(|z|<1)"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence",
+    "kramers"
+   ],
+   "grades": {
+    "forced": 8,
+    "verified": 31,
+    "open": 3,
+    "hypothesis": 0
+   },
+   "pages": 15,
+   "content_sha256": "b842105432e1d8ee101e3140c5bd2d8a656b4242d8800128a803e19ab9fd10c2"
+  },
+  {
+   "id": "analgesic_threshold",
+   "tier": 8,
+   "short": "Analgesic Threshold Logic",
+   "doi": "10.5281/zenodo.20733420",
+   "hub": "/analgesic_threshold/",
+   "headline": "three levers L1/L2/L3 ; corr(γ,GC)=0.99898",
+   "inherits": [
+    "neuro"
+   ],
+   "adds": [
+    "three-lever-L1/L2/L3-therapeutic-logic"
+   ],
+   "primitives": [
+    "R19",
+    "gamma",
+    "emergence"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 41,
+   "content_sha256": "a70d926e32d2b7d39162f6ce7434737a3b4bf386ba2b9d09b3b817052f4e3580"
+  },
+  {
+   "id": "disease_wp",
+   "tier": 8,
+   "short": "Rare Disease Mechanisms (Cases)",
+   "doi": "10.5281/zenodo.20763842",
+   "hub": "/disease_wp/",
+   "headline": "burden = raw_burden · (1 − e)",
+   "inherits": [
+    "dna"
+   ],
+   "adds": [
+    "per-disease-gene-key-mechanism-cases"
+   ],
+   "primitives": [
+    "gamma",
+    "emergence"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 12,
+    "hypothesis": 24
+   },
+   "pages": 39,
+   "content_sha256": "1026975d29440f28c96f209945e045af7ddde154f33a76f2615bb1f12921cde2"
+  },
+  {
+   "id": "disease_kit",
+   "tier": 8,
+   "short": "Rare Disease Reproduction KIT",
+   "doi": "10.5281/zenodo.20755262",
+   "hub": "/disease_kit/",
+   "headline": "per-disease corrective direction [F], magnitude [O]",
+   "inherits": [
+    "disease_wp"
+   ],
+   "adds": [
+    "reproducible-corrective-direction[F]",
+    "magnitude[O]"
+   ],
+   "primitives": [
+    "emergence"
+   ],
+   "grades": {
+    "forced": 0,
+    "verified": 0,
+    "open": 0,
+    "hypothesis": 0
+   },
+   "pages": 1,
+   "content_sha256": "8eda2a9a1ee6a63411895cc9feb7371b89da2a2f3f1bbedaadcfd675e3a3ae55"
+  }
+ ],
+ "lineage": {
+  "built_at": "2026-06-22T09:59:06Z",
+  "built_by": "session/2026-06-22-vp-homepage-rebuild",
+  "parent_sha256": null,
+  "this_sha256": "777d4e8ef44369144709593ac7f75c0d6b737888bac4f1ddd3cea3b2f3725721",
+  "changes": [
+   "genesis: consolidated 30 volumes into single repo",
+   "rebuilt docs/index.html (homepage)",
+   "integrated +5 volumes: eye, ear, nose, wave-computer, inheritance",
+   "sitemap 609->676",
+   "added AGENTS.md AI guide"
+  ]
+ }
+}
