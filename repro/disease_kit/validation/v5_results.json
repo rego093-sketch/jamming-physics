@@ -1,0 +1,1933 @@
+{
+ "author": "Young Jae Lee",
+ "external_source": {
+  "name": "MED-RT MoA via RxClass (FDA-label-derived; no ChEMBL/DGIdb lineage)",
+  "rxnav_rxnorm_version": "01-Jun-2026",
+  "snapshot_fetched_utc": "2026-06-21T09:13:15Z",
+  "snapshot_sha256": "64d71229c847b40e1849a99dadd01cf0337639a58558a72e38cb6d7cf0ba59ca"
+ },
+ "grade": "[O] direction-only; magnitude-free",
+ "headline": {
+  "X1B_genes_linked": 1,
+  "X1_GOF_arm_accuracy": 0.9494,
+  "X1_GOF_inhibitory_recall": 1.0,
+  "X1_LOF_arm_accuracy": 0.4156,
+  "X1_marginal_baseline": 0.7692,
+  "X1_per_gene_recovery": "17/29",
+  "X1_permutation_shuffles_reaching_observed": "0/5000",
+  "X1_pooled_accuracy": 0.6859,
+  "disease_genes_resolvable": "27/130",
+  "external_source": "MED-RT (FDA-label-derived) MoA -- orthogonal direction source, no ChEMBL/DGIdb lineage",
+  "isolates": "the DIRECTION annotation (membership inherited from V4; stated bound)",
+  "three_source_agreement": "18/23"
+ },
+ "honest_conclusion": "The locked emergence directions -- identical to those V3 and V4 checked -- were re-checked against a THIRD source whose DIRECTION annotation has no ChEMBL or DGIdb lineage: MED-RT (NLM/VA, FDA-label-derived) Mechanism-of-Action. Coupling-free X1, with denominators. The GOF arm reproduces the V3/V4 result under this orthogonal direction source -- gain-of-function disease genes attract inhibitory approved drugs, exactly as the emergence demands, above the inhibitor-skew baseline, with the permutation null confirming the lesion carries real directional information. The LOF own-gene arm is again pharmacologically unsatisfiable, surfaced not buried (MED-RT does resolve the rare satisfiable LOF cases -- CFTR potentiators, PAH activators -- as ACTIVATING). HONEST BOUND: V5 orthogonalises the DIRECTION annotation, NOT the drug<->gene membership (inherited from V4, ChEMBL-derived); it rebuts 'the agreement is an artifact of ChEMBL's actionType vocabulary', the one bound V4 left open, and triangulates with two prior assemblers. Direction recovery != efficacy/magnitude; every lead stays [O]; the firewall holds.",
+ "inherited_anchors": {
+  "candidate_register_chain_head": "ca1796255c7c91db49cd28a11b15d49a649042c49a313649bcb63643d43c3fd3",
+  "candidate_register_sha256": "e3536726c36e761043da80bd994de06405a6f6a5811462047e7597134cfd6e22",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "note": "validation is strictly read-only; 0 of the 128 derivations were re-run."
+ },
+ "metrics": {
+  "X1": {
+   "lesion_stratified": {
+    "GOF_arm": {
+     "accuracy": 0.9494,
+     "activating": {
+      "denominator_obs": 4,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "inhibitory": {
+      "denominator_obs": 75,
+      "denominator_pred": 79,
+      "precision": 0.9494,
+      "recall": 1.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 0,
+      "pred_ACT_obs_INH": 0,
+      "pred_INH_obs_ACT": 4,
+      "pred_INH_obs_INH": 75
+     },
+     "n": 79
+    },
+    "LOF_arm": {
+     "accuracy": 0.4156,
+     "activating": {
+      "denominator_obs": 32,
+      "denominator_pred": 77,
+      "precision": 0.4156,
+      "recall": 1.0
+     },
+     "inhibitory": {
+      "denominator_obs": 45,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 32,
+      "pred_ACT_obs_INH": 45,
+      "pred_INH_obs_ACT": 0,
+      "pred_INH_obs_INH": 0
+     },
+     "n": 77
+    },
+    "reading": "GOF disease genes should attract INHIBITORY approved drugs (oppose the gain); LOF genes should attract ACTIVATING ones (restore the loss). The GOF->inhibitory arm is the clean external confirmation; the LOF->activating arm is pharmacologically hard (loss is fixed by replacement / another node), so any shortfall is a property of pharmacology + the source's scope, not the emergence. NB: MED-RT does resolve the rare pharmacologically-satisfiable LOF cases (CFTR potentiators, PAH activators) as ACTIVATING -- surfaced, not buried."
+   },
+   "marginal_baseline": {
+    "accuracy": 0.7692,
+    "always_predict": "INHIBITORY",
+    "note": "approved pharmacology is inhibitor-skewed; the trivial 'everything is an inhibitor' guess. The GOF arm must beat it; the pooled figure is dragged below baseline by the pharmacologically-unsatisfiable LOF arm, exactly as in V3/V4 -- reported, not hidden."
+   },
+   "mismatch_count": 49,
+   "mismatches": [
+    {
+     "drug": "CARBIDOPA",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "DDC",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "aadc_deficiency"
+    },
+    {
+     "drug": "PENTOSTATIN",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ADA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "adenosine_deaminase_deficiency"
+    },
+    {
+     "drug": "ETHACRYNIC ACID",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "TORSEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "ETHACRYNATE SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "BUMETANIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "FUROSEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "COCAINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "ESLICARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "RILUZOLE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "PHENACEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "CENOBAMATE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "LAMOTRIGINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "COCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "ESLICARBAZEPINE ACETATE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "PALIFERMIN",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "FGFR2",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "crouzon_syndrome"
+    },
+    {
+     "drug": "CROFELEMER",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "CFTR",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "cystic_fibrosis"
+    },
+    {
+     "drug": "ELEXACAFTOR",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "CFTR",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "cystic_fibrosis"
+    },
+    {
+     "drug": "COCAINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "RILUZOLE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "PHENACEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "CENOBAMATE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "LAMOTRIGINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "ESLICARBAZEPINE ACETATE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "COCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "ESLICARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "ETEPLIRSEN",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "DMD",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "duchenne_muscular_dystrophy"
+    },
+    {
+     "drug": "DROTRECOGIN ALFA (ACTIVATED)",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "F5",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "factor_v_leiden"
+    },
+    {
+     "drug": "TRICHLORMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "CHLOROTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "BENZTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "CHLORTHALIDONE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "INDAPAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "CYCLOTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "HYDROCHLOROTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "HYDROFLUMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "QUINETHAZONE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "METHYCLOTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "METOLAZONE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "POLYTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "BENDROFLUMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "TINZAPARIN SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SERPINC1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_antithrombin_deficiency"
+    },
+    {
+     "drug": "CONIVAPTAN HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "TOLVAPTAN",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "CONIVAPTAN",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "DESMOPRESSIN ACETATE",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "drug": "DESMOPRESSIN",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "drug": "MIGLITOL",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "GAA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "pompe_disease"
+    },
+    {
+     "drug": "METYROSINE",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "TH",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "tyrosine_hydroxylase_deficiency"
+    }
+   ],
+   "per_gene_majority": {
+    "detail": [
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "DDC",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "aadc_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "FGFR3",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "INHIBITORY",
+      "slug": "achondroplasia"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "ADA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "adenosine_deaminase_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SLC12A1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 5,
+      "pred": "ACTIVATING",
+      "slug": "bartter_syndrome_type_1"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN5A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "ACTIVATING",
+      "slug": "brugada_syndrome"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "KCNJ11",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 8,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "ABCC8",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 7,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "FGFR2",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 1,
+      "n_inh": 7,
+      "pred": "INHIBITORY",
+      "slug": "crouzon_syndrome"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "CFTR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 3,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "cystic_fibrosis"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN1A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "ACTIVATING",
+      "slug": "dravet_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "DMD",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "duchenne_muscular_dystrophy"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "COL3A1",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "ehlers_danlos_syndrome_vascular_type"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "F5",
+      "hit": false,
+      "lesion": "GOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "INHIBITORY",
+      "slug": "factor_v_leiden"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "PCSK9",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "familial_hypercholesterolaemia"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SLC12A3",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 13,
+      "pred": "ACTIVATING",
+      "slug": "gitelman_syndrome"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "F8",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 6,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "haemophilia_a"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SERPINC1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "hereditary_antithrombin_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN5A",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "INHIBITORY",
+      "slug": "long_qt_syndrome_3"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "RET",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 11,
+      "pred": "INHIBITORY",
+      "slug": "multiple_endocrine_neoplasia_type_2a"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "AVPR2",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 2,
+      "n_inh": 3,
+      "pred": "ACTIVATING",
+      "slug": "nephrogenic_diabetes_insipidus_x_linked"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "AVPR2",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 2,
+      "n_inh": 3,
+      "pred": "INHIBITORY",
+      "slug": "nephrogenic_siad"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "COL1A1",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "osteogenesis_imperfecta_type_i"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "PAH",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 2,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "phenylketonuria"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "GAA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "pompe_disease"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "PKLR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 2,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "pyruvate_kinase_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN4A",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 10,
+      "pred": "INHIBITORY",
+      "slug": "scn4a_skeletal_muscle_channelopathy"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "CACNA1C",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 24,
+      "pred": "INHIBITORY",
+      "slug": "timothy_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "TTR",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "transthyretin_amyloidosis"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "TH",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "tyrosine_hydroxylase_deficiency"
+     }
+    ],
+    "genes_recovered": 17,
+    "genes_scored": 29,
+    "recovery_fraction": 0.5862
+   },
+   "permutation_null": {
+    "denominator": 156,
+    "observed_accuracy": 0.6859,
+    "observed_hits": 107,
+    "reading": "lesion labels carry real directional information iff observed concordance sits far above the shuffled mean and almost no shuffle reaches it.",
+    "seed": 19,
+    "shuffled_mean_accuracy": 0.5034,
+    "shuffled_mean_hits": 78.53,
+    "shuffles": 5000,
+    "shuffles_reaching_observed": 0
+   },
+   "pooled": {
+    "accuracy": 0.6859,
+    "activating": {
+     "denominator_obs": 36,
+     "denominator_pred": 77,
+     "precision": 0.4156,
+     "recall": 0.8889
+    },
+    "inhibitory": {
+     "denominator_obs": 120,
+     "denominator_pred": 79,
+     "precision": 0.9494,
+     "recall": 0.625
+    },
+    "matrix": {
+     "pred_ACT_obs_ACT": 32,
+     "pred_ACT_obs_INH": 45,
+     "pred_INH_obs_ACT": 4,
+     "pred_INH_obs_INH": 75
+    },
+    "n": 156
+   },
+   "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs MED-RT MoA direction of the inherited approved drugs on the SAME gene; coupling-free; identical construction to V3/V4 X1 with the direction SOURCE swapped to MED-RT"
+  },
+  "X1B": {
+   "confusion": {
+    "accuracy": 1.0,
+    "activating": {
+     "denominator_obs": 0,
+     "denominator_pred": 0,
+     "precision": null,
+     "recall": null
+    },
+    "inhibitory": {
+     "denominator_obs": 2,
+     "denominator_pred": 2,
+     "precision": 1.0,
+     "recall": 1.0
+    },
+    "matrix": {
+     "pred_ACT_obs_ACT": 0,
+     "pred_ACT_obs_INH": 0,
+     "pred_INH_obs_ACT": 0,
+     "pred_INH_obs_INH": 2
+    },
+    "n": 2
+   },
+   "detail": [
+    {
+     "drugs": [
+      "ALIROCUMAB",
+      "EVOLOCUMAB"
+     ],
+     "gene": "PCSK9",
+     "n_act": 0,
+     "n_inh": 2,
+     "pred": "INHIBITORY"
+    }
+   ],
+   "genes_linked": 1,
+   "reading": "where MED-RT's own naming is gene-symbol-specific, does the emergence direction still agree? A spot-check on the fully-orthogonal corner, not a headline.",
+   "what": "membership-orthogonal sanity arm: a drug is linked to a gene ONLY where a MED-RT MoA class NAME contains the gene symbol -> both membership AND direction from MED-RT, zero curation. Tiny by construction (MED-RT names enzymes, not gene symbols)."
+  },
+  "X_COV": {
+   "coverage_gap_examples": [
+    "ABCD1",
+    "ARSA",
+    "CASR",
+    "F13A1",
+    "F7",
+    "F9",
+    "GLA",
+    "HBB",
+    "KCNJ2",
+    "LEPR",
+    "MYH7",
+    "RPE65",
+    "SCNN1B",
+    "SCNN1G"
+   ],
+   "coverage_gap_resolved_no_medrt_direction": 18,
+   "disease_genes_resolvable": 27,
+   "disease_genes_resolvable_fraction": 0.2077,
+   "disease_genes_total": 130,
+   "disease_genes_with_inherited_drug": 45,
+   "external_source": "MED-RT MoA via RxClass",
+   "fetch_failed_drugs_excluded": [],
+   "gap_no_inherited_drug": 85,
+   "reading": "bounded by which inherited approved drugs MED-RT classes with a directional MoA. Drugs MED-RT leaves directionless (gene therapies, stabilisers, 'Interactions' classes) are genuine gaps (never scored); fetch failures are excluded, never read as 'no drug'.",
+   "what": "how much of the kit is checkable in MED-RT: disease genes whose inherited approved drugs carry >=1 clean MED-RT MoA direction"
+  },
+  "X_CROSS3": {
+   "agree": 18,
+   "agreement_fraction": 0.7826,
+   "disagreements": [
+    {
+     "dgidb": "INHIBITORY",
+     "gene": "ABCC8",
+     "medrt": "ACTIVATING",
+     "opentargets_chembl": "INHIBITORY"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "gene": "F5",
+     "medrt": "ACTIVATING",
+     "opentargets_chembl": "INHIBITORY"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "gene": "F8",
+     "medrt": "ACTIVATING",
+     "opentargets_chembl": "INHIBITORY"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "gene": "KCNJ11",
+     "medrt": "ACTIVATING",
+     "opentargets_chembl": "INHIBITORY"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "gene": "SERPINC1",
+     "medrt": "INHIBITORY",
+     "opentargets_chembl": "ACTIVATING"
+    }
+   ],
+   "genes_callable_in_all_three": 23,
+   "what": "MED-RT (V5) vs OT/ChEMBL (V4) vs DGIdb (V3) majority call on genes ALL THREE resolve (three-source direction concordance; transparency, not the emergence test)"
+  }
+ },
+ "orcid": "0009-0002-7535-8245",
+ "prereg_sha256": "b70a3319440c8fc6f22918757976487dc1a815a4812f1bb870cdfe1d272992cf",
+ "programme": "jamming-physics.org",
+ "release": "0.41.0-validation.v5",
+ "snapshot_date": "2026-06-21",
+ "validation_chain": {
+  "chain_head": "ab3900c19a3c63e40d6b150bbb5c1f6dbd4a8c676a734ed89cb0f69e02ad4056",
+  "continues_from_head": "14a25613b0edc3b03c22ef7f47beddb4d14117301b7633e8d62037ace4d06650",
+  "record": [
+   {
+    "metric": "X_COV_external_coverage",
+    "payload": {
+     "coverage_gap_examples": [
+      "ABCD1",
+      "ARSA",
+      "CASR",
+      "F13A1",
+      "F7",
+      "F9",
+      "GLA",
+      "HBB",
+      "KCNJ2",
+      "LEPR",
+      "MYH7",
+      "RPE65",
+      "SCNN1B",
+      "SCNN1G"
+     ],
+     "coverage_gap_resolved_no_medrt_direction": 18,
+     "disease_genes_resolvable": 27,
+     "disease_genes_resolvable_fraction": 0.2077,
+     "disease_genes_total": 130,
+     "disease_genes_with_inherited_drug": 45,
+     "external_source": "MED-RT MoA via RxClass",
+     "fetch_failed_drugs_excluded": [],
+     "gap_no_inherited_drug": 85,
+     "reading": "bounded by which inherited approved drugs MED-RT classes with a directional MoA. Drugs MED-RT leaves directionless (gene therapies, stabilisers, 'Interactions' classes) are genuine gaps (never scored); fetch failures are excluded, never read as 'no drug'.",
+     "what": "how much of the kit is checkable in MED-RT: disease genes whose inherited approved drugs carry >=1 clean MED-RT MoA direction"
+    },
+    "prev_hash": "14a25613b0edc3b03c22ef7f47beddb4d14117301b7633e8d62037ace4d06650",
+    "row_hash": "d23382d575b5ba7e46524c653be4953c41ebe3de31a2aeed93b1072cad51c2ec"
+   },
+   {
+    "metric": "X1_coupling_free_own_gene",
+    "payload": {
+     "lesion_stratified": {
+      "GOF_arm": {
+       "accuracy": 0.9494,
+       "activating": {
+        "denominator_obs": 4,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "inhibitory": {
+        "denominator_obs": 75,
+        "denominator_pred": 79,
+        "precision": 0.9494,
+        "recall": 1.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 0,
+        "pred_ACT_obs_INH": 0,
+        "pred_INH_obs_ACT": 4,
+        "pred_INH_obs_INH": 75
+       },
+       "n": 79
+      },
+      "LOF_arm": {
+       "accuracy": 0.4156,
+       "activating": {
+        "denominator_obs": 32,
+        "denominator_pred": 77,
+        "precision": 0.4156,
+        "recall": 1.0
+       },
+       "inhibitory": {
+        "denominator_obs": 45,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 32,
+        "pred_ACT_obs_INH": 45,
+        "pred_INH_obs_ACT": 0,
+        "pred_INH_obs_INH": 0
+       },
+       "n": 77
+      },
+      "reading": "GOF disease genes should attract INHIBITORY approved drugs (oppose the gain); LOF genes should attract ACTIVATING ones (restore the loss). The GOF->inhibitory arm is the clean external confirmation; the LOF->activating arm is pharmacologically hard (loss is fixed by replacement / another node), so any shortfall is a property of pharmacology + the source's scope, not the emergence. NB: MED-RT does resolve the rare pharmacologically-satisfiable LOF cases (CFTR potentiators, PAH activators) as ACTIVATING -- surfaced, not buried."
+     },
+     "marginal_baseline": {
+      "accuracy": 0.7692,
+      "always_predict": "INHIBITORY",
+      "note": "approved pharmacology is inhibitor-skewed; the trivial 'everything is an inhibitor' guess. The GOF arm must beat it; the pooled figure is dragged below baseline by the pharmacologically-unsatisfiable LOF arm, exactly as in V3/V4 -- reported, not hidden."
+     },
+     "mismatch_count": 49,
+     "mismatches": [
+      {
+       "drug": "CARBIDOPA",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "DDC",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "aadc_deficiency"
+      },
+      {
+       "drug": "PENTOSTATIN",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ADA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "adenosine_deaminase_deficiency"
+      },
+      {
+       "drug": "ETHACRYNIC ACID",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "TORSEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "ETHACRYNATE SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "BUMETANIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "FUROSEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "COCAINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "ESLICARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "RILUZOLE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "PHENACEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "CENOBAMATE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "LAMOTRIGINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "COCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "ESLICARBAZEPINE ACETATE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "PALIFERMIN",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "FGFR2",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "crouzon_syndrome"
+      },
+      {
+       "drug": "CROFELEMER",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "CFTR",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "cystic_fibrosis"
+      },
+      {
+       "drug": "ELEXACAFTOR",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "CFTR",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "cystic_fibrosis"
+      },
+      {
+       "drug": "COCAINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "RILUZOLE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "PHENACEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "CENOBAMATE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "LAMOTRIGINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "ESLICARBAZEPINE ACETATE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "COCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "ESLICARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "ETEPLIRSEN",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "DMD",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "duchenne_muscular_dystrophy"
+      },
+      {
+       "drug": "DROTRECOGIN ALFA (ACTIVATED)",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "F5",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "factor_v_leiden"
+      },
+      {
+       "drug": "TRICHLORMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "CHLOROTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "BENZTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "CHLORTHALIDONE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "INDAPAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "CYCLOTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "HYDROCHLOROTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "HYDROFLUMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "QUINETHAZONE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "METHYCLOTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "METOLAZONE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "POLYTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "BENDROFLUMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "TINZAPARIN SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SERPINC1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_antithrombin_deficiency"
+      },
+      {
+       "drug": "CONIVAPTAN HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "TOLVAPTAN",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "CONIVAPTAN",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "DESMOPRESSIN ACETATE",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "drug": "DESMOPRESSIN",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "drug": "MIGLITOL",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "GAA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "pompe_disease"
+      },
+      {
+       "drug": "METYROSINE",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "TH",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "tyrosine_hydroxylase_deficiency"
+      }
+     ],
+     "per_gene_majority": {
+      "detail": [
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "DDC",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "aadc_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "FGFR3",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "INHIBITORY",
+        "slug": "achondroplasia"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "ADA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "adenosine_deaminase_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SLC12A1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 5,
+        "pred": "ACTIVATING",
+        "slug": "bartter_syndrome_type_1"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN5A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "ACTIVATING",
+        "slug": "brugada_syndrome"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "KCNJ11",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 8,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "ABCC8",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 7,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "FGFR2",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 1,
+        "n_inh": 7,
+        "pred": "INHIBITORY",
+        "slug": "crouzon_syndrome"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "CFTR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 3,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "cystic_fibrosis"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN1A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "ACTIVATING",
+        "slug": "dravet_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "DMD",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "duchenne_muscular_dystrophy"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "COL3A1",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "ehlers_danlos_syndrome_vascular_type"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "F5",
+        "hit": false,
+        "lesion": "GOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "INHIBITORY",
+        "slug": "factor_v_leiden"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "PCSK9",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "familial_hypercholesterolaemia"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SLC12A3",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 13,
+        "pred": "ACTIVATING",
+        "slug": "gitelman_syndrome"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "F8",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 6,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "haemophilia_a"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SERPINC1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "hereditary_antithrombin_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN5A",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "INHIBITORY",
+        "slug": "long_qt_syndrome_3"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "RET",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 11,
+        "pred": "INHIBITORY",
+        "slug": "multiple_endocrine_neoplasia_type_2a"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "AVPR2",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 2,
+        "n_inh": 3,
+        "pred": "ACTIVATING",
+        "slug": "nephrogenic_diabetes_insipidus_x_linked"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "AVPR2",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 2,
+        "n_inh": 3,
+        "pred": "INHIBITORY",
+        "slug": "nephrogenic_siad"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "COL1A1",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "osteogenesis_imperfecta_type_i"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "PAH",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 2,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "phenylketonuria"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "GAA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "pompe_disease"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "PKLR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 2,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "pyruvate_kinase_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN4A",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 10,
+        "pred": "INHIBITORY",
+        "slug": "scn4a_skeletal_muscle_channelopathy"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "CACNA1C",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 24,
+        "pred": "INHIBITORY",
+        "slug": "timothy_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "TTR",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "transthyretin_amyloidosis"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "TH",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "tyrosine_hydroxylase_deficiency"
+       }
+      ],
+      "genes_recovered": 17,
+      "genes_scored": 29,
+      "recovery_fraction": 0.5862
+     },
+     "permutation_null": {
+      "denominator": 156,
+      "observed_accuracy": 0.6859,
+      "observed_hits": 107,
+      "reading": "lesion labels carry real directional information iff observed concordance sits far above the shuffled mean and almost no shuffle reaches it.",
+      "seed": 19,
+      "shuffled_mean_accuracy": 0.5034,
+      "shuffled_mean_hits": 78.53,
+      "shuffles": 5000,
+      "shuffles_reaching_observed": 0
+     },
+     "pooled": {
+      "accuracy": 0.6859,
+      "activating": {
+       "denominator_obs": 36,
+       "denominator_pred": 77,
+       "precision": 0.4156,
+       "recall": 0.8889
+      },
+      "inhibitory": {
+       "denominator_obs": 120,
+       "denominator_pred": 79,
+       "precision": 0.9494,
+       "recall": 0.625
+      },
+      "matrix": {
+       "pred_ACT_obs_ACT": 32,
+       "pred_ACT_obs_INH": 45,
+       "pred_INH_obs_ACT": 4,
+       "pred_INH_obs_INH": 75
+      },
+      "n": 156
+     },
+     "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs MED-RT MoA direction of the inherited approved drugs on the SAME gene; coupling-free; identical construction to V3/V4 X1 with the direction SOURCE swapped to MED-RT"
+    },
+    "prev_hash": "d23382d575b5ba7e46524c653be4953c41ebe3de31a2aeed93b1072cad51c2ec",
+    "row_hash": "6644e505600ca3a8d0d0d0ed9837fff58e0f4f91cd398ffba08bd85d4ed80d9c"
+   },
+   {
+    "metric": "X1B_membership_orthogonal",
+    "payload": {
+     "confusion": {
+      "accuracy": 1.0,
+      "activating": {
+       "denominator_obs": 0,
+       "denominator_pred": 0,
+       "precision": null,
+       "recall": null
+      },
+      "inhibitory": {
+       "denominator_obs": 2,
+       "denominator_pred": 2,
+       "precision": 1.0,
+       "recall": 1.0
+      },
+      "matrix": {
+       "pred_ACT_obs_ACT": 0,
+       "pred_ACT_obs_INH": 0,
+       "pred_INH_obs_ACT": 0,
+       "pred_INH_obs_INH": 2
+      },
+      "n": 2
+     },
+     "detail": [
+      {
+       "drugs": [
+        "ALIROCUMAB",
+        "EVOLOCUMAB"
+       ],
+       "gene": "PCSK9",
+       "n_act": 0,
+       "n_inh": 2,
+       "pred": "INHIBITORY"
+      }
+     ],
+     "genes_linked": 1,
+     "reading": "where MED-RT's own naming is gene-symbol-specific, does the emergence direction still agree? A spot-check on the fully-orthogonal corner, not a headline.",
+     "what": "membership-orthogonal sanity arm: a drug is linked to a gene ONLY where a MED-RT MoA class NAME contains the gene symbol -> both membership AND direction from MED-RT, zero curation. Tiny by construction (MED-RT names enzymes, not gene symbols)."
+    },
+    "prev_hash": "6644e505600ca3a8d0d0d0ed9837fff58e0f4f91cd398ffba08bd85d4ed80d9c",
+    "row_hash": "73f67204ab2a7c28402316156708c1e9fbe1a10a1056a6167bacdfcf36b725d2"
+   },
+   {
+    "metric": "X_CROSS3_three_source_concordance",
+    "payload": {
+     "agree": 18,
+     "agreement_fraction": 0.7826,
+     "disagreements": [
+      {
+       "dgidb": "INHIBITORY",
+       "gene": "ABCC8",
+       "medrt": "ACTIVATING",
+       "opentargets_chembl": "INHIBITORY"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "gene": "F5",
+       "medrt": "ACTIVATING",
+       "opentargets_chembl": "INHIBITORY"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "gene": "F8",
+       "medrt": "ACTIVATING",
+       "opentargets_chembl": "INHIBITORY"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "gene": "KCNJ11",
+       "medrt": "ACTIVATING",
+       "opentargets_chembl": "INHIBITORY"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "gene": "SERPINC1",
+       "medrt": "INHIBITORY",
+       "opentargets_chembl": "ACTIVATING"
+      }
+     ],
+     "genes_callable_in_all_three": 23,
+     "what": "MED-RT (V5) vs OT/ChEMBL (V4) vs DGIdb (V3) majority call on genes ALL THREE resolve (three-source direction concordance; transparency, not the emergence test)"
+    },
+    "prev_hash": "73f67204ab2a7c28402316156708c1e9fbe1a10a1056a6167bacdfcf36b725d2",
+    "row_hash": "ab3900c19a3c63e40d6b150bbb5c1f6dbd4a8c676a734ed89cb0f69e02ad4056"
+   }
+  ]
+ }
+}

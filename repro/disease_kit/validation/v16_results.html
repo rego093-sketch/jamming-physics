@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>VP Disease Emergence Kit — V12 Prospective-Falsification Ledger</title>
+<style>
+ body{font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:1080px;
+      margin:2rem auto;padding:0 1.2rem;color:#1a1a1a}
+ h1{font-size:1.5rem;margin-bottom:.2rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:2px solid #eee;padding-bottom:.3rem}
+ .sub{color:#666;font-size:.9rem} .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem}
+ table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.86rem}
+ th,td{border:1px solid #ddd;padding:.34rem .5rem;text-align:left;vertical-align:top}
+ th{background:#f6f6f6} .pass{color:#137333;font-weight:600} .fail{color:#c5221f;font-weight:600}
+ .big{font-size:1.25rem;font-weight:700} .card{background:#f8f9fb;border:1px solid #e6e8ee;border-radius:8px;padding:.8rem 1rem;margin:.6rem 0}
+ .verdict{background:#f3f7f3;border-left:4px solid #137333;padding:.7rem 1rem;border-radius:4px}
+ code{background:#f0f0f0;padding:.05rem .3rem;border-radius:3px}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+</style>
+<h1>VP Disease Emergence Kit — Validation Round V12</h1>
+<div class="sub">Prospective-falsification ledger · the §5.3 fourth-and-last metric · Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0</div>
+
+<div class="card">
+ <div class="big">177/177 falsifiers proven well-formed
+ &nbsp;·&nbsp; firewall <span class="pass">PASS</span>
+ (0 leaks)</div>
+ <div class="sub">W1 magnitude-free 177/177 · W2 agent-bound 177/177 ·
+ W3 direction-correct 177/177 · W4 refutation-structure 177/177 ·
+ W5 one-to-one <span class="pass">PASS</span></div>
+</div>
+
+<h2>Verdict</h2>
+<p class="verdict">All 177 candidate-register falsifiers are PROVEN well-formed -- W1 magnitude-free 177/177, W2 agent-bound 177/177, W3 direction-correct 177/177, W4 refutation-structured 177/177, W5 one-to-one with the frozen register (PASS) -- and the register&#x27;s internal laws re-prove (L1 family&lt;-&gt;sign PASS, L2 join PASS, L3 grade-[O] PASS). The kit&#x27;s central honesty claim -- every lead is refutable by its falsifier -- is therefore STRUCTURAL, not merely asserted. The genesis ledger freezes all 177 as UNTESTED (72 genuinely-open `novel` directions + 105 `rediscovery` directions already concordant with established practice); NO outcome is claimed. The append-only instrument (outcome enum + Track-A refuted-flag path) is established and content-hashed, CLOSING the §5.3 ledger: three in-house metrics executed (direction-recovery V1-V8, exclusion calibration V10, novelty audit V11) plus the external prospective-falsification instrument now stood up. Direction != efficacy; every lead stays [O]; firewall holds.</p>
+
+<h2>What this round is (and is not)</h2>
+<p class="sub">prospective falsification is, by construction, future and external: each of the 177 register rows ships a falsifier of the form &#x27;if AGENT (a DIRECTION agent) does NOT move the switch toward the healthy branch in a GENE-lesion model, the DIRECTION is refuted for AGENT here&#x27; -- a refuting EXPERIMENT others run post-hoc, not a database the kit can query now. So the genesis ledger asserts every row UNTESTED; outcomes append later (append-only), each citing the falsifier id + the external source. There is therefore NO snapshot to vendor and NO external refetch -- the only off-manifest audit is an INDEPENDENT RE-PARSE of the falsifiers (a well-formedness re-derivation), confirming the ledger is reproducible from the frozen register without trusting the in-run parse.</p>
+
+<h2>W1–W4 · falsifier well-formedness — failures</h2>
+<table><tr><th>slug</th><th>agent</th><th>required sign</th><th>failed checks</th></tr>
+<tr><td colspan='4'>none — all 152 well-formed</td></tr></table>
+
+<h2>L1–L3 · register cross-laws re-proven</h2>
+<table><tr><th>law</th><th>result</th><th>detail</th></tr>
+<tr><td>L1 family ⇔ sign</td><td class="pass">PASS</td>
+<td class="mono">{&#x27;h-restore&#x27;: [&#x27;decrease&#x27;, &#x27;increase&#x27;], &#x27;gamma-restore&#x27;: [&#x27;stabilise&#x27;]}</td></tr>
+<tr><td>L2 join law (agent sign = required sign)</td><td class="pass">PASS</td>
+<td>0 counterexamples</td></tr>
+<tr><td>L3 grade ≡ [O]</td><td class="pass">PASS</td>
+<td>0 counterexamples</td></tr></table>
+
+<h2>Prospective-falsification denominator</h2>
+<div class="grid">
+ <div class="card"><div class="big">177</div><div class="sub">total refutable direction hypotheses</div></div>
+ <div class="card"><div class="big">72 <span class="sub">open</span> / 105 <span class="sub">corroborated</span></div><div class="sub">novel (genuinely open) vs rediscovery (direction already concordant with practice)</div></div>
+</div>
+<p class="sub">by required sign — increase 73 · decrease 58 · stabilise 46. all 177 ship a refutable direction falsifier. The 72 `novel` rows are GENUINELY OPEN -- their direction is an untested [O] lead and external falsification is the decisive test. The 83 `rediscovery` rows have a direction already concordant with established/approved practice (a consistency signal, V8-audited), so their falsifier carries lower open-risk -- but each is still logged, because rediscovery corroborates the DIRECTION, not a proof the geometry derived it for the right reason.</p>
+
+<h2>The instrument (genesis)</h2>
+<p>outcome enum <code>UNTESTED / DIRECTION_CORROBORATED / DIRECTION_REFUTED / INCONCLUSIVE</code> · entries <b>177</b> · all UNTESTED <b>True</b><br>
+genesis content sha256 <code class="mono">d587a33b9732dad792992a3ebcda149b…</code> · file <code>v16_falsification_ledger.genesis.json</code><br>
+instrument established <span class="pass">True</span></p>
+<p class="sub"><b>append-only:</b> by APPENDING a new chained record -- never mutating genesis -- that cites (a) the falsifier id == the register row_hash (pins it to the frozen chain), (b) the external source (PMID/DOI/NCT), (c) the outcome enum, (d) a magnitude-free note. <b>Refuted:</b> a DIRECTION_REFUTED outcome APPENDS a documented Track-A re-derivation flag for the (gene, family, direction) -- the honest self-correction path, exactly as V10 logged its CASR over-exclusion -- and is NEVER a silent drop.</p>
+
+<h2>§5.3 status</h2>
+<p class="verdict">COMPLETE -- direction-recovery (V1-V8), exclusion calibration (V10), novelty audit (V11), negative-controls/novelty-concentration (V1-V2), and now the prospective-falsification instrument (V12). No further §5.3 metric is open; future work is APPENDING external outcomes to this ledger + Track-A coverage.</p>
+
+<h2>inheritance &amp; validation chain</h2>
+<p class="sub">READ-ONLY: validation is strictly READ-ONLY; 0 of the 128 derivations were re-run.
+disease_inputs <code>ca6c044e7dc1108c…</code>,
+mapped_levers <code>ab063b32abf1f7ed…</code>,
+register-head <code>e94bc7d2cf9fbc82…</code> — all byte-identical.</p>
+<table><tr><th>chain label</th><th>value</th><th>head</th></tr>
+<tr><td>inherited_anchors_readonly_all_match</td><td>True</td><td class='mono'>4e13d36bf7f29a57f8c1…</td></tr>
+<tr><td>falsifier_wellformedness_all_pass</td><td>177/177</td><td class='mono'>ffb7daf767f2f817ad89…</td></tr>
+<tr><td>one_to_one_with_register</td><td>True</td><td class='mono'>493c288112a56bdffbb4…</td></tr>
+<tr><td>cross_laws_L1_L2_L3</td><td>[True, True, True]</td><td class='mono'>87794df358eacd9be167…</td></tr>
+<tr><td>genesis_ledger_content_sha256</td><td>d587a33b9732dad792992a3ebcda149b07ef631a2dfd42468b239a855df87177</td><td class='mono'>d4268d98d58b317c8d08…</td></tr>
+<tr><td>genesis_all_untested</td><td>True</td><td class='mono'>dd8cab6e75373fe1b520…</td></tr>
+<tr><td>prospective_open_vs_corroborated</td><td>72 open / 105 corroborated of 177</td><td class='mono'>3af4cbb558b2f0cdb98a…</td></tr>
+<tr><td>section_5_3_ledger</td><td>COMPLETE</td><td class='mono'>6bd67a279ac91be1bcdb…</td></tr>
+<tr><td>firewall_status</td><td>PASS</td><td class='mono'>372cf5779857eebfb155…</td></tr></table>
+<p class="sub">chain head <code>372cf5779857eebfb155a173…</code>, continues V11 <code>eaf5ac1bd948089a55697748…</code> (append-only).</p>
+
+<h2>what this round does not do</h2>
+<ul><li>does NOT mutate the grown 152-core, re-admit any lever family, re-derive any disease, or re-label any row.</li><li>does NOT assert any magnitude (dose/efficacy/response/survival/p-value/n-of-m).</li><li>does NOT claim any drug works, nor claim any falsifier outcome -- the genesis is all UNTESTED.</li><li>does NOT introduce a new external source (no snapshot to vendor); the off-manifest audit is an independent RE-PARSE of the falsifiers, not a network call.</li><li>does NOT upgrade a `novel` lead via its `rediscovery` neighbours; the open/corroborated split is reported, not merged.</li></ul>
+</html>

@@ -1,0 +1,365 @@
+{
+  "F1_0_fold_primitive": {
+    "bistable_symmetry": true,
+    "chain_collapses_pastfold": true,
+    "chain_holds_subfold": true,
+    "fold_matches_engine": true,
+    "fold_spinodal": 0.3849001795,
+    "primitive_ok": true,
+    "reading": "the chain is a held bistable state; holding margin = the R19 fold. F1.3 tests which node carries the holding."
+  },
+  "F1_1_not_a_gatherer": {
+    "convergence_hub": "thalamus",
+    "effective_in_degree": {
+      "basal_forebrain_chol": 1.0352286369,
+      "brainstem": 4.8885452497,
+      "cerebellum": 3.3325082191,
+      "forebrain_gaba_in": 1.0013743365,
+      "hippocampus": 1.0786108203,
+      "hypothalamus": 1.0308033456,
+      "midbrain": 1.0933398672,
+      "neocortex": 1.0012532816,
+      "olfactory_bulb": 4.7307447988,
+      "pallidum": 4.1598464226,
+      "striatum": 2.42066326,
+      "thalamus": 4.9485762021
+    },
+    "neocortex_does_not_outconverge_thalamus": true,
+    "neocortex_fan_in": 1.0012532816,
+    "neocortex_rank_low_is_1": 1,
+    "reading": "neocortex draws ~all input from one neighbour (fan-in ~1, rank 1/12); the convergence hub is the thalamus (~4.9). Static geometry -- ROBUST. The 'frontal = convergence node' idea is REFUTED.",
+    "robust": true,
+    "thalamus_fan_in": 4.9485762021,
+    "thalamus_is_hub": true
+  },
+  "F1_2_broadcaster": {
+    "is_low_in_high_out_broadcaster": true,
+    "neocortex_f0_hz": 40.0,
+    "neocortex_in_eff": 1.0012532816,
+    "neocortex_in_rank_low_is_1": 1,
+    "neocortex_out_col_mass": 1.3893844694,
+    "neocortex_out_rank_high_is_1": 4,
+    "reading": "low fan-in (rank 1/12) + moderate-to-high out-influence (col-mass rank ~4/12) at f0=40 Hz: the cortical node listens to ~one source and influences many -- a fast BROADCASTER, not an integrator. ROBUST.",
+    "robust": true
+  },
+  "F1_3_temporal_holding": {
+    "a_thread_holding_disp_sweep": {
+      "neocortex_rank_range": [
+        2,
+        9
+      ],
+      "operating_point_specific": true,
+      "table": {
+        "disp=3.0": {
+          "best_holder": "cerebellum",
+          "neocortex_dR": 0.0024630882,
+          "neocortex_rank_best_is_1": 6
+        },
+        "disp=4.0": {
+          "best_holder": "basal_forebrain_chol",
+          "neocortex_dR": 0.0084400137,
+          "neocortex_rank_best_is_1": 3
+        },
+        "disp=5.0": {
+          "best_holder": "basal_forebrain_chol",
+          "neocortex_dR": 0.0120395486,
+          "neocortex_rank_best_is_1": 2
+        },
+        "disp=6.0": {
+          "best_holder": "basal_forebrain_chol",
+          "neocortex_dR": 0.0056564592,
+          "neocortex_rank_best_is_1": 8
+        },
+        "disp=7.0": {
+          "best_holder": "hippocampus",
+          "neocortex_dR": -0.0007230867,
+          "neocortex_rank_best_is_1": 9
+        }
+      }
+    },
+    "b_lobotomy_sustained_Th_sweep": {
+      "instant_spared_robust_all_Th": true,
+      "neocortex_major_winner_at_n_windows": 1,
+      "single_window_resonance": true,
+      "table": {
+        "Th=0.2": {
+          "major_lobotomy_winner": "hippocampus",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": 0.0006353153
+        },
+        "Th=0.3": {
+          "major_lobotomy_winner": "hippocampus",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0014598137
+        },
+        "Th=0.4": {
+          "major_lobotomy_winner": "hippocampus",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0006033068
+        },
+        "Th=0.5": {
+          "major_lobotomy_winner": "neocortex",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0050125589
+        },
+        "Th=0.6": {
+          "major_lobotomy_winner": "midbrain",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0059325302
+        },
+        "Th=0.8": {
+          "major_lobotomy_winner": "midbrain",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0017223617
+        },
+        "Th=1.0": {
+          "major_lobotomy_winner": "basal_forebrain_chol",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": -0.0011678276
+        },
+        "Th=1.5": {
+          "major_lobotomy_winner": "hippocampus",
+          "neocortex_d_instant": -0.0001021257,
+          "neocortex_d_sustain": 6.7685e-06
+        }
+      }
+    },
+    "c_decisive_recovery_seed_averaged": {
+      "holders_are_slower_than_cortex": true,
+      "kick": 0.6,
+      "n_seeds": 20,
+      "neocortex_f0_hz": 40.0,
+      "neocortex_is_robust_holder": false,
+      "neocortex_mean_dR": -0.0003417009,
+      "neocortex_recovery_rank_holder_is_1": 4,
+      "neocortex_std_dR": 0.0013067913,
+      "robust_holders": [
+        "cerebellum"
+      ],
+      "robust_holders_f0_hz": {
+        "cerebellum": 12.0
+      },
+      "table_most_holding_first": [
+        [
+          "cerebellum",
+          -0.0103,
+          0.0037
+        ],
+        [
+          "midbrain",
+          -0.0034,
+          0.0209
+        ],
+        [
+          "basal_forebrain_chol",
+          -0.0031,
+          0.0112
+        ],
+        [
+          "neocortex",
+          -0.0003,
+          0.0013
+        ],
+        [
+          "forebrain_gaba_in",
+          -0.0003,
+          0.0014
+        ],
+        [
+          "thalamus",
+          -0.0001,
+          0.0024
+        ],
+        [
+          "olfactory_bulb",
+          -0.0,
+          0.0012
+        ],
+        [
+          "striatum",
+          0.0005,
+          0.0017
+        ],
+        [
+          "pallidum",
+          0.0006,
+          0.0013
+        ],
+        [
+          "hypothalamus",
+          0.0014,
+          0.0044
+        ],
+        [
+          "brainstem",
+          0.0018,
+          0.0027
+        ],
+        [
+          "hippocampus",
+          0.0119,
+          0.0068
+        ]
+      ]
+    },
+    "verdict": {
+      "apparent_signatures_are_operating_point_artifacts": true,
+      "frontal_temporal_holding_confirmed": false,
+      "instant_spared_robust": true,
+      "reading": "the apparent 'thread-holder' signatures do NOT survive anti-tuning (thread-holding scatter-specific; lobotomy sustained a single-window resonance) and the DECISIVE seed-averaged recovery test finds silencing the cortical node has negligible, non-significant effect on coherence sustaining. The robust sustainers are the slower well-coupled subcortical hubs, NOT the fast cortical broadcaster. The instant-spared sign is robust but only confirms the cortical node is peripheral to BUILDING coherence. H1's temporal-holding claim is NOT confirmed by this engine. [O]",
+      "real_holders_are_subcortical_hubs": true
+    }
+  },
+  "F1_4_engine_invariance_guard": {
+    "anchor_target": 0.3896145516,
+    "engine_integrator_R": 0.3896145516,
+    "engine_matches_anchor_bitforbit": true,
+    "frontal_integrator_R_uniform": 0.3896145516,
+    "frontal_matches_engine_bitforbit": true
+  },
+  "F1_5_frontal_lesion_probe": {
+    "behavioural_record_reproduced": false,
+    "flexibility_by_duration": {
+      "t=0.8": {
+        "d": 0.0746141953,
+        "d_pct": 13.3824779597,
+        "intact": 0.5575514158,
+        "lesion": 0.6321656111
+      },
+      "t=1.0": {
+        "d": 0.0929749625,
+        "d_pct": 14.6621436667,
+        "intact": 0.6341157517,
+        "lesion": 0.7270907143
+      },
+      "t=1.2": {
+        "d": -0.0689425387,
+        "d_pct": -11.6311900999,
+        "intact": 0.5927384741,
+        "lesion": 0.5237959354
+      },
+      "t=1.5": {
+        "d": -0.0622562822,
+        "d_pct": -8.9090438185,
+        "intact": 0.6987986982,
+        "lesion": 0.636542416
+      }
+    },
+    "flexibility_sign_flips": true,
+    "flexibility_sign_stable_across_durations": false,
+    "perception_by_duration": {
+      "t=0.8": {
+        "d_pct": -3.8715540322,
+        "intact": 0.3956505273,
+        "lesion": 0.3803327033
+      },
+      "t=1.0": {
+        "d_pct": -3.2789961378,
+        "intact": 0.3878878115,
+        "lesion": 0.3751689852
+      },
+      "t=1.2": {
+        "d_pct": -2.8085464287,
+        "intact": 0.3878327121,
+        "lesion": 0.3769402503
+      },
+      "t=1.5": {
+        "d_pct": -3.4022651696,
+        "intact": 0.386585695,
+        "lesion": 0.3734330245
+      }
+    },
+    "perception_robustly_spared": true,
+    "reading": "disconnecting the cortical node (the leucotomy isolation) leaves the IMMEDIATE stimulus response (perception) robustly intact -- but that is because the cortical node is PERIPHERAL to coherence (low fan-in), not a frontal-specific function. The set-shifting flexibility change is NOT sign-stable: across a duration sweep it FLIPS between 'more flexible' and 'perseveration', so the apparent leucotomy perseveration signal is an OPERATING-POINT ARTEFACT, exactly like the holding signal in P2. The engine does NOT robustly reproduce the frontal-lesion behavioural record by removing the cortical node. The only robust facts are static (low fan-in, fast broadcaster) plus 'removal is nearly silent' (perception spared). This is Hard Limit 1 in its strongest form: a 12-node engine with an undifferentiated cortical lump cannot carry a stable frontal phenotype. [O honest negative]"
+  },
+  "axis": "D -- temporal chain depth / sustaining (the proposed frontal axis)",
+  "firewall": {
+    "axis_A": "mechanism != felt quality; the 'who perceives the pattern' question is the homunculus regress the framework declines.",
+    "consciousness_claim": 0,
+    "hard_problem_open": 1,
+    "statement": "Every quantity -- fan-in, out-influence, thread-holding, lesion asymmetry, recovery -- is a STRUCTURAL quantity of the coupling model on a frozen 12-node kernel, NOT the felt quality of cognition or any clinical state; NOT a real connectome, current density, electrode or dose; NOT a diagnosis, prognosis or treatment-matching. A node 'holding the thread' is a statement about coherence in a 12-node model, NOT a claim that anything is experienced."
+  },
+  "hard_limits": {
+    "ID_not_a_module": "Intellectual disability is NOT modelled; the §5/P5 mapping is a proposed discriminant test owed a large cohort simulation (F3), not a gated result.",
+    "lobotomy_is_lesion_evidence_only": "Leucotomy/lobotomy is read ONLY as lesion evidence; it was a crude, abandoned, connection-severing procedure. NOT an endorsement; NOT medical advice.",
+    "no_frontal_node_in_engine": "12 coarse organ nodes; the cortical node is the undifferentiated `neocortex` (FOXG1) lump. Every 'frontal' claim is a claim about the WHOLE cortical node. This is WHY P2 cannot be confirmed: there is no cortico-cortical structure to carry a frontal-specific holding function. A real test needs a v2 substrate that would BREAK the frozen READ-ONLY engine."
+  },
+  "honesty_ledger": {
+    "calls_run_all_atlas": 0.0,
+    "consciousness_claim": 0.0,
+    "decoupled_from_mind_atlas": 1.0,
+    "efficacy": 0.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "not_medical_advice": 1.0,
+    "probe_document_treated_as_idea_not_ssot": 1.0,
+    "reports_honest_negative_on_temporal_holding": 1.0,
+    "sign_only_magnitudes_O": 1.0
+  },
+  "hypothesis_under_test": "H1 -- cortical node = temporal chain-holder (not a spatial convergence node). Re-established from first principles; the probe document is a candidate idea only.",
+  "invariants": {
+    "engine_file_sha256_expected": "e61083ae956206e943ed292f5f69f9d3964ef50778e2d7344de93207ade48371",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_bitforbit": true
+  },
+  "module": "frontal_f1_temporal_holding",
+  "overall": {
+    "P1_not_gatherer_broadcaster_robust": true,
+    "P2_temporal_holding_confirmed": false,
+    "P6_flexibility_is_artifact": true,
+    "P6_frontal_lesion_record_reproduced": false,
+    "P6_perception_robustly_spared": true,
+    "engine_invariance_guard": true,
+    "fold_primitive_ok": true,
+    "holding_test_ran": true,
+    "is_full_module": true,
+    "probe_ran": true,
+    "verdict": "Re-established from first principles, the frozen 12-node engine ROBUSTLY shows the cortical node is NOT a spatial gatherer (lowest fan-in; the thalamus is the convergence hub) and IS a fast broadcaster [V mech]. It does NOT reproduce any robust frontal-lesion behaviour: the temporal-HOLDING signature is negligible under seed-averaging (holding lives in slower subcortical hubs) [O], and the leucotomy set-shifting/perseveration signature FLIPS SIGN across a duration sweep -- an operating-point artefact [O]. The only robust facts are the static structure and that removing the cortical node is nearly silent (perception spared because the node is peripheral). The cause is HARD LIMIT 1 in its strongest form: a 12-node engine with an undifferentiated cortical lump cannot carry a stable frontal phenotype. The engine GENERATES sharp frontal hypotheses but CANNOT confirm them; a real test needs a v2 substrate that would break the frozen engine. Magnitudes [O]; consciousness_claim=0; hard problem OPEN; NOT medical advice."
+  },
+  "preregistered_results": {
+    "P1_not_gatherer_but_broadcaster": {
+      "basis": "lowest effective fan-in (rank 1/12; thalamus is the convergence hub) + moderate-to-high out-influence at f0=40 Hz. Static geometry, ROBUST. Refutes the 'frontal = convergence/patternisation' idea.",
+      "broadcaster_robust": true,
+      "grade": "[V mech]",
+      "not_a_gatherer_robust": true,
+      "status": "CONFIRMED"
+    },
+    "P2_frontal_temporal_holding": {
+      "apparent_signatures_operating_point_only": true,
+      "attribution": "HARD LIMIT 1 -- the engine has no cortical microstructure to carry a frontal-specific holding function; a real test needs a v2 substrate that would break the frozen engine. The model generates H1 but cannot confirm it.",
+      "basis": "the cortical node's apparent thread-holding/lobotomy signatures are operating-point artifacts (scatter-specific; single-window resonance); seed-averaged recovery shows silencing it has negligible effect on sustaining; the robust holders are slower subcortical hubs.",
+      "grade": "[O -- honest negative]",
+      "instant_spared_robust": true,
+      "real_holders_are_subcortical": true,
+      "status": "NOT_CONFIRMED"
+    },
+    "P3_autism_W_fault_dissociable_D": {
+      "grade": "[V/L]",
+      "note": "social deficit tracks W (long-range routing, gated §18-19 in mind); the D-dissociation is candidate. The D axis itself is NOT cleanly carried by the cortical node in this engine (see P2) -- a caution for F3.",
+      "status": "CANDIDATE"
+    },
+    "P4_stereotypy_TxWxE0": {
+      "grade": "[L candidate]",
+      "note": "stereotypy = small loops (W down) under low fold (T) consolidated by E0 STABILISATION; absent if E0 off. Built in F2 (W/T/E0 are robust engine handles, unlike the D axis).",
+      "status": "OWED"
+    },
+    "P5_double_dissociation_OxW": {
+      "grade": "[L candidate -- large cohort sim]",
+      "note": "O x W double dissociation; needs the F3 cohort sweep with a separable social read-out. F1 cautions that the D axis is engine-blind.",
+      "status": "OWED"
+    },
+    "P6_frontal_lesion_record_reproduced": {
+      "attribution": "HARD LIMIT 1 in its strongest form -- a 12-node engine with an undifferentiated cortical lump cannot carry a stable frontal behavioural phenotype. The engine reproduces NO robust frontal-lesion behavioural signature; only static structure (low fan-in, fast broadcaster) and 'removal is nearly silent' are robust.",
+      "basis": "tested whether disconnecting the cortical node (leucotomy isolation) reproduces the leucotomy record. PERCEPTION is robustly spared -- but only because the cortical node is peripheral to coherence (low fan-in), not a frontal function. The set-shifting flexibility change FLIPS SIGN across a duration sweep (more-flexible vs perseveration), so the apparent perseveration is an operating-point artefact, like the holding signal in P2.",
+      "flexibility_signal_is_operating_point_artifact": true,
+      "grade": "[O -- honest negative]",
+      "methodological_note": "an earlier single-operating-point probe (one phase duration) showed a clean perseveration result; the duration sweep revealed it flips sign. Anti-tuning caught a false positive -- the framework's discipline working as intended.",
+      "perception_robustly_spared": true,
+      "status": "NOT_CONFIRMED"
+    }
+  },
+  "simulation": "vp_frontal (INDEPENDENT; NOT the 29th atlas citizen)"
+}

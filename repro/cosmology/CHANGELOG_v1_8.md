@@ -1,5 +1,18 @@
 # CHANGELOG — VP_SPEC v1.8 upgrade
 
+## v1.12-final — 2026-06-20 — precise finalization (retrieval surface only)
+- Fermi GRB-dispersion reframed defensive → confident falsifiable highlight (§2 + §16 ledger);
+  h1/hub/_meta title "Sharpest Tension" → "Sharpest Falsifiable Test"; every number and the [O]
+  open grade preserved.
+- 13 truncated meta descriptions rewritten (clean, conclusion-first, 80-160 chars, body-grounded).
+- 13 `abstract-texteq` phase-2 failures cleared by surfacing each page's representative figure.
+- llms.txt surfaces the highlight (§2, §16.1, gamma-dispersion concept); llms-full title aligned.
+- `_meta.json` reconciled to canonical HTML == manifest (48394 w / 896 eq / 27 fig / 14 tab);
+  eq convention TeX-delimiter 2387 → HTML-canonical 896 (author approval requested).
+- Hub overview counts corrected to 42 pages / 66 rendered eq / 27 fig / 14 tab.
+- gate.py phases 1/2/3 PASS; full 42-page C1–C4 audit PASS 24/24.
+- Reported (tools/ LOCKED, unmodified): gate_v1_8.py stale (28-page hardcode); reconcile_meta.py KeyError 'code'.
+
 Upgrade of the **Vacuum-Inflow Cosmology** volume (content revision v2.1,
 time-sector grounding) from VP_SPEC **v1.6** compliance to VP_SPEC **v1.8**
 compliance. The canonical form remains the HTML under `docs/cosmology/`; every

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gap 2 — cortical microstructure — vp_frontal Sim 2 | Jamming Physics</title>
+<meta name="description" content="Gap 2: cortical microstructure as a hub topology — cutting the hubs collapses distant binding while a local cut spares it. ST-2 sign-stable across 9 cells.">
+<link rel="canonical" href="https://jamming-physics.org/mind/frontal/04-gap-2-cortical-microstructure/">
+<link rel="stylesheet" href="/mind/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Gap 2 — cortical microstructure as a hub topology","isPartOf":{"@type":"CreativeWorkSeries","name":"vp_frontal — Felt Cognition (the second brain simulation)","url":"https://jamming-physics.org/mind/frontal/","isPartOf":{"@type":"CreativeWork","name":"Felt Cognition: Parallel Micro-Eddies, the Stream of Thought, and the Open Problem of Experience","sameAs":"https://doi.org/10.5281/zenodo.20694404"}},"position":4,"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"datePublished":"2026-06-21","dateModified":"2026-06-21","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/frontal/_frontal_v2/","knowsAbout":["cortical microcircuit","hub topology","long-range binding","set-shifting","topological phenotype","hippocampus precedent"],"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Felt Cognition","item":"https://jamming-physics.org/mind/"},{"@type":"ListItem","position":3,"name":"vp_frontal","item":"https://jamming-physics.org/mind/frontal/"},{"@type":"ListItem","position":4,"name":"Gap 2 — cortical microstructure as a hub topology"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/mind/">Felt Cognition</a> › <a href="/mind/frontal/">vp_frontal</a> › Gap 2 — cortical microstructure as a hub</nav></header>
+<main>
+<h1>Gap 2 — cortical microstructure as a hub topology</h1>
+<!-- vp:answer:start -->
+<p class="answer">Gap 2 gives the cortex the internal microstructure Sim 1 left as one node. The fill is the hippocampus precedent re-organized into a hub topology: seven long-range hubs carry all long-range edges. Cutting the hubs collapses distant binding while a mass-matched local cut spares it; ST-2 confirms the phenotype is topological and sign-stable across nine cells.</p>
+<!-- vp:answer:end -->
+
+<p class="abstract">The additive cortical micro-model fills Gap 2 by applying the hippocampus precedent to cortex: a frozen autoassociator sits behind one node, but its connectivity is re-organized into a hub topology — <span class="mono">N_HUBS = K = 7</span> (the emerged working-memory capacity) long-range hubs carry all long-range edges, non-hubs wire only locally, and the hub-mediated recurrent settle is the reentrant loop. Cutting the hub edges collapses distant binding (0.857 → 0.724) while a mass-matched random-local cut spares it (→ 0.850); the effect vanishes all-to-all (topological) and is long-range-specific. ST-2 is sign-stable across 9 cells, so the micro-model is sufficient and the kernel fork is not triggered.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-calibrated">model</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/frontal/_frontal_v2/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20694404" rel="noopener">DOI snapshot</a>
+</aside>
+<!-- vp:cards:start -->
+<aside class="vp-card" data-locked="cortical_hub_topology"><b>cortical microstructure = a hub topology</b> — a frozen autoassociator behind one node, re-organized so N_HUBS = K = 7 (the emerged WM capacity) long-range hubs carry ALL long-range edges, non-hubs wire only locally within radius r = N/(2K) = 9, and the hub-mediated recurrent settle IS the reentrant loop — grounded (FOXG1 γ 1.4737, barrier 0.542948), new_tuned_constants = 0, engine read-only <b>[L] in-silico</b>. <a href="/mind/frontal/04-gap-2-cortical-microstructure/">this page</a></aside>
+<aside class="vp-card" data-locked="hub_binding"><b>long-range binding is hub-dependent and topological</b> — cutting hub long-range edges collapses distant binding (0.857 → 0.724) while a mass-matched random-local cut spares it (→ 0.850), a sign-stable hub−random gap (0 → +0.126); the same cut on an all-to-all substrate gives gap ≈ 0 (0.0019) — the effect is topological, not generic mass — and a scattered cue gives only a weak gap (0.009), so the binding is long-range-specific <b>[V] topological</b>. <a href="/mind/frontal/04-gap-2-cortical-microstructure/">this page</a></aside>
+<aside class="vp-card" data-locked="micro_model_sufficient"><b>the additive micro-model is sufficient (no kernel fork)</b> — ST-2 sign-stable across 9 cells: non-circular 9/0/0, topological 9/0/0, set-shift 9/0/0 (perseveration delta +0.033 → +0.172); phenotype_sign_stable = True, broke_on = [] — so cortex need NOT be resolved inside the kernel, M9 stays bit-identical, and the gene-blindness (g absent from the sign() dynamics) is the standing [O] <b>[L] in-silico</b>. <a href="/mind/frontal/04-gap-2-cortical-microstructure/">this page</a></aside>
+<aside class="vp-card" data-locked="st2_behavioural_gap"><b>ST-2 behavioural long-range binding gap</b> = C1 0.077 / C2 0.050 / C3 0.056 — across three cohorts the hub-cut behavioural binding gap is positive and sign-stable, while the matched all-to-all control gap is ≈10⁻⁴ (effectively zero), so long-range binding is carried by the hubs, not by dense local coupling. Sign-stability is the ST-2 result; absolute magnitudes and gene-specificity stay open. <b>[V mech / O mag]</b>. <a href="/mind/frontal/04-gap-2-cortical-microstructure/">this chapter</a></aside>
+<!-- vp:cards:end -->
+
+<h2>The gap: one undifferentiated node</h2>
+<p>Sim 1 carried the entire cortex as a single node of the 12-organ kernel — Hard Limit 1. Gap 2 gives that node the internal microstructure executive function needs, and it does so the additive way, so the frozen engine is untouched and the M9 anchor stays bit-identical.</p>
+
+<h2>The fill: the hippocampus precedent, re-wired into hubs</h2>
+<p>The micro-model is the hippocampus precedent applied to cortex. A frozen autoassociator sits behind one node, but its connectivity is re-organized into a <strong>hub topology</strong>: <span class="mono">N_HUBS = K = 7</span> (the emerged working-memory capacity) long-range hubs carry <em>all</em> the long-range edges, non-hubs wire only locally within radius <span class="mono">r = N/(2K) = 9</span>, and the hub-mediated recurrent settle <em>is</em> the reentrant loop. Everything is grounded (FOXG1 γ = 1.4737, emerged K = 7, <span class="mono">barrier(FOXG1) = 0.542948</span>); <span class="mono">new_tuned_constants = 0</span>; the engine is read-only.</p>
+<p>The read-outs are non-circular by construction. The distant-binding read-out cues a <em>near</em> block and measures recovery of a <em>distant</em> block — never the perturbed edge — and a mass-matched random-local cut of equal mass is the control.</p>
+
+<h2>What the build found</h2>
+<p>Cutting the <strong>hub</strong> long-range edges collapses distant binding (0.857 → 0.724) while a mass-matched <strong>random-local</strong> cut spares it (→ 0.850); the hub−random gap is monotone and sign-stable (0 → +0.126). The same cut on an <strong>all-to-all</strong> substrate gives a gap of ≈ 0 (0.0019) — the effect is <strong>topological</strong>, not generic mass. A <strong>scattered</strong> (non-local) cue gives only a weak gap (0.009) — the binding is <strong>long-range-specific</strong>.</p>
+<p>The honest residual is that the cell-gain gene never enters the dynamics: <span class="mono">LHX2 == FOXG1</span> to the read-out, because <span class="mono">g</span> does not appear in the <span class="mono">sign()</span> update, so the phenotype is purely <strong>topological / gene-blind</strong>. Absolute magnitudes and gene-specificity stay <span class="mono">[O]</span>.</p>
+
+<h2>ST-2: non-circularity and set-shifting</h2>
+<p>The break ST-2 was designed to cause is that the frontal phenotype only appears in a <em>circular</em> read-out, or that set-shifting flips under a duration sweep. Had it broken, the additive micro-model would be insufficient, and the major fork — resolving cortex <em>inside</em> the kernel, which breaks M9 — would open. The test imports the <strong>exact</strong> build model (non-circular at the code level) and tests three signed features across 9 cells (3 seed cohorts × durations 20/40/60): a non-circular behavioural bind-gap (shown against the circular hub-mass-drop control: hub-cut drops 0.60 vs random-cut 0.000), a topological gap (bind-gap exceeds the all-to-all control), and a hub-lesion perseveration delta (establish attractor A, cue B on the near block, and measure the distant block still resting on A).</p>
+<table>
+<thead><tr><th>feature</th><th>support</th><th>contradict</th><th>ambiguous</th><th>sign-stable</th></tr></thead>
+<tbody>
+<tr><td>non-circular (distant bind-gap, not the cut edge)</td><td>9</td><td>0</td><td>0</td><td><strong>True</strong></td></tr>
+<tr><td>topological (gap exceeds all-to-all control)</td><td>9</td><td>0</td><td>0</td><td><strong>True</strong></td></tr>
+<tr><td>set-shift (hub-lesion perseveration delta)</td><td>9</td><td>0</td><td>0</td><td><strong>True</strong></td></tr>
+</tbody></table>
+
+<h2>What survived, and what stays open</h2>
+<p>The phenotype survived: <span class="mono">phenotype_sign_stable = True</span>, <span class="mono">broke_on = []</span>, perseveration delta +0.033 → +0.172. Gap 2 is graded <strong><span class="mono">[L]</span> in-silico</strong>; the additive micro-model is <strong>sufficient</strong>, the kernel fork is <strong>not</strong> triggered, and M9 stays bit-identical. The set-shift delta is duration-invariant because the autoassociator settles fast, so the sweep confirms <em>no flip</em> (anti-tuning) rather than duration-dependence; the gene-blindness is carried forward as the standing <span class="mono">[O]</span>.</p>
+<p>The additive discipline held — re-verified at this session, the M9 anchor reproduces bit-for-bit, the engine tree is unchanged, and the M0–M16 subtree is unchanged.</p>
+
+<p class="note"><strong>Firewall (Axis-A).</strong> Every quantity on this page is a structural quantity of an in-silico model — a sign, a margin, an ordering — and is <em>not</em> a felt state, an experienced quality, or a level of consciousness (<span class="mono">consciousness_claim = 0</span>; the hard problem stays open, <span class="mono">hard_problem_open = 1</span>). These are model results, not validated neuroscience and not clinical guidance. <span class="mono">efficacy = 0</span>; not medical advice.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/mind/frontal/03-gap-1-field-causal-efficacy/">← Gap 1</a>
+  <a href="/mind/frontal/">vp_frontal contents</a>
+  <a rel="next" href="/mind/frontal/05-gap-3-axonal-connectome/">Gap 3 →</a>
+</nav>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

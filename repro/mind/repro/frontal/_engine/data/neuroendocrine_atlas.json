@@ -1,0 +1,59 @@
+{
+  "_purpose": "LOCKED neuromodulatory / neuroendocrine anchor DB for the v1.20 global-state layer (M17) and the interoceptive axis (M18). Every entry is an INDEPENDENTLY measured / published value or a documented modelling choice -- NEVER a value chosen by us to match a scored target (panic_peak_minutes, arousal, valence). The engine reads these constants; it never reads the scored affect observables when selecting them. This is the LOCKED-measured [L] vs back-fit distinction, identical to mind_param_db.json discipline (Young Jae Lee, VP-SPEC C3).",
+  "_grades": {
+    "[L]": "locked: independently measured / published value or universal law, cited; legitimate to use as an input",
+    "[F]": "fixed modelling choice (dimensionless gain / functional form); documented, robustness-swept, NOT tuned to a scored target",
+    "[O]": "open: the entity-specific canonical single value is not available in-package; a generic placeholder stands in and the residual is DECLARED"
+  },
+  "_anti_tuning_rule": "The cortisol cascade time constants below are fixed by CITED endocrine physiology (Dickerson & Kemeny 2004 meta-analysis of the acute cortisol response; CRH/ACTH kinetics). The scored observable panic_peak_minutes is REPRODUCED by those fixed constants -- it is NOT used to choose them. If the cited cascade did not land a peak in the reported window, we would report a residual, not move the constants.",
+
+  "neuromodulators": {
+    "_axis": "Tonic/phasic kinetics of the four global neuromodulators + two endocrine signals that set GLOBAL substrate state. M17 uses these to drive a SINGLE global-gain vector that modulates BOTH cognition and affect (the integration prediction). Receptor/clearance kinetics are cited; the gain MAGNITUDE that the engine applies is a dimensionless [F] (robustness-swept), because a concentration-to-substrate-gain conversion is not a measured constant.",
+
+    "norepinephrine_LC": {
+      "tonic_firing_hz": {"value": 2.0, "range": [1.0, 3.0], "grade": "[L]",
+        "provenance": "Locus coeruleus tonic firing 1-3 Hz in quiet waking; phasic bursts to ~10-20 Hz on salient events. Aston-Jones & Bloom 1981 (J Neurosci 1:876); Aston-Jones & Cohen 2005 adaptive-gain theory (Annu Rev Neurosci 28:403) explicitly links LC-NE tonic/phasic mode to BOTH task performance (cognition) AND arousal -- the canonical single-substrate co-modulator."},
+      "phasic_burst_hz": {"value": 15.0, "range": [10.0, 20.0], "grade": "[L]",
+        "provenance": "LC phasic burst rate on salient/arousing stimuli; Aston-Jones & Cohen 2005."},
+      "gain_role": {"value": "global_arousal_gain", "grade": "[F]",
+        "provenance": "Adaptive-gain theory: NE sets the GAIN of cortical input-output (sharper, higher gain under phasic mode). Modelled as a multiplicative gain on R19 drive; the Yerkes-Dodson inverted-U is an EMERGENT property of the fold, not a fitted curve. The gain value is swept (M17 robustness), not tuned."}
+    },
+
+    "dopamine": {
+      "phasic_transient_decay_s": {"value": 0.4, "range": [0.2, 0.6], "grade": "[L]",
+        "provenance": "Sub-second phasic dopamine transients decay in ~0.2-0.6 s (fast-scan cyclic voltammetry; Sulzer 2011 Neuron 69:628; Schultz 2007 reward-prediction-error physiology). Tonic dopamine operates on a minutes timescale (Grace 1991 tonic/phasic)."},
+      "rpe_role": {"value": "reward_prediction_error", "grade": "[V]",
+        "provenance": "Phasic DA encodes reward prediction error (Schultz, Dayan & Montague 1997 Science 275:1593). ALREADY EMERGED in this engine as M5 (emerge_learned_field); M17/M19 reuse M5, no new mechanism."}
+    },
+
+    "serotonin": {
+      "tonic_firing_hz": {"value": 2.5, "range": [1.0, 5.0], "grade": "[L]",
+        "provenance": "Dorsal raphe serotonergic neurons fire tonically ~1-5 Hz in waking, slowing in sleep (Jacobs & Azmitia 1992 Physiol Rev 72:165). 5-HT sets a slow mood/patience bias (Cools, Roberts & Robbins 2008 Trends Cogn Sci 12:31)."},
+      "mood_role": {"value": "global_mood_valence_bias", "grade": "[F]",
+        "provenance": "Modelled as a slow additive bias on the valence axis of the global state. Dimensionless [F], robustness-swept; not a measured substrate gain."}
+    },
+
+    "oxytocin": {
+      "plasma_half_life_min": {"value": 3.0, "range": [1.0, 6.0], "grade": "[L]",
+        "provenance": "Plasma oxytocin half-life ~1-6 min (Gimpl & Fahrenholz 2001 Physiol Rev 81:629). Hypothalamic (PVN/SON, SIM1 master) magnocellular origin -- same organ the engine already emerges (M0)."},
+      "affiliation_role": {"value": "social_affiliation_gain", "grade": "[O]",
+        "provenance": "Oxytocin's mapping onto a substrate gain for affiliative state is not a single measured constant -- carried as [O], present for completeness, NOT scored."}
+    },
+
+    "cortisol_HPA": {
+      "_cascade": "hypothalamus PVN (CRH) -> anterior pituitary (ACTH) -> adrenal cortex (cortisol) -> negative feedback onto PVN/pituitary. The hypothalamus node is ALREADY emerged in M0 (master SIM1 = PVN/SON neuroendocrine identity), so the HPA hub is grounded, not invented.",
+      "crh_to_acth_latency_s": {"value": 60.0, "range": [30.0, 180.0], "grade": "[L]",
+        "provenance": "CRH-evoked ACTH release is rapid (seconds-to-minutes); ACTH rises within ~1-3 min of CRH (Rivier & Vale 1983; Gibbs 1986). Modelled latency in the cited band."},
+      "acth_to_cortisol_peak_min": {"value": 25.0, "range": [15.0, 40.0], "grade": "[L]",
+        "provenance": "Acute cortisol response peaks ~21-40 min after acute stressor ONSET (Dickerson & Kemeny 2004 meta-analysis, Psychol Bull 130:355; Kirschbaum TSST). This is the CITED, INDEPENDENT endocrine kinetic; it is the anchor that REPRODUCES the panic_peak_minutes observable (NOT chosen to fit it)."},
+      "cortisol_recovery_min": {"value": 75.0, "range": [60.0, 90.0], "grade": "[L]",
+        "provenance": "Cortisol returns toward baseline over ~60-90 min post-peak (Dickerson & Kemeny 2004). Sets the slow falling limb of the stress readout."},
+      "circadian_period_h": {"value": 24.0, "grade": "[L]",
+        "provenance": "HPA cortisol follows a ~24 h circadian rhythm with a morning acrophase (universal). Not used in the acute-response test; recorded for completeness."},
+      "negative_feedback": {"value": true, "grade": "[L]",
+        "provenance": "Cortisol exerts negative feedback on PVN-CRH and pituitary-ACTH (glucocorticoid receptor), bounding the loop (Keller-Wood & Dallman 1984). This makes the engine HPA loop self-limiting."}
+    }
+  },
+
+  "_remaining_open": "A concentration->R19-substrate-gain conversion constant for each neuromodulator is NOT measurable in-package (it is a model gain, not a published tau/conductance). Every such gain is graded [F] and accompanied by a robustness sweep in M17 proving the SCORED co-modulation sign (cognition and affect move together) does not depend on the gain's exact value. Oxytocin's affiliative-gain mapping stays [O]."
+}

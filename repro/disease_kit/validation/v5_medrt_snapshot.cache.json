@@ -1,0 +1,2676 @@
+{
+ "api_base": "https://rxnav.nlm.nih.gov/REST/rxclass",
+ "class_type": "MOA",
+ "direction_reduction": {
+  "activating_tokens": [
+   "ACTIVATOR",
+   "AGONIST",
+   "POTENTIATOR",
+   "OPENER",
+   "STIMULANT",
+   "RELEASING"
+  ],
+  "inhibitory_tokens": [
+   "INHIBITOR",
+   "ANTAGONIST",
+   "BLOCKER",
+   "DEGRADER",
+   "BLOCKING"
+  ],
+  "note": "single unambiguous sign per drug across its MoA classes; zero signs OR a conflict -> None (dropped, never scored). Magnitude-free: class NAMES only, no potency token.",
+  "order": "1) INVERSE AGONIST->INHIBITORY  2) NEGATIVE MODULATOR->INHIBITORY / POSITIVE MODULATOR->ACTIVATING / bare MODULATOR->drop  3) token scan"
+ },
+ "drug_universe_note": "exactly the approved drugs V4 resolved (read from v4_opentargets_snapshot.cache.json); membership inherited, direction re-read",
+ "fetched_utc": "2026-06-21T09:13:15Z",
+ "moa_by_drug": {
+  "ACETOHEXAMIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    },
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "ACORAMIDIS": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ACORAMIDIS HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ALBUTREPENONACOG ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ALECTINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020001",
+     "className": "Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "ALECTINIB HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020001",
+     "className": "Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "ALIROCUMAB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000191730",
+     "className": "PCSK9 Inhibitors"
+    }
+   ]
+  },
+  "AMILORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000238",
+     "className": "Sodium-Potassium Exchanging ATPase Interactions"
+    }
+   ]
+  },
+  "AMILORIDE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000238",
+     "className": "Sodium-Potassium Exchanging ATPase Interactions"
+    }
+   ]
+  },
+  "AMLODIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "AMLODIPINE BENZOATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "AMLODIPINE BESYLATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "ANTIHEMOPHILIC FACTOR, PEGYLATED (MW 20000) HUMAN SEQUENCE RECOMBINANT": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ARTICAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ARTICAINE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ATIDARSAGENE AUTOTEMCEL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193795",
+     "className": "Gene Transduction or Replacement"
+    }
+   ]
+  },
+  "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "AZELNIDIPINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "BARNIDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "BENDROFLUMETHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "BENIDIPINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "BENOXINATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "BENZTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000235",
+     "className": "Carbonic Anhydrase Inhibitors"
+    },
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "BEPRIDIL": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "BETIBEGLOGENE AUTOTEMCEL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193972",
+     "className": "Beta-globin Gene Transfer"
+    }
+   ]
+  },
+  "BUMETANIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181006",
+     "className": "Sodium Potassium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "BUPIVACAINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000108",
+     "className": "Prostaglandin Receptor Antagonists"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "BUPIVACAINE HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000108",
+     "className": "Prostaglandin Receptor Antagonists"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "CARBAMAZEPINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "CARBIDOPA": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000133",
+     "className": "Enzyme Inhibitors"
+    },
+    {
+     "classId": "N0000000203",
+     "className": "Dopamine Receptor Interactions"
+    },
+    {
+     "classId": "N0000175755",
+     "className": "DOPA Decarboxylase Inhibitors"
+    }
+   ]
+  },
+  "CASIMERSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193791",
+     "className": "Gene Alterations"
+    }
+   ]
+  },
+  "CATRIDECACOG": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "CENOBAMATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000118",
+     "className": "GABA A Modulators"
+    },
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    }
+   ]
+  },
+  "CHLOROPROCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "CHLOROTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "CHLORPROPAMIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "CHLORTHALIDONE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "CILNIDIPINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "CINACALCET": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020081",
+     "className": "Increased Calcium-sensing Receptor Sensitivity"
+    }
+   ]
+  },
+  "CINACALCET HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020081",
+     "className": "Increased Calcium-sensing Receptor Sensitivity"
+    }
+   ]
+  },
+  "CINNARIZINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "CLEVIDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "COAGULATION FACTOR IX HUMAN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "COAGULATION FACTOR IX RECOMBINANT HUMAN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "COCAINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000114",
+     "className": "Dopamine Uptake Inhibitors"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "COCAINE HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000114",
+     "className": "Dopamine Uptake Inhibitors"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "CONESTAT ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "CONIVAPTAN": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000182141",
+     "className": "Cytochrome P450 3A4 Inhibitors"
+    },
+    {
+     "classId": "N0000193178",
+     "className": "Vasopressin V2 Receptor Antagonists"
+    },
+    {
+     "classId": "N0000193179",
+     "className": "Vasopressin V1 Receptor Antagonists"
+    }
+   ]
+  },
+  "CONIVAPTAN HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000182141",
+     "className": "Cytochrome P450 3A4 Inhibitors"
+    },
+    {
+     "classId": "N0000193178",
+     "className": "Vasopressin V2 Receptor Antagonists"
+    },
+    {
+     "classId": "N0000193179",
+     "className": "Vasopressin V1 Receptor Antagonists"
+    }
+   ]
+  },
+  "CROFELEMER": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000224",
+     "className": "Chloride Channel Antagonists"
+    }
+   ]
+  },
+  "CYCLOTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000235",
+     "className": "Carbonic Anhydrase Inhibitors"
+    },
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "DALTEPARIN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    },
+    {
+     "classId": "N0000000169",
+     "className": "Serine Proteinase Inhibitors"
+    },
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    },
+    {
+     "classId": "N0000175635",
+     "className": "Factor Xa Inhibitors"
+    }
+   ]
+  },
+  "DAMOCTOCOG ALFA PEGOL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "DANAPAROID SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    },
+    {
+     "classId": "N0000000169",
+     "className": "Serine Proteinase Inhibitors"
+    },
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    },
+    {
+     "classId": "N0000175635",
+     "className": "Factor Xa Inhibitors"
+    }
+   ]
+  },
+  "DELANDISTROGENE MOXEPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193791",
+     "className": "Gene Alterations"
+    },
+    {
+     "classId": "N0000193792",
+     "className": "Gene Editing or Modification"
+    }
+   ]
+  },
+  "DESMOPRESSIN": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000165",
+     "className": "Pituitary Hormone Receptor Agonists"
+    }
+   ]
+  },
+  "DESMOPRESSIN ACETATE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000165",
+     "className": "Pituitary Hormone Receptor Agonists"
+    }
+   ]
+  },
+  "DEUTIVACAFTOR": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "DIAZOXIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000235",
+     "className": "Carbonic Anhydrase Inhibitors"
+    },
+    {
+     "classId": "N0000182728",
+     "className": "Potassium Channel Openers"
+    }
+   ]
+  },
+  "DIBUCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000082",
+     "className": "Immunologic Factor Interactions"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "DILTIAZEM": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "DILTIAZEM HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "DISOPYRAMIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "DISOPYRAMIDE PHOSPHATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "DRONEDARONE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "DRONEDARONE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "DROTRECOGIN ALFA (ACTIVATED)": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "DYCLONINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "E-7090": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "EFANESOCTOCOG ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175614",
+     "className": "Fusion Protein Interactions"
+    }
+   ]
+  },
+  "EFAPROXIRAL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "EFMOROCTOCOG ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "EFTRENONACOG ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ELADOCAGENE EXUPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193795",
+     "className": "Gene Transduction or Replacement"
+    }
+   ]
+  },
+  "ELEXACAFTOR": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000182137",
+     "className": "Cytochrome P450 2D6 Inhibitors"
+    },
+    {
+     "classId": "N0000182138",
+     "className": "Cytochrome P450 1A2 Inhibitors"
+    },
+    {
+     "classId": "N0000182139",
+     "className": "Cytochrome P450 2B6 Inhibitors"
+    },
+    {
+     "classId": "N0000182140",
+     "className": "Cytochrome P450 2C19 Inhibitors"
+    },
+    {
+     "classId": "N0000182141",
+     "className": "Cytochrome P450 3A4 Inhibitors"
+    },
+    {
+     "classId": "N0000185503",
+     "className": "P-Glycoprotein Inhibitors"
+    },
+    {
+     "classId": "N0000185504",
+     "className": "Cytochrome P450 2C9 Inhibitors"
+    },
+    {
+     "classId": "N0000187062",
+     "className": "Cytochrome P450 2C8 Inhibitors"
+    }
+   ]
+  },
+  "ELIVALDOGENE AUTOTEMCEL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193795",
+     "className": "Gene Transduction or Replacement"
+    }
+   ]
+  },
+  "EMICIZUMAB": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ENCAINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ENOXAPARIN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    },
+    {
+     "classId": "N0000000169",
+     "className": "Serine Proteinase Inhibitors"
+    },
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    },
+    {
+     "classId": "N0000175635",
+     "className": "Factor Xa Inhibitors"
+    }
+   ]
+  },
+  "EPLONTERSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193793",
+     "className": "Gene Expression Interactions"
+    }
+   ]
+  },
+  "EPLONTERSEN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193793",
+     "className": "Gene Expression Interactions"
+    }
+   ]
+  },
+  "EPTACOG ALFA (ACTIVATED)": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "EPTACOG BETA (ACTIVATED)": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ERDAFITINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020001",
+     "className": "Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "ESLICARBAZEPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    },
+    {
+     "classId": "N0000182140",
+     "className": "Cytochrome P450 2C19 Inhibitors"
+    },
+    {
+     "classId": "N0000185506",
+     "className": "Cytochrome P450 3A4 Inducers"
+    }
+   ]
+  },
+  "ESLICARBAZEPINE ACETATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    },
+    {
+     "classId": "N0000182140",
+     "className": "Cytochrome P450 2C19 Inhibitors"
+    },
+    {
+     "classId": "N0000185506",
+     "className": "Cytochrome P450 3A4 Inducers"
+    }
+   ]
+  },
+  "ETELCALCETIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020081",
+     "className": "Increased Calcium-sensing Receptor Sensitivity"
+    }
+   ]
+  },
+  "ETELCALCETIDE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020081",
+     "className": "Increased Calcium-sensing Receptor Sensitivity"
+    }
+   ]
+  },
+  "ETEPLIRSEN": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000150",
+     "className": "Protein Synthesis Inhibitors"
+    },
+    {
+     "classId": "N0000000233",
+     "className": "Nucleic Acid Synthesis Inhibitors"
+    }
+   ]
+  },
+  "ETHACRYNATE SODIUM": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181006",
+     "className": "Sodium Potassium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "ETHACRYNIC ACID": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181006",
+     "className": "Sodium Potassium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "ETHOTOIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ETIDOCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ETRANACOGENE DEZAPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193792",
+     "className": "Gene Editing or Modification"
+    }
+   ]
+  },
+  "EVOCALCET": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "EVOLOCUMAB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000191730",
+     "className": "PCSK9 Inhibitors"
+    }
+   ]
+  },
+  "FELODIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "FIDANACOGENE ELAPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193792",
+     "className": "Gene Editing or Modification"
+    }
+   ]
+  },
+  "FLECAINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000193",
+     "className": "Ion Channel Interactions"
+    }
+   ]
+  },
+  "FLECAINIDE ACETATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000193",
+     "className": "Ion Channel Interactions"
+    }
+   ]
+  },
+  "FONDAPARINUX": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    }
+   ]
+  },
+  "FONDAPARINUX SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    }
+   ]
+  },
+  "FOSPHENYTOIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "FOSPHENYTOIN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "FUROSEMIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181006",
+     "className": "Sodium Potassium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "FUTIBATINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "GABAPENTIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "GABAPENTIN ENACARBIL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "GLICLAZIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "GLIMEPIRIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "GLIPIZIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "GLYBURIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    },
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "GOLODIRSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "HEPARIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009960",
+     "className": "Antithrombin Activators"
+    },
+    {
+     "classId": "N0000009963",
+     "className": "Thrombin Inhibitors"
+    }
+   ]
+  },
+  "HEPARIN CALCIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009960",
+     "className": "Antithrombin Activators"
+    },
+    {
+     "classId": "N0000009963",
+     "className": "Thrombin Inhibitors"
+    }
+   ]
+  },
+  "HEPARIN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009960",
+     "className": "Antithrombin Activators"
+    },
+    {
+     "classId": "N0000009963",
+     "className": "Thrombin Inhibitors"
+    }
+   ]
+  },
+  "HEXYLCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "HUMAN COAGULATION FACTOR VIII": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "HYDROCHLOROTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "HYDROFLUMETHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "INCLISIRAN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "INCLISIRAN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "INDAPAMIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    },
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "INDECAINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "INFIGRATINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "INFIGRATINIB PHOSPHATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "INOTERSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "INOTERSEN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ISRADIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "IVACAFTOR": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000184145",
+     "className": "Chloride Channel Activation Potentiators"
+    }
+   ]
+  },
+  "LACIDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "LACOSAMIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "LAMOTRIGINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000191",
+     "className": "Dihydrofolate Reductase Inhibitors"
+    },
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    }
+   ]
+  },
+  "LERCANIDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    }
+   ]
+  },
+  "LESTAURTINIB": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "LEVAMLODIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    }
+   ]
+  },
+  "LEVAMLODIPINE MALEATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    }
+   ]
+  },
+  "LEVOBUPIVACAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "LIDOCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "LIDOCAINE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "LONOCTOCOG ALFA": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "LOVOTIBEGLOGENE AUTOTEMCEL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193972",
+     "className": "Beta-globin Gene Transfer"
+    }
+   ]
+  },
+  "LUMACAFTOR": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000184145",
+     "className": "Chloride Channel Activation Potentiators"
+    }
+   ]
+  },
+  "LYPRESSIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MANIDIPINE 6300": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MASITINIB": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MAVACAMTEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MEPHENYTOIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "MEPIVACAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "METHYCLOTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "METOLAZONE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "METRELEPTIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000175",
+     "className": "Cytokine Receptor Superfamily Interactions"
+    }
+   ]
+  },
+  "METYROSINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000133",
+     "className": "Enzyme Inhibitors"
+    }
+   ]
+  },
+  "MEXILETINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "MEXILETINE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "MIGALASTAT": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000163",
+     "className": "Enzyme Interactions"
+    }
+   ]
+  },
+  "MIGALASTAT HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000163",
+     "className": "Enzyme Interactions"
+    }
+   ]
+  },
+  "MIGLITOL": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000166",
+     "className": "alpha Glucosidase Inhibitors"
+    }
+   ]
+  },
+  "MINOXIDIL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    }
+   ]
+  },
+  "MITAPIVAT": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000194009",
+     "className": "Pyruvate Kinase Activators"
+    }
+   ]
+  },
+  "MITAPIVAT SULFATE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000194009",
+     "className": "Pyruvate Kinase Activators"
+    }
+   ]
+  },
+  "MITIGLINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MITIGLINIDE CALCIUM DIHYDRATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MORICIZINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "MOROCTOCOG ALFA": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "MOZAVAPTAN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "NADROPARIN CALCIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "NATEGLINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    },
+    {
+     "classId": "N0000175448",
+     "className": "Potassium Channel Antagonists"
+    }
+   ]
+  },
+  "NICARDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NICARDIPINE HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NIFEDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NILVADIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    }
+   ]
+  },
+  "NIMODIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NINTEDANIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020000",
+     "className": "Receptor Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "NINTEDANIB ESYLATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020000",
+     "className": "Receptor Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "NISOLDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NITRENDIPINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "NONACOG BETA PEGOL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "OCRIPLASMIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "OCTOCOG ALFA": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "OMECAMTIV MECARBIL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "ONASEMNOGENE ABEPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193795",
+     "className": "Gene Transduction or Replacement"
+    }
+   ]
+  },
+  "ORPHENADRINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "ORPHENADRINE CITRATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "ORPHENADRINE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "OXCARBAZEPINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PALIFERMIN": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020071",
+     "className": "Keratinocyte Growth Factor Receptor Agonists"
+    }
+   ]
+  },
+  "PATISIRAN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "PATISIRAN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "PAZOPANIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020007",
+     "className": "Vascular Endothelial Growth Factor Receptor Inhibitors"
+    },
+    {
+     "classId": "N0000020030",
+     "className": "Platelet-derived Growth Factor Receptor Inhibitors"
+    }
+   ]
+  },
+  "PAZOPANIB HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020007",
+     "className": "Vascular Endothelial Growth Factor Receptor Inhibitors"
+    },
+    {
+     "classId": "N0000020030",
+     "className": "Platelet-derived Growth Factor Receptor Inhibitors"
+    }
+   ]
+  },
+  "PEMIGATINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "PENTOSTATIN": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000233",
+     "className": "Nucleic Acid Synthesis Inhibitors"
+    }
+   ]
+  },
+  "PHENACEMIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    }
+   ]
+  },
+  "PHENAZOPYRIDINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "PHENYTOIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PHENYTOIN SODIUM": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PHLOROGLUCINOL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "PINACIDIL": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000182728",
+     "className": "Potassium Channel Openers"
+    }
+   ]
+  },
+  "POLYTHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "PRALSETINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "PREGABALIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "PRENYLAMINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "PRILOCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PRIMIDONE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000105",
+     "className": "Neurotransmitter Transporter Interactions"
+    }
+   ]
+  },
+  "PROCAINAMIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "PROCAINAMIDE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  },
+  "PROCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PROPAFENONE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000161",
+     "className": "Adrenergic beta-Antagonists"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PROPAFENONE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000161",
+     "className": "Adrenergic beta-Antagonists"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "PROPARACAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000193",
+     "className": "Ion Channel Interactions"
+    }
+   ]
+  },
+  "PROPOXYCAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "QUINETHAZONE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "QUINIDINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000140",
+     "className": "Calcium Channel Interactions"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    }
+   ]
+  },
+  "QUINIDINE GLUCONATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000140",
+     "className": "Calcium Channel Interactions"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    }
+   ]
+  },
+  "QUINIDINE SULFATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000140",
+     "className": "Calcium Channel Interactions"
+    },
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    },
+    {
+     "classId": "N0000000211",
+     "className": "Potassium Channel Interactions"
+    }
+   ]
+  },
+  "QUIZARTINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "RANOLAZINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "REGORAFENIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "REPAGLINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    },
+    {
+     "classId": "N0000175448",
+     "className": "Potassium Channel Antagonists"
+    }
+   ]
+  },
+  "RILUZOLE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181004",
+     "className": "Sodium Channel Antagonists"
+    }
+   ]
+  },
+  "ROMOSOZUMAB": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009949",
+     "className": "Antibody-Receptor Interactions"
+    }
+   ]
+  },
+  "ROPIVACAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "ROPIVACAINE HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "RUFINAMIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "SAPROPTERIN": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000190482",
+     "className": "Phenylalanine Hydroxylase Activators"
+    }
+   ]
+  },
+  "SAPROPTERIN DIHYDROCHLORIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000190482",
+     "className": "Phenylalanine Hydroxylase Activators"
+    }
+   ]
+  },
+  "SELPERCATINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "SIMOCTOCOG ALFA": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "SORAFENIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "SORAFENIB TOSYLATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000175082",
+     "className": "Kinase Inhibitors"
+    }
+   ]
+  },
+  "SULOCTIDIL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "SUNITINIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020000",
+     "className": "Receptor Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "SUNITINIB MALATE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020000",
+     "className": "Receptor Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "SUSOCTOCOG ALFA": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "TAFAMIDIS": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TAFAMIDIS MEGLUMINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TERLIPRESSIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TERODILINE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000069",
+     "className": "Calcium Channel Antagonists"
+    }
+   ]
+  },
+  "TETRACAINE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "TEZACAFTOR": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TINZAPARIN SODIUM": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000076",
+     "className": "Protease Inhibitors"
+    },
+    {
+     "classId": "N0000000107",
+     "className": "Antithrombins"
+    }
+   ]
+  },
+  "TOCAINIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "TOFERSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TOLAZAMIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "TOLBUTAMIDE": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000225",
+     "className": "Insulin Receptor Agonists"
+    }
+   ]
+  },
+  "TOLVAPTAN": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193178",
+     "className": "Vasopressin V2 Receptor Antagonists"
+    }
+   ]
+  },
+  "TOPIRAMATE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000180",
+     "className": "Sodium Channel Interactions"
+    }
+   ]
+  },
+  "TORSEMIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000181006",
+     "className": "Sodium Potassium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "TRAFERMIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "TRIAMTERENE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000238",
+     "className": "Sodium-Potassium Exchanging ATPase Interactions"
+    }
+   ]
+  },
+  "TRICHLORMETHIAZIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000235",
+     "className": "Carbonic Anhydrase Inhibitors"
+    },
+    {
+     "classId": "N0000181005",
+     "className": "Sodium Chloride Symporter Inhibitors"
+    }
+   ]
+  },
+  "TUROCTOCOG ALFA": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000231",
+     "className": "Enzyme Activators"
+    }
+   ]
+  },
+  "TUROCTOCOG ALFA PEGOL": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VALOCTOCOGENE ROXAPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193795",
+     "className": "Gene Transduction or Replacement"
+    }
+   ]
+  },
+  "VANDETANIB": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020001",
+     "className": "Tyrosine Kinase Inhibitors"
+    }
+   ]
+  },
+  "VANZACAFTOR": {
+   "direction": "ACTIVATING",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000184145",
+     "className": "Chloride Channel Activation Potentiators"
+    }
+   ]
+  },
+  "VASOPRESSIN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VERAPAMIL": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "VERAPAMIL HYDROCHLORIDE": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000020065",
+     "className": "L-Calcium Channel Receptor Antagonists"
+    }
+   ]
+  },
+  "VERNAKALANT": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VERNAKALANT HYDROCHLORIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VILTOLARSEN": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000193791",
+     "className": "Gene Alterations"
+    },
+    {
+     "classId": "N0000193794",
+     "className": "Gene Transcription Modulation"
+    }
+   ]
+  },
+  "VOGLIBOSE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VORETIGENE NEPARVOVEC": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VOXELOTOR": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": []
+  },
+  "VUTRISIRAN": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000233",
+     "className": "Nucleic Acid Synthesis Inhibitors"
+    },
+    {
+     "classId": "N0000175516",
+     "className": "RNA Synthetase Inhibitors"
+    },
+    {
+     "classId": "N0000193793",
+     "className": "Gene Expression Interactions"
+    }
+   ]
+  },
+  "VUTRISIRAN SODIUM": {
+   "direction": "INHIBITORY",
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000000233",
+     "className": "Nucleic Acid Synthesis Inhibitors"
+    },
+    {
+     "classId": "N0000175516",
+     "className": "RNA Synthetase Inhibitors"
+    },
+    {
+     "classId": "N0000193793",
+     "className": "Gene Expression Interactions"
+    }
+   ]
+  },
+  "ZONISAMIDE": {
+   "direction": null,
+   "fetch_status": "OK",
+   "moa_classes": [
+    {
+     "classId": "N0000009915",
+     "className": "Unknown Cellular or Molecular Interaction"
+    }
+   ]
+  }
+ },
+ "n_drugs": 270,
+ "n_fetched_ok": 270,
+ "n_with_direction": 111,
+ "rela": "has_moa",
+ "rela_source": "MEDRT",
+ "rxnav_rxnorm_version": "01-Jun-2026",
+ "source": "MED-RT (NLM/VA Medication Reference Terminology, formerly NDF-RT) Mechanism of Action, via the NLM RxClass API (class/byDrugName, relaSource=MEDRT, rela=has_moa)"
+}

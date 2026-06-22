@@ -1,0 +1,69 @@
+{
+  "_README": "M14 sleep-architecture atlas. Measured thalamic/cortical kinetics that SET the sleep rhythms, plus the measured sleep observables (band targets + relational facts) with citations and pre-stated tolerances. VP-SPEC C0-C4: nothing here is tuned to a target -- the spindle FREQUENCY is set by the cited T-current de-inactivation recovery, the waxing-waning ENVELOPE emerges from the cited Ca-mediated Ih upregulation, and the slow oscillation is set by the cited cortical slow-adaptation recovery. The same R19 cubic-bistable primitive and the M9 ephaptic ring/kernel (measured kappa) are reused; ZERO new tuning constants. Reproducing a sleep rhythm is NOT a claim about consciousness or experience.",
+  "units": "tau in milliseconds; frequencies in Hz; drive/gain dimensionless (R19 substrate units).",
+
+  "thalamic_kinetics_measured": {
+    "t_current_deinactivation_recovery_tau_ms": {
+      "value": 13.0,
+      "role": "SETS the spindle CARRIER frequency (slow recovery variable w of the TC relaxation oscillator).",
+      "source": "Huguenard & McCormick 1992, J Neurophysiol 68:1373 -- recovery from inactivation of the low-threshold T-type Ca2+ current in thalamocortical relay neurons (depolarised range)."
+    },
+    "tc_active_membrane_tau_ms": {
+      "value": 4.0,
+      "role": "fast membrane time constant of the active (high-conductance) thalamocortical cell.",
+      "source": "Destexhe, Rudolph & Pare 2003, Nat Rev Neurosci 4:739 -- short effective membrane time constant in the high-conductance in-vivo state."
+    },
+    "ca_ih_upregulation_tau_ms": {
+      "value": 900.0,
+      "role": "slow Ca-mediated Ih upregulation that TERMINATES each spindle and sets the inter-spindle refractory period -> the defining waxing-waning envelope.",
+      "source": "Luthi & McCormick 1998, Neuron 20:553 -- periodicity of thalamic synchronized oscillations via Ca2+-mediated upregulation of Ih."
+    }
+  },
+
+  "cortical_kinetics_measured": {
+    "slow_adaptation_recovery_tau_ms": {
+      "value": 600.0,
+      "role": "recovery of activity-dependent adaptation (Na/Ca-dependent K+ current and synaptic depression) that SETS the <1 Hz Up/Down cycle.",
+      "source": "Sanchez-Vives & McCormick 2000, Nat Neurosci 3:1027; Compte et al. 2003, J Neurophysiol 89:2707 -- cellular/network mechanisms of the slow (<1 Hz) oscillation."
+    }
+  },
+
+  "nrem2_operating_point": {
+    "thalamic_excitability_drive": 0.60,
+    "role": "tonic depolarising level of the TC-TRN recruitment loop that places the thalamus in the NREM-2 window where spindles occur. Sets WHETHER spindles occur and their repetition rate (reported as emergent), NOT the spindle frequency.",
+    "source": "Steriade, McCormick & Sejnowski 1993, Science 262:679 -- thalamocortical oscillations across the sleep/aroused continuum; spindles occur in a specific membrane-polarisation window."
+  },
+
+  "observables": {
+    "sleep_spindle_hz": {
+      "measured": [11.0, 16.0],
+      "kind": "band_hz",
+      "gate": "canonical peak in [11,16] AND >= 0.875 of the 8-seed robustness sweep in-band",
+      "closes_owed_in_M12": "sleep_spindle_hz",
+      "source": "De Gennaro & Ferrara 2003, Sleep Med Rev 7:423 -- NREM-2 sleep spindles, waxing-waning 11-16 Hz."
+    },
+    "slow_oscillation_hz": {
+      "measured": [0.1, 1.0],
+      "kind": "band_hz",
+      "gate": "canonical dominant low-frequency peak < 1 Hz AND >= 0.875 of the 8-seed sweep < 1 Hz",
+      "source": "Steriade, Nunez & Amzica 1993, J Neurosci 13:3252 -- novel slow (<1 Hz) oscillation of neocortical neurons (Up/Down states)."
+    },
+    "spindle_waxing_waning": {
+      "measured_min_am_depth": 0.5,
+      "kind": "relational",
+      "gate": "canonical envelope amplitude-modulation depth > 0.5 AND > 0.5 on >= 0.875 of the 8-seed sweep",
+      "source": "De Gennaro & Ferrara 2003, Sleep Med Rev 7:423 -- the characteristic waxing-and-waning amplitude envelope is the defining signature of a sleep spindle."
+    },
+    "nrem_rem_band_shift": {
+      "kind": "relational",
+      "measured_direction": "REM marker (theta+gamma) over NREM marker (delta+spindle) is HIGHER in the REM state than in the NREM state",
+      "gate": "canonical shift index REM > NREM AND direction holds on >= 0.875 of the 8-seed sweep",
+      "source": "Steriade & McCarley, sleep neurophysiology -- REM EEG is activated/desynchronized (theta+gamma dominant) whereas NREM is delta/spindle dominant."
+    }
+  },
+
+  "dream_recall_mechanism": {
+    "note": "REM theta-gamma coupling drives hippocampal pattern completion (M2 Hippocampus). This honors the M12 observable dream_recall_theta_increase (already MATCHED in M12) via an actual mechanism and the M13 MI->recall pattern; it is reported as a mechanism, NOT scored as a new observable (de-duplicated).",
+    "source": "Hippocampal theta-gamma coupling and memory reactivation in REM (theta-dependent recall); reuses M2 Hebbian attractor recall."
+  }
+}

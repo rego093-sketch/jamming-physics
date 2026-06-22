@@ -292,3 +292,36 @@ independent extreme-AT non-methylators** (Plasmodium, Dictyostelium, Entamoeba),
 caught by the guard, while **6 real methylators all sit ≥ 31.6% GC**. The declared
 residual risk (GC<25% genome with genuine global 5mC) remains unobserved. No threshold
 changed; locked set still byte-identical (the only diff is this LEDGER).
+
+---
+
+## v1.13 — γ↔A4 stated as LEVEL vs SHAPE (clarification, append-only)
+
+This chapter's abstract previously said the earlier chapters "split the read in two"
+without naming the relationship between γ and the A4 coordinate, which left room for the
+**"γ ⊂ A4" misconception**. v1.13 names the relationship exactly, in this chapter and at
+§I/§2/§8, and retires the misconception in the §8 register.
+
+**The relationship (verified [V]).** γ = `−mean(NN ΔG)` is the **LEVEL** (window-mean) of the
+stiffness signal. The A4 coordinate is the **SHAPE** of that *same* signal with its mean
+removed: `key_pipeline_full.run_key` applies `robust_z`, which subtracts the per-locus median —
+exactly the level γ is — and keeps only the within-locus relative structure (shells, anchors,
+loops, anchor-relative phase). So **A4 = "the signal minus γ," and "γ ⊂ A4" is impossible.**
+
+**Evidence** (`vp_session_gamma_a4_verified`, 4 phases, 2×SHA-256,
+`prereg.sha256 ff04aa7b…3901`): same field (per-locus ρ = 0.939; identical coarse anchors,
+0.0 bp offset across all 37 loci) yet the A4 coordinate carries **none of γ**
+(max |corr(axis, γ)| = 0.327). Shared input ≠ nested output.
+
+**Edits (all append-only; no number/grade/equation/DOI changed):** §13 abstract opening
+replaced with the level/shape statement (same numbers); a one-sentence `robust_z` mechanism
+note added to *The coordinate grammar, restored*; a reusable "γ vs A4 level vs shape" vp-card
+added to §I and §13; §2 and the §8 closure gain a level/shape clause; the §8 retired register
+gains the irreversible **"γ ⊂ A4" framing tombstone**. Full spec: `GAMMA_VS_A4_LEVEL_SHAPE_SPEC.md`.
+
+**Standing [O] preserved (do not over-claim the other direction).** "The γ-**level** is
+orthogonal to developmental timing" is earned [V] (heart ρ = +0.071, p = 0.882). Whether the
+A4-**shape** carries timing the level cannot is **[O]** — the one fair test (heart/organ timing
+re-run with 25–50 kb windows so A4 has real shell/anchor resolution) has not been run; the
+single Phase-3b attempt was on degenerate 2501 bp promoters < min_shell_bp. "γ-level ⊥ timing"
+must not be read as "sequence ⊥ timing."

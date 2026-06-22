@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hubble Tension as Line-of-Sight Averaging — Vacuum-Inflow Cosmology §7.1 | Jamming Physics</title>
+<meta name="description" content="The Hubble tension as line-of-sight averaging — different sightlines sample different inflow, giving the early/late H₀ discrepancy in lattice-optics cosmology.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/07-hubble-tension-line-of-sight-averaging/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Hubble Tension as Line-of-Sight Averaging","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/07-hubble-tension-line-of-sight-averaging/","knowsAbout":["Hubble tension","H0 discrepancy","line-of-sight averaging","lattice optics","redshift","cosmology"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§7.1 Hubble Tension as Line-of-Sight Averaging"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §7.1</nav></header>
+<main><!--vp-v1.8-->
+<h1>The Hubble Tension as Line-of-Sight Averaging</h1>
+<p class="answer">The Hubble tension — the mismatch between early-universe and local measurements of H₀ — is read here as line-of-sight averaging. In a lattice-optics cosmology different sightlines sample different amounts of inflow, so the inferred expansion rate depends on the path. This offers the discrepancy as a candidate mechanism rather than a crisis.</p>
+<p class="abstract">Early-universe and local determinations of the Hubble constant disagree, the Hubble tension. In the lattice-optics picture redshift accumulates along the line of sight, and different sightlines sample different inflow, so the inferred H₀ depends on what is averaged over. This is presented as a candidate mechanism for the early-versus-late discrepancy, not a derivation. Early and late determinations differ (67 vs 73 km/s/Mpc).</p>
+<aside class="claim-strip page"><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/07-hubble-tension-line-of-sight-averaging/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>The Hubble tension as line-of-sight averaging (a candidate mechanism)</h2>
+<p>Because the redshift is path-integrated, ln(1+z)=∫_(γ)κₒₚₜds, the slope a distance
+ladder infers, H_(inf)(D)=c⟨κₒₚₜ⟩_(γ,D), is a <em>line-of-sight
+average</em> of the optical coupling, not a single global constant. If κₒₚₜ depends on the local
+medium density—κₒₚₜ=κ₀(1+ηδ_(bg)) with δ_(bg) the
+fractional background-energy contrast and η a sensitivity—then a <em>local</em> sample of
+depth inside an anomaly δ_(loc) and a <em>deep</em> sample (over which
+⟨δ_(bg)⟩→0) return different rates:</p>
+<figure class="eq" id="eq:hubble-tension"><img src="/cosmology/eq/cosmology/cos-07-006.svg" data-eq="cos-07-006" width="159" height="43" loading="lazy" alt="\begin{equation} \frac{H_{\mathrm{local}}}{H_{\mathrm{global}}}=1+\eta\,\delta_{\mathrm{loc}}. \end{equation}"></figure>
+<p>The observed discrepancy H_(local)/H_(global)≈ 73/67≈1.09 is then
+reproduced for ηδ_(loc)≈0.09—an order-unity sensitivity to a
+ 10% local structure contrast, or a local void with η -0.3,δ_(loc)
+ -0.3 (<code>ch7_lattice_optics.py</code>, part C).</p>
+<h4>What this is and is not.</h4>
+ This is a <em>candidate mechanism</em>
+(\textsf{HYP}/\textsf{SPEC}): one and the same field κₒₚₜ, viewed over different path averages,
+yields different inferred H, so a tension can arise <em>without</em> inconsistent data reduction or
+new dark-sector physics. It is <em>not</em> a parameter-free prediction—η and
+δ_(loc) are not fixed independently here, only shown to reach the observed order
+with plausible values. Two falsifiable signatures are the proper test: the inferred H₀ should
+<em>correlate with local large-scale density</em>, and it should be <em>direction-dependent</em> at
+fixed depth if δ_(bg) is anisotropic. <code>ch_hubble_tension.py</code> makes both
+explicit (v2): propagating light through a structured density field with
+κₒₚₜ(ρ)=barκ(1+δ)^(η) reproduces the 73/67 magnitude for
+ηδ_(loc)≈0.08 and exhibits the predicted H₀–density correlation
+(slope set by η), while the η–δ_(loc) degeneracy and the <em>sign</em> of
+η (local over- vs under-density) remain open—to be broken only by measuring that correlation.
+
+<nav class="pn"><a rel="prev" href="/cosmology/07-non-expanding-lattice-optics-cosmology/">← §7</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/08-dark-matter-vacuum-deficit/">§8 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

@@ -32,3 +32,5 @@ Transcribed from the canonical honest-ledger chapter (§16) and `REMAINING_OPEN_
 - Tier B: **6** documented open problems / empirical normalizations.
 - The single largest open item is the **absolute** acoustic length 150 Mpc; its mechanism is closed (Big-Bang-free) and only the absolute value remains an empirical normalization.
 - Every item is in-scope-closed at the mechanism level, deferred to the physics volume, out of scope by the volume's own rule, or data-limited — none is a contradiction with observation.
+
+> v1.9: gamma-ray vacuum dispersion (item B) repro added — repro/cosmology/02-back-calculation-broadband-gamma-spectrum/ (emission established; propagation [O] unchanged).

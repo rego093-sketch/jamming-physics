@@ -1,0 +1,170 @@
+{
+ "_provenance": "M9 ephaptic GEOMETRY atlas (v1.18). A MEASURED 3D position [L] in MNI152 stereotaxic space (mm) for each of the twelve M9 central-brain organs, so the ephaptic coupling kernel can be evaluated on REAL inter-region distances instead of the equal-spacing [O] ring of the frozen v1.17 engine. Coordinates are COPIED from published atlases/papers (DB-SOURCED; we do NOT pick geometry to move the result), exactly as the gamma layer locks NCBI-derived values. Composite organs (neocortex/striatum/cerebellum/bilateral merges) are VOLUME-WEIGHTED centroids of AAL centers-of-mass (Tzourio-Mazoyer 2002). Per-region coord_grade is honest: [L] = exact published atlas center-of-mass or single-structure MNI centroid; [O] = representative literature-consistent point for an elongated or open/distributed structure with no single canonical MNI centroid (midbrain, brainstem, basal-forebrain cholinergic, distributed forebrain GABAergic interneurons). No measurement is invented. The engine reads NOTHING from this file; only the v1.18 decision-check module (geometry_grounding.py) reads it, as a locked data input.",
+ "_space": "MNI152 (mm), neurological orientation (R is R)",
+ "_kernel": "1/r^3 near-field locality is UNCHANGED (neuro 18 [V]); v1.18 changes ONLY the positions ([O] ring -> [L] measured MNI), not the coupling form.",
+ "_grading": "MNI coordinate [L measured input] where an exact atlas CoM / published centroid exists; [O representative] for elongated/open/distributed structures with no single canonical centroid. ephaptic kappa stays the MEASURED fraction (neuro 19); normalization is a declared [F] choice (see geometry_grounding.py docstring).",
+ "_sources": {
+  "AAL": "Tzourio-Mazoyer et al. 2002, NeuroImage 15:273-289; centers-of-mass (MNI) per figshare 184981 / Frontiers SOM Table S1 (article 503556).",
+  "hypothalamus": "Ogawa et al. 2024, PMC11487351 (stereotaxic MNI coordinates of human hypothalamic nuclei).",
+  "basal_forebrain": "Zaborszky et al. 2008, NeuroImage 42:1127-1141 (cytoarchitectonic probabilistic BF Ch1-Ch4 maps); Mesulam Ch4 = nucleus basalis.",
+  "midbrain": "Bianciardi et al. 2015, Brain Struct Funct 220:2387-2405; Rolls et al. 2020 AAL3 midbrain nuclei.",
+  "brainstem": "Harvard-Oxford Brain-Stem (FSL); Paxinos & Huang 1995 human brainstem atlas; PHOX2B preBotzinger respiratory column (Smith 1991)."
+ },
+ "_relation_to_v117": "ADD-ONLY. The frozen v1.17 engine (tree_sha256 b18c86268679b3e19e495b7161fd3a5035605481c8ea76736a84accd0ef26ae7, 95 regression checks) is UNCHANGED and reads nothing from this file. v1.18 adds this atlas + a decision-check module that imports the engine read-only. Promoting the engine's default M9 from ring to measured geometry (with cascade analysis) and decomposing nodes to capture sulcal-bank folding are the explicit v1.19 entry points.",
+ "_voxel_counts_for_audit": {
+  "neocortex": 149206,
+  "hippocampus": 1878,
+  "thalamus": 2157,
+  "striatum": 4029,
+  "pallidum": 573,
+  "cerebellum": 24415,
+  "olfactory_bulb": 569,
+  "forebrain_gaba_in_telencephalon": 154377
+ },
+ "organs": {
+  "neocortex": {
+   "master": "FOXG1",
+   "mni_xyz": [
+    2.16,
+    -15.7,
+    21.16
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL (Tzourio-Mazoyer 2002) volume-weighted centroid of 74 isocortical parcels",
+   "note": "Whole cortical mantle centroid; excludes allocortex (hippocampus) and subcortical nuclei."
+  },
+  "hippocampus": {
+   "master": "LHX2",
+   "mni_xyz": [
+    2.2,
+    -20.5,
+    -10.0
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Hippocampus_L/_R centers-of-mass, volume-weighted",
+   "note": ""
+  },
+  "thalamus": {
+   "master": "GBX2",
+   "mni_xyz": [
+    0.76,
+    -18.0,
+    8.0
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Thalamus_L/_R centers-of-mass, volume-weighted",
+   "note": ""
+  },
+  "striatum": {
+   "master": "GSX2",
+   "mni_xyz": [
+    2.46,
+    7.91,
+    5.4
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Caudate_L/_R + Putamen_L/_R centers-of-mass, volume-weighted",
+   "note": "Striatum = caudate + putamen."
+  },
+  "cerebellum": {
+   "master": "EN1",
+   "mni_xyz": [
+    2.23,
+    -59.26,
+    -33.35
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Cerebellum (Crus1-10) + Vermis centers-of-mass, volume-weighted",
+   "note": ""
+  },
+  "hypothalamus": {
+   "master": "SIM1",
+   "mni_xyz": [
+    0.0,
+    -2.0,
+    -12.0
+   ],
+   "coord_grade": "L",
+   "coord_method": "literature_centroid",
+   "coord_source": "Ogawa et al. 2024 (PMC11487351) human hypothalamic-nuclei MNI centroids (medial nuclei; MPO ~(-1.5,2.3,-12.8))",
+   "note": "Representative whole-hypothalamus point; medial nuclei cluster near x~0, z~-12."
+  },
+  "midbrain": {
+   "master": "OTX2",
+   "mni_xyz": [
+    0.0,
+    -18.0,
+    -12.0
+   ],
+   "coord_grade": "O",
+   "coord_method": "representative_mni",
+   "coord_source": "Bianciardi 2015 / AAL3 (Rolls 2020) midbrain nuclei (SN/VTA/RN/PAG, peri-aqueductal)",
+   "note": "Mesencephalon is an elongated structure with no single canonical MNI centroid -> [O] on purpose."
+  },
+  "brainstem": {
+   "master": "PHOX2B",
+   "mni_xyz": [
+    0.0,
+    -35.0,
+    -45.0
+   ],
+   "coord_grade": "O",
+   "coord_method": "representative_mni",
+   "coord_source": "lower brainstem pons/medulla; PHOX2B preBotzinger/visceral-motor column, rostral ventrolateral medulla (Harvard-Oxford Brain-Stem / Paxinos-Huang family)",
+   "note": "Brainstem is elongated with no single canonical MNI centroid -> [O] on purpose."
+  },
+  "pallidum": {
+   "master": "NKX2-1",
+   "mni_xyz": [
+    1.06,
+    0.0,
+    0.0
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Pallidum_L/_R centers-of-mass, volume-weighted",
+   "note": ""
+  },
+  "forebrain_gaba_in": {
+   "master": "DLX2",
+   "mni_xyz": [
+    2.16,
+    -14.91,
+    20.55
+   ],
+   "coord_grade": "O",
+   "coord_method": "representative_mni",
+   "coord_source": "distributed pan-forebrain GABAergic interneurons (MGE/CGE-derived; Cardin 2009, Sohal 2009); representative = AAL telencephalon volume-weighted centroid",
+   "note": "No single locus: PV/SST interneurons are spread throughout cortex+striatum -> [O] on purpose. Telencephalic center used as representative."
+  },
+  "basal_forebrain_chol": {
+   "master": "LHX8",
+   "mni_xyz": [
+    0.0,
+    0.0,
+    -11.0
+   ],
+   "coord_grade": "O",
+   "coord_method": "representative_mni",
+   "coord_source": "Zaborszky et al. 2008 (NeuroImage 42:1127) cytoarchitectonic BF Ch4 probabilistic maps; Mesulam Ch4 = nucleus basalis (substantia innominata, sublenticular)",
+   "note": "nucleus basalis is an 'open' structure without strict boundaries (Mesulam) -> [O] on purpose. Bilateral-merged sublenticular point."
+  },
+  "olfactory_bulb": {
+   "master": "PAX6",
+   "mni_xyz": [
+    1.14,
+    15.51,
+    -11.0
+   ],
+   "coord_grade": "L",
+   "coord_method": "atlas_com_volume_weighted",
+   "coord_source": "AAL Olfactory_L/_R centers-of-mass, volume-weighted (PROXY: AAL 'Olfactory' = olfactory region/sulcus, not the bulb proper)",
+   "note": "AAL has no olfactory-bulb parcel; the bulb proper sits ~10-15 mm anterior. Exact AAL CoM, proxy structure."
+  }
+ }
+}

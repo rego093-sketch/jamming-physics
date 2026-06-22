@@ -1,0 +1,1131 @@
+{
+ "api_base": "https://rxnav.nlm.nih.gov/REST/rxclass",
+ "axis": "drug<->DISEASE indication (NOT the drug<->target direction axis of V1-V7)",
+ "class_type": "DISEASE",
+ "drug_universe_note": "every agent string in engine/data/prior_art_status.cache.json::specific_pairs (the grown Track-A corpus); queried on base name (text before first '(' or '['); edge stored under the full corpus agent string for an exact downstream join key",
+ "fetched_utc": "2026-06-21T23:33:44Z",
+ "lineage": {
+  "extends": "v8_medrt_may_treat_snapshot.cache.json",
+  "n_new_agents": 25,
+  "n_v8_agents": 105,
+  "policy": "ADDITIVE: the 105 V8 agents' edges are copied byte-identical from the frozen V8 snapshot; only the agents NEW to the grown corpus were freshly pulled. The V8 snapshot file itself is left untouched.",
+  "v8_snapshot_sha256": "d4d37dca9a3ab4e10b8fd70ff3544104226afee7e044a1cf6acc2fc86e06dce0"
+ },
+ "magnitude_free": "categorical only: agent name + MeSH D-number + MeSH disease name. No dose, percent, efficacy, p-value, or n-of-m patient count is fetched or written.",
+ "may_treat_by_agent": {
+  "AMT-130": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "AMT-130"
+  },
+  "DTX401": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "DTX401"
+  },
+  "FBX-101": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "FBX-101"
+  },
+  "ION440": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "ION440"
+  },
+  "L-type calcium channel blocker (verapamil) [Timothy syndrome]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000788": "Angina Pectoris, Variant",
+    "D001281": "Atrial Fibrillation",
+    "D001282": "Atrial Flutter",
+    "D006973": "Hypertension",
+    "D009203": "Myocardial Infarction",
+    "D013617": "Tachycardia, Supraventricular"
+   },
+   "query": "L-type calcium channel blocker -> (fallback) verapamil"
+  },
+  "LDL-C lowering agent (PCSK9 inhibitor / statin / ezetimibe) [FH]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "LDL-C lowering agent"
+  },
+  "N-acetylcysteine (NAC)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "N-acetylcysteine"
+  },
+  "N-acetylmannosamine (ManNAc) / sialic acid [GNE myopathy]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "N-acetylmannosamine"
+  },
+  "QR-1123": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "QR-1123"
+  },
+  "TSHA-101": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "TSHA-101"
+  },
+  "UX111": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "UX111"
+  },
+  "allopurinol (xanthine oxidase inhibitor) [Lesch-Nyhan urate axis]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006073": "Gout"
+   },
+   "query": "allopurinol"
+  },
+  "alpha1-proteinase inhibitor (augmentation therapy)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "alpha1-proteinase inhibitor"
+  },
+  "ambroxol": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "ambroxol"
+  },
+  "amiloride": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001201": "Ascites",
+    "D003550": "Cystic Fibrosis",
+    "D004487": "Edema",
+    "D006333": "Heart Failure",
+    "D006973": "Hypertension",
+    "D007008": "Hypokalemia",
+    "D011141": "Polyuria"
+   },
+   "query": "amiloride"
+  },
+  "anakinra": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001172": "Arthritis, Rheumatoid",
+    "D056587": "Cryopyrin-Associated Periodic Syndromes"
+   },
+   "query": "anakinra"
+  },
+  "antithrombin (human / recombinant alfa)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "antithrombin"
+  },
+  "arginine-restricted diet [OAT gyrate atrophy]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "arginine-restricted diet"
+  },
+  "asfotase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D007014": "Hypophosphatasia"
+   },
+   "query": "asfotase alfa"
+  },
+  "atidarsagene autotemcel": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D007966": "Leukodystrophy, Metachromatic"
+   },
+   "query": "atidarsagene autotemcel"
+  },
+  "atorvastatin (HMG-CoA reductase inhibitor; statin class)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003324": "Coronary Artery Disease",
+    "D006937": "Hypercholesterolemia",
+    "D006951": "Hyperlipoproteinemias",
+    "D015228": "Hypertriglyceridemia"
+   },
+   "query": "atorvastatin"
+  },
+  "belzutifan": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006623": "von Hippel-Lindau Disease"
+   },
+   "query": "belzutifan"
+  },
+  "betaine (anhydrous betaine)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006712": "Homocystinuria"
+   },
+   "query": "betaine"
+  },
+  "bevacizumab": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D002289": "Carcinoma, Non-Small-Cell Lung",
+    "D002292": "Carcinoma, Renal Cell",
+    "D002583": "Uterine Cervical Neoplasms",
+    "D005185": "Fallopian Tube Neoplasms",
+    "D005909": "Glioblastoma",
+    "D007680": "Kidney Neoplasms",
+    "D008175": "Lung Neoplasms",
+    "D010051": "Ovarian Neoplasms",
+    "D010534": "Peritoneal Neoplasms",
+    "D015179": "Colorectal Neoplasms"
+   },
+   "query": "bevacizumab"
+  },
+  "biotin (vitamin B7)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D008661": "Metabolism, Inborn Errors",
+    "D014804": "Vitamin B Deficiency"
+   },
+   "query": "biotin"
+  },
+  "biotin (vitamin B7) [HLCS]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D008661": "Metabolism, Inborn Errors",
+    "D014804": "Vitamin B Deficiency"
+   },
+   "query": "biotin"
+  },
+  "biotin and thiamine (high-dose) [SLC19A3 BTBGD]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "biotin and thiamine"
+  },
+  "burosumab": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D053098": "Familial Hypophosphatemic Rickets"
+   },
+   "query": "burosumab"
+  },
+  "canakinumab": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001171": "Arthritis, Juvenile",
+    "D010505": "Familial Mediterranean Fever",
+    "D054078": "Mevalonate Kinase Deficiency",
+    "D056587": "Cryopyrin-Associated Periodic Syndromes"
+   },
+   "query": "canakinumab"
+  },
+  "carglumic acid (N-carbamylglutamate)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D022124": "Hyperammonemia"
+   },
+   "query": "carglumic acid"
+  },
+  "celiprolol": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000787": "Angina Pectoris",
+    "D006973": "Hypertension"
+   },
+   "query": "celiprolol"
+  },
+  "cerliponase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009472": "Neuronal Ceroid-Lipofuscinoses"
+   },
+   "query": "cerliponase alfa"
+  },
+  "chenodeoxycholic acid": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "chenodeoxycholic acid"
+  },
+  "cinacalcet": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006962": "Hyperparathyroidism, Secondary",
+    "D010282": "Parathyroid Neoplasms",
+    "D049950": "Hyperparathyroidism, Primary"
+   },
+   "query": "cinacalcet"
+  },
+  "colchicine": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000686": "Amyloidosis",
+    "D006073": "Gout",
+    "D008105": "Liver Cirrhosis, Biliary",
+    "D010505": "Familial Mediterranean Fever"
+   },
+   "query": "colchicine"
+  },
+  "copper histidinate": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D007706": "Menkes Kinky Hair Syndrome"
+   },
+   "query": "copper histidinate"
+  },
+  "creatine monohydrate [AGAT/GATM]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "creatine monohydrate"
+  },
+  "creatine monohydrate [GAMT]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "creatine monohydrate"
+  },
+  "cysteamine (cysteamine bitartrate)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003554": "Cystinosis"
+   },
+   "query": "cysteamine"
+  },
+  "deferasirox": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D019190": "Iron Overload"
+   },
+   "query": "deferasirox"
+  },
+  "dietary cholesterol supplementation [DHCR7 Smith-Lemli-Opitz]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "dietary cholesterol supplementation"
+  },
+  "dietary phytanic-acid restriction [PHYH Refsum disease]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "dietary phytanic-acid restriction"
+  },
+  "dietary protein restriction + nitrogen scavenging [ARG1 argininemia]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "dietary protein restriction + nitrogen scavenging"
+  },
+  "eculizumab": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006457": "Hemoglobinuria, Paroxysmal",
+    "D009157": "Myasthenia Gravis",
+    "D065766": "Atypical Hemolytic Uremic Syndrome"
+   },
+   "query": "eculizumab"
+  },
+  "eladocagene exuparvovec": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000592": "Amino Acid Metabolism, Inborn Errors"
+   },
+   "query": "eladocagene exuparvovec"
+  },
+  "elivaldogene autotemcel": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000326": "Adrenoleukodystrophy"
+   },
+   "query": "elivaldogene autotemcel"
+  },
+  "elosulfase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009085": "Mucopolysaccharidosis IV"
+   },
+   "query": "elosulfase alfa"
+  },
+  "encaleret": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "encaleret"
+  },
+  "ezetimibe": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006937": "Hypercholesterolemia",
+    "D006938": "Hyperlipoproteinemia Type II",
+    "D006950": "Hyperlipidemia, Familial Combined"
+   },
+   "query": "ezetimibe"
+  },
+  "factor XIII concentrate (catridecacog / plasma-derived FXIII) [FXIII deficiency]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "factor XIII concentrate"
+  },
+  "flecainide": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001281": "Atrial Fibrillation",
+    "D013617": "Tachycardia, Supraventricular",
+    "D017180": "Tachycardia, Ventricular"
+   },
+   "query": "flecainide"
+  },
+  "folinic acid (5-formyltetrahydrofolate) [FOLR1 CFD]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "folinic acid"
+  },
+  "fosdenopterin (cyclic pyranopterin monophosphate, cPMP)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D008664": "Metal Metabolism, Inborn Errors"
+   },
+   "query": "fosdenopterin"
+  },
+  "fructose-based carbohydrate substitution [SLC5A1 glucose-galactose malabsorption]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "fructose-based carbohydrate substitution"
+  },
+  "galsulfase": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009087": "Mucopolysaccharidosis VI"
+   },
+   "query": "galsulfase"
+  },
+  "givosiran": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D017094": "Porphyrias, Hepatic"
+   },
+   "query": "givosiran"
+  },
+  "glycerol phenylbutyrate": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "glycerol phenylbutyrate"
+  },
+  "glycine": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009750": "Nutritional and Metabolic Diseases",
+    "D010437": "Peptic Ulcer"
+   },
+   "query": "glycine"
+  },
+  "high-dose thiamine (vitamin B1) [SLC19A2 TRMA]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "high-dose thiamine"
+  },
+  "hydrocortisone (glucocorticoid replacement) [CYP21A2 21-hydroxylase CAH]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000309": "Adrenal Insufficiency",
+    "D000312": "Adrenal Hyperplasia, Congenital",
+    "D003093": "Colitis, Ulcerative",
+    "D003877": "Dermatitis, Contact",
+    "D005148": "Facial Dermatoses",
+    "D005533": "Foot Dermatoses",
+    "D006229": "Hand Dermatoses",
+    "D006484": "Hemorrhoids",
+    "D007249": "Inflammation",
+    "D007868": "Leg Dermatoses",
+    "D011538": "Pruritus Ani",
+    "D012216": "Rheumatic Diseases",
+    "D012536": "Scalp Dermatoses",
+    "D012769": "Shock",
+    "D013224": "Status Asthmaticus"
+   },
+   "query": "hydrocortisone"
+  },
+  "hydroxocobalamin and betaine [MMACHC cblC]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "hydroxocobalamin and betaine"
+  },
+  "hydroxyurea": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001932": "Brain Neoplasms",
+    "D002289": "Carcinoma, Non-Small-Cell Lung",
+    "D002292": "Carcinoma, Renal Cell",
+    "D002294": "Carcinoma, Squamous Cell",
+    "D006258": "Head and Neck Neoplasms",
+    "D007964": "Leukocytosis",
+    "D008545": "Melanoma",
+    "D010051": "Ovarian Neoplasms",
+    "D011087": "Polycythemia Vera",
+    "D011471": "Prostatic Neoplasms",
+    "D011565": "Psoriasis",
+    "D013920": "Thrombocythemia, Essential",
+    "D014594": "Uterine Neoplasms",
+    "D015464": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+    "D017681": "Hypereosinophilic Syndrome"
+   },
+   "query": "hydroxyurea"
+  },
+  "idursulfase": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D016532": "Mucopolysaccharidosis II"
+   },
+   "query": "idursulfase"
+  },
+  "infigratinib": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D018281": "Cholangiocarcinoma"
+   },
+   "query": "infigratinib"
+  },
+  "interleukin-1 blockade (anakinra / canakinumab) [TNFRSF1A TRAPS]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "interleukin-1 blockade"
+  },
+  "ivacaftor": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003550": "Cystic Fibrosis"
+   },
+   "query": "ivacaftor"
+  },
+  "ketogenic diet (ketone-body cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "ketogenic diet"
+  },
+  "levocarnitine (L-carnitine)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003677": "Deficiency Diseases"
+   },
+   "query": "levocarnitine"
+  },
+  "levodopa (with carbidopa) [DRD/GCH1]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D010300": "Parkinson Disease"
+   },
+   "query": "levodopa"
+  },
+  "levodopa (with carbidopa) [TH deficiency]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D010300": "Parkinson Disease"
+   },
+   "query": "levodopa"
+  },
+  "levodopa/carbidopa and sapropterin [SPR deficiency]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "levodopa/carbidopa and sapropterin"
+  },
+  "losartan": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003928": "Diabetic Nephropathies",
+    "D006333": "Heart Failure",
+    "D006973": "Hypertension",
+    "D017379": "Hypertrophy, Left Ventricular",
+    "D018487": "Ventricular Dysfunction, Left"
+   },
+   "query": "losartan"
+  },
+  "lovotibeglogene autotemcel": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "lovotibeglogene autotemcel"
+  },
+  "lumasiran": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "lumasiran"
+  },
+  "luspatercept": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000740": "Anemia"
+   },
+   "query": "luspatercept"
+  },
+  "mRNA-3705": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "mRNA-3705"
+  },
+  "mavacamten": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D002312": "Cardiomyopathy, Hypertrophic"
+   },
+   "query": "mavacamten"
+  },
+  "metreleptin": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D008060": "Lipodystrophy"
+   },
+   "query": "metreleptin"
+  },
+  "mexiletine": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D003929": "Diabetic Neuropathies",
+    "D014693": "Ventricular Fibrillation",
+    "D018879": "Ventricular Premature Complexes"
+   },
+   "query": "mexiletine"
+  },
+  "migalastat": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000795": "Fabry Disease"
+   },
+   "query": "migalastat"
+  },
+  "miglustat": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D005776": "Gaucher Disease"
+   },
+   "query": "miglustat"
+  },
+  "mitapivat": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000743": "Anemia, Hemolytic",
+    "D000746": "Anemia, Hemolytic, Congenital Nonspherocytic",
+    "D015323": "Pyruvate Metabolism, Inborn Errors"
+   },
+   "query": "mitapivat"
+  },
+  "nicotinamide (niacin) [SLC6A19 Hartnup]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006937": "Hypercholesterolemia",
+    "D010383": "Pellagra",
+    "D015228": "Hypertriglyceridemia",
+    "D016491": "Peripheral Vascular Diseases"
+   },
+   "query": "nicotinamide -> (fallback) niacin"
+  },
+  "nitisinone": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D020176": "Tyrosinemias"
+   },
+   "query": "nitisinone"
+  },
+  "nitisinone (NTBC)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D020176": "Tyrosinemias"
+   },
+   "query": "nitisinone"
+  },
+  "nitrogen scavenger [argininosuccinic aciduria]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "nitrogen scavenger"
+  },
+  "nitrogen scavenger [citrullinemia type 1]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "nitrogen scavenger"
+  },
+  "nonacog alfa (recombinant factor IX)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D002836": "Hemophilia B",
+    "D005168": "Factor VII Deficiency",
+    "D006467": "Hemophilia A",
+    "D007020": "Hypoprothrombinemias"
+   },
+   "query": "nonacog alfa"
+  },
+  "octocog alfa (recombinant factor VIII)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D005168": "Factor VII Deficiency",
+    "D006467": "Hemophilia A",
+    "D006470": "Hemorrhage",
+    "D014842": "von Willebrand Diseases"
+   },
+   "query": "octocog alfa"
+  },
+  "olipudase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D016464": "Lysosomal Storage Diseases"
+   },
+   "query": "olipudase alfa"
+  },
+  "omaveloxolone": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D005621": "Friedreich Ataxia"
+   },
+   "query": "omaveloxolone"
+  },
+  "oral citrulline (urea-cycle intermediate) [SLC7A7 lysinuric protein intolerance]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "oral citrulline"
+  },
+  "oral citrulline and arginine [SLC25A15 HHH syndrome]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "oral citrulline and arginine"
+  },
+  "oral zinc (zinc sulfate/gluconate) [SLC39A4 acrodermatitis enteropathica]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "oral zinc"
+  },
+  "pamidronate": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006934": "Hypercalcemia",
+    "D010014": "Osteolysis",
+    "D010145": "Paget Disease, Extramammary",
+    "D015663": "Osteoporosis, Postmenopausal"
+   },
+   "query": "pamidronate"
+  },
+  "parenteral/oral folinic acid (5-formyltetrahydrofolate) [SLC46A1 hereditary folate malabsorption]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "parenteral/oral folinic acid"
+  },
+  "pegvaliase": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D010661": "Phenylketonurias"
+   },
+   "query": "pegvaliase"
+  },
+  "pyridoxal-5'-phosphate (PLP)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "pyridoxal-5'-phosphate"
+  },
+  "pyridoxine (vitamin B6) [ALAS2 X-linked sideroblastic anaemia]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D012640": "Seizures",
+    "D026681": "Vitamin B 6 Deficiency",
+    "D064420": "Drug-Related Side Effects and Adverse Reactions"
+   },
+   "query": "pyridoxine"
+  },
+  "pyridoxine (vitamin B6) [PDE]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D012640": "Seizures",
+    "D026681": "Vitamin B 6 Deficiency",
+    "D064420": "Drug-Related Side Effects and Adverse Reactions"
+   },
+   "query": "pyridoxine"
+  },
+  "pyridoxine (vitamin B6; cofactor pyridoxal-5'-phosphate)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D012640": "Seizures",
+    "D026681": "Vitamin B 6 Deficiency",
+    "D064420": "Drug-Related Side Effects and Adverse Reactions"
+   },
+   "query": "pyridoxine"
+  },
+  "recombinant activated factor VII (eptacog alfa) [FVII deficiency]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "recombinant activated factor VII"
+  },
+  "riboflavin (vitamin B2) [BVVL]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D012257": "Riboflavin Deficiency"
+   },
+   "query": "riboflavin"
+  },
+  "riluzole": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000690": "Amyotrophic Lateral Sclerosis"
+   },
+   "query": "riluzole"
+  },
+  "risdiplam": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009134": "Muscular Atrophy, Spinal"
+   },
+   "query": "risdiplam"
+  },
+  "sapropterin (tetrahydrobiopterin)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D010661": "Phenylketonurias"
+   },
+   "query": "sapropterin"
+  },
+  "sapropterin (tetrahydrobiopterin) [GCH1]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D010661": "Phenylketonurias"
+   },
+   "query": "sapropterin"
+  },
+  "sebelipase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "sebelipase alfa"
+  },
+  "selpercatinib": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D002289": "Carcinoma, Non-Small-Cell Lung",
+    "D013964": "Thyroid Neoplasms"
+   },
+   "query": "selpercatinib"
+  },
+  "selumetinib": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D009456": "Neurofibromatosis 1"
+   },
+   "query": "selumetinib"
+  },
+  "setmelanotide": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "setmelanotide"
+  },
+  "sirolimus (rapamycin)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D018192": "Lymphangioleiomyomatosis",
+    "D054973": "Perivascular Epithelioid Cell Neoplasms"
+   },
+   "query": "sirolimus"
+  },
+  "sodium phenylbutyrate (4-PBA)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000755": "Anemia, Sickle Cell",
+    "D003550": "Cystic Fibrosis",
+    "D009196": "Myeloproliferative Disorders",
+    "D017086": "beta-Thalassemia"
+   },
+   "query": "sodium phenylbutyrate"
+  },
+  "sodium-channel blocker (carbamazepine; mexiletine) [SCN9A erythromelalgia]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D001714": "Bipolar Disorder",
+    "D004830": "Epilepsy, Tonic-Clonic",
+    "D011618": "Psychotic Disorders",
+    "D012148": "Restless Legs Syndrome",
+    "D012559": "Schizophrenia",
+    "D013313": "Stress Disorders, Post-Traumatic",
+    "D013375": "Substance Withdrawal Syndrome",
+    "D014277": "Trigeminal Neuralgia",
+    "D017029": "Epilepsy, Complex Partial"
+   },
+   "query": "sodium-channel blocker -> (fallback) carbamazepine"
+  },
+  "tafamidis": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "tafamidis"
+  },
+  "tezacaftor (with ivacaftor)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "tezacaftor"
+  },
+  "tiopronin": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "tiopronin"
+  },
+  "tolvaptan": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D007010": "Hyponatremia"
+   },
+   "query": "tolvaptan"
+  },
+  "tralesinidase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "tralesinidase alfa"
+  },
+  "trametinib": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D002289": "Carcinoma, Non-Small-Cell Lung",
+    "D008545": "Melanoma"
+   },
+   "query": "trametinib"
+  },
+  "tranexamic acid": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D013345": "Subarachnoid Hemorrhage",
+    "D025861": "Blood Coagulation Disorders, Inherited"
+   },
+   "query": "tranexamic acid"
+  },
+  "trientine (triethylenetetramine)": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006527": "Hepatolenticular Degeneration",
+    "D020260": "Heavy Metal Poisoning, Nervous System"
+   },
+   "query": "trientine"
+  },
+  "triheptanoin (anaplerotic C5-ketone cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "triheptanoin"
+  },
+  "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "ursodeoxycholic acid"
+  },
+  "vestronidase alfa": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "vestronidase alfa"
+  },
+  "volanesorsen": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D008072": "Hyperlipoproteinemia Type I"
+   },
+   "query": "volanesorsen"
+  },
+  "vosoritide": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D000130": "Achondroplasia",
+    "D004392": "Dwarfism"
+   },
+   "query": "vosoritide"
+  },
+  "vutrisiran": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D011115": "Polyneuropathies",
+    "D028227": "Amyloid Neuropathies, Familial"
+   },
+   "query": "vutrisiran"
+  },
+  "xanthine oxidase inhibitor (allopurinol; febuxostat) [APRT 2,8-DHA axis]": {
+   "fetch_status": "OK",
+   "may_treat": {
+    "D006073": "Gout"
+   },
+   "query": "xanthine oxidase inhibitor -> (fallback) allopurinol"
+  },
+  "zorevunersen": {
+   "fetch_status": "OK",
+   "may_treat": {},
+   "query": "zorevunersen"
+  }
+ },
+ "mesh": {
+  "D000130": "Achondroplasia",
+  "D000309": "Adrenal Insufficiency",
+  "D000312": "Adrenal Hyperplasia, Congenital",
+  "D000326": "Adrenoleukodystrophy",
+  "D000592": "Amino Acid Metabolism, Inborn Errors",
+  "D000686": "Amyloidosis",
+  "D000690": "Amyotrophic Lateral Sclerosis",
+  "D000740": "Anemia",
+  "D000743": "Anemia, Hemolytic",
+  "D000746": "Anemia, Hemolytic, Congenital Nonspherocytic",
+  "D000755": "Anemia, Sickle Cell",
+  "D000787": "Angina Pectoris",
+  "D000788": "Angina Pectoris, Variant",
+  "D000795": "Fabry Disease",
+  "D001171": "Arthritis, Juvenile",
+  "D001172": "Arthritis, Rheumatoid",
+  "D001201": "Ascites",
+  "D001281": "Atrial Fibrillation",
+  "D001282": "Atrial Flutter",
+  "D001714": "Bipolar Disorder",
+  "D001932": "Brain Neoplasms",
+  "D002289": "Carcinoma, Non-Small-Cell Lung",
+  "D002292": "Carcinoma, Renal Cell",
+  "D002294": "Carcinoma, Squamous Cell",
+  "D002312": "Cardiomyopathy, Hypertrophic",
+  "D002583": "Uterine Cervical Neoplasms",
+  "D002836": "Hemophilia B",
+  "D003093": "Colitis, Ulcerative",
+  "D003324": "Coronary Artery Disease",
+  "D003550": "Cystic Fibrosis",
+  "D003554": "Cystinosis",
+  "D003677": "Deficiency Diseases",
+  "D003877": "Dermatitis, Contact",
+  "D003928": "Diabetic Nephropathies",
+  "D003929": "Diabetic Neuropathies",
+  "D004392": "Dwarfism",
+  "D004487": "Edema",
+  "D004830": "Epilepsy, Tonic-Clonic",
+  "D005148": "Facial Dermatoses",
+  "D005168": "Factor VII Deficiency",
+  "D005185": "Fallopian Tube Neoplasms",
+  "D005533": "Foot Dermatoses",
+  "D005621": "Friedreich Ataxia",
+  "D005776": "Gaucher Disease",
+  "D005909": "Glioblastoma",
+  "D006073": "Gout",
+  "D006229": "Hand Dermatoses",
+  "D006258": "Head and Neck Neoplasms",
+  "D006333": "Heart Failure",
+  "D006457": "Hemoglobinuria, Paroxysmal",
+  "D006467": "Hemophilia A",
+  "D006470": "Hemorrhage",
+  "D006484": "Hemorrhoids",
+  "D006527": "Hepatolenticular Degeneration",
+  "D006623": "von Hippel-Lindau Disease",
+  "D006712": "Homocystinuria",
+  "D006934": "Hypercalcemia",
+  "D006937": "Hypercholesterolemia",
+  "D006938": "Hyperlipoproteinemia Type II",
+  "D006950": "Hyperlipidemia, Familial Combined",
+  "D006951": "Hyperlipoproteinemias",
+  "D006962": "Hyperparathyroidism, Secondary",
+  "D006973": "Hypertension",
+  "D007008": "Hypokalemia",
+  "D007010": "Hyponatremia",
+  "D007014": "Hypophosphatasia",
+  "D007020": "Hypoprothrombinemias",
+  "D007249": "Inflammation",
+  "D007680": "Kidney Neoplasms",
+  "D007706": "Menkes Kinky Hair Syndrome",
+  "D007868": "Leg Dermatoses",
+  "D007964": "Leukocytosis",
+  "D007966": "Leukodystrophy, Metachromatic",
+  "D008060": "Lipodystrophy",
+  "D008072": "Hyperlipoproteinemia Type I",
+  "D008105": "Liver Cirrhosis, Biliary",
+  "D008175": "Lung Neoplasms",
+  "D008545": "Melanoma",
+  "D008661": "Metabolism, Inborn Errors",
+  "D008664": "Metal Metabolism, Inborn Errors",
+  "D009085": "Mucopolysaccharidosis IV",
+  "D009087": "Mucopolysaccharidosis VI",
+  "D009134": "Muscular Atrophy, Spinal",
+  "D009157": "Myasthenia Gravis",
+  "D009196": "Myeloproliferative Disorders",
+  "D009203": "Myocardial Infarction",
+  "D009456": "Neurofibromatosis 1",
+  "D009472": "Neuronal Ceroid-Lipofuscinoses",
+  "D009750": "Nutritional and Metabolic Diseases",
+  "D010014": "Osteolysis",
+  "D010051": "Ovarian Neoplasms",
+  "D010145": "Paget Disease, Extramammary",
+  "D010282": "Parathyroid Neoplasms",
+  "D010300": "Parkinson Disease",
+  "D010383": "Pellagra",
+  "D010437": "Peptic Ulcer",
+  "D010505": "Familial Mediterranean Fever",
+  "D010534": "Peritoneal Neoplasms",
+  "D010661": "Phenylketonurias",
+  "D011087": "Polycythemia Vera",
+  "D011115": "Polyneuropathies",
+  "D011141": "Polyuria",
+  "D011471": "Prostatic Neoplasms",
+  "D011538": "Pruritus Ani",
+  "D011565": "Psoriasis",
+  "D011618": "Psychotic Disorders",
+  "D012148": "Restless Legs Syndrome",
+  "D012216": "Rheumatic Diseases",
+  "D012257": "Riboflavin Deficiency",
+  "D012536": "Scalp Dermatoses",
+  "D012559": "Schizophrenia",
+  "D012640": "Seizures",
+  "D012769": "Shock",
+  "D013224": "Status Asthmaticus",
+  "D013313": "Stress Disorders, Post-Traumatic",
+  "D013345": "Subarachnoid Hemorrhage",
+  "D013375": "Substance Withdrawal Syndrome",
+  "D013617": "Tachycardia, Supraventricular",
+  "D013920": "Thrombocythemia, Essential",
+  "D013964": "Thyroid Neoplasms",
+  "D014277": "Trigeminal Neuralgia",
+  "D014594": "Uterine Neoplasms",
+  "D014693": "Ventricular Fibrillation",
+  "D014804": "Vitamin B Deficiency",
+  "D014842": "von Willebrand Diseases",
+  "D015179": "Colorectal Neoplasms",
+  "D015228": "Hypertriglyceridemia",
+  "D015323": "Pyruvate Metabolism, Inborn Errors",
+  "D015464": "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+  "D015663": "Osteoporosis, Postmenopausal",
+  "D016464": "Lysosomal Storage Diseases",
+  "D016491": "Peripheral Vascular Diseases",
+  "D016532": "Mucopolysaccharidosis II",
+  "D017029": "Epilepsy, Complex Partial",
+  "D017086": "beta-Thalassemia",
+  "D017094": "Porphyrias, Hepatic",
+  "D017180": "Tachycardia, Ventricular",
+  "D017379": "Hypertrophy, Left Ventricular",
+  "D017681": "Hypereosinophilic Syndrome",
+  "D018192": "Lymphangioleiomyomatosis",
+  "D018281": "Cholangiocarcinoma",
+  "D018487": "Ventricular Dysfunction, Left",
+  "D018879": "Ventricular Premature Complexes",
+  "D019190": "Iron Overload",
+  "D020176": "Tyrosinemias",
+  "D020260": "Heavy Metal Poisoning, Nervous System",
+  "D022124": "Hyperammonemia",
+  "D025861": "Blood Coagulation Disorders, Inherited",
+  "D026681": "Vitamin B 6 Deficiency",
+  "D028227": "Amyloid Neuropathies, Familial",
+  "D049950": "Hyperparathyroidism, Primary",
+  "D053098": "Familial Hypophosphatemic Rickets",
+  "D054078": "Mevalonate Kinase Deficiency",
+  "D054973": "Perivascular Epithelioid Cell Neoplasms",
+  "D056587": "Cryopyrin-Associated Periodic Syndromes",
+  "D064420": "Drug-Related Side Effects and Adverse Reactions",
+  "D065766": "Atypical Hemolytic Uremic Syndrome"
+ },
+ "n_agents": 130,
+ "n_disease_edges": 192,
+ "n_resolved": 130,
+ "n_with_may_treat": 78,
+ "newly_added_agents": [
+  "N-acetylmannosamine (ManNAc) / sialic acid [GNE myopathy]",
+  "arginine-restricted diet [OAT gyrate atrophy]",
+  "biotin and thiamine (high-dose) [SLC19A3 BTBGD]",
+  "carglumic acid (N-carbamylglutamate)",
+  "dietary cholesterol supplementation [DHCR7 Smith-Lemli-Opitz]",
+  "dietary phytanic-acid restriction [PHYH Refsum disease]",
+  "dietary protein restriction + nitrogen scavenging [ARG1 argininemia]",
+  "folinic acid (5-formyltetrahydrofolate) [FOLR1 CFD]",
+  "fosdenopterin (cyclic pyranopterin monophosphate, cPMP)",
+  "fructose-based carbohydrate substitution [SLC5A1 glucose-galactose malabsorption]",
+  "high-dose thiamine (vitamin B1) [SLC19A2 TRMA]",
+  "hydrocortisone (glucocorticoid replacement) [CYP21A2 21-hydroxylase CAH]",
+  "hydroxocobalamin and betaine [MMACHC cblC]",
+  "interleukin-1 blockade (anakinra / canakinumab) [TNFRSF1A TRAPS]",
+  "ketogenic diet (ketone-body cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]",
+  "levodopa/carbidopa and sapropterin [SPR deficiency]",
+  "nicotinamide (niacin) [SLC6A19 Hartnup]",
+  "oral citrulline (urea-cycle intermediate) [SLC7A7 lysinuric protein intolerance]",
+  "oral citrulline and arginine [SLC25A15 HHH syndrome]",
+  "oral zinc (zinc sulfate/gluconate) [SLC39A4 acrodermatitis enteropathica]",
+  "parenteral/oral folinic acid (5-formyltetrahydrofolate) [SLC46A1 hereditary folate malabsorption]",
+  "pyridoxine (vitamin B6) [ALAS2 X-linked sideroblastic anaemia]",
+  "sodium-channel blocker (carbamazepine; mexiletine) [SCN9A erythromelalgia]",
+  "triheptanoin (anaplerotic C5-ketone cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]",
+  "xanthine oxidase inhibitor (allopurinol; febuxostat) [APRT 2,8-DHA axis]"
+ ],
+ "rela": "may_treat",
+ "rela_source": "MEDRT",
+ "rxnav_rxnorm_version": "01-Jun-2026",
+ "source": "MED-RT (NLM/VA Medication Reference Terminology, formerly NDF-RT) may_treat INDICATION edges, via the NLM RxClass API (class/byDrugName, relaSource=MEDRT, rela=may_treat), filtered to classType==DISEASE."
+}

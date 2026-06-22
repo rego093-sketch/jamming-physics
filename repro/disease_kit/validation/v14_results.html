@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>V10 — exclusion calibration</title>
+<style>
+ body{font:15px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;max-width:980px;margin:2rem auto;padding:0 1rem;color:#1a1a1a}
+ h1{font-size:1.5rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:1px solid #ddd;padding-bottom:.2rem}
+ code{background:#f3f3f3;padding:.05rem .3rem;border-radius:3px;font-size:.92em}
+ table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.92rem}
+ td,th{border:1px solid #ddd;padding:.35rem .5rem;text-align:left;vertical-align:top}
+ th{background:#fafafa} .ok{color:#1a7f37} .firm{color:#b35900;font-weight:600} .amb{color:#777}
+ .big{font-size:1.05rem} .k{color:#555} blockquote{border-left:3px solid #b35900;margin:.6rem 0;padding:.2rem .9rem;background:#fff8f0}
+</style>
+<h1>VALIDATION V10 &mdash; exclusion calibration</h1>
+<p class="k">VP Disease Emergence Kit · Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0 ·
+grade <code>[O] direction-only; magnitude-free; family-admission audit</code></p>
+<p>Do the kit's <b>gamma-restore EXCLUSIONS</b> (every LOF_null disease) hold up against an
+<b>independently-assembled</b> corrector/chaperone/potentiator source? V1&ndash;V9 tested only the
+kit's positive direction predictions; the 108 exclusion
+claims were untested until now.</p>
+
+<h2>Inheritance (read-only)</h2>
+<p class="ok">anchors byte-identical &mdash; mapped_levers <code>ab063b32abf1f7ed…</code>,
+disease_inputs <code>ca6c044e7dc1108c…</code>,
+all_match=True. 0 of 128 derivations re-run.</p>
+<p class="k">frozen source: v14_opentargets_chaperone_snapshot.cache.json ·
+<code>57893b785e5b64e8…</code> ·
+152/152 genes OK (0 NO_ENSEMBL, 0 FETCH_FAILED) · matches prereg=True</p>
+
+<h2>Exclusion calibration (denominator 108, 0 coverage gaps)</h2>
+<table>
+<tr><th>classifier</th><th>correctly excluded</th><th>candidate / firm over-exclusions</th></tr>
+<tr><td>core, RAW</td><td class="ok big">106/108</td><td>2/108</td></tr>
+<tr><td>core, FIRM (shared-gene rule)</td><td class="ok big">107/108</td><td class="firm">1/108</td></tr>
+<tr><td>sensitivity, RAW</td><td class="ok">104/108</td><td>4/108</td></tr>
+<tr><td>sensitivity, FIRM</td><td class="ok">105/108</td><td class="firm">3/108</td></tr>
+</table>
+
+<h2>Positive-control contrast (the validity signal)</h2>
+<table>
+<tr><th></th><th>missense_residual (kit: chaperonable)</th><th>null (kit: excluded)</th><th>enrichment</th></tr>
+<tr><td>core detection</td><td>6/21</td><td>2/108</td><td class="firm big">~15.4&times;</td></tr>
+<tr><td>sensitivity detection</td><td>8/21</td><td>4/108</td><td class="firm">~10.3&times;</td></tr>
+</table>
+<p class="k">genes the kit flagged chaperonable carry independently-annotated correctors at an order of magnitude higher rate than genes it called null -&gt; residual_allele_evidence tracks the external pharmacological record.</p>
+
+<h2>Miss list &mdash; null-set hits, mechanically adjudicated</h2>
+<p class="k">core classifier:</p>
+<table><tr><th>disease</th><th>gene</th><th>adjudication</th><th>agents (drug / actionType / stage)</th></tr>
+<tr><td><code>neonatal_severe_hyperparathyroidism</code></td><td>CASR</td><td class="firm">FIRM_over_exclusion</td><td>ASP7991 / POSITIVE ALLOSTERIC MODULATOR / PHASE_2; CINACALCET / POSITIVE ALLOSTERIC MODULATOR / APPROVAL; CINACALCET HYDROCHLORIDE / POSITIVE ALLOSTERIC MODULATOR / APPROVAL; EVOCALCET / POSITIVE ALLOSTERIC MODULATOR / APPROVAL</td></tr><tr><td><code>sickle_cell_disease</code></td><td>HBB</td><td class="amb">AMBIGUOUS_shared_gene</td><td>VOXELOTOR / POSITIVE MODULATOR / APPROVAL</td></tr></table>
+<p class="k">sensitivity-only:</p>
+<table><tr><th>disease</th><th>gene</th><th>adjudication</th><th>agents</th></tr>
+<tr><td><code>hereditary_antithrombin_deficiency</code></td><td>SERPINC1</td><td class="firm">FIRM_over_exclusion</td><td>BEMIPARIN SODIUM / ACTIVATOR / PHASE_3; DALTEPARIN SODIUM / ACTIVATOR / APPROVAL; DANAPAROID SODIUM / ACTIVATOR / APPROVAL; ENOXAPARIN SODIUM / ACTIVATOR / APPROVAL; FONDAPARINUX / ACTIVATOR / APPROVAL; FONDAPARINUX SODIUM / ACTIVATOR / APPROVAL; HEPARIN / ACTIVATOR / APPROVAL; HEPARIN CALCIUM / ACTIVATOR / APPROVAL; HEPARIN SODIUM / ACTIVATOR / APPROVAL; NADROPARIN CALCIUM / ACTIVATOR / APPROVAL; PARNAPARIN SODIUM / ACTIVATOR / PHASE_3; TINZAPARIN SODIUM / ACTIVATOR / APPROVAL</td></tr><tr><td><code>phenylketonuria</code></td><td>PAH</td><td class="firm">FIRM_over_exclusion</td><td>SAPROPTERIN / ACTIVATOR / APPROVAL; SAPROPTERIN DIHYDROCHLORIDE / ACTIVATOR / APPROVAL</td></tr></table>
+
+<h2>Verdict</h2>
+<blockquote>The kit does NOT over-exclude gamma-restore: of its 108 LOF_null exclusions, the independent corrector source upholds 107/108 (core, firm); the lone firm core exception is a potentiator/cofactor of the lesioned gene&#x27;s reduced product, logged as an honest over-exclusion for a future re-derivation. Decisively, the kit&#x27;s residual_allele_evidence axis tracks the external record: corrector detection is ~15.4x enriched on the chaperonable (missense_residual) set vs the null set. The conservative exclusion discipline is calibrated, and where it errs it errs toward UNDER-claiming.</blockquote>
+<p class="k">Under-detection: read-through agents (e.g. ataluren) act on the ribosome and are NOT annotated on the disease gene&#x27;s edge, so the gene-edge join CANNOT see them; positive-control sensitivity is therefore &lt; 1. Consequence: corrector-detection is CONSERVATIVE -&gt; calibration is an UPPER bound and any HIT found is robust; additional unseen over-exclusions may exist.</p>
+<p class="ok">firewall PASS &mdash; 0 magnitude leaks.
+validation chain head <code>c0f8e37e80c73fb2323903d6…</code>,
+continues V9 <code>d1cecbb6f0bc44a9e1d1615a…</code>.</p>
+</html>

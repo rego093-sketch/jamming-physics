@@ -1,0 +1,45 @@
+{
+ "all_match": true,
+ "note": "network-dependent AUDIT; not part of the byte-frozen manifest. If the network is down the vendored snapshot (snapshot_sha256 in the prereg) stands.",
+ "release": "0.41.0-validation.v5",
+ "sample": [
+  {
+   "cache_direction": "INHIBITORY",
+   "drug": "EVOLOCUMAB",
+   "in_vendored_snapshot": true,
+   "live_direction": "INHIBITORY",
+   "match": true
+  },
+  {
+   "cache_direction": "ACTIVATING",
+   "drug": "IVACAFTOR",
+   "in_vendored_snapshot": true,
+   "live_direction": "ACTIVATING",
+   "match": true
+  },
+  {
+   "cache_direction": "ACTIVATING",
+   "drug": "SAPROPTERIN",
+   "in_vendored_snapshot": true,
+   "live_direction": "ACTIVATING",
+   "match": true
+  },
+  {
+   "cache_direction": "INHIBITORY",
+   "drug": "AMLODIPINE",
+   "in_vendored_snapshot": true,
+   "live_direction": "INHIBITORY",
+   "match": true
+  },
+  {
+   "cache_direction": "INHIBITORY",
+   "drug": "ALECTINIB",
+   "in_vendored_snapshot": true,
+   "live_direction": "INHIBITORY",
+   "match": true
+  }
+ ],
+ "sample_policy": "every probed drug is drawn from the vendored 270-drug universe (in_vendored_snapshot=True); the audit confirms drugs ALREADY in the snapshot still return the same MED-RT direction live.",
+ "scan": "live RxClass/MED-RT re-pull of a pinned in-snapshot sample vs the vendored snapshot",
+ "snapshot_date": "2026-06-21"
+}

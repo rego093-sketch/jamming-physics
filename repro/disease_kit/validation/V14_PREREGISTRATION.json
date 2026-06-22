@@ -1,0 +1,99 @@
+{
+ "adjudication_layer_SECONDARY_not_in_mechanical_numerator": {
+  "ambiguous_shared_gene_rationale": "G yields a REDUCED product in its missense_residual disease but a TOXIC product in its null disease (e.g. HBB: beta-thalassaemia reduced vs sickle-cell toxic HbS); a single Hb 'positive modulator' surfaced for the null row may be DETOXIFYING the toxic variant (consistent with the kit's CLEAR direction) rather than RESTORING a reduced one -> NOT counted as a firm miss.",
+  "firm_over_exclusion_rationale": "G appears ONLY as a null lesion -> its product is reduced in this disease and an independently-annotated restorer/potentiator/cofactor for that product exists -> the kit's conservative LOF_null under-admitted a feasible gamma-restore [O]; logged as an honest miss for a FUTURE Track-A re-derivation, NOT auto-corrected here.",
+  "mechanical_rule_no_hand_judging": "a raw null-set restore-hit on primary_gene G is FIRM over-exclusion iff G does NOT also appear as a primary_gene in the LOF_missense_residual set; it is AMBIGUOUS (shared-gene) iff G appears in BOTH sets.",
+  "principle": "the mechanical numerator is the RAW classifier (no adjudication baked in). A SEPARATE, MECHANICAL, per-candidate adjudication then distinguishes a FIRM gamma-restore OVER-EXCLUSION from an AMBIGUOUS shared-gene hit, with each agent's mechanism shown.",
+  "reported_both_ways": "calibration is reported RAW (classifier-only) AND FIRM (after the shared-gene rule). The reader sees the unmassaged result and the mechanical interpretation separately."
+ },
+ "author": "Young Jae Lee",
+ "disease_partition_frozen": {
+  "CONTEXT_GOF_gamma_restore_EXCLUDED_by_direction": {
+   "n": 21,
+   "role": "gamma-restore is excluded for GOF by DIRECTION (product is gained, not lost), a different logic from absence-of-corrector. Reported for completeness; NOT in the calibration numerator."
+  },
+  "POSITIVE_CONTROL_LOF_missense_residual_gamma_restore_ADMITTED": {
+   "n": 21,
+   "role": "the kit asserts a corrector IS known (residual_allele_evidence=True). The classifier SHOULD fire here. Detection rate here is the test's sensitivity; the CONTRAST null-vs-positive-control is the validity signal."
+  },
+  "TARGET_LOF_null_gamma_restore_EXCLUDED": {
+   "claim_under_test": "for each, the kit asserts NO corrector/chaperone/read-through/potentiator is known -> a raw classifier HIT here is a candidate MISS (over-exclusion).",
+   "n": 108
+  },
+  "rule": "partition is deterministic from the frozen `lesion` field; NO hand-picking. Join key = primary_gene (the promoter-gamma-bearing locus the exclusion is about)."
+ },
+ "frozen_external_source": {
+  "assembly": "blind to the kit's lesion calls; one (drug,gene) mechanism row per edge with actionType + mechanismOfAction free text + maxClinicalStage; only mechanisms annotated on THIS gene's edge kept.",
+  "coverage": "152/152 kit genes resolved (0 NO_ENSEMBL, 0 FETCH_FAILED) -> no coverage-gap exclusions in the denominator.",
+  "extends": "v10_opentargets_chaperone_snapshot.cache.json (frozen d81b72ae...) — additive +22 genes for the grown 152-core.",
+  "name": "OpenTargets Platform GraphQL surfacing ChEMBL mechanismsOfAction on the gene's OWN edge",
+  "snapshot_file": "v14_opentargets_chaperone_snapshot.cache.json",
+  "snapshot_sha256": "57893b785e5b64e85fbe4fb37cff0dea43f3f2644257f8eb65f15da45e27eb44",
+  "transport_note": "ChEMBL REST returned HTTP 500 this session; ChEMBL mechanism actionType+MoA is surfaced via OpenTargets (same upstream as V4). Independence vs V4 is in the QUESTION (corrector-existence, not direction), not a new assembler."
+ },
+ "gamma_restore_classifier_FROZEN": {
+  "CORE_action_types": [
+   "STABILISER",
+   "POSITIVE ALLOSTERIC MODULATOR",
+   "POSITIVE MODULATOR"
+  ],
+  "EXCLUDED_action_types_not_gamma_restore": {
+   "AGONIST": "receptor agonism = downstream supply, not restoration of the mutant's folding",
+   "BINDING AGENT / OTHER": "unsigned",
+   "EXOGENOUS GENE": "gene therapy -- supplies the gene, not a cusp gamma-axis chaperone",
+   "EXOGENOUS PROTEIN": "enzyme/protein replacement -- supplies the product exogenously",
+   "HYDROLYTIC ENZYME": "enzyme replacement",
+   "INHIBITOR / BLOCKER / ANTAGONIST / ANTISENSE INHIBITOR / RNAI INHIBITOR / NEGATIVE MODULATOR": "clearing/opposing -> the CLEAR family, never gamma-restore",
+   "MODULATOR": "unsigned"
+  },
+  "SENSITIVITY_action_types_added": [
+   "ACTIVATOR",
+   "OPENER"
+  ],
+  "definition": "a (drug,gene)-edge mechanism counts as a gamma-RESTORE lever iff it RESTORES/POTENTIATES/FOLDS the lesioned gene's own (residual) product -- i.e. supplies competence THROUGH the mutant protein, the cusp gamma-axis -- as opposed to clearing/opposing load or supplying the product exogenously.",
+  "known_under_detection_stated": "read-through agents (e.g. ataluren) act on the ribosome and are NOT annotated on the disease gene's edge, so the gene-edge join CANNOT see them; positive-control sensitivity is therefore < 1. Consequence: corrector-detection is CONSERVATIVE -> calibration is an UPPER bound and any HIT found is robust; additional unseen over-exclusions may exist.",
+  "moa_text_regex_case_insensitive": "chaperone|corrector|read[- ]?through|readthrough|nonsense suppress|premature stop|translational read"
+ },
+ "gates_required": {
+  "append_only_chain": "v10 validation chain continues v9 head 6e613d24...; never rewrites.",
+  "core_subset_invariance": "0 of 152 derivations re-run; mapped_levers/disease_inputs hashes unchanged.",
+  "determinism": "2x byte-identical v10_results.json + manifest (expected_sha256_v10.json).",
+  "firewall": "kit pipeline.firewall.magnitude_leak (verbatim) over every emitted string -> PASS, 0 leaks."
+ },
+ "inheritance_anchors_readonly": {
+  "continues_validation_chain_from_v9_head": "6e613d241fbab943d971d56b9c0a0f3ca41b05029cd4fcaec44468fd5a64fca2",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "note": "asserted byte-identical BEFORE any scoring; validation is strictly read-only."
+ },
+ "license": "CC BY 4.0",
+ "metrics_FROZEN": {
+  "M1_restore_hit_counts_per_set": "n diseases in each partition whose primary_gene has >=1 CORE (and, separately, SENSITIVITY) gamma-restore edge; approved-only counted separately.",
+  "M2_exclusion_calibration": "calibration = (108 - raw_core_hits)/108 (RAW) and (108 - firm_over_exclusions)/108 (FIRM, after the mechanical shared-gene rule), denominator=108, FULL miss list reported. Blueprint expectation: ~all correctly excluded.",
+  "M3_positive_control_contrast": "detection fraction on POSITIVE_CONTROL (missense_residual) vs on TARGET (null); enrichment = (control_frac)/(null_frac). A large enrichment = the kit's residual_allele_evidence axis tracks the independent pharmacological record.",
+  "M4_miss_list": "every raw null-set hit with drug, action_type, max_clinical_stage, MoA, kit polarity/direction, and adjudication tag."
+ },
+ "nature": "read-only audit over the GROWN 152-core; 0 of 152 derivations are re-run; additive-only.",
+ "orcid": "0009-0002-7535-8245",
+ "preregistered_before_scoring": true,
+ "programme": "VP Disease Emergence Kit",
+ "release": "0.41.0-validation.v14",
+ "repin_of": "V10 (0.41.0-validation.v10) — the frozen 128-core exclusion-calibration audit, left byte-identical; V14 re-pins the IDENTICAL frozen gamma-restore classifier to the grown 152-core (108 LOF_null exclusions); the OpenTargets corrector snapshot is extended +22 genes additively over the frozen V10 snapshot.",
+ "round": "V14 — EXCLUSION CALIBRATION, grown 152-core re-pin of V10 (blueprint §5.3 / §11.4)",
+ "what_v10_does_NOT_do": [
+  "does NOT mutate the grown 152-core or re-admit gamma-restore for any disease (that would be a separate, documented Track-A re-derivation).",
+  "does NOT assert any magnitude (dose/efficacy/response/survival/p-value).",
+  "does NOT claim any drug works; surfaced over-exclusions are direction-only [O] family-admission flags."
+ ],
+ "why_this_round": [
+  "For every LOF_null disease the kit EXCLUDES the gamma-restore lever family. That exclusion is an",
+  "ASSERTION inherited from §3.1: lesion=LOF_missense_residual (and gamma-restore ADMITTED) iff a",
+  "corrector / pharmacological chaperone / read-through / potentiator is KNOWN for the gene (a",
+  "chaperonable/residual allele demonstrably exists), recorded as residual_allele_evidence=True; else",
+  "the conservative LOF_null call sets residual_allele_evidence=False and gamma-restore is EXCLUDED.",
+  "V1-V9 tested only the kit's POSITIVE direction predictions (V1 circularity, V2 emergence, V3-V8",
+  "external direction/rediscovery) and its level/shape inheritance (V9). The 108 EXCLUSION claims have",
+  "never been falsification-tested. V10 tests them against an independently-assembled corrector source",
+  "and reports MISSES (a null gene for which a gamma-restore-type agent in fact exists)."
+ ]
+}

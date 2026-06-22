@@ -1,0 +1,312 @@
+{
+  "L1_lesion_partition": {
+    "diaschisis_set": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "diaschisis_set_is_E1_relay_set": true,
+    "local_set": [
+      "basal_forebrain_chol",
+      "brainstem",
+      "cerebellum",
+      "forebrain_gaba_in",
+      "hypothalamus",
+      "neocortex",
+      "olfactory_bulb",
+      "pallidum",
+      "striatum",
+      "thalamus"
+    ],
+    "mild_subfloor_diaschisis_set": [
+      "hippocampus",
+      "midbrain",
+      "thalamus"
+    ],
+    "partition_drive_invariant": true,
+    "partition_per_severity": {
+      "-0.9": {
+        "basal_forebrain_chol": "local",
+        "brainstem": "local",
+        "cerebellum": "local",
+        "forebrain_gaba_in": "local",
+        "hippocampus": "diaschisis",
+        "hypothalamus": "local",
+        "midbrain": "diaschisis",
+        "neocortex": "local",
+        "olfactory_bulb": "local",
+        "pallidum": "local",
+        "striatum": "local",
+        "thalamus": "local"
+      },
+      "-0.7": {
+        "basal_forebrain_chol": "local",
+        "brainstem": "local",
+        "cerebellum": "local",
+        "forebrain_gaba_in": "local",
+        "hippocampus": "diaschisis",
+        "hypothalamus": "local",
+        "midbrain": "diaschisis",
+        "neocortex": "local",
+        "olfactory_bulb": "local",
+        "pallidum": "local",
+        "striatum": "local",
+        "thalamus": "local"
+      },
+      "-0.5": {
+        "basal_forebrain_chol": "local",
+        "brainstem": "local",
+        "cerebellum": "local",
+        "forebrain_gaba_in": "local",
+        "hippocampus": "diaschisis",
+        "hypothalamus": "local",
+        "midbrain": "diaschisis",
+        "neocortex": "local",
+        "olfactory_bulb": "local",
+        "pallidum": "local",
+        "striatum": "local",
+        "thalamus": "local"
+      }
+    },
+    "reading": "silencing each region as a focal lesion, the 12 lesions partition into LOCAL-DEFICIT (self-localising -- the coherence deficit concentrates at the lesion, a focal deficit) and REMOTE-DIASCHISIS (relay -- the deficit lands harder off-target, the lesion disrupts distal circuits). The partition is IDENTICAL across the moderate-to-severe lesion-severity sweep, the diaschisis set {hippocampus, midbrain} fixed at every severity and equal to the E1.3 relay set. Whether a focal lesion stays local or causes remote diaschisis is a fixed property of lesion LOCATION, not of lesion severity. HONESTLY, at the mild sub-floor severity -0.3 (below the E1.2 |b|>=0.5 invariance floor) the thalamus also relays, which is exactly why the invariant claim is scoped to the moderate-to-severe core (inheriting the E1.2 floor). Inherits the E1.3 self/relay class read on a silencing bias; structure-only.",
+    "reproduced": true,
+    "thalamus_enters_at_mild_severity": true
+  },
+  "L2_off_target_dominance": {
+    "diaschisis_iff_off_target_dominant_all_severities": true,
+    "per_site_at_representative_severity": {
+      "basal_forebrain_chol": {
+        "off_over_own": 0.2002,
+        "off_target_abs_dc": 0.002205,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.011014
+      },
+      "brainstem": {
+        "off_over_own": 0.0253,
+        "off_target_abs_dc": 0.001398,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.055378
+      },
+      "cerebellum": {
+        "off_over_own": 0.0556,
+        "off_target_abs_dc": 0.016496,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.296757
+      },
+      "forebrain_gaba_in": {
+        "off_over_own": 0.1059,
+        "off_target_abs_dc": 0.001867,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.017622
+      },
+      "hippocampus": {
+        "off_over_own": 1.1761,
+        "off_target_abs_dc": 0.007999,
+        "off_target_dominant": true,
+        "own_abs_dc": 0.006801
+      },
+      "hypothalamus": {
+        "off_over_own": 0.1909,
+        "off_target_abs_dc": 0.002189,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.011462
+      },
+      "midbrain": {
+        "off_over_own": 2.9547,
+        "off_target_abs_dc": 0.013599,
+        "off_target_dominant": true,
+        "own_abs_dc": 0.004602
+      },
+      "neocortex": {
+        "off_over_own": 0.0973,
+        "off_target_abs_dc": 0.001714,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.017615
+      },
+      "olfactory_bulb": {
+        "off_over_own": 0.0445,
+        "off_target_abs_dc": 0.00012,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.002702
+      },
+      "pallidum": {
+        "off_over_own": 0.1861,
+        "off_target_abs_dc": 0.000854,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.00459
+      },
+      "striatum": {
+        "off_over_own": 0.0759,
+        "off_target_abs_dc": 0.001681,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.022156
+      },
+      "thalamus": {
+        "off_over_own": 0.4708,
+        "off_target_abs_dc": 0.000524,
+        "off_target_dominant": false,
+        "own_abs_dc": 0.001112
+      }
+    },
+    "reading": "for a DIASCHISIS lesion the coherence deficit lands HARDER on distal circuits than at the lesion itself (mean off-target |dc| > own |dc|, ratio > 1 -- the hippocampus ~1.2x, the midbrain ~3.0x at the representative severity) -- the structural signature of remote dysfunction beyond the lesion; for a LOCAL-deficit lesion it concentrates at the lesion (ratio < 1 -- the cerebellum ~0.06x, an overwhelmingly focal deficit). The diaschisis <-> (off/own > 1) equivalence holds at every swept severity, tying 'diaschisis' to its clinical meaning. Sign-only; magnitudes [O].",
+    "reproduced": true
+  },
+  "L3_disruption_not_diaschisis": {
+    "_what": "the honest no-tuning result -- a clean hypothesis ('the lesions that most disrupt GLOBAL coordination are exactly the remote-diaschisis lesions') tested and FOUND FALSE",
+    "cerebellum_is_local_deficit_all_severities": true,
+    "cerebellum_is_top3_global_disruptor_all_severities": true,
+    "cerebellum_off_over_own_below_1_all_severities": true,
+    "clean_hypothesis_refuted": true,
+    "global_reach_hub_per_severity": {
+      "-0.9": "midbrain",
+      "-0.7": "cerebellum",
+      "-0.5": "cerebellum"
+    },
+    "local_lesion_maxes_global_disruption": true,
+    "reach_hub_drive_invariant": false,
+    "reach_per_severity": {
+      "-0.9": {
+        "cerebellum_is_local_deficit": true,
+        "cerebellum_off_over_own": 0.0636,
+        "cerebellum_reach": 0.010429,
+        "cerebellum_reach_rank": 3,
+        "top_global_disruptor": "midbrain",
+        "top_reach": 0.014917
+      },
+      "-0.7": {
+        "cerebellum_is_local_deficit": true,
+        "cerebellum_off_over_own": 0.0556,
+        "cerebellum_reach": 0.022807,
+        "cerebellum_reach_rank": 1,
+        "top_global_disruptor": "cerebellum",
+        "top_reach": 0.022807
+      },
+      "-0.5": {
+        "cerebellum_is_local_deficit": true,
+        "cerebellum_off_over_own": 0.0535,
+        "cerebellum_reach": 0.02099,
+        "cerebellum_reach_rank": 1,
+        "top_global_disruptor": "cerebellum",
+        "top_reach": 0.02099
+      }
+    },
+    "reproduced": true,
+    "top_global_disruptor_is_local_at_moderate_severities": true,
+    "two_axes_decoupled": true,
+    "verdict": "the lesions that most disrupt GLOBAL coordination are NOT the remote-diaschisis lesions: the single largest global disruptor is the CEREBELLUM, a LOCAL-deficit lesion, at the representative moderate severities (rank-1 at -0.5 and -0.7), and the cerebellum is a top-3 global disruptor at EVERY severity while producing NO diaschisis (LOCAL class, off/own < 1, at every severity) -- a lesion can max global disruption while being maximally local. Global-coordination disruption (reach) and remote diaschisis (off-target deficit) are TWO DISTINCT, decoupled spatial properties; which sites cause remote dysfunction is SITE-DETERMINED, not reducible to a 'global impact = diaschisis' rule. An HONEST contrast with §44: unlike the ictal case (where the cerebellum topped the reach ranking at EVERY intensity), the lesion global-reach hub is itself NOT drive-invariant -- it is the contained cerebellum at -0.5 and -0.7 but the remote midbrain at -0.9 -- so the very ranking shifts with severity; the decoupling is carried by the cerebellum being LOCAL-yet-top-reach across all severities. The refuted clean hypothesis is reported honestly -- the E1.4 lesson made concrete for stroke/lesion. A refuted clean hypothesis is a finding."
+  },
+  "L4_diaschisis_minority_relay_hub_class": {
+    "clinical_correspondence": "a DIRECTION-ONLY cited correspondence, never a magnitude or a prediction: clinically most focal lesions produce focal deficits, while diaschisis (remote dysfunction after focal injury -- e.g. crossed cerebellar diaschisis, thalamic/limbic remote effects, von Monakow's classical concept) is the recognised EXCEPTION at specific connected hubs -- consistent with the diaschisis set being a strict minority of relay hubs and with local deficit being the structural majority. NOT a patient-level prediction.",
+    "clinical_correspondence_grade": "[L] direction-only",
+    "coherent_minority_relay_hub_class": true,
+    "decoupled_from_global_reach_hub": true,
+    "diaschisis_equals_off_target_dominant_set": true,
+    "diaschisis_is_strict_minority": true,
+    "diaschisis_set": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "local_deficit_is_structural_default": true,
+    "n_diaschisis": 2,
+    "reading": "the two diaschisis lesions {hippocampus, midbrain} are simultaneously the E1.3 relay set AND the off-target-dominant set (L2), a STRICT MINORITY (2 of 12 -- local deficit is the structural default), AND decoupled from the global-reach hub (the local cerebellum at moderate severity) -- one coherent class of limbic/brainstem relay hubs. Remote diaschisis is structurally the EXCEPTION carried by specific relay hubs, not a generic property of lesions. Structure-only; the clinical correspondence is [L] direction-only.",
+    "reproduced": true
+  },
+  "S5_engine_invariance_guard": {
+    "R_direct_measured": "0.38961455156044245",
+    "_what": "a zero lesion (no node silenced) reproduces the frozen M9 coordination anchor bit-for-bit and the per-node field equals the baseline exactly -- the lesion-field reads are a pure structural read on the frozen kernel (no new mechanism)",
+    "baseline_equals_anchor": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "guard": true,
+    "matches_frozen_anchor_bitwise": true,
+    "offstate_R": "0.38961455156044245",
+    "offstate_field_equals_baseline": true,
+    "offstate_matches_direct_bitwise": true
+  },
+  "_what": "LESION-E1 -- stroke / lesion field: local deficit vs remote diaschisis. The SECOND region-specific application of the E1 spatial-localisation layer (§43) and the spatial sibling of the §44 focal-epilepsy application. §44 drove a region with a focal EXCITATORY (ictal) bias; this module SILENCES a region with a focal INHIBITORY (lesion) bias -- a stroke -- and asks whether the deficit stays LOCAL (a focal deficit) or disrupts circuits FAR from the lesion (DIASCHISIS), and whether remote diaschisis is the same thing as collapsing GLOBAL coordination. The lesion is a SILENCING bias on the frozen kernel, NOT a node deletion (which would break the kernel freeze) -- the handover's explicit lesion-modelling directive. This module IMPORTS the E1 SpatialField (it does NOT re-derive the kernel or coupling map). Four sign-only results: L1 the local-deficit/remote-diaschisis partition is drive-invariant over the moderate-to-severe core (the diaschisis set {hippocampus, midbrain} = the E1.3 relay set, fixed across the lesion-severity sweep -- whether a focal lesion stays local or causes remote diaschisis is a property of lesion LOCATION; the thalamus enters only at the mild sub-floor severity, reported honestly); L2 remote diaschisis is off-target dominance (the deficit lands harder on distal circuits than at the lesion -- the structural content of diaschisis); L3 (honest negative) global-coordination disruption is NOT remote diaschisis (the largest global disruptor is the LOCAL-deficit cerebellum, a top-3 global disruptor at every severity yet causing no diaschisis -- two distinct decoupled axes, the E1.4 lesson for stroke; the reach hub itself is not drive-invariant, an honest contrast with §44); L4 the diaschisis set is a coherent minority relay-hub class (local deficit is the structural default, remote diaschisis the exception carried by specific relay hubs). MECHANISM only -- a local/diaschisis class is a STRUCTURAL spatial quantity, NOT a felt deficit, NOT a real lesion/perfusion/connectome map, NOT a clinical prediction of which lesions cause remote dysfunction, and NOT prognostic or rehabilitation guidance. efficacy=0; not medical advice.",
+  "application_of_E1": {
+    "E1_supplied": "the E1.3 SELF-LOCALISING vs RELAY classification (drive-invariant, relay set {hippocampus, midbrain}) and the E1.2 heterogeneous global reach with a drive-stable hub for moderate-to-high drive -- a fixed spatial MAP of the frozen kernel, here READ under a SILENCING (lesion) bias",
+    "reuse_discipline": "imports SpatialField; does NOT re-derive the ephaptic kernel W0 or the k(b) coupling map; the lesion is a SILENCING bias on the frozen kernel, NEVER a node deletion; engine emerged READ-ONLY, byte-unchanged",
+    "severity_floor_inherited": "the moderate-to-severe severity floor |b0|>=0.5 is INHERITED from E1.2 (which certified reach-ranking invariance only for b0>=0.5), a principled reuse of the layer's own invariance scope -- NOT a tuned choice; the mild -0.3 probe is reported honestly to show why the scope is needed",
+    "sibling_with_sec44": "§44 drove a focal EXCITATORY (ictal) bias and read containment vs secondary generalisation; §45 silences with a focal INHIBITORY (lesion) bias and reads local deficit vs remote diaschisis -- the excitatory and inhibitory faces of the same E1 self/relay map, both finding the off-target axis decoupled from the global axis (L3/F3)",
+    "this_module_reads": "which lesions CONTAIN their deficit (stay local) and which cause REMOTE DIASCHISIS, and tests whether remote diaschisis coincides with collapsing GLOBAL coordination -- it finds it does NOT (L3), so remote dysfunction is site-determined, exactly the region-specific reading E1.4 demanded"
+  },
+  "cited_and_locked": {
+    "epilepsy_sibling_cited": "§44 (the first E1 application) drove a focal EXCITATORY (ictal) bias and read containment vs secondary generalisation; §45 silences with a focal INHIBITORY (lesion) bias and reads local deficit vs remote diaschisis -- the same self/relay map read in its two faces, both finding the off-target axis decoupled from the global axis (L3 mirrors F3)",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; whether any real lesion stays local or causes diaschisis by this structure is external",
+    "no_universal_disruption_law_LOCK": "global-coordination disruption is NOT remote diaschisis; the clean 'global impact = diaschisis' hypothesis is explicitly refuted, not forced -- remote dysfunction is site-determined (the E1.4 lesson for stroke)",
+    "not_clinical_LOCK": "nothing here is a real lesion, a perfusion/diffusion map, a real connectome, a diaschisis measurement, a prediction of which patient's lesion causes remote dysfunction, or prognostic/rehabilitation guidance; localisation and prognosis are external clinical decisions",
+    "partition_is_position_LOCK": "whether a focal lesion stays local or causes remote diaschisis is a fixed property of lesion LOCATION (the E1.3 relay class), drive-invariant over the moderate-to-severe core -- structure, not a fitted result",
+    "real_lesions_heterogeneous_LOCK": "real lesion consequences are HETEROGENEOUS (the vascular territory, white-matter tractography, the individual connectome, oedema, penumbra and reorganisation); this module asserts the SIGN/STRUCTURE of a focal silencing bias on the FROZEN kernel, not that any real lesion follows it",
+    "severity_floor_LOCK": "the |b0|>=0.5 moderate-to-severe scope is inherited from E1.2's own reach-ranking invariance floor, NOT a tuned choice; the mild -0.3 sub-floor probe (where the thalamus also relays) is reported honestly to show why the scope is needed",
+    "spatial_layer_cited": "the E1 spatial-localisation layer (§43) supplies the SpatialField class, the self/relay classification (E1.3) and the heterogeneous global reach (E1.2); this module shapes a focal SILENCING (lesion) bias on the frozen kernel, it does not re-derive it"
+  },
+  "honesty_ledger": {
+    "clean_hypothesis_refuted": "L3 reports a REFUTED clean hypothesis honestly (global-coordination disruption is NOT remote diaschisis) rather than forcing a single-axis 'global impact = diaschisis' narrative",
+    "clinical_prediction": "NONE -- no patient-level prediction of which lesion causes remote dysfunction, no localisation, no prognosis; the only clinical correspondence (L4) is [L] direction-only",
+    "consciousness_claim": 0.0,
+    "hard_problem_open": 1.0,
+    "lesion_is_silencing_bias_not_deletion": 1.0,
+    "lesion_severity": "OPEN [O] -- swept; signs/structure hold over the moderate-to-severe lesion-severity sweep, not tuned",
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "not_medical_advice": 1.0,
+    "reuses_E1_spatial_field": 1.0,
+    "severity_floor_inherited_not_tuned": "the |b0|>=0.5 scope is inherited from E1.2, not a tuned choice; the mild sub-floor probe is reported honestly",
+    "spatial_quantities_are_structural": 1.0
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_reproduced_bitwise": true
+  },
+  "lesion_model": {
+    "form": "a focal lesion = a strong focal INHIBITORY (silencing) bias at one region (the rest at baseline), via the SAME k = kappa/(1+|b|) [inhib] map as the SZ/epilepsy/E1 modules (no new constant); the lesioned node is SILENCED, NOT deleted, so the frozen kernel is reused intact; lesion severity b0 swept over {-0.5,-0.7,-0.9}",
+    "form_grade": "[F] forced -- the frozen ephaptic kernel W0 plus the existing k(b) map; no free constant; a zero lesion reproduces the scalar engine bit-for-bit",
+    "lesion_severity_sweep": [
+      -0.5,
+      -0.7,
+      -0.9
+    ],
+    "mild_subfloor_probe": -0.3,
+    "node_not_deleted": "the lesion is a SILENCING inhibitory bias on the frozen kernel, NEVER a node deletion -- deleting a node would break the frozen W0 and forfeit kernel reuse (handover's explicit lesion-modelling directive)",
+    "profile_grade": "[O] swept -- the lesion severity is a SWEEP, not a tuned constant; every SIGN/STRUCTURE holds across the moderate-to-severe sweep",
+    "representative_severity": -0.7,
+    "reused_constants": {
+      "R19_fold_spinodal": 0.3849,
+      "baseline_R0_M9_anchor": 0.3896145516,
+      "kappa_measured": 0.5496,
+      "n_regions": 12
+    }
+  },
+  "overall": {
+    "diaschisis_is_off_target_dominance": true,
+    "diaschisis_minority_relay_hub_class": true,
+    "disruption_not_diaschisis": true,
+    "engine_invariance_guard": true,
+    "is_full_module": true,
+    "lesion_partition_drive_invariant": true,
+    "verdict": "stroke/lesion field -- local deficit vs remote diaschisis -- the second region-specific application of the E1 spatial-localisation layer and the spatial sibling of §44 focal epilepsy. Silencing each region as a focal lesion (a strong inhibitory bias, NOT a node deletion), the local-deficit/remote-diaschisis partition is DRIVE-INVARIANT over the moderate-to-severe core, the diaschisis (remote-disruption) set {hippocampus, midbrain} = the E1.3 relay set, fixed at every severity (L1; the thalamus enters only at the mild sub-floor severity, reported honestly); diaschisis IS off-target dominance, the structural content of remote dysfunction (L2); global-coordination disruption is NOT remote diaschisis -- the largest global disruptor is the LOCAL-deficit cerebellum (a top-3 global disruptor at every severity yet causing no diaschisis), so the two are distinct decoupled axes (L3, the honest no-tuning result, the E1.4 lesson for stroke; the reach hub itself is not drive-invariant, an honest contrast with §44); and the diaschisis set is a coherent minority relay-hub class, local deficit the structural default (L4). A zero lesion reproduces the frozen M9 anchor bit-for-bit (S5). The lesion form is forced, the severity swept, every sign survives the sweep, no new tuned constant, engine byte-unchanged; the SpatialField is imported, not re-derived, and the lesion is a silencing bias, never a node deletion. Axis-A firewall: a local/diaschisis class is a structural spatial quantity, NOT a felt deficit, NOT a real lesion/perfusion/connectome map, NOT a prediction of which lesions cause remote dysfunction, NOT prognostic or rehabilitation guidance. efficacy=0; not medical advice."
+  },
+  "preregistered_results": {
+    "L1_lesion_partition_drive_invariant": {
+      "claim": "silencing each region as a focal lesion, the local-deficit/remote-diaschisis partition is identical across the moderate-to-severe lesion-severity sweep and the diaschisis (relay) set is {hippocampus, midbrain} = the E1.3 relay set at every severity",
+      "status": "CONFIRMED"
+    },
+    "L2_diaschisis_is_off_target_dominance": {
+      "claim": "a lesion is diaschisis IFF its coherence deficit lands harder off-target than at the lesion (mean off-target |dc| > own |dc|), at every swept severity",
+      "status": "CONFIRMED"
+    },
+    "L3_disruption_not_diaschisis": {
+      "claim": "global-coordination disruption is NOT remote diaschisis: the largest global disruptor is the LOCAL-deficit cerebellum (a top-3 global disruptor at every severity yet causing no diaschisis), so the two are decoupled axes; the clean 'global impact = diaschisis' hypothesis is refuted",
+      "status": "CONFIRMED"
+    },
+    "L4_diaschisis_minority_relay_hub_class": {
+      "claim": "the diaschisis set is the E1.3 relay set AND the off-target-dominant set, a strict minority (local deficit the default), decoupled from the global-reach hub -- one coherent minority relay-hub class",
+      "status": "CONFIRMED"
+    }
+  },
+  "roadmap_id": "E1 region-specific application #2 (stroke/lesion field), the spatial sibling of the §44 focal-epilepsy application; the second application of the E1.3 self/relay map named owed by §43; RESEARCH_ROADMAP_post_autism_adhd.md"
+}

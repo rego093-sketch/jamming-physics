@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acoustic Length: Structurally Hard — Vacuum-Inflow Cosmology §14.1 | Jamming Physics</title>
+<meta name="description" content="The CMB acoustic length is structurally hard, not merely unknown — the three criteria attacked, with a Big-Bang-free interpretation as hypothesis.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/14-acoustic-length-structurally-hard/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Acoustic Length: Structurally Hard","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/14-acoustic-length-structurally-hard/","knowsAbout":["acoustic length","sound horizon","CMB acoustic scale","structural difficulty","Big-Bang-free interpretation"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§14.1 Acoustic Length: Structurally Hard"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §14.1</nav></header>
+<main><!--vp-v1.8-->
+<h1>Why the Acoustic Length Is Structurally Hard</h1>
+<p class="answer">The acoustic-peak scale is not merely an unknown number for the framework but structurally hard: a present, static emission lattice lacks the early sound-horizon physics that sets it in ΛCDM. This page attacks the three criteria head-on, shows why the length is structurally rather than contingently missing, and offers a Big-Bang-free interpretation of the scale as a hypothesis.</p>
+<p class="abstract">Reproducing the CMB acoustic length requires a standard ruler the framework does not obviously have. This page attacks the three criteria a candidate must meet, argues the missing length is structural — tied to the absence of an early sound horizon — rather than a contingent gap, and offers a Big-Bang-free reading of the scale as an explicit hypothesis, not a derivation. The photon-fluid sound speed is c_s = 1/√3.</p>
+<aside class="claim-strip page"><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/14-acoustic-length-structurally-hard/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>Attacking the three criteria head-on</h2>
+<p>A dedicated calculation (<code>derive_acoustic_length.py</code>; deterministic, constants only) takes
+the three criteria one at a time and reports, without softening, which of them close.</p>
+<em>Criterion (i)—derive the length.</em> Every natural length the framework offers is computed and
+compared with the 150Mpc target. The inflow clock sets only microscopic scales—the per-nucleon
+length c/νₚ≈10³km, and a cosmic-mean inflow length far larger than the horizon—
+which miss 150Mpc by roughly nineteen and thirty-five orders of magnitude. The only scales of
+cosmological order are the Hubble length c/H₀≈4300Mpc and its fixed multiple
+2π c/H₀. Reaching 150Mpc would require dividing the Hubble length by ≈28.6, a pure
+order-ten number with no forced origin in the π-chain νₙ=nπ²⁽ⁿ⁻¹⁾ or in the geometry;
+choosing such a factor to land on the target is precisely the post-hoc tuning the governance forbids.
+Criterion (i) therefore <em>does not close</em>. What the audit does accomplish is to sharpen the gap:
+the missing object is a cosmological <em>boundary</em> (cavity) length, and the inflow constants
+demonstrably do not supply one.
+<em>Criterion (ii)—the peak heights, by a genuine standing wave.</em> A resonant cavity has
+phase-coherent eigenmodes kₙ=nπ/L <em>by construction</em>: the boundaries, not a synchronized
+big-bang clock, select the discrete standing modes. With baryon loading the temperature transfer is
+Θ(k)=(1+R)cos(kL)-R, so the power |Θ|² raises odd (compression) peaks above even
+(rarefaction) peaks—the observed alternation—and Silk damping rolls off the tail. The calculation
+contrasts this with an isolated inflow shell, whose |sin(kL)/(kL)|² envelope falls monotonically
+as 1/k² with no alternation:
+<pre class="vb">
+standing-wave cavity:    peaks at k*L/pi = 1,2,3,4   heights 1.00, 0.20, 0.91, 0.17
+                         odd&gt;even alternation: 1st&gt;2nd and 3rd&gt;2nd (baryon signature)
+isolated shell |sinc|^2: peaks shifted, heights 1.00, 0.35, 0.18, 0.11
+                         monotonic 1/k^2 fall-off, NO alternation (wrong height pattern)
+</pre>
+<p>So the height <em>pattern</em>—the part a single shell could not deliver—does follow from a genuine
+standing-wave cavity. Criterion (ii) is met at the level of mechanism (the loading R and the damping
+scale enter as standard inputs, exactly as in the standard model, which does not derive them from
+first principles either); what stays tied to (i) is that the cavity length is the same underived
+150Mpc.</p>
+<em>Criterion (iii)—the γ-ray dispersion limit.</em> A 150Mpc standing wave is an
+ultra-low-frequency mode, ν≈3×10⁻¹⁷Hz. A 10GeV burst photon sits at
+ν≈2×10²⁴Hz—some forty-one orders higher—so the coherent background is a rigid,
+near-DC offset on γ-ray scales and cannot add high-wavenumber dispersion. (The lattice
+dispersion that drives the Chapter 2 tension lives near c/a, only about two orders above the
+γ-ray scale; that proximity <em>is</em> the pre-existing tension, and it is untouched by a
+background forty-one orders below it.) Criterion (iii) closes.
+<p>The tally is therefore: (iii) closed outright; (ii) closed at the level of mechanism; (i) the single
+remaining open core, now sharpened from a vague conflict to one precisely named missing object—a
+cosmological cavity length ≈150Mpc. Two of the three criteria close; the chapter stays an
+open program (\textsf{HYP}) on the strength of the one that does not, and—this is the point of the
+discipline—no constant was moved to fit the target, so the gap is reported as a gap. It is the same
+length Chapter 15 needs for the BAO ruler; the absolute 2.725K value of Chapter 9 remains
+separately open.</p>
+
+<h2>Why the missing length is structurally hard, not merely unknown</h2>
+<p>It would be easy to leave criterion (i) as a bare “number we have not yet guessed.” A second
+deterministic diagnostic (<code>probe_subhorizon_desert.py</code>) shows the gap is sharper than that:
+the ≈150Mpc scale is structurally hard for a present-emission lattice, for a reason that
+also explains why no honest patch is available.</p>
+<h4>The sub-horizon desert.</h4>
+ Listing every length the fixed constants can build—the lattice
+cell a, the per-nucleon inflow length c/νₚ≈10³km, their geometric mean, the
+Hubble length c/H₀, the relativistic Jeans length c√π/Gρ_c, and the a₀-length
+2π c/H₀—places them in exactly two regimes: microscopic inflow scales (lesssim10⁶m)
+and cosmological scales ( 10²⁶m). The target ≈5×10²⁴m
+(150Mpc) falls in the empty  10-decade gap between them, 8.6 dex above the nearest
+microscopic-cosmological geometric mean and 1.5 dex below the Hubble length. The only dimensionless
+cosmological ratio the framework supplies is H₀/νₚ; writing L=(c/H₀)(H₀/νₚ)^p
+and solving for the exponent that lands on 150Mpc returns p≈0.072, not 0,tfrac12,1,2,
+so no clean power-law reaches the scale either. The desert is real.
+<h4>What kind of object 150Mpc is.</h4>
+ In the standard model the scale is not a geometric
+constant but a <em>comoving sound-horizon integral</em>,
+<figure class="eq" id="eq:soundhorizon"><img src="/cosmology/eq/cosmology/cos-14-001.svg" data-eq="cos-14-001" width="190" height="45" loading="lazy" alt="\begin{equation} r_{s}\;=\;\int_{0}^{a_{\mathrm{rec}}}\frac{c_{s}(a)}{a^{2}H(a)}\,\mathrm{d}a, \end{equation}"></figure>
+<p>the distance a baryon–photon pressure wave travels through an <em>expanding</em> fluid up to a specific
+early epoch (z_(rec)≈1090). Evaluating Eq. <a class="xref" data-ref="eq:soundhorizon">(soundhorizon)</a> with standard
+parameters—invoked here only diagnostically, as they belong to the history this volume
+rejects—returns rₛ≈144Mpc and (c/H₀)/rₛ≈30, with the baryon–photon ratio
+at recombination R(a_(rec))≈0.62 landing independently on the R≈0.6 used in
+the height calculation above. The lesson is the decisive one: the “factor  29” between the
+Hubble length and 150Mpc is the <em>value of that integral</em>—it depends on
+Ωₘ,Ω_b,Ω_r and z_(rec), and shifts with them (it is ≈28.6 at
+H₀=70, ≈30.8 at H₀=67.4)—not a clean O(10) geometric number. A
+present-emission lattice has neither ingredient the integral requires: no expansion history
+a(η)≠const to integrate over, and no recombination epoch a_(rec) to integrate
+up to. It therefore cannot produce 150Mpc by the standard route <em>at all</em>—the route is
+structurally absent, not merely unevaluated—and dressing the result as L=(c/H₀)/28.6 with a
+clean constant would misrepresent a messy history integral as forced geometry: physically false, and
+exactly the tuning the governance forbids.</p>
+<h4>The gap, named precisely.</h4>
+ The two diagnostics together promote criterion (i) from “find a
+number” to a named structural object. The only sources of a 150Mpc scale are (a) an early epoch
+with a genuine expansion history—excluded by the volume's own thesis—or (b) a new present-day,
+sub-horizon, length-generating mechanism, such as a jamming/cavity correlation length pinned to the
+fixed constants, which the framework does not currently contain. This does not close criterion (i); it
+states, as precisely as the framework allows, exactly what would.
+
+<h2>A Big-Bang-free interpretation of the scale (hypothesis)</h2>
+<p>The structural diagnostic names what a closure would require: a present-day,
+sub-horizon, length-<em>selecting</em> mechanism. The companion fluid-dynamics
+volume supplies exactly that mechanism, and it invites a reading of the
+150Mpc scale that needs no hot dense past. We record it here as a
+<em>hypothesis-level interpretation</em>—one consistent way the scale <em>can</em>
+be read—and emphasise at the outset what it is not: it is not a first-principles
+derivation of the number 150, and no specific π-factor is claimed
+(<code>acoustic_length_hypothesis_interpretation.py</code> reports all five test
+routes and the non-claims).</p>
+<h4>The mechanism (shown, not fitted).</h4>
+ A configured, inflowing medium
+<em>selects</em> a length through a binding-versus-penalty linear response
+λ(k)=μ+ε k²-σ k⁴, whose maximiser
+L_(*)=2π√(2)√(σ/ε) carries an exact one-half
+exponent independent of the growth offset μ; the companion volume derives this
+and recovers it in a blind direct simulation (hatβ≈0.501), with a
+global attractor at x_(*)=2/π and slope -(π/2)⁵ on the <em>same</em>
+81+1 lattice (#R²≤6=81 plus a nozzle, i.e. 3⁴+1) that the
+proton core uses here. The selection <em>prefactor</em> 2π√2≈8.89 is
+forced, and it independently matches the factor  10 separating the
+supercluster-scale inflow length (√GM/a₀≈10–15Mpc) from the
+BAO scale.
+<h4>The interpretation.</h4>
+ Inflow is rotational—two-dimensional, with an
+axial Ekman through-flux that <em>builds</em> structure—at galaxy and cluster
+scales; as the scale grows, isotropy and Gauss's law force the inflow to become
+three-dimensional (the +1 nozzle that carries through-flux in d=2
+<em>closes</em> in a d=3 sphere), and the net structure-building flux ceases. The
+largest rotationally-built scale is therefore a 2D→3D
+crossover—which coincides with the observed transition from the anisotropic
+cosmic web to statistical homogeneity (the “End of Greatness,”  100–150Mpc,
+comparable to the BAO scale). On this reading the acoustic scale is a
+<em>present-day dimensional crossover</em>, not a relic frozen at recombination—a
+genuinely Big-Bang-free account of why the scale exists and sits where it does.
+<h4>What stays open, and how it is classified.</h4>
+ The interpretation supplies
+the mechanism and the forced prefactor; it does <em>not</em> force the absolute
+number. Five independent routes were tested computationally—the fixed constants
+alone, cluster dynamics, the selection law, the inflow rate with the c-ceiling,
+and the rotational-to-3D crossover—and all five deliver the mechanism type while
+leaving the <em>absolute</em> normalisation dependent on the matter distribution's
+amplitude (equivalently, the literal c-limit places the crossover at the Hubble
+scale, and 150Mpc would need an unforced velocity fraction  0.075c).
+The required factor  28.6 is moreover fitted to better than 1% by several
+forced-constant forms (3(π/2)⁵=28.69, 9π=28.27, 3π²=29.61), so
+claiming any one would be the curve-fitting the governance forbids—the same
+ground on which the physics volume rejects 4π(11-δ) as an account of
+1/137. We therefore close criterion (i) <em>at the level of mechanism</em>
+(\textsf{HYP}) and reclassify the absolute value as an <em>empirical
+normalisation</em>, the out-of-scope category the volume already applies to the
+light-element abundances, the absolute g, and the absolute 2.725K. No
+constant was moved.
+<nav class="pn"><a rel="prev" href="/cosmology/14-cmb-anisotropies-acoustic-scale/">← §14</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/15-large-scale-structure-bao/">§15 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

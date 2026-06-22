@@ -1,0 +1,1262 @@
+{
+ "author": "Young Jae Lee",
+ "axis": "drug<->DISEASE INVESTIGATION (a clinical-trial registry) -- independent of the drug<->target axis (V3-V7) and the approved-indication axis (V8).",
+ "grade": "[O] direction-only; magnitude-free; investigational-plausibility audit of a novel-labelled set",
+ "inherited_anchors": {
+  "all_match": true,
+  "candidate_register_chain_head": "e94bc7d2cf9fbc8259c16f1bdafc5e083d0e96c7af5299d7727d17c7d2aca670",
+  "disease_inputs_sha256": "ca6c044e7dc1108c33ade0f14854eacaa05eef927fc96c12cadbbd4c54aba0ca",
+  "expected_prefixes": {
+   "disease_inputs_sha256": "ca6c044e7dc1108c",
+   "mapped_levers_sha256": "ab063b32abf1f7ed",
+   "register_chain_head": "e94bc7d2cf9fbc8259c16f1bdafc5e083d0e96c7af5299d7727d17c7d2aca670"
+  },
+  "mapped_levers_sha256": "ab063b32abf1f7ed6ec6d5a97ffbfed3e1f619b9ceac38e914fe60cc21fd0b3b",
+  "note": "validation is strictly READ-ONLY over the GROWN 152-core; 0 of the 152 derivations were re-run.",
+  "per_anchor_match": {
+   "disease_inputs_sha256": true,
+   "mapped_levers_sha256": true,
+   "register_chain_head": true
+  }
+ },
+ "license": "CC BY 4.0",
+ "mechanical_match": {
+  "disease_present": "some CONDITION, folded, is a SUPERSET of >=1 pre-registered disease token-set (parent/umbrella conditions lacking a distinguishing token are REJECTED).",
+  "drug_present": "some intervention NAME, folded, is a SUPERSET of >=1 pre-registered agent token-set (rejects wrong-salt same-family, e.g. glycerol- vs sodium-phenylbutyrate).",
+  "fold_rule": "lowercase; ae->e, oe->e; non-alphanumeric->space; per-token singularize; DROP single-char tokens; order-insensitive frozenset (V8 fold() + single-char drop).",
+  "principle": "trust NO fuzzy engine expansion; a trial counts ONLY if a post-filter passes.",
+  "superset_semantics": "OR across a disease's token-SETS; AND within a set.",
+  "token_overlap_auto_binding": "REJECTED (inherited from V8)."
+ },
+ "metrics": {
+  "M1_in_disease": {
+   "denominator": 72,
+   "hit_pairs": [
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Cystic fibrosis OMIM 219700",
+     "modality": "repurposed",
+     "n_trials_scanned": 3,
+     "stratum": "BROAD_FAMILY",
+     "trials": [
+      {
+       "nctId": "NCT00016744",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT00590538",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "TERMINATED"
+      }
+     ]
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Spinal muscular atrophy (5q SMA) OMIM 253300",
+     "modality": "repurposed",
+     "n_trials_scanned": 3,
+     "stratum": "BROAD_FAMILY",
+     "trials": [
+      {
+       "nctId": "NCT00439218",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "TERMINATED"
+      },
+      {
+       "nctId": "NCT00439569",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "TERMINATED"
+      },
+      {
+       "nctId": "NCT00528268",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      }
+     ]
+    },
+    {
+     "agent": "DTX401",
+     "disease": "Glycogen storage disease type Ia / von Gierke disease (G6PC1 deficiency) OMIM 232200",
+     "modality": "purpose_built",
+     "n_trials_scanned": 4,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT05139316",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      }
+     ]
+    },
+    {
+     "agent": "FBX-101",
+     "disease": "Krabbe disease (globoid-cell leukodystrophy) OMIM 245200",
+     "modality": "purpose_built",
+     "n_trials_scanned": 3,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT04693598",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT05739643",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT06308718",
+       "phases": [],
+       "status": "TERMINATED"
+      }
+     ]
+    },
+    {
+     "agent": "ION440",
+     "disease": "MECP2 duplication syndrome OMIM 300260",
+     "modality": "purpose_built",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT06430385",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "N-acetylmannosamine",
+     "disease": "GNE myopathy / hereditary inclusion-body myopathy (GNE epimerase/kinase) OMIM 605820",
+     "modality": "repurposed",
+     "n_trials_scanned": 4,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT01634750",
+       "phases": [
+        "PHASE1"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT02346461",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT04231266",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "QR-1123",
+     "disease": "Autosomal dominant retinitis pigmentosa, RHO-related (adRP; RHO toxic gain-of-function / rhodopsin misfolding, e.g. P23H) OMIM 613731",
+     "modality": "purpose_built",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT04123626",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "UX111",
+     "disease": "Mucopolysaccharidosis type IIIA (Sanfilippo syndrome type A) OMIM 252900",
+     "modality": "purpose_built",
+     "n_trials_scanned": 3,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT02716246",
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ],
+       "status": "RECRUITING"
+      },
+      {
+       "nctId": "NCT04088734",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "TERMINATED"
+      }
+     ]
+    },
+    {
+     "agent": "ambroxol",
+     "disease": "Gaucher disease OMIM 230800",
+     "modality": "repurposed",
+     "n_trials_scanned": 4,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT01463215",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "SUSPENDED"
+      },
+      {
+       "nctId": "NCT03950050",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT07285369",
+       "phases": [
+        "NA"
+       ],
+       "status": "TERMINATED"
+      }
+     ]
+    },
+    {
+     "agent": "bevacizumab",
+     "disease": "Hereditary haemorrhagic telangiectasia (Osler-Weber-Rendu) OMIM 187300",
+     "modality": "repurposed",
+     "n_trials_scanned": 13,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT00843440",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT01397695",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT01402531",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT01408030",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT01507480",
+       "phases": [
+        "PHASE1"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT02106520",
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ],
+       "status": "TERMINATED"
+      },
+      {
+       "nctId": "NCT02389959",
+       "phases": [
+        "PHASE4"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT03227263",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT04404881",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT06039124",
+       "phases": [],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT07445347",
+       "phases": [],
+       "status": "ENROLLING_BY_INVITATION"
+      }
+     ]
+    },
+    {
+     "agent": "encaleret",
+     "disease": "Autosomal dominant hypocalcaemia type 1 (CASR gain-of-function) OMIM 601198",
+     "modality": "repurposed",
+     "n_trials_scanned": 3,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT04581629",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT05680818",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT07080385",
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ],
+       "status": "RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "flecainide",
+     "disease": "Catecholaminergic polymorphic ventricular tachycardia (RYR2 gain-of-function) OMIM 604772",
+     "modality": "repurposed",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT01117454",
+       "phases": [
+        "NA"
+       ],
+       "status": "COMPLETED"
+      }
+     ]
+    },
+    {
+     "agent": "hydroxyurea",
+     "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985",
+     "modality": "repurposed",
+     "n_trials_scanned": 24,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT00001958",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT00336362",
+       "phases": [
+        "NA"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT03183375",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "UNKNOWN"
+      },
+      {
+       "nctId": "NCT03653338",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "RECRUITING"
+      },
+      {
+       "nctId": "NCT03763656",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT05132270",
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT05357482",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT06153784",
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT06239389",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT06490601",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT06606886",
+       "phases": [
+        "PHASE4"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT07292259",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      }
+     ]
+    },
+    {
+     "agent": "losartan",
+     "disease": "Marfan syndrome (FBN1 deficiency) OMIM 154700",
+     "modality": "repurposed",
+     "n_trials_scanned": 9,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT00429364",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT00593710",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT00651235",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "UNKNOWN"
+      },
+      {
+       "nctId": "NCT00683124",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "UNKNOWN"
+      },
+      {
+       "nctId": "NCT00723801",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT00763893",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "TERMINATED"
+      },
+      {
+       "nctId": "NCT00782327",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT01145612",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "UNKNOWN"
+      }
+     ]
+    },
+    {
+     "agent": "mRNA-3705",
+     "disease": "Methylmalonic acidaemia (MMUT deficiency) OMIM 251000",
+     "modality": "purpose_built",
+     "n_trials_scanned": 2,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT04899310",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "TERMINATED"
+      },
+      {
+       "nctId": "NCT05295433",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "trametinib",
+     "disease": "Noonan syndrome (PTPN11 gain-of-function) OMIM 163950",
+     "modality": "repurposed",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT06555237",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "RECRUITING"
+      }
+     ]
+    },
+    {
+     "agent": "tranexamic acid",
+     "disease": "Hereditary angioedema (C1-inhibitor deficiency) OMIM 106100",
+     "modality": "repurposed",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT00500656",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "COMPLETED"
+      }
+     ]
+    },
+    {
+     "agent": "zorevunersen",
+     "disease": "Dravet syndrome (SCN1A; NaV1.1 loss-of-function, GABAergic-interneuron haploinsufficiency) OMIM 607208",
+     "modality": "purpose_built",
+     "n_trials_scanned": 3,
+     "stratum": "SPECIFIC",
+     "trials": [
+      {
+       "nctId": "NCT04442295",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "status": "COMPLETED"
+      },
+      {
+       "nctId": "NCT04740476",
+       "phases": [
+        "PHASE2"
+       ],
+       "status": "ACTIVE_NOT_RECRUITING"
+      },
+      {
+       "nctId": "NCT06872125",
+       "phases": [
+        "PHASE3"
+       ],
+       "status": "RECRUITING"
+      }
+     ]
+    }
+   ],
+   "in_disease_hits": 18,
+   "note": "HEADLINE plausibility signal; a hit = a registered trial with BOTH the agent token and the disease token mechanically present. Under-count expected (acronym-only/ultra-rare).",
+   "rate": 0.25
+  },
+  "M2_specificity": {
+   "BROAD_FAMILY": {
+    "agents": [
+     "N-acetylcysteine",
+     "sodium phenylbutyrate",
+     "ursodeoxycholic acid"
+    ],
+    "denominator": 47,
+    "in_disease_hits": 2,
+    "rate": 0.0426
+   },
+   "SPECIFIC": {
+    "agents": [
+     "AMT-130",
+     "DTX401",
+     "FBX-101",
+     "ION440",
+     "L-type calcium channel blocker",
+     "N-acetylmannosamine",
+     "QR-1123",
+     "TSHA-101",
+     "UX111",
+     "ambroxol",
+     "bevacizumab",
+     "encaleret",
+     "flecainide",
+     "hydroxyurea",
+     "infigratinib",
+     "losartan",
+     "mRNA-3705",
+     "sodium-channel blocker",
+     "tolvaptan",
+     "tralesinidase alfa",
+     "trametinib",
+     "tranexamic acid",
+     "triheptanoin",
+     "zorevunersen"
+    ],
+    "denominator": 25,
+    "in_disease_hits": 16,
+    "rate": 0.64
+   },
+   "enrichment_specific_over_broad_x": 15.0,
+   "reading": "SPECIFIC agents (named gene-therapies/ASOs/targeted drugs developed FOR these diseases) carry high in-disease investigation; the BROAD generic-chaperone stratum carries low/zero -> the structural-artifact stratum is identified EMPIRICALLY, not assumed.",
+   "specificity_threshold_K": 3
+  },
+  "M3_related_class": {
+   "n_probes": 6,
+   "policy": "BROAD agents only; reported SEPARATELY; NON-UPGRADING (never rescues a specific pair from the structural stratum); a judgment-bounded transparency note, not a scored signal.",
+   "related_class_live": [
+    {
+     "agent": "N-acetylcysteine",
+     "probe_disease": "retinitis pigmentosa (any)",
+     "related_class": "retinal_antioxidant",
+     "trials": [
+      "NCT04864496",
+      "NCT05537220",
+      "NCT07290530"
+     ]
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "probe_disease": "cystic fibrosis (CFTR misfolding)",
+     "related_class": "lysosomal_misfolding_chaperone",
+     "trials": [
+      "NCT00016744",
+      "NCT00590538"
+     ]
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "probe_disease": "urea cycle disorder",
+     "related_class": "lysosomal_misfolding_chaperone",
+     "trials": [
+      "NCT00345605",
+      "NCT02111200"
+     ]
+    }
+   ]
+  },
+  "M4_structural_residue": {
+   "n_structural_residue": 54,
+   "reading": "externally-UNTESTED structural [O] hypotheses -- flagged & down-weighted (§5.4), NOT refuted; absence in a US registry is not absence of mechanism.",
+   "residue_pairs": [
+    {
+     "agent": "N-acetylcysteine",
+     "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "N-acetylcysteine",
+     "disease": "Choroideremia (CHM / REP1) OMIM 303100",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "N-acetylcysteine",
+     "disease": "Leber congenital amaurosis type 2 (RPE65) OMIM 204100",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "N-acetylcysteine",
+     "disease": "Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "N-acetylcysteine",
+     "disease": "X-linked retinitis pigmentosa (RPGR) OMIM 300029",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Adenosine deaminase deficiency (ADA-SCID) OMIM 102700",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Alpha-1-antitrypsin deficiency OMIM 613490",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Alpha-mannosidosis (MAN2B1 deficiency) OMIM 248500",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985",
+     "modality": "repurposed",
+     "n_trials_scanned": 1,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency) OMIM 236200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Congenital hyperinsulinism (K_ATP-channel; ABCC8 + KCNJ11) OMIM 256450",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Duchenne muscular dystrophy OMIM 310200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Fabry disease OMIM 301500",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Friedreich ataxia OMIM 229300",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Gaucher disease OMIM 230800",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Leptin receptor deficiency (severe early-onset obesity) OMIM 614963",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I) OMIM 607014",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Mucopolysaccharidosis type IIIC (Sanfilippo syndrome type C) OMIM 252930",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Nephrogenic diabetes insipidus, X-linked (AVPR2 loss-of-function; vasopressin V2 receptor) OMIM 304800",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Pompe disease OMIM 232300",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Pyruvate kinase deficiency (erythrocyte / liver pyruvate kinase deficiency; PKLR; chronic non-spherocytic haemolytic anaemia) OMIM 266200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Rett syndrome OMIM 312750",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "sodium phenylbutyrate",
+     "disease": "Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Adenosine deaminase deficiency (ADA-SCID) OMIM 102700",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Alpha-1-antitrypsin deficiency OMIM 613490",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Alpha-mannosidosis (MAN2B1 deficiency) OMIM 248500",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Classical homocystinuria (cystathionine-beta-synthase deficiency) OMIM 236200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Congenital hyperinsulinism (K_ATP-channel; ABCC8 + KCNJ11) OMIM 256450",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Cystic fibrosis OMIM 219700",
+     "modality": "repurposed",
+     "n_trials_scanned": 2,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Duchenne muscular dystrophy OMIM 310200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Fabry disease OMIM 301500",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Friedreich ataxia OMIM 229300",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Gaucher disease OMIM 230800",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Leptin receptor deficiency (severe early-onset obesity) OMIM 614963",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I) OMIM 607014",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Mucopolysaccharidosis type IIIC (Sanfilippo syndrome type C) OMIM 252930",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Nephrogenic diabetes insipidus, X-linked (AVPR2 loss-of-function; vasopressin V2 receptor) OMIM 304800",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Pompe disease OMIM 232300",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Pyruvate kinase deficiency (erythrocyte / liver pyruvate kinase deficiency; PKLR; chronic non-spherocytic haemolytic anaemia) OMIM 266200",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Rett syndrome OMIM 312750",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Spinal muscular atrophy (5q SMA) OMIM 253300",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "ursodeoxycholic acid",
+     "disease": "Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "BROAD_FAMILY"
+    },
+    {
+     "agent": "AMT-130",
+     "disease": "Huntington disease OMIM 143100",
+     "modality": "purpose_built",
+     "n_trials_scanned": 2,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "L-type calcium channel blocker",
+     "disease": "Timothy syndrome (CACNA1C, CaV1.2 gain) OMIM 601005",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "TSHA-101",
+     "disease": "Sandhoff disease (GM2 gangliosidosis, variant 0) OMIM 268800",
+     "modality": "purpose_built",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "TSHA-101",
+     "disease": "Tay-Sachs disease (GM2 gangliosidosis, variant B) OMIM 272800",
+     "modality": "purpose_built",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "infigratinib",
+     "disease": "Crouzon syndrome (FGFR2 gain-of-function) OMIM 123500",
+     "modality": "repurposed",
+     "n_trials_scanned": 4,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "sodium-channel blocker",
+     "disease": "Inherited (primary) erythromelalgia (SCN9A, Nav1.7 gain) OMIM 133020",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "tolvaptan",
+     "disease": "Nephrogenic syndrome of inappropriate antidiuresis (NSIAD) -- AVPR2 gain-of-function (constitutively-active vasopressin V2 receptor; e.g. R137C/R137L, F229V, I130N) OMIM 300539",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "tralesinidase alfa",
+     "disease": "Mucopolysaccharidosis type IIIB (Sanfilippo syndrome type B) OMIM 252920",
+     "modality": "purpose_built",
+     "n_trials_scanned": 1,
+     "stratum": "SPECIFIC"
+    },
+    {
+     "agent": "triheptanoin",
+     "disease": "GLUT1 deficiency syndrome / De Vivo disease (SLC2A1 glucose-transporter-1 defect) OMIM 606777",
+     "modality": "repurposed",
+     "n_trials_scanned": 0,
+     "stratum": "SPECIFIC"
+    }
+   ]
+  },
+  "cross_tab": {
+   "rediscovery_in_disease_sanity_floor": {
+    "argument": "a drug with an APPROVED indication for a disease (V8 confirmed 31/36 rediscovery pairs) was necessarily INVESTIGATED for it -> rediscovery pairs carry trials by entailment; a live sample is re-confirmed in the off-manifest refetch audit.",
+    "entailed_by_v8": true,
+    "v8_rediscovery_precision": "31/36"
+   },
+   "v8_novel_given_approved_indication": 0,
+   "v8_reaffirmed": "these 69 pairs are NOT approved indications (V8 MED-RT may_treat=0 for each); an in-disease TRIAL is investigation, a strictly weaker and orthogonal status."
+  },
+  "post_hoc_modality": {
+   "purpose_built": [
+    {
+     "agent": "DTX401",
+     "disease": "Glycogen storage disease type Ia / von Gierke disease (G6PC1 deficiency) OMIM 232200"
+    },
+    {
+     "agent": "FBX-101",
+     "disease": "Krabbe disease (globoid-cell leukodystrophy) OMIM 245200"
+    },
+    {
+     "agent": "ION440",
+     "disease": "MECP2 duplication syndrome OMIM 300260"
+    },
+    {
+     "agent": "QR-1123",
+     "disease": "Autosomal dominant retinitis pigmentosa, RHO-related (adRP; RHO toxic gain-of-function / rhodopsin misfolding, e.g. P23H) OMIM 613731"
+    },
+    {
+     "agent": "UX111",
+     "disease": "Mucopolysaccharidosis type IIIA (Sanfilippo syndrome type A) OMIM 252900"
+    },
+    {
+     "agent": "mRNA-3705",
+     "disease": "Methylmalonic acidaemia (MMUT deficiency) OMIM 251000"
+    },
+    {
+     "agent": "zorevunersen",
+     "disease": "Dravet syndrome (SCN1A; NaV1.1 loss-of-function, GABAergic-interneuron haploinsufficiency) OMIM 607208"
+    }
+   ],
+   "reading": "purpose-built in-disease trial => the kit's DERIVED DIRECTION matches the field's investigational direction (corroboration of direction, NOT discovery). repurposed in-disease trial => a genuine repurposing-lead corroboration (the stronger novelty case).",
+   "repurposed": [
+    {
+     "agent": "N-acetylmannosamine",
+     "disease": "GNE myopathy / hereditary inclusion-body myopathy (GNE epimerase/kinase) OMIM 605820"
+    },
+    {
+     "agent": "ambroxol",
+     "disease": "Gaucher disease OMIM 230800"
+    },
+    {
+     "agent": "bevacizumab",
+     "disease": "Hereditary haemorrhagic telangiectasia (Osler-Weber-Rendu) OMIM 187300"
+    },
+    {
+     "agent": "encaleret",
+     "disease": "Autosomal dominant hypocalcaemia type 1 (CASR gain-of-function) OMIM 601198"
+    },
+    {
+     "agent": "flecainide",
+     "disease": "Catecholaminergic polymorphic ventricular tachycardia (RYR2 gain-of-function) OMIM 604772"
+    },
+    {
+     "agent": "hydroxyurea",
+     "disease": "Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985"
+    },
+    {
+     "agent": "losartan",
+     "disease": "Marfan syndrome (FBN1 deficiency) OMIM 154700"
+    },
+    {
+     "agent": "trametinib",
+     "disease": "Noonan syndrome (PTPN11 gain-of-function) OMIM 163950"
+    },
+    {
+     "agent": "tranexamic acid",
+     "disease": "Hereditary angioedema (C1-inhibitor deficiency) OMIM 106100"
+    }
+   ],
+   "status": "POST-HOC -- NOT a pre-registered scored metric; a coarse modality read of the SPECIFIC hits, recorded for transparency only."
+  }
+ },
+ "nature": "read-only over the GROWN 152-core (Track-A e7a/e7b/e7c); 0 re-derivations; additive-only; append-only chain (continues V14).",
+ "oracle": {
+  "magnitude_free": "categorical fields only; firewall PASS over the full snapshot.",
+  "snapshot_file": "v15_clinicaltrials_snapshot.cache.json",
+  "snapshot_matches_prereg": true,
+  "snapshot_sha256": "783da6c8bbb84a0b245197f90c6f8f88a83d40e8344542d9a706d5b8d55a1480",
+  "source": "ClinicalTrials.gov (U.S. NLM clinical-study registry), API v2"
+ },
+ "orcid": "0009-0002-7535-8245",
+ "prereg_file_sha256": "c25b75232d9a35e0ffd4fab00afcd2132f42d1a2ca5ffe32a59557152b5c6ac8",
+ "prereg_hash_note": "prereg_sha256 is the serialization-independent CONTENT hash frozen by the fetcher BEFORE results (also recorded in the snapshot meta); prereg_file_sha256 is the byte hash of the shipped file (tracked in expected_sha256_v15.json).",
+ "prereg_sha256": "4f064fe44276cc21a896d29a01f19380c2b3ea0ed65eb7cb88a5379173620a11",
+ "programme": "jamming-physics.org / VP Disease Emergence Kit",
+ "release": "0.41.0-validation.v15",
+ "round": "V11 -- NOVELTY AUDIT: of the kit's `novel` leads, how many are independently plausible (under registered INVESTIGATION in-disease) vs purely structural? (blueprint §5.3 'Novelty audit' / §5.4 genuine-lead vs structural-artifact -- the last in-house §5.3 metric)",
+ "target_set": {
+  "label": "the kit's `novel` candidate rows (direction-only untested [O] hypotheses)",
+  "n_rows": 72,
+  "source": "outputs/candidate_register.json :: prior_art_status=='novel'"
+ },
+ "validation_chain": {
+  "append_only": true,
+  "chain_head": "eaf5ac1bd948089a556977489f0278b7ab1f5f6b7f83d338353e8b7f65991ae7",
+  "continues_from_head": "c0f8e37e80c73fb2323903d6c7aa88c53b17b708f084ee240ad1417c87796d15",
+  "record": [
+   {
+    "head": "a9d3d67ff44adb8c0fddb885d60433d689a25ea08b76e4df720b68089f8cf1b1",
+    "label": "inherited_anchors_readonly_all_match",
+    "prev": "c0f8e37e80c73fb2323903d6c7aa88c53b17b708f084ee240ad1417c87796d15",
+    "value": true
+   },
+   {
+    "head": "8eb72ac4a256f543738eee6a0947192d056eb3b9a9f939d65295a81910e9c5dc",
+    "label": "frozen_snapshot_sha256",
+    "prev": "a9d3d67ff44adb8c0fddb885d60433d689a25ea08b76e4df720b68089f8cf1b1",
+    "value": "783da6c8bbb84a0b245197f90c6f8f88a83d40e8344542d9a706d5b8d55a1480"
+   },
+   {
+    "head": "00f95f343bf8b1f3ff8bbb3cf65c595af61a264791d4e61a41b143db4b355f7b",
+    "label": "novelty_in_disease_hits",
+    "prev": "8eb72ac4a256f543738eee6a0947192d056eb3b9a9f939d65295a81910e9c5dc",
+    "value": "18/72"
+   },
+   {
+    "head": "f0223f8f9623a4be8664a116f6d4be07c08280984b8fe5ef3014c5f145056cd5",
+    "label": "specificity_contrast_specific_vs_broad",
+    "prev": "00f95f343bf8b1f3ff8bbb3cf65c595af61a264791d4e61a41b143db4b355f7b",
+    "value": "16/25 vs 2/47"
+   },
+   {
+    "head": "cd7285a4c6a7aa48a5e092b1fd84df09325f014b052a3c3bce9e3b4d221aa0a6",
+    "label": "v8_novel_given_approved_indication",
+    "prev": "f0223f8f9623a4be8664a116f6d4be07c08280984b8fe5ef3014c5f145056cd5",
+    "value": 0
+   },
+   {
+    "head": "eaf5ac1bd948089a556977489f0278b7ab1f5f6b7f83d338353e8b7f65991ae7",
+    "label": "firewall_status",
+    "prev": "cd7285a4c6a7aa48a5e092b1fd84df09325f014b052a3c3bce9e3b4d221aa0a6",
+    "value": "PASS"
+   }
+  ]
+ },
+ "verdict": "Of 72 novel (drug x disease) pairs, 18 carry a mechanically-verified in-disease registered trial. The §5.4 contrast is decisive and EMPIRICAL: the SPECIFIC stratum (16/25) is investigationally live while the BROAD generic-chaperone stratum (2/47) is largely a structural artifact -- an enrichment of ~15.0x. Each hit is a CORRECTLY-LABELLED novel lead (V8 novel|approved-indication=0); an in-disease trial corroborates its plausibility as an investigational direction, never that it works. The 54 no-signal pairs are flagged structural [O] hypotheses, down-weighted not refuted. With direction-recovery (V3-V7), exclusion-calibration (V10) and now novelty (V11), the §5.3 four-metric ledger is complete in-house; only PROSPECTIVE falsification (external) remains.",
+ "what_this_round_does_not_do": [
+  "does NOT mutate the grown 152-core, re-admit any lever family, or re-derive any disease.",
+  "does NOT assert any magnitude (dose/efficacy/response/survival/p-value/n-of-m).",
+  "does NOT claim any drug works; an in-disease trial is investigation, not approval and not efficacy.",
+  "does NOT upgrade a structural pair via the related-class probe (M3 is reported separately).",
+  "the post-hoc modality split is NOT a pre-registered scored metric (transparency only)."
+ ]
+}

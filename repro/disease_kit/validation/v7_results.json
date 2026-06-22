@@ -1,0 +1,3587 @@
+{
+ "author": "Young Jae Lee",
+ "external_source": {
+  "drugcentral_version": "2021-09-01",
+  "name": "DrugCentral MOA-curated drug<->target edges (primary curation; membership AND direction)",
+  "snapshot_fetched_utc": "2026-06-21T10:18:09Z",
+  "snapshot_sha256": "e9a653768f5c9e834e861c7ac812b257295832a904534a18c3387ba5fc1cd758"
+ },
+ "grade": "[O] direction-only; magnitude-free",
+ "headline": {
+  "arm_A_taxonomy": {
+   "disagreements": 4,
+   "finding": "all four disagreements are vocabulary-FRAME artefacts; MED-RT is the systematic lone dissenter, signing via downstream/agent-intrinsic class names",
+   "frame_normalise_to_agreement": 2,
+   "internal_cross_frame_pooling": 2,
+   "molecular_target_contradictions_remaining": 0,
+   "principled_abstention": 2
+  },
+  "arm_B_drugcentral": {
+   "X1_GOF_arm_accuracy": 0.9369,
+   "X1_GOF_inhibitory_recall": 1.0,
+   "X1_LOF_arm_accuracy": 0.124,
+   "X1_marginal_baseline": 0.9042,
+   "X1_per_gene_recovery": "13/25",
+   "X1_permutation_shuffles_reaching_observed": "390/5000",
+   "X1_permutation_significant": false,
+   "X1_pooled_accuracy": 0.5,
+   "disease_genes_resolvable": "27/130",
+   "external_source": "DrugCentral 2021-09-01 (5th primary-curation source)",
+   "five_source_agreement": "15/17",
+   "honest_negative_denominator": "widens signed-gene denominator by 1 gene (RYR2) -> a 5th triangulation source, not a coverage-widener",
+   "honest_negative_discrimination": "pooled directional discrimination WEAK (channel-blocker skew; permutation null not significant); GOF arm corroborates qualitatively only"
+  }
+ },
+ "honest_conclusion": "V7 closes the loop V6 left open in two ways. ARM A (the taxonomy) explains the four standing four-source disagreements (ABCC8, F5, F8, SERPINC1) mechanically: the lone dissenter, MED-RT, never signs them via a target-action class -- it signs via downstream-physiologic frames (sulfonylureas tagged Insulin Receptor Agonists; heparins tagged Thrombin / Factor Xa / Protease Inhibitors) or agent-intrinsic frames (factor concentrates tagged Enzyme Activators). Where a target-action class exists (ABCC8 Potassium Channel Antagonists -> INHIBITORY; SERPINC1 Antithrombin Activators -> ACTIVATING) it AGREES with the molecular consensus and is already present in MED-RT's OWN annotation, so the gene-level flip is internal cross-frame pooling, not a cross-source contradiction; where none exists (F5, F8) the correct read is abstention. Frame-normalised, ZERO molecular-target contradictions remain. ARM B re-checks the SAME locked emergence directions against a fifth primary-curation source, DrugCentral, mirroring V6's pattern (membership AND direction from DrugCentral's MOA-curated edges). The GOF arm reproduces the V3-V6 direction (gain-of-function genes attract inhibitory drugs, high inhibitory recall). TWO HONEST NEGATIVES, stated plainly: (1) DrugCentral does NOT widen the signed-gene denominator -- exactly one gene (RYR2) is signed by DrugCentral and not by the V3-V6 union -- so it is a 5th TRIANGULATION source, not a coverage expander; (2) DrugCentral's coverage is dominated by ion-channel blockers from other indications, inflating the inhibitor-skew baseline and an unsatisfiable LOF arm, so the pooled directional discrimination is WEAK and the permutation null is NOT significant -- the GOF arm corroborates qualitatively, not as strong independent statistical support. On the five-source concordance the SAME two cases (ABCC8, SERPINC1) remain the only disagreements with MED-RT the lone dissenter, exactly as Arm A predicts; DrugCentral joins the molecular consensus on both. Direction recovery != efficacy/magnitude; every lead stays [O]; the firewall holds (DrugCentral's affinity columns are never read).",
+ "inherited_anchors": {
+  "candidate_register_chain_head": "ca1796255c7c91db49cd28a11b15d49a649042c49a313649bcb63643d43c3fd3",
+  "candidate_register_sha256": "e3536726c36e761043da80bd994de06405a6f6a5811462047e7597134cfd6e22",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "note": "validation is strictly read-only; 0 of the 128 derivations were re-run."
+ },
+ "metrics": {
+  "X1_DC": {
+   "lesion_stratified": {
+    "GOF_arm": {
+     "accuracy": 0.9369,
+     "activating": {
+      "denominator_obs": 7,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "inhibitory": {
+      "denominator_obs": 104,
+      "denominator_pred": 111,
+      "precision": 0.9369,
+      "recall": 1.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 0,
+      "pred_ACT_obs_INH": 0,
+      "pred_INH_obs_ACT": 7,
+      "pred_INH_obs_INH": 104
+     },
+     "n": 111
+    },
+    "LOF_arm": {
+     "accuracy": 0.124,
+     "activating": {
+      "denominator_obs": 16,
+      "denominator_pred": 129,
+      "precision": 0.124,
+      "recall": 1.0
+     },
+     "inhibitory": {
+      "denominator_obs": 113,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 16,
+      "pred_ACT_obs_INH": 113,
+      "pred_INH_obs_ACT": 0,
+      "pred_INH_obs_INH": 0
+     },
+     "n": 129
+    },
+    "reading": "GOF disease genes should attract INHIBITORY approved drugs; LOF genes ACTIVATING ones. HONEST NEGATIVE: DrugCentral's channel-blocker skew makes the GOF arm sit AT/ABOVE an already-high baseline (high inhibitory recall) -- qualitative corroboration, not strong independent support -- while the LOF arm is extreme and unsatisfiable (loss != small-molecule activator; channel blockers from other indications dominate). Surfaced, not buried."
+   },
+   "marginal_baseline": {
+    "accuracy": 0.9042,
+    "always_predict": "INHIBITORY",
+    "note": "DrugCentral's disease-gene coverage is dominated by ion-channel BLOCKERS used in OTHER indications -> an unusually HIGH inhibitor-skew baseline. The GOF arm must beat it; the pooled figure is dragged to chance by the extreme, pharmacologically-unsatisfiable LOF arm."
+   },
+   "mismatch_count": 120,
+   "mismatches": [
+    {
+     "drug": "carbidopa",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "DDC",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "aadc_deficiency"
+    },
+    {
+     "drug": "pentostatin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ADA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "adenosine_deaminase_deficiency"
+    },
+    {
+     "drug": "cinacalcet",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "drug": "etelcalcetide",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "drug": "evocalcet",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "drug": "bumetanide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "ethacrynic acid",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "furosemide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "piretanide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "torsemide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "drug": "ajmaline",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "benzocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "carbamazepine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "cinchocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "disopyramide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "eslicarbazepine acetate",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "ethotoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "etidocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "flecainide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "fosphenytoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "indecainide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "lamotrigine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "lidocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "mephenytoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "mepivacaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "mexiletine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "moracizine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "orphenadrine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "oxcarbazepine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "phenazopyridine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "phenytoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "procainamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "propafenone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "quinidine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "ranolazine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "riluzole",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "ropivacaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "rufinamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "tetracaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "tocainide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "topiramate",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "drug": "acetohexamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "carbutamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "chlorpropamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glibenclamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glibornuride",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "gliclazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glimepiride",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glipizide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "gliquidone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glisoxepide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "mitiglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "nateglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "repaglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "tolazamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "tolbutamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "acetohexamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "carbutamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "chlorpropamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glibenclamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glibornuride",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "gliclazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glimepiride",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glipizide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "gliquidone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "glisoxepide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "mitiglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "nateglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "repaglinide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "tolazamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "tolbutamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "drug": "palifermin",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "FGFR2",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "crouzon_syndrome"
+    },
+    {
+     "drug": "crofelemer",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "CFTR",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "cystic_fibrosis"
+    },
+    {
+     "drug": "articaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "benzocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "eslicarbazepine acetate",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "ethotoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "hexylcaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "lamotrigine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "mephenytoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "mepivacaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "orphenadrine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "oxybuprocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "phenazopyridine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "phenytoin",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "prilocaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "procainamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "proparacaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "propoxycaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "quinidine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "ropivacaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "rufinamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "tetracaine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "tocainide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "topiramate",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "zonisamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "drug": "casimersen",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "DMD",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "duchenne_muscular_dystrophy"
+    },
+    {
+     "drug": "golodirsen",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "DMD",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "duchenne_muscular_dystrophy"
+    },
+    {
+     "drug": "bendroflumethiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "benzthiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "chlorothiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "chlortalidone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "cyclothiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "hydrochlorothiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "hydroflumethiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "indapamide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "methylclothiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "metolazone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "polythiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "quinethazone",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "trichlormethiazide",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "drug": "conivaptan",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "mozavaptan",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "tolvaptan",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "drug": "desmopressin",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "drug": "lypressin",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "drug": "vasopressin",
+     "emergence_pred": "INHIBITORY",
+     "external": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "drug": "miglitol",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "GAA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "pompe_disease"
+    },
+    {
+     "drug": "voglibose",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "GAA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "pompe_disease"
+    },
+    {
+     "drug": "metirosine",
+     "emergence_pred": "ACTIVATING",
+     "external": "INHIBITORY",
+     "gene": "TH",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "tyrosine_hydroxylase_deficiency"
+    }
+   ],
+   "per_gene_majority": {
+    "detail": [
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "CACNA1C",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 26,
+      "pred": "INHIBITORY",
+      "slug": "timothy_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "FGFR2",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 1,
+      "n_inh": 3,
+      "pred": "INHIBITORY",
+      "slug": "crouzon_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "FGFR3",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 4,
+      "pred": "INHIBITORY",
+      "slug": "achondroplasia"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "LEPR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "leptin_receptor_deficiency"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "PAH",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "phenylketonuria"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "PCSK9",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "familial_hypercholesterolaemia"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "RET",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "INHIBITORY",
+      "slug": "multiple_endocrine_neoplasia_type_2a"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "RYR2",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "INHIBITORY",
+      "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN4A",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 20,
+      "pred": "INHIBITORY",
+      "slug": "scn4a_skeletal_muscle_channelopathy"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCNN1B",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "liddle_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCNN1G",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "liddle_syndrome"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "SERPINC1",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 3,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "hereditary_antithrombin_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "TTR",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "transthyretin_amyloidosis"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "ABCC8",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 15,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "ADA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "adenosine_deaminase_deficiency"
+     },
+     {
+      "external_majority": "ACTIVATING",
+      "gene": "CASR",
+      "hit": false,
+      "lesion": "GOF",
+      "n_act": 3,
+      "n_inh": 0,
+      "pred": "INHIBITORY",
+      "slug": "autosomal_dominant_hypocalcemia_type_1"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "DDC",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "aadc_deficiency"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "DMD",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "duchenne_muscular_dystrophy"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "GAA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "pompe_disease"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "KCNJ11",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 3,
+      "n_inh": 15,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN1A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 23,
+      "pred": "ACTIVATING",
+      "slug": "dravet_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SCN5A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 31,
+      "pred": "ACTIVATING",
+      "slug": "brugada_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SLC12A1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 5,
+      "pred": "ACTIVATING",
+      "slug": "bartter_syndrome_type_1"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "SLC12A3",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 13,
+      "pred": "ACTIVATING",
+      "slug": "gitelman_syndrome"
+     },
+     {
+      "external_majority": "INHIBITORY",
+      "gene": "TH",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "tyrosine_hydroxylase_deficiency"
+     }
+    ],
+    "genes_recovered": 13,
+    "genes_scored": 25,
+    "recovery_fraction": 0.52
+   },
+   "permutation_null": {
+    "denominator": 240,
+    "observed_accuracy": 0.5,
+    "observed_hits": 120,
+    "reading": "HONEST NEGATIVE: the pooled permutation null is NOT significant for DrugCentral (channel-blocker skew swamps the pooled signal). The directional information lives in the GOF arm; the pooled test is reported faithfully as non-significant.",
+    "seed": 19,
+    "shuffled_mean_accuracy": 0.4694,
+    "shuffled_mean_hits": 112.65,
+    "shuffles": 5000,
+    "shuffles_reaching_observed": 390,
+    "significant_at_0_05": false
+   },
+   "pooled": {
+    "accuracy": 0.5,
+    "activating": {
+     "denominator_obs": 23,
+     "denominator_pred": 129,
+     "precision": 0.124,
+     "recall": 0.6957
+    },
+    "inhibitory": {
+     "denominator_obs": 217,
+     "denominator_pred": 111,
+     "precision": 0.9369,
+     "recall": 0.4793
+    },
+    "matrix": {
+     "pred_ACT_obs_ACT": 16,
+     "pred_ACT_obs_INH": 113,
+     "pred_INH_obs_ACT": 7,
+     "pred_INH_obs_INH": 104
+    },
+    "n": 240
+   },
+   "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs DrugCentral direction of DrugCentral's OWN MOA-curated drugs on the SAME gene; coupling-free; identical construction to V3..V6 X1 with membership+direction from DrugCentral (a 5th source)"
+  },
+  "X_COV_DC": {
+   "coverage_gap_moa_curated_no_direction": 2,
+   "disease_genes_resolvable_any_action_type": 28,
+   "disease_genes_resolvable_fraction": 0.2077,
+   "disease_genes_resolvable_moa_curated": 27,
+   "disease_genes_total": 130,
+   "external_source": "DrugCentral MOA-curated drug<->target edges (Homo sapiens)",
+   "gap_no_moa_curated_edge": 101,
+   "reading": "bounded by DrugCentral's MOA-curated approved-drug coverage. A smaller denominator than V3/V4 by design; the honest cost of a primary-curation source. Genes DrugCentral leaves directionless (binding/substrate) are gaps, never scored; genes with no MOA edge are gaps, never read as refutation.",
+   "what": "how much of the kit is checkable in DrugCentral: disease genes with >=1 MOA-curated DrugCentral drug carrying a clean direction"
+  },
+  "X_CROSS5": {
+   "agree": 15,
+   "agreement_fraction": 0.8824,
+   "disagreements": [
+    {
+     "dgidb": "INHIBITORY",
+     "drugcentral": "INHIBITORY",
+     "gene": "ABCC8",
+     "gtopdb": "INHIBITORY",
+     "medrt": "ACTIVATING",
+     "opentargets_chembl": "INHIBITORY"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drugcentral": "ACTIVATING",
+     "gene": "SERPINC1",
+     "gtopdb": "ACTIVATING",
+     "medrt": "INHIBITORY",
+     "opentargets_chembl": "ACTIVATING"
+    }
+   ],
+   "genes_callable_in_all_five": 17,
+   "reading": "adding a 5th source leaves the SAME two residual disagreements (ABCC8, SERPINC1) with MED-RT still the lone dissenter -- exactly the cases Arm A explains as vocabulary-frame artefacts; DrugCentral joins the molecular-target consensus on both.",
+   "what": "DrugCentral (V7) vs GtoPdb (V6) vs OT/ChEMBL (V4) vs MED-RT (V5) vs DGIdb (V3) majority call on genes ALL FIVE resolve (five-source direction concordance; transparency)"
+  },
+  "X_MEMB_DC": {
+   "denominator_widened_by": 1,
+   "disagreement_gene_votes": {
+    "ABCC8": "INHIBITORY",
+    "F5": null,
+    "F8": null,
+    "SERPINC1": "ACTIVATING"
+   },
+   "disagreement_votes_reading": "on the four standing disagreements, DrugCentral sides with the molecular-target consensus where it can call (ABCC8 INHIBITORY, SERPINC1 ACTIVATING) and abstains on F5/F8 -- reinforcing the Arm-A taxonomy from an independent 5th source.",
+   "drugcentral_only_signed_edges_on_shared_genes": 31,
+   "drugcentral_signed_not_in_prior_union": [
+    "RYR2"
+   ],
+   "honest_negative": "DrugCentral adds 1 signed disease gene(s) beyond the V3-V6 union (RYR2); it serves as a 5th TRIANGULATION source, NOT a coverage-widener.",
+   "per_gene_edge_overlap": [
+    {
+     "dc_only_examples": [
+      "carbutamide",
+      "diazoxide",
+      "glibenclamide",
+      "glibornuride",
+      "gliquidone",
+      "glisoxepide"
+     ],
+     "gene": "ABCC8",
+     "n_dc_only": 6,
+     "n_dc_signed": 16
+    },
+    {
+     "dc_only_examples": [
+      "(s)-nicardipine",
+      "(s)-nitrendipine",
+      "aranidipine",
+      "dexniguldipine",
+      "efonidipine",
+      "manidipine"
+     ],
+     "gene": "CACNA1C",
+     "n_dc_only": 6,
+     "n_dc_signed": 26
+    },
+    {
+     "dc_only_examples": [
+      "carbutamide",
+      "glibenclamide",
+      "glibornuride",
+      "gliquidone",
+      "glisoxepide"
+     ],
+     "gene": "KCNJ11",
+     "n_dc_only": 5,
+     "n_dc_signed": 18
+    },
+    {
+     "dc_only_examples": [
+      "ajmaline",
+      "benzocaine",
+      "cinchocaine",
+      "moracizine"
+     ],
+     "gene": "SCN5A",
+     "n_dc_only": 4,
+     "n_dc_signed": 31
+    },
+    {
+     "dc_only_examples": [
+      "cabozantinib",
+      "lenvatinib"
+     ],
+     "gene": "RET",
+     "n_dc_only": 2,
+     "n_dc_signed": 8
+    },
+    {
+     "dc_only_examples": [
+      "benzocaine",
+      "oxybuprocaine"
+     ],
+     "gene": "SCN1A",
+     "n_dc_only": 2,
+     "n_dc_signed": 23
+    },
+    {
+     "dc_only_examples": [
+      "benzocaine",
+      "pilsicainide"
+     ],
+     "gene": "SCN4A",
+     "n_dc_only": 2,
+     "n_dc_signed": 20
+    },
+    {
+     "dc_only_examples": [
+      "chlortalidone",
+      "methylclothiazide"
+     ],
+     "gene": "SLC12A3",
+     "n_dc_only": 2,
+     "n_dc_signed": 13
+    },
+    {
+     "dc_only_examples": [
+      "piretanide"
+     ],
+     "gene": "SLC12A1",
+     "n_dc_only": 1,
+     "n_dc_signed": 5
+    },
+    {
+     "dc_only_examples": [
+      "metirosine"
+     ],
+     "gene": "TH",
+     "n_dc_only": 1,
+     "n_dc_signed": 1
+    }
+   ],
+   "signed_genes": {
+    "dgidb": 46,
+    "drugcentral": 25,
+    "gtopdb": 24,
+    "medrt": 27,
+    "opentargets_chembl": 31,
+    "prior_v3_v6_union": 50
+   },
+   "what": "does a 5th primary-curation source (DrugCentral) WIDEN the signed-gene denominator, or only triangulate? + DrugCentral-only edges on shared genes + DrugCentral's vote on the four disagreement genes"
+  },
+  "X_VOCAB": {
+   "disagreement_genes": [
+    "ABCC8",
+    "F5",
+    "F8",
+    "SERPINC1"
+   ],
+   "dissenting_source": "MED-RT (V5) -- the lone dissenter in every one of V6's four disagreements",
+   "per_gene": [
+    {
+     "agrees_with_consensus": true,
+     "distinct_classes": [
+      {
+       "class_name": "Insulin Receptor Agonists",
+       "embedded_sign": "ACTIVATING",
+       "frame": "DOWNSTREAM-PHYSIOLOGIC"
+      },
+      {
+       "class_name": "Potassium Channel Antagonists",
+       "embedded_sign": "INHIBITORY",
+       "frame": "TARGET-ACTION"
+      },
+      {
+       "class_name": "Potassium Channel Interactions",
+       "embedded_sign": null,
+       "frame": "TARGET-NEUTRAL"
+      }
+     ],
+     "frame_normalised": "INHIBITORY",
+     "gene": "ABCC8",
+     "has_target_action_frame": true,
+     "internal_cross_frame_pooling": true,
+     "medrt_dissent": "ACTIVATING",
+     "molecular_consensus": "INHIBITORY",
+     "other_three": {
+      "dgidb": "INHIBITORY",
+      "gtopdb": "INHIBITORY",
+      "opentargets_chembl": "INHIBITORY"
+     },
+     "reading": "frame-normalised resolves INHIBITORY (agrees with molecular consensus); MED-RT's gene-level ACTIVATING is INTERNAL cross-frame pooling",
+     "target_action_signs": [
+      "INHIBITORY"
+     ]
+    },
+    {
+     "agrees_with_consensus": null,
+     "distinct_classes": [
+      {
+       "class_name": "Enzyme Activators",
+       "embedded_sign": "ACTIVATING",
+       "frame": "AGENT-INTRINSIC"
+      }
+     ],
+     "frame_normalised": "ABSTAIN",
+     "gene": "F5",
+     "has_target_action_frame": false,
+     "internal_cross_frame_pooling": false,
+     "medrt_dissent": "ACTIVATING",
+     "molecular_consensus": "INHIBITORY",
+     "other_three": {
+      "dgidb": "INHIBITORY",
+      "gtopdb": "INHIBITORY",
+      "opentargets_chembl": "INHIBITORY"
+     },
+     "reading": "no TARGET-ACTION class present (agent-intrinsic / downstream only) -> principled ABSTENTION, not a contradicting sign",
+     "target_action_signs": []
+    },
+    {
+     "agrees_with_consensus": null,
+     "distinct_classes": [
+      {
+       "class_name": "Enzyme Activators",
+       "embedded_sign": "ACTIVATING",
+       "frame": "AGENT-INTRINSIC"
+      },
+      {
+       "class_name": "Fusion Protein Interactions",
+       "embedded_sign": null,
+       "frame": "AGENT-INTRINSIC"
+      }
+     ],
+     "frame_normalised": "ABSTAIN",
+     "gene": "F8",
+     "has_target_action_frame": false,
+     "internal_cross_frame_pooling": false,
+     "medrt_dissent": "ACTIVATING",
+     "molecular_consensus": "INHIBITORY",
+     "other_three": {
+      "dgidb": "INHIBITORY",
+      "gtopdb": "INHIBITORY",
+      "opentargets_chembl": "INHIBITORY"
+     },
+     "reading": "no TARGET-ACTION class present (agent-intrinsic / downstream only) -> principled ABSTENTION, not a contradicting sign",
+     "target_action_signs": []
+    },
+    {
+     "agrees_with_consensus": true,
+     "distinct_classes": [
+      {
+       "class_name": "Antithrombin Activators",
+       "embedded_sign": "ACTIVATING",
+       "frame": "TARGET-ACTION"
+      },
+      {
+       "class_name": "Antithrombins",
+       "embedded_sign": null,
+       "frame": "TARGET-NEUTRAL"
+      },
+      {
+       "class_name": "Enzyme Activators",
+       "embedded_sign": "ACTIVATING",
+       "frame": "AGENT-INTRINSIC"
+      },
+      {
+       "class_name": "Factor Xa Inhibitors",
+       "embedded_sign": "INHIBITORY",
+       "frame": "DOWNSTREAM-PHYSIOLOGIC"
+      },
+      {
+       "class_name": "Protease Inhibitors",
+       "embedded_sign": "INHIBITORY",
+       "frame": "DOWNSTREAM-PHYSIOLOGIC"
+      },
+      {
+       "class_name": "Serine Proteinase Inhibitors",
+       "embedded_sign": "INHIBITORY",
+       "frame": "DOWNSTREAM-PHYSIOLOGIC"
+      },
+      {
+       "class_name": "Thrombin Inhibitors",
+       "embedded_sign": "INHIBITORY",
+       "frame": "DOWNSTREAM-PHYSIOLOGIC"
+      }
+     ],
+     "frame_normalised": "ACTIVATING",
+     "gene": "SERPINC1",
+     "has_target_action_frame": true,
+     "internal_cross_frame_pooling": true,
+     "medrt_dissent": "INHIBITORY",
+     "molecular_consensus": "ACTIVATING",
+     "other_three": {
+      "dgidb": "ACTIVATING",
+      "gtopdb": "ACTIVATING",
+      "opentargets_chembl": "ACTIVATING"
+     },
+     "reading": "frame-normalised resolves ACTIVATING (agrees with molecular consensus); MED-RT's gene-level INHIBITORY is INTERNAL cross-frame pooling",
+     "target_action_signs": [
+      "ACTIVATING"
+     ]
+    }
+   ],
+   "reading": "every standing disagreement is a vocabulary-FRAME artefact: MED-RT signs via downstream-physiologic or agent-intrinsic class names, never via a target-action class. Where a target-action class exists (ABCC8, SERPINC1) it AGREES with the molecular consensus and is already present in MED-RT's OWN annotation (the gene-level flip is internal pooling); where none exists (F5, F8) the correct read is abstention. Frame-normalised, ZERO molecular-target contradictions remain. Transparency, not the emergence test.",
+   "summary": {
+    "molecular_target_contradictions_remaining": 0,
+    "n_disagreements": 4,
+    "n_frame_normalise_to_agreement": 2,
+    "n_principled_abstention": 2,
+    "n_showing_internal_cross_frame_pooling": 2
+   },
+   "what": "source-vocabulary taxonomy of the four standing four-source disagreements: classify the dissenting source's controlled-vocabulary class names by FRAME and frame-normalise"
+  }
+ },
+ "orcid": "0009-0002-7535-8245",
+ "prereg_sha256": "e99581fd859b9641fa58489f8981256a06cd71571d344bdf0a5d9447c79c2fcd",
+ "programme": "jamming-physics.org",
+ "release": "0.41.0-validation.v7",
+ "snapshot_date": "2026-06-21",
+ "validation_chain": {
+  "chain_head": "20ea28acefb8b6593f66db5dc700f5ff0dc7e5152770622f77d4c94ab439cbcb",
+  "continues_from_head": "7ba7d49b7c7d84860d4a95a38bdc90e4936ba879ac976f0ac3b8cbacccb9a139",
+  "record": [
+   {
+    "metric": "X_VOCAB_source_vocabulary_taxonomy",
+    "payload": {
+     "disagreement_genes": [
+      "ABCC8",
+      "F5",
+      "F8",
+      "SERPINC1"
+     ],
+     "dissenting_source": "MED-RT (V5) -- the lone dissenter in every one of V6's four disagreements",
+     "per_gene": [
+      {
+       "agrees_with_consensus": true,
+       "distinct_classes": [
+        {
+         "class_name": "Insulin Receptor Agonists",
+         "embedded_sign": "ACTIVATING",
+         "frame": "DOWNSTREAM-PHYSIOLOGIC"
+        },
+        {
+         "class_name": "Potassium Channel Antagonists",
+         "embedded_sign": "INHIBITORY",
+         "frame": "TARGET-ACTION"
+        },
+        {
+         "class_name": "Potassium Channel Interactions",
+         "embedded_sign": null,
+         "frame": "TARGET-NEUTRAL"
+        }
+       ],
+       "frame_normalised": "INHIBITORY",
+       "gene": "ABCC8",
+       "has_target_action_frame": true,
+       "internal_cross_frame_pooling": true,
+       "medrt_dissent": "ACTIVATING",
+       "molecular_consensus": "INHIBITORY",
+       "other_three": {
+        "dgidb": "INHIBITORY",
+        "gtopdb": "INHIBITORY",
+        "opentargets_chembl": "INHIBITORY"
+       },
+       "reading": "frame-normalised resolves INHIBITORY (agrees with molecular consensus); MED-RT's gene-level ACTIVATING is INTERNAL cross-frame pooling",
+       "target_action_signs": [
+        "INHIBITORY"
+       ]
+      },
+      {
+       "agrees_with_consensus": null,
+       "distinct_classes": [
+        {
+         "class_name": "Enzyme Activators",
+         "embedded_sign": "ACTIVATING",
+         "frame": "AGENT-INTRINSIC"
+        }
+       ],
+       "frame_normalised": "ABSTAIN",
+       "gene": "F5",
+       "has_target_action_frame": false,
+       "internal_cross_frame_pooling": false,
+       "medrt_dissent": "ACTIVATING",
+       "molecular_consensus": "INHIBITORY",
+       "other_three": {
+        "dgidb": "INHIBITORY",
+        "gtopdb": "INHIBITORY",
+        "opentargets_chembl": "INHIBITORY"
+       },
+       "reading": "no TARGET-ACTION class present (agent-intrinsic / downstream only) -> principled ABSTENTION, not a contradicting sign",
+       "target_action_signs": []
+      },
+      {
+       "agrees_with_consensus": null,
+       "distinct_classes": [
+        {
+         "class_name": "Enzyme Activators",
+         "embedded_sign": "ACTIVATING",
+         "frame": "AGENT-INTRINSIC"
+        },
+        {
+         "class_name": "Fusion Protein Interactions",
+         "embedded_sign": null,
+         "frame": "AGENT-INTRINSIC"
+        }
+       ],
+       "frame_normalised": "ABSTAIN",
+       "gene": "F8",
+       "has_target_action_frame": false,
+       "internal_cross_frame_pooling": false,
+       "medrt_dissent": "ACTIVATING",
+       "molecular_consensus": "INHIBITORY",
+       "other_three": {
+        "dgidb": "INHIBITORY",
+        "gtopdb": "INHIBITORY",
+        "opentargets_chembl": "INHIBITORY"
+       },
+       "reading": "no TARGET-ACTION class present (agent-intrinsic / downstream only) -> principled ABSTENTION, not a contradicting sign",
+       "target_action_signs": []
+      },
+      {
+       "agrees_with_consensus": true,
+       "distinct_classes": [
+        {
+         "class_name": "Antithrombin Activators",
+         "embedded_sign": "ACTIVATING",
+         "frame": "TARGET-ACTION"
+        },
+        {
+         "class_name": "Antithrombins",
+         "embedded_sign": null,
+         "frame": "TARGET-NEUTRAL"
+        },
+        {
+         "class_name": "Enzyme Activators",
+         "embedded_sign": "ACTIVATING",
+         "frame": "AGENT-INTRINSIC"
+        },
+        {
+         "class_name": "Factor Xa Inhibitors",
+         "embedded_sign": "INHIBITORY",
+         "frame": "DOWNSTREAM-PHYSIOLOGIC"
+        },
+        {
+         "class_name": "Protease Inhibitors",
+         "embedded_sign": "INHIBITORY",
+         "frame": "DOWNSTREAM-PHYSIOLOGIC"
+        },
+        {
+         "class_name": "Serine Proteinase Inhibitors",
+         "embedded_sign": "INHIBITORY",
+         "frame": "DOWNSTREAM-PHYSIOLOGIC"
+        },
+        {
+         "class_name": "Thrombin Inhibitors",
+         "embedded_sign": "INHIBITORY",
+         "frame": "DOWNSTREAM-PHYSIOLOGIC"
+        }
+       ],
+       "frame_normalised": "ACTIVATING",
+       "gene": "SERPINC1",
+       "has_target_action_frame": true,
+       "internal_cross_frame_pooling": true,
+       "medrt_dissent": "INHIBITORY",
+       "molecular_consensus": "ACTIVATING",
+       "other_three": {
+        "dgidb": "ACTIVATING",
+        "gtopdb": "ACTIVATING",
+        "opentargets_chembl": "ACTIVATING"
+       },
+       "reading": "frame-normalised resolves ACTIVATING (agrees with molecular consensus); MED-RT's gene-level INHIBITORY is INTERNAL cross-frame pooling",
+       "target_action_signs": [
+        "ACTIVATING"
+       ]
+      }
+     ],
+     "reading": "every standing disagreement is a vocabulary-FRAME artefact: MED-RT signs via downstream-physiologic or agent-intrinsic class names, never via a target-action class. Where a target-action class exists (ABCC8, SERPINC1) it AGREES with the molecular consensus and is already present in MED-RT's OWN annotation (the gene-level flip is internal pooling); where none exists (F5, F8) the correct read is abstention. Frame-normalised, ZERO molecular-target contradictions remain. Transparency, not the emergence test.",
+     "summary": {
+      "molecular_target_contradictions_remaining": 0,
+      "n_disagreements": 4,
+      "n_frame_normalise_to_agreement": 2,
+      "n_principled_abstention": 2,
+      "n_showing_internal_cross_frame_pooling": 2
+     },
+     "what": "source-vocabulary taxonomy of the four standing four-source disagreements: classify the dissenting source's controlled-vocabulary class names by FRAME and frame-normalise"
+    },
+    "prev_hash": "7ba7d49b7c7d84860d4a95a38bdc90e4936ba879ac976f0ac3b8cbacccb9a139",
+    "row_hash": "902501333c777cd981d336154024f7fa7a4e23551730c525d87debd3dbc79360"
+   },
+   {
+    "metric": "X_COV_DC_external_coverage",
+    "payload": {
+     "coverage_gap_moa_curated_no_direction": 2,
+     "disease_genes_resolvable_any_action_type": 28,
+     "disease_genes_resolvable_fraction": 0.2077,
+     "disease_genes_resolvable_moa_curated": 27,
+     "disease_genes_total": 130,
+     "external_source": "DrugCentral MOA-curated drug<->target edges (Homo sapiens)",
+     "gap_no_moa_curated_edge": 101,
+     "reading": "bounded by DrugCentral's MOA-curated approved-drug coverage. A smaller denominator than V3/V4 by design; the honest cost of a primary-curation source. Genes DrugCentral leaves directionless (binding/substrate) are gaps, never scored; genes with no MOA edge are gaps, never read as refutation.",
+     "what": "how much of the kit is checkable in DrugCentral: disease genes with >=1 MOA-curated DrugCentral drug carrying a clean direction"
+    },
+    "prev_hash": "902501333c777cd981d336154024f7fa7a4e23551730c525d87debd3dbc79360",
+    "row_hash": "ede0282cce17696c4dd1982e87173d8b9a10ba1a37309096a68bfdf1543cad3c"
+   },
+   {
+    "metric": "X1_DC_external_membership_own_gene",
+    "payload": {
+     "lesion_stratified": {
+      "GOF_arm": {
+       "accuracy": 0.9369,
+       "activating": {
+        "denominator_obs": 7,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "inhibitory": {
+        "denominator_obs": 104,
+        "denominator_pred": 111,
+        "precision": 0.9369,
+        "recall": 1.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 0,
+        "pred_ACT_obs_INH": 0,
+        "pred_INH_obs_ACT": 7,
+        "pred_INH_obs_INH": 104
+       },
+       "n": 111
+      },
+      "LOF_arm": {
+       "accuracy": 0.124,
+       "activating": {
+        "denominator_obs": 16,
+        "denominator_pred": 129,
+        "precision": 0.124,
+        "recall": 1.0
+       },
+       "inhibitory": {
+        "denominator_obs": 113,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 16,
+        "pred_ACT_obs_INH": 113,
+        "pred_INH_obs_ACT": 0,
+        "pred_INH_obs_INH": 0
+       },
+       "n": 129
+      },
+      "reading": "GOF disease genes should attract INHIBITORY approved drugs; LOF genes ACTIVATING ones. HONEST NEGATIVE: DrugCentral's channel-blocker skew makes the GOF arm sit AT/ABOVE an already-high baseline (high inhibitory recall) -- qualitative corroboration, not strong independent support -- while the LOF arm is extreme and unsatisfiable (loss != small-molecule activator; channel blockers from other indications dominate). Surfaced, not buried."
+     },
+     "marginal_baseline": {
+      "accuracy": 0.9042,
+      "always_predict": "INHIBITORY",
+      "note": "DrugCentral's disease-gene coverage is dominated by ion-channel BLOCKERS used in OTHER indications -> an unusually HIGH inhibitor-skew baseline. The GOF arm must beat it; the pooled figure is dragged to chance by the extreme, pharmacologically-unsatisfiable LOF arm."
+     },
+     "mismatch_count": 120,
+     "mismatches": [
+      {
+       "drug": "carbidopa",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "DDC",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "aadc_deficiency"
+      },
+      {
+       "drug": "pentostatin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ADA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "adenosine_deaminase_deficiency"
+      },
+      {
+       "drug": "cinacalcet",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "drug": "etelcalcetide",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "drug": "evocalcet",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "drug": "bumetanide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "ethacrynic acid",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "furosemide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "piretanide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "torsemide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "drug": "ajmaline",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "benzocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "carbamazepine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "cinchocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "disopyramide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "eslicarbazepine acetate",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "ethotoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "etidocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "flecainide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "fosphenytoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "indecainide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "lamotrigine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "lidocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "mephenytoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "mepivacaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "mexiletine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "moracizine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "orphenadrine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "oxcarbazepine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "phenazopyridine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "phenytoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "procainamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "propafenone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "quinidine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "ranolazine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "riluzole",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "ropivacaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "rufinamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "tetracaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "tocainide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "topiramate",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "drug": "acetohexamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "carbutamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "chlorpropamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glibenclamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glibornuride",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "gliclazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glimepiride",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glipizide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "gliquidone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glisoxepide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "mitiglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "nateglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "repaglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "tolazamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "tolbutamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "acetohexamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "carbutamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "chlorpropamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glibenclamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glibornuride",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "gliclazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glimepiride",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glipizide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "gliquidone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "glisoxepide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "mitiglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "nateglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "repaglinide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "tolazamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "tolbutamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "drug": "palifermin",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "FGFR2",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "crouzon_syndrome"
+      },
+      {
+       "drug": "crofelemer",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "CFTR",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "cystic_fibrosis"
+      },
+      {
+       "drug": "articaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "benzocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "eslicarbazepine acetate",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "ethotoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "hexylcaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "lamotrigine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "mephenytoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "mepivacaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "orphenadrine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "oxybuprocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "phenazopyridine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "phenytoin",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "prilocaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "procainamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "proparacaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "propoxycaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "quinidine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "ropivacaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "rufinamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "tetracaine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "tocainide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "topiramate",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "zonisamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "drug": "casimersen",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "DMD",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "duchenne_muscular_dystrophy"
+      },
+      {
+       "drug": "golodirsen",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "DMD",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "duchenne_muscular_dystrophy"
+      },
+      {
+       "drug": "bendroflumethiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "benzthiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "chlorothiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "chlortalidone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "cyclothiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "hydrochlorothiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "hydroflumethiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "indapamide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "methylclothiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "metolazone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "polythiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "quinethazone",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "trichlormethiazide",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "drug": "conivaptan",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "mozavaptan",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "tolvaptan",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "drug": "desmopressin",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "drug": "lypressin",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "drug": "vasopressin",
+       "emergence_pred": "INHIBITORY",
+       "external": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "drug": "miglitol",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "GAA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "pompe_disease"
+      },
+      {
+       "drug": "voglibose",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "GAA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "pompe_disease"
+      },
+      {
+       "drug": "metirosine",
+       "emergence_pred": "ACTIVATING",
+       "external": "INHIBITORY",
+       "gene": "TH",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "tyrosine_hydroxylase_deficiency"
+      }
+     ],
+     "per_gene_majority": {
+      "detail": [
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "CACNA1C",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 26,
+        "pred": "INHIBITORY",
+        "slug": "timothy_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "FGFR2",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 1,
+        "n_inh": 3,
+        "pred": "INHIBITORY",
+        "slug": "crouzon_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "FGFR3",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 4,
+        "pred": "INHIBITORY",
+        "slug": "achondroplasia"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "LEPR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "leptin_receptor_deficiency"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "PAH",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "phenylketonuria"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "PCSK9",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "familial_hypercholesterolaemia"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "RET",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "INHIBITORY",
+        "slug": "multiple_endocrine_neoplasia_type_2a"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "RYR2",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "INHIBITORY",
+        "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN4A",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 20,
+        "pred": "INHIBITORY",
+        "slug": "scn4a_skeletal_muscle_channelopathy"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCNN1B",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "liddle_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCNN1G",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "liddle_syndrome"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "SERPINC1",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 3,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "hereditary_antithrombin_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "TTR",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "transthyretin_amyloidosis"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "ABCC8",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 15,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "ADA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "adenosine_deaminase_deficiency"
+       },
+       {
+        "external_majority": "ACTIVATING",
+        "gene": "CASR",
+        "hit": false,
+        "lesion": "GOF",
+        "n_act": 3,
+        "n_inh": 0,
+        "pred": "INHIBITORY",
+        "slug": "autosomal_dominant_hypocalcemia_type_1"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "DDC",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "aadc_deficiency"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "DMD",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "duchenne_muscular_dystrophy"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "GAA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "pompe_disease"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "KCNJ11",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 3,
+        "n_inh": 15,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN1A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 23,
+        "pred": "ACTIVATING",
+        "slug": "dravet_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SCN5A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 31,
+        "pred": "ACTIVATING",
+        "slug": "brugada_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SLC12A1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 5,
+        "pred": "ACTIVATING",
+        "slug": "bartter_syndrome_type_1"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "SLC12A3",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 13,
+        "pred": "ACTIVATING",
+        "slug": "gitelman_syndrome"
+       },
+       {
+        "external_majority": "INHIBITORY",
+        "gene": "TH",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "tyrosine_hydroxylase_deficiency"
+       }
+      ],
+      "genes_recovered": 13,
+      "genes_scored": 25,
+      "recovery_fraction": 0.52
+     },
+     "permutation_null": {
+      "denominator": 240,
+      "observed_accuracy": 0.5,
+      "observed_hits": 120,
+      "reading": "HONEST NEGATIVE: the pooled permutation null is NOT significant for DrugCentral (channel-blocker skew swamps the pooled signal). The directional information lives in the GOF arm; the pooled test is reported faithfully as non-significant.",
+      "seed": 19,
+      "shuffled_mean_accuracy": 0.4694,
+      "shuffled_mean_hits": 112.65,
+      "shuffles": 5000,
+      "shuffles_reaching_observed": 390,
+      "significant_at_0_05": false
+     },
+     "pooled": {
+      "accuracy": 0.5,
+      "activating": {
+       "denominator_obs": 23,
+       "denominator_pred": 129,
+       "precision": 0.124,
+       "recall": 0.6957
+      },
+      "inhibitory": {
+       "denominator_obs": 217,
+       "denominator_pred": 111,
+       "precision": 0.9369,
+       "recall": 0.4793
+      },
+      "matrix": {
+       "pred_ACT_obs_ACT": 16,
+       "pred_ACT_obs_INH": 113,
+       "pred_INH_obs_ACT": 7,
+       "pred_INH_obs_INH": 104
+      },
+      "n": 240
+     },
+     "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs DrugCentral direction of DrugCentral's OWN MOA-curated drugs on the SAME gene; coupling-free; identical construction to V3..V6 X1 with membership+direction from DrugCentral (a 5th source)"
+    },
+    "prev_hash": "ede0282cce17696c4dd1982e87173d8b9a10ba1a37309096a68bfdf1543cad3c",
+    "row_hash": "fc0754a4bf2fbc0f5335565ded88a00dc9654c9ce84283eb7a5cb51681ef61ef"
+   },
+   {
+    "metric": "X_MEMB_DC_membership_overlap",
+    "payload": {
+     "denominator_widened_by": 1,
+     "disagreement_gene_votes": {
+      "ABCC8": "INHIBITORY",
+      "F5": null,
+      "F8": null,
+      "SERPINC1": "ACTIVATING"
+     },
+     "disagreement_votes_reading": "on the four standing disagreements, DrugCentral sides with the molecular-target consensus where it can call (ABCC8 INHIBITORY, SERPINC1 ACTIVATING) and abstains on F5/F8 -- reinforcing the Arm-A taxonomy from an independent 5th source.",
+     "drugcentral_only_signed_edges_on_shared_genes": 31,
+     "drugcentral_signed_not_in_prior_union": [
+      "RYR2"
+     ],
+     "honest_negative": "DrugCentral adds 1 signed disease gene(s) beyond the V3-V6 union (RYR2); it serves as a 5th TRIANGULATION source, NOT a coverage-widener.",
+     "per_gene_edge_overlap": [
+      {
+       "dc_only_examples": [
+        "carbutamide",
+        "diazoxide",
+        "glibenclamide",
+        "glibornuride",
+        "gliquidone",
+        "glisoxepide"
+       ],
+       "gene": "ABCC8",
+       "n_dc_only": 6,
+       "n_dc_signed": 16
+      },
+      {
+       "dc_only_examples": [
+        "(s)-nicardipine",
+        "(s)-nitrendipine",
+        "aranidipine",
+        "dexniguldipine",
+        "efonidipine",
+        "manidipine"
+       ],
+       "gene": "CACNA1C",
+       "n_dc_only": 6,
+       "n_dc_signed": 26
+      },
+      {
+       "dc_only_examples": [
+        "carbutamide",
+        "glibenclamide",
+        "glibornuride",
+        "gliquidone",
+        "glisoxepide"
+       ],
+       "gene": "KCNJ11",
+       "n_dc_only": 5,
+       "n_dc_signed": 18
+      },
+      {
+       "dc_only_examples": [
+        "ajmaline",
+        "benzocaine",
+        "cinchocaine",
+        "moracizine"
+       ],
+       "gene": "SCN5A",
+       "n_dc_only": 4,
+       "n_dc_signed": 31
+      },
+      {
+       "dc_only_examples": [
+        "cabozantinib",
+        "lenvatinib"
+       ],
+       "gene": "RET",
+       "n_dc_only": 2,
+       "n_dc_signed": 8
+      },
+      {
+       "dc_only_examples": [
+        "benzocaine",
+        "oxybuprocaine"
+       ],
+       "gene": "SCN1A",
+       "n_dc_only": 2,
+       "n_dc_signed": 23
+      },
+      {
+       "dc_only_examples": [
+        "benzocaine",
+        "pilsicainide"
+       ],
+       "gene": "SCN4A",
+       "n_dc_only": 2,
+       "n_dc_signed": 20
+      },
+      {
+       "dc_only_examples": [
+        "chlortalidone",
+        "methylclothiazide"
+       ],
+       "gene": "SLC12A3",
+       "n_dc_only": 2,
+       "n_dc_signed": 13
+      },
+      {
+       "dc_only_examples": [
+        "piretanide"
+       ],
+       "gene": "SLC12A1",
+       "n_dc_only": 1,
+       "n_dc_signed": 5
+      },
+      {
+       "dc_only_examples": [
+        "metirosine"
+       ],
+       "gene": "TH",
+       "n_dc_only": 1,
+       "n_dc_signed": 1
+      }
+     ],
+     "signed_genes": {
+      "dgidb": 46,
+      "drugcentral": 25,
+      "gtopdb": 24,
+      "medrt": 27,
+      "opentargets_chembl": 31,
+      "prior_v3_v6_union": 50
+     },
+     "what": "does a 5th primary-curation source (DrugCentral) WIDEN the signed-gene denominator, or only triangulate? + DrugCentral-only edges on shared genes + DrugCentral's vote on the four disagreement genes"
+    },
+    "prev_hash": "fc0754a4bf2fbc0f5335565ded88a00dc9654c9ce84283eb7a5cb51681ef61ef",
+    "row_hash": "0e4eda2881398cdb5a0c370f9acc5f90b899ee587aea71920a9c8c18e7565943"
+   },
+   {
+    "metric": "X_CROSS5_five_source_concordance",
+    "payload": {
+     "agree": 15,
+     "agreement_fraction": 0.8824,
+     "disagreements": [
+      {
+       "dgidb": "INHIBITORY",
+       "drugcentral": "INHIBITORY",
+       "gene": "ABCC8",
+       "gtopdb": "INHIBITORY",
+       "medrt": "ACTIVATING",
+       "opentargets_chembl": "INHIBITORY"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drugcentral": "ACTIVATING",
+       "gene": "SERPINC1",
+       "gtopdb": "ACTIVATING",
+       "medrt": "INHIBITORY",
+       "opentargets_chembl": "ACTIVATING"
+      }
+     ],
+     "genes_callable_in_all_five": 17,
+     "reading": "adding a 5th source leaves the SAME two residual disagreements (ABCC8, SERPINC1) with MED-RT still the lone dissenter -- exactly the cases Arm A explains as vocabulary-frame artefacts; DrugCentral joins the molecular-target consensus on both.",
+     "what": "DrugCentral (V7) vs GtoPdb (V6) vs OT/ChEMBL (V4) vs MED-RT (V5) vs DGIdb (V3) majority call on genes ALL FIVE resolve (five-source direction concordance; transparency)"
+    },
+    "prev_hash": "0e4eda2881398cdb5a0c370f9acc5f90b899ee587aea71920a9c8c18e7565943",
+    "row_hash": "20ea28acefb8b6593f66db5dc700f5ff0dc7e5152770622f77d4c94ab439cbcb"
+   }
+  ]
+ }
+}

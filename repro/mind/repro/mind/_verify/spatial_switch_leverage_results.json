@@ -1,0 +1,282 @@
+{
+  "C1_threshold_rank": {
+    "_what": "driving a focal excitatory stimulation at each region in turn, the 12 sites rank by how easily their focal drive flips the collective state (lowest intensity threshold first); this rank EQUALS the broadcast-leverage rank and is barrier-invariant",
+    "common_finite_threshold_set_across_barrier": [
+      "basal_forebrain_chol",
+      "forebrain_gaba_in",
+      "hippocampus",
+      "hypothalamus",
+      "midbrain",
+      "neocortex",
+      "pallidum",
+      "striatum"
+    ],
+    "fixed_non_switching_set": [
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "flip_threshold_rank_equals_leverage_rank": true,
+    "flip_threshold_table_at_rep_barrier": {
+      "basal_forebrain_chol": 0.22,
+      "brainstem": 0.74,
+      "cerebellum": 1.0,
+      "forebrain_gaba_in": 0.28,
+      "hippocampus": 0.3,
+      "hypothalamus": 0.24,
+      "midbrain": 0.3,
+      "neocortex": 0.3,
+      "olfactory_bulb": null,
+      "pallidum": 0.4,
+      "striatum": 0.6,
+      "thalamus": null
+    },
+    "non_switching_set_is_expected": true,
+    "rank_barrier_invariant": true,
+    "rank_easiest_to_hardest": [
+      "basal_forebrain_chol",
+      "hypothalamus",
+      "forebrain_gaba_in",
+      "neocortex",
+      "hippocampus",
+      "midbrain",
+      "pallidum",
+      "striatum",
+      "brainstem",
+      "cerebellum"
+    ],
+    "rank_per_barrier_depth": {
+      "0.7": [
+        "basal_forebrain_chol",
+        "hypothalamus",
+        "forebrain_gaba_in",
+        "neocortex",
+        "hippocampus",
+        "midbrain",
+        "pallidum",
+        "striatum",
+        "brainstem",
+        "cerebellum"
+      ],
+      "1.0": [
+        "basal_forebrain_chol",
+        "hypothalamus",
+        "forebrain_gaba_in",
+        "neocortex",
+        "hippocampus",
+        "midbrain",
+        "pallidum",
+        "striatum",
+        "brainstem",
+        "cerebellum"
+      ],
+      "1.3": [
+        "basal_forebrain_chol",
+        "hypothalamus",
+        "forebrain_gaba_in",
+        "neocortex",
+        "hippocampus",
+        "midbrain",
+        "pallidum",
+        "striatum"
+      ]
+    },
+    "verdict": "the flip-threshold rank is IDENTICAL to the broadcast-leverage rank (lev_j = colsum_j of the frozen kernel): the site whose focal drive flips the collective state most cheaply is the highest-leverage hub (basal forebrain cholinergic), monotone in leverage all the way down. The rank is the SAME across the barrier-depth sweep {0.7,1.0,1.3} on the common finite-threshold set -- a deeper well raises every threshold together but does not reorder which region flips easiest. A FIXED non-switching minority {thalamus, olfactory_bulb} never flips the state at any swept intensity (b0<=1). Which focal drive most cheaply flips the collective state is a fixed property of the frozen kernel's broadcast structure, not of barrier depth nor stimulation intensity. structure-only; efficacy=0."
+  },
+  "C2_latency_ladder": {
+    "_what": "ease-of-flip tracks broadcast leverage with critical slowing at the bottom: the flip threshold and the crossing latency are both monotone-decreasing in leverage, and the lowest-leverage finite-flip site shows the largest latency (critical slowing)",
+    "critical_slowing_lowest_leverage_largest_latency": true,
+    "crossing_latency_table_at_rep_intensity": {
+      "basal_forebrain_chol": 0.72,
+      "brainstem": 5.68,
+      "cerebellum": null,
+      "forebrain_gaba_in": 0.98,
+      "hippocampus": 1.0,
+      "hypothalamus": 0.82,
+      "midbrain": 1.0,
+      "neocortex": 1.0,
+      "olfactory_bulb": null,
+      "pallidum": 1.62,
+      "striatum": 3.24,
+      "thalamus": null
+    },
+    "latency_monotone_decreasing_in_leverage": true,
+    "lowest_leverage_finite_flip_site": "brainstem",
+    "non_switching_set_never_crosses": true,
+    "threshold_monotone_decreasing_in_leverage": true,
+    "verdict": "the flip threshold is monotone-decreasing in broadcast leverage (b0* = spinodal/lev), and at a FIXED supra-threshold intensity (b0=0.9) the crossing latency -- the time the collective state takes to flip -- is also monotone-decreasing in leverage: a high-leverage hub flips the state both more cheaply AND faster, a low-leverage site dearly and slowly. The lowest-leverage site that still flips (brainstem) shows the largest finite latency (critical slowing -- the transition time diverging as the effective drive approaches the fold), the §28 ictal time-course given a spatial address; the fixed non-switching minority never crosses. structure-only."
+  },
+  "C3_decoupled_and_no_reach_law": {
+    "_what": "the genuinely-new coupling result + the honest no-tuning negative: (a) the switch-leverage axis is DECOUPLED from the §46 instantaneous-footprint axis; (b) there is no universal reach->switchability law -- the §43 reach hub is one of the hardest to switch",
+    "decoupled": true,
+    "decoupled_from_instantaneous_footprint": true,
+    "field_relay_set_sec46": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "field_relay_switch_ranks": {
+      "hippocampus": 5,
+      "midbrain": 6
+    },
+    "hard_to_switch_but_clean_delivery_sites": [
+      "cerebellum",
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "no_universal_reach_to_switchability_law": true,
+    "reach_hub_is_switch_hub": false,
+    "reach_hub_sec43": "cerebellum",
+    "reach_hub_switch_rank": 10,
+    "switch_hub_sec46_field_class": "self_localising",
+    "switch_leverage_hub": "basal_forebrain_chol",
+    "verdict": "(a) the §46/E1.3 instantaneous-field relay set {hippocampus, midbrain} (where a focal drive's instantaneous effect leaks off-target) is NOT the switch hub set: those two sites are MID-rank in switch leverage (ranks 5-6 of 12, easily switchable, not special), while the switch hub is basal-forebrain-cholinergic, which §46 classes as SELF-LOCALISING (clean instantaneous delivery). WHERE a focal drive's instantaneous effect lands and WHICH focal drive flips the collective state are two DISTINCT, decoupled spatial axes -- the E1xE2 lesson neither layer alone could state. (b) The clean hypothesis 'the greatest-reach region (the §43 reach hub) is the one whose focal drive most easily flips the state' is FALSE: the §43/§46 reach hub is cerebellum (rank-1 reach at every depth) yet cerebellum is switch-rank 10 of 12, one of the HARDEST to flip the state from; the hard-to-switch set {thalamus, olfactory_bulb, cerebellum} are all §46 self-localising (clean delivery) yet cannot cheaply flip the collective state. Reaching far, delivering cleanly, and flipping the collective state are THREE distinct properties -- NO universal reach->switchability law. The refuted clean hypothesis is reported honestly -- the no-tuning discipline working as intended."
+  },
+  "C4_majority_switchable": {
+    "_what": "a coherent majority-switchable structure with a fixed non-switching minority -- the honest contrast with §46, where clean instantaneous delivery was the default",
+    "coherent_structure": true,
+    "fixed_non_switching_set": [
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "non_switching_set_size": 2,
+    "sec46_field_clean_was_majority": true,
+    "sec46_field_self_localising_count": "10/12",
+    "switchable_is_strict_majority": true,
+    "switchable_set": [
+      "basal_forebrain_chol",
+      "brainstem",
+      "cerebellum",
+      "forebrain_gaba_in",
+      "hippocampus",
+      "hypothalamus",
+      "midbrain",
+      "neocortex",
+      "pallidum",
+      "striatum"
+    ],
+    "switchable_set_size": 10,
+    "verdict": "a STRICT MAJORITY of sites (ten of twelve) can have their collective state flipped by a swept focal drive (b0<=1), with a FIXED non-switching minority {thalamus, olfactory_bulb} that cannot -- MAJORITY-SWITCHABLE, with a hard peripheral floor. This is the honest contrast with §46, where the structural default was clean instantaneous DELIVERY (ten of twelve self-localising in the instant): here most regions' focal drive CAN flip the collective state, but how cheaply is set by broadcast leverage and a peripheral minority is locked out entirely. A DIRECTION-ONLY [L] correspondence is noted, never a magnitude or a prediction: the highest-leverage hubs (basal forebrain cholinergic, hypothalamus) are the classic global brain-state / arousal control hubs (the ascending arousal and basal-forebrain systems gating sleep-wake and cortical state), and the hardest-to-switch / locked-out sites (thalamic relay, olfactory bulb, cerebellum) are peripheral sensory-relay or motor-timing structures -- direction-consistent with broadcast hubs having an outsized role in switching the global brain state, and relays not."
+  },
+  "S6_engine_invariance_guard": {
+    "_what": "removing the focal drive (b0=0 -> h_eff=0) settles the collective state via E.settle bit-for-bit (the static limit IS the frozen engine, inherited from E2.4), the fold is read from E.spinodal, and the down state stays down exactly -- a pure add-on",
+    "down_state_stays_down": true,
+    "focal_excursion_removed_reverts_exactly": true,
+    "fold_read_from_E_spinodal": true,
+    "guard": true,
+    "leverage_switch_zero_drive_endpoint": "-1.0",
+    "settle_endpoint_E_settle": "-1.0",
+    "static_limit_is_E_settle_bitwise": true,
+    "zero_drive_matches_settle_bitwise": true
+  },
+  "_what": "SPC-E1E2 -- the spatial-switch-leverage coupling: the SECOND marriage of the E1 spatial-localisation layer (§43 SpatialField, a per-node spatial drive on the frozen kernel) and the E2 state-switching layer (§28 BistableSwitch, the frozen R19 bistable cell used over time), the spatial sibling of the §29 bipolar episode. Neither layer alone could pose the question -- E1 has no bistable state (a focal drive cannot FLIP anything), E2 has no spatial profile (every region is the same scalar drive). This module drives the SINGLE collective R19 bistable state (the SAME §28/§29 cell) with a FOCAL stimulation whose effective drive is the driven node's frozen-kernel BROADCAST LEVERAGE (lev_j = colsum_j of W0, the one-step current node j injects), and asks WHICH region's focal drive most easily flips the state. Four sign/order-only results over a stimulation-intensity x barrier-depth sweep: (C1) the flip-threshold rank EQUALS the broadcast-leverage rank and is barrier-invariant, with a fixed non-switching minority {thalamus, olfactory_bulb}; (C2) ease-of-flip tracks leverage (threshold and latency both monotone-decreasing in leverage) with critical slowing at the bottom; (C3, the genuinely-new result + honest negative) the switch-leverage axis is DECOUPLED from the §46 instantaneous-footprint axis AND the §43 reach axis -- the reach hub (cerebellum) is one of the HARDEST to switch, so there is no universal reach->switchability law; (C4) a coherent majority-switchable structure with a fixed non-switching minority, the honest contrast with §46's clean-delivery default. Both layers IMPORTED, not re-derived; the only new object is the §28 cell fed a frozen-kernel leverage readout -- no new constant, no new rule. MECHANISM only -- NOT felt, NOT efficacy, NOT medical advice.",
+  "cited_and_locked": {
+    "couples_two_layers": "the SECOND coupling of the E1 spatial-localisation layer (§43) and the E2 state-switching layer (§28): a focal excitatory drive (E1) whose effective drive is the frozen kernel's broadcast leverage flips the single collective R19 bistable state (E2) -- the spatial sibling of the §29 bipolar episode (§29 asked WHEN the state flips under a temporal drive; this asks WHERE a focal drive most cheaply flips it)",
+    "decoupled_axes_LOCK": "the switch-leverage axis is DECOUPLED from the §46 instantaneous-footprint axis (the field-relay set is mid-rank in switch leverage; the switch hub is §46 self-localising) and from the §43 reach axis (the reach hub, cerebellum, is one of the HARDEST to switch) -- reaching far, delivering cleanly, and flipping the state are three distinct properties; there is NO universal reach->switchability law",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; whether any real focal stimulation flips a brain state, and which, is external",
+    "leverage_orders_switchability_LOCK": "the flip-threshold rank EQUALS the broadcast-leverage rank (b0* = spinodal/lev, inverse in leverage) and is barrier-invariant: WHICH focal drive most cheaply flips the collective state is a fixed property of the frozen kernel's broadcast structure, not of barrier depth nor stimulation intensity",
+    "real_state_control_distributed_LOCK": "real brain-state switching is a distributed neuromodulatory system (the ascending arousal nuclei, basal forebrain, thalamic and cortical loops, multiple transmitters, state-dependent conductances); this module asserts the SIGN/ORDER/STRUCTURE of which focal-drive ADDRESS most cheaply flips a single bistable collective state when the effective drive is the frozen kernel's broadcast leverage, not that any real state control follows this exact rule",
+    "reuse_not_rederive_LOCK": "both layers are IMPORTED (SpatialField for the frozen kernel and broadcast structure, BistableSwitch for the R19 cell and the fold); the kernel W0, the broadcast leverage colsum, the R19 cell and the fold are NOT re-derived. The only new object is the §28 cell fed a leverage readout of the SAME frozen kernel -- no new constant, no new rule",
+    "state_control_hubs_cited": "the highest-leverage hubs (basal forebrain cholinergic, hypothalamus) are the classic global brain-state / arousal control hubs, and the locked-out / hard-to-switch sites (thalamic relay, olfactory bulb, cerebellum) are peripheral relay or motor-timing structures -- a DIRECTION-ONLY [L] correspondence to the leverage ordering, never a magnitude or a patient-level prediction"
+  },
+  "grounding": {
+    "barrier_sweep": [
+      0.7,
+      1.0,
+      1.3
+    ],
+    "broadcast_leverage": "lev_j = colsum_j = sum_i W0[i,j], the total one-step ephaptic current node j injects into the network through the FROZEN kernel W0 (E1's imported ~1/r^3 row-stochastic kernel) -- a pure readout, not a fit",
+    "broadcast_leverage_table": {
+      "basal_forebrain_chol": 1.793325,
+      "brainstem": 0.532586,
+      "cerebellum": 0.393236,
+      "forebrain_gaba_in": 1.424396,
+      "hippocampus": 1.388238,
+      "hypothalamus": 1.631919,
+      "midbrain": 1.382603,
+      "neocortex": 1.389384,
+      "olfactory_bulb": 0.218105,
+      "pallidum": 0.978044,
+      "striatum": 0.6587,
+      "thalamus": 0.209463
+    },
+    "collective_state": "the §28 BistableSwitch cell ds/dt = g*s - s^3 + h (E2's imported R19 cell, the SAME cubic the engine froze, E.sdot), started at the DOWN fixed point s0 = -sqrt(g); imported, not re-derived",
+    "drive": "focal EXCITATORY bias b0>0 at one region (rest baseline); its effective drive on the collective state is the broadcast leverage of the driven node, NO new constant",
+    "effective_drive_and_fold": "h_eff(j,b0) = b0 * lev_j; the state flips up iff h_eff crosses the fold spinodal(g) (E.spinodal, the SAME fold as M11 / theta-cap / epilepsy / E2); the intensity threshold is b0* = spinodal(g) / lev_j, inverse in the leverage -- forced [F]",
+    "field_relay_set_sec46": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "intensity_sweep": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "reach_hub_sec43": "cerebellum",
+    "rep_barrier": 1.0,
+    "rep_intensity": 0.9,
+    "reused_layers": {
+      "E1_SpatialField": "imported (frozen kernel W0, broadcast structure, per-node spatial drive)",
+      "E2_BistableSwitch": "imported (the R19 bistable cell, the fold)",
+      "R19_fold_spinodal": 0.3849,
+      "kappa_measured": 0.5496,
+      "n_regions": 12
+    },
+    "sweep_grade": "[O] swept -- stimulation intensity b0 AND barrier depth g are SWEPT, not tuned; every SIGN/ORDER/STRUCTURE holds across BOTH sweeps (intensity x barrier, anti-tuning)"
+  },
+  "honesty_ledger": {
+    "barrier_depth_g": "OPEN [O] -- swept {0.7,1.0,1.3}; the rank is barrier-invariant, not tuned",
+    "broadcast_leverage_is_frozen_kernel_readout": 1.0,
+    "clinical_prediction": "NONE -- the [L] correspondence is direction-only, never a patient-level prediction; target selection / device programming are external",
+    "collective_state_is_structural": 1.0,
+    "consciousness_claim": 0.0,
+    "couples_E1_and_E2": 1.0,
+    "hard_problem_open": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "not_medical_advice": 1.0,
+    "opens_E1xE2_coupling": 1.0,
+    "reach_to_switchability_law_refuted": "C3(b) reports a REFUTED clean hypothesis honestly (no universal reach->switchability law) rather than forcing a tidy 'the reach hub is the switch hub' narrative",
+    "reuses_E1_spatial_field": 1.0,
+    "reuses_E2_state_switching": 1.0,
+    "stimulation_intensity": "OPEN [O] -- swept (driven node, depth); signs/order hold over the intensity sweep, not tuned",
+    "switchability_decoupled_from_instantaneous_footprint": 1.0,
+    "switchability_decoupled_from_reach": 1.0
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_value_frozen": "0.38961455156044245",
+    "static_limit_is_E_settle": true
+  },
+  "overall": {
+    "decoupling_and_no_law_reproduced": true,
+    "engine_invariance_guard": true,
+    "is_full_module": true,
+    "latency_ladder_reproduced": true,
+    "majority_switchable_reproduced": true,
+    "threshold_rank_reproduced": true,
+    "verdict": "SPC-E1E2 is the spatial-switch-leverage coupling -- the second marriage of the E1 spatial drive and the E2 bistable state, the spatial sibling of the §29 bipolar episode, asking WHICH focal drive most easily flips the collective state. The flip-threshold rank EQUALS the broadcast-leverage rank and is barrier-invariant, with a fixed non-switching minority {thalamus, olfactory_bulb} (C1); ease-of-flip tracks leverage -- threshold and latency both monotone-decreasing in leverage -- with critical slowing at the lowest-leverage finite-flip site (C2); the switch-leverage axis is DECOUPLED from the §46 instantaneous-footprint axis and the §43 reach axis -- the reach hub (cerebellum) is one of the hardest to switch, so there is no universal reach->switchability law (C3, the genuinely-new result + honest negative); a coherent majority-switchable structure with a fixed non-switching minority, the honest contrast with §46's clean-delivery default (C4). Removing the focal drive settles the collective state via E.settle bit-for-bit and the fold is read from E.spinodal (S6). Both layers imported not re-derived, no new tuned constant, no new rule, engine byte-unchanged. efficacy=0; not medical advice; Axis-A firewall; hard problem OPEN."
+  },
+  "preregistered_results": {
+    "C1_threshold_rank_is_leverage_rank_barrier_invariant": {
+      "claim": "driving a focal excitatory stimulation at each region, the flip-threshold rank (easiest to flip the collective state first) EQUALS the broadcast-leverage rank (lev_j = colsum_j of the frozen kernel) and is identical across the barrier-depth sweep on the common finite-threshold set; a fixed non-switching minority {thalamus, olfactory_bulb} never flips at any swept intensity",
+      "status": "CONFIRMED"
+    },
+    "C2_ease_of_flip_tracks_leverage_critical_slowing": {
+      "claim": "the flip threshold is monotone-decreasing in broadcast leverage and the crossing latency at a fixed supra-threshold intensity is monotone-decreasing in leverage, with the lowest-leverage finite-flip site showing the largest latency (critical slowing); the non-switching minority never crosses",
+      "status": "CONFIRMED"
+    },
+    "C3_switchability_decoupled_from_footprint_and_reach": {
+      "claim": "the switch-leverage axis is decoupled from the §46 instantaneous-footprint axis (the field-relay set is mid-rank; the switch hub is §46 self-localising) and there is no universal reach->switchability law (the §43 reach hub, cerebellum, is one of the hardest to switch)",
+      "status": "CONFIRMED"
+    },
+    "C4_majority_switchable_fixed_nonswitching_minority": {
+      "claim": "a strict majority (ten of twelve) of sites can have their collective state flipped by a swept focal drive, with a fixed non-switching minority {thalamus, olfactory_bulb} -- majority-switchable with a hard peripheral floor, the honest contrast with §46's clean-delivery default",
+      "status": "CONFIRMED"
+    }
+  }
+}

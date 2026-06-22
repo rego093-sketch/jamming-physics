@@ -1482,6 +1482,343 @@ LOCKS = {
         "canonical": "44-focal-epilepsy-spread",
         "check": None,
     },
+    "lesion_field_diaschisis": {
+        "label": "stroke/lesion field = local deficit vs remote diaschisis; the second region-specific application of the spatial layer",
+        "value": "silencing each region as a focal lesion (an inhibitory bias on the frozen kernel, the node SILENCED not deleted) the 12 lesions partition into LOCAL-DEFICIT (the dysfunction stays local) and REMOTE-DIASCHISIS (the lesion disrupts distant circuits more than itself), and this partition is DRIVE-INVARIANT over the moderate-to-severe core — the diaschisis set {hippocampus, midbrain} fixed at every severity, = the E1.3 relay set; remote diaschisis IS off-target dominance (the change lands harder on distal circuits than on the lesion); but global-coordination disruption is NOT remote diaschisis — the single largest global disruptor is the LOCAL-deficit cerebellum and, unlike §44, the reach hub is NOT drive-invariant (cerebellum→midbrain at −0.9), two decoupled axes — so remote-dysfunction propagation is site-determined, local deficit the structural default",
+        "grade": "[V mech]",
+        "meaning": "the SECOND region-specific application of the §43 spatial-localisation layer, and the "
+                   "destructive-lesion DUAL of the §44 focal-epilepsy module. §44 read the spatial map under an "
+                   "EXCITATORY ictal drive (does a focal seizure stay focal or secondarily generalise?); this "
+                   "module reads the SAME map under a SILENCING (inhibitory) bias — a focal lesion — and asks the "
+                   "dual clinical question for a STROKE: does destroying one region produce a purely LOCAL deficit "
+                   "or disrupt REMOTE, connected regions MORE than the lesion site itself (DIASCHISIS, von "
+                   "Monakow's classical concept of remote dysfunction after focal injury). A lesion = a strong "
+                   "focal INHIBITORY bias at one region (the rest baseline, same k=κ/(1+|b|) inhib map, no new "
+                   "constant); the lesioned node is SILENCED, NOT deleted — deleting a node would break the frozen "
+                   "W0 and forfeit kernel reuse (handover's explicit lesion-modelling directive) — so the lesion "
+                   "is read on the INTACT frozen kernel, severity SWEPT over {−0.5,−0.7,−0.9} (the moderate-to-"
+                   "severe floor inherited from E1.2), every sign required to hold at every severity. Four "
+                   "results. (L1) The local-deficit/remote-diaschisis partition is DRIVE-INVARIANT: each lesion is "
+                   "LOCAL-DEFICIT (the coordination change concentrates at the lesion, the dysfunction stays "
+                   "local) or REMOTE-DIASCHISIS (the change lands harder off-target, the lesion disrupts distant "
+                   "circuits more than itself), and the diaschisis set {hippocampus, midbrain} is fixed at every "
+                   "severity — whether a lesion stays local or causes diaschisis is a property of lesion "
+                   "LOCATION — and that set is EXACTLY the E1.3 relay set read under silencing. (Honest scope: at "
+                   "a MILD sub-floor −0.3 the thalamus ALSO enters the diaschisis set; this is reported plainly "
+                   "and is NOT part of the drive-invariant claim, asserted only over the moderate-to-severe core.) "
+                   "(L2) Remote diaschisis IS off-target dominance: for a diaschisis lesion the mean off-target "
+                   "local-coherence change exceeds its own (ratio>1 — midbrain ~3.0×, hippocampus ~1.2×) — the "
+                   "structural content of remote dysfunction after focal injury — for a local-deficit lesion it "
+                   "concentrates at the site (ratio≪1 — cerebellum ~0.06×), the equivalence holding at every "
+                   "severity. (L3, the honest no-tuning result) Global disruption is NOT remote diaschisis: the "
+                   "clean hypothesis 'the lesions that most disrupt GLOBAL coordination are exactly the remote-"
+                   "diaschisis lesions' is FALSE — the single largest global disruptor is the CEREBELLUM, a "
+                   "LOCAL-deficit lesion (off/own≪1, no diaschisis) that is rank-1 global disruptor at the "
+                   "moderate severities and top-3 at every severity, i.e. a lesion can MAXIMISE global disruption "
+                   "while being maximally LOCAL; and unlike §44 (where the reach hub was drive-invariant) the "
+                   "reach hub here is NOT drive-invariant (cerebellum tops reach at −0.5/−0.7, midbrain overtakes "
+                   "at −0.9) — so remote diaschisis and global-coordination disruption are TWO DISTINCT, decoupled "
+                   "spatial axes and remote-dysfunction propagation is site-determined; the refuted clean "
+                   "hypothesis is reported honestly (the E1.4 lesson for stroke). (L4) The diaschisis set is a "
+                   "COHERENT MINORITY relay-hub class: {hippocampus, midbrain} is simultaneously the E1.3 relay "
+                   "set and the off-target-dominant set, a strict minority (2 of 12 — local deficit the structural "
+                   "default), and disjoint from the global-disruption hub — remote diaschisis is structurally the "
+                   "EXCEPTION carried by specific relay hubs; a [L] direction-only correspondence is noted (most "
+                   "focal lesions produce focal deficits; diaschisis — crossed cerebellar diaschisis, "
+                   "thalamic/limbic remote effects, von Monakow's concept — is the recognised exception at "
+                   "specific connected hubs), never a patient-level prediction. A zero lesion reproduces the "
+                   "frozen M9 anchor (R=0.38961455156) BIT-FOR-BIT and the off-state field equals the baseline "
+                   "exactly — a pure structural read on the frozen kernel; engine imported READ-ONLY and byte-"
+                   "unchanged (0fbf4988…), no new tuned constant, SpatialField reused not re-derived. Axis-A "
+                   "firewall: a local-deficit/diaschisis class is a STRUCTURAL spatial quantity of the coupling "
+                   "model, NEVER the felt experience of a stroke, and NOT a real lesion, infarct/perfusion/"
+                   "diffusion map, connectome-diaschisis measurement, stroke-outcome prediction, or rehabilitation/"
+                   "clinical guidance (consciousness_claim=0; hard problem OPEN); efficacy=0; not medical advice.",
+        "canonical": "45-lesion-field-diaschisis",
+        "check": None,
+    },
+    "targeted_neuromodulation_offtarget": {
+        "label": "targeted neuromodulation = clean delivery vs off-target leak; the third and final region-specific application of the spatial layer, closing the E1 trilogy",
+        "value": "aiming a focal therapeutic stimulation (DBS/TMS/tDCS, modelled as the SAME excitatory bias §44 used, k=κ/(1+|b|), no new constant) at each region, the 12 targets partition into CLEAN-DELIVERY (the excitation concentrates where it is aimed) and OFF-TARGET-LEAK (the excitation bleeds to distal circuits), and this partition is DRIVE-INVARIANT at EVERY swept intensity INCLUDING the mildest (no sub-floor caveat, an honest contrast with §45's inhibitory case) — the leak set {hippocampus, midbrain} fixed at every intensity, = the E1.3 relay set; off-target leak IS off-target dominance (off/own>1 — hippocampus ~4.2×, midbrain ~1.6×; clean cerebellum ~0.04×); clean delivery and global reach are DECOUPLED — the cleanest target (cerebellum) is ALSO the largest-global-reach target at every intensity and the reach hub IS drive-invariant (inheriting §44, the honest contrast with §45), refuting 'focal=weak, leaky=strong', and the two leak targets push global R in OPPOSITE directions (hippocampus lowers, midbrain raises), so leak is not a controllable point-to-point relay — clean delivery the structural default; the spatial numbers COINCIDE with §44 (same excitatory drive, stated plainly), what is new is the therapeutic target-selection reading and the N3 decoupling",
+        "grade": "[V mech]",
+        "meaning": "the THIRD and FINAL region-specific application of the §43 spatial-localisation layer, and the "
+                   "THERAPEUTIC re-reading of the §44 focal-epilepsy module, CLOSING the E1 application trilogy "
+                   "(containment/broadcast for seizures §44 · local/diaschisis for stroke §45 · clean/leak for "
+                   "neuromodulation §46). §44 read the spatial map under an EXCITATORY ictal drive (does a focal "
+                   "seizure stay focal or generalise?); this module reads the SAME excitatory map under the SAME "
+                   "k=κ/(1+|b|) coupling but RE-FRAMES the drive as a therapeutic focal stimulation (deep brain "
+                   "stimulation, transcranial magnetic/direct-current stimulation) and asks the dual clinical "
+                   "question of TARGET SELECTION: aim a focal stimulation at a region — does the excitation DELIVER "
+                   "CLEANLY (self-localising, the stimulation concentrates where it is aimed) or LEAK OFF-TARGET "
+                   "(relay, the stimulation bleeds to distal circuits)? Because this module reads the SAME "
+                   "excitatory spatial map as §44, the footprint classes, reach map and off-target ratios COINCIDE "
+                   "NUMERICALLY with §44 — STATED PLAINLY as the central no-overclaiming point (a focal excitatory "
+                   "drive is a focal excitatory drive; the numbers are NOT a fresh measurement). What is NEW is (a) "
+                   "the THERAPEUTIC target-selection reading (a relay target = off-target leak, a self-localising "
+                   "target = clean delivery, distinct from §44's seizure-prognosis framing) and (b) the N3 honest-"
+                   "negative DECOUPLING result. Intensity SWEPT over {0.3,0.5,0.7,0.9}, every sign required to hold "
+                   "at every intensity. Four results. (N1) The clean-delivery/off-target-leak partition is DRIVE-"
+                   "INVARIANT: each target is CLEAN-DELIVERY (the change concentrates at the target) or OFF-TARGET-"
+                   "LEAK (the change lands harder off-target), and the leak set {hippocampus, midbrain} is fixed at "
+                   "every intensity — whether aiming at a region delivers cleanly or leaks is a property of target "
+                   "LOCATION — and that set is EXACTLY the E1.3 relay set. Unlike §45's inhibitory case (a marginal "
+                   "node crossed in only at a mild sub-floor severity), the EXCITATORY partition is exactly stable "
+                   "at EVERY intensity INCLUDING the mildest (0.3) — NO sub-floor caveat, inheriting §44's full-"
+                   "sweep scope, an honest contrast with the destructive dual. (N2) Off-target leak IS off-target "
+                   "dominance: for a leak target the mean off-target local-coherence change exceeds its own "
+                   "(ratio>1 — hippocampus ~4.2×, midbrain ~1.6×) — a stimulation that bleeds away from where it is "
+                   "aimed — for a clean target it concentrates at the site (ratio≪1 — cerebellum ~0.04×, the "
+                   "cleanest delivery), the equivalence holding at every intensity (these are §44's ratios re-read "
+                   "as delivery quality). (N3, the honest no-tuning result) Clean delivery and global reach are "
+                   "DECOUPLED: the clean hypothesis 'to get a large GLOBAL effect you must accept off-target leak; "
+                   "a clean target is necessarily a WEAK one' is FALSE — the single largest global-reach target is "
+                   "the CEREBELLUM, a CLEAN-delivery target (off/own≪1, no leak) that is rank-1 at EVERY intensity, "
+                   "i.e. a target can MAXIMISE global effect while delivering maximally CLEANLY, refuting "
+                   "'focal=weak, leaky=strong'; and unlike §45 the reach hub IS drive-invariant (cerebellum at "
+                   "every intensity, inheriting §44). Moreover the two leak targets push global R in OPPOSITE "
+                   "directions (hippocampus LOWERS R, midbrain RAISES it, at every intensity) — leak is site-"
+                   "determined in magnitude AND direction, NOT a controllable point-to-point relay a clinician "
+                   "could aim through — so clean delivery and global reach are TWO DISTINCT, decoupled spatial axes; "
+                   "the refuted clean hypothesis is reported honestly (the E1.4 lesson for neuromodulation). (N4) "
+                   "The leak set is a COHERENT MINORITY relay-hub class: {hippocampus, midbrain} is simultaneously "
+                   "the E1.3 relay set and the off-target-dominant set, a strict minority (2 of 12 — clean delivery "
+                   "the structural default), and disjoint from the global-reach hub — off-target leak is "
+                   "structurally the EXCEPTION carried by specific relay hubs; a [L] direction-only correspondence "
+                   "is noted (off-target effects of focal neuromodulation — current spread beyond target, DBS "
+                   "co-recruitment of adjacent/connected structures, TMS/tDCS network spread — are a recognised "
+                   "concern at specific connected hubs), never a patient-level prediction. A zero stimulation "
+                   "reproduces the frozen M9 anchor (R=0.38961455156) BIT-FOR-BIT and the off-state field equals "
+                   "the baseline exactly — a pure structural read on the frozen kernel; engine imported READ-ONLY "
+                   "and byte-unchanged (0fbf4988…), no new tuned constant, SpatialField reused not re-derived, the "
+                   "spatial numbers are §44's own. Axis-A firewall: a clean-delivery/off-target-leak class is a "
+                   "STRUCTURAL spatial quantity of the coupling model, NEVER a felt effect of stimulation, and NOT "
+                   "a real electric-field/current-density map, lead-position/SAR map, real connectome, prediction "
+                   "of which patient's stimulation leaks or which target is optimal, or device-programming/target-"
+                   "selection guidance (consciousness_claim=0; hard problem OPEN); efficacy=0; not medical advice.",
+        "canonical": "46-targeted-neuromodulation-offtarget",
+        "check": None,
+    },
+    "spatial_plasticity_imprint": {
+        "label": "spatial-plasticity imprint = local delivery vs relayed consolidation; the FIRST cross-axis coupling, marrying the E1 spatial layer (WHERE) to the E0 plasticity layer (LASTING)",
+        "value": "driving a focal therapeutic stimulation (modelled as the SAME excitatory bias §44/§46 used, k=κ/(1+|b|), no new constant) at each region and then letting the E0 phase-Hebbian update consolidate the coincidences it provokes (new integrator stepping the per-node spatial drive on the EVOLVING connectome), the 12 targets partition into LOCAL-IMPRINT (the lasting synaptic trace concentrates where the drive is aimed) and RELAYED-IMPRINT (the trace lands harder on distal circuits), and this partition is DRIVE-INVARIANT across BOTH the intensity sweep {0.3,0.5,0.7,0.9} AND the consolidation-rate sweep {0.03,0.05,0.08} — exactly one partition over the whole grid — the local set {brainstem, cerebellum, pallidum, striatum} fixed throughout; relayed imprint IS off-target-dominant trace (off/own>1) at every intensity and rate; the genuinely-new coupling result — the trace-relay set STRICTLY CONTAINS the §46 field-relay set {hippocampus, midbrain}: plasticity DELOCALISES imprint, so clean DELIVERY does NOT imply clean IMPRINT — six witness sites (neocortex, thalamus, hypothalamus, basal_forebrain_chol, forebrain_gaba_in, olfactory_bulb) self-localise the instantaneous field yet imprint OFF-TARGET once consolidation runs; relayed imprint is the STRUCTURAL DEFAULT (strict majority 8 of 12, an honest contrast with §46's clean-default 10 of 12); and the honest negative — there is NO universal focal>diffuse trace law (only 3 of 12 imprint more under a focal than a diffuse drive); what is new is the COUPLING reading (a lasting trace, not an instantaneous field) and the delivery/imprint decoupling",
+        "grade": "[V mech]",
+        "meaning": "the FIRST cross-axis coupling in the atlas — every prior E1 module (§44 containment/broadcast, "
+                   "§45 local/diaschisis, §46 clean/leak) re-read the SAME §43 spatial map on a SINGLE axis (space), "
+                   "and every prior E0 module (§37/§39/§41) consolidated on the SINGLE axis of time; this module "
+                   "MARRIES the two, importing BOTH the §43 SpatialField (per-node drive, NOT re-derived) and the "
+                   "§26 PlasticConnectome (phase-correlation Hebbian update, NOT re-derived) and asking the question "
+                   "neither axis can answer alone: a focal stimulation DELIVERS to a place (E1) and then the network "
+                   "CONSOLIDATES what the drive provoked (E0) — so WHERE does a focal drive leave a LASTING synaptic "
+                   "imprint, and is that place the same as where the instantaneous field landed? A new integrator "
+                   "(_integrate_coupled) steps the per-node spatial drive vector on the EVOLVING connectome while "
+                   "accumulating the pairwise phase-coincidence the E0 rule consolidates, re-seeding the engine's own "
+                   "fixed incoherent IC each epoch (deterministic). Intensity SWEPT over {0.3,0.5,0.7,0.9} AND "
+                   "consolidation rate over {0.03,0.05,0.08}; every sign required to hold across the WHOLE product "
+                   "grid. Four results. (C1) The local-imprint/relayed-imprint partition is DRIVE-INVARIANT across "
+                   "BOTH sweeps: each target's lasting trace either concentrates where the drive is aimed (LOCAL "
+                   "IMPRINT) or lands harder off-target (RELAYED IMPRINT), and the local set {brainstem, cerebellum, "
+                   "pallidum, striatum} is fixed at every (intensity, rate) — whether a focal drive imprints locally "
+                   "is a property of target LOCATION, stable under both how hard and how fast you drive. (C2) Relayed "
+                   "imprint IS off-target dominance: for a relayed target the mean off-target consolidated trace "
+                   "exceeds its own (ratio>1), for a local target it concentrates at the site (ratio<1), the "
+                   "equivalence holding across the whole grid — the consolidated read of the §46 leak quality. (C3, "
+                   "the genuinely-new coupling result + the honest negative) DELIVERY and IMPRINT are DECOUPLED: the "
+                   "trace-relay set STRICTLY CONTAINS the §46 instantaneous field-relay set {hippocampus, midbrain} "
+                   "— plasticity DELOCALISES the imprint — so a target whose instantaneous field self-localises "
+                   "CLEANLY (clean DELIVERY, §46) can still imprint OFF-TARGET once the trace consolidates (relayed "
+                   "IMPRINT): six witness sites (neocortex, thalamus, hypothalamus, basal_forebrain_chol, "
+                   "forebrain_gaba_in, olfactory_bulb) deliver cleanly yet imprint off-target, demonstrating that "
+                   "clean delivery does NOT imply clean imprint; and the refuted clean hypothesis is reported "
+                   "honestly — there is NO universal focal>diffuse trace law (only 3 of 12 imprint more under a "
+                   "focal than a matched diffuse drive, heterogeneous not universal), the E0×E1 lesson that a "
+                   "lasting trace is not a sharpened field. (C4) Relayed imprint is the STRUCTURAL DEFAULT: the "
+                   "relayed-imprint set is a strict MAJORITY (8 of 12) — an honest CONTRAST with §46's clean-default "
+                   "(10 of 12 delivered cleanly), the coupling INVERTS the majority because consolidation spreads "
+                   "what delivery localised — it equals the off-target-dominant set and it CONTAINS the §46 field-"
+                   "relay set; a [L] direction-only correspondence is noted (stimulation-induced plasticity from "
+                   "rTMS/tDCS/DBS is network-distributed rather than confined to the stimulated site — a recognised "
+                   "feature of therapeutic neuromodulation), never a patient-level prediction. A zero drive with "
+                   "consolidation OFF (eta=0) reproduces the frozen M9 anchor (R=0.38961455156) BIT-FOR-BIT, eta=0 "
+                   "leaves the connectome W identical to the kernel, and a focal excursion reverts EXACTLY when "
+                   "consolidation is removed (inheriting the E0.3 guard) — a pure structural read on the frozen "
+                   "kernel; engine imported READ-ONLY and byte-unchanged (0fbf4988…), no new tuned constant, BOTH "
+                   "the SpatialField and the PlasticConnectome reused not re-derived. Axis-A firewall: a local-"
+                   "imprint/relayed-imprint class is a STRUCTURAL spatial quantity of the coupled model, NEVER a "
+                   "felt effect of stimulation or of learning, and NOT a real electric-field/current-density map, "
+                   "lead-position/SAR map, real connectome or synaptic-weight matrix, prediction of which patient's "
+                   "stimulation imprints where or which target consolidates optimally, or device-programming/"
+                   "target-selection guidance (consciousness_claim=0; hard problem OPEN); efficacy=0; not medical "
+                   "advice.",
+        "canonical": "47-spatial-plasticity-imprint",
+        "check": None,
+    },
+    "spatial_switch_leverage": {
+        "label": "spatial switch leverage = which focal drive most easily FLIPS the collective state; the SECOND cross-axis coupling, marrying the E1 spatial layer (WHERE) to the E2 state-switching layer (the bistable flip)",
+        "value": "driving the single collective R19 bistable state (the SAME §28/§29 BistableSwitch cell, imported) with a focal stimulation whose effective drive on that state is the driven node's frozen-kernel BROADCAST LEVERAGE (lev_j = colsum_j = Σ_i W0[i,j], the one-step ephaptic current node j injects into the network — a pure readout of the frozen kernel, no new constant), the 12 sites rank by how easily their focal drive flips the state (intensity threshold b0* = spinodal(g)/lev_j, inverse in leverage), and that flip-threshold rank EQUALS the broadcast-leverage rank and is BARRIER-INVARIANT across the well-depth sweep g∈{0.7,1.0,1.3} on the common finite-threshold set — the easiest-to-flip hub is basal_forebrain_chol, monotone in leverage down to a FIXED non-switching minority {thalamus, olfactory_bulb} that never flips at any swept intensity (b0≤1); ease-of-flip tracks leverage with CRITICAL SLOWING — both the threshold and the crossing latency at fixed supra-threshold drive are monotone-decreasing in leverage, the lowest-leverage finite-flip site (brainstem) showing the largest latency (the §28 ictal time-course given a spatial address); the genuinely-new coupling result — the switch-leverage axis is DECOUPLED from BOTH the §46 instantaneous-footprint axis (the field-relay set {hippocampus, midbrain} is MID-rank 5–6/12, the switch hub basal_forebrain_chol is §46 SELF-LOCALISING) AND the §43 reach axis, with the honest negative that there is NO universal reach→switchability law (the §43/§46 reach hub CEREBELLUM is switch-rank 10/12, one of the HARDEST to flip; the hard-to-switch set {thalamus, olfactory_bulb, cerebellum} all deliver CLEANLY in the instant yet cannot cheaply flip the state); and a coherent MAJORITY-SWITCHABLE structure (10 of 12) with the fixed non-switching minority — the honest contrast with §46's clean-delivery default; what is new is the COUPLING reading (which focal drive flips a bistable collective state, a question neither layer can pose alone) and the switchability/footprint/reach triple-decoupling",
+        "grade": "[V mech]",
+        "meaning": "the SECOND cross-axis coupling in the atlas and the spatial sibling of the §29 bipolar episode — "
+                   "§29 imported the §28 BistableSwitch and asked WHEN the collective state flips under a TEMPORAL "
+                   "drive; this module imports the SAME cell (NOT re-derived) together with the §43 SpatialField "
+                   "(NOT re-derived) and asks the question neither axis can answer alone: a focal stimulation acts "
+                   "at a PLACE (E1) and the collective state either FLIPS or holds (E2) — so WHICH region's focal "
+                   "drive most easily flips the bistable state? The only new object is the §28 cell fed an effective "
+                   "drive read straight off the frozen kernel: h_eff(j,b0) = b0·lev_j with lev_j = colsum_j of W0, "
+                   "the total one-step ephaptic current node j broadcasts into the network (a pure frozen-kernel "
+                   "readout — no new constant, no new rule); the state starts at the DOWN fixed point s0=−√g and "
+                   "flips up iff h_eff crosses the fold spinodal(g) (E.spinodal, the SAME fold as M11/theta-cap/"
+                   "epilepsy/E2). Stimulation intensity SWEPT over {0.3,0.5,0.7,0.9} AND barrier depth g over "
+                   "{0.7,1.0,1.3}; every sign/order required to hold across BOTH sweeps. Four results. (C1) The "
+                   "flip-threshold rank EQUALS the broadcast-leverage rank (b0*=spinodal/lev, inverse in leverage) "
+                   "and is BARRIER-INVARIANT on the common finite-threshold set — the easiest-to-flip site is the "
+                   "highest-leverage hub basal_forebrain_chol, monotone down to a FIXED non-switching minority "
+                   "{thalamus, olfactory_bulb} whose leverage is too small for the strongest swept drive to cross "
+                   "the fold; which focal drive most cheaply flips the state is a property of the frozen kernel's "
+                   "broadcast structure, not of barrier depth nor stimulation intensity. (C2) Ease-of-flip tracks "
+                   "leverage with CRITICAL SLOWING: the threshold and the crossing LATENCY at fixed supra-threshold "
+                   "drive (b0=0.9) are both monotone-decreasing in leverage — a high-leverage hub flips the state "
+                   "both more cheaply AND faster — and the lowest-leverage finite-flip site (brainstem) shows the "
+                   "largest latency (the transition time diverging as the effective drive approaches the fold), the "
+                   "§28 ictal time-course now given a spatial address. (C3, the genuinely-new coupling result + the "
+                   "honest negative) switchability is DECOUPLED from BOTH the §46 instantaneous-footprint axis and "
+                   "the §43 reach axis: the §46 field-relay set {hippocampus, midbrain} is MID-rank in switch "
+                   "leverage (5–6 of 12, easily switchable, not special) and the switch hub basal_forebrain_chol is "
+                   "§46 SELF-LOCALISING, so WHERE a focal drive's instantaneous effect lands and WHICH focal drive "
+                   "flips the state are distinct axes; and the refuted clean hypothesis is reported honestly — the "
+                   "§43/§46 reach hub CEREBELLUM (rank-1 reach at every depth, read from the E1 results) is switch-"
+                   "rank 10 of 12, one of the HARDEST to flip, and the hard-to-switch set {thalamus, olfactory_bulb, "
+                   "cerebellum} all self-localise (clean DELIVERY) yet cannot cheaply flip the state, so there is NO "
+                   "universal reach→switchability law (reaching far, delivering cleanly, and flipping the collective "
+                   "state are three distinct properties). (C4) A coherent MAJORITY-SWITCHABLE structure: a strict "
+                   "MAJORITY (10 of 12) can have the collective state flipped by a swept drive, with the FIXED non-"
+                   "switching minority {thalamus, olfactory_bulb} locked out — an honest CONTRAST with §46's clean-"
+                   "delivery default (10 of 12 self-localising); a [L] direction-only correspondence is noted (the "
+                   "highest-leverage hubs basal_forebrain_chol and hypothalamus are the classic global brain-state / "
+                   "arousal control hubs, the locked-out/hard sites thalamic relay, olfactory bulb and cerebellum "
+                   "are peripheral relay/motor-timing structures — direction-consistent with broadcast hubs gating "
+                   "global brain-state switching), never a patient-level prediction. Removing the focal drive "
+                   "(b0=0 → h_eff=0) settles the collective state via E.settle BIT-FOR-BIT (the static limit IS the "
+                   "frozen engine, inheriting the E2.4 guard) and the fold is read from E.spinodal — a pure add-on "
+                   "on the frozen kernel; engine imported READ-ONLY and byte-unchanged (0fbf4988…), no new tuned "
+                   "constant, BOTH the SpatialField and the BistableSwitch reused not re-derived. Axis-A firewall: "
+                   "the collective bistable state and its flip are STRUCTURAL quantities of the coupled model, NEVER "
+                   "a felt state, an experienced arousal or a level of consciousness, and NOT a real electric-field/"
+                   "current-density map, lead-position/SAR map, real connectome, prediction of which patient's "
+                   "stimulation flips which brain state, or device-programming/target-selection guidance "
+                   "(consciousness_claim=0; hard problem OPEN); efficacy=0; not medical advice.",
+        "canonical": "48-spatial-switch-leverage",
+        "check": None,
+    },
+    "e0e2_kindling": {
+        "label": "kindling = do repeated state-flips become easier; the THIRD cross-axis coupling, marrying the E0 plasticity layer (the evolving connectome) to the E2 state-switching layer (the bistable flip), and the module that closes the trace→threshold link the §29 bipolar episode left OPEN",
+        "value": "driving the single collective R19 bistable state (the SAME §28/§29 BistableSwitch cell, imported) through repeated FLIP EPISODES, letting each flip drive the §26 phase-Hebbian update so the connectome EVOLVES (the SAME §26 PlasticConnectome, imported), and reading the effective drive of an external push off the evolving connectome via its COORDINATION GAIN L(W) = R(W)/R_anchor (the order parameter at the measured coupling normalised by the frozen M9 anchor R(W0) = 0.38961455156044245 — a pure readout of the connectome, = 1 at W0, generalising the §48 broadcast leverage to the global coherence gain), the flip threshold in external push is p* = spinodal(g)/L(W), which DROPS as the connectome consolidates: repeated flips deepen the retained trace ‖dW‖ STRICTLY MONOTONICALLY and the threshold ends BELOW the un-kindled fold (KINDLING — repeated flips become easier), and the kindling is BARRIER-INVARIANT across the well-depth sweep g∈{0.7,1.0,1.3} (p* = spinodal(g)/L scales the fold by the same gain at every g) — this is the trace→threshold coupling the §29 bipolar episode (B3) named but left [O]; the push-space hysteresis loop 2·spinodal(g)/L NARROWS and the crossing latency at a fixed supra-threshold push SHORTENS (a learned change of the §28 hysteresis and a faster onset); the genuinely-new coupling result with the honest negative — kindling is CONSOLIDATIVE, NOT DEGRADATIVE: the clean hypothesis 'kindling erodes coordination, so easier-to-flip means less coordinated' is REFUTED, the connectome's coordination R(W) RISES (net, across the rate sweep) and the kindled connectome ends AT OR ABOVE the frozen anchor while the trace deepens, so easier-to-flip and erosion are DECOUPLED (the threshold falls through CONSOLIDATION, the connectome writing the repeated transition into its own structure, not through degradation); and a single coherent consolidative seam — the threshold is monotone-decreasing in the accumulated trace ‖dW‖ (the trace IS the kindling variable), with a [L] direction-only correspondence to clinical kindling (Goddard) and bipolar cycle acceleration; what is new is the COUPLING reading (whether repeated flips of a bistable state lower its own threshold, a question neither layer can pose alone — E0 has no flip, E2 has a frozen connectome) and the consolidative-not-degradative refutation",
+        "grade": "[V mech]",
+        "meaning": "the THIRD cross-axis coupling in the atlas and the module that CLOSES the trace→threshold "
+                   "link the §29 bipolar episode left OPEN. The §26 plasticity layer built the evolving "
+                   "connectome and its retained trace; the §28 state-switching layer built the bistable flip, "
+                   "its fold and its hysteresis; §29 imported §28 and showed (B3) that alternating episodes "
+                   "DEEPEN the connectome trace and separately noted a LOWER barrier flips more cheaply, but "
+                   "left the actual trace→threshold COUPLING — whether and how the accumulated trace lowers the "
+                   "threshold — explicitly [O]. This module supplies it. It imports BOTH layers (NOT re-derived) "
+                   "and asks the question neither can pose alone: E0 has the plastic connectome but no bistable "
+                   "flip, E2 has the flip but a frozen connectome so repetition cannot accumulate. The only new "
+                   "object is the §28 cell driven through the §26 connectome: repeated FLIP EPISODES drive the "
+                   "phase-Hebbian update so the connectome consolidates, and the effective drive of an external "
+                   "push p on the collective state is scaled by the connectome's COORDINATION GAIN L(W) = "
+                   "R(W)/R_anchor (a pure readout, = 1 at W0); the state flips iff h_eff = p·L crosses the fold "
+                   "spinodal(g) (E.spinodal, the SAME fold as M11/theta-cap/epilepsy/E2), so the threshold p* = "
+                   "spinodal(g)/L drops as L grows. Rate eta SWEPT {0.03,0.05,0.08} AND barrier g SWEPT "
+                   "{0.7,1.0,1.3}; every sign required to hold across BOTH sweeps. Four results. (K1) Repeated "
+                   "flips deepen the trace ‖dW‖ STRICTLY MONOTONICALLY and the flip threshold ends BELOW the "
+                   "un-kindled fold — kindling, repeated flips become easier — and it is BARRIER-INVARIANT (at "
+                   "every g the kindled threshold ends below that depth's own fold); the trace→threshold "
+                   "coupling §29 (B3) left [O], now supplied. (K2) The push-space hysteresis loop 2·spinodal(g)/L "
+                   "NARROWS (a learned change of the §28 hysteresis) and the crossing latency at a fixed "
+                   "supra-threshold push SHORTENS (a faster §28 onset). (K3, the genuinely-new coupling result + "
+                   "the honest negative) kindling is CONSOLIDATIVE, NOT DEGRADATIVE — the clean hypothesis "
+                   "'kindling erodes coordination (R toward incoherence), so easier-to-flip means less "
+                   "coordinated' is REFUTED: the threshold DROPS while R(W) RISES and the kindled connectome ends "
+                   "AT OR ABOVE the frozen anchor (MORE coordinated, not less) as the trace deepens, so "
+                   "easier-to-flip and erosion are DECOUPLED — the threshold falls through CONSOLIDATION, not "
+                   "degradation; the refuted clean hypothesis is reported honestly (with a negligible "
+                   "first-episode transient at the lowest rate disclosed). (K4) A single coherent consolidative "
+                   "seam: the threshold is monotone-decreasing in the accumulated trace ‖dW‖ (the trace IS the "
+                   "kindling variable — the explicit trace→threshold law §29 left open), with a [L] "
+                   "direction-only correspondence (clinical kindling, Goddard; bipolar cycle acceleration — "
+                   "repetition lowering the next transition's threshold), never a patient-level prediction. With "
+                   "eta = 0 the connectome stays frozen, R = the frozen M9 anchor BIT-FOR-BIT so the gain L = 1 "
+                   "and the threshold = the un-kindled fold exactly (E0.4), and with a zero push (h_eff = 0) the "
+                   "collective state settles via E.settle BIT-FOR-BIT and the down state stays down (E2.4) — a "
+                   "pure add-on; engine imported READ-ONLY and byte-unchanged (0fbf4988…), no new tuned "
+                   "constant, no new rule, BOTH the PlasticConnectome and the BistableSwitch reused not "
+                   "re-derived. Axis-A firewall: the collective bistable state, its flip threshold, the retained "
+                   "trace and the coordination gain are STRUCTURAL quantities of the coupled model, NEVER a felt "
+                   "state, an experienced mood, a level of consciousness or an experienced ease of relapse, and "
+                   "NOT a real connectome, synaptic-weight matrix, measure of kindling/seizure threshold, or "
+                   "prediction of whether any patient's episodes accelerate (consciousness_claim=0; hard problem "
+                   "OPEN); efficacy=0; not medical advice.",
+        "canonical": "49-kindling",
+        "check": None,
+    },
+    "cross_axis_coupling_synthesis": {
+        "label": "the cross-axis coupling synthesis (the v1.57 capstone): a META-SYNTHESIS -- zero new measurement, zero new machinery, zero new tuned constant -- that cross-reads the three now-frozen CROSS-AXIS COUPLING modules (spatial-plasticity imprint §47 E1×E0, spatial switch leverage §48 E1×E2, kindling §49 E0×E2) and certifies them as ONE FAMILY: the three pairwise EDGES of the same three layers E0 (plasticity), E1 (spatial localisation) and E2 (state switching), each layer appearing in exactly two couplings, sharing one shape -- the genuinely-new result each seam surfaces is a DECOUPLING of two quantities the single-axis intuition welds together; the three source results JSONs are the SSOT and their frozen SHA-256 are re-verified BIT-FOR-BIT before they are read, the engine is imported READ-ONLY and byte-unchanged; five certifications (T1 one family / the complete E0/E1/E2 triangle, T2 one new joining object per coupling, T3 three decouplings, T4 a common shape / a single-axis law breaks, T5 one coupling discipline), all CONFIRMED",
+        "value": "the three preceding cross-axis couplings each married TWO of the atlas's three new layers -- the §47 imprint coupled the §43 spatial layer (E1, WHERE) to the §26 plasticity layer (E0, LASTING), the §48 leverage coupled E1 to the §28 state-switching layer (E2, the FLIP), the §49 kindling coupled E0 to E2 -- and with the third frozen, the trio of pairwise couplings CLOSES, and this capstone steps back to certify the single structural statement they jointly make: they are the complete set of PAIRWISE EDGES of three layers, read as ONE FAMILY with ONE SHAPE. It is a META-SYNTHESIS, not a new model: zero new measurement, zero new machinery, zero new tuned constant. Discipline of a synthesis -- the three source results JSONs are the SSOT, and BEFORE reading a single number the verifier re-computes each one's SHA-256 and checks it BIT-FOR-BIT against the frozen value (imprint cdb16230..., leverage bd3a9e23..., kindling 3880e63f...); only then are they read; the engine is emerged READ-ONLY for the invariant check and confirmed byte-unchanged (0fbf4988...). FIVE CERTIFICATIONS, all CONFIRMED: T1 ONE FAMILY / THE COMPLETE E0/E1/E2 TRIANGLE -- all three couple two of the layers (couples_E1_and_E0 / couples_E1_and_E2 / couples_E0_and_E2 = 1) and TOGETHER realise all three pairwise edges {E1,E0} {E1,E2} {E0,E2}, every layer-vertex appearing in EXACTLY TWO couplings (E0 in 47+49, E1 in 47+48, E2 in 48+49 -- degree two), and each reverts to the frozen engine BIT-FOR-BIT with its drive off (each module's own engine-invariance guard reproduced): one family, three edges, one off-state. T2 ONE NEW JOINING OBJECT PER COUPLING -- each marries its two layers with EXACTLY ONE new object and re-derives NEITHER (the imprint readout, a focal drive through the plastic connectome; the leverage switch, the bistable cell driven by a node's frozen-kernel broadcast leverage; the kindling switch, the bistable cell driven through the evolving connectome), each reusing BOTH its layers read-only, with NO new tuned constant in any (the broadcast leverage and the coordination gain are frozen/evolving-kernel READOUTS, not free weights). T3 THREE DECOUPLINGS -- the genuinely-new result each seam surfaces is a DECOUPLING, all three CONFIRMED: clean DELIVERY != clean IMPRINT (47 C3, the retained-trace relay set STRICTLY CONTAINS the instantaneous-field relay set, 8 ⊃ 2 -- plasticity delocalises the mark), SWITCHABILITY decoupled from both instantaneous FOOTPRINT and spatial REACH (48 C3, the reach hub cerebellum is among the HARDEST to flip, switch rank 10/12; the switch hub is basal_forebrain_chol), EASIER-TO-FLIP decoupled from EROSION (49 K3, the coordination R(W) RISES 0.3896→0.3964 as the threshold falls and the kindled connectome ends AT OR ABOVE the anchor -- consolidation, not degradation). T4 A COMMON SHAPE / A SINGLE-AXIS LAW BREAKS -- each decoupling REFUTES a tidy single-axis hypothesis the coupling was the natural place to test, reported HONESTLY (no universal focal>diffuse imprint law §47; no universal reach→switchability law §48; no clean kindling-erodes-coordination story §49), the no-tuning discipline producing the SAME honest-negative shape three times: when SPACE meets TIME the imprint decouples from delivery, when SPACE meets STATE the flip decouples from footprint and reach, when TIME meets STATE the kindling decouples from erosion. T5 ONE COUPLING DISCIPLINE, THREE TIMES -- every coupling SWEEPS BOTH coupled axes so every sign survives the product grid (anti-tuning: 47 intensity × plasticity rate, 48 intensity × barrier depth, 49 plasticity rate × barrier depth), REVERTS to the frozen engine BIT-FOR-BIT with the drive off (inheriting EACH layer's guard -- E1×E0 the M9 anchor, E1×E2 the E.settle relaxation, E0×E2 BOTH), and reports any decoupling HONESTLY, with NO new measurement or tuned constant in any: same seam discipline, three couplings. Registered as the 28th and FINAL atlas citizen (CROSS-SYNTH), placed LAST in the run order so the three source JSONs are freshly regenerated before their hashes are re-verified. FIREWALL inherited THREEFOLD and absolute: every imprint, leverage, flip threshold, retained trace and coordination gain is a STRUCTURAL quantity, NEVER a felt state, an experienced mood, a level of consciousness, an experienced ease of relapse, a real connectome, a real measure of where a drive leaves a mark, which target is most switchable, or whether any patient's episodes accelerate (Axis-A; consciousness_claim=0; hard problem OPEN); only structural SIGNS and RELATIONS are asserted, every MAGNITUDE is [O]; the [L] correspondences in the source chapters are direction-only; target selection, device programming, prognosis and treatment are external; nothing is a cure, reversal, or prevention; efficacy=0; not medical advice",
+        "grade": "[V synth]",
+        "meaning": "the capstone of the three cross-axis couplings. The §47 imprint (E1×E0), §48 leverage "
+                   "(E1×E2) and §49 kindling (E0×E2) chapters each married TWO of the atlas's three new "
+                   "layers -- E0 plasticity (the evolving connectome), E1 spatial localisation (where), E2 "
+                   "state switching (the bistable flip). With the third frozen the trio of pairwise "
+                   "couplings closes, and this chapter is a META-SYNTHESIS -- NOT a new model -- that steps "
+                   "back to certify the single structural statement they jointly make: they are the "
+                   "complete set of PAIRWISE EDGES of the three layers, read as one FAMILY with one SHAPE. "
+                   "It runs ZERO new measurements, adds ZERO new machinery, derives ZERO new tuned "
+                   "constants. Its discipline is the discipline of a synthesis: the three source results "
+                   "JSONs are the SSOT, and BEFORE reading a single number it re-computes each one's "
+                   "SHA-256 and checks it BIT-FOR-BIT against the frozen value (imprint cdb16230..., "
+                   "leverage bd3a9e23..., kindling 3880e63f...); only then are they read; the engine is "
+                   "emerged READ-ONLY for the invariant check and confirmed byte-unchanged (0fbf4988...), "
+                   "the M0-16 subtree identical. FIVE certifications hold, all CONFIRMED. T1 ONE FAMILY / "
+                   "THE COMPLETE E0/E1/E2 TRIANGLE -- all three couple two of the layers and together "
+                   "realise all three pairwise edges {E1,E0} {E1,E2} {E0,E2}, every layer-vertex appearing "
+                   "in EXACTLY TWO couplings (E0 in 47+49, E1 in 47+48, E2 in 48+49 -- degree two), and "
+                   "each reverts to the frozen engine BIT-FOR-BIT with its drive off: one family, three "
+                   "edges, one off-state. T2 ONE NEW JOINING OBJECT PER COUPLING -- the imprint readout (a "
+                   "focal drive through the plastic connectome), the leverage switch (the bistable cell "
+                   "driven by broadcast leverage) and the kindling switch (the bistable cell driven through "
+                   "the evolving connectome), each reusing BOTH its layers read-only and adding NO new "
+                   "tuned constant (the leverage and the coordination gain are frozen/evolving-kernel "
+                   "readouts, not free weights). T3 THREE DECOUPLINGS -- the genuinely-new result each seam "
+                   "surfaces is a decoupling, all three CONFIRMED: clean delivery != clean imprint (the "
+                   "trace relay strictly contains the field relay, 8 ⊃ 2 -- plasticity delocalises the "
+                   "mark), switchability decoupled from both footprint and reach (the reach hub cerebellum "
+                   "is among the hardest to flip, rank 10/12), easier-to-flip decoupled from erosion (the "
+                   "coordination rises 0.3896→0.3964 as the threshold falls -- consolidation, not "
+                   "degradation). T4 A COMMON SHAPE / A SINGLE-AXIS LAW BREAKS -- each decoupling refutes a "
+                   "tidy single-axis hypothesis the coupling was the natural place to test, reported "
+                   "honestly (no universal focal>diffuse imprint law, no universal reach→switchability law, "
+                   "no clean kindling-erodes-coordination story), the same honest-negative shape three "
+                   "times: when space meets time the imprint decouples from delivery, when space meets "
+                   "state the flip decouples from footprint and reach, when time meets state the kindling "
+                   "decouples from erosion. T5 ONE COUPLING DISCIPLINE, THREE TIMES -- every coupling "
+                   "sweeps BOTH coupled axes (anti-tuning), reverts to the frozen engine BIT-FOR-BIT with "
+                   "the drive off (inheriting each layer's guard -- the M9 anchor, the E.settle "
+                   "relaxation, or both), and reports any decoupling honestly, with NO new measurement or "
+                   "tuned constant in any: same seam discipline, three couplings. Registered as the 28th "
+                   "and FINAL atlas citizen (CROSS-SYNTH), placed LAST in the run order so the three "
+                   "source JSONs are freshly regenerated before their hashes are re-verified. The family "
+                   "mirrors the earlier §42 E0 triad synthesis, which closed the three READOUTS of one "
+                   "plasticity layer; this chapter closes the three COUPLINGS of three layers. FIREWALL "
+                   "inherited THREEFOLD and absolute: every imprint, leverage, flip threshold, retained "
+                   "trace and coordination gain is a STRUCTURAL quantity, NEVER a felt state, an "
+                   "experienced mood, a level of consciousness, an experienced ease of relapse, a real "
+                   "connectome, a real measure of where a drive leaves a mark, which target is most "
+                   "switchable, or whether any patient's episodes accelerate (Axis-A; consciousness_claim=0; "
+                   "hard problem OPEN); only structural signs and relations are asserted, every magnitude "
+                   "is [O]; the [L] correspondences in the source chapters are direction-only; target "
+                   "selection, device programming, prognosis and treatment are external; nothing is a cure, "
+                   "reversal, or prevention; efficacy=0; not medical advice",
+        "canonical": "50-cross-axis-synthesis",
+        "check": None,
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -1533,6 +1870,12 @@ CITES = {
     "42-e0-triad-synthesis": ["e0_triad_synthesis", "addiction_sensitization_dynamics", "alzheimers_progression_dynamics", "ocd_stabilisation_dynamics"],
     "43-spatial-localisation": ["e1_spatial_localisation", "coord_kappa", "plasticity_consolidation"],
     "44-focal-epilepsy-spread": ["focal_epilepsy_spread", "e1_spatial_localisation", "epilepsy_oversync"],
+    "45-lesion-field-diaschisis": ["lesion_field_diaschisis", "e1_spatial_localisation", "focal_epilepsy_spread"],
+    "46-targeted-neuromodulation-offtarget": ["targeted_neuromodulation_offtarget", "e1_spatial_localisation", "focal_epilepsy_spread", "lesion_field_diaschisis"],
+    "47-spatial-plasticity-imprint": ["spatial_plasticity_imprint", "e1_spatial_localisation", "plasticity_consolidation", "targeted_neuromodulation_offtarget"],
+    "48-spatial-switch-leverage": ["spatial_switch_leverage", "e1_spatial_localisation", "state_switching", "targeted_neuromodulation_offtarget"],
+    "49-kindling": ["e0e2_kindling", "plasticity_consolidation", "state_switching", "bipolar_state_switching"],
+    "50-cross-axis-synthesis": ["cross_axis_coupling_synthesis", "spatial_plasticity_imprint", "spatial_switch_leverage", "e0e2_kindling"],
 }
 
 # ---------------------------------------------------------------------------
@@ -1772,6 +2115,37 @@ ANSWERS = {
         "foci partition into contained (the seizure stays focal) and broadcast (it secondarily generalises), and "
         "this partition is fixed by focus location, not ictal intensity. But broadcast is not the same as global "
         "hypersynchrony — two decoupled axes. Structural quantities, never felt experience.",
+    "45-lesion-field-diaschisis":
+        "Chapter 44's spatial map gets its destructive dual. Silencing each region as a focal lesion, the lesions "
+        "partition into local-deficit (the dysfunction stays local) and remote-diaschisis (it disrupts distant "
+        "circuits more than the lesion itself), fixed by lesion location, not severity. But diaschisis is not the "
+        "same as global disruption — two decoupled axes. Structural quantities, never felt experience.",
+    "46-targeted-neuromodulation-offtarget":
+        "Chapter 44's excitatory drive, re-read as therapy, closing the trilogy. Aiming a focal stimulation at "
+        "each region, targets split into clean-delivery and off-target-leak, fixed by target location, not "
+        "intensity. The spatial numbers coincide with chapter 44; what is new: clean delivery and global reach "
+        "are decoupled, the cleanest target is the strongest. Structural quantities, never felt effect.",
+    "47-spatial-plasticity-imprint":
+        "The first cross-axis coupling: where a focal drive leaves a lasting synaptic trace. Marrying the "
+        "spatial layer to plasticity, targets split into local-imprint and relayed-imprint, fixed by location "
+        "across intensity and rate. The new result: clean delivery does not imply clean imprint — plasticity "
+        "delocalises it. Relayed imprint is the structural default. Structural quantities, never felt effect.",
+    "48-spatial-switch-leverage":
+        "The second cross-axis coupling, the spatial sibling of the bipolar episode: which focal drive most "
+        "easily flips the collective state. Driving the bistable cell with each region's frozen-kernel broadcast "
+        "leverage, the flip-threshold rank equals the leverage rank, barrier-invariant. The new result: "
+        "switchability decouples from both instantaneous footprint and reach — the reach hub is among the "
+        "hardest to flip.",
+    "49-kindling":
+        "The third cross-axis coupling, closing the trace-to-threshold link the bipolar episode left open: do "
+        "repeated state-flips become easier? Driving the bistable cell through the evolving plastic connectome, "
+        "repeated flips deepen the trace and lower the flip threshold (kindling), barrier-invariant. The honest "
+        "finding: kindling is consolidative, not degradative — coordination rises, it does not erode.",
+    "50-cross-axis-synthesis":
+        "The capstone of the three cross-axis couplings, certified as one family: the spatial-plasticity imprint, "
+        "the spatial switch leverage and the kindling coupling are the three pairwise edges of the same three "
+        "layers. Each marries two and decouples a single-axis law — delivery from imprint, switchability from "
+        "reach, easier-flip from erosion. Zero new measurement; structural signs only.",
 }
 
 CHAPTERS = list(ANSWERS.keys())

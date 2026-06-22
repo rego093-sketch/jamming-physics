@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Back-Calculated Broadband Gamma Spectrum — Vacuum-Inflow Cosmology §2.2 | Jamming Physics</title>
+<meta name="description" content="A gamma-ray burst is one broadband shake of the vacuum lattice; the 31 GeV photon is its high-wavenumber tail via E=ħck, not an independent quantum.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/02-back-calculation-broadband-gamma-spectrum/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Back-Calculated Broadband Gamma Spectrum","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-back-calculation-broadband-gamma-spectrum/","knowsAbout":["gamma-ray burst spectrum","vacuum lattice","broadband emission","Fermi GRB 090510","wavenumber back-calculation","Lorentz invariance"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§2.2 Back-Calculated Broadband Gamma Spectrum"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §2.2</nav></header>
+<main><!--vp-v1.8-->
+<h1>Back-Calculation: A Broadband Gamma Spectrum</h1>
+<p class="answer">A gamma-ray burst is one broadband shake of the vacuum lattice, not a stream of independent photons. By Fourier's theorem the shake is broadband, so its short-wavelength tail reaches the gamma band; the 31 GeV photon (ka ≈ 0.1) is that high-wavenumber tail, read out as energy by E = ħck. Emission is established; cosmological-distance coherence stays open [O].</p>
+<p class="abstract">A localized shake of the vacuum lattice is broadband by construction, carrying power from radio up into the gamma band; what a calorimeter reports as a 31 GeV photon is the ka ≈ 0.1 component of one disturbance — a ≈63-cell wavelength — via E = ħck = 311.7 GeV × ka. The gamma reach is fixed by the shake's sharpness, not its amplitude. This establishes broadband emission; whether the gamma-band content stays coherent with the low-energy content over a cosmological baseline is the open dispersion item.</p>
+<aside class="claim-strip page"><span class="g g-open" data-phase2="grade">[O] open</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-back-calculation-broadband-gamma-spectrum/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="a"><b>a = 6.33×10⁻¹⁹ m</b> — VP fundamental cell spacing (the lattice scale for light, not the angle scale D). <b>[O]</b> input. <a href="/cosmology/axc-two-length-scales-d-versus/">정본 §Appendix C</a></aside>
+<h2>One shake of the lattice is broadband</h2>
+<p>A localized disturbance of the vacuum lattice carries a wide band of wavenumbers, not a single one. This is Fourier's theorem: the narrower the disturbance in space, the broader its spectrum in wavenumber. So a violent, structurally sharp "churning" shake necessarily contains high-wavenumber content, while a smooth disturbance does not.</p>
+<p>"Gamma of many wavelengths" is therefore a consequence of the shake, not an added assumption. The burst is one collective disturbance of the medium that radiates a gravitational wave; the gamma rays are radiation we sample from the same event. The script <code>ch2_backcalc_spectrum.py</code> makes this concrete on the same lattice that carries light.</p>
+
+<h2>The 31 GeV photon is the high-wavenumber tail</h2>
+<p>A calorimeter does not measure a wavelength — it measures the energy deposited by the e⁺e⁻ shower and back-calculates a photon energy. In the framework's optics that back-calculation is one map: E = ħω = ħck for the continuum (Maxwell/Goldstone) mode. The detector thus reports the high-wavenumber content of one disturbance as a spread of photon energies.</p>
+<p>In lattice units the map is E = (ħc/a)·ka = 311.7 GeV × ka. The famous 31 GeV photon of GRB 090510 then sits at ka ≈ 0.1 — a ≈63-cell wavelength, deep in the long-wavelength regime where ω ≈ ck holds. It is the high-energy tail of one broadband shake, not an isolated ultra-energetic quantum that must propagate as a discrete-lattice phonon.</p>
+
+<h2>Gamma reach is set by sharpness, not amplitude</h2>
+<p>Whether the spectrum reaches the gamma band is fixed by the disturbance's structure, not its energy. Two equal-energy shakes — one sharp (≈2 cells), one smooth (≈5000 cells) — give opposite spectra: the sharp shake carries 99.3% of its power above 1 GeV, the smooth one effectively none. A tiny sharp shake has the same gamma fraction as a violent one; "gamma is present" is fixed by structure, "the energy is enormous" by amplitude.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch2_backcalc_spectrum.png" loading="lazy" alt="Top: a sharp ~2-cell lattice shake versus a smooth ~5000-cell one. Bottom: their back-calculated photon-energy spectra; the sharp shake is flat from keV through GeV past the 31 GeV photon line, the smooth one is cut off before the gamma band."><figcaption>One lattice shake back-calculated to a photon-energy spectrum (E = ħc·k). The sharp shake is broadband into the gamma band; the equal-energy smooth shake is not.</figcaption></figure>
+<table>
+<thead><tr><th>disturbance (equal energy)</th><th>power &gt; 1 MeV</th><th>&gt; 100 MeV</th><th>&gt; 1 GeV (gamma)</th><th>reaches gamma?</th></tr></thead>
+<tbody>
+<tr><td>sharp churning core (≈2 cells)</td><td>1.000</td><td>0.999</td><td>0.993</td><td>yes</td></tr>
+<tr><td>smooth disturbance (≈5000 cells)</td><td>0.967</td><td>0.023</td><td>8×10⁻³²</td><td>no</td></tr>
+</tbody>
+</table>
+
+<h2>What this establishes, and what stays open</h2>
+<p>This establishes the emission side: one localized lattice shake is broadband and its high-wavenumber tail reaches the gamma band. It dissolves the puzzle of an isolated ultra-energetic quantum — the 31 GeV photon is one shake's tail, read out as energy. Exhibiting this broadband-emission mechanism is a real reframing, not a hand-waving escape.</p>
+<p>It does not establish the propagation side. Whether the gamma-band content arrives coherent with the low-energy content over a cosmological baseline is a separate question — the open dispersion item, graded [O] "relaxed, not fully closed." A broadband-emission mechanism is not a derivation of dispersionless transport, and this page does not claim one.</p>
+<p>The reframing does, however, move the propagation question to firmer ground. Treating a burst as one collective disturbance rather than independent photons replaces "do independent 31 GeV and 10 keV photons disperse?" with "does one coherent front stay coherent?" — the regime where the collective-soliton result of §2.2 applies. The rigorous coherence over cosmological distance remains the single open dynamical item recorded in §16.</p>
+
+<h2>Reproducibility</h2>
+<p>The script <code>ch2_backcalc_spectrum.py</code> builds a localized lattice shake, FFTs it, and maps wavenumber to photon energy by E = ħc·k. It confirms the calibration ħc/a = 311.7 GeV at ka = 1, so the 31 GeV photon sits at ka ≈ 0.1 (a 63-cell wavelength), and reports the sharp-versus-smooth gamma fractions above. A width sweep shows the conclusion is width-independent — every sharp shake reaches the gamma band, no smooth one does — so it rests on no tuned constant.</p>
+<p>The run is deterministic: only ħ, c (CODATA) and the locked cell a enter the physics, SEED = 19, and a 2×SHA-256 over 6-significant-figure results gives a fixed digest. The script prints its own scope, separating the established emission result from the open propagation item, so the reframing cannot be misread as closure. The collective-coherence companion is <code>ch2_gamma_collective.py</code> (§2.2).</p>
+
+<nav class="pn"><a rel="prev" href="/cosmology/02-gamma-burst-collective-disturbance/">← §2.1</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/02-angle-account-quasi-longitudinal-gamma/">§2.3 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

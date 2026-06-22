@@ -146,7 +146,7 @@ HTML = r"""<!DOCTYPE html>
 <nav class="pn">
   <a rel="prev" href="/mind/43-spatial-localisation/">&larr; §43 Spatial localisation (the field-shaping layer)</a>
   <a href="/mind/">paper contents</a>
-  <span></span>
+  <a rel="next" href="/mind/45-lesion-field-diaschisis/">§45 Stroke and the lesion field (local deficit vs remote diaschisis) &rarr;</a>
 </nav>
 </main>
 <footer>DOI <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>

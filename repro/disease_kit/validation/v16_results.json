@@ -1,0 +1,3201 @@
+{
+ "author": "Young Jae Lee",
+ "axis": "PROSPECTIVE FALSIFICATION tracking -- not a test of the kit against an external oracle, but the instrument by which external post-hoc tests of the published falsifiers are logged. Distinct from V1-V2 (own recovery), V3-V7 (target axis), V8 (indication axis), V10 (exclusion), V11 (novelty).",
+ "cross_laws": {
+  "L1_family_sign": {
+   "partition": {
+    "gamma-restore": [
+     "stabilise"
+    ],
+    "h-restore": [
+     "decrease",
+     "increase"
+    ]
+   },
+   "pass_": true
+  },
+  "L2_join_law": {
+   "counterexamples": [],
+   "pass_": true
+  },
+  "L3_grade": {
+   "counterexamples": [],
+   "pass_": true
+  }
+ },
+ "grade": "[O] direction-only; magnitude-free; a well-formedness + genesis-freeze of a falsifiable set",
+ "inherited_anchors": {
+  "all_match": true,
+  "candidate_register_chain_head": "e94bc7d2cf9fbc8259c16f1bdafc5e083d0e96c7af5299d7727d17c7d2aca670",
+  "disease_inputs_sha256": "ca6c044e7dc1108c33ade0f14854eacaa05eef927fc96c12cadbbd4c54aba0ca",
+  "expected_prefixes": {
+   "disease_inputs_sha256": "ca6c044e7dc1108c",
+   "mapped_levers_sha256": "ab063b32abf1f7ed",
+   "register_chain_head": "e94bc7d2cf9fbc8259c16f1bdafc5e083d0e96c7af5299d7727d17c7d2aca670"
+  },
+  "mapped_levers_sha256": "ab063b32abf1f7ed6ec6d5a97ffbfed3e1f619b9ceac38e914fe60cc21fd0b3b",
+  "note": "validation is strictly READ-ONLY; 0 of the 128 derivations were re-run.",
+  "per_anchor_match": {
+   "disease_inputs_sha256": true,
+   "mapped_levers_sha256": true,
+   "register_chain_head": true
+  }
+ },
+ "instrument": {
+  "all_status_untested": true,
+  "append_only_protocol": {
+   "chain": "appended outcomes form their own append-only hash chain rooted at the genesis ledger content hash, so the full falsification history is auditable end to end.",
+   "corroborated_handling": "a DIRECTION_CORROBORATED outcome is recorded as external support; it does NOT upgrade the lead to a treatment claim (direction != efficacy; the lead stays [O]).",
+   "how_an_outcome_is_logged": "by APPENDING a new chained record -- never mutating genesis -- that cites (a) the falsifier id == the register row_hash (pins it to the frozen chain), (b) the external source (PMID/DOI/NCT), (c) the outcome enum, (d) a magnitude-free note.",
+   "refuted_handling": "a DIRECTION_REFUTED outcome APPENDS a documented Track-A re-derivation flag for the (gene, family, direction) -- the honest self-correction path, exactly as V10 logged its CASR over-exclusion -- and is NEVER a silent drop."
+  },
+  "genesis_content_sha256": "d587a33b9732dad792992a3ebcda149b07ef631a2dfd42468b239a855df87177",
+  "genesis_file_sha256": "c4ea1c4b7d84d2fe1ef38a64b0c700283acd68110ff7fa9931e40669a4e53786",
+  "genesis_ledger_file": "v16_falsification_ledger.genesis.json",
+  "instrument_established": true,
+  "n_entries": 177,
+  "outcome_enum": [
+   "UNTESTED",
+   "DIRECTION_CORROBORATED",
+   "DIRECTION_REFUTED",
+   "INCONCLUSIVE"
+  ]
+ },
+ "license": "CC BY 4.0",
+ "nature": "read-only over the GROWN 152-core (Track-A e7a/e7b/e7c); 0 re-derivations; additive-only; append-only chain (continues V15).",
+ "orcid": "0009-0002-7535-8245",
+ "prereg_content_ok": true,
+ "prereg_content_recomputed": "697116125cf0bc7b862071110f412a8651163302d73b80ea9288e75f7166a9ad",
+ "prereg_file_sha256": "e6ec53fa388123bd3bc122548abaa826bc6ebe82ce7a7bfdb07ca0fb2f718893",
+ "prereg_hash_note": "prereg_sha256 is the serialization-independent CONTENT hash frozen by _v12_freeze_prereg.py BEFORE this run; prereg_file_sha256 is the byte hash of the shipped file (tracked in expected_sha256_v12.json).",
+ "prereg_sha256": "697116125cf0bc7b862071110f412a8651163302d73b80ea9288e75f7166a9ad",
+ "programme": "jamming-physics.org / VP Disease Emergence Kit",
+ "prospective_denominators": {
+  "by_required_sign": {
+   "decrease": 58,
+   "increase": 73,
+   "stabilise": 46
+  },
+  "open_novel": 72,
+  "reading": "all 177 ship a refutable direction falsifier. The 72 `novel` rows are GENUINELY OPEN -- their direction is an untested [O] lead and external falsification is the decisive test. The 83 `rediscovery` rows have a direction already concordant with established/approved practice (a consistency signal, V8-audited), so their falsifier carries lower open-risk -- but each is still logged, because rediscovery corroborates the DIRECTION, not a proof the geometry derived it for the right reason.",
+  "rediscovery_direction_corroborated": 105,
+  "total_falsifiable_direction_hypotheses": 177
+ },
+ "release": "0.41.0-validation.v12",
+ "round": "V12 -- PROSPECTIVE FALSIFICATION: stand up the in-house instrument by which OTHERS will test the 177 published [O] direction falsifiers; PROVE every falsifier is well-formed and falsifiable; freeze the genesis ledger (all UNTESTED); define the append-only outcome protocol (blueprint §5.3 'Prospective falsification' -- the fourth and LAST metric).",
+ "section_5_3_status": "COMPLETE -- direction-recovery (V1-V8), exclusion calibration (V10), novelty audit (V11), negative-controls/novelty-concentration (V1-V2), and now the prospective-falsification instrument (V12). No further §5.3 metric is open; future work is APPENDING external outcomes to this ledger + Track-A coverage.",
+ "target_set": {
+  "label": "every candidate-register row's falsifier (a direction-only, falsifiable [O] hypothesis)",
+  "n_rows": 177,
+  "pinned_by": "ledger entries keyed by register row_hash (frozen append-only chain).",
+  "source": "outputs/candidate_register.json :: rows[*].falsifier"
+ },
+ "validation_chain": {
+  "append_only": true,
+  "chain_head": "372cf5779857eebfb155a173d96689222cd65693344a1f736998da4f36c9ccb2",
+  "continues_from_head": "eaf5ac1bd948089a556977489f0278b7ab1f5f6b7f83d338353e8b7f65991ae7",
+  "record": [
+   {
+    "head": "4e13d36bf7f29a57f8c115e32a5e088031908a9dc4238c4a6b0e8a03949b3855",
+    "label": "inherited_anchors_readonly_all_match",
+    "prev": "eaf5ac1bd948089a556977489f0278b7ab1f5f6b7f83d338353e8b7f65991ae7",
+    "value": true
+   },
+   {
+    "head": "ffb7daf767f2f817ad89fd07621fe0185cd3cf89a507bd9a2491d2f2392c15cd",
+    "label": "falsifier_wellformedness_all_pass",
+    "prev": "4e13d36bf7f29a57f8c115e32a5e088031908a9dc4238c4a6b0e8a03949b3855",
+    "value": "177/177"
+   },
+   {
+    "head": "493c288112a56bdffbb408c9f0caf970b86c6bb7ed0d0b925c6d33dd84e0adc5",
+    "label": "one_to_one_with_register",
+    "prev": "ffb7daf767f2f817ad89fd07621fe0185cd3cf89a507bd9a2491d2f2392c15cd",
+    "value": true
+   },
+   {
+    "head": "87794df358eacd9be167d3379df7f05ed3b3e695c0228c8187cea85e3ed54d87",
+    "label": "cross_laws_L1_L2_L3",
+    "prev": "493c288112a56bdffbb408c9f0caf970b86c6bb7ed0d0b925c6d33dd84e0adc5",
+    "value": [
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "head": "d4268d98d58b317c8d08c7d1affce20356087ad8c0e5ada79aa3f7ab6a758324",
+    "label": "genesis_ledger_content_sha256",
+    "prev": "87794df358eacd9be167d3379df7f05ed3b3e695c0228c8187cea85e3ed54d87",
+    "value": "d587a33b9732dad792992a3ebcda149b07ef631a2dfd42468b239a855df87177"
+   },
+   {
+    "head": "dd8cab6e75373fe1b5209dd3d0f4846e677b90b9c87193cc4c2f5ef9da980d4b",
+    "label": "genesis_all_untested",
+    "prev": "d4268d98d58b317c8d08c7d1affce20356087ad8c0e5ada79aa3f7ab6a758324",
+    "value": true
+   },
+   {
+    "head": "3af4cbb558b2f0cdb98a1d6320ee7a314c3e66433cb93bc571d68247b6dd8766",
+    "label": "prospective_open_vs_corroborated",
+    "prev": "dd8cab6e75373fe1b5209dd3d0f4846e677b90b9c87193cc4c2f5ef9da980d4b",
+    "value": "72 open / 105 corroborated of 177"
+   },
+   {
+    "head": "6bd67a279ac91be1bcdbb2b2847b2e05496a92ccc036faec267a8b9c9d825d2d",
+    "label": "section_5_3_ledger",
+    "prev": "3af4cbb558b2f0cdb98a1d6320ee7a314c3e66433cb93bc571d68247b6dd8766",
+    "value": "COMPLETE"
+   },
+   {
+    "head": "372cf5779857eebfb155a173d96689222cd65693344a1f736998da4f36c9ccb2",
+    "label": "firewall_status",
+    "prev": "6bd67a279ac91be1bcdbb2b2847b2e05496a92ccc036faec267a8b9c9d825d2d",
+    "value": "PASS"
+   }
+  ]
+ },
+ "verdict": "All 177 candidate-register falsifiers are PROVEN well-formed -- W1 magnitude-free 177/177, W2 agent-bound 177/177, W3 direction-correct 177/177, W4 refutation-structured 177/177, W5 one-to-one with the frozen register (PASS) -- and the register's internal laws re-prove (L1 family<->sign PASS, L2 join PASS, L3 grade-[O] PASS). The kit's central honesty claim -- every lead is refutable by its falsifier -- is therefore STRUCTURAL, not merely asserted. The genesis ledger freezes all 177 as UNTESTED (72 genuinely-open `novel` directions + 105 `rediscovery` directions already concordant with established practice); NO outcome is claimed. The append-only instrument (outcome enum + Track-A refuted-flag path) is established and content-hashed, CLOSING the §5.3 ledger: three in-house metrics executed (direction-recovery V1-V8, exclusion calibration V10, novelty audit V11) plus the external prospective-falsification instrument now stood up. Direction != efficacy; every lead stays [O]; firewall holds.",
+ "wellformedness": {
+  "W1_magnitude_free": "177/177",
+  "W2_agent_bound": "177/177",
+  "W3_direction_correct": "177/177",
+  "W4_refutation_structure": "177/177",
+  "W5_one_to_one": {
+   "ledger_entries": 177,
+   "pass_": true,
+   "register_hashes_unique": true,
+   "register_rows": 177,
+   "set_equal": true
+  },
+  "all_pass": "177/177",
+  "failures": [],
+  "per_row": [
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "eladocagene exuparvovec",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "aadc_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "vosoritide",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "achondroplasia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "oral zinc (zinc sulfate/gluconate) [SLC39A4 acrodermatitis enteropathica]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "acrodermatitis_enteropathica"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "givosiran",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "acute_intermittent_porphyria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "xanthine oxidase inhibitor (allopurinol; febuxostat) [APRT 2,8-DHA axis]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "adenine_phosphoribosyltransferase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "adenosine_deaminase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "adenosine_deaminase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "creatine monohydrate [AGAT/GATM]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "agat_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nitisinone",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "alkaptonuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "alpha1_antitrypsin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "alpha1_antitrypsin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "alpha1-proteinase inhibitor (augmentation therapy)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "alpha1_antitrypsin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "alpha_mannosidosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "alpha_mannosidosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "dietary protein restriction + nitrogen scavenging [ARG1 argininemia]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "argininemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nitrogen scavenger [argininosuccinic aciduria]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "argininosuccinic_aciduria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "eculizumab",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "atypical_hemolytic_uremic_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "encaleret",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "autosomal_dominant_hypocalcemia_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "bardet_biedl_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "bardet_biedl_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylcysteine (NAC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "bardet_biedl_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "setmelanotide",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "bardet_biedl_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "beta_thalassaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "beta_thalassaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "hydroxyurea",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "beta_thalassaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "luspatercept",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "beta_thalassaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "biotin and thiamine (high-dose) [SLC19A3 BTBGD]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "biotin_thiamine_responsive_basal_ganglia_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "biotin (vitamin B7)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "biotinidase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "flecainide",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "folinic acid (5-formyltetrahydrofolate) [FOLR1 CFD]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "cerebral_folate_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "chenodeoxycholic acid",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "cerebrotendinous_xanthomatosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylcysteine (NAC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "choroideremia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nitrogen scavenger [citrullinemia type 1]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "citrullinemia_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "classical_homocystinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "classical_homocystinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "betaine (anhydrous betaine)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "classical_homocystinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pyridoxine (vitamin B6; cofactor pyridoxal-5'-phosphate)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "classical_homocystinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "hydroxocobalamin and betaine [MMACHC cblC]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "cobalamin_c_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "hydrocortisone (glucocorticoid replacement) [CYP21A2 21-hydroxylase CAH]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "congenital_adrenal_hyperplasia_21ohd"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "congenital_hyperinsulinism"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "congenital_hyperinsulinism"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "metreleptin",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "congenital_leptin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "infigratinib",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "crouzon_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "canakinumab",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "cryopyrin_associated_periodic_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "cystic_fibrosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "tezacaftor (with ivacaftor)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "stabilise",
+    "slug": "cystic_fibrosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "cystic_fibrosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ivacaftor",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "cystic_fibrosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "cysteamine (cysteamine bitartrate)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "cystinosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "tiopronin",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "cystinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "anakinra",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "deficiency_of_il1_receptor_antagonist"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "levodopa (with carbidopa) [DRD/GCH1]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "dopa_responsive_dystonia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sapropterin (tetrahydrobiopterin) [GCH1]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "dopa_responsive_dystonia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "zorevunersen",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "dravet_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "duchenne_muscular_dystrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "duchenne_muscular_dystrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "celiprolol",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "ehlers_danlos_syndrome_vascular_type"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "migalastat",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "stabilise",
+    "slug": "fabry_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "fabry_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "fabry_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "recombinant activated factor VII (eptacog alfa) [FVII deficiency]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "factor_vii_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "factor XIII concentrate (catridecacog / plasma-derived FXIII) [FXIII deficiency]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "factor_xiii_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "volanesorsen",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "familial_chylomicronaemia_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "atorvastatin (HMG-CoA reductase inhibitor; statin class)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "familial_hypercholesterolaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "LDL-C lowering agent (PCSK9 inhibitor / statin / ezetimibe) [FH]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "familial_hypercholesterolemia_ldlr"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "atorvastatin (HMG-CoA reductase inhibitor; statin class)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "familial_hypercholesterolemia_ldlr"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "colchicine",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "familial_mediterranean_fever"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "friedreich_ataxia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "friedreich_ataxia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "omaveloxolone",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "friedreich_ataxia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "creatine monohydrate [GAMT]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "gamt_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ambroxol",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "gaucher_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "gaucher_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "gaucher_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "fructose-based carbohydrate substitution [SLC5A1 glucose-galactose malabsorption]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "glucose_galactose_malabsorption"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ketogenic diet (ketone-body cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "glut1_deficiency_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "triheptanoin (anaplerotic C5-ketone cerebral fuel) [SLC2A1 GLUT1-deficiency syndrome]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "glut1_deficiency_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "DTX401",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "glycogen_storage_disease_type_ia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylmannosamine (ManNAc) / sialic acid [GNE myopathy]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "gne_myopathy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "arginine-restricted diet [OAT gyrate atrophy]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "gyrate_atrophy_choroid_retina"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "octocog alfa (recombinant factor VIII)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "haemophilia_a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nonacog alfa (recombinant factor IX)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "haemophilia_b"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nicotinamide (niacin) [SLC6A19 Hartnup]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "hartnup_disorder"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "tranexamic acid",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "hereditary_angioedema"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "antithrombin (human / recombinant alfa)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "hereditary_antithrombin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "parenteral/oral folinic acid (5-formyltetrahydrofolate) [SLC46A1 hereditary folate malabsorption]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "hereditary_folate_malabsorption"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "deferasirox",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "hereditary_haemochromatosis_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "bevacizumab",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "hereditary_haemorrhagic_telangiectasia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "nitisinone (NTBC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "hereditary_tyrosinaemia_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "biotin (vitamin B7) [HLCS]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "holocarboxylase_synthetase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "AMT-130",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "huntington_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "oral citrulline and arginine [SLC25A15 HHH syndrome]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "hyperornithinemia_hyperammonemia_homocitrullinuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "mavacamten",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "hypertrophic_cardiomyopathy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "asfotase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "hypophosphatasia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium-channel blocker (carbamazepine; mexiletine) [SCN9A erythromelalgia]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "inherited_erythromelalgia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "glycine",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "isovaleric_acidemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "FBX-101",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "krabbe_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylcysteine (NAC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "leber_congenital_amaurosis_2"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "leptin_receptor_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "leptin_receptor_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "setmelanotide",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "leptin_receptor_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "allopurinol (xanthine oxidase inhibitor) [Lesch-Nyhan urate axis]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "lesch_nyhan_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "amiloride",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "liddle_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "oral citrulline (urea-cycle intermediate) [SLC7A7 lysinuric protein intolerance]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "lysinuric_protein_intolerance"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sebelipase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "lysosomal_acid_lipase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "losartan",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "marfan_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ION440",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "mecp2_duplication_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "copper histidinate",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "menkes_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "atidarsagene autotemcel",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "metachromatic_leukodystrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "mRNA-3705",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "methylmalonic_acidemia_mut_type"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "fosdenopterin (cyclic pyranopterin monophosphate, cPMP)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "molybdenum_cofactor_deficiency_a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "mucopolysaccharidosis_type_i"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "mucopolysaccharidosis_type_i"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "idursulfase",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_ii"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "UX111",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_iiia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "tralesinidase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_iiib"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "mucopolysaccharidosis_type_iiic"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "mucopolysaccharidosis_type_iiic"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "elosulfase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_iva"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "galsulfase",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_vi"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "vestronidase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "mucopolysaccharidosis_type_vii"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "selpercatinib",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "multiple_endocrine_neoplasia_type_2a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "mexiletine",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "myotonia_congenita"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "carglumic acid (N-carbamylglutamate)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "n_acetylglutamate_synthase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "cinacalcet",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "neonatal_severe_hyperparathyroidism"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "nephrogenic_diabetes_insipidus_x_linked"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "nephrogenic_diabetes_insipidus_x_linked"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "tolvaptan",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "nephrogenic_siad"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "selumetinib",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "neurofibromatosis_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "cerliponase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "neuronal_ceroid_lipofuscinosis_2"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "olipudase alfa",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "niemann_pick_disease_type_a_b"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "miglustat",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "niemann_pick_disease_type_c"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "trametinib",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "noonan_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "glycerol phenylbutyrate",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "ornithine_transcarbamylase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pamidronate",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "osteogenesis_imperfecta_type_i"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pegvaliase",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "phenylketonuria"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pyridoxal-5'-phosphate (PLP)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "pnpo_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "pompe_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "pompe_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "levocarnitine (L-carnitine)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "primary_carnitine_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "lumasiran",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "primary_hyperoxaluria_type_1"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pyridoxine (vitamin B6) [PDE]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "pyridoxine_dependent_epilepsy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "mitapivat",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "stabilise",
+    "slug": "pyruvate_kinase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "pyruvate_kinase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "pyruvate_kinase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "dietary phytanic-acid restriction [PHYH Refsum disease]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "refsum_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "rett_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "rett_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "QR-1123",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "rho_autosomal_dominant_retinitis_pigmentosa"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "riboflavin (vitamin B2) [BVVL]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "riboflavin_transporter_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "TSHA-101",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "sandhoff_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "mexiletine",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "scn4a_skeletal_muscle_channelopathy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "levodopa/carbidopa and sapropterin [SPR deficiency]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "sepiapterin_reductase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "lovotibeglogene autotemcel",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "sickle_cell_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ezetimibe",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "sitosterolaemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "dietary cholesterol supplementation [DHCR7 Smith-Lemli-Opitz]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "smith_lemli_opitz_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "riluzole",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "sod1_amyotrophic_lateral_sclerosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "spinal_muscular_atrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "spinal_muscular_atrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "risdiplam",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "spinal_muscular_atrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "TSHA-101",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "tay_sachs_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sapropterin (tetrahydrobiopterin)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "tetrahydrobiopterin_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "high-dose thiamine (vitamin B1) [SLC19A2 TRMA]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "thiamine_responsive_megaloblastic_anemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "L-type calcium channel blocker (verapamil) [Timothy syndrome]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "decrease",
+    "slug": "timothy_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "interleukin-1 blockade (anakinra / canakinumab) [TNFRSF1A TRAPS]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "tnf_receptor_associated_periodic_syndrome"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "vutrisiran",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "transthyretin_amyloidosis"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sirolimus (rapamycin)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "tuberous_sclerosis_complex"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "levodopa (with carbidopa) [TH deficiency]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "tyrosine_hydroxylase_deficiency"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "sodium phenylbutyrate (4-PBA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "usher_syndrome_type_2a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "stabilise"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "ursodeoxycholic acid (UDCA; taurine conjugate TUDCA)",
+    "all_pass": true,
+    "derived_family": "gamma-restore (stabiliser / pharmacological chaperone)",
+    "prior_art_status": "novel",
+    "required_sign": "stabilise",
+    "slug": "usher_syndrome_type_2a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylcysteine (NAC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "usher_syndrome_type_2a"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "belzutifan",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "von_hippel_lindau_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "trientine (triethylenetetramine)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "wilson_disease"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "elivaldogene autotemcel",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "x_linked_adrenoleukodystrophy"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "decrease"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "burosumab",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "decrease",
+    "slug": "x_linked_hypophosphataemia"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "N-acetylcysteine (NAC)",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "novel",
+    "required_sign": "increase",
+    "slug": "x_linked_retinitis_pigmentosa"
+   },
+   {
+    "W1_leaks": [],
+    "W1_magnitude_free": true,
+    "W2_agent_bound": true,
+    "W3_conflicting_tags": [],
+    "W3_direction_correct": true,
+    "W3_tags_present": [
+     "increase"
+    ],
+    "W4_refutation_structure": true,
+    "agent": "pyridoxine (vitamin B6) [ALAS2 X-linked sideroblastic anaemia]",
+    "all_pass": true,
+    "derived_family": "h-restore (drive modulator)",
+    "prior_art_status": "rediscovery",
+    "required_sign": "increase",
+    "slug": "x_linked_sideroblastic_anemia"
+   }
+  ],
+  "rules": {
+   "W1_magnitude_free": "kit firewall magnitude_leak() over the falsifier text => 0 leaks (the refutation criterion carries NO dose/efficacy/response/survival/p-value/n-of-m token). Run with the kit's own _magnitude_leak verbatim.",
+   "W2_agent_bound": "fold(falsifier) is a SUPERSET of fold(agent base-name) -- the falsifier names the SPECIFIC agent, never a generic family stand-in. fold() inherited verbatim from the V8/V11 holdout (lowercase; ae->e, oe->e; non-alnum->space; singularize trailing-s if len>3; single-char-token drop).",
+   "W3_direction_correct": "the falsifier carries the register generator's machine-emitted self-declaration tag '<sign> agent' (e.g. 'a pathway decrease agent', 'a broad stabilise agent', 'a gene-specific supply/increase agent') for its OWN required_mechanism_sign, and carries NO conflicting '<other-sign> agent' tag -- so the falsifier unambiguously states which direction it would refute, and it is the RIGHT one (a falsifier declaring the wrong or two signs is the defect class this catches).",
+   "W3_rationale": "a fuzzy directional-verb lexicon was REJECTED as the W3 instrument: the lever families are literally named `h-restore` / `gamma-restore`, so the token 'restore' appears in every row's '...direction is refuted' clause AND legitimately belongs to BOTH increase (h-restore=supply) and stabilise (restore thermostability) -- it is not sign-discriminating. The deterministic '<sign> agent' tag the generator emits is the unambiguous, non-tunable direction declaration; W3 tests THAT.",
+   "W4_refutation_structure": "the falsifier is an explicit conditional refutation: it contains a negation of the predicted effect ('does NOT' / 'fails to') AND the word 'refut' -- i.e. an 'if predicted-effect-absent => direction refuted' clause, not a bare assertion.",
+   "W5_one_to_one": "exactly one ledger entry per register row; the ledger's row_hash set EQUALS the register's row_hash set (0 dropped, 0 duplicated, 0 invented). No silent drop."
+  }
+ },
+ "what_this_round_does_not_do": [
+  "does NOT mutate the grown 152-core, re-admit any lever family, re-derive any disease, or re-label any row.",
+  "does NOT assert any magnitude (dose/efficacy/response/survival/p-value/n-of-m).",
+  "does NOT claim any drug works, nor claim any falsifier outcome -- the genesis is all UNTESTED.",
+  "does NOT introduce a new external source (no snapshot to vendor); the off-manifest audit is an independent RE-PARSE of the falsifiers, not a network call.",
+  "does NOT upgrade a `novel` lead via its `rediscovery` neighbours; the open/corroborated split is reported, not merged."
+ ],
+ "why_no_external_oracle": "prospective falsification is, by construction, future and external: each of the 177 register rows ships a falsifier of the form 'if AGENT (a DIRECTION agent) does NOT move the switch toward the healthy branch in a GENE-lesion model, the DIRECTION is refuted for AGENT here' -- a refuting EXPERIMENT others run post-hoc, not a database the kit can query now. So the genesis ledger asserts every row UNTESTED; outcomes append later (append-only), each citing the falsifier id + the external source. There is therefore NO snapshot to vendor and NO external refetch -- the only off-manifest audit is an INDEPENDENT RE-PARSE of the falsifiers (a well-formedness re-derivation), confirming the ledger is reproducible from the frozen register without trusting the in-run parse."
+}

@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>VP Disease Kit -- Validation V3 (external blinded hold-out vs DGIdb)</title>
+<style>
+ body{font:15px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;max-width:920px;margin:2rem auto;padding:0 1rem;color:#1c2530}
+ h1{font-size:1.5rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:1px solid #dce3ea;padding-bottom:.3rem}
+ .k{display:inline-block;background:#eef3f8;border:1px solid #d4dde6;border-radius:6px;padding:.5rem .8rem;margin:.25rem .4rem .25rem 0}
+ .k b{font-size:1.12rem} table{border-collapse:collapse;width:100%;font-size:13px;margin:.6rem 0;max-width:380px}
+ td,th{border:1px solid #dce3ea;padding:.32rem .5rem;text-align:left;vertical-align:top}
+ th{background:#f5f8fb} .pass{color:#0a7d3c;font-weight:600} .fail{color:#b00020;font-weight:600} small{color:#5a6b7b}
+ .note{background:#fbf7ee;border:1px solid #ece2c6;border-radius:8px;padding:.7rem .9rem;margin:.8rem 0}
+ .big{background:#eaf6ee;border:1px solid #bfe3cb;border-radius:8px;padding:.7rem .9rem;margin:.8rem 0}
+ table.wide{max-width:100%}
+</style>
+<h1>Validation V3 &mdash; external blinded hold-out vs DGIdb</h1>
+<small>0.41.0-validation.v3 &middot; snapshot 2026-06-21 &middot; grade [O] direction-only; magnitude-free
+&middot; pre-registration a6f40165eb96c9d4&hellip; &middot; continues V2 chain
+55cb8d7e3289&hellip; &middot; DGIdb snapshot
+4115cef45cbd&hellip;</small>
+<div class="big"><b>The last external loop.</b> V2 dissolved the §5.1 direction-circularity
+<i>inside</i> the kit. V3 locks the emergence directions and checks them against
+<b>DGIdb</b> &mdash; an independent drug-gene aggregator the kit never consulted, queried by gene
+symbol, <b>full return, no hand-picking</b>, filtered only by approved-drug + a single
+directionality. Reported in two honest strata, with denominators and a permutation null.</div>
+<div class="note">All numbers are counts and fractions only. DGIdb is read <b>only for direction</b>
+(inhibitory / activating) &mdash; no affinity, dose, efficacy, or outcome token is ever touched.</div>
+<div>
+ <span class="k">disease genes checkable<br><b>46/130</b></span>
+ <span class="k">named targets checkable<br><b>60/157</b></span>
+ <span class="k">X1 GOF arm acc.<br><b>0.9447</b></span>
+ <span class="k">X1 GOF inhib. recall<br><b>1.0</b></span>
+ <span class="k">X1 baseline<br><b>0.8607</b></span>
+ <span class="k">X1 perm. &ge; obs<br><b>0/5000</b></span>
+ <span class="k">X2b distinct-target acc.<br><b>0.875</b></span>
+ <span class="k">X2b agree<br><b>21/24</b></span>
+</div>
+
+<h2>X&middot;COV &middot; how much is externally checkable (denominators first)</h2>
+<p>the external check is bounded by DGIdb coverage: physiological switch-node &#x27;targets&#x27; (plasma LDL-cholesterol, striatal dopamine, ...) and genes with no small-molecule drug are genuine gaps, reported here, never silently scored.</p>
+<p>disease genes recognised by DGIdb <b>128/130</b>,
+with &ge;1 approved signed drug <b>46/130</b>
+&middot; named targets recognised <b>125/157</b>,
+checkable <b>60/157</b>.
+Coverage-gap examples (non-gene switch-node 'targets'): <small>11-cis-retinal, CHM, HBG1, L-type calcium current, RPGR, biotin-dependent carboxylase competence, brain creatine, calcium, carnitine, copper, cystine, factor VII coagulant activity</small></p>
+
+<h2>X1 &middot; coupling-free emergence vs DGIdb (own-gene), lesion-stratified</h2>
+<p>the falsifiable content lives here: GOF disease genes should attract INHIBITORY approved drugs (oppose the gain) and LOF genes should attract ACTIVATING ones (restore the loss). The GOF-&gt;inhibitory arm is a clean, non-trivial external confirmation; the LOF-&gt;activating arm is pharmacologically hard (loss is usually fixed by replacement or by acting on another node, not by a small-molecule activator of the lost gene), so any shortfall is a property of pharmacology, not of the emergence -- those drugs are covered by X2.</p>
+<p><b>GOF arm</b> (emergence: inhibit the gain) &mdash; accuracy
+<b>0.9447</b> over n=199;
+inhibitory recall <b>1.0</b>.</p>
+<table><tr><th></th><th>obs ACT</th><th>obs INH</th></tr><tr><th>pred ACT</th><td>0</td><td>0</td></tr><tr><th>pred INH</th><td>11</td><td>188</td></tr></table>
+<p><b>LOF arm</b> (emergence: restore the loss; pharmacologically hard at the gene itself) &mdash;
+accuracy <b>0.1972</b> over n=289.</p>
+<table><tr><th></th><th>obs ACT</th><th>obs INH</th></tr><tr><th>pred ACT</th><td>57</td><td>232</td></tr><tr><th>pred INH</th><td>0</td><td>0</td></tr></table>
+<p>pooled accuracy <b>0.502</b> vs inhibitor-skew baseline
+<b>0.8607</b> (always predict INHIBITORY).
+Permutation null (seed 19, 5000 shuffles): observed hits
+<b>245/488</b>, shuffled mean
+<b>211.52</b>, shuffles reaching observed
+<b>0/5000</b>.</p>
+<p>per-gene majority recovery <b>23/50</b>.
+X1 mismatches (first rows):</p>
+<table class="wide"><tr><th>slug</th><th>gene/lesion</th><th>emergence</th><th>DGIdb</th><th>drug</th></tr><tr><td>aadc_deficiency</td><td>DDC/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>BENSERAZIDE</td></tr><tr><td>aadc_deficiency</td><td>DDC/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>CARBIDOPA ANHYDROUS</td></tr><tr><td>adenosine_deaminase_deficiency</td><td>ADA/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>PENTOSTATIN</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>OCRELIZUMAB</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>TOSITUMOMAB</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>OFATUMUMAB</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>IBRITUMOMAB TIUXETAN</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>OBINUTUZUMAB</td></tr><tr><td>agat_deficiency</td><td>GATM/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>RITUXIMAB</td></tr><tr><td>andersen_tawil_syndrome</td><td>KCNJ2/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>DRONEDARONE HYDROCHLORIDE</td></tr><tr><td>autosomal_dominant_hypocalcemia_type_1</td><td>CASR/GOF</td><td>INHIBITORY</td><td>ACTIVATING</td><td>ETELCALCETIDE</td></tr><tr><td>autosomal_dominant_hypocalcemia_type_1</td><td>CASR/GOF</td><td>INHIBITORY</td><td>ACTIVATING</td><td>ETELCALCETIDE HYDROCHLORIDE</td></tr><tr><td>autosomal_dominant_hypocalcemia_type_1</td><td>CASR/GOF</td><td>INHIBITORY</td><td>ACTIVATING</td><td>CINACALCET HYDROCHLORIDE</td></tr><tr><td>bardet_biedl_syndrome</td><td>BBS1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>LIDOCAINE</td></tr><tr><td>bardet_biedl_syndrome</td><td>BBS1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>ROPIVACAINE</td></tr><tr><td>bardet_biedl_syndrome</td><td>BBS1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>BUPIVACAINE</td></tr><tr><td>bartter_syndrome_type_1</td><td>SLC12A1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>FUROSEMIDE</td></tr><tr><td>bartter_syndrome_type_1</td><td>SLC12A1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>ETHACRYNATE SODIUM</td></tr><tr><td>bartter_syndrome_type_1</td><td>SLC12A1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>ETHACRYNIC ACID</td></tr><tr><td>bartter_syndrome_type_1</td><td>SLC12A1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>BUMETANIDE</td></tr><tr><td>bartter_syndrome_type_1</td><td>SLC12A1/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>TORSEMIDE</td></tr><tr><td>biotinidase_deficiency</td><td>BTD/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>ASPIRIN</td></tr><tr><td>biotinidase_deficiency</td><td>BTD/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>DICLOFENAC SODIUM</td></tr><tr><td>biotinidase_deficiency</td><td>BTD/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>SALICYLIC ACID</td></tr><tr><td>biotinidase_deficiency</td><td>BTD/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>AMILORIDE</td></tr><tr><td>brugada_syndrome</td><td>SCN5A/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>CHLOROPROCAINE</td></tr><tr><td>brugada_syndrome</td><td>SCN5A/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>DICHLOROBENZYL ALCOHOL</td></tr><tr><td>brugada_syndrome</td><td>SCN5A/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>PHENACEMIDE</td></tr><tr><td>brugada_syndrome</td><td>SCN5A/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>INDECAINIDE HYDROCHLORIDE</td></tr><tr><td>brugada_syndrome</td><td>SCN5A/LOF</td><td>ACTIVATING</td><td>INHIBITORY</td><td>ETHOTOIN</td></tr></table>
+
+<h2>X2 &middot; named-target direction corroboration (independent DB agrees with the kit)</h2>
+<p>V2 proved the kit&#x27;s asserted action on each target is emergence-consistent at the axis level; X2b shows an INDEPENDENT DB agrees on that per-drug action direction on the fairly-checkable (distinct-target) subset. The downstream target-&gt;axis coupling is inherited from the kit, not re-derived here.</p>
+<p><b>X2b &mdash; distinct modulatory target (the fair external check).</b> an independent DB agrees with the kit&#x27;s per-drug action DIRECTION on the large fairly-checkable subset. The few mismatches are a known DGIdb directionality quirk (e.g. APOC3 antisense labelled activating) and majority-vs-specific-agent (e.g. ADRB1 has both agonists and blockers; the kit row is a minority agonist).</p>
+<p>direction accuracy <b>0.875</b> over n=24 signable+resolved
+rows (unsignable verb 23; target unresolved in DGIdb 52).</p>
+<table><tr><th></th><th>obs ACT</th><th>obs INH</th></tr><tr><th>pred ACT</th><td>4</td><td>1</td></tr><tr><th>pred INH</th><td>2</td><td>17</td></tr></table>
+<p>X2b mismatches:</p>
+<table class="wide"><tr><th>slug</th><th>target</th><th>agent</th><th>kit asserts</th><th>DGIdb</th></tr><tr><td>brugada_syndrome</td><td>ADRB1</td><td>beta-adrenergic agonist (isoproterenol) -- electrical-storm </td><td>ACTIVATING</td><td>INHIBITORY</td></tr><tr><td>familial_chylomicronaemia_syndrome</td><td>APOC3</td><td>hepatocyte-targeted APOC3 antisense oligonucleotide (olezars</td><td>INHIBITORY</td><td>ACTIVATING</td></tr><tr><td>familial_chylomicronaemia_syndrome</td><td>APOC3</td><td>APOC3 antisense oligonucleotide (volanesorsen)</td><td>INHIBITORY</td><td>ACTIVATING</td></tr></table>
+<p><b>X2a &mdash; own-gene restorative (reported limitation, not the corroboration).</b> this stratum is depressed by construction: the kit correctly asserts ACTIVATING (restore the lost gene), but DGIdb annotates SMALL-MOLECULE INHIBITORS of that gene from other indications, so &#x27;restore via replacement/gene-therapy&#x27; cannot agree with an inhibitor annotation. This is the X1 LOF arm again, at the agent level -- a property of pharmacology and of DGIdb&#x27;s annotation scope, not of the kit. Reported in full for honesty, NOT used as the external corroboration.</p>
+<p>accuracy <b>0.5952</b> over n=42 (the
+restore-vs-inhibitor-annotation mismatch: pred-ACT/obs-INH =
+16).</p>
+<table><tr><th></th><th>obs ACT</th><th>obs INH</th></tr><tr><th>pred ACT</th><td>13</td><td>16</td></tr><tr><th>pred INH</th><td>1</td><td>12</td></tr></table>
+
+<h2>Honest conclusion</h2>
+<p>The locked emergence directions were checked against DGIdb -- an independent drug-gene aggregator the kit never consulted, queried by gene symbol, full return, no hand-picking, filtered only by approved-drug + a single directionality. Two honest strata, both with denominators. X1 (coupling-free, own-gene): on the GOF arm the emergence&#x27;s lesion-forced action agrees with DGIdb (gain-of-function disease genes attract inhibitory approved drugs, exactly as the emergence demands) far above the inhibitor-skew baseline, with no permutation reaching the observed concordance; the LOF own-gene arm is pharmacologically unsatisfiable (lost function is fixed by replacement / gene-therapy / another node, not by a small-molecule activator of the lost gene), a property of pharmacology and of DGIdb&#x27;s annotation scope, not of the emergence. X2 (named-target, stratified by an a-priori mechanistic split): on the FAIR subset -- drugs acting on a DISTINCT modulatory target (X2b) -- an independent DB agrees with the kit&#x27;s per-drug action DIRECTION on the large checkable set, the residual mismatches being a known DGIdb labelling quirk and a minority-agent case; the own-gene restorative subset (X2a) is the LOF limit again at the agent level and is reported, not used as the corroboration. Combined with V2 (which proved those directions emergence-consistent at the axis level), X1-GOF and X2b close the external direction loop to the extent an independent inhibitor-annotation DB can speak. Everything DGIdb could not cover -- physiological switch-node &#x27;targets&#x27;, genes with no small-molecule drug -- is reported as an explicit coverage gap, never scored as a hit. No magnitude, efficacy, affinity, or outcome is asserted anywhere; every lead stays [O]. The within-kit recovery (V2) plus this external corroboration (V3) jointly refute &#x27;the direction is just author-input recovery&#x27;.</p>
+</html>

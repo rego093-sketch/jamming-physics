@@ -1,0 +1,207 @@
+{
+  "_what": "vp_wave_computer v0.12 \u2014 POST-PROGRAM COMPRESSION: axiom-independence audit (do the 8 inherited invariants reduce to a MINIMAL load-bearing set of L0 substrate axioms? ablate each operational axiom and test whether a core capability collapses)",
+  "firewall": {
+    "consciousness_claim": 0,
+    "hard_problem_open": 1
+  },
+  "new_tuned_constants": 0,
+  "post_program": true,
+  "continuation": "(a) compression \u2014 the only named post-program task still outstanding (S11 did continuation (b), the A3 inline closure)",
+  "reuses_substrate": "wave_compute_core (L0: hebbian_field, relax, overlap, global_R, pattern_to_phase, corrupt_phase) \u2014 exact, non-circular; L0 never edited",
+  "C0_compression_map": {
+    "inherited_invariants": 8,
+    "operational_axioms_in_L0": 5,
+    "map": {
+      "AX1_data_encoded_field": [
+        "B1 ephaptic near-field coupling",
+        "B4 attractor pattern-completion (storage rule)"
+      ],
+      "AX2_field_symmetry": [
+        "B4 attractor (the Lyapunov/energy structure)",
+        "P3 1/r^2 near-field reciprocity"
+      ],
+      "AX3_coupling_nonlinearity": [
+        "B2 phase (Kuramoto/XY) coupling"
+      ],
+      "AX4_settling_clockfree": [
+        "P2 clock-free lattice propagation",
+        "B2 self-timed phase dynamics"
+      ],
+      "AX5_metastable_band": [
+        "B3 metastable critical operating band",
+        "P1 medium stiffness = coupling gain"
+      ]
+    },
+    "deferred_not_an_L0_axiom": {
+      "B5_theta_gamma_capacity": "a higher-layer realization (theta-gamma multiplexing) built at L2/L3, not a property of the L0 substrate itself -- recorded as deferred, not ablated"
+    },
+    "note": "EIGHT inherited invariants map onto FIVE independent operational axioms in the frozen L0 substrate (B5 is a deferred higher-layer realization, not an L0 axiom). Several inherited invariants COLLAPSE onto the same operational mechanism -- e.g. B1 (ephaptic field), B4 (attractor) and P3 (near-field reciprocity) all become a single symmetric, data-encoded coupling matrix -- so the inherited set is NOT minimal at the operational level. The ablation audit C1..C5 then tests whether the FIVE are each load-bearing (no further compression) or whether any is itself redundant (a further compression)."
+  },
+  "intact_positive_control": {
+    "capacity": 0.9667,
+    "overlap": 0.9969,
+    "R": 0.0622,
+    "passes": true,
+    "note": "the intact substrate recovers the stored pattern through the SAME harness -> any collapse below is attributable to the knock-out, not the harness."
+  },
+  "C1_AX1_data_field": {
+    "axiom": "AX1 data-encoded coupling field",
+    "knockout": "magnitude-matched RANDOM symmetric field (data not encoded)",
+    "intact_capacity": 0.9,
+    "intact_overlap": 0.9792,
+    "ko_capacity": 0.0,
+    "ko_overlap": 0.5177,
+    "gap_mean": 0.9,
+    "collapses_sign_stable": true,
+    "load_bearing": true,
+    "reading": "a coupling medium not sculpted by the data has the stored patterns as NON-attractors: CAPACITY (recovery to the stored pattern, the decision metric) collapses from the intact level to ZERO at every seed -- a clean recall never happens. (The residual overlap sits between the cue level and chance because a non-encoding field is largely inert: it neither recalls the pattern nor must scramble the cue.) The other four axioms are all intact and do not rescue it -> AX1 is independent."
+  },
+  "C2_AX2_symmetry": {
+    "axiom": "AX2 field symmetry (reciprocity, J=J^T)",
+    "knockout": "antisymmetric break of magnitude kappa*||J|| (kappa swept)",
+    "by_kappa": [
+      {
+        "kappa": 0.0,
+        "capacity": 0.8667,
+        "overlap": 0.9776
+      },
+      {
+        "kappa": 0.5,
+        "capacity": 0.7,
+        "overlap": 0.9609
+      },
+      {
+        "kappa": 1.0,
+        "capacity": 0.5,
+        "overlap": 0.9083
+      },
+      {
+        "kappa": 2.0,
+        "capacity": 0.1,
+        "overlap": 0.7245
+      },
+      {
+        "kappa": 4.0,
+        "capacity": 0.0,
+        "overlap": 0.1073
+      }
+    ],
+    "intact_capacity": 0.8667,
+    "strong_break_capacity": 0.0,
+    "gap_mean": 0.8667,
+    "asymmetry_tolerance_kappa": 1.0,
+    "collapses_sign_stable": true,
+    "load_bearing": true,
+    "reading": "breaking reciprocity removes the Lyapunov/energy structure that guarantees settling converges to the stored fixed point. A strong break collapses recall to ~chance (small breaks may be tolerated -- the tolerance kappa is reported, an honest graded result). The break is the only change; the data is still encoded -> AX2 is independent."
+  },
+  "C3_AX3_nonlinearity": {
+    "axiom": "AX3 coupling nonlinearity (sin dtheta / XY)",
+    "knockout": "first-order LINEAR (small-angle) signed-Laplacian consensus flow (same J)",
+    "intact_capacity": 0.9,
+    "intact_overlap": 0.9854,
+    "intact_R": 0.0738,
+    "ko_capacity": 0.0,
+    "ko_overlap": -0.0104,
+    "ko_R": 0.081,
+    "gap_mean": 0.9,
+    "collapses_sign_stable": true,
+    "load_bearing": true,
+    "reading": "the first-order linearization removes the discrete phase WELLS at {0, pi} that hold DISTINCT patterns: the corrupted cue is no longer pulled back to the stored pattern, so recall collapses to ~chance. (The settled global R is reported as a diagnostic; with signed Hebbian weights the linear signed-Laplacian flow does not lock onto the stored pattern -- it neither recovers it nor drives to a single global phase.) Only the nonlinearity is removed -- same data field, same settling budget -> AX3 is independent."
+  },
+  "C4_AX4_settling": {
+    "axiom": "AX4 settling / clock-free relaxation (compute = the relaxation)",
+    "knockout": "NO settling -- the field is present but never iterated (steps=0)",
+    "intact_capacity": 1.0,
+    "intact_overlap": 0.9969,
+    "ko_capacity": 0.0,
+    "ko_overlap": 0.7031,
+    "ko_equals_cue_level": 0.7031,
+    "field_inert_without_relaxation": true,
+    "gap_mean": 1.0,
+    "collapses_sign_stable": true,
+    "load_bearing": true,
+    "reading": "with no relaxation the read-out equals the CORRUPTED cue (no error correction): the stored field alone is inert. Computation is the SETTLING, not the storage -- so AX4 is independent of AX1 (you need both the field AND the dynamics)."
+  },
+  "C5_AX5_band": {
+    "axiom": "AX5 metastable operating band (operate below full coherence)",
+    "knockout": "uniform ferromagnetic drive d (force global sync, R -> 1)",
+    "by_drive": [
+      {
+        "drive": 0.0,
+        "capacity": 0.9667,
+        "overlap": 0.9922,
+        "R": 0.1017
+      },
+      {
+        "drive": 0.5,
+        "capacity": 0.1667,
+        "overlap": 0.5792,
+        "R": 0.8849
+      },
+      {
+        "drive": 1.0,
+        "capacity": 0.0,
+        "overlap": 0.0771,
+        "R": 1.0
+      },
+      {
+        "drive": 2.0,
+        "capacity": 0.0,
+        "overlap": 0.0771,
+        "R": 1.0
+      },
+      {
+        "drive": 4.0,
+        "capacity": 0.0,
+        "overlap": 0.0771,
+        "R": 1.0
+      },
+      {
+        "drive": 8.0,
+        "capacity": 0.0,
+        "overlap": 0.0771,
+        "R": 1.0
+      }
+    ],
+    "intact_capacity": 0.9667,
+    "intact_R": 0.1017,
+    "overdriven_capacity": 0.0,
+    "overdriven_R": 1.0,
+    "drive_forces_coherence": true,
+    "capacity_collapse_drive": 0.5,
+    "gap_mean": 0.9667,
+    "collapses_sign_stable": true,
+    "load_bearing": true,
+    "reading": "forced toward full coherence the global mode swamps the stored structure: R rises toward 1 while recall collapses to ~chance -- one global state carries zero stored information. Maximal coherence is NOT optimal; the band is necessary. (The inherited D3 regime scan already pins the LOWER, field-off edge.) -> AX5 is independent."
+  },
+  "C6_verdict": {
+    "load_bearing_per_axiom": {
+      "AX1_data_encoded_field": true,
+      "AX2_field_symmetry": true,
+      "AX3_coupling_nonlinearity": true,
+      "AX4_settling_clockfree": true,
+      "AX5_metastable_band": true
+    },
+    "n_axioms": 5,
+    "redundant_axioms": [],
+    "axiom_set_irreducible": true,
+    "inheritance_compression": "8 inherited invariants -> 5 operational L0 axioms (B5 deferred to a higher layer)",
+    "verdict": "IRREDUCIBLE: every one of the five operational axioms is load-bearing -- each knock-out collapses a core capability that the other (intact) axioms do not rescue, sign-stable across seeds. So the eight inherited invariants compress to a MINIMAL five-axiom operational core, and no axiom in that core is itself redundant."
+  },
+  "headline": {
+    "inheritance_compression": "8 inherited invariants -> 5 operational L0 axioms (B5 deferred to a higher layer)",
+    "load_bearing_per_axiom": {
+      "AX1_data_encoded_field": true,
+      "AX2_field_symmetry": true,
+      "AX3_coupling_nonlinearity": true,
+      "AX4_settling_clockfree": true,
+      "AX5_metastable_band": true
+    },
+    "redundant_axioms": [],
+    "axiom_set_irreducible": true,
+    "grade": "[V] minimal/irreducible 5-axiom core (no redundancy found)",
+    "intact_control_passes": true,
+    "deferred": "B5 theta-gamma capacity is a higher-layer (L2/L3) realization, not an L0 axiom"
+  },
+  "_digest": "7f59ced681bdf8b83396b1b4c8d37f639460f66dacbce34291633f91e4fc45a0"
+}

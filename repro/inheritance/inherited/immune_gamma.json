@@ -1,0 +1,90 @@
+{
+ "_atlas": "VP visceral + morphogenesis master-gene gamma (vendored subset)",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998); READ-ONLY measured values from human proximal promoters (NCBI exact TSS -> window TSS-2000..+500, 2501 bp). IDENTICAL pipeline to fetch_morpho_gamma.py / the kit; never fitted. Each gene carries its accession/strand. Sequences are cached in organ_promoters.cache.json so gamma reproduces offline bit-for-bit (inherited/gamma_pipeline.py).",
+ "_pipeline_validation": "The in-package offline pipeline (gamma_pipeline.py) reproduces the two originally-vendored values to 4 dp from cached sequence (FOXN1->1.4533, TLX1->1.4228). Because it is byte-exact on the knowns, the two formerly to-measure masters RUNX1 (1.3225) and PAX5 (1.4892) -- fetched by the SAME window/method and frozen in the cache -- are MEASURED inputs [V], not invented. gamma is strand-invariant (the - strand window is read as reverse complement; the multiset of NN steps, hence the mean, is preserved).",
+ "_sources": [
+  "organ_gamma.json (visceral)",
+  "morpho_gamma.json (morphogenesis)"
+ ],
+ "_seam_note": "VENDORED subset from DNA. gamma is MEASURED [V] and never fitted; organ IDENTITY + emergence ORDER are owned by DNA. RUNX1/PAX5 were the 'fetch' the to-measure entries called for, performed here via the validated pipeline; on re-vendoring into the DNA atlas they must match (the knowns already do, exactly). SSOT reconciliation obligation noted.",
+ "genes": {
+  "FOXN1": {
+   "gamma": 1.4533,
+   "gc": 0.5594,
+   "src": "NC_000017.11 + TSS-2000..+500",
+   "grade": "[V] measured; byte-exact verified vs live NCBI GRCh38.p14",
+   "_source": "morpho_gamma.json (morphogenesis)",
+   "ncbi": {
+    "accession": "NC_000017.11",
+    "assembly": "GRCh38.p14",
+    "efetch_strand": 1,
+    "genomic_window_1based": [
+     28504348,
+     28506848
+    ],
+    "verified": true,
+    "verified_on": "2026-06-18",
+    "byte_exact_vs_live_ncbi": true
+   }
+  },
+  "TLX1": {
+   "gamma": 1.4228,
+   "gc": 0.5246,
+   "src": "NC_000010.11 + TSS-2000..+500",
+   "grade": "[V] measured; byte-exact verified vs live NCBI GRCh38.p14",
+   "_source": "organ_gamma.json (visceral)",
+   "ncbi": {
+    "accession": "NC_000010.11",
+    "assembly": "GRCh38.p14",
+    "efetch_strand": 1,
+    "genomic_window_1based": [
+     101129300,
+     101131800
+    ],
+    "verified": true,
+    "verified_on": "2026-06-18",
+    "byte_exact_vs_live_ncbi": true
+   }
+  },
+  "RUNX1": {
+   "gamma": 1.3225,
+   "gc": 0.425,
+   "src": "NC_000021.9 - TSS-2000..+500 (genomic 35048802-35051302, read revcomp)",
+   "grade": "[V] measured; byte-exact verified vs live NCBI GRCh38.p14",
+   "_source": "fetched here via NN-stacking dG37 (SantaLucia 1998); cached for offline reproduction; reconcile into DNA atlas as SSOT",
+   "ncbi": {
+    "accession": "NC_000021.9",
+    "assembly": "GRCh38.p14",
+    "efetch_strand": 2,
+    "genomic_window_1based": [
+     35048802,
+     35051302
+    ],
+    "verified": true,
+    "verified_on": "2026-06-18",
+    "byte_exact_vs_live_ncbi": true
+   }
+  },
+  "PAX5": {
+   "gamma": 1.4892,
+   "gc": 0.569,
+   "src": "NC_000009.12 - TSS-2000..+500 (genomic 37033768-37036268, read revcomp)",
+   "grade": "[V] measured; byte-exact verified vs live NCBI GRCh38.p14",
+   "_source": "fetched here via NN-stacking dG37 (SantaLucia 1998); cached for offline reproduction; reconcile into DNA atlas as SSOT",
+   "ncbi": {
+    "accession": "NC_000009.12",
+    "assembly": "GRCh38.p14",
+    "efetch_strand": 2,
+    "genomic_window_1based": [
+     37033768,
+     37036268
+    ],
+    "verified": true,
+    "verified_on": "2026-06-18",
+    "byte_exact_vs_live_ncbi": true
+   }
+  }
+ },
+ "_to_measure": [],
+ "_ncbi_verification": "v0.3.0: all four promoter windows whose γ this atlas carries were re-fetched LIVE from NCBI nuccore by their exact accession + 1-based window + efetch strand and verified byte-for-byte (sha256) against the offline cache on 2026-06-18 (GRCh38.p14); γ recomputed identical. Gene→organ master + chromosome corroborated by NCBI-Gene RefSeq. Frozen proof: inherited/ncbi_verification.json + inherited/ncbi_gene_refseq.json; offline gate: inherited/ncbi_verify.py OFFLINE_check(); online audit: ONLINE_reverify(). γ VALUES UNCHANGED."
+}

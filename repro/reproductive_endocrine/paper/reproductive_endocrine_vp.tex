@@ -1,0 +1,758 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
+
+\definecolor{accent}{HTML}{7A1F4B}
+\definecolor{forced}{HTML}{274B8A}
+\definecolor{verified}{HTML}{1F6B3A}
+\definecolor{open}{HTML}{9A5B00}
+
+% honest-grading badges
+\newcommand{\gradeV}{\textcolor{verified}{\textbf{[V]}}}
+\newcommand{\gradeF}{\textcolor{forced}{\textbf{[F]}}}
+\newcommand{\gradeL}{\textcolor{verified}{\textbf{[L]}}}
+\newcommand{\gradeO}{\textcolor{open}{\textbf{[O]}}}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+\sloppy
+\hbadness=10000
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Reproductive and Gonadal-Endocrine Emergence on a Jammed-Vacuum Substrate: the HPG Oscillator, the Menstrual Cycle, and Hormone-Driven Cancer}\\[1.0em]
+{\large Young Jae Lee}\\[0.3em]
+{\small Independent Researcher \quad ORCID: \href{https://orcid.org/0009-0002-7535-8245}{0009-0002-7535-8245}}\\[0.3em]
+{\small Version 0.7.1-writing \quad DOI: \href{https://doi.org/10.5281/zenodo.20754657}{10.5281/zenodo.20754657} \quad License: CC BY 4.0}\\[0.3em]
+{\small Canonical living version: \href{https://jamming-physics.org/reproductive-endocrine/}{jamming-physics.org/reproductive-endocrine/}}
+\end{center}
+
+\vspace{0.6em}
+\hrule
+\vspace{0.6em}
+
+\begin{abstract}
+\noindent We derive the human reproductive and gonadal-endocrine (hypothalamic--pituitary--gonadal, HPG)
+axis on the VP Theory jammed-vacuum substrate, using two vendored primitives unchanged: a bistable
+rectification (R19) switch and a FitzHugh--Nagumo (FHN) relaxation oscillator. A single sex-hormone drive
+$h$ acting on the R19 tilted double well produces \emph{two} opposite failure modes --- an oscillator
+disease and a barrier-lowered oncogenic switch --- governed by \emph{one} control axis: temporal pattern
+(pulsatile versus continuous, cycling versus sustained). The same kernel, run as an FHN oscillator,
+generates the GnRH pulse train, the menstrual cycle, and the spermatogenic cycle by changing only the
+recovery timescale $\tau_s$; run as an R19 switch, it gives organ emergence in measured-$\gamma$ order, the
+discontinuous ovulatory LH surge, puberty as a spinodal crossing, and hormone-driven carcinogenesis as
+barrier lowering. The same two primitives extend downstream to the gamete and the embryo, to the
+infertility/subfertility distinction (categorical past a spinodal versus a finite Kramers rate near
+threshold), and to sex determination and sex-ratio distortion (a tiltable bistable switch with Fisher's
+1:1 restoring force). Every published quantity is pulled live from a deterministic reproduction engine
+(SEED~=~19; two builds are byte-identical, \texttt{sha256}~=~\texttt{f849da7d13d23302\ldots}); no
+constant is tuned to a target. Grades are honest throughout: \gradeF{} forced by geometry, \gradeV{}
+simulation-verified, \gradeL{} measured anchor, \gradeO{} open with the obstacle stated. This is a
+falsifiable physics-derived research artefact and is \textbf{not} clinical advice.
+\end{abstract}
+
+\vspace{0.4em}
+\textbf{Keywords:} reproductive endocrinology; HPG axis; GnRH pulse-frequency coding; menstrual cycle;
+relaxation oscillator; FitzHugh--Nagumo; bistable switch; spinodal; hysteresis; hormone-driven cancer;
+dose--response; Bipolar Androgen Therapy; infertility; subfertility; meiotic drive; sex determination;
+sex ratio; Fisher's principle; VP Theory; jamming; computational biology; reproducibility.
+
+\vspace{0.4em}
+\hrule
+
+\section{Scope and the jammed-vacuum substrate}
+
+\textbf{One drive, two failures, one lever.} This package derives the gonadal-endocrine axis on the VP
+Theory jammed-vacuum substrate~\cite{vptheory}, where a cell or tissue fate is a point in a bistable R19
+double-well potential and a hormone is a tilt $h$ on that well. One sex-hormone drive, moved two opposite
+ways, produces the whole disease map: move it the wrong \emph{pattern} and an HPG oscillator fails (an
+endocrine disorder); lower the barrier and the R19 oncogenic switch crosses (a hormone-driven cancer). The
+single control axis the framework exposes is therefore temporal pattern. No new physics is introduced here;
+the vendored primitives are used unchanged.
+
+The fate landscape is the tilted double well
+\begin{equation}
+V(s) = -\tfrac{1}{2}\gamma s^{2} + \tfrac{1}{4}s^{4} - h\,s,
+\qquad
+\dot s = \gamma s - s^{3} + h,
+\end{equation}
+whose stationary states are the roots of $s^{3}-\gamma s - h = 0$: for three real roots there are two minima
+(basins) and a saddle. As the tilt $h$ grows, the metastable minimum and the saddle approach and annihilate
+at the \emph{spinodal} --- beyond it the flip is unavoidable and discontinuous. Two locked constants set
+every threshold and barrier in the paper, both forced functions of the identity constant $\gamma$ alone:
+\begin{equation}
+h_{\mathrm{sp}}(\gamma) = 2\left(\tfrac{\gamma}{3}\right)^{3/2}
+\quad(\,= 0.3849\ \text{at}\ \gamma=1\,),
+\qquad
+\Delta V_{0}(\gamma) = \tfrac{\gamma^{2}}{4}.
+\end{equation}
+The spinodal $h_{\mathrm{sp}}$ fixes where a switch flips; the barrier $\Delta V_{0}$ fixes how stable a
+basin is. Both are \gradeF{} forced by geometry.
+
+\paragraph{Firewall.} Decomposition is by physical regime, not textbook organ labels: this is the jamming
+(hormonal-cycle / germline) class. The brain-facing hypothalamic--pituitary--adrenal (HPA) stress axis and
+felt experience belong to the companion Felt Cognition paper and are cited, never re-derived here. Sex-hormone
+\emph{levels} are this package's single source of truth.
+
+\section{Organ emergence from measured master-gene \texorpdfstring{$\gamma$}{gamma}}
+
+The morphogenesis identity constant is $\gamma = -\langle\Delta G_{37}^{\mathrm{NN}}\rangle$: minus the mean
+nearest-neighbour stacking free energy~\cite{santalucia} over the proximal promoter (TSS$-2000\ldots+500$,
+GRCh38) of each organ's master gene. It is \gradeV{} measured, never fitted --- the pipeline is accepted only
+because it reproduces the vendored SOX9 anchor ($\gamma=1.4598$) to four decimals; the promoter sequences are
+cached so $\gamma$ reproduces offline bit-for-bit~\cite{dnablueprint}. The emergence order of an organ system
+is the argsort of its master-gene $\gamma$ values, the same gene-clock used elsewhere in the programme.
+
+For the four reproductive masters the measured order (ascending $\gamma$) is germline $\to$ testis $\to$ ovary $\to$ tract. Germline-first
+is consistent with primordial germ-cell specification preceding gonadal differentiation, a sign sanity-check
+rather than a fitted result. The relative run-length / size of each switch follows
+$\mathrm{DWELL}(\gamma) = \gamma^{3/2}/(K+\mathrm{brake})$ --- order and direction \gradeF{} forced; absolute
+magnitude \gradeO{} (external calibration; see \S\ref{sec:open}).
+
+\begin{table}[H]
+\centering
+\small
+\caption{Reproductive organ emergence in measured-$\gamma$ order. $\gamma$ is measured from the proximal promoter by the 4D DNA pipeline, reproduced offline bit-for-bit; the emergence order is $\mathrm{argsort}(\gamma)$.}
+\label{tab:organs}
+\begin{tabular}{llcccl}
+\toprule
+master gene & organ & $\gamma$ (meas.) & func.\ spinodal & rel.\ size (DWELL) & dyn.\ class \\
+\midrule
+DAZL & germline & 1.3803 & 0.6242 & 1.4742 & germline \\
+SOX9 & gonad testis & 1.4598 & 0.6789 & 1.6034 & germline-support \\
+FOXL2 & gonad ovary & 1.4829 & 0.6950 & 1.6416 & oscillator \\
+WT1 & reproductive tract & 1.5182 & 0.7200 & 1.7006 & structural \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The GnRH pulse generator}
+
+\textbf{Answer.} The hypothalamic GnRH pulse generator is the shared FHN relaxation oscillator: a fast R19
+switch with slow recovery emits a relaxation pulse train (62 pulses at $\tau_s=60$).
+Pulse \emph{frequency} --- not amplitude --- decodes to gonadotropin identity, fast pulses favouring LH and
+slow pulses favouring FSH, reproduced as a monotone function of $\tau_s$~\cite{knobil}. The mechanism is
+\gradeV{} sim-verified; the absolute pulse rate is a measured \gradeL{} anchor.
+
+The arcuate KNDy network that paces GnRH release is, on this substrate, the same fast--slow FHN system used
+everywhere in the package. At the follicular setting $\tau_s=60$ the generator emits 62
+pulses over the run with mean inter-pulse interval 130.6 (arb). The
+clinically central fact --- that pulse \emph{frequency} sets the LH:FSH balance --- falls out of the recovery
+timescale: a faster generator (smaller $\tau_s$) fires more often and favours LH; a slower generator favours
+FSH; and the pulse rate is monotone in $\tau_s$ (Table~\ref{tab:freq}). The pulse rate is calibrated to the
+measured follicular figure of roughly one GnRH/LH pulse per 60--90~min~\gradeL{}; the package does not claim
+to derive that clinical number, only the monotone frequency-decoding mechanism~\gradeV{}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Frequency decoding by the shared FHN generator: the pulse rate is a monotone function of the recovery timescale $\tau_s$, and fast/slow maps onto the LH/FSH bias.}
+\label{tab:freq}
+\begin{tabular}{ccccl}
+\toprule
+recovery $\tau_s$ & pulses & mean interval & pulse rate & gonadotropin bias \\
+\midrule
+20 & 155 & 51.7 & 0.019375 & LH (fast) \\
+60 & 62 & 130.6 & 0.007750 & LH (fast) \\
+150 & 27 & 299.4 & 0.003375 & FSH (slow) \\
+400 & 11 & 756.2 & 0.001375 & FSH (slow) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The menstrual cycle as a relaxation oscillator}
+
+\textbf{Answer.} The menstrual cycle is the same kernel run slow: a relaxation (saw-tooth) oscillator, not a
+sinusoid. Over the run it completes 11 cycles with period 1133.7
+(arb), built from a slow follicular rise (3.6) and an abrupt luteal fall
+(1130.0), an asymmetry ratio of 309.6. The strong
+rise/fall asymmetry is the signature of a relaxation oscillation; a sinusoid would have asymmetry near unity.
+The period magnitude is anchored to the $\sim$28-day cycle as a measured \gradeL{} quantity, while the
+relaxation \emph{form} is \gradeV{} sim-verified. Only the recovery timescale $\tau_s$ distinguishes this from
+the GnRH pulse and the spermatogenic cycle --- it is one oscillator at three speeds.
+
+\section{The oestrogen feedback switch and the LH surge}
+
+\textbf{Answer.} The pre-ovulatory LH surge is a discontinuous spinodal crossing of the R19 switch, not a
+smooth rise: rising oestradiol tilts the well until the negative-feedback basin annihilates at
+$h_{\mathrm{sp}}=0.3849$, and the state jumps to the secretory branch. The model shows
+a discontinuous up-jump of size 1.634 once the up-threshold
+$0.3873$ is crossed, and the return path crosses a different down-threshold
+$-0.3915$ --- a hysteresis loop of width
+$0.779$~\gradeV{}. This is the switch from oestrogen \emph{negative}
+feedback (most of the cycle) to the brief \emph{positive}-feedback surge: the substrate realises it as one
+bistable well crossing its spinodal in one direction, then returning by another, which is exactly what
+hysteresis means. The discontinuity and the hysteresis are forced features of an R19 switch, not added by
+hand.
+
+\section{The spermatogenic cycle}
+
+\textbf{Answer.} Spermatogenesis is the same relaxation oscillator at an intermediate recovery timescale
+($\tau_s=340$), giving period 656.5 (arb), between the
+fast GnRH pulse and the slow menstrual cycle. The package verifies the period ordering directly:
+$132.4$ (pulse) $<$ $656.5$ (spermatogenic)
+$<$ $1133.7$ (menstrual)~\gradeV{}. Mapped to clinical time the spermatogenic
+cycle anchors to $\sim$16~days~\gradeL{}; the ordering is the derived claim, the absolute days an anchor. That
+a single oscillator covers three reproductive rhythms purely by its recovery timescale is the unifying point:
+the body re-uses one fast--slow kernel and re-tunes $\tau_s$.
+
+\section{Puberty as a spinodal crossing}
+
+\textbf{Answer.} Puberty is the reactivation of the GnRH generator modelled as a single irreversible spinodal
+crossing: below threshold the axis sits in the quiescent (OFF) basin at $-0.514$,
+and once the drive reaches $0.3888$ --- a ratio jump/spinodal of
+$1.01$ --- the state jumps by $0.955$ to the
+active (ON) branch at $0.442$~\gradeV{}. The onset is therefore discontinuous and
+localised at the spinodal, the same geometry as the LH surge but taken once and not returned. The framework
+fixes the discontinuous order (OFF below the crossing, ON above) and the jump/spinodal ratio; mapping the
+crossing to a chronological age requires external endocrine calibration and is declared \gradeO{}
+(\S\ref{sec:open}).
+
+\section{Hormone-driven cancer as barrier lowering}
+
+\textbf{Answer.} Hormone-driven carcinogenesis is the R19 oncogenic switch crossed by barrier lowering: a
+sustained sex-hormone drive tilts the well and lowers the inter-basin barrier $\Delta V_0=\gamma^2/4$, raising
+the Kramers escape rate~\cite{kramers} into the malignant basin. The relative risk is the ratio of escape
+rates,
+\begin{equation}
+\mathrm{RR}(\mathrm{dose}) = \frac{\exp[-\Delta V(h)/D]}{\exp[-\Delta V(0)/D]},
+\end{equation}
+with a single open lattice noise constant $D=0.15$ that sets the absolute magnitude
+only. Crucially, the relative barrier as a function of relative drive is \emph{identical across} $\gamma$
+(Table~\ref{tab:uni}, max spread $0.0$), so the dose--response \emph{shape} is forced and $\gamma$-independent
+\gradeF{}; every reported RR \emph{ratio} is invariant under $D$ (verified $D$-robust). Three cancers come out
+as three distinct, sim-verified shapes:
+
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt]
+\item \textbf{Breast} (Table~\ref{tab:breast}): cumulative-oestrogen exposure raises RR monotonically to a
+plateau (saturating once the barrier is gone)~\gradeV{}.
+\item \textbf{Prostate} (Table~\ref{tab:prostate}): barrier reduction is concave and RR plateaus past the fold
+\gradeV{}.
+\item \textbf{Cervical} (Table~\ref{tab:cervical}): HPV $\times$ smoking is multiplicative at low exposure and
+saturates sub-multiplicatively at high exposure~\gradeV{}, the same synergy structure seen in other
+infection $\times$ carcinogen pairs.
+\end{itemize}
+
+Absolute population incidence needs epidemiological calibration and is declared \gradeO{}; the shapes,
+ratios, and the $\gamma$-independence are the derived content.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Barrier-law universality: the relative barrier as a function of relative drive is identical across $\gamma$ (max spread $0.0$), so the dose--response shape is $\gamma$-independent~\gradeF{}.}
+\label{tab:uni}
+\begin{tabular}{ccc}
+\toprule
+$h/h_{\mathrm{sp}}$ & $\Delta V/\Delta V_0$ & max spread across $\gamma$ \\
+\midrule
+0.00 & 1.00000 & 0.0 \\
+0.20 & 0.71014 & 0.0 \\
+0.40 & 0.45804 & 0.0 \\
+0.60 & 0.24771 & 0.0 \\
+0.80 & 0.08705 & 0.0 \\
+0.95 & 0.01083 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Breast: cumulative-oestrogen exposure monotonically raises modelled relative risk to a plateau. Population anchor: WHI combined MHT RR \textasciitilde{}1.26 [L].}
+\label{tab:breast}
+\begin{tabular}{ccc}
+\toprule
+exposure yr & $h/h_{\mathrm{sp}}$ & RR \\
+\midrule
+0 & 0.000 & 1.000 \\
+5 & 0.312 & 2.067 \\
+10 & 0.624 & 3.633 \\
+15 & 0.935 & 5.156 \\
+20 & 0.999 & 5.294 \\
+25 & 0.999 & 5.294 \\
+30 & 0.999 & 5.294 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Prostate: barrier reduction is concave and the relative risk plateaus past the fold.}
+\label{tab:prostate}
+\begin{tabular}{ccc}
+\toprule
+androgen drive $\times h_{\mathrm{sp}}$ & barrier reduction & RR \\
+\midrule
+0.0 & 0.000 & 1.000 \\
+0.2 & 0.290 & 1.621 \\
+0.4 & 0.542 & 2.468 \\
+0.6 & 0.752 & 3.504 \\
+0.8 & 0.913 & 4.580 \\
+1.0 & 1.000 & 5.295 \\
+1.3 & 1.000 & 5.295 \\
+1.6 & 1.000 & 5.295 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Cervical: HPV $\times$ smoking is multiplicative at low exposure (synergy index $\approx 1$) and saturates sub-multiplicatively at high exposure.}
+\label{tab:cervical}
+\begin{tabular}{ccccc}
+\toprule
+joint exp. & RR HPV & RR smoke & RR both & synergy idx \\
+\midrule
+0.05 & 1.224 & 1.135 & 1.376 & 0.990 \\
+0.10 & 1.473 & 1.283 & 1.819 & 0.963 \\
+0.20 & 2.030 & 1.621 & 2.853 & 0.867 \\
+0.30 & 2.636 & 2.017 & 3.929 & 0.739 \\
+0.40 & 3.248 & 2.468 & 4.825 & 0.602 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Temporal pattern as a therapeutic lever}
+
+\textbf{Answer.} The single control axis the framework exposes is temporal pattern, and it runs the whole
+therapy map. Cycling the androgen drive (Bipolar Androgen Therapy, BAT) amplifies the stress on the resistant
+clone 13.6$\times$ over continuous high suppression (Table~\ref{tab:bat}): a resistant clone
+adapted to a constant environment is destabilised by forced oscillation, whereas continuous suppression
+selects for it. The same principle, read on the GnRH generator, gives the textbook paradox that the
+\emph{same molecule} has opposite effects by pattern: pulsatile GnRH activates the axis
+(41 pulses) while continuous GnRH suppresses it
+(0 pulses)~\gradeV{}. This retrodicts pulsatile-GnRH pump therapy
+(activation in hypothalamic amenorrhoea) and depot GnRH-agonist desensitisation (suppression in precocious
+puberty, endometriosis, and prostate cancer), the hCG trigger as a single spinodal kick onto the ON branch,
+and the BAT schedule --- all as moves along one temporal-pattern axis.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Temporal-pattern selectivity. Cycling androgen (Bipolar Androgen Therapy) amplifies the stress on the resistant clone far more than continuous suppression does.}
+\label{tab:bat}
+\begin{tabular}{lccc}
+\toprule
+schedule & sensitive stress & resistant stress & res./sens. \\
+\midrule
+continuous high (T) & 0.0036 & 0.0304 & 8.35 \\
+continuous low (ADT) & 0.0018 & 0.0043 & 2.36 \\
+cycling (BAT) & 0.0633 & 0.4125 & 6.52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Disease mechanisms on one substrate}
+
+\textbf{Answer.} Eight common HPG disorders map to one substrate: one drive, two failure modes, one lever.
+PCOS (the generator stuck too fast, LH-biased rate $0.0135$) and
+functional hypothalamic amenorrhoea (the same generator slowed below the ovulatory rate,
+$0.0025$) are opposite ends of one pulse-frequency axis. Menopause is
+irreversible loss of the bistable secretory latch (ON $1.0 \to 0.229$ on follicular depletion), so HRT is replacement,
+not restoration. The split is by mechanism, not body part: every disorder is either a broken oscillator or a
+crossed oncogenic switch, resolved by the temporal-pattern lever.
+
+Retrodictions are sim-verified \gradeV{}; the genuinely novel suggestions --- low-frequency pulsatile
+restoration in PCOS, and pulsed/cycled testosterone replacement --- are graded \gradeO{} and explicitly
+require clinical validation.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Eight common HPG disorders on one substrate. Retrodictions of existing practice are flagged as validation; genuinely novel hypotheses are graded \gradeO{} and require clinical validation. None of this is clinical advice.}
+\label{tab:disorders}
+\begin{tabular}{p{2.6cm}p{4.2cm}p{4.6cm}c}
+\toprule
+disorder & substrate failure mode & model-derived hypothesis & grade \\
+\midrule
+PCOS (anovulatory phenotype) & GnRH pulse generator runs too FAST -> chronic LH excess, low FSH -> follicles recruited but none selected, no dominant follicle, no surge (chronic anovulation) & restore the SLOW pulse pattern itself -- low-frequency PULSATILE GnRH (not continuous, not fast) to re-establish the FSH-favouring rhythm and physiological follicle selection & \gradeO \\
+Functional hypothalamic amenorrhoea (FHA) & energy deficit / stress SLOW the GnRH pulse generator below the ovulatory pulse frequency (PCOS and FHA are opposite ends of one pulse-frequency axis); reversible & pulsatile GnRH at PHYSIOLOGICAL frequency restores the generator's rate -- the model says the missing thing is the pulse PATTERN/rate, not the molecule & \gradeV \\
+Menopause / perimenopause & follicle pool (ovarian responder substrate) exhausted -> the bistable secretory latch is lost; irreversible substrate depletion, NOT detuning & the model is explicit that this is REPLACEMENT, not restoration: the oscillator hardware is gone, so the honest in-framework lever is replacement with the cancer-risk trade-off made explicit (same h that lowers the breast barrier) -- restoration would need follicle regeneration (out of scope) & \gradeO \\
+Age-related male hypogonadism & sustained androgen drive decays with age -> hypogonadal symptoms & TRT re-supplies the SAME androgen drive that lowers the prostate R19 barrier (trade-off). The temporal-pattern lever predicts that PULSATILE or cycled delivery might separate the wanted androgenic tone from the unwanted sustained proliferative drive & \gradeO \\
+Central precocious puberty & the GnRH axis crosses the T5 spinodal too EARLY -> premature pulsatile reactivation & retrodiction: continuous GnRH agonist = depolarisation block of the generator (same mechanism the therapy module shows) -> axis switched OFF; the standard of care is exactly the substrate-predicted move & \gradeV \\
+Delayed puberty (functional / constitutional) & drive has not yet crossed the T5 spinodal -> axis still OFF & supply drive to cross the spinodal; pulsatile GnRH drives the generator (activation pattern) where continuous would block it & \gradeV \\
+Anovulatory infertility (surge failure) & the mid-cycle LH-surge switch fails to flip -> no ovulation & retrodiction: the hCG trigger is a single SPINODAL KICK forcing the surge switch onto the ON branch -- the model identifies why a one-shot trigger (not sustained drive) is the right move at that moment & \gradeV \\
+Endometriosis (oestrogen-dependent) & oestrogen-driven ECTOPIC proliferation -- SAME drive variable as breast carcinoma, benign but in the wrong location (one drive, different outcome) & suppression is the goal here, so the model says CONTINUOUS (block) is correct and warns that a cycling/pulsatile schedule would RE-stimulate -- the same lever, read in the opposite direction from the cancer case & \gradeV \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The gamete itself: meiosis, motility and the egg}
+
+\textbf{Answer.} The four questions about the germ cell answer on the same substrate, with measured
+gamete-program promoter $\gamma$ as the only new input. \emph{How} a gamete is made: meiosis is one DNA
+replication then two divisions ($2N,2C \to 2N,4C \to 1N,2C \to 1N,1C$), reductional before equational, an
+order forced by ordered two-stage REC8 cohesin release (arm separase $0.684$
+$\to$ centromeric $1.085$, set by the sign of shugoshin
+protection, not a tuned rate)~\gradeV{}. \emph{Whether} gametes are identical: no --- independent assortment is
+exactly $2^{23}=8,388,608$, and crossover interference
+is the substrate refractory period mapped onto the chromosome axis (sub-Poisson, Fano
+$0.108$ versus the Poisson null $0.976$, gap
+CV $0.26$, obligate crossover), so the floor on distinct gametes exceeds
+$10^{47}$~\gradeV{}.
+
+\textbf{The sperm is a fast oscillator; the egg is a held switch.} The flagellar beat is the fast end of the
+same relaxation-oscillator ladder: in arbitrary units the periods order
+$26.2$ (flagellum) $<$ $132.4$ (pulse) $<$
+$675.0$ (spermatogenic) $<$ $1133.7$
+(menstrual)~\gradeV{}, anchored to a $\sim20$~Hz beat~\gradeL{}.
+Hyperactivation is a CatSper-driven rise in oscillator gain, and its two co-signatures move together: the beat
+grows in amplitude ($2.21 \to 2.83$)
+and slows ($77 \to 57$
+beats)~\gradeV{}. The egg is the opposite use of the kernel: a switch held at metaphase~II (arrested state
+$-1.088$). A sub-spinodal $\mathrm{Ca}^{2+}$ transient does nothing; one above
+the spinodal ($0.3849$) flips it irreversibly, and that same past-spinodal
+irreversibility \emph{is} the polyspermy block~\gradeV{}. The integer~9 of the $9{+}2$ axoneme is structural and
+\emph{not} derived; it is declared \gradeO{} rather than back-fitted.
+
+\textbf{A measured $\gamma$ atlas and an honest null.} The gamete-program promoters, in ascending $\gamma$:
+TEKT1 1.3400, NLRP5 1.3475, MOS 1.3619, DAZL 1.3803, CATSPER1 1.4019, DMC1 1.4056, MLH1 1.4085, SPO11 1.4105, PRDM9 1.4165, ZAR1 1.4226, DNAH1 1.4469, ZP3 1.4486, REC8 1.4525. A pre-registered test of whether $\gamma$ \emph{separates} the three functional modules
+returns F-like $0.109$, $p=0.617$ --- a
+null, reported as it falls. What is supported, and tested separately, is narrower: the recombination core
+(SPO11, DMC1, MLH1, PRDM9) is a tight $\gamma$ cluster (CV $0.0028$ versus panel
+$0.0253$, $p=0.0014$). The framework
+claims only the second result, at the grade the test supports.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measured gamete-program promoter $\gamma$ by functional module (NN-stacking $\Delta G_{37}$, SantaLucia 1998). A pre-registered permutation test of module separation returns a null (reported honestly); only the recombination-core cluster is claimed.}
+\label{tab:gamete-gamma}
+\begin{tabular}{lrrrr}
+\toprule
+module & n & mean $\gamma$ & sd & range \\
+\midrule
+germline & 1 & 1.3803 & 0.0000 & 1.3803--1.3803 \\
+meiosis & 5 & 1.4187 & 0.0173 & 1.4056--1.4525 \\
+sperm & 3 & 1.3963 & 0.0438 & 1.3400--1.4469 \\
+oocyte & 4 & 1.3951 & 0.0418 & 1.3475--1.4486 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{One substrate, two gametes.} The same kernel is a free-running oscillator for the sperm and a held
+switch for the egg; the count asymmetry has the same root. Spermatogenesis divides symmetrically into
+$4$ equal gametes, while oogenesis divides
+asymmetrically into $1$ large egg and
+$3$ vanishing polar bodies, concentrating the cytoplasm
+(egg:polar-body mass $49\times$) and giving a measured egg:sperm
+volume ratio of $\sim18,963\times$~\gradeL{}. Anisogamy ---
+the deepest asymmetry in reproduction --- is on this substrate an oscillator and a switch built from one rule;
+the evolutionary ``why'' is game-theoretic and is marked \gradeO{} (\S\ref{sec:open}).
+
+\section{The embryo: from two gametes to a fetus}
+
+\textbf{Answer.} The two gametes meet and a fetus is built on the same substrate, each step a discriminant
+against the vendored R19 switch and FHN oscillator, reusing the gamete results and adding a measured
+developmental master-gene $\gamma$ panel as the only new input. \emph{Syngamy}: the sperm (a free
+oscillator) delivers a supra-spinodal $\mathrm{Ca}^{2+}$ kick that flips the egg (a held switch) one-way,
+with a polyspermy block; two haploid pronuclei fuse, restoring diploidy ($1N{+}1N\to 2N$), and the new
+genome is unique to a floor of $10^{94}$ --- the
+square of the per-gamete floor, since the zygote is the product of two independent draws~\gradeV{}. This is
+the ``emerge DNA'' step: a new diploid genome that has never existed before.
+
+\textbf{Cleavage and genome activation.} Unlike the asymmetric oocyte division, cleavage is symmetric ---
+$2^{n}$ equal blastomeres --- and it \emph{subdivides a fixed cytoplasmic mass} rather than growing it (summed
+mass conserved; each blastomere $1/2^{n}$ of the zygote)~\gradeV{}. The first cell-fate decision, inner cell
+mass versus trophectoderm, is one R19 bistable switch. Zygotic genome activation is the genome's own
+switch-on: before it, the embryo runs on maternal oocyte stores (ZAR1, the oocyte-to-embryo factor; NLRP5;
+c-Mos), with the zygotic genome off; a rising competence drive crosses the spinodal
+$0.3849$ and the genome switches on in one discontinuous step (jump
+$1.655$ at drive $0.3913$)~\gradeV{} --- the
+maternal-to-zygotic handoff from the gamete program this package owns to the embryo's own genome.
+
+\textbf{The gene-clock builds the body.} With the genome on, the body plan unfolds in the order the cited
+morphogenesis gene-clock dictates: emergence order $=$ argsort of the spinodal over the master genes, which
+(the spinodal being monotone in $\gamma$) is simply $\gamma$ ascending. The measured panel orders as
+NANOG $\to$ SOX17 $\to$ GATA4 $\to$ HOXB4 $\to$ PAX3 $\to$ CDX2 $\to$ SOX2 $\to$ SOX9 $\to$ PDX1 $\to$ POU5F1 $\to$ HOXA1 $\to$ MYOD1 $\to$ FOXA2 $\to$ PAX6 $\to$ NKX2-5 $\to$ TBXT $\to$ HOXA13. A pre-registered test finds $\gamma$ rises with developmental stage --- the stage
+means climb from pluripotency ($1.4310$) through germ-layer ($1.4373$) to
+organ-primordium ($1.4916$), Spearman $\rho=0.551$,
+permutation $p=0.020$~\gradeV{}. A second pre-registered test
+(HOX $3'\!\to\!5'$ colinearity) is reported as a \emph{partial} result in the honest style of the gamete
+chapter: the posterior-most HOX (HOXA13) carries the highest
+$\gamma$, but across three genes the correlation ($\rho=0.500$,
+$p=0.500$) does not reach significance; only the narrow claim is made.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measured developmental master-gene promoter $\gamma$ (same NN-stacking pipeline; validated on the SOX9 and DAZL anchors), in gene-clock order (argsort of the spinodal $=$ $\gamma$ ascending). Stage is the pre-registered hypothesis label, declared before $\gamma$ was seen.}
+\label{tab:embryo-gamma}
+\begin{tabular}{llrrr}
+\toprule
+master & stage & $\gamma$ & func. spinodal & rel. size \\
+\midrule
+NANOG & pluripotency & 1.3479 & 0.6023 & 1.4226 \\
+SOX17 & germ layer & 1.3821 & 0.6254 & 1.4771 \\
+GATA4 & germ layer & 1.3933 & 0.6330 & 1.4951 \\
+HOXB4 & AP-axis (HOX) & 1.4453 & 0.6688 & 1.5796 \\
+PAX3 & germ layer & 1.4479 & 0.6706 & 1.5839 \\
+CDX2 & germ layer & 1.4500 & 0.6720 & 1.5873 \\
+SOX2 & pluripotency & 1.4576 & 0.6773 & 1.5998 \\
+SOX9 & organ primordium & 1.4598 & 0.6789 & 1.6034 \\
+PDX1 & organ primordium & 1.4732 & 0.6882 & 1.6255 \\
+POU5F1 & pluripotency & 1.4874 & 0.6982 & 1.6491 \\
+HOXA1 & AP-axis (HOX) & 1.4923 & 0.7017 & 1.6573 \\
+MYOD1 & organ primordium & 1.4937 & 0.7027 & 1.6596 \\
+FOXA2 & organ primordium & 1.4986 & 0.7061 & 1.6678 \\
+PAX6 & organ primordium & 1.5110 & 0.7149 & 1.6885 \\
+NKX2-5 & organ primordium & 1.5130 & 0.7163 & 1.6919 \\
+TBXT & germ layer & 1.5130 & 0.7163 & 1.6919 \\
+HOXA13 & AP-axis (HOX) & 1.5427 & 0.7375 & 1.7419 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The whole arc.} Run end-to-end, a specific sperm and a specific egg produce a zygote with a
+reproducible, unique genome fingerprint, and the arc passes at every stage (syngamy, cleavage, genome
+activation, gene-clock body plan). The result is a fetus carrying a unique diploid genome
+($10^{94}$) and an inner-cell-mass-derived body of
+$17$ gene-clock-ordered structures~\gradeV{}. The absolute
+gestational timing is left open~\gradeO{} --- the events and their order are forced, but mapping them to a
+calendar needs external calibration, exactly as puberty's age does. The full multi-organ morphogenesis atlas
+and the gene-clock law remain the 4D~DNA~Blueprint package's single source of truth, cited here, never
+re-owned (\S\ref{sec:open}).
+
+\section{Infertility versus subfertility: two sides of one spinodal}
+
+\textbf{Answer.} The reproductive arc is a chain of substrate operations, and conception requires
+\emph{every} one to succeed --- a logical AND over the 8 verified links of the
+earlier chapters (the GnRH pulse, the follicle/sperm switch, ordered REC8 meiosis, gamete number, the
+metaphase-II flip, syngamy, ZGA, the gene-clock), so breaking any single link gives
+sterility~\gradeV{}. The two clinical failure classes are then one distinction on the substrate.
+\emph{Infertility} is an operation on the wrong side of a spinodal: categorical and deterministic, a
+per-cycle conception probability of exactly zero that a sub-threshold drive cannot move. \emph{Subfertility}
+is an operation near its threshold: a small but finite Kramers crossing rate per cycle, so the same drive
+that does nothing across a spinodal moves it exponentially.
+
+\textbf{The central dissociation.} Computed on the same R19 spinodal and Kramers factor
+$\exp(-\Delta V/D)$~\cite{kramers} the oncology chapter uses, a fixed, modest drive nudge
+($\Delta h = 0.0770$, one fifth of the spinodal
+$0.3849$) raises a near-threshold cycle probability from
+$0.0391$ to $0.0610$
+($1.56\times$; over a year
+$0.381 \to 0.530$), while leaving a
+past-spinodal operation at exactly $0$ --- the same nudge, exponential
+versus nothing~\gradeV{}. This is why the two diagnoses behave categorically differently under the same
+intervention, not as two points on one slider.
+
+\begin{table}[H]
+\centering
+\small
+\caption{The infertility/subfertility dissociation under an \emph{identical} drive nudge ($\Delta h = 0.0770$). A near-threshold (subfertile) operation responds exponentially through the Kramers rate~\cite{kramers}; a past-spinodal (sterile) operation stays at exactly zero. Same drive, two regimes.}
+\label{tab:infertility-dissociation}
+\begin{tabular}{lrrrrr}
+\toprule
+operation & $p_{\mathrm{cycle}}$ & $p_{\mathrm{cycle}}$ nudged & fold & $p_{\mathrm{year}}$ & $p_{\mathrm{year}}$ nudged \\
+\midrule
+subfertile (near threshold) & 0.0391 & 0.0610 & 1.56$\times$ & 0.381 & 0.530 \\
+sterile (past spinodal) & 0.0000 & 0.0000 & --- & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Male and female factor on the kernel.} Male factor is oscillator throughput: whether
+spermatogenesis runs at all is an R19 switch (sub-spinodal $=$ azoospermia, categorical and
+sterile)~\gradeV{}, while \emph{how much} it makes once on is the seminiferous/flagellar beat rate ---
+a fast beat (full count) versus a slow one (oligo-/astheno-, subfertile but non-zero:
+$51 \to 7$ beats)~\gradeV{}; CatSper
+(measured $\gamma = 1.4019$) is a \emph{separate} supra-spinodal
+gate~\cite{santalucia}. Female factor adds the molecular clock of female subfertility: anovulation is the
+mid-cycle ovulatory-surge switch left OFF (sterile until driven across)~\gradeV{}, and REC8 cohesin fatigue
+(measured $\gamma = 1.4525$) is the rising-with-age mis-segregation clock ---
+as the held barrier $\gamma^{2}/4$ decays with the years held, per-egg aneuploidy escape climbs from
+$0.121$ at age 25 to $0.752$ at age
+45 (only the rising \emph{shape} is claimed; the absolute fraction is \gradeO{}),
+with primary ovarian insufficiency the same latch lost early~\gradeV{}.
+
+\textbf{Treatment is a drive.} The interventions are reading the same kernel: the hCG trigger / ovulation
+induction is a supra-spinodal kick forcing the stuck ovulatory switch across (the spinodal kick the disease
+chapter already retrodicts)~\gradeV{}; pulsatile GnRH \emph{restarts} the oscillator where a continuous drive
+suppresses ($41$ versus $0$
+pulses, cited from the temporal-pattern chapter, same molecule opposite effect)~\gradeV{}; and ICSI/IVF supply
+or bypass the missing gate (the same supra-spinodal flip)~\gradeV{}/\gradeL{}. The absolute per-cycle
+probabilities, the map from a real semen parameter or maternal age to a drive value, and the gene-to-$\gamma$
+links for specific azoospermia/POI genes remain open~\gradeO{} (\S\ref{sec:open}); sex-hormone levels stay
+this package's single source of truth, and the management of a real couple's infertility belongs to clinicians.
+
+\section{Sex determination and sex-ratio distortion: a tiltable coin}
+
+\textbf{Answer.} Mammalian sex is one bistable switch: SOX9 (testis, measured
+$\gamma = 1.4598$) against FOXL2 (ovary, $\gamma = 1.4829$),
+with SRY the tipping drive. Mendelian 50:50 is that switch untilted --- a fair coin. A meiotic-drive gene
+tilts it, so transmission climbs from one-half and, past the spinodal, fixes near one. A sex-chromosome-linked
+driver tilts the X-versus-Y gamete switch, skewing offspring sex --- male for an X-shredder, female for a
+Y-killer --- while Fisher's restoring force holds the \emph{population} at 1:1~\cite{fisher}. Sex is a coin
+that can be weighted; the genome and the population each set a different constraint.
+
+\textbf{Sex is a switch; segregation is a fair coin.} The SOX9$\leftrightarrow$FOXL2 mutual-antagonism toggle
+reduces to one R19 well of scale $\gamma = 1.4714$ (the mean of the two measured
+antagonist $\gamma$, not fitted), spinodal $0.6869$. At zero tilt the two basins
+have equal depth (both sexes viable), the undifferentiated default settles to ovary, and SRY is a
+\emph{transient} supra-spinodal drive: it flips the switch to testis and the basin then self-maintains for life
+(hysteresis)~\gradeV{}. A heterozygous transmission locus is the same switch with no tilt, so an ensemble of
+$20,000$ meioses transmits at
+$0.4983$ (analytic exactly
+$0.5$) --- Mendel's first law as an untilted R19 switch~\gradeV{}.
+
+\textbf{Drive is a tilt; the sex ratio is a \emph{signed} tilt.} A meiotic-drive gene is a tilt $h$ on the
+switch, and the transmission ratio is a Boltzmann basin occupancy: it rises monotonically from
+$0.5$ through $0.8623$
+(graded distortion below the spinodal) to $1.0$ once the
+loser basin vanishes past the spinodal (the t-haplotype / SD fixation limit)~\gradeV{}. A
+sex-chromosome-linked gamete-killer is the same tilt \emph{with a sign}: an X-shredder kills X-bearing sperm
+and gives a secondary sex ratio of $1.0$ (male), a Y-killer gives
+$0.0$ (female), and a weaker driver gives a partial skew
+($0.8223$) --- one mechanism, two signs~\gradeV{}.
+
+\textbf{Fisher holds the line.} Drive tilts the individual switch, but at the population level the 1:1 sex
+ratio is a stable attractor: the rarer sex has higher per-capita reproductive value, so selection favours
+producers of the rarer sex and suppressors of drive~\cite{fisher}. Displaced to
+$0.50$ or $0.50$ male the population returns to
+$0.5$ with no drive, and a persistent weak drive shifts the fixed point only
+boundedly (to $0.5125$, not to fixation)~\gradeV{}. The human at-birth
+ratio ($\sim0.512$ male) is exactly this kind of small residual,
+\emph{not} a strong-drive case; its cause (paternal age, hormonal-timing) is left open~\gradeO{}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measured sex-determination master-gene promoter $\gamma$ (same NN-stacking $\Delta G_{37}$ pipeline~\cite{santalucia,dnablueprint}; validated on the SOX9 and FOXL2 anchors), ascending. A pre-registered permutation test of whether the gonadal axis separates $\gamma$ returns a null (reported as it falls).}
+\label{tab:sexdet-gamma}
+\begin{tabular}{llrr}
+\toprule
+master & axis & $\gamma$ & GC \\
+\midrule
+SRY & testis & 1.2550 & 0.361 \\
+DMRT1 & testis & 1.4423 & 0.532 \\
+SOX9 & testis & 1.4598 & 0.545 \\
+RSPO1 & ovary & 1.4669 & 0.561 \\
+FOXL2 & ovary & 1.4829 & 0.575 \\
+WNT4 & ovary & 1.5992 & 0.672 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sex-determination masters are measured through the identical DNA pipeline (testis axis SRY/SOX9/DMRT1,
+ovary axis FOXL2/RSPO1/WNT4). A pre-registered test of whether the gonadal axis \emph{separates} promoter
+$\gamma$ --- declared before the values were seen, exactly as in the gamete chapter --- finds the ovary axis
+trends higher (mean $1.5163$ versus testis
+$1.3857$, gap $0.1306$), but with
+SRY a strong low-$\gamma$ outlier ($1.2550$, AT-rich) and $n=3$ per axis the
+permutation test returns $p=0.10$ --- a null, reported honestly~\gradeV{}.
+None of the chapter's verified claims depends on this test; the measured $\gamma$ sets the switch \emph{scale},
+not the drive strength (\S\ref{sec:open}).
+
+\section{Methods: reproducibility, determinism, and grading}
+
+\paragraph{Determinism (VP-SPEC C1).} The reproduction engine is seeded (SEED~=~19) with single-threaded
+BLAS, round-before-hash, and sorted JSON keys, so the hashed core emits an identical \texttt{sha256} on
+repeat: \texttt{f849da7d13d233020b3f4051867307c7523c42f9ae485359113a33b55f6a94a4} (two runs byte-identical, process-stable). Every quantity in this
+paper is pulled live from the research modules at build time by the LaTeX generator
+(\texttt{tools/build\_paper.py}); nothing is transcribed by hand, so the PDF cannot drift from the engine. The
+companion HTML site is generated the same way (\texttt{tools/build\_docs.py}), and two full site builds are
+byte-identical.
+
+\paragraph{No tuning (strict).} Every constant is a measured input or a derived value, never chosen to hit a
+target. The recovery timescale $\tau_s$ sets a period, but periods are \gradeL{} anchors --- the package never
+claims to \emph{derive} a clinical timing. The noise constant $D$, per-year rates, coupling $\kappa$, and
+amplitude fractions are stated inputs; all RR ratios are invariant to $D$. The master-gene $\gamma$ values are
+\emph{measured} from cached promoters (nearest-neighbour $\Delta G_{37}$, SantaLucia~1998) and accepted only
+because the pipeline reproduces the vendored SOX9 anchor bit-for-bit.
+
+\paragraph{Research gate.} All sections pass one machine-checked gate before the writing phase is unlocked:
+determinism $\checkmark$, organ
+emergence $\checkmark$, the T1--T5 discriminant battery
+$\checkmark$, oncology
+$\checkmark$, therapy
+$\checkmark$, and disease
+$\checkmark$ (\texttt{all\_green}~=~true).
+
+\paragraph{Grading vocabulary.} \gradeV{} simulation-verified; \gradeF{} forced by geometry; \gradeL{}
+measured anchor; \gradeO{} open, with the obstacle stated in \S\ref{sec:open}. The grades are honesty
+markers, not self-deprecation: the physics fixes shape, ordering, and ratios; absolute scales and external
+calibrations are declared open rather than tuned.
+
+\section{Open quantities (honest grading)}\label{sec:open}
+
+The physics fixes the shape, ordering, and ratios; the following absolute scales and externally-set
+calibrations are declared open rather than tuned. Genuinely novel clinical hypotheses (low-frequency pulsatile
+restoration in PCOS; pulsed/cycled testosterone replacement) are likewise \gradeO{} and require clinical
+validation. This is a physics-derived research artefact and is \textbf{not} medical advice.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Every open \gradeO{} quantity with its specific obstacle (VP-SPEC C3). An open quantity without a stated obstacle is a gate failure.}
+\label{tab:open}
+\begin{tabular}{p{3.6cm}cp{8.0cm}}
+\toprule
+open quantity & grade & obstacle (why not reproducible in-package) \\
+\midrule
+absolute organ size / mass & \gradeO & DWELL $\propto\gamma^{3/2}$ fixes relative size and order \gradeF{}; absolute scale needs external calibration \\
+absolute cancer incidence & \gradeO & RR \emph{shape} reproduces \gradeV{}; absolute population incidence needs epidemiological calibration \\
+noise level $D$ (abs.\ RR magnitude) & \gradeO & single open lattice constant; every reported RR \emph{ratio} is invariant under $D$ (verified $D$-robust) \\
+chronological pubertal age & \gradeO & the spinodal crossing fixes discontinuous order and jump/spinodal ratio \gradeV{}; calendar age needs endocrine calibration \\
+menopause irreversibility & \gradeO & latch collapse on depletion is shown \gradeV{}; no in-package follicle regeneration, so one-wayness is asserted from biology \\
+absolute gestational timing & \gradeO & fertilisation $\to$ fetus events and their \emph{order} are forced \gradeV{}; mapping to days/weeks needs external calibration (as pubertal age) \\
+full-body morphogenesis atlas & \gradeO & the gene-clock law (argsort spinodal) and the multi-organ atlas are the 4D~DNA~Blueprint package's SSOT (firewall); this package demonstrates the cited clock on a panel only \\
+absolute per-cycle conception probability & \gradeO & the categorical/probabilistic dissociation and the rising age curve are verified \gradeV{}; absolute rates for a real couple need clinical calibration \\
+per-age aneuploidy fraction & \gradeO & only the rising \emph{shape} of REC8 cohesin-fatigue mis-segregation is claimed \gradeV{}; the absolute fraction and the age$\to$cohesin map need calibration \\
+meiotic-drive / sex-ratio tilt magnitude & \gradeO & drive-as-tilt and the signed secondary-sex-ratio skew are verified \gradeV{}; the $\gamma\to$drive-strength map per real driver is not derived \\
+cause of the human $\sim0.512$ sex ratio & \gradeO & the 1:1 Fisher attractor and the bounded residual are verified \gradeV{}; the cause (paternal age / hormonal-timing) is unpinned \\
+axis separation of sex-determination $\gamma$ & \gradeO & the atlas is measured \gradeV{}; whether the gonadal axis separates $\gamma$ at $n=3$ is reported ($p=0.10$, a null), not assumed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{Data and code availability}
+All code, the deterministic reproduction engine, the cached promoter sequences, and the generators for this
+paper and the companion HTML site are bundled in the reproducibility archive deposited with this record
+(DOI~\href{https://doi.org/10.5281/zenodo.20754657}{10.5281/zenodo.20754657}; Zenodo concept DOI, version-independent and
+always resolving to the latest version). The living canonical version is maintained at
+\href{https://jamming-physics.org/reproductive-endocrine/}{jamming-physics.org/reproductive-endocrine/}, with the public mirror at
+\href{https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive-endocrine}{GitHub}. Running \texttt{python repro/run\_all.py} reproduces every number; running
+\texttt{python tools/build\_paper.py} regenerates this document and \texttt{python tools/build\_docs.py}
+regenerates the site.
+
+\section*{Acknowledgement of scope}
+This paper derives the gonadal-endocrine axis only; the brain-facing HPA stress axis and felt experience are
+firewalled to the companion Felt Cognition paper. Nothing here is clinical advice.
+
+\begin{thebibliography}{10}
+\bibitem{vptheory} Y.~J. Lee. \emph{VP Theory: the vacuum as a jammed granular medium}. Zenodo, 2026.
+DOI: \href{https://doi.org/10.5281/zenodo.17932566}{10.5281/zenodo.17932566}.
+\bibitem{dnablueprint} Y.~J. Lee. \emph{The 4D DNA Blueprint: master-gene $\gamma$ and the morphogenesis
+gene-clock}. Zenodo, 2026. DOI: \href{https://doi.org/10.5281/zenodo.20471407}{10.5281/zenodo.20471407}.
+\bibitem{santalucia} J.~SantaLucia~Jr. A unified view of polymer, dumbbell, and oligonucleotide DNA
+nearest-neighbor thermodynamics. \emph{Proc. Natl. Acad. Sci. USA} \textbf{95}(4):1460--1465, 1998.
+\bibitem{fhn} R.~FitzHugh. Impulses and physiological states in theoretical models of nerve membrane.
+\emph{Biophys. J.} \textbf{1}(6):445--466, 1961.
+\bibitem{nagumo} J.~Nagumo, S.~Arimoto, S.~Yoshizawa. An active pulse transmission line simulating nerve
+axon. \emph{Proc. IRE} \textbf{50}(10):2061--2070, 1962.
+\bibitem{kramers} H.~A. Kramers. Brownian motion in a field of force and the diffusion model of chemical
+reactions. \emph{Physica} \textbf{7}(4):284--304, 1940.
+\bibitem{knobil} E.~Knobil. The neuroendocrine control of the menstrual cycle. \emph{Recent Prog. Horm. Res.}
+\textbf{36}:53--88, 1980.
+\bibitem{whi} Writing Group for the Women's Health Initiative Investigators. Risks and benefits of estrogen
+plus progestin in healthy postmenopausal women. \emph{JAMA} \textbf{288}(3):321--333, 2002.
+\bibitem{bat} S.~R. Denmeade, J.~T. Isaacs. Bipolar androgen therapy: the rationale for rapid cycling of
+supraphysiologic androgen/ablation. \emph{Prostate} \textbf{70}(14):1600--1607, 2010.
+\bibitem{fisher} R.~A. Fisher. \emph{The Genetical Theory of Natural Selection}. Oxford: Clarendon Press, 1930.
+\end{thebibliography}
+
+\end{document}

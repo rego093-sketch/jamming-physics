@@ -1,0 +1,562 @@
+{
+  "_what": "vp_wave_computer v0.5 \u2014 L4 resonance inference (derive-the-gate, constraint satisfaction = settling, analogy = resonance, probabilistic = noisy settling)",
+  "firewall": {
+    "consciousness_claim": 0,
+    "hard_problem_open": 1
+  },
+  "new_tuned_constants": 0,
+  "reuses_substrate": "wave_compute_core (L0) + wave_structure_core (L1/L2) + wave_hierarchy_core (L3 gating) \u2014 exact, non-circular",
+  "I1_derive_then_route": {
+    "rho_curve": [
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.3333,
+        "oracle_instance_acc": 0.3333,
+        "flat_instance_acc": 0.3333,
+        "derivation_cost": 0.0,
+        "rho": 0.0,
+        "B": 8
+      },
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.9583,
+        "oracle_instance_acc": 0.9583,
+        "flat_instance_acc": 0.375,
+        "derivation_cost": 0.0,
+        "rho": 0.1,
+        "B": 8
+      },
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.9861,
+        "oracle_instance_acc": 0.9861,
+        "flat_instance_acc": 0.4861,
+        "derivation_cost": 0.0,
+        "rho": 0.2,
+        "B": 8
+      },
+      {
+        "gate_inference_acc": 0.9722,
+        "derived_instance_acc": 0.9722,
+        "oracle_instance_acc": 1.0,
+        "flat_instance_acc": 0.9722,
+        "derivation_cost": 0.0278,
+        "rho": 0.3,
+        "B": 8
+      },
+      {
+        "gate_inference_acc": 0.7083,
+        "derived_instance_acc": 0.7083,
+        "oracle_instance_acc": 1.0,
+        "flat_instance_acc": 0.9861,
+        "derivation_cost": 0.2917,
+        "rho": 0.4,
+        "B": 8
+      }
+    ],
+    "B_curve": [
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.9167,
+        "oracle_instance_acc": 0.9167,
+        "flat_instance_acc": 0.3333,
+        "derivation_cost": 0.0,
+        "B": 4,
+        "rho": 0.15
+      },
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.9861,
+        "oracle_instance_acc": 0.9861,
+        "flat_instance_acc": 0.3333,
+        "derivation_cost": 0.0,
+        "B": 8,
+        "rho": 0.15
+      },
+      {
+        "gate_inference_acc": 1.0,
+        "derived_instance_acc": 0.7778,
+        "oracle_instance_acc": 0.7778,
+        "flat_instance_acc": 0.3194,
+        "derivation_cost": 0.0,
+        "B": 16,
+        "rho": 0.15
+      }
+    ],
+    "derived_beats_flat_in_band": true,
+    "mean_gate_inference_acc_separable": 0.993,
+    "mean_derivation_cost_separable": 0.0,
+    "derivation_breaks_at_rho": 0.4,
+    "loop_closes": true,
+    "note": "The gate is DERIVED by settling the raw cue in the upper prototype field (H2 abstraction re-used to produce the gate), then the fast field is routed by phi_b_hat. Non-circular: b_hat is argmax over ALL prototypes; the instance read-out is argmax over ALL instances. The loop closes in the informative band rho in {0.1,0.2} (gate derived ~perfectly, cost~0, derived >> flat). rho=0 is degenerate; at rho=0.4 the upper geometry stops being separable, gate inference degrades, and the derivation cost jumps (the honest limit)."
+  },
+  "I1_derived_capacity": {
+    "load_T": 48,
+    "B": 6,
+    "m": 8,
+    "recall_thresh": 0.95,
+    "frac_curve": [
+      {
+        "schema_frac": 0.0,
+        "gate_inference_acc": 0.1944,
+        "oracle_strict_acc": 1.0,
+        "derived_strict_acc": 0.1944,
+        "flat_strict_acc": 0.0,
+        "oracle_id_acc": 1.0,
+        "derived_id_acc": 0.1944,
+        "flat_id_acc": 0.9583
+      },
+      {
+        "schema_frac": 0.0625,
+        "gate_inference_acc": 0.2917,
+        "oracle_strict_acc": 0.9861,
+        "derived_strict_acc": 0.2917,
+        "flat_strict_acc": 0.0,
+        "oracle_id_acc": 1.0,
+        "derived_id_acc": 0.2917,
+        "flat_id_acc": 0.9861
+      },
+      {
+        "schema_frac": 0.125,
+        "gate_inference_acc": 0.4306,
+        "oracle_strict_acc": 0.4861,
+        "derived_strict_acc": 0.1944,
+        "flat_strict_acc": 0.0,
+        "oracle_id_acc": 1.0,
+        "derived_id_acc": 0.4722,
+        "flat_id_acc": 0.7778
+      },
+      {
+        "schema_frac": 0.25,
+        "gate_inference_acc": 0.9583,
+        "oracle_strict_acc": 0.0,
+        "derived_strict_acc": 0.0,
+        "flat_strict_acc": 0.0,
+        "oracle_id_acc": 0.875,
+        "derived_id_acc": 0.8472,
+        "flat_id_acc": 0.3194
+      },
+      {
+        "schema_frac": 0.5,
+        "gate_inference_acc": 1.0,
+        "oracle_strict_acc": 0.0,
+        "derived_strict_acc": 0.0,
+        "flat_strict_acc": 0.0,
+        "oracle_id_acc": 0.5972,
+        "derived_id_acc": 0.5972,
+        "flat_id_acc": 0.1111
+      }
+    ],
+    "derivability_separability_tradeoff": true,
+    "strict_advantage_survives_derivation": false,
+    "id_advantage_survives_derivation": true,
+    "note": "H4 (S4) showed a ~6x STRICT (overlap>=0.95) advantage ASSUMING the gate, with INDEPENDENT instances. Deriving the gate needs a shared category schema; that shared structure CORRELATES the instances, and the trade-off is direct -- as the schema fraction rises the gate becomes derivable (gate_acc up) but strict instance recovery collapses for EVERYONE, the oracle included (the settled state locks onto the shared schema, not the specific instance). So the strict advantage does NOT survive gate-derivation-from-content: no fraction gives both. What SURVIVES is the ID-level advantage (which instance) -- where the instances are correlated the flat field confuses them while the derived hierarchy still routes correctly (see I1 derive_then_route). The honest limit: the strict ~6x advantage requires an INDEPENDENTLY supplied context (a separate channel), which content-only derivation cannot provide -> restart capacity work with a context channel (L5)."
+  },
+  "I2_constraint_satisfaction": {
+    "random_baseline": 0.5,
+    "curve": [
+      {
+        "n": 16,
+        "edge_density": 0.2,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 1.0,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.2,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.975,
+        "satisfied_bestof": 0.975,
+        "gap_to_optimum": 0.0023
+      },
+      {
+        "n": 16,
+        "edge_density": 0.2,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.8661,
+        "satisfied_bestof": 0.9018,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.2,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.8958,
+        "satisfied_bestof": 0.9097,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.4,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 1.0,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.4,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.8557,
+        "satisfied_bestof": 0.9182,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.4,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.8292,
+        "satisfied_bestof": 0.8714,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 16,
+        "edge_density": 0.4,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.778,
+        "satisfied_bestof": 0.8158,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 24,
+        "edge_density": 0.2,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 0.9783,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 24,
+        "edge_density": 0.2,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.8964,
+        "satisfied_bestof": 0.906,
+        "gap_to_optimum": 0.0073
+      },
+      {
+        "n": 24,
+        "edge_density": 0.2,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.9146,
+        "satisfied_bestof": 0.9232,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 24,
+        "edge_density": 0.2,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.8158,
+        "satisfied_bestof": 0.8442,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 24,
+        "edge_density": 0.4,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 1.0,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 24,
+        "edge_density": 0.4,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.8933,
+        "satisfied_bestof": 0.907,
+        "gap_to_optimum": 0.0037
+      },
+      {
+        "n": 24,
+        "edge_density": 0.4,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.7705,
+        "satisfied_bestof": 0.8302,
+        "gap_to_optimum": 0.0056
+      },
+      {
+        "n": 24,
+        "edge_density": 0.4,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.7486,
+        "satisfied_bestof": 0.7612,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 32,
+        "edge_density": 0.2,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 1.0,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 32,
+        "edge_density": 0.2,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.8973,
+        "satisfied_bestof": 0.9272,
+        "gap_to_optimum": 0.0031
+      },
+      {
+        "n": 32,
+        "edge_density": 0.2,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.8206,
+        "satisfied_bestof": 0.8568,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 32,
+        "edge_density": 0.2,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.7962,
+        "satisfied_bestof": 0.8186,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 32,
+        "edge_density": 0.4,
+        "frustration": 0.0,
+        "optimum_1_over_1plusf": 1.0,
+        "satisfied_single": 1.0,
+        "satisfied_bestof": 1.0,
+        "gap_to_optimum": 0.0
+      },
+      {
+        "n": 32,
+        "edge_density": 0.4,
+        "frustration": 0.1,
+        "optimum_1_over_1plusf": 0.9091,
+        "satisfied_single": 0.9097,
+        "satisfied_bestof": 0.9097,
+        "gap_to_optimum": 0.0008
+      },
+      {
+        "n": 32,
+        "edge_density": 0.4,
+        "frustration": 0.2,
+        "optimum_1_over_1plusf": 0.8333,
+        "satisfied_single": 0.7969,
+        "satisfied_bestof": 0.8344,
+        "gap_to_optimum": 0.0029
+      },
+      {
+        "n": 32,
+        "edge_density": 0.4,
+        "frustration": 0.4,
+        "optimum_1_over_1plusf": 0.7143,
+        "satisfied_single": 0.7166,
+        "satisfied_bestof": 0.745,
+        "gap_to_optimum": 0.0
+      }
+    ],
+    "satisfied_by_frustration": [
+      {
+        "frustration": 0.0,
+        "satisfied_bestof": 1.0
+      },
+      {
+        "frustration": 0.1,
+        "satisfied_bestof": 0.9238
+      },
+      {
+        "frustration": 0.2,
+        "satisfied_bestof": 0.8696
+      },
+      {
+        "frustration": 0.4,
+        "satisfied_bestof": 0.8157
+      }
+    ],
+    "settling_solves_satisfiable": true,
+    "beats_random_everywhere": true,
+    "frustration_degrades_toward_optimum": true,
+    "mean_spurious_gap_under_frustration": 0.0014,
+    "note": "Native q=2 anti-ferromagnet on a planted-bipartite graph: the L0 relaxation IS a 2-colouring/MAX-CUT machine (no clock, no constant). Settling solves the satisfiable graph (~1.0, >> random 0.5). The frustration knob adds odd-cycle edges (optimum 1/(1+f)); the achieved fraction tracks toward it and the residual gap is the spurious-minima cost. (The O(1) physical-time claim is [O]: a digital settle is O(steps*edges).)"
+  },
+  "I3_analogy_resonance": {
+    "fill_curve": [
+      {
+        "J_roles": 2,
+        "load_J_over_N": 0.0078,
+        "fill_acc": 1.0
+      },
+      {
+        "J_roles": 3,
+        "load_J_over_N": 0.0117,
+        "fill_acc": 1.0
+      },
+      {
+        "J_roles": 4,
+        "load_J_over_N": 0.0156,
+        "fill_acc": 1.0
+      },
+      {
+        "J_roles": 6,
+        "load_J_over_N": 0.0234,
+        "fill_acc": 1.0
+      },
+      {
+        "J_roles": 8,
+        "load_J_over_N": 0.0312,
+        "fill_acc": 1.0
+      },
+      {
+        "J_roles": 12,
+        "load_J_over_N": 0.0469,
+        "fill_acc": 1.0
+      }
+    ],
+    "analogy_curve": [
+      {
+        "J_roles": 2,
+        "analogy_acc": 1.0
+      },
+      {
+        "J_roles": 3,
+        "analogy_acc": 0.9792
+      },
+      {
+        "J_roles": 4,
+        "analogy_acc": 1.0
+      },
+      {
+        "J_roles": 6,
+        "analogy_acc": 0.6875
+      },
+      {
+        "J_roles": 8,
+        "analogy_acc": 0.4375
+      },
+      {
+        "J_roles": 12,
+        "analogy_acc": 0.0625
+      }
+    ],
+    "useful_fill_load_Jstar": 12,
+    "useful_analogy_load_Jstar": 4,
+    "fill_works": true,
+    "analogy_works": true,
+    "note": "Pure L1 algebra (bind/unbind/bundle/resonance), no settling. Fill = H3 decode framed as inference; analogy = extract-the-relation then apply (combination-agnostic). Read-out is argmax over the WHOLE vocabulary (non-circular). The useful relational load J* is the honest crosstalk ceiling (~sqrt(J/N))."
+  },
+  "I4_probabilistic_settling": {
+    "prior_curve": [
+      {
+        "weight_ratio_AtoB": 1.0,
+        "p_A_sampled": 0.5083
+      },
+      {
+        "weight_ratio_AtoB": 2.0,
+        "p_A_sampled": 0.975
+      },
+      {
+        "weight_ratio_AtoB": 4.0,
+        "p_A_sampled": 0.9917
+      },
+      {
+        "weight_ratio_AtoB": 8.0,
+        "p_A_sampled": 1.0
+      }
+    ],
+    "evidence_curve": [
+      {
+        "evidence_toward_A": 0.0,
+        "p_A_sampled": 0.4417
+      },
+      {
+        "evidence_toward_A": 0.05,
+        "p_A_sampled": 0.625
+      },
+      {
+        "evidence_toward_A": 0.1,
+        "p_A_sampled": 0.9083
+      },
+      {
+        "evidence_toward_A": 0.2,
+        "p_A_sampled": 0.9833
+      }
+    ],
+    "temperature_curve": [
+      {
+        "temperature": 0.05,
+        "N": 64,
+        "p_A_sampled": 0.9611,
+        "occupancy_entropy_bits": 0.236
+      },
+      {
+        "temperature": 0.15,
+        "N": 64,
+        "p_A_sampled": 0.95,
+        "occupancy_entropy_bits": 0.2742
+      },
+      {
+        "temperature": 0.3,
+        "N": 64,
+        "p_A_sampled": 0.9611,
+        "occupancy_entropy_bits": 0.236
+      },
+      {
+        "temperature": 0.5,
+        "N": 64,
+        "p_A_sampled": 0.9056,
+        "occupancy_entropy_bits": 0.4506
+      },
+      {
+        "temperature": 0.7,
+        "N": 64,
+        "p_A_sampled": 0.8056,
+        "occupancy_entropy_bits": 0.6932
+      }
+    ],
+    "prior_law_holds": true,
+    "evidence_law_holds": true,
+    "temperature_law_holds": true,
+    "all_three_laws_hold": true,
+    "exact_posterior_match": "[O] deferred (needs basin-volume integrals)",
+    "note": "Noisy settling realises noise=sampling, attractor=MAP. The three DIRECTIONAL Bayesian laws (prior up -> A up; evidence up -> A up; temperature up -> entropy up) are the [V] claim, each sign-stable across seeds. An EXACT posterior/KL match is a separate harder question left as an honest [O]. Occupancy read by basin overlap (non-circular vs the noise realisation)."
+  },
+  "headline": {
+    "I1_loop_closes_derive_then_route": true,
+    "I1_mean_gate_inference_acc_separable": 0.993,
+    "I1_strict_advantage_survives": false,
+    "I1_id_advantage_survives": true,
+    "I1_derivability_separability_tradeoff": true,
+    "I2_settling_solves": true,
+    "I2_beats_random": true,
+    "I2_frustration_degrades": true,
+    "I3_fill_works": true,
+    "I3_analogy_works": true,
+    "I3_useful_fill_load": 12,
+    "I3_useful_analogy_load": 4,
+    "I4_all_three_laws_hold": true,
+    "grade_I1_derive_then_route": "[V]",
+    "grade_I1_strict_capacity": "[O]",
+    "grade_I1_tradeoff_mechanism": "[V]",
+    "grade_I2_constraint_settling": "[V]",
+    "grade_I3_analogy": "[V]",
+    "grade_I4_probabilistic": "[V]"
+  },
+  "_digest": "2d3057bb4cb45e85333697c6d77c311aadba7be4e48678b272ebdcc1b97e3fd8"
+}

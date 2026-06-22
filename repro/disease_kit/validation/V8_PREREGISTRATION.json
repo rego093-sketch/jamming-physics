@@ -1,0 +1,139 @@
+{
+ "author": "Young Jae Lee",
+ "axis": "drug<->DISEASE indication (NOT the drug<->target direction axis of V1-V7)",
+ "binding_table": {
+  "fold_rule": "lowercase; non-alphanumeric->space; ae->e, oe->e; per-token singularize; order-insensitive token-set identity, applied identically to slug and MeSH name",
+  "n_scored_tiers_1_2": 31,
+  "n_scored_tiers_1_3": 35,
+  "principle": "bind slug<->MeSH classId iff the MeSH term has a SINGLE canonical in-model referent AND is not a pure symptom / broad multi-etiology umbrella; token-overlap auto-binding is rejected (collides e.g. von Willebrand<->von Hippel)",
+  "rejected": {
+   "_olipudase_lysosomal_storage_umbrella": [
+    "D016464",
+    "GT edge olipudase->Lysosomal Storage Diseases declined: broad umbrella with many in-model referents"
+   ],
+   "catecholaminergic_polymorphic_ventricular_tachycardia": [
+    "D017180 / D013617 / D014693 / D018879",
+    "GT carries only ventricular/supraventricular arrhythmia symptom umbrellas, none CPVT-specific"
+   ],
+   "familial_hypercholesterolaemia": [
+    "D006937",
+    "broad lipid umbrella; 2 in-model competitors"
+   ],
+   "familial_hypercholesterolemia_ldlr": [
+    "D006937",
+    "broad lipid umbrella; 2 in-model competitors"
+   ],
+   "neonatal_severe_hyperparathyroidism": [
+    "D049950 / D006934",
+    "adult Primary Hyperparathyroidism / Hypercalcemia symptom -- different disease"
+   ],
+   "riboflavin_transporter_deficiency": [
+    "D012257",
+    "nutritional Riboflavin Deficiency != the genetic SLC52 transporter defect (different etiology)"
+   ],
+   "transthyretin_amyloidosis": [
+    "D000686 / D028227",
+    "D000686 Amyloidosis spans AL/AA/ATTR; D028227 is the familial-neuropathy subtype only -- neither is a 1:1 referent"
+   ]
+  },
+  "reporting": "all primary metrics reported at BOTH Tiers1-2 and Tiers1-3 so the group stratum is never hidden; plus a string-variant-collapsed recall sensitivity",
+  "tier1_exact": {
+   "achondroplasia": "D000130",
+   "atypical_hemolytic_uremic_syndrome": "D065766",
+   "beta_thalassaemia": "D017086",
+   "cryopyrin_associated_periodic_syndrome": "D056587",
+   "cystic_fibrosis": "D003550",
+   "cystinosis": "D003554",
+   "fabry_disease": "D000795",
+   "familial_mediterranean_fever": "D010505",
+   "friedreich_ataxia": "D005621",
+   "gaucher_disease": "D005776",
+   "haemophilia_a": "D006467",
+   "haemophilia_b": "D002836",
+   "hypertrophic_cardiomyopathy": "D002312",
+   "hypophosphatasia": "D007014",
+   "metachromatic_leukodystrophy": "D007966",
+   "phenylketonuria": "D010661",
+   "spinal_muscular_atrophy": "D009134",
+   "von_hippel_lindau_disease": "D006623"
+  },
+  "tier2_curated_specific": {
+   "classical_homocystinuria": "D006712",
+   "factor_vii_deficiency": "D005168",
+   "familial_chylomicronaemia_syndrome": "D008072",
+   "hereditary_tyrosinaemia_type_1": "D020176",
+   "menkes_disease": "D007706",
+   "mucopolysaccharidosis_type_ii": "D016532",
+   "mucopolysaccharidosis_type_iva": "D009085",
+   "mucopolysaccharidosis_type_vi": "D009087",
+   "neurofibromatosis_type_1": "D009456",
+   "sickle_cell_disease": "D000755",
+   "wilson_disease": "D006527",
+   "x_linked_adrenoleukodystrophy": "D000326",
+   "x_linked_hypophosphataemia": "D053098"
+  },
+  "tier3_group_single_referent": {
+   "acute_intermittent_porphyria": "D017094",
+   "neuronal_ceroid_lipofuscinosis_2": "D009472",
+   "pyruvate_kinase_deficiency": "D015323",
+   "sod1_amyotrophic_lateral_sclerosis": "D000690"
+  }
+ },
+ "continues_from": {
+  "round": "V7",
+  "v7_prereg_sha256": "e99581fd859b9641fa58489f8981256a06cd71571d344bdf0a5d9447c79c2fcd",
+  "v7_validation_chain_head": "20ea28acefb8b6593f66db5dc700f5ff0dc7e5152770622f77d4c94ab439cbcb"
+ },
+ "determinism": "metrics computed from the VENDORED snapshot (byte-frozen manifest); a fresh live re-pull is an off-manifest sidecar. Two runs are byte-identical.",
+ "disease_set_size": 128,
+ "drug_name_parsing": {
+  "base": "text before the first '(' or '[', stripped",
+  "fallback": "if the base name yields zero may_treat edges and a parenthetical exists, a single fallback query is tried on the first parenthetical token; base wins when non-empty",
+  "join_key": "edge stored under the FULL corpus agent string; downstream agent join is exact-string",
+  "unresolved": "agents resolving under neither carry an empty may_treat set -- logged, never guessed"
+ },
+ "expected_negative": "MED-RT may_treat coverage is thin for ultra-rare monogenic disease and new modalities (gene/cell therapies and combination products often carry zero edges; some indications coded only to a generic parent). Denominators are SMALL and some rediscoveries are unconfirmed for lack of an edge -- reported as a coverage cost of an independent oracle, not a kit-label failure.",
+ "ground_truth": {
+  "api": "NLM RxClass class/byDrugName (relaSource=MEDRT, rela=may_treat), filtered classType==DISEASE",
+  "independence": "indication relation, NOT mechanism; V5 used the same API for has_moa only",
+  "magnitude_free": "categorical (drug, MeSH-disease) edges only; no dose/percent/efficacy/p-value/n-of-m",
+  "n_agents": 105,
+  "n_disease_edges": 158,
+  "n_resolved": 105,
+  "n_with_may_treat": 71,
+  "snapshot_file": "v8_medrt_may_treat_snapshot.cache.json",
+  "snapshot_sha256": "d4d37dca9a3ab4e10b8fd70ff3544104226afee7e044a1cf6acc2fc86e06dce0",
+  "source": "MED-RT (NLM/VA Medication Reference Terminology) may_treat indication edges"
+ },
+ "inheritance_discipline": {
+  "chain": "APPEND-ONLY, continuing the V7 validation chain head",
+  "derivation": "READ-ONLY over the frozen 128-core (0 re-runs); inherited anchors re-checked byte-identical",
+  "invariants": "firewall PASS; every emitted string magnitude-free",
+  "source": "vendored dated snapshot (snapshot_sha256 above); live re-pull is an off-manifest audit"
+ },
+ "licence": "CC BY 4.0",
+ "metrics": {
+  "cross_tab": "GT-confirmation by kit label (rediscovery|novel); novel-but-confirmed = conservative",
+  "negative_control": "gene-specific agents must carry tight non-leaking may_treat sets",
+  "precision": "of scoped rediscovery pairs (slug bound AND agent resolved in RxNav), fraction MED-RT confirms via a may_treat edge to the bound MeSH disease; unconfirmed listed with reason",
+  "recall": "of in-scope GT indications (agent in corpus, disease bound & in-model), fraction the kit surfaced as a specific (slug, agent) pair; misses annotated alternative-agent vs honest-gap",
+  "sensitivity_string_collapsed": "base-name agent join (dedup), Tiers1-3, to quantify same-drug string-variant misses"
+ },
+ "orcid": "0009-0002-7535-8245",
+ "pre_registered_next_batch": [
+  "Track-A corpus expansion for COVERAGE on the burden-weighted dual-track roadmap (§11), now that BOTH the direction axis (V1-V7) and the indication axis (V8) have an external audit in place.",
+  "A second independent INDICATION oracle at finer disease granularity than MED-RT may_treat (to lift the small-denominator coverage cost), should one become reachable -- mirroring how V3-V7 widened the direction axis across successive primary sources.",
+  "An indication-axis VOCABULARY taxonomy of the rediscovery 'unconfirmed' residue (edge-absent vs generic-parent-coded vs new-modality), analogous to V7's direction-axis frame taxonomy."
+ ],
+ "prereg_sha256": "05ec93f3f266b7f569396c2f3c89dbfb43f9aeb0d0d4e34b6759012cb639d459",
+ "programme": "jamming-physics.org / VP Disease Emergence Kit",
+ "rediscovery_label_source": {
+  "classification": "rediscovery = agent has an approved/established indication SPECIFICALLY for that disease at snapshot date; novel = no such indication (direction-only [O] hypothesis)",
+  "file": "engine/data/prior_art_status.cache.json :: specific_pairs",
+  "n_pairs": 111
+ },
+ "release": "0.41.0-validation.v8",
+ "round": "V8",
+ "section": "00_CONTINUATION_BLUEPRINT.md §11.4(b) -- rediscovery precision/recall vs an independent indication ground truth (the pre-registered next batch from V7).",
+ "snapshot_date": "2026-06-21"
+}

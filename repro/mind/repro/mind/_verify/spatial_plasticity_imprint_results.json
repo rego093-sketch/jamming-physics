@@ -1,0 +1,286 @@
+{
+  "C1_imprint_partition": {
+    "_what": "running a focal excitatory drive THROUGH plasticity at each region, the 12 sites partition by where the retained trace LANDS: LOCAL imprint (trace mostly on edges incident to the driven node) vs RELAYED imprint (trace harder on off-target edges)",
+    "classification_at_rep": {
+      "basal_forebrain_chol": "relayed",
+      "brainstem": "local",
+      "cerebellum": "local",
+      "forebrain_gaba_in": "relayed",
+      "hippocampus": "relayed",
+      "hypothalamus": "relayed",
+      "midbrain": "relayed",
+      "neocortex": "relayed",
+      "olfactory_bulb": "relayed",
+      "pallidum": "local",
+      "striatum": "local",
+      "thalamus": "relayed"
+    },
+    "distinct_partitions_over_sweep": 1,
+    "local_imprint_set": [
+      "brainstem",
+      "cerebellum",
+      "pallidum",
+      "striatum"
+    ],
+    "local_set_is_expected": true,
+    "partition_drive_invariant": true,
+    "relayed_imprint_set": [
+      "basal_forebrain_chol",
+      "forebrain_gaba_in",
+      "hippocampus",
+      "hypothalamus",
+      "midbrain",
+      "neocortex",
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "relayed_set_is_expected": true,
+    "verdict": "the local-imprint/relayed-imprint partition is IDENTICAL across the full stimulation-intensity sweep {0.3,0.5,0.7,0.9} AND the plasticity-rate sweep {0.03,0.05,0.08} (exactly one partition observed): the local-imprint set {brainstem, cerebellum, pallidum, striatum} fixed, the relayed-imprint set (eight) fixed. Whether a focal drive imprints LOCALLY or RELAYS its trace is a fixed property of the driven site, not of stimulation intensity nor plasticity rate. structure-only; efficacy=0."
+  },
+  "C2_off_target_dominance": {
+    "_what": "relayed imprint <-> (mean off-target |dW| > incident |dW|), at every swept intensity and every swept rate -- the structural content of relayed imprint",
+    "equivalence_all_intensities_and_rates": true,
+    "per_site_at_rep": {
+      "basal_forebrain_chol": {
+        "incident_abs_dW": 0.00428613,
+        "off_over_incident": 1.1272,
+        "off_target_abs_dW": 0.00483121,
+        "off_target_dominant_relayed": true
+      },
+      "brainstem": {
+        "incident_abs_dW": 0.0070488,
+        "off_over_incident": 0.6306,
+        "off_target_abs_dW": 0.0044451,
+        "off_target_dominant_relayed": false
+      },
+      "cerebellum": {
+        "incident_abs_dW": 0.00710225,
+        "off_over_incident": 0.6808,
+        "off_target_abs_dW": 0.00483525,
+        "off_target_dominant_relayed": false
+      },
+      "forebrain_gaba_in": {
+        "incident_abs_dW": 0.00095885,
+        "off_over_incident": 5.7097,
+        "off_target_abs_dW": 0.00547472,
+        "off_target_dominant_relayed": true
+      },
+      "hippocampus": {
+        "incident_abs_dW": 0.0035254,
+        "off_over_incident": 1.359,
+        "off_target_abs_dW": 0.00479111,
+        "off_target_dominant_relayed": true
+      },
+      "hypothalamus": {
+        "incident_abs_dW": 0.00393213,
+        "off_over_incident": 1.2343,
+        "off_target_abs_dW": 0.00485335,
+        "off_target_dominant_relayed": true
+      },
+      "midbrain": {
+        "incident_abs_dW": 0.00353388,
+        "off_over_incident": 1.4352,
+        "off_target_abs_dW": 0.00507165,
+        "off_target_dominant_relayed": true
+      },
+      "neocortex": {
+        "incident_abs_dW": 0.00087848,
+        "off_over_incident": 6.2547,
+        "off_target_abs_dW": 0.00549463,
+        "off_target_dominant_relayed": true
+      },
+      "olfactory_bulb": {
+        "incident_abs_dW": 0.00201966,
+        "off_over_incident": 2.6221,
+        "off_target_abs_dW": 0.00529581,
+        "off_target_dominant_relayed": true
+      },
+      "pallidum": {
+        "incident_abs_dW": 0.01240825,
+        "off_over_incident": 0.2466,
+        "off_target_abs_dW": 0.00306014,
+        "off_target_dominant_relayed": false
+      },
+      "striatum": {
+        "incident_abs_dW": 0.01263706,
+        "off_over_incident": 0.2559,
+        "off_target_abs_dW": 0.00323439,
+        "off_target_dominant_relayed": false
+      },
+      "thalamus": {
+        "incident_abs_dW": 0.0019183,
+        "off_over_incident": 2.7935,
+        "off_target_abs_dW": 0.00535882,
+        "off_target_dominant_relayed": true
+      }
+    },
+    "verdict": "for a RELAYED site the retained trace lands HARDER on off-target edges than on the driven node's own edges (off/inc > 1) -- the focal drive writes itself into distal circuitry; for a LOCAL site the trace concentrates on incident edges (off/inc < 1). The relayed <-> off-target-dominant equivalence holds at every intensity and rate, tying 'relayed imprint' to its structural meaning. structure-only."
+  },
+  "C3_decoupled_and_no_universal_law": {
+    "_what": "the genuinely-new coupling result + the honest no-tuning negative: (a) instantaneous delivery (§46) and lasting imprint are DECOUPLED -- the trace-relay set strictly contains the §46 field-relay set; (b) there is no universal focal>diffuse TRACE law",
+    "clean_delivery_relayed_imprint_witnesses": [
+      "basal_forebrain_chol",
+      "forebrain_gaba_in",
+      "hypothalamus",
+      "neocortex",
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "decoupled": true,
+    "field_relay_also_trace_relayed": {
+      "hippocampus": "relayed",
+      "midbrain": "relayed"
+    },
+    "field_relay_set_sec46": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "field_relay_subset_of_trace_relay": true,
+    "focal_gt_diffuse_trace_sign_over_intensity": {
+      "0.5": {
+        "heterogeneous": true,
+        "n_sites_focal_gt_diffuse": "3/12",
+        "universal": false
+      },
+      "0.7": {
+        "heterogeneous": true,
+        "n_sites_focal_gt_diffuse": "3/12",
+        "universal": false
+      }
+    },
+    "n_witnesses_clean_field_relayed_trace": 6,
+    "no_universal_focal_gt_diffuse_trace_law": true,
+    "trace_relay_set": [
+      "basal_forebrain_chol",
+      "forebrain_gaba_in",
+      "hippocampus",
+      "hypothalamus",
+      "midbrain",
+      "neocortex",
+      "olfactory_bulb",
+      "thalamus"
+    ],
+    "trace_relay_strictly_contains_field_relay": true,
+    "verdict": "(a) the retained-trace relay set (eight sites) STRICTLY CONTAINS the §46/E1.3 instantaneous-field relay set {hippocampus, midbrain} (a proper subset): plasticity DELOCALISES the imprint. The two field-relay sites are ALSO trace-relayed (the subset is genuine), and SIX further sites (neocortex, thalamus, hypothalamus, basal-forebrain-cholinergic, forebrain-GABA-interneuron, olfactory-bulb) deliver CLEANLY in the instant (self-localising field, §46 clean delivery) yet imprint OFF-target (relayed trace) -- a clean INSTANTANEOUS delivery does NOT guarantee a clean LASTING imprint. WHERE a focal drive ACTS NOW and WHERE it WRITES ITSELF are two DISTINCT, decoupled spatial axes, the E1xE0 lesson neither layer alone could state. (b) The clean hypothesis 'a focal drive always imprints MORE at its own site than the same total dose spread diffusely' is FALSE -- the sign of (focal trace - diffuse trace) varies across sites (three of twelve imprint more focally), holding over the intensity sweep: NO universal focal>diffuse TRACE law, the E1.4 lesson carried from the instantaneous field to the lasting trace. The refuted clean hypothesis is reported honestly -- the no-tuning discipline working as intended."
+  },
+  "C4_relayed_imprint_is_default": {
+    "_what": "relayed imprint is the structural DEFAULT -- a strict majority, the honest contrast with §46 where clean delivery was the default",
+    "coherent_majority_class": true,
+    "local_imprint_set_size": 4,
+    "relayed_equals_off_target_dominant_set": true,
+    "relayed_imprint_set_size": 8,
+    "relayed_is_strict_majority": true,
+    "relayed_strictly_contains_field_relay": true,
+    "sec46_field_clean_was_majority": true,
+    "sec46_field_self_localising_count": "10/12",
+    "verdict": "the relayed-imprint set is a STRICT MAJORITY (eight of twelve), so RELAYED imprint, not local, is the structural DEFAULT -- the explicit honest contrast with §46, where CLEAN delivery was the structural default (ten of twelve self-localising in the instant). A focal drive's LASTING structural footprint is by default DELOCALISED, even though its INSTANTANEOUS footprint is by default focal -- plasticity spreads the imprint. The relayed-imprint set is simultaneously the off-target-dominant trace set (C2) and strictly contains the field-relay set (C3a): one coherent majority class. A DIRECTION-ONLY [L] correspondence is noted, never a magnitude or a prediction: stimulation-induced plasticity (rTMS/tDCS after-effects, the plasticity DBS induces in connected circuits) is recognised to be network-distributed and target/connectivity-dependent rather than confined to the stimulation site -- consistent with relayed imprint being the structural majority and the imprint axis decoupled from the instantaneous-delivery axis."
+  },
+  "S6_engine_invariance_guard": {
+    "R_direct_measured": "0.38961455156044245",
+    "_what": "a zero drive at eta=0 reproduces the frozen M9 anchor bit-for-bit, leaves W identical to the kernel, and a focal excursion at eta=0 reverts exactly (E0.3 inherited under a spatial drive) -- the coupling is a pure add-on on the engine",
+    "eta0_W_identical_to_kernel": true,
+    "focal_excursion_eta0_reverts_exactly": true,
+    "frozen_M9_anchor": "0.38961455156044245",
+    "guard": true,
+    "matches_frozen_anchor_bitwise": true,
+    "zero_drive_eta0_R": "0.38961455156044245",
+    "zero_drive_matches_direct_bitwise": true
+  },
+  "_what": "SPC-E1E0 -- the spatial-plasticity coupling: the FIRST marriage of the E1 spatial-localisation layer (§43 SpatialField, a per-node spatial drive on the frozen kernel) and the E0 plasticity layer (§26 PlasticConnectome, a phase-correlation Hebbian update of W). Neither layer alone could pose the question -- E1 has a FROZEN W (no lasting trace), E0 drives GLOBALLY (a trace has no 'where'). This module runs a FOCAL excitatory drive (the §44/§46 stimulation, from E1) THROUGH the E0 Hebbian update so the focal drive WRITES ITSELF into the connectome, and reads the SPATIAL pattern of the retained trace ||W-W0|| -- the spatial x temporal seam, the spatial sibling of E0 consolidation and the lasting-trace counterpart of §46. Four sign-only results over an intensity x rate sweep: (C1) the local-imprint/relayed-imprint partition is drive-invariant; (C2) relayed imprint is off-target-dominant trace; (C3, the genuinely-new result + honest negative) instantaneous delivery and lasting imprint are DECOUPLED -- the retained-trace relay set STRICTLY CONTAINS the §46 instantaneous-field relay set, so plasticity DELOCALISES the imprint and a clean delivery does not guarantee a clean imprint, AND there is no universal focal>diffuse trace law; (C4) relayed imprint is the structural DEFAULT (the honest contrast with §46's clean default). Both layers IMPORTED, not re-derived; the coupled integrator is the same per-node generalisation E1 already made, accumulating the pairwise correlation E0's rule consumes -- no new constant, no new rule. MECHANISM only -- NOT felt, NOT efficacy, NOT medical advice.",
+  "cited_and_locked": {
+    "couples_two_layers": "the FIRST coupling of the E1 spatial-localisation layer (§43) and the E0 plasticity layer (§26): a focal excitatory spatial drive (E1) run through a phase-correlation Hebbian update (E0), reading the SPATIAL pattern of the retained trace -- the spatial x temporal seam neither layer alone could pose",
+    "delocalised_imprint_LOCK": "plasticity DELOCALISES the imprint: the retained-trace relay set strictly contains the §46 instantaneous-field relay set, so a clean instantaneous delivery (§46) does NOT guarantee a clean lasting imprint -- WHERE a focal drive acts now and where it writes itself are two decoupled spatial axes",
+    "experimental_LOCK": "nothing here is medical advice; in-silico mechanism only; whether any real focal stimulation imprints locally or off-target, and where, is external",
+    "no_universal_law_LOCK": "there is NO universal focal>diffuse TRACE law -- the sign of (focal trace - diffuse trace) varies across sites; the clean monotone hypothesis is explicitly refuted, not forced (the E1.4 lesson carried to the lasting trace)",
+    "real_plasticity_heterogeneous_LOCK": "real synaptic plasticity is HETEROGENEOUS (LTP/LTD, STDP, homeostatic scaling, metaplasticity, structural plasticity) and real stimulation spread is heterogeneous (electrode geometry, tissue conductivity, tractography, the individual connectome, montage/waveform); this module asserts the SIGN/STRUCTURE of a focal excitatory drive run through a phase-Hebbian update on the frozen kernel, not that any real stimulation-induced plasticity follows this exact rule",
+    "reuse_not_rederive_LOCK": "both layers are IMPORTED (SpatialField for the kernel/map/per-node drive, PlasticConnectome for the Hebbian rule); the kernel W0, the coupling map k(b) and the Hebbian rule are NOT re-derived. The coupled integrator is the SAME per-node generalisation E1 already made of the engine integrator, additionally accumulating the pairwise correlation the E0 rule consumes -- no new constant, no new rule",
+    "stimulation_induced_plasticity_cited": "stimulation-induced plasticity (rTMS/tDCS after-effects, plasticity DBS induces in connected circuits) is recognised to be network-distributed and target/connectivity-dependent rather than confined to the stimulation site -- a DIRECTION-ONLY [L] correspondence to the relayed-imprint majority, never a magnitude or a patient-level prediction"
+  },
+  "grounding": {
+    "coupled_integrator": "dtheta_i = omega_i + Kvec_i * sum_j W_ij sin(theta_j-theta_i) with a PER-NODE drive Kvec (E1's spatial generalisation of the engine integrator) on the EVOLVING W (E0's plastic connectome), accumulating the pairwise C_ij the Hebbian update consumes -- forced [F]; a uniform/zero drive at eta=0 reproduces E._integrate bit-for-bit",
+    "drive": "focal EXCITATORY bias b0>0 at one region (rest baseline), k=kappa/(1-|b|) cap 2*kappa -- the §44/§46 stimulation model, E1's _k_bias imported (no new constant)",
+    "epochs": 8,
+    "field_relay_set_sec46": [
+      "hippocampus",
+      "midbrain"
+    ],
+    "imprint_readout": "for the driven node, mean |dW| on edges INCIDENT to it (own imprint) vs mean |dW| on edges NOT incident (off-target imprint) -- the trace analogue of the E1.3 own-vs-off-target footprint",
+    "intensity_sweep": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "plasticity": "E0 phase-correlation Hebbian update W_ij<-max(0,W_ij*(1+eta*C_ij)) row-renormalised, C_ij=<cos(theta_j-theta_i)> -- the §26 PlasticConnectome rule, imported and reused (no new rule)",
+    "rate_sweep": [
+      0.03,
+      0.05,
+      0.08
+    ],
+    "rep_intensity": 0.7,
+    "rep_rate": 0.05,
+    "reused_layers": {
+      "E0_PlasticConnectome": "imported (the phase-Hebbian rule)",
+      "E1_SpatialField": "imported (kernel W0, coupling map, per-node drive)",
+      "R19_fold_spinodal": 0.3849,
+      "kappa_measured": 0.5496,
+      "n_regions": 12
+    },
+    "sweep_grade": "[O] swept -- intensity b0 AND plasticity rate eta are SWEPT, not tuned; every SIGN/STRUCTURE holds across BOTH sweeps (intensity x rate, anti-tuning)"
+  },
+  "honesty_ledger": {
+    "clean_hypothesis_refuted": "C3(b) reports a REFUTED clean hypothesis honestly (no universal focal>diffuse trace law) rather than forcing a monotone narrative",
+    "clinical_prediction": "NONE -- the [L] correspondence is direction-only, never a patient-level prediction; target selection / device programming are external",
+    "consciousness_claim": 0.0,
+    "couples_E1_and_E0": 1.0,
+    "hard_problem_open": 1.0,
+    "instantaneous_delivery_decoupled_from_lasting_imprint": 1.0,
+    "medium_efficacy_tested": 0.0,
+    "new_tuned_constants": 0.0,
+    "no_cure_claimed": 1.0,
+    "not_medical_advice": 1.0,
+    "opens_E1xE0_coupling": 1.0,
+    "plasticity_rate_eta": "OPEN [O] -- representative; signs hold over the eta sweep, not tuned",
+    "relayed_imprint_is_default_contrast_with_sec46": 1.0,
+    "retained_trace_is_structural": 1.0,
+    "reuses_E0_plasticity": 1.0,
+    "reuses_E1_spatial_field": 1.0,
+    "spatial_quantities_are_structural": 1.0,
+    "stimulation_intensity": "OPEN [O] -- swept (driven node, depth); signs/structure hold over the intensity sweep, not tuned"
+  },
+  "invariants": {
+    "engine_tree_frozen": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_live": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_sha256_unchanged": "0fbf4988fc836f66507f97d05624d4e195a0df321f223485b59ec6a6e2431a70",
+    "engine_tree_unchanged": true,
+    "m0_16_subtree_unchanged": true,
+    "m9_anchor_reproduced_bitwise": true
+  },
+  "overall": {
+    "decoupling_and_no_law_reproduced": true,
+    "engine_invariance_guard": true,
+    "imprint_partition_reproduced": true,
+    "is_full_module": true,
+    "off_target_dominance_reproduced": true,
+    "relayed_default_reproduced": true,
+    "verdict": "SPC-E1E0 is the spatial-plasticity coupling -- the first marriage of the E1 spatial drive and the E0 plasticity rule, reading the SPATIAL pattern of a focal drive's retained trace. The local-imprint/relayed-imprint partition is drive-invariant across intensity x rate, the local set {brainstem, cerebellum, pallidum, striatum} fixed (C1); relayed imprint is off-target-dominant trace (C2); instantaneous delivery and lasting imprint are DECOUPLED -- the trace-relay set strictly contains the §46 field-relay set, plasticity delocalises the imprint and a clean delivery does not guarantee a clean imprint, and there is no universal focal>diffuse trace law (C3, the genuinely-new result + honest negative); relayed imprint is the structural default, the honest contrast with §46's clean default (C4). A zero drive at eta=0 reproduces the frozen M9 anchor bit-for-bit and a focal excursion reverts exactly without plasticity (S6). Both layers imported not re-derived, no new tuned constant, no new rule, engine byte-unchanged. efficacy=0; not medical advice."
+  },
+  "preregistered_results": {
+    "C1_imprint_partition_drive_invariant": {
+      "claim": "running a focal excitatory drive through plasticity at each region, the local-imprint/relayed-imprint partition is identical across the full intensity sweep AND the rate sweep; the local-imprint set {brainstem, cerebellum, pallidum, striatum} and the relayed-imprint set (the other eight) are fixed",
+      "status": "CONFIRMED"
+    },
+    "C2_relayed_is_off_target_dominant_trace": {
+      "claim": "a site is relayed-imprint iff the mean off-target |dW| exceeds the mean incident |dW| (off/inc > 1), at every swept intensity and rate",
+      "status": "CONFIRMED"
+    },
+    "C3_delivery_imprint_decoupled_no_universal_law": {
+      "claim": "the retained-trace relay set STRICTLY CONTAINS the §46 instantaneous-field relay set (plasticity delocalises the imprint; clean delivery != clean imprint), AND there is no universal focal>diffuse trace law (the sign varies across sites)",
+      "status": "CONFIRMED"
+    },
+    "C4_relayed_imprint_structural_default": {
+      "claim": "the relayed-imprint set is a strict majority (eight of twelve) and equals the off-target-dominant set and strictly contains the field-relay set -- relayed imprint is the structural default, the honest contrast with §46's clean default",
+      "status": "CONFIRMED"
+    }
+  }
+}

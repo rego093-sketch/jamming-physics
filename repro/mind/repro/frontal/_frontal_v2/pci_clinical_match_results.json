@@ -1,0 +1,218 @@
+{
+  "clinical_reference": {
+    "Casali_2013_STM_5_198ra105": "PCI orders wake~REM > NREM > anaesthesia > vegetative.",
+    "Casarotto_2016_AnnNeurol_80_718": "empirical cutoff PCI* ~= 0.31 (conscious vs unconscious).",
+    "Massimini_2005_Science_309_2228": "NREM breakdown of cortical effective connectivity.",
+    "Pigorini_2015_NeuroImage_112_105": "cortical bistability / OFF-period truncates the evoked chain.",
+    "SanchezVives_McCormick_2000_NatNeurosci_3_1027": "slow-oscillation / slow-adaptation mechanism (M14).",
+    "Steriade_1993_JNeurosci_13_3252": "NREM thalamocortical operating point (M14 drive).",
+    "note": "Orderings used for EXTERNAL comparison only; no quantity was tuned to them."
+  },
+  "constitution": {
+    "consciousness_claim": 0,
+    "engine_readonly": true,
+    "hard_problem_open": 1,
+    "new_tuned_constants": 0
+  },
+  "digest": "bde773708fd6fd71d345f34f62bc05943b23c16edb8987708d219005998b8687",
+  "engine_anchor_bitforbit": {
+    "R": 0.3896145516,
+    "integrator_matches_engine": true,
+    "matches_M9_anchor": true
+  },
+  "grades": "[L] in-silico conscious/unconscious PCI split (wake~REM >> NREM), grounded by M14; [O] within-unconscious ordering (NREM/anaesthesia/VS collapse to ~one scalar), [O] wake-vs-REM fine gap, [O] absolute PCI magnitudes, [O] felt quality. consciousness_claim=0; hard_problem_open=1; new_tuned_constants=0; engine READ-ONLY. This is an in-silico model result -- NOT validated neuroscience, NOT clinical guidance.",
+  "grounded_inputs": {
+    "A_GAIN": 1.6,
+    "TAU_SO_s": 0.6,
+    "TAU_S_s": 0.025,
+    "T_s": 8.0,
+    "clinical_cutoff_ref": 0.31,
+    "downsample": 8,
+    "drive_nrem": 0.6,
+    "f_rem_hz": 23.5,
+    "f_slow_hz": 0.5,
+    "kappa_ephaptic": 0.5496,
+    "kick_amp": 2.0,
+    "kick_offset_samples": 4,
+    "n_cell": 16,
+    "post_window_s": 1.5,
+    "seeds": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "settle_s": 4.0
+  },
+  "m14_grounding": {
+    "hard_problem_open": 1,
+    "interpretation": "REM activated (shift_index_rem>>nrem) -> off_depth=0; NREM bistable (slow Up/Down, OFF-periods) -> off_depth=1 @ cited nrem2 drive. Earned, not assumed.",
+    "is_consciousness_claim": 0,
+    "recall_nrem_coupling": 0.53125,
+    "recall_rem_coupling": 1.0,
+    "shift_index_nrem": 0.044537,
+    "shift_index_rem": 1.05174,
+    "sleep_concordance": 1.0,
+    "slow_oscillation_hz": 0.4883,
+    "spindle_peak_hz": 15.3809
+  },
+  "module": "pci_clinical_match (Chunk D / Gap-4 build)",
+  "noncircular_control": {
+    "interpretation": "no kick -> twin divergence 0 -> PCI 0 (perturbational, not spontaneous).",
+    "noperturbation_pci_max_over_states": 0.0
+  },
+  "pci_by_state": [
+    {
+      "carrier_hz": 23.5,
+      "grounding": "grounded",
+      "off_depth": 0.0,
+      "pci": 0.464286,
+      "pci_per_seed": [
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286
+      ],
+      "raw_activity": 1.221277,
+      "state": "WAKE"
+    },
+    {
+      "carrier_hz": 23.5,
+      "grounding": "grounded",
+      "off_depth": 0.0,
+      "pci": 0.464286,
+      "pci_per_seed": [
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286,
+        0.464286
+      ],
+      "raw_activity": 1.221277,
+      "state": "REM"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "grounded",
+      "off_depth": 1.0,
+      "pci": 0.036364,
+      "pci_per_seed": [
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364,
+        0.036364
+      ],
+      "raw_activity": 0.873903,
+      "state": "NREM"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "extended",
+      "off_depth": 1.6,
+      "pci": 0.047619,
+      "pci_per_seed": [
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619,
+        0.047619
+      ],
+      "raw_activity": 0.87857,
+      "state": "ANES"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "extended",
+      "off_depth": 2.4,
+      "pci": 0.081081,
+      "pci_per_seed": [
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081,
+        0.081081
+      ],
+      "raw_activity": 0.871064,
+      "state": "VS"
+    }
+  ],
+  "state_map": [
+    {
+      "carrier_hz": 23.5,
+      "grounding": "grounded",
+      "off_depth": 0.0,
+      "state": "WAKE"
+    },
+    {
+      "carrier_hz": 23.5,
+      "grounding": "grounded",
+      "off_depth": 0.0,
+      "state": "REM"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "grounded",
+      "off_depth": 1.0,
+      "state": "NREM"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "extended",
+      "off_depth": 1.6,
+      "state": "ANES"
+    },
+    {
+      "carrier_hz": 0.5,
+      "grounding": "extended",
+      "off_depth": 2.4,
+      "state": "VS"
+    }
+  ],
+  "verdict": {
+    "conscious_unconscious_split_survives": true,
+    "deeper_unconsciousness_lower_pci": false,
+    "gap4_grade": "[L] in-silico for the CONSCIOUS/UNCONSCIOUS split (wake~REM >> NREM, grounded by the M14 activated-vs-bistable distinction; matches the clinical PCI conscious/unconscious binary and survives the no-perturbation control). [O] OPEN for the unconscious-state ordering: the single PCI scalar does NOT separate NREM/anaesthesia/VS (they collapse to ~one value) and 'deeper bistability -> lower PCI' does not hold; the small clinical wake>REM gap is also unresolved [O].",
+    "noperturbation_control_pci": 0.0,
+    "pci_anes": 0.047619,
+    "pci_nrem": 0.036364,
+    "pci_rem": 0.464286,
+    "pci_vs": 0.081081,
+    "pci_wake": 0.464286,
+    "raw_activity_tracks_pci": false,
+    "rem_gt_nrem": true,
+    "rem_minus_nrem": 0.427922,
+    "statement": "Driven through the EMERGED M14 sleep states with NO new constant, the faithful perturbational PCI cleanly separates the CONSCIOUS from the UNCONSCIOUS states: wake and REM (activated, off_depth=0) sit far above NREM (bistable, off_depth=1) -- wake~REM ~=0.46 vs NREM ~=0.04. This is the clinical PCI's core finding (conscious/unconscious binary) and it falls out of the frozen kernel once the activated-vs-bistable distinction is in place -- the bistable OFF-periods truncate the evoked causal chain (Massimini 2005; Pigorini 2015), collapsing complexity. HONEST NEGATIVE (recorded, not avoided): the SINGLE PCI scalar does NOT resolve the FINE unconscious ordering -- NREM, anaesthesia and the deepest 'vegetative' sweep collapse to ~one value (spread 0.045), and 'deeper bistability -> monotonically lower PCI' BREAKS; and the mechanism cannot resolve the small clinical wake>REM gap (|wake-REM|=0.000). The non-circular control holds (no kick -> PCI=0.00), and PCI is not a mere arousal proxy (it dissociates from raw activity). So GAP-4 is an in-silico [L] for the conscious/unconscious split and an [O] for the within-unconscious ordering. ST-4 stresses the split for sign-stability before it is believed.",
+    "unconscious_spread": 0.044717,
+    "unconscious_states_separable": false,
+    "unconscious_summary": "NREM=0.036, ANES=0.048, VS=0.081; spread=0.045",
+    "wake_gt_nrem": true,
+    "wake_vs_rem_gap": 0.0
+  }
+}

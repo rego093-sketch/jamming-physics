@@ -1,0 +1,150 @@
+{
+ "author": "Young Jae Lee",
+ "axis": "drug<->DISEASE indication (NOT the drug<->target direction axis of V1-V7)",
+ "binding_table": {
+  "fold_rule": "lowercase; non-alphanumeric->space; ae->e, oe->e; per-token singularize; order-insensitive token-set identity, applied identically to slug and MeSH name",
+  "inheritance": "EXACT (18) and CURATED_SPECIFIC (13) inherited VERBATIM from V8 (0 changed); GROUP_SINGLE_REFERENT extends V8's 4 by ONE warranted grown-core binding (CAH); REJECTED extends V8's 6 by THREE grown-core tempting-but-wrong bindings",
+  "n_scored_tiers_1_2": 31,
+  "n_scored_tiers_1_3": 36,
+  "new_binding_warrant": "0 new EXACT (fold-identity) matches exist over the extended may_treat MeSH universe; the single new GROUP binding (congenital_adrenal_hyperplasia_21ohd -> D000312) mirrors the V8 AIP -> D017094 precedent",
+  "principle": "bind slug<->MeSH classId iff the MeSH term has a SINGLE canonical in-model referent AND is not a pure symptom / broad multi-etiology umbrella; token-overlap auto-binding rejected",
+  "rejected": {
+   "catecholaminergic_polymorphic_ventricular_tachycardia": [
+    "D017180 / D013617 / D014693 / D018879",
+    "GT carries only ventricular/supraventricular arrhythmia symptom umbrellas, none CPVT-specific"
+   ],
+   "familial_hypercholesterolaemia": [
+    "D006937",
+    "broad lipid umbrella; 2 in-model competitors"
+   ],
+   "familial_hypercholesterolemia_ldlr": [
+    "D006937",
+    "broad lipid umbrella; 2 in-model competitors"
+   ],
+   "hartnup_disorder": [
+    "D010383",
+    "nicotinamide -> 'Pellagra' is the nutritional niacin-deficiency phenotype, NOT the genetic SLC6A19 transporter defect (different etiology) -- mirrors the riboflavin_transporter REJECT"
+   ],
+   "molybdenum_cofactor_deficiency_a": [
+    "D008664",
+    "fosdenopterin -> 'Metal Metabolism, Inborn Errors' is a BROAD group (Wilson/Menkes/haemochromatosis also in-model) -- not a 1:1 MoCD-A referent"
+   ],
+   "n_acetylglutamate_synthase_deficiency": [
+    "D022124",
+    "carglumic acid -> 'Hyperammonemia' is a SYMPTOM umbrella with many in-model referents (NAGS/OTC/citrullinemia/argininosuccinic aciduria) -- not a 1:1 NAGS referent"
+   ],
+   "neonatal_severe_hyperparathyroidism": [
+    "D049950 / D006934",
+    "adult Primary Hyperparathyroidism / Hypercalcemia symptom -- different disease"
+   ],
+   "riboflavin_transporter_deficiency": [
+    "D012257",
+    "nutritional Riboflavin Deficiency != the genetic SLC52 transporter defect (different etiology)"
+   ],
+   "transthyretin_amyloidosis": [
+    "D000686 / D028227",
+    "D000686 Amyloidosis spans AL/AA/ATTR; D028227 is the familial-neuropathy subtype only -- neither is a 1:1 referent"
+   ]
+  },
+  "reporting": "all primary metrics reported at BOTH Tiers1-2 and Tiers1-3 so the group stratum is never hidden; plus a string-variant-collapsed recall sensitivity",
+  "tier1_exact": {
+   "achondroplasia": "D000130",
+   "atypical_hemolytic_uremic_syndrome": "D065766",
+   "beta_thalassaemia": "D017086",
+   "cryopyrin_associated_periodic_syndrome": "D056587",
+   "cystic_fibrosis": "D003550",
+   "cystinosis": "D003554",
+   "fabry_disease": "D000795",
+   "familial_mediterranean_fever": "D010505",
+   "friedreich_ataxia": "D005621",
+   "gaucher_disease": "D005776",
+   "haemophilia_a": "D006467",
+   "haemophilia_b": "D002836",
+   "hypertrophic_cardiomyopathy": "D002312",
+   "hypophosphatasia": "D007014",
+   "metachromatic_leukodystrophy": "D007966",
+   "phenylketonuria": "D010661",
+   "spinal_muscular_atrophy": "D009134",
+   "von_hippel_lindau_disease": "D006623"
+  },
+  "tier2_curated_specific": {
+   "classical_homocystinuria": "D006712",
+   "factor_vii_deficiency": "D005168",
+   "familial_chylomicronaemia_syndrome": "D008072",
+   "hereditary_tyrosinaemia_type_1": "D020176",
+   "menkes_disease": "D007706",
+   "mucopolysaccharidosis_type_ii": "D016532",
+   "mucopolysaccharidosis_type_iva": "D009085",
+   "mucopolysaccharidosis_type_vi": "D009087",
+   "neurofibromatosis_type_1": "D009456",
+   "sickle_cell_disease": "D000755",
+   "wilson_disease": "D006527",
+   "x_linked_adrenoleukodystrophy": "D000326",
+   "x_linked_hypophosphataemia": "D053098"
+  },
+  "tier3_group_single_referent": {
+   "acute_intermittent_porphyria": "D017094",
+   "congenital_adrenal_hyperplasia_21ohd": "D000312",
+   "neuronal_ceroid_lipofuscinosis_2": "D009472",
+   "pyruvate_kinase_deficiency": "D015323",
+   "sod1_amyotrophic_lateral_sclerosis": "D000690"
+  }
+ },
+ "continues_from": {
+  "round": "V16",
+  "v16_validation_chain_head": "372cf5779857eebfb155a173d96689222cd65693344a1f736998da4f36c9ccb2"
+ },
+ "determinism": "metrics computed from the VENDORED snapshot (byte-frozen manifest); a fresh live re-pull is an off-manifest sidecar. Two runs are byte-identical.",
+ "disease_set_size": 152,
+ "expected_negative": "MED-RT may_treat coverage is thin for ultra-rare monogenic disease and new modalities (gene/cell therapies, diets, vitamins, combination products often carry zero edges; some indications coded only to a generic parent). Denominators are SMALL and many grown-core rediscoveries are unconfirmed for lack of an edge -- reported as a coverage cost of an independent oracle, not a kit-label failure.",
+ "ground_truth": {
+  "additive_lineage": {
+   "extends": "v8_medrt_may_treat_snapshot.cache.json",
+   "policy": "105 V8 agent edges copied byte-identical; only new grown-core agents fetched",
+   "v8_snapshot_sha256": "d4d37dca9a3ab4e10b8fd70ff3544104226afee7e044a1cf6acc2fc86e06dce0"
+  },
+  "api": "NLM RxClass class/byDrugName (relaSource=MEDRT, rela=may_treat), filtered classType==DISEASE",
+  "independence": "indication relation, NOT mechanism; V5 used the same API for has_moa only",
+  "magnitude_free": "categorical (drug, MeSH-disease) edges only; no dose/percent/efficacy/p-value/n-of-m",
+  "n_agents": 130,
+  "n_disease_edges": 192,
+  "n_resolved": 130,
+  "n_with_may_treat": 78,
+  "snapshot_file": "v17_medrt_may_treat_snapshot.cache.json",
+  "snapshot_sha256": "35dd4eec1a0d8699e5e0e4da031ff026fd9344071ce0b14ed18c2f42346f0263",
+  "source": "MED-RT (NLM/VA Medication Reference Terminology) may_treat indication edges"
+ },
+ "inheritance_discipline": {
+  "chain": "APPEND-ONLY, continuing the V16 validation chain head",
+  "derivation": "READ-ONLY over the GROWN 152-core (0 re-runs); inherited anchors re-checked byte-identical",
+  "invariants": "firewall PASS; every emitted string magnitude-free",
+  "source": "vendored dated snapshot (snapshot_sha256 above); live re-pull is an off-manifest audit"
+ },
+ "licence": "CC BY 4.0",
+ "metrics": {
+  "cross_tab": "GT-confirmation by kit label (rediscovery|novel); novel-but-confirmed = conservative",
+  "negative_control": "inherited V8 instrument: gene-specific agents must carry tight non-leaking sets",
+  "precision": "of scoped rediscovery pairs (slug bound AND agent resolved in RxNav), fraction MED-RT confirms via a may_treat edge to the bound MeSH disease; unconfirmed listed with reason",
+  "recall": "of in-scope GT indications (agent in corpus, disease bound & in-model), fraction the kit surfaced as a specific (slug, agent) pair; misses annotated alternative-agent vs honest-gap"
+ },
+ "orcid": "0009-0002-7535-8245",
+ "prereg_sha256": "a3dcd3c826785373577d1e8e2b6aba47b3fa6f66a81a3e5190597f377cf635ed",
+ "programme": "jamming-physics.org / VP Disease Emergence Kit",
+ "re_pin_of": "V8 (128-core); identical protocol, grown substrate; V8 left byte-identical.",
+ "rediscovery_label_source": {
+  "classification": "rediscovery = agent has an approved/established indication SPECIFICALLY for that disease at snapshot date; novel = no such indication (direction-only [O] hypothesis)",
+  "file": "engine/data/prior_art_status.cache.json :: specific_pairs",
+  "n_pairs": 136
+ },
+ "release": "0.41.0-validation.v17",
+ "round": "V17",
+ "section": "00_CONTINUATION_BLUEPRINT.md 11.4(b) -- rediscovery precision/recall vs an independent indication ground truth, GROWN 152-core re-pin of V8.",
+ "snapshot_date": "2026-06-22",
+ "what_v17_does_NOT_do": [
+  "does not add/re-derive any disease (0 re-derivation; core is e7c byte-identical)",
+  "does not re-admit any lever family or re-label any row",
+  "does not claim any drug is efficacious (an indication edge is categorical, not an efficacy)",
+  "does not claim any magnitude (dose/efficacy/response/survival/p-value/n-of-m) -- firewall PASS",
+  "does not mutate the frozen V8 128-core audit or its snapshot"
+ ]
+}

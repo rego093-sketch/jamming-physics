@@ -1,0 +1,412 @@
+{
+  "_what": "vp_wave_computer v0.8 -- L7 embodiment / real-time control. Control = continuous settling in a closed, clock-free, end-to-end ANALOG sensorimotor loop (no ADC/DAC in the loop). Tests the principal's analog-I/O thesis: analog dominates DIMENSIONAL resolution (parallel physics, no quantization tax) but is CAPPED on single-value bit depth (Shannon); exact arithmetic uses a digital hand-off. Resolves the inherited S7 limit -- prediction-sufficiency suffices for control.",
+  "firewall": {
+    "consciousness_claim": 0,
+    "hard_problem_open": 1
+  },
+  "new_tuned_constants": 0,
+  "reuses_substrate": "wave_compute_core (L0: hebbian_field, relax/clean-up = D4, overlap, pattern_to_phase) + wave_world_model_core (L6: forward_predict, _train_world_model, analytic_transition_coupling) -- exact, non-circular; tracking error is vs the WORLD's true target.",
+  "inherited_seed_limit_addressed": "S7 [O]: the L6 error-gated operator is directionally the L2 transition coupling (cosine ~0.81) but not magnitude-identical -- E3 tests whether control on the predicted state needs magnitude-identity.",
+  "E1_closed_loop_control": {
+    "noise_curve": [
+      {
+        "sigma": 0.3,
+        "forward_err": 0.0,
+        "reactive_err": 0.9631,
+        "openloop_err": 0.7674,
+        "forward_err_sd": 0.0
+      },
+      {
+        "sigma": 0.6,
+        "forward_err": 0.0,
+        "reactive_err": 0.9631,
+        "openloop_err": 0.7674,
+        "forward_err_sd": 0.0
+      },
+      {
+        "sigma": 0.9,
+        "forward_err": 0.0006,
+        "reactive_err": 0.9631,
+        "openloop_err": 0.7674,
+        "forward_err_sd": 0.001
+      },
+      {
+        "sigma": 1.2,
+        "forward_err": 0.0035,
+        "reactive_err": 0.9627,
+        "openloop_err": 0.7674,
+        "forward_err_sd": 0.0024
+      }
+    ],
+    "forward_tracks_through_delay": true,
+    "forward_beats_reactive": true,
+    "forward_beats_openloop": true,
+    "milestone_closed_loop_control": true,
+    "N": 96,
+    "M": 5,
+    "delay": 1,
+    "seeds": 4,
+    "_note": "Control = continuous settling in a closed real-time loop. With a one-tick sensorimotor delay a REACTIVE controller lags one place (>>chance error) and OPEN-LOOP drifts; the FORWARD model anticipates +1 and holds the target -- the embodiment value of prediction is compensating loop latency."
+  },
+  "E2_analog_io_advantage": {
+    "E2a_quantization_tax_curve": [
+      {
+        "bits": 1,
+        "err": 0.1591,
+        "err_sd": 0.0317
+      },
+      {
+        "bits": 2,
+        "err": 0.0089,
+        "err_sd": 0.0081
+      },
+      {
+        "bits": 3,
+        "err": 0.0025,
+        "err_sd": 0.0035
+      },
+      {
+        "bits": "analog",
+        "err": 0.0008,
+        "err_sd": 0.0011
+      }
+    ],
+    "E2a_analog_err": 0.0008,
+    "E2a_onebit_err": 0.1591,
+    "E2a_quantization_tax_exists": true,
+    "E2a_tax_closes_at_bits": 2,
+    "E2b_dimension_curve": [
+      {
+        "N": 48,
+        "analog_err": 0.015,
+        "onebit_err": 0.1107,
+        "per_channel_gap": 0.0957,
+        "aggregate_advantage_N_times_gap": 4.593
+      },
+      {
+        "N": 96,
+        "analog_err": 0.0019,
+        "onebit_err": 0.163,
+        "per_channel_gap": 0.1611,
+        "aggregate_advantage_N_times_gap": 15.463
+      },
+      {
+        "N": 192,
+        "analog_err": 0.0,
+        "onebit_err": 0.1626,
+        "per_channel_gap": 0.1626,
+        "aggregate_advantage_N_times_gap": 31.222
+      },
+      {
+        "N": 288,
+        "analog_err": 0.0,
+        "onebit_err": 0.1462,
+        "per_channel_gap": 0.1462,
+        "aggregate_advantage_N_times_gap": 42.093
+      }
+    ],
+    "E2b_per_channel_gap_sign_stable_positive": true,
+    "E2b_aggregate_advantage_grows_with_dimension": true,
+    "E2c_parallelism_principle": "INHERITS R4 [O]: in parallel hardware the L0 settling integrates all N channels in O(1) physical time, while a serial-digital read/quantize/process is O(N). Under a fixed real-time control deadline this makes the dimensional advantage a THROUGHPUT/LATENCY advantage that grows with sensory dimension (the optical-Fourier / memristor-crossbar O(1) point). This is recorded as PRINCIPLE, not a measured wall-clock, and stays [O] exactly as R4 (physical parallelism) is [O].",
+    "analog_io_advantage_holds": true,
+    "tax_sigma": 1.0,
+    "dims": [
+      48,
+      96,
+      192,
+      288
+    ],
+    "seeds": 3,
+    "_note": "The analog loop carries the graded sensory noise-margin that the substrate's settling integrates (D4 at the I/O boundary); a b-bit ADC discards it, so the 1-bit loop pays a quantization tax under noise (closing at higher b). The per-channel advantage is paid once by the parallel physics but N times by a serial-digital pipeline, so the aggregate edge (N x gap) grows with dimension. The O(1)-vs-O(N) latency form of this is the R4-inherited principle (E2c, [O])."
+  },
+  "E3_prediction_sufficiency": {
+    "noise_curve": [
+      {
+        "sigma": 0.6,
+        "pred_sufficient_err": 0.0,
+        "magnitude_identical_err": 0.0,
+        "difference": 0.0
+      },
+      {
+        "sigma": 1.0,
+        "pred_sufficient_err": 0.0006,
+        "magnitude_identical_err": 0.0,
+        "difference": -0.0006
+      },
+      {
+        "sigma": 1.4,
+        "pred_sufficient_err": 0.0085,
+        "magnitude_identical_err": 0.0,
+        "difference": -0.0085
+      },
+      {
+        "sigma": 1.8,
+        "pred_sufficient_err": 0.1963,
+        "magnitude_identical_err": 0.1496,
+        "difference": -0.0467
+      }
+    ],
+    "operator_L2_cosine": 0.8026,
+    "prediction_sufficiency_suffices_in_working_regime": true,
+    "max_magnitude_identity_edge": 0.0467,
+    "magnitude_edge_only_at_edge_of_failure": true,
+    "S7_open_limit_resolved_for_control": true,
+    "N": 96,
+    "M": 5,
+    "seeds": 4,
+    "_note": "S7 left open whether acting on the PREDICTED state needs the full-magnitude L2 operator. In the working regime the prediction-sufficient operator (cosine ~0.81) tracks IDENTICALLY to the magnitude-identical one; only at extreme noise, where BOTH controllers are already failing, does the full operator show a marginal robustness edge. Resolution: prediction-sufficiency SUFFICES for embodied control -- the S7 limit does not bite in the operating regime."
+  },
+  "E4_stability_bandwidth": {
+    "E4a_bandwidth_curve": [
+      {
+        "rate": 0.1,
+        "err": 0.6049
+      },
+      {
+        "rate": 0.2,
+        "err": 0.4776
+      },
+      {
+        "rate": 0.3,
+        "err": 0.3682
+      },
+      {
+        "rate": 0.4,
+        "err": 0.2548
+      },
+      {
+        "rate": 0.5,
+        "err": 0.0
+      },
+      {
+        "rate": 0.7,
+        "err": 0.0
+      },
+      {
+        "rate": 0.9,
+        "err": 0.0
+      }
+    ],
+    "E4a_bandwidth_threshold_rate": 0.5,
+    "E4b_horizon_curve": [
+      {
+        "speed": 0.5,
+        "err": 0.4788
+      },
+      {
+        "speed": 1.0,
+        "err": 0.0
+      },
+      {
+        "speed": 1.5,
+        "err": 0.4799
+      },
+      {
+        "speed": 2.0,
+        "err": 0.9578
+      }
+    ],
+    "E4b_nominal_speed_tracks": true,
+    "E4b_off_nominal_degrades": true,
+    "E4c_selfcorrection_curve": [
+      {
+        "rate": 0.3,
+        "acquire_ticks": 20.0
+      },
+      {
+        "rate": 0.5,
+        "acquire_ticks": 0.0
+      },
+      {
+        "rate": 0.9,
+        "acquire_ticks": 0.0
+      }
+    ],
+    "E4c_fast_reacquires_at_high_bandwidth": true,
+    "stable_operating_band_exists": true,
+    "N": 96,
+    "M": 5,
+    "sigma": 0.6,
+    "seeds": 3,
+    "_note": "The closed loop has a stable band: control bandwidth (motor rate) must exceed a threshold (else the agent cannot slew to keep up), and the prediction horizon must match the loop latency x target speed (else over/under-anticipation). Within the band the loop self-corrects from a displaced start by settling. The stress did NOT break real-time control; it bounds the operating band honestly. A multi-step rollout (W2) would widen the matched-horizon range -- future work."
+  },
+  "E5a_shannon_cap": {
+    "shannon_curve": [
+      {
+        "sigma": 0.2,
+        "snr_ref_bits": 3.83,
+        "effective_bits_ceiling": 5.05,
+        "saturates": true,
+        "curve": [
+          {
+            "requested_levels": 2,
+            "requested_bits": 1,
+            "effective_bits": 1.0
+          },
+          {
+            "requested_levels": 4,
+            "requested_bits": 2,
+            "effective_bits": 2.0
+          },
+          {
+            "requested_levels": 8,
+            "requested_bits": 3,
+            "effective_bits": 3.0
+          },
+          {
+            "requested_levels": 16,
+            "requested_bits": 4,
+            "effective_bits": 3.993
+          },
+          {
+            "requested_levels": 32,
+            "requested_bits": 5,
+            "effective_bits": 4.757
+          },
+          {
+            "requested_levels": 64,
+            "requested_bits": 6,
+            "effective_bits": 5.05
+          }
+        ]
+      },
+      {
+        "sigma": 0.5,
+        "snr_ref_bits": 2.52,
+        "effective_bits_ceiling": 3.782,
+        "saturates": true,
+        "curve": [
+          {
+            "requested_levels": 2,
+            "requested_bits": 1,
+            "effective_bits": 1.0
+          },
+          {
+            "requested_levels": 4,
+            "requested_bits": 2,
+            "effective_bits": 2.0
+          },
+          {
+            "requested_levels": 8,
+            "requested_bits": 3,
+            "effective_bits": 2.941
+          },
+          {
+            "requested_levels": 16,
+            "requested_bits": 4,
+            "effective_bits": 3.599
+          },
+          {
+            "requested_levels": 32,
+            "requested_bits": 5,
+            "effective_bits": 3.782
+          },
+          {
+            "requested_levels": 64,
+            "requested_bits": 6,
+            "effective_bits": 3.748
+          }
+        ]
+      },
+      {
+        "sigma": 1.0,
+        "snr_ref_bits": 1.58,
+        "effective_bits_ceiling": 2.757,
+        "saturates": true,
+        "curve": [
+          {
+            "requested_levels": 2,
+            "requested_bits": 1,
+            "effective_bits": 0.996
+          },
+          {
+            "requested_levels": 4,
+            "requested_bits": 2,
+            "effective_bits": 1.915
+          },
+          {
+            "requested_levels": 8,
+            "requested_bits": 3,
+            "effective_bits": 2.501
+          },
+          {
+            "requested_levels": 16,
+            "requested_bits": 4,
+            "effective_bits": 2.757
+          },
+          {
+            "requested_levels": 32,
+            "requested_bits": 5,
+            "effective_bits": 2.623
+          },
+          {
+            "requested_levels": 64,
+            "requested_bits": 6,
+            "effective_bits": 2.714
+          }
+        ]
+      }
+    ],
+    "single_channel_bits_saturate": true,
+    "ceiling_rises_with_snr": true,
+    "single_channel_is_shannon_capped": true,
+    "n_block": 8,
+    "_note": "Per-channel precision is bounded by channel SNR (Shannon C = B*log2(1+S/N)): asking for more levels past the noise floor yields no more distinguishable bits, and the plateau rises only with SNR. The analog strength is DIMENSIONAL (E2: many channels in parallel), NOT single-value bit depth -- same coin, two sides, exactly as the directive states."
+  },
+  "E5b_hybrid_exact": {
+    "count_curve": [
+      {
+        "K": 5,
+        "analog_exact_acc": 0.96,
+        "digital_exact_acc": 1.0
+      },
+      {
+        "K": 10,
+        "analog_exact_acc": 0.87,
+        "digital_exact_acc": 1.0
+      },
+      {
+        "K": 20,
+        "analog_exact_acc": 0.737,
+        "digital_exact_acc": 1.0
+      },
+      {
+        "K": 40,
+        "analog_exact_acc": 0.573,
+        "digital_exact_acc": 1.0
+      },
+      {
+        "K": 80,
+        "analog_exact_acc": 0.413,
+        "digital_exact_acc": 1.0
+      }
+    ],
+    "analog_exact_count_decays_with_length": true,
+    "digital_register_stays_exact": true,
+    "exact_arithmetic_needs_digital_handoff": true,
+    "eps": 0.15,
+    "_note": "An analog tally accumulates noise and loses the exact integer as the stream grows; a digital register holds it exactly. Hand off to digital ONLY at the moment exactness is required -- the hybrid the directive names, and the concrete form of the standing L4 [O] on exact symbolic arithmetic."
+  },
+  "headline": {
+    "E1_closed_loop_control": true,
+    "E2_analog_io_advantage": true,
+    "E2a_quantization_tax_exists": true,
+    "E2b_aggregate_advantage_grows_with_dimension": true,
+    "E3_prediction_sufficiency_suffices": true,
+    "E3_operator_L2_cosine": 0.8026,
+    "E4_stable_operating_band_exists": true,
+    "E5a_single_channel_shannon_capped": true,
+    "E5b_exact_arithmetic_needs_digital_handoff": true,
+    "grade_E1_closed_loop_control": "[V]",
+    "grade_E2_analog_io_advantage": "[V]",
+    "grade_E2c_parallelism_latency": "[O]",
+    "grade_E3_prediction_sufficiency": "[V]",
+    "grade_E4_stability_band": "[V]",
+    "grade_E5a_shannon_cap": "[O]",
+    "grade_E5b_hybrid_handoff": "[O]",
+    "S7_seed_limit_now": "[V]",
+    "firewall_held": true,
+    "summary": "L7 embodiment / real-time control: 4 [V] / 3 [O]. Control is continuous settling in a closed, clock-free, end-to-end ANALOG loop. (E1) the forward model holds a moving target through sensorimotor delay where a reactive controller lags and open-loop drifts. (E2) the analog loop beats a b-bit ADC/DAC loop under graded noise (D4 at the I/O boundary; tax closes at higher b), and the aggregate analog advantage GROWS with state dimension -- the directive's headline -- with the O(1)-vs-O(N) latency form recorded as the R4-inherited principle [O]. (E3) prediction-sufficiency SUFFICES for control: the L6 error-gated operator (cosine ~0.81) tracks identically to the magnitude-identical L2 operator in the working regime, so the inherited S7 [O] is resolved [V] for embodiment. (E4) a stable operating band exists (bandwidth threshold + matched prediction horizon; self-corrects from displacement). (E5) the honest two-sides caveat: single-channel bit depth is Shannon-capped and exact arithmetic needs a digital hand-off [O] -- the analog win is dimensional, not per-channel precision. Firewall held; new_tuned_constants = 0."
+  },
+  "_digest": "17aa27bf34b72f57876aa18cd35783feff961d95feb60e6729e1edcc7a3a87a6"
+}

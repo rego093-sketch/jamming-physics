@@ -1,0 +1,33 @@
+{
+  "_purpose": "Authoritative reconciliation of research FOLDER E-numbers <-> BLUEPRINT-canonical E-numbers (open item #4, flagged since v0.3.0). Machine-checked by tools/verify_seed.py block [5]. This file is the single source of truth for 'which folder carries which BLUEPRINT increment'.",
+  "version_reconciled": "0.11.0",
+  "convention": "Research FOLDERS are numbered in CHRONOLOGICAL BUILD ORDER (E1, E3, E4, E5, E6, E7, E8 in the order they were built; 'E2' was never used as a folder label because the first folder built took 'E1'). This chronological-folder convention COINCIDES with BLUEPRINT-canonical numbering for E3/E4/E5/E7/E8, and DIFFERS for the first two scientific topics (see 'documented_slip'). Folders are deliberately NOT renamed: renaming would touch the no-omission manifest, the seed.json foundation paths, the SSOT loader, and the cross-links already deposited in sibling/site releases. The reconciliation is therefore THIS MAP, enforced by the verifier so the labels cannot silently drift.",
+  "blueprint_canonical": [
+    {"E": "E0", "subject": "inherited foundation: sound = sqrt(B/rho) longitudinal wave, Greenwood place map, R19 substrate, DNA reading gamma(LEVEL)+A4(SHAPE)", "carrier_folder": null, "location": "inherited/"},
+    {"E": "E1", "subject": "the fluid-loaded dispersive traveling-wave ENVELOPE (the named open obstacle the seed exists to take up)", "carrier_folder": "E6-traveling-wave-envelope", "location": "research/E6-traveling-wave-envelope"},
+    {"E": "E2", "subject": "the hair-cell mechanotransduction tip-link MET switch (TMC1/PCDH15/CDH23/TMIE) = R19 switch on the place map", "carrier_folder": "E1-place-and-traveling-wave", "location": "research/E1-place-and-traveling-wave"},
+    {"E": "E3", "subject": "the active cochlear amplifier (prestin/SLC26A5) = the R19 cubic at criticality, cube-root compression", "carrier_folder": "E3-cochlear-amplifier", "location": "research/E3-cochlear-amplifier"},
+    {"E": "E4", "subject": "congenital DEAFNESS (the goal) = the R19 cubic's failure-mode decomposition (drive/structure/readout/amplifier)", "carrier_folder": "E4-congenital-deafness", "location": "research/E4-congenital-deafness"},
+    {"E": "E5", "subject": "the READOUT substrate (otoferlin/OTOF) = a rectified saturating Ca2+ sensor distinct from the cubic", "carrier_folder": "E5-readout-synapse", "location": "research/E5-readout-synapse"},
+    {"E": "E7", "subject": "the audible BAND = a geometry-carved bandpass on the inherited wave law (N_oct = 1/2 log2(S_base/S_apex))", "carrier_folder": "E7-audible-band", "location": "research/E7-audible-band"},
+    {"E": "E8", "subject": "band-specific / frequency-selective hearing loss = E4 class axis x E7 place axis (order-isomorphism)", "carrier_folder": "E8-band-specific-loss", "location": "research/E8-band-specific-loss"}
+  ],
+  "_note_on_E6": "There is NO BLUEPRINT-canonical 'E6' increment. 'E6' exists only as a FOLDER label (the chronological slot after E5), and that folder carries BLUEPRINT-E1 content (the envelope). The canonical list above therefore runs E0,E1,E2,E3,E4,E5,E7,E8 with no E6.",
+  "folders": [
+    {"folder": "E1-place-and-traveling-wave", "folder_E": "E1", "blueprint_E": "E2", "subject": "MET tip-link switch on the place map (+ the forced parameter-free traveling-wave PEAK PLACE = inverse-Greenwood)", "built": "v0.3.0", "status": "DONE", "grade": "[F/V]", "run": "research/E1-place-and-traveling-wave/run.py", "label_matches_blueprint": false},
+    {"folder": "E3-cochlear-amplifier", "folder_E": "E3", "blueprint_E": "E3", "subject": "cochlear amplifier (prestin/SLC26A5), parameter-free cube-root F^(1/3) / gain F^(-2/3)", "built": "v0.4.0", "status": "DONE", "grade": "[F/V]", "run": "research/E3-cochlear-amplifier/run.py", "label_matches_blueprint": true},
+    {"folder": "E4-congenital-deafness", "folder_E": "E4", "blueprint_E": "E4", "subject": "congenital deafness as the cubic's four failure classes (drive/structure/readout/amplifier)", "built": "v0.5.0", "status": "DONE", "grade": "[F/V]", "run": "research/E4-congenital-deafness/run.py", "label_matches_blueprint": true},
+    {"folder": "E5-readout-synapse", "folder_E": "E5", "blueprint_E": "E5", "subject": "otoferlin readout = rectified saturating Ca2+ sensor; auditory neuropathy; OAE+/ABR-", "built": "v0.6.0", "status": "DONE", "grade": "[F/V]", "run": "research/E5-readout-synapse/run.py", "label_matches_blueprint": true},
+    {"folder": "E6-traveling-wave-envelope", "folder_E": "E6", "blueprint_E": "E1", "subject": "the traveling-wave ENVELOPE characterised as a one-parameter family in Q (the named [O]; Q irreducible)", "built": "v0.7.0", "status": "DONE (characterised; Q is the single irreducible [O])", "grade": "[F/O]", "run": "research/E6-traveling-wave-envelope/run.py", "label_matches_blueprint": false},
+    {"folder": "E7-audible-band", "folder_E": "E7", "blueprint_E": "E7", "subject": "audible band as a geometry-carved bandpass; helicotrema high-pass x middle-ear low-pass", "built": "v0.8.0", "status": "DONE", "grade": "[F/O]", "run": "research/E7-audible-band/run.py", "label_matches_blueprint": true},
+    {"folder": "E8-band-specific-loss", "folder_E": "E8", "blueprint_E": "E8", "subject": "band-specific hearing loss as class x place (CF monotone => order-isomorphism)", "built": "v0.9.0", "status": "DONE", "grade": "[F/O]", "run": "research/E8-band-specific-loss/run.py", "label_matches_blueprint": true}
+  ],
+  "documented_slip": {
+    "description": "Folder labels differ from BLUEPRINT-canonical numbers in EXACTLY TWO places, by design (the chronological-folder convention). Every other folder (E3/E4/E5/E7/E8) matches. This is no longer a silent slip: it is recorded here and enforced by verify_seed.py [5].",
+    "pairs": [
+      {"folder": "E1-place-and-traveling-wave", "folder_E": "E1", "blueprint_E": "E2", "why": "the first folder built took 'E1'; its content is the MET switch, which the BLUEPRINT numbers E2"},
+      {"folder": "E6-traveling-wave-envelope", "folder_E": "E6", "blueprint_E": "E1", "why": "the envelope (BLUEPRINT-E1) was built last among the early increments, so it landed in the next free chronological folder 'E6'"}
+    ]
+  },
+  "forward_rule": "A new increment takes the next free CHRONOLOGICAL folder number and records its BLUEPRINT-canonical E here. If a folder is ever physically renamed to make the label match the BLUEPRINT, update this map in the SAME change (deliberate, never silent); verify_seed.py [5] will fail until the map and the filesystem agree."
+}

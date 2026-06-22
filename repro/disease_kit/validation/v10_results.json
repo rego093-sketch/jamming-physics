@@ -1,0 +1,239 @@
+{
+ "author": "Young Jae Lee",
+ "classifier": {
+  "core_action_types": [
+   "POSITIVE ALLOSTERIC MODULATOR",
+   "POSITIVE MODULATOR",
+   "STABILISER"
+  ],
+  "excluded": {
+   "AGONIST": "receptor agonism = downstream supply, not restoration of the mutant's folding",
+   "BINDING AGENT / OTHER": "unsigned",
+   "EXOGENOUS GENE": "gene therapy -- supplies the gene, not a cusp gamma-axis chaperone",
+   "EXOGENOUS PROTEIN": "enzyme/protein replacement -- supplies the product exogenously",
+   "HYDROLYTIC ENZYME": "enzyme replacement",
+   "INHIBITOR / BLOCKER / ANTAGONIST / ANTISENSE INHIBITOR / RNAI INHIBITOR / NEGATIVE MODULATOR": "clearing/opposing -> the CLEAR family, never gamma-restore",
+   "MODULATOR": "unsigned"
+  },
+  "moa_regex": "chaperone|corrector|read[- ]?through|readthrough|nonsense suppress|premature stop|translational read",
+  "sensitivity_action_types": [
+   "ACTIVATOR",
+   "OPENER",
+   "POSITIVE ALLOSTERIC MODULATOR",
+   "POSITIVE MODULATOR",
+   "STABILISER"
+  ]
+ },
+ "frozen_source": {
+  "coverage": "130/130 genes OK (0 NO_ENSEMBL, 0 FETCH_FAILED)",
+  "fetched_utc": "2026-06-21T12:02:44Z",
+  "matches_prereg": true,
+  "snapshot_file": "v10_opentargets_chaperone_snapshot.cache.json",
+  "snapshot_sha256": "d81b72aeb1161ecec8b3908d9fd2a96a062f6209eb051f5a8f67a064bd23d7ec"
+ },
+ "grade": "[O] direction-only; magnitude-free; family-admission audit",
+ "inherited_anchors": {
+  "all_match": true,
+  "candidate_register_chain_head": "ca1796255c7c91db49cd28a11b15d49a649042c49a313649bcb63643d43c3fd3",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "expected_equals": {
+   "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+   "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263"
+  },
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "note": "validation is strictly READ-ONLY; 0 of the 128 derivations were re-run.",
+  "per_anchor_match": {
+   "disease_inputs_sha256": true,
+   "mapped_levers_sha256": true
+  }
+ },
+ "license": "CC BY 4.0",
+ "metrics": {
+  "M1_restore_hit_counts": {
+   "CONTEXT_GOF": {
+    "core_hit": "2/21",
+    "n": 21,
+    "note": "excluded by DIRECTION not by absence-of-corrector; NOT in the calibration numerator."
+   },
+   "POSITIVE_CONTROL_missense_residual": {
+    "core_hit": "6/21",
+    "core_hit_approved_only": "4/21",
+    "n": 21,
+    "sensitivity_hit": "8/21"
+   },
+   "TARGET_LOF_null": {
+    "core_hit": "2/86",
+    "core_hit_approved_only": "2/86",
+    "n": 86,
+    "sensitivity_hit": "4/86"
+   }
+  },
+  "M2_exclusion_calibration": {
+   "FIRM_core": {
+    "correctly_excluded": "85/86",
+    "firm_over_exclusions": "1/86"
+   },
+   "FIRM_sensitivity": {
+    "correctly_excluded": "83/86",
+    "firm_over_exclusions": "3/86"
+   },
+   "RAW_core": {
+    "candidate_misses": "2/86",
+    "correctly_excluded": "84/86"
+   },
+   "RAW_sensitivity": {
+    "candidate_misses": "4/86",
+    "correctly_excluded": "82/86"
+   },
+   "coverage_gaps_in_denominator": 0,
+   "denominator_null_exclusions_tested": 86,
+   "reading": "the kit's conservative LOF_null exclusions are ~all upheld; the few firm exceptions are honest, mechanistically-explained over-exclusions logged (not corrected)."
+  },
+  "M3_positive_control_contrast": {
+   "core_detection_missense_residual": "6/21",
+   "core_detection_null": "2/86",
+   "enrichment_core_x": 12.3,
+   "enrichment_sensitivity_x": 8.2,
+   "reading": "genes the kit flagged chaperonable carry independently-annotated correctors at an order of magnitude higher rate than genes it called null -> residual_allele_evidence tracks the external pharmacological record.",
+   "sensitivity_detection_missense_residual": "8/21",
+   "sensitivity_detection_null": "4/86"
+  },
+  "M4_miss_list": {
+   "core_candidate_misses": [
+    {
+     "adjudication": "FIRM_over_exclusion",
+     "agents": [
+      "ASP7991 / POSITIVE ALLOSTERIC MODULATOR / PHASE_2",
+      "CINACALCET / POSITIVE ALLOSTERIC MODULATOR / APPROVAL",
+      "CINACALCET HYDROCHLORIDE / POSITIVE ALLOSTERIC MODULATOR / APPROVAL",
+      "EVOCALCET / POSITIVE ALLOSTERIC MODULATOR / APPROVAL"
+     ],
+     "kit_direction": "DOWN",
+     "kit_polarity": "clear",
+     "primary_gene": "CASR",
+     "reason": "gene appears ONLY as a null lesion; an independently-annotated restorer/potentiator/cofactor exists for its reduced product -> conservative LOF_null under-admitted a feasible gamma-restore [O]; logged for a future Track-A re-derivation, not corrected here.",
+     "slug": "neonatal_severe_hyperparathyroidism"
+    },
+    {
+     "adjudication": "AMBIGUOUS_shared_gene",
+     "agents": [
+      "VOXELOTOR / POSITIVE MODULATOR / APPROVAL"
+     ],
+     "kit_direction": "UP",
+     "kit_polarity": "clear",
+     "primary_gene": "HBB",
+     "reason": "gene yields a reduced product in its missense_residual disease but a toxic product in this null disease; the surfaced modulator may detoxify the toxic variant (CLEAR), not restore a reduced one -> not a firm miss.",
+     "slug": "sickle_cell_disease"
+    }
+   ],
+   "sensitivity_only_candidate_misses": [
+    {
+     "adjudication": "FIRM_over_exclusion",
+     "agents": [
+      "BEMIPARIN SODIUM / ACTIVATOR / PHASE_3",
+      "DALTEPARIN SODIUM / ACTIVATOR / APPROVAL",
+      "DANAPAROID SODIUM / ACTIVATOR / APPROVAL",
+      "ENOXAPARIN SODIUM / ACTIVATOR / APPROVAL",
+      "FONDAPARINUX / ACTIVATOR / APPROVAL",
+      "FONDAPARINUX SODIUM / ACTIVATOR / APPROVAL",
+      "HEPARIN / ACTIVATOR / APPROVAL",
+      "HEPARIN CALCIUM / ACTIVATOR / APPROVAL",
+      "HEPARIN SODIUM / ACTIVATOR / APPROVAL",
+      "NADROPARIN CALCIUM / ACTIVATOR / APPROVAL",
+      "PARNAPARIN SODIUM / ACTIVATOR / PHASE_3",
+      "TINZAPARIN SODIUM / ACTIVATOR / APPROVAL"
+     ],
+     "kit_direction": "DOWN",
+     "kit_polarity": "clear",
+     "primary_gene": "SERPINC1",
+     "reason": "gene appears ONLY as a null lesion; an independently-annotated restorer/potentiator/cofactor exists for its reduced product -> conservative LOF_null under-admitted a feasible gamma-restore [O]; logged for a future Track-A re-derivation, not corrected here.",
+     "slug": "hereditary_antithrombin_deficiency"
+    },
+    {
+     "adjudication": "FIRM_over_exclusion",
+     "agents": [
+      "SAPROPTERIN / ACTIVATOR / APPROVAL",
+      "SAPROPTERIN DIHYDROCHLORIDE / ACTIVATOR / APPROVAL"
+     ],
+     "kit_direction": "UP",
+     "kit_polarity": "supply",
+     "primary_gene": "PAH",
+     "reason": "gene appears ONLY as a null lesion; an independently-annotated restorer/potentiator/cofactor exists for its reduced product -> conservative LOF_null under-admitted a feasible gamma-restore [O]; logged for a future Track-A re-derivation, not corrected here.",
+     "slug": "phenylketonuria"
+    }
+   ]
+  },
+  "positive_control_detected_genes": [
+   "CFTR",
+   "DMD",
+   "GAA",
+   "GBA1",
+   "GLA",
+   "HBB"
+  ],
+  "positive_control_undetected_genes": [
+   "ADA",
+   "AVPR2",
+   "BBS1",
+   "CBS",
+   "FXN",
+   "HGSNAT",
+   "IDUA",
+   "KCNJ11",
+   "LEPR",
+   "MAN2B1",
+   "MECP2",
+   "PKLR",
+   "SERPINA1",
+   "SMN1",
+   "USH2A"
+  ],
+  "under_detection_note": "read-through agents (e.g. ataluren) act on the ribosome and are NOT annotated on the disease gene's edge, so the gene-edge join CANNOT see them; positive-control sensitivity is therefore < 1. Consequence: corrector-detection is CONSERVATIVE -> calibration is an UPPER bound and any HIT found is robust; additional unseen over-exclusions may exist."
+ },
+ "nature": "read-only over the frozen 128-core; 0 re-derivations; additive-only.",
+ "orcid": "0009-0002-7535-8245",
+ "round": "V10 -- EXCLUSION CALIBRATION: do the kit's gamma-restore EXCLUSIONS hold up against an independently-assembled corrector/chaperone source? (blueprint §5.3 'Exclusion calibration', the negative-space metric V1-V9 never tested)",
+ "validation_chain": {
+  "append_only": true,
+  "chain_head": "1d668453b4d484a1d3f6f7255002065bd344e22cce13608b391b3c2a3a6da663",
+  "continues_from_head": "6e613d241fbab943d971d56b9c0a0f3ca41b05029cd4fcaec44468fd5a64fca2",
+  "record": [
+   {
+    "head": "e2c6ce825e0795192cc01170e1203a83ef25c8cd811858531dfce35e17b73578",
+    "label": "inherited_anchors_readonly_all_match",
+    "prev": "6e613d241fbab943d971d56b9c0a0f3ca41b05029cd4fcaec44468fd5a64fca2",
+    "value": true
+   },
+   {
+    "head": "7ee071c93d1acc494cd051289df408ca7cab71b8f86da10d468fcf64105e1d9b",
+    "label": "frozen_snapshot_sha256",
+    "prev": "e2c6ce825e0795192cc01170e1203a83ef25c8cd811858531dfce35e17b73578",
+    "value": "d81b72aeb1161ecec8b3908d9fd2a96a062f6209eb051f5a8f67a064bd23d7ec"
+   },
+   {
+    "head": "bdd5dcc489f522b48f75d3ed8787f110e8b937230533e477f415c782ea1da894",
+    "label": "exclusion_calibration_FIRM_core",
+    "prev": "7ee071c93d1acc494cd051289df408ca7cab71b8f86da10d468fcf64105e1d9b",
+    "value": "85/86"
+   },
+   {
+    "head": "42907900319efcade503b8b25cea6a2902c8b5b331d0a1db75ab85755e3c35bf",
+    "label": "positive_control_enrichment_core_x",
+    "prev": "bdd5dcc489f522b48f75d3ed8787f110e8b937230533e477f415c782ea1da894",
+    "value": 12.3
+   },
+   {
+    "head": "1d668453b4d484a1d3f6f7255002065bd344e22cce13608b391b3c2a3a6da663",
+    "label": "firewall_status",
+    "prev": "42907900319efcade503b8b25cea6a2902c8b5b331d0a1db75ab85755e3c35bf",
+    "value": "PASS"
+   }
+  ]
+ },
+ "verdict": "The kit does NOT over-exclude gamma-restore: of its 86 LOF_null exclusions, the independent corrector source upholds 85/86 (core, firm); the lone firm core exception is a potentiator/cofactor of the lesioned gene's reduced product, logged as an honest over-exclusion for a future re-derivation. Decisively, the kit's residual_allele_evidence axis tracks the external record: corrector detection is ~12.3x enriched on the chaperonable (missense_residual) set vs the null set. The conservative exclusion discipline is calibrated, and where it errs it errs toward UNDER-claiming.",
+ "what_this_round_does_not_do": [
+  "does NOT mutate the frozen 128-core or re-admit gamma-restore for any disease (that would be a separate, documented Track-A re-derivation).",
+  "does NOT assert any magnitude (dose/efficacy/response/survival/p-value).",
+  "does NOT claim any drug works; surfaced over-exclusions are direction-only [O] family-admission flags."
+ ]
+}

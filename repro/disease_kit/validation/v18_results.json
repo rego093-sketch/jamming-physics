@@ -1,0 +1,515 @@
+{
+ "M1_independence_from_verb": {
+  "HOLDOUT": {
+   "agree": 46,
+   "divergences": [
+    {
+     "blind_emergence": "increase",
+     "gene": "SCN5A",
+     "lesion": "LOF_null",
+     "slug": "brugada_syndrome",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "PCSK9",
+     "lesion": "GOF",
+     "slug": "familial_hypercholesterolaemia",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "CLCN1",
+     "lesion": "LOF_null",
+     "slug": "myotonia_congenita",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "HBB",
+     "lesion": "LOF_null",
+     "slug": "sickle_cell_disease",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "SOD1",
+     "lesion": "GOF",
+     "slug": "sod1_amyotrophic_lateral_sclerosis",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "TTR",
+     "lesion": "GOF",
+     "slug": "transthyretin_amyloidosis",
+     "therapy_verb": "decrease"
+    }
+   ],
+   "n_divergences": 6,
+   "scored": 52
+  },
+  "TRAIN": {
+   "agree": 92,
+   "divergences": [
+    {
+     "blind_emergence": "increase",
+     "gene": "FGFR3",
+     "lesion": "GOF",
+     "slug": "achondroplasia",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "KCNJ2",
+     "lesion": "LOF_null",
+     "slug": "andersen_tawil_syndrome",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "FGFR2",
+     "lesion": "GOF",
+     "slug": "crouzon_syndrome",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "COL3A1",
+     "lesion": "LOF_null",
+     "slug": "ehlers_danlos_syndrome_vascular_type",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "HTT",
+     "lesion": "GOF",
+     "slug": "huntington_disease",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "FBN1",
+     "lesion": "LOF_null",
+     "slug": "marfan_syndrome",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "COL1A1",
+     "lesion": "LOF_null",
+     "slug": "osteogenesis_imperfecta_type_i",
+     "therapy_verb": "decrease"
+    },
+    {
+     "blind_emergence": "increase",
+     "gene": "RHO",
+     "lesion": "GOF",
+     "slug": "rho_autosomal_dominant_retinitis_pigmentosa",
+     "therapy_verb": "decrease"
+    }
+   ],
+   "n_divergences": 8,
+   "scored": 100
+  },
+  "reading": "on a HELD-OUT partition the blind forced-axis direction DIVERGES from the therapy-verb shortcut (corrective_h_polarity) -> it cannot be a re-reading of the verb (the §5.1 charge), proven on data whose predictions were locked before reveal."
+ },
+ "M2_external_recovery_v4": {
+  "HOLDOUT": {
+   "note": "satisfiable = GOF / LOF_missense_residual (a small molecule can move the target); LOF_null is pharmacologically unsatisfiable by a small-molecule activator (V6) -- reported separately. Misses are node-vs-target (the kit's switch-node direction differs from the drug's molecular-target direction), not necessarily kit errors.",
+   "satisfiable": {
+    "agree": 6,
+    "misses": [
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "PCSK9",
+      "lesion": "GOF",
+      "match": false,
+      "slug": "familial_hypercholesterolaemia",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 4
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "SOD1",
+      "lesion": "GOF",
+      "match": false,
+      "slug": "sod1_amyotrophic_lateral_sclerosis",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 1
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "TTR",
+      "lesion": "GOF",
+      "match": false,
+      "slug": "transthyretin_amyloidosis",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 8
+     }
+    ],
+    "recovery": 0.6667,
+    "scored": 9
+   },
+   "unsatisfiable_LOF_null": {
+    "agree": 2,
+    "misses": [
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "SCN5A",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "brugada_syndrome",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 66
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "SCN1A",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "dravet_syndrome",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 59
+     }
+    ],
+    "recovery": 0.5,
+    "scored": 4
+   }
+  },
+  "TRAIN": {
+   "note": "satisfiable = GOF / LOF_missense_residual (a small molecule can move the target); LOF_null is pharmacologically unsatisfiable by a small-molecule activator (V6) -- reported separately. Misses are node-vs-target (the kit's switch-node direction differs from the drug's molecular-target direction), not necessarily kit errors.",
+   "satisfiable": {
+    "agree": 5,
+    "misses": [
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "FGFR3",
+      "lesion": "GOF",
+      "match": false,
+      "slug": "achondroplasia",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 11
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "ADA",
+      "lesion": "LOF_missense_residual",
+      "match": false,
+      "slug": "adenosine_deaminase_deficiency",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 1
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "KCNJ11",
+      "lesion": "LOF_missense_residual",
+      "match": false,
+      "slug": "congenital_hyperinsulinism",
+      "tag": "node_vs_target",
+      "v4_activating": 3,
+      "v4_inhibitory": 12
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "FGFR2",
+      "lesion": "GOF",
+      "match": false,
+      "slug": "crouzon_syndrome",
+      "tag": "node_vs_target",
+      "v4_activating": 2,
+      "v4_inhibitory": 9
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "GAA",
+      "lesion": "LOF_missense_residual",
+      "match": false,
+      "slug": "pompe_disease",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 2
+     }
+    ],
+    "recovery": 0.5,
+    "scored": 10
+   },
+   "unsatisfiable_LOF_null": {
+    "agree": 0,
+    "misses": [
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "DDC",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "aadc_deficiency",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 1
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "KCNJ2",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "andersen_tawil_syndrome",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 2
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "SLC12A1",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "bartter_syndrome_type_1",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 5
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "SLC12A3",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "gitelman_syndrome",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 13
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "F8",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "haemophilia_a",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 1
+     },
+     {
+      "blind": "decrease",
+      "external": "increase",
+      "gene": "SERPINC1",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "hereditary_antithrombin_deficiency",
+      "tag": "node_vs_target",
+      "v4_activating": 10,
+      "v4_inhibitory": 0
+     },
+     {
+      "blind": "decrease",
+      "external": "increase",
+      "gene": "CASR",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "neonatal_severe_hyperparathyroidism",
+      "tag": "node_vs_target",
+      "v4_activating": 5,
+      "v4_inhibitory": 0
+     },
+     {
+      "blind": "increase",
+      "external": "decrease",
+      "gene": "TH",
+      "lesion": "LOF_null",
+      "match": false,
+      "slug": "tyrosine_hydroxylase_deficiency",
+      "tag": "node_vs_target",
+      "v4_activating": 0,
+      "v4_inhibitory": 1
+     }
+    ],
+    "recovery": 0.0,
+    "scored": 8
+   }
+  }
+ },
+ "M3_axis_effect_circularity_disclosure": {
+  "axis_effect_equals_corrective_direction": "268/268",
+  "finding": "the kit's corrective_agents[].axis_effect is IDENTICAL to corrective_direction = OPPOSE(axis_dir) for every agent row -> it is NOT an independent therapy-direction source. Matching the blind prediction to it would be trivially 100%. Counted ONLY as within-kit self-consistency; external recovery uses V4 (M2). This refines V2's M2' reading; V2 stays byte-identical.",
+  "n_differ": 0
+ },
+ "blindness_corroboration": {
+  "catabolic_enzyme_refinements": {
+   "argininemia": "ARG1",
+   "gyrate_atrophy_choroid_retina": "OAT",
+   "refsum_disease": "PHYH"
+  },
+  "coarse_mismatches": [
+   {
+    "coarse": "DOWN",
+    "gene": "ARG1",
+    "lesion": "LOF",
+    "role": "enzyme",
+    "slug": "argininemia",
+    "stored": "UP"
+   },
+   {
+    "coarse": "DOWN",
+    "gene": "OAT",
+    "lesion": "LOF",
+    "role": "enzyme",
+    "slug": "gyrate_atrophy_choroid_retina",
+    "stored": "UP"
+   },
+   {
+    "coarse": "DOWN",
+    "gene": "PHYH",
+    "lesion": "LOF",
+    "role": "enzyme",
+    "slug": "refsum_disease",
+    "stored": "UP"
+   }
+  ],
+  "coarse_rule_reproduces_stored_axis": "157/160",
+  "reading": "OPPOSE(axis_dir) is therapy-blind: the forced axis is a function of (role, lesion, sourced biochemistry). The coarse role label reproduces it for 149/152; the 3 catabolic-enzyme exceptions are a biochemical refinement (LOF->accumulation), not a therapy."
+ },
+ "grade": "[O] direction-only; magnitude-free; blinded prospective hold-out of the corrective DIRECTION",
+ "inherited_anchors": {
+  "all_match": true,
+  "candidate_register_chain_head": "e94bc7d2cf9fbc8259c16f1bdafc5e083d0e96c7af5299d7727d17c7d2aca670",
+  "candidate_register_sha256": "a351421eed22eb1ad21f7ed7b37083fa301a8c92c292d915334d6ba3859cbd8e",
+  "disease_inputs_sha256": "ca6c044e7dc1108c33ade0f14854eacaa05eef927fc96c12cadbbd4c54aba0ca",
+  "expected_equals": {
+   "disease_inputs_sha256": "ca6c044e7dc1108c33ade0f14854eacaa05eef927fc96c12cadbbd4c54aba0ca",
+   "mapped_levers_sha256": "ab063b32abf1f7ed6ec6d5a97ffbfed3e1f619b9ceac38e914fe60cc21fd0b3b"
+  },
+  "mapped_levers_sha256": "ab063b32abf1f7ed6ec6d5a97ffbfed3e1f619b9ceac38e914fe60cc21fd0b3b",
+  "note": "strictly READ-ONLY over the GROWN 152-core (Track-A e7a/e7b/e7c); 0 of 152 re-run.",
+  "per_anchor_match": {
+   "disease_inputs_sha256": true,
+   "mapped_levers_sha256": true
+  }
+ },
+ "nature": "read-only over the GROWN 152-core; 0 re-derivations; append-only chain (continues V17); partition + predictions LOCKED in the prereg before any oracle was consulted.",
+ "negative_controls": {
+  "gamma_restore_admitted_on_LOF_null": "0/108",
+  "gamma_restore_null_exclusion_holds": true,
+  "gene_specific_agents_tight": true,
+  "gene_specific_sample": [
+   {
+    "agent": "asfotase alfa",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "belzutifan",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "cerliponase alfa",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "elosulfase alfa",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "galsulfase",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "idursulfase",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "migalastat",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "pegvaliase",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "risdiplam",
+    "n_may_treat": 1
+   },
+   {
+    "agent": "vosoritide",
+    "n_may_treat": 2
+   }
+  ]
+ },
+ "partition": {
+  "counts": {
+   "HOLDOUT": 52,
+   "TRAIN": 100
+  },
+  "n_multi_axis": 0,
+  "n_total": 152,
+  "rule": "sha256(slug) % 10 < 3 -> HOLDOUT"
+ },
+ "prospective_lock": {
+  "holdout_predictions_content_hash": "d7158afa644f39c6e08350c76baba96aa28cacf70384de70d9836b258d08cd94",
+  "locked_in": "V18_PREREGISTRATION.json (written before metrics)",
+  "n_holdout": 52
+ },
+ "release": "0.41.0-validation.v18",
+ "round": "V18",
+ "snapshot_date": "2026-06-22",
+ "validation_chain": {
+  "append_only": true,
+  "chain_head": "30cc490aaecc2d4e72f644f1ca46a0ff1c979181575766c582ee2dcf2c92784f",
+  "continues_from_head": "43ea8e0daa8acb3be309bcdf81fd31c339509c3dc6ad5b3ff99385b9cfb48242",
+  "record": [
+   {
+    "metric": "prospective_lock_holdout_predictions",
+    "prev_hash": "43ea8e0daa8acb3be309bcdf81fd31c339509c3dc6ad5b3ff99385b9cfb48242",
+    "row_hash": "7bff10c6df0173899695b0dd732d1a8bfdb3020f67bd600a9636e928b850522b"
+   },
+   {
+    "metric": "blindness_coarse_rule",
+    "prev_hash": "7bff10c6df0173899695b0dd732d1a8bfdb3020f67bd600a9636e928b850522b",
+    "row_hash": "7ccb0f257df413c380ce557816cb755d2ff0dddf343983b4718b7664bbd52f59"
+   },
+   {
+    "metric": "M1_independence_from_verb",
+    "prev_hash": "7ccb0f257df413c380ce557816cb755d2ff0dddf343983b4718b7664bbd52f59",
+    "row_hash": "3db224982d7e63ffbeab431663cbcd6e650b7b4938abab63337a10bb26909120"
+   },
+   {
+    "metric": "M2_external_recovery_v4",
+    "prev_hash": "3db224982d7e63ffbeab431663cbcd6e650b7b4938abab63337a10bb26909120",
+    "row_hash": "d314f57ae15d68e838ba80d1a6b3ccf096d6954d97ab37e261d49b8643ad9c14"
+   },
+   {
+    "metric": "M3_axis_effect_disclosure",
+    "prev_hash": "d314f57ae15d68e838ba80d1a6b3ccf096d6954d97ab37e261d49b8643ad9c14",
+    "row_hash": "f1fc884e20a87bb05bf0006e0640e218fb29940d8cf1bf0c5f9b9c4b2cabb9b5"
+   },
+   {
+    "metric": "negative_controls",
+    "prev_hash": "f1fc884e20a87bb05bf0006e0640e218fb29940d8cf1bf0c5f9b9c4b2cabb9b5",
+    "row_hash": "a279f1ad68d270f1db0c3a9bd43b77217bc23f8552053fd3387eba49c7463306"
+   },
+   {
+    "metric": "inherited_anchors_readonly",
+    "prev_hash": "a279f1ad68d270f1db0c3a9bd43b77217bc23f8552053fd3387eba49c7463306",
+    "row_hash": "30cc490aaecc2d4e72f644f1ca46a0ff1c979181575766c582ee2dcf2c92784f"
+   }
+  ]
+ }
+}

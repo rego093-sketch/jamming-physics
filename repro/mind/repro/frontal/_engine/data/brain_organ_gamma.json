@@ -1,0 +1,31 @@
+{
+  "_provenance": "gamma = -mean(NN stacking dG37), SantaLucia 1998 nearest-neighbour stacking (the SAME read-only metric used by the DNA volume and the neuro chain). Values are extracted VERBATIM (read-only, never fitted) from the neuro package data files repro/neuro/_engine/data/{sensory_organ_gamma.json, spinal_master_genes.json}, which fetched the master-gene promoter window [TSS-2000, TSS+500] (2501 bp, coding strand) from NCBI RefSeq (GRCh38). corr(gamma, GC) = 0.994-0.995 across that atlas. Layer-1 [F] uses gamma; absolute organ size/time is Layer-2 [O].",
+  "_window": "promoter [TSS-2000, TSS+500] = 2501 bp coding strand",
+  "_metric": "gamma = mean(-NN dG37), SantaLucia 1998",
+  "organs": {
+    "cerebrum": {
+      "master": "FOXG1",
+      "gamma": 1.4737,
+      "role": "telencephalon / neocortex master (forebrain identity)",
+      "note": "FOXG1 specifies the telencephalon, including the dorsal cortex; canonical forebrain master."
+    },
+    "cerebellum": {
+      "master": "EN1",
+      "gamma": 1.4692,
+      "role": "mid-hindbrain / cerebellar master (engrailed)",
+      "note": "EN1 patterns the mid-hindbrain boundary that gives rise to the cerebellum."
+    },
+    "hypothalamus": {
+      "master": "SIM1",
+      "gamma": 1.4465,
+      "role": "hypothalamic master (PVN/SON neuroendocrine identity)",
+      "note": "SIM1 is the canonical master for paraventricular/supraoptic hypothalamic nuclei."
+    },
+    "hippocampus": {
+      "master": "LHX2",
+      "gamma": 1.5172,
+      "role": "cortical-hem / hippocampal-field regulator",
+      "note": "LHX2 controls the cortical hem and hippocampal-field allocation. The dentate-gyrus-specific master PROX1 is a Layer-2 [O] refinement (gamma not re-fetched here)."
+    }
+  }
+}

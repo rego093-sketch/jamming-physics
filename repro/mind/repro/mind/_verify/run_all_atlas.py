@@ -483,6 +483,117 @@ MODULES = [
     ("FOC-EPI-E1", "E1-FOC", "focal_epilepsy_spread.py",
      "focal_epilepsy_spread_results.json",
      "7bbf6a338133080ce0090a44fb3971f2287cd3799688c3b16ccd8e8cff39094b"),
+    # --- v1.52 SECOND region-specific E1 application: stroke/lesion field, the
+    #     destructive DUAL of FOC-EPI-E1. Reads the SAME §43 SpatialField (not
+    #     re-derived) under a SILENCING inhibitory bias (a focal lesion, node
+    #     SILENCED not deleted so the frozen W0 is reused) and partitions lesions
+    #     into LOCAL-DEFICIT vs REMOTE-DIASCHISIS (von Monakow); finds global-
+    #     coordination disruption is NOT remote diaschisis (L3, honest negative,
+    #     the largest global disruptor being the LOCAL cerebellum, the reach hub
+    #     itself not drive-invariant). Placed after FOC-EPI-E1 / E1-SPATIAL so the
+    #     E1 layer it depends on is freshly regenerated first; before E0-SYNTH.
+    ("LESION-E1", "E1-LES", "lesion_field_diaschisis.py",
+     "lesion_field_diaschisis_results.json",
+     "d525a66eeb0b1736f572690b79955f527a6dc8fd6a96f2093212dfb9693a5b76"),
+    # --- v1.53 THIRD and FINAL region-specific E1 application: targeted
+    #     neuromodulation, the THERAPEUTIC re-reading of FOC-EPI-E1, CLOSING the
+    #     E1 trilogy (containment/broadcast §44 · local/diaschisis §45 ·
+    #     clean/leak §46). Reads the SAME §43 SpatialField (not re-derived) under
+    #     the SAME EXCITATORY bias as FOC-EPI-E1, re-framed as a therapeutic focal
+    #     stimulation (DBS/TMS/tDCS), and partitions targets into CLEAN-DELIVERY
+    #     vs OFF-TARGET-LEAK. The spatial numbers COINCIDE with FOC-EPI-E1 (same
+    #     excitatory drive, stated plainly); what is new is the therapeutic target-
+    #     selection reading and N3 (clean delivery and global reach DECOUPLED -- the
+    #     cleanest target is the largest-reach target, reach hub drive-invariant
+    #     inheriting §44, the two leak targets pushing R in OPPOSITE directions).
+    #     Placed after LESION-E1 / FOC-EPI-E1 / E1-SPATIAL so the E1 layer it
+    #     depends on is freshly regenerated first; before E0-SYNTH.
+    ("NEUROMOD-E1", "E1-NMOD", "targeted_neuromodulation_offtarget.py",
+     "targeted_neuromodulation_offtarget_results.json",
+     "cfe754e883c0d71351f030b2fc59c1d014be60ec189ac9e964959c9138a09434"),
+    # --- v1.54 FIRST cross-axis coupling: E1 (space) x E0 (time). Marries the
+    #     §43 SpatialField per-node drive (NOT re-derived) to the E0
+    #     PlasticConnectome phase-Hebbian update (NOT re-derived), asking WHERE a
+    #     focal drive leaves a lasting synaptic imprint -- local delivery vs
+    #     relayed consolidation. New integrator _integrate_coupled steps the
+    #     per-node Kvec on the EVOLVING W while accumulating pairwise phase
+    #     coincidence C_ij. Partition (LOCAL {brainstem,cerebellum,pallidum,
+    #     striatum} vs RELAYED rest) is drive-invariant across intensity x rate
+    #     (C1); relayed <=> off-target-dominant trace (C2); the genuinely-new
+    #     result (C3): the trace-relay set STRICTLY CONTAINS the §46 field-relay
+    #     set -- plasticity DELOCALISES imprint, so clean DELIVERY does not imply
+    #     clean IMPRINT (six witness sites self-localise the field yet imprint
+    #     off-target), and there is NO universal focal>diffuse trace law (honest
+    #     negative, 3/12 only). Relayed imprint is the STRUCTURAL DEFAULT (strict
+    #     majority 8/12, honest contrast with §46's clean-default 10/12) (C4).
+    #     S6 inherits E0.3: zero drive + eta=0 reproduces the M9 anchor bit-for-
+    #     bit, eta=0 leaves W identical, a focal excursion reverts exactly. Placed
+    #     after NEUROMOD-E1 so BOTH the E1 SpatialField layer and the E0
+    #     PlasticConnectome it couples are freshly regenerated first; before
+    #     E0-SYNTH so the synthesis remains the final word.
+    ("SPC-E1E0", "E1xE0", "spatial_plasticity_imprint.py",
+     "spatial_plasticity_imprint_results.json",
+     "cdb1623009fe2a02818c00be5fd2243034d43880501fde89b75270e0574ec036"),
+    # --- v1.55 SECOND cross-axis coupling: E1 (space) x E2 (state-switching),
+    #     the spatial sibling of the §29 bipolar episode. Marries the §43
+    #     SpatialField broadcast structure (NOT re-derived) to the §28
+    #     BistableSwitch R19 cell (NOT re-derived), asking WHICH focal drive most
+    #     easily FLIPS the single collective bistable state. The only new object
+    #     is the §28 cell fed an effective drive = the driven node's frozen-kernel
+    #     BROADCAST LEVERAGE h_eff(j,b0)=b0*lev_j, lev_j=colsum_j of W0 (a pure
+    #     frozen-kernel readout, no new constant); the state starts DOWN (s0=-sqrt
+    #     (g)) and flips iff h_eff crosses the fold spinodal(g). Intensity SWEPT
+    #     {0.3,0.5,0.7,0.9} x barrier g {0.7,1.0,1.3}. (C1) the flip-threshold rank
+    #     EQUALS the broadcast-leverage rank and is barrier-invariant on the common
+    #     finite-threshold set, with a FIXED non-switching minority {thalamus,
+    #     olfactory_bulb}; (C2) ease-of-flip tracks leverage with CRITICAL SLOWING
+    #     (threshold and latency both monotone-decreasing in leverage, brainstem
+    #     the largest finite latency); the genuinely-new result (C3): switchability
+    #     is DECOUPLED from BOTH the §46 instantaneous-footprint axis (field-relay
+    #     {hippocampus,midbrain} mid-rank 5-6/12, switch hub basal_forebrain_chol
+    #     §46 self-localising) AND the §43 reach axis -- NO universal reach->
+    #     switchability law (reach hub cerebellum is switch-rank 10/12, hard);
+    #     (C4) a coherent MAJORITY-SWITCHABLE structure (10/12) with the fixed
+    #     non-switching minority, the honest contrast with §46's clean-default.
+    #     S6 inherits E2.4: removing the focal drive settles via E.settle bit-for-
+    #     bit and the fold is read from E.spinodal. Placed after SPC-E1E0 so BOTH
+    #     the E1 SpatialField and the E2 BistableSwitch layers it couples are
+    #     freshly regenerated first; before E0-SYNTH so the synthesis stays last.
+    ("SPC-E1E2", "E1xE2", "spatial_switch_leverage.py",
+     "spatial_switch_leverage_results.json",
+     "bd3a9e230a4304371bc17ced39e7ae08b5c0dcf99855c9842f3eaea84ab7ea4e"),
+    # --- v1.56 THIRD cross-axis coupling: E0 (plasticity) x E2 (state-switching),
+    #     the kindling coupling. Marries the §26 PlasticConnectome (the frozen
+    #     kernel + the phase-Hebbian rule, NOT re-derived) to the §28
+    #     BistableSwitch R19 cell (NOT re-derived), asking whether repeated FLIPS
+    #     of the single collective bistable state become EASIER over time. It
+    #     CLOSES the trace->threshold link the bipolar module (§29, B3) named but
+    #     left [O]. Repeated flip episodes drive the phase-Hebbian update so the
+    #     connectome EVOLVES; the effective drive of an external push on the
+    #     collective state is scaled by the connectome's COORDINATION GAIN
+    #     L(W)=R(W)/R_anchor (a pure readout, =1 at W0, generalising the §48
+    #     broadcast leverage to the global coherence gain), so the flip threshold
+    #     p*=spinodal(g)/L drops as the connectome consolidates. Rate eta SWEPT
+    #     {0.03,0.05,0.08} x barrier g {0.7,1.0,1.3}. (K1) the trace deepens
+    #     strictly-monotonically and the flip threshold ends BELOW the un-kindled
+    #     fold (kindling), barrier-invariant -- the §29 [O] supplied; (K2) the
+    #     push-space hysteresis loop NARROWS and the crossing latency at fixed
+    #     push SHORTENS (a learned change of hysteresis + a faster onset); the
+    #     genuinely-new result (K3): kindling is CONSOLIDATIVE not DEGRADATIVE --
+    #     the clean 'kindling erodes coordination' hypothesis is REFUTED, R RISES
+    #     and ends at/above the anchor while the trace deepens, so easier-to-flip
+    #     and erosion are decoupled; (K4) a single coherent consolidative seam,
+    #     the threshold monotone-decreasing in the accumulated trace (the trace IS
+    #     the kindling variable), with a [L] direction-only correspondence to
+    #     clinical kindling and bipolar cycle acceleration. S5 inherits BOTH
+    #     guards: eta=0 -> R = the frozen anchor bit-for-bit so the threshold =
+    #     the un-kindled fold (E0.4), and a zero push -> E.settle bit-for-bit
+    #     (E2.4). Placed after SPC-E1E2 so BOTH the E0 PlasticConnectome and the
+    #     E2 BistableSwitch layers it couples are freshly regenerated first;
+    #     before E0-SYNTH so the synthesis stays last.
+    ("E0E2-KINDLING", "E0xE2", "e0e2_kindling.py",
+     "e0e2_kindling_results.json",
+     "3880e63ff23d43b10506824fdf7b6b5c54cee19ef73e3e4bd6369079e31aa9f0"),
     # --- v1.49 capstone: meta-synthesis of the three frozen E0-dynamics faces
     #     (GAIN / DECAY / STABILISATION). Placed LAST so the three source
     #     results JSONs are freshly regenerated by their own modules above
@@ -490,6 +601,21 @@ MODULES = [
     ("E0-SYNTH", "E0-SYNTH", "e0_triad_synthesis.py",
      "e0_triad_synthesis_results.json",
      "62b49afc94574a3eaf11139832dc7679338e08d90bb6a69bc037ba593b668d10"),
+    # --- v1.57 capstone: meta-synthesis of the three frozen CROSS-AXIS COUPLINGS
+    #     (E1xE0 imprint 47, E1xE2 leverage 48, E0xE2 kindling 49). Placed LAST so
+    #     the three source coupling JSONs are freshly regenerated by their own
+    #     modules above before this synthesis re-reads and cross-certifies them.
+    #     Certifies the three couplings as one FAMILY -- the three pairwise edges
+    #     of the same three layers E0/E1/E2, each layer in exactly two couplings --
+    #     sharing one shape: the genuinely-new result each seam surfaces is a
+    #     DECOUPLING (clean delivery from clean imprint, switchability from
+    #     footprint and reach, easier-flip from erosion), each refuting a tidy
+    #     single-axis hypothesis reported honestly, under one coupling discipline.
+    #     Zero new measurement / machinery / tuned constant; the three source shas
+    #     are re-verified bit-for-bit before they are read; engine byte-unchanged.
+    ("CROSS-SYNTH", "CROSS-SYNTH", "cross_axis_coupling_synthesis.py",
+     "cross_axis_coupling_synthesis_results.json",
+     "028fdbcc34ec1067f334dfe30fd68c7eec3319b42476e77533bdd43a17d4eb21"),
 ]
 
 

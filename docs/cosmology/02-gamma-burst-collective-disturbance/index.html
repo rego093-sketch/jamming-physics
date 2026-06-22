@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamma Bursts as Collective Disturbances — Vacuum-Inflow Cosmology §2.1 | Jamming Physics</title>
+<meta name="description" content="A gamma-ray burst as one collective lattice disturbance arrives dispersionless, removing the independent-photon assumption the Fermi GRB bound rests on.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/02-gamma-burst-collective-disturbance/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Gamma Bursts as Collective Disturbances","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-gamma-burst-collective-disturbance/","knowsAbout":["gamma-ray burst","collective disturbance","soliton","gravitational wave GW170817","vacuum lattice","Fermi bound"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§2.1 Gamma Bursts as Collective Disturbances"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §2.1</nav></header>
+<main><!--vp-v1.8-->
+<h1>Gamma-Ray Bursts as Collective Lattice Disturbances</h1>
+<p class="answer">A gamma-ray burst can be one collective disturbance of the vacuum lattice, not a stream of independent photons. A collision-driven soliton front stays coherent and travels at c, dispersionless, removing the independent-high-k-photon assumption behind the Fermi tension. Its energy is many quanta over a volume, not a large per-quantum energy.</p>
+<p class="abstract">Modeled as one collective lattice disturbance — the same event that radiates a gravitational wave — a gamma-ray burst forms a coherent soliton front that travels at c with no spreading, like GW170817's wave arriving with its short GRB within 1.7 s over 130 Mly. The burst's energy is E_burst/E_photon ~ V/a³ quanta over a volume, a measure of the medium's stiffness, not a large per-quantum energy.</p>
+<aside class="claim-strip page"><span class="g g-open" data-phase2="grade">[O] open</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-gamma-burst-collective-disturbance/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="vp-card" data-locked="a"><b>a = 6.33×10⁻¹⁹ m</b> — VP fundamental cell spacing (the lattice scale for light, not the angle scale D). <b>[O]</b> input. <a href="/cosmology/axc-two-length-scales-d-versus/">정본 §Appendix C</a></aside>
+<h2>A gamma-ray burst as a collective disturbance</h2>
+<span id="sec:collective"></span>
+<p>The estimate above models a burst as a stream of <em>independent</em> high-k photon modes, each
+carrying the lattice dispersion v_g=ccos(ka/2). There is a first reason to doubt that picture,
+prior to any question about the mode of an individual photon: in the medium, a burst can instead be
+a <em>collective</em> disturbance. When two large quantum inflows—compact objects acting as inflow
+sinks—collide and their inflow lines break, they launch a single macroscopic disturbance of the
+lattice, the same class of event that radiates a gravitational wave. This is not idle: the short
+burst Fermi used to set the bound, GRB 090510, is itself a compact-merger burst, and GW170817
+showed a gravitational wave and a short GRB arriving within  1.7s after  130 Mly—the
+coincidence a collective-disturbance origin predicts.</p>
+<p>The script <code>ch2_grb.py</code> makes the mechanism concrete on the very lattice that carries light.
+It contrasts two ways energy can travel: (A) a single weak high-k wave packet—the “independent
+high-energy photon,” linear regime—and (B) the strong disturbance launched when two inward
+inflows collide (nonlinear FPU-β regime). The contrast is sharp. The independent high-k
+packet <em>disperses</em>: with v_g=cos(k₀/2)≈0.73c<c its components separate and its
+RMS width grows by a factor of 11 over the run. The collision-driven disturbance instead
+organises into a coherent compression front and propagates at ≈ c with <em>no</em> measurable
+spreading (width factor 1.0), like a gravitational wave—the nonlinearity supplied by the violent
+collision balancing the dispersion, the standard soliton mechanism. So if Fermi's bursts are
+collective disturbances rather than streams of independent photons, they are expected to arrive
+dispersionless, independently of the per-photon mode question taken up next.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch2_grb.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>Honest scope.</h4>
+ This is a mechanism, not a derivation. <code>ch2_grb.py</code> uses toy,
+normalised units; it establishes that the colliding-inflow picture is <em>self-consistent</em> and
+yields a dispersionless burst (degenerate, on the observed coincidence, with the standard
+compact-merger account), which is what GW170817 and Fermi together require. It does <em>not</em>
+derive the detected keV–GeV gamma-ray spectrum from the disturbance—the
+energyleftrightarrowwavelength reinterpretation that would do so is not established—and so it
+does not close the dispersion problem. Whether real GRB emission sits in this coherent regime is
+open. Its standing is thus a <em>toy mechanism</em>: it removes the “independent high-k photons”
+assumption on which the conflict rests, but the spectrum derivation belongs to the same open
+dynamical work as the quasi-longitudinal dispersion (§<a class="xref" data-ref="sec:angle-disp">(angle-disp)</a>).
+
+<h2>The burst as a stiff-medium event (exploratory)</h2>
+<span id="sec:burststiff"></span>
+<p>The collective-disturbance picture of §<a class="xref" data-ref="sec:collective">(collective)</a> leaves two things underived: the burst's
+<em>energy budget</em>, and its <em>spectrum</em>. A sharper reading of the same mechanism supplies both and ties
+the burst to a quantity the framework otherwise only postulates. The reading is this: a gamma-ray burst is not
+light that crosses the cosmos and disperses—it is a violent, <em>volumetric</em> event in a very stiff medium,
+and the gamma rays are radiation we sample from it. The same merging inflows that launch the event launch the
+gravitational wave; in the framework a gravitational wave <em>is</em> a wave of the lattice, so the burst and the
+wave are one disturbance read in two ways.</p>
+<h4>Energetics: many quanta, not a large quantum.</h4>
+ Light, in the framework, is a single quantum of the
+lattice's transverse mode, E=ħω (§<a class="xref" data-ref="sec:goldstone">(goldstone)</a>). A burst is the whole shaken volume; the
+ratio of energies is therefore, to order of magnitude, the number of grains set in motion,
+<figure class="eq"><img src="/cosmology/eq/cosmology/cos-02-003.svg" data-eq="cos-02-003" width="130" height="43" loading="lazy" alt="\begin{equation} \frac{E_{\mathrm{burst}}}{E_{\mathrm{photon}}}\;\sim\;\frac{V}{a^{3}}, \end{equation}"></figure>
+<p>which for a bright burst (E_(burst) 10⁵³erg) and a 31GeV gamma quantum is
+ 2×10⁵⁴. Equivalently, a region of only  1m³, fully excited at the gamma scale,
+already carries an entire burst's energy—a vivid measure of how stiff and dense the medium is. The enormous
+energy of a burst is thus <em>many quanta over a three-dimensional volume</em>, not a large per-quantum energy;
+the gamma quantum itself (31GeV, ka≈0.1, ≈63 lattice spacings) is an ordinary,
+well-supported ripple of the lattice. Put as a force rather than an energy, the burst is the <em>sum of the
+lattice forces over the churning volume</em>: each cell excited at the gamma scale carries a force
+  E_(γ)/a≈8×10⁹N (itself a measure of the stiffness), and summing  2×10⁵⁴
+such cells over the volume is the blast—the same bookkeeping as totalling the energy of every parcel of water
+in an underwater explosion. The arithmetic is in <code>ch2_gammacontent.py</code>.</p>
+<h4>The gravitational-wave link, and a handle on the stiffness postulate.</h4>
+ Reading the burst and the
+gravitational wave as one disturbance reframes an apparent paradox: why is the gravitational wave so
+<em>small</em> (strain h 10⁻²¹) while the gamma is so <em>large</em>? Because the medium is extraordinarily
+stiff—a colossal energy produces only a whisper of strain, exactly as a very stiff spring stores great energy
+in a tiny displacement. Quantitatively the elastic scale a gravitational wave reveals is   c⁴/G≈
+1.2×10⁴⁴N; in the framework's terms this <em>is</em> a measurement of the bulk modulus K in
+c²=K/ρ. That matters beyond the burst: the physics volume (DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}) flags the unbounded local
+stiffness of the lattice as a postulate it <em>cannot measure internally</em>. The gravitational-wave
+strain–energy relation is precisely such a measurement, supplied from outside. The two channels also differ
+only in how we <em>sample</em> them—the gravitational wave as a strain at one detector, the gamma as photons
+emerging from a three-dimensional volume; same physics, different measurement dimension. The event GW170817—a
+gravitational wave and a short gamma-ray burst arriving within  1.7s over  130Mly, bounding the
+wave speed to c within  10⁻¹⁵—both supplies this anchor and shows directly that the collective
+(continuum) mode is non-dispersive at low wavenumber.
+<h4>Spectrum: churning is broadband.</h4>
+ §<a class="xref" data-ref="sec:collective">(collective)</a> did not derive the keV–GeV spectrum from
+the disturbance. Its volumetric, turbulent (“churning”) character supplies a candidate. A multi-scale
+disturbance carries broadband spectral content: <code>ch2_gammacontent.py</code> shows that a churning front
+carries power continuously from low wavenumber up into the gamma band and on to the lattice zone-boundary
+( 620GeV at this calibration), whereas a smooth disturbance does not reach the gamma band at all
+(Fig. <a class="xref" data-ref="fig:gammacontent">(gammacontent)</a>). The spectral <em>shape</em>—hence the gamma fraction—is independent of
+amplitude: a tiny churning wave has the same gamma fraction as a violent one. “Gamma is present” is fixed by
+the disturbance's structure; “the energy is enormous” is fixed by its amplitude.
+<figure class="fig"><img src="/cosmology/assets/img/ch2_gammacontent.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>What it does not resolve, and why (a decisive test).</h4>
+ This reading answers the energy and (candidate)
+spectrum questions and anchors the stiffness empirically—but it does <em>not</em> close the dispersion problem,
+and a direct test shows exactly why. <code>ch2_burstprop.py</code> launches a churning broadband disturbance and,
+as it propagates, splits it into its low-wavenumber part (the long-wavelength envelope, what a detector
+registers as a gravitational wave) and its high-wavenumber part (the gamma content). The low-k envelope
+travels as a coherent front at ≈ c; the high-k content travels at v_g=ccos(ka/2)<c and
+<em>separates</em>, lagging the front by ≈[1-cos(ka/2)]×distance (Fig. <a class="xref" data-ref="fig:burstprop">(burstprop)</a>).
+This separation occurs at the <em>same</em> rate whether the disturbance is weak or strong: the nonlinearity that
+keeps the envelope coherent does not bind the gamma content to it. The coherence reported in
+§<a class="xref" data-ref="sec:collective">(collective)</a> is thus the low-k envelope; the gamma rides off it. Over a cosmological baseline the
+lag is the original conflict, unchanged—at ka≈0.1 and D 9Gly it exceeds the Fermi bound by
+ 15 orders. A jammed, incompressible (density=1) vacuum does not rescue it either
+(<code>ch2_jammed2d.py</code>): incompressibility freezes the longitudinal channel but leaves the transverse
+(light) dispersion cos(ka/2) unchanged—jamming rescales c, not the normalised dispersion.
+<figure class="fig"><img src="/cosmology/assets/img/ch2_burstprop.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>The other escape, and why it also fails.</h4>
+ One might instead deny that any gamma propagates: let the
+cosmos-crossing object be only the collective wave (the non-dispersive low-k mode, the gravitational wave),
+and let the gamma be <em>produced locally</em> when that arriving wave shakes our lattice. The energy is
+available—a wave far too gentle to register as a gravitational wave (h 10⁻²²) already carries a whole
+burst's energy flux, because the medium is so stiff. But the wave cannot make the gamma. Generating gamma-scale
+(high-k) shaking from a long-wavelength (low-k) disturbance is an <em>up-conversion</em>, and up-conversion
+requires the per-bond strain to approach unity, since the nonlinear term competes with the linear one only when
+β(strain)² 1. <code>ch2_upconvert.py</code> confirms this in both one and three dimensions: the
+high-k fraction stays at the per-cent level or below until the strain is of order one, and the threshold is
+the <em>same</em> in 1D and 3D because it is per-bond—dimension-independent. A non-dispersively propagated wave
+is, however, necessarily smooth, hence low-strain (strain   h 10⁻²²): some twenty orders below
+threshold. Three dimensions do change two things—the cascade to small scales is richer once nonlinear, and
+converging geometry (focusing) raises the strain—but focusing acts at the <em>converging source</em> (the
+merger), not in the <em>diverging</em> wave that reaches us. So 3D helps make gamma at the source, where it then
+faces propagation; it does not let a gentle arriving wave make gamma in flight.
+<h4>Standing.</h4>
+ The burst-as-stiff-medium-event reading is a genuine enrichment of §<a class="xref" data-ref="sec:collective">(collective)</a>:
+it gives the energy budget (volumetric, E_(burst)/Eₚₕₒₜₒₙ  V/a³, the sum of lattice
+forces over the churning volume), a candidate spectrum (churning is broadband), and—through the
+gravitational-wave link—an external, empirical handle on the stiffness the framework otherwise only
+postulates. These are solid. It does <em>not</em> close the dispersion tension, and the two conceivable escapes
+fail for clean, opposite reasons: gamma emitted at the source disperses off the propagating front
+(<code>ch2_burstprop.py</code>), while a gentle arriving wave is some twenty orders too weak to generate gamma
+locally (<code>ch2_upconvert.py</code>)—and neither gap is closed by going to three dimensions. Both therefore
+point to the same single requirement examined in §<a class="xref" data-ref="sec:goldstone">(goldstone)</a>–§<a class="xref" data-ref="sec:stiffness">(stiffness)</a>: that gamma
+propagate as the exact continuum (Box_c) mode, not seeing the lattice spacing. The gravitational-wave link
+does not remove that requirement—it sharpens it, by establishing that the collective mode is observed
+non-dispersive at low wavenumber and isolating the gamma-band coherence over cosmological distance as the one
+genuinely open item. That item is also a live question in fundamental physics: whether the discreteness of
+spacetime leaves any imprint on the propagation of light.
+
+
+<nav class="pn"><a rel="prev" href="/cosmology/02-light-lattice-elastic-wave-sharpest/">← §2</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/02-back-calculation-broadband-gamma-spectrum/">§2.2 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

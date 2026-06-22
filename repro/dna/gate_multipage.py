@@ -169,15 +169,15 @@ def _sha256(path):
     except OSError:
         return None
 report = {
-    "session": "v1_12-multipage-split",
+    "session": "v1_13-gamma-a4-level-shape",
     "spec": "VP-SPEC v1.8",
     "paper_id": "dna",
-    "date": "2026-06-17",
+    "date": "2026-06-21",
     "layout": "multi-page canonical (hub + per-section pages)",
     "summary": {"pass": P, "warn": len(warns), "fail": len(fails),
                 "verdict": "PASS" if not fails else "FAIL"},
     "scripts": {
-        "build": {"file": "build_multipage_dna.py", "sha256": _sha256("build_multipage_dna.py")},
+        "build": {"file": "build_v1_13_level_shape.py", "sha256": _sha256("build_v1_13_level_shape.py")},
         "gate":  {"file": "gate_multipage.py",      "sha256": _sha256("gate_multipage.py")},
     },
     "checks": [{"status": s, "check": n} for s, n in checks],
@@ -185,7 +185,7 @@ report = {
     "failures": fails,
 }
 os.makedirs("reports", exist_ok=True)
-with open("reports/dna-v1_12-multipage.gate.json", "w", encoding="utf-8") as fh:
+with open("reports/dna-v1_13-multipage.gate.json", "w", encoding="utf-8") as fh:
     json.dump(report, fh, indent=2, ensure_ascii=False)
-print("wrote reports/dna-v1_12-multipage.gate.json")
+print("wrote reports/dna-v1_13-multipage.gate.json")
 sys.exit(1 if fails else 0)

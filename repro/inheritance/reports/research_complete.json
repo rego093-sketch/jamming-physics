@@ -1,0 +1,309 @@
+{
+  "kit": "vp_inheritance_kit",
+  "phase": "writing",
+  "all_green": true,
+  "ncbi_offline_verify": {
+    "rna_carrier": {
+      "ok": true,
+      "anchor_reproduced": true,
+      "n_genes": 12
+    },
+    "imprint": {
+      "ok": true,
+      "anchor_reproduced": true,
+      "n_genes": 12
+    },
+    "disease": {
+      "ok": true,
+      "cross_package_all_reproduce": true,
+      "n_oncology": 16,
+      "n_neurodegeneration": 9,
+      "cross_package_consistency": {
+        "PTEN": {
+          "measured": 1.5694,
+          "reference": 1.5694,
+          "source": "neuro_gamma.json (this kit, ASD atlas)",
+          "agrees": true
+        },
+        "VHL": {
+          "measured": 1.4325,
+          "reference": 1.4325,
+          "source": "vp-site disease_kit von_hippel_lindau",
+          "agrees": true
+        },
+        "SOD1": {
+          "measured": 1.4443,
+          "reference": 1.4443,
+          "source": "vp-site disease_kit SOD1-ALS",
+          "agrees": true
+        },
+        "HTT": {
+          "measured": 1.6142,
+          "reference": 1.6142,
+          "source": "vp-site disease_kit Huntington",
+          "agrees": true
+        }
+      }
+    },
+    "a4_coordinates": {
+      "ok": true,
+      "n_windows": 42
+    }
+  },
+  "heldout_validation_verify": {
+    "ok": true,
+    "source_doi": "10.1016/j.cell.2022.05.013",
+    "figshare_article": "20029387",
+    "provenance_ok": true,
+    "held_out_warrant_ok": true,
+    "prediction_sign_locked_ok": true,
+    "panel_rule_ok": true,
+    "structure_ok": true,
+    "primary_spearman_rho_from_cache": -0.076,
+    "n_primary": 43,
+    "headline_reproduced": true,
+    "B_result": "NULL (rho=-0.0760, p=0.6283, n=43, K562 GWPS): the no-tuning (A)-map gamma-ordering shows no significant correspondence to on-target CRISPRi knockdown depth; promotes no [O] item. See engine/feasibility_validation.py and the ledger."
+  },
+  "heldout_signlaw_minus_arm_verify": {
+    "ok": true,
+    "source": "DepMap 24Q2 Public CRISPRGeneEffect (Chronos)",
+    "figshare_article": "25880521",
+    "provenance_ok": true,
+    "held_out_warrant_ok": true,
+    "prediction_sign_locked_ok": true,
+    "readout_scope_ok": true,
+    "structure_ok": true,
+    "no_smuggled_sign_or_gc": true,
+    "n_onco_scored": 16,
+    "n_neurodegen_out_of_scope": 8,
+    "point_biserial_from_cache": 0.494,
+    "exact_permutation_p": 0.0227,
+    "headline_reproduced": true,
+    "B_result": "SCORED (point-biserial=+0.494, exact one-sided p=0.0227, n=16 onco): under the '-' (knockout) operation GOF oncogenes are dependencies and LOF suppressors are not -- the corrective sign-law's '-' arm is confirmed on held-out DepMap data, identified (orthogonal to GC) and firewall-clean. Promotes the '-' arm [V]; O-22 stays [O] (needs the '+' restore arm alone -- FV6's obstacle, not Delta-h), O-21 stays [O]. See FV7."
+  },
+  "heldout_signlaw_plus_arm_verify": {
+    "ok": true,
+    "source": "Horlbeck et al. 2016 hCRISPRa-v2 K562 gene growth phenotypes, eLife 5:e19760 (supp. file 10)",
+    "elife_article": "19760",
+    "doi": "10.7554/eLife.19760",
+    "provenance_ok": true,
+    "held_out_warrant_ok": true,
+    "prediction_sign_locked_ok": true,
+    "readout_scope_ok": true,
+    "structure_ok": true,
+    "no_smuggled_sign_or_gc": true,
+    "n_onco_scored": 16,
+    "n_neurodegen_out_of_scope": 9,
+    "point_biserial_from_cache": 0.4852,
+    "exact_permutation_p": 0.0274,
+    "headline_reproduced": true,
+    "B_result": "SCORED (point-biserial=+0.4852, exact one-sided p=0.0274, n=16 onco): under the '+' (CRISPR-activation) operation LOF suppressors are growth-suppressive and GOF oncogenes are not -- the corrective sign-law's '+' RESTORE arm is confirmed on held-out Horlbeck 2016 CRISPRa data, identified (orthogonal to GC) and firewall-clean. The MIRROR of FV7: together the sign-law is now BIDIRECTIONALLY [V] (both arms, direction-only), removing in full the bidirectional-data obstacle. O-22 (per-patient yes/no) STILL stays [O] -- its obstacle is now the FIREWALL, not data: a class-level direction-only law cannot certify a per-patient corrected outcome, which needs the firewalled per-patient magnitude; O-21 (absolute dose) stays [O]. This corrects FV7's '+'-arm-alone framing. See FV8."
+  },
+  "battery_pass": {
+    "R_rna_layer": true,
+    "RS_rna_species": true,
+    "A4_a4_layer": true,
+    "TC_two_channel": true,
+    "TG_env_to_germline": true,
+    "GE_germline_escapee": true,
+    "CH_coordinate_heritability": true,
+    "I_transgenerational_immunity": true,
+    "IM_immune_maturation": true,
+    "V_rna_vaccine": true,
+    "GT_gene_therapy": true,
+    "AM_a4_application_map": true,
+    "FM_rna_feasibility_map": true,
+    "DM_disease_feasibility_map": true,
+    "FV_feasibility_validation": true,
+    "PO_parent_of_origin": true,
+    "VK_rna_vaccine_kinetics": true,
+    "LV_lever_map": true
+  },
+  "scoreboards": {
+    "R_rna_layer": {
+      "R1 RNA as a reversible drive-write (gamma unchanged)": "PASS",
+      "R2 two signs on one channel (siRNA-OFF vs saRNA-ON)": "PASS",
+      "R3 measured RNA-carrier gamma atlas (NCBI-direct, anchor-gated)": "PASS",
+      "R4 reversibility -- payload cleared, basin returns (vs irreversible edit)": "PASS"
+    },
+    "RS_rna_species": {
+      "RS1 species-resolved drive with biological sign": "PASS",
+      "RS2 production-stability ordering by machinery barrier": "PASS",
+      "RS3 writer/eraser mark-side reversibility (METTL3 write / YTHDF2 erase)": "PASS",
+      "RS4 germline competence -- which species can load the gamete": "PASS"
+    },
+    "A4_a4_layer": {
+      "A4-1 A4 is orthogonal to gamma (gamma alone is degenerate)": "PASS",
+      "A4-2 RNA coordinate-targeting -- contact-competence gates the drive at fixed gamma": "PASS",
+      "A4-3 environment writes A4 (contact/compartment), gamma is fixed": "PASS",
+      "A4-4 inheritance is of an A4 configuration (a held contact state at a coordinate)": "PASS"
+    },
+    "TC_two_channel": {
+      "TC1 same-sign channels ADD (sum crosses the spinodal)": "PASS",
+      "TC2 opposite-sign channels VETO (cancel, no flip)": "PASS",
+      "TC3 path-dependence (hysteresis latches the channel that crossed first)": "PASS"
+    },
+    "TG_env_to_germline": {
+      "TG1 SET invariance -- genome (gamma) byte-identical parent->child": "PASS",
+      "TG2 the reprogramming firewall (two erasures -> p^2)": "PASS",
+      "TG3 heritability ranks ascending-gamma (deeper barrier inherits better)": "PASS",
+      "TG4 direction-only -- the inherited SIGN is preserved (magnitude is runtime [O])": "PASS",
+      "TG5 RNA-only drive decays across generations; deep-barrier mark persists": "PASS"
+    },
+    "GE_germline_escapee": {
+      "GE1 escapee prediction -- imprinted survival ranks ascending-gamma": "PASS",
+      "GE2 two erasures resolved (PGC vs zygotic; harsher dominates)": "PASS",
+      "GE3 re-writing vs persistence -- critical re-write rate w*": "PASS"
+    },
+    "CH_coordinate_heritability": {
+      "CH1 coordinate-resolved heritability (contact adds heritability beyond gamma)": "PASS",
+      "CH2 parent-of-origin contact configuration (inherited object = parent-specific contact state)": "PASS",
+      "CH3 joint (gamma, A4) heritability ordering": "PASS"
+    },
+    "I_transgenerational_immunity": {
+      "I1 immune memory = held basin; lifetime (MFPT) ranks ascending-gamma": "PASS",
+      "I2 trained immunity = pre-tilt -> smaller drive to recall": "PASS",
+      "I3 transgenerational immune priming -- inherited pre-tilt through the firewall": "PASS"
+    },
+    "IM_immune_maturation": {
+      "IM1 affinity maturation emerges from iterated selection; gain has an interior optimum": "PASS",
+      "IM2 innate vs adaptive = two-timescale durability split (slow arm = deep barrier)": "PASS",
+      "IM3 tolerance is the opposite-sign drive on the same switch (memory <-> tolerance)": "PASS"
+    },
+    "V_rna_vaccine": {
+      "V1 vaccine = supra-spinodal flip into protected basin (memory held after clearance)": "PASS",
+      "V2/V3 schedule has an interior optimum tracking the measured protection half-life": "PASS",
+      "V4 transient payload, persistent protection (held by barrier, not lingering RNA)": "PASS"
+    },
+    "GT_gene_therapy": {
+      "GT1 Lever A -- SET edit moves the threshold (irreversible by a drive)": "PASS",
+      "GT2 Lever B -- reversible h-reset (RNA), gamma untouched": "PASS",
+      "GT3 decision rule -- drive-reachable -> Lever B; beyond tolerable drive -> Lever A": "PASS"
+    },
+    "AM_a4_application_map": {
+      "AM1 prime-boost dose depends on the A4 coordinate": "PASS",
+      "AM2 lever map on the (gamma, A4) plane": "PASS",
+      "AM3 the 3D contact boundary curve on (gamma, contact-assist)": "PASS"
+    },
+    "FM_rna_feasibility_map": {
+      "FM1 reachability map: flip-drive = measured spinodal; absolute flip-drive ordered by gamma": "PASS",
+      "FM2 autism extension: measured ASD promoters are R19 switches; flip-drive ordered by gamma": "PASS",
+      "FM3 reversibility: sub-spinodal transient reverts, supra-spinodal transient latches (hysteresis)": "PASS",
+      "FM4 honesty gate: a self-contained flip is Delta-h assumption-replay, not evidence ((B) decides)": "PASS"
+    },
+    "DM_disease_feasibility_map": {
+      "DM1 disease reachability map: cancer+neurodegen promoters are R19 switches; flip-drive ordered by gamma": "PASS",
+      "DM2 corrective-sign law: corrective drive sign FORCED by mechanism (GOF->-, LOF->+), orthogonal to gamma": "PASS",
+      "DM3 two-lever decision: Lever-B reversible drive reachable for every switch; required drive grows with gamma": "PASS",
+      "DM4 honesty gate: a self-contained 'corrected' is Delta-h replay; cross-package gamma reproduces (no tuning)": "PASS"
+    },
+    "FV_feasibility_validation": {
+      "FV1 provenance+held-out integrity: real Replogle target, frozen gamma, fixed panel rule": "PASS",
+      "FV2 no-tuning ordering score (K562 genome-wide): Spearman rho(frozen gamma, fold_expr) + rule": "PASS",
+      "FV3 null robustness: no control_expr cutoff yields significant support; cell-line signs disagree": "PASS",
+      "FV4 (A)/(B) firewall: (B) score recorded; map stays [V]; per-cell yes/no stays [O]; gamma untouched": "PASS",
+      "FV5 GC-identifiability stress test: gamma<->GC is near-collinear, so the knockdown-depth ordering score cannot separate barrier from GC -- the (B) null is NON-IDENTIFIED": "PASS",
+      "FV6 (B) identifiability decomposition: of every (B)-testable VP prediction, the gamma-ORDERED class is non-identified (collinear with GC) and only the mechanism corrective-SIGN is identified (orthogonal to GC) AND firewall-clean -- so the unique open (B) is the sign-law, blocked on data": "PASS",
+      "FV7 corrective sign-law '-' arm (held-out, DepMap 24Q2 CRISPR-KO): GOF oncogenes are dependencies and LOF suppressors are not, under the '-' operation -- the first held-out score of the unique identified+firewall-clean (B) frontier": "PASS",
+      "FV8 corrective sign-law '+' arm (held-out, Horlbeck 2016 CRISPRa K562): LOF suppressors are growth-suppressive on activation and GOF oncogenes are not, under the '+' operation -- the mirror of FV7, completing the bidirectional held-out test of the (B) frontier": "PASS"
+    },
+    "PO_parent_of_origin": {
+      "PO1 context asymmetry -- sustained (maternal) flips a held switch, transient (paternal) reverts": "PASS",
+      "PO2 parent-of-origin SIGN law -- dominant (maternal) sign inherited; agreement reinforces": "PASS",
+      "PO3 the parent-of-origin asymmetry is universal across the measured germline atlas": "PASS"
+    },
+    "VK_rna_vaccine_kinetics": {
+      "VK1 prime-boost interval from the maturation endpoint -- interior optimum (inverted-U in time)": "PASS",
+      "VK2 saRNA vs mRNA -- the longer saRNA drive window crosses the protected basin more reliably": "PASS"
+    },
+    "LV_lever_map": {
+      "LV1 Lever A sub-types -- SET edits move the threshold; CRISPRa re-classifies to Lever B": "PASS",
+      "LV2 Lever B sub-types -- all leave gamma byte-identical, all reversible; signs differ": "PASS",
+      "LV3 decision boundary -- h_path*(gamma) = h_cap - spinodal(gamma) falls; gamma* mandates Lever A": "PASS",
+      "LV4 durable correction WITHOUT an edit -- re-dosing holds the corrected state (w > w*)": "PASS"
+    }
+  },
+  "determinism_2xsha256": {
+    "R_rna_layer": {
+      "sha256": "bad121918593df9d62559545dbc1686bb5e3f443ee854db514d40148f6b82a4a",
+      "identical": true
+    },
+    "RS_rna_species": {
+      "sha256": "48e7ac684c8eced30d7a584d3f2ceb9cd3b08932321d2d7dcc8a748fc48df7a9",
+      "identical": true
+    },
+    "A4_a4_layer": {
+      "sha256": "54d2cf903199574545988430f30dda1eea5f560cfc29c8281df89cba0970571a",
+      "identical": true
+    },
+    "TC_two_channel": {
+      "sha256": "25fbc1dc0e575e6304888a8439457a2f101b1b7378ddf0e1a340b713ee4cc633",
+      "identical": true
+    },
+    "TG_env_to_germline": {
+      "sha256": "3f968c68f5a446ea9822aa173dcee6fa2e9b288bb43d09257e71fafaf854d165",
+      "identical": true
+    },
+    "GE_germline_escapee": {
+      "sha256": "83d7fb761e55b90557fde8d0f45a9d1ed23ffae1432cd84776791bafd6aab2b9",
+      "identical": true
+    },
+    "CH_coordinate_heritability": {
+      "sha256": "54c90a70b716816310cd3965fa576d52bfb06ea9a84b3fbdf603dfed31a4a4a6",
+      "identical": true
+    },
+    "I_transgenerational_immunity": {
+      "sha256": "cbdcf840736755f2d15eb5322dc45195162e9946693e3dabe456edf181b1e761",
+      "identical": true
+    },
+    "IM_immune_maturation": {
+      "sha256": "d1a515ef33c2bf0fba876268ba6778e4974ef9c416cbb44930f7b7082799e885",
+      "identical": true
+    },
+    "V_rna_vaccine": {
+      "sha256": "4bb17146205f900a01c37bacee1922446068d138737dcb2b06f1a6bd52042115",
+      "identical": true
+    },
+    "GT_gene_therapy": {
+      "sha256": "39111a24ec426d9ae379bc8e6cf3e0719917fff332139af8e4076462fb961d88",
+      "identical": true
+    },
+    "AM_a4_application_map": {
+      "sha256": "833ddc3dcb80514b4b2b448fb610e9d527795293b593f742a52e29d8167b67e7",
+      "identical": true
+    },
+    "FM_rna_feasibility_map": {
+      "sha256": "f144cda1bca83faa6ca38db21134c1e1f2983bd6fd3c4ea76619c7d9c881707c",
+      "identical": true
+    },
+    "DM_disease_feasibility_map": {
+      "sha256": "3a463f1e7833cc17b2cc499a4e0332238c82742bb71893d35a97767617d699bb",
+      "identical": true
+    },
+    "FV_feasibility_validation": {
+      "sha256": "ffd7c8a5f587dfab14de7ed4ec2441351ac5be8efd5db80e349360aa32e4e394",
+      "identical": true
+    },
+    "PO_parent_of_origin": {
+      "sha256": "e76139f9fd1334e9506982a290b166e71124a906c7b4802562ba73d4c441e0e0",
+      "identical": true
+    },
+    "VK_rna_vaccine_kinetics": {
+      "sha256": "f1fb203f6198755281fea0540f1cc7c92385514e3771a0e44d20a83fbe121ff2",
+      "identical": true
+    },
+    "LV_lever_map": {
+      "sha256": "78ec23038101e730c6a169ebb05429f3cc2886eae73e0d2e91b3603f9489feb4",
+      "identical": true
+    }
+  },
+  "determinism_all_identical": true,
+  "discipline": {
+    "dna_emergence": "every number traces to the measured promoter gamma (NN-stacking dG37, SantaLucia 1998) + the measured A4 coordinate (compartment/anchor/helical-contact, vendored vp_a4) + the vendored R19 switch; nothing fitted.",
+    "two_channel_reads": "gamma is the unwritable SET; the environment/RNA write through the A4 COORDINATE channel (and methylation), never through gamma.",
+    "no_tuning": "gamma measured from NCBI; pipeline accepted only because the SOX9 anchor reproduces.",
+    "magnitude_firewall": "WHICH switch + SIGN of drive + ORDERING/DECAY read; absolute phenotype/dose/titre/generation-count are runtime [O]; clinical application is firewalled.",
+    "single_source_substrate": "inherited/vp_substrate.py is the only copy of the switch math.",
+    "grades": "[F] forced / [V] simulation-verified / [O] open / [L] calibration."
+  }
+}

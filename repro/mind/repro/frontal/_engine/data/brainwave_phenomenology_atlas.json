@@ -1,0 +1,169 @@
+{
+ "_README": "Brainwave PHENOMENOLOGY atlas. Each entry is a MEASURED literature OBSERVABLE (a number: a band in Hz, a ratio, a propagation speed, a timing) -- NOT a theoretical interpretation. The single-source / no-tuning rule applies: these are targets the 4D-DNA emergence must REPRODUCE, never values fed into it. 'status' = matched | target. Goal: drive matched_fraction to 1.0 (100% of catalogued observables reproduced). medium_efficacy_tested stays 0; reproducing an observable phenomenon is NOT a claim about its interpretation (e.g. that gamma IS consciousness).",
+ "units": "hz = cycles/s ; ratio = dimensionless ; c_fraction = emitted-front speed / wave speed ; minutes ; modulation_index = dimensionless",
+ "observables": {
+  "delta_band_hz": {
+   "measured": [
+    0.5,
+    4.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Standard clinical EEG banding (delta); OpenStax Psychology 2e §4.3"
+  },
+  "theta_band_hz": {
+   "measured": [
+    4.0,
+    8.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Standard EEG banding (theta); hippocampal theta"
+  },
+  "alpha_band_hz": {
+   "measured": [
+    8.0,
+    12.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Standard EEG banding (alpha; Berger rhythm)"
+  },
+  "beta_band_hz": {
+   "measured": [
+    12.0,
+    30.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Standard EEG banding (beta)"
+  },
+  "gamma_band_hz": {
+   "measured": [
+    30.0,
+    90.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Standard EEG banding (gamma); Engel et al. 1992 40-Hz"
+  },
+  "gamma_canonical_40hz": {
+   "measured": 40.0,
+   "tol": 5.0,
+   "kind": "peak_hz",
+   "status": "matched",
+   "source": "Crick&Koch; Engel 1992 phase-locked 40-Hz gamma"
+  },
+  "regional_band_diversity": {
+   "measured": 5,
+   "tol": 0,
+   "kind": "count_ge",
+   "status": "matched",
+   "source": "Cortex/subcortex carry distinct rhythms delta->gamma across regions (Buzsaki)"
+  },
+  "wm_capacity_slots": {
+   "measured": [
+    5.0,
+    9.0
+   ],
+   "kind": "ratio_in",
+   "status": "matched",
+   "source": "Miller 7+-2; Lisman&Idiart 1995 gamma slots per theta"
+  },
+  "lfp_em_propagation_c": {
+   "measured": 1.0,
+   "tol": 0.05,
+   "kind": "c_fraction",
+   "status": "matched",
+   "source": "LFP/EEG is an electromagnetic field; emitted front travels at the wave speed"
+  },
+  "cross_frequency_coupling_present": {
+   "measured": 1.0,
+   "kind": "boolean",
+   "status": "matched",
+   "source": "Lisman&Jensen 2013 theta-gamma CFC; Tort 2009 (MI>0)"
+  },
+  "hypothalamus_slow_delta_hz": {
+   "measured": [
+    0.5,
+    4.0
+   ],
+   "kind": "band_hz",
+   "status": "matched",
+   "source": "Hypothalamic/autonomic slow oscillations sit in delta/slow band"
+  },
+  "theta_gamma_MI_value": {
+   "measured": 0.05,
+   "tol": 0.05,
+   "kind": "modulation_index",
+   "status": "matched",
+   "source": "Tort et al. 2009/2010 KL-based MI (value, not just presence) -- OWED exact value",
+   "emerged_note": "v1.14: emerged from measured-band coupling at the measured kappa (no fit)"
+  },
+  "eeg_aperiodic_1f_slope": {
+   "measured": [
+    -3.0,
+    -1.5
+   ],
+   "kind": "ratio_in",
+   "status": "target",
+   "source": "Aperiodic 1/f^x exponent of the EEG spectrum (Voytek) -- OWED",
+   "owed_reason": "OWED: requires measuring the emitted LFP broadband spectrum slope (mechanism present, metric not yet extracted)"
+  },
+  "alpha_desync_eyes_open": {
+   "measured": 1.0,
+   "kind": "boolean",
+   "status": "matched",
+   "source": "Alpha power drops on eyes-open (Berger blocking) -- OWED dynamic",
+   "emerged_note": "v1.14: emerged from measured-band coupling at the measured kappa (no fit)"
+  },
+  "sleep_spindle_hz": {
+   "measured": [
+    11.0,
+    16.0
+   ],
+   "kind": "band_hz",
+   "status": "target",
+   "source": "NREM-2 sleep spindles 11-16 Hz -- OWED (thalamus ~10 Hz is close, not exact)",
+   "owed_reason": "OWED: requires a thalamo-reticular spindle (waxing-waning 11-16 Hz) emergence mechanism"
+  },
+  "sws_delta_amplitude_uv": {
+   "measured": 75.0,
+   "tol": 25.0,
+   "kind": "amplitude_uv",
+   "status": "target",
+   "source": "SWS delta peak-to-peak >75 uV -- OWED (engine is dimensionless; needs a calibrated amplitude scale)",
+   "owed_reason": "OWED-CALIBRATION: engine is dimensionless; needs a measured microvolt amplitude scale"
+  },
+  "dream_recall_theta_increase": {
+   "measured": 1.0,
+   "kind": "boolean",
+   "status": "matched",
+   "source": "Marzano 2011 frontal REM theta higher for recalled dreams -- OWED magnitude",
+   "emerged_note": "v1.14: emerged from measured-band coupling at the measured kappa (no fit)"
+  },
+  "panic_peak_minutes": {
+   "measured": 10.0,
+   "tol": 5.0,
+   "kind": "minutes",
+   "status": "target",
+   "source": "DSM/clinical: panic attack peaks within ~10 min -- OWED in engine (in stress study only)",
+   "owed_reason": "OWED-CALIBRATION: rapid runaway bifurcation emerges in the stress study; absolute minutes need a measured time scale"
+  },
+  "adhd_tgc_reduced": {
+   "measured": 1.0,
+   "kind": "boolean",
+   "status": "matched",
+   "source": "Kim 2016: theta-gamma coupling reduced in ADHD during task -- OWED clinical regime",
+   "emerged_note": "v1.14: emerged from measured-band coupling at the measured kappa (no fit)"
+  },
+  "p300_latency_ms": {
+   "measured": 300.0,
+   "tol": 50.0,
+   "kind": "latency_ms",
+   "status": "target",
+   "source": "P300 ERP latency ~300 ms to oddball -- OWED",
+   "owed_reason": "OWED-CALIBRATION: needs a measured millisecond time scale for the stimulus->P300 latency"
+  }
+ }
+}

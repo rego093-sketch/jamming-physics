@@ -1,0 +1,202 @@
+{
+ "_atlas": "VP oncology disease master-gene gamma (NCBI-direct, v0.8.0).",
+ "_provenance": "gamma = -mean(NN stacking dG37, SantaLucia 1998), promoter TSS-2000..+500 (GRCh38). IDENTICAL pipeline to the RNA/germline/immune/autism atlases; never fitted. Validated against SOX9. The promoter gamma reads the locus switch STRUCTURE only; disease coding lesions and their magnitudes sit OUTSIDE the firewall and are runtime [O].",
+ "_panel_basis": "Canonical cancer driver master-genes (tumour suppressors + oncogenes), declared by function before measurement; grounded in the sibling vp-site oncology/disease_kit curation.",
+ "_corrective_sign_rule": "Sign of the corrective drive on the gene's OWN switch is FORCED by the disease mechanism: GOF (over-active) -> '-' (knock DOWN; siRNA / Lever-B knockdown); LOF (under-active) -> '+' (restore UP; saRNA / Lever-B activation / Lever-A repair). Sign [F]/[V]; absolute dose [O].",
+ "_order_gamma_asc": [
+  "APC",
+  "PIK3CA",
+  "BRAF",
+  "MYC",
+  "BRCA1",
+  "MDM2",
+  "TP53",
+  "VHL",
+  "RB1",
+  "CDKN2A",
+  "NF1",
+  "KRAS",
+  "EGFR",
+  "STK11",
+  "BCL2",
+  "PTEN"
+ ],
+ "genes": {
+  "TP53": {
+   "gamma": 1.4301,
+   "gc": 0.5306,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "restore p53 pathway / MDM2-i in WT context",
+   "note": "guardian of the genome (apoptosis + cell-cycle gate)",
+   "gene_id": "7157",
+   "src": "NC_000017.11 - TSS-2000..+500"
+  },
+  "RB1": {
+   "gamma": 1.4345,
+   "gc": 0.5246,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "CDK4/6-i exploits an intact RB axis",
+   "note": "retinoblastoma cell-cycle brake (E2F restraint)",
+   "gene_id": "5925",
+   "src": "NC_000013.11 + TSS-2000..+500"
+  },
+  "PTEN": {
+   "gamma": 1.5694,
+   "gc": 0.6441,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "PI3K/AKT/mTOR-i downstream of PTEN loss",
+   "note": "PI3K phosphatase brake (also a SFARI ASD gene -- cross-check vs neuro_gamma)",
+   "gene_id": "5728",
+   "src": "NC_000010.11 + TSS-2000..+500"
+  },
+  "VHL": {
+   "gamma": 1.4325,
+   "gc": 0.521,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "HIF2a-i (belzutifan) downstream of VHL loss",
+   "note": "HIF E3-ligase substrate recognition (hereditary RCC -- cross-check vs disease_kit)",
+   "gene_id": "7428",
+   "src": "NC_000003.12 + TSS-2000..+500"
+  },
+  "APC": {
+   "gamma": 1.3748,
+   "gc": 0.4814,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "Wnt/tankyrase-i downstream of APC loss",
+   "note": "Wnt destruction-complex scaffold (colorectal)",
+   "gene_id": "324",
+   "src": "NC_000005.10 + TSS-2000..+500"
+  },
+  "BRCA1": {
+   "gamma": 1.4149,
+   "gc": 0.5134,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "PARP-i synthetic-lethal with HR loss",
+   "note": "homologous-recombination DNA repair",
+   "gene_id": "672",
+   "src": "NC_000017.11 - TSS-2000..+500"
+  },
+  "NF1": {
+   "gamma": 1.4457,
+   "gc": 0.543,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "MEK-i downstream of RAS-GAP loss (selumetinib)",
+   "note": "RAS-GTPase-activating brake (neurofibromatosis)",
+   "gene_id": "4763",
+   "src": "NC_000017.11 + TSS-2000..+500"
+  },
+  "CDKN2A": {
+   "gamma": 1.4422,
+   "gc": 0.5378,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "CDK4/6-i for p16 loss",
+   "note": "p16INK4a / p14ARF cell-cycle + p53 brake",
+   "gene_id": "1029",
+   "src": "NC_000009.12 - TSS-2000..+500"
+  },
+  "STK11": {
+   "gamma": 1.5102,
+   "gc": 0.5874,
+   "role": "suppressor",
+   "mechanism": "LOF",
+   "corr_sign": "+",
+   "therapy": "mTOR/metabolic axis downstream of LKB1 loss",
+   "note": "LKB1 energy-sensing kinase brake (Peutz-Jeghers)",
+   "gene_id": "6794",
+   "src": "NC_000019.10 + TSS-2000..+500"
+  },
+  "KRAS": {
+   "gamma": 1.4698,
+   "gc": 0.5602,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "KRAS-G12C-i (sotorasib) / siRNA knockdown",
+   "note": "RAS GTPase proliferation driver",
+   "gene_id": "3845",
+   "src": "NC_000012.12 - TSS-2000..+500"
+  },
+  "MYC": {
+   "gamma": 1.4101,
+   "gc": 0.503,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "BET-i / MYC-targeted knockdown",
+   "note": "transcriptional amplifier driver",
+   "gene_id": "4609",
+   "src": "NC_000008.11 + TSS-2000..+500"
+  },
+  "EGFR": {
+   "gamma": 1.4857,
+   "gc": 0.5698,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "EGFR-TKI (osimertinib)",
+   "note": "receptor tyrosine-kinase driver",
+   "gene_id": "1956",
+   "src": "NC_000007.14 + TSS-2000..+500"
+  },
+  "BRAF": {
+   "gamma": 1.4052,
+   "gc": 0.4962,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "BRAF-i (vemurafenib/dabrafenib)",
+   "note": "RAF kinase driver (V600E)",
+   "gene_id": "673",
+   "src": "NC_000007.14 - TSS-2000..+500"
+  },
+  "MDM2": {
+   "gamma": 1.4284,
+   "gc": 0.5138,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "MDM2-i (nutlin-class) re-activates p53",
+   "note": "p53 negative regulator (amplified)",
+   "gene_id": "4193",
+   "src": "NC_000012.12 + TSS-2000..+500"
+  },
+  "BCL2": {
+   "gamma": 1.525,
+   "gc": 0.5966,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "BCL2-i (venetoclax)",
+   "note": "anti-apoptotic survival driver",
+   "gene_id": "596",
+   "src": "NC_000018.10 - TSS-2000..+500"
+  },
+  "PIK3CA": {
+   "gamma": 1.3876,
+   "gc": 0.4846,
+   "role": "oncogene",
+   "mechanism": "GOF",
+   "corr_sign": "-",
+   "therapy": "PI3Ka-i (alpelisib)",
+   "note": "PI3-kinase catalytic-alpha driver",
+   "gene_id": "5290",
+   "src": "NC_000003.12 + TSS-2000..+500"
+  }
+ }
+}

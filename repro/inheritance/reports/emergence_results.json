@@ -1,0 +1,3369 @@
+{
+  "R_rna_layer": {
+    "module": "rna_layer",
+    "battery": "R1-R5",
+    "R5_scoreboard": {
+      "R1 RNA as a reversible drive-write (gamma unchanged)": "PASS",
+      "R2 two signs on one channel (siRNA-OFF vs saRNA-ON)": "PASS",
+      "R3 measured RNA-carrier gamma atlas (NCBI-direct, anchor-gated)": "PASS",
+      "R4 reversibility -- payload cleared, basin returns (vs irreversible edit)": "PASS"
+    },
+    "firewall": "WHICH switch + SIGN of drive read [V]; absolute payload->phenotype dose is runtime [O]; clinical RNA dosing belongs to clinicians.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "R1 RNA as a reversible drive-write (gamma unchanged)",
+        "gamma_DICER1": 1.3981,
+        "spinodal": 0.6363,
+        "h_at_flip": -0.6999,
+        "flip_at_far_spinodal_hysteretic": true,
+        "gamma_unchanged_SET_readonly": true,
+        "grade": "[V] held switch flips only past the opposite spinodal (memory); gamma never edited",
+        "pass": true
+      },
+      {
+        "name": "R2 two signs on one channel (siRNA-OFF vs saRNA-ON)",
+        "gamma_AGO2": 1.3776,
+        "spinodal": 0.6223,
+        "siRNA_drives_OFF": true,
+        "s_after_siRNA": -1.3986,
+        "saRNA_drives_ON": true,
+        "s_after_saRNA": 1.3986,
+        "grade": "[V] one writable channel carries a sign; magnitude is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "R3 measured RNA-carrier gamma atlas (NCBI-direct, anchor-gated)",
+        "n_genes": 12,
+        "gamma_min": 1.3776,
+        "gamma_max": 1.5434,
+        "all_R19_bistable": true,
+        "atlas": [
+          {
+            "gene": "AGO2",
+            "gamma": 1.3776,
+            "spinodal": 0.6223,
+            "barrier": 0.4744,
+            "bistable": true,
+            "role": "Argonaute-2 (RISC catalytic slicer)"
+          },
+          {
+            "gene": "DICER1",
+            "gamma": 1.3981,
+            "spinodal": 0.6363,
+            "barrier": 0.4887,
+            "bistable": true,
+            "role": "cytoplasmic RNase III (pre-miRNA -> mature miRNA/siRNA)"
+          },
+          {
+            "gene": "METTL3",
+            "gamma": 1.4104,
+            "spinodal": 0.6447,
+            "barrier": 0.4973,
+            "bistable": true,
+            "role": "m6A methyltransferase (RNA epigenetic writer)"
+          },
+          {
+            "gene": "YTHDF2",
+            "gamma": 1.4134,
+            "spinodal": 0.6468,
+            "barrier": 0.4994,
+            "bistable": true,
+            "role": "m6A reader (RNA-mark decay)"
+          },
+          {
+            "gene": "DDX4",
+            "gamma": 1.4238,
+            "spinodal": 0.6539,
+            "barrier": 0.5068,
+            "bistable": true,
+            "role": "VASA germ-granule RNA helicase (germline RNA)"
+          },
+          {
+            "gene": "DROSHA",
+            "gamma": 1.4289,
+            "spinodal": 0.6574,
+            "barrier": 0.5104,
+            "bistable": true,
+            "role": "microprocessor RNase III (nuclear pri-miRNA cleavage)"
+          },
+          {
+            "gene": "MOV10L1",
+            "gamma": 1.4421,
+            "spinodal": 0.6666,
+            "barrier": 0.5199,
+            "bistable": true,
+            "role": "germline RNA helicase (piRNA biogenesis)"
+          },
+          {
+            "gene": "ANG",
+            "gamma": 1.4595,
+            "spinodal": 0.6787,
+            "barrier": 0.5325,
+            "bistable": true,
+            "role": "angiogenin (tRNA cleavage -> sperm tsRNA/tRF carriers)"
+          },
+          {
+            "gene": "TARBP2",
+            "gamma": 1.5122,
+            "spinodal": 0.7158,
+            "barrier": 0.5717,
+            "bistable": true,
+            "role": "TRBP (RISC loading / Dicer cofactor)"
+          },
+          {
+            "gene": "PIWIL1",
+            "gamma": 1.5236,
+            "spinodal": 0.7239,
+            "barrier": 0.5803,
+            "bistable": true,
+            "role": "PIWI (piRNA pathway, germline silencing)"
+          },
+          {
+            "gene": "ELAVL1",
+            "gamma": 1.5282,
+            "spinodal": 0.7271,
+            "barrier": 0.5838,
+            "bistable": true,
+            "role": "HuR mRNA-stability RNA-binding protein"
+          },
+          {
+            "gene": "DGCR8",
+            "gamma": 1.5434,
+            "spinodal": 0.738,
+            "barrier": 0.5955,
+            "bistable": true,
+            "role": "microprocessor partner (pri-miRNA recognition)"
+          }
+        ],
+        "grade": "[V] measured promoter gamma; pipeline validated by SOX9 anchor reproduction",
+        "pass": true
+      },
+      {
+        "name": "R4 reversibility -- payload cleared, basin returns (vs irreversible edit)",
+        "gamma_TARBP2": 1.5122,
+        "spinodal": 0.7158,
+        "forced_OFF_under_payload": true,
+        "s_under_payload": -1.4653,
+        "returns_ON_after_clearance": true,
+        "s_after_clearance": 1.4653,
+        "grade": "[V] RNA drive is reversible; a SET-edit (gene_therapy Lever A) is not",
+        "pass": true
+      }
+    ]
+  },
+  "RS_rna_species": {
+    "module": "rna_species",
+    "battery": "RS1-RS5",
+    "seed": 19,
+    "RS5_scoreboard": {
+      "RS1 species-resolved drive with biological sign": "PASS",
+      "RS2 production-stability ordering by machinery barrier": "PASS",
+      "RS3 writer/eraser mark-side reversibility (METTL3 write / YTHDF2 erase)": "PASS",
+      "RS4 germline competence -- which species can load the gamete": "PASS"
+    },
+    "firewall": "species SIGN, stability ORDERING, germline competence read [V]; absolute per-species gain is runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "RS1 species-resolved drive with biological sign",
+        "target_gamma_DAZL": 1.3803,
+        "spinodal": 0.6242,
+        "species": {
+          "miRNA": {
+            "sign": "-",
+            "s_final": -1.4137,
+            "drove_predicted_basin": true
+          },
+          "piRNA": {
+            "sign": "-",
+            "s_final": -1.4137,
+            "drove_predicted_basin": true
+          },
+          "tsRNA": {
+            "sign": "-",
+            "s_final": -1.4137,
+            "drove_predicted_basin": true
+          },
+          "m6A_mRNA": {
+            "sign": "+",
+            "s_final": 1.4137,
+            "drove_predicted_basin": true
+          }
+        },
+        "grade": "[V] each species is a signed drive; absolute gain is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "RS2 production-stability ordering by machinery barrier",
+        "ranking_low_to_high": [
+          "m6A_mRNA",
+          "miRNA",
+          "tsRNA",
+          "piRNA"
+        ],
+        "table": [
+          {
+            "species": "m6A_mRNA",
+            "machinery": [
+              "METTL3",
+              "YTHDF2"
+            ],
+            "mean_gamma": 1.4119,
+            "production_barrier": 0.4984,
+            "germline_restricted": false
+          },
+          {
+            "species": "miRNA",
+            "machinery": [
+              "DROSHA",
+              "DGCR8",
+              "DICER1",
+              "AGO2",
+              "TARBP2"
+            ],
+            "mean_gamma": 1.452,
+            "production_barrier": 0.5271,
+            "germline_restricted": false
+          },
+          {
+            "species": "tsRNA",
+            "machinery": [
+              "ANG"
+            ],
+            "mean_gamma": 1.4595,
+            "production_barrier": 0.5325,
+            "germline_restricted": true
+          },
+          {
+            "species": "piRNA",
+            "machinery": [
+              "PIWIL1",
+              "MOV10L1"
+            ],
+            "mean_gamma": 1.4829,
+            "production_barrier": 0.5497,
+            "germline_restricted": true
+          }
+        ],
+        "ordering_is_total": true,
+        "grade": "[V] ORDERING from measured gamma; absolute production rate is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "RS3 writer/eraser mark-side reversibility (METTL3 write / YTHDF2 erase)",
+        "gamma_METTL3": 1.4104,
+        "gamma_YTHDF2": 1.4134,
+        "write_drives_ON": true,
+        "erase_drives_OFF": true,
+        "mark_is_bidirectional": true,
+        "grade": "[V] the mark is reversible at the writer/eraser level (twin of payload reversibility)",
+        "pass": true
+      },
+      {
+        "name": "RS4 germline competence -- which species can load the gamete",
+        "germline_competent_species": [
+          "piRNA",
+          "tsRNA"
+        ],
+        "somatic_species": [
+          "miRNA",
+          "m6A_mRNA"
+        ],
+        "includes_sperm_tsRNA_carrier": true,
+        "includes_piRNA_pathway": true,
+        "grade": "[F/V] germline-restricted machinery selects the transgenerational carriers",
+        "pass": true
+      }
+    ]
+  },
+  "A4_a4_layer": {
+    "module": "a4_layer",
+    "battery": "A4-1..A4-5",
+    "seed": 19,
+    "A4_5_scoreboard": {
+      "A4-1 A4 is orthogonal to gamma (gamma alone is degenerate)": "PASS",
+      "A4-2 RNA coordinate-targeting -- contact-competence gates the drive at fixed gamma": "PASS",
+      "A4-3 environment writes A4 (contact/compartment), gamma is fixed": "PASS",
+      "A4-4 inheritance is of an A4 configuration (a held contact state at a coordinate)": "PASS"
+    },
+    "firewall": "A4 orthogonality, coordinate-gating, and the identity of the inherited object read [V]; absolute contact energies, loop occupancies, phenotype magnitudes are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "A4-1 A4 is orthogonal to gamma (gamma alone is degenerate)",
+        "n_carriers": 12,
+        "corr_gamma_GC": 0.829,
+        "R2_gamma_GC_pct": 69.0,
+        "corr_gamma_CpG_OE": 0.421,
+        "R2_gamma_CpG_pct": 18.0,
+        "corr_gamma_helical_face": 0.155,
+        "R2_gamma_face_pct": 2.0,
+        "helical_contact_phase_orthogonal_to_gamma": true,
+        "same_gamma_different_contact_pair_exists": true,
+        "example_pair": {
+          "dgamma": 0.003,
+          "a_face": 0.062,
+          "a_contact": true,
+          "b_face": 0.312,
+          "b_contact": false
+        },
+        "grade": "[V] A4 carries non-gamma information (~98% of the contact phase); gamma cannot specify it",
+        "pass": true
+      },
+      {
+        "name": "A4-2 RNA coordinate-targeting -- contact-competence gates the drive at fixed gamma",
+        "shared_gamma": 1.3981,
+        "spinodal": 0.6363,
+        "payload": 0.5408,
+        "loop_assist_at_contact": 0.1909,
+        "contact_coordinate_flips_ON": true,
+        "noncontact_same_gamma_stays_OFF": true,
+        "grade": "[V] the A4 coordinate decides reachability at fixed gamma; absolute contact energy is [O]",
+        "pass": true
+      },
+      {
+        "name": "A4-3 environment writes A4 (contact/compartment), gamma is fixed",
+        "gamma_parent": 1.39814,
+        "gamma_child": 1.39814,
+        "gamma_sequence_fixed": true,
+        "contact_state_ON_then_OFF": true,
+        "grade": "[V/F] gamma is the unwritable SET; the A4 contact state is the writable channel",
+        "pass": true
+      },
+      {
+        "name": "A4-4 inheritance is of an A4 configuration (a held contact state at a coordinate)",
+        "deep_coordinate_gamma": 1.5434,
+        "p_contact_configuration_survives_one_erasure": 0.7742,
+        "a4_configuration_inheritable": true,
+        "grade": "[V] the inherited object is an A4 coordinate-state; absolute penetrance is runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "TC_two_channel": {
+    "module": "two_channel",
+    "battery": "TC1-TC4",
+    "seed": 19,
+    "TC4_scoreboard": {
+      "TC1 same-sign channels ADD (sum crosses the spinodal)": "PASS",
+      "TC2 opposite-sign channels VETO (cancel, no flip)": "PASS",
+      "TC3 path-dependence (hysteresis latches the channel that crossed first)": "PASS"
+    },
+    "firewall": "interaction SIGN and path-dependence read [V]; absolute channel amplitudes are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "TC1 same-sign channels ADD (sum crosses the spinodal)",
+        "target_gamma_REC8": 1.4525,
+        "spinodal": 0.6738,
+        "methylation_alone_OFF": true,
+        "rna_alone_OFF": true,
+        "both_together_ON": true,
+        "grade": "[V] the two channels write the same h and add; amplitudes are runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "TC2 opposite-sign channels VETO (cancel, no flip)",
+        "target_gamma_REC8": 1.4525,
+        "spinodal": 0.6738,
+        "methylation_alone_flips_ON": true,
+        "net_with_opposing_RNA_stays_OFF": true,
+        "grade": "[V] opposing channels cancel on the shared drive; amplitudes are runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "TC3 path-dependence (hysteresis latches the channel that crossed first)",
+        "target_gamma_PAX5": 1.4892,
+        "spinodal": 0.6995,
+        "cross_then_subspinodal_opposite_stays_ON": true,
+        "never_crossing_stays_OFF": true,
+        "outcome_depends_on_order_not_just_sum": true,
+        "grade": "[V/F] hysteresis makes the combined outcome order-dependent (memory of which channel won)",
+        "pass": true
+      }
+    ]
+  },
+  "TG_env_to_germline": {
+    "module": "env_to_germline",
+    "battery": "TG1-TG6",
+    "seed": 19,
+    "TG6_scoreboard": {
+      "TG1 SET invariance -- genome (gamma) byte-identical parent->child": "PASS",
+      "TG2 the reprogramming firewall (two erasures -> p^2)": "PASS",
+      "TG3 heritability ranks ascending-gamma (deeper barrier inherits better)": "PASS",
+      "TG4 direction-only -- the inherited SIGN is preserved (magnitude is runtime [O])": "PASS",
+      "TG5 RNA-only drive decays across generations; deep-barrier mark persists": "PASS"
+    },
+    "firewall": "WHICH switch + SIGN + heritability ORDERING/DECAY read [V]; absolute inherited phenotype magnitude and wild generation count are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "TG1 SET invariance -- genome (gamma) byte-identical parent->child",
+        "DAZL_gamma_parent": 1.38028,
+        "DAZL_gamma_child": 1.38028,
+        "gamma_identical": true,
+        "genome_sha_identical": true,
+        "grade": "[V] the environment never rewrites the SET; only the drive h is inheritable",
+        "pass": true
+      },
+      {
+        "name": "TG2 the reprogramming firewall (two erasures -> p^2)",
+        "reprogramming_noise_D": 0.22,
+        "shallow_gamma": 1.34,
+        "p_survive_one": 0.6685,
+        "p_inherit_two": 0.4469,
+        "deep_gamma": 1.4525,
+        "p_survive_one_deep": 0.7238,
+        "p_inherit_two_deep": 0.5238,
+        "two_erasures_compound": true,
+        "deep_inherits_more_than_shallow": true,
+        "grade": "[V] inheritance is barrier vs reprogramming noise, squared by the two erasures",
+        "pass": true
+      },
+      {
+        "name": "TG3 heritability ranks ascending-gamma (deeper barrier inherits better)",
+        "reprogramming_noise_D": 0.22,
+        "n_genes": 13,
+        "spearman_rho_gamma_vs_survival": 0.995,
+        "monotone_increasing": true,
+        "survival_at_gamma_min": 0.6685,
+        "survival_at_gamma_max": 0.7238,
+        "table": [
+          {
+            "gene": "TEKT1",
+            "gamma": 1.34,
+            "p_survive": 0.6685
+          },
+          {
+            "gene": "NLRP5",
+            "gamma": 1.3475,
+            "p_survive": 0.674
+          },
+          {
+            "gene": "MOS",
+            "gamma": 1.3619,
+            "p_survive": 0.6833
+          },
+          {
+            "gene": "DAZL",
+            "gamma": 1.3803,
+            "p_survive": 0.6887
+          },
+          {
+            "gene": "CATSPER1",
+            "gamma": 1.4019,
+            "p_survive": 0.6983
+          },
+          {
+            "gene": "DMC1",
+            "gamma": 1.4056,
+            "p_survive": 0.7
+          },
+          {
+            "gene": "MLH1",
+            "gamma": 1.4085,
+            "p_survive": 0.7015
+          },
+          {
+            "gene": "SPO11",
+            "gamma": 1.4105,
+            "p_survive": 0.7013
+          },
+          {
+            "gene": "PRDM9",
+            "gamma": 1.4165,
+            "p_survive": 0.7043
+          },
+          {
+            "gene": "ZAR1",
+            "gamma": 1.4226,
+            "p_survive": 0.7083
+          },
+          {
+            "gene": "DNAH1",
+            "gamma": 1.4469,
+            "p_survive": 0.7192
+          },
+          {
+            "gene": "ZP3",
+            "gamma": 1.4486,
+            "p_survive": 0.7208
+          },
+          {
+            "gene": "REC8",
+            "gamma": 1.4525,
+            "p_survive": 0.7238
+          }
+        ],
+        "grade": "[V] germline heritability ordering = barrier ordering = gamma ordering",
+        "pass": true
+      },
+      {
+        "name": "TG4 direction-only -- the inherited SIGN is preserved (magnitude is runtime [O])",
+        "deep_gamma": 1.4525,
+        "ON_written_stays_ON": 0.7238,
+        "OFF_written_stays_OFF": 0.7358,
+        "sign_preserved_through_firewall": true,
+        "grade": "[V] sign read; [O] absolute inherited phenotype magnitude + generation count in the wild",
+        "pass": true
+      },
+      {
+        "name": "TG5 RNA-only drive decays across generations; deep-barrier mark persists",
+        "rna_dilution_per_gen": 0.45,
+        "methylation_retention_per_gen": 0.7238,
+        "detectability_threshold": 0.1,
+        "rna_amplitude_by_gen": [
+          1.0,
+          0.45,
+          0.2025,
+          0.0911,
+          0.041,
+          0.0185,
+          0.0083
+        ],
+        "meth_amplitude_by_gen": [
+          1.0,
+          0.7238,
+          0.5238,
+          0.3791,
+          0.2744,
+          0.1986,
+          0.1437
+        ],
+        "rna_undetectable_at_generation": 3,
+        "meth_undetectable_at_generation": null,
+        "rna_decays_faster_than_methylation": true,
+        "grade": "[V] decay ORDERING (RNA faster); absolute generations-to-loss in the wild is [O]",
+        "pass": true
+      }
+    ]
+  },
+  "GE_germline_escapee": {
+    "module": "germline_escapee",
+    "battery": "GE1-GE4",
+    "seed": 19,
+    "GE4_scoreboard": {
+      "GE1 escapee prediction -- imprinted survival ranks ascending-gamma": "PASS",
+      "GE2 two erasures resolved (PGC vs zygotic; harsher dominates)": "PASS",
+      "GE3 re-writing vs persistence -- critical re-write rate w*": "PASS"
+    },
+    "firewall": "survival ORDERING, harsher-erasure dominance, re-writing BOUNDARY read [V]; absolute penetrance and wild generation index are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "GE1 escapee prediction -- imprinted survival ranks ascending-gamma",
+        "reprogramming_noise_D": 0.22,
+        "n_loci": 12,
+        "spearman_rho_gamma_vs_survival": 1.0,
+        "monotone": true,
+        "best_inherited": "KCNQ1OT1",
+        "best_gamma": 1.5637,
+        "worst_inherited": "SNRPN",
+        "worst_gamma": 1.2794,
+        "table": [
+          {
+            "locus": "SNRPN",
+            "gamma": 1.2794,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.64
+          },
+          {
+            "locus": "MEST",
+            "gamma": 1.3645,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.6835
+          },
+          {
+            "locus": "PEG3",
+            "gamma": 1.3961,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.696
+          },
+          {
+            "locus": "PLAGL1",
+            "gamma": 1.4122,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.702
+          },
+          {
+            "locus": "GNAS",
+            "gamma": 1.4256,
+            "parent_of_origin": "complex",
+            "p_survive": 0.709
+          },
+          {
+            "locus": "IGF2",
+            "gamma": 1.4372,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.7137
+          },
+          {
+            "locus": "GRB10",
+            "gamma": 1.4839,
+            "parent_of_origin": "complex",
+            "p_survive": 0.741
+          },
+          {
+            "locus": "NNAT",
+            "gamma": 1.4853,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.7418
+          },
+          {
+            "locus": "H19",
+            "gamma": 1.4881,
+            "parent_of_origin": "maternal",
+            "p_survive": 0.743
+          },
+          {
+            "locus": "MEG3",
+            "gamma": 1.5131,
+            "parent_of_origin": "maternal",
+            "p_survive": 0.7568
+          },
+          {
+            "locus": "DLK1",
+            "gamma": 1.5482,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.773
+          },
+          {
+            "locus": "KCNQ1OT1",
+            "gamma": 1.5637,
+            "parent_of_origin": "paternal",
+            "p_survive": 0.7815
+          }
+        ],
+        "grade": "[V] heritability ordering = barrier ordering; absolute penetrance is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "GE2 two erasures resolved (PGC vs zygotic; harsher dominates)",
+        "D_pgc": 0.2,
+        "D_zyg_harsher": 0.28,
+        "deep_gamma": 1.5637,
+        "p_survive_pgc_deep": 0.832,
+        "p_survive_zyg_deep": 0.6683,
+        "compound_deep": 0.556,
+        "shallow_gamma": 1.2794,
+        "compound_shallow": 0.3777,
+        "harsher_window_dominates": true,
+        "deep_escapee_beats_shallow": true,
+        "grade": "[V] the two windows compound; the harsher one dominates; ordering read, absolute [O]",
+        "pass": true
+      },
+      {
+        "name": "GE3 re-writing vs persistence -- critical re-write rate w*",
+        "per_generation_loss": 0.2708,
+        "threshold": 0.1,
+        "critical_w_star": 0.02708,
+        "steady_state_at_1.5x_w_star": 0.15,
+        "maintained": true,
+        "steady_state_at_0.5x_w_star": 0.05,
+        "fades_below_w_star": true,
+        "steady_state_no_rewrite": 0.0,
+        "transient_exposure_fades": true,
+        "grade": "[V] a measured boundary separates maintained (re-written) from transient (fades); absolute wild generations are runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "CH_coordinate_heritability": {
+    "module": "coordinate_heritability",
+    "battery": "CH1-CH4",
+    "seed": 19,
+    "CH4_scoreboard": {
+      "CH1 coordinate-resolved heritability (contact adds heritability beyond gamma)": "PASS",
+      "CH2 parent-of-origin contact configuration (inherited object = parent-specific contact state)": "PASS",
+      "CH3 joint (gamma, A4) heritability ordering": "PASS"
+    },
+    "firewall": "coupling DIRECTION, parent-of-origin MAPPING, joint ORDERING read [V]; absolute contact stabilisation energy and penetrance are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "CH1 coordinate-resolved heritability (contact adds heritability beyond gamma)",
+        "matched_pair": {
+          "MEST": 1.3645,
+          "MOS": 1.3619
+        },
+        "dgamma": 0.0026,
+        "survival_contact_competent": 0.603,
+        "survival_noncontact": 0.5613,
+        "contact_competent_inherits_better_at_matched_gamma": true,
+        "grade": "[V] A4 contact adds heritability at fixed gamma; absolute stabilisation energy is [O]",
+        "pass": true
+      },
+      {
+        "name": "CH2 parent-of-origin contact configuration (inherited object = parent-specific contact state)",
+        "n_paternal": 8,
+        "n_maternal": 2,
+        "paternal_contact_fraction": 0.5,
+        "maternal_contact_fraction": 0.0,
+        "configuration_map": {
+          "IGF2": {
+            "parent": "paternal",
+            "shell": "mid",
+            "contact": false,
+            "helical_face": 0.438
+          },
+          "H19": {
+            "parent": "maternal",
+            "shell": "stiff",
+            "contact": false,
+            "helical_face": 0.438
+          },
+          "KCNQ1OT1": {
+            "parent": "paternal",
+            "shell": "stiff",
+            "contact": false,
+            "helical_face": 0.812
+          },
+          "SNRPN": {
+            "parent": "paternal",
+            "shell": "soft",
+            "contact": true,
+            "helical_face": 0.938
+          },
+          "MEST": {
+            "parent": "paternal",
+            "shell": "stiff",
+            "contact": true,
+            "helical_face": 0.062
+          },
+          "PEG3": {
+            "parent": "paternal",
+            "shell": "soft",
+            "contact": false,
+            "helical_face": 0.562
+          },
+          "PLAGL1": {
+            "parent": "paternal",
+            "shell": "mid",
+            "contact": true,
+            "helical_face": 0.062
+          },
+          "GNAS": {
+            "parent": "complex",
+            "shell": "stiff",
+            "contact": false,
+            "helical_face": 0.688
+          },
+          "DLK1": {
+            "parent": "paternal",
+            "shell": "stiff",
+            "contact": false,
+            "helical_face": 0.312
+          },
+          "MEG3": {
+            "parent": "maternal",
+            "shell": "stiff",
+            "contact": false,
+            "helical_face": 0.312
+          },
+          "NNAT": {
+            "parent": "paternal",
+            "shell": "stiff",
+            "contact": true,
+            "helical_face": 0.938
+          },
+          "GRB10": {
+            "parent": "complex",
+            "shell": "mid",
+            "contact": false,
+            "helical_face": 0.688
+          }
+        },
+        "parent_resolved_configuration_exists": true,
+        "grade": "[V on the mapping] each imprinted locus carries a parent-specific A4 contact state; absolute parent-of-origin penetrance is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "CH3 joint (gamma, A4) heritability ordering",
+        "n_loci": 29,
+        "best_inherited": "NNAT",
+        "best": {
+          "locus": "NNAT",
+          "gamma": 1.4853,
+          "contact": true,
+          "survival": 0.6488
+        },
+        "worst_inherited": "RUNX1",
+        "worst": {
+          "locus": "RUNX1",
+          "gamma": 1.3225,
+          "contact": false,
+          "survival": 0.5487
+        },
+        "top_table": [
+          {
+            "locus": "NNAT",
+            "gamma": 1.4853,
+            "contact": true,
+            "survival": 0.6488
+          },
+          {
+            "locus": "KCNQ1OT1",
+            "gamma": 1.5637,
+            "contact": false,
+            "survival": 0.638
+          },
+          {
+            "locus": "REC8",
+            "gamma": 1.4525,
+            "contact": true,
+            "survival": 0.6332
+          },
+          {
+            "locus": "ZP3",
+            "gamma": 1.4486,
+            "contact": true,
+            "survival": 0.6308
+          },
+          {
+            "locus": "DLK1",
+            "gamma": 1.5482,
+            "contact": false,
+            "survival": 0.6308
+          }
+        ],
+        "best_is_contact_competent": true,
+        "grade": "[V] joint barrier+contact ordering; absolute penetrance is runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "I_transgenerational_immunity": {
+    "module": "transgenerational_immunity",
+    "battery": "I1-I4",
+    "seed": 19,
+    "I4_scoreboard": {
+      "I1 immune memory = held basin; lifetime (MFPT) ranks ascending-gamma": "PASS",
+      "I2 trained immunity = pre-tilt -> smaller drive to recall": "PASS",
+      "I3 transgenerational immune priming -- inherited pre-tilt through the firewall": "PASS"
+    },
+    "firewall": "memory ORDERING, recall DIRECTION, inheritance SIGN read [V]; absolute protection magnitude is runtime [O]; clinical immunisation belongs to clinicians.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "I1 immune memory = held basin; lifetime (MFPT) ranks ascending-gamma",
+        "noise_D": 0.3,
+        "n_compartments": 4,
+        "table": [
+          {
+            "gene": "RUNX1",
+            "gamma": 1.3225,
+            "escape_rate": 0.024875,
+            "mfpt": 40.2
+          },
+          {
+            "gene": "TLX1",
+            "gamma": 1.4228,
+            "escape_rate": 0.024629,
+            "mfpt": 40.6
+          },
+          {
+            "gene": "FOXN1",
+            "gamma": 1.4533,
+            "escape_rate": 0.024508,
+            "mfpt": 40.8
+          },
+          {
+            "gene": "PAX5",
+            "gamma": 1.4892,
+            "escape_rate": 0.024367,
+            "mfpt": 41.04
+          }
+        ],
+        "deeper_barrier_holds_memory_longer": true,
+        "grade": "[V] durability ordering EMERGES from the measured escape statistic, not gamma^2/4 asserted",
+        "pass": true
+      },
+      {
+        "name": "I2 trained immunity = pre-tilt -> smaller drive to recall",
+        "gamma_PAX5": 1.4892,
+        "spinodal": 0.6995,
+        "min_drive_naive": 0.7065,
+        "min_drive_primed": 0.2868,
+        "primed_recall_needs_less_drive": true,
+        "grade": "[V] pre-tilt lowers the distance to spinodal; magnitude of the boost is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "I3 transgenerational immune priming -- inherited pre-tilt through the firewall",
+        "deep_immune_gamma": 1.4892,
+        "p_primed_sign_survives_one_erasure": 0.7452,
+        "inherited_priming_sign_preserved": true,
+        "rna_priming_fades_by_F3_if_not_rewritten": true,
+        "grade": "[V] sign inheritable + fading; [O] absolute inherited protection magnitude in the wild",
+        "pass": true
+      }
+    ]
+  },
+  "IM_immune_maturation": {
+    "module": "immune_maturation",
+    "battery": "IM1-IM4",
+    "seed": 19,
+    "IM4_scoreboard": {
+      "IM1 affinity maturation emerges from iterated selection; gain has an interior optimum": "PASS",
+      "IM2 innate vs adaptive = two-timescale durability split (slow arm = deep barrier)": "PASS",
+      "IM3 tolerance is the opposite-sign drive on the same switch (memory <-> tolerance)": "PASS"
+    },
+    "firewall": "affinity-maturation SHAPE (interior optimum), innate/adaptive durability ORDERING, and the memory<->tolerance SIGN read [V]; absolute selection pressure, memory lifetimes, and desensitisation dose are runtime [O]; clinical immunisation and desensitisation belong to clinicians and regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "IM1 affinity maturation emerges from iterated selection; gain has an interior optimum",
+        "pool": 300,
+        "rounds": 14,
+        "mutation_sd": 0.045,
+        "k_min_viable": 10,
+        "naive_master": "PAX5",
+        "naive_gamma": 1.4892,
+        "sweep": [
+          {
+            "survivor_frac": 1.0,
+            "pressure": 0.0,
+            "maturation_gain": -0.040954
+          },
+          {
+            "survivor_frac": 0.6,
+            "pressure": 0.4,
+            "maturation_gain": 0.032436
+          },
+          {
+            "survivor_frac": 0.4,
+            "pressure": 0.6,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.25,
+            "pressure": 0.75,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.15,
+            "pressure": 0.85,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.1,
+            "pressure": 0.9,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.06,
+            "pressure": 0.94,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.033,
+            "pressure": 0.967,
+            "maturation_gain": 0.033064
+          },
+          {
+            "survivor_frac": 0.02,
+            "pressure": 0.98,
+            "maturation_gain": 0.000132
+          },
+          {
+            "survivor_frac": 0.01,
+            "pressure": 0.99,
+            "maturation_gain": 0.000132
+          }
+        ],
+        "optimum_pressure": 0.6,
+        "optimum_survivor_frac": 0.4,
+        "optimum_gain": 0.033064,
+        "weak_selection_gain": -0.040954,
+        "over_stringent_gain": 0.000132,
+        "interior_optimum": true,
+        "maturation_emerges": true,
+        "optimum_trajectory_rises": true,
+        "grade": "[V] inverted-U + emergence MEASURED from the GC loop on the substrate; absolute selection pressure -> affinity in real units is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "IM2 innate vs adaptive = two-timescale durability split (slow arm = deep barrier)",
+        "noise_D": 0.12,
+        "horizon_steps": 8000,
+        "innate": {
+          "gene": "RUNX1",
+          "gamma": 1.3225,
+          "barrier": 0.4373,
+          "surviving_fraction": 0.3564,
+          "mfpt": 77.54
+        },
+        "adaptive": {
+          "gene": "PAX5",
+          "gamma": 1.4892,
+          "barrier": 0.5544,
+          "surviving_fraction": 0.6469,
+          "mfpt": 183.65
+        },
+        "mfpt_ratio_adaptive_over_innate": 2.369,
+        "role_matches_barrier_ordering": true,
+        "adaptive_outlasts_innate": true,
+        "timescales_well_separated": true,
+        "durability_tracks_measured_gamma": true,
+        "grade": "[V] durability ordering + separation EMERGE from the measured escape statistic and track the measured gamma; absolute lifetimes (days/years) are runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "IM3 tolerance is the opposite-sign drive on the same switch (memory <-> tolerance)",
+        "switch": "PAX5",
+        "gamma": 1.4892,
+        "spinodal": 0.6995,
+        "drive_to_memory": 0.7065,
+        "drive_to_tolerance": 0.7065,
+        "flip_thresholds_symmetric": true,
+        "thresholds_at_spinodal_magnitude": true,
+        "responsive_state_held_after_clear": true,
+        "tolerant_state_held_after_clear": true,
+        "both_states_hysteretic": true,
+        "plus_drive_gives_memory_minus_gives_tolerance": true,
+        "grade": "[V] the sign law (memory<->tolerance) and the held basin of BOTH states are measured from the substrate; absolute desensitisation dose/schedule is [O]; clinical tolerance to clinicians",
+        "pass": true
+      }
+    ]
+  },
+  "V_rna_vaccine": {
+    "module": "rna_vaccine",
+    "battery": "V1-V5",
+    "seed": 19,
+    "V5_scoreboard": {
+      "V1 vaccine = supra-spinodal flip into protected basin (memory held after clearance)": "PASS",
+      "V2/V3 schedule has an interior optimum tracking the measured protection half-life": "PASS",
+      "V4 transient payload, persistent protection (held by barrier, not lingering RNA)": "PASS"
+    },
+    "firewall": "flip DIRECTION, schedule SHAPE, transience/persistence read [V]; absolute dose, titre and clinical timing are runtime [O]; vaccine development belongs to clinicians/regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "V1 vaccine = supra-spinodal flip into protected basin (memory held after clearance)",
+        "immune_gamma": 1.4892,
+        "spinodal": 0.6995,
+        "barrier": 0.5544,
+        "flipped_ON_by_prime": true,
+        "memory_held_after_clearance": true,
+        "grade": "[V] one-way flip + hysteretic hold; absolute dose/titre is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "V2/V3 schedule has an interior optimum tracking the measured protection half-life",
+        "immune_gamma": 1.4892,
+        "escape_rate": 0.024367,
+        "protection_half_life": 28.447,
+        "n_boosts_budget": 4,
+        "horizon": 142.233,
+        "best_interval": 33.261,
+        "best_protected_fraction": 0.8,
+        "optimum_is_interior": true,
+        "optimum_tracks_half_life": true,
+        "grade": "[V] inverted-U / interior optimum SHAPE; absolute clinical interval is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "V4 transient payload, persistent protection (held by barrier, not lingering RNA)",
+        "immune_gamma": 1.4892,
+        "payload_drive_after_clearance": 0.0,
+        "s_after_clearance": 1.2203,
+        "protection_persists_at_zero_drive": true,
+        "protection_not_sustained_by_RNA": true,
+        "grade": "[V] payload transient + protection barrier-held; this is why an RNA vaccine needs no edit",
+        "pass": true
+      }
+    ]
+  },
+  "GT_gene_therapy": {
+    "module": "gene_therapy",
+    "battery": "GT1-GT4",
+    "seed": 19,
+    "GT4_scoreboard": {
+      "GT1 Lever A -- SET edit moves the threshold (irreversible by a drive)": "PASS",
+      "GT2 Lever B -- reversible h-reset (RNA), gamma untouched": "PASS",
+      "GT3 decision rule -- drive-reachable -> Lever B; beyond tolerable drive -> Lever A": "PASS"
+    },
+    "firewall": "lever CHOICE, correction SIGN, reversibility read [V]; absolute dose, edit efficiency and clinical outcome are runtime [O]; gene therapy belongs to clinicians/regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "GT1 Lever A -- SET edit moves the threshold (irreversible by a drive)",
+        "gamma_before": 1.3981,
+        "gamma_after_edit": 1.4781,
+        "spinodal_before": 0.6363,
+        "spinodal_after": 0.6917,
+        "barrier_before": 0.4887,
+        "barrier_after": 0.5462,
+        "threshold_moved": true,
+        "set_not_restorable_by_drive": true,
+        "grade": "[V] gamma-edit relocates spinodal/barrier; absolute edit efficiency is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "GT2 Lever B -- reversible h-reset (RNA), gamma untouched",
+        "gamma_TARBP2": 1.5122,
+        "forced_OFF_by_siRNA": true,
+        "reversible_on_withdrawal": true,
+        "gamma_untouched": true,
+        "grade": "[V] reversible/tunable correction; absolute dose is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "GT3 decision rule -- drive-reachable -> Lever B; beyond tolerable drive -> Lever A",
+        "gamma_PAX5": 1.4892,
+        "spinodal": 0.6995,
+        "tolerable_drive_cap": 1.7487,
+        "shallow_tilt_cleared_by_tolerable_drive": true,
+        "deep_hold_needs_SET_edit": true,
+        "rule_separates_the_two_levers": true,
+        "grade": "[V] the lever choice is a geometry threshold; absolute clinical dosing is runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "AM_a4_application_map": {
+    "module": "a4_application_map",
+    "battery": "AM1-AM4",
+    "seed": 19,
+    "AM4_scoreboard": {
+      "AM1 prime-boost dose depends on the A4 coordinate": "PASS",
+      "AM2 lever map on the (gamma, A4) plane": "PASS",
+      "AM3 the 3D contact boundary curve on (gamma, contact-assist)": "PASS"
+    },
+    "firewall": "coordinate-DEPENDENCE of dose, lever MAP, boundary SHAPE read [V]; absolute doses, assist energies, clinical outcomes are runtime [O]; application belongs to clinicians/regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "AM1 prime-boost dose depends on the A4 coordinate",
+        "immune_gamma": 1.4892,
+        "spinodal": 0.6995,
+        "prime": 0.5946,
+        "contact_assist": 0.2098,
+        "reaches_memory_at_contact_coordinate": true,
+        "fails_at_noncontact_same_gamma": true,
+        "grade": "[V] effective vaccine dose is coordinate-dependent; absolute dose is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "AM2 lever map on the (gamma, A4) plane",
+        "tolerable_drive_spinodal_units": 2.3,
+        "n_loci": 25,
+        "n_leverB_drive_reachable": 0,
+        "n_leverA_needs_edit": 25,
+        "prediction_matches_integration": true,
+        "sample": [
+          {
+            "locus": "TEKT1",
+            "gamma": 1.34,
+            "contact": false,
+            "lever": "A",
+            "cleared_by_drive": false
+          },
+          {
+            "locus": "NLRP5",
+            "gamma": 1.3475,
+            "contact": false,
+            "lever": "A",
+            "cleared_by_drive": false
+          },
+          {
+            "locus": "MOS",
+            "gamma": 1.3619,
+            "contact": false,
+            "lever": "A",
+            "cleared_by_drive": false
+          },
+          {
+            "locus": "DAZL",
+            "gamma": 1.3803,
+            "contact": true,
+            "lever": "A",
+            "cleared_by_drive": false
+          },
+          {
+            "locus": "CATSPER1",
+            "gamma": 1.4019,
+            "contact": true,
+            "lever": "A",
+            "cleared_by_drive": false
+          },
+          {
+            "locus": "DMC1",
+            "gamma": 1.4056,
+            "contact": false,
+            "lever": "A",
+            "cleared_by_drive": false
+          }
+        ],
+        "grade": "[V] the two levers partition (gamma, contact); absolute caps/doses are runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "AM3 the 3D contact boundary curve on (gamma, contact-assist)",
+        "gamma_grid": [
+          1.3,
+          1.323,
+          1.345,
+          1.368,
+          1.391,
+          1.414,
+          1.436,
+          1.459,
+          1.482,
+          1.505,
+          1.527,
+          1.55
+        ],
+        "delta_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6
+        ],
+        "h_path": 0.5,
+        "tolerable_budget_B0": 0.9,
+        "reachable_surface": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "boundary_delta_star_by_gamma": [
+          {
+            "gamma": 1.3,
+            "delta_star": 0.1705
+          },
+          {
+            "gamma": 1.323,
+            "delta_star": 0.1855
+          },
+          {
+            "gamma": 1.345,
+            "delta_star": 0.2007
+          },
+          {
+            "gamma": 1.368,
+            "delta_star": 0.216
+          },
+          {
+            "gamma": 1.391,
+            "delta_star": 0.2314
+          },
+          {
+            "gamma": 1.414,
+            "delta_star": 0.2469
+          },
+          {
+            "gamma": 1.436,
+            "delta_star": 0.2626
+          },
+          {
+            "gamma": 1.459,
+            "delta_star": 0.2784
+          },
+          {
+            "gamma": 1.482,
+            "delta_star": 0.2943
+          },
+          {
+            "gamma": 1.505,
+            "delta_star": 0.3103
+          },
+          {
+            "gamma": 1.527,
+            "delta_star": 0.3265
+          },
+          {
+            "gamma": 1.55,
+            "delta_star": 0.3428
+          }
+        ],
+        "assist_monotonically_helps": true,
+        "boundary_exists": true,
+        "delta_star_rises_with_gamma": true,
+        "integration_crosscheck_ok": true,
+        "grade": "[V] the drive-reachable boundary bends with A4 contact (delta* rises with gamma); absolute energies are runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "FM_rna_feasibility_map": {
+    "module": "rna_feasibility_map",
+    "battery": "FM1-FM4",
+    "seed": 19,
+    "FM_scoreboard": {
+      "FM1 reachability map: flip-drive = measured spinodal; absolute flip-drive ordered by gamma": "PASS",
+      "FM2 autism extension: measured ASD promoters are R19 switches; flip-drive ordered by gamma": "PASS",
+      "FM3 reversibility: sub-spinodal transient reverts, supra-spinodal transient latches (hysteresis)": "PASS",
+      "FM4 honesty gate: a self-contained flip is Delta-h assumption-replay, not evidence ((B) decides)": "PASS"
+    },
+    "firewall": "FM reads the FEASIBILITY MAP only -- which switch is reachable by a drive, the ordering by measured gamma, and reversibility -- all [V]. It does NOT, and a self-contained sim CANNOT, return 'the cell changed': that yes/no rides on the RNA drive magnitude Delta-h, which is firewalled [O], on top of the assumed R19 dynamics. The crossing to evidence is the (B) held-out score, never a louder screen. Clinical RNA therapy belongs to clinicians and regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "FM1 reachability map: flip-drive = measured spinodal; absolute flip-drive ordered by gamma",
+        "n_switches": 12,
+        "easiest": "AGO2",
+        "easiest_spinodal": 0.6223,
+        "hardest": "DGCR8",
+        "hardest_spinodal": 0.738,
+        "k_above": 1.05,
+        "flips_just_above_spinodal": true,
+        "s_above": 1.3943,
+        "k_below": 0.95,
+        "flips_just_below_spinodal": false,
+        "s_below": -0.8163,
+        "absolute_flip_drive_monotone_in_gamma": true,
+        "reachability_threshold_is_the_measured_spinodal": true,
+        "map": [
+          {
+            "gene": "AGO2",
+            "gamma": 1.3776,
+            "spinodal": 0.6223,
+            "barrier": 0.4744
+          },
+          {
+            "gene": "DICER1",
+            "gamma": 1.3981,
+            "spinodal": 0.6363,
+            "barrier": 0.4887
+          },
+          {
+            "gene": "METTL3",
+            "gamma": 1.4104,
+            "spinodal": 0.6447,
+            "barrier": 0.4973
+          },
+          {
+            "gene": "YTHDF2",
+            "gamma": 1.4134,
+            "spinodal": 0.6468,
+            "barrier": 0.4994
+          },
+          {
+            "gene": "DDX4",
+            "gamma": 1.4238,
+            "spinodal": 0.6539,
+            "barrier": 0.5068
+          },
+          {
+            "gene": "DROSHA",
+            "gamma": 1.4289,
+            "spinodal": 0.6574,
+            "barrier": 0.5104
+          },
+          {
+            "gene": "MOV10L1",
+            "gamma": 1.4421,
+            "spinodal": 0.6666,
+            "barrier": 0.5199
+          },
+          {
+            "gene": "ANG",
+            "gamma": 1.4595,
+            "spinodal": 0.6787,
+            "barrier": 0.5325
+          },
+          {
+            "gene": "TARBP2",
+            "gamma": 1.5122,
+            "spinodal": 0.7158,
+            "barrier": 0.5717
+          },
+          {
+            "gene": "PIWIL1",
+            "gamma": 1.5236,
+            "spinodal": 0.7239,
+            "barrier": 0.5803
+          },
+          {
+            "gene": "ELAVL1",
+            "gamma": 1.5282,
+            "spinodal": 0.7271,
+            "barrier": 0.5838
+          },
+          {
+            "gene": "DGCR8",
+            "gamma": 1.5434,
+            "spinodal": 0.738,
+            "barrier": 0.5955
+          }
+        ],
+        "grade": "[V] reachability=spinodal and the absolute-flip-drive ordering by gamma are MEASURED geometry; the absolute RNA drive Delta-h is runtime [O].",
+        "pass": true
+      },
+      {
+        "name": "FM2 autism extension: measured ASD promoters are R19 switches; flip-drive ordered by gamma",
+        "n_loci": 10,
+        "shallowest": "SCN2A",
+        "shallowest_gamma": 1.1982,
+        "deepest": "PTEN",
+        "deepest_gamma": 1.5694,
+        "every_asd_switch_is_bistable": true,
+        "flip_drive_ordering_tracks_measured_gamma": true,
+        "shallow_and_deep_both_behave_as_R19": true,
+        "map": [
+          {
+            "gene": "SCN2A",
+            "gamma": 1.1982,
+            "spinodal": 0.5048,
+            "barrier": 0.3589,
+            "role": "voltage-gated sodium channel Nav1.2 (ASD/epilepsy)"
+          },
+          {
+            "gene": "NRXN1",
+            "gamma": 1.3505,
+            "spinodal": 0.6041,
+            "barrier": 0.456,
+            "role": "neurexin-1 presynaptic adhesion (ASD/schizophrenia)"
+          },
+          {
+            "gene": "CHD8",
+            "gamma": 1.408,
+            "spinodal": 0.6431,
+            "barrier": 0.4956,
+            "role": "chromodomain helicase DNA-binding 8 (highest-confidence ASD risk)"
+          },
+          {
+            "gene": "NLGN3",
+            "gamma": 1.4366,
+            "spinodal": 0.6628,
+            "barrier": 0.516,
+            "role": "neuroligin-3 postsynaptic adhesion (X-linked ASD)"
+          },
+          {
+            "gene": "SYNGAP1",
+            "gamma": 1.4463,
+            "spinodal": 0.6695,
+            "barrier": 0.5229,
+            "role": "synaptic Ras-GTPase-activating protein (ASD/ID)"
+          },
+          {
+            "gene": "FMR1",
+            "gamma": 1.4563,
+            "spinodal": 0.6764,
+            "barrier": 0.5302,
+            "role": "fragile-X mental retardation 1 (Fragile-X; translational brake)"
+          },
+          {
+            "gene": "MECP2",
+            "gamma": 1.4951,
+            "spinodal": 0.7036,
+            "barrier": 0.5588,
+            "role": "methyl-CpG-binding protein 2 (Rett; X-linked ASD, chromatin reader)"
+          },
+          {
+            "gene": "SHANK3",
+            "gamma": 1.5207,
+            "spinodal": 0.7218,
+            "barrier": 0.5781,
+            "role": "postsynaptic density scaffold (Phelan-McDermid ASD)"
+          },
+          {
+            "gene": "TSC2",
+            "gamma": 1.5435,
+            "spinodal": 0.7381,
+            "barrier": 0.5956,
+            "role": "tuberous sclerosis 2 / mTOR brake (ASD with TSC)"
+          },
+          {
+            "gene": "PTEN",
+            "gamma": 1.5694,
+            "spinodal": 0.7567,
+            "barrier": 0.6158,
+            "role": "PI3K phosphatase (macrocephaly/ASD)"
+          }
+        ],
+        "answer": "In the (A)-map sense the structure transfers to real autism-gene promoters: each is R19-bistable and an RNA drive past its measured spinodal flips it, ordered by the measured promoter gamma. Whether a given RNA dose changes a given neuron is [O]/(B).",
+        "grade": "[V] R19-bistability and the flip-drive ordering on MEASURED neuronal promoters; the absolute Delta-h and the per-neuron yes/no are runtime [O] (need (B) held-out data).",
+        "pass": true
+      },
+      {
+        "name": "FM3 reversibility: sub-spinodal transient reverts, supra-spinodal transient latches (hysteresis)",
+        "gamma": 1.4563,
+        "spinodal": 0.6764,
+        "saRNA_plus_settles_ON": true,
+        "siRNA_minus_settles_OFF": true,
+        "sign_law_holds": true,
+        "sub_spinodal_transient_reverts": true,
+        "s_sub_after_clear": -1.2068,
+        "supra_spinodal_transient_latches": true,
+        "s_supra_after_clear": 1.2068,
+        "opposite_supra_drive_undoes_latch": true,
+        "grade": "[V] the sign law (saRNA<->siRNA) and the reversible/latched split by drive magnitude are MEASURED geometry of the switch; absolute hold-time/dose is runtime [O].",
+        "pass": true
+      },
+      {
+        "name": "FM4 honesty gate: a self-contained flip is Delta-h assumption-replay, not evidence ((B) decides)",
+        "n_switches_checked": 22,
+        "flip_exists_at_k_ge_1_for_every_switch": true,
+        "no_flip_at_k_lt_1_for_every_switch": true,
+        "flip_is_replay_of_the_assumed_drive": true,
+        "screen_is_a_function_of_assumed_k_alone": true,
+        "yes_no_rides_on_firewalled_Delta_h": true,
+        "dynamics_R19_is_also_assumed": true,
+        "self_contained_sim_cannot_return_yes_no": true,
+        "only_honest_crossing": "(B) score predicted flipped-switch SET+ORDERING vs HELD-OUT measured pre/post expression of real siRNA/saRNA-treated cells, NO tuning of Delta-h or parameters to the target.",
+        "grade": "[V] as an honesty invariant (the circularity is demonstrated, not asserted); the yes/no of 'did the cell change' is itself runtime [O] until (B) is run.",
+        "pass": true
+      }
+    ]
+  },
+  "DM_disease_feasibility_map": {
+    "module": "disease_feasibility_map",
+    "battery": "DM1-DM4",
+    "seed": 19,
+    "DM_scoreboard": {
+      "DM1 disease reachability map: cancer+neurodegen promoters are R19 switches; flip-drive ordered by gamma": "PASS",
+      "DM2 corrective-sign law: corrective drive sign FORCED by mechanism (GOF->-, LOF->+), orthogonal to gamma": "PASS",
+      "DM3 two-lever decision: Lever-B reversible drive reachable for every switch; required drive grows with gamma": "PASS",
+      "DM4 honesty gate: a self-contained 'corrected' is Delta-h replay; cross-package gamma reproduces (no tuning)": "PASS"
+    },
+    "firewall": "DM reads the DISEASE FEASIBILITY MAP only -- which disease switch is reachable, the ordering by measured gamma, the corrective SIGN forced by mechanism, and the Lever-A/B partition -- all [V]/[F]. It does NOT, and a self-contained sim CANNOT, return 'the patient's cell was corrected': that yes/no rides on the firewalled drive magnitude Delta-h atop the assumed R19 dynamics. The crossing to evidence is the (B) held-out score. All clinical oncology/neurology belongs to clinicians and regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "DM1 disease reachability map: cancer+neurodegen promoters are R19 switches; flip-drive ordered by gamma",
+        "n_loci": 25,
+        "n_oncology": 16,
+        "n_neurodegeneration": 9,
+        "shallowest": "SNCA",
+        "shallowest_gamma": 1.249,
+        "deepest": "HTT",
+        "deepest_gamma": 1.6142,
+        "every_disease_switch_is_bistable": true,
+        "absolute_flip_drive_monotone_in_gamma": true,
+        "shallow_and_deep_both_behave_as_R19": true,
+        "map": [
+          {
+            "gene": "SNCA",
+            "gamma": 1.249,
+            "spinodal": 0.5373,
+            "barrier": 0.39,
+            "role": "driver",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "therapy": "SNCA-lowering ASO (clinical trials)"
+          },
+          {
+            "gene": "LRRK2",
+            "gamma": 1.3728,
+            "spinodal": 0.6191,
+            "barrier": 0.4711,
+            "role": "driver",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "therapy": "LRRK2 kinase-i / ASO (clinical trials)"
+          },
+          {
+            "gene": "APC",
+            "gamma": 1.3748,
+            "spinodal": 0.6205,
+            "barrier": 0.4725,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "Wnt/tankyrase-i downstream of APC loss"
+          },
+          {
+            "gene": "PRKN",
+            "gamma": 1.3855,
+            "spinodal": 0.6277,
+            "barrier": 0.4799,
+            "role": "brake",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "therapy": "restore mitophagy / PRKN gene-replacement (preclinical)"
+          },
+          {
+            "gene": "PIK3CA",
+            "gamma": 1.3876,
+            "spinodal": 0.6291,
+            "barrier": 0.4814,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "PI3Ka-i (alpelisib)"
+          },
+          {
+            "gene": "PARK7",
+            "gamma": 1.4049,
+            "spinodal": 0.6409,
+            "barrier": 0.4934,
+            "role": "brake",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "therapy": "oxidative-stress-axis support (preclinical)"
+          },
+          {
+            "gene": "BRAF",
+            "gamma": 1.4052,
+            "spinodal": 0.6411,
+            "barrier": 0.4936,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "BRAF-i (vemurafenib/dabrafenib)"
+          },
+          {
+            "gene": "MYC",
+            "gamma": 1.4101,
+            "spinodal": 0.6445,
+            "barrier": 0.4971,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "BET-i / MYC-targeted knockdown"
+          },
+          {
+            "gene": "BRCA1",
+            "gamma": 1.4149,
+            "spinodal": 0.6478,
+            "barrier": 0.5005,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "PARP-i synthetic-lethal with HR loss"
+          },
+          {
+            "gene": "GBA1",
+            "gamma": 1.4158,
+            "spinodal": 0.6484,
+            "barrier": 0.5011,
+            "role": "brake",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "therapy": "substrate-reduction / chaperone (ambroxol trials)"
+          },
+          {
+            "gene": "MDM2",
+            "gamma": 1.4284,
+            "spinodal": 0.6571,
+            "barrier": 0.5101,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "MDM2-i (nutlin-class) re-activates p53"
+          },
+          {
+            "gene": "TP53",
+            "gamma": 1.4301,
+            "spinodal": 0.6583,
+            "barrier": 0.5113,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "restore p53 pathway / MDM2-i in WT context"
+          },
+          {
+            "gene": "VHL",
+            "gamma": 1.4325,
+            "spinodal": 0.6599,
+            "barrier": 0.513,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "HIF2a-i (belzutifan) downstream of VHL loss"
+          },
+          {
+            "gene": "RB1",
+            "gamma": 1.4345,
+            "spinodal": 0.6613,
+            "barrier": 0.5144,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "CDK4/6-i exploits an intact RB axis"
+          },
+          {
+            "gene": "CDKN2A",
+            "gamma": 1.4422,
+            "spinodal": 0.6666,
+            "barrier": 0.52,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "CDK4/6-i for p16 loss"
+          },
+          {
+            "gene": "SOD1",
+            "gamma": 1.4443,
+            "spinodal": 0.6681,
+            "barrier": 0.5215,
+            "role": "brake",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "therapy": "SOD1 ASO (tofersen, FDA 2023)"
+          },
+          {
+            "gene": "NF1",
+            "gamma": 1.4457,
+            "spinodal": 0.6691,
+            "barrier": 0.5225,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "MEK-i downstream of RAS-GAP loss (selumetinib)"
+          },
+          {
+            "gene": "PINK1",
+            "gamma": 1.4518,
+            "spinodal": 0.6733,
+            "barrier": 0.5269,
+            "role": "brake",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "therapy": "PINK1-pathway activation (preclinical)"
+          },
+          {
+            "gene": "KRAS",
+            "gamma": 1.4698,
+            "spinodal": 0.6859,
+            "barrier": 0.5401,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "KRAS-G12C-i (sotorasib) / siRNA knockdown"
+          },
+          {
+            "gene": "EGFR",
+            "gamma": 1.4857,
+            "spinodal": 0.697,
+            "barrier": 0.5518,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "EGFR-TKI (osimertinib)"
+          },
+          {
+            "gene": "VPS35",
+            "gamma": 1.5056,
+            "spinodal": 0.7111,
+            "barrier": 0.5667,
+            "role": "driver",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "therapy": "retromer-stabilising (preclinical)"
+          },
+          {
+            "gene": "STK11",
+            "gamma": 1.5102,
+            "spinodal": 0.7143,
+            "barrier": 0.5702,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "mTOR/metabolic axis downstream of LKB1 loss"
+          },
+          {
+            "gene": "BCL2",
+            "gamma": 1.525,
+            "spinodal": 0.7249,
+            "barrier": 0.5814,
+            "role": "oncogene",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "therapy": "BCL2-i (venetoclax)"
+          },
+          {
+            "gene": "PTEN",
+            "gamma": 1.5694,
+            "spinodal": 0.7567,
+            "barrier": 0.6158,
+            "role": "suppressor",
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "therapy": "PI3K/AKT/mTOR-i downstream of PTEN loss"
+          },
+          {
+            "gene": "HTT",
+            "gamma": 1.6142,
+            "spinodal": 0.7894,
+            "barrier": 0.6514,
+            "role": "brake",
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "therapy": "HTT-lowering ASO (tominersen-class)"
+          }
+        ],
+        "grade": "[V] R19-bistability + the absolute-flip-drive ordering by measured gamma across two disease classes; the absolute RNA/edit drive Delta-h is runtime [O].",
+        "pass": true
+      },
+      {
+        "name": "DM2 corrective-sign law: corrective drive sign FORCED by mechanism (GOF->-, LOF->+), orthogonal to gamma",
+        "n_loci": 25,
+        "mechanism_forced_sign_corrects_every_gene": true,
+        "sign_changes_along_gamma_order": 14,
+        "sign_vs_gamma_pointbiserial": -0.0148,
+        "plus_gamma_range": [
+          1.3748,
+          1.5694
+        ],
+        "minus_gamma_range": [
+          1.249,
+          1.6142
+        ],
+        "sign_is_orthogonal_to_gamma": true,
+        "detail": [
+          {
+            "gene": "SNCA",
+            "gamma": 1.249,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.3115
+          },
+          {
+            "gene": "LRRK2",
+            "gamma": 1.3728,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.375
+          },
+          {
+            "gene": "APC",
+            "gamma": 1.3748,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.376
+          },
+          {
+            "gene": "PRKN",
+            "gamma": 1.3855,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.3813
+          },
+          {
+            "gene": "PIK3CA",
+            "gamma": 1.3876,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.3824
+          },
+          {
+            "gene": "PARK7",
+            "gamma": 1.4049,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.391
+          },
+          {
+            "gene": "BRAF",
+            "gamma": 1.4052,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.3911
+          },
+          {
+            "gene": "MYC",
+            "gamma": 1.4101,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.3935
+          },
+          {
+            "gene": "BRCA1",
+            "gamma": 1.4149,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.3959
+          },
+          {
+            "gene": "GBA1",
+            "gamma": 1.4158,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.3964
+          },
+          {
+            "gene": "MDM2",
+            "gamma": 1.4284,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.4026
+          },
+          {
+            "gene": "TP53",
+            "gamma": 1.4301,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4034
+          },
+          {
+            "gene": "VHL",
+            "gamma": 1.4325,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4046
+          },
+          {
+            "gene": "RB1",
+            "gamma": 1.4345,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4055
+          },
+          {
+            "gene": "CDKN2A",
+            "gamma": 1.4422,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4093
+          },
+          {
+            "gene": "SOD1",
+            "gamma": 1.4443,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.4103
+          },
+          {
+            "gene": "NF1",
+            "gamma": 1.4457,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.411
+          },
+          {
+            "gene": "PINK1",
+            "gamma": 1.4518,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.414
+          },
+          {
+            "gene": "KRAS",
+            "gamma": 1.4698,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.4227
+          },
+          {
+            "gene": "EGFR",
+            "gamma": 1.4857,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.4304
+          },
+          {
+            "gene": "VPS35",
+            "gamma": 1.5056,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.44
+          },
+          {
+            "gene": "STK11",
+            "gamma": 1.5102,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4422
+          },
+          {
+            "gene": "BCL2",
+            "gamma": 1.525,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.4492
+          },
+          {
+            "gene": "PTEN",
+            "gamma": 1.5694,
+            "mechanism": "LOF",
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": 1.4702
+          },
+          {
+            "gene": "HTT",
+            "gamma": 1.6142,
+            "mechanism": "GOF",
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "forced_sign_corrects": true,
+            "opposite_sign_does_not": true,
+            "s_after_correction": -1.491
+          }
+        ],
+        "grade": "[F]/[V] the corrective sign is forced by the disease mechanism and verified by integration for every gene; its orthogonality to gamma is [V]; absolute dose is [O].",
+        "pass": true
+      },
+      {
+        "name": "DM3 two-lever decision: Lever-B reversible drive reachable for every switch; required drive grows with gamma",
+        "n_loci": 25,
+        "leverB_reversible_drive_available_for_every_disease_switch": true,
+        "required_corrective_drive_grows_with_gamma": true,
+        "nearest_a_tolerable_cap": "HTT",
+        "farthest_from_cap": "SNCA",
+        "leverA_partition": "Lever A (irreversible SET edit -- repair/replace/knockout) is reserved for lesions in the coding SET, which the promoter gamma does NOT read (firewall): a broken coding sequence cannot be driven back by an expression-level drive.",
+        "detail": [
+          {
+            "gene": "SNCA",
+            "gamma": 1.249,
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.5373
+          },
+          {
+            "gene": "LRRK2",
+            "gamma": 1.3728,
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6191
+          },
+          {
+            "gene": "APC",
+            "gamma": 1.3748,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6205
+          },
+          {
+            "gene": "PRKN",
+            "gamma": 1.3855,
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6277
+          },
+          {
+            "gene": "PIK3CA",
+            "gamma": 1.3876,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6291
+          },
+          {
+            "gene": "PARK7",
+            "gamma": 1.4049,
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6409
+          },
+          {
+            "gene": "BRAF",
+            "gamma": 1.4052,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6411
+          },
+          {
+            "gene": "MYC",
+            "gamma": 1.4101,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6445
+          },
+          {
+            "gene": "BRCA1",
+            "gamma": 1.4149,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6478
+          },
+          {
+            "gene": "GBA1",
+            "gamma": 1.4158,
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6484
+          },
+          {
+            "gene": "MDM2",
+            "gamma": 1.4284,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6571
+          },
+          {
+            "gene": "TP53",
+            "gamma": 1.4301,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6583
+          },
+          {
+            "gene": "VHL",
+            "gamma": 1.4325,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6599
+          },
+          {
+            "gene": "RB1",
+            "gamma": 1.4345,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6613
+          },
+          {
+            "gene": "CDKN2A",
+            "gamma": 1.4422,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6666
+          },
+          {
+            "gene": "SOD1",
+            "gamma": 1.4443,
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6681
+          },
+          {
+            "gene": "NF1",
+            "gamma": 1.4457,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6691
+          },
+          {
+            "gene": "PINK1",
+            "gamma": 1.4518,
+            "corr_sign": "+",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6733
+          },
+          {
+            "gene": "KRAS",
+            "gamma": 1.4698,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.6859
+          },
+          {
+            "gene": "EGFR",
+            "gamma": 1.4857,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.697
+          },
+          {
+            "gene": "VPS35",
+            "gamma": 1.5056,
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.7111
+          },
+          {
+            "gene": "STK11",
+            "gamma": 1.5102,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.7143
+          },
+          {
+            "gene": "BCL2",
+            "gamma": 1.525,
+            "corr_sign": "-",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.7249
+          },
+          {
+            "gene": "PTEN",
+            "gamma": 1.5694,
+            "corr_sign": "+",
+            "disease_class": "oncology",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.7567
+          },
+          {
+            "gene": "HTT",
+            "gamma": 1.6142,
+            "corr_sign": "-",
+            "disease_class": "neurodegeneration",
+            "leverB_reversible_drive_available": true,
+            "corrective_spinodal_drive": 0.7894
+          }
+        ],
+        "grade": "[V]/[F] the Lever-B reachability + the gamma-ordered drive requirement are measured/forced geometry (reusing GT/AM); the absolute tolerable cap and the coding-lesion magnitude are [O].",
+        "pass": true
+      },
+      {
+        "name": "DM4 honesty gate: a self-contained 'corrected' is Delta-h replay; cross-package gamma reproduces (no tuning)",
+        "n_switches_checked": 25,
+        "flip_exists_at_k_ge_1_for_every_disease_switch": true,
+        "no_flip_at_k_lt_1_for_every_disease_switch": true,
+        "corrected_screen_is_replay_of_assumed_drive": true,
+        "cross_package_consistency": {
+          "PTEN": {
+            "measured": 1.5694,
+            "reference": 1.5694,
+            "agrees": true
+          },
+          "VHL": {
+            "measured": 1.4325,
+            "reference": 1.4325,
+            "agrees": true
+          },
+          "SOD1": {
+            "measured": 1.4443,
+            "reference": 1.4443,
+            "agrees": true
+          },
+          "HTT": {
+            "measured": 1.6142,
+            "reference": 1.6142,
+            "agrees": true
+          }
+        },
+        "cross_package_all_reproduce": true,
+        "yes_no_rides_on_firewalled_Delta_h": true,
+        "dynamics_R19_is_also_assumed": true,
+        "self_contained_sim_cannot_return_yes_no": true,
+        "only_honest_crossing": "(B) score predicted corrected-switch SET+ORDERING vs HELD-OUT measured pre/post expression of real treated cells (siRNA/saRNA/ASO/edit), NO tuning of Delta-h or parameters to the target.",
+        "grade": "[V] honesty invariant + a no-tuning cross-package reproduction; the yes/no of 'did the cell get corrected' is itself runtime [O] until (B) is run. Clinical care to clinicians.",
+        "pass": true
+      }
+    ]
+  },
+  "FV_feasibility_validation": {
+    "module": "feasibility_validation",
+    "battery": "FV1-FV8",
+    "seed": 19,
+    "FV_scoreboard": {
+      "FV1 provenance+held-out integrity: real Replogle target, frozen gamma, fixed panel rule": "PASS",
+      "FV2 no-tuning ordering score (K562 genome-wide): Spearman rho(frozen gamma, fold_expr) + rule": "PASS",
+      "FV3 null robustness: no control_expr cutoff yields significant support; cell-line signs disagree": "PASS",
+      "FV4 (A)/(B) firewall: (B) score recorded; map stays [V]; per-cell yes/no stays [O]; gamma untouched": "PASS",
+      "FV5 GC-identifiability stress test: gamma<->GC is near-collinear, so the knockdown-depth ordering score cannot separate barrier from GC -- the (B) null is NON-IDENTIFIED": "PASS",
+      "FV6 (B) identifiability decomposition: of every (B)-testable VP prediction, the gamma-ORDERED class is non-identified (collinear with GC) and only the mechanism corrective-SIGN is identified (orthogonal to GC) AND firewall-clean -- so the unique open (B) is the sign-law, blocked on data": "PASS",
+      "FV7 corrective sign-law '-' arm (held-out, DepMap 24Q2 CRISPR-KO): GOF oncogenes are dependencies and LOF suppressors are not, under the '-' operation -- the first held-out score of the unique identified+firewall-clean (B) frontier": "PASS",
+      "FV8 corrective sign-law '+' arm (held-out, Horlbeck 2016 CRISPRa K562): LOF suppressors are growth-suppressive on activation and GOF oncogenes are not, under the '+' operation -- the mirror of FV7, completing the bidirectional held-out test of the (B) frontier": "PASS"
+    },
+    "B_result_headline": "NULL: Spearman rho(frozen gamma, on-target CRISPRi fold_expr) = -0.0760, p = 0.6283, n = 43 (K562 genome-wide Perturb-seq, Replogle 2022). Slightly OPPOSITE to the predicted positive sign; non-significant across every expression cutoff; sign disagrees on RPE1; SET-proxy AUC = 0.389. No support to promote the per-cell yes/no out of [O].",
+    "B_identifiability_headline": "NON-IDENTIFIED (FV5): gamma = -mean(NN dG37) tracks promoter GC by construction (gamma<->GC rank rho up to 0.991); after partialling GC the gamma effect is non-significant and sign-unstable across panels. The knockdown-depth ordering score therefore CANNOT separate a barrier effect from a GC/accessibility effect -- so the recorded null is 'cannot separate signal from confound', not 'signal absent'. Because gamma<->GC collinearity is a promoter-DNA property (cell-type invariant), repeating the same observable in neurons inherits the same non-identification; an identified (B) needs a downstream RESPONSE-MAGNITUDE readout, which requires the firewalled Delta-h. Promotes nothing.",
+    "B_identifiability_decomposition_headline": "FV6: the (B) frontier PARTITIONS. With gamma=-mean(NN dG37) collinear with promoter GC (rho(gamma,GC)=0.9944 on the disease panel, R2=0.9948), every gamma-ORDERED VP prediction (reachability/knockdown-depth/durability/correction-difficulty ordering) is non-identified as a CLASS -- FV5 was one instance. The mechanism corrective-SIGN (DM2: LOF->'+', GOF->'-') is the SOLE exception: point-biserial(sign,GC)=0.0153 (R2=0.0002, a 4974x separation), so it is ORTHOGONAL to the confound and a held-out sign-match could not be produced by GC. The sign test also reads only WHICH sign corrects, never a dose, so it is FIREWALL-CLEAN. Hence the unique open (B) is the corrective sign-law (DM/(B)), blocked on bidirectional disease-correction DATA -- NOT on the firewalled Delta-h (the prior framing is corrected) and NOT on the GC confound. Reproduces DM2's point-biserial(sign,gamma)=-0.0148 frozen. Promotes nothing.",
+    "B_signlaw_minus_arm_headline": "FV7: the corrective sign-law's '-' ARM is now SCORED on a genuinely held-out target -- DepMap 24Q2 CRISPR-KO gene-effect (16 oncology genes, 7 GOF/9 LOF). Under the '-' (knockout) operation, GOF oncogenes (corr_sign '-') are DEPENDENCIES and LOF suppressors (corr_sign '+') are not: point-biserial(GOF, -gene_effect) = 0.4940, exact one-sided permutation p = 0.0227 (11440 perms), in the predicted direction (per-gene 12/16 correct). This is the UNIQUE (B) crossing FV6 named -- identified AND firewall-clean -- and it is RE-CONFIRMED identified live: orthogonal to the GC confound that sinks the ordering axis (point-biserial(sign,GC) = -0.1222; GOF mean GC 0.532 vs LOF mean GC 0.543; GC-partialled point-biserial = 0.4939, essentially unchanged), and firewall-clean (reads only WHICH sign corrects, never a dose). corr_sign/GC re-read FROZEN; gamma untouched; nothing fitted. The kit's FIRST held-out POSITIVE -- the substrate's mechanism sign-law is biologically faithful on independent CRISPR-dependency data. It promotes the '-' arm only: O-22 (per-patient yes/no) stays [O] -- its obstacle NARROWS from bidirectional data to the '+' RESTORE arm alone (over-expression of a suppressor); FV7 does NOT reintroduce Delta-h (FV6 corrected that), and the separate absolute-dose item O-21 stays [O]. NOT a fresh discovery of the oncogene/suppressor split: those labels are frozen priors; DepMap is the independent test that the '-' arm tracks them (4/9 LOF genes are pan-essential and push AGAINST the prediction; pan-cancer mean, no cherry-picking).",
+    "B_signlaw_plus_arm_headline": "FV8: the corrective sign-law's '+' RESTORE ARM is now SCORED on a genuinely held-out target of the OPPOSITE operation -- Horlbeck 2016 hCRISPRa-v2 K562 growth (16 oncology genes, 9 LOF/7 GOF). Under the '+' (activation) operation, LOF suppressors (corr_sign '+') are growth-suppressive on activation and GOF oncogenes (corr_sign '-') are not: point-biserial(LOF, -growth_phenotype) = 0.4852, exact one-sided permutation p = 0.0274 (11440 perms), in the predicted direction (per-gene 10/16 correct). It is RE-CONFIRMED identified live: orthogonal to the GC confound (point-biserial(sign,GC) = 0.1222; LOF mean GC 0.543 vs GOF mean GC 0.532; GC-partialled point-biserial = 0.4731, essentially unchanged) and firewall-clean (reads only WHICH sign corrects, never a dose). corr_sign/GC re-read FROZEN; gamma untouched; nothing fitted. The kit's SECOND held-out POSITIVE and the MIRROR of FV7: TOGETHER the corrective sign-law is now BIDIRECTIONALLY [V] on held-out data (both arms, direction-only), removing in full the bidirectional-DATA obstacle FV6 named. CRITICAL FIREWALL CALL: O-22 (per-patient corrected yes/no) STILL stays [O]. FV8 CORRECTS FV7's framing -- O-22's residual obstacle is no longer DATA (both arms are scored) but the FIREWALL itself: the sign-law is CLASS-LEVEL and DIRECTION-ONLY (which way to push each class), whereas O-22 is a PER-PATIENT ABSOLUTE outcome that needs the firewalled per-patient magnitude/penetrance (absolute drive size = O-21, also [O]). Promoting O-22 would leak direction-only [V] into per-patient absolute [V]. So O-22's obstacle moves from 'missing '+'-arm data' to 'the firewall', and it stays [O]. This does NOT contradict FV6 (scoring the sign-law needed bidirectional data, not Delta-h -- both arms were scored with zero Delta-h). NOT a fresh discovery of the oncogene/suppressor split: those labels are frozen priors; CRISPRa is the independent test that the '+' arm tracks them (K562 is a single CML line; TP53-null and CDKN2A-deleted push AGAINST the prediction, no cherry-picking).",
+    "firewall": "FV runs the (B) held-out score that FM named as the ONLY honest crossing from map to evidence. The score is computed with gamma RE-READ FROZEN from the DNA-measured atlases (hash-checked, never re-fitted) against a genuinely held-out CRISPRi expression target, with the prediction sign and panel rule locked in advance. The outcome is a recorded NULL and is reported as it falls: it promotes NO [O] item (O-19/O-20/O-22 stay open), leaves the (A) map [V] and untouched, and confirms FM4's honesty invariant empirically. Clinical translation remains firewalled to clinicians and regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "FV1 provenance+held-out integrity: real Replogle target, frozen gamma, fixed panel rule",
+        "source_doi_present": true,
+        "figshare_article_present": true,
+        "on_target_fold_expr_readout": true,
+        "held_out_warrant_dna_only": true,
+        "prediction_sign_locked_in_cache": true,
+        "panel_is_fixed_union_rule": true,
+        "cache_gamma_equals_frozen_atlas_gamma": true,
+        "n_gamma_values_crosschecked": 61,
+        "gamma_mismatches": [],
+        "live_panel_size": 75,
+        "cache_panel_size": 75,
+        "panel_size_matches": true,
+        "grade": "[V] integrity gate: the (B) target is the real held-out Replogle CRISPRi readout and the gamma scored against it is the frozen DNA-measured atlas gamma, re-read live and hash-equal to the cache. Nothing here is fitted.",
+        "pass": true
+      },
+      {
+        "name": "FV2 no-tuning ordering score (K562 genome-wide): Spearman rho(frozen gamma, fold_expr) + rule",
+        "dataset": "K562_GWPS (primary, pre-registered)",
+        "n": 43,
+        "spearman_rho": -0.076,
+        "p_value": 0.6283,
+        "set_proxy_auc": 0.3889,
+        "n_responders": 36,
+        "n_total": 43,
+        "predicted_sign": "rho > 0 (higher gamma resists knockdown -> more transcript remaining)",
+        "observed_sign": "negative",
+        "significant_at_0_05": false,
+        "matches_predicted_direction": false,
+        "promotion_rule": "promote per-cell yes/no [O]->[V] iff (p < 0.05 AND rho > 0); else keep [O]",
+        "promotion_decision": "KEEP [O] (no significant support in the predicted direction)",
+        "promotes_per_cell_yes_no": false,
+        "honest_outcome": "NULL: the frozen gamma-ordering shows no significant correspondence to on-target CRISPRi knockdown depth, and the point estimate is slightly OPPOSITE to the predicted direction. Reported as it falls.",
+        "grade": "[V] as a correctly-run, no-tuning held-out score with the promotion rule applied honestly; the per-cell yes/no it was testing remains [O] (rule kept it open).",
+        "pass": true
+      },
+      {
+        "name": "FV3 null robustness: no control_expr cutoff yields significant support; cell-line signs disagree",
+        "primary_K562_GWPS_sweep": [
+          {
+            "cutoff": 0.0,
+            "n": 43,
+            "rho": -0.076,
+            "p": 0.6283
+          },
+          {
+            "cutoff": 0.25,
+            "n": 31,
+            "rho": -0.1855,
+            "p": 0.3177
+          },
+          {
+            "cutoff": 0.5,
+            "n": 19,
+            "rho": -0.2526,
+            "p": 0.2967
+          },
+          {
+            "cutoff": 1.0,
+            "n": 9,
+            "rho": -0.3333,
+            "p": 0.3807
+          }
+        ],
+        "robustness_RPE1_sweep": [
+          {
+            "cutoff": 0.0,
+            "n": 11,
+            "rho": 0.2141,
+            "p": 0.5272
+          },
+          {
+            "cutoff": 0.25,
+            "n": 8,
+            "rho": 0.0958,
+            "p": 0.8215
+          },
+          {
+            "cutoff": 0.5,
+            "n": 6,
+            "rho": null,
+            "p": null
+          },
+          {
+            "cutoff": 1.0,
+            "n": 3,
+            "rho": null,
+            "p": null
+          }
+        ],
+        "no_cutoff_gives_significant_support_primary": true,
+        "no_cutoff_gives_significant_support_RPE1": true,
+        "primary_rho_all_matched": -0.076,
+        "RPE1_rho_all_matched": 0.2141,
+        "cell_line_signs_disagree": true,
+        "interpretation": "The non-support is robust: across every expression cutoff the primary correlation stays non-significant (and slightly negative), and the 2nd cell line's sign does not agree -- so no hand-chosen cutoff or cell line rescues a supporting result. Low power (n=43/11) means this does not REFUTE the map; it finds no support for promoting the per-cell yes/no.",
+        "grade": "[V] the null is cutoff- and cell-line-robust (recorded under the honest-negative policy); the absolute effect size remains [O].",
+        "pass": true
+      },
+      {
+        "name": "FV4 (A)/(B) firewall: (B) score recorded; map stays [V]; per-cell yes/no stays [O]; gamma untouched",
+        "A_map_reachability_ordering_intact": true,
+        "B_held_out_score_on_record": true,
+        "B_reached_significance_in_predicted_direction": false,
+        "B_promotes_no_open_item": true,
+        "O19_O20_O22_per_cell_yes_no_stay_open": true,
+        "gamma_untouched_hash_checked": true,
+        "gamma_GC_entanglement_recorded": true,
+        "standing_confound": "gamma correlates with promoter GC (kit R^2~0.69); CRISPRi knockdown efficiency carries its own GC/CpG-island dependence, so the ordering test cannot cleanly isolate the barrier mechanism even were it to correlate.",
+        "what_B_moved": "nothing -- the (A) map is unchanged and no [O] item was promoted; the value of (B) here is a recorded, no-tuning null that is consistent with FM4 (the part the sim can compute does not, by itself, predict the firewalled per-cell effect).",
+        "grade": "[V] as a firewall invariant: a real (B) score now exists, it promoted no [O] item, and the frozen gamma was not touched. The per-cell/per-patient yes/no remains [O]; all clinical translation stays firewalled to clinicians and regulators.",
+        "pass": true
+      },
+      {
+        "name": "FV5 GC-identifiability stress test: gamma<->GC is near-collinear, so the knockdown-depth ordering score cannot separate barrier from GC -- the (B) null is NON-IDENTIFIED",
+        "gamma_is_minus_mean_NN_dG37_so_tracks_GC_by_construction": true,
+        "per_panel": [
+          {
+            "dataset": "K562_GWPS",
+            "n": 43,
+            "rho_gamma_gc": 0.9909,
+            "p_gamma_gc": 0.0,
+            "rho_gamma_fold": -0.076,
+            "partial_rho_gamma_fold_given_gc": 0.1259,
+            "partial_p": 0.4268,
+            "identified_supporting_gamma_effect": false
+          },
+          {
+            "dataset": "RPE1",
+            "n": 11,
+            "rho_gamma_gc": 0.9818,
+            "p_gamma_gc": 0.0,
+            "rho_gamma_fold": 0.2141,
+            "partial_rho_gamma_fold_given_gc": -0.2228,
+            "partial_p": 0.5362,
+            "identified_supporting_gamma_effect": false
+          },
+          {
+            "dataset": "K562_essential",
+            "n": 7,
+            "rho_gamma_gc": 0.9643,
+            "p_gamma_gc": 0.0005,
+            "rho_gamma_fold": -0.25,
+            "partial_rho_gamma_fold_given_gc": -0.4282,
+            "partial_p": 0.397,
+            "identified_supporting_gamma_effect": false
+          }
+        ],
+        "max_abs_rho_gamma_gc": 0.9909,
+        "gamma_GC_collinear_on_every_panel": true,
+        "primary_partial_gamma_given_GC_nonsignificant": true,
+        "partial_sign_unstable_across_panels": true,
+        "no_identified_supporting_gamma_effect_on_any_panel": true,
+        "ordering_score_is_non_identified": true,
+        "cell_type_invariance_note": "gamma and GC are promoter-DNA properties (identical in any cell type), so a neuronal CRISPRi/Perturb-seq panel inherits the SAME non-identification; repeating the knockdown-depth ordering in neurons does NOT advance O-20. An identified (B) requires a readout not collinear with GC (downstream response magnitude), which needs the firewalled drive size Delta-h.",
+        "promotes_anything": false,
+        "grade": "[V] as an identifiability/honesty invariant: it establishes (measured, no tuning) that the (B) knockdown-depth ordering score is non-identified -- gamma~GC collinearity (rho up to 0.991) means the recorded null is 'cannot separate signal from confound', not 'signal absent'. Promotes no [O] item; the per-cell/per-patient yes/no stays [O].",
+        "pass": true
+      },
+      {
+        "name": "FV6 (B) identifiability decomposition: of every (B)-testable VP prediction, the gamma-ORDERED class is non-identified (collinear with GC) and only the mechanism corrective-SIGN is identified (orthogonal to GC) AND firewall-clean -- so the unique open (B) is the sign-law, blocked on data",
+        "n_disease_genes": 25,
+        "n_LOF_plus": 13,
+        "n_GOF_minus": 12,
+        "rho_gamma_GC": 0.9944,
+        "p_gamma_GC": 0.0,
+        "R2_gamma_given_GC": 0.9948,
+        "point_biserial_sign_gamma": -0.0148,
+        "point_biserial_sign_GC": 0.0153,
+        "R2_sign_given_GC": 0.0002,
+        "confound_explains_gamma_not_sign_separation_ratio": 4974.0,
+        "DM2_point_biserial_reproduced": true,
+        "confound_is_near_perfect": true,
+        "sign_axis_orthogonal_to_confound": true,
+        "sign_axis_is_identifiable_and_firewall_clean": true,
+        "candidate_B_observable_map": {
+          "knockdown_depth_ordering (FV5 target)": {
+            "identified": false,
+            "firewall_clean": true,
+            "verdict": "DEGENERATE -- non-identified (gamma~GC); re-running on neurons inherits the same confound"
+          },
+          "downstream_response_magnitude": {
+            "identified": true,
+            "firewall_clean": false,
+            "verdict": "IDENTIFIED but FIREWALL-BLOCKED -- it is an absolute magnitude (needs Delta-h)"
+          },
+          "corrective_SIGN (bidirectional, DM2)": {
+            "identified": true,
+            "firewall_clean": true,
+            "verdict": "UNIQUE OPEN FRONTIER -- identified AND firewall-clean; blocked only on bidirectional disease-correction data (a '+' arm and a '-' arm with a disease/normal contrast)"
+          }
+        },
+        "gamma_ordered_predictions_are_non_identified_as_a_class": "FM1 reachability ordering, FV knockdown-depth ordering, IM2 durability ordering, and DM1 correction-difficulty ordering are all monotone in gamma; with rho(gamma,GC)~0.99 each is collinear with the GC confound, so each inherits FV5's non-identification -- a CLASS property, not a single failed test",
+        "corrected_obstacle_for_O22": "PRIOR framing: all (B) crossings 'need the firewalled Delta-h'. CORRECTED: the SIGN crossing (DM/(B)) does NOT need a magnitude -- a sign test reads WHICH sign corrects, which is firewall-clean -- and it is identified (sign _|_ GC). Its only obstacle is bidirectional disease-correction DATA. The ordering crossings remain non-identified.",
+        "promotes_anything": false,
+        "grade": "[V] (measured partition: rho(gamma,GC)=0.9944, point-biserial(sign,GC)=0.0153, R2 separation 4974x) on a [F] criterion (a prediction orthogonal to a near-perfect confound is identifiable; one collinear with it is not). Reproduces DM2's point-biserial(sign,gamma)=-0.0148 as a frozen cross-check. Promotes no [O]: O-22 stays open until the sign-law is scored on bidirectional held-out data.",
+        "pass": true
+      },
+      {
+        "name": "FV7 corrective sign-law '-' arm (held-out, DepMap 24Q2 CRISPR-KO): GOF oncogenes are dependencies and LOF suppressors are not, under the '-' operation -- the first held-out score of the unique identified+firewall-clean (B) frontier",
+        "target": "DepMap 24Q2 CRISPRGeneEffect (Chronos gene-effect), figshare article 25880521",
+        "provenance_ok": true,
+        "held_out_warrant_ok": true,
+        "prediction_sign_locked_ok": true,
+        "readout_scope_onco_only_ok": true,
+        "no_smuggled_sign_gc_or_gamma": true,
+        "n_onco_scored": 16,
+        "n_GOF_minus": 7,
+        "n_LOF_plus": 9,
+        "n_neurodegen_out_of_scope": 8,
+        "point_biserial_GOFsign_vs_neg_gene_effect": 0.494,
+        "exact_permutation_p_one_sided": 0.0227,
+        "n_permutations": 11440,
+        "predicted_direction": "point-biserial(corr_sign=='-', -gene_effect) > 0 (GOF more depended-on than LOF)",
+        "observed_direction": "positive (as predicted)",
+        "significant_at_0_05": true,
+        "per_gene_sign_correct": {
+          "GOF": "7/7",
+          "LOF": "5/9",
+          "total": "12/16"
+        },
+        "point_biserial_sign_vs_GC": -0.1222,
+        "GOF_mean_GC": 0.532,
+        "LOF_mean_GC": 0.5426,
+        "group_GC_balanced": true,
+        "partial_point_biserial_sign_given_GC": 0.4939,
+        "partial_survives_GC_removal": true,
+        "sign_axis_orthogonal_to_GC": true,
+        "identified_not_a_GC_artifact": true,
+        "promotion_rule": "support the '-' arm iff (exact p < 0.05 AND point-biserial > 0); else keep [O]",
+        "minus_arm_supported": true,
+        "promotes_O22_per_patient_yes_no": false,
+        "promotes_O21_absolute_dose": false,
+        "O22_obstacle_narrowed": "O-22's FV6 obstacle was BIDIRECTIONAL disease-correction data (a '+' arm AND a '-' arm); the '-' arm is now scored (identified, firewall-clean), so the remaining obstacle is the '+' RESTORE arm alone (over-expression of a LOF suppressor with a disease/normal contrast). O-22 stays [O] with this narrowed obstacle. FV7 does NOT reintroduce Delta-h here -- FV6 corrected that; the absolute drive magnitude is the separate item O-21.",
+        "what_this_is_not": "NOT a fresh discovery of the oncogene/suppressor distinction -- those labels are the kit's frozen priors; DepMap is the INDEPENDENT held-out test of whether the sign-law's '-' arm tracks them. 4/9 LOF genes (VHL/BRCA1/APC/STK11) are pan-essential for reasons orthogonal to tumour-suppression and push AGAINST the prediction (conservative panel); the score is a pan-cancer mean, never lineage-cherry-picked.",
+        "firewall": "reads only the SIGN of the GOF-vs-LOF separation under the '-' operation; no magnitude, dose, or titre is predicted or claimed. corr_sign/GC re-read frozen; gamma untouched. Clinical translation firewalled to clinicians and regulators.",
+        "grade": "[V] HELD-OUT POSITIVE for the corrective sign-law '-' arm: point-biserial(GOF, -gene_effect)=0.4940, exact one-sided p=0.0227 (n=16 onco genes, 11440 perms), in the predicted direction. IDENTIFIED -- orthogonal to the GC confound that sinks the ordering axis (point-biserial(sign,GC)=-0.1222; GOF GC 0.532 vs LOF GC 0.543; GC-partialled point-biserial 0.4939, essentially unchanged). FIREWALL-CLEAN (sign only). Promotes the '-' arm; O-22 stays [O] (needs the '+' restore arm -- FV6's obstacle, not Delta-h), O-21 stays [O] (absolute dose, firewalled). The kit's first held-out empirical confirmation -- the substrate's mechanism sign-law is biologically faithful on independent CRISPR-dependency data.",
+        "pass": true
+      },
+      {
+        "name": "FV8 corrective sign-law '+' arm (held-out, Horlbeck 2016 CRISPRa K562): LOF suppressors are growth-suppressive on activation and GOF oncogenes are not, under the '+' operation -- the mirror of FV7, completing the bidirectional held-out test of the (B) frontier",
+        "target": "Horlbeck et al. 2016 hCRISPRa-v2 K562 gene growth phenotypes, eLife 5:e19760 (supp. file 10)",
+        "provenance_ok": true,
+        "held_out_warrant_ok": true,
+        "prediction_sign_locked_ok": true,
+        "readout_scope_onco_only_ok": true,
+        "no_smuggled_sign_gc_or_gamma": true,
+        "n_onco_scored": 16,
+        "n_LOF_plus": 9,
+        "n_GOF_minus": 7,
+        "n_neurodegen_out_of_scope": 9,
+        "point_biserial_LOFsign_vs_neg_growth": 0.4852,
+        "exact_permutation_p_one_sided": 0.0274,
+        "n_permutations": 11440,
+        "predicted_direction": "point-biserial(corr_sign=='+', -growth_phenotype) > 0 (LOF more growth-suppressed-on-activation than GOF)",
+        "observed_direction": "positive (as predicted)",
+        "significant_at_0_05": true,
+        "per_gene_sign_correct": {
+          "LOF": "7/9",
+          "GOF": "3/7",
+          "total": "10/16"
+        },
+        "point_biserial_sign_vs_GC": 0.1222,
+        "LOF_mean_GC": 0.5426,
+        "GOF_mean_GC": 0.532,
+        "group_GC_balanced": true,
+        "partial_point_biserial_sign_given_GC": 0.4731,
+        "partial_survives_GC_removal": true,
+        "sign_axis_orthogonal_to_GC": true,
+        "identified_not_a_GC_artifact": true,
+        "promotion_rule": "support the '+' arm iff (exact p < 0.05 AND point-biserial > 0); else keep [O]",
+        "plus_arm_supported": true,
+        "sign_law_bidirectional_complete": true,
+        "promotes_O22_per_patient_yes_no": false,
+        "promotes_O21_absolute_dose": false,
+        "O22_obstacle_corrected": "FV7 narrowed O-22's obstacle to 'the '+' RESTORE arm alone'. FV8 scores that '+' arm (identified, firewall-clean), so the bidirectional-DATA obstacle FV6 named is now REMOVED IN FULL and the corrective sign-law is bidirectionally [V] (direction-only). FV8 CORRECTS FV7's framing: O-22's residual obstacle is no longer DATA -- it is the FIREWALL itself. The sign-law is CLASS-LEVEL and DIRECTION-ONLY (which way to push each class); O-22 is a PER-PATIENT ABSOLUTE outcome (does a drive correct THIS patient's switch?), which needs the firewalled per-patient magnitude/penetrance -- the absolute drive size being the separate item O-21. So O-22 stays [O] with its obstacle moved from 'missing '+'-arm data' to 'the firewall (per-patient magnitude)'. This does NOT contradict FV6 (scoring the sign-law needed bidirectional data, not Delta-h -- and both arms were scored with zero Delta-h).",
+        "what_this_is_not": "NOT a fresh discovery of the oncogene/suppressor distinction -- those labels are the kit's frozen priors; CRISPRa is the INDEPENDENT held-out test of whether the sign-law's '+' arm tracks them. K562 is a single CML line (single-line growth screen, vs FV7's pan-cancer mean); TP53 is null and CDKN2A is deleted in K562, so activation has a weak/absent locus to restore and they push AGAINST the prediction (conservative panel, no cherry-picking).",
+        "firewall": "reads only the SIGN of the LOF-vs-GOF separation under the '+' operation; no magnitude, dose, or titre is predicted or claimed. corr_sign/GC re-read frozen; gamma untouched. Per-patient correction and clinical translation firewalled to clinicians and regulators.",
+        "grade": "[V] HELD-OUT POSITIVE for the corrective sign-law '+' arm: point-biserial(LOF, -growth_phenotype)=0.4852, exact one-sided p=0.0274 (n=16 onco genes, 11440 perms), in the predicted direction. IDENTIFIED -- orthogonal to the GC confound that sinks the ordering axis (point-biserial(sign,GC)=0.1222; LOF GC 0.543 vs GOF GC 0.532; GC-partialled point-biserial 0.4731, essentially unchanged). FIREWALL-CLEAN (sign only). TOGETHER WITH FV7 the corrective sign-law is now BIDIRECTIONALLY [V] (both arms, direction-only) -- the kit's second held-out positive and the mirror of the first. O-22 STAYS [O]: its obstacle is no longer data (both arms scored) but the FIREWALL -- a class-level direction-only law cannot certify a per-patient corrected yes/no, which needs the firewalled per-patient magnitude; O-21 (absolute dose) stays [O]. The substrate's mechanism sign-law is biologically faithful on independent CRISPR-activation data, completing the bidirectional test FV6 named.",
+        "pass": true
+      }
+    ]
+  },
+  "PO_parent_of_origin": {
+    "module": "parent_of_origin",
+    "battery": "PO1-PO4",
+    "seed": 19,
+    "PO4_scoreboard": {
+      "PO1 context asymmetry -- sustained (maternal) flips a held switch, transient (paternal) reverts": "PASS",
+      "PO2 parent-of-origin SIGN law -- dominant (maternal) sign inherited; agreement reinforces": "PASS",
+      "PO3 the parent-of-origin asymmetry is universal across the measured germline atlas": "PASS"
+    },
+    "firewall": "the parent-of-origin context asymmetry (sustained vs transient), the inherited SIGN, and the barrier ORDERING of the paternal disadvantage are read [V]; which parent's payload prevails in vivo and the absolute penetrance are runtime [O].",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "PO1 context asymmetry -- sustained (maternal) flips a held switch, transient (paternal) reverts",
+        "deep_germline_gamma": 1.4525,
+        "spinodal": 0.6738,
+        "equal_amplitude": 0.8759,
+        "crossing_time_steps": 342,
+        "paternal_burst_steps": 119,
+        "paternal_decay_tau_steps": 102,
+        "maternal_sustained_end_state": 1.4361,
+        "maternal_flips": true,
+        "paternal_burst_end_state": -1.2052,
+        "paternal_burst_reverts": true,
+        "paternal_decay_end_state": -1.2052,
+        "paternal_decay_reverts": true,
+        "maternal_channel_dominates_held_switch": true,
+        "grade": "[V] the crossing is set by DURATION of supra-spinodal exposure (sustained vs transient) at EQUAL amplitude; absolute parent-of-origin penetrance is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "PO2 parent-of-origin SIGN law -- dominant (maternal) sign inherited; agreement reinforces",
+        "gamma": 1.4525,
+        "spinodal": 0.6738,
+        "amplitude": 0.8759,
+        "maternal_plus_vs_paternal_minus_end": 1.2052,
+        "inherits_maternal_ON": true,
+        "maternal_minus_vs_paternal_plus_end": -1.2052,
+        "inherits_maternal_OFF": true,
+        "dominant_maternal_sign_is_inherited": true,
+        "cross_steps_both_agree": 94,
+        "cross_steps_maternal_only": 342,
+        "agreement_reinforces": true,
+        "grade": "[V] the inherited SIGN is the dominant-context (maternal) sign; the transient opposite (paternal) burst is vetoed; agreement reinforces -- magnitude not read; clinical [O]",
+        "pass": true
+      },
+      {
+        "name": "PO3 the parent-of-origin asymmetry is universal across the measured germline atlas",
+        "n_germline_loci": 13,
+        "amplitude_rule": "1.3 * spinodal(gamma) per switch (equal RELATIVE amplitude)",
+        "paternal_burst_rule": "held for 0.35 of each switch's own crossing time",
+        "asymmetry_holds_at_every_locus": true,
+        "n_loci_asymmetric": 13,
+        "descriptive_rho_gamma_vs_crossing_time_AS_IT_FALLS": -1.0,
+        "directional_ordering_claimed": false,
+        "note": "crossing time is ~flat/slightly decreasing in gamma under equal-relative amplitude; the asymmetry is universal in PRESENCE, not monotone in magnitude -- reported, not tuned.",
+        "table": [
+          {
+            "gene": "TEKT1",
+            "gamma": 1.34,
+            "crossing_steps": 371,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "NLRP5",
+            "gamma": 1.3475,
+            "crossing_steps": 369,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "MOS",
+            "gamma": 1.3619,
+            "crossing_steps": 365,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "DAZL",
+            "gamma": 1.3803,
+            "crossing_steps": 360,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "CATSPER1",
+            "gamma": 1.4019,
+            "crossing_steps": 354,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "DMC1",
+            "gamma": 1.4056,
+            "crossing_steps": 353,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "MLH1",
+            "gamma": 1.4085,
+            "crossing_steps": 353,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "SPO11",
+            "gamma": 1.4105,
+            "crossing_steps": 352,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "PRDM9",
+            "gamma": 1.4165,
+            "crossing_steps": 351,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "ZAR1",
+            "gamma": 1.4226,
+            "crossing_steps": 349,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "DNAH1",
+            "gamma": 1.4469,
+            "crossing_steps": 343,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "ZP3",
+            "gamma": 1.4486,
+            "crossing_steps": 343,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          },
+          {
+            "gene": "REC8",
+            "gamma": 1.4525,
+            "crossing_steps": 342,
+            "maternal_flips": true,
+            "paternal_burst_reverts": true,
+            "asymmetry_holds": true
+          }
+        ],
+        "grade": "[V] the sustained-vs-transient asymmetry holds at EVERY measured germline gamma (universality); the crossing-time ordering is reported as it falls; absolute penetrance is [O]",
+        "pass": true
+      }
+    ]
+  },
+  "VK_rna_vaccine_kinetics": {
+    "module": "rna_vaccine_kinetics",
+    "battery": "VK1-VK3",
+    "seed": 19,
+    "VK3_scoreboard": {
+      "VK1 prime-boost interval from the maturation endpoint -- interior optimum (inverted-U in time)": "PASS",
+      "VK2 saRNA vs mRNA -- the longer saRNA drive window crosses the protected basin more reliably": "PASS"
+    },
+    "firewall": "the prime-boost interior-optimal interval SHAPE and the saRNA>mRNA crossing reliability ORDERING are read [V]; absolute calendar intervals, titres, and amplification factors are runtime [O]; clinical scheduling belongs to clinicians/regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "VK1 prime-boost interval from the maturation endpoint -- interior optimum (inverted-U in time)",
+        "naive_master": "PAX5",
+        "memory_switch_gamma": 1.4892,
+        "measured_escape_rate": 0.024367,
+        "round_time_substrate_units": 1.0,
+        "sweep": [
+          {
+            "interval_rounds": 1,
+            "maturation_gain": 0.024571,
+            "primed_survival": 0.9759,
+            "boost_benefit": 0.023979
+          },
+          {
+            "interval_rounds": 2,
+            "maturation_gain": 0.032185,
+            "primed_survival": 0.9524,
+            "boost_benefit": 0.030654
+          },
+          {
+            "interval_rounds": 3,
+            "maturation_gain": 0.033452,
+            "primed_survival": 0.9295,
+            "boost_benefit": 0.031093
+          },
+          {
+            "interval_rounds": 4,
+            "maturation_gain": 0.033885,
+            "primed_survival": 0.9071,
+            "boost_benefit": 0.030738
+          },
+          {
+            "interval_rounds": 5,
+            "maturation_gain": 0.032849,
+            "primed_survival": 0.8853,
+            "boost_benefit": 0.029081
+          },
+          {
+            "interval_rounds": 6,
+            "maturation_gain": 0.033546,
+            "primed_survival": 0.864,
+            "boost_benefit": 0.028983
+          },
+          {
+            "interval_rounds": 7,
+            "maturation_gain": 0.033628,
+            "primed_survival": 0.8432,
+            "boost_benefit": 0.028354
+          },
+          {
+            "interval_rounds": 8,
+            "maturation_gain": 0.034371,
+            "primed_survival": 0.8229,
+            "boost_benefit": 0.028284
+          },
+          {
+            "interval_rounds": 9,
+            "maturation_gain": 0.032608,
+            "primed_survival": 0.8031,
+            "boost_benefit": 0.026187
+          },
+          {
+            "interval_rounds": 10,
+            "maturation_gain": 0.030727,
+            "primed_survival": 0.7837,
+            "boost_benefit": 0.024083
+          },
+          {
+            "interval_rounds": 11,
+            "maturation_gain": 0.032349,
+            "primed_survival": 0.7649,
+            "boost_benefit": 0.024743
+          },
+          {
+            "interval_rounds": 12,
+            "maturation_gain": 0.033693,
+            "primed_survival": 0.7465,
+            "boost_benefit": 0.025151
+          },
+          {
+            "interval_rounds": 13,
+            "maturation_gain": 0.032055,
+            "primed_survival": 0.7285,
+            "boost_benefit": 0.023352
+          },
+          {
+            "interval_rounds": 14,
+            "maturation_gain": 0.032466,
+            "primed_survival": 0.711,
+            "boost_benefit": 0.023082
+          },
+          {
+            "interval_rounds": 15,
+            "maturation_gain": 0.034315,
+            "primed_survival": 0.6938,
+            "boost_benefit": 0.023809
+          },
+          {
+            "interval_rounds": 16,
+            "maturation_gain": 0.034742,
+            "primed_survival": 0.6771,
+            "boost_benefit": 0.023525
+          },
+          {
+            "interval_rounds": 17,
+            "maturation_gain": 0.034662,
+            "primed_survival": 0.6608,
+            "boost_benefit": 0.022907
+          },
+          {
+            "interval_rounds": 18,
+            "maturation_gain": 0.03175,
+            "primed_survival": 0.6449,
+            "boost_benefit": 0.020477
+          },
+          {
+            "interval_rounds": 19,
+            "maturation_gain": 0.030961,
+            "primed_survival": 0.6294,
+            "boost_benefit": 0.019487
+          },
+          {
+            "interval_rounds": 20,
+            "maturation_gain": 0.033335,
+            "primed_survival": 0.6143,
+            "boost_benefit": 0.020476
+          },
+          {
+            "interval_rounds": 21,
+            "maturation_gain": 0.035376,
+            "primed_survival": 0.5995,
+            "boost_benefit": 0.021207
+          },
+          {
+            "interval_rounds": 22,
+            "maturation_gain": 0.032331,
+            "primed_survival": 0.585,
+            "boost_benefit": 0.018915
+          },
+          {
+            "interval_rounds": 23,
+            "maturation_gain": 0.030766,
+            "primed_survival": 0.571,
+            "boost_benefit": 0.017566
+          },
+          {
+            "interval_rounds": 24,
+            "maturation_gain": 0.035193,
+            "primed_survival": 0.5572,
+            "boost_benefit": 0.01961
+          },
+          {
+            "interval_rounds": 25,
+            "maturation_gain": 0.034297,
+            "primed_survival": 0.5438,
+            "boost_benefit": 0.018651
+          }
+        ],
+        "optimum_interval_rounds": 3,
+        "optimum_benefit": 0.031093,
+        "short_interval_arm_worse": true,
+        "long_interval_arm_worse": true,
+        "optimum_is_interior": true,
+        "note": "maturation completes quickly relative to memory decay, so the optimal boost is shortly AFTER maturation, BEFORE decay erodes the pool -- a genuine inverted-U with both arms worse.",
+        "grade": "[V] the inverted-U SHAPE (maturation x survival) is measured from the coupled GC loop and the escape statistic; the absolute calendar interval is runtime [O]",
+        "pass": true
+      },
+      {
+        "name": "VK2 saRNA vs mRNA -- the longer saRNA drive window crosses the protected basin more reliably",
+        "immune_gamma": 1.4892,
+        "spinodal": 0.6995,
+        "amplitude_near_spinodal": 0.6645,
+        "noise_D": 0.3,
+        "window_mRNA_steps": 400,
+        "window_saRNA_steps": 1200,
+        "crossing_fraction_mRNA": 0.5072,
+        "crossing_fraction_saRNA": 0.5317,
+        "saRNA_more_reliable_than_mRNA": true,
+        "post_flip_durability_identical_same_barrier": true,
+        "advantage_is_in_reaching_not_holding": true,
+        "grade": "[V] the reliability ORDERING saRNA>mRNA follows from the longer SAME-amplitude window (not a larger dose); absolute titre / amplification factor is runtime [O]",
+        "pass": true
+      }
+    ]
+  },
+  "LV_lever_map": {
+    "module": "lever_map",
+    "battery": "LV1-LV5",
+    "seed": 19,
+    "LV5_scoreboard": {
+      "LV1 Lever A sub-types -- SET edits move the threshold; CRISPRa re-classifies to Lever B": "PASS",
+      "LV2 Lever B sub-types -- all leave gamma byte-identical, all reversible; signs differ": "PASS",
+      "LV3 decision boundary -- h_path*(gamma) = h_cap - spinodal(gamma) falls; gamma* mandates Lever A": "PASS",
+      "LV4 durable correction WITHOUT an edit -- re-dosing holds the corrected state (w > w*)": "PASS"
+    },
+    "firewall": "the lever SUB-TYPE of a modality (SET edit vs fixed-gamma drive), its drive SIGN, its reversibility, the lever-choice BOUNDARY, and edit-free durability are read [V]; absolute efficiency, dose, titre and in-vivo durability are runtime [O] -- clinical modality selection belongs to clinicians/regulators.",
+    "all_pass": true,
+    "tests": [
+      {
+        "name": "LV1 Lever A sub-types -- SET edits move the threshold; CRISPRa re-classifies to Lever B",
+        "gamma_DICER1": 1.3981,
+        "spinodal_before": 0.6363,
+        "barrier_before": 0.4887,
+        "set_edits_move_threshold_and_are_drive_irreversible": true,
+        "crispra_flips_at_fixed_gamma": true,
+        "crispra_reversible_on_withdrawal": true,
+        "crispra_threshold_unmoved": true,
+        "crispra_is_really_leverB": true,
+        "subtypes": [
+          {
+            "modality": "knockout",
+            "channel": "SET (gamma)",
+            "gamma_after": 0.0699,
+            "spinodal_after": 0.0071,
+            "barrier_after": 0.0012,
+            "threshold_moved": true,
+            "reversible_by_drive": false,
+            "lever": "A"
+          },
+          {
+            "modality": "base_edit",
+            "channel": "SET (gamma)",
+            "gamma_after": 1.3581,
+            "spinodal_after": 0.6092,
+            "barrier_after": 0.4611,
+            "threshold_moved": true,
+            "reversible_by_drive": false,
+            "lever": "A"
+          },
+          {
+            "modality": "prime_edit",
+            "channel": "SET (gamma)",
+            "gamma_after": 1.2981,
+            "spinodal_after": 0.5693,
+            "barrier_after": 0.4213,
+            "threshold_moved": true,
+            "reversible_by_drive": false,
+            "lever": "A"
+          },
+          {
+            "modality": "CRISPRa",
+            "channel": "DRIVE (h) at fixed gamma",
+            "gamma_after": 1.3981,
+            "spinodal_after": 0.6363,
+            "barrier_after": 0.4887,
+            "threshold_moved": false,
+            "reversible_by_drive": true,
+            "lever": "B (re-classified -- 'activation' is a drive, not a SET edit)"
+          }
+        ],
+        "grade": "[V] knockout/base-edit/prime-edit are SET edits (threshold moves, drive-irreversible); CRISPRa is a fixed-gamma drive (reversible) -> Lever B; absolute edit efficiency is [O]",
+        "pass": true
+      },
+      {
+        "name": "LV2 Lever B sub-types -- all leave gamma byte-identical, all reversible; signs differ",
+        "gamma_TARBP2": 1.5122,
+        "spinodal": 0.7158,
+        "barrier": 0.5717,
+        "spinodal_barrier_unchanged_by_any_subtype": true,
+        "all_subtypes_flip_and_revert_at_fixed_gamma": true,
+        "subtypes": [
+          {
+            "modality": "siRNA",
+            "axis": "expression (drive h)",
+            "sign": "-",
+            "flips": true,
+            "reversible": true,
+            "gamma_untouched": true,
+            "lever": "B"
+          },
+          {
+            "modality": "ASO_splice",
+            "axis": "structure (A4 coordinate), gamma fixed",
+            "sign": "coordinate",
+            "flips": true,
+            "reversible": true,
+            "gamma_untouched": true,
+            "lever": "B"
+          },
+          {
+            "modality": "saRNA",
+            "axis": "expression (drive h)",
+            "sign": "+",
+            "flips": true,
+            "reversible": true,
+            "gamma_untouched": true,
+            "lever": "B"
+          },
+          {
+            "modality": "miRNA_sponge",
+            "axis": "expression (drive h)",
+            "sign": "+ (net, de-repression)",
+            "flips": true,
+            "reversible": true,
+            "gamma_untouched": true,
+            "lever": "B"
+          }
+        ],
+        "grade": "[V] every Lever-B sub-type acts at fixed gamma and is reversible; the SIGN (siRNA -, saRNA/miRNA-sponge +, ASO-splice a fixed-gamma coordinate change) is read; dose is [O]",
+        "pass": true
+      },
+      {
+        "name": "LV3 decision boundary -- h_path*(gamma) = h_cap - spinodal(gamma) falls; gamma* mandates Lever A",
+        "declared_h_cap": 0.6789,
+        "h_cap_basis": "spinodal(anchor gamma=1.4598); not tuned to outcome",
+        "gamma_star_analytic": 1.4598,
+        "gamma_star_swept": 1.4605,
+        "boundary_falls_monotonically": true,
+        "boundary_crosses_zero_in_window": true,
+        "analytic_crossing_matches_sweep": true,
+        "shallow_below_boundary_cleared_by_cap_drive": true,
+        "shallow_above_boundary_needs_SET_edit": true,
+        "deep_switch_zero_hold_needs_LeverA": true,
+        "boundary_curve_sample": [
+          [
+            1.3276,
+            0.0901
+          ],
+          [
+            1.3808,
+            0.0544
+          ],
+          [
+            1.4339,
+            0.018
+          ],
+          [
+            1.4871,
+            -0.0191
+          ],
+          [
+            1.5402,
+            -0.0569
+          ],
+          [
+            1.5934,
+            -0.0953
+          ]
+        ],
+        "grade": "[V] the lever-choice boundary is an explicit falling curve with a finite gamma* beyond which Lever A is mandatory, confirmed by substrate settles; absolute dosing is [O]",
+        "pass": true
+      },
+      {
+        "name": "LV4 durable correction WITHOUT an edit -- re-dosing holds the corrected state (w > w*)",
+        "gamma_TARBP2": 1.5122,
+        "residual_tilt": 0.2147,
+        "measured_per_cycle_loss": 0.5527,
+        "threshold": 0.1,
+        "critical_w_star": 0.05527,
+        "steady_state_at_1.5x_w_star": 0.15,
+        "maintained_above_w_star": true,
+        "steady_state_at_0.5x_w_star": 0.05,
+        "fades_below_w_star": true,
+        "steady_state_no_rewrite": 0.0,
+        "single_dose_fades": true,
+        "gamma_untouched": true,
+        "grade": "[V] a measured re-write boundary holds a corrected state with NO SET edit (Lever B durability); absolute re-dosing schedule is runtime [O]",
+        "pass": true
+      }
+    ]
+  }
+}

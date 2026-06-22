@@ -1,0 +1,1133 @@
+{
+ "api_base": "https://www.guidetopharmacology.org/DATA",
+ "direction_reduction": {
+  "activating_tokens": [
+   "AGONIST",
+   "ACTIVATOR",
+   "ACTIVATION",
+   "POTENTIATION",
+   "OPENER",
+   "POSITIVE",
+   "STIMULANT",
+   "STIMULATION"
+  ],
+  "inhibitory_tokens": [
+   "ANTAGONIST",
+   "INHIBITOR",
+   "INHIBITION",
+   "BLOCKER",
+   "BLOCKADE",
+   "NEGATIVE"
+  ],
+  "note": "single unambiguous sign per (drug,gene) from Type+Action; binding/neutral/ambiguous -> None (dropped, never scored). Read from class words only, no potency token.",
+  "order": "1) INVERSE AGONIST->INHIBITORY  2) PARTIAL/FULL AGONIST->ACTIVATING  3) (ALLOSTERIC) MODULATOR: NEGATIVE->INHIBITORY / POSITIVE->ACTIVATING / bare->fall-through  4) token scan over Type|Action"
+ },
+ "fetched_utc": "2026-06-21T09:51:15Z",
+ "filters": {
+  "approved": "ligands.csv Approved==yes (or interaction Approved==yes)",
+  "disease_genes": 130,
+  "target_species": "Human"
+ },
+ "gtopdb_version": "2026.2 - published: 2026-06-15",
+ "interactions_by_symbol": {
+  "ABCC8": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL498",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CHLORPROPAMIDE",
+    "ligand_id": "6801",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1272",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "REPAGLINIDE",
+    "ligand_id": "6841",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "ADA": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1580",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PENTOSTATIN",
+    "ligand_id": "4805",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "AVPR2": [
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL382301",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ATOSIBAN",
+    "ligand_id": "2213",
+    "primary_target": false,
+    "type": "Antagonist"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL1755",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CONIVAPTAN",
+    "ligand_id": "2203",
+    "primary_target": true,
+    "type": "Antagonist"
+   },
+   {
+    "action": "Full agonist",
+    "chembl_id": "CHEMBL264448",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "DESMOPRESSIN",
+    "ligand_id": "2182",
+    "primary_target": false,
+    "type": "Agonist"
+   },
+   {
+    "action": "Full agonist",
+    "chembl_id": "CHEMBL395429",
+    "direction": "ACTIVATING",
+    "endogenous": true,
+    "ligand": "OXYTOCIN",
+    "ligand_id": "2174",
+    "primary_target": false,
+    "type": "Agonist"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL344159",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "TOLVAPTAN",
+    "ligand_id": "2226",
+    "primary_target": true,
+    "type": "Antagonist"
+   },
+   {
+    "action": "Full agonist",
+    "chembl_id": "CHEMBL373742",
+    "direction": "ACTIVATING",
+    "endogenous": true,
+    "ligand": "VASOPRESSIN",
+    "ligand_id": "2168",
+    "primary_target": true,
+    "type": "Agonist"
+   }
+  ],
+  "CACNA1C": [
+   {
+    "action": "Antagonist",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "BENIDIPINE",
+    "ligand_id": "10159",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL1648",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ISRADIPINE",
+    "ligand_id": "4488",
+    "primary_target": false,
+    "type": "Gating inhibitor"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL45816",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "MIBEFRADIL",
+    "ligand_id": "2522",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL1726",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "NISOLDIPINE",
+    "ligand_id": "2524",
+    "primary_target": false,
+    "type": "Gating inhibitor"
+   }
+  ],
+  "CASR": [
+   {
+    "action": "Positive",
+    "chembl_id": "CHEMBL1201284",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "CINACALCET",
+    "ligand_id": "3308",
+    "primary_target": true,
+    "type": "Allosteric modulator"
+   },
+   {
+    "action": "Positive",
+    "chembl_id": "CHEMBL3545184",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "ETELCALCETIDE",
+    "ligand_id": "8375",
+    "primary_target": false,
+    "type": "Allosteric modulator"
+   },
+   {
+    "action": "Positive",
+    "chembl_id": "",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "EVOCALCET",
+    "ligand_id": "9042",
+    "primary_target": true,
+    "type": "Allosteric modulator"
+   },
+   {
+    "action": "Positive",
+    "chembl_id": "",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "UPACICALCET",
+    "ligand_id": "12235",
+    "primary_target": false,
+    "type": "Allosteric modulator"
+   }
+  ],
+  "CBS": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1096979",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "BENSERAZIDE",
+    "ligand_id": "5150",
+    "primary_target": false,
+    "type": "Inhibitor"
+   }
+  ],
+  "CFTR": [
+   {
+    "action": "Potentiation",
+    "chembl_id": "CHEMBL294199",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "CAPSAICIN",
+    "ligand_id": "2486",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL2108184",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CROFELEMER",
+    "ligand_id": "7453",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Potentiation",
+    "chembl_id": "CHEMBL4297603",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "DEUTIVACAFTOR",
+    "ligand_id": "13695",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "None",
+    "chembl_id": "",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "ELEXACAFTOR",
+    "ligand_id": "10552",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "Potentiation",
+    "chembl_id": "CHEMBL1480",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "FELODIPINE",
+    "ligand_id": "4190",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "Pore blocker",
+    "chembl_id": "CHEMBL472",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "GLIBENCLAMIDE",
+    "ligand_id": "2414",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Potentiation",
+    "chembl_id": "CHEMBL2010601",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "IVACAFTOR",
+    "ligand_id": "4342",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "CHEMBL2103870",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "LUMACAFTOR",
+    "ligand_id": "7481",
+    "primary_target": false,
+    "type": "None"
+   },
+   {
+    "action": "Potentiation",
+    "chembl_id": "CHEMBL1428",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "NIMODIPINE",
+    "ligand_id": "2523",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL3544914",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "TEZACAFTOR",
+    "ligand_id": "10199",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL5314934",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "VANZACAFTOR",
+    "ligand_id": "13694",
+    "primary_target": false,
+    "type": "Activator"
+   }
+  ],
+  "CLCN1": [
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL63323",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "NIFLUMIC ACID",
+    "ligand_id": "2439",
+    "primary_target": false,
+    "type": "Channel blocker"
+   }
+  ],
+  "DDC": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1096979",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "BENSERAZIDE",
+    "ligand_id": "5150",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1201236",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CARBIDOPA",
+    "ligand_id": "5159",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL459",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "L-&ALPHA;-METHYLDOPA",
+    "ligand_id": "5217",
+    "primary_target": false,
+    "type": "Inhibitor"
+   }
+  ],
+  "F5": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL2109065",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "DROTRECOGIN ALFA",
+    "ligand_id": "6788",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "F8": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL2109065",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "DROTRECOGIN ALFA",
+    "ligand_id": "6788",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "F9": [
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "EMICIZUMAB",
+    "ligand_id": "9744",
+    "primary_target": false,
+    "type": "Antibody"
+   }
+  ],
+  "FGFR2": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ERDAFITINIB",
+    "ligand_id": "9039",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3701238",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "FUTIBATINIB",
+    "ligand_id": "9786",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1852688",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "INFIGRATINIB",
+    "ligand_id": "7877",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL502835",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "NINTEDANIB",
+    "ligand_id": "5936",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Agonist",
+    "chembl_id": "CHEMBL1201821",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "PALIFERMIN",
+    "ligand_id": "6954",
+    "primary_target": true,
+    "type": "Agonist"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PEMIGATINIB",
+    "ligand_id": "9767",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3686884",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "TASURGRATINIB",
+    "ligand_id": "11414",
+    "primary_target": false,
+    "type": "Inhibitor"
+   }
+  ],
+  "FGFR3": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ERDAFITINIB",
+    "ligand_id": "9039",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3701238",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "FUTIBATINIB",
+    "ligand_id": "9786",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1852688",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "INFIGRATINIB",
+    "ligand_id": "7877",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL502835",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "NINTEDANIB",
+    "ligand_id": "5936",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PEMIGATINIB",
+    "ligand_id": "9767",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3686884",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "TASURGRATINIB",
+    "ligand_id": "11414",
+    "primary_target": false,
+    "type": "Inhibitor"
+   }
+  ],
+  "GAA": [
+   {
+    "action": "Binding",
+    "chembl_id": "CHEMBL110458",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "MIGALASTAT",
+    "ligand_id": "10200",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1561",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "MIGLITOL",
+    "ligand_id": "4842",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "GBA1": [
+   {
+    "action": "Binding",
+    "chembl_id": "CHEMBL1477775",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "AMBROXOL",
+    "ligand_id": "10692",
+    "primary_target": false,
+    "type": "None"
+   }
+  ],
+  "KCNJ11": [
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL472",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "GLIBENCLAMIDE",
+    "ligand_id": "2414",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL802",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "MINOXIDIL",
+    "ligand_id": "4254",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL284906",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "NICORANDIL",
+    "ligand_id": "2411",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL782",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "TOLBUTAMIDE",
+    "ligand_id": "6848",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "PAH": [
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201774",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "SAPROPTERIN",
+    "ligand_id": "5276",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1255653",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "SEPIAPTERIN",
+    "ligand_id": "14278",
+    "primary_target": false,
+    "type": "Activator"
+   }
+  ],
+  "PCSK9": [
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "ALIROCUMAB",
+    "ligand_id": "6744",
+    "primary_target": true,
+    "type": "Antibody"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "EBRONUCIMAB",
+    "ligand_id": "13786",
+    "primary_target": true,
+    "type": "Antibody"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "EVOLOCUMAB",
+    "ligand_id": "7343",
+    "primary_target": true,
+    "type": "Antibody"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "LERODALCIBEP",
+    "ligand_id": "14319",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "ONGERICIMAB",
+    "ligand_id": "13787",
+    "primary_target": true,
+    "type": "Antibody"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "RECATICIMAB",
+    "ligand_id": "14196",
+    "primary_target": true,
+    "type": "Antibody"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "TAFOLECIMAB",
+    "ligand_id": "12517",
+    "primary_target": false,
+    "type": "Antibody"
+   }
+  ],
+  "PKLR": [
+   {
+    "action": "Positive",
+    "chembl_id": "",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "MITAPIVAT",
+    "ligand_id": "10473",
+    "primary_target": false,
+    "type": "Allosteric modulator"
+   }
+  ],
+  "RET": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL2105717",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CABOZANTINIB",
+    "ligand_id": "5887",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3301622",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "GILTERITINIB",
+    "ligand_id": "8708",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1171837",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PONATINIB",
+    "ligand_id": "5890",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PRALSETINIB",
+    "ligand_id": "10033",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL576982",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "QUIZARTINIB",
+    "ligand_id": "5658",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL3186534",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "RIVOCERANIB",
+    "ligand_id": "7648",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "SELPERCATINIB",
+    "ligand_id": "10318",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1336",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "SORAFENIB",
+    "ligand_id": "5711",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL535",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "SUNITINIB",
+    "ligand_id": "5713",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL24828",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "VANDETANIB",
+    "ligand_id": "5717",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "RYR2": [
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL113",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "CAFFEINE",
+    "ligand_id": "407",
+    "primary_target": false,
+    "type": "Activator"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL723",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CARVEDILOL",
+    "ligand_id": "551",
+    "primary_target": false,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL569",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "PROCAINE",
+    "ligand_id": "4291",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL265502",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "SURAMIN",
+    "ligand_id": "1728",
+    "primary_target": false,
+    "type": "Activator"
+   }
+  ],
+  "SCN1A": [
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL190461",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CANNABIDIOL",
+    "ligand_id": "4150",
+    "primary_target": false,
+    "type": "Channel blocker"
+   }
+  ],
+  "SCN4A": [
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL190461",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CANNABIDIOL",
+    "ligand_id": "4150",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Antagonist",
+    "chembl_id": "CHEMBL558",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "MEXILETINE",
+    "ligand_id": "2629",
+    "primary_target": true,
+    "type": "Channel blocker"
+   }
+  ],
+  "SCN5A": [
+   {
+    "action": "Pore blocker",
+    "chembl_id": "CHEMBL1098",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "BUPIVACAINE",
+    "ligand_id": "2397",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "None",
+    "chembl_id": "CHEMBL190461",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CANNABIDIOL",
+    "ligand_id": "4150",
+    "primary_target": false,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Pore blocker",
+    "chembl_id": "CHEMBL79",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "LIDOCAINE",
+    "ligand_id": "2623",
+    "primary_target": true,
+    "type": "Channel blocker"
+   },
+   {
+    "action": "Pore blocker",
+    "chembl_id": "CHEMBL1077896",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ROPIVACAINE",
+    "ligand_id": "7602",
+    "primary_target": false,
+    "type": "Channel blocker"
+   }
+  ],
+  "SERPINC1": [
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201460",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "DALTEPARIN",
+    "ligand_id": "6803",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201534",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "DANAPAROID",
+    "ligand_id": "6804",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201476",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "ENOXAPARIN",
+    "ligand_id": "6811",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201202",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "FONDAPARINUX",
+    "ligand_id": "6819",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL526514",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "HEPARIN",
+    "ligand_id": "4214",
+    "primary_target": true,
+    "type": "Activator"
+   },
+   {
+    "action": "Activation",
+    "chembl_id": "CHEMBL1201414",
+    "direction": "ACTIVATING",
+    "endogenous": false,
+    "ligand": "TINZAPARIN",
+    "ligand_id": "6846",
+    "primary_target": true,
+    "type": "Activator"
+   }
+  ],
+  "SLC12A1": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1072",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "BUMETANIDE",
+    "ligand_id": "4837",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL35",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "FUROSEMIDE",
+    "ligand_id": "4839",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "SLC12A3": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL842",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CHLOROTHIAZIDE",
+    "ligand_id": "4835",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL61593",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "CYCLOTHIAZIDE",
+    "ligand_id": "4167",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL435",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "HYDROCHLOROTHIAZIDE",
+    "ligand_id": "4836",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL878",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "METOLAZONE",
+    "ligand_id": "4838",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "TH": [
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1200862",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "ALPHA-METHYLTYROSINE",
+    "ligand_id": "6956",
+    "primary_target": true,
+    "type": "Inhibitor"
+   },
+   {
+    "action": "Inhibition",
+    "chembl_id": "CHEMBL1330596",
+    "direction": "INHIBITORY",
+    "endogenous": false,
+    "ligand": "METHYLTYROSINE",
+    "ligand_id": "5094",
+    "primary_target": true,
+    "type": "Inhibitor"
+   }
+  ],
+  "TTR": [
+   {
+    "action": "Binding",
+    "chembl_id": "CHEMBL3940890",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "ACORAMIDIS",
+    "ligand_id": "13628",
+    "primary_target": false,
+    "type": "None"
+   },
+   {
+    "action": "Binding",
+    "chembl_id": "CHEMBL2103837",
+    "direction": null,
+    "endogenous": false,
+    "ligand": "TAFAMIDIS",
+    "ligand_id": "8378",
+    "primary_target": false,
+    "type": "None"
+   }
+  ]
+ },
+ "ligands_version": "2026.2 - published: 2026-06-15",
+ "magnitude_firewall": "affinity columns (Affinity Units/High/Median/Low, Original Affinity nM, concentration Range) are NEVER read or vendored; only the categorical Type/Action fields are kept. Snapshot is magnitude-free by construction.",
+ "membership_note": "A (drug<->gene) edge exists iff GtoPdb curates an interaction between an APPROVED ligand and the disease gene's human target. Membership is GtoPdb's, NOT inherited from V4/ChEMBL -- this is the orthogonal-membership arm.",
+ "n_approved_ligands_total": 2218,
+ "n_disease_genes": 130,
+ "n_genes_with_any_interaction": 30,
+ "n_genes_with_signed_interaction": 27,
+ "n_interaction_rows_kept": 113,
+ "source": "IUPHAR/BPS Guide to PHARMACOLOGY (GtoPdb) -- approved-drug interactions, bulk CSV (ligands.csv + interactions.csv). Primary expert curation; membership AND direction are independent of ChEMBL."
+}

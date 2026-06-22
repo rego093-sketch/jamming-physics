@@ -1,0 +1,273 @@
+{
+ "arm_A_taxonomy": {
+  "claim": "this is a transparency decomposition of an annotation-vocabulary artefact, NOT part of the emergence test and NOT a re-derivation; it explains WHY one source dissents.",
+  "disagreement_genes_source": "read from V6 X_CROSS4 disagreements (not hand-listed).",
+  "frame_classifier": {
+   "agent_intrinsic_markers": [
+    "ENZYME ACTIVATOR",
+    "FUSION PROTEIN"
+   ],
+   "frame_action_tokens": {
+    "activating": [
+     "ACTIVATOR",
+     "AGONIST",
+     "OPENER",
+     "POTENTIATOR",
+     "STIMULANT"
+    ],
+    "inhibitory": [
+     "ANTAGONIST",
+     "INHIBITOR",
+     "BLOCKER",
+     "DEGRADER"
+    ]
+   },
+   "frames": [
+    "TARGET-ACTION (names the disease gene's target family AND an action verb)",
+    "TARGET-NEUTRAL (names the target family, no action verb -> unsigned)",
+    "DOWNSTREAM-PHYSIOLOGIC (a different node downstream / net physiological effect)",
+    "AGENT-INTRINSIC (the molecule's own chemical class, no target)"
+   ],
+   "resolution": "frame-normalise: restrict to the TARGET-ACTION frame. A gene resolves to that frame's sign if present (and we record whether MED-RT's OWN annotation already contains it -> INTERNAL pooling); if no TARGET-ACTION class exists, the correct read is ABSTENTION, never a contradicting sign.",
+   "target_lexicon": {
+    "ABCC8": [
+     "POTASSIUM CHANNEL",
+     "K-ATP",
+     "KATP",
+     "SULFONYLUREA RECEPTOR"
+    ],
+    "F5": [
+     "FACTOR V",
+     "FACTOR VA",
+     "PROTHROMBINASE"
+    ],
+    "F8": [
+     "FACTOR VIII",
+     "ANTIHEMOPHILIC"
+    ],
+    "SERPINC1": [
+     "ANTITHROMBIN"
+    ]
+   }
+  },
+  "what": "decompose the four standing disagreements V6 surfaced in X_CROSS4 (genes where all of DGIdb/OT-ChEMBL/MED-RT/GtoPdb call, but MED-RT dissents opposite the molecular consensus) by the FRAME of the controlled-vocabulary class names the dissenting source assigns."
+ },
+ "arm_B_external_source": {
+  "assembly": "FULL MOA-curated interaction return per disease gene from the DrugCentral bulk TSV. NO hand-picking. Membership = a DrugCentral-curated drug<->disease-gene edge. Direction = reduce_dc(ACTION_TYPE); zero sign OR ambiguous -> dropped (never guessed).",
+  "determinism": "metrics computed from the VENDORED snapshot (byte-frozen manifest). A fresh live DrugCentral re-pull is a network AUDIT sidecar, off-manifest.",
+  "drugcentral_version": "2021-09-01",
+  "magnitude_firewall": "affinity columns (ACT_VALUE/ACT_UNIT/ACT_TYPE-assay/ACT_COMMENT/RELATION) are NEVER read or vendored; only categorical direction fields enter the kit. Snapshot magnitude-free by construction.",
+  "membership_bound": "DrugCentral integrates ChEMBL/DrugBank/IUPHAR upstream -> NOT fully orthogonal to the ChEMBL lineage. What it adds is its own MOA edge assignments plus genes/edges the prior sources did not carry. X_MEMB_DC audits the overlap. PRE-REGISTERED HONEST NEGATIVE: DrugCentral is expected to TRIANGULATE, not to widen the signed-gene denominator, and its coverage is channel-blocker-skewed so the pooled directional discrimination may be weak -- both to be reported faithfully whatever the outcome.",
+  "name": "DrugCentral drug<->target interaction table (bulk TSV), Homo sapiens, kit disease genes only; MOA=1 curated edges supply BOTH membership and direction.",
+  "orthogonality": "DrugCentral is a PRIMARY expert-curated drug-target compendium; mirrors V6's GtoPdb pattern (membership AND direction from DrugCentral's own curation).",
+  "snapshot_fetched_utc": "2026-06-21T10:18:09Z",
+  "snapshot_sha256": "e9a653768f5c9e834e861c7ac812b257295832a904534a18c3387ba5fc1cd758",
+  "vendored_snapshot": "validation/v7_drugcentral_snapshot.cache.json"
+ },
+ "author": "Young Jae Lee",
+ "committed_before_metrics": true,
+ "continues_from": {
+  "round": "V6",
+  "v6_prereg_sha256": "5ac4e192e8206083dc3032cbbd24723e2111aebeb1d144e89bbae9a13298901e",
+  "v6_validation_chain_head": "7ba7d49b7c7d84860d4a95a38bdc90e4936ba879ac976f0ac3b8cbacccb9a139"
+ },
+ "disease_set": {
+  "candidate_register_sha256": "e3536726c36e761043da80bd994de06405a6f6a5811462047e7597134cfd6e22",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "n": 128,
+  "policy": "ALL resolved diseases (whole frozen set; no cherry-picking, no hold-back).",
+  "slugs": [
+   "aadc_deficiency",
+   "achondroplasia",
+   "acute_intermittent_porphyria",
+   "adenosine_deaminase_deficiency",
+   "agat_deficiency",
+   "alkaptonuria",
+   "alpha1_antitrypsin_deficiency",
+   "alpha_mannosidosis",
+   "andersen_tawil_syndrome",
+   "argininosuccinic_aciduria",
+   "atypical_hemolytic_uremic_syndrome",
+   "autosomal_dominant_hypocalcemia_type_1",
+   "bardet_biedl_syndrome",
+   "bartter_syndrome_type_1",
+   "beta_thalassaemia",
+   "biotinidase_deficiency",
+   "brugada_syndrome",
+   "catecholaminergic_polymorphic_ventricular_tachycardia",
+   "cerebrotendinous_xanthomatosis",
+   "choroideremia",
+   "citrullinemia_type_1",
+   "classic_galactosemia",
+   "classical_homocystinuria",
+   "congenital_hyperinsulinism",
+   "congenital_leptin_deficiency",
+   "crouzon_syndrome",
+   "cryopyrin_associated_periodic_syndrome",
+   "cystic_fibrosis",
+   "cystinosis",
+   "cystinuria",
+   "deficiency_of_il1_receptor_antagonist",
+   "dopa_responsive_dystonia",
+   "dravet_syndrome",
+   "duchenne_muscular_dystrophy",
+   "ehlers_danlos_syndrome_vascular_type",
+   "fabry_disease",
+   "factor_v_leiden",
+   "factor_vii_deficiency",
+   "factor_xiii_deficiency",
+   "familial_chylomicronaemia_syndrome",
+   "familial_hypercholesterolaemia",
+   "familial_hypercholesterolemia_ldlr",
+   "familial_mediterranean_fever",
+   "friedreich_ataxia",
+   "gamt_deficiency",
+   "gaucher_disease",
+   "gitelman_syndrome",
+   "glucose_6_phosphate_dehydrogenase_deficiency",
+   "glutaric_aciduria_type_1",
+   "glycogen_storage_disease_type_ia",
+   "gm2_gangliosidosis_ab_variant",
+   "haemophilia_a",
+   "haemophilia_b",
+   "hereditary_angioedema",
+   "hereditary_antithrombin_deficiency",
+   "hereditary_fructose_intolerance",
+   "hereditary_haemochromatosis_type_1",
+   "hereditary_haemorrhagic_telangiectasia",
+   "hereditary_tyrosinaemia_type_1",
+   "holocarboxylase_synthetase_deficiency",
+   "huntington_disease",
+   "hypertrophic_cardiomyopathy",
+   "hypophosphatasia",
+   "isovaleric_acidemia",
+   "krabbe_disease",
+   "leber_congenital_amaurosis_2",
+   "leptin_receptor_deficiency",
+   "lesch_nyhan_syndrome",
+   "liddle_syndrome",
+   "long_qt_syndrome_3",
+   "lysosomal_acid_lipase_deficiency",
+   "maple_syrup_urine_disease",
+   "marfan_syndrome",
+   "mecp2_duplication_syndrome",
+   "medium_chain_acyl_coa_dehydrogenase_deficiency",
+   "menkes_disease",
+   "metachromatic_leukodystrophy",
+   "methylmalonic_acidemia_mut_type",
+   "mucopolysaccharidosis_type_i",
+   "mucopolysaccharidosis_type_ii",
+   "mucopolysaccharidosis_type_iiia",
+   "mucopolysaccharidosis_type_iiib",
+   "mucopolysaccharidosis_type_iiic",
+   "mucopolysaccharidosis_type_iiid",
+   "mucopolysaccharidosis_type_iva",
+   "mucopolysaccharidosis_type_vi",
+   "mucopolysaccharidosis_type_vii",
+   "multiple_endocrine_neoplasia_type_2a",
+   "myotonia_congenita",
+   "neonatal_severe_hyperparathyroidism",
+   "nephrogenic_diabetes_insipidus_x_linked",
+   "nephrogenic_siad",
+   "neurofibromatosis_type_1",
+   "neuronal_ceroid_lipofuscinosis_2",
+   "niemann_pick_disease_type_a_b",
+   "niemann_pick_disease_type_c",
+   "noonan_syndrome",
+   "ornithine_transcarbamylase_deficiency",
+   "osteogenesis_imperfecta_type_i",
+   "phenylketonuria",
+   "pnpo_deficiency",
+   "pompe_disease",
+   "primary_carnitine_deficiency",
+   "primary_hyperoxaluria_type_1",
+   "pyridoxine_dependent_epilepsy",
+   "pyruvate_kinase_deficiency",
+   "rett_syndrome",
+   "rho_autosomal_dominant_retinitis_pigmentosa",
+   "riboflavin_transporter_deficiency",
+   "sandhoff_disease",
+   "sclerosteosis",
+   "scn4a_skeletal_muscle_channelopathy",
+   "sickle_cell_disease",
+   "sitosterolaemia",
+   "sod1_amyotrophic_lateral_sclerosis",
+   "spinal_muscular_atrophy",
+   "tay_sachs_disease",
+   "tetrahydrobiopterin_deficiency",
+   "timothy_syndrome",
+   "transthyretin_amyloidosis",
+   "tuberous_sclerosis_complex",
+   "tyrosine_hydroxylase_deficiency",
+   "usher_syndrome_type_2a",
+   "von_hippel_lindau_disease",
+   "wilson_disease",
+   "x_linked_adrenoleukodystrophy",
+   "x_linked_hypophosphataemia",
+   "x_linked_retinitis_pigmentosa"
+  ]
+ },
+ "frozen_rules": {
+  "emergence_own_gene_action": "LOF -> RESTORE (ACTIVATING); GOF -> OPPOSE (INHIBITORY). IDENTICAL to the rule the kit, V2..V6 already live by. BLIND to DrugCentral.",
+  "external_directionality_reduction": {
+   "activating_tokens": [
+    "AGONIST",
+    "ACTIVATOR",
+    "OPENER",
+    "POSITIVE",
+    "RELEASING"
+   ],
+   "inhibitory_tokens": [
+    "ANTAGONIST",
+    "INHIBITOR",
+    "BLOCKER",
+    "NEGATIVE"
+   ],
+   "note": "DrugCentral ACTION_TYPE -> direction. Single unambiguous sign per edge; binding/neutral/ambiguous -> dropped. Per gene: majority of the gene's MOA-curated DrugCentral drugs that carry a clean sign; tie -> TIE (not scored).",
+   "ordered_overrides": [
+    "INVERSE AGONIST->INHIBITORY",
+    "PARTIAL/FULL AGONIST->ACTIVATING",
+    "ANTIBODY BINDING / BINDING AGENT / SUBSTRATE / CHAPERONE->None",
+    "NEGATIVE (ALLOSTERIC) MODULATOR->INHIBITORY",
+    "POSITIVE (ALLOSTERIC) MODULATOR->ACTIVATING",
+    "bare MODULATOR->None"
+   ]
+  },
+  "membership": "(drug<->gene) is DrugCentral's OWN MOA=1 curation; NOT inherited from V4."
+ },
+ "licence": "CC BY 4.0",
+ "metrics": {
+  "x1_dc": "X1 confusion matrix + accuracy, LESION-STRATIFIED, per-class precision/recall, marginal baseline, permutation null. Full mismatch list.",
+  "x_cov_dc": "coverage/denominators in DrugCentral (MOA-curated, signed).",
+  "x_cross5": "five-source direction concordance.",
+  "x_memb_dc": "signed-gene overlap vs the V3-V6 union; DrugCentral-only edges; disagreement votes.",
+  "x_nc": "negative/structural control: the X1_DC permutation null (reported even when NOT significant -- that is itself the honest result).",
+  "x_vocab": "per-disagreement frame table; count of disagreements that frame-normalise to agreement vs abstention; count showing internal cross-frame pooling."
+ },
+ "non_claims": [
+  "No metric here asserts any clinical magnitude, efficacy, dose, affinity, or outcome. DrugCentral is read ONLY for membership + DIRECTION (ACTION_TYPE category); the affinity columns are never touched. The taxonomy reads only controlled-vocabulary class names.",
+  "Recovering a therapy DIRECTION against a 5th source is method-consistency and external corroboration, NOT evidence any drug works; every lead stays [O].",
+  "ARM A is an annotation-vocabulary explanation of WHY one source dissents; it neither changes any locked direction nor adjudicates pharmacology -- it shows the disagreement is a framing artefact, not a molecular-target contradiction.",
+  "ARM B's honest negatives are first-class results: DrugCentral does NOT widen the signed-gene denominator (one gene, RYR2) and its pooled directional discrimination is WEAK (channel-blocker-skewed; permutation null not significant). The GOF arm corroborates qualitatively only."
+ ],
+ "orcid": "0009-0002-7535-8245",
+ "perm": {
+  "n": 5000,
+  "seed": 19
+ },
+ "pre_registered_next_batch": "the four-source disagreement is now explained as a vocabulary-frame artefact and triangulated by a fifth source; the external direction loop is corroborated but its coverage is saturating on primary pharmacology DBs. Remaining work is (a) COVERAGE via Track-A-scale corpus expansion (more in-model diseases whose genes resolve), gated on validation throughput, and (b) §11.4 blinded hold-out / rediscovery precision-recall with denominators -- never outrunning the validation it rests on.",
+ "prereg_sha256": "e99581fd859b9641fa58489f8981256a06cd71571d344bdf0a5d9447c79c2fcd",
+ "programme": "jamming-physics.org",
+ "release": "0.41.0-validation.v7",
+ "snapshot_date": "2026-06-21",
+ "strata": {
+  "X1_DC_external_membership_own_gene": "ARM B. emergence_own_gene_action(lesion) vs DrugCentral direction of DrugCentral's OWN MOA-curated drugs on the SAME gene. Coupling-free, LESION-STRATIFIED + marginal baseline + permutation null. Identical construction to V3..V6 X1, membership+direction from DrugCentral.",
+  "X2_omitted": "X2 inherits V2 coupling and was reported in full in V3; V7 does not re-do it.",
+  "X_COV_DC_external_coverage": "ARM B coverage/denominators: disease genes with >=1 MOA-curated DrugCentral drug carrying a clean direction.",
+  "X_CROSS5_triangulation": "ARM B. on genes ALL FIVE sources can call, do DrugCentral (V7), GtoPdb (V6), OT/ChEMBL (V4), MED-RT (V5) and DGIdb (V3) agree? Transparency.",
+  "X_MEMB_DC_membership_overlap": "ARM B. signed-gene overlap of DrugCentral vs the V3-V6 union (the honest 'does a 5th primary source widen the denominator?' test) + DrugCentral-only drug edges on shared genes + DrugCentral's vote on the four disagreement genes.",
+  "X_VOCAB_source_vocabulary_taxonomy": "ARM A. Frame-decomposition of the four standing disagreements; detects INTERNAL cross-frame pooling and emits the frame-normalised resolution (target-action agreement or principled abstention)."
+ },
+ "title": "V7 -- source-vocabulary taxonomy of the four standing four-source disagreements (ABCC8, F5, F8, SERPINC1), plus a fifth primary-curation cross-check (DrugCentral) of the locked emergence directions, with denominators and honest negatives"
+}

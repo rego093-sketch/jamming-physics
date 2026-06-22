@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colliding Clusters: the Bullet Offset — Vacuum-Inflow Cosmology §8.1 | Jamming Physics</title>
+<meta name="description" content="The Bullet-Cluster lensing-gas offset as deficit relaxation: the vacuum deficit passes through and relaxes separately, no dark-matter particle.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/08-colliding-clusters-bullet-offset/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Colliding Clusters: the Bullet Offset","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/08-colliding-clusters-bullet-offset/","knowsAbout":["Bullet Cluster","galaxy cluster collision","gravitational lensing","dark matter offset","vacuum deficit"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§8.1 Colliding Clusters: the Bullet Offset"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §8.1</nav></header>
+<main><!--vp-v1.8-->
+<h1>Colliding Clusters: the Offset as Deficit Relaxation</h1>
+<p class="answer">In colliding galaxy clusters the gravitational-lensing peak is offset from the hot gas, usually read as proof of collisionless dark matter. Here the offset is deficit relaxation: the vacuum deficit, unlike the shocked gas, passes through the collision and relaxes on its own timescale. This reproduces the Bullet-Cluster-type separation between lensing mass and gas without a dark-matter particle.</p>
+<p class="abstract">The Bullet Cluster shows the gravitational-lensing mass offset from the X-ray gas, the canonical argument for a collisionless dark-matter particle. In the deficit picture the vacuum deficit passes through the collision while the gas shocks and lags, so the lensing peak and the gas separate by deficit relaxation, the deficit's 1/r² gravity tracking the galaxies — the same observation without a new particle.</p>
+<aside class="claim-strip page"><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/08-colliding-clusters-bullet-offset/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>Colliding clusters: the offset as deficit relaxation</h2>
+<span id="sec:colliding"></span>
+<p>The Bullet-Cluster objection deserves more than a paragraph, because it is the one place where a
+deficit account can be made to <em>move</em>: in a merger the gas, the stars, and the deficit need
+not stay together, and their separation is a dynamical prediction rather than a fit. We give the
+minimal model, state exactly the conditions for an offset, and then say plainly what the
+simulation does and does not establish.</p>
+<h4>The deficit as a field.</h4>
+<p>Write the local shortfall of the medium as a deficit field Δ(x,t)≥0 (the
+depleted amount relative to the undepleted background). It couples to the potential as
+Φ_(def)=-α_(Φ)c²Δ, so its gradient is <em>attractive</em> and sources
+the same inflow that gives the flat curve (Step 2). For lensing one projects an effective surface
+density Σ_(eff)=Σ_(baryon)+Σ_(def), and the
+convergence is κ∝Σ_(eff). The <em>sign</em> is not chosen: under no-slip
+matching to general relativity (Φ=Ψ, post-Newtonian γ=1) the index in the well is
+n≃1-4Φ_(eff)/c²>1, tied to the <em>same</em> attractive potential as the
+rotation curve, so lensing and rotation share one source by construction (packing foundations in
+the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}).</p>
+<h4>Transport during a merger.</h4>
+<p>The deficit is not rigidly attached to any one component; it advects, diffuses, and relaxes
+toward the local equilibrium Δ_(eq) set by the instantaneous baryons:</p>
+<figure class="eq" id="eq:cl_transport"><img src="/cosmology/eq/cosmology/cos-08-001.svg" data-eq="cos-08-001" width="362" height="40" loading="lazy" alt="\begin{equation} \partial_{t}\Delta+\nabla\!\cdot\!\big(\Delta\,\mathbf{u}_{\Delta}-D_{\Delta}\nabla\Delta\big) =\frac{1}{\tau_{\Delta}}\big(\Delta_{\mathrm{eq}}-\Delta\big), \end{equation}"></figure>
+<p>with advection velocity u_(Δ), diffusivity D_(Δ), and relaxation time
+τ_(Δ)—the time the depletion shadow takes to re-form around a displaced baryon
+distribution. A lensing/gas offset survives the merger under three conditions:</p>
+<ul>
+<li><strong>(C1)</strong>  <strong>slow relaxation</strong>, τ_(Δ)ggτ_(coll): the deficit cannot
+re-form on the new (shocked) gas during the collision time τ_(coll);
+<li><strong>(C2)</strong>  <strong>small diffusion</strong>, √D_(Δ)τ_(coll)ll L_(off):
+the shadow does not simply smear across the offset scale L_(off);
+<li><strong>(C3)</strong>  <strong>collisionless advection</strong>,
+|u_(Δ)-u_(gal)|ll|u_(gal)-u_(gas)|:
+the deficit travels with the (collisionless) galaxies, which pass through, not with the
+ram-pressure-braked gas.
+</ul>
+<p>When these hold, the lensing peak (Σ_(eff)) stays on the galaxies while the X-ray
+peak (Σ_(gas)) lags behind—the observed configuration.</p>
+<h4>What the simulation shows.</h4>
+<code>ch8_bullet.py</code> integrates Eq. <a class="xref" data-ref="eq:cl_transport">(cl_transport)</a> for a “bullet” subcluster
+crossing a larger cluster (galaxies ballistic; gas decelerated by a ram-pressure pulse; deficit
+evolved on a grid) and measures the lensing-minus-gas centroid offset just after pericentre, as a
+function of τ_(Δ)/τ_(coll) (Fig. <a class="xref" data-ref="fig:bullet">(bullet)</a>). With gas dominating the
+baryons (f_(gas)=0.85) and the deficit dominating the total mass
+(M_(def):M_(baryon)=5:1)—both as in real clusters, so the result is not
+an artefact of the weighting—the normalised offset rises monotonically from the small
+stellar-baryon floor (≃0.15L_(off), fast relaxation) to the
+lensing-on-galaxies ceiling (≃0.86L_(off), slow relaxation), with the transition
+at τ_(Δ) τ_(coll) exactly as condition (C1) predicts. The small-diffusion
+condition (C2) is comfortably met (√D_(Δ)τ_(coll)/L_(off)≈0.04).
+<figure class="fig"><img src="/cosmology/assets/img/ch8_bullet.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>Status of the cluster claim (read this before celebrating).</h4>
+<ul>
+<li> <strong>Evidence (Gate 1): mechanism, not measurement.</strong> The simulation shows that the
+deficit transport of Eq. <a class="xref" data-ref="eq:cl_transport">(cl_transport)</a> <em>does</em> produce a lensing/gas offset under
+C1–C3. It uses normalised (toy) units—no real masses, velocities, or weak-lensing maps—so it
+does <em>not</em> reproduce the observed  0.2 Mpc offset of any specific system. The
+quantitative data gate (a χ² against real lensing+X-ray maps) remains <strong>open</strong>.
+<li> <strong>Label (Gate 2): degenerate, with one possible discriminator.</strong> The <em>existence</em>
+of the offset is <strong>degenerate</strong> with collisionless particle dark matter: both produce it by
+the identical “collisionless-during-merger” logic (C3), and the deficit here is, by design,
+<em>mimicking</em> a collisionless component. The one feature that could in principle distinguish
+them is that a <em>finite</em> τ_(Δ) predicts slow post-merger <em>reattachment</em> of the
+lensing peak back toward the gas, whereas collisionless dark matter never reattaches. We flag
+this as a falsifiable direction; it is <em>not</em> tested here.
+<li> <strong>Scope (Gate 3): present-day, observable.</strong> Cluster lensing and X-ray offsets are
+present-day measurements; nothing here is an origin or cosmic-history claim.
+</ul>
+<h4>Sharpening the discriminator: a secular τ_(Δ) and gas-coincident cores.</h4>
+<p>Two points raise this above a bare hope. First, τ_(Δ) is not a free dial: the deficit is
+a depletion <em>shadow</em> laid down by baryon annihilation (νₚ=3π⁴≈292 quanta
+s⁻¹ per nucleon, Chapter 1) over the cluster's lifetime, so it can only re-form on a
+comparably <em>secular</em> time—of order a gigayear, not the collision time
+τ_(coll) 0.3 Gyr. Thus τ_(Δ)ggτ_(coll) (condition C1) holds
+<em>by construction</em>: lensing-on-the-galaxies is the generic young-merger outcome, and—unlike
+MOND, whose baryon-tied gravity must put the lensing on the dominant gas and so <em>fails</em> the
+Bullet system—the framework reproduces it because its deficit is a real, collisionlessly advected
+component. Second, a <em>finite</em> τ_(Δ) predicts what collisionless dark matter cannot:
+over  Gyr the lensing should relax back <em>toward the gas</em>, so older or slower mergers
+should show reduced offsets and, in the limit, a lensing “dark core” sitting <em>on the X-ray
+gas and largely devoid of galaxies</em>—which the collisionless paradigm explicitly forbids (the mass
+should follow the galaxies). Just such a core is reported in Abell 520, the “cosmic train
+wreck” (Mahdavi et al. 2007; Jee et al.), though it is <em>contested</em>: a reanalysis (Clowe et
+al. 2012) does not recover it and finds the mass tracking the galaxies. So the framework's
+distinguishing signature exists as a real but unsettled candidate in the data. The decisive test is
+a population one—lensing/gas offset versus post-merger age, and the frequency of gas-coincident
+cores across the dissociative-merger sample (Bullet, MACS J0025, Abell 2034, Abell 520,
+El Gordo, …)—which no current dataset yet delivers.</p>
+<p>In short: the Bullet Cluster is no longer a bare qualitative hope—the mechanism is
+explicit and simulated, and the conditions for an offset are stated—but it is still <em>not</em>
+claimed as a quantitative success, and the offset alone does not select the deficit picture over
+particle dark matter. The honest entry in the ledger (Chapter 16) is “mechanism demonstrated
+(toy); quantitative cluster gate open; the discriminator (post-merger reattachment → gas-coincident cores) has a real but contested candidate in Abell 520 and awaits a population test.”</p>
+
+<nav class="pn"><a rel="prev" href="/cosmology/08-dark-matter-vacuum-deficit/">← §8</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/09-microwave-background-present-lattice-emission/">§9 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

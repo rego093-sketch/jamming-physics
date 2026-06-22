@@ -1,0 +1,599 @@
+{
+ "_held_out_warrant": "The kit's gamma is measured PURELY from promoter DNA (NN-stacking dG37, SantaLucia 1998, GRCh38 TSS-2000..+500), and was frozen before any expression data was consulted. The Replogle CRISPRi pseudobulk expresses none of that DNA-thermodynamic information, so it is a genuinely held-out target for the (A) map. No parameter or gamma was tuned to it.",
+ "_panel_rule": "Panel = union of ALL seven frozen kit gamma atlases (neuro, onco, neurodegen, rna-carrier, imprint, germline, immune), deduplicated by symbol (first-wins; no gamma conflicts), matched to perturbations by EXACT HGNC symbol with the single documented alias GBA1->GBA. Declared before scoring; not chosen to favour any result.",
+ "_panel_size": 75,
+ "_prediction_sign_locked": "R19 (A)-map prediction, locked BEFORE scoring: a deeper-barrier (higher-gamma) promoter resists the knockdown drive, so higher gamma -> more transcript remaining -> Spearman rho(gamma, fold_expr) > 0. A null or negative rho is a valid honest outcome.",
+ "_source": {
+  "assembly_note": "perturbation labels parsed as '{idx}_{SYMBOL}_{P1P2|P1}_{ENSG}'; symbol = field[1]; NON-TARGETING controls excluded.",
+  "doi": "10.1016/j.cell.2022.05.013",
+  "figshare_article": "20029387",
+  "figshare_base_url": "https://ndownloader.figshare.com/files/",
+  "readout_column": "obs/fold_expr = ON-TARGET fraction of transcript remaining after CRISPRi (1.0=no knockdown, 0.0=complete); obs/control_expr = matched non-targeting baseline level.",
+  "study": "Replogle et al., Mapping information-rich genotype-phenotype landscapes with genome-scale Perturb-seq, Cell 185(14):2559-2575 (2022)"
+ },
+ "_what": "VP Inheritance Kit -- (B) VALIDATION scoring sheet (held-out). Cached matched-panel rows used to score the kit's no-tuning (A)-map gamma-ordering against REAL on-target CRISPRi knockdown depth. This file holds ONLY the held-out measurements (fold_expr/control_expr) for the genes that intersect the kit's frozen gamma atlases; gamma itself is NOT stored here as truth -- it is re-read from the frozen inherited/*_gamma.json atlases at score time. Nothing is fitted to these numbers; the kit scores frozen predictions against them.",
+ "datasets": {
+  "K562_GWPS": {
+   "cell_line": "K562",
+   "dataset_median_fold_expr": 0.155279,
+   "description": "genome-wide Perturb-seq (primary, pre-registered)",
+   "figshare_file_id": "35773217",
+   "matched": [
+    {
+     "control_expr": 0.826112,
+     "fold_expr": 1.071711,
+     "gamma": 1.3225,
+     "gamma_atlas": "immune",
+     "gene": "RUNX1",
+     "matched_as": "RUNX1",
+     "promoter_gc": 0.425
+    },
+    {
+     "control_expr": 0.15028,
+     "fold_expr": 0.318598,
+     "gamma": 1.3645,
+     "gamma_atlas": "imprint",
+     "gene": "MEST",
+     "matched_as": "MEST",
+     "promoter_gc": 0.4694
+    },
+    {
+     "control_expr": 0.672267,
+     "fold_expr": 0.606521,
+     "gamma": 1.3748,
+     "gamma_atlas": "onco",
+     "gene": "APC",
+     "matched_as": "APC",
+     "promoter_gc": 0.4814
+    },
+    {
+     "control_expr": 0.692921,
+     "fold_expr": 0.264987,
+     "gamma": 1.3776,
+     "gamma_atlas": "rna",
+     "gene": "AGO2",
+     "matched_as": "AGO2",
+     "promoter_gc": 0.4798
+    },
+    {
+     "control_expr": 0.349302,
+     "fold_expr": 0.124529,
+     "gamma": 1.3876,
+     "gamma_atlas": "onco",
+     "gene": "PIK3CA",
+     "matched_as": "PIK3CA",
+     "promoter_gc": 0.4846
+    },
+    {
+     "control_expr": 1.5e-05,
+     "fold_expr": 0.0,
+     "gamma": 1.3961,
+     "gamma_atlas": "imprint",
+     "gene": "PEG3",
+     "matched_as": "PEG3",
+     "promoter_gc": 0.4886
+    },
+    {
+     "control_expr": 0.506079,
+     "fold_expr": 0.124286,
+     "gamma": 1.3981,
+     "gamma_atlas": "rna",
+     "gene": "DICER1",
+     "matched_as": "DICER1",
+     "promoter_gc": 0.4918
+    },
+    {
+     "control_expr": 6.399653,
+     "fold_expr": 0.087829,
+     "gamma": 1.4049,
+     "gamma_atlas": "neurodegen",
+     "gene": "PARK7",
+     "matched_as": "PARK7",
+     "promoter_gc": 0.4978
+    },
+    {
+     "control_expr": 0.454077,
+     "fold_expr": 0.192906,
+     "gamma": 1.4052,
+     "gamma_atlas": "onco",
+     "gene": "BRAF",
+     "matched_as": "BRAF",
+     "promoter_gc": 0.4962
+    },
+    {
+     "control_expr": 0.068033,
+     "fold_expr": 0.0,
+     "gamma": 1.4056,
+     "gamma_atlas": "germline",
+     "gene": "DMC1",
+     "matched_as": "DMC1",
+     "promoter_gc": 0.5026
+    },
+    {
+     "control_expr": 1.292955,
+     "fold_expr": 0.489761,
+     "gamma": 1.408,
+     "gamma_atlas": "neuro",
+     "gene": "CHD8",
+     "matched_as": "CHD8",
+     "promoter_gc": 0.5058
+    },
+    {
+     "control_expr": 0.453632,
+     "fold_expr": 0.087966,
+     "gamma": 1.4085,
+     "gamma_atlas": "germline",
+     "gene": "MLH1",
+     "matched_as": "MLH1",
+     "promoter_gc": 0.5022
+    },
+    {
+     "control_expr": 2.71402,
+     "fold_expr": 0.929371,
+     "gamma": 1.4101,
+     "gamma_atlas": "onco",
+     "gene": "MYC",
+     "matched_as": "MYC",
+     "promoter_gc": 0.503
+    },
+    {
+     "control_expr": 0.564519,
+     "fold_expr": 0.206773,
+     "gamma": 1.4104,
+     "gamma_atlas": "rna",
+     "gene": "METTL3",
+     "matched_as": "METTL3",
+     "promoter_gc": 0.5022
+    },
+    {
+     "control_expr": 0.320877,
+     "fold_expr": 0.749311,
+     "gamma": 1.4122,
+     "gamma_atlas": "imprint",
+     "gene": "PLAGL1",
+     "matched_as": "PLAGL1",
+     "promoter_gc": 0.5014
+    },
+    {
+     "control_expr": 1.060125,
+     "fold_expr": 0.577214,
+     "gamma": 1.4134,
+     "gamma_atlas": "rna",
+     "gene": "YTHDF2",
+     "matched_as": "YTHDF2",
+     "promoter_gc": 0.507
+    },
+    {
+     "control_expr": 1.046548,
+     "fold_expr": 0.181248,
+     "gamma": 1.4149,
+     "gamma_atlas": "onco",
+     "gene": "BRCA1",
+     "matched_as": "BRCA1",
+     "promoter_gc": 0.5134
+    },
+    {
+     "control_expr": 0.106322,
+     "fold_expr": 0.464735,
+     "gamma": 1.4158,
+     "gamma_atlas": "neurodegen",
+     "gene": "GBA1",
+     "matched_as": "GBA",
+     "promoter_gc": 0.5134
+    },
+    {
+     "control_expr": 0.000127,
+     "fold_expr": 0.0,
+     "gamma": 1.4165,
+     "gamma_atlas": "germline",
+     "gene": "PRDM9",
+     "matched_as": "PRDM9",
+     "promoter_gc": 0.517
+    },
+    {
+     "control_expr": 0.087925,
+     "fold_expr": 0.062855,
+     "gamma": 1.4228,
+     "gamma_atlas": "immune",
+     "gene": "TLX1",
+     "matched_as": "TLX1",
+     "promoter_gc": 0.5246
+    },
+    {
+     "control_expr": 6.857208,
+     "fold_expr": 0.247258,
+     "gamma": 1.4256,
+     "gamma_atlas": "imprint",
+     "gene": "GNAS",
+     "matched_as": "GNAS",
+     "promoter_gc": 0.5238
+    },
+    {
+     "control_expr": 0.446825,
+     "fold_expr": 0.128503,
+     "gamma": 1.4284,
+     "gamma_atlas": "onco",
+     "gene": "MDM2",
+     "matched_as": "MDM2",
+     "promoter_gc": 0.5138
+    },
+    {
+     "control_expr": 0.32294,
+     "fold_expr": 0.0,
+     "gamma": 1.4289,
+     "gamma_atlas": "rna",
+     "gene": "DROSHA",
+     "matched_as": "DROSHA",
+     "promoter_gc": 0.5246
+    },
+    {
+     "control_expr": 0.074118,
+     "fold_expr": 0.319426,
+     "gamma": 1.4301,
+     "gamma_atlas": "onco",
+     "gene": "TP53",
+     "matched_as": "TP53",
+     "promoter_gc": 0.5306
+    },
+    {
+     "control_expr": 0.545649,
+     "fold_expr": 0.11316,
+     "gamma": 1.4325,
+     "gamma_atlas": "onco",
+     "gene": "VHL",
+     "matched_as": "VHL",
+     "promoter_gc": 0.521
+    },
+    {
+     "control_expr": 0.489905,
+     "fold_expr": 0.116472,
+     "gamma": 1.4345,
+     "gamma_atlas": "onco",
+     "gene": "RB1",
+     "matched_as": "RB1",
+     "promoter_gc": 0.5246
+    },
+    {
+     "control_expr": 4.516551,
+     "fold_expr": 0.056499,
+     "gamma": 1.4443,
+     "gamma_atlas": "neurodegen",
+     "gene": "SOD1",
+     "matched_as": "SOD1",
+     "promoter_gc": 0.533
+    },
+    {
+     "control_expr": 0.626936,
+     "fold_expr": 0.051618,
+     "gamma": 1.4457,
+     "gamma_atlas": "onco",
+     "gene": "NF1",
+     "matched_as": "NF1",
+     "promoter_gc": 0.543
+    },
+    {
+     "control_expr": 0.059282,
+     "fold_expr": 0.11209,
+     "gamma": 1.4518,
+     "gamma_atlas": "neurodegen",
+     "gene": "PINK1",
+     "matched_as": "PINK1",
+     "promoter_gc": 0.5402
+    },
+    {
+     "control_expr": 1.4e-05,
+     "fold_expr": 0.0,
+     "gamma": 1.4533,
+     "gamma_atlas": "immune",
+     "gene": "FOXN1",
+     "matched_as": "FOXN1",
+     "promoter_gc": 0.5594
+    },
+    {
+     "control_expr": 0.150046,
+     "fold_expr": 0.368556,
+     "gamma": 1.4563,
+     "gamma_atlas": "neuro",
+     "gene": "FMR1",
+     "matched_as": "FMR1",
+     "promoter_gc": 0.5446
+    },
+    {
+     "control_expr": 0.954011,
+     "fold_expr": 0.259072,
+     "gamma": 1.4698,
+     "gamma_atlas": "onco",
+     "gene": "KRAS",
+     "matched_as": "KRAS",
+     "promoter_gc": 0.5602
+    },
+    {
+     "control_expr": 0.281424,
+     "fold_expr": 0.195517,
+     "gamma": 1.4839,
+     "gamma_atlas": "imprint",
+     "gene": "GRB10",
+     "matched_as": "GRB10",
+     "promoter_gc": 0.569
+    },
+    {
+     "control_expr": 4.9e-05,
+     "fold_expr": 0.0,
+     "gamma": 1.4892,
+     "gamma_atlas": "immune",
+     "gene": "PAX5",
+     "matched_as": "PAX5",
+     "promoter_gc": 0.569
+    },
+    {
+     "control_expr": 0.297598,
+     "fold_expr": 0.221733,
+     "gamma": 1.4951,
+     "gamma_atlas": "neuro",
+     "gene": "MECP2",
+     "matched_as": "MECP2",
+     "promoter_gc": 0.5786
+    },
+    {
+     "control_expr": 1.712447,
+     "fold_expr": 0.200121,
+     "gamma": 1.5056,
+     "gamma_atlas": "neurodegen",
+     "gene": "VPS35",
+     "matched_as": "VPS35",
+     "promoter_gc": 0.5866
+    },
+    {
+     "control_expr": 0.582172,
+     "fold_expr": 1.157219,
+     "gamma": 1.5102,
+     "gamma_atlas": "onco",
+     "gene": "STK11",
+     "matched_as": "STK11",
+     "promoter_gc": 0.5874
+    },
+    {
+     "control_expr": 0.333919,
+     "fold_expr": 0.0,
+     "gamma": 1.5122,
+     "gamma_atlas": "rna",
+     "gene": "TARBP2",
+     "matched_as": "TARBP2",
+     "promoter_gc": 0.607
+    },
+    {
+     "control_expr": 1.174909,
+     "fold_expr": 0.115774,
+     "gamma": 1.5282,
+     "gamma_atlas": "rna",
+     "gene": "ELAVL1",
+     "matched_as": "ELAVL1",
+     "promoter_gc": 0.5998
+    },
+    {
+     "control_expr": 0.995255,
+     "fold_expr": 0.298287,
+     "gamma": 1.5434,
+     "gamma_atlas": "rna",
+     "gene": "DGCR8",
+     "matched_as": "DGCR8",
+     "promoter_gc": 0.615
+    },
+    {
+     "control_expr": 0.240036,
+     "fold_expr": 1.117206,
+     "gamma": 1.5435,
+     "gamma_atlas": "neuro",
+     "gene": "TSC2",
+     "matched_as": "TSC2",
+     "promoter_gc": 0.6277
+    },
+    {
+     "control_expr": 0.326255,
+     "fold_expr": 0.148208,
+     "gamma": 1.5694,
+     "gamma_atlas": "neuro",
+     "gene": "PTEN",
+     "matched_as": "PTEN",
+     "promoter_gc": 0.6441
+    },
+    {
+     "control_expr": 0.348634,
+     "fold_expr": 0.225839,
+     "gamma": 1.6142,
+     "gamma_atlas": "neurodegen",
+     "gene": "HTT",
+     "matched_as": "HTT",
+     "promoter_gc": 0.6845
+    }
+   ],
+   "n_matched": 43,
+   "n_nontargeting_excluded": 585,
+   "n_perturbations_total": 10673
+  },
+  "K562_essential": {
+   "cell_line": "K562",
+   "dataset_median_fold_expr": 0.172527,
+   "description": "K562 essential-gene Perturb-seq (robustness)",
+   "figshare_file_id": "35780870",
+   "matched": [
+    {
+     "control_expr": 0.618775,
+     "fold_expr": 0.051945,
+     "gamma": 1.3981,
+     "gamma_atlas": "rna",
+     "gene": "DICER1",
+     "matched_as": "DICER1",
+     "promoter_gc": 0.4918
+    },
+    {
+     "control_expr": 3.162823,
+     "fold_expr": 0.779421,
+     "gamma": 1.4101,
+     "gamma_atlas": "onco",
+     "gene": "MYC",
+     "matched_as": "MYC",
+     "promoter_gc": 0.503
+    },
+    {
+     "control_expr": 0.669836,
+     "fold_expr": 0.126207,
+     "gamma": 1.4104,
+     "gamma_atlas": "rna",
+     "gene": "METTL3",
+     "matched_as": "METTL3",
+     "promoter_gc": 0.5022
+    },
+    {
+     "control_expr": 1.272917,
+     "fold_expr": 0.187405,
+     "gamma": 1.4149,
+     "gamma_atlas": "onco",
+     "gene": "BRCA1",
+     "matched_as": "BRCA1",
+     "promoter_gc": 0.5134
+    },
+    {
+     "control_expr": 0.655726,
+     "fold_expr": 0.207128,
+     "gamma": 1.4325,
+     "gamma_atlas": "onco",
+     "gene": "VHL",
+     "matched_as": "VHL",
+     "promoter_gc": 0.521
+    },
+    {
+     "control_expr": 6.049748,
+     "fold_expr": 0.040611,
+     "gamma": 1.4443,
+     "gamma_atlas": "neurodegen",
+     "gene": "SOD1",
+     "matched_as": "SOD1",
+     "promoter_gc": 0.533
+    },
+    {
+     "control_expr": 2.146734,
+     "fold_expr": 0.102894,
+     "gamma": 1.5056,
+     "gamma_atlas": "neurodegen",
+     "gene": "VPS35",
+     "matched_as": "VPS35",
+     "promoter_gc": 0.5866
+    }
+   ],
+   "n_matched": 7,
+   "n_nontargeting_excluded": 109,
+   "n_perturbations_total": 2176
+  },
+  "RPE1": {
+   "cell_line": "RPE1",
+   "dataset_median_fold_expr": 0.087977,
+   "description": "RPE1 essential-gene Perturb-seq (robustness, 2nd cell line)",
+   "figshare_file_id": "35775512",
+   "matched": [
+    {
+     "control_expr": 0.422715,
+     "fold_expr": 0.0,
+     "gamma": 1.3981,
+     "gamma_atlas": "rna",
+     "gene": "DICER1",
+     "matched_as": "DICER1",
+     "promoter_gc": 0.4918
+    },
+    {
+     "control_expr": 0.675354,
+     "fold_expr": 0.539063,
+     "gamma": 1.4101,
+     "gamma_atlas": "onco",
+     "gene": "MYC",
+     "matched_as": "MYC",
+     "promoter_gc": 0.503
+    },
+    {
+     "control_expr": 0.239381,
+     "fold_expr": 0.07843,
+     "gamma": 1.4104,
+     "gamma_atlas": "rna",
+     "gene": "METTL3",
+     "matched_as": "METTL3",
+     "promoter_gc": 0.5022
+    },
+    {
+     "control_expr": 0.833947,
+     "fold_expr": 0.0,
+     "gamma": 1.4149,
+     "gamma_atlas": "onco",
+     "gene": "BRCA1",
+     "matched_as": "BRCA1",
+     "promoter_gc": 0.5134
+    },
+    {
+     "control_expr": 0.263833,
+     "fold_expr": 0.143708,
+     "gamma": 1.4289,
+     "gamma_atlas": "rna",
+     "gene": "DROSHA",
+     "matched_as": "DROSHA",
+     "promoter_gc": 0.5246
+    },
+    {
+     "control_expr": 0.14674,
+     "fold_expr": 0.294285,
+     "gamma": 1.4325,
+     "gamma_atlas": "onco",
+     "gene": "VHL",
+     "matched_as": "VHL",
+     "promoter_gc": 0.521
+    },
+    {
+     "control_expr": 4.513489,
+     "fold_expr": 0.147487,
+     "gamma": 1.4443,
+     "gamma_atlas": "neurodegen",
+     "gene": "SOD1",
+     "matched_as": "SOD1",
+     "promoter_gc": 0.533
+    },
+    {
+     "control_expr": 0.69673,
+     "fold_expr": 0.045096,
+     "gamma": 1.4457,
+     "gamma_atlas": "onco",
+     "gene": "NF1",
+     "matched_as": "NF1",
+     "promoter_gc": 0.543
+    },
+    {
+     "control_expr": 1.697903,
+     "fold_expr": 0.092683,
+     "gamma": 1.5056,
+     "gamma_atlas": "neurodegen",
+     "gene": "VPS35",
+     "matched_as": "VPS35",
+     "promoter_gc": 0.5866
+    },
+    {
+     "control_expr": 0.229659,
+     "fold_expr": 0.338891,
+     "gamma": 1.5434,
+     "gamma_atlas": "rna",
+     "gene": "DGCR8",
+     "matched_as": "DGCR8",
+     "promoter_gc": 0.615
+    },
+    {
+     "control_expr": 1.137516,
+     "fold_expr": 0.087589,
+     "gamma": 1.5694,
+     "gamma_atlas": "neuro",
+     "gene": "PTEN",
+     "matched_as": "PTEN",
+     "promoter_gc": 0.6441
+    }
+   ],
+   "n_matched": 11,
+   "n_nontargeting_excluded": 130,
+   "n_perturbations_total": 2549
+  }
+ }
+}

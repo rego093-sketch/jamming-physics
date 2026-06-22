@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>VP Disease Kit — Validation V8 (rediscovery precision/recall)</title>
+<style>
+ body{font:14px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;max-width:980px;margin:2rem auto;padding:0 1rem;color:#1a1a1a}
+ h1{font-size:1.5rem;margin-bottom:.2rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:1px solid #ddd;padding-bottom:.2rem}
+ .big{font-size:1.25rem;font-weight:600} .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em}
+ table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.9em} th,td{border:1px solid #ddd;padding:.35rem .5rem;text-align:left;vertical-align:top}
+ th{background:#f5f5f5} .ok{color:#0a7d32;font-weight:600} .note{color:#555} code{background:#f3f3f3;padding:0 .25rem;border-radius:3px}
+</style></head><body>
+<h1>Validation V8 — rediscovery precision / recall</h1>
+<div class="note">Release <code>0.41.0-validation.v8</code> · snapshot 2026-06-21 · axis: drug↔<b>DISEASE</b> indication ·
+ground truth: MED-RT <code>may_treat</code> (independent, magnitude-free)</div>
+
+<h2>Headline (denominators in full)</h2>
+<p class="big">Precision of the rediscovery label
+&nbsp;31/36 = 0.8611</p>
+<p class="big">Recall of MED-RT indications
+&nbsp;31/41 = 0.7561</p>
+<table>
+<tr><th>metric</th><th>Tiers 1–2 (exact+curated)</th><th>Tiers 1–3 (+group-single-referent)</th></tr>
+<tr><td>Precision (rediscovery label)</td>
+<td>27/32 = 0.8438</td>
+<td>31/36 = 0.8611</td></tr>
+<tr><td>Recall (MED-RT indications)</td>
+<td>27/37 = 0.7297</td>
+<td>31/41 = 0.7561</td></tr>
+<tr><td>Recall, string-variant-collapsed (Tiers 1–3)</td><td colspan="2">
+31/39 = 0.7949 &nbsp;<span class="note">(same-drug name variants merged)</span></td></tr>
+</table>
+<p class="note">All metrics reported at two binding depths so the group-single-referent stratum is never hidden.
+Scored bindings: 31 (Tiers 1–2) → 35 (Tiers 1–3);
+rejected (logged): 7. EXACT-tier fold identity verified:
+<span class="ok">YES</span>; all scored bindings live in kit+GT:
+<span class="ok">YES</span>.</p>
+
+<h2>Cross-tab — GT confirmation by kit label</h2>
+<table><tr><th>label | GT</th><th>count</th></tr><tr><td>novel|GT-silent</td><td style='text-align:right'>2</td></tr><tr><td>rediscovery|GT-confirms</td><td style='text-align:right'>31</td></tr><tr><td>rediscovery|GT-silent</td><td style='text-align:right'>5</td></tr></table>
+<p class="note">novel-but-GT-confirmed = a conservative label (the kit called novel what MED-RT independently treats);
+rediscovery|GT-silent = a MED-RT coverage gap, not a kit error. Novel-but-confirmed pairs:
+0.</p>
+
+<h2>Rediscovery pairs MED-RT does NOT confirm (coverage residue, with reason)</h2>
+<table><tr><th>slug</th><th>agent</th><th>bound disease</th><th>reason</th></tr><tr><td>classical_homocystinuria</td><td>pyridoxine (vitamin B6; cofactor pyridoxal-5&#x27;-phosphate)</td><td>D006712 Homocystinuria</td><td>agent-resolved-but-no-may_treat-edge-to-this-MeSH</td></tr><tr><td>beta_thalassaemia</td><td>luspatercept</td><td>D017086 beta-Thalassemia</td><td>agent-resolved-but-no-may_treat-edge-to-this-MeSH</td></tr><tr><td>cystic_fibrosis</td><td>tezacaftor (with ivacaftor)</td><td>D003550 Cystic Fibrosis</td><td>agent-has-zero-may_treat-edges-in-MEDRT</td></tr><tr><td>sickle_cell_disease</td><td>lovotibeglogene autotemcel</td><td>D000755 Anemia, Sickle Cell</td><td>agent-has-zero-may_treat-edges-in-MEDRT</td></tr><tr><td>factor_vii_deficiency</td><td>recombinant activated factor VII (eptacog alfa) [FVII deficiency]</td><td>D005168 Factor VII Deficiency</td><td>agent-has-zero-may_treat-edges-in-MEDRT</td></tr></table>
+
+<h2>Recall misses (the kit surfaced the disease via a different agent, or an honest gap)</h2>
+<table><tr><th>GT agent</th><th>disease (slug)</th><th>kit surfaced this disease via</th><th>category</th></tr><tr><td>amiloride</td><td>cystic_fibrosis (D003550)</td><td>ivacaftor, tezacaftor (with ivacaftor)</td><td>alternative-agent-same-disease</td></tr><tr><td>anakinra</td><td>cryopyrin_associated_periodic_syndrome (D056587)</td><td>canakinumab</td><td>alternative-agent-same-disease</td></tr><tr><td>canakinumab</td><td>familial_mediterranean_fever (D010505)</td><td>colchicine</td><td>alternative-agent-same-disease</td></tr><tr><td>miglustat</td><td>gaucher_disease (D005776)</td><td>ambroxol</td><td>alternative-agent-same-disease</td></tr><tr><td>nitisinone</td><td>hereditary_tyrosinaemia_type_1 (D020176)</td><td>nitisinone (NTBC)</td><td>alternative-agent-same-disease</td></tr><tr><td>nonacog alfa (recombinant factor IX)</td><td>factor_vii_deficiency (D005168)</td><td>recombinant activated factor VII (eptacog alfa) [FVII deficiency]</td><td>alternative-agent-same-disease</td></tr><tr><td>nonacog alfa (recombinant factor IX)</td><td>haemophilia_a (D006467)</td><td>octocog alfa (recombinant factor VIII)</td><td>alternative-agent-same-disease</td></tr><tr><td>octocog alfa (recombinant factor VIII)</td><td>factor_vii_deficiency (D005168)</td><td>recombinant activated factor VII (eptacog alfa) [FVII deficiency]</td><td>alternative-agent-same-disease</td></tr><tr><td>sapropterin (tetrahydrobiopterin)</td><td>phenylketonuria (D010661)</td><td>pegvaliase</td><td>alternative-agent-same-disease</td></tr><tr><td>sapropterin (tetrahydrobiopterin) [GCH1]</td><td>phenylketonuria (D010661)</td><td>pegvaliase</td><td>alternative-agent-same-disease</td></tr></table>
+
+<h2>Negative control — gene-specific agents carry tight, non-leaking indications</h2>
+<table><tr><th>agent</th><th>MED-RT may_treat set</th></tr><tr><td>asfotase alfa</td><td>Hypophosphatasia</td></tr><tr><td>belzutifan</td><td>von Hippel-Lindau Disease</td></tr><tr><td>cerliponase alfa</td><td>Neuronal Ceroid-Lipofuscinoses</td></tr><tr><td>elosulfase alfa</td><td>Mucopolysaccharidosis IV</td></tr><tr><td>galsulfase</td><td>Mucopolysaccharidosis VI</td></tr><tr><td>idursulfase</td><td>Mucopolysaccharidosis II</td></tr><tr><td>migalastat</td><td>Fabry Disease</td></tr><tr><td>pegvaliase</td><td>Phenylketonurias</td></tr><tr><td>risdiplam</td><td>Muscular Atrophy, Spinal</td></tr><tr><td>vosoritide</td><td>Achondroplasia, Dwarfism</td></tr></table>
+<p class="note">tight (no cross-disease leakage): <span class="ok">YES</span></p>
+
+<h2>Inheritance &amp; chain</h2>
+<p class="note mono">pre-registration 05ec93f3f266b7f5… · continues V7 chain
+20ea28acefb8… → V8 head 6f5446270117… ·
+128-core inherited anchors re-checked byte-identical (mapped_levers
+93ba3c89781f…, disease_inputs
+e9003054a4f7…)</p>
+<p class="note">Honest expected negative: MED-RT <code>may_treat</code> coverage is thin for ultra-rare monogenic
+disease and new modalities (gene/cell therapies and combination products often carry zero edges; some indications
+coded only to a generic parent). Denominators are small by construction; this is the coverage cost of an
+independent oracle, not a failure of the kit's labels. No magnitude token appears anywhere in this report.</p>
+</body></html>

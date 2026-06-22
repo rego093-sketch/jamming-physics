@@ -1,0 +1,54 @@
+{
+ "_README": "M13 SPECTRAL-OBSERVABLE atlas. Each entry is a MEASURED literature OBSERVABLE extracted from the FULL emitted LFP of the brain-structure-like multi-source coupled field (12 measured-master-gene organ nodes + a prefrontal frontal-midline-theta node, placed on the M9 ephaptic ring and phase-circulated through the measured-kappa pathways). The aperiodic floor is NOT fitted: it is the sum of shot noise through four MEASURED synaptic kernels (AMPA/NMDA/GABA_A/GABA_B time-constants + conductances, cited), each weighted by its synaptic CHARGE q=g*tau (Linden 2010: slow currents dominate the LFP). Slope, peaks, ignition, and the MI->recall link must EMERGE; no constant is tuned to a target. 'status' = matched | target(owed). Reproducing a phenomenon is NOT a claim about its interpretation; medium_efficacy_tested stays 0; the hard problem stays OPEN. The recurrent_ignition observable reproduces a measured NONLINEAR-THRESHOLD signature only -- it is NOT a claim of consciousness.",
+ "units": "hz = cycles/s ; exponent = dimensionless 1/f^x slope ; count_ge = at least N ; modulation_index = dimensionless (Tort KL) ; nonlinear_threshold = all-or-none bistable jump ; relational = X-vs-Y fact",
+ "synaptic_kinetics_measured": {
+  "_note": "decay time constant tau (ms), peak conductance g (nS), kinetic class. CITED measured biophysics, NOT fitted. Proportions NUM ~ Markram 2015 cortical E:I ~ 80:20.",
+  "AMPA":   {"tau_ms": 2.0,   "g_nS": 0.7, "class": "Efast", "num": 0.45, "source": "Jonas 1993; Destexhe 1998 (fast glutamatergic)"},
+  "NMDA":   {"tau_ms": 100.0, "g_nS": 0.5, "class": "Eslow", "num": 0.35, "source": "Destexhe 1998 (slow voltage-dependent glutamatergic)"},
+  "GABA_A": {"tau_ms": 6.0,   "g_nS": 1.0, "class": "Ifast", "num": 0.12, "source": "Destexhe 1998 (fast GABAergic)"},
+  "GABA_B": {"tau_ms": 180.0, "g_nS": 0.4, "class": "Islow", "num": 0.08, "source": "Destexhe 1998 (slow K+ GABAergic)"}
+ },
+ "prefrontal_node_hz": {
+  "_note": "M13-PRIVATE node (NOT in the shared brain_organ_atlas.json, to keep M0-M12 byte-identical). Frontal-midline-theta carrier of the prefrontal cortex -- the 'frontal lobe' the brief asks to represent.",
+  "f0_hz": 6.5,
+  "source": "Cavanagh & Frank 2014 (frontal-midline theta, ~6.5 Hz, PFC)"
+ },
+ "observables": {
+  "eeg_aperiodic_1f_slope": {
+   "measured": [1.5, 3.0],
+   "kind": "exponent_range",
+   "status": "matched",
+   "source": "Voytek 2015; Donoghue 2020 (cortical 1/f^x aperiodic exponent, x ~ 1.5-3 awake)",
+   "mechanism": "Welch PSD of the multi-source LFP -> specparam-style log-log fit over 1-45 Hz with iterative peak masking -> aperiodic exponent. Floor is charge-weighted measured-synapse shot noise (q=g*tau), NOT fitted."
+  },
+  "eeg_oscillatory_peaks_above_aperiodic": {
+   "measured": 3,
+   "tol": 0,
+   "kind": "count_ge",
+   "status": "matched",
+   "source": "Donoghue 2020 (genuine oscillations are narrowband peaks RISING ABOVE the aperiodic 1/f floor)",
+   "mechanism": "from the SAME PSD, count spectral bins whose power exceeds 2x the fitted aperiodic floor; peaks appear at the measured organ f0 (theta/alpha/beta/gamma), emergent from the circulating coupled oscillators."
+  },
+  "recurrent_ignition_nonlinear": {
+   "measured": "all_or_none",
+   "kind": "nonlinear_threshold",
+   "status": "matched",
+   "source": "Sergent & Dehaene 2004; Dehaene & Changeux 2011 (measured ALL-OR-NONE nonlinear ignition: sub-threshold stimuli evoke a small graded response, supra-threshold a large sustained one, with a sharp boundary)",
+   "mechanism": "R19 bistable mean-field with recurrent ephaptic feedback (recur = kappa*max(x,0)) at the MEASURED kappa: a sub-threshold drive relaxes to the OFF basin, a supra-threshold drive jumps to the ON basin, with a sharp boundary and a large jump -- the all-or-none arising from the bistability, not a baked-in gain. Reproduces the measured nonlinear-threshold SIGNATURE only; NOT a consciousness claim."
+  },
+  "theta_gamma_MI_predicts_recall": {
+   "measured": "MI_higher_when_recalled",
+   "kind": "relational",
+   "status": "matched",
+   "source": "Tort 2009 (theta-gamma KL modulation index); Lega 2016 (stronger theta-gamma coupling predicts successful hippocampal recall)",
+   "mechanism": "Tort KL MI of theta-phase/gamma-amplitude is computed for strong vs weak coupling and TIED to the M2 hippocampal recall outcome: strong coupling -> high MI and cue completes the engram (recall>=0.95); weak coupling -> low MI and the cue fails (recall<0.95). The MI->behaviour link is relational; no arbitrary constant."
+  },
+  "aperiodic_slope_flattens_with_arousal": {
+   "measured": "x_aroused_lt_x_rest",
+   "kind": "relational",
+   "status": "target",
+   "source": "Gao 2017; Lendner 2020; Waschke 2021 (the 1/f aperiodic slope FLATTENS with cortical activation / arousal as the E:I balance shifts)",
+   "owed_reason": "DIRECTIONAL but NOT yet robust. At the canonical SEED the aroused floor flattens (cortical-activation signature: up fast-E, down slow currents), but over an 8-seed robustness sweep it flattens on only 4/5 -- below the >=4/5 gate is borderline and one canonical-adjacent seed steepens slightly. Counted as OWED, not matched, until a thalamocortical conductance model (or a longer multi-trial record) makes the flattening robust. Honesty before completeness."
+  }
+ }
+}

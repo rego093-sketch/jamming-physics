@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>VP Disease Kit - Validation V18 (blinded prospective hold-out)</title>
+<style>
+ body{font:14px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;max-width:1000px;margin:2rem auto;padding:0 1rem;color:#1a1a1a}
+ h1{font-size:1.5rem;margin-bottom:.2rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:1px solid #ddd;padding-bottom:.2rem}
+ .big{font-size:1.2rem;font-weight:600} table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.9em}
+ th,td{border:1px solid #ddd;padding:.35rem .5rem;text-align:left;vertical-align:top} th{background:#f5f5f5}
+ .ok{color:#0a7d32;font-weight:600} .warn{color:#b35900;font-weight:600} .note{color:#555} code{background:#f3f3f3;padding:0 .25rem;border-radius:3px}
+ blockquote{border-left:3px solid #0a7d32;margin:.6rem 0;padding:.2rem .9rem;background:#f3fbf4}
+ .corr{border-left:3px solid #b35900;background:#fff8f0;margin:.6rem 0;padding:.2rem .9rem}
+</style></head><body>
+<h1>Validation V18 - blinded prospective hold-out (§5.2, grown 152-core)</h1>
+<div class="note">Release <code>0.41.0-validation.v18</code> . snapshot 2026-06-22 . the LAST open §11.4 item .
+partition + predictions LOCKED before any oracle . independent external oracle = V4 OpenTargets/ChEMBL drug sign</div>
+
+<h2>Design (prospective lock)</h2>
+<p>Hold-out partition <code>sha256(slug) % 10 &lt; 3</code> (blind, cannot be cherry-picked):
+<b>52 HOLDOUT</b> / 100 TRAIN (of 152; 0 multi-axis).
+Blind corrective direction = <b>OPPOSE(stored forced emergent axis)</b>, therapy-blind; the 52
+HOLD-OUT predictions were frozen in the pre-registration (content hash
+<code>d7158afa644f39c6…</code>) <b>before</b> any oracle was consulted.</p>
+<p class="note">Blindness corroboration: the coarse (role,lesion) rule reproduces the stored forced axis
+<b>157/160</b>; the 3 exceptions
+(ARG1/OAT/PHYH) are catabolic enzymes (LOF→accumulation), a biochemical refinement, not a therapy.</p>
+
+<h2>M1 — independence from the therapy verb (the §5.1 circular axis)</h2>
+<table><tr><th>partition</th><th>agree with verb</th><th>divergences (emergence ≠ verb)</th></tr>
+<tr><td>HOLDOUT</td><td>46/52</td><td class="big">6</td></tr>
+<tr><td>TRAIN</td><td>92/100</td><td class="big">8</td></tr></table>
+<p class="note">HOLD-OUT divergences (the forced-axis direction is NOT the verb, on locked-before-reveal data):</p>
+<table><tr><th>disease</th><th>gene</th><th>lesion</th><th>emergence / verb</th></tr><tr><td><code>brugada_syndrome</code></td><td>SCN5A</td><td>LOF_null</td><td>emergence increase / verb decrease</td></tr><tr><td><code>familial_hypercholesterolaemia</code></td><td>PCSK9</td><td>GOF</td><td>emergence increase / verb decrease</td></tr><tr><td><code>myotonia_congenita</code></td><td>CLCN1</td><td>LOF_null</td><td>emergence increase / verb decrease</td></tr><tr><td><code>sickle_cell_disease</code></td><td>HBB</td><td>LOF_null</td><td>emergence increase / verb decrease</td></tr><tr><td><code>sod1_amyotrophic_lateral_sclerosis</code></td><td>SOD1</td><td>GOF</td><td>emergence increase / verb decrease</td></tr><tr><td><code>transthyretin_amyloidosis</code></td><td>TTR</td><td>GOF</td><td>emergence increase / verb decrease</td></tr></table>
+
+<h2>M2 — external direction recovery vs V4 ChEMBL drug-sign (the INDEPENDENT oracle)</h2>
+<table><tr><th>partition</th><th>satisfiable (GOF / missense_residual)</th><th>unsatisfiable (LOF_null) — reported separately</th></tr>
+<tr><td>HOLDOUT</td><td class="big">6/9 = 0.6667</td><td class="note">2/4 (V6 caveat)</td></tr>
+<tr><td>TRAIN</td><td class="big">5/10 = 0.5</td><td class="note">0/8 (V6 caveat)</td></tr></table>
+<p class="note">HOLD-OUT satisfiable misses (node-vs-target: kit's switch-node direction ≠ drug's molecular-target direction):</p>
+<table><tr><th>disease</th><th>gene</th><th>lesion</th><th>kit / external</th><th>tag</th></tr><tr><td><code>familial_hypercholesterolaemia</code></td><td>PCSK9</td><td>GOF</td><td>kit increase / ext decrease</td><td>node_vs_target</td></tr><tr><td><code>sod1_amyotrophic_lateral_sclerosis</code></td><td>SOD1</td><td>GOF</td><td>kit increase / ext decrease</td><td>node_vs_target</td></tr><tr><td><code>transthyretin_amyloidosis</code></td><td>TTR</td><td>GOF</td><td>kit increase / ext decrease</td><td>node_vs_target</td></tr></table>
+
+<h2 class="warn">M3 — honest circularity disclosure (corrects V2's M2′ reading)</h2>
+<div class="corr"><p>The kit's <code>corrective_agents[].axis_effect</code> is <b>identical</b> to
+<code>corrective_direction = OPPOSE(axis_dir)</code> for
+<b>268/268</b> agent rows.
+So matching the blind prediction to <code>axis_effect</code> is <b>trivially 100%</b> and is NOT an independent
+recovery — it is a within-kit self-consistency check only. V18 therefore scores recovery against the genuinely-
+independent V4 external oracle (M2). This refines V2's reading (which used axis_effect); <b>V2 stays byte-identical</b>,
+exactly as V2 itself refined V1.</p></div>
+
+<h2>Negative controls</h2>
+<p class="ok">γ-restore admitted on LOF_null: 0/108 (exclusion holds:
+True). Gene-specific agents tight (no cross-disease leak): True.</p>
+
+<h2>Verdict</h2>
+<blockquote>The blinded prospective hold-out (partition + predictions locked before reveal) shows the kit's forced-axis
+corrective direction is <b>independent of the therapy verb</b> on the held-out set (M1: 6 HOLD-OUT
+divergences). Against a <b>genuinely-independent</b> external drug-sign oracle (M2), the satisfiable hold-out recovery is
+6/9 = 0.6667, <b>consistent with TRAIN</b> (5/10 = 0.5)
+— no overfit — with the misses being switch-node-vs-molecular-target divergences (not necessarily kit errors), and the
+LOF_null arm pharmacologically unsatisfiable (V6). V18 also <b>surfaces, not hides</b>, that the kit's axis_effect field is
+internally circular (M3), correcting V2's earlier over-reading. Negative controls hold. Every direction stays <code>[O]</code>;
+no magnitude token appears anywhere.</blockquote>
+<p class="ok">firewall PASS — 0 magnitude leaks.
+validation chain head <code>30cc490aaecc2d4e72f644f1…</code>, continues V17 <code>43ea8e0daa8acb3be309bcdf…</code>.</p>
+</body></html>

@@ -1,0 +1,15 @@
+{
+  "_what": "Frozen SHA-256 of the THREE reusable layers copied READ-ONLY from the mind v1.57 package (repro/mind/_verify). The frontal sim imports the layer CLASSES (PlasticConnectome, SpatialField, BistableSwitch) but never re-derives them and never depends on the mind atlas. engine_tripwire.py pins these so any 1-byte drift in a copied layer fails the gate -- the copied layers share the same frozen R19 substrate as mind, proven by identical file digests.",
+  "source_package": "mind v1.57 (mind_vp_site_v1_57_cross_axis_synthesis.zip), repro/mind/_verify/",
+  "layers": {
+    "e0_plasticity.py": "7c59a6bdc8dc3ce088523440ce04ea0a7dd2a3bcc1411764caede1cb99b95c47",
+    "e1_spatial_localisation.py": "a00928ad6dcba0272a725aa9b4f9e15e5178bc60faa0510832ae56ac13678905",
+    "e2_state_switching.py": "505897be1234e772ec44878c3ac6da5aaadc2700b137029f0af077337d6f2f21"
+  },
+  "engine_file_sha256": "e61083ae956206e943ed292f5f69f9d3964ef50778e2d7344de93207ade48371",
+  "classes_used": {
+    "e2_state_switching.py": "BistableSwitch  (F1 imports: the R19 bistable cell over time)",
+    "e1_spatial_localisation.py": "SpatialField   (F2/F3: per-node drive + long-range edge attenuation = the W handle)",
+    "e0_plasticity.py": "PlasticConnectome (F2/F3: phase-Hebbian consolidation = the E0 STABILISATION trace)"
+  }
+}

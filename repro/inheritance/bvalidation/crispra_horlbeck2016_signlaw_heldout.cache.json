@@ -1,0 +1,248 @@
+{
+ "_genes_not_in_crispra_table": [],
+ "_held_out_warrant": "The kit's corrective SIGN is forced by each gene's disease MECHANISM (GOF/LOF), declared by function and frozen in inherited/onco_gamma.json BEFORE any CRISPRa data was seen. The CRISPRa K562 growth phenotype is an independent functional viability readout that expresses none of that label -- a legitimate held-out target. corr_sign/gc are re-read frozen at score time; nothing is fitted to these numbers.",
+ "_honest_caveats": "K562 is a single CML line (the '+' arm is a single-line growth screen, vs FV7's pan-cancer mean). TP53 is null and CDKN2A is deleted in K562, so CRISPRa has a weak/absent endogenous locus to restore for those and they push AGAINST the prediction (conservative panel, no cherry-picking).",
+ "_panel_rule": "The two frozen disease atlases (onco + neurodegen), declared by function; growth phenotype matched by gene symbol (older-symbol aliases GBA1->GBA, PRKN->PARK2).",
+ "_prediction_sign_locked": "Sign-law '+' arm, locked BEFORE scoring: under the '+' (CRISPR-activation) operation, a LOF gene (corr_sign '+') is CORRECTED ('+' restores the tumour brake => activation slows growth, growth_phenotype < 0), while a GOF gene (corr_sign '-') is NOT corrected by '+' (activating an active driver is neutral/pro-growth => growth_phenotype >= 0). Predicted: LOF more negative than GOF, i.e. point-biserial(corr_sign=='+', -growth_phenotype) > 0.",
+ "_readout_scope": "Cancer-cell GROWTH is a CORRECTION phenotype ONLY for the ONCOLOGY panel. The neurodegeneration rows are cached for transparency but are OUT OF READOUT SCOPE for this test (a leukemia growth screen does not measure neuronal proteinopathy correction); the engine (FV8) scores the ONCO panel only.",
+ "_source": {
+  "cell_line": "K562 (CML), SunTag-VP64 CRISPRa",
+  "citation": "Horlbeck et al. 2016, eLife 5:e19760",
+  "doi": "10.7554/eLife.19760",
+  "elife_article": "19760",
+  "n_replicates": 2,
+  "n_table_gene_rows": 36888,
+  "provider": "Weissman lab (UCSF)",
+  "readout_column": "ave_Rep1_Rep2 'average phenotype of strongest 3' = gene growth phenotype (log2 sgRNA enrichment per cell doubling); negative => activation slows growth",
+  "supplementary_file": "supp10",
+  "url": "https://cdn.elifesciences.org/articles/19760/elife-19760-supp10-v2.xlsx"
+ },
+ "_what": "VP Inheritance Kit -- (B) SIGN-LAW '+' RESTORE ARM scoring sheet (held-out). Cached per-gene hCRISPRa-v2 K562 growth phenotype for the frozen disease panel, used to score the kit's mechanism-forced corrective SIGN ('+' for LOF) against REAL CRISPR-activation growth data. SIGN test only -- the magnitudes are the target, never a kit prediction.",
+ "matched": {
+  "APC": {
+   "disease_class": "oncology",
+   "gene": "APC",
+   "growth_phenotype": 0.007884,
+   "mann_whitney_p": 0.650476,
+   "matched_as": "APC",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "BCL2": {
+   "disease_class": "oncology",
+   "gene": "BCL2",
+   "growth_phenotype": 0.004348,
+   "mann_whitney_p": 0.761223,
+   "matched_as": "BCL2",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "BRAF": {
+   "disease_class": "oncology",
+   "gene": "BRAF",
+   "growth_phenotype": 0.017194,
+   "mann_whitney_p": 0.114092,
+   "matched_as": "BRAF",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "BRCA1": {
+   "disease_class": "oncology",
+   "gene": "BRCA1",
+   "growth_phenotype": -0.053645,
+   "mann_whitney_p": 0.186438,
+   "matched_as": "BRCA1",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "CDKN2A": {
+   "disease_class": "oncology",
+   "gene": "CDKN2A",
+   "growth_phenotype": -0.020401,
+   "mann_whitney_p": 0.032234,
+   "matched_as": "CDKN2A",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "EGFR": {
+   "disease_class": "oncology",
+   "gene": "EGFR",
+   "growth_phenotype": -0.013215,
+   "mann_whitney_p": 0.081424,
+   "matched_as": "EGFR",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "GBA1": {
+   "disease_class": "neurodegeneration",
+   "gene": "GBA1",
+   "growth_phenotype": 0.006312,
+   "mann_whitney_p": 0.287427,
+   "matched_as": "GBA",
+   "mechanism": "LOF",
+   "role": "brake"
+  },
+  "HTT": {
+   "disease_class": "neurodegeneration",
+   "gene": "HTT",
+   "growth_phenotype": 0.009786,
+   "mann_whitney_p": 0.988188,
+   "matched_as": "HTT",
+   "mechanism": "GOF",
+   "role": "brake"
+  },
+  "KRAS": {
+   "disease_class": "oncology",
+   "gene": "KRAS",
+   "growth_phenotype": -0.013934,
+   "mann_whitney_p": 0.646681,
+   "matched_as": "KRAS",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "LRRK2": {
+   "disease_class": "neurodegeneration",
+   "gene": "LRRK2",
+   "growth_phenotype": -0.002944,
+   "mann_whitney_p": 0.232153,
+   "matched_as": "LRRK2",
+   "mechanism": "GOF",
+   "role": "driver"
+  },
+  "MDM2": {
+   "disease_class": "oncology",
+   "gene": "MDM2",
+   "growth_phenotype": -0.000812,
+   "mann_whitney_p": 0.99848,
+   "matched_as": "MDM2",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "MYC": {
+   "disease_class": "oncology",
+   "gene": "MYC",
+   "growth_phenotype": 0.031788,
+   "mann_whitney_p": 0.001027,
+   "matched_as": "MYC",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "NF1": {
+   "disease_class": "oncology",
+   "gene": "NF1",
+   "growth_phenotype": -0.015633,
+   "mann_whitney_p": 0.036812,
+   "matched_as": "NF1",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "PARK7": {
+   "disease_class": "neurodegeneration",
+   "gene": "PARK7",
+   "growth_phenotype": -0.007514,
+   "mann_whitney_p": 0.972052,
+   "matched_as": "PARK7",
+   "mechanism": "LOF",
+   "role": "brake"
+  },
+  "PIK3CA": {
+   "disease_class": "oncology",
+   "gene": "PIK3CA",
+   "growth_phenotype": -0.010475,
+   "mann_whitney_p": 0.242154,
+   "matched_as": "PIK3CA",
+   "mechanism": "GOF",
+   "role": "oncogene"
+  },
+  "PINK1": {
+   "disease_class": "neurodegeneration",
+   "gene": "PINK1",
+   "growth_phenotype": 0.020819,
+   "mann_whitney_p": 0.026977,
+   "matched_as": "PINK1",
+   "mechanism": "LOF",
+   "role": "brake"
+  },
+  "PRKN": {
+   "disease_class": "neurodegeneration",
+   "gene": "PRKN",
+   "growth_phenotype": 0.001205,
+   "mann_whitney_p": 0.820146,
+   "matched_as": "PARK2",
+   "mechanism": "LOF",
+   "role": "brake"
+  },
+  "PTEN": {
+   "disease_class": "oncology",
+   "gene": "PTEN",
+   "growth_phenotype": -0.028987,
+   "mann_whitney_p": 0.005878,
+   "matched_as": "PTEN",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "RB1": {
+   "disease_class": "oncology",
+   "gene": "RB1",
+   "growth_phenotype": -0.056531,
+   "mann_whitney_p": 0.008438,
+   "matched_as": "RB1",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "SNCA": {
+   "disease_class": "neurodegeneration",
+   "gene": "SNCA",
+   "growth_phenotype": -0.010869,
+   "mann_whitney_p": 0.129629,
+   "matched_as": "SNCA",
+   "mechanism": "GOF",
+   "role": "driver"
+  },
+  "SOD1": {
+   "disease_class": "neurodegeneration",
+   "gene": "SOD1",
+   "growth_phenotype": -0.017098,
+   "mann_whitney_p": 0.194781,
+   "matched_as": "SOD1",
+   "mechanism": "GOF",
+   "role": "brake"
+  },
+  "STK11": {
+   "disease_class": "oncology",
+   "gene": "STK11",
+   "growth_phenotype": -0.015672,
+   "mann_whitney_p": 0.426135,
+   "matched_as": "STK11",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "TP53": {
+   "disease_class": "oncology",
+   "gene": "TP53",
+   "growth_phenotype": 0.00703,
+   "mann_whitney_p": 0.698221,
+   "matched_as": "TP53",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "VHL": {
+   "disease_class": "oncology",
+   "gene": "VHL",
+   "growth_phenotype": -0.002564,
+   "mann_whitney_p": 0.585242,
+   "matched_as": "VHL",
+   "mechanism": "LOF",
+   "role": "suppressor"
+  },
+  "VPS35": {
+   "disease_class": "neurodegeneration",
+   "gene": "VPS35",
+   "growth_phenotype": 0.009899,
+   "mann_whitney_p": 0.477389,
+   "matched_as": "VPS35",
+   "mechanism": "GOF",
+   "role": "driver"
+  }
+ }
+}

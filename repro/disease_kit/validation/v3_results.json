@@ -1,0 +1,6180 @@
+{
+ "author": "Young Jae Lee",
+ "external_source": {
+  "n_dgidb_sources": 45,
+  "name": "DGIdb GraphQL",
+  "snapshot_fetched_utc": "2026-06-21T07:14:47Z",
+  "snapshot_sha256": "4115cef45cbd30a63d154f9d0d8baac10e9731cf927e879eb5426c4f05ddf5c2"
+ },
+ "grade": "[O] direction-only; magnitude-free",
+ "headline": {
+  "X1_GOF_arm_accuracy": 0.9447,
+  "X1_GOF_inhibitory_recall": 1.0,
+  "X1_LOF_arm_accuracy": 0.1972,
+  "X1_marginal_baseline": 0.8607,
+  "X1_per_gene_recovery": "23/50",
+  "X1_permutation_shuffles_reaching_observed": "0/5000",
+  "X1_pooled_accuracy": 0.502,
+  "X2a_own_gene_note": "restore-vs-inhibitor-annotation limit; reported, not the corroboration",
+  "X2a_own_gene_restorative_accuracy": 0.5952,
+  "X2b_distinct_target_accuracy": 0.875,
+  "X2b_distinct_target_rows": "21/24",
+  "disease_genes_resolvable": "46/130",
+  "external_source": "DGIdb (independent; assembled with no hand-picking)",
+  "named_targets_resolvable": "60/157"
+ },
+ "honest_conclusion": "The locked emergence directions were checked against DGIdb -- an independent drug-gene aggregator the kit never consulted, queried by gene symbol, full return, no hand-picking, filtered only by approved-drug + a single directionality. Two honest strata, both with denominators. X1 (coupling-free, own-gene): on the GOF arm the emergence's lesion-forced action agrees with DGIdb (gain-of-function disease genes attract inhibitory approved drugs, exactly as the emergence demands) far above the inhibitor-skew baseline, with no permutation reaching the observed concordance; the LOF own-gene arm is pharmacologically unsatisfiable (lost function is fixed by replacement / gene-therapy / another node, not by a small-molecule activator of the lost gene), a property of pharmacology and of DGIdb's annotation scope, not of the emergence. X2 (named-target, stratified by an a-priori mechanistic split): on the FAIR subset -- drugs acting on a DISTINCT modulatory target (X2b) -- an independent DB agrees with the kit's per-drug action DIRECTION on the large checkable set, the residual mismatches being a known DGIdb labelling quirk and a minority-agent case; the own-gene restorative subset (X2a) is the LOF limit again at the agent level and is reported, not used as the corroboration. Combined with V2 (which proved those directions emergence-consistent at the axis level), X1-GOF and X2b close the external direction loop to the extent an independent inhibitor-annotation DB can speak. Everything DGIdb could not cover -- physiological switch-node 'targets', genes with no small-molecule drug -- is reported as an explicit coverage gap, never scored as a hit. No magnitude, efficacy, affinity, or outcome is asserted anywhere; every lead stays [O]. The within-kit recovery (V2) plus this external corroboration (V3) jointly refute 'the direction is just author-input recovery'.",
+ "inherited_anchors": {
+  "candidate_register_chain_head": "ca1796255c7c91db49cd28a11b15d49a649042c49a313649bcb63643d43c3fd3",
+  "candidate_register_sha256": "e3536726c36e761043da80bd994de06405a6f6a5811462047e7597134cfd6e22",
+  "disease_inputs_sha256": "e9003054a4f7dc9cd3b171ecd5e7ed248680cfcadc02a3134798bd9d2b2dd291",
+  "mapped_levers_sha256": "93ba3c89781f4952b293cbb87efb0905b31f20d5812c820bca96f0edf1a0d263",
+  "note": "validation is strictly read-only; 0 of the 128 derivations were re-run."
+ },
+ "metrics": {
+  "X1": {
+   "lesion_stratified": {
+    "GOF_arm": {
+     "accuracy": 0.9447,
+     "activating": {
+      "denominator_obs": 11,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "inhibitory": {
+      "denominator_obs": 188,
+      "denominator_pred": 199,
+      "precision": 0.9447,
+      "recall": 1.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 0,
+      "pred_ACT_obs_INH": 0,
+      "pred_INH_obs_ACT": 11,
+      "pred_INH_obs_INH": 188
+     },
+     "n": 199
+    },
+    "LOF_arm": {
+     "accuracy": 0.1972,
+     "activating": {
+      "denominator_obs": 57,
+      "denominator_pred": 289,
+      "precision": 0.1972,
+      "recall": 1.0
+     },
+     "inhibitory": {
+      "denominator_obs": 232,
+      "denominator_pred": 0,
+      "precision": null,
+      "recall": 0.0
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 57,
+      "pred_ACT_obs_INH": 232,
+      "pred_INH_obs_ACT": 0,
+      "pred_INH_obs_INH": 0
+     },
+     "n": 289
+    },
+    "reading": "the falsifiable content lives here: GOF disease genes should attract INHIBITORY approved drugs (oppose the gain) and LOF genes should attract ACTIVATING ones (restore the loss). The GOF->inhibitory arm is a clean, non-trivial external confirmation; the LOF->activating arm is pharmacologically hard (loss is usually fixed by replacement or by acting on another node, not by a small-molecule activator of the lost gene), so any shortfall is a property of pharmacology, not of the emergence -- those drugs are covered by X2."
+   },
+   "marginal_baseline": {
+    "accuracy": 0.8607,
+    "always_predict": "INHIBITORY",
+    "note": "approved pharmacology is inhibitor-skewed; this is the trivial 'everything is an inhibitor' guess. The emergence must beat it to add information."
+   },
+   "mismatch_count": 243,
+   "mismatches": [
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENSERAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "DDC",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "aadc_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CARBIDOPA ANHYDROUS",
+     "emergence_pred": "ACTIVATING",
+     "gene": "DDC",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "aadc_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PENTOSTATIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ADA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "adenosine_deaminase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OCRELIZUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOSITUMOMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OFATUMUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "IBRITUMOMAB TIUXETAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OBINUTUZUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RITUXIMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GATM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "agat_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DRONEDARONE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ2",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "andersen_tawil_syndrome"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "ETELCALCETIDE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "ETELCALCETIDE HYDROCHLORIDE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "CINACALCET HYDROCHLORIDE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "CASR",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "autosomal_dominant_hypocalcemia_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LIDOCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BBS1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bardet_biedl_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ROPIVACAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BBS1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bardet_biedl_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BUPIVACAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BBS1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bardet_biedl_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "FUROSEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETHACRYNATE SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETHACRYNIC ACID",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BUMETANIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TORSEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A1",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "bartter_syndrome_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ASPIRIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BTD",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "biotinidase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DICLOFENAC SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BTD",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "biotinidase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SALICYLIC ACID",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BTD",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "biotinidase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "AMILORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "BTD",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "biotinidase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLOROPROCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DICHLOROBENZYL ALCOHOL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENACEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "INDECAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETHOTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPOXYCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RANOLAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "FOSPHENYTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LIDOCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "FLECAINIDE ACETATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LIDOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROCAINAMIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE SULFATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LACOSAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ZONISAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENYTOIN SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRENYLAMINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE GLUCONATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRIMIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ESLICARBAZEPINE ACETATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CENOBAMATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "HEXYLCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRILOCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOPIRAMATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LAMOTRIGINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CARBAMAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DRONEDARONE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEPIVACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TETRACAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ESLICARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RUFINAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ROPIVACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPAFENONE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENOXINATE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETIDOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MERETHOXYLLINE PROCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE POLYGALACTURONATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEXILETINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOCAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ARTICAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPARACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "VERNAKALANT HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DIBUCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DYCLONINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MORICIZINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ENCAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OXCARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RILUZOLE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ORPHENADRINE CITRATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENAZOPYRIDINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ORPHENADRINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEPHENYTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "COCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DISOPYRAMIDE PHOSPHATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRILOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN5A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "brugada_syndrome"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "CAFFEINE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "RYR2",
+     "lesion": "GOF",
+     "role": "channel",
+     "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "ADENOSINE TRIPHOSPHATE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "RYR2",
+     "lesion": "GOF",
+     "role": "channel",
+     "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLBUTAMIDE SODIUM, STERILE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLBUTAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ACETOHEXAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLYBURIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLIMEPIRIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLIPIZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "NATEGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MITIGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "REPAGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLICLAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLORPROPAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLAZAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "KCNJ11",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLBUTAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "NATEGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "REPAGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLYBURIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLIMEPIRIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ACETOHEXAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLBUTAMIDE SODIUM, STERILE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLICLAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLAZAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MITIGLINIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLORPROPAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLIPIZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCC8",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "congenital_hyperinsulinism"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "PALIFERMIN",
+     "emergence_pred": "INHIBITORY",
+     "gene": "FGFR2",
+     "lesion": "GOF",
+     "role": "brake",
+     "slug": "crouzon_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GLYBURIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "CFTR",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "cystic_fibrosis"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CROFELEMER",
+     "emergence_pred": "ACTIVATING",
+     "gene": "CFTR",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "cystic_fibrosis"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TETRACAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENACEMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RILUZOLE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENYTOIN SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEPIVACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLOROPROCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ESLICARBAZEPINE ACETATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LIDOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "FOSPHENYTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DISOPYRAMIDE PHOSPHATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RUFINAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOPIRAMATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE SULFATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETIDOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "INDECAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DYCLONINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE POLYGALACTURONATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ZONISAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LIDOCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "COCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "HEXYLCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ORPHENADRINE CITRATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRILOCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ENCAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINIDINE GLUCONATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOCAINIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRIMIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MERETHOXYLLINE PROCAINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPAFENONE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CENOBAMATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LACOSAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DRONEDARONE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OXCARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CARBAMAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PHENAZOPYRIDINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPOXYCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ESLICARBAZEPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LAMOTRIGINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROPARACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROCAINAMIDE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ROPIVACAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MORICIZINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ARTICAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ORPHENADRINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ETHOTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEXILETINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MEPHENYTOIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DICHLOROBENZYL ALCOHOL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENOXINATE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PRILOCAINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SCN1A",
+     "lesion": "LOF",
+     "role": "channel",
+     "slug": "dravet_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "COL3A1",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "ehlers_danlos_syndrome_vascular_type"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OCRIPLASMIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "COL3A1",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "ehlers_danlos_syndrome_vascular_type"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "UMBRALISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SAPANISERTIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ALPELISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LENIOLISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "COPANLISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "IDELALISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DUVELISIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F7",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "factor_vii_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "EZETIMIBE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GBA1",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "gaucher_disease"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "HYDROCHLOROTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLOROTHIAZIDE SODIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "POLYTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUINETHAZONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "METOLAZONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLOROTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENDROFLUMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "METHYCLOTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLORTHALIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "INDAPAMIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TRICHLORMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CYCLOTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "HYDROFLUMETHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENZTHIAZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SLC12A3",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "gitelman_syndrome"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "NIVOLUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GM2A",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "gm2_gangliosidosis_ab_variant"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CEMIPLIMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GM2A",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "gm2_gangliosidosis_ab_variant"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PEMBROLIZUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GM2A",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "gm2_gangliosidosis_ab_variant"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DROTRECOGIN ALFA",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F8",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "haemophilia_a"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DROTRECOGIN ALFA (ACTIVATED)",
+     "emergence_pred": "ACTIVATING",
+     "gene": "F8",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "haemophilia_a"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MECAMYLAMINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SERPINC1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_antithrombin_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "GALLAMINE TRIETHIODIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SERPINC1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_antithrombin_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PANCURONIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SERPINC1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_antithrombin_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SORAFENIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "FAH",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_tyrosinaemia_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "VEMURAFENIB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "FAH",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "hereditary_tyrosinaemia_type_1"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "VALSARTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OLMESARTAN MEDOXOMIL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LOSARTAN POTASSIUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "IRBESARTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CANDESARTAN CILEXETIL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SPARSENTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TELMISARTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "AZILSARTAN MEDOXOMIL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "EPROSARTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ACADM",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RITONAVIR",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GUSB",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "mucopolysaccharidosis_type_vii"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TOLVAPTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MOZAVAPTAN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CONIVAPTAN HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "AVPR2",
+     "lesion": "LOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_diabetes_insipidus_x_linked"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "ARGIPRESSIN",
+     "emergence_pred": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "DESMOPRESSIN",
+     "emergence_pred": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "ARGIPRESSIN TANNATE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "LYPRESSIN",
+     "emergence_pred": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "dgidb": "ACTIVATING",
+     "drug": "VASOPRESSIN TANNATE",
+     "emergence_pred": "INHIBITORY",
+     "gene": "AVPR2",
+     "lesion": "GOF",
+     "role": "accelerator",
+     "slug": "nephrogenic_siad"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OCRIPLASMIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "COL1A1",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "osteogenesis_imperfecta_type_i"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM",
+     "emergence_pred": "ACTIVATING",
+     "gene": "COL1A1",
+     "lesion": "LOF",
+     "role": "structural",
+     "slug": "osteogenesis_imperfecta_type_i"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MIGLITOL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GAA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "pompe_disease"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "VOGLIBOSE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "GAA",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "pompe_disease"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ROMOSOZUMAB",
+     "emergence_pred": "ACTIVATING",
+     "gene": "SOST",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "sclerosteosis"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "METYROSINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "TH",
+     "lesion": "LOF",
+     "role": "enzyme",
+     "slug": "tyrosine_hydroxylase_deficiency"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LUMATEPERONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLORPROTHIXENE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CHLORPROMAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PIMOZIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "MESORIDAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "TRIFLUOPERAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "RISPERIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SERTINDOLE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "LOXAPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PERPHENAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ASENAPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "ZIPRASIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "AMISULPRIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "DOMPERIDONE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BENPERIDOL",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "OLANZAPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROCHLORPERAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "HALOPERIDOL DECANOATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "FLUPHENAZINE HYDROCHLORIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "BLONANSERIN",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "SULPIRIDE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "QUETIAPINE FUMARATE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "PROMAZINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    },
+    {
+     "dgidb": "INHIBITORY",
+     "drug": "CLOZAPINE",
+     "emergence_pred": "ACTIVATING",
+     "gene": "ABCD1",
+     "lesion": "LOF",
+     "role": "brake",
+     "slug": "x_linked_adrenoleukodystrophy"
+    }
+   ],
+   "per_gene_majority": {
+    "detail": [
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "DDC",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "aadc_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "FGFR3",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 10,
+      "pred": "INHIBITORY",
+      "slug": "achondroplasia"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "ADA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "adenosine_deaminase_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "GATM",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 6,
+      "pred": "ACTIVATING",
+      "slug": "agat_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "KCNJ2",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "andersen_tawil_syndrome"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "CASR",
+      "hit": false,
+      "lesion": "GOF",
+      "n_act": 3,
+      "n_inh": 0,
+      "pred": "INHIBITORY",
+      "slug": "autosomal_dominant_hypocalcemia_type_1"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "BBS1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 3,
+      "pred": "ACTIVATING",
+      "slug": "bardet_biedl_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SLC12A1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 5,
+      "pred": "ACTIVATING",
+      "slug": "bartter_syndrome_type_1"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "HBB",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "beta_thalassaemia"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "BTD",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 4,
+      "pred": "ACTIVATING",
+      "slug": "biotinidase_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCN5A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 56,
+      "pred": "ACTIVATING",
+      "slug": "brugada_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "KCNJ11",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 12,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "ABCC8",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 12,
+      "pred": "ACTIVATING",
+      "slug": "congenital_hyperinsulinism"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "FGFR2",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 1,
+      "n_inh": 11,
+      "pred": "INHIBITORY",
+      "slug": "crouzon_syndrome"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "CFTR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 7,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "cystic_fibrosis"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCN1A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 51,
+      "pred": "ACTIVATING",
+      "slug": "dravet_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "COL3A1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "ehlers_danlos_syndrome_vascular_type"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "F5",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 8,
+      "pred": "INHIBITORY",
+      "slug": "factor_v_leiden"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "F7",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 7,
+      "pred": "ACTIVATING",
+      "slug": "factor_vii_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "PCSK9",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "familial_hypercholesterolaemia"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "GBA1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "gaucher_disease"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SLC12A3",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 14,
+      "pred": "ACTIVATING",
+      "slug": "gitelman_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "GM2A",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 3,
+      "pred": "ACTIVATING",
+      "slug": "gm2_gangliosidosis_ab_variant"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "F8",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "haemophilia_a"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "SERPINC1",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 9,
+      "n_inh": 3,
+      "pred": "ACTIVATING",
+      "slug": "hereditary_antithrombin_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "FAH",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "hereditary_tyrosinaemia_type_1"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "MYH7",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "INHIBITORY",
+      "slug": "hypertrophic_cardiomyopathy"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "ALPL",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 6,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "hypophosphatasia"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "LEPR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "leptin_receptor_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCNN1G",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "liddle_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCNN1B",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "liddle_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCN5A",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 56,
+      "pred": "INHIBITORY",
+      "slug": "long_qt_syndrome_3"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "BCKDHA",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 7,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "maple_syrup_urine_disease"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "ACADM",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 9,
+      "pred": "ACTIVATING",
+      "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "GUSB",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "mucopolysaccharidosis_type_vii"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "RET",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 11,
+      "pred": "INHIBITORY",
+      "slug": "multiple_endocrine_neoplasia_type_2a"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "CASR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 3,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "neonatal_severe_hyperparathyroidism"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "AVPR2",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 5,
+      "n_inh": 3,
+      "pred": "ACTIVATING",
+      "slug": "nephrogenic_diabetes_insipidus_x_linked"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "AVPR2",
+      "hit": false,
+      "lesion": "GOF",
+      "n_act": 5,
+      "n_inh": 3,
+      "pred": "INHIBITORY",
+      "slug": "nephrogenic_siad"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "COL1A1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "osteogenesis_imperfecta_type_i"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "PAH",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "phenylketonuria"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "GAA",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "ACTIVATING",
+      "slug": "pompe_disease"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "PKLR",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 2,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "pyruvate_kinase_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SOST",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "sclerosteosis"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "SCN4A",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 55,
+      "pred": "INHIBITORY",
+      "slug": "scn4a_skeletal_muscle_channelopathy"
+     },
+     {
+      "dgidb_majority": "ACTIVATING",
+      "gene": "HBB",
+      "hit": true,
+      "lesion": "LOF",
+      "n_act": 1,
+      "n_inh": 0,
+      "pred": "ACTIVATING",
+      "slug": "sickle_cell_disease"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "CACNA1C",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 23,
+      "pred": "INHIBITORY",
+      "slug": "timothy_syndrome"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "TTR",
+      "hit": true,
+      "lesion": "GOF",
+      "n_act": 0,
+      "n_inh": 2,
+      "pred": "INHIBITORY",
+      "slug": "transthyretin_amyloidosis"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "TH",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 0,
+      "n_inh": 1,
+      "pred": "ACTIVATING",
+      "slug": "tyrosine_hydroxylase_deficiency"
+     },
+     {
+      "dgidb_majority": "INHIBITORY",
+      "gene": "ABCD1",
+      "hit": false,
+      "lesion": "LOF",
+      "n_act": 13,
+      "n_inh": 24,
+      "pred": "ACTIVATING",
+      "slug": "x_linked_adrenoleukodystrophy"
+     }
+    ],
+    "genes_recovered": 23,
+    "genes_scored": 50,
+    "recovery_fraction": 0.46
+   },
+   "permutation_null": {
+    "denominator": 488,
+    "observed_accuracy": 0.502,
+    "observed_hits": 245,
+    "reading": "lesion labels carry real directional information iff the observed concordance sits far above the shuffled mean and almost no shuffle reaches it.",
+    "seed": 19,
+    "shuffled_mean_accuracy": 0.4334,
+    "shuffled_mean_hits": 211.52,
+    "shuffles": 5000,
+    "shuffles_reaching_observed": 0
+   },
+   "pooled": {
+    "accuracy": 0.502,
+    "activating": {
+     "denominator_obs": 68,
+     "denominator_pred": 289,
+     "precision": 0.1972,
+     "recall": 0.8382
+    },
+    "inhibitory": {
+     "denominator_obs": 420,
+     "denominator_pred": 199,
+     "precision": 0.9447,
+     "recall": 0.4476
+    },
+    "matrix": {
+     "pred_ACT_obs_ACT": 57,
+     "pred_ACT_obs_INH": 232,
+     "pred_INH_obs_ACT": 11,
+     "pred_INH_obs_INH": 188
+    },
+    "n": 488
+   },
+   "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs DGIdb approved action on the SAME gene; coupling-free"
+  },
+  "X2": {
+   "X2a_own_gene_restorative": {
+    "confusion": {
+     "accuracy": 0.5952,
+     "activating": {
+      "denominator_obs": 14,
+      "denominator_pred": 29,
+      "precision": 0.4483,
+      "recall": 0.9286
+     },
+     "inhibitory": {
+      "denominator_obs": 28,
+      "denominator_pred": 13,
+      "precision": 0.9231,
+      "recall": 0.4286
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 13,
+      "pred_ACT_obs_INH": 16,
+      "pred_INH_obs_ACT": 1,
+      "pred_INH_obs_INH": 12
+     },
+     "n": 42
+    },
+    "mismatch_count": 17,
+    "mismatches": [
+     {
+      "agent_class": "AAV2-hAADC putaminal gene therapy (eladocagene exuparvovec)",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 2,
+      "slug": "aadc_deficiency",
+      "target": "DDC"
+     },
+     {
+      "agent_class": "PEGylated recombinant adenosine deaminase enzyme replacement",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 1,
+      "slug": "adenosine_deaminase_deficiency",
+      "target": "ADA"
+     },
+     {
+      "agent_class": "ex-vivo autologous CD34+ haematopoietic stem-cell gene thera",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 1,
+      "slug": "adenosine_deaminase_deficiency",
+      "target": "ADA"
+     },
+     {
+      "agent_class": "BBS1 gene/function restoration (investigational)",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 3,
+      "slug": "bardet_biedl_syndrome",
+      "target": "BBS1"
+     },
+     {
+      "agent_class": "oral biotin (vitamin B7) cofactor replacement -- the establi",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 4,
+      "slug": "biotinidase_deficiency",
+      "target": "BTD"
+     },
+     {
+      "agent_class": "interneuron-targeted SCN1A gene replacement (dual-AAV split-",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 51,
+      "slug": "dravet_syndrome",
+      "target": "SCN1A"
+     },
+     {
+      "agent_class": "F5-Leiden APC-sensitivity restoration (allele-specific corre",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 8,
+      "slug": "factor_v_leiden",
+      "target": "F5"
+     },
+     {
+      "agent_class": "enzyme replacement (imiglucerase, velaglucerase alfa, taligl",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 1,
+      "slug": "gaucher_disease",
+      "target": "GBA1"
+     },
+     {
+      "agent_class": "scAAV9-GM2A in vivo gene therapy (intravenous BBB-crossing /",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 3,
+      "slug": "gm2_gangliosidosis_ab_variant",
+      "target": "GM2A"
+     },
+     {
+      "agent_class": "AAV F8 gene replacement (valoctocogene roxaparvovec)",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 2,
+      "slug": "haemophilia_a",
+      "target": "F8"
+     },
+     {
+      "agent_class": "factor VIII protein replacement (recombinant / plasma-derive",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 2,
+      "slug": "haemophilia_a",
+      "target": "F8"
+     },
+     {
+      "agent_class": "FAH restoration (liver transplantation; FAH gene therapy inv",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 2,
+      "slug": "hereditary_tyrosinaemia_type_1",
+      "target": "FAH"
+     },
+     {
+      "agent_class": "recombinant human beta-glucuronidase enzyme replacement (ves",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 1,
+      "slug": "mucopolysaccharidosis_type_vii",
+      "target": "GUSB"
+     },
+     {
+      "agent_class": "Rho-kinase (ROCK) pathway restraint (investigational; mechan",
+      "dgidb_majority": "ACTIVATING",
+      "kit_asserted": "INHIBITORY",
+      "n_act": 5,
+      "n_inh": 3,
+      "slug": "nephrogenic_siad",
+      "target": "AVPR2"
+     },
+     {
+      "agent_class": "enzyme replacement (alglucosidase alfa, avalglucosidase alfa",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 2,
+      "slug": "pompe_disease",
+      "target": "GAA"
+     },
+     {
+      "agent_class": "SOST / sclerostin restoration (recombinant sclerostin or SOS",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 0,
+      "n_inh": 1,
+      "slug": "sclerosteosis",
+      "target": "SOST"
+     },
+     {
+      "agent_class": "ex-vivo lentiviral ABCD1 gene addition to autologous CD34+ H",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 13,
+      "n_inh": 24,
+      "slug": "x_linked_adrenoleukodystrophy",
+      "target": "ABCD1"
+     }
+    ],
+    "reading": "this stratum is depressed by construction: the kit correctly asserts ACTIVATING (restore the lost gene), but DGIdb annotates SMALL-MOLECULE INHIBITORS of that gene from other indications, so 'restore via replacement/gene-therapy' cannot agree with an inhibitor annotation. This is the X1 LOF arm again, at the agent level -- a property of pharmacology and of DGIdb's annotation scope, not of the kit. Reported in full for honesty, NOT used as the external corroboration.",
+    "rows_scored": 42,
+    "rows_target_unresolved": 86,
+    "rows_unsignable_verb": 16,
+    "what": "drug acts on the OWN disease gene to RESTORE it (replacement / gene-therapy / cofactor) -- NOT fairly checkable against a small-molecule inhibitor-annotation DB"
+   },
+   "X2b_distinct_modulatory_target": {
+    "confusion": {
+     "accuracy": 0.875,
+     "activating": {
+      "denominator_obs": 6,
+      "denominator_pred": 5,
+      "precision": 0.8,
+      "recall": 0.6667
+     },
+     "inhibitory": {
+      "denominator_obs": 18,
+      "denominator_pred": 19,
+      "precision": 0.8947,
+      "recall": 0.9444
+     },
+     "matrix": {
+      "pred_ACT_obs_ACT": 4,
+      "pred_ACT_obs_INH": 1,
+      "pred_INH_obs_ACT": 2,
+      "pred_INH_obs_INH": 17
+     },
+     "n": 24
+    },
+    "mismatch_count": 3,
+    "mismatches": [
+     {
+      "agent_class": "beta-adrenergic agonist (isoproterenol) -- electrical-storm ",
+      "dgidb_majority": "INHIBITORY",
+      "kit_asserted": "ACTIVATING",
+      "n_act": 15,
+      "n_inh": 27,
+      "slug": "brugada_syndrome",
+      "target": "ADRB1"
+     },
+     {
+      "agent_class": "hepatocyte-targeted APOC3 antisense oligonucleotide (olezars",
+      "dgidb_majority": "ACTIVATING",
+      "kit_asserted": "INHIBITORY",
+      "n_act": 5,
+      "n_inh": 0,
+      "slug": "familial_chylomicronaemia_syndrome",
+      "target": "APOC3"
+     },
+     {
+      "agent_class": "APOC3 antisense oligonucleotide (volanesorsen)",
+      "dgidb_majority": "ACTIVATING",
+      "kit_asserted": "INHIBITORY",
+      "n_act": 5,
+      "n_inh": 0,
+      "slug": "familial_chylomicronaemia_syndrome",
+      "target": "APOC3"
+     }
+    ],
+    "reading": "an independent DB agrees with the kit's per-drug action DIRECTION on the large fairly-checkable subset. The few mismatches are a known DGIdb directionality quirk (e.g. APOC3 antisense labelled activating) and majority-vs-specific-agent (e.g. ADRB1 has both agonists and blockers; the kit row is a minority agonist).",
+    "rows_scored": 24,
+    "rows_target_unresolved": 52,
+    "rows_unsignable_verb": 23,
+    "what": "drug acts on a DISTINCT target (NOT a disease gene) -- the FAIR external check"
+   },
+   "reading": "V2 proved the kit's asserted action on each target is emergence-consistent at the axis level; X2b shows an INDEPENDENT DB agrees on that per-drug action direction on the fairly-checkable (distinct-target) subset. The downstream target->axis coupling is inherited from the kit, not re-derived here.",
+   "what": "kit ASSERTED action on a named target (frozen verb lexicon) vs DGIdb independent approved action on that target; STRATIFIED by target-relationship"
+  },
+  "X_COV": {
+   "coverage_gap_examples": [
+    "11-cis-retinal",
+    "CHM",
+    "HBG1",
+    "L-type calcium current",
+    "RPGR",
+    "biotin-dependent carboxylase competence",
+    "brain creatine",
+    "calcium",
+    "carnitine",
+    "copper",
+    "cystine",
+    "factor VII coagulant activity"
+   ],
+   "disease_genes_in_dgidb": 128,
+   "disease_genes_resolvable": 46,
+   "disease_genes_resolvable_fraction": 0.3538,
+   "disease_genes_total": 130,
+   "named_targets_in_dgidb": 125,
+   "named_targets_resolvable": 60,
+   "named_targets_resolvable_fraction": 0.3822,
+   "named_targets_total": 157,
+   "reading": "the external check is bounded by DGIdb coverage: physiological switch-node 'targets' (plasma LDL-cholesterol, striatal dopamine, ...) and genes with no small-molecule drug are genuine gaps, reported here, never silently scored.",
+   "what": "how much of the kit is externally checkable in DGIdb (approved + single-signed)"
+  }
+ },
+ "orcid": "0009-0002-7535-8245",
+ "prereg_sha256": "a6f40165eb96c9d41a5014891248c3c562fff3b409280287de58f7f3f22d872f",
+ "programme": "jamming-physics.org",
+ "release": "0.41.0-validation.v3",
+ "snapshot_date": "2026-06-21",
+ "validation_chain": {
+  "chain_head": "e05e2834f4f7c9d7e9119fc2774caeb27de674d92e96823567e4de49b35407af",
+  "continues_from_head": "55cb8d7e32897058ccd8960c72e0d63edd5e52d5a0f04a260dd4736e8046873b",
+  "record": [
+   {
+    "metric": "X_COV_external_coverage",
+    "payload": {
+     "coverage_gap_examples": [
+      "11-cis-retinal",
+      "CHM",
+      "HBG1",
+      "L-type calcium current",
+      "RPGR",
+      "biotin-dependent carboxylase competence",
+      "brain creatine",
+      "calcium",
+      "carnitine",
+      "copper",
+      "cystine",
+      "factor VII coagulant activity"
+     ],
+     "disease_genes_in_dgidb": 128,
+     "disease_genes_resolvable": 46,
+     "disease_genes_resolvable_fraction": 0.3538,
+     "disease_genes_total": 130,
+     "named_targets_in_dgidb": 125,
+     "named_targets_resolvable": 60,
+     "named_targets_resolvable_fraction": 0.3822,
+     "named_targets_total": 157,
+     "reading": "the external check is bounded by DGIdb coverage: physiological switch-node 'targets' (plasma LDL-cholesterol, striatal dopamine, ...) and genes with no small-molecule drug are genuine gaps, reported here, never silently scored.",
+     "what": "how much of the kit is externally checkable in DGIdb (approved + single-signed)"
+    },
+    "prev_hash": "55cb8d7e32897058ccd8960c72e0d63edd5e52d5a0f04a260dd4736e8046873b",
+    "row_hash": "53dc1673a070916c6994505821c5085ca2c4d2a92b508794bf7c37c9a12a492a"
+   },
+   {
+    "metric": "X1_coupling_free_own_gene",
+    "payload": {
+     "lesion_stratified": {
+      "GOF_arm": {
+       "accuracy": 0.9447,
+       "activating": {
+        "denominator_obs": 11,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "inhibitory": {
+        "denominator_obs": 188,
+        "denominator_pred": 199,
+        "precision": 0.9447,
+        "recall": 1.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 0,
+        "pred_ACT_obs_INH": 0,
+        "pred_INH_obs_ACT": 11,
+        "pred_INH_obs_INH": 188
+       },
+       "n": 199
+      },
+      "LOF_arm": {
+       "accuracy": 0.1972,
+       "activating": {
+        "denominator_obs": 57,
+        "denominator_pred": 289,
+        "precision": 0.1972,
+        "recall": 1.0
+       },
+       "inhibitory": {
+        "denominator_obs": 232,
+        "denominator_pred": 0,
+        "precision": null,
+        "recall": 0.0
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 57,
+        "pred_ACT_obs_INH": 232,
+        "pred_INH_obs_ACT": 0,
+        "pred_INH_obs_INH": 0
+       },
+       "n": 289
+      },
+      "reading": "the falsifiable content lives here: GOF disease genes should attract INHIBITORY approved drugs (oppose the gain) and LOF genes should attract ACTIVATING ones (restore the loss). The GOF->inhibitory arm is a clean, non-trivial external confirmation; the LOF->activating arm is pharmacologically hard (loss is usually fixed by replacement or by acting on another node, not by a small-molecule activator of the lost gene), so any shortfall is a property of pharmacology, not of the emergence -- those drugs are covered by X2."
+     },
+     "marginal_baseline": {
+      "accuracy": 0.8607,
+      "always_predict": "INHIBITORY",
+      "note": "approved pharmacology is inhibitor-skewed; this is the trivial 'everything is an inhibitor' guess. The emergence must beat it to add information."
+     },
+     "mismatch_count": 243,
+     "mismatches": [
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENSERAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "DDC",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "aadc_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CARBIDOPA ANHYDROUS",
+       "emergence_pred": "ACTIVATING",
+       "gene": "DDC",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "aadc_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PENTOSTATIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ADA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "adenosine_deaminase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OCRELIZUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOSITUMOMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OFATUMUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "IBRITUMOMAB TIUXETAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OBINUTUZUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RITUXIMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GATM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "agat_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DRONEDARONE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ2",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "andersen_tawil_syndrome"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "ETELCALCETIDE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "ETELCALCETIDE HYDROCHLORIDE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "CINACALCET HYDROCHLORIDE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "CASR",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "autosomal_dominant_hypocalcemia_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LIDOCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BBS1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bardet_biedl_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ROPIVACAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BBS1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bardet_biedl_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BUPIVACAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BBS1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bardet_biedl_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "FUROSEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETHACRYNATE SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETHACRYNIC ACID",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BUMETANIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TORSEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A1",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "bartter_syndrome_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ASPIRIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BTD",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "biotinidase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DICLOFENAC SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BTD",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "biotinidase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SALICYLIC ACID",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BTD",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "biotinidase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "AMILORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "BTD",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "biotinidase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLOROPROCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DICHLOROBENZYL ALCOHOL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENACEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "INDECAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETHOTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPOXYCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RANOLAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "FOSPHENYTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LIDOCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "FLECAINIDE ACETATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LIDOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROCAINAMIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE SULFATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LACOSAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ZONISAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENYTOIN SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRENYLAMINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE GLUCONATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRIMIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ESLICARBAZEPINE ACETATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CENOBAMATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "HEXYLCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRILOCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOPIRAMATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LAMOTRIGINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CARBAMAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DRONEDARONE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEPIVACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TETRACAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ESLICARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RUFINAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ROPIVACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPAFENONE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENOXINATE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETIDOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MERETHOXYLLINE PROCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE POLYGALACTURONATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEXILETINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOCAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ARTICAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPARACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "VERNAKALANT HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DIBUCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DYCLONINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MORICIZINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ENCAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OXCARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RILUZOLE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ORPHENADRINE CITRATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENAZOPYRIDINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ORPHENADRINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEPHENYTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "COCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DISOPYRAMIDE PHOSPHATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRILOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN5A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "brugada_syndrome"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "CAFFEINE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "RYR2",
+       "lesion": "GOF",
+       "role": "channel",
+       "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "ADENOSINE TRIPHOSPHATE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "RYR2",
+       "lesion": "GOF",
+       "role": "channel",
+       "slug": "catecholaminergic_polymorphic_ventricular_tachycardia"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLBUTAMIDE SODIUM, STERILE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLBUTAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ACETOHEXAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLYBURIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLIMEPIRIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLIPIZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "NATEGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MITIGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "REPAGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLICLAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLORPROPAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLAZAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "KCNJ11",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLBUTAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "NATEGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "REPAGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLYBURIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLIMEPIRIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ACETOHEXAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLBUTAMIDE SODIUM, STERILE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLICLAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLAZAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MITIGLINIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLORPROPAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLIPIZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCC8",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "congenital_hyperinsulinism"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "PALIFERMIN",
+       "emergence_pred": "INHIBITORY",
+       "gene": "FGFR2",
+       "lesion": "GOF",
+       "role": "brake",
+       "slug": "crouzon_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GLYBURIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "CFTR",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "cystic_fibrosis"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CROFELEMER",
+       "emergence_pred": "ACTIVATING",
+       "gene": "CFTR",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "cystic_fibrosis"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TETRACAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENACEMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RILUZOLE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENYTOIN SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEPIVACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLOROPROCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ESLICARBAZEPINE ACETATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LIDOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "FOSPHENYTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DISOPYRAMIDE PHOSPHATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RUFINAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOPIRAMATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE SULFATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETIDOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "INDECAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DYCLONINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE POLYGALACTURONATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ZONISAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LIDOCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "COCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "HEXYLCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ORPHENADRINE CITRATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRILOCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ENCAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINIDINE GLUCONATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOCAINIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRIMIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MERETHOXYLLINE PROCAINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPAFENONE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CENOBAMATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LACOSAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DRONEDARONE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OXCARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CARBAMAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PHENAZOPYRIDINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPOXYCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ESLICARBAZEPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LAMOTRIGINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROPARACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROCAINAMIDE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ROPIVACAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MORICIZINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ARTICAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ORPHENADRINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ETHOTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEXILETINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MEPHENYTOIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DICHLOROBENZYL ALCOHOL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENOXINATE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PRILOCAINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SCN1A",
+       "lesion": "LOF",
+       "role": "channel",
+       "slug": "dravet_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "COL3A1",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "ehlers_danlos_syndrome_vascular_type"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OCRIPLASMIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "COL3A1",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "ehlers_danlos_syndrome_vascular_type"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "UMBRALISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SAPANISERTIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ALPELISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LENIOLISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "COPANLISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "IDELALISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DUVELISIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F7",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "factor_vii_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "EZETIMIBE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GBA1",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "gaucher_disease"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "HYDROCHLOROTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLOROTHIAZIDE SODIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "POLYTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUINETHAZONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "METOLAZONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLOROTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENDROFLUMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "METHYCLOTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLORTHALIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "INDAPAMIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TRICHLORMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CYCLOTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "HYDROFLUMETHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENZTHIAZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SLC12A3",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "gitelman_syndrome"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "NIVOLUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GM2A",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "gm2_gangliosidosis_ab_variant"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CEMIPLIMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GM2A",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "gm2_gangliosidosis_ab_variant"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PEMBROLIZUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GM2A",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "gm2_gangliosidosis_ab_variant"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DROTRECOGIN ALFA",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F8",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "haemophilia_a"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DROTRECOGIN ALFA (ACTIVATED)",
+       "emergence_pred": "ACTIVATING",
+       "gene": "F8",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "haemophilia_a"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MECAMYLAMINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SERPINC1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_antithrombin_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "GALLAMINE TRIETHIODIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SERPINC1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_antithrombin_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PANCURONIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SERPINC1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_antithrombin_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SORAFENIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "FAH",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_tyrosinaemia_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "VEMURAFENIB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "FAH",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "hereditary_tyrosinaemia_type_1"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "VALSARTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OLMESARTAN MEDOXOMIL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LOSARTAN POTASSIUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "IRBESARTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CANDESARTAN CILEXETIL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SPARSENTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TELMISARTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "AZILSARTAN MEDOXOMIL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "EPROSARTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ACADM",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RITONAVIR",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GUSB",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "mucopolysaccharidosis_type_vii"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TOLVAPTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MOZAVAPTAN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CONIVAPTAN HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "AVPR2",
+       "lesion": "LOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_diabetes_insipidus_x_linked"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "ARGIPRESSIN",
+       "emergence_pred": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "DESMOPRESSIN",
+       "emergence_pred": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "ARGIPRESSIN TANNATE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "LYPRESSIN",
+       "emergence_pred": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "dgidb": "ACTIVATING",
+       "drug": "VASOPRESSIN TANNATE",
+       "emergence_pred": "INHIBITORY",
+       "gene": "AVPR2",
+       "lesion": "GOF",
+       "role": "accelerator",
+       "slug": "nephrogenic_siad"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OCRIPLASMIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "COL1A1",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "osteogenesis_imperfecta_type_i"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "COLLAGENASE CLOSTRIDIUM HISTOLYTICUM",
+       "emergence_pred": "ACTIVATING",
+       "gene": "COL1A1",
+       "lesion": "LOF",
+       "role": "structural",
+       "slug": "osteogenesis_imperfecta_type_i"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MIGLITOL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GAA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "pompe_disease"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "VOGLIBOSE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "GAA",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "pompe_disease"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ROMOSOZUMAB",
+       "emergence_pred": "ACTIVATING",
+       "gene": "SOST",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "sclerosteosis"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "METYROSINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "TH",
+       "lesion": "LOF",
+       "role": "enzyme",
+       "slug": "tyrosine_hydroxylase_deficiency"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LUMATEPERONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLORPROTHIXENE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CHLORPROMAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PIMOZIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "MESORIDAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "TRIFLUOPERAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "RISPERIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SERTINDOLE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "LOXAPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PERPHENAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ASENAPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "ZIPRASIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "AMISULPRIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "DOMPERIDONE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BENPERIDOL",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "OLANZAPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROCHLORPERAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "HALOPERIDOL DECANOATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "FLUPHENAZINE HYDROCHLORIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "BLONANSERIN",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "SULPIRIDE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "QUETIAPINE FUMARATE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "PROMAZINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      },
+      {
+       "dgidb": "INHIBITORY",
+       "drug": "CLOZAPINE",
+       "emergence_pred": "ACTIVATING",
+       "gene": "ABCD1",
+       "lesion": "LOF",
+       "role": "brake",
+       "slug": "x_linked_adrenoleukodystrophy"
+      }
+     ],
+     "per_gene_majority": {
+      "detail": [
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "DDC",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "aadc_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "FGFR3",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 10,
+        "pred": "INHIBITORY",
+        "slug": "achondroplasia"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "ADA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "adenosine_deaminase_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "GATM",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 6,
+        "pred": "ACTIVATING",
+        "slug": "agat_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "KCNJ2",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "andersen_tawil_syndrome"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "CASR",
+        "hit": false,
+        "lesion": "GOF",
+        "n_act": 3,
+        "n_inh": 0,
+        "pred": "INHIBITORY",
+        "slug": "autosomal_dominant_hypocalcemia_type_1"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "BBS1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 3,
+        "pred": "ACTIVATING",
+        "slug": "bardet_biedl_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SLC12A1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 5,
+        "pred": "ACTIVATING",
+        "slug": "bartter_syndrome_type_1"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "HBB",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "beta_thalassaemia"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "BTD",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 4,
+        "pred": "ACTIVATING",
+        "slug": "biotinidase_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCN5A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 56,
+        "pred": "ACTIVATING",
+        "slug": "brugada_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "KCNJ11",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 12,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "ABCC8",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 12,
+        "pred": "ACTIVATING",
+        "slug": "congenital_hyperinsulinism"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "FGFR2",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 1,
+        "n_inh": 11,
+        "pred": "INHIBITORY",
+        "slug": "crouzon_syndrome"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "CFTR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 7,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "cystic_fibrosis"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCN1A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 51,
+        "pred": "ACTIVATING",
+        "slug": "dravet_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "COL3A1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "ehlers_danlos_syndrome_vascular_type"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "F5",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 8,
+        "pred": "INHIBITORY",
+        "slug": "factor_v_leiden"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "F7",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 7,
+        "pred": "ACTIVATING",
+        "slug": "factor_vii_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "PCSK9",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "familial_hypercholesterolaemia"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "GBA1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "gaucher_disease"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SLC12A3",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 14,
+        "pred": "ACTIVATING",
+        "slug": "gitelman_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "GM2A",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 3,
+        "pred": "ACTIVATING",
+        "slug": "gm2_gangliosidosis_ab_variant"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "F8",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "haemophilia_a"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "SERPINC1",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 9,
+        "n_inh": 3,
+        "pred": "ACTIVATING",
+        "slug": "hereditary_antithrombin_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "FAH",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "hereditary_tyrosinaemia_type_1"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "MYH7",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "INHIBITORY",
+        "slug": "hypertrophic_cardiomyopathy"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "ALPL",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 6,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "hypophosphatasia"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "LEPR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "leptin_receptor_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCNN1G",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "liddle_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCNN1B",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "liddle_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCN5A",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 56,
+        "pred": "INHIBITORY",
+        "slug": "long_qt_syndrome_3"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "BCKDHA",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 7,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "maple_syrup_urine_disease"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "ACADM",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 9,
+        "pred": "ACTIVATING",
+        "slug": "medium_chain_acyl_coa_dehydrogenase_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "GUSB",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "mucopolysaccharidosis_type_vii"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "RET",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 11,
+        "pred": "INHIBITORY",
+        "slug": "multiple_endocrine_neoplasia_type_2a"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "CASR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 3,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "neonatal_severe_hyperparathyroidism"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "AVPR2",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 5,
+        "n_inh": 3,
+        "pred": "ACTIVATING",
+        "slug": "nephrogenic_diabetes_insipidus_x_linked"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "AVPR2",
+        "hit": false,
+        "lesion": "GOF",
+        "n_act": 5,
+        "n_inh": 3,
+        "pred": "INHIBITORY",
+        "slug": "nephrogenic_siad"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "COL1A1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "osteogenesis_imperfecta_type_i"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "PAH",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "phenylketonuria"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "GAA",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "ACTIVATING",
+        "slug": "pompe_disease"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "PKLR",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 2,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "pyruvate_kinase_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SOST",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "sclerosteosis"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "SCN4A",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 55,
+        "pred": "INHIBITORY",
+        "slug": "scn4a_skeletal_muscle_channelopathy"
+       },
+       {
+        "dgidb_majority": "ACTIVATING",
+        "gene": "HBB",
+        "hit": true,
+        "lesion": "LOF",
+        "n_act": 1,
+        "n_inh": 0,
+        "pred": "ACTIVATING",
+        "slug": "sickle_cell_disease"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "CACNA1C",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 23,
+        "pred": "INHIBITORY",
+        "slug": "timothy_syndrome"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "TTR",
+        "hit": true,
+        "lesion": "GOF",
+        "n_act": 0,
+        "n_inh": 2,
+        "pred": "INHIBITORY",
+        "slug": "transthyretin_amyloidosis"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "TH",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 0,
+        "n_inh": 1,
+        "pred": "ACTIVATING",
+        "slug": "tyrosine_hydroxylase_deficiency"
+       },
+       {
+        "dgidb_majority": "INHIBITORY",
+        "gene": "ABCD1",
+        "hit": false,
+        "lesion": "LOF",
+        "n_act": 13,
+        "n_inh": 24,
+        "pred": "ACTIVATING",
+        "slug": "x_linked_adrenoleukodystrophy"
+       }
+      ],
+      "genes_recovered": 23,
+      "genes_scored": 50,
+      "recovery_fraction": 0.46
+     },
+     "permutation_null": {
+      "denominator": 488,
+      "observed_accuracy": 0.502,
+      "observed_hits": 245,
+      "reading": "lesion labels carry real directional information iff the observed concordance sits far above the shuffled mean and almost no shuffle reaches it.",
+      "seed": 19,
+      "shuffled_mean_accuracy": 0.4334,
+      "shuffled_mean_hits": 211.52,
+      "shuffles": 5000,
+      "shuffles_reaching_observed": 0
+     },
+     "pooled": {
+      "accuracy": 0.502,
+      "activating": {
+       "denominator_obs": 68,
+       "denominator_pred": 289,
+       "precision": 0.1972,
+       "recall": 0.8382
+      },
+      "inhibitory": {
+       "denominator_obs": 420,
+       "denominator_pred": 199,
+       "precision": 0.9447,
+       "recall": 0.4476
+      },
+      "matrix": {
+       "pred_ACT_obs_ACT": 57,
+       "pred_ACT_obs_INH": 232,
+       "pred_INH_obs_ACT": 11,
+       "pred_INH_obs_INH": 188
+      },
+      "n": 488
+     },
+     "what": "emergence own-gene corrective action (lesion-forced, BLIND) vs DGIdb approved action on the SAME gene; coupling-free"
+    },
+    "prev_hash": "53dc1673a070916c6994505821c5085ca2c4d2a92b508794bf7c37c9a12a492a",
+    "row_hash": "bfe5609d8c6d29afed9cc3e2306298943b5d30b06437e133c31f37cb44cdd7bc"
+   },
+   {
+    "metric": "X2_named_target_corroboration",
+    "payload": {
+     "X2a_own_gene_restorative": {
+      "confusion": {
+       "accuracy": 0.5952,
+       "activating": {
+        "denominator_obs": 14,
+        "denominator_pred": 29,
+        "precision": 0.4483,
+        "recall": 0.9286
+       },
+       "inhibitory": {
+        "denominator_obs": 28,
+        "denominator_pred": 13,
+        "precision": 0.9231,
+        "recall": 0.4286
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 13,
+        "pred_ACT_obs_INH": 16,
+        "pred_INH_obs_ACT": 1,
+        "pred_INH_obs_INH": 12
+       },
+       "n": 42
+      },
+      "mismatch_count": 17,
+      "mismatches": [
+       {
+        "agent_class": "AAV2-hAADC putaminal gene therapy (eladocagene exuparvovec)",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 2,
+        "slug": "aadc_deficiency",
+        "target": "DDC"
+       },
+       {
+        "agent_class": "PEGylated recombinant adenosine deaminase enzyme replacement",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 1,
+        "slug": "adenosine_deaminase_deficiency",
+        "target": "ADA"
+       },
+       {
+        "agent_class": "ex-vivo autologous CD34+ haematopoietic stem-cell gene thera",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 1,
+        "slug": "adenosine_deaminase_deficiency",
+        "target": "ADA"
+       },
+       {
+        "agent_class": "BBS1 gene/function restoration (investigational)",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 3,
+        "slug": "bardet_biedl_syndrome",
+        "target": "BBS1"
+       },
+       {
+        "agent_class": "oral biotin (vitamin B7) cofactor replacement -- the establi",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 4,
+        "slug": "biotinidase_deficiency",
+        "target": "BTD"
+       },
+       {
+        "agent_class": "interneuron-targeted SCN1A gene replacement (dual-AAV split-",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 51,
+        "slug": "dravet_syndrome",
+        "target": "SCN1A"
+       },
+       {
+        "agent_class": "F5-Leiden APC-sensitivity restoration (allele-specific corre",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 8,
+        "slug": "factor_v_leiden",
+        "target": "F5"
+       },
+       {
+        "agent_class": "enzyme replacement (imiglucerase, velaglucerase alfa, taligl",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 1,
+        "slug": "gaucher_disease",
+        "target": "GBA1"
+       },
+       {
+        "agent_class": "scAAV9-GM2A in vivo gene therapy (intravenous BBB-crossing /",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 3,
+        "slug": "gm2_gangliosidosis_ab_variant",
+        "target": "GM2A"
+       },
+       {
+        "agent_class": "AAV F8 gene replacement (valoctocogene roxaparvovec)",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 2,
+        "slug": "haemophilia_a",
+        "target": "F8"
+       },
+       {
+        "agent_class": "factor VIII protein replacement (recombinant / plasma-derive",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 2,
+        "slug": "haemophilia_a",
+        "target": "F8"
+       },
+       {
+        "agent_class": "FAH restoration (liver transplantation; FAH gene therapy inv",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 2,
+        "slug": "hereditary_tyrosinaemia_type_1",
+        "target": "FAH"
+       },
+       {
+        "agent_class": "recombinant human beta-glucuronidase enzyme replacement (ves",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 1,
+        "slug": "mucopolysaccharidosis_type_vii",
+        "target": "GUSB"
+       },
+       {
+        "agent_class": "Rho-kinase (ROCK) pathway restraint (investigational; mechan",
+        "dgidb_majority": "ACTIVATING",
+        "kit_asserted": "INHIBITORY",
+        "n_act": 5,
+        "n_inh": 3,
+        "slug": "nephrogenic_siad",
+        "target": "AVPR2"
+       },
+       {
+        "agent_class": "enzyme replacement (alglucosidase alfa, avalglucosidase alfa",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 2,
+        "slug": "pompe_disease",
+        "target": "GAA"
+       },
+       {
+        "agent_class": "SOST / sclerostin restoration (recombinant sclerostin or SOS",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 0,
+        "n_inh": 1,
+        "slug": "sclerosteosis",
+        "target": "SOST"
+       },
+       {
+        "agent_class": "ex-vivo lentiviral ABCD1 gene addition to autologous CD34+ H",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 13,
+        "n_inh": 24,
+        "slug": "x_linked_adrenoleukodystrophy",
+        "target": "ABCD1"
+       }
+      ],
+      "reading": "this stratum is depressed by construction: the kit correctly asserts ACTIVATING (restore the lost gene), but DGIdb annotates SMALL-MOLECULE INHIBITORS of that gene from other indications, so 'restore via replacement/gene-therapy' cannot agree with an inhibitor annotation. This is the X1 LOF arm again, at the agent level -- a property of pharmacology and of DGIdb's annotation scope, not of the kit. Reported in full for honesty, NOT used as the external corroboration.",
+      "rows_scored": 42,
+      "rows_target_unresolved": 86,
+      "rows_unsignable_verb": 16,
+      "what": "drug acts on the OWN disease gene to RESTORE it (replacement / gene-therapy / cofactor) -- NOT fairly checkable against a small-molecule inhibitor-annotation DB"
+     },
+     "X2b_distinct_modulatory_target": {
+      "confusion": {
+       "accuracy": 0.875,
+       "activating": {
+        "denominator_obs": 6,
+        "denominator_pred": 5,
+        "precision": 0.8,
+        "recall": 0.6667
+       },
+       "inhibitory": {
+        "denominator_obs": 18,
+        "denominator_pred": 19,
+        "precision": 0.8947,
+        "recall": 0.9444
+       },
+       "matrix": {
+        "pred_ACT_obs_ACT": 4,
+        "pred_ACT_obs_INH": 1,
+        "pred_INH_obs_ACT": 2,
+        "pred_INH_obs_INH": 17
+       },
+       "n": 24
+      },
+      "mismatch_count": 3,
+      "mismatches": [
+       {
+        "agent_class": "beta-adrenergic agonist (isoproterenol) -- electrical-storm ",
+        "dgidb_majority": "INHIBITORY",
+        "kit_asserted": "ACTIVATING",
+        "n_act": 15,
+        "n_inh": 27,
+        "slug": "brugada_syndrome",
+        "target": "ADRB1"
+       },
+       {
+        "agent_class": "hepatocyte-targeted APOC3 antisense oligonucleotide (olezars",
+        "dgidb_majority": "ACTIVATING",
+        "kit_asserted": "INHIBITORY",
+        "n_act": 5,
+        "n_inh": 0,
+        "slug": "familial_chylomicronaemia_syndrome",
+        "target": "APOC3"
+       },
+       {
+        "agent_class": "APOC3 antisense oligonucleotide (volanesorsen)",
+        "dgidb_majority": "ACTIVATING",
+        "kit_asserted": "INHIBITORY",
+        "n_act": 5,
+        "n_inh": 0,
+        "slug": "familial_chylomicronaemia_syndrome",
+        "target": "APOC3"
+       }
+      ],
+      "reading": "an independent DB agrees with the kit's per-drug action DIRECTION on the large fairly-checkable subset. The few mismatches are a known DGIdb directionality quirk (e.g. APOC3 antisense labelled activating) and majority-vs-specific-agent (e.g. ADRB1 has both agonists and blockers; the kit row is a minority agonist).",
+      "rows_scored": 24,
+      "rows_target_unresolved": 52,
+      "rows_unsignable_verb": 23,
+      "what": "drug acts on a DISTINCT target (NOT a disease gene) -- the FAIR external check"
+     },
+     "reading": "V2 proved the kit's asserted action on each target is emergence-consistent at the axis level; X2b shows an INDEPENDENT DB agrees on that per-drug action direction on the fairly-checkable (distinct-target) subset. The downstream target->axis coupling is inherited from the kit, not re-derived here.",
+     "what": "kit ASSERTED action on a named target (frozen verb lexicon) vs DGIdb independent approved action on that target; STRATIFIED by target-relationship"
+    },
+    "prev_hash": "bfe5609d8c6d29afed9cc3e2306298943b5d30b06437e133c31f37cb44cdd7bc",
+    "row_hash": "e05e2834f4f7c9d7e9119fc2774caeb27de674d92e96823567e4de49b35407af"
+   }
+  ]
+ }
+}

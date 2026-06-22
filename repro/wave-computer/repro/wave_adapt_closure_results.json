@@ -1,0 +1,138 @@
+{
+  "_what": "vp_wave_computer v0.11 \u2014 POST-PROGRAM HARDENING: the A3 [O]->[V] closure (re-probe the L9 ladder's lone shortfall with the proven L5 dual store wired in INLINE; the single store cannot over-write a switched rule, the dual store does)",
+  "firewall": {
+    "consciousness_claim": 0,
+    "hard_problem_open": 1
+  },
+  "new_tuned_constants": 0,
+  "post_program": true,
+  "reuses_substrate": "wave_compute_core (L0: attractor clean-up, one-shot R3) + the L5 / C2 fast episodic store (hebbian_field one-shot) \u2014 exact, non-circular",
+  "closes": "the S10 / L9 capability-ladder lone open rung A3 (real-time adaptation); the S10 single-store [O] record stays byte-stable (the minimal machine's honest limit), this adds the dual-store closure INLINE (mirrors the program's L4->L5).",
+  "T1_closure": {
+    "by_shift": [
+      {
+        "shift_frac": 0.25,
+        "pre": 1.0,
+        "dip": 0.8333,
+        "post_single": 0.9167,
+        "post_dual_norm": 1.0,
+        "post_dual_raw": 1.0,
+        "old_single": 0.75,
+        "old_dual_slow": 0.6667
+      },
+      {
+        "shift_frac": 0.5,
+        "pre": 1.0,
+        "dip": 0.6667,
+        "post_single": 0.7778,
+        "post_dual_norm": 1.0,
+        "post_dual_raw": 0.8889,
+        "old_single": 0.6111,
+        "old_dual_slow": 0.6111
+      },
+      {
+        "shift_frac": 0.75,
+        "pre": 1.0,
+        "dip": 0.5833,
+        "post_single": 0.8056,
+        "post_dual_norm": 1.0,
+        "post_dual_raw": 1.0,
+        "old_single": 0.6667,
+        "old_dual_slow": 0.7083
+      },
+      {
+        "shift_frac": 1.0,
+        "pre": 1.0,
+        "dip": 0.2222,
+        "post_single": 0.5833,
+        "post_dual_norm": 1.0,
+        "post_dual_raw": 0.9722,
+        "old_single": 0.5,
+        "old_dual_slow": 0.4722
+      }
+    ],
+    "band": 0.8,
+    "clean_baseline_pre_shift": true,
+    "performance_dips_at_shift": true,
+    "single_fails_at_full_switch": true,
+    "single_below_band_when_shift_large": false,
+    "dual_recovers_to_band_everywhere": true,
+    "dual_strictly_beats_single_everywhere": true,
+    "dual_raw_unnormalized_also_beats_single": true,
+    "A3_closure_O_to_V": true,
+    "note": "PAIRED [O]->[V]: the single store == the dual store's SLOW component ALONE, so the ONLY difference is the added FAST episodic store (the inherited R3 / C2 one-shot additive store, reused unchanged). The single store cannot over-write a switched rule (old+new superpose in ONE field) -> recovery falls below band as the shift grows and fails at the full switch (the inherited A3 [O], reproduced). The dual store encodes the new rule in a SEPARATE fast field, so it recovers to band at EVERY shift fraction -> the [O] is CLOSED [V]. The unnormalized raw-sum dual read also beats single everywhere, so the equal-vote normalization is scale-equalizing, not load-bearing: the fast episodic store is the mechanism. new_tuned_constants=0.",
+    "honest_old_rule_note": "the OLD-rule retention for OVER-WRITTEN cues is correctly LOW in the integrated read -- a cue cannot map to two responses at once, so adaptation MEANS the superseded association is let go for the changed cues (this is correct behaviour, not a defect). The dual store's distinct A7 retention property (retaining NON-conflicting old skills, ~1.0) is a separate, already-[V] result; it is not re-litigated here, where the old and new map the SAME cue."
+  },
+  "T2_size_robustness": {
+    "by_config": [
+      {
+        "B": 6,
+        "N": 128,
+        "by_shift": [
+          {
+            "shift_frac": 0.5,
+            "post_single": 0.7778,
+            "post_dual_norm": 1.0
+          },
+          {
+            "shift_frac": 1.0,
+            "post_single": 0.5833,
+            "post_dual_norm": 1.0
+          }
+        ],
+        "single_fails_full_switch": true,
+        "dual_closes_everywhere": true
+      },
+      {
+        "B": 8,
+        "N": 128,
+        "by_shift": [
+          {
+            "shift_frac": 0.5,
+            "post_single": 0.7917,
+            "post_dual_norm": 1.0
+          },
+          {
+            "shift_frac": 1.0,
+            "post_single": 0.5417,
+            "post_dual_norm": 1.0
+          }
+        ],
+        "single_fails_full_switch": true,
+        "dual_closes_everywhere": true
+      },
+      {
+        "B": 6,
+        "N": 256,
+        "by_shift": [
+          {
+            "shift_frac": 0.5,
+            "post_single": 0.75,
+            "post_dual_norm": 1.0
+          },
+          {
+            "shift_frac": 1.0,
+            "post_single": 0.5556,
+            "post_dual_norm": 1.0
+          }
+        ],
+        "single_fails_full_switch": true,
+        "dual_closes_everywhere": true
+      }
+    ],
+    "closure_sign_stable_across_size": true,
+    "note": "the same sign holds at every machine size swept: the single store fails the full rule switch and the dual store closes to band at every shift fraction -- the closure is not an artifact of one (B, N)."
+  },
+  "headline": {
+    "T1_single_fails_at_full_switch": true,
+    "T1_single_below_band_when_shift_large": false,
+    "T1_dual_recovers_to_band_everywhere": true,
+    "T1_dual_strictly_beats_single_everywhere": true,
+    "T1_dual_raw_unnormalized_also_beats_single": true,
+    "T2_closure_sign_stable_across_size": true,
+    "A3_O_to_V_closed": true,
+    "grade_A3_after_dual_store": "[V]",
+    "ladder_after_closure": "7/7 [V] with the proven L5 dual store wired in (the S10 6/7 single-store record stands as the minimal machine's honest limit)"
+  },
+  "_digest": "ad93057afac2054ed8fb70d8bfaca41dd3869462b05d0ca89bb96c22a05d2551"
+}

@@ -1,0 +1,286 @@
+{
+ "_dependency_threshold": -0.5,
+ "_genes_not_in_depmap_matrix": [
+  "GBA1"
+ ],
+ "_held_out_warrant": "The kit's corrective SIGN is forced by each gene's disease MECHANISM (GOF/LOF), declared by function and frozen in inherited/onco_gamma.json BEFORE any DepMap data was seen. DepMap gene-effect is an independent functional viability readout that expresses none of that label -- a legitimate held-out target. corr_sign/gc are re-read frozen at score time; nothing is fitted to these numbers.",
+ "_panel_rule": "The two frozen disease atlases (onco + neurodegen), declared by function; gene-effect matched by official symbol (GBA1->GBA).",
+ "_prediction_sign_locked": "Sign-law '-' arm, locked BEFORE scoring: under the '-' (knockout) operation, a GOF gene (corr_sign '-') is CORRECTED ('-' removes the oncogenic drive => dependency, gene_effect < 0), while a LOF gene (corr_sign '+') is NOT corrected by '-' (knockout neutral/pro-tumour => gene_effect >= 0). Predicted: GOF more negative than LOF, i.e. point-biserial(corr_sign=='-', -gene_effect) > 0.",
+ "_readout_scope": "Cancer-cell viability is a CORRECTION phenotype ONLY for the ONCOLOGY panel. The neurodegeneration rows are cached for transparency but are OUT OF READOUT SCOPE for this test (a cancer-viability screen does not measure neuronal proteinopathy correction); the engine (FV7) scores the ONCO panel only.",
+ "_source": {
+  "figshare_article": "25880521",
+  "gene_effect_file_id": "46489063",
+  "model_file_id": "46489732",
+  "n_models_screened": 1150,
+  "provider": "Broad Institute DepMap (Project Achilles / Sanger SCORE)",
+  "readout_column": "CRISPRGeneEffect (Chronos gene-effect; <= -0.5 ~ dependency, ~ -1 ~ common-essential)",
+  "release": "DepMap 24Q2 Public"
+ },
+ "_what": "VP Inheritance Kit -- (B) SIGN-LAW '-' ARM scoring sheet (held-out). Cached per-gene DepMap CRISPR-KO gene-effect for the frozen disease panel, used to score the kit's mechanism-forced corrective SIGN ('-' for GOF) against REAL cancer-dependency data. SIGN test only -- the magnitudes are the target, never a kit prediction.",
+ "matched": {
+  "APC": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.2217,
+   "gene": "APC",
+   "matched_as": "APC",
+   "mean_gene_effect": -0.3344,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.3291,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "BCL2": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0235,
+   "gene": "BCL2",
+   "matched_as": "BCL2",
+   "mean_gene_effect": -0.0041,
+   "mechanism": "GOF",
+   "median_gene_effect": 0.0257,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "BRAF": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.073,
+   "gene": "BRAF",
+   "matched_as": "BRAF",
+   "mean_gene_effect": -0.1274,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.0477,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "BRCA1": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.3696,
+   "gene": "BRCA1",
+   "matched_as": "BRCA1",
+   "mean_gene_effect": -0.4377,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.423,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "CDKN2A": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0009,
+   "gene": "CDKN2A",
+   "matched_as": "CDKN2A",
+   "mean_gene_effect": 0.1623,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.1574,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "EGFR": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.207,
+   "gene": "EGFR",
+   "matched_as": "EGFR",
+   "mean_gene_effect": -0.3235,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.2197,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "HTT": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0557,
+   "gene": "HTT",
+   "matched_as": "HTT",
+   "mean_gene_effect": -0.1299,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.1033,
+   "n_models": 1150,
+   "role": "brake"
+  },
+  "KRAS": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.3357,
+   "gene": "KRAS",
+   "matched_as": "KRAS",
+   "mean_gene_effect": -0.5617,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.367,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "LRRK2": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0043,
+   "gene": "LRRK2",
+   "matched_as": "LRRK2",
+   "mean_gene_effect": -0.1627,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.159,
+   "n_models": 1150,
+   "role": "driver"
+  },
+  "MDM2": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.3478,
+   "gene": "MDM2",
+   "matched_as": "MDM2",
+   "mean_gene_effect": -0.604,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.3987,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "MYC": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.9496,
+   "gene": "MYC",
+   "matched_as": "MYC",
+   "mean_gene_effect": -1.7613,
+   "mechanism": "GOF",
+   "median_gene_effect": -1.8315,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "NF1": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0096,
+   "gene": "NF1",
+   "matched_as": "NF1",
+   "mean_gene_effect": 0.0395,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.0164,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "PARK7": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0035,
+   "gene": "PARK7",
+   "matched_as": "PARK7",
+   "mean_gene_effect": -0.161,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.1622,
+   "n_models": 1150,
+   "role": "brake"
+  },
+  "PIK3CA": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.413,
+   "gene": "PIK3CA",
+   "matched_as": "PIK3CA",
+   "mean_gene_effect": -0.4995,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.4329,
+   "n_models": 1150,
+   "role": "oncogene"
+  },
+  "PINK1": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0017,
+   "gene": "PINK1",
+   "matched_as": "PINK1",
+   "mean_gene_effect": 0.0317,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.0365,
+   "n_models": 1150,
+   "role": "brake"
+  },
+  "PRKN": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0,
+   "gene": "PRKN",
+   "matched_as": "PRKN",
+   "mean_gene_effect": -0.0175,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.0156,
+   "n_models": 1150,
+   "role": "brake"
+  },
+  "PTEN": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0096,
+   "gene": "PTEN",
+   "matched_as": "PTEN",
+   "mean_gene_effect": 0.3841,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.3209,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "RB1": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0009,
+   "gene": "RB1",
+   "matched_as": "RB1",
+   "mean_gene_effect": 0.2665,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.247,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "SNCA": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.0,
+   "gene": "SNCA",
+   "matched_as": "SNCA",
+   "mean_gene_effect": 0.1022,
+   "mechanism": "GOF",
+   "median_gene_effect": 0.102,
+   "n_models": 1150,
+   "role": "driver"
+  },
+  "SOD1": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.96,
+   "gene": "SOD1",
+   "matched_as": "SOD1",
+   "mean_gene_effect": -1.3924,
+   "mechanism": "GOF",
+   "median_gene_effect": -1.405,
+   "n_models": 1150,
+   "role": "brake"
+  },
+  "STK11": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.1461,
+   "gene": "STK11",
+   "matched_as": "STK11",
+   "mean_gene_effect": -0.1445,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.124,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "TP53": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.0043,
+   "gene": "TP53",
+   "matched_as": "TP53",
+   "mean_gene_effect": 0.3557,
+   "mechanism": "LOF",
+   "median_gene_effect": 0.1872,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "VHL": {
+   "disease_class": "oncology",
+   "frac_dependent": 0.7226,
+   "gene": "VHL",
+   "matched_as": "VHL",
+   "mean_gene_effect": -0.6971,
+   "mechanism": "LOF",
+   "median_gene_effect": -0.701,
+   "n_models": 1150,
+   "role": "suppressor"
+  },
+  "VPS35": {
+   "disease_class": "neurodegeneration",
+   "frac_dependent": 0.693,
+   "gene": "VPS35",
+   "matched_as": "VPS35",
+   "mean_gene_effect": -0.616,
+   "mechanism": "GOF",
+   "median_gene_effect": -0.6045,
+   "n_models": 1150,
+   "role": "driver"
+  }
+ }
+}

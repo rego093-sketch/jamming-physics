@@ -1,0 +1,813 @@
+% =====================================================================
+%  Integumentary Emergence in the Jammed-Granular-Vacuum Framework
+%  VP Theory -- single-author whitepaper  (paper_id: integumentary_vp_site)
+%  Author: Young Jae Lee (ORCID 0009-0002-7535-8245)
+%  Version 1.0.0  -- build 2026-06-19
+%  Concept DOI: 10.5281/zenodo.20754541 (all versions) | version DOI: 10.5281/zenodo.20754542 (v1.0.0)
+%  License: CC BY 4.0
+%  Compile: pdflatex (run twice for the table of contents / references)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage[hidelinks,colorlinks=true,linkcolor=linknavy,urlcolor=linknavy,citecolor=linknavy]{hyperref}
+
+% ---- colours -------------------------------------------------------
+\definecolor{linknavy}{HTML}{1A4E8A}
+\definecolor{gV}{HTML}{1F7A3D}
+\definecolor{gL}{HTML}{1A5FA8}
+\definecolor{gF}{HTML}{8A5A00}
+\definecolor{gO}{HTML}{9A2A2A}
+\definecolor{rule}{HTML}{B9C2CC}
+\definecolor{boxbg}{HTML}{F4F6F8}
+
+% ---- grade badges --------------------------------------------------
+\newcommand{\V}{\textcolor{gV}{\textbf{[V]}}}
+\newcommand{\Lg}{\textcolor{gL}{\textbf{[L]}}}
+\newcommand{\Fg}{\textcolor{gF}{\textbf{[F]}}}
+\newcommand{\Og}{\textcolor{gO}{\textbf{[O]}}}
+
+% ---- glyph shorthands (ASCII-safe; pdflatex) -----------------------
+\newcommand{\gam}{\ensuremath{\gamma}}
+\newcommand{\ra}{\ensuremath{\rightarrow}}
+\newcommand{\mul}{\ensuremath{\times}}
+\newcommand{\apx}{\ensuremath{\approx}}
+\newcommand{\cd}{\ensuremath{\cdot}}
+\newcommand{\dg}{\ensuremath{^{\circ}}}
+\newcommand{\um}{\ensuremath{\mu}m}
+\newcommand{\tewlunit}{\ensuremath{\mathrm{g\,m^{-2}\,h^{-1}}}}
+
+% ---- section styling ----------------------------------------------
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus .3ex}{0.8ex}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.18}
+\captionsetup{font=small,labelfont=bf}
+
+% answer-first callout box
+\newcommand{\answer}[1]{%
+  \par\vspace{0.2em}\noindent
+  \fcolorbox{rule}{boxbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
+  \small\textit{#1}}}\par\vspace{0.4em}}
+
+\hypersetup{
+  pdftitle={Integumentary Emergence in the Jammed-Granular-Vacuum Framework},
+  pdfauthor={Young Jae Lee},
+  pdfsubject={VP Theory -- physics-derived emergence of the integumentary system on one bistable substrate},
+  pdfkeywords={VP Theory, jammed granular vacuum, integumentary system, epidermal barrier, wound healing, jamming unjamming, melanin photoprotection, UV carcinogenesis, hysteresis, reproducibility}
+}
+
+\begin{document}
+
+% =====================================================================
+%  TITLE
+% =====================================================================
+\begin{titlepage}
+\centering
+{\sffamily\bfseries\LARGE
+Integumentary Emergence in the\\[2pt]
+Jammed-Granular-Vacuum Framework\par}
+\vspace{0.7em}
+{\sffamily\large
+The Epidermal Barrier, Wound-Healing Unjamming,\\
+and the Ultraviolet-Carcinogenesis Showcase\par}
+\vspace{1.4em}
+{\large Young Jae Lee\par}
+\vspace{0.2em}
+{\small Independent Researcher \;\textbar\; ORCID \href{https://orcid.org/0009-0002-7535-8245}{0009-0002-7535-8245}\par}
+\vspace{0.2em}
+{\small VP Theory --- Jammed-Granular-Vacuum Emergence \;\textbar\; \href{https://jamming-physics.org/integumentary/}{jamming-physics.org/integumentary}\par}
+
+\vspace{1.8em}
+\begin{minipage}{0.86\textwidth}\small\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{r l}
+\textbf{Package} & \texttt{integumentary\_vp\_site} \;(code: \texttt{skn})\\
+\textbf{Physical class} & jamming --- barrier/interface + external insult\\
+\textbf{Version} & 1.0.0 \;(in-lane program complete) --- build 2026-06-19\\
+\textbf{Governance} & VP-SPEC v1.8 (constitution C0 overrides on conflict)\\
+\textbf{DOI (concept)} & \href{https://doi.org/10.5281/zenodo.20754541}{10.5281/zenodo.20754541} \;(all versions)\\
+\textbf{DOI (this version)} & \href{https://doi.org/10.5281/zenodo.20754542}{10.5281/zenodo.20754542} \;(v1.0.0)\\
+\textbf{License} & Creative Commons Attribution 4.0 (CC BY 4.0)\\
+\end{tabular}
+\end{minipage}
+
+\vspace{1.6em}
+\begin{minipage}{0.9\textwidth}\small
+\textbf{Abstract.} The integumentary system --- the body's boundary --- is reconstructed not as a designed
+organ set but as an \emph{emergent} one. In the VP (jammed-granular-vacuum) framework every cell programme rides one
+vendored bistable primitive, the R19 switch $\dot s = g\,s - s^{3} + h$, whose control parameter $g$ is a
+\emph{measured} master-gene order parameter $\gamma$ carried read-only from the DNA gene-clock. Four organs
+(epidermis TP63, keratinocyte KRT14, melanocyte MITF, skin-appendage EDAR) switch on from their measured $\gamma$,
+and a fifth (sebaceous gland PRDM1) is added by the same promoter-thermodynamics pipeline that reproduces MITF
+and EDAR byte-for-byte; the developmental order is read directly off $\gamma$, never fitted. On this one substrate
+the work verifies ten discriminant targets --- the epidermal water barrier, wound healing as an unjamming
+transition around the vertex-model shape index $q^{*}=3.81$, melanin as an ultraviolet negative feedback, epidermal
+turnover as a dwell-cascade, sweating as a regulated interface flux, ultraviolet carcinogenesis as a convex
+multistage rate, and four additive hysteretic dynamics (the hair-follicle relaxation oscillator and the sebaceous,
+adhesion, and vasomotor jams) --- and reproduces twenty-three skin diseases as \emph{signed perturbations of one
+existing knob}, each established treatment being the same knob reversed. The decisive internal test is that
+clinically opposite entities (psoriasis/ichthyosis, melasma/vitiligo, pemphigus/pemphigoid, rosacea/Raynaud)
+fall out of the same switch driven in opposite directions, with no constant changed between them. The programme
+holds a strict no-tuning rule --- every constant is a measured input or substrate-derived, never chosen to hit a
+target --- and is reproducible to seven byte-identical SHA-256 hashes that a single release-audit script re-verifies
+($7/7$ match, all gates green). Claims are graded honestly throughout: \V\ simulation-verified shape, \Lg\ cited
+literature anchor, \Fg\ substrate-forced regime scale, \Og\ absolute magnitude open with a stated obstacle.
+\end{minipage}
+
+\vfill
+{\footnotesize This whitepaper is the human-readable companion to the canonical per-title HTML at
+\href{https://jamming-physics.org/integumentary/}{jamming-physics.org/integumentary}. The reproducible engine,
+governance documents, and this source are bundled in the accompanying reproducibility archive.\par}
+\end{titlepage}
+
+\tableofcontents
+\vspace{1em}
+\hrule
+\vspace{0.6em}
+
+% =====================================================================
+\section*{Conventions and the grading system}
+\addcontentsline{toc}{section}{Conventions and the grading system}
+
+Every result in this document is reproduced from one vendored primitive --- the R19 bistable switch
+$\dot s = g\,s - s^{3} + h$, with its spinodal, basin barrier, and dwell time --- driven by the measured
+master-gene order parameters $\gamma$. The governing discipline is the \textbf{no-tuning invariant}:
+\emph{every constant is either a measured input (cited and locked) or substrate-derived; none is chosen to fit a
+target}. The methodology is \textbf{LOCK $\to$ Derive $\to$ Gate}: inputs are locked, consequences are derived, and a
+gate suite refuses to let the writing phase proceed until the research battery is green. The pipeline is
+deterministic --- BLAS pinned single-thread, all grids fixed, no random-number generator --- so two independent runs
+produce a byte-identical result hashed to SHA-256.
+
+Claims carry one of four grades, used uniformly:
+
+\begin{description}[leftmargin=2.6em,style=nextline,itemsep=1pt]
+\item[\V\ Simulation-verified] a shape, control, ordering, sign, or discontinuity reproduced by the substrate.
+\item[\Lg\ Cited anchor] a measured number taken from the external literature.
+\item[\Fg\ Forced (substrate)] a dimensionless regime-scale set-point forced by the substrate (e.g.\ a spinodal
+      computed from measured $\gamma$); forced, not fitted.
+\item[\Og\ Open (obstacle stated)] an absolute magnitude the package does \emph{not} yet derive, each listed with
+      the specific external input that would close it. An \Og\ without a stated obstacle is a gate failure.
+\end{description}
+
+% =====================================================================
+\section{Integumentary emergence: the body boundary from measured $\gamma$}
+
+\answer{Four skin organs emerge from measured master-gene $\gamma$ on the shared R19 bistable substrate. Ordered
+by ascending $\gamma$ the predicted developmental sequence is epidermis $\to$ skin-appendage $\to$ melanocyte
+$\to$ keratinocyte --- a consequence of the measured inputs, not a fit.}
+
+The integumentary system is the organism's interface with the world: a barrier that holds water in, a screen that
+holds ultraviolet out, a sensor sheet, and a thermostat. Here it is not designed; it \emph{emerges} when a small
+set of master genes switch on the shared bistable substrate. Each organ rides the same vendored switch, whose
+control parameter $g$ is the measured master-gene $\gamma$ taken read-only from the DNA gene-clock package.
+Identity and developmental order follow from those measured numbers; nothing is tuned to a skin phenotype.
+
+\begin{table}[h]
+\centering\small
+\caption{The integumentary organ atlas. $\gamma$ is a measured, read-only input; the spinodal is substrate-derived
+from $\gamma$ and sets the threshold at which each state flips discontinuously. PRDM1 was fetched, cached, and
+vendored in v0.6.0 through the identical promoter-thermodynamics pipeline validated against MITF and EDAR, and
+reproduces offline bit-for-bit ($\gamma=1.343156$).}
+\begin{tabular}{l l c c l}
+\toprule
+\textbf{Organ} & \textbf{Master gene} & \textbf{$\gamma$ (measured)} & \textbf{Spinodal} & \textbf{Role class}\\
+\midrule
+Epidermis        & TP63          & 1.3643 & 0.6134 & barrier\\
+Keratinocyte     & KRT14         & 1.4894 & 0.6996 & barrier\\
+Melanocyte       & MITF          & 1.3945 & 0.6338 & defense\\
+Skin appendage   & EDAR          & 1.3696 & 0.6169 & appendage\\
+Sebaceous gland  & PRDM1 (Blimp1)& 1.3432 & 0.5990 & jamming\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ordering the four core organs by ascending $\gamma$ gives the substrate's prediction for the sequence in which
+they consolidate: \textbf{epidermis $\to$ skin-appendage $\to$ melanocyte $\to$ keratinocyte}. The epidermal field
+commits first, appendages and melanocytes follow, and the stiff keratinocyte programme last. This ordering is a
+falsifiable consequence of the measured $\gamma$, not an input \V. PRDM1, committed on its biology \emph{before}
+$\gamma$ was read, then turns out to carry the \emph{lowest} $\gamma$ in the whole atlas, so its functional spinodal
+opens earliest --- an emergence-order prediction graded by sign \V.
+
+% =====================================================================
+\section{Epidermal barrier and transepidermal water loss (T1)}
+
+\answer{Transepidermal water loss rises as $1/N$ with barrier thickness, crossing twice baseline at half thickness,
+then collapses discontinuously when a chemical insult drives the keratinocyte switch past its spinodal. Insult
+tolerance scales as $\gamma^{1.5}$, ranking the keratinocyte highest.}
+
+The stratum corneum is a diffusion barrier and transepidermal water loss (TEWL) is the steady flux across it. For
+a barrier of $N$ layers the flux scales as $1/N$, so thinning raises TEWL smoothly and monotonically; on a 15-layer
+reference barrier the flux crosses twice baseline once thickness halves --- here at 7 layers. That is the ordinary
+graded failure mode. \emph{Insult} is different. A chemical insult does not thin the barrier; it drives the
+keratinocyte switch field $h$ toward its spinodal. The ON-basin depth is robust until the drive reaches a fraction
+$\apx 1.0033$ of the spinodal, and then the barrier collapses \emph{discontinuously}, TEWL jumping rather than
+drifting \V. The absolute insult a layer absorbs before that snap scales as $\gamma^{1.5}$, so the organs rank in
+resistance as $\mathrm{KRT14}>\mathrm{MITF}>\mathrm{EDAR}>\mathrm{TP63}$ \V; the keratinocyte absolute tolerance is
+0.70 dimensionless drive units. The conversion to a clinical TEWL in \tewlunit\ is open \Og: it needs the
+stratum-corneum lipid permeability and the trans-barrier water-activity gradient as cited inputs.
+
+% =====================================================================
+\section{Wound healing as jamming, unjamming, and re-jamming (T2)}
+
+\answer{Re-epithelialisation is an unjamming--rejamming cycle around the vertex-model shape index $q^{*}=3.81$. A
+free edge unjams ($q$ rises to 4.07), cells migrate, confluence re-jams the sheet ($q$ falls to 3.55); below a
+critical drive the wound fails to close.}
+
+A confluent epithelial sheet is a \emph{jammed} solid: cells are caged by neighbours and cannot rearrange. Its
+jammed-versus-fluid state is set by a single geometric control, the cell shape index $q$, with a vertex-model
+threshold at $q^{*}=3.81$ (Bi, Lopez, Schwarz \& Manning, 2015--2016) \Lg: below it the sheet is jammed, above it
+it flows. Injury frees an edge; the free-edge cue drives edge cells across $q^{*}$, \emph{unjamming} them (here
+$q_{\max}=4.07$), and the unjammed cells migrate collectively into the gap. As the gap closes the free-edge cue
+vanishes, confluent crowding pushes the edge field back below the spinodal, and the sheet \emph{re-jams}
+($q_{\text{final}}=3.55$). The same model predicts failure: below a critical unjamming drive of about 0.15 the edge
+never crosses $q^{*}$, the sheet stays jammed, and the gap does not close --- the substrate's picture of a chronic,
+non-healing wound \V. The absolute closure rate in \ensuremath{\mathrm{\mu m\,h^{-1}}} is open \Og: it needs a
+measured single-cell migration speed.
+
+% =====================================================================
+\section{Melanin photoprotection as ultraviolet negative feedback (T3)}
+
+\answer{Ultraviolet drives MITF$\to$melanin, and melanin screens ultraviolet, closing a negative-feedback loop.
+The melanin response is concave and plateauing; delivered ultraviolet is attenuated to about 21\%, and removing the
+feedback abolishes the protection.}
+
+Ultraviolet light drives the melanocyte master gene MITF, which makes melanin; melanin then absorbs ultraviolet ---
+including the ultraviolet that triggered it. Synthesis and screening therefore form a negative-feedback loop,
+$h_{\text{eff}} = \mathrm{UV}\cdot e^{-kM}$. The self-consistent steady melanin level is consequently
+\emph{concave} in dose, rising toward a plateau rather than tracking the dose linearly: across the swept range the
+high-dose level is only about $1.09\mul$ the mid-dose level, the signature of a regulated quantity. The ultraviolet
+that actually reaches the DNA below is the screened flux $\mathrm{UV}\cdot e^{-kM}$, attenuated to about 21\% of the
+incident dose at the top of the range --- substantial but partial photoprotection (a tan is not sunscreen). The
+control experiment removes the feedback ($k\to0$): delivered-ultraviolet attenuation returns to $1\mul$ (no
+protection at all), identifying the melanin screen --- not any synthesis cap --- as the cause \V. The absolute
+minimal erythema dose and melanin optical density are open \Og: they need the melanin extinction coefficient.
+
+% =====================================================================
+\section{Epidermal turnover as a substrate dwell-cascade (T4)}
+
+\answer{Total turnover is the sum of compartment residences. Viable epidermis and stratum corneum share TP63, so
+the substrate gives them equal dwell; with the cited $\apx 14$-day corneum transit the total is $\apx 28$ days,
+inside the cited 28--40-day window.}
+
+Epidermal renewal moves a cell from the basal layer to the surface and off; the total turnover time is therefore a
+\emph{sum of compartment residence times}, long established by labelled-cell studies. The two compartments here ---
+viable epidermis and stratum corneum --- share the same master gene TP63, so the substrate assigns them the same
+dwell time (the dwell ratio is 1): equal $\gamma$ gives equal substrate dwell, a prediction not a fit. With the
+stratum-corneum transit fixed to its cited 14 days \Lg, the equal-dwell viable phase is also 14 days and the total
+epidermal turnover is 28 days, inside the cited 28--40-day window for young-adult skin \V. Because dwell grows with
+$\gamma$, the four organs rank in dwell as $\mathrm{KRT14}>\mathrm{MITF}>\mathrm{EDAR}>\mathrm{TP63}$. The absolute
+basal cycle time per cell is open \Og: it needs a per-cell calibration. (See \S\ref{sec:anchors}: current literature
+puts whole-epidermis turnover at $\apx 28$--48 days, extending to $\apx 56$ days in newer estimates, so the
+modelled 28 days sits at the conservative lower edge of the window --- stated, not tuned.)
+
+% =====================================================================
+\section{Thermoregulation: the sweat gland as a regulated interface flux (T5)}
+
+\answer{A thermal load raises core temperature until it crosses the EDAR sweat-switch threshold; the evaporative
+interface flux then regulates temperature, dropping the temperature--load slope from 2.00 to 0.77, until capacity
+saturates and temperature runs away.}
+
+A thermal load raises core temperature. The sweat gland is governed by the EDAR switch and stays off until the
+thermal drive clears its threshold (recruitment begins at a load of about 0.3); below that the skin sheds heat only
+passively. Once recruited, the gland secretes in proportion to the temperature error and evaporative cooling
+carries heat away as an interface flux --- a feedback controller engaging at a set-point, not a linear radiator. The
+regulation is visible in the slope of core temperature against load: about 2.00 before sweating, falling sharply to
+about 0.77 once the evaporative flux engages, the controller actively flattening the rise. Above the maximum sweat
+capacity the flux saturates, the slope climbs back to about 2.00, and temperature runs away --- the substrate's
+picture of the heat-stroke limit \V. The absolute set-point (37\dg C) and the absolute sweat rate are open \Og:
+they need per-gland output and body heat capacity.
+
+% =====================================================================
+\section{Ultraviolet carcinogenesis: the squamous/melanoma dichotomy}
+
+\answer{A single convex, multistage malignant rate splits the two ultraviolet cancers. Squamous-cell carcinoma
+rises near-linearly with cumulative dose ($r=0.999$); melanoma is intermittent-sensitive (burst relative risk up to
+$\apx 5.7\mul$); and a chronic-exposure tan protects against melanoma ($\apx 2.6\mul$).}
+
+In this framework a carcinogen is a sustained aberrant drive that lowers the barrier between the normal and
+malignant basins of the same cell switch; the malignant-crossing rate is Kramers-like,
+$\text{rate}\sim e^{|h|/\text{spinodal}}$. Because malignancy needs several independent hits, the realised rate is
+multistage, $\text{rate}^{K}$ with $K\apx 5$ (Armitage--Doll) \Lg --- a cited biological structure, not a fitted
+knob. That single convex rate splits the two ultraviolet cancers.
+
+\textbf{Squamous-cell carcinoma} tracks cumulative dose. At a fixed chronic intensity the cumulative
+malignant-initiation probability accumulates linearly in total dose, so SCC rises near-linearly with cumulative
+ultraviolet (linear to $r=0.999$) \V, matching the recognised near-linear dependence of cutaneous SCC on
+cumulative, occupational ultraviolet.
+
+\textbf{Melanoma} tracks intermittent bursts. For a fixed cumulative dose, concentrating it into bursts raises the
+integrated hazard, because a convex rate rewards peaks (Jensen's inequality). Delivering the same dose
+intermittently raises the melanoma relative risk by up to about $5.7\mul$ here \V --- the substrate's account of
+melanoma's sunburn/intermittent-exposure sensitivity.
+
+\textbf{The chronic-exposure paradox.} A spread, chronic dose builds a melanin screen (a tan) that a fast sunburn
+cannot, lowering the effective intensity; here the tan reduces the chronic-arm hazard by about $2.6\mul$ \V,
+reproducing the otherwise puzzling inverse association between chronic occupational ultraviolet and melanoma. The
+cited anchor is Gandini et al.\ (2005), a meta-analysis of 57 studies: intermittent exposure raises melanoma risk
+(summary relative risk 1.61, 95\% CI 1.31--1.99) while chronic/occupational exposure does not, and sunburn roughly
+doubles risk \Lg. Absolute incidences and relative-risk magnitudes are open \Og: they need a population baseline
+rate and an absolute dose calibration.
+
+% =====================================================================
+\section{Methods, grades, and reproducibility}\label{sec:methods}
+
+\answer{All results derive from the R19 bistable substrate and measured master-gene $\gamma$ under a strict
+no-tuning rule. The pipeline is bit-reproducible to an identical SHA-256, and every claim is graded, with each open
+item carrying a stated obstacle.}
+
+Every result is reproduced from one vendored primitive, the R19 bistable switch $\dot s = g\,s - s^{3} + h$, with
+its spinodal, basin barrier, and dwell. The only organism-specific inputs are the measured master-gene $\gamma$
+values carried read-only from the DNA gene-clock. The governing rule is the no-tuning invariant: every constant is
+a measured input (cited and locked) or substrate-derived, never chosen to fit a target. The measured $\gamma$ drive
+falsifiable cross-checks --- the developmental order, the $\gamma^{1.5}$ insult ordering, the equal-dwell turnover
+--- while the dimensionless dynamical scales set the regime in which each mechanism is exhibited and are graded
+honestly rather than calibrated to data.
+
+The research pipeline is deterministic: BLAS is pinned single-thread, all grids are fixed, and no random-number
+generator is used. Two independent runs produce a byte-identical result; the core target battery hashes to SHA-256
+\texttt{1fb59f55\dots 093d3e92}. The writing phase is gated --- the canonical site cannot be generated until the
+research gate is green and the phase is flipped. The seven layer hashes and the release-audit contract are
+collected in Appendix~\ref{app:hashes}; the complete \Og\ obstacle ledger in Appendix~\ref{app:irrepro}.
+
+% =====================================================================
+\section{Integumentary pathology: thirteen diseases as perturbations}
+
+\answer{Thirteen common skin diseases are reproduced as signed perturbations of the six verified mechanisms.
+Opposite entities emerge from opposite drive signs on a single R19 switch, every intervention is the same knob
+reversed, and the layer adds no constant while the core-battery hash stays fixed.}
+
+The preceding sections established six verified mechanisms --- the water barrier (T1), wound closure (T2), the
+melanin screen (T3), turnover (T4), thermoregulation (T5), and the carcinogenesis kernel. The major skin diseases
+follow without new physics: each is one mechanism driven away from its set-point, and each established treatment is
+the same control pushed back.
+
+\textbf{Barrier failures (T1).} \emph{Atopic dermatitis} is a chronic erosion of barrier reserve: the intact-basin
+depth falls to about 0.55 of healthy and an emollient restores it to about 0.90. \emph{Contact dermatitis} is the
+acute mode of the same switch: an external irritant clears the spinodal and the barrier collapses discontinuously
+(TEWL jumping about $20\mul$ at insult $\apx$ spinodal), active repair re-crossing to 1.0. \emph{Ichthyosis} sits
+on the retention side: a weak desquamation drive holds the corneum near its spinodal, raising stratum-corneum
+residence about $6.6\mul$ (critical slowing), reversed by a keratolytic.
+
+\textbf{Turnover off both poles (T4).} \emph{Psoriasis} is turnover past its differentiation spinodal: below
+threshold transit is homeostatic ($\apx 28$ days), but above it the exit drive becomes autonomous and
+self-accelerating, compressing transit about $20.8\mul$ toward the cited 3--5-day psoriatic window; an
+anti-proliferative lowers the exit drive below the spinodal. Psoriasis (acceleration) and ichthyosis (retention)
+are the two opposite signs of one switch.
+
+\textbf{Wound non-closure (T2).} A chronic wound is re-epithelialisation held below its own unjamming drive: with
+$q^{*}=3.81$ fixed, a free-edge drive of 0.1 stays below the critical 0.15, the sheet stays jammed, and the gap does
+not close; raising the drive to 0.25 (debridement, growth factor) carries it over threshold and the wound closes.
+
+\textbf{Pigment off both poles (T3).} \emph{Vitiligo} drives the melanocyte viability switch below its spinodal:
+melanin collapses discontinuously to 0.0 and delivered-ultraviolet attenuation returns to 1.0 (no screen),
+photoprotection-deficient, repigmentation needing active phototherapy (hysteresis). \emph{Melasma} is the opposite
+sign of the same switch: a standing pro-melanogenic drive raises regulated melanin about $3.12\mul$, reversed by
+removing the driver. \emph{Albinism} removes the functional screen upstream, so the shared multistage hazard rises
+to a relative risk of about $2.58\mul$ versus pigmented skin; an exogenous sunscreen brings it back to about
+$1.13\mul$.
+
+\textbf{Thermoregulation off both poles (T5).} \emph{Hypohidrotic ectodermal dysplasia} caps the sweat
+appendage's maximum capacity, moving the danger band to lower load (onset $3.1\to1.8$; at a test load of 2.5 the
+core measure runs to 4.60 against 2.05 healthy), external cooling capping the load. \emph{Primary hyperhidrosis} is
+the opposite sign: the recruitment threshold is lowered (onset 0.2 against 0.3), reversed by threshold-raising
+therapy. \emph{Heat stroke} is the capacity limit of the healthy controller: above saturation the regulated
+slope (0.77) jumps to the runaway slope (2.00).
+
+\textbf{Oncology.} The single convex multistage rate carries into disease: SCC near-linear ($r=0.999$); melanoma
+intermittent-sensitive (burst relative risk up to about $5.67\mul$); a chronic tan protective ($\apx 2.63\mul$);
+and the pigment-loss diseases couple in (removing the screen raises the burst relative risk to about $10.59\mul$).
+\emph{Actinic keratosis} is the same kernel with fewer hits crossed --- high field prevalence (0.96) above invasive
+SCC (0.18) at the same dose.
+
+\begin{table}[h]
+\centering\small
+\caption{The five-way opposite-sign discriminant: opposite clinical entities from the same R19 switch driven in
+opposite directions, no constant changed between poles. All five pairs reproduce \V.}
+\begin{tabular}{l l l c}
+\toprule
+\textbf{Switch} & \textbf{Positive-drive pole} & \textbf{Negative-drive pole} & \textbf{Reproduced}\\
+\midrule
+Turnover         & psoriasis (accelerated)     & ichthyosis (retention)              & yes\\
+Barrier reserve  & intact (full reserve)       & atopic (collapsed reserve)          & yes\\
+Melanin          & melasma (overshoot)         & vitiligo (loss)                     & yes\\
+Sweat recruitment& hyperhidrosis (excess)      & ectodermal dysplasia (deficit)      & yes\\
+Photoprotection  & healthy tan (screened)      & pigment loss (unscreened)           & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+That a single switch generates psoriasis and ichthyosis, melasma and vitiligo, hyperhidrosis and the
+ectodermal-dysplasia deficit from opposite signs alone is the strongest internal evidence that these lesions are
+dynamics, not bespoke parameters. Every disease mechanism is \V, every clinical mapping rests on a cited anchor
+\Lg, and every absolute magnitude is open \Og, each inheriting the obstacle of its parent target. The pathology
+layer hashes independently to \texttt{0a4404cc\dots} and does not touch the core-battery hash.
+
+% =====================================================================
+\section{The hair-follicle cycle: an emergent oscillator and four alopecias (T6)}
+
+\answer{The hair follicle --- the one autonomously cycling skin structure --- is reproduced as an emergent
+relaxation oscillator on the same measured EDAR $\gamma$, with no new fitted constant. The cycle is anagen-dominant
+with a plateau-then-collapse waveform; four alopecias follow as signed perturbations of the one cycle.}
+
+Every mechanism so far has been a static R19 switch. But the core battery itself reports a gap --- no autonomous
+oscillator anywhere in the integumentary class --- and the structure that demands one is the hair follicle, which
+cycles on its own between a long growth phase (anagen), a brief regression (catagen), and a resting phase
+(telogen). This is closed with no new organ and no new fitted constant: the \emph{same} measured
+$\mathrm{EDAR}\,\gamma=1.3696$ that emerged the skin appendage is placed on the \emph{same} vendored relaxation
+element the thermoregulation page already uses, and the cycle is read off. The growth bias is half the appendage
+spinodal (0.308), a substrate-scaled regime scale \Fg.
+
+The cycle is anagen-dominant (anagen fraction $\apx 0.59$) with a clear relaxation waveform (the plateau occupies
+$\apx 0.87$ of each beat before a fast collapse) \V. The package is deliberately honest about what it does not
+claim: the absolute anagen fraction (cited 85--90\%) and the years-long period are \emph{not} fitted \Og, because a
+constant drive strong enough to reach 88\% would push the element through its Hopf point and kill the oscillation.
+The substrate is therefore graded by dominance and direction, not magnitude.
+
+Four alopecias follow as one oscillator driven off its cycle. \emph{Androgenetic alopecia} is a standing
+anti-growth drive: the anagen fraction falls progressively $0.59\to0.54\to0.49$ (miniaturisation), and minoxidil /
+anti-androgen lengthens it back to about 0.63 --- the same knob reversed. \emph{Alopecia areata} is a sustained
+premature-catagen drive collapsing anagen to about 0.48; removing the drive lets anagen recover to about 0.59
+(bistable regrowth hysteresis). The two effluvia share a synchronising cause but differ in timing:
+\emph{telogen effluvium} pushes an anagen cohort synchronously into telogen, which sheds exactly one telogen later
+--- a shed peak lagging the stressor by 365 steps, precisely $(1-0.59)$ of the cycle --- then self-limits;
+\emph{anagen effluvium} is a direct cytotoxic insult to the growing matrix that sheds immediately (lag 0), bypassing
+telogen. Same oscillator, opposite timing \V. A three-axis opposite discriminant (anagen short/long; shed
+delayed/immediate; loss sustained/self-limited) reproduces on all axes. The layer hashes independently to
+\texttt{d910fa5d\dots}; the core hash is unchanged.
+
+% =====================================================================
+\section{The sebaceous duct: follicular occlusion as a hysteretic jam (T7)}
+
+\answer{The pilosebaceous duct is reproduced as a hysteretic two-state occlusion jam on the same R19 switch,
+running on a newly measured PRDM1 $\gamma$. The duct snaps shut discontinuously at an upper spinodal and reopens
+only at a lower one; acne and hidradenitis suppurativa follow as the one jam at two depths.}
+
+The integumentary class is jamming: a barrier or channel driven past a spinodal by an external insult. The
+pilosebaceous duct is a textbook member the earlier targets did not cover --- a follicular channel whose net
+occlusion drive (androgen-driven sebum, infundibular hyperkeratinisation, and \emph{Cutibacterium acnes}, minus
+clearance) can rise until the duct snaps shut into a comedo. It is emerged here as the same R19 jamming switch,
+running on a \emph{newly measured} sebaceous master-gene $\gamma$: PRDM1/Blimp1, the committed sebaceous-lineage
+master (Horsley et al., 2006), promoted \texttt{to\_measure $\to$ fetched $\to$ vendored} exactly as MITF and EDAR
+were. Its $\gamma=1.3432$ is the proximal-promoter nearest-neighbour $\Delta G_{37}$ (SantaLucia, 1998) over the
+cached window, computed with the same pipeline validated to reproduce MITF and EDAR byte-for-byte, and reproduces
+offline ($\gamma=1.343156$) \Lg. Committing the master gene on the biology before reading $\gamma$ is the
+discipline that makes the next result a prediction: PRDM1 carries the lowest $\gamma$ in the atlas, so its functional
+spinodal opens earliest --- graded by sign \V.
+
+Run as the R19 switch, the duct does not drift smoothly: it stays patent, then snaps shut discontinuously at the
+upper spinodal (a jump of about 2.01 at net occlusion $\apx 1.00$), and reopens not at the same level but only at a
+lower spinodal (net occlusion $\apx -1.00$), tracing a hysteresis loop of width about 2.01 \V. The healthy duct
+sits patent at net occlusion $-0.30$. The hysteresis \emph{shape} is verified \V; the occlusion set-points are
+dimensionless regime scales \Fg; the absolute comedo and lesion counts, Hurley-stage extent, and sebum excretion
+rate are open \Og (a per-gland calibration).
+
+\emph{Acne vulgaris} is a standing high occlusion drive (about 1.10) past the upper spinodal, so the duct jams into
+a comedo and the \emph{C.\ acnes} amplifier makes it inflammatory; a single agent that only nudges the drive is
+insufficient (the duct must be carried below the \emph{lower} spinodal), but a combined comedolytic + sebostatic +
+antimicrobial regimen (or isotretinoin) reopens it, while de-inflaming alone leaves a comedonal-but-jammed residue.
+\emph{Hidradenitis suppurativa} is the same jam in deeper apocrine-bearing follicles, driven heavier (about 1.50),
+where the plug ruptures into the dermis into a chronic scarring sinus-tract sub-state acne never reaches; dropping
+the drive to the same sub-acne level that clears acne still leaves the ruptured tract, so a biologic calms activity
+but only deroofing/excision resets the scar. A three-way opposite-mode discriminant (reversible superficial /
+irreversible deep rupture; inflammatory / comedonal; lighter / heavier plug) reproduces on all axes \V. The layer
+hashes independently to \texttt{1e8a557d\dots}; the core hash is unchanged.
+
+% =====================================================================
+\section{Cell adhesion as a hysteretic binding jam: pemphigus and pemphigoid (T8)}
+
+\answer{Junctional adhesion is reproduced as a hysteretic two-state binding jam on the already-measured KRT14
+$\gamma$, with no new $\gamma$ fetched and none fitted. Pemphigus vulgaris and bullous pemphigoid differ only by
+which compartment the antibody hits, flipping the cleavage plane, the Nikolsky sign, and the blister tension.}
+
+Desmosomes and hemidesmosomes anchor the keratinocyte's keratin network, so junctional adhesion is an intrinsic
+property of the keratinocyte --- a new \emph{target} on an existing organ (the hair-cycle pattern), not a new
+measured organ. It runs on the already-measured $\mathrm{KRT14}\,\gamma=1.4894$ with no new $\gamma$ fetched and
+none fitted. A bond is read the natural way round: \emph{adherent} $=$ jammed ON, \emph{blistered} $=$ unjammed OFF.
+Run as the switch, the bond detaches discontinuously at the lower spinodal (a jump of about 2.11 at net adhesion
+$\apx -1.005$) and re-adheres only at a higher spinodal (net adhesion $\apx +1.005$), tracing a hysteresis loop of
+width about 2.01 \V; the healthy bond sits above the upper spinodal at net adhesion $+1.40$. Adhesion runs in two
+coupled compartments on the \emph{same} $\gamma$ and spinodal: cell-cell (desmosomal, DSG3) and cell-matrix
+(hemidesmosomal, BP180/COL17A1), and an antibody of the same magnitude detaches whichever it is specific for.
+
+\emph{Pemphigus vulgaris}: an anti-DSG3 autoantibody drives the cell-cell compartment below the spinodal $\to$ an
+intraepidermal/suprabasal split with the cell-matrix bond intact (basal ``tombstone'' row). Because the failing
+bond is the lateral one, a tangential shear propagates, so the Nikolsky sign is \emph{positive} (derived, not
+asserted) and the thin roof is flaccid; a partial titre reduction does not re-adhere, clearance (rituximab /
+immunosuppression) does. \emph{Bullous pemphigoid}: an anti-BP180 antibody of the \emph{same magnitude} instead
+drives the cell-matrix compartment below the spinodal $\to$ a subepidermal split with cell-cell bonds intact (the
+epidermis lifts whole). The failing bond is basal, not lateral, so shear does not propagate: the Nikolsky sign is
+\emph{negative} (derived) and the full-thickness roof is tense; corticosteroid / immunosuppression re-adheres it.
+
+\begin{table}[h]
+\centering\small
+\caption{The three-axis opposite-property discriminant for autoimmune blistering: from the targeted
+\emph{compartment} alone, at the same antibody magnitude on one reused KRT14 $\gamma$. All three pairs reproduce \V.}
+\begin{tabular}{l l l c}
+\toprule
+\textbf{Axis} & \textbf{Pemphigus vulgaris} & \textbf{Bullous pemphigoid} & \textbf{Reproduced}\\
+\midrule
+Cleavage plane & intraepidermal / suprabasal & subepidermal / junctional & yes\\
+Nikolsky sign  & positive (derived)          & negative (derived)        & yes\\
+Blister tension& flaccid                     & tense                     & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The adhesion reserve and antibody titres are dimensionless regime scales \Fg; the clinical mappings are cited
+anchors \Lg; absolute blister counts, titre (IU/mL), cleavage depth (\um), and body-surface area are open \Og (a
+per-junction calibration). Boundary: congenital epidermolysis bullosa (a defective adhesion \emph{gene}
+KRT14/COL17A1/LAMB3) is gene-keyed and belongs to the gene-lesion registry, not this dynamical layer. The layer
+hashes independently to \texttt{55dce8c2\dots}; the core hash is unchanged.
+
+% =====================================================================
+\section{Neurovascular reactivity as a hysteretic vasomotor jam: rosacea and Raynaud (T9)}
+
+\answer{Cutaneous vasomotor tone is reproduced as a hysteretic two-lock reactivity jam on the already-measured EDAR
+$\gamma$, with the dermal-perfusion magnitude left an inherited circulatory seam. Rosacea (a vasodilator drive that
+locks the vessel dilated) and Raynaud phenomenon (a vasoconstrictor drive giving a reversible attack) differ only by
+drive sign.}
+
+Every disease so far lived on a barrier, a bond, a duct, or a cycle. Rosacea lives on the cutaneous vasculature's
+reactivity, and the core battery had no vasomotor target --- which is exactly why it was held back. The target is
+added without a new organ and without a fitted constant: the already-measured $\mathrm{EDAR}\,\gamma=1.3696$ --- the
+thermoregulation-interface organ --- is placed on the same R19 switch. The justification is anatomical: the
+cutaneous thermoregulatory interface carries two autonomic effector arms, the sudomotor arm (sweat, the T5 target)
+and the vasomotor arm (skin blood flow); rosacea dysregulates the vasomotor arm, the \emph{vascular mirror of
+hyperhidrosis} on the sudomotor arm, so it is intrinsic to this organ. A vessel is read the natural way round:
+\emph{dilated} $=$ jammed ON, \emph{constricted} $=$ OFF. The dermal-perfusion \emph{magnitude} is not re-derived:
+it stays an inherited circulatory citation; only the reactivity dynamics is added.
+
+Run as the switch, the vessel locks dilated discontinuously once the net dilator drive exceeds the upper spinodal
+(a jump of about 2.03 at net drive $\apx +1.005$) and locks constricted discontinuously once it falls below the
+lower spinodal (at net drive $\apx -1.005$), tracing a hysteresis loop of width about 2.01 \V; between the locks it
+is reversibly responsive (healthy net drive $-0.30$). Reversibility is a uniform consequence of \emph{whether a
+drive crosses its lock}: an early flush comes and goes, but once a sustained drive carries the vessel past the upper
+lock the dilation is fixed.
+
+\emph{Rosacea} is a standing vasodilator reactivity drive (a lowered flush threshold under heat / alcohol /
+ultraviolet / spice) that carries the net dilator drive past the upper spinodal, so the vessel locks dilated into
+persistent erythema and fixed telangiectasia (dilation depth 1.00); the LL-37 / Demodex inflammatory amplifier on
+the same dilated background gives the papulopustular subtype. Anti-inflammatory therapy clears the papules but
+leaves the vascular background; an $\alpha$-agonist (brimonidine) blanches transiently but, because a partial
+constrictor leaves the net drive above the lower lock, does not reset the fixed vessels (hysteresis); only laser /
+intense-pulsed-light physically resets the telangiectasia --- a structural reset exactly like deroofing for a
+hidradenitis tract. \emph{Raynaud phenomenon} is the opposite sign: a cold / stress vasoconstrictor drive carries
+the net drive negative into the constricted/ischemic basin (constriction depth 1.00) producing the white-blue-red
+digital attack; \emph{primary} Raynaud crosses no lock, so it reverses on rewarming and a vasodilator /
+calcium-channel blocker (nifedipine) aborts it. The \emph{fixed} digital-ischemia / ulcer state of \emph{secondary}
+Raynaud (connective-tissue disease) is a downstream structural change --- an immune/rheumatology sibling-package
+seam, named not modelled.
+
+\begin{table}[h]
+\centering\footnotesize
+\caption{The three-axis opposite-property discriminant for the vasomotor diseases: from the drive sign and the lock
+rule alone, on one reused EDAR $\gamma$. All three pairs reproduce \V.}
+\begin{tabular}{@{}p{2.9cm} p{4.5cm} p{4.9cm} c@{}}
+\toprule
+\textbf{Axis} & \textbf{Rosacea} & \textbf{Raynaud phenomenon} & \textbf{Repr.}\\
+\midrule
+Direction              & vasodilation (above upper lock)   & vasoconstriction (into constricted basin) & yes\\
+Reversibility (lock)   & fixed telangiectasia (crosses lock)& reversible vasospasm (short of lock)      & yes\\
+Vascular vs.\ inflammatory & erythematotelangiectatic       & papulopustular (LL-37/Demodex amplifier)  & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The resting tone, reactivity gains, and constrictor drives are dimensionless regime scales \Fg; the clinical
+mappings are cited anchors \Lg; absolute erythema index, vessel density, flush magnitude, digital temperature,
+attack frequency, and body-surface area are open \Og (a per-vessel calibration), with the perfusion magnitude an
+inherited circulatory seam. The layer hashes independently to \texttt{53a99f52\dots}; the core hash is unchanged.
+
+% =====================================================================
+\section{Cross-package seams: what the package imports, exposes, and hands off}
+
+\answer{For the VP organs to run as one body, each package imports a sibling's result across a named seam rather
+than re-deriving it. This is the integumentary package's labelled seam record: it adds no new mechanism, exposes the
+one internal cross-target coupling (pigment-loss removes the melanin screen and raises the oncology hazard), and
+declares what it inherits and hands off.}
+
+The whole VP programme is a family of organ packages that must eventually run as one body without any package
+secretly re-deriving another's result. The discipline that makes that safe is the single source of truth (SSOT):
+each quantity is owned by exactly one package and imported elsewhere across a named seam. This section is the
+integumentary package's complete, machine-readable seam record (also emitted as
+\texttt{reports/seam\_manifest.json}), in three honestly distinct classes; it adds no new mechanism and no new
+constant.
+
+\textbf{Inherited-in (3).} Read-only inputs vendored from a sibling and never re-derived: the circulatory
+dermal-perfusion \emph{magnitude} (cited, consumed by T9); the DNA organ identity, emergence order, and measured
+$\gamma$ \V; and the R19 substrate primitive.
+
+\textbf{Internal-live (1).} The one genuinely internal cross-target coupling: a melanocyte-target (T3) lesion that
+removes the melanin screen raises the shared oncology-kernel hazard. The numbers are \emph{re-exported verbatim}
+from the verified pathology layer, so the seam output provably \emph{is} the internal link surfaced, not a parallel
+implementation. Removing the screen with an albinism-type lesion raises the SCC cumulative-hazard relative risk to
+about $2.58\mul$ (incidence relative risk about $2.24\mul$) and the melanoma \emph{burst} relative risk to about
+$10.59\mul$; restoring an exogenous screen (sunscreen) brings the SCC hazard back to about $1.13\mul$ --- the screen
+is the causal lever. (That the lesion's delivered-ultraviolet attenuation is exactly 1.00 --- no screen at all ---
+is the mechanistic reason.) The coupling shape is \V, the epidemiology cited \Lg, the absolute relative risk open
+\Og. See \S\ref{sec:anchors} for the honesty flag: the $10.59\mul$ melanoma-burst figure is a property of the shared
+oncology \emph{kernel}, not a claim that albinos have $\apx 10.6\mul$ the melanoma incidence (OCA melanoma is
+clinically rare because the melanocytic substrate is removed --- consistent, on a different axis).
+
+\textbf{Declared-out (6).} Contracts to sibling packages, flagged honestly as \emph{declared, not yet live
+wiring} --- the integration harness does not exist in this self-contained package. They are: gene-lesion $\to$
+\texttt{disease\_wp} (single-gene genodermatoses); urticaria/angioedema (immune-hematologic); lichen planus /
+inflammatory dermatoses (immune-effector); the \emph{fixed} digital ischemia of secondary Raynaud (rheumatology);
+the rosacea inflammatory chemistry beyond the LL-37/Demodex flag (immune-effector); and out-of-class cutaneous
+infections (impetigo, cellulitis, dermatophytosis, herpes, warts), which are pathogen-driven, not an R19-dynamics
+failure. Flagging them as declared rather than silently modelling them is the same honesty rule as grading an
+absolute magnitude \Og: the boundary is named, not hidden.
+
+% =====================================================================
+\appendix
+\section*{\centering\rule{0.4\linewidth}{0.4pt}\ \ Appendices\ \ \rule{0.4\linewidth}{0.4pt}}
+\addcontentsline{toc}{section}{Appendices}
+
+% ---------------------------------------------------------------
+\section{The frozen determinism contract}\label{app:hashes}
+
+The v1.0.0 release is label-only over v0.9.0's computation: the version string and build date were bumped and the
+HTML re-stamped, while the seven hashes below are byte-identical to v0.9.0. The release adds exactly one additive,
+read-only artifact (\texttt{repro/run\_release\_audit.py}) and the governance documents. The evidence of record is
+these seven hashes plus the green gates; \texttt{python repro/run\_release\_audit.py} re-runs each canonical runner
+in its own subprocess and asserts each hash matches the pinned value. The verdict on this release is $7/7$ hashes
+match, all gates green, \textbf{release-ready}.
+
+\begin{table}[h]
+\centering\small
+\caption{Coverage certified by the release-readiness audit (\texttt{reports/release\_audit.json},
+\texttt{all\_ok = true}).}
+\begin{tabular}{l l}
+\toprule
+\textbf{Check} & \textbf{Value}\\
+\midrule
+In-lane program (jamming class) & complete\\
+Targets verified & 10 \;(T1--T9 + oncology kernel)\\
+Diseases covered + verified & 23 \;($13+4+2+2+2$)\\
+Seam manifest & inherited-in 3 / internal-live 1 / declared-out 6\\
+Canonical doc sections (HTML, C4) & 14 + hub\\
+Frozen determinism hashes & $7/7$ match\\
+All layer gates green & yes\\
+No-tuning discipline & held (no constant fitted; \texttt{\_to\_measure} empty)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begingroup
+\footnotesize\ttfamily\setlength{\parskip}{0.15em}
+\textbf{\rmfamily Layer --- runner --- SHA-256 (two independent runs identical):}\par
+\smallskip
+core T1--T5 + oncology --- run\_all.py\par
+\hangindent=2em 1fb59f556e01882916c0f4b4e72aa76ad47ef348bffb81fe4a7f3ce9093d3e92\par
+pathology (13 + 5-way) --- run\_pathology.py\par
+\hangindent=2em 0a4404ccde6559a7621249de90cd889f907619db48a4104329f3af2f74c51cd8\par
+hair-cycle (T6 + 4) --- run\_cycle.py\par
+\hangindent=2em d910fa5d2854462236a5ef56b831490f1aca82ba37050b3f8bb751198b356822\par
+sebaceous (T7 + 2) --- run\_seb.py\par
+\hangindent=2em 1e8a557d9a8d7b05823259bb2fcac31e372b96272e47ef1f2f5d89b1b0246a84\par
+adhesion (T8 + 2) --- run\_adhesion.py\par
+\hangindent=2em 55dce8c267ea4c76d8d5b967535a4ee0876c4b67f605e6ae7d65bf38516f28ad\par
+vasomotor (T9 + 2) --- run\_vasomotor.py\par
+\hangindent=2em 53a99f522ad684a11bcc6d4d33c5e8123d1f4dff5a75836c0bbced6736a62003\par
+seam manifest --- run\_seam.py\par
+\hangindent=2em 52b49a95a9add070a05a02848b1a4cef0589f4a36791167232fda3fc1c1d58f7\par
+\endgroup
+
+% ---------------------------------------------------------------
+\section{Irreproducibility ledger (the \texorpdfstring{\Og}{[O]} obstacle list)}\label{app:irrepro}
+
+Every open quantity is listed with the specific external input that would close it (VP-SPEC C3). The shapes,
+controls, orderings, and dichotomies in the body stand independently of these open absolute magnitudes.
+
+\begin{longtable}{p{4.6cm} c p{8.6cm}}
+\toprule
+\textbf{Item} & \textbf{Grade} & \textbf{Obstacle (why not reproducible in-package)}\\
+\midrule
+\endhead
+to-measure master-gene $\gamma$ & \Og$\to$\V & none deferred (\texttt{\_to\_measure: []}); any future master is fetched via the DNA atlas as a measured input, not fitted\\
+absolute TEWL (\tewlunit) & \Og & T1 threshold + discontinuous-collapse shape \V; absolute flux needs stratum-corneum lipid permeability and the trans-barrier water-activity gradient\\
+absolute wound closure rate (\ensuremath{\mathrm{\mu m\,h^{-1}}}) & \Og & T2 unjam$\to$migrate$\to$rejam sequence + chronic-wound threshold \V; $q^{*}=3.81$ cited \Lg; absolute rate needs a measured single-cell migration speed\\
+absolute minimal erythema dose / melanin OD & \Og & T3 concave-plateau response, partial attenuation, feedback-off control \V; absolute MED needs the melanin extinction coefficient\\
+absolute basal cycle time (per cell) & \Og & T4 conveyor-sum structure \V and rate set by one cited anchor (SC transit $\apx 14$ d) \Lg; per-cell cycle needs a per-cell calibration\\
+absolute set-point (37\dg C) \& sweat rate & \Og & T5 thresholded onset, slope drop, runaway-above-capacity \V; absolute set-point/rate need per-gland output and body heat capacity\\
+absolute cancer incidence \& RR magnitude & \Og & oncology dichotomy directions \V on cited anchors \Lg (Gandini SRR 1.61; Armitage--Doll $K\apx5$); absolute incidence/RR need a population baseline rate and absolute dose calibration\\
+absolute anagen fraction (cited 85--90\%) \& period (years) & \Og & anagen dominance and the relaxation waveform are dimensionless \V; the absolute fraction cannot be tuned without crossing the Hopf point and killing the limit cycle (per-follicle calibration)\\
+absolute comedo/lesion counts; Hurley extent; sebum rate & \Og & T7 occlusion-jam direction, discontinuity, hysteresis, reopening \V; set-points are regime scales \Fg; absolute counts need a per-gland calibration\\
+absolute blister counts; titre (IU/mL); cleavage depth (\um); BSA & \Og & T8 de-adhesion direction, plane selection, derived Nikolsky sign, re-adhesion \V; titres are regime scales \Fg; absolutes need a per-junction calibration\\
+absolute erythema index; vessel density; digital temperature; BSA & \Og & T9 lock rule, both discontinuous locks, reversible middle \V; drives are regime scales \Fg; absolutes need a per-vessel calibration; the perfusion magnitude is an inherited circulatory seam\\
+absolute organ size / mass & \Og & dwell $\propto \gamma^{1.5}$ fixes relative size/order \Fg; absolute scale needs an external calibration\\
+\bottomrule
+\end{longtable}
+
+% ---------------------------------------------------------------
+\section{Anchor verification (v1.0.0, against current literature)}\label{sec:anchors}
+
+A v1.0.0 pass over the cited \Lg\ anchors against current authoritative literature. It changes no computation:
+every determinism hash is byte-frozen; the \V\ shapes were never fitted to these numbers; the \Og\ magnitudes
+remain open with their stated obstacle. Its job is to make each citation explicit and to flag, with the framework's
+``name it, don't hide it'' discipline, the one place where a model quantity must not be read as a literal incidence.
+
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt]
+\item \textbf{Epidermal turnover (T4).} Current literature: stratum-corneum transit $\apx 14$--20 d;
+whole-epidermis turnover $\apx 28$--48 d (classic Weinstein-class), extending to $\apx 56$ d in newer density-based
+estimates; the widely-quoted ``28-day renewal'' is a lower-bound simplification. The modelled $\apx 28$ d total
+therefore sits at the \emph{conservative lower edge} of the literature --- stated, not tuned; the \V\ dwell-cascade
+structure is unchanged, the absolute total stays \Og. The CHARTER \texttt{TO-ANCHOR} flag is cleared.
+\item \textbf{UV dichotomy.} Confirmed: melanoma $\leftarrow$ intermittent/recreational + sunburn (Gandini summary
+relative risk $\apx 1.6$), with a chronic/occupational \emph{inverse} association (the tan paradox); SCC
+$\leftarrow$ cumulative ultraviolet, near-linear (occupational pooled odds ratio $\apx 1.77$). Matches the model's
+\V\ shapes. Refinement recorded: BCC is more intermittent-like than SCC; a future SCC/BCC split could place BCC
+nearer the melanoma pole.
+\item \textbf{Pigment-loss $\to$ oncology (the internal-live seam).} OCA $\to$ SCC confirmed (SCC dominant,
+$\apx 75$--88\% of albino skin cancers; up to $\apx 1000\mul$ risk in sub-Saharan-African albinos; sunscreen the
+preventive/causal lever). \emph{Honesty flag}: the seam's ``melanoma burst relative risk $\apx 10.59\mul$'' is a
+property of the shared oncology kernel (screen removed $\to$ the multistage rate's burst-sensitivity rises), not a
+claim that albinos have $\apx 10.6\mul$ the melanoma incidence --- OCA melanoma is clinically rare because OCA
+removes the melanocytic substrate. The two are consistent (different axes), and the package already grades the burst
+relative risk \Og, never as a cited incidence. No computation changed.
+\end{itemize}
+
+Net effect on the release: no hash changed, no constant added, no shape re-fitted. The \Lg\ anchors are now
+explicit and current, the \texttt{TO-ANCHOR} flag is cleared, and the single place where a model number could be
+mis-read epidemiologically is named and bounded.
+
+% ---------------------------------------------------------------
+\section{How to reproduce}\label{app:reproduce}
+
+The reproducible engine is bundled in the accompanying archive under \texttt{repro/}. With Python 3 and NumPy
+(BLAS is pinned single-thread inside the engine), from the package root:
+
+\begingroup\small\ttfamily
+\setlength{\parskip}{0.1em}
+python repro/run\_all.py \hfill \rmfamily\itshape core battery (T1--T5 + oncology) --- sha 1fb59f55\dots\par
+python repro/run\_pathology.py \hfill \rmfamily\itshape 13 diseases + 5-way discriminant --- sha 0a4404cc\dots\par
+python repro/run\_cycle.py \hfill \rmfamily\itshape hair-cycle oscillator + 4 alopecias --- sha d910fa5d\dots\par
+python repro/run\_seb.py \hfill \rmfamily\itshape sebaceous-duct jam + 2 diseases --- sha 1e8a557d\dots\par
+python repro/run\_adhesion.py \hfill \rmfamily\itshape cell-adhesion jam + 2 diseases --- sha 55dce8c2\dots\par
+python repro/run\_vasomotor.py \hfill \rmfamily\itshape vasomotor jam + 2 diseases --- sha 53a99f52\dots\par
+python repro/run\_seam.py \hfill \rmfamily\itshape cross-package seam manifest --- sha 52b49a95\dots\par
+python repro/run\_release\_audit.py \hfill \rmfamily\itshape re-runs all of the above; asserts $7/7$ hashes\par
+\endgroup
+
+\medskip
+\begin{sloppypar}
+Each runner prints its $2\times$ SHA-256 and writes a machine-readable record under \texttt{reports/}. The
+additive layers (\texttt{run\_pathology}, \texttt{run\_cycle}, \texttt{run\_seb}, \texttt{run\_adhesion},
+\texttt{run\_vasomotor}, \texttt{run\_seam}) each carry their own hash and never touch the core hash. The canonical
+HTML is rebuilt by \texttt{python tools/build\_docs.py}, which refuses to run unless the research gate is green and
+\texttt{PHASE = writing}; every displayed number is pulled live from the engine.
+\end{sloppypar}
+
+% =====================================================================
+\section*{Selected cited anchors}
+\addcontentsline{toc}{section}{Selected cited anchors}
+\small
+
+The \Lg-graded external anchors used in the body. All \V\ shapes are derived from the substrate and were never
+fitted to these numbers.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1.5pt]
+\item D.~Bi, J.~H.~Lopez, J.~M.~Schwarz, M.~L.~Manning. \textit{A density-independent rigidity transition in
+biological tissues.} Nature Physics \textbf{11}, 1074--1079 (2015); and \textit{Motility-driven glass and jamming
+transitions in biological tissues.} Phys.\ Rev.\ X \textbf{6}, 021011 (2016). --- the vertex-model shape-index
+threshold $q^{*}\apx3.81$ (T2).
+\item S.~Gandini et al. \textit{Meta-analysis of risk factors for cutaneous melanoma: II.\ Sun exposure.}
+European Journal of Cancer \textbf{41}, 45--60 (2005). --- intermittent summary relative risk 1.61; chronic
+exposure inversely associated; sunburn risk (T3 oncology, \S7, \S9).
+\item P.~Armitage, R.~Doll. \textit{The age distribution of cancer and a multi-stage theory of carcinogenesis.}
+British Journal of Cancer \textbf{8}, 1--12 (1954). --- the multistage exponent $K\apx5$ (oncology kernel).
+\item J.~SantaLucia~Jr. \textit{A unified view of polymer, dumbbell, and oligonucleotide DNA nearest-neighbor
+thermodynamics.} PNAS \textbf{95}, 1460--1465 (1998). --- the nearest-neighbour $\Delta G_{37}$ used to compute
+master-gene $\gamma$ from cached promoters (PRDM1, T7).
+\item V.~Horsley et al. \textit{Blimp1 defines a progenitor population that governs cellular input to the sebaceous
+gland.} Cell \textbf{126}, 597--609 (2006). --- PRDM1/Blimp1 as the committed sebaceous-lineage master (T7).
+\item G.~D.~Weinstein, J.~L.~McCullough, P.~Ross. \textit{Cell proliferation in human epidermis.} J.\ Invest.\
+Dermatol. (classic radiolabel turnover; stratum-corneum transit and whole-epidermis renewal windows) (T4,
+\S\ref{sec:anchors}).
+\end{enumerate}
+
+\vfill
+\begin{center}\footnotesize\itshape
+Single source of truth: the canonical artifact is the per-title HTML at jamming-physics.org/integumentary.\\
+This whitepaper and the bundled engine are reproducible to the seven SHA-256 hashes above.\\
+Young Jae Lee --- ORCID 0009-0002-7535-8245 --- VP Theory --- CC BY 4.0 --- v1.0.0, 2026-06-19.
+\end{center}
+
+\end{document}

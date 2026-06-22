@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproduction and provenance — vp_frontal Sim 2 | Jamming Physics</title>
+<meta name="description" content="The audit trail for vp_frontal Sim 2: the frozen engine and its SHA, every module and its committed digest, the M9 anchor, gene data, and the cited literature.">
+<link rel="canonical" href="https://jamming-physics.org/mind/frontal/09-reproduction-and-provenance/">
+<link rel="stylesheet" href="/mind/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Reproduction and provenance","isPartOf":{"@type":"CreativeWorkSeries","name":"vp_frontal — Felt Cognition (the second brain simulation)","url":"https://jamming-physics.org/mind/frontal/","isPartOf":{"@type":"CreativeWork","name":"Felt Cognition: Parallel Micro-Eddies, the Stream of Thought, and the Open Problem of Experience","sameAs":"https://doi.org/10.5281/zenodo.20694404"}},"position":9,"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"datePublished":"2026-06-21","dateModified":"2026-06-21","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/frontal/_frontal_v2/","knowsAbout":["reproducibility","provenance","frozen engine SHA","committed digests","cited connectome","cited PCI mechanism"],"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},{"@type":"ListItem","position":2,"name":"Felt Cognition","item":"https://jamming-physics.org/mind/"},{"@type":"ListItem","position":3,"name":"vp_frontal","item":"https://jamming-physics.org/mind/frontal/"},{"@type":"ListItem","position":4,"name":"Reproduction and provenance"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/mind/">Felt Cognition</a> › <a href="/mind/frontal/">vp_frontal</a> › Reproduction and provenance</nav></header>
+<main>
+<h1>Reproduction and provenance</h1>
+<!-- vp:answer:start -->
+<p class="answer">This is the audit trail for vp_frontal Sim 2. It lists the frozen engine and its SHA, every v2 module and its committed digest, the M9 anchor that must reproduce bit-for-bit, the gene data, the cited connectome and PCI/sleep mechanism, and the tissue EM parameters. Every module prints its grades and new_tuned_constants = 0.</p>
+<!-- vp:answer:end -->
+
+<p class="abstract">Provenance is the spine of the project: every number is meant to reproduce from shipped, deterministic code. The frozen engine (<span class="mono">vp_mind_engine.py</span>, sha e61083ae…) is read-only, and the M9 anchor <span class="mono">R = 0.38961455156044245</span> must reproduce bit-for-bit on it. Each v2 module ships its results, its committed digest, and its figure; the connectome (Gap 3) and the PCI/sleep mechanism (Gap 4) cite the literature, with orderings used for external comparison only — nothing tuned to them.</p>
+
+<aside class="claim-strip">
+  <span class="grade g-verified">verified</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/frontal/_frontal_v2/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20694404" rel="noopener">DOI snapshot</a>
+</aside>
+<!-- vp:cards:start -->
+<aside class="vp-card" data-locked="frozen_engine_sha"><b>the frozen engine is byte-frozen and read-only</b> — vp_mind_engine.py sha e61083ae956206e943ed292f5f69f9d3964ef50778e2d7344de93207ade48371; the M9 anchor R = 0.38961455156044245 must reproduce bit-for-bit on the unchanged kernel; KAPPA_EPHAPTIC = 0.5496; every v2 module asserts the anchor on every run and prints new_tuned_constants = 0 <b>[V]</b>. <a href="/mind/frontal/09-reproduction-and-provenance/">this page</a></aside>
+<aside class="vp-card" data-locked="committed_digests"><b>every artifact carries a committed digest</b> — each v2 module ships its results JSON, an independently committed expected-sha file, and a figure; the integration pass re-derives each digest from content and compares against the committed expected-sha (non-circular: it does not copy shas forward), so reproduction is performed, not asserted <b>[V]</b>. <a href="/mind/frontal/09-reproduction-and-provenance/">this page</a></aside>
+<aside class="vp-card" data-locked="emerged_substrate"><b>the substrate provenance, end to end — not a toy model</b> — beneath this audit trail the brain is emerged, not assumed: real master-gene promoter DNA (NCBI RefSeq GRCh38) → SantaLucia 1998 nearest-neighbour γ → forced organ identity, developmental order and relative size; the EM brainwave is the radiated field of a real driven lattice-wave equation (u_tt = c²∇²u + f). Every committed number is re-emerged by seeded code, two runs to one SHA-256. Direction/order forced; absolute size, power and ms/µV stay open. <b>[V dir / O mag]</b>. <a href="/mind/16-what-is-a-thought/">canonical §16</a></aside>
+<!-- vp:cards:end -->
+
+<h2>The frozen engine</h2>
+<p>The kernel is <span class="mono">repro/frontal/_engine/vp_mind_engine.py</span> — read-only, sha <span class="mono">e61083ae…</span> (full: <span class="mono">e61083ae956206e943ed292f5f69f9d3964ef50778e2d7344de93207ade48371</span>). The M9 anchor <span class="mono">R = 0.38961455156044245</span> must reproduce bit-for-bit on it. The ephaptic coupling is <span class="mono">KAPPA_EPHAPTIC = 0.5496</span>; the R19 barrier is <span class="mono">B(g) = g²/4</span> (so <span class="mono">barrier(1.0) = 0.25</span>) and the fold is <span class="mono">spinodal(1.0) = 0.38490017945975047</span>.</p>
+
+<h2>The v2 modules</h2>
+<p>All under <span class="mono">repro/frontal/_frontal_v2/</span>: the build modules <span class="mono">cortical_emergence</span>, <span class="mono">cortical_wm_holding</span>, <span class="mono">frontal_axonal_channel</span>, <span class="mono">frontal_em_wave</span>, and <span class="mono">cognition_consciousness_body</span>; then the gap build-and-stress modules <span class="mono">field_efficacy_robustness</span> (ST-1, Gap 1), <span class="mono">cortical_microcircuit</span> + <span class="mono">cortical_microcircuit_st2</span> (Gap 2), <span class="mono">cortico_connectome_owt</span> + <span class="mono">cortico_connectome_owt_st3</span> (Gap 3), <span class="mono">pci_clinical_match</span> + <span class="mono">pci_clinical_match_st4</span> (Gap 4); and the integration pass <span class="mono">v2_atlas</span>. Each ships deterministically (cells are call-invariant), and each stress module imports the exact build model so the test is non-circular at the code level.</p>
+
+<h2>The committed digests</h2>
+<table>
+<thead><tr><th>artifact</th><th>internal digest</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">field_efficacy_robustness</span> (ST-1)</td><td><span class="mono">05a7d317…</span></td></tr>
+<tr><td><span class="mono">cortical_microcircuit</span> (Gap-2 build)</td><td><span class="mono">417a8319…</span></td></tr>
+<tr><td><span class="mono">cortical_microcircuit_st2</span> (ST-2)</td><td><span class="mono">a3d2e409…</span></td></tr>
+<tr><td><span class="mono">cortico_connectome_owt</span> (Gap-3 build)</td><td><span class="mono">8d3f3e00…</span></td></tr>
+<tr><td><span class="mono">cortico_connectome_owt_st3</span> (ST-3)</td><td><span class="mono">0b3a80ae…</span></td></tr>
+<tr><td><span class="mono">pci_clinical_match</span> (Gap-4 build)</td><td><span class="mono">bde77370…</span></td></tr>
+<tr><td><span class="mono">pci_clinical_match_st4</span> (ST-4)</td><td><span class="mono">2ada85a4…</span></td></tr>
+<tr><td><span class="mono">v2_atlas</span> (integration pass)</td><td><span class="mono">bbaa4e9405e8…</span></td></tr>
+</tbody></table>
+<p>Each artifact has an independently committed <span class="mono">expected_…_sha256.json</span>; the integration pass re-derives each digest from content and requires <span class="mono">recomputed == stored == committed-expected-sha</span>.</p>
+
+<h2>Gene data and tissue parameters</h2>
+<p>Gene data: <span class="mono">_engine/data/brain_organ_atlas.json</span> (FOXG1 γ 1.4737; full per-organ bands), and <span class="mono">brain_organ_gamma.json</span>. Tissue EM parameters: σ = 0.30&nbsp;S/m, ε_r = 1e5, L_brain = 0.15&nbsp;m. Every module prints its grades and <span class="mono">new_tuned_constants = 0</span>.</p>
+
+<h2>The cited connectome (Gap 3)</h2>
+<p>Klein 2010 <em>NeuroImage</em> 51:555; <em>J Neurosci</em> 43:7780 (2023) — cortex↔thalamus heavy &amp; reciprocal. Öngür &amp; Price 1998 <em>JCN</em> 401:480; Radley 2006 <em>J Neurosci</em> 26:12967 — cortex→hypothalamus sparse &amp; diffuse.</p>
+
+<h2>The cited PCI / sleep mechanism (Gap 4)</h2>
+<p>Casali 2013 <em>Sci Transl Med</em> 5(198):198ra105 (PCI orders wake ≈ REM &gt; NREM &gt; anaesthesia &gt; VS); Casarotto 2016 <em>Ann Neurol</em> 80(5):718 (empirical cutoff PCI* ≈ 0.31); Massimini 2005 <em>Science</em> 309:2228 and Pigorini 2015 <em>NeuroImage</em> 112:105 (cortical bistability / the OFF-period truncates the evoked causal chain); Sanchez-Vives &amp; McCormick 2000 <em>Nat Neurosci</em> 3:1027 and Steriade 1993 <em>J Neurosci</em> 13:3252 (the M14 slow-adaptation mechanism / the NREM operating point). Orderings are used for external comparison only — nothing is tuned to them.</p>
+
+<p class="note"><strong>Firewall (Axis-A).</strong> Every quantity on this page is a structural quantity of an in-silico model — a sign, a margin, an ordering — and is <em>not</em> a felt state, an experienced quality, or a level of consciousness (<span class="mono">consciousness_claim = 0</span>; the hard problem stays open, <span class="mono">hard_problem_open = 1</span>). These are model results, not validated neuroscience and not clinical guidance. <span class="mono">efficacy = 0</span>; not medical advice.</p>
+
+<nav class="pn">
+  <a rel="prev" href="/mind/frontal/08-integration-atlas-and-closure/">← Closure</a>
+  <a href="/mind/frontal/">vp_frontal contents</a>
+  <a rel="next" href="/mind/frontal/">vp_frontal hub →</a>
+</nav>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

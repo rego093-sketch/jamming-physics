@@ -1,0 +1,144 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>VP Disease Emergence Kit — V11 Novelty Audit</title>
+<style>
+ body{font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:1080px;
+      margin:2rem auto;padding:0 1.2rem;color:#1a1a1a}
+ h1{font-size:1.5rem;margin-bottom:.2rem} h2{font-size:1.1rem;margin-top:1.8rem;border-bottom:2px solid #eee;padding-bottom:.3rem}
+ .sub{color:#666;font-size:.9rem} .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem}
+ table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.86rem}
+ th,td{border:1px solid #ddd;padding:.34rem .5rem;text-align:left;vertical-align:top}
+ th{background:#f6f6f6} .pass{color:#137333;font-weight:600} .fail{color:#c5221f;font-weight:600}
+ .big{font-size:1.25rem;font-weight:700} .card{background:#f8f9fb;border:1px solid #e6e8ee;border-radius:8px;padding:.8rem 1rem;margin:.6rem 0}
+ .verdict{background:#f3f7f3;border-left:4px solid #137333;padding:.7rem 1rem;border-radius:4px}
+ code{background:#f0f0f0;padding:.05rem .3rem;border-radius:3px}
+</style>
+<h1>VP Disease Emergence Kit — Validation Round V11</h1>
+<div class="sub">Novelty audit · ClinicalTrials.gov oracle · Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0</div>
+
+<div class="card">
+ <div class="big">17 / 69 novel pairs investigationally live
+ &nbsp;·&nbsp; firewall <span class="pass">PASS</span>
+ (0 leaks)</div>
+ <div class="sub">SPECIFIC 15/22
+ vs BROAD_FAMILY 2/47
+ &nbsp;→&nbsp; ~16.0× enrichment ·
+ V8 novel|approved-indication = 0</div>
+</div>
+
+<h2>Verdict</h2>
+<p class="verdict">Of 69 novel (drug x disease) pairs, 17 carry a mechanically-verified in-disease registered trial. The §5.4 contrast is decisive and EMPIRICAL: the SPECIFIC stratum (15/22) is investigationally live while the BROAD generic-chaperone stratum (2/47) is largely a structural artifact -- an enrichment of ~16.0x. Each hit is a CORRECTLY-LABELLED novel lead (V8 novel|approved-indication=0); an in-disease trial corroborates its plausibility as an investigational direction, never that it works. The 52 no-signal pairs are flagged structural [O] hypotheses, down-weighted not refuted. With direction-recovery (V3-V7), exclusion-calibration (V10) and now novelty (V11), the §5.3 four-metric ledger is complete in-house; only PROSPECTIVE falsification (external) remains.</p>
+
+<h2>M1 · in-disease investigation — the 17 hits</h2>
+<table><tr><th>agent</th><th>disease</th><th>stratum</th><th>modality (post-hoc)</th><th>NCT</th><th>phase</th></tr>
+<tr><td>sodium phenylbutyrate</td><td>Cystic fibrosis OMIM 219700</td><td>BROAD_FAMILY</td><td>repurposed</td><td class='mono'>NCT00016744, NCT00590538</td><td>PHASE1/PHASE2, PHASE1/PHASE2</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Spinal muscular atrophy (5q SMA) OMIM 253300</td><td>BROAD_FAMILY</td><td>repurposed</td><td class='mono'>NCT00439218, NCT00439569, NCT00528268</td><td>PHASE1/PHASE2, PHASE1/PHASE2, PHASE1/PHASE2</td></tr>
+<tr><td>DTX401</td><td>Glycogen storage disease type Ia / von Gierke disease (G6PC1 deficiency) OMIM 232200</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT05139316</td><td>PHASE3</td></tr>
+<tr><td>FBX-101</td><td>Krabbe disease (globoid-cell leukodystrophy) OMIM 245200</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT04693598, NCT05739643, NCT06308718</td><td>PHASE1/PHASE2, PHASE1/PHASE2, —</td></tr>
+<tr><td>ION440</td><td>MECP2 duplication syndrome OMIM 300260</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT06430385</td><td>PHASE1/PHASE2</td></tr>
+<tr><td>QR-1123</td><td>Autosomal dominant retinitis pigmentosa, RHO-related (adRP; RHO toxic gain-of-function / rhodopsin misfolding, e.g. P23H) OMIM 613731</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT04123626</td><td>PHASE1/PHASE2</td></tr>
+<tr><td>UX111</td><td>Mucopolysaccharidosis type IIIA (Sanfilippo syndrome type A) OMIM 252900</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT02716246, NCT04088734</td><td>PHASE2/PHASE3, PHASE1/PHASE2</td></tr>
+<tr><td>ambroxol</td><td>Gaucher disease OMIM 230800</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT01463215, NCT03950050, NCT07285369</td><td>PHASE1/PHASE2, PHASE2, NA</td></tr>
+<tr><td>bevacizumab</td><td>Hereditary haemorrhagic telangiectasia (Osler-Weber-Rendu) OMIM 187300</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT00843440, NCT01397695, NCT01402531, NCT01408030, NCT01507480, NCT02106520, NCT02389959, NCT03227263, NCT04404881, NCT06039124, NCT07445347</td><td>PHASE2, PHASE2, PHASE2, PHASE2, PHASE1, PHASE2/PHASE3, PHASE4, PHASE3, PHASE2, —, —</td></tr>
+<tr><td>encaleret</td><td>Autosomal dominant hypocalcaemia type 1 (CASR gain-of-function) OMIM 601198</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT04581629, NCT05680818, NCT07080385</td><td>PHASE2, PHASE3, PHASE2/PHASE3</td></tr>
+<tr><td>flecainide</td><td>Catecholaminergic polymorphic ventricular tachycardia (RYR2 gain-of-function) OMIM 604772</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT01117454</td><td>NA</td></tr>
+<tr><td>hydroxyurea</td><td>Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT00001958, NCT00336362, NCT03183375, NCT03653338, NCT03763656, NCT05132270, NCT05357482, NCT06153784, NCT06239389, NCT06490601, NCT06606886, NCT07292259</td><td>PHASE2, NA, PHASE2, PHASE1/PHASE2, PHASE1/PHASE2, PHASE2/PHASE3, PHASE1/PHASE2, PHASE2/PHASE3, PHASE2, PHASE2, PHASE4, PHASE2</td></tr>
+<tr><td>losartan</td><td>Marfan syndrome (FBN1 deficiency) OMIM 154700</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT00429364, NCT00593710, NCT00651235, NCT00683124, NCT00723801, NCT00763893, NCT00782327, NCT01145612</td><td>PHASE3, PHASE2, PHASE2, PHASE3, PHASE3, PHASE3, PHASE3, PHASE3</td></tr>
+<tr><td>mRNA-3705</td><td>Methylmalonic acidaemia (MMUT deficiency) OMIM 251000</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT04899310, NCT05295433</td><td>PHASE1/PHASE2, PHASE1/PHASE2</td></tr>
+<tr><td>trametinib</td><td>Noonan syndrome (PTPN11 gain-of-function) OMIM 163950</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT06555237</td><td>PHASE2</td></tr>
+<tr><td>tranexamic acid</td><td>Hereditary angioedema (C1-inhibitor deficiency) OMIM 106100</td><td>SPECIFIC</td><td>repurposed</td><td class='mono'>NCT00500656</td><td>PHASE3</td></tr>
+<tr><td>zorevunersen</td><td>Dravet syndrome (SCN1A; NaV1.1 loss-of-function, GABAergic-interneuron haploinsufficiency) OMIM 607208</td><td>SPECIFIC</td><td>purpose_built</td><td class='mono'>NCT04442295, NCT04740476, NCT06872125</td><td>PHASE1/PHASE2, PHASE2, PHASE3</td></tr></table>
+
+<h2>M2 · specificity stratification (the §5.4 contrast, empirical)</h2>
+<table><tr><th>stratum</th><th>hits / pairs</th><th>rate</th><th>agents</th></tr>
+<tr><td>SPECIFIC (≤K novel diseases)</td><td>15/22</td>
+<td>0.6818</td><td class="mono">AMT-130, DTX401, FBX-101, ION440, L-type calcium channel blocker, QR-1123, TSHA-101, UX111, ambroxol, bevacizumab, encaleret, flecainide, hydroxyurea, infigratinib, losartan, mRNA-3705, tolvaptan, tralesinidase alfa, trametinib, tranexamic acid, zorevunersen</td></tr>
+<tr><td>BROAD_FAMILY (&gt;K via one generic family)</td><td>2/47</td>
+<td>0.0426</td><td class="mono">N-acetylcysteine, sodium phenylbutyrate, ursodeoxycholic acid</td></tr></table>
+<p class="sub">SPECIFIC agents (named gene-therapies/ASOs/targeted drugs developed FOR these diseases) carry high in-disease investigation; the BROAD generic-chaperone stratum carries low/zero -&gt; the structural-artifact stratum is identified EMPIRICALLY, not assumed.</p>
+
+<h2>post-hoc modality read of the SPECIFIC hits <span class="sub">(NOT a scored metric)</span></h2>
+<p><b>purpose-built</b> (direction corroboration): DTX401→Glycogen storage disease type Ia / von Gierke disease, FBX-101→Krabbe disease, ION440→MECP2 duplication syndrome OMIM 300260, QR-1123→Autosomal dominant retinitis pigmentosa, RHO-related, UX111→Mucopolysaccharidosis type IIIA, mRNA-3705→Methylmalonic acidaemia, zorevunersen→Dravet syndrome<br>
+<b>repurposed</b> (repurposing-lead corroboration): ambroxol→Gaucher disease OMIM 230800, bevacizumab→Hereditary haemorrhagic telangiectasia, encaleret→Autosomal dominant hypocalcaemia type 1, flecainide→Catecholaminergic polymorphic ventricular tachycardia, hydroxyurea→Beta-thalassaemia, losartan→Marfan syndrome, trametinib→Noonan syndrome, tranexamic acid→Hereditary angioedema</p>
+
+<h2>M3 · related-class probes <span class="sub">(BROAD agents only · NON-upgrading · separate)</span></h2>
+<table><tr><th>agent</th><th>related class</th><th>probe disease</th><th>NCT</th></tr>
+<tr><td>N-acetylcysteine</td><td>retinal_antioxidant</td><td>retinitis pigmentosa (any)</td><td class='mono'>NCT04864496, NCT05537220, NCT07290530</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>lysosomal_misfolding_chaperone</td><td>cystic fibrosis (CFTR misfolding)</td><td class='mono'>NCT00016744, NCT00590538</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>lysosomal_misfolding_chaperone</td><td>urea cycle disorder</td><td class='mono'>NCT00345605, NCT02111200</td></tr></table>
+
+<h2>M4 · structural residue — 52 no-signal pairs <span class="sub">(flagged, NOT refuted)</span></h2>
+<table><tr><th>agent</th><th>disease</th><th>stratum</th><th>trials scanned</th></tr>
+<tr><td>N-acetylcysteine</td><td>Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>N-acetylcysteine</td><td>Choroideremia (CHM / REP1) OMIM 303100</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>N-acetylcysteine</td><td>Leber congenital amaurosis type 2 (RPE65) OMIM 204100</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>N-acetylcysteine</td><td>Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>N-acetylcysteine</td><td>X-linked retinitis pigmentosa (RPGR) OMIM 300029</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Adenosine deaminase deficiency (ADA-SCID) OMIM 102700</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Alpha-1-antitrypsin deficiency OMIM 613490</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Alpha-mannosidosis (MAN2B1 deficiency) OMIM 248500</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985</td><td>BROAD_FAMILY</td><td>1</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Classical homocystinuria (cystathionine-beta-synthase deficiency) OMIM 236200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Congenital hyperinsulinism (K_ATP-channel; ABCC8 + KCNJ11) OMIM 256450</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Duchenne muscular dystrophy OMIM 310200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Fabry disease OMIM 301500</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Friedreich ataxia OMIM 229300</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Gaucher disease OMIM 230800</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Leptin receptor deficiency (severe early-onset obesity) OMIM 614963</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I) OMIM 607014</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Mucopolysaccharidosis type IIIC (Sanfilippo syndrome type C) OMIM 252930</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Nephrogenic diabetes insipidus, X-linked (AVPR2 loss-of-function; vasopressin V2 receptor) OMIM 304800</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Pompe disease OMIM 232300</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Pyruvate kinase deficiency (erythrocyte / liver pyruvate kinase deficiency; PKLR; chronic non-spherocytic haemolytic anaemia) OMIM 266200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Rett syndrome OMIM 312750</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>sodium phenylbutyrate</td><td>Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Adenosine deaminase deficiency (ADA-SCID) OMIM 102700</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Alpha-1-antitrypsin deficiency OMIM 613490</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Alpha-mannosidosis (MAN2B1 deficiency) OMIM 248500</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Bardet-Biedl syndrome (BBS1-predominant; a BBSome ciliopathy) OMIM 209900</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Beta-thalassaemia (beta-thalassaemia major / intermedia) OMIM 613985</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Classical homocystinuria (cystathionine-beta-synthase deficiency) OMIM 236200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Congenital hyperinsulinism (K_ATP-channel; ABCC8 + KCNJ11) OMIM 256450</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Cystic fibrosis OMIM 219700</td><td>BROAD_FAMILY</td><td>2</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Duchenne muscular dystrophy OMIM 310200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Fabry disease OMIM 301500</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Friedreich ataxia OMIM 229300</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Gaucher disease OMIM 230800</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Leptin receptor deficiency (severe early-onset obesity) OMIM 614963</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Mucopolysaccharidosis type I (alpha-L-iduronidase deficiency; Hurler / Hurler-Scheie / Scheie syndrome; MPS I) OMIM 607014</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Mucopolysaccharidosis type IIIC (Sanfilippo syndrome type C) OMIM 252930</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Nephrogenic diabetes insipidus, X-linked (AVPR2 loss-of-function; vasopressin V2 receptor) OMIM 304800</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Pompe disease OMIM 232300</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Pyruvate kinase deficiency (erythrocyte / liver pyruvate kinase deficiency; PKLR; chronic non-spherocytic haemolytic anaemia) OMIM 266200</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Rett syndrome OMIM 312750</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Spinal muscular atrophy (5q SMA) OMIM 253300</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>ursodeoxycholic acid</td><td>Usher syndrome type 2A (USH2A loss-of-function; usherin, the photoreceptor periciliary-membrane / hair-cell ankle-link complex protein) -- combined congenital sensorineural hearing loss + retinitis pigmentosa OMIM 276901</td><td>BROAD_FAMILY</td><td>0</td></tr>
+<tr><td>AMT-130</td><td>Huntington disease OMIM 143100</td><td>SPECIFIC</td><td>2</td></tr>
+<tr><td>L-type calcium channel blocker</td><td>Timothy syndrome (CACNA1C, CaV1.2 gain) OMIM 601005</td><td>SPECIFIC</td><td>0</td></tr>
+<tr><td>TSHA-101</td><td>Sandhoff disease (GM2 gangliosidosis, variant 0) OMIM 268800</td><td>SPECIFIC</td><td>1</td></tr>
+<tr><td>TSHA-101</td><td>Tay-Sachs disease (GM2 gangliosidosis, variant B) OMIM 272800</td><td>SPECIFIC</td><td>1</td></tr>
+<tr><td>infigratinib</td><td>Crouzon syndrome (FGFR2 gain-of-function) OMIM 123500</td><td>SPECIFIC</td><td>4</td></tr>
+<tr><td>tolvaptan</td><td>Nephrogenic syndrome of inappropriate antidiuresis (NSIAD) -- AVPR2 gain-of-function (constitutively-active vasopressin V2 receptor; e.g. R137C/R137L, F229V, I130N) OMIM 300539</td><td>SPECIFIC</td><td>0</td></tr>
+<tr><td>tralesinidase alfa</td><td>Mucopolysaccharidosis type IIIB (Sanfilippo syndrome type B) OMIM 252920</td><td>SPECIFIC</td><td>1</td></tr></table>
+
+<h2>cross-tab &amp; rediscovery floor</h2>
+<p>V8 novel|approved-indication = <b>0</b> (re-affirmed: these are investigation, not approval).
+Rediscovery in-disease sanity floor is entailed by V8 (rediscovery precision 31/36; approved ⇒ investigated) and re-confirmed live in the off-manifest audit.</p>
+
+<h2>inheritance &amp; validation chain</h2>
+<p class="sub">READ-ONLY: validation is strictly READ-ONLY; 0 of the 128 derivations were re-run.
+disease_inputs <code>e9003054a4f7dc9c…</code>,
+mapped_levers <code>93ba3c89781f4952…</code>,
+register-head <code>ca1796255c7c91db…</code> — all byte-identical.</p>
+<table><tr><th>chain label</th><th>value</th><th>head</th></tr>
+<tr><td>inherited_anchors_readonly_all_match</td><td>True</td><td class='mono'>d083016aec3f2b468dc7…</td></tr>
+<tr><td>frozen_snapshot_sha256</td><td>d9eeab1aeb604049b235164e62f9a9abec2162ac1f39212ea615656d257680f2</td><td class='mono'>c28833eacd72068fd9dd…</td></tr>
+<tr><td>novelty_in_disease_hits</td><td>17/69</td><td class='mono'>b8a09205cf176aad67f6…</td></tr>
+<tr><td>specificity_contrast_specific_vs_broad</td><td>15/22 vs 2/47</td><td class='mono'>d57e5d1ddf7a5e794bf5…</td></tr>
+<tr><td>v8_novel_given_approved_indication</td><td>0</td><td class='mono'>0bcbca4eb2342162d406…</td></tr>
+<tr><td>firewall_status</td><td>PASS</td><td class='mono'>542971ddda3a801fdb19…</td></tr></table>
+<p class="sub">chain head <code>542971ddda3a801fdb19ef4b…</code>, continues V10 <code>1d668453b4d484a1d3f6f725…</code> (append-only).</p>
+
+<h2>what this round does not do</h2>
+<ul><li>does NOT mutate the frozen 128-core, re-admit any lever family, or re-derive any disease.</li><li>does NOT assert any magnitude (dose/efficacy/response/survival/p-value/n-of-m).</li><li>does NOT claim any drug works; an in-disease trial is investigation, not approval and not efficacy.</li><li>does NOT upgrade a structural pair via the related-class probe (M3 is reported separately).</li><li>the post-hoc modality split is NOT a pre-registered scored metric (transparency only).</li></ul>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamma as a Quasi-Longitudinal Mode — Vacuum-Inflow Cosmology §2.3 | Jamming Physics</title>
+<meta name="description" content="By sinχ=λ/(mD), optical light is near-transverse and gamma quasi-longitudinal — so the dispersion behind the Fermi GRB test is read off the wrong branch.">
+<link rel="canonical" href="https://jamming-physics.org/cosmology/02-angle-account-quasi-longitudinal-gamma/">
+<link rel="stylesheet" href="/cosmology/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Gamma as a Quasi-Longitudinal Mode","isPartOf":{"@type":"CreativeWorkSeries","name":"Vacuum-Inflow Cosmology","identifier":"10.5281/zenodo.20568874","sameAs":"https://doi.org/10.5281/zenodo.20568874"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"identifier":"10.5281/zenodo.20568874","datePublished":"2026-06-13","dateModified":"2026-06-20","isBasedOn":"https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-angle-account-quasi-longitudinal-gamma/","knowsAbout":["polarization","quasi-longitudinal mode","angle account","gamma-ray dispersion","lattice spacing D","Fermi bound"],"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"Vacuum-Inflow Cosmology","item":"https://jamming-physics.org/cosmology/"},
+{"@type":"ListItem","position":3,"name":"§2.3 Gamma as a Quasi-Longitudinal Mode"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §2.3</nav></header>
+<main><!--vp-v1.8-->
+<h1>The Angle Account: Gamma as a Quasi-Longitudinal Mode</h1>
+<p class="answer">On the framework's angle account a wave of wavelength λ runs through the lattice at angle sinχ=λ/(mD): optical light is near-transverse (χ→90°) while Fermi-band gamma is quasi-longitudinal (χ→0°). Gamma and visible light are two modes, not one mode at two wavelengths, so the transverse-branch dispersion behind the 8–15-order Fermi conflict is applied to the wrong mode.</p>
+<p class="abstract">The angle account gives a geometric reason light is transverse: sinχ=λ/(mD) with m=⌈λ/D⌉. Optical light sits near χ→90° (transverse, as observed) while Fermi-band gamma sits at χ≈0.01°–15° (quasi-longitudinal), so the 8–15-order dispersion conflict applies the transverse law to a mode the framework labels longitudinal. A D-independent test follows: angle-sines scale as wavelength, 633/532=1.190, independent of the unknown spacing D.</p>
+<aside class="claim-strip page"><span class="g g-open" data-phase2="grade">[O] open</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/02-angle-account-quasi-longitudinal-gamma/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>The angle account of polarization (exploratory)</h2>
+<p>The framework offers a geometric account of why light is transverse: a wave of wavelength
+λ propagates through the lattice at an angle χ to a lattice axis with</p>
+<figure class="eq"><img src="/cosmology/eq/cosmology/cos-02-004.svg" data-eq="cos-02-004" width="246" height="38" loading="lazy" alt="\begin{equation} \sin\chi=\frac{\lambda}{mD},\qquad m=\lceil\lambda/D\rceil, \end{equation}"></figure>
+<p>so that the physical mode sits closest to transverse. Evaluating this: a 1pm gamma ray gives
+χ≈11.9^(∘) (strongly longitudinal), green (532nm) χ≈89.80^(∘),
+red (633nm) χ≈89.93^(∘), and a 1m radio wave χ≈90.0^(∘):
+optical and radio light is essentially transverse, as observed, while very hard radiation acquires
+a longitudinal character. A <em>D-independent</em> test follows: compared at a common diffraction
+order, sinχ∝λ, so the angle-sines of two lines scale as their wavelength ratio,
+e.g. 633/532=1.190, regardless of the unknown spacing D. We present this as an exploratory
+account; its detailed justification belongs to the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}, where the
+relation is constructed from a single right triangle (the m-quantum chain mD as hypotenuse,
+the transverse swing λ as opposite side) and is registered as a falsifiable prediction.</p>
+
+<h2>What the angle account implies for the dispersion tension</h2>
+<span id="sec:angle-disp"></span>
+<p>The dispersion estimate stated at the front of this chapter and the angle account just given
+describe the <em>same</em> gamma radiation, but they model its passage through the lattice in
+mutually incompatible ways—and the incompatibility is the point. The estimate treats a gamma ray
+as a high-k instance of the ordinary <em>transverse</em> elastic wave: it assigns a propagation
+wavevector k=2π/λ and reads the group velocity from v_g=ccos(ka/2), identically to
+optical light but at short wavelength. The angle account assigns the same radiation a
+<em>different geometric mode</em>: for λ<D one has m=⌈λ/D⌉=1,
+sinχ=λ/D, and χ→0^(∘), so the disturbance runs nearly <em>along</em> the
+lattice axis (quasi-longitudinal), whereas optical light (m enormous, χ→90^(∘)) is the
+transverse branch. On the framework's own optics, gamma and visible light are not one mode sampled
+at two wavelengths; they are two modes.</p>
+<figure class="fig"><img src="/cosmology/assets/img/ch2_lightangle.png" loading="lazy" alt=""><figcaption></figcaption></figure>
+<h4>Consequence for the “decisive” reading.</h4>
+ The 8–15-order figure was obtained by
+applying the <em>transverse</em>-branch dispersion to gamma. If the angle account is taken at face
+value that is the wrong branch: the estimate carries a relation derived for the transverse mode
+over to radiation the same framework labels quasi-longitudinal. The decisive conflict is therefore
+not unconditional—it is contingent on the identification “gamma disperses exactly as
+short-wavelength transverse light,” which §10.9.1 of the physics volume does not adopt. A
+falsification that depends on a mode assignment the theory disowns is not decisive.
+<h4>What this does and does not settle.</h4>
+ We are deliberately exact about the residue.
+<ul>
+<li> It <em>downgrades</em> the conflict. The “clearest falsification” reading assumed the
+transverse branch; the framework's own geometry says gamma is the other branch, so the
+unconditional conflict becomes conditional.
+<li> It does <em>not</em> resolve the question. The angle account fixes the propagation
+<em>angle</em>, not the propagation <em>dynamics</em>: sinχ=λ/(mD) is geometry, while the
+dispersion relation ω(k) of the quasi-longitudinal branch is derived in neither volume and
+cannot be read off the triangle (naive attempts to do so are not self-consistent, which is itself
+why a dynamical treatment is required). The framework's gamma-dispersion prediction is, at present,
+<em>undetermined</em>: one branch (transverse) conflicts, the other (quasi-longitudinal) is
+uncomputed.
+<li> The escape is therefore not guaranteed. If the quasi-longitudinal dynamics, once derived,
+again yields a keV–GeV dispersion, the conflict returns; if it yields effective
+dispersionlessness, the conflict dissolves. The reframing shows the matter is open, not won.
+<li> The existing datum is consistent with the reframing. Fermi sees no energy-dependent arrival
+across the GRB band; a gamma branch whose propagation is <em>not</em> the transverse
+v_g=ccos(ka/2) is compatible with that null at the mechanism level—a consistency argument,
+not a derived prediction.
+<li> The geometry is independently falsifiable. §10.9.1 registers a direct test: near
+χ 90^(∘), cosχ is tiny, so measuring the transverse angle of visible light
+against a lattice/anisotropy axis would pin D to  0.001% and decide among candidate
+spacings—exposing the angle relation to experiment independently of the dispersion question. That
+test is gated: it runs through the physics volume's open observation gate <code>G-ISO</code> (§10.9.2),
+and no experimental χ claim is made before that gate passes (see §<a class="xref" data-ref="sec:realmap">(realmap)</a>).
+</ul>
+<p>Taken with the collective-disturbance mechanism above, the net effect is to move the
+vacuum-dispersion item from “decisive conflict” to an apparent conflict resting on two
+assumptions the framework disputes—that a burst is a stream of <em>independent</em> photons (the
+collective-disturbance section) and that those photons are the <em>transverse</em> branch (this
+section). Neither replacement is a derivation: the collective burst's spectrum and the
+quasi-longitudinal branch's dispersion are both uncomputed, so the residue is an open
+<em>dynamical</em> problem, not a resolved one. The script <code>ch2_lightangle.py</code> makes the
+geometric half concrete—it reproduces the §10.9.1 band table from sinχ=λ/(mD) and
+confirms that Fermi-band energies (MeV–GeV) sit at χ≈0.01^(∘)–15^(∘), i.e.\
+quasi-longitudinal. The dynamical half—ω(k) for that branch versus the Fermi bound—is the
+open item recorded in Chapter 16.</p>
+
+<h2>The reality-mapping note: the mass-free visible-band closure (imported, v2)</h2>
+<span id="sec:realmap"></span>
+<p>The angle account above is pinned to reality through exactly one ratio. The physics volume's
+quantum-base verification (its §10.9.1) shows that the <em>sole mapping input</em> is λ/D: on a
+medium specified only as ρ=1, perfect elasticity, B=c², no friction, voids forbidden — with
+<em>no mass value entering the dynamics</em> — the committed pair</p>
+<figure class="eq"><img src="/cosmology/eq/cosmology/cos-02-006.svg" data-eq="cos-02-006" width="436" height="19" loading="lazy" alt="\chi(632.99\,\mathrm{nm})=89.9378^{\circ},\qquad \chi(532.0\,\mathrm{nm})=89.8248^{\circ}"></figure>
+<p>follows from sinχ=λ/(mD) at the canonical D, and the ratio
+(λ/D)₆₃₃/(λ/D)₅₃₂=633/532=1.18983 cancels D <em>and</em> any mass scale outright
+(the D-independent line that <code>ch2_light.py</code> prints). These are the physics volume's
+pre-registered B1 numbers; the deterministic, seed-free verification module is shipped with this
+volume's reproducibility package as <code>phys_import_06_light_mapping_massfree/</code> (gate
+<code>G-LIGHT-MAP-Q</code>: <code>PASS</code>; output sha256-gated), so the closure can be re-run here without
+the physics volume in hand. Two disciplines carry over with it. <em>First</em>, observation claims about
+χ are gated: the physics volume's open observation gate <code>G-ISO</code> (§10.9.2) requires the
+axis-fixing and coherence scale, the averaging-away protocols, the observable window, and consistency
+with precision propagation data <em>before</em> any experimental χ claim — the direct test quoted
+in §<a class="xref" data-ref="sec:angle-disp">(angle-disp)</a> runs through that gate, and this volume's gamma-dispersion question registers
+against its item (iv). <em>Second</em>, what the closure does and does not buy here: it fixes the
+<em>optical</em>-band mapping scale to D with zero fit freedom (the datum quoted in the two-length
+appendix and in Chapter 16), and it buys nothing for the gamma branch, whose dynamics remain the
+volume's first open problem.</p>
+
+
+<nav class="pn"><a rel="prev" href="/cosmology/02-back-calculation-broadband-gamma-spectrum/">← §2.2</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/02-goldstone-continuum-mode-dispersionless/">§2.4 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

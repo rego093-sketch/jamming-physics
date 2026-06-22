@@ -73,9 +73,10 @@ PRIM_FORM = {
 
 def sha256_bytes(b): return hashlib.sha256(b).hexdigest()
 
-def volume_content_hash(vid):
-    """Deterministic tree hash over all files under docs/{vid}/ (sorted relpath)."""
-    base = os.path.join(DOCS, vid)
+def dir_content_hash(base):
+    """Deterministic tree hash over all files under base/ (sorted relpath). '' if absent."""
+    if not os.path.isdir(base):
+        return None
     parts = []
     for f in sorted(glob.glob(os.path.join(base, "**", "*"), recursive=True)):
         if os.path.isfile(f):
@@ -111,7 +112,8 @@ def main():
             "inherits": inh, "adds": add,
             "primitives": [k for k, d in prims.items() if vid in d["volumes"]],
             "grades": r["grades"], "pages": r["pages"],
-            "content_sha256": volume_content_hash(vid),
+            "content_sha256": dir_content_hash(os.path.join(DOCS, vid)),
+            "repro_sha256": dir_content_hash(os.path.join("repro", vid)),
         }
         if vid in SELECTIVE: row["selective"] = SELECTIVE[vid]
         volumes.append(row)
@@ -156,10 +158,13 @@ def main():
         "parent_sha256": prev,
         "this_sha256": "",
         "changes": (sys.argv[1:] or [
-            "genesis: consolidated 30 volumes into single repo",
-            "rebuilt docs/index.html (homepage)",
-            "integrated +5 volumes: eye, ear, nose, wave-computer, inheritance",
-            "sitemap 609->676", "added AGENTS.md AI guide",
+            "genesis: consolidated 30 volumes into a single repo",
+            "rebuilt docs/index.html (homepage) from the manifest",
+            "integrated +5 volumes: eye, ear, nose, wave-computer, inheritance (docs + repro)",
+            "added repro/ entries for the 5 new volumes (30/30 complete)",
+            "manifest now tracks content_sha256 AND repro_sha256 per volume",
+            "primitive counts corrected to volumes-only: R19 22, gamma 22, emergence 27",
+            "sitemap 609->676", "added AGENTS.md AI reading guide",
         ]),
     }
     manifest["lineage"] = lineage
