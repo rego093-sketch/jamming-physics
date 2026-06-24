@@ -1,0 +1,42 @@
+Two-way-coupled 3D run -- recorded findings (SEED=19, 64x64x12, Ra=1e4, dt=5e-5)
+================================================================================
+Solver: coupled_rbc3d.py (continent INSULATION heat source, zero-mean = self-limiting redistribution)
+Driver: coupled_driver.py (convection co-evolves with the continental tracer; continents ride the
+        LARGE-SCALE / low-pass flow = raft rigidity; same accretion rule as the frozen-flow test).
+
+RE-VALIDATION (the key gate): with the coupling code present but C=0, the solver reproduces the
+analytic onset Ra_c = 27*pi^4/4 ~ 657.5 EXACTLY (single-mode growth matches linear theory to ~1e-7).
+=> the coupling does NOT corrupt the validated solver.
+
+STABLE-WINDOW RESULT (continents seeded ~step 1800-2600; statistical steady state):
+  q_insul=0 (baseline: live co-evolving flow + raft advection, NO insulation feedback):
+     f = 0.324, 0.280, 0.300, 0.297, 0.292, 0.326, 0.304, 0.273  -> mean ~0.30 (range 0.27-0.33)
+  q_insul=5 (self-limiting zero-mean insulation feedback ON):
+     f = 0.325, 0.305, 0.293, 0.266, 0.306, 0.321, 0.281, 0.355  -> mean ~0.30 (range 0.27-0.36)
+  (an earlier CONSTANT-injection q=7 run rose to ~0.37 but was NET-PUMPING heat and numerically
+   UNSTABLE -- not a trustworthy value; discarded.)
+
+=> the two-way-coupled fraction settles around f ~ 0.30, robust to the coupling strength. It CONFIRMS
+   the frozen-flow lower bound (~0.30) and the percolation mechanism; it does NOT reach observed 0.41.
+
+NUMERICAL CAVEAT (honest): at the strongly-supercritical Ra=1e4 used for the convecting regime,
+64x64x12 is stable only for a finite window (~7000 steps); EVEN THE q=0 BASELINE eventually blows up
+(rms_w spikes from ~26 to ~77 then NaN). So the long-time instability is the under-resolved
+strongly-supercritical convection, NOT the coupling. A fully-converged long run needs higher vertical
+resolution / implicit buoyancy / hyperviscous (or adaptive-dt) stabilization. The onset gate (Ra_c,
+near-threshold) is well resolved and exact; the Ra=1e4 stable window is long enough to reach the
+tracer's statistical steady state but not arbitrarily long.
+
+INTERPRETATION (falsification = discovery): vigorous convective stirring disperses a PASSIVE continental tracer,
+holding f near ~0.30. Real Earth's mantle is at far higher Ra (~1e6-1e7) -> stirs even MORE -> would
+push a passive tracer LOWER, not higher. So the observed 0.41 must be sustained by physics this
+passive model OMITS: continental coherence/strength resisting dispersal (a real rheology, not a
+passive scalar), felsic production CONCENTRATED at convergent margins, sphere geometry, internal
+heating (narrower downwellings). The coupled run did NOT confirm the convenient 0.41 -- it confirmed
+~0.30 and SHARPENED the residual into a specific list of omitted, testable physics.
+
+GRADE: area-fraction value stays [L]. The percolation ATTRACTOR is now confirmed as a robust bounding
+mechanism (~0.25-0.41) across THREE independent settings: static 2D (0.39-0.41), 3D-frozen-flow
+(0.24-0.32), and 3D-two-way-coupled (~0.30). The decisive run is DONE; the open residual is no longer
+"run the coupled case" but "supply the omitted continental rheology + convergent-margin production (and
+a numerically-stable high-Ra long run) to test whether they lift ~0.30 to the observed 0.41."

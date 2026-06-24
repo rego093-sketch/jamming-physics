@@ -1,4 +1,4 @@
-# VP 사이트 변환 작업표준서 (VP-SPEC) v1.8 — 정본 HTML · 재현성 헌법 · AI-검색 수용성,백서는 영어로 작성
+# VP 사이트 변환 작업표준서 (VP-SPEC) v1.9 — 정본 HTML · 재현성 헌법 · AI-검색 수용성 · 공유 인프라(공동모듈·용어) 무손실 편입,백서는 영어로 작성
 
 > jamming-physics.org 의 9개 백서(physics·fluid-dynamics·cosmology·geodynamics·dna·geochronology·chemistry·neuro·mind)를, 생성형 검색(RAG·AI 개요)이 **구절 단위로 추출·인용**할 수 있는 결정론적 다중 페이지 정본 HTML 로 변환하는 단일 기준. 정본은 docs/ HTML 하나이며, 세션은 이 표준서와 충돌하는 어떤 창의적 변경도 하지 않는다. LOCK → Derive → Gate: 입력은 잠그고, 규칙대로 산출하고, 카운트로 검증한다.
 >
@@ -51,6 +51,19 @@ SVG/HTML 내부의 `alt`·`title` LaTeX 는 접근성 메타데이터로서 HTML
 HTML·봇 허용·sitemap). C4 는 C1–C3 과 충돌하지 않는다: 유도의 단일출처(SSOT)는 유지하되 결과의
 **진술**을 자체완결화한다(6-R장). 구현·검사 규칙은 6-R장과 8장 검색 게이트.
 
+**C5 — 공유 인프라 선언 (공동모듈·용어; 무손실 편입의 보증).**
+프레임워크는 2장 백서 레지스트리와 **동급의 LOCK 공유 레지스트리 두 개**를 가진다 — 공동모듈
+(`/modules/` = `registry/modules.json`)과 용어사전(`/concepts/` = `registry/concepts.json`). 이 둘은
+전역선언이다. 모든 백서는 자신이 **상속하는 공동모듈**과 **사용·소유하는 용어**를 ① 기계 판독 가능한
+선언 블록(`_decl.json`, 6-M.1)으로 명시하고 ② 본문에서 표기(6-M.2·6-M.3)한다. 이 선언이 편입의
+**무손실성**을 보증한다: 빌드가 선언을 읽어 `vp.manifest.json`·`concepts.json`·`modules.json` 을
+**수작업 재구성 없이 드리프트 0** 으로 갱신한다. 선언이 레지스트리와 불일치하거나(미해소 id), 본문
+표기가 누락되거나, 선언↔manifest 가 어긋나면 8장 **공유-인프라 게이트 FAIL** 이다. 근거: 용어와
+공동모듈만 있으면 프레임워크의 약 80% 가 강제 복원되므로 — 이 둘은 가장 핵심이자 공격면이며, 따라서
+각 백서가 그 공유 코어에서 무엇을 끌어오는지가 **명시적·검증가능·무손실**이어야 한다. C5 는 C1–C4 와
+충돌하지 않는다: SSOT·재현성·자체완결을 유지한 채, 공유 코어에 대한 백서의 의존을 기계가 읽는 선언으로
+고정할 뿐이다.
+
 ---
 
 
@@ -60,13 +73,14 @@ HTML·봇 허용·sitemap). C4 는 C1–C3 과 충돌하지 않는다: 유도의
 원칙
 1. 변환의 주체는 코드다. 모델이 본문을 받아쓰는 방식은 금지한다.
 2. 모든 세션은 종료 전 8장의 게이트를 실행하고 결과(gate.json)를 남긴다.
-3. 읽기 전용(LOCK): src/, manifest/, slugs.csv, tools/, templates/, 2장 레지스트리.
+3. 읽기 전용(LOCK): src/, manifest/, slugs.csv, tools/, templates/, 2장 레지스트리,
+   registry/concepts.json·modules.json (공유 인프라 SSOT — 본문에서 직접 수정 금지; 신규 용어·모듈은 레지스트리 JSON 갱신 후 재생성, 6-M.0).
 4. 한 세션 = 한 과업. 범위는 4장의 세션 매트릭스를 따른다.
 5. 세션 간 상태는 오직 파일로만 전달한다. 이전 대화 기억에 의존하지 않는다.
 6. 레인 규칙: 세션은 자기 과업의 경로 밖 파일을 생성·수정하지 않는다.
    백서 세션의 레인: docs/{paper_id}/, docs/eq/{paper_id}/,
    manifest/{paper_id}.csv, reports/. 공용 파일(docs/index.html, sitemap.xml,
-   assets/, concepts/, tools/, templates/)은 지정 Phase(0·4·5·6) 외 접근 금지.
+   assets/, concepts/, modules/, tools/, templates/)은 지정 Phase(0·4·5·6) 외 접근 금지.
    레인 밖 파일이 handoff zip 에 들어 있으면 그 자체로 게이트 FAIL 이다.
 
 금지사항
@@ -128,11 +142,17 @@ TeX 가 필요하면 정본에서 on-demand 로 출력한다(`tools/extract.py`:
 
 ```
 vp-site/                          ← 공개 GitHub repo = 단일 진실 원천 (Pages 게시 루트는 docs/ 만)
-├── VP_SPEC_v1.8.md               ← 이 표준서 (모든 세션에 첨부)
+├── VP_SPEC_v1.9.md               ← 이 표준서 (모든 세션에 첨부)
 ├── tools/                        ← Phase 0 산출, 이후 LOCK (세션은 실행만)
 │   ├── inventory.py              ← 표준라이브러리(단어수·섹션코드·슬러그). gate.py 가 word_count 공유
 │   ├── derive_meta.py            ← (v1.7) Phase 2 결정론 파생: title·desc·abstract·grade 채움
 │   ├── build_hub.py              ← (v1.7) Phase 3 결정론 허브: 목차·횡단 링크·개요 생성
+│   ├── build_concepts.py         ← (v1.9) registry/concepts.json → docs/concepts/index.html (DefinedTermSet)
+│   ├── build_modules.py          ← (v1.9) registry/modules.json → docs/modules/index.html (공동모듈)
+│   ├── build_decls.py            ← (v1.9) manifest+concepts → docs/{p}/_decl.json (편입 선언 일괄 도출)
+│   ├── build_strips.py           ← (v1.9) _decl.json → hub 의 inherits-strip 주입 (6-M.2)
+│   ├── retrofit_cards.py         ← (v1.9) vp-card 에 data-concept + /concepts 링크 (6-M.3)
+│   ├── gate_shared_infra.py      ← (v1.9) 공유-인프라 게이트 실행 (8장: 선언↔레지스트리↔manifest↔본문)
 │   ├── extract.py                ← (v1.7) 정본 HTML → 텍스트/LaTeX on-demand 출력(img alt 추출, 헌법 C2)
 │   ├── reconcile_derived_to_html.py ← (v1.7) manifest·_meta.json 카운트를 정본 HTML 에서 재산출(헌법 C1)
 │   ├── vp_numeric_ssot.py + vp_*.py ← 결정론 수치 단일진실원·재생성 모듈(2×sha256). 재현성 엔진
@@ -141,6 +161,8 @@ vp-site/                          ← 공개 GitHub repo = 단일 진실 원천 
 ├── repro/{paper_id}/{슬러그}/    ← 재현 스크립트·데이터·기대 출력 (검증층, 게시 제외)
 ├── manifest/{paper_id}.csv  slugs.csv          ← 읽기 전용 (정본 HTML 의 파생 인덱스)
 ├── registry/cross_volume_doi.{csv,md}          ← (v1.7) 형제 백서 개념 DOI 레지스트리
+├── registry/concepts.json  modules.json         ← (v1.9) 공유 인프라 SSOT — 용어사전·공동모듈(헌법 C5)
+├── registry/vp.manifest.json                    ← (v1.9) 전 볼륨 스파인 (concepts·modules 포함; _decl.json 에서 갱신)
 ├── docs/                        ← 배포 사이트 루트 = **정본(canonical)**, 헌법 C2
 │   ├── index.html  sitemap.xml  robots.txt  llms.txt  llms-full.txt
 │   ├── assets/css/site.css(≤50KB)  assets/fonts/(woff2 2~3)  assets/img/
@@ -148,9 +170,10 @@ vp-site/                          ← 공개 GitHub repo = 단일 진실 원천 
 │   ├── physics/            ├── fluid-dynamics/   ├── cosmology/
 │   ├── geodynamics/        ├── dna/              ├── geochronology/
 │   ├── chemistry/          ├── neuro/            ├── mind/   ← v1.7 추가 3권(2장 레지스트리)
-│   │   각 백서 폴더 공통: index.html(허브), _meta.json(요약 카드),
+│   │   각 백서 폴더 공통: index.html(허브), _meta.json(요약 카드), _decl.json(편입 선언, 6-M.1),
 │   │                     {슬러그}/index.html (섹션당 1폴더)
-│   └── concepts/{용어 슬러그}/index.html
+│   ├── modules/index.html                        ← (v1.9) 공동모듈 페이지 (build_modules.py 생성)
+│   └── concepts/index.html  {용어 슬러그}/index.html  ← (v1.9) 용어사전 페이지 (build_concepts.py 생성)
 ├── reports/{phase}-{paper}-{범위}.gate.json
 └── IRREPRODUCIBILITY_LEDGER.md   ← (v1.7) 전 [O] 항목·재현불가 사유·위치 집계(헌법 C3)
 ```
@@ -208,7 +231,7 @@ Phase 2 는 (v1.7) 백서당 **1 derive run + gate**(결정론). 전체 프로�
 새 창은 이전 창의 파일을 보지 못한다. 전달은 아래 규약으로만 한다.
 
 세션 시작 시 저자가 업로드하는 것
-1. VP_SPEC_v1.8.md (항상)
+1. VP_SPEC_v1.9.md (항상)
 2. 해당 Phase 의 tools/ 스크립트와 templates/ (Phase 1~6)
 3. 과업 입력: 원본(Phase 1) 또는 이전 산출 섹션 html(Phase 2~) + 해당 manifest 행 + slugs.csv
 4. 8 장 시작 지시문(12장)에 과업 범위 기입
@@ -274,9 +297,16 @@ Phase 2 는 (v1.7) 백서당 **1 derive run + gate**(결정론). 전체 프로�
   <a href="https://doi.org/{P.DOI}" rel="noopener">DOI 스냅샷</a>
 </aside>
 
-<!-- 6-R.2: 본문이 다른 섹션의 잠금 정량(α·δ·νₚ 등)을 인용하면, 그 정량마다 자체완결 카드 1개를 둔다.
-     값+한줄 의미+등급+정본 유도 링크. (유도가 아니라 결과 진술이므로 SSOT 위반 아님.) 예: -->
-<aside class="vp-card" data-locked="delta"><b>δ = 1/π²</b> — 이중 정류 생존상수(두 half-wave 평균의 곱, max-entropy 측도). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/#delta">정본 유도 §5.2</a></aside>
+<!-- 6-M.2: 상속 공동모듈 스트립 (hub·첫 챕터). _decl.json.inherits_modules 와 정확히 일치, /modules/#id 링크. -->
+<aside class="inherits-strip" aria-label="Inherited common modules">
+  <span class="lbl">Inherits:</span>
+  <a href="/modules/#kernel">R19 switch</a>
+  <a href="/modules/#dna_interpretation">DNA interpretation</a>
+</aside>
+
+<!-- 6-R.2 + 6-M.3: 본문이 다른 섹션의 잠금 정량(α·δ·γ 등)을 인용하면, 그 정량마다 자체완결 카드 1개를 둔다.
+     값+한줄 의미+등급 + 두 링크(정본 유도, /concepts/#id). data-locked == data-concept. (결과 진술이므로 SSOT 위반 아님.) 예: -->
+<aside class="vp-card" data-locked="delta" data-concept="delta"><b>δ = 1/π²</b> — 이중 정류 생존상수(두 half-wave 평균의 곱, max-entropy 측도). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/#delta">정본 유도 §5.2</a> · <a href="/concepts/#delta">용어</a></aside>
 
 {본문 — 원본 그대로 이관. h2/h3 계단식, h1 추가 금지. 각 섹션 첫 문장 = 그 섹션의 직답(6-R.3), 단락 ≤3문장}
 
@@ -407,6 +437,100 @@ SSOT("한 번 유도, 나머진 참조", 5·7장)는 드리프트를 막지만(C
 
 ---
 
+## 6-M. 공유 인프라 표기 & 선언 (공동모듈·용어) — 헌법 C5 구현, v1.9
+
+용어와 공동모듈만으로 프레임워크의 약 80% 가 강제 복원된다. 따라서 이 둘은 전역 LOCK 자산이며, 각
+백서는 자신이 그 공유 코어에서 **무엇을 끌어오는지**를 ① 기계 판독 선언(`_decl.json`)과 ② 본문 표기로
+명시한다. 8장 공유-인프라 게이트가 삼자 정합(선언 ↔ 레지스트리 ↔ 본문)을 검사한다. 목표는 단 하나:
+**백서가 사이트에 로스 없이 편입된다** — 빌드가 선언만 읽어 모든 레지스트리를 드리프트 0 으로 갱신하고,
+사람은 manifest·concepts·modules 를 손으로 재구성하지 않는다.
+
+### 6-M.0 두 LOCK 레지스트리 (전역선언; SSOT)
+- **공동모듈** `/modules/` ← `registry/modules.json` (vp.modules/0.1). 생성 코어 4종: `kernel`(R19 스위치+
+  잼드 기판, bedrock) · `light_emergence`(양자 빛 창발; self_completeness 필수) · `dna_interpretation`
+  (γ LEVEL+A4 SHAPE) · `rotor_inflow`(3회전체 유입/방출). 각 모듈 필드: `forces·reach·bundles`(용어 id)
+  `·canonical·grade·inherited_by·attack_surface`(+ self_completeness).
+- **용어사전** `/concepts/` ← `registry/concepts.json` (vp.concepts/0.1). 횡단 용어 + 잠금 핵심 수치.
+  각 표제어 필드: `id·term·symbol·value·statement`(자체완결 1줄)`·grade·register·owner·href·loc`(+`aka·disambig`).
+- 두 JSON 이 SSOT 이며 `/modules/`·`/concepts/` 페이지는 거기서 생성된다(`tools/build_modules.py`·
+  `build_concepts.py`; 수작업 편집 금지). **새 모듈·용어는 레지스트리 JSON 만 고치고 재생성**한다(AGENTS §9 동일).
+- 동일 글자 충돌은 `disambig` 로 분리(예: φ_RCP 0.7405 / φ_jam 0.840 / φ_iso 0.633; α 2/π vs α_em 1/137).
+  per-질환·per-유전자 카탈로그는 용어가 아니라 데이터이므로 사전에 넣지 않고 소유 볼륨으로 포인터만 건다.
+
+### 6-M.1 선언 블록 `_decl.json` (백서당 1개, hub 폴더 — 무손실 편입의 핵심)
+`docs/{paper_id}/` 에 `_meta.json` 과 나란히 둔다. 빌드는 이 **한 파일**을 읽어 manifest·concepts·modules 를
+갱신한다. 7 필드는 `vp.manifest.json` 의 그 볼륨 행과 정확히 매핑되므로(아래) 재구성이 곧 무손실이다.
+
+```json
+{
+  "paper_id": "neuro", "tier": 4,
+  "inherits_volumes": ["physics", "chemistry", "dna"],
+  "owns_modules": [],
+  "inherits_modules": ["kernel", "light_emergence", "dna_interpretation"],
+  "adds": ["neuron=R19+slow-recovery", "brain-rhythms", "working-memory=theta/gamma~7pm2", "memory", "motor"],
+  "primitives": ["R19", "gamma", "emergence", "jammed_c2", "fhn"],
+  "owns_terms": ["theta_gamma", "neuron_R19"],
+  "uses_terms": ["gamma", "spinodal", "barrier", "c2_brho", "r19_switch", "emergence_engine"],
+  "grades": {"forced": 2, "verified": 2, "open": 2, "hypothesis": 0}
+}
+```
+
+- `inherits_volumes` — 볼륨 단위 상속(= manifest `inherits`).
+- `owns_modules` — 이 백서가 **originate(정의)** 하는 공동모듈 id (= modules.json 의 첫 canonical 볼륨이 이 paper_id).
+  소유자는 자기 모듈을 **상속하지 않는다**(자기상속 금지) — physics 는 `[kernel, light_emergence]`, dna 는 `[dna_interpretation]`,
+  fluid-dynamics 는 `[rotor_inflow]` 를 owns 한다.
+- `inherits_modules` — 이 백서가 **소비(consume)** 하는 공동모듈 id (originate 한 것은 제외). **전부 modules.json 에 존재** (미해소 = FAIL).
+- `adds` — 더하는 단 하나의 새 모듈(add-only; = manifest `adds`).
+- `primitives` — 사용하는 커널 프리미티브(R19·gamma·emergence·jammed_c2·kramers·fhn·cube_root 부분집합).
+- `owns_terms` — 이 백서가 **정본 소유자**인 용어 id(= concepts.json 에서 `owner == 이 paper_id`).
+- `uses_terms` — 본문에서 인용(카드화)하는 **타 소유** 용어 id. 전부 concepts.json 에 존재해야 함.
+- `grades` — forced/verified/open/hypothesis 집계(= manifest `grades`).
+> 매핑: `{inherits_volumes, adds, primitives, grades}` ↔ manifest 행 4필드(드리프트 0). `{inherits_modules}`
+> ↔ modules.json 의 `inherited_by`(역방향 일관). `{owns_modules}` ↔ modules.json 의 첫 canonical 볼륨.
+> `{owns_terms, uses_terms}` ↔ concepts.json 의 owner/사용. concepts.json 항목은 선택적 `grade_note` 로
+> 맥락상 정당한 등급 분기(예: c²=B/ρ 는 물리에서 forced·화학 sim 에서 verified)를 문서화할 수 있다(감사가 이를 인식). **originate≠inherit**: 소유 모듈은 owns_modules 에만, 상속(소비) 모듈은 inherits_modules 에만.
+
+### 6-M.2 본문 표기 ① 공동모듈 상속 스트립 (hub 및 첫 챕터 상단)
+`claim-strip` 바로 아래에 둔다. **두 구획**: `Defines:`(= `owns_modules`, 이 백서가 정의하는 모듈) + `Inherits:`(= `inherits_modules`,
+소비하는 모듈). 합쳐서 `owns_modules ∪ inherits_modules` 와 **정확히 일치**하며 각 항목은 `/modules/#{id}` 로 링크한다(404 = FAIL).
+소유자 hub(physics)는 `Defines:` 만, 순수 소비자(cosmology)는 `Inherits:` 만, 둘 다(dna)는 양쪽을 보인다.
+
+```html
+<aside class="inherits-strip" aria-label="Common-module provenance">
+  <span class="lbl">Defines:</span><a href="/modules/#dna_interpretation">DNA interpretation</a>
+  <span class="lbl">Inherits:</span><a href="/modules/#kernel">R19 switch</a>
+</aside>
+```
+
+### 6-M.3 본문 표기 ② 용어 카드에 사전 연결 (6-R.2 확장)
+6-R.2 의 자체완결 카드(`aside.vp-card`)에 **`data-concept="{id}"` 속성**과 **`/concepts/#{id}` 링크**를
+더한다. 카드는 이제 두 링크를 가진다: (a) 정본 유도(원 소유 챕터, 기존), (b) 사전 표제어(`/concepts/#{id}`, 신규).
+값·의미 재진술은 그대로(SSOT 위반 아님). **`data-concept` 는 `data-locked` 가 가리키는 정본 사전 id** 다 —
+`data-locked` 가 aka/로컬 토큰(예 `nu-p`,`gamma_RUNX2`)이면 `data-concept` 는 그 해소된 정본 id(`nu_p`,`gamma_exemplars`)다.
+**사전에 없는 볼륨-로컬 정량**(예 geodynamics 의 `omega_nogo`,`phi_jam`)은 카드를 자체완결로 두되 `/concepts/` 링크는 달지
+않는다 — 횡단 어휘가 아니기 때문. `uses_terms` 의 모든 용어는 본문에 최소 1개 카드(`data-concept`)로 표기되어야 한다.
+
+```html
+<aside class="vp-card" data-locked="gamma" data-concept="gamma">
+  <b>γ = −mean NN stacking ΔG₃₇</b> — 프로모터 강성(SantaLucia), R19 임계 SCALE 을 세팅; corr(γ,GC)=0.998, 측정·무피팅. <b>[V]</b> verified.
+  <a href="/dna/02-material-threshold-scale/">정본 유도</a> · <a href="/concepts/#gamma">용어</a>
+</aside>
+```
+
+### 6-M.4 무손실 편입 계약 (빌드·게이트가 강제)
+편입(병합) 시 빌드는 각 백서의 `_decl.json` 을 읽어 — 사람이 손대지 않고 —
+1. `vp.manifest.json` 의 그 볼륨 행(`inherits·adds·primitives·grades`)을 재생성(드리프트 0).
+2. `inherits_modules` 가 modules.json 에, `owns_terms·uses_terms` 가 concepts.json 에 전부 존재하는지 확인;
+   미해소 id 가 있으면 게이트가 **신규 등록 요청**으로 표시(레지스트리 JSON 을 먼저 갱신 후 재시도).
+3. `owns_terms` 의 표제어가 concepts.json 에서 `owner == 이 paper_id` 인지(소유 정합) 확인.
+4. 본문의 상속 스트립(6-M.2)·용어 카드(6-M.3)가 선언과 일치하는지 확인.
+
+선언 ↔ 레지스트리 ↔ 본문 표기 **삼자가 일치할 때만 PASS**. 하나라도 어긋나면 8장 공유-인프라 게이트 FAIL —
+이것이 "로스 없는 편입"의 강제 장치다. (재생성 원칙: 집계물 manifest·concepts·modules·홈페이지 모듈 섹션·
+sitemap 은 선언과 레지스트리에서 생성하며 손으로 고치지 않는다.)
+
+---
+
 ## 7. 수식 규칙
 
 판정 한 줄: "키보드로 한 줄 평문처럼 자연스럽게 쳐지는가?"
@@ -480,6 +604,20 @@ Phase 4 (수치 드리프트 — 정본 HTML, v1.7 헌법 C1·C2)
       Google-Extended) 허용 · `sitemap.xml` 에 페이지 존재 · `docs/llms.txt` 존재·<5KB.
 - [ ] **단락**: 본문 단락 대부분 ≤3문장(소프트; 장문 블록 경고).
 
+공유 인프라 게이트 (v1.9 — C5 공동모듈·용어 무손실 편입)
+- [ ] **선언 존재·유효**: `docs/{paper}/_decl.json` 존재, 7 필드 유효. `inherits_modules` 의 모든 id 가
+      `registry/modules.json` 에, `owns_terms`·`uses_terms` 의 모든 id 가 `registry/concepts.json` 에
+      존재(미해소 id 0; 신규 도입이면 레지스트리 JSON 을 먼저 갱신).
+- [ ] **manifest 정합(무손실 핵심)**: `_decl.json` 의 `inherits_volumes`·`adds`·`primitives`·`grades` 가
+      `vp.manifest.json` 의 그 볼륨 행과 일치(드리프트 0) — 빌드가 선언에서 행을 재생성해도 동일해야 한다.
+- [ ] **공동모듈 스트립**: hub 에 `aside.inherits-strip` 존재, 링크 집합 == `owns_modules ∪ inherits_modules`,
+      각 항목이 `/modules/#{id}` 로 링크(404 = FAIL). 소유자 자기상속 0(owns 와 inherits 교집합 없음).
+- [ ] **용어 카드 연결**: 사전 해소되는 카드(`data-locked` 가 사전 용어)는 `data-concept`==정본(`data-locked`) +
+      `/concepts/#{id}` 링크 보유. 볼륨-로컬 정량·무-`data-locked`·`="true"` 카드는 면제. `uses_terms` 의 모든 용어가
+      볼륨 본문에 `data-concept` 로 표기됨(전 챕터 스캔).
+- [ ] **소유 정합**: `owns_terms` 의 모든 표제어가 concepts.json 에서 `owner == 이 paper_id`;
+      이 백서가 새로 도입한 잠금 정량은 `uses_terms` 가 아니라 `owns_terms` 에 들어 있음.
+
 ---
 
 ## 9. 요약 카드 — docs/{paper_id}/_meta.json
@@ -506,6 +644,10 @@ Phase 4 (수치 드리프트 — 정본 HTML, v1.7 헌법 C1·C2)
 
 Phase 5 는 9개 백서를 다시 읽지 않고 이 카드 9장만 읽는다.
 
+**(v1.9) 선언 카드 `docs/{paper_id}/_decl.json`** 을 `_meta.json` 과 같은 폴더에 둔다 — 공동모듈·용어
+상속 선언(스키마·매핑은 6-M.1). `_meta.json` 이 *요약*(사람·인덱스용)이라면, `_decl.json` 은 *편입 계약*
+(빌드가 manifest·concepts·modules 를 무손실 갱신하는 입력)이다. 둘 다 handoff zip 에 항상 포함한다.
+
 ---
 
 ## 10. 횡단 링크 규칙 — 유도 지도를 사이트 구조로
@@ -519,6 +661,10 @@ Phase 5 는 9개 백서를 다시 읽지 않고 이 카드 9장만 읽는다.
 2. geodynamics 허브는 physics(jamming) 와 geochronology(연대 방법) 둘 다에 링크(수렴).
 3. 챕터 본문에서 타 백서 개념이 처음 등장하면 해당 허브 또는 concepts 페이지로 링크.
 4. concepts 페이지는 그 용어가 등장하는 모든 백서 허브를 역링크한다(횡단 접착제).
+5. **(v1.9) 공유 코어 링크**: 본문에서 처음 등장하는 **공동모듈**은 `/modules/#{id}`, 처음 등장하는
+   **사전 용어**는 `/concepts/#{id}` 로 링크한다(같은 대상 링크는 페이지당 첫 1회, 3·6-M.3 규칙). 백서 hub 는
+   상속 공동모듈 스트립(6-M.2)으로 `/modules/` 에 역링크되고, 용어 카드(6-M.3)로 `/concepts/` 에 역링크된다 —
+   유도 지도뿐 아니라 **공유 코어 의존 지도**도 사람과 구글이 읽는 링크가 된다.
 
 ---
 
@@ -576,16 +722,16 @@ Phase 7 게이트
 ## 13. 새 창 표준 시작 지시문 (복사용)
 
 ```
-[로드: VP_SPEC_v1.8.md(먼저 정독) + registry/cross_volume_doi.csv + 대상 docs/ HTML + tools/·templates/]
+[로드: VP_SPEC_v1.9.md(먼저 정독) + registry/cross_volume_doi.csv + registry/concepts.json + registry/modules.json + 대상 docs/ HTML + tools/·templates/]
 [로드 금지: 과거 스펙 버전·변경 이력 — 이 표준만으로 충분, 토큰 절약]
 이번 세션 과업: Phase {P} / {paper_id} / {범위 예: §8–§10}
-헌법 우선(C1 재현성·C2 HTML 정본/TeX 비동봉·C3 [O] 사유·C4 검색 수용성).
-백서 정보는 2장 레지스트리의 {paper_id} 행만 사용한다(웹 재조사 금지).
-본문 무변경 — 편집은 head·answer·abstract·claim-strip·vp-card·내부링크·JSON-LD 뿐.
-산출: 3·6·6-R·7장 규칙 준수 + 5장 규약의 handoff zip 1개. 수치는 tools/vp_*ssot.py 결정론(2×sha256).
-종료 조건: 8장의 해당 Phase 게이트 + 헌법 게이트 + 검색 게이트 전부 PASS, gate.json 포함, 요약 보고.
-금지: 1장 금지사항. 표준서와 충돌하는 제안은 실행하지 말고 보고만 할 것.
+헌법 우선(C1 재현성·C2 HTML 정본/TeX 비동봉·C3 [O] 사유·C4 검색 수용성·C5 공유 인프라 선언).
+백서 정보는 2장 레지스트리의 {paper_id} 행만 사용한다(웹 재조사 금지). 공동모듈·용어는 modules.json·concepts.json 만 참조.
+본문 무변경 — 편집은 head·answer·abstract·claim-strip·vp-card(+data-concept)·inherits-strip·_decl.json·내부링크·JSON-LD 뿐.
+산출: 3·6·6-M·6-R·7장 규칙 준수 + 5장 규약의 handoff zip 1개(_decl.json 포함). 수치는 tools/vp_*ssot.py 결정론(2×sha256).
+종료 조건: 8장의 해당 Phase 게이트 + 헌법 게이트 + 검색 게이트 + 공유-인프라 게이트 전부 PASS, gate.json 포함, 요약 보고.
+금지: 1장 금지사항. 새 공동모듈·용어는 본문에 박아넣지 말고 레지스트리 JSON 갱신으로(재생성). 표준서와 충돌하는 제안은 실행하지 말고 보고만 할 것.
 Phase 1 이상인데 tools/·templates/ 첨부가 없으면 어떤 산출도 만들지 말고 "Phase 0 키트 누락"만 보고하고 종료.
 ```
 
-— 끝 (v1.8) —
+— 끝 (v1.9) —

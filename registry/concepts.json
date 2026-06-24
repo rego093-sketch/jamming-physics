@@ -1,0 +1,1139 @@
+{
+  "schema": "vp.concepts/0.1",
+  "title": "VP Concept Dictionary — unified internal lexicon",
+  "note": "Single source of truth for cross-volume terminology and locked core numbers. Values, grades and owners are harvested from the canonical volume cards (vp-card / data-locked) and the per-volume dictionaries; this registry UNIFIES them, disambiguates same-glyph collisions, and is the source from which docs/concepts/index.html is generated. Per-disease burden values and the full per-gene gamma census are NOT vocabulary; they live in their owning volumes (disease_kit / dna atlas) and are pointed to, not copied.",
+  "legend": {
+    "F": "forced — follows necessarily from the math/substrate (not contingent on a fit)",
+    "V": "verified — passed a test built to falsify it, against external data",
+    "L": "anchored — rests on a single declared empirical LOCK; trace the anchor",
+    "O": "open — an honest gap; the obstacle is stated. [O] is a finding, not a failure (반증=발견)",
+    "imported": "cited from another volume as provenance, not re-derived here",
+    "admissible": "a closed mechanical read (e.g. a DNA Layer-1 gloss); STATE/sign/dosage/timing remain runtime",
+    "discipline": "a governance rule or apparatus, not a graded claim (e.g. the no-tuning flowchart)",
+    "principle": "a stated principle or demonstration rather than a measured number",
+    "distinguishing": "the framework's unique, falsifiable prediction"
+  },
+  "register_order": [
+    "kernel",
+    "physics-const",
+    "cosmology",
+    "earth-science",
+    "dna-bio",
+    "neuro-cog",
+    "method"
+  ],
+  "registers": {
+    "kernel": "Kernel & substrate — the one universal machine",
+    "physics-const": "Physics constants — forced numbers and the quantum scale",
+    "cosmology": "Cosmology constants — the vacuum-inflow law",
+    "dna-bio": "DNA / biology layer — the measured ruler and its two channels",
+    "neuro-cog": "Neural / cognition — the switch made into a brain",
+    "method": "Method, grading & governance — the epistemic vocabulary",
+    "earth-science": "Earth-science layer — the jamming engine that makes dry land and its recent coupled relaxation"
+  },
+  "entries": [
+    {
+      "id": "jammed_substrate",
+      "term": "Jammed substrate (the vacuum)",
+      "symbol": "φ ≈ 0.7405",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/03-axioms-primitives-volume-particle-lattice/",
+      "loc": "§3",
+      "statement": "The single physical claim of the whole framework: the vacuum is a jammed elastic solid at random close packing. Everything else is this medium plus one switch.",
+      "aka": [
+        "VP",
+        "Volume Particle",
+        "emerged_substrate"
+      ]
+    },
+    {
+      "id": "c2_brho",
+      "term": "Speed of light as an elastic wave",
+      "symbol": "c² = B/ρ",
+      "value": "B/ρ",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "chemistry",
+      "href": "/chemistry/01-electromagnetism-jammed-lattice-light/",
+      "loc": "§1 (EM)",
+      "statement": "Light is the single longitudinal elastic wave that survives at the jammed lattice's isostatic point (shear modulus → 0); B = bulk modulus, ρ = density. Forced from the marginal substrate and simulation-verified to 0.06%.",
+      "aka": [
+        "cs2",
+        "c2",
+        "c2_brho",
+        "cBrho"
+      ],
+      "grade_note": "primary [F] forced by elastic-wave kernel; verified [V] to 0.06% in chemistry §2 (legitimate context split)"
+    },
+    {
+      "id": "r19_switch",
+      "term": "R19 bistable switch (the kernel)",
+      "symbol": "ṡ = g·s − s³ + h",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/03-axioms-primitives-volume-particle-lattice/",
+      "loc": "§3",
+      "statement": "The universal object: a double-well cubic. g sets the basin-threshold scale, h is the drive. The cooperativity IS the −s³ term (order n = 3); the double-well itself arises from the stiffness shell (a frequency-selective rigid shell), not mere hardness — that is why it is a switch. Bit-identical across every volume at run time.",
+      "aka": [
+        "r19",
+        "switch"
+      ]
+    },
+    {
+      "id": "gamma",
+      "term": "γ — promoter stacking stiffness (the ruler)",
+      "symbol": "γ = −mean NN stacking ΔG₃₇",
+      "register": "kernel",
+      "grade": "V",
+      "owner": "dna",
+      "href": "/dna/02-material-threshold-scale/",
+      "loc": "§2",
+      "statement": "Minus the mean nearest-neighbour stacking free energy (SantaLucia 1998) over the proximal promoter (TSS−2000..+500, GRCh38). Sets the R19 threshold SCALE, not the trait. corr(γ,GC)=0.998. Measured, never fitted; carries composition, not lineage.",
+      "aka": [
+        "gamma",
+        "gamma-method",
+        "nn-stacking"
+      ],
+      "grade_note": "measured material constant (SantaLucia 1998) — [V], never forced/calibrated"
+    },
+    {
+      "id": "spinodal",
+      "term": "Spinodal (the firing threshold)",
+      "symbol": "h* = 2(γ/3)^1.5",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/dna/how-to-read-a-locus/",
+      "loc": "§I (locus)",
+      "statement": "Equivalently |h_sp| = (2/3√3)·γ^1.5. The bias past which one R19 basin disappears and the flip becomes discontinuous — a substrate primitive set entirely by γ.",
+      "aka": [
+        "spinodal"
+      ]
+    },
+    {
+      "id": "barrier",
+      "term": "Barrier (state stability)",
+      "symbol": "barrier = γ²/4",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/dna/how-to-read-a-locus/",
+      "loc": "§I (locus)",
+      "statement": "The energy barrier between the two basins. Ranks state stability and sets the Kramers crossing rate — larger-γ organs hold memory and resist transformation more strongly.",
+      "aka": [
+        "barrier",
+        "r19-barrier"
+      ]
+    },
+    {
+      "id": "dwell",
+      "term": "Dwell (reservoir / size)",
+      "symbol": "dwell(γ) ≈ γ^1.5",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "dna",
+      "href": "/dna/05-dwell-how-long-switch-runs/",
+      "loc": "§5",
+      "statement": "How long a switch runs before its finite reservoir empties; sets reservoir capacity and the replicative limit, and is read as relative organ size in the emergence engine.",
+      "aka": [
+        "dwell"
+      ]
+    },
+    {
+      "id": "emergence_engine",
+      "term": "Emergence engine (the creation recipe)",
+      "symbol": "STATE · spinodal(γ) · dwell∝γ^1.5",
+      "register": "kernel",
+      "grade": "L",
+      "owner": "dna",
+      "href": "/dna/13-unified-deterministic-interpreter/",
+      "loc": "§13",
+      "statement": "How anything emerges from measured γ: STATE(γ→can-fire)=presence; spinodal(γ)=developmental order; dwell∝γ^1.5=relative size. A NON-FIT baseline — the engine never reads the outcome it predicts.",
+      "aka": [
+        "emergence",
+        "emergence-engine",
+        "emergence-lambda"
+      ]
+    },
+    {
+      "id": "fhn",
+      "term": "FitzHugh–Nagumo oscillator",
+      "symbol": "R19 cubic + slow recovery",
+      "register": "kernel",
+      "grade": "V",
+      "owner": "neuro",
+      "href": "/neuro/03-rhythm-bands-coupling/",
+      "loc": "§3",
+      "statement": "The shared relaxation-oscillator law: the R19 fast variable plus a slow recovery variable τ_s sets the period, so the substrate's intrinsic rhythm sits far below the switch timescale (hearts, clocks, neurons).",
+      "aka": [
+        "fhn",
+        "fhn-oscillator"
+      ]
+    },
+    {
+      "id": "kramers",
+      "term": "Kramers / Arrhenius barrier",
+      "symbol": "rate ∝ exp(−barrier/D)",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "chemistry",
+      "href": "/chemistry/02-chemistry-single-anchor/",
+      "loc": "§2",
+      "statement": "Barrier crossing over the γ²/4 barrier with a single noise scale D; the switching-kinetics primitive shared by chemistry, geodynamics, the immune threshold and the clocks.",
+      "aka": [
+        "kramers"
+      ]
+    },
+    {
+      "id": "cube_root",
+      "term": "Cube-root transduction (criticality)",
+      "symbol": "R = (F/β)^(1/3)",
+      "register": "kernel",
+      "grade": "V",
+      "owner": "sensory_organ",
+      "href": "/sensory_organ/07-cochlear-hopf-amplifier-cube-root/",
+      "loc": "§7",
+      "statement": "Hold the R19 switch at criticality (g → 0) and it gives cube-root compression with exponent exactly 0.3333, parameter-free — the cochlear and retinal amplifier.",
+      "aka": [
+        "cube_root"
+      ]
+    },
+    {
+      "id": "phi_rcp",
+      "term": "Random-close-packing fraction",
+      "symbol": "φ_RCP = 0.7405",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/chemistry/02-chemistry-single-anchor/",
+      "loc": "§2",
+      "statement": "Packing fraction of the vacuum substrate (random close packing).",
+      "disambig": "DISTINCT from φ_jam = 0.840 (2D jamming onset) and φ_iso = 0.633 (isostatic z→6). Three different packing fractions — do not conflate.",
+      "aka": []
+    },
+    {
+      "id": "stiffness_shell",
+      "term": "Stiffness shell (the precise term for 'stiffness')",
+      "symbol": "rigid shell — blocks high-frequency deformation",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/fluid-dynamics/ax-j-rigid-shell-quantum-length-module/",
+      "loc": "Appendix J / rigidity",
+      "statement": "What the framework loosely calls 'stiffness' is precisely a rigid SHELL, not a scalar hardness: a structure that blocks high-frequency deformation. Because it is a frequency-selective shell it produces the bistable double-well — this is WHY the kernel is a switch, and why the concept is more than firmness. In the stiff limit it fixes the quantum length D = 2λ_C,e ≈ 4.854 pm.",
+      "aka": [
+        "rigid-shell"
+      ]
+    },
+    {
+      "id": "event_quantum",
+      "term": "Event quantum (the unit that flows and annihilates)",
+      "symbol": "minimal rectified unit; rate ν fixes the time unit",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/09-event-quantum-definition-canonical-event/",
+      "loc": "§9",
+      "statement": "The minimal loggable unit of change in the medium. Its canonical (rectified) count N_can over a window, and its canonical rate ν, FIX the framework's unit of time. This is the quantum that flows in and annihilates — the same object from the quantum scale up through chemistry to cosmology.",
+      "aka": [
+        "canonical event",
+        "event"
+      ]
+    },
+    {
+      "id": "inflow",
+      "term": "Inflow (유입) — the medium into matter",
+      "symbol": "Q ∝ mass",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "cosmology",
+      "href": "/cosmology/01-single-input-inflow-rate/",
+      "loc": "§1",
+      "statement": "The vacuum medium (event quanta) flowing INTO a body at rate Q, proportional to its mass — the engine of gravity and of the galactic acceleration scale a₀. A general mechanism used from the quantum scale through chemistry to cosmology; at the rotor scale it is the same thing as 'suction', the 3-rotor inflow of fluid-dynamics. Its directional opposite is outflow / emission.",
+      "aka": [
+        "vacuum-inflow",
+        "suction"
+      ]
+    },
+    {
+      "id": "annihilation",
+      "term": "Annihilation (소멸) — the sink",
+      "symbol": "quanta removed from the medium; ν_p per nucleon",
+      "register": "kernel",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/cosmology/01-single-input-inflow-rate/",
+      "loc": "§1 (dark cores Ch.8)",
+      "statement": "Quanta annihilated — removed from the medium — the sink counterpart to inflow. The per-nucleon annihilation rate is ν_p = 3π⁴. Where quanta are annihilated away, deficit cores form (the 'dark' cores), and with no quanta there is no temperature. A general mechanism, quantum through cosmology.",
+      "aka": [
+        "annihilated",
+        "sink"
+      ]
+    },
+    {
+      "id": "mp_me",
+      "term": "Proton–electron mass ratio",
+      "symbol": "mₚ/mₑ = 6π⁵",
+      "value": "6π⁵ ≈ 1836.118",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/13-mass-u-lat-m-h/",
+      "loc": "§13",
+      "statement": "The proton-electron mass ratio as 2π·ν_p = 6π⁵, −19 ppm versus measurement. Cited downstream as provenance (e.g. chemistry records the same −19 ppm residual, graded [O] cross-volume).",
+      "aka": [
+        "mp-me",
+        "mp_me",
+        "massratio"
+      ]
+    },
+    {
+      "id": "nu_p",
+      "term": "Canonical proton event rate",
+      "symbol": "ν_p = 3π⁴",
+      "value": "3π⁴ ≈ 292.227 s⁻¹",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/08-discrete-proton-structure-82-7/",
+      "loc": "§8",
+      "statement": "The per-nucleon vacuum-annihilation / proton event rate, fixed geometrically by the n-fold rectification law ν_n = nπ^(2(n−1)).",
+      "aka": [
+        "nu-p",
+        "nu_p"
+      ]
+    },
+    {
+      "id": "D_quantum",
+      "term": "Invariant quantum size",
+      "symbol": "D = 2λ_C,e = 4.852620 pm",
+      "value": "4.852620 pm",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/10-implementing-speed-light-clock-free/",
+      "loc": "§10.9",
+      "statement": "THE QUANTUM SIZE — the one internal length of the framework: the electron rotation length (equivalently 6π⁶ rₚ), fixed by the electron mass, not a free parameter. It is what the EM angle law sinχ = λ/(mD) is measured against, and it is inherited into the neural / EM chain.",
+      "aka": [
+        "D"
+      ]
+    },
+    {
+      "id": "delta",
+      "term": "Double-rectification survival constant",
+      "symbol": "δ = 1/π²",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/05-geometric-rectification-constants-single-source/",
+      "loc": "§5",
+      "statement": "Product of two half-wave means; a max-entropy measure. One of the two geometric rectification constants.",
+      "aka": [
+        "delta"
+      ]
+    },
+    {
+      "id": "alpha",
+      "term": "Geometric rectification ratio",
+      "symbol": "α = 2/π",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/05-geometric-rectification-constants-single-source/",
+      "loc": "§5",
+      "statement": "Full-wave to half-wave mean — the single rectification anchor.",
+      "disambig": "NOT the electromagnetic α_em ≈ 1/137. Same Greek letter, different quantity.",
+      "aka": [
+        "alpha"
+      ]
+    },
+    {
+      "id": "lambda_anchor",
+      "term": "The single empirical anchor",
+      "symbol": "λ_anchor = 632.99 nm",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/11-realization-units-t-rcross/",
+      "loc": "§11",
+      "statement": "The only measured LENGTH input to the whole framework (DOF = 1). Every realized SI value traces to this one anchor.",
+      "disambig": "Distinct from D (quantum size, 4.852620 pm) and from the canonical Anchor-Cell length D_anch.",
+      "aka": [
+        "anchor"
+      ]
+    },
+    {
+      "id": "alpha_em",
+      "term": "Electromagnetic fine-structure constant",
+      "symbol": "α_em ≈ 1/137",
+      "register": "physics-const",
+      "grade": "O",
+      "owner": "physics",
+      "href": "/physics/14-force-lattice-tension-1-r2/",
+      "loc": "§14",
+      "statement": "A MEASURED input, explicitly NOT derived — it runs with energy and the closed form 137≈4π(11−δ) is flagged non-evidence. Recorded honestly as open.",
+      "aka": [
+        "alpha-em"
+      ]
+    },
+    {
+      "id": "angle_law",
+      "term": "EM angle law (near vs far field)",
+      "symbol": "sinχ = λ/(mD)",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/10-implementing-speed-light-clock-free/",
+      "loc": "§10.9",
+      "statement": "Conduction (χ→0, near-field) and radiation (χ→90°, far-field) are one electromagnetic phenomenon, ordered by the propagation angle χ at the invariant quantum size D. The brain lives in the χ→0 near-field limit.",
+      "aka": [
+        "angle"
+      ]
+    },
+    {
+      "id": "colour_closure",
+      "term": "Colour = angle, and the 633/532 closure",
+      "symbol": "sinχ = λ/(mD),  m = ⌈λ/D⌉",
+      "register": "physics-const",
+      "grade": "V",
+      "owner": "physics",
+      "href": "/physics/10-implementing-speed-light-clock-free/",
+      "loc": "§10 / eye E0",
+      "statement": "Colour is the propagation angle χ(λ) of the lattice wave at the invariant quantum size D: light rides an integer 'dent' chain, sinχ = λ/(mD) with m = ⌈λ/D⌉. The committed angles χ(633)/χ(532) are the ARMED FALSIFIER — HeNe red 632.99 nm (m = 130443, ν = 4.736×10¹⁴ Hz) and green 532 nm (m = 109632, ν = 5.635×10¹⁴ Hz) both map to integer dents against the SAME D, and their ratio closes ((λ/D)₆₃₃/(λ/D)₅₃₂ = 632.99/532). This proves D is wavelength-independent — fixed by the electron mass, not fit to any single line.",
+      "aka": []
+    },
+    {
+      "id": "E_QG",
+      "term": "Vacuum-dispersion (quantum-gravity) scale",
+      "symbol": "E_QG,2 = √2·hc/(πa) ≈ 882 GeV",
+      "register": "physics-const",
+      "grade": "O",
+      "owner": "cosmology",
+      "href": "/cosmology/02-goldstone-continuum-mode-dispersionless/",
+      "loc": "§2.4",
+      "statement": "Quadratic vacuum-dispersion scale at the cell size a. OPEN FALSIFIER recorded in the open: the Fermi GRB 090510 bound requires E_QG > 1.3×10¹¹ GeV, far above 882 GeV — a stated tension, kept visible rather than papered over.",
+      "aka": [
+        "EQG"
+      ]
+    },
+    {
+      "id": "electron_second",
+      "term": "Electron rate νₑ=1 and the ≈1-second coincidence",
+      "symbol": "νₑ = 1 ;  Tₑ ≈ 1 s",
+      "register": "physics-const",
+      "grade": "F",
+      "owner": "physics",
+      "href": "/physics/12-electron-1-second-cross-check/",
+      "loc": "§12",
+      "statement": "The n-fold law ν_n = nπ^(2(n−1)) gives the electron rate νₑ = 1 (n=1) and the proton rate ν_p = 3π⁴ (n=3), so mₚ/mₑ = 2π·3π⁴ = 6π⁵. Realized in SI, the electron timescale is Tₑ = (D/a)³·τ_VP·(6/5) ≈ 1 s. CAUTION — the ≈1 s is a NUMERICAL COINCIDENCE with the human-defined SI second, NOT a tuned input; the proton inflow rate is read RELATIVE to this electron unit (νₑ=1), which is what can make it look fitted. The value is robust (unchanged under reclassification); only re-executable evidence is graded.",
+      "aka": [
+        "Te",
+        "electron 1 second"
+      ]
+    },
+    {
+      "id": "a0",
+      "term": "Galactic acceleration scale",
+      "symbol": "a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²",
+      "register": "cosmology",
+      "grade": "distinguishing",
+      "owner": "cosmology",
+      "href": "/cosmology/06-galactic-rotation-derivation-a0-ch0/",
+      "loc": "§6",
+      "statement": "The galactic acceleration scale derived from the vacuum-inflow law — the one prediction unique to this framework.",
+      "aka": [
+        "a0"
+      ]
+    },
+    {
+      "id": "nu_H",
+      "term": "Hydrogen inflow rate",
+      "symbol": "ν_H = 3π⁴+1 ≈ 293.227 s⁻¹",
+      "register": "cosmology",
+      "grade": "F",
+      "owner": "cosmology",
+      "href": "/cosmology/01-single-input-inflow-rate/",
+      "loc": "§1",
+      "statement": "The hydrogen-atom inflow rate: the sum of the proton and electron annihilation rates, π-fixed, not a free parameter.",
+      "aka": [
+        "nu_H"
+      ]
+    },
+    {
+      "id": "QM_inflow",
+      "term": "Mass-specific inflow rate",
+      "symbol": "Q/M = 1.7522×10²⁹ quanta s⁻¹ kg⁻¹",
+      "register": "cosmology",
+      "grade": "F",
+      "owner": "cosmology",
+      "href": "/cosmology/01-single-input-inflow-rate/",
+      "loc": "§1",
+      "statement": "Fixes the inflow rate of any body from its mass alone (hydrogen anchor).",
+      "aka": [
+        "QM"
+      ]
+    },
+    {
+      "id": "A4",
+      "term": "A4 coordinate (the SHAPE axis)",
+      "symbol": "A4 = (shell, anchor+strength, loops, helical phase)",
+      "register": "dna-bio",
+      "grade": "admissible",
+      "owner": "dna",
+      "href": "/dna/how-to-read-a-locus/",
+      "loc": "4D DNA Blueprint §I",
+      "statement": "The geometric coordinate-grammar of a locus — which shell, its nearest anchor and strength, its loops, and the anchor-relative helical phase. The SHAPE channel, writable, orthogonal to the γ LEVEL channel.",
+      "aka": [
+        "coordinate"
+      ],
+      "grade_note": "SHAPE axis is admissible; a card's [O] refers to open magnitude of a specific A4 coordinate, not the axis itself"
+    },
+    {
+      "id": "two_layer_reading",
+      "term": "Two-layer reading (γ LEVEL + A4 SHAPE)",
+      "symbol": "γ = LEVEL  ⊥  A4 = SHAPE",
+      "register": "dna-bio",
+      "grade": "F",
+      "owner": "dna",
+      "href": "/dna/00-the-reading-stated-plainly/",
+      "loc": "§00",
+      "statement": "One locus is read on two separable channels: γ sets the threshold LEVEL (can-fire), A4 places the SHAPE (coordinate grammar). γ is unwritable (set); A4 is writable. This is the core of the genome reading.",
+      "aka": [
+        "two_separable_axes"
+      ]
+    },
+    {
+      "id": "node_atlas",
+      "term": "DNA node atlas (the SSOT)",
+      "symbol": "atlas = single source of truth",
+      "register": "dna-bio",
+      "grade": "F",
+      "owner": "dna",
+      "href": "/dna/the-dna-dictionary/",
+      "loc": "§II",
+      "statement": "The atlas owns node IDENTITY and developmental ORDER for the entire corpus. Every downstream volume inherits these and re-emerges nothing — the enforced single source of truth for biology.",
+      "aka": []
+    },
+    {
+      "id": "dev_order",
+      "term": "Developmental order",
+      "symbol": "order = argsort(γ)",
+      "register": "dna-bio",
+      "grade": "V",
+      "owner": "dna",
+      "href": "/dna/ax-a-universal-morphogenesis-gene-clock/",
+      "loc": "gene-clock",
+      "statement": "Developmental / emergence order is the ascending-γ readout. Identity and order are owned by the DNA gene-clock and read out downstream, never refitted.",
+      "aka": [
+        "dev-order"
+      ]
+    },
+    {
+      "id": "methylation_M",
+      "term": "Methylation layer (the writable environment)",
+      "symbol": "M = CpG O/E layer",
+      "register": "dna-bio",
+      "grade": "principle",
+      "owner": "dna",
+      "href": "/dna/09-environment-methylation-layer/",
+      "loc": "§9",
+      "statement": "The environment-written CpG methylation layer (O/E) — the writable environmental channel that sits on top of the unwritable γ ruler, generalised across vertebrate, plant and insect architectures.",
+      "aka": [
+        "methylation"
+      ]
+    },
+    {
+      "id": "five_channels",
+      "term": "The five readable channels",
+      "symbol": "material · set · state · dwell · environment",
+      "register": "dna-bio",
+      "grade": "admissible",
+      "owner": "dna",
+      "href": "/dna/how-to-read-a-locus/",
+      "loc": "§I",
+      "statement": "The output of one deterministic locus read: material, set, state, dwell, environment — five channels from a single pass, not five separate analyses. Because the readable layer is closed, a finite lexicon is possible.",
+      "aka": []
+    },
+    {
+      "id": "gamma_exemplars",
+      "term": "Canonical measured γ (master genes)",
+      "symbol": "γ ∈ ≈1.264–1.494, all R19-bistable",
+      "register": "dna-bio",
+      "grade": "V",
+      "owner": "dna",
+      "href": "/dna/the-dna-dictionary/",
+      "loc": "§II (26 loci)",
+      "statement": "Exemplars (measured, NCBI GRCh38, byte-verified): BMAL1/ARNTL 1.33348, RUNX2 1.2414, SOX9 1.4598, MYOD1 1.4933, SOX2 1.287315, RUNX1 1.3225, FOXN1 1.4533, PAX5 1.4892, RHO 1.4719. γ is blind to on/off (human_ZRS 1.264 ON vs snake_LMBR1 1.290 OFF). The full per-gene census lives in the DNA atlas — not copied here.",
+      "aka": [
+        "gamma_RUNX2",
+        "gamma_MYOD1",
+        "gamma_SOX9"
+      ]
+    },
+    {
+      "id": "theta_gamma",
+      "term": "Working-memory slot count",
+      "symbol": "θ/γ ≈ 7±2",
+      "register": "neuro-cog",
+      "grade": "V",
+      "owner": "neuro",
+      "href": "/neuro/04-code-working-memory/",
+      "loc": "§4",
+      "statement": "Each γ cycle nested in one θ frame is one working-memory slot, giving Miller's 7±2 (measured ≈6.1 in mind). The ordering θ < γ is forced and tACS-causal; absolute hertz are open.",
+      "aka": [
+        "theta_gamma",
+        "theta-gamma"
+      ],
+      "grade_note": "θ/γ≈6.1 verified within empirical 7±2 (not forced)"
+    },
+    {
+      "id": "neuron_R19",
+      "term": "Neuron = R19 + slow recovery",
+      "symbol": "excitable cubic + τ_s",
+      "register": "neuro-cog",
+      "grade": "F",
+      "owner": "neuro",
+      "href": "/neuro/02-substrate-neuron-switch/",
+      "loc": "§2",
+      "statement": "A neuron is the R19 switch plus a slow recovery variable; from this come brain rhythms, memory and motor control — the whole neural-emergence chain.",
+      "aka": []
+    },
+    {
+      "id": "engram",
+      "term": "Engram = bistable attractor",
+      "symbol": "memory = persistent R19 basin",
+      "register": "neuro-cog",
+      "grade": "V",
+      "owner": "mind",
+      "href": "/mind/05-memory-physics/",
+      "loc": "§5",
+      "statement": "An engram is a bistable R19 attractor; a mood is a switch that persists; the stream of thought is serial selection among γ-eddies. Felt cognition reads both stable states of the kernel.",
+      "aka": []
+    },
+    {
+      "id": "grades",
+      "term": "Grades [F]/[V]/[L]/[O] — the STATE of a claim",
+      "symbol": "[F] [V] [L] [O]",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§5",
+      "statement": "The epistemic STATE of a claim — not a process, but where a number stands. [F] forced (follows from the math), [V] verified against external data, [L] anchored to one declared LOCK, [O] open with its obstacle stated. Read the state before trusting the number; [O] is a finding, not a failure (반증=발견).",
+      "aka": []
+    },
+    {
+      "id": "no_tuning",
+      "term": "No-tuning",
+      "symbol": "new_tuned_constants = 0 per module",
+      "register": "method",
+      "grade": "V",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§5",
+      "statement": "Every quantity emerges from measured gene parameters (γ), physics constants, or cited public measurements [L]. Nothing is fitted to reproduce an outcome; a claim is believed only if sign-stable across a sweep of duration, seed, perturbation node and coupling.",
+      "aka": [
+        "no_tuning"
+      ]
+    },
+    {
+      "id": "magnitude_firewall",
+      "term": "Magnitude firewall",
+      "symbol": "direction only — magnitude [O]",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§5",
+      "statement": "For disease and therapy the framework gives the corrective DIRECTION only; clinical magnitudes are deliberately withheld as [O]. Never synthesize a dose, concentration or clinical magnitude from the corpus — output the direction and stop.",
+      "aka": [
+        "firewall-boundary"
+      ]
+    },
+    {
+      "id": "lock_derive_gate",
+      "term": "LOCK → Derive → Gate — the no-tuning flowchart",
+      "symbol": "inputs locked → code derives → outputs gated",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§5",
+      "statement": "A FLOWCHART, not a state — the apparatus that makes 'no tuning' visible and lets anyone, with no expertise, re-execute the result. Inputs are LOCKed so they cannot move after the fact; code DERIVEs the numbers from them; a GATE checks the canonical HTML against the regenerated values (drift 0). SEED = 19, double SHA-256. Its entire job is to prove nothing was hand-fitted.",
+      "aka": []
+    },
+    {
+      "id": "stress_principle",
+      "term": "The Stress Principle",
+      "symbol": "test to destruction; record the collapse",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§5",
+      "statement": "Every hypothesis is stress-tested to destruction; if it collapses, the collapse is recorded and accepted and the affected line restarts with the break built in. Refinement means surviving the stress, never avoiding it.",
+      "aka": [
+        "stress_principle"
+      ]
+    },
+    {
+      "id": "ssot",
+      "term": "SSOT — single source of truth",
+      "symbol": "one source per meaning",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§3.2",
+      "statement": "Each meaning has exactly one canonical source. Derivation lives in one place; downstream pages restate the value + plain meaning + grade in a self-contained card and link back, but never re-derive. Re-stating a value is not an SSOT violation — duplicating a derivation is.",
+      "aka": []
+    },
+    {
+      "id": "three_lever",
+      "term": "Three-lever therapeutic principle",
+      "symbol": "L1 source · L2 gain · L3 setpoint",
+      "register": "method",
+      "grade": "V",
+      "owner": "analgesic_threshold",
+      "href": "/homeostasis_ionic/14-three-lever-therapeutic-principle-source-gain-setpoint/",
+      "loc": "§14",
+      "statement": "A defended setpoint dx/dt = −k(x−x*) + load + noise has exactly three independent handles: L1 lowers the load (source), L2 raises the loop gain k (gain), L3 relocates the target x* (setpoint). Only L2 tightens the stationary variance; L1 moves the mean; L3 moves the defended value durably.",
+      "aka": [
+        "three-lever"
+      ]
+    },
+    {
+      "id": "seam",
+      "term": "Sharp seam (cross-system boundary)",
+      "symbol": "vendored SSOT snapshot + one-way pointer",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§3.2",
+      "statement": "A boundary between what a volume inherits and what it adds, declared in prose. A sibling-owned quantity is vendored once (verified against the sibling engine) and consumed by pointer, never silently imported. No undeclared borrowing.",
+      "aka": [
+        "seam"
+      ],
+      "grade_note": "discipline construct (vendored SSOT + one-way pointer); the [F] on a wiring card marks structural necessity, not a separate claim"
+    },
+    {
+      "id": "selective_inheritance",
+      "term": "Selective inheritance",
+      "symbol": "à-la-carte, declared",
+      "register": "method",
+      "grade": "discipline",
+      "owner": "framework",
+      "href": "/AGENTS.md",
+      "loc": "§3.2",
+      "statement": "A volume takes only the modules its domain needs and declares both what it inherits and what it deliberately does not — e.g. the nose inherits no wave module because smell has no wave, while the eye and ear inherit the wave.",
+      "aka": []
+    },
+    {
+      "id": "airy_freeboard",
+      "term": "Airy rock freeboard",
+      "symbol": "4.45 km",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A 2.8 g cm⁻³, 35 km felsic column floats with its top 4.45 km above oceanic-crust top by Airy balance — no upward force; the basin subsides and emergence follows.",
+      "value": "4.45 km continent-top minus ocean-floor"
+    },
+    {
+      "id": "assembly_entailment",
+      "term": "Assembly entailment chain",
+      "symbol": "opening ⇒ one-sided mass",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "On a fixed-area sphere (A = 5.101×10¹⁴ m²), opening forces antipodal closing (conservation) → skin subducts/raft cannot (buoyancy) → raft collects at the sink (kinematics) ⇒ a one-sided felsic mass is entailed. A dependency graph, not a timeline.",
+      "value": "one-sided felsic mass is forced"
+    },
+    {
+      "id": "bimodal_hypsometry",
+      "term": "Bimodal hypsometry",
+      "symbol": "+1544 / −3686 m",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The same isostatic system yields two elevation peaks (land +1544 m, ocean −3686 m, separation ~5.2 km); sea level sits ~70% up the relief, so continents are near-marginal — emergent by only the top ~30%.",
+      "value": "two peaks, separation ~5.2 km"
+    },
+    {
+      "id": "buckling_bar",
+      "term": "Compression-face buckling bar",
+      "symbol": "σ_cr(λ)",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The lateral stress to buckle a 30 km skin falls with wavelength (614 MPa at 300 km → 154 MPa at 600 km): the “huge push” becomes a calculable, feasible stress threshold.",
+      "value": "154–614 MPa at λ 300–600 km"
+    },
+    {
+      "id": "buoyancy_gate",
+      "term": "Buoyancy gate (sign law)",
+      "symbol": "B = Σ(ρ_asth−ρ_i)h_i",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A compressed column's response is gated by net buoyancy B: net-negative old ocean skin sheds compression by subducting (smooth deep floor); net-positive felsic cannot sink and must crumple.",
+      "value": "B>0 floats / B<0 subducts"
+    },
+    {
+      "id": "compensation_law",
+      "term": "Isostatic-compensation law",
+      "symbol": "h_max≈ΔH(ρm−ρc)/(ρm−ρtop)",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Maximum compensated relief needs a deep light root: normal 7 km basalt skin (even doubled) caps at ~1 km, felsic collision reaches ~5 km. Live test = free-air gravity + Moho depth.",
+      "value": "bare skin caps ~1 km; felsic ~5 km"
+    },
+    {
+      "id": "downwelling_convergence",
+      "term": "Convergence = downwelling limb",
+      "symbol": "Ra≈5.85×10⁶",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A hot fluid sphere must convect (Ra ≈ 5.85×10⁶ ≫ critical); closed-sphere convection has up- and down-limbs by conservation, so the convergence IS the downwelling limb — not a separate assumption. The first seed is the first downwelling's flux-melt.",
+      "value": "convergence is the forced downwelling limb"
+    },
+    {
+      "id": "freeboard_fixedpoint",
+      "term": "Freeboard fixed point (R1)",
+      "symbol": "+840 m (measured)",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A present-tense fixed point (no time): textbook ρ_c=2800 overshoots to +1915 m, but the measured bulk density/thickness lands at +840 m = observed. The lever is the distilled-felsic density deficit.",
+      "value": "isostasy + measured water → observed freeboard"
+    },
+    {
+      "id": "isochron_nonunique",
+      "term": "Isochron non-uniqueness caveat",
+      "symbol": "mixing ≡ isochron",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A two-component mixing line is algebraically identical to an isochron, so an isochron age is NON-UNIQUE. This supports the firewall and is never load-bearing for “young.”",
+      "value": "mixing line ≡ isochron"
+    },
+    {
+      "id": "jamming_state",
+      "term": "Mantle jamming state",
+      "symbol": "T/T_solidus ~0.7–0.95",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The mantle is a jammed solid near unjamming (T/T_solidus ~0.7–0.95): it flows as a heavy fluid on Myr but transmits S-waves (μ>0, solid) — ~10¹⁵–10¹⁹× magma viscosity. Magma is the local unjammed state.",
+      "value": "jammed solid near unjamming, not magma"
+    },
+    {
+      "id": "percolation_attractor",
+      "term": "Area-fraction percolation attractor",
+      "symbol": "f* ≈ 0.407",
+      "register": "earth-science",
+      "grade": "L",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The ~40% continental area fraction is a self-organized marginal-connectivity (percolation) attractor of the complementary ocean network (planar f* ≈ 0.407): a fragmenting ocean throttles its own subduction, pinning the fraction rate-insensitively.",
+      "value": "ocean-network percolation bound"
+    },
+    {
+      "id": "percolation_z",
+      "term": "Connectivity-dependent ceiling",
+      "symbol": "z = 6−12/F",
+      "register": "earth-science",
+      "grade": "L",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The percolation ceiling is connectivity-dependent: f* ≈ 0.41 (z=4) → 0.50 (z=6). Euler topology gives the plate network z = 6−12/F ≈ 5–6, so its ceiling ~0.46–0.50 overshoots 0.41 — regime-right, exact value not uniquely forced.",
+      "value": "f*≈0.41(z=4)–0.50(z=6); natural net z≈5–6"
+    },
+    {
+      "id": "ra_onset",
+      "term": "Boussinesq onset (solver validation)",
+      "symbol": "Ra_c = 27π⁴/4 ≈ 657.5",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The infinite-Pr 3D Boussinesq solver is validated against the analytic free-slip onset Ra_c = 27π⁴/4 ≈ 657.5 (single-mode growth matches linear theory to ~1e-7), so the area-fraction stress tests run on a verified convection engine.",
+      "value": "validated to ~1e-7"
+    },
+    {
+      "id": "signflip_age",
+      "term": "Ocean buoyancy sign-flip",
+      "symbol": "t* ≈ 11 Ma",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Half-space cooling flips the ocean skin's net buoyancy from positive to negative at t* ≈ 11 Ma (~3.7 km depth); most deep floor is older/deeper and net-negative.",
+      "value": "net-buoyancy flips at ~11 Ma, ~3.7 km depth"
+    },
+    {
+      "id": "three_margins",
+      "term": "Three marginal attractors (R2)",
+      "symbol": "substrate / freeboard / area",
+      "register": "earth-science",
+      "grade": "L",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Where land sits (over downwellings), how high it stands (marginal freeboard) and how much there is (marginal percolation) are three faces of the c²=B/ρ kernel's marginal criticality: VP is the foundation beneath mantle convection, not a competitor.",
+      "value": "one marginal-criticality kernel"
+    },
+    {
+      "id": "two_tier_crust",
+      "term": "Two-tier crust",
+      "symbol": "ρ: 2.8 / 2.9 / 3.3",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Felsic continental crust (~2.8 g cm⁻³, ~35 km) and basaltic ocean skin (~2.9, ~7 km) over mantle (~3.3): density×thickness is the only reason dry land and ocean basins coexist — composition, not age.",
+      "value": "felsic ~2.8 / basalt ~2.9 / mantle ~3.3 g cm⁻³"
+    },
+    {
+      "id": "wet_solidus",
+      "term": "Wet vs dry granitic solidus",
+      "symbol": "~650 vs ~950 °C",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Water lowers the granitic solidus by ~300 °C: a 600–800 °C lower crust does not melt dry (no granite) but the same crust wet crosses the solidus → partial melt → granite. The submarine start supplies the water.",
+      "value": "solidus ~650 °C wet / ~950 °C dry"
+    },
+    {
+      "id": "causal_closure_8to1",
+      "term": "Integrative tuning-free causal closure",
+      "symbol": "8:1",
+      "register": "earth-science",
+      "grade": "L",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "One untuned cause closes nine present-tense phenomena of the cascade with zero data-fitted parameters, where the mainstream uses eight independent mechanisms — an 8:1 compression in mechanism and parameter count (parsimony, not proof).",
+      "value": "[L]"
+    },
+    {
+      "id": "deglaciation_recency",
+      "term": "Present-tense deglaciation recency",
+      "symbol": "order 10⁴ yr",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Order 10⁴ yr read from ongoing rebound (~1 cm/yr) plus the measured mantle relaxation time, with no calendar date and no assumed rate; a present-tense observable that does NOT promote the cascade's occurrence past [O].",
+      "value": "[V]"
+    },
+    {
+      "id": "dual_redox",
+      "term": "Dual-redox petroleum mechanism",
+      "symbol": "—",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Glacial meltwater does opposite things to oxygen at two depths: sealing it out deep (preserving source rock) and bringing it in shallow (making oil heavy); reproduces oil quality across 6/6 provinces (M42).",
+      "value": "6/6 provinces"
+    },
+    {
+      "id": "freshwater_lid_anoxia",
+      "term": "Freshwater-lid anoxia",
+      "symbol": "—",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "A layer of fresh meltwater sitting on heavier seawater stops oxygen reaching the bottom → the bottom goes anoxic → organic matter is preserved (the source-rock preservation half of the dual-redox).",
+      "value": "present-tense"
+    },
+    {
+      "id": "magnitude_ratio_discriminator",
+      "term": "Magnitude-ratio discriminator",
+      "symbol": "SH-26",
+      "register": "earth-science",
+      "grade": "O",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The one genuinely-discriminating cross-system test; the protocol harness and canonical population are built (M49) but the decisive run stays open pending verified source volumes — no fabrication.",
+      "value": "[O]",
+      "aka": [
+        "SH-26"
+      ]
+    },
+    {
+      "id": "occurrence_cap",
+      "term": "Occurrence cap (chronology firewall)",
+      "symbol": "[O]",
+      "register": "earth-science",
+      "grade": "O",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Any claim that the coupled sequence (or any face) occurred in Earth history is capped at [O] (Art. 1.2), decided only by independent dating; the firewall is bidirectional — it withholds both 'deep time' and 'recent'.",
+      "value": "[O]"
+    },
+    {
+      "id": "s0_release",
+      "term": "S0 deep-water reservoir release",
+      "symbol": "SH-5",
+      "register": "earth-science",
+      "grade": "O",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "The single load-bearing release that drives the coupled cascade; the deep-water inventory is bounded present-tense and exceeds the largest requirement by ~10× [V] (M50), but the releasable fraction and mechanism stay open [O].",
+      "value": "[O]",
+      "aka": [
+        "SH-5",
+        "the bottleneck"
+      ]
+    },
+    {
+      "id": "source_rock",
+      "term": "Source rock",
+      "symbol": "—",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Organic-rich rock that later generates oil; it needs a quiet, oxygen-starved (anoxic) setting to preserve the organic matter.",
+      "value": "anoxic"
+    },
+    {
+      "id": "biodegradation",
+      "term": "Biodegradation",
+      "symbol": "—",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "continental-genesis-cascade",
+      "href": "/continental-genesis-cascade/",
+      "statement": "Microbes eat the light fractions of oil in cool, shallow, oxygen-reached reservoirs, leaving it heavy; the process shuts off above ~80 °C.",
+      "value": "< ~80 °C"
+    },
+    {
+      "id": "firewall",
+      "term": "Bidirectional chronology firewall",
+      "symbol": "[O] both ways",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "Every absolute date is RECORD and forbidden as load-bearing in BOTH directions; every past-occurrence statement is [O]. Only present-tense, non-rate observables carry the argument.",
+      "value": "dates = RECORD"
+    },
+    {
+      "id": "gia",
+      "term": "Glacial isostatic adjustment (forebulge / marine limit)",
+      "symbol": "GIA",
+      "register": "earth-science",
+      "grade": "V",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "Crust bending under ice and springing back after; the forebulge and marine limit record the former load, and ongoing uplift is the present-tense recency clock.",
+      "value": "present-tense"
+    },
+    {
+      "id": "maxwell_time",
+      "term": "Maxwell relaxation time",
+      "symbol": "τ_M",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "The timescale that decides solid-vs-fluid response: the mantle carries S-waves over seconds yet convects over Myr; it sets the rebound clock used in M44.",
+      "value": "τ_M = η/μ"
+    },
+    {
+      "id": "stick_slip",
+      "term": "Stick-slip / duty cycle",
+      "symbol": "—",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "Mostly-stuck motion with rare fast slips; a slow average speed can be rare fast events spread thinly, so a present speed cannot by itself date onset.",
+      "value": "—"
+    },
+    {
+      "id": "conservation_identity",
+      "term": "Conservation identity (fixed-globe bookkeeping)",
+      "symbol": "ΔA_open = −ΔA_close",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "On a fixed-size globe, opening one ocean must be balanced by closing elsewhere — an exact bookkeeping identity that anchors the Continental-Genesis import (M45).",
+      "value": "exact"
+    },
+    {
+      "id": "jamming_engine",
+      "term": "Jamming–unjamming continental engine",
+      "symbol": "Ψ_eff > Ψ_y",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "geodynamics",
+      "href": "/geodynamics/",
+      "statement": "Rapid continental break-up as a jamming→unjamming transition once the effective stress exceeds the yield surface; the inherited geodynamics engine the cascade re-runs (39/39 PASS).",
+      "value": "Ψ_eff > Ψ_y"
+    },
+    {
+      "id": "marginal_substrate",
+      "term": "Marginal jammed substrate",
+      "symbol": "G_relaxed→0",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "fluid-dynamics",
+      "href": "/fluid-dynamics/",
+      "statement": "A substrate poised at the isostatic margin has zero relaxed shear stiffness, so it offers no restoring force against a transport perturbation — symmetry-breaking is permitted, not forbidden. Inherited from the Configured Continuum.",
+      "value": "relaxed shear → 0"
+    },
+    {
+      "id": "ekman_inflow",
+      "term": "Co-rotation → merge → Ekman inflow",
+      "symbol": "∝√(ν/Ω)",
+      "register": "earth-science",
+      "grade": "F",
+      "owner": "fluid-dynamics",
+      "href": "/fluid-dynamics/",
+      "statement": "C₃ frustration forces co-rotation; co-rotating vortices merge; the coherent rotation pumps a convergent Ekman through-flow with radial inflow ∝ √(ν/Ω). Inherited.",
+      "value": "forced inflow"
+    },
+    {
+      "id": "double_sha256",
+      "term": "Double-SHA-256 gate",
+      "symbol": "2×sha256",
+      "register": "method",
+      "grade": "V",
+      "owner": "physics",
+      "href": "/physics/",
+      "statement": "A self-check inside each script: it hashes its own output twice and refuses to pass unless the hash matches the pinned value — proof the result has not drifted.",
+      "value": "pinned"
+    },
+    {
+      "id": "seed19",
+      "term": "Fixed seed convention",
+      "symbol": "SEED = 19",
+      "register": "method",
+      "grade": "V",
+      "owner": "physics",
+      "href": "/physics/",
+      "statement": "The fixed random-seed convention so every load-bearing computation is deterministic and reproducible.",
+      "value": "19"
+    }
+  ]
+}

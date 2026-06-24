@@ -20,6 +20,7 @@ TAGS = {
  'chemistry':['single anchor','φ_RCP=0.7405'],
  'geodynamics':['jamming↔unjamming','cusp'],
  'geochronology':['incorporation limit'],
+ 'continental-genesis-cascade':['buoyancy gate','percolation attractor','one relaxation ×3'],
  'wave-computer':['phase coding','clock-free'],
  'dna':['γ = −Σ stacking ΔG','R19','bridge'],
  'inheritance':['two channels','writable A4','RNA'],
@@ -50,7 +51,7 @@ TAGS = {
 TIERS = [
  (1,'Foundation · non-biological',
   'The substrate, before life',
-  'The vacuum modelled as a jammed elastic solid. Seven volumes derive light, matter, fields, flow, the cosmos, the Earth, the limits of dating, and computation from one measured medium — all before biology enters.'),
+  'The vacuum modelled as a jammed elastic solid. Eight volumes derive light, matter, fields, flow, the cosmos, the Earth, the limits of dating, the rise of dry land and its recent relaxation, and computation from one measured medium — all before biology enters.'),
  (2,'The bridge',
   'DNA — where physics becomes biology',
   'A single volume carries the substrate across. The same R19 switch is instantiated by a material stiffness γ = −mean nearest-neighbour stacking free energy, read directly from the genome and never fitted (corr(γ, GC) = 0.998).'),
@@ -74,7 +75,7 @@ TIERS = [
   'Disease is the switch driven off its setpoint; therapy is pushing the barrier back along one of three levers. The corrective direction is forced [F]; clinical magnitude is held open [O] behind a strict no-magnitude firewall.'),
 ]
 TIER_VOLS = {
- 1:['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology','wave-computer'],
+ 1:['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology','continental-genesis-cascade','wave-computer'],
  2:['dna'],
  3:['inheritance'],
  4:['neuro','mind'],

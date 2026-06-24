@@ -1,0 +1,43 @@
+# basin_superposition.csv  --  PRESENT-TENSE vertical superposition only (which unit sits below which).
+# Firewall-clean: depth_rank is an ORDINAL stacking order (1 = deepest / earliest deposited,
+# increasing upward), NOT an age. No absolute date, no rate, no occurrence is encoded.
+# Stages restricted to NON-INTERPRETIVE, robustly-drilled lithostratigraphic units:
+#   RIFT     = syn-rift / basement-bounding extensional package
+#   GLACIAL  = glaciogenic diamictite / tillite (where present)
+#   SOURCE   = the basin's principal organic-rich (anoxic) source rock
+#   SALT     = evaporite (salt) interval (where present)
+#   RES_OIL  = the reservoir into which oil has migrated (migration post-dates burial -> shallower/later)
+# "FLOOD-signature" is DELIBERATELY EXCLUDED: assigning a clastic unit to "flood" is an
+#   interpretation (firewall-contamination risk), so it is not load-bearing here.
+# Provenance: these are textbook/regional petroleum-stratigraphy superposition relations.
+#   AUTHOR ACTION (DATA_CHECKLIST): pin a primary reference per basin before release.
+basin,region,unit_stage,depth_rank,note
+Santos,South Atlantic,RIFT,1,syn-rift lacustrine section (basal)
+Santos,South Atlantic,SOURCE,2,pre-salt lacustrine source (Barra Velha / Piaui-equiv)
+Santos,South Atlantic,SALT,3,Aptian Ariri salt (overlies the pre-salt source)
+Santos,South Atlantic,RES_OIL,4,post-salt + pre-salt carbonate reservoirs charged upward
+Campos,South Atlantic,RIFT,1,syn-rift (basal)
+Campos,South Atlantic,SOURCE,2,Lagoa Feia lacustrine source (pre-salt)
+Campos,South Atlantic,SALT,3,Aptian salt (overlies source)
+Campos,South Atlantic,RES_OIL,4,turbidite + carbonate reservoirs
+Kwanza,West Africa conjugate,RIFT,1,syn-rift (basal)
+Kwanza,West Africa conjugate,SOURCE,2,Cuvo/pre-salt lacustrine source
+Kwanza,West Africa conjugate,SALT,3,Aptian Loeme salt (overlies source)
+Kwanza,West Africa conjugate,RES_OIL,4,pre/post-salt reservoirs
+CentralGraben,North Sea,RIFT,1,Permian rift basement
+CentralGraben,North Sea,SALT,2,Zechstein salt (Permian) UNDERLIES the source
+CentralGraben,North Sea,SOURCE,3,Kimmeridge Clay (Upper Jurassic) source
+CentralGraben,North Sea,RES_OIL,4,Brent/Fulmar reservoirs charged upward
+GulfOfMexico,Gulf of Mexico,RIFT,1,Triassic-Jurassic rift basement
+GulfOfMexico,Gulf of Mexico,SALT,2,Louann salt (Middle Jurassic) UNDERLIES the main source
+GulfOfMexico,Gulf of Mexico,SOURCE,3,Tithonian/Cenozoic source intervals
+GulfOfMexico,Gulf of Mexico,RES_OIL,4,Cenozoic deepwater reservoirs
+Murzuq,North Africa,GLACIAL,1,Hirnantian glaciogenic diamictite (basal here)
+Murzuq,North Africa,SOURCE,2,Tanezzuft "hot shale" (post-glacial transgression anoxia)
+Murzuq,North Africa,RES_OIL,3,Mamuniyat sandstone reservoir
+Ghadames,North Africa,GLACIAL,1,Hirnantian glaciogenic interval
+Ghadames,North Africa,SOURCE,2,Tanezzuft hot-shale source (overlies the glacial unit)
+Ghadames,North Africa,RES_OIL,3,Acacus/Memouniat reservoirs
+RubAlKhali,Arabia,GLACIAL,1,Hirnantian glaciogenic (Sarah-equiv)
+RubAlKhali,Arabia,SOURCE,2,Qusaiba "hot shale" (basal Silurian, post-glacial)
+RubAlKhali,Arabia,RES_OIL,3,Paleozoic clastic reservoirs

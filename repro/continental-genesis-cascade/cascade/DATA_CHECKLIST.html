@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML AUTHORING PRINCIPLE (VP-SPEC v1.8): HTML is the single canonical body (C2); each source subheading is rendered in full, no abridgement; numbers/equations/grades are invariant (LOCK); reproducibility scripts, frozen data and inherited bundles are the verification layer and stay as-is (C1); [O] items keep their stated reason (C3); static semantic HTML + JSON-LD for retrieval (C4). Full rule: HTML_AUTHORING_PRINCIPLES.html. Falsification = discovery. -->
+<title>DATA CHECKLIST — vp_recent_sequence_cascade (integrated, Session-2 update) | VP Recent-Sequence Cascade</title>
+<meta name="description" content="Only two cascade scripts read a data file; the rest (incl. all five new ones) are self-contained on LOCK constants. Data-reading scripts must be run from insi">
+<meta name="author" content="Young Jae Lee">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"DATA CHECKLIST — vp_recent_sequence_cascade (integrated, Session-2 update)","isPartOf":{"@type":"CreativeWorkSeries","name":"VP Recent-Sequence Cascade","@id":"https://doi.org/10.5281/zenodo.20827806","sameAs":"https://doi.org/10.5281/zenodo.20827806"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"license":"https://creativecommons.org/licenses/by/4.0/","citation":["https://doi.org/10.5281/zenodo.17932566","https://doi.org/10.5281/zenodo.17978934"],"isAccessibleForFree":true}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"VP Recent-Sequence Cascade"},
+ {"@type":"ListItem","position":2,"name":"DATA CHECKLIST"}]}
+</script>
+</head>
+<body>
+<header class="site"><nav class="crumb"><a href="index.html">VP Recent-Sequence Cascade</a> › DATA CHECKLIST</nav></header>
+<main>
+<p class="answer">Only two cascade scripts read a data file; the rest (incl. all five new ones) are self-contained on LOCK constants. Data-reading scripts must be run from inside repro/ (they use a relative data/… path — original behaviour, unchanged).</p>
+<aside class="standing">
+<div class="row"><span class="k">Author:</span>Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a>) &nbsp;·&nbsp; <span class="k">License:</span><a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></div>
+<div class="row"><span class="k">Cite:</span><a href="https://doi.org/10.5281/zenodo.20827806" rel="noopener">concept DOI 10.5281/zenodo.20827806</a></div>
+<div class="row"><span class="k">Inherits:</span><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">physics DOI</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">geodynamics DOI</a></div>
+</aside>
+<h1 id="data-checklist-vp_recent_sequence_cascade-integrated-session-2-update">DATA CHECKLIST — vp_recent_sequence_cascade (integrated, Session-2 update)</h1>
+<p><strong>Author:</strong> Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0 · https://jamming-physics.org/<br>
+<strong>Purpose:</strong> a single, verifiable inventory of <strong>every data file</strong> in the package, proving <strong>no duplication and no omission</strong>, plus the script→data map and the provenance of this session's new modules (27–31). Governance: VP-SPEC, SEED = 19, no-tuning.</p>
+<hr>
+<h2 id="0-headline">0. Headline</h2>
+<ul>
+<li><strong>57 data files</strong> (<code>.gb</code> / <code>.json</code> / <code>.csv</code> / <code>.rda</code> / <code>.npz</code>), <strong>zero duplicate content</strong> anywhere in the package (verified by content hash).</li>
+<li><strong>3 stray duplicate byproducts removed this session</strong> (see §3) — they were <em>not</em> tracked by the inherited manifest and duplicated canonical copies.</li>
+<li><strong>This session's 5 new modules (27–31) add NO data files</strong> — every number lives in an in-code <code>LOCK</code> block citing a published source (see §4). Nothing to deduplicate, nothing to fetch.</li>
+<li><strong>Top-level <code>MANIFEST.sha256</code> regenerated:</strong> <strong>185 tracked files</strong>, ROOT-CHAIN (SEED = 19, 2×SHA-256) <code>eb669fe8a201934da855c213e9bd9d2b9601ed54fa606c01a2181cd38a9aff5b</code>; body verifies <strong>185/185 OK</strong>. Nested manifests independently green (animal 37/37, plant 39/39, engine 60/60).</li>
+</ul>
+<hr>
+<h2 id="1-data-inventory-every-data-file-grouped">1. Data inventory (every data file, grouped)</h2>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Location</th>
+<th>Count</th>
+<th>Kind</th>
+<th>Role / provenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animal DNA — sequences</td>
+<td><code>dna_emergence/animal/repro/data/</code> (<code>mito/</code> 6, <code>nuc/</code> 6, <code>accessions.json</code>)</td>
+<td>13</td>
+<td><code>.gb</code> + json</td>
+<td>frozen NCBI GenBank records (mammoth/elephant, Neanderthal/Denisovan/human) for Module 22</td>
+</tr>
+<tr>
+<td>Animal DNA — results</td>
+<td><code>dna_emergence/animal/results/</code> (<code>channel_records.json</code>, <code>orthologs.json</code>)</td>
+<td>2</td>
+<td>json</td>
+<td>recomputed outputs (regenerated by <code>repro/run_all.py</code>)</td>
+</tr>
+<tr>
+<td>Plant DNA — sequences</td>
+<td><code>dna_emergence/plant/repro/data/</code> (<code>plastid/</code> 6, <code>stress/</code> 10, <code>accessions.json</code>)</td>
+<td>17</td>
+<td><code>.gb</code> + json</td>
+<td>frozen NCBI records (plastid genomes; CBF1/2/3, CHS×6, UVR8 stress genes) for the plant package</td>
+</tr>
+<tr>
+<td>Plant DNA — results</td>
+<td><code>dna_emergence/plant/results/</code> (<code>plant_channel_records.json</code>, <code>plastid_orthologs.json</code>)</td>
+<td>2</td>
+<td>json</td>
+<td>recomputed outputs</td>
+</tr>
+<tr>
+<td>Fossil audit</td>
+<td><code>fossil_audit/data/p3k14c_data.rda</code></td>
+<td>1</td>
+<td><code>.rda</code></td>
+<td>179,689 real radiocarbon dates (Bird et al. 2022) — the archaeological compilation read in Modules 23/26</td>
+</tr>
+<tr>
+<td>Inherited engine</td>
+<td><code>inherited_engine/</code> (<code>results/</code> 19 <code>.npz</code>, <code>data/meta/…template.csv</code>)</td>
+<td>20</td>
+<td><code>.npz</code> + csv</td>
+<td>saved outputs of the 19 NumPy engines (audited by <code>validate_all.py</code>) + one event-window template</td>
+</tr>
+<tr>
+<td>Cascade screens</td>
+<td><code>repro/data/</code> (<code>elevation_sample.json</code> 5444 rec, <code>taxa_subset.csv</code> 675 rec)</td>
+<td>2</td>
+<td>json + csv</td>
+<td>frozen subsets for Module 26 (elevation discriminator; taxa counts), SEED = 19</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>57</strong></td>
+<td></td>
+<td><strong>zero duplicate content</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-script-data-dependency-map-repro">2. Script → data dependency map (<code>repro/</code>)</h2>
+<p>Only <strong>two</strong> cascade scripts read a data file; the rest (incl. <strong>all five new ones</strong>) are self-contained on <code>LOCK</code> constants. Data-reading scripts must be run <strong>from inside <code>repro/</code></strong> (they use a relative <code>data/…</code> path — original behaviour, unchanged).</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Reads</th>
+<th>Gate (2×SHA-256)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>taxa_composition.py</code></td>
+<td><code>data/taxa_subset.csv</code></td>
+<td><code>39cd3b8e…</code></td>
+</tr>
+<tr>
+<td><code>elevation_test.py</code></td>
+<td><code>data/elevation_sample.json</code></td>
+<td><code>cc9db07e…</code></td>
+</tr>
+<tr>
+<td><code>gap_window.py</code> · <code>contamination_arithmetic.py</code> · <code>chain_energy_ledger.py</code> · <code>c1_quant_screen.py</code></td>
+<td>— (LOCK constants)</td>
+<td><code>8235bff6…</code> · <code>faabe48d…</code> · (n/a) · (n/a)</td>
+</tr>
+<tr>
+<td><strong><code>oil_cracking_clock.py</code></strong> (M27)</td>
+<td>—</td>
+<td><code>a2bcfc0d…</code></td>
+</tr>
+<tr>
+<td><strong><code>source_rock_organic_budget.py</code></strong> (M28)</td>
+<td>—</td>
+<td><code>d6221d6e…</code></td>
+</tr>
+<tr>
+<td><strong><code>chain_consistency_audit.py</code></strong> (M29)</td>
+<td>—</td>
+<td><code>31e35962…</code></td>
+</tr>
+<tr>
+<td><strong><code>seam_resolution_check.py</code></strong> (M30)</td>
+<td>—</td>
+<td><code>d317fadb…</code></td>
+</tr>
+<tr>
+<td><strong><code>petroleum_location_screen.py</code></strong> (M31)</td>
+<td>—</td>
+<td><code>715093d2…</code></td>
+</tr>
+</tbody>
+</table>
+<p>DNA scripts read their own frozen records under <code>dna_emergence/*/repro/data/</code> (re-fetchable via <code>fetch_ncbi.py</code>).</p>
+<hr>
+<h2 id="3-deduplication-performed-this-session-transparency">3. Deduplication performed this session (transparency)</h2>
+<p>Three <code>.npz</code> files appeared <strong>twice</strong> — once under <code>inherited_engine/engine/</code> and once under <code>inherited_engine/results/</code> — with byte-identical content:</p>
+<ul>
+<li><code>omega_nogo_results.npz</code>, <code>jamming_bistability_results.npz</code>, <code>c16_energy_ledger_results.npz</code></li>
+</ul>
+<p>The <strong>canonical, tracked</strong> copies live in <code>results/</code> (listed in <code>inherited_engine/SHA256SUMS.txt</code>; read by <code>validate_all.py</code>). The <code>engine/</code> copies were <strong>untracked stray byproducts</strong> (the engine scripts write a result next to themselves when run). <strong>The <code>engine/</code> copies were removed.</strong> Confirmed safe:</p>
+<ul>
+<li><code>inherited_engine/SHA256SUMS.txt</code> still validates <strong>60/60</strong> (it never listed the removed files).</li>
+<li><code>validate_all.py</code> still <strong>39/39 PASS</strong> (it reads <code>results/</code>).</li>
+<li>They regenerate automatically if you re-run the engine scripts — nothing is lost.</li>
+</ul>
+<p>This is the <strong>only</strong> data duplication that existed; after removal the package is duplication-free.</p>
+<hr>
+<h2 id="4-provenance-of-this-sessions-new-modules-2731-no-data-files-sources-cited-in-code">4. Provenance of this session's new modules (27–31) — no data files, sources cited in-code</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Script</th>
+<th>Where its numbers come from (in the <code>LOCK</code> block)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27 — oil-cracking clock</td>
+<td><code>oil_cracking_clock.py</code></td>
+<td>published oil→gas cracking kinetics (activation energy ≈ 230 kJ/mol, pre-exponential ≈ 1×10¹³ /s); Arrhenius only</td>
+</tr>
+<tr>
+<td>28 — source-rock budget</td>
+<td><code>source_rock_organic_budget.py</code></td>
+<td>textbook TOC mass-balance (productivity, burial efficiency, dilution); no external file</td>
+</tr>
+<tr>
+<td>29 — chain consistency audit</td>
+<td><code>chain_consistency_audit.py</code></td>
+<td>the cascade's own dependency graph (encoded from Modules 12–28); pure logic</td>
+</tr>
+<tr>
+<td>30 — seam resolution</td>
+<td><code>seam_resolution_check.py</code></td>
+<td>the chain's own sealed constraints (gap floor M25, ordering, loaded-spring energy M16)</td>
+</tr>
+<tr>
+<td>31 — petroleum location</td>
+<td><code>petroleum_location_screen.py</code></td>
+<td><strong>Mann, Gahagan &amp; Gordon 2003</strong> (AAPG Memoir 78; 877 giant fields by tectonic setting) + <strong>Sorkhabi 2009</strong> (GeoExpro; six source intervals &gt; 90 % of oil). For deeper per-basin work: <strong>USGS World Petroleum Assessment / NAGA</strong> (downloadable, ~170+ basins) — noted, not bundled.</td>
+</tr>
+</tbody>
+</table>
+<p>No new raw data was downloaded or fabricated; the curated, published <em>results</em> are cited directly.</p>
+<hr>
+<h2 id="4s3-provenance-of-session-3s-new-module-32-archaeology-two-frozen-csvs-one-raw-primary-file">4·S3. Provenance of Session 3's new module (32 — archaeology) — two frozen CSVs + one raw primary file</h2>
+<p>Unlike Modules 27–31, Module 32 ships <strong>two small frozen CSVs</strong> (present-tense, held-out-date columns kept <em>only</em> as D5/RECORD per the chronology firewall, never read as load-bearing):</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Rows</th>
+<th>What each column is, and where it comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repro/data/horizon_sites.csv</code></td>
+<td>12</td>
+<td>Site name; present-tense material-culture/settlement state (planned→squatter, monumental→quiet, occupied-continuous, flood-silt-capped) read from published site reports; a <code>continuity_flag</code> (1 = continuity counterexample); and a held-out <code>record_date_bce</code> column (D5, firewalled). 6 discontinuity sites + <strong>6 continuity counterexamples</strong> (Tell Edfu, Dendera, Luoyang-Basin Longshan, British EBA, etc.).</td>
+</tr>
+<tr>
+<td><code>repro/data/pyramid_scale.csv</code></td>
+<td>16</td>
+<td>Pyramid; present-tense <strong>design height (m)</strong> and <strong>core-quality class</strong> (dressed-solid / rubble-core) as measured on the standing structures; dynasty <strong>ordinal</strong> (sequence only, not a date); held-out <code>record_date_bce</code> (D5, firewalled).</td>
+</tr>
+<tr>
+<td><code>repro/data/gol_e_zard2019_noaa_RAW.txt</code></td>
+<td>259 data rows</td>
+<td><strong>Untouched primary file</strong>, downloaded verbatim from NOAA/WDS Paleoclimatology (Gol-e-Zard Cave stalagmite GZ14-1; Carolin et al. 2019, <em>PNAS</em> doi:10.1073/pnas.1808103115; data doi:10.25921/x5zv-ar39). Columns: depth_mm, mu_yrBP (age — <strong>firewalled, RECORD-only</strong>), age bounds, δ¹⁸O, δ¹³C, Mg/Ca, Sr/Ca, Ba/Ca, S/Ca. Added for the part-G "drought" audit; its SHA-256 (<code>86667741…</code>) is pinned <strong>inside</strong> the audit gate, and <code>four_two_ka_proxy_audit.py</code> parses these bytes directly (no transcription).</td>
+</tr>
+</tbody>
+</table>
+<p>Sources cited in-code (<code>LOCK</code> blocks): Egyptian pyramid dimensions — standard surveyed heights (Lehner, <em>The Complete Pyramids</em>); 4.2 ka / Liangzhu hydrology — <strong>Zhang et al. 2021</strong> (<em>Science Advances</em>, stalagmite extreme-rainfall window) and the Liangzhu waterlain silt/clay cap literature; First-Intermediate-Period skeletal continuity — <strong>Duhig</strong> craniometric/palaeopathology series. The CSVs hold the <em>present-tense observables</em> (heights, superposition states, counts); every absolute year stays in the firewalled <code>record_date_bce</code> column and is <strong>never</strong> an input to any gate.</p>
+<p>No new raw data was downloaded or fabricated; published measurements and curated <em>results</em> are transcribed, with the date column quarantined by the firewall.</p>
+<hr>
+<h2 id="4s4-provenance-petroleum-strand">4·S4. Provenance of the glaciation-driven petroleum strand (Modules 33–44) — six frozen CSVs</h2>
+<p>Present-tense, curated datasets for the petroleum strand. Each is <strong>frozen</strong>; its raw SHA-256 is pinned inside the consuming script's LOCK block, so a single changed byte fails the module gate. Values are author-curated from the literature and stated present-tense (no ages load-bearing).</p>
+<table>
+<thead><tr><th>File</th><th>Used by / contents</th><th>raw SHA-256 (16+8)</th></tr></thead>
+<tbody>
+<tr><td><code>repro/data/deglacial_pattern_sites.csv</code></td><td>M34 — nested recessional/readvance moraine sites (both hemispheres)</td><td><code>d3c8b1d3e9afe670…bdc5bfda</code></td></tr>
+<tr><td><code>repro/data/gia_geometry_sites.csv</code></td><td>M35 — forebulge / marine-limit GIA geometry sites</td><td><code>fdb24572ccb7651d…88648bab</code></td></tr>
+<tr><td><code>repro/data/source_rock_facies.csv</code></td><td>M37 — giant-field source-rock facies census</td><td><code>b393f34c0b25ea1a…9dbf6da0</code></td></tr>
+<tr><td><code>repro/data/sa_margin_segments.csv</code></td><td>M39 — South Atlantic conjugate-margin segments (β-extension, salt thickness)</td><td><code>c36ae5f4b9eb9495…565a284e</code></td></tr>
+<tr><td><code>repro/data/zonal_precip.csv</code></td><td>M40 — present zonal-mean precipitation field</td><td><code>e23dda67081253f6…8da540a5</code></td></tr>
+<tr><td><code>repro/data/oil_quality_provinces.csv</code></td><td>M42 — province oil-quality + reservoir/recharge/sulfur setting</td><td><code>df64db78a4d30222…001ddf4d</code></td></tr>
+</tbody>
+</table>
+<p class="frozen-note">The strand also re-verifies the Continental-Genesis screens in <code>cg_inheritance/</code> (CG-30/26/36) for Module 45; those carry no CSV inputs (all constants are in-code with cited present-day values).</p>
+<h2 id="5-verification-checklist-run-these-all-must-be-green">5. Verification checklist (run these — all must be green)</h2>
+<pre><code># from the package root:
+grep -v '^#' MANIFEST.sha256 | sha256sum -c        # -&gt; 185 OK, 0 FAILED
+( cd dna_emergence/animal &amp;&amp; grep -v '^#' MANIFEST.sha256 | sha256sum -c )   # 37 OK
+( cd dna_emergence/plant  &amp;&amp; grep -v '^#' MANIFEST.sha256 | sha256sum -c )   # 39 OK
+( cd inherited_engine &amp;&amp; grep -v '^#' SHA256SUMS.txt | sha256sum -c )        # 60 OK
+( cd inherited_engine &amp;&amp; python3 validate_all.py )                          # 39/39 PASS
+
+# the new gates (Modules 27-31):
+for s in oil_cracking_clock source_rock_organic_budget chain_consistency_audit \
+         seam_resolution_check petroleum_location_screen; do python3 repro/$s.py | tail -1; done   # 5× REPRO GATE: PASS
+
+# the data-reading gates (run from inside repro/):
+( cd repro &amp;&amp; python3 taxa_composition.py | tail -1 &amp;&amp; python3 elevation_test.py | tail -1 )       # 2× PASS
+
+# Session 3 archaeology gates (Module 32 — run from inside repro/):
+( cd repro &amp;&amp; python3 horizon_census.py | tail -1 &amp;&amp; python3 giza_singularity_screen.py | tail -1 \
+            &amp;&amp; python3 synchrony_window_check.py | tail -1 )                                        # 3× REPRO GATE: PASS
+
+# Session 3 part-G raw-proxy &quot;drought&quot; audit (reads untouched NOAA file; run from inside repro/):
+( cd repro &amp;&amp; python3 four_two_ka_proxy_audit.py | tail -1 )                                        # REPRO GATE: PASS
+
+# duplication audit (must print nothing):
+find . -type f \( -name '*.gb' -o -name '*.json' -o -name '*.csv' -o -name '*.rda' -o -name '*.npz' \) \
+  -exec sha256sum {} \; | awk '{print $1}' | sort | uniq -d
+</code></pre>
+<hr>
+<h2 id="6-attestation">6. Attestation</h2>
+<ul>
+<li><strong>No omission:</strong> all data files are tracked in the regenerated top-level manifest (<code>sha256sum -c</code> clean). Session 2 added 10 files (Modules 27–31 + their scripts) under <code>modules/</code> and <code>repro/</code>; <strong>Session 3 adds 8</strong> — Module 32's markdown (<code>modules/32_archaeology_recent_horizon.md</code>), its <strong>four</strong> SEED=19 gates (<code>horizon_census.py</code>, <code>giza_singularity_screen.py</code>, <code>synchrony_window_check.py</code>, <code>four_two_ka_proxy_audit.py</code>), its two frozen CSVs (<code>repro/data/horizon_sites.csv</code>, <code>repro/data/pyramid_scale.csv</code>), and one <strong>untouched primary file</strong> (<code>repro/data/gol_e_zard2019_noaa_RAW.txt</code>, NOAA/WDS). The master-seed ledger (§4 sub-hypotheses SH-45…<strong>SH-52</strong>), session log (§5), reproducibility table (§6) and roadmap (§7) are updated <strong>append-only</strong>.</li>
+<li><strong>No duplication:</strong> content-hash audit returns zero duplicates after the §3 cleanup; the two new CSVs are unique.</li>
+<li><strong>Append-only / mark-never-erase:</strong> no prior file was edited destructively; the manifest was <em>regenerated</em> (not hand-patched) over the current tree, and the only historical deletions remain the three untracked stray byproduct duplicates (§3), which regenerate on demand.</li>
+<li><strong>Firewall intact (Module 32):</strong> both new CSVs <strong>and</strong> the raw NOAA file keep every absolute year in a quarantined age column (<code>record_date_bce</code> / <code>mu_yrBP</code>, D5/RECORD) that is <strong>never</strong> an input to any gate; the part-G audit orders by <strong>depth</strong> and reads the untouched NOAA bytes directly. Synchrony and cause are graded <strong>[O] in both directions</strong> (including "drought caused the regression" — SH-52 R3 [O], with the archaeology→climate circularity recorded from the climate literature's own admissions); present-tense continuity counterexamples (Middle/Upper Egypt expansion, FIP skeletal continuity, British EBA vigor, Luoyang-Basin Longshan) and the raw Mg/Ca excursion (R0 [V]) are recorded at full strength — the archaeological analogue of the Module 26 bison-continuity result.</li>
+</ul>
+<p><em>Falsification = discovery.</em></p>
+</main>
+<footer class="site">
+<div>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> ·
+<a href="https://jamming-physics.org/" rel="noopener">jamming-physics.org</a></div>
+<div>Cite this volume (concept DOI): <a href="https://doi.org/10.5281/zenodo.20827806" rel="noopener">10.5281/zenodo.20827806</a></div>
+<div>Inherits: <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">physics 10.5281/zenodo.17932566</a> ·
+<a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">geodynamics 10.5281/zenodo.17978934</a></div>
+<div class="motto">Falsification = discovery — a refutation is a finding.</div>
+</footer>
+</body>
+</html>

@@ -6,6 +6,7 @@ import json, re, os, glob, hashlib, csv, sys
 
 DOCS="docs"; REG="registry"
 ORDER=['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology',
+ 'continental-genesis-cascade',
  'wave-computer','dna','inheritance','neuro','mind','sensory_organ','eye','ear','nose',
  'cardioresp','circulatory','digestive','musculoskeletal','immune_hematologic','integumentary',
  'reproductive_endocrine','homeostasis_thermometabolic','homeostasis_hemodynamic',
@@ -46,15 +47,15 @@ surf['llms']=set(re.findall(r'jamming-physics\.org/([a-z0-9_-]+)/',llms)) & EXPE
 for name,s in surf.items():
     missing=EXPECT-s; extra=s-EXPECT
     if missing or extra: bad(f"slug-set [{name}]", f"missing={sorted(missing)} extra={sorted(extra)}")
-    else: ok(f"slug-set [{name}]","30/30")
+    else: ok(f"slug-set [{name}]",f"{len(EXPECT)}/{len(EXPECT)}")
 
 # ---- B. hash integrity: recompute vs manifest ----
 mism=[]; rmism=[]
 for vid in ORDER:
     if dirhash(f"{DOCS}/{vid}")!=MV[vid].get('content_sha256'): mism.append(vid)
     if dirhash(f"repro/{vid}")!=MV[vid].get('repro_sha256'): rmism.append(vid)
-ok("content_sha256 integrity","all 30 match") if not mism else bad("content_sha256 integrity",f"drift: {mism}")
-ok("repro_sha256 integrity","all 30 match") if not rmism else bad("repro_sha256 integrity",f"drift: {rmism}")
+ok("content_sha256 integrity",f"all {len(ORDER)} match") if not mism else bad("content_sha256 integrity",f"drift: {mism}")
+ok("repro_sha256 integrity",f"all {len(ORDER)} match") if not rmism else bad("repro_sha256 integrity",f"drift: {rmism}")
 
 # manifest self-hash recompute
 m2=json.loads(json.dumps(man)); m2['lineage']['this_sha256']=""
@@ -110,7 +111,7 @@ ok("sitemap bijection",f"{len(idxfiles)} pages") if not miss_in_smap and not ext
 doi_man=set(v['doi'] for v in man['volumes'])
 doi_page=set(re.findall(r'doi\.org/(10\.5281/zenodo\.\d+)',page))
 doi_llms=set(re.findall(r'doi:(10\.5281/zenodo\.\d+)',llms))
-ok("DOIs: 30 in manifest, well-formed") if len(doi_man)==30 and all(re.match(r'10\.5281/zenodo\.\d+$',d) for d in doi_man) else bad("DOIs manifest",f"{len(doi_man)} unique")
+ok(f"DOIs: {len(ORDER)} in manifest, well-formed") if len(doi_man)==len(ORDER) and all(re.match(r'10\.5281/zenodo\.\d+$',d) for d in doi_man) else bad("DOIs manifest",f"{len(doi_man)} unique")
 ok("DOI set: homepage⊇manifest") if doi_man<=doi_page else bad("DOI homepage",f"missing {sorted(doi_man-doi_page)[:3]}")
 ok("DOI set: llms⊇manifest") if doi_man<=doi_llms else warn("DOI llms",f"missing {sorted(doi_man-doi_llms)[:3]}")
 

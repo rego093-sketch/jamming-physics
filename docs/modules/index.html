@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Common Modules — the generative core | Jamming Physics</title>
+<meta name="description" content="The load-bearing common modules of the VP framework: the primary attack surface and the generators. With the dictionary plus these, most of the framework is forced.">
+<link rel="canonical" href="https://jamming-physics.org/modules/">
+<style>
+:root{--ink:#1c1d21;--mut:#5b5e66;--bg:#fff;--line:#e6e6ea;--ac:#0a5a8a;--amber:#8a5a00;--amberbg:#fff6e0}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:17px/1.65 Georgia,'Times New Roman',serif}
+main{max-width:820px;margin:0 auto;padding:0 18px 64px}
+header{border-bottom:1px solid var(--line)}
+footer{border-top:1px solid var(--line);max-width:820px;margin:40px auto 0;padding:14px 18px;color:var(--mut);font-size:.85em}
+.crumb{max-width:820px;margin:0 auto;padding:10px 18px;font:14px/1.4 system-ui,sans-serif;color:var(--mut)}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.7em;margin:.6em 0 .2em}
+.thesis{font-size:1.05em;color:#2a2c33;border-left:3px solid var(--ac);padding:.4em 0 .4em .9em;margin:1.1em 0}
+.mod{border:1px solid var(--line);border-radius:10px;padding:1em 1.1em;margin:1.3em 0;background:#fff}
+.mod h2{font-size:1.22em;margin:.1em 0 .6em;border:0}
+.num{display:inline-block;min-width:1.5em;height:1.5em;line-height:1.5em;text-align:center;border-radius:50%;background:var(--ac);color:#fff;font:700 .8em/1.5em system-ui,sans-serif;vertical-align:middle;margin-right:.3em}
+.role{font:600 .62em/1 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.04em;border-radius:10px;padding:.3em .55em;vertical-align:middle;margin-left:.3em}
+.role.bedrock{background:#eef1f4;color:var(--mut)}.role.gen{background:#e7f0f7;color:var(--ac)}
+.named{font:600 .62em/1 system-ui,sans-serif;color:var(--amber);background:var(--amberbg);border-radius:10px;padding:.3em .55em;vertical-align:middle}
+.mod p{margin:.55em 0}
+.mod .forces b,.mod .reach b,.mod .attack b,.meta-row b{color:var(--ink)}
+.attack{color:#7a2f2f;background:#fbf4f4;border-radius:8px;padding:.5em .7em}
+.selfc{color:#1d5a36;background:#f1f8f3;border-radius:8px;padding:.5em .7em}
+.inh{display:inline-block;color:var(--mut);font:.85em system-ui,sans-serif}
+.meta-row{font-size:.95em;color:var(--mut)}
+.grade{font-family:system-ui,sans-serif;font-size:.82em;white-space:nowrap}
+.g-f{color:#0a5a8a}.g-v{color:#1d6b2e}.g-l{color:#6a4b00}.g-o{color:#9c1f1f}.g-x{color:var(--mut)}
+.foot-links{margin:1.4em 0;font:14px/1.7 system-ui,sans-serif}
+@media(max-width:480px){body{font-size:16px}}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "DefinedTermSet", "@id": "https://jamming-physics.org/modules/", "name": "Common Modules — the generative core", "description": "These are the load-bearing common modules of the VP framework. They are the primary attack surface (the claims a critic must break) AND the generators: with the Concept Dictionary plus these modules, roughly 80% of the framework is forced — a reader could reconstruct most of it. Two are named by the author as the irreducible core: Quantum light emergence and DNA interpretation. Each module is a bundle of dictionary terms whose canonical derivation lives in one place; downstream volumes inherit it and re-derive nothing.", "hasDefinedTerm": [{"@type": "DefinedTerm", "name": "The R19 switch on a jammed substrate", "termCode": "kernel", "description": "Every volume is this ONE cubic, specialized. A bistable double-well ṡ = g·s − s³ + h (R19) sitting on a jammed elastic solid where c² = B/ρ. The double-well arises from the stiffness shell (a frequency-selective rigid shell), not mere hardness — which is why it is a switch.", "inDefinedTermSet": "https://jamming-physics.org/modules/"}, {"@type": "DefinedTerm", "name": "Quantum light emergence", "termCode": "light_emergence", "description": "Light is the lattice's single surviving longitudinal elastic wave (c² = B/ρ, shear modulus → 0); a single photon is one R19 flip; the event quantum fixes the unit of time; and the quantum size D = 2λ_C,e ≈ 4.852620 pm is the one internal length, fixed by the electron mass. Colour is then the propagation angle χ(λ) of that wave — light rides an integer dent chain, sinχ = λ/(mD), m = ⌈λ/D⌉.", "inDefinedTermSet": "https://jamming-physics.org/modules/"}, {"@type": "DefinedTerm", "name": "DNA interpretation (γ LEVEL + A4 SHAPE)", "termCode": "dna_interpretation", "description": "A locus is read in one deterministic pass. Measured γ = −mean NN stacking ΔG (SantaLucia, corr(γ,GC)=0.998) sets the R19 threshold: spinodal 2(γ/3)^1.5, barrier γ²/4, dwell γ^1.5. A4 places the SHAPE (shell, anchor, loops, helical phase). The emergence engine then forces identity, developmental order (argsort γ) and relative size — from measurement, never a fit.", "inDefinedTermSet": "https://jamming-physics.org/modules/"}, {"@type": "DefinedTerm", "name": "Rotor inflow & emission (three rotations)", "termCode": "rotor_inflow", "description": "A co-rotating PAIR cannot self-propel (a No-Go theorem), so the irreducible interaction of a rotating arrangement is the three-body triangle; co-rotation then builds large-scale rotation with inflow (suction) and emission. The vacuum medium flows into matter at rate Q ∝ mass.", "inDefinedTermSet": "https://jamming-physics.org/modules/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "Common Modules"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › Common Modules</nav></header>
+<main>
+<h1>Common Modules — the generative core</h1>
+<p class="thesis">These are the load-bearing common modules of the VP framework. They are the primary attack surface (the claims a critic must break) AND the generators: with the Concept Dictionary plus these modules, roughly 80% of the framework is forced — a reader could reconstruct most of it. Two are named by the author as the irreducible core: Quantum light emergence and DNA interpretation. Each module is a bundle of dictionary terms whose canonical derivation lives in one place; downstream volumes inherit it and re-derive nothing.</p>
+<p class="foot-links">See also: <a href="/concepts/">Concept Dictionary</a> (the terms these modules are built from) · <a href="/AGENTS.md">AGENTS.md</a> (full reading guide).</p>
+<section class="mod" id="kernel">
+  <h2><span class="num">1</span> The R19 switch on a jammed substrate <span class="role bedrock">bedrock</span></h2>
+  <p class="forces"><b>Forces.</b> Every volume is this ONE cubic, specialized. A bistable double-well ṡ = g·s − s³ + h (R19) sitting on a jammed elastic solid where c² = B/ρ. The double-well arises from the stiffness shell (a frequency-selective rigid shell), not mere hardness — which is why it is a switch. <b class="grade g-f">[F] forced</b></p>
+  <p class="reach"><b>Reach.</b> All 30 volumes inherit this object: 23/30 carry R19 explicitly, 27/30 emerge from it. It is the shared bedrock the other three modules specialize. <span class="inh">inherited by 31 / 31 (bedrock)</span></p>
+  <p class="attack"><b>Attack surface.</b> Is reality really one cubic on a jammed solid? Break the substrate (c² = B/ρ) or the bistable normal form and the entire program falls at once.</p>
+  <p class="meta-row"><b>Built from:</b> <a href="/concepts/#jammed_substrate">φ ≈ 0.7405</a> · <a href="/concepts/#c2_brho">c² = B/ρ</a> · <a href="/concepts/#r19_switch">ṡ = g·s − s³ + h</a> · <a href="/concepts/#stiffness_shell">rigid shell — blocks high-frequency deformation</a></p>
+  <p class="meta-row"><b>Canonical derivation:</b> <a href="/physics/03-axioms-primitives-volume-particle-lattice/">physics §3</a> · <a href="/chemistry/01-electromagnetism-jammed-lattice-light/">chemistry §1</a></p>
+</section>
+<section class="mod" id="light_emergence">
+  <h2><span class="num">2</span> Quantum light emergence <span class="role gen">generator</span> <span class="named">★ author-named core</span></h2>
+  <p class="forces"><b>Forces.</b> Light is the lattice&#x27;s single surviving longitudinal elastic wave (c² = B/ρ, shear modulus → 0); a single photon is one R19 flip; the event quantum fixes the unit of time; and the quantum size D = 2λ_C,e ≈ 4.852620 pm is the one internal length, fixed by the electron mass. Colour is then the propagation angle χ(λ) of that wave — light rides an integer dent chain, sinχ = λ/(mD), m = ⌈λ/D⌉. <b class="grade g-f">[F] forced</b></p>
+  <p class="reach"><b>Reach.</b> Forces the physics constants with NO fit: mₚ/mₑ = 6π⁵ (−19 ppm), the per-nucleon rate ν_p = 3π⁴ (with the electron rate νₑ = 1), the EM angle law sinχ = λ/(mD) unifying near- and far-field, and electromagnetism on the same substrate. (α_em is the one measured, open input.) <span class="inh">inherited by physics, chemistry, cosmology, eye, neuro (EM)</span></p>
+  <p class="selfc"><b>Self-completeness.</b> Closed and non-circular. D is fixed INTERNALLY by the electron mass — it never reads a wavelength. The justification is the 633/532 closure: TWO independent measured laser lines, HeNe red 632.99 nm (m = 130443) and green 532 nm (m = 109632), both map to integer dents against that SAME D, and their ratio closes ((λ/D)₆₃₃/(λ/D)₅₃₂ = 632.99/532). The single anchor (633) alone could be dismissed as a fit; the second line (532) closing against the same invariant is what proves D was not tuned. The committed angles χ(633)/χ(532) are an armed falsifier — a wrong D breaks the closure.</p>
+  <p class="attack"><b>Attack surface.</b> The most exposed quantitative claim — and the most checkable. If c² = B/ρ and the n-fold rate law ν_n = nπ^(2(n−1)) are wrong, the constants do not follow. mₚ/mₑ = 6π⁵ to 19 ppm is the headline target a critic will test first.</p>
+  <p class="meta-row"><b>Built from:</b> <a href="/concepts/#c2_brho">c² = B/ρ</a> · <a href="/concepts/#event_quantum">minimal rectified unit; rate ν fixes the time unit</a> · <a href="/concepts/#D_quantum">D = 2λ_C,e = 4.852620 pm</a> · <a href="/concepts/#colour_closure">sinχ = λ/(mD),  m = ⌈λ/D⌉</a> · <a href="/concepts/#angle_law">sinχ = λ/(mD)</a> · <a href="/concepts/#lambda_anchor">λ_anchor = 632.99 nm</a> · <a href="/concepts/#nu_p">ν_p = 3π⁴</a> · <a href="/concepts/#mp_me">mₚ/mₑ = 6π⁵</a> · <a href="/concepts/#electron_second">νₑ = 1 ;  Tₑ ≈ 1 s</a> · <a href="/concepts/#r19_switch">ṡ = g·s − s³ + h</a></p>
+  <p class="meta-row"><b>Canonical derivation:</b> <a href="/physics/10-implementing-speed-light-clock-free/">physics §10</a> · <a href="/physics/09-event-quantum-definition-canonical-event/">physics §9</a> · <a href="/eye/e0-carrier/">eye E0 (colour = angle)</a> · <a href="/eye/e5-frequency-ladder/">eye E5 (carrier → neural)</a></p>
+</section>
+<section class="mod" id="dna_interpretation">
+  <h2><span class="num">3</span> DNA interpretation (γ LEVEL + A4 SHAPE) <span class="role gen">generator</span> <span class="named">★ author-named core</span></h2>
+  <p class="forces"><b>Forces.</b> A locus is read in one deterministic pass. Measured γ = −mean NN stacking ΔG (SantaLucia, corr(γ,GC)=0.998) sets the R19 threshold: spinodal 2(γ/3)^1.5, barrier γ²/4, dwell γ^1.5. A4 places the SHAPE (shell, anchor, loops, helical phase). The emergence engine then forces identity, developmental order (argsort γ) and relative size — from measurement, never a fit. <b class="grade g-v">[V] verified</b></p>
+  <p class="reach"><b>Reach.</b> Forces all of biology. Every neuron, sense, organ, clock and disease inherits node identity and order from this single reading; the DNA atlas is the single source of truth and downstream volumes re-emerge nothing. <span class="inh">inherited by 24/31 carry γ; nearly all biology inherits the atlas</span></p>
+  <p class="attack"><b>Attack surface.</b> The no-tuning claim lives or dies here. If measured γ does NOT force the switch threshold — if a fit is hiding anywhere — biology collapses to curve-fitting. Every γ is re-derived byte-identically from NCBI GRCh38, so the input is auditable.</p>
+  <p class="meta-row"><b>Built from:</b> <a href="/concepts/#gamma">γ = −mean NN stacking ΔG₃₇</a> · <a href="/concepts/#A4">A4 = (shell, anchor+strength, loops, helical phase)</a> · <a href="/concepts/#two_layer_reading">γ = LEVEL  ⊥  A4 = SHAPE</a> · <a href="/concepts/#spinodal">h* = 2(γ/3)^1.5</a> · <a href="/concepts/#barrier">barrier = γ²/4</a> · <a href="/concepts/#dwell">dwell(γ) ≈ γ^1.5</a> · <a href="/concepts/#emergence_engine">STATE · spinodal(γ) · dwell∝γ^1.5</a> · <a href="/concepts/#node_atlas">atlas = single source of truth</a> · <a href="/concepts/#dev_order">order = argsort(γ)</a> · <a href="/concepts/#five_channels">material · set · state · dwell · environment</a> · <a href="/concepts/#gamma_exemplars">γ ∈ ≈1.264–1.494, all R19-bistable</a></p>
+  <p class="meta-row"><b>Canonical derivation:</b> <a href="/dna/how-to-read-a-locus/">dna §I</a> · <a href="/dna/02-material-threshold-scale/">dna §2</a> · <a href="/dna/13-unified-deterministic-interpreter/">dna §13</a></p>
+</section>
+<section class="mod" id="rotor_inflow">
+  <h2><span class="num">4</span> Rotor inflow &amp; emission (three rotations) <span class="role gen">generator</span></h2>
+  <p class="forces"><b>Forces.</b> A co-rotating PAIR cannot self-propel (a No-Go theorem), so the irreducible interaction of a rotating arrangement is the three-body triangle; co-rotation then builds large-scale rotation with inflow (suction) and emission. The vacuum medium flows into matter at rate Q ∝ mass. <b class="grade g-f">[F] forced</b></p>
+  <p class="reach"><b>Reach.</b> Forces continuum flow on the jammed medium, plate break-up (geodynamics), gravity as inflow, and the galactic acceleration scale a₀ = cH₀/2π — the framework&#x27;s one unique cosmological prediction. <span class="inh">inherited by fluid-dynamics, geodynamics, geochronology, cosmology, continental-genesis-cascade</span></p>
+  <p class="attack"><b>Attack surface.</b> If three rotations do NOT necessarily produce inflow and emission — if the No-Go on a co-rotating pair fails — then gravity-as-inflow and the a₀ prediction do not follow.</p>
+  <p class="meta-row"><b>Built from:</b> <a href="/concepts/#inflow">Q ∝ mass</a> · <a href="/concepts/#annihilation">quanta removed from the medium; ν_p per nucleon</a> · <a href="/concepts/#event_quantum">minimal rectified unit; rate ν fixes the time unit</a> · <a href="/concepts/#a0">a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m s⁻²</a> · <a href="/concepts/#QM_inflow">Q/M = 1.7522×10²⁹ quanta s⁻¹ kg⁻¹</a></p>
+  <p class="meta-row"><b>Canonical derivation:</b> <a href="/fluid-dynamics/04-axiomatic-core-rotation-forces-three/">fluid §4</a> · <a href="/cosmology/01-single-input-inflow-rate/">cosmology §1</a> · <a href="/cosmology/06-galactic-rotation-derivation-a0-ch0/">cosmology §6</a></p>
+</section>
+<footer>Generated from <code>registry/modules.json</code> on 2026-06-24 ·
+4 modules · CC BY 4.0 · Young Jae Lee</footer>
+</main>
+</body>
+</html>
