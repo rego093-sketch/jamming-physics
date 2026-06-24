@@ -20,7 +20,8 @@ TAGS = {
  'chemistry':['single anchor','φ_RCP=0.7405'],
  'geodynamics':['jamming↔unjamming','cusp'],
  'geochronology':['incorporation limit'],
- 'continental-genesis-cascade':['buoyancy gate','percolation attractor','one relaxation ×3'],
+ 'continental-genesis':['buoyancy gate','percolation-bounded ~0.4–0.5','freeboard +840 m'],
+ 'recent-sequence-cascade':['8:1 causal closure','deglaciation recency','dual-redox 6/6'],
  'wave-computer':['phase coding','clock-free'],
  'dna':['γ = −Σ stacking ΔG','R19','bridge'],
  'inheritance':['two channels','writable A4','RNA'],
@@ -75,7 +76,7 @@ TIERS = [
   'Disease is the switch driven off its setpoint; therapy is pushing the barrier back along one of three levers. The corrective direction is forced [F]; clinical magnitude is held open [O] behind a strict no-magnitude firewall.'),
 ]
 TIER_VOLS = {
- 1:['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology','continental-genesis-cascade','wave-computer'],
+ 1:['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology','continental-genesis','recent-sequence-cascade','wave-computer'],
  2:['dna'],
  3:['inheritance'],
  4:['neuro','mind'],
@@ -84,6 +85,11 @@ TIER_VOLS = {
  7:['homeostasis_thermometabolic','homeostasis_hemodynamic','homeostasis_ionic','circadian','aging_senescence'],
  8:['analgesic_threshold','disease_wp','disease_kit'],
 }
+
+# Volume counts derived from TIER_VOLS so the homepage can never go stale.
+NV = sum(len(v) for v in TIER_VOLS.values())
+NV_FOUND = len(TIER_VOLS[1])
+NV_BIO = sum(len(TIER_VOLS[t]) for t in (3,4,5,6,7,8))
 
 def esc(s): return html.escape(s, quote=True)
 
@@ -138,7 +144,7 @@ jsonld = {
  "@graph":[
   {"@type":"WebSite","@id":SITE+"#website","url":SITE,
    "name":"Jamming Physics — the VP framework",
-   "description":"The vacuum as a jammed elastic solid: one measured substrate and one bistable switch projected across 30 open-access volumes, from physics to DNA to disease.",
+   "description":f"The vacuum as a jammed elastic solid: one measured substrate and one bistable switch projected across {NV} open-access volumes, from physics to DNA to disease.",
    "inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/",
    "author":{"@id":SITE+"#author"}},
   {"@type":"Person","@id":SITE+"#author","name":"Young Jae Lee",
@@ -146,7 +152,7 @@ jsonld = {
    "identifier":"https://orcid.org/0009-0002-7535-8245",
    "affiliation":"Independent researcher"},
   {"@type":"CollectionPage","@id":SITE+"#collection","url":SITE,
-   "name":"VP framework — 30 volumes","isPartOf":{"@id":SITE+"#website"},
+   "name":f"VP framework — {NV} volumes","isPartOf":{"@id":SITE+"#website"},
    "author":{"@id":SITE+"#author"},"hasPart":haspart()}
  ]
 }
@@ -172,11 +178,11 @@ _C = {k: _man[k]['count'] for k in _man}   # counts for hero facts
 def strength_rows():
     out=[]
     for name,sub,n in STRENGTH:
-        pct=int(round(n/30*100))
+        pct=int(round(n/NV*100))
         out.append(f'''        <li class="srow">
           <div class="slabel"><span class="sname">{esc(name)}</span><span class="ssub">{esc(sub)}</span></div>
           <div class="sbar"><span style="width:{pct}%"></span></div>
-          <div class="scount">{n}<span>/30</span></div>
+          <div class="scount">{n}<span>/{NV}</span></div>
         </li>''')
     return '\n'.join(out)
 
@@ -214,19 +220,19 @@ PAGE = f'''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jamming Physics — one substrate, one switch, 30 volumes from physics to disease</title>
-<meta name="description" content="The VP framework models the vacuum as a jammed elastic solid whose bistable R19 switch is the single kernel behind 30 open-access volumes — physics, DNA, the senses, the organs, homeostasis, and disease — with every number measured, never fitted.">
+<title>Jamming Physics — one substrate, one switch, {NV} volumes from physics to disease</title>
+<meta name="description" content="The VP framework models the vacuum as a jammed elastic solid whose bistable R19 switch is the single kernel behind {NV} open-access volumes — physics, DNA, the senses, the organs, homeostasis, and disease — with every number measured, never fitted.">
 <link rel="canonical" href="{SITE}">
 <meta name="author" content="Young Jae Lee">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jamming Physics">
-<meta property="og:title" content="Jamming Physics — one substrate, one switch, 30 volumes">
-<meta property="og:description" content="One measured substrate and one bistable switch (ṡ = g·s − s³ + h) projected across 30 open-access volumes, from the vacuum to the genome to disease.">
+<meta property="og:title" content="Jamming Physics — one substrate, one switch, {NV} volumes">
+<meta property="og:description" content="One measured substrate and one bistable switch (ṡ = g·s − s³ + h) projected across {NV} open-access volumes, from the vacuum to the genome to disease.">
 <meta property="og:url" content="{SITE}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jamming Physics — one substrate, one switch, 30 volumes">
-<meta name="twitter:description" content="One measured substrate, one bistable switch, projected across 30 open-access volumes from physics to disease.">
+<meta name="twitter:title" content="Jamming Physics — one substrate, one switch, {NV} volumes">
+<meta name="twitter:description" content="One measured substrate, one bistable switch, projected across {NV} open-access volumes from physics to disease.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -381,7 +387,7 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
       <a href="#kernel">The kernel</a>
       <a href="#strength">Connections</a>
       <a href="#map">Architecture</a>
-      <a href="#volumes">30 volumes</a>
+      <a href="#volumes">{NV} volumes</a>
       <a href="#method">Method</a>
       <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a>
     </nav>
@@ -393,13 +399,13 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">A single-substrate physical framework · CC BY 4.0</p>
-    <h1>One substrate. One switch. <em>Thirty volumes</em>, from the vacuum to disease.</h1>
+    <h1>One substrate. One switch. <em>{NV} volumes</em>, from the vacuum to disease.</h1>
     <p class="lead">The VP framework models the vacuum as a jammed elastic solid. Its bistable R19 switch is the single kernel behind every volume — and a material stiffness <span class="mono">γ</span>, measured from DNA and never fitted, carries it from physics into all of biology.</p>
     <div class="stamp"><b>ṡ = g·s − s³ + h</b> <span>the R19 bistable switch</span></div>
     <div class="facts">
-      <div class="fact"><b>30</b><span>open-access volumes</span></div>
-      <div class="fact"><b>{_C.get("R19",0)}/30</b><span>share the R19 switch</span></div>
-      <div class="fact"><b>{_C.get("emergence",0)}/30</b><span>emerge from measured <i class="lc">γ</i></span></div>
+      <div class="fact"><b>{NV}</b><span>open-access volumes</span></div>
+      <div class="fact"><b>{_C.get("R19",0)}/{NV}</b><span>share the R19 switch</span></div>
+      <div class="fact"><b>{_C.get("emergence",0)}/{NV}</b><span>emerge from measured <i class="lc">γ</i></span></div>
       <div class="fact"><b>0</b><span>fitted parameters</span></div>
     </div>
     <p class="meta">Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> · independent researcher · every volume an independent Zenodo DOI · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap</a></p>
@@ -430,9 +436,9 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
 
 <section class="band strength" id="strength">
   <div class="wrap">
-    <p class="eyebrow">Connection strength · measured across all 30 volumes</p>
+    <p class="eyebrow">Connection strength · measured across all {NV} volumes</p>
     <h2>How tightly the volumes are bound</h2>
-    <div class="prose"><p>These are not loose thematic links. A full-text scan of every volume shows the shared primitives appearing almost everywhere — the same switch, the same measured stiffness, the same emergence recipe. The bars below count how many of the 30 volumes carry each primitive.</p></div>
+    <div class="prose"><p>These are not loose thematic links. A full-text scan of every volume shows the shared primitives appearing almost everywhere — the same switch, the same measured stiffness, the same emergence recipe. The bars below count how many of the {NV} volumes carry each primitive.</p></div>
     <ul>
 {strength_rows()}
     </ul>
@@ -443,7 +449,7 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
   <div class="wrap">
     <p class="eyebrow">Architecture</p>
     <h2>Non-biological physics, the DNA bridge, then biology</h2>
-    <div class="prose"><p>The volumes are ordered by derivation, not discipline. Seven non-biological volumes fix the substrate; the DNA volume is the hinge where the switch meets a measured genome; and twenty-two biological volumes emerge beneath it — every organ from its master gene’s measured γ.</p></div>
+    <div class="prose"><p>The volumes are ordered by derivation, not discipline. {NV_FOUND} non-biological volumes fix the substrate; the DNA volume is the hinge where the switch meets a measured genome; and {NV_BIO} biological volumes emerge beneath it — every organ from its master gene’s measured γ.</p></div>
     <figure class="map-figure">
       {{MAP_SVG}}
       <figcaption class="map-cap">Click any tier in the list below to open its volumes. Colour marks the three zones: the physical substrate (blue), the DNA bridge (amber), and the emerged biology (teal).</figcaption>
@@ -454,7 +460,7 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
 <section class="volumes" id="volumes">
   <div class="wrap">
     <p class="eyebrow">The library</p>
-    <h2 class="sect">Thirty volumes, one derivation order</h2>
+    <h2 class="sect">{NV} volumes, one derivation order</h2>
     <p class="sect-sub">Each card carries the volume’s headline result, the shared primitives it uses, its graded-claim ledger where present, and a permanent Zenodo DOI. Non-biological foundation first; biology emerges below the DNA bridge.</p>
 {tiers_html}
   </div>
@@ -489,12 +495,12 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
   <div class="wrap foot-grid">
     <div class="foot-intro">
       <h4>Jamming Physics</h4>
-      <p>The vacuum as a jammed elastic solid: one measured substrate and one bistable switch, projected across thirty open-access volumes from physics to disease.</p>
+      <p>The vacuum as a jammed elastic solid: one measured substrate and one bistable switch, projected across {NV} open-access volumes from physics to disease.</p>
       <p>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · CC BY 4.0</p>
       <p><a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a></p>
     </div>
     <div class="foot-dois">
-      <h4>All 30 volumes · permanent DOIs</h4>
+      <h4>All {NV} volumes · permanent DOIs</h4>
       <ul class="doi-list">
 {doi_index()}
       </ul>

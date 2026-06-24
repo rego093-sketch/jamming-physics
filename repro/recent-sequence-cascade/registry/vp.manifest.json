@@ -1,0 +1,145 @@
+{
+  "schema": "vp.manifest/0.1",
+  "generated_by": "VP-SPEC v1.9 §6-M.4 — regenerated from _decl.json (drift 0). SEED=19.",
+  "volumes": [
+    {
+      "paper_id": "physics",
+      "tier": 1,
+      "role": "foundation",
+      "inherits_volumes": [],
+      "adds": [
+        "kernel"
+      ],
+      "primitives": [
+        "R19",
+        "jammed_c2"
+      ],
+      "doi": "10.5281/zenodo.17932566"
+    },
+    {
+      "paper_id": "geodynamics",
+      "tier": 4,
+      "role": "convergence (jamming+chronometry)",
+      "inherits_volumes": [
+        "physics"
+      ],
+      "adds": [
+        "jamming_geodynamics"
+      ],
+      "primitives": [
+        "R19",
+        "jammed_c2",
+        "maxwell_time",
+        "stick_slip"
+      ],
+      "doi": "10.5281/zenodo.17978934"
+    },
+    {
+      "paper_id": "dna",
+      "tier": 4,
+      "role": "jamming branch",
+      "inherits_volumes": [
+        "physics"
+      ],
+      "adds": [
+        "dna_interpretation"
+      ],
+      "primitives": [
+        "R19",
+        "gamma"
+      ],
+      "doi": "10.5281/zenodo.20471407"
+    },
+    {
+      "paper_id": "recent-sequence-cascade",
+      "tier": 5,
+      "role": "convergence branch (recent-sequence cascade)",
+      "doi": "10.5281/zenodo.20827806",
+      "inherits_volumes": [
+        "physics",
+        "geodynamics",
+        "dna"
+      ],
+      "adds": [
+        "recent_sequence_relaxation=coupled Flood→Glaciation→Atlantic-opening relaxation on a jammed-water S0 release"
+      ],
+      "primitives": [
+        "R19",
+        "gamma",
+        "jammed_c2",
+        "emergence",
+        "maxwell_time",
+        "stick_slip"
+      ],
+      "grades": {
+        "forced": 7,
+        "verified": 17,
+        "leaning": 1,
+        "open": 17
+      },
+      "owns_terms": [
+        "dual_redox",
+        "freshwater_lid_anoxia",
+        "s0_release",
+        "magnitude_ratio_discriminator",
+        "causal_closure_8to1",
+        "deglaciation_recency",
+        "occurrence_cap"
+      ],
+      "uses_terms": [
+        "r19_switch",
+        "c2_brho",
+        "gamma",
+        "maxwell_time",
+        "jamming_engine",
+        "conservation_identity",
+        "gia",
+        "stick_slip",
+        "biodegradation",
+        "source_rock",
+        "double_sha256",
+        "seed19"
+      ],
+      "inherits_modules": [
+        "kernel",
+        "dna_interpretation",
+        "rotor_inflow"
+      ],
+      "doi_inherits": {
+        "physics": "10.5281/zenodo.17932566",
+        "geodynamics": "10.5281/zenodo.17978934",
+        "dna": "10.5281/zenodo.20471407"
+      }
+    }
+  ],
+  "modules_count": 5,
+  "concepts_count": 19,
+  "module_ids": [
+    "kernel",
+    "light_emergence",
+    "dna_interpretation",
+    "rotor_inflow",
+    "recent_sequence_relaxation"
+  ],
+  "concept_ids": [
+    "r19_switch",
+    "c2_brho",
+    "gamma",
+    "maxwell_time",
+    "jamming_engine",
+    "conservation_identity",
+    "gia",
+    "stick_slip",
+    "biodegradation",
+    "source_rock",
+    "double_sha256",
+    "seed19",
+    "dual_redox",
+    "freshwater_lid_anoxia",
+    "s0_release",
+    "magnitude_ratio_discriminator",
+    "causal_closure_8to1",
+    "deglaciation_recency",
+    "occurrence_cap"
+  ]
+}

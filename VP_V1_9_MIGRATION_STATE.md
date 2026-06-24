@@ -1,13 +1,15 @@
 # VP-SPEC v1.9 — Shared-Infrastructure Migration: STATE / HANDOFF
 
-> **Addendum (2026-06-24).** A 31st volume, `continental-genesis-cascade`, was
-> added under v1.9 — a single self-contained whitepaper merging *Continental
-> Genesis* (Part I) and the *Recent-Sequence Cascade* (Part II) into one HTML
-> file, inheriting physics, geodynamics, geochronology, fluid-dynamics and dna,
-> plus the kernel / dna_interpretation / rotor_inflow modules. It carries a
-> gate-valid `_decl.json` (REQUIRED + BODY) and a hand-appended manifest row
-> (the 30 frozen rows left byte-identical). Corpus is now **31/31**. The
-> counts below describe the original 30-volume migration cohort.
+> **Addendum (2026-06-24, revised).** The geophysics material was split into **two
+> independent volumes** — `continental-genesis` (#7) and `recent-sequence-cascade`
+> (#8) — rather than one merged whitepaper. Each is a single self-contained HTML
+> file with its own gate-valid `_decl.json` (REQUIRED + BODY PASS) and a
+> hand-appended manifest row (the 30 frozen rows left byte-identical). Continental
+> Genesis inherits physics, geodynamics and fluid-dynamics (kernel / rotor_inflow);
+> the Recent-Sequence Cascade inherits continental-genesis, physics, geodynamics and
+> dna (kernel / dna_interpretation / rotor_inflow), making the Cascade→Genesis
+> inheritance edge explicit. Corpus is now **32/32**. The counts below describe the
+> original 30-volume migration cohort.
 
 **Status: COMPLETE.** All 30 volumes are v1.9-compliant. The shared-infrastructure
 gate passes both tiers across the whole corpus:

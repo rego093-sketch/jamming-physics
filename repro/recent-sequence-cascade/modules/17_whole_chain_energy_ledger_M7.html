@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML AUTHORING PRINCIPLE (VP-SPEC v1.8): HTML is the single canonical body (C2); each source subheading is rendered in full, no abridgement; numbers/equations/grades are invariant (LOCK); reproducibility scripts, frozen data and inherited bundles are the verification layer and stay as-is (C1); [O] items keep their stated reason (C3); static semantic HTML + JSON-LD for retrieval (C4). Full rule: HTML_AUTHORING_PRINCIPLES.html. Falsification = discovery. -->
+<title>Module 17 — Whole-Chain Energy Ledger (M7 capstone): the cascade closes under one parameter | VP Recent-Sequence Cascade</title>
+<meta name="description" content="Modules 13–14 showed each climate hand-off is individually permitted. This module runs the whole-chain gate: does the entire cascade — relaxation heat → warm ">
+<meta name="author" content="Young Jae Lee">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Module 17 — Whole-Chain Energy Ledger (M7 capstone): the cascade closes under one parameter","isPartOf":{"@type":"CreativeWorkSeries","name":"VP Recent-Sequence Cascade","@id":"https://doi.org/10.5281/zenodo.20827806","sameAs":"https://doi.org/10.5281/zenodo.20827806"},"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},"license":"https://creativecommons.org/licenses/by/4.0/","citation":["https://doi.org/10.5281/zenodo.17932566","https://doi.org/10.5281/zenodo.17978934"],"isAccessibleForFree":true}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"VP Recent-Sequence Cascade"},
+ {"@type":"ListItem","position":2,"name":"Module 17"}]}
+</script>
+</head>
+<body>
+<header class="site"><nav class="crumb"><a href="../index.html">VP Recent-Sequence Cascade</a> › Module 17</nav></header>
+<main>
+<p class="answer">GATE module (the chain capstone). Computational; reproducible. Code: chain_energy_ledger.py (SEED=19; no RNG; no fitted parameter). Standing grade: closure of physical permission under one parameter (Art. 4.3, Art. 5). Occurrence remains <span class="gbadge g-o">[O]</span> (Art. 4.2).</p>
+<aside class="standing">
+<div class="row"><span class="k">Tier:</span>1 · Inherits: Modules 13 (C1), 14 (C2), 16 (single-relaxation theory), Master Scenario (M7 gate: &quot;does the full chain close energetically without a STOP?&quot;).</div>
+<div class="row"><span class="k">Status:</span>GATE module (the chain capstone). Computational; reproducible. Code: chain_energy_ledger.py (SEED=19; no RNG; no fitted parameter).</div>
+<div class="row"><span class="k">Standing grade:</span>closure of physical permission under one parameter (Art. 4.3, Art. 5). Occurrence remains [O] (Art. 4.2).</div>
+<div class="row"><span class="k">Grades:</span><span class="gbadge g-o">[O]</span> &nbsp;<span style="color:var(--muted)">F&nbsp;&gt;&nbsp;V&nbsp;&gt;&nbsp;L&nbsp;&gt;&nbsp;O</span></div>
+<div class="row"><span class="k">Author:</span>Young Jae Lee (<a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a>) &nbsp;·&nbsp; <span class="k">License:</span><a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></div>
+<div class="row"><span class="k">Cite:</span><a href="https://doi.org/10.5281/zenodo.20827806" rel="noopener">concept DOI 10.5281/zenodo.20827806</a></div>
+<div class="row"><span class="k">Inherits:</span><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">physics DOI</a> &nbsp;·&nbsp; <a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">geodynamics DOI</a></div>
+</aside>
+<h1 id="module-17-whole-chain-energy-ledger-m7-capstone-the-cascade-closes-under-one-parameter">Module 17 — Whole-Chain Energy Ledger (M7 capstone): the cascade closes under one parameter</h1>
+<p><strong>Author:</strong> Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0 · https://jamming-physics.org/<br>
+<strong>Tier:</strong> 1 · <strong>Inherits:</strong> Modules 13 (C1), 14 (C2), 16 (single-relaxation theory), Master Scenario (M7 gate: "does the full chain close energetically without a STOP?").<br>
+<strong>Status:</strong> GATE module (the chain capstone). Computational; reproducible. <strong>Code:</strong> <code>chain_energy_ledger.py</code> (SEED=19; no RNG; no fitted parameter).<br>
+<strong>Standing grade:</strong> closure of <em>physical permission</em> under one parameter (Art. 4.3, Art. 5). <strong>Occurrence remains [O]</strong> (Art. 4.2).</p>
+<blockquote>
+<p><strong>What this module does, in one line.</strong> Modules 13–14 showed each climate hand-off is individually permitted. This module runs the <strong>whole-chain</strong> gate: does the entire cascade — relaxation heat → warm ocean → ice → loading → rupture → melt → equilibrium — <strong>close energetically under a single controlling parameter</strong>, with no physically absurd step, using <strong>measured constants only</strong>? It does, and the theory's distinctive build/melt asymmetry (Module 16 P3) falls out quantitatively.</p>
+</blockquote>
+<hr>
+<h2 id="0-firewall-both-directions">0. Firewall (both directions)</h2>
+<p>Inputs are <strong>measured constants</strong> and <strong>present-day measured</strong> yardsticks (ocean area/volume, present ice masses, geothermal flux). <strong>No</strong> absolute chronology, <strong>no</strong> reconstructed ice volumes, <strong>no</strong> paleoclimate model, <strong>no</strong> fitted parameter. The one free quantity is the <strong>ocean heat anomaly</strong> (a warm-layer warming), run over a range. Any STOP is reported.</p>
+<hr>
+<h2 id="1-the-result-single-parameter-ocean-warm-layer-anomaly">1. The result (single parameter = ocean warm-layer anomaly)</h2>
+<table>
+<thead>
+<tr>
+<th>Ocean warming</th>
+<th>Ice built (vs Greenland)</th>
+<th>Build energy</th>
+<th>Melt energy</th>
+<th>Melt time (upper bound)*</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 K</td>
+<td>0.14×</td>
+<td>high</td>
+<td>low</td>
+<td>~80 yr</td>
+<td>closes (not-STOP)</td>
+</tr>
+<tr>
+<td>5 K</td>
+<td>0.23×</td>
+<td>high</td>
+<td>low</td>
+<td>~140 yr</td>
+<td>closes (not-STOP)</td>
+</tr>
+<tr>
+<td>8 K</td>
+<td>0.37×</td>
+<td>high</td>
+<td>low</td>
+<td>~220 yr</td>
+<td>closes (not-STOP)</td>
+</tr>
+<tr>
+<td>10 K</td>
+<td>0.46×</td>
+<td>high</td>
+<td>low</td>
+<td>~270 yr</td>
+<td>closes (not-STOP)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Melt time computed at the </em><em>global</em><em> geothermal flux — a deliberate </em><em>upper bound</em>*; a rupture concentrates mantle/volcanic heat locally, so realised melt is faster.</p>
+<p><strong>Reading.</strong> Across the range, one ocean-heat anomaly builds a fraction of a continental ice sheet (0.14–0.46× Greenland), loads the crust (feeding C2), and the melt is comfortably affordable — the chain <strong>closes with no STOP</strong> for a single ice sheet. (Building <strong>all</strong> present ice in one pulse remains the honest STOP from Module 13.) Everything scales with the one parameter — the theory's one-knob economy (Module 16), made quantitative.</p>
+<hr>
+<h2 id="2-the-distinctive-prediction-confirmed-from-measured-constants-module-16-p3">2. The distinctive prediction, confirmed from measured constants (Module 16 P3)</h2>
+<p>Building ice goes through <strong>evaporation</strong> (the ocean pays the latent heat of <strong>vaporisation</strong>, ~2.45×10⁶ J/kg); melting it back pays only the latent heat of <strong>fusion</strong> (~3.34×10⁵ J/kg). From these measured constants alone:</p>
+<blockquote>
+<p><strong>Building ice is ~7.3× more expensive than melting it.</strong></p>
+</blockquote>
+<p>So the loop closes <strong>asymmetrically</strong>: a slow, ocean-heat-limited <strong>build</strong>, then a <strong>cheap, fast melt</strong> once the rupture restores warm circulation. <strong>Rapid termination is therefore a <em>prediction</em> of the theory, not a puzzle to be explained away</strong> — and it emerges with no fitted parameter, purely from two laboratory latent heats. This is exactly the kind of distinctive, falsifiable, theory-internal consequence the BUILD phase aims to produce (Module 16 §6).</p>
+<hr>
+<h2 id="3-the-honest-demanding-link-flagged-for-the-stress-test">3. The honest demanding link (flagged for the stress-test)</h2>
+<p>The <strong>source</strong> of the ocean heat is the one link the budget shows is demanding. If the heat comes from the <strong>gravitational energy</strong> of the reservoir release (water redistributing through a ~2 km drop), warming the ocean by 5–10 K requires releasing ~<strong>5–11% of the ocean's volume</strong> of water. The deep reservoir is ~1 ocean-equivalent (Module 12), so a <strong>few-percent release can supply it</strong> — large, but not absurd. <strong>Caveat held:</strong> gravitational potential energy is <strong>one</strong> source; mantle heat exposed by the rupture and the configurational energy of unjamming also contribute, so this is a <strong>sanity bound, not the only path</strong>. The flood-energy source is therefore <strong>plausible but the demanding link</strong> — flagged for the later stress-test, <strong>not</strong> claimed solved.</p>
+<hr>
+<h2 id="4-verdict">4. Verdict</h2>
+<p><strong>The single-relaxation chain is energetically COHERENT under one parameter</strong> (Art. 5 UNLOCK at the whole-chain level): it builds ice, loads the crust, and melts back, with no STOP for a single ice sheet, using measured constants only and <strong>no chronology</strong>. The build/melt asymmetry (rapid termination) is a clean prediction. The flood-energy source is the demanding link, flagged. <strong>Occurrence remains [O].</strong></p>
+<p>This completes the <strong>physical-permission screening of the entire cascade</strong>:</p>
+<ul>
+<li>S0 substrate observed (M12) · H-F mechanism observed (M12) · C1 permitted (M13) · C2 permitted (M14) · <strong>whole-chain energy closes (this module)</strong>.</li>
+</ul>
+<p>Every link is now either <strong>observed</strong> or <strong>screened not-STOP</strong>, and the chain <strong>closes as one budget</strong> — the theory's "one relaxation" is quantitatively coherent. What remains is <strong>evidence-gathering against the theory's distinctive predictions</strong> (Module 16 P1–P5) and the later <strong>stress-test</strong>.</p>
+<hr>
+<h2 id="5-sub-hypothesis-register-update">5. Sub-hypothesis register update</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Sub-hypothesis</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SH-15</strong></td>
+<td>The whole cascade <strong>closes energetically under one controlling parameter</strong> with no STOP (single ice sheet).</td>
+<td><strong>[F]</strong> (physical-permission closure)</td>
+</tr>
+<tr>
+<td><strong>SH-16</strong></td>
+<td><strong>Rapid termination</strong> follows necessarily from the build/melt latent-heat asymmetry.</td>
+<td><strong>[F]</strong> (forced by measured constants)</td>
+</tr>
+<tr>
+<td><strong>SH-17</strong></td>
+<td>The reservoir release can <strong>supply the ocean heat</strong> (energy source).</td>
+<td><strong>[O]</strong> (HOLD) — demanding link, few-% release plausible, flagged</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-reproducibility-provenance">6. Reproducibility / provenance</h2>
+<ul>
+<li><strong><code>chain_energy_ledger.py</code></strong> — deterministic; SEED=19 (no RNG); <strong>no fitted parameter</strong>.</li>
+<li><strong>Constants:</strong> L_v=2.45×10⁶, L_f=3.34×10⁵ J/kg; c_p(sw)=3990; ρ(sw)=1027, ρ(ice)=917, ρ(w)=1000 kg/m³; g=9.81; A_ocean=3.61×10¹⁴ m²; V_ocean=1.335×10⁹ km³; global geothermal flux 4.7×10¹³ W.</li>
+<li><strong>Yardsticks present-day measured:</strong> Greenland 2.85×10⁶ km³; all land ice ~30×10⁶ km³.</li>
+<li><strong>Append-only:</strong> Module 17.</li>
+</ul>
+<hr>
+<p><em>Module 17 complete. M7 capstone RUN: the whole cascade closes energetically under ONE parameter (ocean heat anomaly), no STOP for a single ice sheet; the build/melt latent-heat asymmetry (~7.3×) makes rapid termination a forced prediction (SH-16 [F]); the flood-energy source is the demanding link (SH-17 [O], few-% reservoir release plausible). Chronology-free; occurrence [O]. The cascade's physical permission is now screened end-to-end. Falsification = discovery.</em></p>
+</main>
+<footer class="site">
+<div>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> ·
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a> ·
+<a href="https://jamming-physics.org/" rel="noopener">jamming-physics.org</a></div>
+<div>Cite this volume (concept DOI): <a href="https://doi.org/10.5281/zenodo.20827806" rel="noopener">10.5281/zenodo.20827806</a></div>
+<div>Inherits: <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">physics 10.5281/zenodo.17932566</a> ·
+<a href="https://doi.org/10.5281/zenodo.17978934" rel="noopener">geodynamics 10.5281/zenodo.17978934</a></div>
+<div class="motto">Falsification = discovery — a refutation is a finding.</div>
+</footer>
+</body>
+</html>

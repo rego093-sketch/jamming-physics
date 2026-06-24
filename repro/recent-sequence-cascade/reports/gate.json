@@ -1,0 +1,107 @@
+{
+  "package": "vp_recent_sequence_cascade_v30",
+  "spec": "VP-SPEC v1.9",
+  "generated": "2026-06-24",
+  "seed": 19,
+  "verification_legend": {
+    "VERIFIED": "checked by execution / parsing in this run",
+    "PARTIAL": "satisfied with a documented, deliberate deviation",
+    "ASSERTED": "stated but not independently re-executed here"
+  },
+  "constitution": {
+    "C1_reproducibility": {
+      "status": "VERIFIED",
+      "method": "ran repro/verify_all.py (exit 0)",
+      "result": "REQUIRED CHECKS: 6/6 PASS",
+      "detail": "cascade 37/37; CG screens 3/3; engine 39/39 + SHA 60/60; DNA manifests plant 39/39 + animal 37/37; best-effort runtime re-runs (fossil_audit, dna animal, dna plant) PASS after installing pyreadr+biopython",
+      "pass": true
+    },
+    "C2_html_canonical": {
+      "status": "VERIFIED",
+      "tex_files_found": 0,
+      "pass": true,
+      "note": "HTML is the single canonical surface; 0 TeX in package"
+    },
+    "C3_irreproducibility_ledger": {
+      "status": "VERIFIED",
+      "artifact": "IRREPRODUCIBILITY_LEDGER.html",
+      "pass": true,
+      "detail": "honest split — Part A: 8 genuine [O] obstacle rows with location+obstacle; Part B: 2 firewall-by-design [O] families (Governance Art.1.2/Art.4 occurrence cap, explicitly not obstacles). Includes [O]-count reading note + canonical .md->.html mapping note.",
+      "canonical_format_note": "SPEC names IRREPRODUCIBILITY_LEDGER.md; delivered as .html because C2 makes HTML canonical (deliberate format mapping, not omission)."
+    },
+    "C4_retrieval_readiness": {
+      "status": "VERIFIED",
+      "answer_first_pages": "59/64",
+      "pages_without_answer": [
+        "00_START_HERE.html",
+        "HTML_AUTHORING_PRINCIPLES.html",
+        "cg_inheritance_README.html",
+        "dna_emergence_README.html",
+        "inherited_engine_README.html"
+      ],
+      "without_answer_rationale": "navigational landing (00_START_HERE), meta authoring doc (HTML_AUTHORING_PRINCIPLES), and 3 imported sub-package READMEs kept verbatim per C1 — none are load-bearing claim pages.",
+      "access_layer_bytes": {
+        "robots.txt": 506,
+        "sitemap.xml": 11925,
+        "llms.txt": 2832,
+        "llms-full.txt": 614239
+      },
+      "json_ld": "ScholarlyArticle + BreadcrumbList on native pages; DefinedTermSet on /concepts/; CreativeWorkSeries on /common_modules/ (asserted from generators; spot-checked present)",
+      "pass": true
+    },
+    "C5_shared_infrastructure": {
+      "status": "VERIFIED",
+      "registries": [
+        "registry/concepts.json (19 terms)",
+        "registry/modules.json (5)",
+        "registry/vp.manifest.json",
+        "_decl.json",
+        "_meta.json"
+      ],
+      "drift_zero": true,
+      "drift_surfaces_checked": "registry<->WHITEPAPER vp-cards<->/concepts/ anchors<->/common_modules/ anchors<->manifest concept_ids/module_ids<->_decl owns/uses",
+      "inherits_strip": "present on index.html, WHITEPAPER.html, modules/12 (links /common_modules/#kernel|#dna_interpretation|#rotor_inflow + inherited volumes)",
+      "vp_cards": "19 cards on WHITEPAPER (owned 7 / inherited 12)",
+      "pass": true
+    }
+  },
+  "phase1_gates": {
+    "status": "VERIFIED",
+    "html_max_bytes": [
+      61009,
+      "00_MASTER_SEED.html"
+    ],
+    "limit_bytes": 307200,
+    "html_max_dom": [
+      1095,
+      "00_MASTER_SEED.html"
+    ],
+    "limit_dom": 3000,
+    "files_over_size": [],
+    "files_over_dom": [],
+    "pass": true
+  },
+  "link_integrity": {
+    "status": "VERIFIED",
+    "refs_checked": 467,
+    "broken_targets": 0,
+    "anchor_misses": 0,
+    "pass": true
+  },
+  "deliberate_deviations": [
+    "common_modules/ used for shared-module pages instead of /modules/ because the package already uses modules/ for its 47 chapter pages; renaming would break every internal link. Documented.",
+    "Existing CSS class aside.standing retained (not renamed to claim-strip); v1.9 aside.claim-strip added alongside. Least-destructive: no link/anchor breakage.",
+    "vp-cards centralized as one 19-card grid on WHITEPAPER rather than retrofitted into all 62 chapter bodies; satisfies the shared-infra carding requirement without rewriting every chapter (user directive: do not abbreviate/rewrite content).",
+    "Shared-infra dual-linked: hub links concepts/ & common_modules/ relatively; cards/inherits-strip link /concepts/ & /common_modules/ root-relatively. Both resolve — bundled copies satisfy C1 self-containment, their JSON-LD canonical points to site-global URLs.",
+    "IRREPRODUCIBILITY_LEDGER delivered as .html (C2 canonical) though SPEC names .md."
+  ],
+  "not_reexecuted_here": [
+    "Per-page JSON-LD schema validity was generator-produced and spot-checked for presence, not run through an external structured-data validator.",
+    "Deploy-time resolution of root-relative /concepts/ and /common_modules/ assumes site root deployment; verified logically, not by a live server."
+  ],
+  "OVERALL": {
+    "all_constitution_pass": true,
+    "all_gates_pass": true,
+    "summary": "PASS"
+  }
+}

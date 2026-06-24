@@ -6,7 +6,7 @@ import json, re, os, glob, hashlib, csv, sys
 
 DOCS="docs"; REG="registry"
 ORDER=['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology',
- 'continental-genesis-cascade',
+ 'continental-genesis','recent-sequence-cascade',
  'wave-computer','dna','inheritance','neuro','mind','sensory_organ','eye','ear','nose',
  'cardioresp','circulatory','digestive','musculoskeletal','immune_hematologic','integumentary',
  'reproductive_endocrine','homeostasis_thermometabolic','homeostasis_hemodynamic',
@@ -117,8 +117,8 @@ ok("DOI set: llms⊇manifest") if doi_man<=doi_llms else warn("DOI llms",f"missi
 
 # ---- G. number consistency manifest==homepage==AGENTS ----
 mc=sorted((v['count'] for v in man['primitives'].values()),reverse=True)
-pc=sorted((int(x) for x in re.findall(r'class="scount">(\d+)<span>/30',page)),reverse=True)
-ac=sorted((int(x) for x in re.findall(r'\| (\d+) / 30 \|',agents)),reverse=True)
+pc=sorted((int(x) for x in re.findall(rf'class="scount">(\d+)<span>/{len(ORDER)}',page)),reverse=True)
+ac=sorted((int(x) for x in re.findall(rf'\| (\d+) / {len(ORDER)} \|',agents)),reverse=True)
 ok("primitive counts","manifest==homepage==AGENTS "+str(mc)) if mc==pc==ac else bad("primitive counts",f"man={mc} page={pc} ag={ac}")
 
 # ---- H. magnitude firewall scan (disease/therapy bodies) ----

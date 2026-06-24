@@ -45,9 +45,11 @@
     "R19": {
       "form": "ds/dt = g*s - s^3 + h",
       "pattern": "R19|bistable",
-      "count": 23,
+      "count": 25,
       "volumes": [
         "geodynamics",
+        "continental-genesis",
+        "recent-sequence-cascade",
         "dna",
         "inheritance",
         "neuro",
@@ -75,8 +77,9 @@
     "gamma": {
       "form": "gamma = -mean NN stacking dG",
       "pattern": "SantaLucia|stacking|spinodal|ΔG37",
-      "count": 23,
+      "count": 24,
       "volumes": [
+        "recent-sequence-cascade",
         "dna",
         "inheritance",
         "neuro",
@@ -105,12 +108,14 @@
     "emergence": {
       "form": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size",
       "pattern": "emerge|emergence|emerges",
-      "count": 27,
+      "count": 29,
       "volumes": [
         "physics",
         "fluid-dynamics",
         "cosmology",
         "chemistry",
+        "continental-genesis",
+        "recent-sequence-cascade",
         "wave-computer",
         "dna",
         "inheritance",
@@ -139,13 +144,15 @@
     "jammed_c2": {
       "form": "c^2 = B/rho (random close packing)",
       "pattern": "jammed|random close pack|B/ρ|0\\.7405",
-      "count": 13,
+      "count": 15,
       "volumes": [
         "physics",
         "fluid-dynamics",
         "cosmology",
         "chemistry",
         "geodynamics",
+        "continental-genesis",
+        "recent-sequence-cascade",
         "wave-computer",
         "neuro",
         "eye",
@@ -381,22 +388,50 @@
       "repro_sha256": "ba740962769b5e3588c7768cb146c3ac4defbfbcc90ae86b8b49b39b245c2de4"
     },
     {
-      "id": "continental-genesis-cascade",
+      "id": "continental-genesis",
       "tier": 1,
-      "short": "Continental Genesis & Cascade",
+      "short": "Continental Genesis",
       "doi": "10.5281/zenodo.20827711",
-      "hub": "/continental-genesis-cascade/",
-      "headline": "why dry land exists; one relaxation read as flood, ice, and Atlantic",
+      "hub": "/continental-genesis/",
+      "headline": "composition + buoyancy, not age — why dry land exists",
       "inherits": [
         "physics",
         "geodynamics",
-        "geochronology",
-        "fluid-dynamics",
+        "fluid-dynamics"
+      ],
+      "adds": [
+        "continental-genesis = two-face rupture distillation of felsic crust (opening floors a basin; the antipodal downwelling/compression face flux-melts hydrated skin to granite)"
+      ],
+      "primitives": [
+        "R19",
+        "emergence",
+        "jammed_c2"
+      ],
+      "grades": {
+        "forced": 44,
+        "verified": 5,
+        "open": 0,
+        "hypothesis": 6
+      },
+      "pages": 30,
+      "content_sha256": "f8efef745d178e86119b9f4f434968f8097854197c7d6f16a8db8b0eeb00642d",
+      "repro_sha256": "5ac77377783b1377ff68ac94f9cc5e9ff11c26721bb112c2158fbb2aa16cbae6"
+    },
+    {
+      "id": "recent-sequence-cascade",
+      "tier": 1,
+      "short": "Recent-Sequence Cascade",
+      "doi": "10.5281/zenodo.20827806",
+      "hub": "/recent-sequence-cascade/",
+      "headline": "one cause closes 9 present-tense phenomena (8:1 vs mainstream)",
+      "inherits": [
+        "continental-genesis",
+        "physics",
+        "geodynamics",
         "dna"
       ],
       "adds": [
-        "continental-genesis",
-        "recent-sequence-cascade"
+        "recent_sequence_relaxation=coupled Flood→Glaciation→Atlantic-opening relaxation on a jammed-water S0 release"
       ],
       "primitives": [
         "R19",
@@ -405,14 +440,14 @@
         "jammed_c2"
       ],
       "grades": {
-        "forced": 43,
-        "verified": 15,
-        "open": 11,
-        "hypothesis": 10
+        "forced": 7,
+        "verified": 17,
+        "open": 17,
+        "hypothesis": 1
       },
-      "pages": 39,
-      "content_sha256": "3b7d1a60495273fb32cba56b9cabc23968bb6086a4be8d59c3c6fc5b2d00875e",
-      "repro_sha256": "454d8c378657f667146411789eea73a0b14b593cd2b18f2e8cdd38112979da8b"
+      "pages": 9,
+      "content_sha256": "44412f18e85e22b869d776ee0da15accc3a75d5ef66ed9b39c35aafb4d3e8f9c",
+      "repro_sha256": "8fb469f6fd7f10d762462e93d596f6f13496c76dc9a5450df0619e766c0a911c"
     },
     {
       "id": "wave-computer",
@@ -1173,16 +1208,15 @@
     }
   ],
   "lineage": {
-    "built_at": "2026-06-24T13:31:42Z",
-    "built_by": "session/2026-06-24-vp-merge-cascade-genesis",
-    "parent_sha256": "1b559485c5c6ce9eb2d2b41c21df6cf15ff5889cfbca7b2b5d9f9f4b0ac64c33",
-    "this_sha256": "cc34c58351cd46b02b95a85e88816d40ef661368c58fb130bc1334059b4b215a",
+    "built_at": "2026-06-24T14:39:51Z",
+    "built_by": "session/2026-06-24-vp-unmerge-genesis-cascade",
+    "parent_sha256": "d512e806675a496c7a76d11de35a420358ce9e2dab3353a5a38fbe1743069628",
+    "this_sha256": "18efa642bbf498bd7f60669c2817678a57162ed87ee15fbe18c7f19b49e485bc",
+    "spec_version": "VP-SPEC v1.9",
     "changes": [
-      "added 31st volume continental-genesis-cascade: single self-contained HTML merging Continental Genesis (Part I) + Recent-Sequence Cascade (Part II)",
-      "hand-appended manifest row after geochronology (30 frozen row payloads unchanged); content_sha256+repro_sha256 via dir_content_hash",
-      "+36 concepts (26 owned by cgc + 10 shared used-terms under true owners); +earth-science register",
-      "regenerated docs/index.html (31 cards), concepts, modules; sitemap 1577->1578; llms.txt + decl_coverage updated",
-      "merged volume passes gate_shared_infra.py REQUIRED + BODY; corpus 31/31"
+      "un-merged continental-genesis-cascade into two independent volumes: continental-genesis (#7) + recent-sequence-cascade (#8); 31->32 volumes",
+      "recent-sequence-cascade inherits continental-genesis (explicit Cascade->Genesis edge)",
+      "concept ownership re-mapped (17->continental-genesis, 9->recent-sequence-cascade); repro split per volume"
     ]
   },
   "concepts": {

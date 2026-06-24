@@ -1,0 +1,17 @@
+convection steady (87s): downwelling = 0.461, strain Srms = 86.121
+
+f vs RELATIVE yield Y/Srms (3 seeds; p_prod=0.30, r=0.015). Y=0 = passive; large = rigid limit:
+  Y/Srms  |  uniform  |  convergent
+     0.00 |   0.291   |    0.001
+     0.25 |   0.303   |    0.001
+     0.50 |   0.251   |    0.001
+     1.00 |   0.318   |    0.244
+     2.00 |   0.341   |    0.328
+     4.00 |   0.341   |    0.328
+     8.00 |   0.341   |    0.328
+  1000000.00 |   0.341   |    0.328  <- RIGID LIMIT (Y->inf)
+
+passive ~0.29; mobility-model saturated ~0.38; this yield model saturates ~0.34 even RIGID; ceiling ~0.407; observed 0.41.
+=> FALSIFIES 'yield strength closes the gap': two rheology encodings BOTH saturate SHORT of 0.41.
+   Residual is NOT rheology -> sphere geometry + internal heating, or the value sits at the planar
+   ceiling a flat stirred box only approaches. No tuning (rigid limit is parameter-free). falsification = discovery.

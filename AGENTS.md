@@ -1,6 +1,6 @@
 # AGENTS.md — Reading Guide for AI Systems
 
-**Corpus:** the VP (Vacuum / Jamming Physics) framework — 30 open-access volumes at https://jamming-physics.org/
+**Corpus:** the VP (Vacuum / Jamming Physics) framework — 32 open-access volumes at https://jamming-physics.org/
 **Author:** Young Jae Lee · ORCID 0009-0002-7535-8245 · CC BY 4.0
 **Purpose of this file:** let an AI understand the entire framework — its kernel, its inheritance structure, and its rules — from *one read*, before touching the 676 HTML pages. This is the main manual. Read it first.
 
@@ -128,19 +128,19 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 
 ## 4. The primitive index  *(machine-map of the thesis)*
 
-How many of the 30 volumes carry each shared primitive (full-text measured). This is the fastest proof that the corpus is one object, and the fastest way to find every use of a mechanism.
+How many of the 32 volumes carry each shared primitive (full-text measured). This is the fastest proof that the corpus is one object, and the fastest way to find every use of a mechanism.
 
 | Primitive | Form | Volumes | Coverage |
 |---|---|---:|---|
-| R19 bistable switch | `ṡ = g·s − s³ + h` | 23 / 30 | the universal kernel |
-| γ — measured stiffness | `γ = −mean NN stacking ΔG` | 23 / 30 | the biology instantiation |
-| Emergence from measured γ | `STATE · spinodal · dwell ∝ γ^1.5` | 27 / 30 | the creation recipe |
-| Kramers / Arrhenius barrier | escape over `g²/4` | 15 / 30 | switching kinetics |
-| Jammed lattice / `c²=B/ρ` | the bare substrate | 13 / 30 | reaches into dna, eye, neuro |
-| FitzHugh–Nagumo oscillator | relaxation rhythm | 12 / 30 | hearts, clocks, neurons |
-| Cube-root transduction | `R = (F/β)^⅓` | 3 / 30 | eye, ear, sensory (criticality) |
+| R19 bistable switch | `ṡ = g·s − s³ + h` | 25 / 32 | the universal kernel |
+| γ — measured stiffness | `γ = −mean NN stacking ΔG` | 24 / 32 | the biology instantiation |
+| Emergence from measured γ | `STATE · spinodal · dwell ∝ γ^1.5` | 29 / 32 | the creation recipe |
+| Kramers / Arrhenius barrier | escape over `g²/4` | 15 / 32 | switching kinetics |
+| Jammed lattice / `c²=B/ρ` | the bare substrate | 15 / 32 | reaches into dna, eye, neuro |
+| FitzHugh–Nagumo oscillator | relaxation rhythm | 12 / 32 | hearts, clocks, neurons |
+| Cube-root transduction | `R = (F/β)^⅓` | 3 / 32 | eye, ear, sensory (criticality) |
 
-*Counts are measured over the 30 volume bodies (excluding the homepage and 404 pages) by the patterns recorded in `registry/vp.manifest.json`; regenerate to re-verify.*
+*Counts are measured over the 32 volume bodies (excluding the homepage and 404 pages) by the patterns recorded in `registry/vp.manifest.json`; regenerate to re-verify.*
 
 ---
 
@@ -162,7 +162,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 
 ---
 
-## 6. Volume catalog (all 30, derivation order)
+## 6. Volume catalog (all 32, derivation order)
 
 | # | id | tier | title | headline result | DOI |
 |--:|---|--:|---|---|---|
@@ -172,30 +172,32 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
-| 7 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
-| 8 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998` | 10.5281/zenodo.20471407 |
-| 9 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
-| 10 | neuro | 4 | Neural Emergence Chain | working memory `= θ/γ ≈ 7±2` (tACS-causal) | 10.5281/zenodo.17979015 |
-| 11 | mind | 4 | Felt Cognition | stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
-| 12 | sensory_organ | 5 | Sensory Organs | cochlear Hopf `R=(F/β)^⅓`, exp 0.333 | 10.5281/zenodo.20755154 |
-| 13 | eye | 5 | The Eye | single-photon R19 flip; `n=√(B/ρ ratio)` | 10.5281/zenodo.20790134 |
-| 14 | ear | 5 | Hearing & the Ear | `ṡ=g·s−s³+h` → cube-root amplification | 10.5281/zenodo.20790201 |
-| 15 | nose | 5 | Olfaction & the Nose | smell from R19 + measured DNA γ | 10.5281/zenodo.20790182 |
-| 16 | cardioresp | 6 | Cardiorespiratory | heart+lung = one FitzHugh–Nagumo oscillator | 10.5281/zenodo.20755371 |
-| 17 | circulatory | 6 | Circulatory Flow & Clearance | `MAP = CO × SVR` | 10.5281/zenodo.20754354 |
-| 18 | digestive | 6 | Digestive Transport | gastric ~3 → duodenum 11.1 cpm (one clock) | 10.5281/zenodo.20755319 |
-| 19 | musculoskeletal | 6 | Musculoskeletal Load | structure + load from measured γ | 10.5281/zenodo.20755760 |
-| 20 | immune_hematologic | 6 | Immune & Hematologic | population thresholds on the R19 switch | 10.5281/zenodo.20755280 |
-| 21 | integumentary | 6 | Integumentary Barrier | barrier + stimulus; UV → melanoma key | 10.5281/zenodo.20754541 |
-| 22 | reproductive_endocrine | 6 | Reproductive & Endocrine | four organs in measured-γ order | 10.5281/zenodo.20754657 |
-| 23 | homeostasis_thermometabolic | 7 | Thermometabolic Homeostasis | endo 0.054 vs ecto 1.394 sensitivity | 10.5281/zenodo.20756934 |
-| 24 | homeostasis_hemodynamic | 7 | Hemodynamic Homeostasis | `MAP = CVP + CO×SVR = 93 mmHg` | 10.5281/zenodo.20756801 |
-| 25 | homeostasis_ionic | 7 | Ionic Homeostasis | mineral / acid-base / electrolyte setpoints | 10.5281/zenodo.20755910 |
-| 26 | circadian | 7 | Circadian Oscillator | measured BMAL1/ARNTL `γ = 1.33348` | 10.5281/zenodo.20755413 |
-| 27 | aging_senescence | 7 | Aging & Senescence | human aging genes not special (`|z|<1`) | 10.5281/zenodo.20756155 |
-| 28 | analgesic_threshold | 8 | Analgesic Threshold Logic | three levers L1/L2/L3; `corr(γ,GC)=0.99898` | 10.5281/zenodo.20733420 |
-| 29 | disease_wp | 8 | Rare Disease Mechanisms | `burden = raw_burden · (1 − e)` | 10.5281/zenodo.20763842 |
-| 30 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction `[F]`, magnitude `[O]` | 10.5281/zenodo.20755262 |
+| 7 | continental-genesis | 1 | Continental Genesis | why dry land exists — composition + buoyancy, not age | 10.5281/zenodo.20827711 |
+| 8 | recent-sequence-cascade | 1 | Recent-Sequence Cascade | one relaxation read as flood, ice, Atlantic (8:1 vs mainstream) | 10.5281/zenodo.20827806 |
+| 9 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
+| 10 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998` | 10.5281/zenodo.20471407 |
+| 11 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
+| 12 | neuro | 4 | Neural Emergence Chain | working memory `= θ/γ ≈ 7±2` (tACS-causal) | 10.5281/zenodo.17979015 |
+| 13 | mind | 4 | Felt Cognition | stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
+| 14 | sensory_organ | 5 | Sensory Organs | cochlear Hopf `R=(F/β)^⅓`, exp 0.333 | 10.5281/zenodo.20755154 |
+| 15 | eye | 5 | The Eye | single-photon R19 flip; `n=√(B/ρ ratio)` | 10.5281/zenodo.20790134 |
+| 16 | ear | 5 | Hearing & the Ear | `ṡ=g·s−s³+h` → cube-root amplification | 10.5281/zenodo.20790201 |
+| 17 | nose | 5 | Olfaction & the Nose | smell from R19 + measured DNA γ | 10.5281/zenodo.20790182 |
+| 18 | cardioresp | 6 | Cardiorespiratory | heart+lung = one FitzHugh–Nagumo oscillator | 10.5281/zenodo.20755371 |
+| 19 | circulatory | 6 | Circulatory Flow & Clearance | `MAP = CO × SVR` | 10.5281/zenodo.20754354 |
+| 20 | digestive | 6 | Digestive Transport | gastric ~3 → duodenum 11.1 cpm (one clock) | 10.5281/zenodo.20755319 |
+| 21 | musculoskeletal | 6 | Musculoskeletal Load | structure + load from measured γ | 10.5281/zenodo.20755760 |
+| 22 | immune_hematologic | 6 | Immune & Hematologic | population thresholds on the R19 switch | 10.5281/zenodo.20755280 |
+| 23 | integumentary | 6 | Integumentary Barrier | barrier + stimulus; UV → melanoma key | 10.5281/zenodo.20754541 |
+| 24 | reproductive_endocrine | 6 | Reproductive & Endocrine | four organs in measured-γ order | 10.5281/zenodo.20754657 |
+| 25 | homeostasis_thermometabolic | 7 | Thermometabolic Homeostasis | endo 0.054 vs ecto 1.394 sensitivity | 10.5281/zenodo.20756934 |
+| 26 | homeostasis_hemodynamic | 7 | Hemodynamic Homeostasis | `MAP = CVP + CO×SVR = 93 mmHg` | 10.5281/zenodo.20756801 |
+| 27 | homeostasis_ionic | 7 | Ionic Homeostasis | mineral / acid-base / electrolyte setpoints | 10.5281/zenodo.20755910 |
+| 28 | circadian | 7 | Circadian Oscillator | measured BMAL1/ARNTL `γ = 1.33348` | 10.5281/zenodo.20755413 |
+| 29 | aging_senescence | 7 | Aging & Senescence | human aging genes not special (`|z|<1`) | 10.5281/zenodo.20756155 |
+| 30 | analgesic_threshold | 8 | Analgesic Threshold Logic | three levers L1/L2/L3; `corr(γ,GC)=0.99898` | 10.5281/zenodo.20733420 |
+| 31 | disease_wp | 8 | Rare Disease Mechanisms | `burden = raw_burden · (1 − e)` | 10.5281/zenodo.20763842 |
+| 32 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction `[F]`, magnitude `[O]` | 10.5281/zenodo.20755262 |
 
 ---
 

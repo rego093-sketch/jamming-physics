@@ -1,0 +1,197 @@
+/* VP Recent-Sequence Cascade — canonical site stylesheet (single source, no inline CSS).
+   Governance: VP-SPEC v1.8 §6 (no inline style/script). SEED=19. */
+
+:root{
+  --ink:#1a1d21; --ink-soft:#3c4248; --muted:#6b7480; --line:#e3e6ea;
+  --bg:#ffffff; --bg-soft:#f7f8fa; --bg-code:#f4f5f7;
+  --accent:#0b5c8a; --accent-soft:#e7f0f6;
+  --g-f:#1d6f42; --g-f-bg:#e6f2eb;     /* forced/derived  */
+  --g-v:#0b5c8a; --g-v-bg:#e7f0f6;     /* verified        */
+  --g-l:#8a5a0b; --g-l-bg:#f6efe2;     /* leaning         */
+  --g-o:#7a3b8a; --g-o-bg:#f2e9f5;     /* open            */
+  --maxw:46rem;
+}
+
+*{box-sizing:border-box}
+html{font-size:17px;-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,
+              "Noto Sans","Noto Sans KR",sans-serif;
+  line-height:1.62; letter-spacing:.003em;
+}
+main{max-width:var(--maxw); margin:0 auto; padding:1.4rem 1.25rem 4rem}
+
+/* header / breadcrumb */
+header.site{border-bottom:1px solid var(--line); background:var(--bg-soft)}
+nav.crumb{max-width:var(--maxw); margin:0 auto; padding:.7rem 1.25rem; font-size:.82rem; color:var(--muted)}
+nav.crumb a{color:var(--accent); text-decoration:none}
+nav.crumb a:hover{text-decoration:underline}
+
+/* headings */
+h1{font-size:1.72rem; line-height:1.22; margin:.2rem 0 .9rem; letter-spacing:-.01em}
+h2{font-size:1.24rem; line-height:1.3; margin:2.1rem 0 .6rem; padding-top:.5rem;
+   border-top:1px solid var(--line)}
+h3{font-size:1.05rem; margin:1.4rem 0 .4rem; color:var(--ink-soft)}
+h4{font-size:.95rem; margin:1.1rem 0 .3rem; color:var(--ink-soft)}
+h1+p,h2+p,h3+p{margin-top:.35rem}
+
+/* the subtitle line right under H1 (markdown ### immediately after #) */
+main>h3:first-of-type{}
+
+p{margin:.7rem 0}
+a{color:var(--accent)}
+strong,b{color:var(--ink)}
+em{color:var(--ink-soft)}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+
+/* blockquote = the "One line" / callout */
+blockquote{
+  margin:1rem 0; padding:.7rem 1rem; background:var(--accent-soft);
+  border-left:3px solid var(--accent); border-radius:0 4px 4px 0;
+  color:var(--ink-soft); font-size:.97rem;
+}
+blockquote p{margin:.35rem 0}
+
+/* lists */
+ul,ol{margin:.6rem 0 .6rem 1.15rem; padding:0}
+li{margin:.28rem 0}
+li>ul,li>ol{margin:.2rem 0 .2rem 1rem}
+
+/* code */
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+     font-size:.86em; background:var(--bg-code); padding:.1em .35em; border-radius:4px;
+     color:#243; word-break:break-word}
+pre{background:var(--bg-code); border:1px solid var(--line); border-radius:7px;
+    padding:.85rem 1rem; overflow:auto; font-size:.82rem; line-height:1.5; margin:1rem 0}
+pre code{background:none; padding:0; color:var(--ink); white-space:pre}
+
+/* tables */
+table{border-collapse:collapse; width:100%; margin:1.1rem 0; font-size:.86rem; display:block; overflow-x:auto}
+th,td{border:1px solid var(--line); padding:.42rem .6rem; text-align:left; vertical-align:top}
+thead th{background:var(--bg-soft); font-weight:600; color:var(--ink)}
+tbody tr:nth-child(even){background:var(--bg-soft)}
+
+/* grade badges in the provenance strip */
+.gbadge{display:inline-block; font-size:.74rem; font-weight:700; padding:.06rem .4rem;
+        border-radius:4px; margin:0 .15rem; letter-spacing:.02em; white-space:nowrap}
+.g-f{color:var(--g-f); background:var(--g-f-bg)}
+.g-v{color:var(--g-v); background:var(--g-v-bg)}
+.g-l{color:var(--g-l); background:var(--g-l-bg)}
+.g-o{color:var(--g-o); background:var(--g-o-bg)}
+
+/* provenance / standing strip (faithfully built from the document's own header lines) */
+aside.standing{
+  margin:0 0 1.4rem; padding:.7rem .9rem; background:var(--bg-soft);
+  border:1px solid var(--line); border-radius:7px; font-size:.83rem; color:var(--ink-soft);
+}
+aside.standing .row{margin:.18rem 0}
+aside.standing .k{color:var(--muted); font-weight:600; margin-right:.35rem}
+aside.standing a{color:var(--accent); text-decoration:none}
+aside.standing a:hover{text-decoration:underline}
+
+/* footer */
+footer.site{max-width:var(--maxw); margin:0 auto; padding:1.4rem 1.25rem 2.5rem;
+            border-top:1px solid var(--line); color:var(--muted); font-size:.8rem}
+footer.site a{color:var(--accent); text-decoration:none}
+footer.site .motto{font-style:italic; margin-top:.5rem; color:var(--ink-soft)}
+
+/* index hub */
+.hub-section{margin:1.6rem 0}
+.hub-section h2{border-top:none; padding-top:0}
+ul.hub{list-style:none; margin:.4rem 0 0; padding:0}
+ul.hub li{margin:.3rem 0; padding-left:0}
+ul.hub li a{text-decoration:none; font-weight:600}
+ul.hub li a:hover{text-decoration:underline}
+ul.hub li .desc{display:block; font-weight:400; font-size:.83rem; color:var(--muted); margin-top:.05rem}
+.frozen-note{font-size:.82rem; color:var(--muted); background:var(--bg-soft);
+             border:1px dashed var(--line); border-radius:6px; padding:.6rem .8rem; margin:.5rem 0}
+
+@media (max-width:640px){
+  html{font-size:16px}
+  h1{font-size:1.5rem}
+  main{padding:1.1rem 1rem 3rem}
+}
+
+/* ============================================================
+   VP-SPEC v1.9 additions (C4 retrieval-readiness · C5 shared
+   infrastructure). Appended — existing rules unchanged. No
+   inline CSS anywhere; these classes render the answer-first
+   paragraph, the inherited-modules strip and the self-contained
+   concept cards required by §6-R / §6-M. SEED=19.
+   ============================================================ */
+
+/* C4 / §6-R.3 — answer-first paragraph (first content block).
+   A self-contained direct answer (entity + value/conclusion +
+   grade), placed before everything else for passage retrieval. */
+p.answer{
+  margin:0 0 1.1rem; padding:.75rem .95rem;
+  background:var(--accent-soft); border:1px solid var(--line);
+  border-left:3px solid var(--accent); border-radius:0 6px 6px 0;
+  color:var(--ink); font-size:.98rem; line-height:1.55;
+}
+p.answer::before{
+  content:"Answer"; display:block; font-size:.7rem; font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--accent);
+  margin-bottom:.25rem;
+}
+p.answer .gbadge{vertical-align:baseline}
+
+/* §6 — canonical claim-strip (kept available; this package's
+   richer aside.standing carries the same provenance). */
+aside.claim-strip{
+  margin:0 0 1.2rem; padding:.55rem .8rem; background:var(--bg-soft);
+  border:1px solid var(--line); border-radius:6px; font-size:.82rem;
+  color:var(--ink-soft); display:flex; flex-wrap:wrap; gap:.5rem .9rem;
+  align-items:center;
+}
+aside.claim-strip a{color:var(--accent); text-decoration:none}
+aside.claim-strip a:hover{text-decoration:underline}
+aside.claim-strip .gate{color:var(--muted); font-weight:600}
+
+/* §6-M.2 — inherited common-modules strip (hub + first chapter).
+   Links each inherited module to the common-modules registry. */
+aside.inherits-strip{
+  margin:0 0 1.2rem; padding:.5rem .8rem; background:var(--g-f-bg);
+  border:1px solid var(--line); border-radius:6px; font-size:.82rem;
+  display:flex; flex-wrap:wrap; gap:.4rem .7rem; align-items:center;
+}
+aside.inherits-strip .lbl{color:var(--g-f); font-weight:700; margin-right:.2rem}
+aside.inherits-strip a{
+  color:var(--g-f); text-decoration:none; font-weight:600;
+  background:var(--bg); border:1px solid var(--line);
+  border-radius:4px; padding:.05rem .4rem;
+}
+aside.inherits-strip a:hover{text-decoration:underline}
+
+/* §6-R.2 / §6-M.3 — self-contained concept card. value + one-line
+   meaning + grade + two links (canonical derivation, glossary term).
+   Re-statement of a result is not an SSOT violation (§6-R.2). */
+aside.vp-card{
+  margin:.7rem 0; padding:.55rem .8rem; background:var(--bg-soft);
+  border:1px solid var(--line); border-left:3px solid var(--muted);
+  border-radius:0 6px 6px 0; font-size:.86rem; color:var(--ink-soft);
+}
+aside.vp-card b{color:var(--ink)}
+aside.vp-card a{color:var(--accent); text-decoration:none}
+aside.vp-card a:hover{text-decoration:underline}
+aside.vp-card[data-concept]{border-left-color:var(--accent)}
+
+/* concept-card grid used on the whitepaper / concepts page */
+.card-grid{display:grid; gap:.55rem; margin:1rem 0}
+.card-grid aside.vp-card{margin:0}
+
+/* concepts / common-modules registry pages */
+.reg-entry{
+  margin:1.1rem 0; padding:.8rem .95rem; background:var(--bg-soft);
+  border:1px solid var(--line); border-radius:7px;
+}
+.reg-entry h3{margin:.1rem 0 .35rem; color:var(--ink)}
+.reg-entry .meta{font-size:.8rem; color:var(--muted); margin:.2rem 0}
+.reg-entry code{font-size:.82em}
+
+/* v1.9 — concept-card grid support (shared-infrastructure surface) */
+.concept-cards{margin:1.4rem 0}
+.concept-cards h3{margin:1rem 0 .4rem; color:var(--ink); font-size:.95rem}
+aside.vp-card .val{color:var(--accent); font-weight:600; margin-left:.15rem}
+aside.vp-card code{font-size:.82em}
