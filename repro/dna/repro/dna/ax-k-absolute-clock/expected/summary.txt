@@ -1,0 +1,28 @@
+Appendix K -- the absolute clock (pinning the global zero-point)
+===============================================================
+Appendix K closes B1 -- the global zero-point. The cascade's developmental ORDER is pinned to absolute DAYS by TWO INDEPENDENT measured anchors (the in-vitro segmentation oscillator setting the SLOPE; the in-vivo first-heartbeat landmark, CS10 @ 22 d, setting the INTERCEPT), with ZERO free parameters. Held-out Carnegie stage-days and 31 held-out gene-days within the somite-clock window are reproduced OUT-OF-SAMPLE to <= 0.56 d. The absolute clock is a MEASUREMENT -- graded [L], NEVER [V]. The single somite-rate drift after somitogenesis (CS14+) and the origin of the rates remain disclosed firewall bounds. physical_complete stays False (B2 cis->drive and B4 jitter remain). No body was built.
+
+gate: PASS (17/17)  sha=49bbaa2a0ea2971f
+reading_hash (2x SHA-256): f443a05f709b70e4437bb0acf629905eac09a7d750367ebb6e2694bd2d3bde55
+grades: V=10  L=4  F=1  O=1   physical_complete=False
+
+B1 -- the absolute clock (global zero-point), two-anchor calibration:
+  SLOPE  b = 2.1875 d/stage   (segmentation modality: 5.0 h x 42 somites / 24 over CS9-CS13)
+  INTERCEPT a = 0.1250 d      (cardiac modality: first heartbeat CS10 @ 22 d)
+  free parameters: 0
+  held-out stages (excl. CS10 zero-point): n=5, max err 0.562 d  -> all within 1.5 d
+  held-out genes (somite window): n=31, max err 0.562 d (worst TBX5) -> all in window
+  honest bound: single somite-rate drifts up to 6.56 d after somitogenesis (CS14+)
+  B1 CLOSED = True   grade = [L] (a MEASUREMENT, never [V])
+
+O1 floor re-test (pre-registered 0.70):
+  inherited 38-kit      0.341  (n=47)  reproduces Appendix I
+  + full HOX (FILLED)   0.755  (n=47)  FLOOR MET
+  jitter (+-1 rank, seed=19): mean 0.694, p5 0.625, frac>=floor 0.449 -> stays [L], not [V]
+
+O2 segmentation sub-clock: 8.75 d (42 pairs x 5.0 h), cited window 8.0 -> consistent
+
+axial chain (longest cascade path): HOXA1 -> HOXA2 -> HOXA3 -> HOXA4 -> HOXA5 -> HOXA6 -> HOXA7 -> HOXA9 -> HOXA10 -> HOXA11 -> HOXA13
+
+honest summary:
+  B1 CLOSED to [L]: the global zero-point is pinned by two independent measured anchors (segmentation SLOPE + cardiac INTERCEPT), 0 free parameters; held-out stages and 31 held-out genes within the somite-clock window reproduced to <= 0.56 d. A MEASUREMENT, never [V]. O1 floor still [L] (jitter-sensitive). O2 sub-clock [L]. O3 sequence-drive [F]+[V]. GATE threshold-k [V]. Remaining to 100%: B2 (derive cis->drive map -> [L]) and B4 (lift jitter p5 >= floor); B5 built body out of scope. physical_complete=False.

@@ -1,0 +1,61 @@
+==============================================================================
+  GRAMMAR HIERARCHY -- reading the UPPER blueprint
+  (is there a tissue-level gamma/A4 the cell-level reading missed?)
+==============================================================================
+
+THE QUESTION: the corpus has read only the BOTTOM blueprint -- the cell-level
+material (gamma = stacking dG, A4 = its pattern), the chemistry of adjacent
+bases. Is there a TISSUE-level gamma/A4 we have not seen? What is the upper
+blueprint's 'material' if not ions/chemistry?
+
+THE HIERARCHY (the same (gamma, A4) operator lifted up the tower):
+  G1 material    (cell,  phonology) -- stacking dG       -> (gamma_1, A4_1)
+  G2 regulatory  (tissue, syntax)   -- cardiac TF grammar -> (gamma_2, A4_2) <= MISSED
+  G3 architecture(organ, discourse) -- element layout     -> (gamma_3, A4_3)  배치도
+
+RESULT 1 -- TISSUE IDENTITY IS READABLE FROM THE REGULATORY GRAMMAR (real promoters)
+  NPPA_cardiac           cardiac                      G1 gamma=-1.459  cardiac-TF=17
+  TNNT2_cardiac          cardiac                      G1 gamma=-1.452  cardiac-TF=11
+  GAPDH_housekeeping     housekeeping (non-cardiac control) G1 gamma=-1.569  cardiac-TF=1
+  cardiac mean cardiac-TF = 14.0  vs  control = 1.0  -> 14.0x
+  G2 separates tissue: True   G1 (material) separates tissue: False
+  => a TISSUE-level blueprint exists and is sequence-readable; the material is blind to it [L]
+
+RESULT 2 -- THE UPPER GRAMMAR IS INFORMATION ABOVE THE MATERIAL (dinuc shuffle)
+  material gamma_1: -1.459299 -> -1.459299  (preserved exactly: True)
+  cardiac grammar : 17 -> 4  (76% lost)
+  => the dinuc shuffle preserves the material level EXACTLY yet destroys the cardiac
+     grammar -- NONE of the tissue identity is at the material level [V]
+
+RESULT 3 -- THE LEVELS ARE ORTHOGONAL
+  corr(G1 material, G2 regulatory) = -0.0421  (R^2 = 0.0018)
+  => distinct projections of the blueprint, not the same signal twice [V]
+
+THE HEART RESOLUTION (반증 = 발견)
+  Appendix D imported external cardiac moduli because it read the cell-level MATERIAL,
+  which is orthogonal to the arrangement (Appendix A null rho=+0.071). The arrangement
+  lives one grammar level up -- the cardiac TF syntax -- and is SEQUENCE-READABLE.
+  The blueprint had the arrangement; the corpus had read the wrong level.
+
+WHAT EACH LEVEL SUPPLIES TO THE HEART:
+  G1 material    -> the CELL's intrinsic stiffness (read before; blind to identity)
+  G2 regulatory  -> WHICH tissue (cardiac identity: GATA/NKX2-5/MEF2/TBX5/HAND)
+  G3 architecture-> the spatial LAYOUT (배치도) -- toward the organ's exact form
+
+HONEST STATUS (precision != accuracy)
+  completion.complete = False
+  found : tissue identity sequence-readable [L]; above-material [V]; orthogonal [V];
+          same operator at every level [V]
+  NOT yet: functional validation vs measured enhancer activity; the real 3D arrangement
+           map; absolute kPa magnitudes -- three channels [O]
+     [O] FUNCTIONAL validation: A4_2 predicts measured cardiac enhancer ACTIVITY
+         -> needs: a held-out cardiac functional dataset (VISTA cardiac enhancers, cardiac ATAC-seq/H3K27ac, or MPRA) with a pre-registered rank test and a shuffle control
+     [O] the real spatial ARRANGEMENT MAP (배치도) at the organ level (G3)
+         -> needs: measured 3D-genome contacts (Hi-C/Micro-C) or the colinear spatial-domain TF map (Hox-style), staged across development
+     [O] ABSOLUTE modulus magnitudes (kPa)
+         -> needs: the co-registered modulus series of Appendix D (this package does not supersede it; it reduces the IDENTITY/ARRANGEMENT import)
+
+------------------------------------------------------------------------------
+  GATE: PASS (9/9)   gate sha=49763d1e3abaf0b8   reading hash=4e29df39b95c16ea
+  LOCK -> Derive -> Gate. No fitted parameters. precision != accuracy. 반증=발견. 문법.
+------------------------------------------------------------------------------

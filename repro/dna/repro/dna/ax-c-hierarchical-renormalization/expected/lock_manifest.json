@@ -1,0 +1,90 @@
+{
+  "constants": {
+    "coordination_onset_exponent": {
+      "grade": "[L]",
+      "provenance": "Excess coordination above isostatic scales as Delta_z = z - z_iso ~ (phi - phi_c)^(1/2): O'Hern et al. 2003 PRE 68:011306 (Eq. 6 / Fig. 9), confirmed across potentials, polydispersity, and dimension. Universal exponent 1/2; not fitted.",
+      "value": 0.5
+    },
+    "dimension_d": {
+      "grade": "[L]",
+      "provenance": "Physical space dimension d=3. Enters the isostatic coordination z_iso = 2d.",
+      "value": 3
+    },
+    "phi_c": {
+      "grade": "[L]",
+      "provenance": "Onset-of-jamming packing fraction phi_c for 3D frictionless spheres ~ random close packing ~0.639: O'Hern, Silbert, Liu & Nagel 2003, Phys. Rev. E 68:011306 ('Jamming at zero T and zero applied stress'). At phi_c the bulk AND shear moduli simultaneously become non-zero. Bernal 1960 / Scott & Kilgour 1969 give RCP~0.6366. FRICTION and POLYDISPERSITY shift phi_c down (frictional ~0.55-0.58) -- which is exactly why the ABSOLUTE biological value is graded [O], not this universal anchor.",
+      "value": 0.639
+    },
+    "rigidity_coordination_exponent": {
+      "grade": "[L]",
+      "provenance": "The rigidity that emerges CONTINUOUSLY at the transition (the shear modulus, which vanishes at phi_c) is set by the excess connectivity above isostaticity: G ~ Delta_z (linear in excess contacts): Wyart, Nagel & Witten 2005 EPL 72:486; Liu & Nagel 2010 Annu. Rev. Condens. Matter Phys. 1:347. Composing with Delta_z ~ (phi-phi_c)^(1/2) gives the continuous rigidity onset ~ (phi-phi_c)^(1/2).",
+      "value": 1.0
+    },
+    "unit_bulk_modulus_pa": {
+      "grade": "[O]",
+      "provenance": "[O] Single-cell elastic modulus E ~ 0.1-10 kPa varies by cell type and method (AFM nanoindentation, optical-tweezer/optical-stretcher, micropipette aspiration): Hochmuth 2000 J. Biomech. 33:15; Guck et al. 2005 Biophys. J. 88:3689. A generic 1 kPa central placeholder stands in; the per-cell-type MEASURED modulus is the named obstacle. Absolute B-flow is [O].",
+      "value": 1000.0
+    },
+    "unit_density_kg_per_m3": {
+      "grade": "[L]",
+      "provenance": "Mammalian cell mass density ~1.03-1.10 g/mL (slightly denser than water): e.g. Grover et al. 2011 PNAS 108:10992 (suspended microchannel resonator). Generic central value; used only as the density anchor of the ladder. The DIMENSIONLESS softening ratio does not depend on it.",
+      "value": 1070.0
+    },
+    "z_isostatic": {
+      "grade": "[L]",
+      "provenance": "Maxwell isostatic coordination z_iso = 2d = 6 in 3D (Maxwell 1864 counting argument; exact). At the jamming point the packing is marginally rigid with z = z_iso (O'Hern et al. 2003).",
+      "value": 6
+    }
+  },
+  "db_path": "../param_db.json",
+  "derived": {
+    "unit_wave_speed_m_per_s": {
+      "grade": "[O]-absolute / [V]-form",
+      "provenance": "c0 = sqrt(B0/rho0); FORM exact (VP master), absolute [O] because B0 is [O]",
+      "value": 0.966736
+    },
+    "z_iso_equals_2d": {
+      "grade": "[L]",
+      "provenance": "isostatic identity z_iso = 2d checked against the DB",
+      "value": true
+    }
+  },
+  "inline_magic_numbers": 0,
+  "ladder_rungs": [
+    {
+      "grade": "[F]",
+      "length_um": 0.011,
+      "level": 0,
+      "name": "molecular / chromatin",
+      "provenance": "Nucleosome core particle ~11 nm disc (Luger et al. 1997, Nature 389:251); DNA base-step rise 0.34 nm. The cell-level gamma (mean NN stacking dG) lives at this scale -- the stiffness of the genome polymer."
+    },
+    {
+      "grade": "[F]",
+      "length_um": 10.0,
+      "level": 1,
+      "name": "cell",
+      "provenance": "Typical animal cell diameter ~10-20 um (Alberts, Molecular Biology of the Cell). Generic central value."
+    },
+    {
+      "grade": "[F]",
+      "length_um": 100.0,
+      "level": 2,
+      "name": "tissue (functional unit)",
+      "provenance": "Functional tissue unit / acinus / lobule scale ~0.1-1 mm. Generic central value. This is where the morphogen LEVEL/SHAPE (Appendix B) lives."
+    },
+    {
+      "grade": "[F]",
+      "length_um": 10000.0,
+      "level": 3,
+      "name": "organ",
+      "provenance": "Organ scale ~ cm. Generic central value."
+    },
+    {
+      "grade": "[F]",
+      "length_um": 300000.0,
+      "level": 4,
+      "name": "organ system / body",
+      "provenance": "Organ-system / whole-body scale ~ 0.1-1 m. Generic central value."
+    }
+  ]
+}

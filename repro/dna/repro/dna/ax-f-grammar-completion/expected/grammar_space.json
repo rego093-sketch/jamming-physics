@@ -1,0 +1,78 @@
+{
+  "map": {
+    "breadth": {
+      "name": "organ atlas",
+      "source": "Appendix F",
+      "what": "the interpretation axis read across cardiac, neural, hepatic (not heart alone)"
+    },
+    "interpretation_axis": {
+      "axis": "how a fixed text is read (finer -> context-dependent)",
+      "levels": [
+        {
+          "id": "G1",
+          "linguistics": "phonology",
+          "name": "material",
+          "pair": "(gamma_1, A4_1)",
+          "scale": "cell",
+          "signal": "stacking dG",
+          "source": "Appendix E"
+        },
+        {
+          "id": "G2",
+          "linguistics": "syntax",
+          "name": "regulatory",
+          "pair": "(gamma_2, A4_2)",
+          "scale": "tissue",
+          "signal": "TF binding grammar",
+          "source": "Appendix E; here generalized across organs (atlas)"
+        },
+        {
+          "id": "G4",
+          "linguistics": "pragmatics",
+          "name": "dynamical",
+          "pair": "(gamma_4, A4_4)",
+          "scale": "cell state",
+          "signal": "CpG O/E methylation-sensitivity",
+          "source": "Appendix F (new rung)"
+        }
+      ]
+    },
+    "one_operator": "robust_z (median-centred, MAD-scaled) at every cell of the space",
+    "organization_axis": {
+      "axis": "how the text is laid out (organ -> whole body)",
+      "levels": [
+        {
+          "id": "G3",
+          "linguistics": "discourse",
+          "name": "architecture",
+          "pair": "(gamma_3, A4_3)",
+          "scale": "organ",
+          "signal": "element layout",
+          "source": "Appendix E"
+        },
+        {
+          "id": "G5",
+          "linguistics": "genre",
+          "name": "body-plan",
+          "pair": "(gamma_5, A4_5)",
+          "scale": "body",
+          "signal": "Hox colinearity",
+          "source": "Appendix F (new rung)"
+        }
+      ]
+    }
+  },
+  "one_operator_proof": {
+    "grade": "[V] the SHAPE projection is one operator across the whole grammar space",
+    "levels_using_it": [
+      "G1_material",
+      "G2_regulatory",
+      "G4_dynamical",
+      "G5_bodyplan"
+    ],
+    "operator": "robust_z (median-centred, MAD-scaled) -- identical at G1, G2, G4, G5",
+    "same_operator_all_levels": true,
+    "shape_scale_invariance": 4.440892098500626e-16,
+    "shape_shift_invariance": 3.552713678800501e-15
+  }
+}

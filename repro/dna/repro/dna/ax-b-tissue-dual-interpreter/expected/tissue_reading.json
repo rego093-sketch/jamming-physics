@@ -1,0 +1,180 @@
+{
+  "LEVEL_channel_size": {
+    "carries_position": false,
+    "closed_form": "lambda*tanh(L/lambda)/L",
+    "grade_size_vs_real_mass": "[O] needs measured per-organ developmental growth-rate atlas (engine does NOT compare)",
+    "grade_value": "[V] exact (precision)",
+    "level_mean": 0.16666462,
+    "size_budget": 59.9992627
+  },
+  "SHAPE_channel_form": {
+    "apical_axial_frac": 0.1155276,
+    "apical_width_um": 41.588831,
+    "closed_form": "x_k = L - lambda*acosh(theta_k*cosh(L/lambda))",
+    "grade_form": "[V] exact (precision)",
+    "grade_form_vs_real_anatomy": "[O] needs measured enhancer-promoter contact (Hi-C/Micro-C/capture-C) or a tissue-territory boundary map",
+    "level_removed": true,
+    "n_territories": 8,
+    "territory_boundaries_um": [
+      41.589937,
+      83.183192,
+      124.789731,
+      166.449552
+    ],
+    "territory_volume_fracs": [
+      0.115528,
+      0.115537,
+      0.115574,
+      0.115722
+    ],
+    "theta": 0.5
+  },
+  "_what": "tissue-level DUAL interpreter: one morphogen field projected into LEVEL (size) and SHAPE (form); the cell-level gamma/A4 dualization made exact at the tissue scale",
+  "completion": {
+    "complete": false,
+    "open_channels": [
+      {
+        "channel": "SIZE magnitude vs real organ mass",
+        "named_obstacle": "per-organ developmental growth-rate atlas (e.g. staged organ-mass trajectories)"
+      },
+      {
+        "channel": "FORM (territory partition) vs real anatomy",
+        "named_obstacle": "measured chromatin contact (Hi-C/Micro-C/capture-C) or staged tissue-territory boundary map"
+      }
+    ],
+    "reason": "two channels precision-exact but accuracy-untested [O]; named obstacles below. Precision (정밀) is earned; accuracy (정확) is not yet claimed.",
+    "what_would_close_it": "supply the named measured datasets, run the rank test vs barrier/contact with a shuffle control, pre-register the sign; then and only then mark 정확."
+  },
+  "field": {
+    "closed_form_planar": "c(x) = cosh((L-x)/lambda)/cosh(L/lambda)",
+    "equation": "D*lap(c) - c/tau + source = 0  (screened-Poisson)",
+    "lambda_grade": "[L]-grounded (measured D, tau)",
+    "lambda_um": 60.0
+  },
+  "grade_ledger": [
+    {
+      "basis": "composed of two MEASURED morphogen constants (D, tau; Kicheva 2007), read from the locked DB; no fit",
+      "channel": "intrinsic length lambda = sqrt(D*tau)",
+      "grade": "[L]",
+      "kind": "grounded"
+    },
+    {
+      "basis": "exact closed-form integral of the screened-Poisson field; deterministic, bit-for-bit",
+      "channel": "LEVEL projection = mean(c) = (lambda/L)*tanh(L/lambda)",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "exact closed-form threshold crossings; SAME robust_z operator as the cell-level A4; deterministic",
+      "channel": "SHAPE projection = robust_z(c); territory boundaries x_k = L - lambda*acosh(theta_k*cosh(L/lambda))",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "SHAPE invariant under source-scale and background-offset to machine epsilon (analytic) + non-redundant on a geometry panel (numeric)",
+      "channel": "orthogonality LEVEL ⟂ SHAPE",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "positional-information threshold; modelling choice; interpreter required theta-robust over [0.3, 0.7]",
+      "channel": "territory partition theta",
+      "grade": "[F]",
+      "kind": "choice"
+    },
+    {
+      "basis": "single UNIVERSAL rule applied identically to all; never per-organ",
+      "channel": "developmental supply exponent alpha (extent ~ devtime^alpha)",
+      "grade": "[F]",
+      "kind": "choice"
+    },
+    {
+      "basis": "ACCURACY untested. Needs a MEASURED per-organ developmental growth-rate atlas; the engine does NOT compare (would be back-fit)",
+      "channel": "SIZE magnitude vs real organ mass",
+      "grade": "[O]",
+      "kind": "accuracy_open",
+      "named_obstacle": "per-organ developmental growth-rate atlas (e.g. staged organ-mass trajectories)"
+    },
+    {
+      "basis": "ACCURACY untested. Needs MEASURED enhancer-promoter contact (Hi-C/Micro-C/capture-C) or a tissue-territory boundary map",
+      "channel": "FORM (territory partition) vs real anatomy",
+      "grade": "[O]",
+      "kind": "accuracy_open",
+      "named_obstacle": "measured chromatin contact (Hi-C/Micro-C/capture-C) or staged tissue-territory boundary map"
+    }
+  ],
+  "input": {
+    "L_um": 360.0,
+    "k_territories": 4,
+    "lambda_um": 60.0,
+    "theta": 0.5
+  },
+  "orthogonality": {
+    "geometry_changes_shape": {
+      "apical_frac_a": 0.115528,
+      "apical_frac_b": 0.173539,
+      "lambda_a": 60.0,
+      "lambda_b": 90.0,
+      "shape_moved": true,
+      "verdict": "geometry moves SHAPE while LEVEL is rescalable -> SHAPE not in LEVEL"
+    },
+    "grade": "[V] exact: SHAPE invariant under LEVEL moves to machine epsilon",
+    "orthogonal": true,
+    "panel_correlation": {
+      "apical_frac": [
+        0.377293,
+        0.233562,
+        0.173539,
+        0.138657,
+        0.115528,
+        0.086643,
+        0.069315,
+        0.049511,
+        0.038508
+      ],
+      "corr_level_vs_shape": 0.9969,
+      "level_mean": [
+        0.482014,
+        0.331685,
+        0.249832,
+        0.199982,
+        0.166665,
+        0.125,
+        0.1,
+        0.071429,
+        0.055556
+      ],
+      "note": "both from one field; |corr|<1 -> not redundant readouts",
+      "ratios_L_over_lambda": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        14,
+        18
+      ]
+    },
+    "two_knob_test": {
+      "knob1_scale_source": {
+        "kappa": 3.7,
+        "level_after": 0.6172805,
+        "level_before": 0.16683257,
+        "level_ratio": 3.7,
+        "shape_invariant": true,
+        "shape_max_abs_change": 5.329070518200751e-15
+      },
+      "knob2_add_background": {
+        "level_after": 0.71683257,
+        "level_before": 0.16683257,
+        "level_delta": 0.55,
+        "offset": 0.55,
+        "shape_invariant": true,
+        "shape_max_abs_change": 8.881784197001252e-15
+      },
+      "verdict": "LEVEL moves; SHAPE invariant to machine epsilon -> LEVEL not in SHAPE"
+    }
+  }
+}

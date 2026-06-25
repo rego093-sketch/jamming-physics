@@ -1,0 +1,390 @@
+{
+  "LEVEL_channel_stiffness_size": {
+    "carries_position": false,
+    "closed_form": "mean( B_unit * phi(x) * J(phi(x)) )",
+    "grade_modulus_vs_real": "[O] needs measured per-scale modulus atlas (elastography/AFM); engine does NOT compare (would be back-fit)",
+    "grade_value": "[V] exact mean (precision)",
+    "level_effective_modulus_pa": 531.180788
+  },
+  "SHAPE_channel_stiffness_pattern": {
+    "grade_form": "[V] exact (precision)",
+    "grade_form_vs_real": "[O] needs measured packing-density / cell-type territory map (naturally the Appendix B morphogen territories)",
+    "level_removed": true,
+    "n_anchors": 2,
+    "operator": "robust_z = (B - median(B)) / (1.4826*MAD)  [identical to cell-level A4]",
+    "shape_z_max": 0.959993,
+    "shape_z_min": -1.064866,
+    "stiffness_anchor_fracs": [
+      0.5,
+      0.5
+    ]
+  },
+  "_what": "hierarchical scale-renormalization interpreter: classify every reading channel by structural level, then climb the tower with the renormalization operator R (jamming) so each level's stiffness and density are DERIVED from the level below -- 'cells gather and become volume and stiffness'. The cell gamma/A4 LEVEL/SHAPE split is repeated at every mechanical rung.",
+  "completion": {
+    "complete": false,
+    "open_channels": [
+      {
+        "channel": "ABSOLUTE modulus at each biological level (B in Pa)",
+        "named_obstacle": "measured per-scale modulus atlas (elastography MRE/USE, AFM nanoindentation, micro-rheology) across cell -> tissue -> organ"
+      },
+      {
+        "channel": "REAL per-rung packing fraction phi(level)",
+        "named_obstacle": "measured cell packing fraction at each level by confocal/EM stereology (and ECM volume fraction)"
+      },
+      {
+        "channel": "REAL monotonicity vs ECM stiffening (cartilage, bone)",
+        "named_obstacle": "per-tissue ECM / mineralization stiffness contribution (e.g. measured cartilage/bone modulus vs cell modulus)"
+      }
+    ],
+    "reason": "the renormalization MACHINERY is precision-exact ([V]) and the rigidity onset is [L]-grounded, but the ABSOLUTE biological moduli and the REAL per-rung packing fractions are accuracy-untested [O]; named obstacles below. Precision (정밀) is earned; accuracy (정확) is not yet claimed.",
+    "what_would_close_it": "supply the named measured datasets (per-scale modulus atlas + per-rung stereology + ECM contribution), feed the measured phi profile and B0 into the SAME operator, compare the predicted softening trajectory to a measured elastography ladder with a shuffle control, pre-register the sign; then and only then mark 정확."
+  },
+  "grade_ledger": [
+    {
+      "basis": "exact: void carries no mass, so aggregate density is the packing fraction times the unit density; mass/volume conservation. Deterministic, bit-for-bit.",
+      "channel": "density renormalization  rho' = phi * rho",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "exact elastic-mixture THEOREMS (Reuss 1929 isostress lower; Voigt 1889 isostrain upper) with a void phase B_void=0; evaluated exactly. The effective modulus is GUARANTEED inside this bracket.",
+      "channel": "exact composite bounds  B_Reuss = 0,  B_Voigt = phi * B_unit",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "exact: the VP master relation c^2=B/rho applied at both levels gives c'/c = sqrt(B'/B * rho/rho') = sqrt(phi*J / phi) = sqrt(J). Deterministic closed form.",
+      "channel": "wave-speed softening ratio per rung  c'/c = sqrt(J(phi))",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "exact: climbing two rungs equals one combined rung to < 1e-9 (semigroup property); the ladder is a consistent RG flow.",
+      "channel": "renormalization-group composition (R∘R associativity)",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "exact RG theorem of the idealized ladder: J<1 for every phi<1, so c strictly decreases each rung. Holds for any phi<1 with no ECM stiffening; that proviso is stated.",
+      "channel": "monotone wave-speed softening up the tower (uniform phi)",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "the SHAPE is the composition of two CITED universals: excess coordination Delta_z ~ (phi-phi_c)^(1/2) (O'Hern 2003) and rigidity G ~ Delta_z (Wyart 2005). Not a free choice; read from the locked DB.",
+      "channel": "rigidity-onset shape  J(phi) = sqrt((phi-phi_c)/(1-phi_c))",
+      "grade": "[L]",
+      "kind": "grounded"
+    },
+    {
+      "basis": "independently published universals (O'Hern-Silbert-Liu-Nagel 2003; Maxwell isostatic counting; Wyart-Nagel-Witten 2005), read from the locked DB; no fit.",
+      "channel": "jamming anchors  phi_c, z_iso=2d, onset exponent 1/2",
+      "grade": "[L]",
+      "kind": "grounded"
+    },
+    {
+      "basis": "the jamming transition admits a renormalization-group / scaling description (Goodrich-Liu-Sethna 2016) and applies to CELL packings (Bi-Lopez-Schwarz-Manning 2015); grounds the ladder construction.",
+      "channel": "RG-ladder framing (repeated coarse-graining of jammed units)",
+      "grade": "[L]",
+      "kind": "grounded"
+    },
+    {
+      "basis": "SHAPE = robust_z(B(x)) is invariant under both LEVEL moves (field scale, uniform stiffness offset) to machine epsilon (analytic) + geometry moves SHAPE (numeric). Same robust_z as cell-level A4.",
+      "channel": "orthogonality  mechanical LEVEL ⟂ SHAPE",
+      "grade": "[V]",
+      "kind": "precision"
+    },
+    {
+      "basis": "a declaration, not a computed quantity: each corpus reading channel is tagged with the structural level it reads and how it connects to the tower. Carries no fitted number; exists so scale cannot drift.",
+      "channel": "scale classification ledger (every channel tagged L0..L4)",
+      "grade": "[L]",
+      "kind": "grounded"
+    },
+    {
+      "basis": "a documented jammed profile (all phi in (phi_c,1)) standing in for measured per-rung stereology; the operator is GENERAL in phi -- measured fractions change only the numbers, not the machinery.",
+      "channel": "per-rung packing fraction profile phi_k (demonstration climb)",
+      "grade": "[F]",
+      "kind": "choice"
+    },
+    {
+      "basis": "generic textbook orders of magnitude, used ONLY to count units-per-rung (a reported volume ratio); the dimensionless flow does not depend on them at all.",
+      "channel": "ladder length scales L0..L4 (cell~10um, tissue~100um, ...)",
+      "grade": "[F]",
+      "kind": "choice"
+    },
+    {
+      "basis": "ACCURACY untested. The single-unit modulus is a generic placeholder and sets absolute magnitude only; the engine does NOT compare to a measured modulus (that would be back-fit).",
+      "channel": "ABSOLUTE modulus at each biological level (B in Pa)",
+      "grade": "[O]",
+      "kind": "accuracy_open",
+      "named_obstacle": "measured per-scale modulus atlas (elastography MRE/USE, AFM nanoindentation, micro-rheology) across cell -> tissue -> organ"
+    },
+    {
+      "basis": "ACCURACY untested. The demonstration phi profile is a modelling choice; the real per-level cell packing fraction is unmeasured here.",
+      "channel": "REAL per-rung packing fraction phi(level)",
+      "grade": "[O]",
+      "kind": "accuracy_open",
+      "named_obstacle": "measured cell packing fraction at each level by confocal/EM stereology (and ECM volume fraction)"
+    },
+    {
+      "basis": "ACCURACY untested. The idealized flow softens monotonically; real extracellular-matrix mineralization can RAISE the unit modulus and break monotonicity. Not modelled; flagged as the named obstacle.",
+      "channel": "REAL monotonicity vs ECM stiffening (cartilage, bone)",
+      "grade": "[O]",
+      "kind": "accuracy_open",
+      "named_obstacle": "per-tissue ECM / mineralization stiffness contribution (e.g. measured cartilage/bone modulus vs cell modulus)"
+    }
+  ],
+  "orthogonality": {
+    "geometry_changes_shape": {
+      "gentle_profile_shape_range": 1.965939,
+      "shape_moved": true,
+      "steep_profile_shape_range": 2.070082,
+      "verdict": "packing-profile geometry moves SHAPE while LEVEL is rescalable -> SHAPE not in LEVEL"
+    },
+    "grade": "[V] exact: SHAPE invariant under LEVEL moves to machine epsilon",
+    "orthogonal": true,
+    "panel_correlation": {
+      "corr_level_vs_shape": 0.921,
+      "level_means": [
+        314.9255,
+        381.8847,
+        446.39,
+        510.0191,
+        573.5507
+      ],
+      "note": "both from one stiffness field; |corr|<1 -> not redundant readouts",
+      "shape_ranges": [
+        1.9972,
+        2.0132,
+        2.0209,
+        2.0239,
+        2.0254
+      ]
+    },
+    "two_knob_test": {
+      "knob1_scale_field": {
+        "kappa": 4.3,
+        "level_after": 2284.077387,
+        "level_before": 531.180788,
+        "level_ratio": 4.3,
+        "shape_invariant": true,
+        "shape_max_abs_change": 6.661338147750939e-16
+      },
+      "knob2_add_background": {
+        "level_after": 531.880788,
+        "level_before": 531.180788,
+        "level_delta": 0.7,
+        "offset": 0.7,
+        "shape_invariant": true,
+        "shape_max_abs_change": 4.440892098500626e-16
+      },
+      "verdict": "LEVEL moves; SHAPE invariant to machine epsilon -> LEVEL not in SHAPE"
+    }
+  },
+  "renormalization_climb": {
+    "_what": "renormalization climb up the biological ladder: each level's (B,rho,c) DERIVED from the level below by R (jamming), not assumed",
+    "levels": [
+      {
+        "B_pa": 1000.0,
+        "c_m_per_s": 0.966736,
+        "length_um": 10.0,
+        "level": 1,
+        "name": "cell",
+        "rho_kg_per_m3": 1070.0,
+        "role": "BASE unit (cell): (B,rho) from DB; absolute [O], c0=sqrt(B0/rho0)"
+      },
+      {
+        "B_pa": 364.625,
+        "B_within_bracket": true,
+        "c_m_per_s": 0.683586,
+        "length_um": 100.0,
+        "level": 2,
+        "name": "tissue (functional unit)",
+        "phi_used": 0.72925,
+        "rho_kg_per_m3": 780.2975,
+        "rigidity_fraction_J": 0.5,
+        "softening_ratio_c_over_prev": 0.7071067812,
+        "units_packed_from_below": 729.25
+      },
+      {
+        "B_pa": 211.29071,
+        "B_within_bracket": true,
+        "c_m_per_s": 0.574825,
+        "length_um": 10000.0,
+        "level": 3,
+        "name": "organ",
+        "phi_used": 0.8195,
+        "rho_kg_per_m3": 639.453801,
+        "rigidity_fraction_J": 0.7071067812,
+        "softening_ratio_c_over_prev": 0.8408964153,
+        "units_packed_from_below": 819500.0
+      },
+      {
+        "B_pa": 166.468896,
+        "B_within_bracket": true,
+        "c_m_per_s": 0.534935,
+        "length_um": 300000.0,
+        "level": 4,
+        "name": "organ system / body",
+        "phi_used": 0.90975,
+        "rho_kg_per_m3": 581.743096,
+        "rigidity_fraction_J": 0.8660254038,
+        "softening_ratio_c_over_prev": 0.9306048591,
+        "units_packed_from_below": 24563.25
+      }
+    ],
+    "note": "softening ratio per rung = sqrt(J(phi)) is EXACT [V]; monotone decrease holds for any phi<1 (idealized, no ECM stiffening). ABSOLUTE moduli per real level are [O].",
+    "phi_profile_grade": "[F] documented jammed profile standing in for measured per-rung stereology [O]",
+    "phi_profile_used": [
+      0.72925,
+      0.8195,
+      0.90975
+    ],
+    "rung_brackets": [
+      {
+        "B_eff": 364.625,
+        "B_reuss_floor": 0.0,
+        "B_voigt_ceiling": 729.25,
+        "from_level": "cell",
+        "phi": 0.72925,
+        "softening_ratio": 0.7071067812,
+        "to_level": "tissue (functional unit)"
+      },
+      {
+        "B_eff": 211.2907098689,
+        "B_reuss_floor": 0.0,
+        "B_voigt_ceiling": 298.8101875,
+        "from_level": "tissue (functional unit)",
+        "phi": 0.8195,
+        "softening_ratio": 0.8408964153,
+        "to_level": "organ"
+      },
+      {
+        "B_eff": 166.4688955398,
+        "B_reuss_floor": 0.0,
+        "B_voigt_ceiling": 192.2217233032,
+        "from_level": "organ",
+        "phi": 0.90975,
+        "softening_ratio": 0.9306048591,
+        "to_level": "organ system / body"
+      }
+    ],
+    "wave_speed_monotone_decreasing": true,
+    "wave_speed_trajectory_m_per_s": [
+      0.966736,
+      0.683586,
+      0.574825,
+      0.534935
+    ]
+  },
+  "rg_composition_associativity": {
+    "composes_exactly": true,
+    "direct_product": {
+      "B_eff": 369.6420324579,
+      "c_eff": 0.7032303715,
+      "rho_eff": 747.4568246
+    },
+    "grade": "[V] exact: R composes (renormalization-group semigroup)",
+    "max_discrepancy": 4.326616842575959e-11,
+    "stepwise": {
+      "B_eff": 369.6420324579,
+      "c_eff": 0.7032303715,
+      "rho_eff": 747.4568246
+    }
+  },
+  "scale_classification": {
+    "channels": [
+      {
+        "axis": "stiffness LEVEL (gamma-mirror)",
+        "channel": "NN stacking dG -> gamma (MATERIAL level)",
+        "connects_to_tower": "sets B at the BASE (the cell's intrinsic stiffness anchor)",
+        "reads_level": "L0 molecular (base-step) -> L1 cell",
+        "source": "chapters 2, 13",
+        "what": "per-dinucleotide stacking stiffness; mean over a window = gamma, the cell's genome-stiffness LEVEL (the polymer modulus the cell is built from)"
+      },
+      {
+        "axis": "stiffness SHAPE (A4-mirror)",
+        "channel": "A4 coordinate (shell / anchor / helical phase)",
+        "connects_to_tower": "the cell-level instance of the LEVEL/SHAPE split the tower repeats",
+        "reads_level": "L0 molecular -> L1 cell",
+        "source": "chapter 13",
+        "what": "the SHAPE of the same stiffness signal (gamma's mean removed by robust_z); contact-competent geometry"
+      },
+      {
+        "axis": "switch state (within a cell)",
+        "channel": "R19 switch (spinodal, barrier, |s|)",
+        "connects_to_tower": "intra-cell dynamics; not a tower rung (the tower is mechanical aggregation, orthogonal to the switch read)",
+        "reads_level": "L1 cell",
+        "source": "chapters 3, 4",
+        "what": "the bistable state of one regulatory switch, derived from gamma alone"
+      },
+      {
+        "axis": "drive (within a cell)",
+        "channel": "CpG O/E -> methylation drive h",
+        "connects_to_tower": "intra-cell; orthogonal to the mechanical tower",
+        "reads_level": "L1 cell (environment write)",
+        "source": "chapters 6, 9",
+        "what": "the writable drive that moves the switch; environment-set, sequence-read"
+      },
+      {
+        "axis": "chemical LEVEL (size)",
+        "channel": "morphogen LEVEL = mean(c) -> SIZE",
+        "connects_to_tower": "the CHEMICAL axis at L2 -- runs ALONGSIDE the mechanical tower, not in place of it (the gap Appendix B left)",
+        "reads_level": "L2 tissue",
+        "source": "Appendix B",
+        "what": "the morphogen budget of a tissue domain (the CHEMICAL/patterning axis)"
+      },
+      {
+        "axis": "chemical SHAPE (form)",
+        "channel": "morphogen SHAPE = robust_z(c) -> FORM (territories)",
+        "connects_to_tower": "the territories are the natural phi(x) domains the MECHANICAL SHAPE (this appendix) reads -- the chemical and mechanical axes meet here",
+        "reads_level": "L2 tissue",
+        "source": "Appendix B",
+        "what": "the territory boundaries of a tissue domain (the CHEMICAL/patterning axis)"
+      },
+      {
+        "axis": "mechanical LEVEL (B) + SHAPE (stiffness pattern)",
+        "channel": "packing fraction phi, jamming J, B_eff, rho_eff, c_eff",
+        "connects_to_tower": "IS the tower: the renormalization operator R that climbs every rung",
+        "reads_level": "L1->L4 (EVERY mechanical rung)",
+        "source": "Appendix C (this)",
+        "what": "the effective stiffness and density an aggregate ACQUIRES by packing its units (the MECHANICAL axis 'cells gather -> volume + stiffness')"
+      },
+      {
+        "axis": "mechanical structural invariant",
+        "channel": "isostatic coordination z_iso = 2d",
+        "connects_to_tower": "the universal anchor that makes the rigidity emergence parameter-free",
+        "reads_level": "structural invariant (all rungs)",
+        "source": "Appendix C (this)",
+        "what": "the marginal contact number at jamming; the anchor of the rigidity onset"
+      },
+      {
+        "axis": "the unifying relation across all scales",
+        "channel": "VP master c^2 = B/rho (wave speed per level)",
+        "connects_to_tower": "the invariant carried up every rung; softens by sqrt(J) per rung",
+        "reads_level": "L0->L4 (the through-line)",
+        "source": "Appendix C (this) <- core physics volume",
+        "what": "the mechanical signal speed at every level; the SAME relation the VP core thesis applies to the vacuum (vacuum as a jammed elastic solid)"
+      }
+    ],
+    "coverage_ok": true,
+    "levels_covered": [
+      "L0 molecular (base-step) -> L1 cell",
+      "L0 molecular -> L1 cell",
+      "L0->L4 (the through-line)",
+      "L1 cell",
+      "L1 cell (environment write)",
+      "L1->L4 (EVERY mechanical rung)",
+      "L2 tissue",
+      "structural invariant (all rungs)"
+    ],
+    "tower_levels": [
+      "L0 molecular/chromatin",
+      "L1 cell",
+      "L2 tissue",
+      "L3 organ",
+      "L4 organ system/body"
+    ]
+  },
+  "vp_master_relation": "c^2 = B / rho  (same relation the VP core applies to the vacuum; here applied one structural level up)"
+}

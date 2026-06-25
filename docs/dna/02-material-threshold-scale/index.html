@@ -34,6 +34,19 @@
 <h3>What γ is</h3>
 <p>γ is the negative mean of nearest-neighbor stacking free energy (−mean NN ΔG, SantaLucia 1998), read mechanically from the sequence. It sets the threshold scale of the R19 double well: barrier = γ²/4, spinodal |h_sp| = (2/3√3)·γ^1.5. The R19 dynamics are ṡ = −(s³ − γs − h). The larger γ, the deeper the switch; the smaller, the shallower. <strong>γ is the scale of the threshold, not in itself the sign, quantity, or on/off of a trait.</strong></p>
 
+<aside class="vp-algo" aria-label="Algorithm — gamma from sequence, reproducible without running the code">
+<b>ALGO · γ from sequence — deterministic, fit-free (reproduce on paper)</b>
+<pre><code>input : promoter window seq  (real GRCh38, TSS−2000..+500, 2501 bp)
+        nn := SantaLucia-1998 nearest-neighbour ΔG₃₇ table
+proc  : for i in 0 .. len(seq)−2:  s[i] = nn[ seq[i:i+2] ]   # per-dinucleotide stacking ΔG
+        γ = − mean(s)                                        # stiffness convention
+        spinodal(γ) = 2·(γ/3)^1.5 ;  barrier(γ) = γ²/4       # the R19 threshold geometry
+out   : γ   (byte-identical across runs; e.g. SOX9 = 1.459260)
+grade : [V] the operator · [L] the measured value · corr(γ, GC) = 0.998</code></pre>
+</aside>
+
+<p>The read is mechanical and exact: the same window and the same nearest-neighbour table return the same γ to the last digit on every run, with no fitted parameter anywhere in the path. That bit-for-bit determinism is what makes γ an admissible measurement rather than an estimate — the cell-level material is read precisely, and the four higher grammar levels (<a href="/dna/ax-g-the-grammar-space/">Appendix G</a>) sit on top of it as orthogonal projections of the same field.</p>
+
 <h3>The γ census</h3>
 <table>
 <thead><tr><th>comparison</th><th>genes</th><th>species</th><th>cross-species γ CV</th></tr></thead>
@@ -64,6 +77,6 @@
 </ul>
 <nav class="pn"><a rel="prev" href="/dna/01-constitution-scope/">← §1</a><a href="/dna/">contents</a><a rel="next" href="/dna/03-set-switch-inventory/">§3 →</a></nav>
 </main>
-<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.13)</footer>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.18)</footer>
 </body>
 </html>

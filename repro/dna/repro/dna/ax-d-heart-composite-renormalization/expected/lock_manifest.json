@@ -1,0 +1,111 @@
+{
+  "cell_phase": {
+    "adult_kpa": {
+      "grade": "[L]",
+      "provenance": "Adult rat freshly-isolated cardiomyocyte transverse/radial apparent elastic modulus ~35 kPa (35.1 +/- 0.7 kPa, n=53, F344xBN; Rutgers/Shroff-type AFM nanoindentation; also ~35 kPa diastolic, similar to skinned cardiomyocytes). Representative of the stiff ADULT cell phase.",
+      "value": 35.0
+    },
+    "density_kg_per_m3": {
+      "grade": "[L]",
+      "provenance": "Myocardial / muscle mass density ~1.06 g/mL: standard cardiac tissue value. Used only as the density anchor for the VP wave-speed relation c^2=B/rho; the dimensionless results do not depend on it.",
+      "value": 1060.0
+    },
+    "immature_kpa": {
+      "grade": "[L]",
+      "provenance": "Human iPSC-derived (immature) cardiomyocyte Young's modulus ~1.25 kPa, decreasing on F-actin depolymerization: Pires et al. 2019 (cited in Frontiers Cell Dev Biol 2021). Representative of the soft EMBRYONIC/immature cell phase.",
+      "value": 1.25
+    }
+  },
+  "composition": {
+    "collagen_rises_faster_than_weight": {
+      "grade": "[L]",
+      "provenance": "In the chick embryo, heart growth and collagen growth (day 5-21) both follow continuous EXPONENTIAL functions, but collagen increases MORE RAPIDLY than heart weight, so the collagen FRACTION rises over development: classic chick collagen-development study (Biochim. Biophys. Acta 1967, 0005-2795(67)90473-4). Mechanical interpretation given: rising collagen proportion meets the enlarging heart's increasing mechanical-strength requirement.",
+      "value": true
+    },
+    "phi_cell_adult": {
+      "grade": "[F]",
+      "provenance": "[F] Cardiomyocytes occupy ~70-90% of adult myocardial VOLUME (though <50% by cell NUMBER): standard cardiac histology (Vliegen; Banerjee). Central 0.80. Used as phi_cell; phi_ECM = 1 - phi_cell.",
+      "value": 0.8
+    },
+    "phi_ecm_embryonic_start": {
+      "grade": "[F]",
+      "provenance": "[F] Collagen first detected in chick heart at day 3 and is sparse early (a few percent of volume); central 0.02 used as the embryonic ECM volume fraction start. Real co-registered value is [O].",
+      "value": 0.02
+    }
+  },
+  "db_path": "../param_db.json",
+  "ecm_phase": {
+    "central_kpa": {
+      "grade": "[F]",
+      "provenance": "[F] A single central value for the ECM phase modulus, taken as the decellularized-myocardium central (~5-17 kPa -> 8 kPa working central). Used for the bracket; the measured RANGE is carried so the bracket can be reported as a range, not a point.",
+      "value": 8.0
+    },
+    "decellularized_LV_kpa": {
+      "grade": "[L]",
+      "provenance": "Decellularized porcine LEFT-VENTRICLE myocardial ECM elastic modulus ~5 kPa: Williams et al. (cited in AJP-Heart 2024, doi 10.1152/ajpheart.00813.2024). The ECM phase modulus IN SITU with cells removed.",
+      "value": 5.0
+    },
+    "decellularized_SAN_kpa": {
+      "grade": "[L]",
+      "provenance": "Decellularized porcine SINOATRIAL-NODE myocardial ECM ~17 kPa (stiffer than LV): same source. Shows the ECM phase modulus spans ~5-17 kPa across heart regions.",
+      "value": 17.0
+    }
+  },
+  "gamma_control": {
+    "appendix_a_null_p": {
+      "grade": "[L]",
+      "provenance": "Appendix A: exact permutation p = 0.882 for the heart gamma-vs-timing null (not significant). The trajectory is NOT in gamma.",
+      "value": 0.882
+    },
+    "appendix_a_null_rho": {
+      "grade": "[L]",
+      "provenance": "Appendix A (universal_morphogenesis_geneclock): gamma vs absolute developmental timing is an honest NULL, sharpest in the heart, Spearman rho = +0.071. Reproduced here as the measured null the composition axis explains.",
+      "value": 0.071
+    },
+    "gamma_time_invariant": {
+      "grade": "[V]",
+      "provenance": "[V] Logical certainty: gamma is computed from the genomic sequence (mean nearest-neighbour stacking dG), which is identical in every cell at every developmental stage. A time-invariant quantity cannot encode a time-varying trajectory. This is WHY gamma fails to predict the stiffening.",
+      "value": true
+    }
+  },
+  "inline_magic_numbers": 0,
+  "jamming_inherited": {
+    "phi_c": {
+      "grade": "[L]",
+      "provenance": "Jamming onset / random close packing phi_c ~ 0.639 (3D frictionless): O'Hern, Silbert, Liu & Nagel 2003, PRE 68:011306. Used for the pure-cell-jamming sub-model (the model being falsified for the trajectory).",
+      "value": 0.639
+    },
+    "rigidity_onset_exponent": {
+      "grade": "[L]",
+      "provenance": "Continuous rigidity onset ~ (phi-phi_c)^(1/2): O'Hern 2003 (Delta_z ~ (phi-phi_c)^1/2) composed with Wyart-Nagel-Witten 2005 (G ~ Delta_z). Inherited from Appendix C.",
+      "value": 0.5
+    }
+  },
+  "target_trajectory_MEASURED": {
+    "adult_rat_kpa": {
+      "grade": "[L]",
+      "provenance": "Adult rat heart elastic modulus ~18 +/- 2 kPa: Berry et al. 2006. Bhana et al. report 11.9-46.2 kPa for adult rat myocardium and 4-11.4 kPa for neonatal rat myocardium.",
+      "value": 18.0
+    },
+    "chick_intercept_kpa": {
+      "grade": "[L]",
+      "provenance": "Embryonic chick heart elastic modulus starts ~0.1 kPa: Majkut, Idema, Swift, Krieger, Liu & Discher 2013, Curr. Biol. 23:2434-2439 ('Heart-specific stiffening in early embryos parallels matrix and myosin expression to optimize beating'); restated in Pesce et al. 2022.",
+      "value": 0.1
+    },
+    "chick_slope_kpa_per_day": {
+      "grade": "[L]",
+      "provenance": "Embryonic chick heart stiffness rises ~0.3 kPa per day (approximately LINEAR in developmental time): Majkut et al. 2013, Curr. Biol. 23:2434-2439. The daily rise parallels a small subset of proteins -- COLLAGEN plus cardiac excitation-contraction proteins (proteomics, same paper).",
+      "value": 0.3
+    },
+    "murine_E14_kpa": {
+      "grade": "[L]",
+      "provenance": "Murine heart stiffens ~10-fold from E2 to E14, reaching ~10 kPa -- a value also measured in neonate and adult myocardium: Majkut et al. 2013.",
+      "value": 10.0
+    },
+    "murine_E2_kpa": {
+      "grade": "[L]",
+      "provenance": "Murine heart at embryonic day E2 has modulus < 1 kPa (central placeholder 0.5): Majkut et al. 2013 (comparative study cited in Ward & Iskratsch 2020; Frontiers Cell Dev Biol 2021).",
+      "value": 0.5
+    }
+  }
+}

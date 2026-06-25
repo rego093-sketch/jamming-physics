@@ -1,0 +1,33 @@
+{
+  "constants": {
+    "diffusion_D_um2_per_s": {
+      "grade": "[L]",
+      "provenance": "Typical morphogen effective diffusion ~0.1-10 um^2/s (e.g. Bicoid, FGF, Nodal): Kicheva et al. 2007 (Science); Yu et al. 2009. Central value; target-independent.",
+      "value": 1.0
+    },
+    "growth_alpha": {
+      "grade": "[F]",
+      "provenance": "Dosage(size supply) ~ (developmental time available)^alpha, single UNIVERSAL exponent applied to ALL organs identically (not per-organ). alpha=1 is the documented modelling choice; not tuned to any mass.",
+      "value": 1.0
+    },
+    "morphogen_decay_min": {
+      "grade": "[L]",
+      "provenance": "Morphogen clearance timescale ~tens of minutes-hours: Kicheva et al. 2007. Generic central value.",
+      "value": 60.0
+    },
+    "territory_theta": {
+      "grade": "[F]",
+      "provenance": "Activation threshold (fraction of steady state) at which a regulator is counted ON. Modelling choice; engine is required to be theta-robust over [0.3,0.7] (asserted in gate).",
+      "value": 0.5
+    }
+  },
+  "db_path": "../param_db.json",
+  "derived": {
+    "lambda_um": {
+      "grade": "[L]-grounded",
+      "provenance": "lambda = sqrt(D*tau); composed of two measured locked constants, no fit",
+      "value": 60.0
+    }
+  },
+  "inline_magic_numbers": 0
+}

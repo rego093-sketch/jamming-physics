@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tissue-level dual interpreter — 4D DNA Blueprint Appendix B | Jamming Physics</title>
+<meta name="description" content="The cell-level γ/A4 level–shape split, lifted exactly to the tissue scale: one morphogen field read as LEVEL (size) and SHAPE (form), orthogonal closed forms.">
+<link rel="canonical" href="https://jamming-physics.org/dna/ax-b-tissue-dual-interpreter/">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Tissue-level dual interpreter: lifting the cell-level γ/A4 split to the tissue scale", "isPartOf": {"@type": "CreativeWorkSeries", "name": "4D DNA Blueprint", "identifier": "https://doi.org/10.5281/zenodo.20471407", "url": "https://jamming-physics.org/dna/"}, "author": {"@type": "Person", "name": "Young Jae Lee", "sameAs": "https://orcid.org/0009-0002-7535-8245"}, "identifier": "https://doi.org/10.5281/zenodo.20471407", "isBasedOn": "https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/ax-b-tissue-dual-interpreter/", "license": "https://creativecommons.org/licenses/by/4.0/", "knowsAbout": ["morphogen gradient", "screened-Poisson equation", "positional information", "French-flag model", "reaction-diffusion length scale", "level and shape decomposition", "robust z-score", "deterministic morphogenesis", "tissue territory boundaries", "precision versus accuracy", "reproducible developmental biology", "4D DNA Blueprint"]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jamming-physics.org/"}, {"@type": "ListItem", "position": 2, "name": "4D DNA Blueprint", "item": "https://jamming-physics.org/dna/"}, {"@type": "ListItem", "position": 3, "name": "Appendix B Tissue-level dual interpreter"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › Appendix B</nav></header>
+<main>
+<h1>Tissue-level dual interpreter</h1>
+
+<p class="answer">The cell level reads one stiffness signal two ways: γ is its level (the window-mean) and the A4 coordinate is its shape (the same signal with that mean removed). This appendix proves the tissue level admits the same split, made exact. One morphogen field — the steady screened-Poisson gradient c(x) — is read as LEVEL = mean(c) → size and SHAPE = robust_z(c) → form (the territory boundaries). The two reads are orthogonal projections of one field, in closed form, to machine precision. The map from this exact machinery to a real organ's mass and a real tissue's anatomy stays open, each behind a named measured-data obstacle.</p>
+
+<p class="abstract">Appendix A grew tissue-level form with a coarse 32-point Jacobi relaxation, a one-dimensional axis collapse taken on faith, an integer-floor territory count, and two inline constants (a dwell gain and brake) that appear in no parameter database. That is precision theatre: it returns a number, but the number carries a discretization error and rests on unstated constants. The cell level has no such problem — there one signal is projected two ways and both projections are exact arithmetic on the sequence. The correct fix is therefore not to tune the solver but to find the same dual structure at the tissue scale and make it exact. It exists. The morphogen obeys a linear equation D·∇²c − c/τ + source = 0, so for a full source face with zero-flux side walls the field is exactly one-dimensional and has the closed form c(x) = cosh((L−x)/λ)/cosh(L/λ) with λ = √(Dτ). From this single field both channels fall out in closed form: LEVEL = mean(c) = (λ/L)·tanh(L/λ) is the size budget (the tissue mirror of γ), and SHAPE = robust_z(c) gives territory boundaries x_k = L − λ·acosh(θ_k·cosh(L/λ)) (the tissue mirror of A4, using the identical robust_z operator). The boundaries reproduce their threshold c(x_k)=θ to ten decimals; the LEVEL integral matches a two-million-point quadrature to under 1e-9. SHAPE is invariant under both level moves — scaling the source and adding a background — to a few parts in 10¹⁵, and moves only when the geometry changes: LEVEL ⟂ SHAPE, exactly. The old Jacobi solver is retained only as a convergence witness whose λ error shrinks toward the exact 60 µm as the grid refines, proving the roughness was the solver, not the physics. Every constant is locked from a parameter database with a grade and provenance (zero inline magic numbers). The size and form machinery is graded verified-exact; the comparison to real organ mass and real anatomy is graded open, untested, because making it without measured data would be back-fitting. The fail-closed gate passes seven of seven and completion is honestly false.</p>
+
+<aside class="vp-card" data-locked="relationship">
+  <h4 class="vp-q">The tissue level dualizes exactly like the cell level</h4>
+  <p class="vp-value">Cell level: one stiffness signal <code>s(x)</code> → <strong>γ = mean(s)</strong> (level) ⊕ <strong>A4 = robust_z(s)</strong> (shape). Tissue level: one morphogen field <code>c(x)</code> → <strong>LEVEL = mean(c)</strong> → size ⊕ <strong>SHAPE = robust_z(c)</strong> → form. The <em>same</em> <code>robust_z</code> operator removes the level, so SHAPE carries none of LEVEL. Same field, orthogonal projections; neither contains the other.</p>
+  <p class="vp-grade">Grade: verified (closed-form level/shape decomposition; SHAPE invariant under source-scale and background-offset to ~5×10⁻¹⁵; 2×SHA-256 deterministic).</p>
+</aside>
+<aside class="vp-card" data-register="ax-b-tissue-dual-interpreter">
+  <h4 class="vp-q">Read tissue size and tissue form from one field with one deterministic engine</h4>
+  <p class="vp-value">At λ = 60 µm over L = 360 µm: LEVEL size budget = 59.999 µm (closed form λ·tanh(L/λ)/L) · SHAPE territory boundaries at 41.59 / 83.18 / 124.79 / 166.45 µm (closed form x_k = L − λ·acosh(θ_k·cosh(L/λ))) · apical territory 41.59 µm · LEVEL ⟂ SHAPE to machine epsilon. Every number reproduced from a closed form whose constants are locked.</p>
+  <p class="vp-meaning">Size and form are not two engines but two orthogonal reads of one morphogen field, exactly as γ and the A4 coordinate are two reads of one stiffness field. Replacing the coarse Jacobi relaxation with the exact gradient removes a 0.92% grid artifact in the recovered length scale; replacing the integer-floor count with exact threshold crossings makes every territory boundary reproduce its own activation threshold to ten decimals; sourcing every constant from the locked database removes the unstated dwell gain and brake.</p>
+  <p class="vp-grade">Grade: precision verified-exact (size/form/orthogonality) · accuracy open (size-vs-mass and form-vs-anatomy untested, back-fit forbidden)</p>
+  <p class="vp-canonical"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/ax-b-tissue-dual-interpreter/" rel="noopener">Canonical reproduction → repro/dna/ax-b-tissue-dual-interpreter/</a></p>
+</aside>
+<aside class="vp-card" data-locked="material">
+  <b>γ / A4 — the cell-level level–shape split</b> — the source pattern this appendix mirrors: γ is the level of the stiffness field, the A4 coordinate is its shape (same signal, mean removed). Imported as the template, unchanged. <a href="/dna/13-unified-deterministic-interpreter/" rel="noopener">canonical level/shape §13</a>
+</aside>
+<aside class="vp-card" data-locked="length-scale">
+  <b>λ — intrinsic morphogen length</b> — λ = √(Dτ) = 60.0 µm, composed of two measured morphogen constants (effective diffusion D and clearance time τ; Kicheva et al. 2007), read from the locked database, no fit <span class="grade g-calibrated">measured-grounded</span>. <a href="/dna/ax-a-universal-morphogenesis-gene-clock/" rel="noopener">morphogen length context Appendix A</a>
+</aside>
+<aside class="claim-strip">
+  <span class="grade g-forced">precision verified-exact</span>
+  <span class="grade g-open">accuracy open</span>
+  <span class="gate">LOCK → Derive → Gate</span>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/ax-b-tissue-dual-interpreter/" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
+</aside>
+
+<h3>Why this appendix exists</h3>
+<p>Appendix A's morphogenesis engine ran only the static level projection of a four-dimensional object — one of time and three of space — and grew form on a coarse grid. The recovered length scale came back as 60.55 µm against an exact 60.00, a 0.92% coarse-grid artifact; the territory boundary came back as 41.92 against an exact 41.59. The axis collapse to one dimension was asserted, the territory count used an integer floor, and the size channel carried two inline constants — a dwell gain and a brake — that appear in no database. None of this is wrong physics; it is a rough numerical reading of correct physics. The cell level shows the standard to meet: there one signal is projected into a level and a shape and both are exact. This appendix lifts that standard to the tissue scale.</p>
+
+<h3>One field, in closed form</h3>
+<p>The morphogen concentration at steady state obeys a linear screened-Poisson equation, D·∇²c − c/τ + source = 0, whose only length scale is λ = √(Dτ). Because the equation is linear, a full source face with zero-flux side walls makes the field separable and therefore exactly one-dimensional — the transverse variance is zero, not small — so the axis collapse Appendix A assumed is here a theorem, not an approximation. The field is</p>
+<p><code>c(x) = cosh((L − x)/λ) / cosh(L/λ)</code>, with c(0) = 1 exact and zero flux at the far wall satisfied to machine epsilon. For a point source the three-dimensional Yukawa form <code>c(r) = e^(−r/λ)/(4πDr)</code> is available with the same constant, and its threshold radius is found in closed form through the Lambert W function — no relaxation grid anywhere.</p>
+
+<h3>LEVEL — the size channel (the γ mirror)</h3>
+<p>The level read is the spatial mean of the field, which integrates exactly:</p>
+<p><code>LEVEL = mean(c) = (λ/L)·tanh(L/λ)</code>. At λ = 60 µm over a deep domain this gives a size budget of 59.999 µm, matched against a two-million-point quadrature to under 1e-9. This is the tissue mirror of γ: a single scalar that says <em>how much</em>, carrying no positional information. Developmental extent enters as a single universal dosage rule — available extent scales as developmental-time to a fixed exponent — applied identically to every organ, never per-organ, so nothing here is fit to any measured size.</p>
+
+<h3>SHAPE — the form channel (the A4 mirror)</h3>
+<p>The shape read removes the level with the very same operator the cell level uses for the A4 coordinate: <code>robust_z(c) = (c − median(c)) / (1.4826·MAD)</code>, byte-for-byte the function from the §13 pipeline. The territory boundaries — the positions where the field crosses an activation threshold — are then the closed-form crossings</p>
+<p><code>x_k = L − λ·acosh(θ_k·cosh(L/λ))</code>, each of which reproduces its own threshold c(x_k) = θ_k to ten decimals. For a deep domain this collapses to the textbook French-flag spacing λ·ln(1/θ). The apical territory comes out at 41.59 µm, the boundaries at 41.59, 83.18, 124.79 and 166.45 µm — exact crossings, not an integer-floor count. This is the tissue mirror of A4: the form of the field once its level is subtracted.</p>
+
+<h3>LEVEL ⟂ SHAPE, exactly</h3>
+<p>The two reads are orthogonal, and the proof is mechanical rather than statistical. Scaling the source by any factor multiplies LEVEL by that factor while leaving SHAPE unchanged to about five parts in 10¹⁵; adding a uniform background shifts LEVEL while leaving SHAPE unchanged to about nine parts in 10¹⁵. SHAPE moves only when the geometry — the length scale λ relative to the domain — changes, which is precisely when the form itself changes. On a panel of domain-to-length ratios the two reads are non-redundant. SHAPE ignores everything LEVEL responds to and responds only to the form: there is no "approximately" in the relationship, exactly as at the cell level the A4 coordinate carries none of γ.</p>
+
+<h3>The coarse solver, superseded not patched</h3>
+<p>The old Jacobi relaxation is kept, but only as a witness against itself. Refining its grid drives its recovered length scale monotonically toward the exact 60.00 µm and its transverse variance toward zero, demonstrating that the roughness lived in the discretization and that the underlying field was exactly one-dimensional all along. The fix was therefore supersession, not tuning: the rough code is retained solely as the convergence demonstration, and the engine reads the closed form. This follows the standing rule that a rough result is replaced by a more rigorous one, never patched around.</p>
+
+<h3>What is locked, and what stays open</h3>
+<p>Every constant the interpreter uses — the diffusion coefficient and clearance time behind λ, the activation threshold, the dosage exponent — is read from the locked database with a grade and a provenance, and the lock manifest reports zero inline magic numbers; the dwell-gain-and-brake class of unstated constant cannot reappear. The interpreter never reads a validation target, so its output is identical whether or not a decoy target file is present, and two serializations hash identically.</p>
+<p>What stays open is the accuracy, and it stays open on purpose. The engine computes the size budget and the form partition exactly, but it does not compare them to a real organ, because doing so without measured data would be back-fitting. Two named obstacles stand between this appendix and an accuracy claim: the size magnitude cannot be checked against real organ mass without a measured per-organ developmental growth-rate atlas, and the form partition cannot be checked against real anatomy without measured chromatin contact (Hi-C, Micro-C, or capture-C) or a staged tissue-territory boundary map. Until those datasets are supplied and a pre-registered rank test against them is run with a shuffle control, the honest grade is open and completion is false. Precision is earned here; accuracy is not yet claimed.</p>
+
+<aside class="vp-card" data-stress="precision-not-accuracy">
+  <b>The discipline (the handover's law) — precision ≠ accuracy.</b> Everything graded verified on this page is <i>precision</i>: machine-epsilon exact arithmetic on a closed-form field with locked constants. None of it is <i>accuracy</i>: agreement with a measured organ. The two are kept apart in exactly one place in the code, and the two accuracy channels are graded open with a named obstacle each, so a precise number can never be mistaken for a validated one. <span class="grade g-open">precision exact / accuracy open</span> <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/ax-b-tissue-dual-interpreter/LEDGER.md" rel="noopener">grade ledger → repro</a></aside>
+
+<nav class="pn"><a rel="prev" href="/dna/ax-a-universal-morphogenesis-gene-clock/">← Appendix A</a><a href="/dna/">contents</a><a rel="next" href="/dna/ax-c-hierarchical-renormalization/">Appendix C →</a></nav>
+</main>
+<footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.13)</footer>
+</body>
+</html>

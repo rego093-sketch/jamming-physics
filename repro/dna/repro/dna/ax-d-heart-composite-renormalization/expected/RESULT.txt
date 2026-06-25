@@ -1,0 +1,59 @@
+==============================================================================
+  HEART COMPOSITE-RENORMALIZATION -- ACCURACY RESULT
+  (challenging the heart that 'failed' in Appendix A)
+==============================================================================
+
+THE QUESTION: what sets the heart's developmental stiffening
+  measured: 0.1 + 0.3*day kPa (chick); E2 <1 -> E14 ~10 kPa; adult 10-50 kPa
+  -- the sequence material gamma? pure cell-jamming? or ECM composition?
+
+RESULT A -- PURE CELL-JAMMING IS INSUFFICIENT (falsification, parameter-free)
+  embryonic cell modulus      : 1.25 kPa
+  pure-jamming ceiling        : 1.25 kPa (<= cell modulus)
+  measured E14 tissue         : 10.0 kPa
+  rise factor (ceiling->E14)  : 8.0x  >> 1
+  => pure jamming insufficient : True
+     the stiff ECM phase / cell maturation is NECESSARY  [V]
+
+RESULT B -- GAMMA IS ORTHOGONAL TO THE STIFFENING (explains the null)
+  gamma time-invariant        : True (sequence-fixed)
+  Appendix A heart null       : rho=0.071, p=0.882
+  reproduces & explains null  : True  [V]+[L]
+     a constant cannot encode a rising trajectory; the timing axis is
+     COMPOSITION (ECM), orthogonal to the material gamma
+
+RESULT C -- EXACT TWO-PHASE BRACKET CONTAINS THE MEASURED TISSUE (consistency)
+  ventricular LV bracket      : [15.909091, 29.0] kPa
+  measured adult tissue       : 18.0 kPa
+  contained (LV ECM)          : True  [L]
+  note                        : measured tissue sits low in bracket
+                                (isolated cells stiffer than bulk)
+
+COMPOSITION-FLOW TRAJECTORY (illustration, [F])
+  predicted span              : 0.16 -> 23.5079 kPa
+  measured embryonic / adult  : 0.5 / [10.0, 50.0] kPa
+  spans measured range        : True (monotone=True)
+
+THE DISCOVERY (반증 = 발견)
+  the heart's developmental stiffening is a COMPOSITION + MATURATION flow
+  (ECM collagen deposition + cell jamming), NOT the sequence material gamma.
+  Falsifying pure-jamming and material-gamma REVEALS the right axis -- which
+  is exactly why gamma was orthogonal to heart timing in Appendix A.
+
+HONEST STATUS (precision != accuracy)
+  completion.complete         : False
+  achieved : exact bracket [V], pure-jamming falsified [V], gamma-null
+             explained [V], measured phase moduli [L], bracket-consistency [L]
+  NOT yet  : a TIGHT zero-parameter trajectory prediction (3 channels [O])
+  closes with: ONE measured dataset (named above). The machinery, the measured phase moduli, the falsification, and the explanation are already in place.
+     [O] TIGHT quantitative trajectory prediction (zero free parameters)
+         -> needs: co-registered developmental series (tissue modulus + both volume fractions + both phase moduli) in one preparation
+     [O] active tension contribution (myosin) vs passive composite
+         -> needs: measured active-tension vs passive-stiffness decomposition per developmental stage
+     [O] large-strain (nonlinear strain-stiffening) behaviour
+         -> needs: measured per-stage stress-strain curves (nonlinear modulus)
+
+------------------------------------------------------------------------------
+  GATE: PASS (9/9)   gate sha=94355b40c40c3791   reading hash=a01f16ecc3637ed8
+  LOCK -> Derive -> Gate. No fitted parameters. precision != accuracy. 반증=발견.
+------------------------------------------------------------------------------

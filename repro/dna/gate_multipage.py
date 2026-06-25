@@ -24,7 +24,7 @@ meta = json.load(open(os.path.join(mono_dir, "_meta.json"), encoding="utf-8"))
 order = [c["slug"] for c in meta["chapters"]] + [a["slug"] for a in meta["appendices"]]
 
 # 1. section count == manifest/meta rows
-if len(pages) == 17 == len(order): ok("section count = 17 = meta rows")
+if len(pages) == 28 == len(order): ok("section count = 28 = meta rows")
 else: bad("section count mismatch: %d pages, %d meta" % (len(pages), len(order)))
 
 # 2. all meta slugs have a page
@@ -88,8 +88,8 @@ if hub.count("<h1>") == 1: ok("hub: one h1")
 else: bad("hub: h1 count %d" % hub.count("<h1>"))
 hub_links = set(re.findall(r'href="(/%s/[^"#]+/)"' % PAPER, hub))
 linked = sum(1 for s in pages if ("/%s/%s/" % (PAPER, s)) in hub_links)
-if linked == 17: ok("hub: all 17 sections linked (orphans 0)")
-else: bad("hub: only %d/17 sections linked" % linked)
+if linked == 28: ok("hub: all 28 sections linked (orphans 0)")
+else: bad("hub: only %d/28 sections linked" % linked)
 if 'href="/physics/"' in hub: ok("hub: cross-volume jamming link (§10)")
 else: bad("hub: missing /physics/ cross link")
 for j in re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', hub, re.S):
@@ -169,7 +169,7 @@ def _sha256(path):
     except OSError:
         return None
 report = {
-    "session": "v1_13-gamma-a4-level-shape",
+    "session": "v1_13-gamma-a4-level-shape + ax-b-tissue-dual-interpreter",
     "spec": "VP-SPEC v1.8",
     "paper_id": "dna",
     "date": "2026-06-21",
@@ -177,7 +177,7 @@ report = {
     "summary": {"pass": P, "warn": len(warns), "fail": len(fails),
                 "verdict": "PASS" if not fails else "FAIL"},
     "scripts": {
-        "build": {"file": "build_v1_13_level_shape.py", "sha256": _sha256("build_v1_13_level_shape.py")},
+        "build": {"file": "build_multipage_dna.py", "sha256": _sha256("build_multipage_dna.py")},
         "gate":  {"file": "gate_multipage.py",      "sha256": _sha256("gate_multipage.py")},
     },
     "checks": [{"status": s, "check": n} for s, n in checks],

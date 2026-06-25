@@ -1,0 +1,119 @@
+{
+  "confusion_matrix": {
+    "control_max_grammar": "neural",
+    "control_max_z": 0.063,
+    "control_quiet": true,
+    "diagonal_dominance_mean": 3,
+    "grade": "[L] real promoters + mean-matrix diagonal + [F] consensus-motif choice + [O] small panel / liver grammar enhancer-distributed (weakest)",
+    "mean_matrix": {
+      "cardiac": {
+        "cardiac": 2.92,
+        "hepatic": -0.374,
+        "neural": 1.086
+      },
+      "hepatic": {
+        "cardiac": -0.187,
+        "hepatic": 0.407,
+        "neural": -0.216
+      },
+      "neural": {
+        "cardiac": -0.448,
+        "hepatic": -0.037,
+        "neural": 1.283
+      }
+    },
+    "mean_matrix_diagonal_dominant": true,
+    "n_organs": 3,
+    "organs": [
+      "cardiac",
+      "neural",
+      "hepatic"
+    ],
+    "per_gene_diagonal_dominance": 3,
+    "per_gene_total": 8,
+    "verdict": "the regulatory grammar reads organ identity ACROSS the atlas -- the MEAN confusion matrix is diagonal-dominant (each organ peaks on its own grammar) and the housekeeping control is quiet. G2 is not heart-specific; the same operator reads cardiac, neural, and hepatic identity from real promoters. Per-gene argmax is noisy at small counts (reported honestly); the mean matrix is the primary read."
+  },
+  "per_promoter_reads": {
+    "ALB_hepatic": {
+      "argmax_grammar": "cardiac",
+      "organ": "hepatic",
+      "z": {
+        "cardiac": 0.793,
+        "hepatic": 0.717,
+        "neural": 0.626
+      }
+    },
+    "APOA1_hepatic": {
+      "argmax_grammar": "cardiac",
+      "organ": "hepatic",
+      "z": {
+        "cardiac": -0.231,
+        "hepatic": -0.716,
+        "neural": -0.771
+      }
+    },
+    "GAPDH_housekeeping": {
+      "argmax_grammar": "neural",
+      "organ": "housekeeping",
+      "z": {
+        "cardiac": -1.098,
+        "hepatic": -0.709,
+        "neural": 0.063
+      }
+    },
+    "NEUROD1_neural": {
+      "argmax_grammar": "neural",
+      "organ": "neural",
+      "z": {
+        "cardiac": -0.594,
+        "hepatic": 0.114,
+        "neural": 3.477
+      }
+    },
+    "NPPA_cardiac": {
+      "argmax_grammar": "cardiac",
+      "organ": "cardiac",
+      "z": {
+        "cardiac": 4.64,
+        "hepatic": -0.5,
+        "neural": -0.251
+      }
+    },
+    "PAX6_neural": {
+      "argmax_grammar": "cardiac",
+      "organ": "neural",
+      "z": {
+        "cardiac": 0.154,
+        "hepatic": -1.035,
+        "neural": 0.114
+      }
+    },
+    "SYN1_neural": {
+      "argmax_grammar": "hepatic",
+      "organ": "neural",
+      "z": {
+        "cardiac": -0.905,
+        "hepatic": 0.811,
+        "neural": 0.258
+      }
+    },
+    "TNNT2_cardiac": {
+      "argmax_grammar": "neural",
+      "organ": "cardiac",
+      "z": {
+        "cardiac": 1.201,
+        "hepatic": -0.248,
+        "neural": 2.422
+      }
+    },
+    "TTR_hepatic": {
+      "argmax_grammar": "hepatic",
+      "organ": "hepatic",
+      "z": {
+        "cardiac": -1.122,
+        "hepatic": 1.221,
+        "neural": -0.504
+      }
+    }
+  }
+}

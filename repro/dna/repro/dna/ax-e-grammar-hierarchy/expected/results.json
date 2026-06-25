@@ -1,0 +1,66 @@
+{
+  "result_1_tissue_identity_readable": {
+    "G1_separates_tissue": false,
+    "G2_cardiac_over_control_ratio": 14.0,
+    "G2_separates_tissue": true,
+    "cardiac_mean_G1_gamma": -1.4555,
+    "cardiac_mean_G2_total": 14.0,
+    "control_mean_G1_gamma": -1.5686,
+    "control_mean_G2_total": 1.0,
+    "grade": "[L] real human promoters + [V] computed exactly",
+    "rows": [
+      {
+        "G1_material_gamma": -1.459299,
+        "G2_cardiac_total": 17,
+        "G2_regulatory_gamma": 1.806667,
+        "sequence": "NPPA_cardiac",
+        "tissue": "cardiac"
+      },
+      {
+        "G1_material_gamma": -1.451735,
+        "G2_cardiac_total": 11,
+        "G2_regulatory_gamma": 1.234444,
+        "sequence": "TNNT2_cardiac",
+        "tissue": "cardiac"
+      },
+      {
+        "G1_material_gamma": -1.568587,
+        "G2_cardiac_total": 1,
+        "G2_regulatory_gamma": 0.112222,
+        "sequence": "GAPDH_housekeeping",
+        "tissue": "housekeeping (non-cardiac control)"
+      }
+    ],
+    "verdict": "the REGULATORY grammar G2 reads cardiac tissue identity from sequence (cardiac >> control); the MATERIAL grammar G1 does not -- the tissue blueprint is a level above the material, and the corpus had read only the material level"
+  },
+  "result_2_upper_grammar_above_material": {
+    "cardiac_grammar_collapsed": true,
+    "cardiac_grammar_original_total": 17,
+    "cardiac_grammar_shuffled_total": 4,
+    "dinucleotide_counts_preserved": true,
+    "fraction_grammar_lost": 0.7647,
+    "grade": "[V] exact: gamma_1 invariance is a consequence of dimer-count preservation",
+    "material_gamma_original": -1.459299,
+    "material_gamma_shuffled": -1.459299,
+    "material_level_preserved_exactly": true,
+    "sequence": "NPPA_cardiac",
+    "tissue": "cardiac",
+    "verdict": "the dinucleotide shuffle preserves the MATERIAL level gamma_1 exactly (it preserves dimer counts and gamma_1 is their mean) yet collapses the cardiac grammar -- so NONE of the tissue identity is at the material level; reading only the cell-level material misses the tissue blueprint"
+  },
+  "result_3_levels_orthogonal": {
+    "corr_G1_material_vs_G2_regulatory": -0.0421,
+    "grade": "[V] computed exactly on the real sequence",
+    "largely_orthogonal": true,
+    "r_squared": 0.0018,
+    "sequence": "NPPA_cardiac",
+    "tissue": "cardiac",
+    "verdict": "the material and regulatory grammars are largely uncorrelated along the sequence -- distinct projections of the blueprint; the material does not predict the regulatory arrangement"
+  },
+  "same_operator_all_levels": {
+    "grade": "[V] the SHAPE projection is the same operator at G1, G2, G3",
+    "operator": "robust_z (median-centred, MAD-scaled) -- identical to the cell A4",
+    "same_operator_all_levels": true,
+    "shape_scale_invariance": 4.440892098500626e-16,
+    "shape_shift_invariance": 3.552713678800501e-15
+  }
+}

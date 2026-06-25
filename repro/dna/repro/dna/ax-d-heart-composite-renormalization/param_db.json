@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "purpose": "Locked parameter database for the HEART composite-renormalization ACCURACY test. Unlike the generic Appendix C placeholders, every modulus, fraction, and trajectory point here is an INDEPENDENTLY MEASURED, PUBLISHED, cited value from the cardiac-mechanics literature. This is the [O] -> [L] upgrade Appendix C named: the absolute per-scale moduli are now measured, so an ACCURACY test (does the renormalization composite CONTAIN / TRACK the measured myocardium?) becomes possible. The engine reads ONLY this DB for physical inputs; it never reads the validation TARGET (the measured tissue trajectory) when computing a PREDICTION. That separation is the difference between a locked measured input [L] and a back-fit.",
+    "grades": {
+      "[L]": "locked: independently measured/published value or exact theorem, cited; legitimate input",
+      "[V]": "verified: an EXACT closed form / theorem / logical certainty evaluated here (precision, not a measurement match)",
+      "[F]": "fixed modelling choice (generic central value of a cited range, or a documented functional form); declared",
+      "[O]": "open: the specific co-registered measurement does not exist here; a generic value stands in and the residual is declared open"
+    },
+    "rule": "MEASURED-AND-CITED or EXACT-THEOREM => legitimate. PER-TARGET-TUNED => forbidden. No modulus below was chosen to make the bracket land on the tissue value; each is an independent literature measurement.",
+    "the_test": "The myocardium is a two-phase composite: a CELL phase (cardiomyocytes, modulus B_cell, fraction phi_cell) and an ECM/COLLAGEN phase (modulus B_ECM, fraction phi_ECM). The EXACT elastic-mixture bounds bracket the composite modulus. The accuracy questions: (1) does the bracket CONTAIN the measured myocardium modulus at the embryonic AND adult endpoints? (2) is pure cell-jamming (Appendix C, no ECM) INSUFFICIENT to reach the adult tissue modulus from the soft embryonic cell -- forcing the ECM phase? (3) is the developmental stiffening trajectory therefore a COMPOSITION flow (collagen), orthogonal to the sequence material gamma -- explaining the Appendix A null?"
+  },
+
+  "tissue_stiffness_trajectory": {
+    "_axis": "THE VALIDATION TARGET -- the MEASURED developmental stiffening of myocardium. The engine NEVER reads this when computing a prediction (non-fit invariant, gate D7). It is compared to the prediction only in the explicit accuracy/containment checks.",
+    "chick_embryo_intercept_kpa": {
+      "value": 0.1, "grade": "[L]", "measured": true,
+      "provenance": "Embryonic chick heart elastic modulus starts ~0.1 kPa: Majkut, Idema, Swift, Krieger, Liu & Discher 2013, Curr. Biol. 23:2434-2439 ('Heart-specific stiffening in early embryos parallels matrix and myosin expression to optimize beating'); restated in Pesce et al. 2022."
+    },
+    "chick_embryo_slope_kpa_per_day": {
+      "value": 0.3, "grade": "[L]", "measured": true,
+      "provenance": "Embryonic chick heart stiffness rises ~0.3 kPa per day (approximately LINEAR in developmental time): Majkut et al. 2013, Curr. Biol. 23:2434-2439. The daily rise parallels a small subset of proteins -- COLLAGEN plus cardiac excitation-contraction proteins (proteomics, same paper)."
+    },
+    "murine_E2_kpa": {
+      "value": 0.5, "grade": "[L]", "measured": true, "reported_as": "< 1 kPa",
+      "provenance": "Murine heart at embryonic day E2 has modulus < 1 kPa (central placeholder 0.5): Majkut et al. 2013 (comparative study cited in Ward & Iskratsch 2020; Frontiers Cell Dev Biol 2021)."
+    },
+    "murine_E14_kpa": {
+      "value": 10.0, "grade": "[L]", "measured": true,
+      "provenance": "Murine heart stiffens ~10-fold from E2 to E14, reaching ~10 kPa -- a value also measured in neonate and adult myocardium: Majkut et al. 2013."
+    },
+    "adult_rat_myocardium_central_kpa": {
+      "value": 18.0, "grade": "[L]", "measured": true, "range": [11.9, 46.2],
+      "provenance": "Adult rat heart elastic modulus ~18 +/- 2 kPa: Berry et al. 2006. Bhana et al. report 11.9-46.2 kPa for adult rat myocardium and 4-11.4 kPa for neonatal rat myocardium."
+    },
+    "adult_human_myocardium_range_kpa": {
+      "value": [10.0, 50.0], "grade": "[L]", "measured": true,
+      "provenance": "Normal adult human heart tissue stiffness ~10-50 kPa: Berry et al. 2006; Engler et al.; Bhana et al. 2010. The 10-30 kPa band is also the substrate elasticity on which cardiomyocytes form organized sarcomeres (Jacot/McCain; doc PMC3386849, PMC22196970)."
+    }
+  },
+
+  "cell_phase": {
+    "_axis": "THE CELL PHASE -- single cardiomyocyte modulus, MEASURED. This is the B_cell input to the composite. Embryonic/immature cells are SOFT; adult cells are STIFF. The key falsification uses the EMBRYONIC cell modulus.",
+    "single_cardiomyocyte_immature_kpa": {
+      "value": 1.25, "grade": "[L]", "measured": true,
+      "provenance": "Human iPSC-derived (immature) cardiomyocyte Young's modulus ~1.25 kPa, decreasing on F-actin depolymerization: Pires et al. 2019 (cited in Frontiers Cell Dev Biol 2021). Representative of the soft EMBRYONIC/immature cell phase."
+    },
+    "single_cardiomyocyte_adult_kpa": {
+      "value": 35.0, "grade": "[L]", "measured": true, "range": [30.0, 42.0],
+      "provenance": "Adult rat freshly-isolated cardiomyocyte transverse/radial apparent elastic modulus ~35 kPa (35.1 +/- 0.7 kPa, n=53, F344xBN; Rutgers/Shroff-type AFM nanoindentation; also ~35 kPa diastolic, similar to skinned cardiomyocytes). Representative of the stiff ADULT cell phase."
+    },
+    "cardiomyocyte_density_kg_per_m3": {
+      "value": 1060.0, "grade": "[L]", "measured": false, "range": [1050.0, 1080.0],
+      "provenance": "Myocardial / muscle mass density ~1.06 g/mL: standard cardiac tissue value. Used only as the density anchor for the VP wave-speed relation c^2=B/rho; the dimensionless results do not depend on it."
+    }
+  },
+
+  "ecm_phase": {
+    "_axis": "THE ECM / COLLAGEN PHASE -- the STIFF phase the pure-cell-jamming model (Appendix C) was missing. Modulus MEASURED on DECELLULARIZED myocardium (cells removed, ECM alone) and on reconstituted collagen networks. This is B_ECM. The whole discovery is that THIS phase, deposited over development, drives the stiffening.",
+    "decellularized_LV_ECM_kpa": {
+      "value": 5.0, "grade": "[L]", "measured": true,
+      "provenance": "Decellularized porcine LEFT-VENTRICLE myocardial ECM elastic modulus ~5 kPa: Williams et al. (cited in AJP-Heart 2024, doi 10.1152/ajpheart.00813.2024). The ECM phase modulus IN SITU with cells removed."
+    },
+    "decellularized_SAN_ECM_kpa": {
+      "value": 17.0, "grade": "[L]", "measured": true,
+      "provenance": "Decellularized porcine SINOATRIAL-NODE myocardial ECM ~17 kPa (stiffer than LV): same source. Shows the ECM phase modulus spans ~5-17 kPa across heart regions."
+    },
+    "collagen_I_network_range_kpa": {
+      "value": [2.0, 50.0], "grade": "[L]", "measured": true,
+      "provenance": "Reconstituted type-I collagen network elastic modulus: a POWER LAW in concentration, ranging ~1 to several hundred kPa over 10-200 mg/mL (Col-I review, bioRxiv 2025.03.10.642521); compressed collagen scaffolds 2-10 kPa (Serpooshan/Ruel, PMC3809823); collagen-fibrin gels 0.5-3.7 kPa spanning native rat myocardium 2.67 kPa (PMC ACS 2018). Central working band 2-50 kPa."
+    },
+    "ecm_phase_central_kpa": {
+      "value": 8.0, "grade": "[F]", "measured": false, "range": [5.0, 17.0],
+      "provenance": "[F] A single central value for the ECM phase modulus, taken as the decellularized-myocardium central (~5-17 kPa -> 8 kPa working central). Used for the bracket; the measured RANGE is carried so the bracket can be reported as a range, not a point."
+    }
+  },
+
+  "composition": {
+    "_axis": "THE VOLUME FRACTIONS and the COLLAGEN TRAJECTORY -- how much of the myocardium is cell vs ECM, and how the ECM (collagen) fraction RISES over development. The trajectory SHAPE is measured-grounded (collagen rises faster than heart weight); exact co-registered fractions are [F]/[O].",
+    "cardiomyocyte_volume_fraction_adult": {
+      "value": 0.80, "grade": "[F]", "measured": false, "range": [0.70, 0.90],
+      "provenance": "[F] Cardiomyocytes occupy ~70-90% of adult myocardial VOLUME (though <50% by cell NUMBER): standard cardiac histology (Vliegen; Banerjee). Central 0.80. Used as phi_cell; phi_ECM = 1 - phi_cell."
+    },
+    "collagen_rises_faster_than_heart_weight": {
+      "value": true, "grade": "[L]", "measured": true,
+      "provenance": "In the chick embryo, heart growth and collagen growth (day 5-21) both follow continuous EXPONENTIAL functions, but collagen increases MORE RAPIDLY than heart weight, so the collagen FRACTION rises over development: classic chick collagen-development study (Biochim. Biophys. Acta 1967, 0005-2795(67)90473-4). Mechanical interpretation given: rising collagen proportion meets the enlarging heart's increasing mechanical-strength requirement."
+    },
+    "neonatal_high_collagen_protein_ratio": {
+      "value": true, "grade": "[L]", "measured": true,
+      "provenance": "Neonatal/young human heart has a relatively HIGH total-collagen/total-protein ratio and a high type-I/type-III ratio (type I = rigidity, type III = elasticity), explaining a rigid, less-compliant state; both ratios gradually decrease to adult levels (collagen/protein normal by ~5 months): Marijianowski, van der Loos, Mohrschladt & Becker 1994, J. Am. Coll. Cardiol. 23:1204-1208 (hydroxyproline assay + Sirius red)."
+    },
+    "collagen_fraction_embryonic_start": {
+      "value": 0.02, "grade": "[F]", "measured": false, "range": [0.0, 0.05],
+      "provenance": "[F] Collagen first detected in chick heart at day 3 and is sparse early (a few percent of volume); central 0.02 used as the embryonic ECM volume fraction start. Real co-registered value is [O]."
+    }
+  },
+
+  "gamma_axis_control": {
+    "_axis": "THE NEGATIVE CONTROL -- the sequence material gamma. gamma is SEQUENCE-FIXED (the genome does not change over development), hence TIME-INVARIANT. The Appendix A result is reproduced here as the measured null: gamma is orthogonal to developmental timing, SHARPEST IN THE HEART.",
+    "gamma_is_time_invariant_over_development": {
+      "value": true, "grade": "[V]", "measured": false,
+      "provenance": "[V] Logical certainty: gamma is computed from the genomic sequence (mean nearest-neighbour stacking dG), which is identical in every cell at every developmental stage. A time-invariant quantity cannot encode a time-varying trajectory. This is WHY gamma fails to predict the stiffening."
+    },
+    "appendix_a_heart_timing_null_rho": {
+      "value": 0.071, "grade": "[L]", "measured": true,
+      "provenance": "Appendix A (universal_morphogenesis_geneclock): gamma vs absolute developmental timing is an honest NULL, sharpest in the heart, Spearman rho = +0.071. Reproduced here as the measured null the composition axis explains."
+    },
+    "appendix_a_heart_timing_null_p": {
+      "value": 0.882, "grade": "[L]", "measured": true,
+      "provenance": "Appendix A: exact permutation p = 0.882 for the heart gamma-vs-timing null (not significant). The trajectory is NOT in gamma."
+    }
+  },
+
+  "jamming_inherited": {
+    "_axis": "INHERITED from Appendix C (hierarchy.jamming) -- the rigidity-emergence universals. Carried so the heart package is self-contained; identical values, same citations.",
+    "phi_c_3d": {
+      "value": 0.639, "grade": "[L]", "universal": true,
+      "provenance": "Jamming onset / random close packing phi_c ~ 0.639 (3D frictionless): O'Hern, Silbert, Liu & Nagel 2003, PRE 68:011306. Used for the pure-cell-jamming sub-model (the model being falsified for the trajectory)."
+    },
+    "rigidity_onset_exponent": {
+      "value": 0.5, "grade": "[L]", "universal": true,
+      "provenance": "Continuous rigidity onset ~ (phi-phi_c)^(1/2): O'Hern 2003 (Delta_z ~ (phi-phi_c)^1/2) composed with Wyart-Nagel-Witten 2005 (G ~ Delta_z). Inherited from Appendix C."
+    }
+  },
+
+  "_open": {
+    "_axis": "[O] data-blocked specifics -- declared open; what would CLOSE the accuracy claim",
+    "co_registered_developmental_series": "[O] a SINGLE co-registered developmental time series in ONE preparation giving, at each stage, (myocardium modulus E_tissue, collagen volume fraction phi_ECM, cell volume fraction phi_cell, single-cell modulus B_cell, ECM-phase modulus B_ECM). With it, the composite predicts E_tissue(t) with ZERO free parameters and the trajectory match becomes a tight [V]/accuracy test rather than a bracket-containment [L] consistency check.",
+    "active_tension_contribution": "[O] the ACTIVE (myosin contraction) contribution to apparent stiffness, separate from passive composite elasticity; Majkut shows contraction wave speed is LINEAR in E_t (active), distinct from the passive VP elastic wave c=sqrt(B/rho).",
+    "strain_stiffening": "[O] collagen and myocardium both show nonlinear STRAIN-STIFFENING; the linear-elastic bracket here is the small-strain modulus. Large-strain behaviour needs a measured stress-strain curve per stage."
+  }
+}

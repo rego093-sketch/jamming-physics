@@ -1,0 +1,94 @@
+{
+  "channels": [
+    {
+      "axis": "stiffness LEVEL (gamma-mirror)",
+      "channel": "NN stacking dG -> gamma (MATERIAL level)",
+      "connects_to_tower": "sets B at the BASE (the cell's intrinsic stiffness anchor)",
+      "reads_level": "L0 molecular (base-step) -> L1 cell",
+      "source": "chapters 2, 13",
+      "what": "per-dinucleotide stacking stiffness; mean over a window = gamma, the cell's genome-stiffness LEVEL (the polymer modulus the cell is built from)"
+    },
+    {
+      "axis": "stiffness SHAPE (A4-mirror)",
+      "channel": "A4 coordinate (shell / anchor / helical phase)",
+      "connects_to_tower": "the cell-level instance of the LEVEL/SHAPE split the tower repeats",
+      "reads_level": "L0 molecular -> L1 cell",
+      "source": "chapter 13",
+      "what": "the SHAPE of the same stiffness signal (gamma's mean removed by robust_z); contact-competent geometry"
+    },
+    {
+      "axis": "switch state (within a cell)",
+      "channel": "R19 switch (spinodal, barrier, |s|)",
+      "connects_to_tower": "intra-cell dynamics; not a tower rung (the tower is mechanical aggregation, orthogonal to the switch read)",
+      "reads_level": "L1 cell",
+      "source": "chapters 3, 4",
+      "what": "the bistable state of one regulatory switch, derived from gamma alone"
+    },
+    {
+      "axis": "drive (within a cell)",
+      "channel": "CpG O/E -> methylation drive h",
+      "connects_to_tower": "intra-cell; orthogonal to the mechanical tower",
+      "reads_level": "L1 cell (environment write)",
+      "source": "chapters 6, 9",
+      "what": "the writable drive that moves the switch; environment-set, sequence-read"
+    },
+    {
+      "axis": "chemical LEVEL (size)",
+      "channel": "morphogen LEVEL = mean(c) -> SIZE",
+      "connects_to_tower": "the CHEMICAL axis at L2 -- runs ALONGSIDE the mechanical tower, not in place of it (the gap Appendix B left)",
+      "reads_level": "L2 tissue",
+      "source": "Appendix B",
+      "what": "the morphogen budget of a tissue domain (the CHEMICAL/patterning axis)"
+    },
+    {
+      "axis": "chemical SHAPE (form)",
+      "channel": "morphogen SHAPE = robust_z(c) -> FORM (territories)",
+      "connects_to_tower": "the territories are the natural phi(x) domains the MECHANICAL SHAPE (this appendix) reads -- the chemical and mechanical axes meet here",
+      "reads_level": "L2 tissue",
+      "source": "Appendix B",
+      "what": "the territory boundaries of a tissue domain (the CHEMICAL/patterning axis)"
+    },
+    {
+      "axis": "mechanical LEVEL (B) + SHAPE (stiffness pattern)",
+      "channel": "packing fraction phi, jamming J, B_eff, rho_eff, c_eff",
+      "connects_to_tower": "IS the tower: the renormalization operator R that climbs every rung",
+      "reads_level": "L1->L4 (EVERY mechanical rung)",
+      "source": "Appendix C (this)",
+      "what": "the effective stiffness and density an aggregate ACQUIRES by packing its units (the MECHANICAL axis 'cells gather -> volume + stiffness')"
+    },
+    {
+      "axis": "mechanical structural invariant",
+      "channel": "isostatic coordination z_iso = 2d",
+      "connects_to_tower": "the universal anchor that makes the rigidity emergence parameter-free",
+      "reads_level": "structural invariant (all rungs)",
+      "source": "Appendix C (this)",
+      "what": "the marginal contact number at jamming; the anchor of the rigidity onset"
+    },
+    {
+      "axis": "the unifying relation across all scales",
+      "channel": "VP master c^2 = B/rho (wave speed per level)",
+      "connects_to_tower": "the invariant carried up every rung; softens by sqrt(J) per rung",
+      "reads_level": "L0->L4 (the through-line)",
+      "source": "Appendix C (this) <- core physics volume",
+      "what": "the mechanical signal speed at every level; the SAME relation the VP core thesis applies to the vacuum (vacuum as a jammed elastic solid)"
+    }
+  ],
+  "coverage_ok": true,
+  "levels_covered": [
+    "L0 molecular (base-step) -> L1 cell",
+    "L0 molecular -> L1 cell",
+    "L0->L4 (the through-line)",
+    "L1 cell",
+    "L1 cell (environment write)",
+    "L1->L4 (EVERY mechanical rung)",
+    "L2 tissue",
+    "structural invariant (all rungs)"
+  ],
+  "tower_levels": [
+    "L0 molecular/chromatin",
+    "L1 cell",
+    "L2 tissue",
+    "L3 organ",
+    "L4 organ system/body"
+  ]
+}

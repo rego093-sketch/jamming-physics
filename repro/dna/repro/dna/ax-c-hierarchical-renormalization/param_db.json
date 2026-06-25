@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "purpose": "Locked parameter database for the HIERARCHICAL SCALE-RENORMALIZATION interpreter. Every entry is an INDEPENDENTLY measured/published value, a UNIVERSAL law/theorem, or a documented modelling choice -- NEVER a value chosen by us to match a biological modulus, a tissue size, or an organ stiffness. The renormalization operator reads ONLY this DB for physical constants; it never reads any validation target when computing a flow. This is the difference between a LOCKED measured input [L] and a back-fit.",
+    "grades": {
+      "[L]": "locked: independently measured/published value, universal law, or exact theorem, cited; legitimate to use",
+      "[V]": "verified: an EXACT closed form / theorem evaluated here to machine precision (precision, NOT a measurement match)",
+      "[F]": "fixed modelling choice (functional form / generic central value of a cited range); documented",
+      "[O]": "open: the entity-specific MEASURED value does not exist in literature accessible here; a generic placeholder stands in and the residual is declared open"
+    },
+    "rule": "UNIVERSAL or CITED-MEASURED or EXACT-THEOREM => not a violation. PER-TARGET-TUNED => forbidden. No entry below was tuned to a biological target.",
+    "non_fit_invariant": "hierarchy.gate asserts the operator produces identical flow whether or not any target table is present (constants are target-independent)."
+  },
+
+  "jamming": {
+    "_axis": "RIGIDITY EMERGENCE (cells gather -> stiffness) -- the universal physics of how a packing of soft units acquires a bulk/shear modulus at a critical packing fraction. The SAME jamming physics the VP core thesis applies to the vacuum, applied one level up to a packing of biological units.",
+    "phi_c_3d_frictionless": {
+      "value": 0.639, "grade": "[L]", "universal": true,
+      "range": [0.55, 0.66],
+      "provenance": "Onset-of-jamming packing fraction phi_c for 3D frictionless spheres ~ random close packing ~0.639: O'Hern, Silbert, Liu & Nagel 2003, Phys. Rev. E 68:011306 ('Jamming at zero T and zero applied stress'). At phi_c the bulk AND shear moduli simultaneously become non-zero. Bernal 1960 / Scott & Kilgour 1969 give RCP~0.6366. FRICTION and POLYDISPERSITY shift phi_c down (frictional ~0.55-0.58) -- which is exactly why the ABSOLUTE biological value is graded [O], not this universal anchor."
+    },
+    "spatial_dimension_d": {
+      "value": 3, "grade": "[L]", "universal": true,
+      "provenance": "Physical space dimension d=3. Enters the isostatic coordination z_iso = 2d."
+    },
+    "z_isostatic_3d": {
+      "value": 6, "grade": "[L]", "universal": true,
+      "provenance": "Maxwell isostatic coordination z_iso = 2d = 6 in 3D (Maxwell 1864 counting argument; exact). At the jamming point the packing is marginally rigid with z = z_iso (O'Hern et al. 2003)."
+    },
+    "coordination_onset_exponent": {
+      "value": 0.5, "grade": "[L]", "universal": true,
+      "provenance": "Excess coordination above isostatic scales as Delta_z = z - z_iso ~ (phi - phi_c)^(1/2): O'Hern et al. 2003 PRE 68:011306 (Eq. 6 / Fig. 9), confirmed across potentials, polydispersity, and dimension. Universal exponent 1/2; not fitted."
+    },
+    "rigidity_coordination_linearity": {
+      "value": 1.0, "grade": "[L]", "universal": true,
+      "provenance": "The rigidity that emerges CONTINUOUSLY at the transition (the shear modulus, which vanishes at phi_c) is set by the excess connectivity above isostaticity: G ~ Delta_z (linear in excess contacts): Wyart, Nagel & Witten 2005 EPL 72:486; Liu & Nagel 2010 Annu. Rev. Condens. Matter Phys. 1:347. Composing with Delta_z ~ (phi-phi_c)^(1/2) gives the continuous rigidity onset ~ (phi-phi_c)^(1/2)."
+    },
+    "rg_scale_invariance": {
+      "value": true, "grade": "[L]", "universal": true,
+      "provenance": "The jamming transition exhibits EMERGENT SCALE INVARIANCE and admits a renormalization-group / Widom scaling description: Goodrich, Liu & Sethna 2016, PNAS 113:9745 ('Scaling ansatz for the jamming transition'). This grounds the use of a renormalization LADDER (repeated coarse-graining) for an aggregate of jammed units."
+    },
+    "biological_tissue_rigidity_transition": {
+      "value": true, "grade": "[L]", "universal": true,
+      "provenance": "Living tissues undergo a jamming/rigidity (fluid->solid) transition controlled by cell connectivity/shape: Bi, Lopez, Schwarz & Manning 2015, Nat. Phys. 11:1074 ('A density-independent rigidity transition in biological tissues'); van Hecke 2010, J. Phys. Condens. Matter 22:033101 (review). Grounds applying the jamming operator to a packing of CELLS, not only of inert grains."
+    }
+  },
+
+  "composite_bounds": {
+    "_axis": "EXACT ELASTIC-MIXTURE THEOREMS -- the rigorous upper/lower bounds the effective modulus of any packing must lie between. These are mathematical theorems, evaluated here exactly (graded [V]); they are NOT fitted and carry no free parameter.",
+    "voigt_isostrain_upper": {
+      "grade": "[V]",
+      "form": "B_Voigt = sum_i phi_i * B_i  (volume-weighted arithmetic mean); with a void phase B_void=0 -> B_Voigt = phi * B_unit",
+      "provenance": "Voigt 1889 isostrain (uniform-strain) bound -- the rigorous UPPER bound on the effective modulus of a composite. Exact theorem."
+    },
+    "reuss_isostress_lower": {
+      "grade": "[V]",
+      "form": "1/B_Reuss = sum_i phi_i / B_i  (volume-weighted harmonic mean); with a void phase B_void=0 -> B_Reuss = 0",
+      "provenance": "Reuss 1929 isostress (uniform-stress) bound -- the rigorous LOWER bound. With any void in series the bound is 0, i.e. an UNJAMMED packing has no rigidity. Exact theorem."
+    }
+  },
+
+  "hierarchy_scales": {
+    "_axis": "THE BIOLOGICAL LADDER -- characteristic length scales of the structural levels the renormalization climbs. GENERIC central values (textbook orders of magnitude); they vary by cell/tissue/organ type, so they are graded [F] and used ONLY to count units-per-rung (volume ratio). NEVER fitted to a target. The flow's DIMENSIONLESS content (the rigidity fraction J, the wave-speed softening ratio) does not depend on these numbers at all.",
+    "rungs": [
+      {"level": 0, "name": "molecular / chromatin", "length_um": 0.011, "grade": "[F]",
+       "provenance": "Nucleosome core particle ~11 nm disc (Luger et al. 1997, Nature 389:251); DNA base-step rise 0.34 nm. The cell-level gamma (mean NN stacking dG) lives at this scale -- the stiffness of the genome polymer."},
+      {"level": 1, "name": "cell", "length_um": 10.0, "grade": "[F]",
+       "provenance": "Typical animal cell diameter ~10-20 um (Alberts, Molecular Biology of the Cell). Generic central value."},
+      {"level": 2, "name": "tissue (functional unit)", "length_um": 100.0, "grade": "[F]",
+       "provenance": "Functional tissue unit / acinus / lobule scale ~0.1-1 mm. Generic central value. This is where the morphogen LEVEL/SHAPE (Appendix B) lives."},
+      {"level": 3, "name": "organ", "length_um": 10000.0, "grade": "[F]",
+       "provenance": "Organ scale ~ cm. Generic central value."},
+      {"level": 4, "name": "organ system / body", "length_um": 300000.0, "grade": "[F]",
+       "provenance": "Organ-system / whole-body scale ~ 0.1-1 m. Generic central value."}
+    ]
+  },
+
+  "unit_mechanics": {
+    "_axis": "THE [O] ENTRY POINT -- the absolute mechanical properties of a single base unit. These are the ONLY quantities that set absolute magnitude, and they are exactly the unmeasured biological specifics. Generic placeholders stand in; the absolute flow is declared [O]. The DIMENSIONLESS flow (ratios, J, c-softening per rung) is INDEPENDENT of these and carries the [V]/[L] content.",
+    "single_cell_bulk_modulus_pa": {
+      "value": 1000.0, "grade": "[O]", "universal": false,
+      "range": [100.0, 10000.0],
+      "provenance": "[O] Single-cell elastic modulus E ~ 0.1-10 kPa varies by cell type and method (AFM nanoindentation, optical-tweezer/optical-stretcher, micropipette aspiration): Hochmuth 2000 J. Biomech. 33:15; Guck et al. 2005 Biophys. J. 88:3689. A generic 1 kPa central placeholder stands in; the per-cell-type MEASURED modulus is the named obstacle. Absolute B-flow is [O]."
+    },
+    "single_cell_density_kg_per_m3": {
+      "value": 1070.0, "grade": "[L]", "universal": false,
+      "range": [1030.0, 1100.0],
+      "provenance": "Mammalian cell mass density ~1.03-1.10 g/mL (slightly denser than water): e.g. Grover et al. 2011 PNAS 108:10992 (suspended microchannel resonator). Generic central value; used only as the density anchor of the ladder. The DIMENSIONLESS softening ratio does not depend on it."
+    }
+  },
+
+  "_open": {
+    "_axis": "[O] data-blocked specifics (NOT in this DB; declared open, generic placeholders used)",
+    "per_scale_modulus_atlas": "[O] measured bulk/shear moduli at each biological level (cell -> tissue -> organ) by elastography (MRE/USE), AFM, micro-rheology -> generic placeholders + universal jamming flow stand in",
+    "per_rung_packing_fraction": "[O] measured cell packing fraction phi at each level (confocal/EM stereology) -> a documented phi profile stands in; the operator is general in phi",
+    "ecm_stiffening": "[O] per-tissue extracellular-matrix / mineralization contribution that can RAISE the intrinsic unit modulus above the cell value (e.g. cartilage, bone) -> not modelled; flagged as why real flow need not be monotone"
+  }
+}

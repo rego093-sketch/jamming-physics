@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "purpose": "Locked parameter database for the GRAMMAR-HIERARCHY interpreter. The DNA blueprint is read at MORE THAN ONE grammatical level. The cell-level reads (the material gamma, the A4 coordinate) read the LOWEST level: the physical/chemical material of adjacent base pairs (nearest-neighbour stacking free energy -- electrostatics and base-stacking, i.e. 'ions/chemistry'). That is the bottom blueprint. This package formalizes the HIGHER blueprints the cell-level reading misses: a TISSUE-level grammar (the cis-regulatory syntax -- the arrangement of transcription-factor binding sites, here the cardiac TF code) and an ORGAN-level grammar (the architecture/arrangement map -- colinearity and element layout). Each level gets the SAME (LEVEL, SHAPE) = (gamma, A4) decomposition via the identical robust_z operator. The discovery: the tissue arrangement that Appendix A/D could not get from the cell-level material gamma -- and had to import as external measured moduli -- is WRITTEN in the sequence at a higher grammatical level we had not read.",
+    "the_linguistic_hierarchy": {
+      "G1_material_cell": "PHONOLOGY -- the physical substance of the letters. Signal = nearest-neighbour stacking dG (SantaLucia 1998). gamma_1 = mean (the material level), A4_1 = robust_z (the material pattern). This is what the corpus has read.",
+      "G2_regulatory_tissue": "SYNTAX -- how control words are arranged. Signal = local density/arrangement of the CARDIAC TF binding grammar (GATA, NKE/NKX2-5, MEF2, T-box/TBX5, E-box/HAND). gamma_2 = mean regulatory drive, A4_2 = robust_z arrangement (the tissue-identity / arrangement pattern). THE MISSED UPPER A4.",
+      "G3_architecture_organ": "DISCOURSE -- how the whole text is laid out. Signal = the inter-element spacing/arrangement of the G2 regulatory hotspots (the layout). gamma_3 = mean layout regularity, A4_3 = robust_z arrangement map (the \ubc30\uce58\ub3c4)."
+    },
+    "rule": "MEASURED-AND-CITED (real genomic sequences, published NN parameters, published TF consensus motifs) or EXACT (the robust_z decomposition, the dinucleotide-shuffle invariance). No parameter is tuned to a target. The cardiac-vs-noncardiac contrast uses REAL human promoters, so it is not circular.",
+    "grades": {
+      "[L]": "locked: measured/published value, real genomic sequence, or cited motif",
+      "[V]": "verified: exact decomposition / logical invariant (precision)",
+      "[F]": "fixed modelling choice (consensus motif set, window size); declared",
+      "[O]": "open: real-tissue-arrangement validation absent; named obstacle"
+    }
+  },
+  "nn_stacking_dG_kcal_per_mol": {
+    "_axis": "G1 MATERIAL -- SantaLucia 1998 unified nearest-neighbour Delta-G(37C) parameters (kcal/mol), the cell-level material the corpus already uses. The signal s1[i] = dG(S[i:i+2]) along the sequence; gamma_1 = mean(s1), A4_1 = robust_z(s1).",
+    "provenance": "SantaLucia J Jr 1998, PNAS 95:1460-1465, 'A unified view of polymer, dumbbell, and oligonucleotide DNA nearest-neighbor thermodynamics'. Unified NN Delta-G_37 set; the same pipeline the corpus uses for measured gamma.",
+    "grade": "[L]",
+    "values": {
+      "AA": -1.0,
+      "AT": -0.88,
+      "AC": -1.44,
+      "AG": -1.28,
+      "TA": -0.58,
+      "TT": -1.0,
+      "TC": -1.3,
+      "TG": -1.45,
+      "CA": -1.45,
+      "CT": -1.28,
+      "CC": -1.84,
+      "CG": -2.17,
+      "GA": -1.3,
+      "GT": -1.44,
+      "GC": -2.24,
+      "GG": -1.84
+    }
+  },
+  "cardiac_tf_grammar": {
+    "_axis": "G2 REGULATORY -- the CARDIAC transcription-factor binding grammar. These five factors form the core cardiac regulatory network; their combinatorial binding-site syntax specifies cardiac tissue identity and arrangement. The signal s2[i] = number of cardiac-TF consensus matches (either strand) in a window centred at i.",
+    "provenance": "Core cardiac TF code: GATA4, NKX2-5, MEF2C, TBX5, and bHLH/HAND. Consensus motifs from JASPAR (GATA4 MA0482; NKX2-5 MA0063; MEF2C MA0497; TBX5 MA0807; bHLH E-box) and the cardiac-GRN literature (Olson 2006, Science 313:1922; Bruneau 2013, CSH Perspect Biol 5:a008292; Akazawa & Komuro 2003). The combinatorial arrangement of these sites is the established cis-regulatory grammar of cardiac enhancers.",
+    "grade": "[L]",
+    "motifs_IUPAC": {
+      "GATA4_WGATAR": "[AT]GATA[AG]",
+      "NKX2-5_NKE_TYAAGTG": "T[CT]AAGTG",
+      "MEF2C_CTAWWWWTAG": "CTA[AT][AT][AT][AT]TAG",
+      "TBX5_RGGTGTGA": "[AG]GGTGTGA",
+      "HAND_bHLH_EBOX_CASSTG": "CA[CG][CG]TG"
+    },
+    "window_bp": {
+      "value": 50,
+      "grade": "[F]",
+      "note": "sliding-window half-width for the regulatory density signal; a documented choice, not tuned to a target"
+    }
+  },
+  "real_sequences": {
+    "_axis": "REAL human genomic promoter sequences (GRCh38), fetched from NCBI, embedded for deterministic offline reproduction. Two CARDIAC promoters (rich cardiac TF grammar) and one HOUSEKEEPING promoter (the non-cardiac control). The contrast is not circular: these are unmodified genomic sequences.",
+    "grade": "[L]",
+    "NPPA_cardiac": {
+      "tissue": "cardiac",
+      "gene": "NPPA (natriuretic peptide A / ANP)",
+      "accession": "NC_000001.11",
+      "coords": "11847783-11848682 (minus)",
+      "provenance": "Human NPPA proximal promoter, GRCh38 NC_000001.11 11847783-11848682 (minus) (900 bp upstream of TSS, gene-sense strand). NPPA is a canonical cardiac-restricted gene whose promoter carries GATA and NKE (NKX2-5) cardiac elements.",
+      "length": 900,
+      "seq": "CACCTCCCTTCCTCCATCGGTCAAGTTGCCACGGGCACAAGCCCAGGAAGGGCAGGGGGATGTTAACAAACTTCAGACACGAAGAGTCTGAGCATCTATAAACAGCAACGGAAGAAATGAAATTGGCTGCGTCCTCTAAGCCTGTCCCCGCAGCATGCTGGAGGAGGGTCGCGGGGGACATGGAAGAGGAGGAGCTTTGGAGAGAGGATGCTTGTGCTCCCCCGCCTTTTCTTGCTATTTCTATTTGGGGGTTGGATTCCTGGGAGCTTCATCACATTTGGTTCTCAGCTGACTTTATATACTAAAAAATAACTTCCTTTCGCCTGACCATGGAGAGGGACTGCCAGGGGTGAAGGCAGCCCTGTCTGAGGCCAGAGGTCTGCCCACGTGGCGGATGAGGCAGGTGTGAGGCCAGCTTGAGCATCTGGATCCATTTGTCTCGGGCTGCTGGCTGCCTGCCATTTCCTCCTCTCCACCCTTATTTGGAGGCCCTGACAGCTGAGCCACAAACAAACCAGGGGAGCTGGGCACCAGCCAAGCGTCACCCTCTGTTTCCCCGCACGGGTACCAGCGTCGAGGAGAAAGAATCCTGAGGCACGGCGGTGAGATAACCAAGGACTCTTTTTTACTCTTCTCACACCTTTGAAGTGGGAGCCTCTTGAGTCAAATCAGTAAGAATGCGGCTCTTGCAGCTGAGGGTCTGGGGGGCTGTTGGGGCTGCCCAAGGCAGAGAGGGGCTGTGACAAGCCCTGCGGGATGATAACTTTAAAAGGGCATCTCCTGCTGGCTTCTCACTTGGCAGCTTTATCACTGCAAGTGACAGAATGGGGAGGGTTCTGTCTCTCCTGCGTGCTTGGAGAGCTGGGGGGCTATAAAAAGAGGCGGCACTGGGCAGCTGGG"
+    },
+    "TNNT2_cardiac": {
+      "tissue": "cardiac",
+      "gene": "TNNT2 (cardiac troponin T)",
+      "accession": "NC_000001.11",
+      "coords": "201377680-201378579 (minus)",
+      "provenance": "Human TNNT2 proximal promoter, GRCh38 NC_000001.11 201377680-201378579 (minus) (900 bp upstream of TSS). TNNT2 is a cardiac-muscle-restricted gene with characterized cardiac regulatory elements.",
+      "length": 900,
+      "seq": "CTCCTGTCTCTTTCATTTTCATAATCTACCAAACCCTGCAATGGGCCAGCCTTGAACATACAAGTGCATGTGCATGGTCAGACACAGGCAAGCAAGCAAGACCCCTAGGCCTGACCTATGCATCTGCAATCTAGTAGGTTTAGCAGATCATAGCCCCGCACTGCTTGATTTTAAAGCCGTTAGGGGATGACCTTTGACAGTCCGCATCACCCCTCTCACACAACGAGCGCCTGTTCAAGGTTCTTGACTGGAAGTTCTACCTTGTATCTGGCCTCCTGTAGCAGTTTCAGTCCATTCCCTGTGAGGAGGGTGTGCCACATGGCTTTGGGGGTCATGGAGAAGACCCACCTTGCAGATGTCCTCACTGGGGCTGGCAGAGCCGGCAACCTGCCTAAGGCTGCTCAGTCCATTAGGAGCCAGTAGCCTGGAAGATGTCTTTACCCCCAGCATCAGTTCAAGTGGAGCAGCACATAACTCTTGCCCTCTGCCTTCCAAGATTCTGGTGCTGAGACTTATGGAGTGTCTTGGAGGTTGCCTTCTGCCCCCCAACCCTGCTCCCAGCTGGCCCTCCCAGGCCTGGGTTGCTGGCCTCTGCTTTATCAGGATTCTCAAGAGGGACAGCTGGTTTATGTTGCATGACTGTTCCCTGCATATCTGCTCTGGTTTTAAATAGCTTATCTGAGCAGCTGGAGGACCACATGGGCTTATATGGCGTGGGGTACATGTTCCTGTAGCCTTGTCCCTGGCACCTGCCAAAATAGCAGCCAACACCCCCCACCCCCACCGCCATCCCCCTGCCCCACCCGTCCCCTGTCGCACATTCCTCCCTCCGCAGGGCTGGCTCACCAGGCCCCAGCCCACATGCCTGCTTAAAGCCCTCTCCATCCTCTGCCTCACCCA"
+    },
+    "GAPDH_housekeeping": {
+      "tissue": "housekeeping (non-cardiac control)",
+      "gene": "GAPDH",
+      "accession": "NC_000012.12",
+      "coords": "6533617-6534516 (plus)",
+      "provenance": "Human GAPDH proximal promoter, GRCh38 NC_000012.12 6533617-6534516 (plus) (900 bp upstream of TSS). GAPDH is a ubiquitously-expressed housekeeping gene with a CpG-island promoter and NO cardiac-specific regulatory program -- the negative control for the cardiac grammar.",
+      "length": 900,
+      "seq": "GGCAGCACAGCCCACAGGTTTCCAGGAGTGCCTTTGTGGGAGGCCTCTGGGCCCCCACCAGCCATCCTGTCCTCCGCCTGGGGCCCCAGCCCGGAGAGAGCCGCTGGTGCACACAGGGCCGGGATTGTCTGCCCTAATTATCAGGTCCAGGCTACAGGGCTGCAGGACATCGTGACCTTCCGTGCAGAAACCTCCCCCTCCCCCTCAAGCCGCCTCCCGAGCCTCCTTCCTCTCCAGGCCCCCAGTGCCCAGTGCCCAGTGCCCAGCCCAGGCCTCGGTCCCAGAGATGCCAGGAGCCAGGAGATGGGGAGGGGGAAGTGGGGGCTGGGAAGGAACCACGGGCCCCCGCCCGAGGCCCATGGGCCCCTCCTAGGCCTTTGCCTGAGCAGTCCGGTGTCACTACCGCAGAGCCTCGAGGAGAAGTTCCCCAACTTTCCCGCCTCTCAGCCTTTGAAAGAAAGAAAGGGGAGGGGGCAGGCCGCGTGCAGCCGCGAGCGGTGCTGGGCTCCGGCTCCAATTCCCCATCTCAGTCGTTCCCAAAGTCCTCCTGTTTCATCCAAGCGTGTAAGGGTCCCCGTCCTTGACTCCCTAGTGTCCTGCTGCCCACAGTCCAGTCCTGGGAACCAGCACCGATCACCTCCCATCGGGCCAATCTCAGTCCCTTCCCCCCTACGTCGGGGCCCACACGCTCGGTGCGTGCCCAGTTGAACCAGGCGGCTGCGGAAAAAAAAAAGCGGGGAGAAAGTAGGGCCCGGCTACTAGCGGTTTTACGGGCGCACGTAGCTCAGGCCTCAAGACCTTGGGCTGGGACTGGCTGAGCCTGGCGGGAGGCGGGGTCCGAGTCACCGCCTGCCGCCGCGCCCCCGGTTTCTATAAATTGAGCCCGCAGCCTCCCGCTTC"
+    }
+  },
+  "shuffle": {
+    "_axis": "The dinucleotide-preserving shuffle (Altschul-Erickson Eulerian-path). It preserves dinucleotide counts EXACTLY, hence preserves the G1 material grammar (the stacking-dG distribution, gamma_1 and the A4_1 statistics), while randomizing the POSITIONS of all higher-order structure (motifs). Used to PROVE the regulatory grammar G2 is information ABOVE the material level G1.",
+    "provenance": "Altschul SF & Erickson BW 1985, Mol Biol Evol 2:526-538, 'Significance of nucleotide sequence alignments: a method for random sequence permutation that preserves dinucleotide and codon usage'.",
+    "seed": {
+      "value": 20471407,
+      "grade": "[F]",
+      "note": "fixed deterministic seed (the DOI number) so the shuffle is reproducible under 2x SHA-256"
+    },
+    "grade": "[L]"
+  },
+  "appendix_d_link": {
+    "_axis": "The external-data reliance this package reduces. Appendix D had to import MEASURED cardiac moduli because the arrangement was not in the cell-level material gamma. Here the tissue arrangement is shown to be READABLE from sequence at the regulatory grammar level -- the blueprint had it.",
+    "appendix_d_needed_external_moduli": {
+      "value": true,
+      "grade": "[L]",
+      "provenance": "Appendix D (heart composite-renormalization) bracketed the myocardium using measured single-cell and decellularized-ECM moduli; the developmental arrangement/timing was orthogonal to the sequence material gamma (Appendix A null, rho=+0.071). This package locates that arrangement in the regulatory grammar."
+    }
+  },
+  "_open": {
+    "real_enhancer_activity": "[O] validating that A4_2 (the regulatory arrangement) predicts MEASURED cardiac enhancer ACTIVITY needs a held-out functional dataset (VISTA cardiac enhancers, cardiac ATAC-seq/H3K27ac, or MPRA) with a pre-registered rank test and a shuffle control.",
+    "real_arrangement_map": "[O] validating that A4_3 (the architecture grammar) predicts the real spatial TISSUE arrangement (the \ubc30\uce58\ub3c4) needs measured 3D-genome contacts (Hi-C/Micro-C) or the colinear spatial-domain TF map (Hox-style), staged.",
+    "pwm_vs_consensus": "[O] the consensus (IUPAC) motif matching is a documented simplification of full position-weight-matrix scoring; richer PWM scoring would raise the regulatory signal's resolution."
+  }
+}

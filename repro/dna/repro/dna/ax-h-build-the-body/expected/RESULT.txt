@@ -1,0 +1,55 @@
+==============================================================================
+  BUILD THE BODY -- from the readable blueprint to a BUILD-SPECIFIED body
+  (Appendix F read the blueprint; here the house is specified, brick by brick)
+==============================================================================
+
+THE MODULE MANIFEST (the body as hundreds of addressed parts):
+  named modules: 286   (bone 206, muscle 30, organ 18, tooth 32)
+  bones EXPANDED from program group counts = 206  (matches 206: True)
+  driver programs used: 20   distinct driver gammas: 20
+  example address  femur_L: program=leg driver=TBX4 gamma=1.548816 L=L3 parent=pelvic_girdle
+
+THE COUNT GRAMMAR G7 (갯수): the segmentation clock sets serial NUMBER
+  law: N_serial ~ T_window / P_clock  (clock period P, axis-elongation window T)
+  human clock period = 300 min; recovered somite pairs = 42; presacral vertebrae(real) = 24
+  COUNT NULL: |corr(driver gamma, serial index)| = 0.000 (ceiling 0.30) -> count is the clock's integral, not gamma [V]
+  INVERSE LEVER: halve P -> x2.00 count ; double P -> x0.50 count (exact) [V]
+  realized counts: vertebrae presacral=24, ribs/thoracic=12, digits/limb=5, teeth=32
+
+THE SIZE SWITCH (장기 문법 + 크기 스위치): relative magnitude from a dosage lever
+  law: SIZE = base(system) * dosage^0.75 ; gamma fixes program, NOT magnitude (size null)
+  monotone in dosage: True ; ranking preserved across dosage: True (a switch, not a refit) [V]
+
+THE ASSEMBLY GRAMMAR (a body, not a pile of bricks):
+  part-to-part tree rooted at skull_base ; 39 nodes ; all modules reach root: True ; max depth 7
+  single connected rooted tree: True (the joinery makes one body) [V]
+
+THE 4D BUILD SCHEDULE (조금씩 조금씩 발달): modules appear in spinodal-gamma order
+  order = argsort(spinodal(gamma)) (Appendix A, verbatim); body fills over tau in [0,1]
+  half the modules present by tau ~ 0.11 ; perturb a gamma -> fill order resorts: True [V]
+
+THE RENORMALIZATION COMPILER (강성화: rigidify finished modules, climb the tower):
+  R (Appendix C, verbatim): rho'=phi*rho ; B'=phi*B*J(phi) in [Reuss=0, Voigt=phi*B] ; c'=c*sqrt(J)
+  compiled 286 modules at phi=0.90 ; ALL inside exact [Reuss,Voigt] bracket: True [V]
+  body LEVEL (mean effective rel-modulus) = 0.7711 ; R composes (semigroup): True [V]
+  => a module BECOMES volume + stiffness by the act of packing; the tower is climbed at
+     the MODULE level (hundreds of rigid parts), not the impossible cell level
+
+THE BUILD DECLARATION (해독 선언) -- THREE axes, honest
+  STRUCTURAL  / read the blueprint   : COMPLETE (100%)  (Appendix F; G1..G6 unchanged)
+  CONSTRUCTIVE/ specify the build     : COMPLETE (100%)  (this appendix: addressed/counted/sized/assembled/scheduled/compiled)
+  PHYSICAL    / instantiate real tissue: OPEN
+    [O] absolute mechanics -> the absolute modulus per real tissue in Pa -- a measured elastography / AFM / nanoindentation atlas to replace the relative gamma->modulus map (the compiler is exact in RELATIVE units only)
+    [O] absolute size + timing -> a measured growth atlas (absolute organ mass in grams, absolute developmental time per Carnegie stage) to fix the size-dosage base and the schedule's tau window -- the count/size/schedule are relative
+    [O] real materials + compute -> actual cells/materials and the HPC to instantiate and integrate them; 강성화 (rigidify finished modules) makes the tower tractable but does not manufacture matter -- a built human is NEVER claimed
+    [O] schedule timing accuracy -> whether the spinodal-gamma build ORDER matches real organogenesis timing is the Appendix A measured null (promoter stiffness does not predict Carnegie staging); the schedule is a deterministic order, not a validated clock
+  => 100% means the blueprint is fully READ and fully BUILD-SPECIFIED;
+     what remains is MATTER, not grammar and not a missing build rule
+
+HONEST STATUS (precision != accuracy)
+  structural_complete = True   constructive_complete = True   physical_complete = False
+
+------------------------------------------------------------------------------
+  GATE: PASS (12/12)   gate sha=e9dd6d1e15149807   reading hash=fa919cad71520d2d
+  LOCK -> Derive -> Gate. No fitted parameters. precision != accuracy. 반증=발견. 집.
+------------------------------------------------------------------------------
