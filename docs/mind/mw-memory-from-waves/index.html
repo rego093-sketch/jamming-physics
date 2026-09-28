@@ -19,7 +19,7 @@
 <main>
 <h1>MW. Memory From Waves: the premise of this volume</h1>
 <p class="answer">Thought can run on slow brain rhythms because computing by phase does not depend on how fast the carrier oscillates. The brainwave is the common carrier. Each sense sends low-frequency signals that ride that carrier as a relative phase. In the hippocampus, cues that belong to the same experience add constructively and cross the memory threshold. Cues from different experiences cancel. One cue alone rarely recalls a memory; several congruent cues together do.</p>
-<aside class="claim-strip page"><span class="g">[F in-model] carrier invariance · [V mech] MM1 amplification &amp; interference · [H] brain mapping · [L] theta phase coding</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer/experiments/MM1_multimodal_amplification/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20694404" rel="noopener">DOI</a></aside>
+<aside class="claim-strip page"><span class="g">[F in-model] carrier invariance · [V mech] MM1 amplification &amp; interference · MM2 theta-locking rescue · [H] brain mapping · [L] theta phase coding</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer/experiments/MM1_multimodal_amplification/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20694404" rel="noopener">DOI</a></aside>
 
 <h2>1. Why this page exists</h2>
 <p>Every later chapter of this volume assumes that thought can be carried by slow brain rhythms (δ, θ, γ, from a few hertz to about a hundred). That assumption comes from the Wave Computer volume, but until now it was never written down, and the two volumes even cited each other in a loop. This page states the premise, shows the code result that supports it, and describes the mechanism by which waves become memory. Grades: <strong>[F in-model]</strong> holds in the model by its equations; <strong>[V mech]</strong> is reproduced in the model under a test that could have failed; <strong>[L]</strong> rests on cited literature; <strong>[H]</strong> is an identification with the brain; <strong>[O]</strong> is open.</p>
@@ -53,7 +53,25 @@
 
 <h2>5. What R ≈ 0.39 means, and what it does not</h2>
 <p>This volume's engine reports a global coherence R ≈ 0.39 between cortical regions. A reviewer pointed out that when oscillators with different natural frequencies are coupled directly, associative recall collapses at exactly this level of partial coherence (recall about 0.2 at σ<sub>ω</sub>/K ≈ 0.59). The mechanism above resolves this. Recall does not happen between dispersed cortical oscillators. It happens inside the hippocampus, where every input is locked to the same theta carrier, so the effective frequency spread is small and the core works in its good regime. R ≈ 0.39 describes <em>global inter-regional</em> coherence, not the locking inside the memory circuit.</p>
-<p>Data-pending: (i) a Wave Computer run with a theta-locked hippocampal module that shows recall holding while cortical inputs are dispersed; (ii) measured theta phase-locking in the hippocampus (effective σ<sub>ω</sub>/K) against recall accuracy; (iii) human recall as a function of the number of congruent and incongruent cue modalities.</p>
+<p>Experiment MM2 tests this directly. It was pre-registered and run on the unmodified Wave Computer core, and <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer/experiments/MM2_theta_locked_hippocampus/" rel="noopener">its code is on GitHub</a>. In the model, each unit gets its own frequency offset (the dispersion σ) and a pull toward the common theta carrier (the locking strength κ). The locking term locks the <em>frequency</em> to theta and leaves both stored phases stable. Its exact form is a modelling choice [H]. All five predictions passed [V mech]:</p>
+<table>
+<tr><th>Condition (2 congruent cues, 40 fresh seeds)</th><th>Recall</th></tr>
+<tr><td>Dispersed inputs, no theta locking (σ = 0.4)</td><td>0%</td></tr>
+<tr><td>Same inputs, locked to theta (κ = 0.3)</td><td><strong>82.5%</strong></td></tr>
+<tr><td>Locked to theta but no stored couplings</td><td>0%</td></tr>
+<tr><td>Over-locked (κ = 0.8, stronger than the memory field)</td><td>0%</td></tr>
+<tr><td>Locked, 1 → 4 congruent cues</td><td>10 → 82.5 → 95 → 97.5% (incongruent: 2.5%)</td></tr>
+</table>
+<p>Three things follow. First, theta locking rescues recall that dispersion destroys, so R ≈ 0.39 between cortical regions and good recall inside the hippocampus are compatible. Second, the locking carries no content: without stored couplings it recalls nothing. The memory is in the synapses, and theta only makes it readable. Third, there is a <strong>working window</strong>. Locking must be stronger than the frequency spread but weaker than the memory field. Too much locking freezes every input, noise included, onto theta, and recall fails. That is a testable prediction: phase locking to theta should help memory up to a point, and hyper-synchronous theta should impair it.</p>
+
+<h2>5a. What human data already say [L]</h2>
+<p>These are measurements from the literature. They support the <em>direction</em> of the mechanism. No number from them is fitted into the model.</p>
+<ul>
+<li><strong>Theta phase-locking predicts memory.</strong> Rutishauser et al. (2010, <em>Nature</em> 464:903) recorded single neurons in the human hippocampus and amygdala. Memories were later recognised with higher confidence when the neurons' spikes during learning were more tightly locked to the theta rhythm. This is the in-vivo counterpart of MM2's rescue: tighter theta locking goes with better memory.</li>
+<li><strong>Congruent multisensory cues aid memory.</strong> Objects first presented with a matching sound are later recognised better than objects shown alone, and a mismatching sound does not help (Lehmann &amp; Murray 2005; Thelen, Talsma &amp; Murray 2015; review Shams &amp; Seitz 2008). This is the direction of MM1: congruent cues amplify, incongruent ones do not.</li>
+<li><strong>Synchrony in theta is the binding.</strong> Clouter, Shapiro &amp; Hanslmayr (2017, <em>Current Biology</em>) flickered a movie and a sound at 4 Hz. Associations between them were remembered better when the two flickers were in phase than when they were out of phase. The effect held at theta but not at a faster control rate. Wang et al. (2018, <em>J. Neurosci.</em>) repeated the finding. This is the closest human test of the claim on this page: content bound by relative phase against a theta carrier.</li>
+</ul>
+<p>Still data-pending: (i) a quantitative comparison of measured hippocampal theta locking (effective σ<sub>ω</sub>/K) with recall accuracy on the same subjects; (ii) the recall curve as a function of the number of congruent and incongruent cue modalities in one design (the studies above test one or two modalities); (iii) the over-locking side of the window. That side is suggestive in the clinic, where hyper-synchronous hippocampal activity in epilepsy goes with memory impairment, but it has not been tested against this model [O].</p>
 
 <h2>6. How the inheritance runs</h2>
 <ul>
@@ -67,10 +85,11 @@
 <h2>7. Grades on this page</h2>
 <ul>
 <li><strong>[F in-model]</strong> carrier invariance: dynamics depend only on phase differences.</li>
-<li><strong>[V mech]</strong> MM1 amplification and interference, reproduced in the model and pre-registered.</li>
-<li><strong>[L]</strong> theta phase coding in the hippocampus (O'Keefe &amp; Recce 1993; Lisman &amp; Jensen 2013).</li>
+<li><strong>[V mech]</strong> MM1 amplification and interference; MM2 rescue of recall by theta locking, with its working window. Both were reproduced in the model and pre-registered.</li>
+<li><strong>[L]</strong> theta phase coding in the hippocampus (O'Keefe &amp; Recce 1993; Lisman &amp; Jensen 2013); theta locking predicts memory (Rutishauser et al. 2010); congruent multisensory benefit (Lehmann &amp; Murray 2005; Thelen et al. 2015); theta-phase binding (Clouter et al. 2017; Wang et al. 2018).</li>
 <li><strong>[H]</strong> the identification: brainwave = carrier, sensory low-frequency signals = content, hippocampus = associative core with R19 thresholds.</li>
-<li><strong>[O]</strong> the three data-pending items of Section 5.</li>
+<li><strong>[H]</strong> the form of the theta-locking term in MM2.</li>
+<li><strong>[O]</strong> the three data-pending items of Section 5a.</li>
 </ul>
 <nav class="pn">
   <a rel="prev" href="/mind/01-constitution-scope/">← §1</a>

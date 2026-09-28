@@ -1,0 +1,26 @@
+{
+  "experiment": "MM2 — theta-locked hippocampal module: does locking to a common theta carrier rescue recall from frequency dispersion?",
+  "registered": "2026-09-28",
+  "status": "pre-registered before running mm2_run.py (exploratory runs on seeds 1000-1029 motivated the parameter choices; those seeds are excluded)",
+  "question": "Oscillators with dispersed natural frequencies (dispersed cortical inputs) lose associative recall. If each unit is additionally locked to the common theta carrier, does recall return, while the memory content still comes from the stored couplings and not from the locking?",
+  "model": {
+    "core": "repro/wave-computer/repro/wave_compute_core.py, unmodified: hebbian_field, pattern_to_phase (same Euler step, dt=0.05, 600 steps)",
+    "added_terms": "dtheta_i/dt = domega_i + sum_j J_ij sin(theta_j - theta_i) - kappa * sin(2 theta_i), written in the frame of the common theta carrier (carrier invariance lets the carrier drop out)",
+    "domega_i": "natural-frequency offset from the carrier, Normal(0, sigma) — the dispersion of the inputs",
+    "kappa": "theta-locking strength. The second-harmonic form locks FREQUENCY to the carrier while leaving both stored phases (0 and pi relative to theta) stable, so it does not favour either bit. This form is a modelling choice [H].",
+    "identity_check": "with sigma=0 and kappa=0 the update is identical to wave_compute_core.relax"
+  },
+  "setup": {"N": 256, "modality_blocks": 4, "block_size": 64, "stored_episodes_P": 15, "cue_phase_jitter_rad": 0.8,
+            "cued_blocks_default": 2, "uncued_blocks": "uniform random phase", "target": "episode 0",
+            "readout": "phase-invariant sign overlap: rotate by psi = arg(mean(xi * exp(i theta))), then |mean(sign(cos(theta - psi)) * xi)|",
+            "recall_success": "overlap >= 0.9",
+            "seeds": "numpy default_rng(6000 + s), s = 0..39 (40 fresh seeds)"},
+  "predictions": {
+    "P1_collapse": "sigma=0.4, kappa=0 (no locking): recall rate <= 0.20",
+    "P2_rescue": "sigma=0.4, kappa=0.3 (theta-locked): recall rate >= 0.60 and at least 0.40 above P1",
+    "P3_content_from_memory": "sigma=0.4, kappa=0.3 but J=0 (no stored couplings): recall rate <= 0.05 — locking alone recalls nothing",
+    "P4_overlocking": "sigma=0, kappa=0.8 (locking stronger than the associative field): recall rate <= 0.20 — locking must stay weaker than the memory field",
+    "P5_amplification_survives": "sigma=0.4, kappa=0.3: congruent recall non-decreasing in k=1..4 with rate(4)-rate(1) >= 0.40, and incongruent k=4 rate <= 0.20"
+  },
+  "record_either_way": true
+}
