@@ -1,0 +1,48 @@
+{
+  "baseline": {
+    "N": 200,
+    "seed": 2,
+    "A_median": 802149.7404524856,
+    "gstar_over_g0_median": 1.143823107063735,
+    "source": "results/soc_run3_summary.json"
+  },
+  "unit_realization": {
+    "A_geo": 883082.3503950943,
+    "source": "results/mst_unit_realization.json",
+    "comment": "A_geo = c*dt/a (unit realization anchor)."
+  },
+  "new_rerun": {
+    "N": 750,
+    "seeds": [
+      45,
+      46,
+      47,
+      48
+    ],
+    "events_total": 104,
+    "events_valid_gstar": 98,
+    "A_median": 476364.94999999995,
+    "A_mean": 569330.3581632653,
+    "gstar_over_g0_median": 1.2408495,
+    "a_med_median": 0.11822450000000001,
+    "S_over_N_mean": 0.7936190476190476,
+    "source_folder": "results/soc_N750/"
+  },
+  "geometric_scaling_hypothesis": {
+    "statement": "Under fixed microscopic threshold g0 and unit box L=1, typical neighbor distance scales as N^{-1/3}; thus A=a_med/g_star is expected to scale approximately as N^{-1/3} if g_star distribution is stable.",
+    "scaling_exponent": -0.3333333333333333,
+    "scale_factor_(200_to_750)": 0.6436595897370865
+  },
+  "predictions": {
+    "A_pred_from_A_geo": 568404.4233593685,
+    "A_pred_from_A_median_N200": 516311.3728473573
+  },
+  "relative_errors": {
+    "A_mean_vs_A_pred_from_A_geo": 0.0016290070341542762,
+    "A_median_vs_A_pred_from_A_median_N200": -0.07736886101706525
+  },
+  "notes": [
+    "This N=750 dataset is provided as a supplementary robustness / N-scaling sanity check for A. It is not used to set locked constants.",
+    "Some events have g_star=0 (division singularity); summary stats exclude those events by requiring g_star>1e-12."
+  ]
+}

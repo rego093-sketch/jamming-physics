@@ -1,0 +1,22 @@
+======================================================================
+빛 창발 / 양자 지름 검증:  D = 2*pi*lambda_light/A
+  lambda_light = 633 nm,  목표 D = 2*lambda_Ce = 4.8526 pm
+======================================================================
+
+--- soc_indep_avalanches.csv  (n=14 avalanches)
+    A 중앙값                 = 6.903e+05
+    ell_rot 중앙값           = 5.770 pm   (목표 4.8526 pm, +18.9%)
+    ell_rot 평균             = 6.255 pm
+    목표에 가장 가까운 값    = 4.659 pm   (best avalanche)
+    목표 D 를 주는 A_target  = 8.196e+05  (중앙 A 가 이보다 낮으면 ell_rot +%)
+
+--- soc_run3_avalanches.csv  (n=82 avalanches)
+    A 중앙값                 = 8.012e+05
+    ell_rot 중앙값           = 4.964 pm   (목표 4.8526 pm, +2.3%)
+    ell_rot 평균             = 5.304 pm
+    목표에 가장 가까운 값    = 4.854 pm   (best avalanche)
+    목표 D 를 주는 A_target  = 8.196e+05  (중앙 A 가 이보다 낮으면 ell_rot +%)
+
+결론: ell_rot 분포의 중앙값(~4.96 pm)은 A 분포 중앙값이 목표 A_target 보다
+      약간 낮아 생긴 offset(+2~3%)이며, best avalanche 는 4.85 pm 에 도달.
+      4.96 vs 4.85 = 분포 offset (근본 오류 아님).

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rot_aniso manifest.json",
+  "type": "object",
+  "required": ["hash_alg", "files"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "pid": {"type": "string"},
+    "ver": {},
+    "hash_alg": {"type": "string"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "bytes", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "bytes": {"type": "integer"},
+          "sha256": {"type": "string"}
+        }
+      }
+    }
+  }
+}

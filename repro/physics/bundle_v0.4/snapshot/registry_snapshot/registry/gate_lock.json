@@ -1,0 +1,83 @@
+{
+  "change_log": [],
+  "created": "2025-12-14",
+  "fail_codes": [
+    {
+      "code": "F-LOCK-MIX",
+      "meaning": "LOCK id / hash mismatch or mixed versions detected."
+    },
+    {
+      "code": "F-PROCEDURE-020",
+      "meaning": "Protocol violation: unexpected parameter/key in plan or run."
+    },
+    {
+      "code": "FAIL-RCROSS-DEV",
+      "meaning": "RCROSS deviation exceeded dev_max threshold."
+    },
+    {
+      "code": "F-MANIFEST",
+      "meaning": "Manifest/checksum sealing failure or missing artifact."
+    }
+  ],
+  "gates": {
+    "G-LOCK": {
+      "purpose": "Lock integrity (lock_id present; canonical hash matches file contents)",
+      "required_locks": [
+        "analysis_lock"
+      ],
+      "required_registry_files": [
+        "registry/canon_lock.json",
+        "registry/realization_lock.json",
+        "registry/gate_lock.json",
+        "registry/protocol_lock.json"
+      ]
+    },
+    "G-RECT": {
+      "alpha_expected_expr": "2/pi",
+      "delta_expected_expr": "1/pi^2",
+      "purpose": "Rectification constants: alpha=2/pi, delta=1/pi^2 (universal regime)",
+      "tolerance_abs": "0"
+    },
+    "G-REP": {
+      "purpose": "Reproducibility sealing: manifest+checksums+registry_snapshot",
+      "required_snapshot_files": [
+        "gate/PASS.rules",
+        "registry/registry_snapshot.json",
+        "snapshot/checksum_exclusions.txt",
+        "snapshot/checksums.txt",
+        "snapshot/manifest.json",
+        "snapshot/registry_snapshot/registry/analysis_lock.json",
+        "snapshot/registry_snapshot/registry/canon_lock.json",
+        "snapshot/registry_snapshot/registry/gate_lock.json",
+        "snapshot/registry_snapshot/registry/protocol_lock.json",
+        "snapshot/registry_snapshot/registry/realization_lock.json",
+        "snapshot/registry_snapshot/registry_snapshot.json",
+        "snapshot/release_tag.json"
+      ]
+    },
+    "G-SYM": {
+      "purpose": "Symbol/unit consistency (no collision; dimensional sanity)",
+      "required_registry_files": [
+        "registry/symbols_table.csv",
+        "registry/units_table.csv"
+      ]
+    }
+  },
+  "lock_id": "gate_lock:v0.2.6:sha256:d6cc185630f197570224d68a9aa3201ac6e4f872e7e4cb9ba06261cc4a6dc53a",
+  "lock_type": "gate_lock",
+  "rcross": {
+    "dev_max": "1e-12",
+    "fail_code": "FAIL-RCROSS-DEV"
+  },
+  "scope": "global",
+  "thresholds": {
+    "numeric_abs_tol_default": "0",
+    "numeric_rel_tol_default": "1e-12"
+  },
+  "tolerances": {
+    "dev_tol_max": "1e-12",
+    "eps_abs": "0",
+    "eps_rel": "1e-12"
+  },
+  "version": "v0.2.6"
+}

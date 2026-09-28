@@ -1,0 +1,10 @@
+digraph dependency_dag {
+  rankdir=LR;
+  "registry/canon_lock.json" -> "derived/claims.json";
+  "registry/realization_lock.json" -> "derived/claims.json";
+  "registry/protocol_lock.json" -> "derived/claims.json";
+  "registry/gate_lock.json" -> "derived/claims.json";
+  "derived/claims.json" -> "derived/tables/length_scales.csv";
+  "derived/claims.json" -> "derived/tables/mass_scales.csv";
+  "derived/claims.json" -> "derived/tables/invariants.csv";
+}

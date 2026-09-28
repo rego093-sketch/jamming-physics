@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rot_aniso protocol",
+  "type": "object",
+  "required": ["module", "module_version", "created", "locks_required", "seed_policy", "parameters", "outputs"],
+  "properties": {
+    "module": {"type": "string", "const": "rot_aniso"},
+    "module_version": {"type": "string"},
+    "created": {"type": "string"},
+    "kind": {"type": "string"},
+    "description": {"type": "string"},
+    "locks_required": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "seed_policy": {
+      "type": "object",
+      "required": ["rng", "seed0"],
+      "properties": {
+        "rng": {"type": "string"},
+        "seed0": {"type": "integer"}
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "required": ["omega_rot", "chi_star", "axis_u", "n_steps"],
+      "properties": {
+        "omega_rot": {"type": "number"},
+        "chi_star": {"type": "number"},
+        "axis_u": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "number"}
+        },
+        "n_steps": {"type": "integer", "minimum": 1}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "run_log": {"type": "string"},
+        "metrics": {"type": "string"},
+        "manifest": {"type": "string"},
+        "artifacts_dir": {"type": "string"}
+      }
+    }
+  }
+}

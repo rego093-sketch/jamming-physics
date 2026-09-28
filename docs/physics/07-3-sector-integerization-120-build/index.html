@@ -27,7 +27,8 @@
 <h1>3-Sector Integerization (120°) and Build Time</h1>
 <p class="answer">3-Sector Integerization (120°) and Build Time: Build time is counting times the tick — any other aggregation needs its own closure. For the left-hand side to be 1, we must have n₁·n₂=-1/2, so the angle between the two axes is 120^∘. Grade [F] forced.</p>
 <p class="abstract" data-phase2="abstract">Build time is counting times the tick — any other aggregation needs its own closure. For the left-hand side to be 1, we must have n₁·n₂=-1/2, so the angle between the two axes is 120^∘.</p>
-<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/07-3-sector-integerization-120-build/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/bundle_v0.4/01_quantum_annihilation/quantum_annihilation_DOI_vNext/scripts/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Update (2026-09-28).</strong> Why n = 3 and not the four directions of free 3D space: the sectors live in the rotation plane, perpendicular to the fixed nozzle axis, and the cube’s symmetry about that axis is C₃. See <a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">§MR Step 3</a>.</aside>
 <aside class="vp-card" data-locked="nu-p" data-concept="nu_p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a> · <a href="/concepts/#nu_p">용어</a></aside>
 <h2>Topological necessity of 3 sectors</h2>
 <p>To physically enclose a center point (Core) in a 2D cross section, at least three vectors are required (two vectors are linear; four vectors are overcomplete).
@@ -137,7 +138,7 @@ Hence V is locked as an integer-based residual vector that encodes the magnitude
 Define the threshold as</p>
 <figure class="eq" id="eq:S07_Vmin"><img src="/physics/eq/physics/phy-07-018.svg" data-eq="phy-07-018" width="99" height="19" loading="lazy" alt="\begin{equation} \|\mathbf{V}\|\ge V_{\min}, \end{equation}"></figure>
 <p>where V_(min) is a pre-registered threshold in <code>gate_lock</code>; changing V_(min) is allowed only by a version bump.
-If |V|<V_(min), labels are treated as neutral (or undefined), and the handling rule for that case (whether it is CT-LIM or CT-DEF) must be locked by PASS.rules.</p>
+If |V|&lt;V_(min), labels are treated as neutral (or undefined), and the handling rule for that case (whether it is CT-LIM or CT-DEF) must be locked by PASS.rules.</p>
 <h3>Declaration of the link to charge/electron labels</h3>
 <p>The integerization rule is linked to downstream labels in the following forms.</p>
 <ol>
@@ -150,7 +151,7 @@ If |V|<V_(min), labels are treated as neutral (or undefined), and the handling r
 </ol>
 <p>Therefore the integerization rule in this chapter is a “super-convention” for charge/electron labels: labels cannot be introduced separately by bypassing the integerization rule.</p>
 <h2>7.5 Definition of Build Time</h2>
-<aside class="claim-strip vps" data-vps="7.5" data-cards="VP-C-024, VP-C-004"><span class="g">definitions</span><span class="io">in: $Δ t$ (realization_lock), $ν$ / out: $T_build:=NΔ t$ (tick), event-rate form, 3-sector auxiliaries</span><q class="one">Build time is counting times the tick — any other aggregation needs its own closure.</q><span class="cards">VP-C-024, VP-C-004</span></aside>
+<aside class="claim-strip vps" data-vps="7.5" data-cards="VP-C-024, VP-C-004"><span class="g">definitions</span><span class="io">in: Δ t (realization_lock), ν / out: T_build:=NΔ t (tick), event-rate form, 3-sector auxiliaries</span><q class="one">Build time is counting times the tick — any other aggregation needs its own closure.</q><span class="cards">VP-C-024, VP-C-004</span></aside>
 <h3>7.5.1 Tick-based build time</h3>
 <p>When the realization time tick Δ t is locked in <code>realization_lock</code>, define the build time corresponding to total count N as</p>
 <figure class="eq" id="eq:S07_Tbuild_tick"><img src="/physics/eq/physics/phy-07-020.svg" data-eq="phy-07-020" width="118" height="16" loading="lazy" alt="\begin{equation} T_{\mathrm{build}} := N\,\Delta t. \end{equation}"></figure>
@@ -177,7 +178,7 @@ In all cases T_i is fixed by <a href="#eq:S07_Ti_def" class="xref" data-ref="eq:
 <li> Gate: The non-degeneracy threshold V_(min) (<a href="#eq:S07_Vmin" class="xref" data-ref="eq:S07_Vmin">(S07_Vmin)</a>) and the label-handling rule must be pre-registered in <code>gate_lock</code> and PASS.rules.
 </ul>
 <h2>7.1 Minimum-variance integerization (N=3m+r): 89, 82</h2>
-<aside class="claim-strip vps" data-vps="7.1" data-cards="VP-C-029, VP-C-031, VP-C-024"><span class="g">[F] integerization + min-variance</span><span class="io">in: real loads / out: $|k_i-k_j|≤1$; $89→(30,30,29)$, $82→(28,27,27)$; counts 19/27/81/123; $R²=7$ empty</span><q class="one">Floor-plus-largest-residual with locked tie-breaks; number theory pins the 81.</q><span class="cards">VP-C-029, VP-C-031, VP-C-024</span></aside>
+<aside class="claim-strip vps" data-vps="7.1" data-cards="VP-C-029, VP-C-031, VP-C-024"><span class="g">[F] integerization + min-variance</span><span class="io">in: real loads / out: |k_i-k_j|≤1; 89→(30,30,29), 82→(28,27,27); counts 19/27/81/123; R²=7 empty</span><q class="one">Floor-plus-largest-residual with locked tie-breaks; number theory pins the 81.</q><span class="cards">VP-C-029, VP-C-031, VP-C-024</span></aside>
 <h3>7.1.1 Definition of the integerization problem</h3>
 <p>The goal of 3-sector integerization is to distribute a total integer resource N∈Z_(≥ 0) into three nonnegative integer sector counts</p>
 <figure class="eq" id="eq:S07_01_k_domain"><img src="/physics/eq/physics/phy-07-024.svg" data-eq="phy-07-024" width="138" height="23" loading="lazy" alt="\begin{equation} (k_1,k_2,k_3)\in\mathbb{Z}_{\ge 0}^3 \end{equation}"></figure>
@@ -351,7 +352,7 @@ Conversely, in the present document where 82 is locked as a structural integer (
 <li> Gate: Post hoc choice of n_r, changing the counting attribution of N_core, or absorbing/redefining φ_pack (symbol overloading) is <code>FAIL</code> under G-NT/G-LOCK/G-SYM.
 </ul>
 <h2>7.2 Definition of build times Tₚ, Tₙ</h2>
-<aside class="claim-strip vps" data-vps="7.2" data-cards="VP-C-024"><span class="g">[F] build times</span><span class="io">in: $νₚ$ / out: $Tₚ/Tₙ=89/82$; $Tₚ-Tₙ=7/ν$</span><q class="one">Two integers, one rate, the n-p split in seconds.</q><span class="cards">VP-C-024</span></aside>
+<aside class="claim-strip vps" data-vps="7.2" data-cards="VP-C-024"><span class="g">[F] build times</span><span class="io">in: νₚ / out: Tₚ/Tₙ=89/82; Tₚ-Tₙ=7/ν</span><q class="one">Two integers, one rate, the n-p split in seconds.</q><span class="cards">VP-C-024</span></aside>
 <h3>7.2.1 Definition of the canonical event rate νₚ,can (time–count link)</h3>
 <p>Let the time variable t denote realization time (unit: s).
 An event is counted according to the operational definition locked in <code>canon_lock</code>, and event counts are recorded as dimensionless integers.
@@ -444,7 +445,7 @@ It is meaningful only under the same locked version.</p>
 <li> Gate: Regime mismatch or incomplete logs for ν_p,can are <code>INCONCLUSIVE</code> under G-REG or G-REP; post hoc changes are <code>FAIL</code> under G-NT.
 </ul>
 <h2>7.3 Definitions of Φ and χ (handoff criteria between observation and analysis)</h2>
-<aside class="claim-strip vps" data-vps="7.3" data-cards="VP-C-043, VP-C-049"><span class="g">operational definitions + handoff gate</span><span class="io">in: event logs (mandatory schema) / out: aggregates $Φ$, $χ$ and the observation$→$analysis handoff gate; missing fields $⇒$ INCONCLUSIVE/FAIL. NB: this $χ$ is the handoff aggregate, distinct from the light angle $χ$ of S10.9</span><q class="one">Observables are computable from logs or they do not exist — and the handoff itself is gated.</q><span class="cards">VP-C-043, VP-C-049</span></aside>
+<aside class="claim-strip vps" data-vps="7.3" data-cards="VP-C-043, VP-C-049"><span class="g">operational definitions + handoff gate</span><span class="io">in: event logs (mandatory schema) / out: aggregates Φ, χ and the observation→analysis handoff gate; missing fields ⇒ INCONCLUSIVE/FAIL. NB: this χ is the handoff aggregate, distinct from the light angle χ of S10.9</span><q class="one">Observables are computable from logs or they do not exist — and the handoff itself is gated.</q><span class="cards">VP-C-043, VP-C-049</span></aside>
 <h3>7.3.1 Purpose</h3>
 <p>This section (i) fixes observable aggregates Φ and χ by internal definitions, (ii) specifies the measurability conditions of Φ and χ (log-based computability), and (iii) defines the Gate that hands Φ and χ off to the analysis part (closure/gate/estimator stack).
 The Φ and χ in this section are defined from event logs and the 3-sector integerization + rectification conventions only, with no appeal to external texts.</p>
@@ -455,7 +456,7 @@ Missing fields make the quantities undefined and must be judged immediately as <
 <li> Event set: E.
 <li> Event index: e∈E.
 <li> Event time (tick): n(e)∈Z.
-<li> Tick boundaries for window definition: n₁<n₂.
+<li> Tick boundaries for window definition: n₁&lt;n₂.
 <li> Pre/post state identifiers: pre(e), post(e).
 <li> VP subset involved in the event: V(e)⊆V.
 <li> 3-sector integerization input: either total count N(e) or the sector triple (k₁(e),k₂(e),k₃(e)).

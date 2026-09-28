@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "summary",
+  "type": "object",
+  "required": [
+    "run_id",
+    "analysis_lock_hash",
+    "windows",
+    "pass_fail"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "analysis_lock_hash": {
+      "type": "string"
+    },
+    "windows": {
+      "type": "array"
+    },
+    "pass_fail": {
+      "type": "object",
+      "required": [
+        "level0_integrity",
+        "level1_schema",
+        "level2_science"
+      ],
+      "properties": {
+        "level0_integrity": {
+          "type": "boolean"
+        },
+        "level1_schema": {
+          "type": "boolean"
+        },
+        "level2_science": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

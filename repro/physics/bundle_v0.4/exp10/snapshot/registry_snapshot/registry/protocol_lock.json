@@ -1,0 +1,56 @@
+{
+  "change_log": [],
+  "created": "2025-12-14",
+  "formats": {
+    "checksums_format": "txt",
+    "csv_utf8": true,
+    "decimal_strings": true,
+    "event_csv_unicode": true,
+    "json_sort_keys": true,
+    "manifest_format": "json"
+  },
+  "hashing": {
+    "algorithm": "sha256",
+    "exclusions_file": "snapshot/checksum_exclusions.txt",
+    "path_base": "bundle_root"
+  },
+  "lock_id": "protocol_lock:v0.2.6:sha256:c9d2c8ff73758193791febf14d2c92c2d31dc8f2947db79eef074be390d71e03",
+  "lock_type": "protocol_lock",
+  "schemas": {
+    "exp10_events_csv": {
+      "columns": [
+        {
+          "name": "tick",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "name": "node",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "encoding": "utf-8",
+      "format": "csv",
+      "notes": [
+        "Toy schema; locked to satisfy VP whitepaper §10.4.6.1"
+      ],
+      "path": "exp10/inputs/events/events.csv"
+    }
+  },
+  "scope": "global",
+  "scripts": {
+    "build_derived": "scripts/build_derived.py",
+    "run_gates": "scripts/run_gates.py",
+    "seal_snapshot": "scripts/seal_snapshot.py"
+  },
+  "unit_conventions": {
+    "GeV_to_J": "1.602176634e-10",
+    "fm_to_m": "1e-15"
+  },
+  "unit_conversions": {
+    "GeV_to_J": "1.602176634e-10",
+    "fm_to_m": "1e-15"
+  },
+  "version": "v0.2.6"
+}

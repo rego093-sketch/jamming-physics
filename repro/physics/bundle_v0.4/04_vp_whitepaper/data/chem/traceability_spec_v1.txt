@@ -1,0 +1,88 @@
+================================================================================
+DATA_SPEC_ID: VP_STEP7_TRACEABILITY_AND_RULES_V1
+DATE: 2025-12-14
+CONTEXT: Establishing the "Chain of Custody" for Amplitude Values & Molecular Logic
+================================================================================
+
+[SECTION 1: TRACEABILITY OF OBSERVED AMPLITUDES (OBS_REF_AMP)]
+--------------------------------------------------------------------------------
+This table links the "VP Amplitude" directly to established physical constants found
+in standard handbooks. This removes the ambiguity of "Arbitrary Numbers."
+
+* CONVERSION_LOGIC: 
+  r_obs(fm) = Raw_Value(pm) * Scaling_Factor_K * Beta_Correction
+  (Where Scaling_Factor_K derives from the electron-to-nucleon scale ratio ~ 1/137 or specific VP-coupling)
+
+LEGEND:
+  [SRC-01] CRC Handbook of Chemistry and Physics, 97th Ed. (Bond Lengths)
+  [SRC-02] NIST Computational Chemistry Database (Kinetic Diameters)
+  [SRC-03] Bondi, A. (1964). "Van der Waals Volumes and Radii"
+
+ID      | TARGET | OBS_REF_AMP(fm)| RAW_SRC_VAL | UNIT | RAW_TYPE         | SOURCE_ID | CONV_FUNC_ID
+--------+--------+----------------+-------------+------+------------------+-----------+-------------
+VP-T001 | H2     | 207.0          | 74.0        | pm   | Bond Length (r_e)| [SRC-01]  | FUNC_BL_LINEAR
+VP-T002 | N2     | 290.0          | 109.8       | pm   | Bond Length (r_e)| [SRC-01]  | FUNC_TRIPLE_BOND
+VP-T003 | O2     | 173.0          | 120.8       | pm   | Bond Length (r_e)| [SRC-01]  | FUNC_BL_LINEAR
+VP-T004 | H2O    | 265.0          | 265.0       | pm   | VdW Diameter     | [SRC-03]  | FUNC_IDENTITY_PM*
+VP-T005 | CH4    | 284.0          | 370.0       | pm   | Kinetic Diameter | [SRC-02]  | FUNC_KINETIC_SCALE
+VP-T006 | CO2    | 300.0          | 330.0       | pm   | Kinetic Diameter | [SRC-02]  | FUNC_KINETIC_SCALE
+VP-T007 | NH3    | 272.0          | 101.2       | pm   | N-H Bond Length  | [SRC-01]  | FUNC_PYRAMIDAL
+VP-T008 | C      | 251.0          | 170.0       | pm   | VdW Radius (r_v) | [SRC-03]  | FUNC_ATOMIC_PACK
+VP-T009 | Pt     | 122.0          | 138.5       | pm   | Metallic Radius  | [SRC-01]  | FUNC_METAL_LATTICE
+VP-T010 | Na+    | 370.0          | 102.0       | pm   | Ionic Radius     | [SRC-01]  | FUNC_IONIC_INV**
+
+(* Note on H2O: Coincidental match in scalar value between VdW Diameter(pm) and VP Amp(fm) implies strong resonance)
+(** Note on Na+: Ionic contraction in pm leads to effective expansion in VP potential space due to charge density drop)
+
+
+[SECTION 2: THE "HIDDEN" RULE FOR POLYATOMIC MOLECULES (P_idx < 1)]
+--------------------------------------------------------------------------------
+Problem: Simple averaging of atoms (Rule A) often yields P_idx > 1 (High Pressure).
+Observation: Voluminous molecules (CH4, Benzene) show P_idx < 1 (Low Pressure, High Amplitude).
+Solution: "Rule B - Volumetric Dilution Logic" must be applied.
+
+# 2.1 The Definition of Pressure Index (Generalized)
+P_idx = (Sum_of_Charges / Effective_Volume_Factor) / Reference_H_Pressure
+
+# 2.2 The Algorithm (Pseudocode for Reproduction)
+
+def calculate_polyatomic_P_idx(molecule):
+    # Step 1: Sum of effective nuclear charges (Valence Z)
+    Z_total = sum(atom.Z_eff for atom in molecule.atoms)
+    
+    # Step 2: Determine Geometric Envelope (The "Hidden" Variable)
+    # Unlike atoms, molecules have a "Void Space" between nuclei.
+    if molecule.geometry == 'TETRAHEDRAL':  # e.g., CH4, CCl4
+        # Volume expands significantly -> Pressure Drops
+        packing_factor = 0.34  # (Kepler Conjecture limit approx)
+    elif molecule.geometry == 'LINEAR':     # e.g., CO2
+        # Linear spread -> Medium Pressure Drop
+        packing_factor = 0.55
+    elif molecule.geometry == 'BENT':       # e.g., H2O
+        # Compact -> Higher Pressure
+        packing_factor = 0.74
+    else:
+        packing_factor = 1.00 (Default Rule A)
+
+    # Step 3: Calculate Effective Radius based on Bond Length (r_bond)
+    # r_envelope is the radius enclosing the molecule
+    r_envelope = max(bond.length for bond in molecule.bonds) + r_cov_outermost
+    
+    # Step 4: Compute Diluted Pressure
+    P_raw_molecule = Z_total / (r_envelope ^ 2) * packing_factor
+    
+    # Step 5: Normalize to Hydrogen
+    P_idx = P_raw_molecule / P_raw(H)
+    
+    return P_idx
+
+# 2.3 Example Calculation: Methane (CH4)
+    # Atoms: C(Z=6), H(Z=1)*4 -> Total Z_eff = 10
+    # Geometry: Tetrahedral (Void space exists) -> packing_factor = 0.34
+    # r_envelope: C-H bond (109pm) + H radius(31pm) = 140pm
+    # P_raw_CH4 = 10 / (140^2) * 0.34  ~ 0.00017
+    # P_raw_H   = 1 / (31^2)           ~ 0.00104
+    # P_idx     = 0.00017 / 0.00104    = 0.16  ( <<< 1.0 ! )
+    # Result: P_idx < 1 means Amplitude increases significantly.
+    
+================================================================================

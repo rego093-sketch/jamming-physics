@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Is Complete, Building Is Open — DNA §RB | Jamming Physics</title>
+<meta name="description" content="What this volume claims and what it does not: DNA's declared channels are read 100% and deterministically; building an organism from the reading is not claimed. It stays open, possible in principle with organism-level computation of every object's volume and stiffness.">
+<link rel="canonical" href="https://jamming-physics.org/dna/rb-reading-complete-building-open/">
+<link rel="stylesheet" href="/dna/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Reading Is Complete, Building Is Open",
+"isPartOf":{"@type":"CreativeWork","name":"4D DNA Blueprint","sameAs":"https://doi.org/10.5281/zenodo.20471407"},
+"position":"RB","author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/dna/">4D DNA Blueprint</a> › §RB</nav></header>
+<main>
+<h1>RB. Reading Is Complete, Building Is Open</h1>
+<p class="answer">This volume makes one claim and deliberately stops short of a second. <strong>Claim:</strong> DNA can be read, 100% of its declared channels, deterministically and with no free parameter. <strong>Not claimed:</strong> that an organism can be built from the reading alone. Building happens as every object grows independently, and that is a full-physics process. It is <strong>open</strong>, and possible in principle, not through a different logic but through the same logic run with organism-level computation: measuring and evolving the volume and stiffness of every object.</p>
+<aside class="claim-strip page"><span class="g">Reading [F]/[V] · Building [O] (obstacle: computation)</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/repro/dna/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>1. Why this page exists</h2>
+<p>Readers, including careful reviewers, repeatedly take this volume to claim more than it does. They see γ next to developmental order, organ size and a clock, and conclude that the volume says DNA builds the body by γ. They then find that γ does not predict developmental order and call the volume refuted. That reading is wrong about the claim. This page states the claim in three layers, says exactly what "100% readable" means, and shows why the results that look like failures are what the claim predicts.</p>
+
+<h2>2. Layer 1: reading (claimed, 100%)</h2>
+<p><strong>What "100% readable" means.</strong> Every channel that the volume declares readable is extracted from the sequence completely, by a fixed algorithm, with no free parameter, and byte-identically on every run. "100%" is complete <em>with respect to the declared channels</em>. It does not mean "all biological information in DNA". That second statement could not be proven by any gate, and it is not made.</p>
+<table>
+<tr><th>Channel</th><th>What is read</th><th>How</th><th>Grade</th></tr>
+<tr><td>Level, γ</td><td>mean nearest-neighbour stacking free energy of the window</td><td>SantaLucia 1998 unified ΔG37 table, verified in every copy; recomputes bit-for-bit</td><td>[F] computation</td></tr>
+<tr><td>Shape, A4</td><td>the robust-z coordinate profile along the element</td><td>median-removed, so it carries no level (max |corr| with γ = 0.327)</td><td>[F] computation</td></tr>
+<tr><td>Methylation handles</td><td>CpG observed/expected</td><td>a dinucleotide-destroying shuffle moves O/E from 0.335 to 0.998 (negative control)</td><td>[V]</td></tr>
+<tr><td>Can-fire</td><td>whether the R19 double well exists for this γ</td><td>γ &gt; 0 for every DNA sequence, so every locus can fire</td><td>[F] by construction</td></tr>
+</table>
+<p><strong>Be exact about the level channel.</strong> Because the SantaLucia table is a fixed per-step lookup, the mean over a sequence tracks its GC content almost exactly. Random sequences give corr(γ, GC) ≈ 0.9996, and real promoters give 0.997–0.998, so γ ≈ 0.87 + 1.04·GC. The level channel is therefore GC composition expressed in free-energy units. corr(γ, GC) = 0.998 is a consistency check of the table, not a discovery. The sequence-specific information, the part that is not composition, is carried by the <strong>shape</strong> and <strong>methylation</strong> channels. Saying this plainly makes the reading claim stronger, not weaker: the volume reads composition, arrangement and marks, and it says which is which.</p>
+<p><strong>Can-fire is not a separating test.</strong> "All loci are R19-bistable" holds for any DNA, because γ &gt; 0 always. It confirms that the model applies everywhere. It is not evidence that separates one locus from another.</p>
+
+<h2>3. The bridge between reading and model: one declared identification [L]</h2>
+<p>Computing γ is a fact. Treating γ as the control parameter of the R19 switch, ṡ = γs − s³ + h, is an <em>identification</em>. The volume states it once, as follows. The R19 cubic is the generic switch of the jammed substrate. Its control parameter is identified with γ expressed in kcal/mol, that is γ/γ₀ with γ₀ = 1 kcal/mol. This is a declared postulate, graded [L].</p>
+<p>Two consequences follow and are stated rather than hidden:</p>
+<ul>
+<li>Absolute spinodal and barrier values (h_sp = 2(γ/3)^1.5, barrier γ²/4) depend on that unit choice. In kJ/mol they would scale by 8.56 and 17.5. Only <strong>order-preserving</strong> statements, "higher γ means a higher threshold", are independent of γ₀.</li>
+<li>"Stiffness" is the physical reading that the jamming substrate gives to duplex stability, which is pairing plus stacking. It is a name that comes from the physics seam, not an independently measured elastic modulus.</li>
+</ul>
+<p><strong>Two kinds of dwell.</strong> "Dwell ∝ γ^1.5" means the <em>deterministic hold time</em> of a switch whose drive is ramped slowly at rate r: it holds until |h| reaches the spinodal, so t_hold = |h_sp(γ)|/r ∝ γ^1.5. That is a different quantity from the <em>noise-driven</em> dwell of §6, which scales as exp(γ²/4D). Both are properties of the model. Neither is a claim about organ size (Layer 2).</p>
+
+<h2>4. Layer 2: building (not claimed)</h2>
+<p>An organism is not read out of its DNA the way a file is read. It is <strong>grown</strong>. Every cell, tissue and organ is an object that grows independently, pushes on its neighbours, stiffens, and changes volume, and each step feeds back on the next. Developmental order, final size, absolute timing and whether a switch is on or off at a given moment are decided in that growth. They are not decided in the sequence alone.</p>
+<p>The volume's own results show exactly this boundary. They are evidence <em>for</em> the claim, not against it:</p>
+<table>
+<tr><th>Result</th><th>Value</th><th>What it shows</th></tr>
+<tr><td>Spinodal(γ) vs Carnegie developmental order</td><td>Spearman −0.087 (n = 47), null (App. L)</td><td>order is not written in γ</td></tr>
+<tr><td>γ vs developmental timing</td><td>ρ = −0.018, p = 0.99 (App. A)</td><td>absolute time is not written in γ</td></tr>
+<tr><td>Where order does come from</td><td>regulatory-cascade depth (App. I–L)</td><td>order is produced by the interaction of objects, in growth</td></tr>
+<tr><td>Size direction from dwell</td><td>sign flipped within primates (+0.70 → −0.47, §5)</td><td>size is not read from γ</td></tr>
+<tr><td>On/off STATE</td><td>taken from the literature (snake ZRS off, white-grape MYBA off)</td><td>state is a runtime observation, not a sequence read</td></tr>
+</table>
+<p>So the appendices that model order, size, tissue stiffness and a clock (A–L) are <strong>principle demonstrations of the building layer</strong>. They show how the read quantities could enter a growth computation. They are not evidence that reading determines building, and they are graded accordingly (Section 6).</p>
+
+<h2>5. Layer 3: building is possible in principle [O]</h2>
+<p>The door is not closed. Building needs no new logic. It needs the same logic run with computation comparable to the organism itself: every object's <strong>volume</strong> and <strong>stiffness</strong> measured and evolved as it grows, together with its neighbours. That is a full-physics computation, the same class of problem as the absolute surface gravity 9.8 m/s² in the physics volume. Its obstacle is computation, not theory. It is therefore graded [O] with the obstacle named: object-resolved volume and stiffness at organism scale. Small-scale pieces, such as the tissue-stiffness bracket (App. D) and the regulatory-cascade ordering (App. I), are the first steps of that computation. They are not its completion.</p>
+
+<h2>6. What changes in how the appendices are graded</h2>
+<ul>
+<li><strong>Results that are true by construction</strong> are graded [F] (a model property), not [V]. [V] is reserved for tests against external data. Examples: the wavefront "0 violations", firing vs depth, the quorum gate, and "order = argsort(spinodal)".</li>
+<li><strong>Order edges defined by temporal precedence</strong> ("X activates before Y") agree with time by construction. Edge concordance is [F], and the order result is a principle demonstration until edges come from direct regulatory evidence (ChIP, loss-of-function) that is independent of timing.</li>
+<li><strong>Post-hoc additions to a pre-registered floor</strong> are disclosed as such. The genes added in App. J and the MEOX1→PAX7 edge in App. L were added after the floor was missed, so the pre-edge result is the primary outcome.</li>
+<li><strong>The absolute clock (App. K)</strong> has one free choice, the bracket end (CS13 is the optimum; CS12 gives 2.75 d and CS15 gives 1.62 d). It has five independent stage rows, not 31 independent genes.</li>
+<li><strong>"No grammatical level remains undiscovered"</strong> is a declared closure of the <em>reading</em> layer: the three buckets (read / runtime / out of scope) are exhaustive by construction. It is not an empirical [V] claim.</li>
+</ul>
+
+<h2>7. Two grading vocabularies, one mapping</h2>
+<table>
+<tr><th>Body vocabulary</th><th>Corpus grade</th></tr>
+<tr><td>admissible</td><td>[F], [V] or [L], according to its basis</td></tr>
+<tr><td>principle-demonstration</td><td>shown in the model, not tested against held-out data (building layer)</td></tr>
+<tr><td>open</td><td>[O], obstacle stated</td></tr>
+<tr><td>[B]</td><td>category boundary (read / runtime / out of scope)</td></tr>
+</table>
+
+<h2>8. Reproducibility status, stated plainly</h2>
+<ul>
+<li>γ, spinodal and barrier recompute bit-for-bit (28/28 regression cases, all shipped promoter caches). App. A verify 20/20 (needs scipy and scikit-image, now listed in <code>requirements.txt</code>). App. L completion gate 18/18.</li>
+<li>The §2 census cites 51 reads. Inputs for 28 are shipped. The others (primate growth plate, cat and tiger GHRHR/IGF2/POU1F1, fish and frog UCP1, and the organ-interpretation JSON behind the 26 atlas γ) are not in the repository, so those reads are marked not-reproducible-here until the inputs are added.</li>
+<li>γ windows differ. The definition uses a 2501-bp promoter window, while the Dictionary uses 150 kb–1 Mb regional windows (regional GC). Tables state their window. The like-for-like ZRS pair is human LMBR1 region 1.281 vs snake region 1.290.</li>
+</ul>
+
+<h2>9. Data-pending register</h2>
+<p>This corpus follows one rule: <strong>data decides the theory, and a theory counts only once it is written as code that reproduces its numbers.</strong> Items without shipped data or code are therefore not argued. They are listed here as data-pending, and they will be revised when the data arrive.</p>
+<ul>
+<li>§2 census: 23 of 51 reads lack shipped inputs (primate growth plate, cat/tiger GHRHR/IGF2/POU1F1, fish/frog UCP1, the organ-interpretation JSON behind the 26 atlas γ).</li>
+<li>Order edges from timing-independent regulatory evidence (ChIP, loss-of-function) to replace precedence-defined edges (App. I–L).</li>
+<li>App. C: which modulus carries the √Δφ onset (shear G vs bulk B) is to be settled by a coded packing run, not by argument.</li>
+<li>Cis-drive read (h) for on/off STATE, which App. L already calls data-blocked.</li>
+<li>Housekeeping: <code>gate_multipage.py</code> to the deployed layout; manifest grade counts regenerated from page tags.</li>
+</ul>
+<nav class="pn"><a rel="prev" href="/dna/00-the-reading-stated-plainly/">← §0</a><a href="/dna/">contents</a><a rel="next" href="/dna/how-to-read-a-locus/">§I →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.20471407">DOI 10.5281/zenodo.20471407</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

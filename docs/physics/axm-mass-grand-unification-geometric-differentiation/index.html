@@ -27,7 +27,7 @@
 <h1>Appendix M. Mass grand unification: geometric differentiation of lattice energy</h1>
 <p class="answer">Appendix M. Mass grand unification: Lock the mass=resistance axiom. If the canonical cell (cube) locks the independent channel count to κ_H=5 by removing one global reference degree of freedom from the 6 faces, and if the canonical cross-section of each channel is locked to π.</p>
 <p class="abstract" data-phase2="abstract">Lock the mass=resistance axiom. If the canonical cell (cube) locks the independent channel count to κ_H=5 by removing one global reference degree of freedom from the 6 faces, and if the canonical cross-section of each channel is locked to π.</p>
-<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/axm-mass-grand-unification-geometric-differentiation/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/bundle_v0.4/scripts/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
 <aside class="vp-card" data-locked="d-anch"><b>D = 4.8526 pm</b> — Quantum (anchor) diameter that fixes the lattice length scale. <b>[F]</b> forced. <a href="/physics/03-axioms-primitives-volume-particle-lattice/">canonical derivation §3</a></aside>
 <h3>M.0 Locked definitions (single source of truth)</h3>
 <figure class="eq" id="eq:AppM_Ulat"><img src="/physics/eq/physics/phy-axm-000.svg" data-eq="phy-axm-000" width="112" height="38" loading="lazy" alt="\begin{equation} U_{\mathrm{lat}}:=\frac{h\,c_{\mathrm{ref}}}{a}. \end{equation}"></figure>
@@ -51,6 +51,7 @@ radius rₑ=r₀δ, which governs only νₑ=1):</p>
 <p>as above, and</p>
 <figure class="eq" id="eq:AppM_sigmae"><img src="/physics/eq/physics/phy-axm-004.svg" data-eq="phy-axm-004" width="102" height="28" loading="lazy" alt="\begin{equation} \boxed{ \sigma_{\mathrm{eff}}(e):=S } \end{equation}"></figure>
 <h3>M.2 Mass grand-unification theorem (same format)</h3>
+<p><em>Status note (2026-09-28).</em> The invariants I_H, I_p and I_e below equal 1 by construction, so this “theorem” is a definitional closure [D] and cannot fail. The external content is carried elsewhere: 6π⁵ (<a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">§MR</a>) and the Higgs value conditional on N (§13.3). The electron channel must use λ_C,e, not rₑ = (D/2)δ; the gate script now does so and cross-checks mₑ against CODATA as a round-trip consistency check.</p>
 <h4>Theorem M.2.1</h4>
 <p>Under the same lock version, if <a href="#eq:AppM_Ulat" class="xref" data-ref="eq:AppM_Ulat">(AppM_Ulat)</a>–<a href="#eq:AppM_sigmae" class="xref" data-ref="eq:AppM_sigmae">(AppM_sigmae)</a> hold, then</p>
 <figure class="eq" id="eq:AppM_masses"><img src="/physics/eq/physics/phy-axm-005.svg" data-eq="phy-axm-005" width="329" height="53" loading="lazy" alt="\begin{equation} \boxed{ m_H=\frac{U_{\mathrm{lat}}}{5\pi},\quad m_p=\frac{U_{\mathrm{lat}}}{S_p},\quad m_e=\frac{U_{\mathrm{lat}}}{S} } \end{equation}"></figure>
@@ -121,9 +122,10 @@ def main():
     S_p = lambda_C / a_m
     m_p = U_lat_GeV / S_p
 
-    # electron: r_e, S, m_e
-    r_e = (D_anch/2.0) * delta
-    S = r_e / a_m
+    # electron: read through the Compton length lambda_C,e = D_anch/2
+    # (the retracted r_e = (D_anch/2)*delta form gave m_e = pi^2 * 0.511 MeV and still passed)
+    lambda_Ce = D_anch/2.0
+    S = lambda_Ce / a_m
     m_e = U_lat_GeV / S
 
     # invariants

@@ -1,0 +1,205 @@
+{
+  "analysis_spec": {
+    "locked_artifacts": {
+      "core82": {
+        "generator_script": "scripts/build_core82.py",
+        "generator_sha256": "45fa641819501f35031de1ca1e36782b92535142ddb4bb50937c27d73fcdc459",
+        "notes": [
+          "This section locks the file-level reproducibility for the Core-82 storage artifacts (§8.1.9).",
+          "The values in these files are a deterministic reference instance produced by scripts/build_core82.py."
+        ],
+        "outputs": [
+          "X82.csv",
+          "G82.edgelist",
+          "layers82.csv"
+        ],
+        "params_file": "params82.yaml"
+      },
+      "exp10": {
+        "configs": [
+          "exp10/configs/regime.yaml",
+          "exp10/configs/domain.yaml",
+          "exp10/configs/probes.yaml",
+          "exp10/configs/soc.yaml",
+          "exp10/configs/thresholds.yaml"
+        ],
+        "inputs": [
+          "exp10/inputs/geometry/nodes2d.csv",
+          "exp10/inputs/geometry/nodes3d.csv",
+          "exp10/inputs/graphs/edges2d.edgelist",
+          "exp10/inputs/graphs/edges3d.edgelist",
+          "exp10/inputs/graphs/Gopen.edgelist",
+          "exp10/inputs/graphs/backbone.edgelist",
+          "exp10/inputs/events/events.csv"
+        ],
+        "notes": [
+          "This section locks the exp10 package file list and the sealing script (§10.4).",
+          "exp10/ is a deterministic toy implementation whose purpose is to satisfy the DOI-level reproducibility contract."
+        ],
+        "outputs": [
+          "exp10/outputs/2d_throat/gaps2d.csv",
+          "exp10/outputs/2d_throat/gc2d.txt",
+          "exp10/outputs/2d_throat/deltaeff2d.txt",
+          "exp10/outputs/2d_throat/Gopen2d.edgelist",
+          "exp10/outputs/2d_throat/backbone2d.edgelist",
+          "exp10/outputs/2d_throat/report_perc2d.json",
+          "exp10/outputs/3d_jamming/switch.json",
+          "exp10/outputs/3d_jamming/Wiso.csv",
+          "exp10/outputs/3d_jamming/Wdrift.csv",
+          "exp10/outputs/3d_jamming/Beff.txt",
+          "exp10/outputs/3d_jamming/rhoeff.txt",
+          "exp10/outputs/3d_jamming/ctilde.txt",
+          "exp10/outputs/3d_jamming/c.txt",
+          "exp10/outputs/3d_jamming/report_c.json",
+          "exp10/outputs/soc_pinning/clusters.json",
+          "exp10/outputs/soc_pinning/A.txt",
+          "exp10/outputs/soc_pinning/steady.json",
+          "exp10/outputs/soc_pinning/pinning.json",
+          "exp10/outputs/soc_pinning/robust.json",
+          "exp10/outputs/soc_pinning/report_A.json",
+          "exp10/outputs/derived/README.md",
+          "exp10/outputs/gates/README.md"
+        ],
+        "root": "exp10/",
+        "scripts": [
+          "exp10/scripts/compute_A.py",
+          "exp10/scripts/compute_B_rho_c.py",
+          "exp10/scripts/compute_backbone.py",
+          "exp10/scripts/compute_deltaeff.py",
+          "exp10/scripts/run_2d_throat.py",
+          "exp10/scripts/run_3d_jamming.py",
+          "exp10/scripts/run_soc_pinning.py",
+          "exp10/scripts/seal_exp10.py"
+        ],
+        "scripts_sha256": {
+          "exp10/scripts/compute_A.py": "58681cca989f559e576d78b718ef8c796a829bf7dc158909ef7df877b4d52702",
+          "exp10/scripts/compute_B_rho_c.py": "24f2dda2dbd2bfb29967b0ddb192cde4b2cc182a18b0665771159596e74490b3",
+          "exp10/scripts/compute_backbone.py": "1684ee8213c5225d9f6bdab5634757122b4e0219f8892dbbcc111f091369026b",
+          "exp10/scripts/compute_deltaeff.py": "25f977f6ecfe18a1d11cb7879ca4b8057e51c21c1204aba03ed61d3add8891e5",
+          "exp10/scripts/run_2d_throat.py": "85a2abac2decec71f396cd87eb249deb213c7d7dad09240d65b64741d697755e",
+          "exp10/scripts/run_3d_jamming.py": "bc66c1e1238dc2d0faa4ffa1f136e60b434425d131e2659075db38e2b24b5a1d",
+          "exp10/scripts/run_soc_pinning.py": "13e57125dde2894c68423a1cbf858c6ec21dd7e79ee2a2e7c6cb512ec4d58c49",
+          "exp10/scripts/seal_exp10.py": "1533c683d074ee1799e8caaa67ab0af48dc6d72b18383125196a0f16e3184398"
+        },
+        "snapshot": [
+          "exp10/snapshot/manifest.json",
+          "exp10/snapshot/checksums.txt",
+          "exp10/snapshot/release_tag.json",
+          "exp10/snapshot/checksum_exclusions.txt",
+          "exp10/snapshot/registry_snapshot/registry/canon_lock.json",
+          "exp10/snapshot/registry_snapshot/registry/realization_lock.json",
+          "exp10/snapshot/registry_snapshot/registry/analysis_lock.json",
+          "exp10/snapshot/registry_snapshot/registry/protocol_lock.json",
+          "exp10/snapshot/registry_snapshot/registry/gate_lock.json"
+        ]
+      },
+      "release_pack": {
+        "locks_dir": [
+          "locks/canon_lock.json",
+          "locks/realization_lock.json",
+          "locks/analysis_lock.json",
+          "locks/locks.sha256"
+        ],
+        "plans_dir": [
+          "plans/plan.json",
+          "plans/plan.sha256"
+        ],
+        "protocol_dir": [
+          "protocol/protocol.yaml",
+          "protocol/protocol.sha256"
+        ],
+        "ref_impl": [
+          "ref_impl/run_one.py",
+          "ref_impl/run_plan.py",
+          "ref_impl/validate.py"
+        ],
+        "release_manifest": [
+          "release_manifest.json",
+          "release_manifest.sha256"
+        ],
+        "required_top": [
+          "README.md",
+          "LICENSE",
+          "CITATION.cff",
+          "CHANGELOG.md",
+          "DOI_MAP.csv",
+          "protocol.yaml",
+          "protocol.sha256"
+        ],
+        "runs_dir": "runs/"
+      }
+    },
+    "no_tuning": true,
+    "notes": [
+      "This analysis_lock anchors machine-readable PASS.rules for core derived-number claims.",
+      "For module-specific analysis locks, see each module's LOCK/... where applicable."
+    ],
+    "numerical_policy": {
+      "float_storage": "decimal_string",
+      "rounding": "no_rounding_in_storage",
+      "tolerance_default_rel": "1e-12"
+    },
+    "pass_rules_ref": {
+      "path": "gate/PASS.rules",
+      "sha256": "b3c32781bb1515ae80fd28ecb906bfb78adb0e19c1f2ccac3793d16598c020ce"
+    },
+    "regime_id": "global"
+  },
+  "anchor_split": {
+    "N": "1000000000000",
+    "notes": [
+      "Anchor split integer N (example default)."
+    ]
+  },
+  "choices": {
+    "cell_geometry": "cube",
+    "geometry_meaning": "diameter",
+    "normalization_length_id": "a",
+    "report_unit_energy": "GeV",
+    "rounding_rule_id": "decimal_string"
+  },
+  "created": "2025-12-14",
+  "definitions": {
+    "closure_stack_id": "closure_stack_v0.2.6",
+    "event_definition_id": "event_v0.2.6",
+    "regime_map_id": "regime_map_v0.2.6"
+  },
+  "lock_id": "analysis_lock:v0.2.6:sha256:10ac9f47042b9e0412e2ceb2b66b9b2e352d5eb7964c393ecf635b2fbd61eb31",
+  "lock_type": "analysis_lock",
+  "numerics": {
+    "decimal_precision": 120,
+    "deterministic": true,
+    "random_seed_policy": "locked_or_none"
+  },
+  "rcross": {
+    "dev_definition": "dev = abs(dt_633 - dt_532) / ((dt_633+dt_532)/2)",
+    "tier3_definition": "tier3: optional derivative/replay strengthening",
+    "tiers": {
+      "tier1": {
+        "report_fields": [
+          "dt_633",
+          "dt_532"
+        ],
+        "requires": [
+          "outputs/derived/dt_633.txt",
+          "outputs/derived/dt_532.txt"
+        ]
+      },
+      "tier2": {
+        "compute": "dev",
+        "fail_code": "FAIL-RCROSS-DEV",
+        "threshold_ref": "registry/gate_lock.rcross.dev_max"
+      },
+      "tier3": {
+        "derivatives": [],
+        "notes": [
+          "Tier-3 is optional; if not configured, treat as INCONCLUSIVE."
+        ],
+        "replay_set": [],
+        "stat_rule": "none"
+      }
+    }
+  },
+  "scope": "global",
+  "version": "v0.2.6"
+}

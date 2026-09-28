@@ -1,0 +1,124 @@
+{
+  "dataset": "soc_percolation_pinning_N750_rerun",
+  "generated_utc": "2025-12-16T10:25:18Z",
+  "parameters": {
+    "N": 750,
+    "L": 1.0,
+    "k_nn": 12,
+    "target_far": 0.8,
+    "r_far": 0.35,
+    "g0": 2e-07,
+    "steps_max": 100000,
+    "eps_init": 4e-05,
+    "delta_eps_drive": 8e-08,
+    "lambda_rel": 1e-05,
+    "c_sigma": 10.0,
+    "notes": "Parameter values are taken from the clean Colab script used for reruns (stored in this folder)."
+  },
+  "seeds": [
+    45,
+    46,
+    47,
+    48
+  ],
+  "stats_valid_gstar": {
+    "N": 750,
+    "g0": 2e-07,
+    "seeds": [
+      45,
+      46,
+      47,
+      48
+    ],
+    "events_total": 104,
+    "events_valid_gstar": 98,
+    "A_median": 476364.94999999995,
+    "A_mean": 569330.3581632653,
+    "A_std": 431495.74072828755,
+    "A_p10": 335877.01,
+    "A_p90": 836390.37,
+    "g_star_median": 2.481699e-07,
+    "g_star_mean": 2.464949232653061e-07,
+    "gstar_over_g0_median": 1.2408495,
+    "a_med_median": 0.11822450000000001,
+    "a_med_mean": 0.11820155102040816,
+    "S_mean": 595.2142857142857,
+    "S_median": 595.0,
+    "S_over_N_mean": 0.7936190476190476
+  },
+  "per_seed": [
+    {
+      "seed": 45,
+      "events_total": 28,
+      "events_valid_gstar": 27,
+      "g_star_zero_count": 1,
+      "A_median": 495724.9,
+      "A_mean": 644820.1740740739,
+      "A_p10": 363344.9,
+      "A_p90": 657412.52,
+      "gstar_over_g0_median": 1.1923755,
+      "a_med_median": 0.118219,
+      "S_mean": 589.8148148148148
+    },
+    {
+      "seed": 46,
+      "events_total": 23,
+      "events_valid_gstar": 22,
+      "g_star_zero_count": 1,
+      "A_median": 460329.35,
+      "A_mean": 556839.2045454546,
+      "A_p10": 339765.78,
+      "A_p90": 876847.82,
+      "gstar_over_g0_median": 1.28179775,
+      "a_med_median": 0.117905,
+      "S_mean": 593.1363636363636
+    },
+    {
+      "seed": 47,
+      "events_total": 22,
+      "events_valid_gstar": 20,
+      "g_star_zero_count": 2,
+      "A_median": 460674.95,
+      "A_mean": 522580.78500000003,
+      "A_p10": 318097.22000000003,
+      "A_p90": 831581.3400000001,
+      "gstar_over_g0_median": 1.2887089999999999,
+      "a_med_median": 0.118235,
+      "S_mean": 596.25
+    },
+    {
+      "seed": 48,
+      "events_total": 31,
+      "events_valid_gstar": 29,
+      "g_star_zero_count": 2,
+      "A_median": 457906.7,
+      "A_mean": 540763.8689655173,
+      "A_p10": 337365.3,
+      "A_p90": 802846.0599999999,
+      "gstar_over_g0_median": 1.292697,
+      "a_med_median": 0.118387,
+      "S_mean": 601.1034482758621
+    }
+  ],
+  "scaling_check": {
+    "baseline_N200_A_median": 802149.7404524856,
+    "unit_realization_A_geo": 883082.3503950943,
+    "scale_factor_(200_to_750)": 0.6436595897370865,
+    "A_pred_from_A_geo": 568404.4233593685,
+    "A_pred_from_A_median_N200": 516311.3728473573,
+    "A_mean_N750": 569330.3581632653,
+    "A_median_N750": 476364.94999999995,
+    "rel_err_mean_vs_pred_from_A_geo": 0.0016290070341542762,
+    "rel_err_median_vs_pred_from_A_median_N200": -0.07736886101706525,
+    "interpretation": "Mean-level agreement with A_geo scaling is ~O(0.1%). Median-level agreement with N=200 median scaling is within ~10%. This supports the expected geometric scaling A\u221dN^{-1/3} under fixed g0."
+  },
+  "caveats": [
+    "Some avalanche rows report g_star=0 leading to A=0 by construction; these are excluded from summary stats via g_star>1e-12 filter.",
+    "This dataset is provided as a supplementary reproducibility/robustness artifact. It is not used to set any locked constants."
+  ],
+  "bundle_paths": {
+    "raw_csv_folder": "02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/soc_N750/",
+    "baseline_summary": "02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/soc_run3_summary.json",
+    "unit_realization": "02_lattice_percolation_soc/lattice_percolation_soc_bundle/results/mst_unit_realization.json"
+  }
+}

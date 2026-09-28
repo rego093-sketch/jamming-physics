@@ -77,3 +77,6 @@ No file was fabricated to make a reference resolve, and no historical/frozen rec
 doing either would violate the package's no-confabulation and append-only discipline.
 
 — v1.18.1 integrity attestation. Reproduce by re-running the commands in the table on a fresh extraction.
+
+---
+**Correction (2026-09-28).** "Every published number reproduces from shipped inputs" is too strong. γ, spinodal and barrier reproduce bit-for-bit for all shipped sequences (28/28 regression cases; all promoter caches). Of the 51 census reads in §2, inputs for 28 are shipped. The rest (primate growth plate, cat/tiger GHRHR/IGF2/POU1F1, fish/frog UCP1, `_verify/inputs/comparative_taxa_results.json`, `data_small/`, and the organ-interpretation JSON behind the 26 atlas γ) are not in the repository, and those reads are marked not-reproducible-here. Gates L8 (`inline_magic_numbers` set to a constant 0) and L9 (decoy files that the interpreter never reads) cannot fail and are not counted as evidence. Dependencies: `repro/dna/requirements.txt`.

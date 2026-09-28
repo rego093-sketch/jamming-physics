@@ -20,10 +20,10 @@ If you remember only this, you can read any volume correctly:
 
 | Question | Answer |
 |---|---|
-| What is the substrate? | Vacuum = jammed elastic solid at random close packing (φ ≈ 0.7405). Light is its elastic wave: `c² = B/ρ`. |
+| What is the substrate? | Vacuum = jammed elastic solid at the isostatic jamming point (φ_jam ≈ 0.63, random close packing; note 0.7405 is the FCC crystal value, not RCP). Light is identified with its single surviving elastic wave: `c² = B/ρ`. |
 | What is the universal object? | The **R19 switch**: `ṡ = g·s − s³ + h` — a double well. Bistable for detection; at criticality (`g→0`) it gives cube-root compression. |
 | What makes it biology? | `γ` = promoter stiffness, **measured** (SantaLucia NN stacking). It sets the switch: threshold `spinodal ∝ γ^1.5`, barrier `γ²/4`. |
-| How does anything "emerge"? | The **emergence engine**: `STATE`(γ→can-fire) = presence · `spinodal(γ)` order = developmental sequence · `dwell ∝ γ^1.5` = relative size. All from measured γ. |
+| How does anything "emerge"? | **Reading vs building.** DNA is *read* 100% (declared channels, deterministic): γ level, A4 shape, CpG marks, can-fire (γ sets each locus's switch threshold). An organism is *built* by the independent growth of every object — developmental order (from regulatory-cascade depth, not γ), size and timing are decided there. Building is not claimed: it is full-physics, open [O], possible in principle with organism-level computation of every object's volume and stiffness (dna §RB). |
 | Where do I start reading? | `physics` → `dna` → then the tier you care about. Never start mid-biology; it will reference inherited results. |
 | How do I read a number? | By its **grade**: `[F]` forced, `[V]` verified-against-data, `[L]` rests on a declared anchor, `[O]` open (obstacle stated). Treat `[O]` as a known gap, not a weakness to paper over. |
 | What must I never do? | Re-derive a node the DNA atlas owns · re-fit an inherited number · emit a clinical magnitude · ignore a declared seam. (See §8.) |
@@ -34,9 +34,9 @@ If you remember only this, you can read any volume correctly:
 
 Three equations carry the whole framework.
 
-1. **Substrate** — `c² = B/ρ` (speed of light = elastic-wave speed of the jammed lattice; simulation-validated to ~0.06%). Mass ratio `mₚ/mₑ = 6π⁵` (−19 ppm). This is `physics`.
+1. **Substrate** — `c² = B/ρ` (speed of light = the one elastic speed that survives at the isostatic point, verified on five observables in 3-D; the lattice amplification A links a measured light wavelength to the electron scale at ±10%, test E2. The older "~0.06%" figure is a 1-D wave-packet check, not the evidence). Mass ratio `mₚ/mₑ = 6π⁵` (−18.8 ppm; [F | LOCK-NU-N], residual open). This is `physics`.
 2. **Switch** — `ṡ = g·s − s³ + h`, the **R19** cubic normal form. Two stable roots + a barrier. The cooperativity *is* the `−s³` term (order n = 3).
-3. **Stiffness** — `γ = −mean nearest-neighbour stacking ΔG37`, read from human proximal promoters. `corr(γ, GC) = 0.998`. **Never fitted.** `γ` sets the switch threshold scale (`spinodal ∝ γ^1.5`, barrier `γ²/4`). This is `dna`.
+3. **Stiffness** — `γ = −mean nearest-neighbour stacking ΔG37`, read from human proximal promoters. **Never fitted.** (`corr(γ, GC) = 0.998` is a consistency check of the SantaLucia table — random sequence gives 0.9996 — so γ's level channel is GC composition in free-energy units; sequence-specific information sits in the A4 shape and CpG channels.) `γ` sets the switch threshold scale (`spinodal ∝ γ^1.5`, barrier `γ²/4`). This is `dna`.
 
 **The one cubic, specialized five ways** (this is the framework's whole thesis):
 
@@ -44,7 +44,7 @@ Three equations carry the whole framework.
 |---|---|---|
 | Set the threshold from measured `γ` | DNA | `spinodal ∝ γ^1.5`, barrier `γ²/4` |
 | Hold at criticality, `g → 0` | Eye & ear | cube-root compression `R = (F/β)^⅓`, exponent 0.333 |
-| Add a slow recovery variable | Neuro | relaxation oscillator; working memory `= θ/γ ≈ 7±2` |
+| Add a slow recovery variable | Neuro | relaxation oscillator; working memory `= f_γ/f_θ ≈ 6–7` ([L]: literature bands, tACS-consistent) |
 | Read both stable states | Mind | engram = bistable attractor; mood = a switch that persists |
 | Push the barrier `g²/4` | Disease & therapy | the three correction levers L1 / L2 / L3 |
 
@@ -57,7 +57,7 @@ The framework is not 30 parallel papers; it is a **single derivation tree**. Und
 ### 3.1 The dependency DAG
 
 ```
-physics  ── the root: jammed-solid substrate, c²=B/ρ, R19 normal form, constants
+physics  ── the root: jammed-solid substrate, c²=B/ρ, constants (R19 is first stated in dna)
   ├── fluid-dynamics ── geodynamics ── geochronology
   ├── cosmology
   ├── chemistry          (EM on the same substrate)
@@ -86,14 +86,14 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 1. **Single source of truth.** The DNA atlas owns node *identity* and developmental *order*. Downstream volumes **inherit** them and re-emerge nothing. (`sensory_organ`: "treats the DNA atlas as the single source of truth for identity and order… re-emerges no organ owned elsewhere.")
 2. **Add-only.** Each volume contributes exactly *one* new module on top of inherited nodes. No duplication across volumes.
 3. **Selective inheritance.** A volume takes only the modules its domain needs. `nose` "inherits no wave module, because smell has no wave"; `eye`/`ear` inherit the wave. Inheritance is à-la-carte, declared explicitly.
-4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer`: the brain's `R = 0.39` and `WM ≈ 7` are "cited as directions, not reproduced by adjustment.") This is `no-tuning` applied across the inheritance edge.
+4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer`: the brain's `R = 0.39` (from mind) and `WM ≈ 7` (from neuro) are "cited as directions, not reproduced by adjustment.") This is `no-tuning` applied across the inheritance edge.
 5. **Sharp seams.** Every boundary between what a volume inherits and what it adds is declared in prose ("the seam to downstream biology is sharp"). There is no silent borrowing.
 
 ### 3.3 Per-volume: inherits → adds
 
 | Volume | Inherits | Adds (its one new module) |
 |---|---|---|
-| physics | — (root) | jammed substrate, `c²=B/ρ`, R19 normal form, constants |
+| physics | — (root) | jammed substrate, `c²=B/ρ`, constants (the R19 normal form is not in physics; first stated in dna) |
 | fluid-dynamics | physics | continuum flow on the jammed medium |
 | cosmology | physics | vacuum-inflow, `a₀ = cH₀/2π` |
 | chemistry | physics | EM + bonding on the same substrate, `φ_RCP` |
@@ -102,7 +102,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | wave-computer | physics, neuro chain | clock-free phase computation |
 | **dna** | physics (substrate) | **γ ruler, two-layer reading (γ LEVEL + A4 SHAPE), R19 in biology, the node atlas** |
 | inheritance | dna (two channels) | writable A4 vs unwritable γ; environmental inheritance; RNA layer; gene-therapy path |
-| neuro | physics, chemistry, dna | neuron = R19 + slow recovery; rhythms; `θ/γ ≈ 7±2`; memory; motor |
+| neuro | physics, chemistry, dna | neuron = R19 + slow recovery; rhythms; `f_γ/f_θ ≈ 6–7` [L]; memory; motor |
 | mind | neuro, dna | engram = attractor; felt cognition; mood = persistent switch |
 | sensory_organ | dna (atlas), neuro | organ dynamics (Hopf cube-root), instrument physics |
 | eye | physics (wave), dna, neuro | high→low down-conversion ladder; single-photon R19; `n = √(B/ρ)` |
@@ -134,7 +134,7 @@ How many of the 32 volumes carry each shared primitive (full-text measured). Thi
 |---|---|---:|---|
 | R19 bistable switch | `ṡ = g·s − s³ + h` | 25 / 32 | the universal kernel |
 | γ — measured stiffness | `γ = −mean NN stacking ΔG` | 24 / 32 | the biology instantiation |
-| Emergence from measured γ | `STATE · spinodal · dwell ∝ γ^1.5` | 29 / 32 | the creation recipe |
+| Emergence from measured γ | read: `can-fire · spinodal threshold`; build: order/size/timing by growth [O] | 29 / 32 | the reading recipe (building is open, dna §RB) |
 | Kramers / Arrhenius barrier | escape over `g²/4` | 15 / 32 | switching kinetics |
 | Jammed lattice / `c²=B/ρ` | the bare substrate | 15 / 32 | reaches into dna, eye, neuro |
 | FitzHugh–Nagumo oscillator | relaxation rhythm | 12 / 32 | hearts, clocks, neurons |
@@ -158,6 +158,8 @@ Two more rules that govern every number:
 - **No-tuning.** `γ` and all inputs are measured/derived, never fitted to reproduce an outcome. If you see a number with no reproduction path, it is marked — do not assume it.
 - **Magnitude firewall.** For disease/therapy the framework gives **direction only**. Clinical magnitudes are deliberately withheld `[O]`. An AI must **never** synthesize a dose, concentration, or clinical magnitude from this corpus — output the corrective *direction* and stop.
 
+**Data decides the theory.** A claim counts only when data support it and code reproduces it; theory is written as code. Items without data or code are listed as data-pending, not argued.
+
 Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining, `LOCK → Derive → Gate` (inputs locked → code derives → outputs gated against the canonical HTML).
 
 ---
@@ -169,7 +171,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 1 | physics | 1 | VP Theory | `c²=B/ρ ; mₚ/mₑ=6π⁵` | 10.5281/zenodo.17932566 |
 | 2 | fluid-dynamics | 1 | Configured Continuum | `∂ρ/∂t + ∇·(ρu)=0` on jammed medium | 10.5281/zenodo.17972568 |
 | 3 | cosmology | 1 | Vacuum-Inflow Cosmology | `a₀ = cH₀/2π` | 10.5281/zenodo.20568874 |
-| 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` | 10.5281/zenodo.20680540 |
+| 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` (flag: 0.7405 is FCC, RCP ≈ 0.64) | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
 | 7 | continental-genesis | 1 | Continental Genesis | why dry land exists — composition + buoyancy, not age | 10.5281/zenodo.20827711 |
@@ -177,7 +179,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 9 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
 | 10 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998` | 10.5281/zenodo.20471407 |
 | 11 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
-| 12 | neuro | 4 | Neural Emergence Chain | working memory `= θ/γ ≈ 7±2` (tACS-causal) | 10.5281/zenodo.17979015 |
+| 12 | neuro | 4 | Neural Emergence Chain | working memory `= f_γ/f_θ ≈ 6–7` ([L], literature bands; tACS-consistent) | 10.5281/zenodo.17979015 |
 | 13 | mind | 4 | Felt Cognition | stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
 | 14 | sensory_organ | 5 | Sensory Organs | cochlear Hopf `R=(F/β)^⅓`, exp 0.333 | 10.5281/zenodo.20755154 |
 | 15 | eye | 5 | The Eye | single-photon R19 flip; `n=√(B/ρ ratio)` | 10.5281/zenodo.20790134 |
@@ -213,7 +215,7 @@ The corpus is managed as one repository. Its machine-readable spine is a single 
     "kernel": { "switch": "ds/dt = g*s - s^3 + h",
                 "substrate": "c^2 = B/rho",
                 "stiffness": "gamma = -mean NN stacking dG (measured, never fitted)",
-                "emergence": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size" },
+                "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order, size, timing) = independent growth, full physics, open [O]" },
     "governance": ["no-tuning","LOCK->Derive->Gate","honest-grading[F/V/L/O]",
                    "magnitude-firewall","seed=19","2x-SHA256"],
     "contract": ["dna-atlas=single-source-of-truth","add-only","selective-inheritance",

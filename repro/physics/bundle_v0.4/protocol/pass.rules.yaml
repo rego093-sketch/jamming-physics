@@ -1,0 +1,20 @@
+# PASS.rules (YAML mirror)
+#
+# This mirrors gate/PASS.rules in a machine-readable form because the whitepaper's
+# archive tree (Appendix C) expects protocol/pass.rules.yaml to exist.
+
+pass_rules:
+  rule_id: PASS_RULES_V0_2_6
+  allowed_evidence_status:
+    - PASS
+  disallowed_evidence_status:
+    - FAIL
+    - INCONCLUSIVE
+    - UNLOGGED
+    - UNCHECKED
+  interpretation:
+    nonpass_is_not_evidence: true
+  notes:
+    - "If a gate report is missing, the corresponding claim must be treated as UNLOGGED."
+    - "INCONCLUSIVE means no conclusion may be drawn from that channel."
+    - "FAIL means the claim is falsified under the declared protocol/locks."

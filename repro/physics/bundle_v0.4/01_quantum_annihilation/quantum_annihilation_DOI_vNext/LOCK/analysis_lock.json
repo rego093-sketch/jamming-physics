@@ -1,0 +1,50 @@
+{
+  "version": "analysis_lock_v1",
+  "event_type_for_nu": {
+    "electron": "TURNOVER",
+    "proton": "ANN"
+  },
+  "event_time_kind": "det",
+  "windowing": {
+    "window_length_ticks": 537634408602150537634,
+    "overlap_ratio": 0.0,
+    "warmup_drop_ticks": 0
+  },
+  "thresholds": {
+    "k_phi": 2.0,
+    "k_chi": 2.0,
+    "chi_int_crit": 0.0,
+    "u_min": 0.2
+  },
+  "phi_definition": "phi_core_from_signal_log",
+  "chi_definition": {
+    "dir": "chi_dir_core_from_signal_log",
+    "int": "chi_int_core_from_signal_log"
+  },
+  "filters": {
+    "type": "none"
+  },
+  "peak_detection": {
+    "enabled": false
+  },
+  "estimators": {
+    "nu": "count",
+    "ci": "poisson_approx",
+    "use_gate_correction": true,
+    "use_signal_log_if_present": true
+  },
+  "passfail": {
+    "eps_nu_e_rel": 0.02,
+    "eps_nu_p_rel": 0.02,
+    "eps_ratio_rel": 0.02,
+    "min_events_per_window_e": 1,
+    "min_events_per_window_p": 50
+  },
+  "convergence_tests": {
+    "eps_time": 0.05,
+    "eps_space": 0.05,
+    "eps_seed": 0.1,
+    "eps_mode": 0.1
+  },
+  "notes": "분석 규약(관측 프로토콜) LOCK. 결과를 보고 임계/윈도우를 바꾸면 피팅이므로 금지."
+}

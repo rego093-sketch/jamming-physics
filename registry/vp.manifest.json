@@ -12,7 +12,7 @@
    "substrate": "c^2 = B/rho (vacuum = jammed elastic solid, phi~0.7405)",
    "switch": "ds/dt = g*s - s^3 + h  (R19 bistable)",
    "stiffness": "gamma = -mean NN stacking dG  (measured, never fitted)",
-   "emergence": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size"
+   "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order from cascade depth, size, timing) = independent growth of objects, full physics, open [O] (dna §RB)"
   },
   "governance": [
    "no-tuning",
@@ -106,7 +106,7 @@
    ]
   },
   "emergence": {
-   "form": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size",
+   "form": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order from cascade depth, size, timing) = independent growth of objects, full physics, open [O] (dna §RB)",
    "pattern": "emerge|emergence|emerges",
    "count": 29,
    "volumes": [
@@ -222,12 +222,11 @@
    "short": "VP Theory",
    "doi": "10.5281/zenodo.17932566",
    "hub": "/physics/",
-   "headline": "c² = B/ρ ; mₚ/mₑ = 6π⁵ (−19 ppm)",
+   "headline": "c² = B/ρ ; mₚ/mₑ = 6π⁵ (−18.8 ppm)",
    "inherits": [],
    "adds": [
     "jammed-substrate",
     "c2=B/rho",
-    "R19-normal-form",
     "constants:mp/me=6pi^5"
    ],
    "primitives": [
@@ -241,8 +240,8 @@
     "hypothesis": 2
    },
    "pages": 48,
-   "content_sha256": "6ec421fc342a0050d6b77ad693f1166b3ba490922ac234e06f36506d2dba95cf",
-   "repro_sha256": "a4d2a0c79dd5e9cb854395bc1cc192d9a161c331e66902d9674922de611ce0ae"
+   "content_sha256": "be9237cd1a592cbedca9c434bb27ebf34573826ba1b600261c2d8e5b53a8de10",
+   "repro_sha256": "89fef57f231cc8e43d49db2d035f45111d7a2644073eb2b5783a573952448c2d"
   },
   {
    "id": "fluid-dynamics",
@@ -505,8 +504,8 @@
     "hypothesis": 0
    },
    "pages": 29,
-   "content_sha256": "6e726385adc592bceb432ff2e90ce46a8039649a8ee87528f47f553ad4c6bfa3",
-   "repro_sha256": "5f9fc33d43b76091116e815119362845da96885c36a4e36ed286c22f691a87b7"
+   "content_sha256": "15427832d30d42c6669b6e9eb8dbbb7ec5f9cffb2ca9f00480c99d053afb3715",
+   "repro_sha256": "7dd0aa2f12a198e4bc5f6b6a01405ad4ea1a4bb5eacdb52071e68fe4d77d67f8"
   },
   {
    "id": "inheritance",
@@ -546,7 +545,7 @@
    "short": "Neural Emergence Chain",
    "doi": "10.5281/zenodo.17979015",
    "hub": "/neuro/",
-   "headline": "working memory = θ/γ ≈ 7±2 (tACS-causal)",
+   "headline": "working memory = f_γ/f_θ ≈ 6–7 ([L], literature bands; tACS-consistent)",
    "inherits": [
     "physics",
     "chemistry",
@@ -573,8 +572,8 @@
     "hypothesis": 0
    },
    "pages": 27,
-   "content_sha256": "334e5f77a42929a33d1e6015ea2ba0ad9b20b2a5c11240953dfaf445f0dc588a",
-   "repro_sha256": "be51d6dcd83a28477d4b9478244c094fad5861dedd833800628d9676b0c28bf4"
+   "content_sha256": "ad5bf9a5176d414c28155812e2ef301bad59cc7fd8e8fe61cca2ee5c865312c7",
+   "repro_sha256": "adf081b607880ee121ffcf74aaf03cfb2e27245fe87e27708c1123813fb414d5"
   },
   {
    "id": "mind",
@@ -1208,16 +1207,14 @@
   }
  ],
  "lineage": {
-  "built_at": "2026-06-25T15:52:25Z",
-  "built_by": "session/2026-06-25-dna-v1_18_1-merge-closeout",
-  "parent_sha256": "18efa642bbf498bd7f60669c2817678a57162ed87ee15fbe18c7f19b49e485bc",
-  "this_sha256": "ba4894b846e607da03f209c763d183bc2445a35575bc04602af980f64876ac77",
+  "built_at": "2026-09-28T07:33:36Z",
+  "built_by": "session/2026-09-28-neuro-and-light-fields",
+  "parent_sha256": "d733471b1ed4820ff996a6cbf62c96bd5af47e40e22676e449168982ae4373b6",
+  "this_sha256": "0a207dbd028c4e860d359d72f0225bfaf6ef27c626dc8144ec9506ad51cd14a7",
   "changes": [
-   "DNA volume upgraded v1.13->v1.18.1 (AX-G recovered): docs/dna replaced, 18->29 pages (+11 appendices ax-b..ax-l)",
-   "repro/dna kit updated to v1.18.1; words index regenerated uniformly under VP-SPEC §8 body rule",
-   "C5 restored on DNA via tools/retrofit_cards.py + build_strips.py (data-concept links + hub inherits-strip); gate_shared_infra dna PASS",
-   "SURGICAL manifest patch: ONLY dna row (pages + content_sha256 + repro_sha256 via tool's dir_content_hash). NOT a full regen.",
-   "BLOCKER: tools/make_manifest.py ORDER/REL is stale — missing continental-genesis + recent-sequence-cascade; running it regresses 32->30 volumes. Full regen deferred until that tool is fixed (VP-SPEC §1 tool-approval)."
+   "physics §LT Link 6a: E = transverse swing, B = lattice rotational response, ray = carrier/energy flow; why we feel E and B; G-POL replaced by E/B lattice run (data-pending); notes on §10, §14, W0",
+   "neuro: WM capacity regraded [L] (f_γ/f_θ, literature bands, sensitivity 4.3–11.6; tACS cited: Vosskuhl 2015, Reinhart & Nguyen 2019); building-layer claims (§12, §17, §20, §23, hub) regraded [O] per dna §RB; promoter vs membrane threshold separated (§21, §23); [V]->[F] for model properties (§14, §22); §19 α_em stays [O]; §11 eye γ vs atlas; §2–§8 numbers data-pending; transverse [F] withdrawn (§15, §18)",
+   "neuro: 28 repro links repointed; §23 stray '<-' escaped; α2δ-1 / K_V7 typos; γ disambiguation in TERMINOLOGY_canonical.md; AGENTS headline + R=0.39 source (mind)"
   ]
  },
  "concepts": {

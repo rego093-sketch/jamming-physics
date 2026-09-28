@@ -1,0 +1,32 @@
+{
+  "version": "vp_whitepaper_chem_external_inspection_lock_v1",
+  "module": "04_vp_whitepaper",
+  "scope": {
+    "paper_section": "18 (chemistry & process extension)",
+    "purpose": "Provide DOI-embedded bulk literature inspection dataset + deterministic validation summaries"
+  },
+  "inputs": {
+    "external_inspection_csv": "04_vp_whitepaper/data/chem/external_inspection/VP_STEP7_EXT_INSPECTION_FULL_V1.csv"
+  },
+  "constants": {
+    "r_vac_fm": 245.9,
+    "reference_species": {
+      "species": "H",
+      "Z": 1,
+      "radius_pm": 31
+    },
+    "gate_tolerance_pct": 5.0
+  },
+  "definitions": {
+    "r_eff_fm": "r_vac_fm / sqrt(P_idx)",
+    "error_pct": "100 * (CALC_AMP - OBS_REF_AMP) / OBS_REF_AMP",
+    "status": "PASS if abs(error_pct) <= gate_tolerance_pct else FAIL (or FAIL_* label)"
+  },
+  "notes": {
+    "dataset_comment": "This lock validates internal consistency of the DOI-embedded dataset and provides reproducible summary tables. It does not embed copyrighted source documents.",
+    "see": [
+      "04_vp_whitepaper/docs/chem/EXTERNAL_INSPECTION_PROTOCOL.md",
+      "04_vp_whitepaper/docs/chem/TRACEABILITY_SPEC.md"
+    ]
+  }
+}

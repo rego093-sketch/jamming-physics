@@ -33,7 +33,7 @@ def words_of(html):
 
 def phase1(p,rep):
     rows=read_manifest(p); ok=True
-    dirs=[d for d in sorted(os.listdir(f"docs/{p}")) if os.path.isdir(f"docs/{p}/{d}")]
+    dirs=[d for d in sorted(os.listdir(f"docs/{p}")) if os.path.isdir(f"docs/{p}/{d}") and d not in ("assets","eq")]  # deployed layout keeps assets/ and eq/ inside the volume
     c={"sections_manifest":len(rows),"sections_dirs":len(dirs)}
     ok &= len(rows)==len(dirs)
     per=[]; tot_disp=0; viol=[]
@@ -54,7 +54,7 @@ def phase1(p,rep):
         if dw>0.005: bad.append(f"words {w} vs {wm}")
         tot_disp+=int(r["eq_display"])
         if bad: viol.append({"slug":r["slug"],"bad":bad}); ok=False
-    nsvg=len(glob.glob(f"docs/eq/{p}/*.svg"))
+    nsvg=len(glob.glob(f"docs/eq/{p}/*.svg")) or len(glob.glob(f"docs/{p}/eq/{p}/*.svg"))  # build layout, else deployed layout
     pend = (nsvg==0 and tot_disp>0)
     if not pend and nsvg!=tot_disp: ok=False; viol.append({"svg":f"{nsvg}!={tot_disp}"})
     c.update(display_total=tot_disp,svg_files=nsvg,violations=viol,
@@ -151,6 +151,7 @@ def phase4(p,rep):
         q=ssot.compute()
         from decimal import Decimal as _D
         r3=(q["nu_len"]/q["nu_geo"]-1)*_D(10)**6
+        # regression guard only (value = rounding of the 4-digit r_p lock + 6pi^5 residual); not evidence, see docs §8.0.5
         if abs(r3-_D("61.2"))>_D("0.5"): viol.append({"ssot_residual_drift":str(r3)})
     except Exception as e:
         viol.append({"ssot_compute_error":str(e)})

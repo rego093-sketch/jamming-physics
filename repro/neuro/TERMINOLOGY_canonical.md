@@ -222,3 +222,8 @@ This is the same disambiguation as §1 and the same retirement as the thesis —
 differs: `neuro` writes the object, `mind` writes the brainwave and cites the object.
 
 — end (canonical terminology, v1.1 — adds §7 register/ownership) —
+
+## γ disambiguation (added 2026-09-28)
+- **γ-band / f_γ**: the gamma rhythm (the locked slow-gamma band is 25–50 Hz). Capacity is written f_γ/f_θ (equivalently T_θ/T_γ). Never write "θ/γ" for a frequency ratio.
+- **γ_DNA**: DNA stacking stiffness (−mean NN ΔG37), inherited from the dna atlas. It reads a locus's switch threshold (can-fire). It does not set any neural band; bands are set by channel kinetics (τ_inh).
+- **g**: the R19 control parameter in engine code (`Neuron(gamma=…)` is g, not γ_DNA).

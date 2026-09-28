@@ -27,19 +27,17 @@
 <h1>Read First — What This Is, and How to Read the Numbers</h1>
 <p class="answer">Read First: This document does not reinterpret established physics while leaving its mechanisms intact. It proposes a different foundational ontology: the vacuum is a jammed granular medium, a solid frozen at random close packing, and every familiar law is a behaviour of that medium.</p>
 <p class="abstract" data-phase2="abstract">This document does not reinterpret established physics while leaving its mechanisms intact. It proposes a different foundational ontology: the vacuum is a jammed granular medium, a solid frozen at random close packing, and every familiar law is a behaviour of that medium. 5π.</p>
-<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/rf-read-first-what-this-is/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="claim-strip page"><span class="g" data-phase2="grade"></span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
 <aside class="vp-card" data-locked="delta" data-concept="delta"><b>δ = 1/π²</b> — Double-rectification survival constant (product of two half-wave means; a max-entropy measure). <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a> · <a href="/concepts/#delta">용어</a></aside>
 <aside class="vp-card" data-locked="alpha" data-concept="alpha"><b>α = 2/π</b> — Geometric rectification ratio (full-wave to half-wave mean); the single rectification anchor. <b>[F]</b> forced. <a href="/physics/05-geometric-rectification-constants-single-source/">canonical derivation §5</a> · <a href="/concepts/#alpha">용어</a></aside>
 <aside class="vp-card" data-locked="nu-p" data-concept="nu_p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a> · <a href="/concepts/#nu_p">용어</a></aside>
-<aside class="vp-card" data-locked="mp-me" data-concept="mp_me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−19 ppm vs measurement). <b>[F]</b> forced. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a> · <a href="/concepts/#mp_me">용어</a></aside>
-<aside class="vp-card" data-locked="anchor" data-concept="lambda_anchor"><b>λ_anchor = 632.99 nm</b> — Single empirical anchor (DOF = 1); the only measured length input to the framework. <b>[F]</b> forced. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a> · <a href="/concepts/#lambda_anchor">용어</a></aside>
+<aside class="vp-card" data-locked="mp-me" data-concept="mp_me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−18.8 ppm vs measurement; residual [O], next order). <b>[F | LOCK-NU-N]</b> forced once the declared survival→rate mapping is accepted. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a> · <a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">step by step §MR</a> · <a href="/concepts/#mp_me">용어</a></aside>
+<aside class="vp-card" data-locked="anchor" data-concept="lambda_anchor"><b>λ_anchor = 632.99 nm</b> — Measured length anchor (I₂-stabilised He–Ne line). It is one of two measured anchors: the other is the electron mass, which fixes D = 2λ_C,e. The container size N = 10¹² and the tick Δt are declared, not measured. No coefficient is fitted. <b>[L]</b> anchor. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a> · <a href="/concepts/#lambda_anchor">용어</a></aside>
 <h4>A rival vacuum, not a reinterpretation.</h4>
 <p>This document does not reinterpret established physics while leaving its
 mechanisms intact. It proposes a different foundational ontology: the vacuum
 is a <strong>jammed granular medium</strong>, a solid frozen at random close packing,
-and every familiar law is a behaviour of that medium. The framework
-<strong>reproduces the empirical results</strong> of quantum electrodynamics, general
-relativity, and the Standard Model while <strong>rejecting their mechanisms</strong>.
+and every familiar law is meant to be read as a behaviour of that medium. The framework <strong>aims to reproduce</strong> the empirical results of quantum electrodynamics, general relativity and the Standard Model while <strong>replacing their mechanisms</strong>. What is reproduced today is narrower and is graded on every page: the single light speed of the jammed substrate and its λ–D link (<a href="/physics/lt-light-chain-doubts-and-resolutions/">§LT</a>), the mass ratio 6π⁵ with the proton radius (<a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">§MR</a>), the Higgs mass conditional on N, the O(c⁻²) clock shifts, and gravity at the velocity-saturation level. Spin, the running of α, Bell correlations and the full metric of GR are open [O].
 The speed of light is an emergent elastic-wave speed, not a postulate;
 relativistic time dilation is the processing lag of a medium that must
 rearrange to transmit a signal, not spacetime geometry. The conflict with the
@@ -146,7 +144,7 @@ for R in np.linspace(0.102, 0.116, 26):    # slowly compress (grow radius)
 print(f"\njamming onset phi_jam = {phi_jam:.3f}   [RCP ~ 0.64]")
 print("contacts &lt;z&gt; climb through the isostatic 6 ; constants used: 0")
 </pre>
-<p>Expected output: a short table in which <code><z></code> rises past the
+<p>Expected output: a short table in which <code>&lt;z></code> rises past the
 isostatic 6 near φ≈0.64, ending with
 <code>phi_jam = 0.626  [RCP   0.64]</code> and <code>constants used: 0</code>. The
 production read-out (larger N, the full percolation/envelope-speed stiffness
@@ -183,7 +181,7 @@ anchor once and is computed in §13.)</p>
         νₚ=3π⁴ and mₚ/mₑ=6π⁵ (§7–8); the rate law ν=sδ
         (§9); the light angle (§10); c from measured stiffness (§11.6); the
         Higgs coefficient 5π (§13.3); the 1/r² shape and four-force unity
-        (§14); gravity as sink inflow with the equivalence principle
+        (§14); gravity as sink inflow with the equivalence principle (at the velocity-saturation level)
         <em>derived</em> (§17.4). <em>The physics is decided here.</em>
 <li><strong>Calibrated (input × structure).</strong>  The dimension-bearing values
         (mₚ, m_H, U_lat=hc/a). The <strong>electron mass is the

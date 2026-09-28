@@ -25,17 +25,18 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §5</nav></header>
 <main>
 <h1>Geometric Rectification Constants (Single Source of Truth)</h1>
-<p class="answer">Geometric Rectification Constants: Every π is an averaged rotation and every 2 has a name — the constants are sentences, not knobs. α and δ may be cited everywhere and re-derived nowhere. Every observable in this framework that involves a directional rotation undergoes a phase-averaging (rectification) integral. Grade [F] forced.</p>
+<p class="answer">Geometric Rectification Constants: Every π is an averaged rotation and every 2 has a name — the constants are sentences, not knobs. α and δ may be cited everywhere and re-derived nowhere. Every observable in this framework that involves a directional rotation undergoes a phase-averaging (rectification) integral. The average is taken over the rotation <em>phase</em> about a fixed axis (the nozzle diagonal of §8.0.4), so the averaging space is the phase circle S¹, not the sphere of axis directions; a sphere average (⟨|cosθ|⟩=1/2) would answer the different question of a randomly oriented axis. Grade [F] forced.</p>
 <p class="abstract" data-phase2="abstract">Every π is an averaged rotation and every 2 has a name — the constants are sentences, not knobs. α and δ may be cited everywhere and re-derived nowhere.</p>
-<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/05-geometric-rectification-constants-single-source/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
-<aside class="vp-card" data-locked="mp-me" data-concept="mp_me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−19 ppm vs measurement). <b>[F]</b> forced. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a> · <a href="/concepts/#mp_me">용어</a></aside>
+<aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Update (2026-09-28).</strong> Why the averages are over a circle (S¹) and not a sphere: the rotation axis is pinned to the nozzle diagonal, so what varies is the phase about a fixed axis, which lives on a circle. Written out in <a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">§MR Steps 1–2</a>.</aside>
+<aside class="vp-card" data-locked="mp-me" data-concept="mp_me"><b>m_p/m_e = 6π⁵</b> — Proton-electron mass ratio as 2π·ν_p = 6π⁵ (−18.8 ppm vs measurement; residual [O], next order). <b>[F | LOCK-NU-N]</b> forced once the declared survival→rate mapping is accepted. <a href="/physics/13-mass-u-lat-m-h/">canonical derivation §13</a> · <a href="/physics/mr-mass-ratio-chain-6pi5-step-by-step/">step by step §MR</a> · <a href="/concepts/#mp_me">용어</a></aside>
 <aside class="vp-card" data-locked="alpha-em" data-concept="alpha_em"><b>α_em ≈ 1/137</b> — Electromagnetic fine-structure constant; a measured input — NOT derived (it runs with energy). <b>[O]</b> open. <a href="/physics/14-force-lattice-tension-1-r2/">canonical derivation §14</a> · <a href="/concepts/#alpha_em">용어</a></aside>
 <h2>5.0 Reading convention: the π and 2 decoder</h2>
 <span id="hub:decoder"></span>
-<aside class="claim-strip vps" data-vps="5.0" data-cards="VP-C-005, VP-C-006"><span class="g">[D] reading convention (decoder)</span><span class="io">in: — / out: fixed reading of closed forms — $π^k$ = $k$ rotations averaged; each factor 2 carries a named convention (diameter/projection); $δ=1/π²$ derived in S5.2</span><q class="one">Every $π$ is an averaged rotation and every 2 has a name — the constants are sentences, not knobs.</q><span class="cards">VP-C-005, VP-C-006</span></aside>
+<aside class="claim-strip vps" data-vps="5.0" data-cards="VP-C-005, VP-C-006"><span class="g">[D] reading convention (decoder)</span><span class="io">in: — / out: fixed reading of closed forms — π^k = k rotations averaged; each factor 2 carries a named convention (diameter/projection); δ=1/π² derived in S5.2</span><q class="one">Every π is an averaged rotation and every 2 has a name — the constants are sentences, not knobs.</q><span class="cards">VP-C-005, VP-C-006</span></aside>
 <em> Concept links: the rectification constant δ=1/π² is derived in <a href="#hub:delta" class="xref" data-ref="hub:delta">§5.2</a>.</em>
 <h4>Core sentence.</h4>
-<p>Every observable in this framework that involves a directional rotation undergoes a phase-averaging (rectification) integral. Powers of π and factors of 2 appearing in the closed forms therefore have a fixed reading:</p>
+<p>Every observable in this framework that involves a directional rotation undergoes a phase-averaging (rectification) integral. The average is taken over the rotation <em>phase</em> about a fixed axis (the nozzle diagonal of §8.0.4), so the averaging space is the phase circle S¹, not the sphere of axis directions; a sphere average (⟨|cosθ|⟩=1/2) would answer the different question of a randomly oriented axis. Powers of π and factors of 2 appearing in the closed forms therefore have a fixed reading:</p>
 <ul>
 <li> <strong>π^k</strong>: <em>k rotations averaged</em>.
 <li> <strong>2</strong>: <em>the two ends of an oriented axis</em>.
@@ -71,7 +72,7 @@ In particular, freeze the following rules as global rules.</p>
 <li> <strong>Version binding</strong>: The definition/derivation/convention of α and δ is bound to <code>canon_lock_id</code>. Even if one uses the same symbols with the same numerical values, it is forbidden to mix different <code>canon_lock_id</code>s in a single conclusion sentence.
 </ol>
 <h2>5.4 Reuse rules (reference style and conclusion-sentence form)</h2>
-<aside class="claim-strip vps" data-vps="5.4" data-cards="VP-C-005, VP-C-006, VP-C-050"><span class="g">reuse rules</span><span class="io">in: $α$, $δ$ from canon_lock / out: reference-first citation, no substitution-as-derivation, locked averaging conventions, role restriction to rectification</span><q class="one">$α$ and $δ$ may be cited everywhere and re-derived nowhere.</q><span class="cards">VP-C-005, VP-C-006, VP-C-050</span></aside>
+<aside class="claim-strip vps" data-vps="5.4" data-cards="VP-C-005, VP-C-006, VP-C-050"><span class="g">reuse rules</span><span class="io">in: α, δ from canon_lock / out: reference-first citation, no substitution-as-derivation, locked averaging conventions, role restriction to rectification</span><q class="one">α and δ may be cited everywhere and re-derived nowhere.</q><span class="cards">VP-C-005, VP-C-006, VP-C-050</span></aside>
 <p>When using α and δ outside this chapter, follow the reuse rules below.</p>
 <ol>
 <li> <strong>Reference-first</strong>: Every derivation/table/figure/log that contains α or δ must include a reference to which <code>lock_id</code> in <code>canon_lock</code> locks that item.
@@ -80,7 +81,7 @@ In particular, freeze the following rules as global rules.</p>
 <li> <strong>Role restriction</strong>: α and δ are used <em>only</em> as rectification constants. Reinterpreting them as a new meaning (e.g., a different coefficient or a different correction term) is forbidden.
 </ol>
 <h2>5.5 Violation types and immediate invalidation rules</h2>
-<aside class="claim-strip vps" data-vps="5.5" data-cards="VP-C-005, VP-C-049"><span class="g">invalidation rules</span><span class="io">in: — / out: re-definition, symbol overloading ($δ$ vs $δ_gap$), lock mixing, unlocked procedure $⇒$ output immediately invalid</span><q class="one">Four ways to misuse the rectification constants, each fatal on contact.</q><span class="cards">VP-C-005, VP-C-049</span></aside>
+<aside class="claim-strip vps" data-vps="5.5" data-cards="VP-C-005, VP-C-049"><span class="g">invalidation rules</span><span class="io">in: — / out: re-definition, symbol overloading (δ vs δ_gap), lock mixing, unlocked procedure ⇒ output immediately invalid</span><q class="one">Four ways to misuse the rectification constants, each fatal on contact.</q><span class="cards">VP-C-005, VP-C-049</span></aside>
 <p>Violations of SSOT or reuse rules for α and δ cannot be patched by interpretation. If any of the following violations occurs, the corresponding output is immediately invalid.</p>
 <ol>
 <li> Within the same document version, presenting the definition of α or δ again in a different form (re-definition), or deriving it again under a different convention (re-derivation).
@@ -91,7 +92,7 @@ In particular, freeze the following rules as global rules.</p>
 <p>If a violation occurs, the output loses conclusion status, and this loss propagates to derived outputs along the dependency graph.</p>
 <h2>5.1 Derivation of α=2/π</h2>
 <span id="hub:alpha"></span>
-<aside class="claim-strip vps" data-vps="5.1" data-cards="VP-C-005"><span class="g">[F] forced integral</span><span class="io">in: uniform angle measure / out: $α=⟨|cos|⟩=2/π$</span><q class="one">The full-cycle magnitude average — not the fine-structure constant.</q><span class="cards">VP-C-005</span></aside>
+<aside class="claim-strip vps" data-vps="5.1" data-cards="VP-C-005"><span class="g">[F] forced integral</span><span class="io">in: uniform angle measure / out: α=⟨|cos|⟩=2/π</span><q class="one">The full-cycle magnitude average — not the fine-structure constant.</q><span class="cards">VP-C-005</span></aside>
 <em> Concept links: this rectification α=2/π sets the proton size ratio <a href="/physics/06-continuum-core-model-deriving-rp/#hub:RpLq" class="xref" data-ref="hub:RpLq">§6.2</a>. <strong>Distinct</strong> from the fine-structure constant αₑₘ≈1/137 (<a href="/physics/14-force-lattice-tension-1-r2/#hub:alphaem" class="xref" data-ref="hub:alphaem">§14.5</a>); same letter, different quantity.</em>
 <h3>5.1.1 Definition of the rectification problem (directional component → scalar effective quantity)</h3>
 <p>In this section, α is defined as the constant “that rectifies a directional (or phase) component into a scalar effective quantity.”
@@ -186,7 +187,7 @@ This distinction is reused repeatedly in all later “cancellation → survival�
 If a different averaging convention is required, define a separate rectification coefficient under a <strong>new symbol</strong>, which requires a separate registry entry and Gate.</p>
 <h2>5.2 Derivation of δ=1/π² + universality axiom</h2>
 <span id="hub:delta"></span>
-<aside class="claim-strip vps" data-vps="5.2" data-cards="VP-C-006"><span class="g">[F] forced integral</span><span class="io">in: two half-wave constraints (AND, product measure) / out: $δ=1/π²$; triggers T1–T5</span><q class="one">Double rectification survives at $1/π²$ under the max-entropy measure.</q><span class="cards">VP-C-006</span></aside>
+<aside class="claim-strip vps" data-vps="5.2" data-cards="VP-C-006"><span class="g">[F] forced integral</span><span class="io">in: two half-wave constraints (AND, product measure) / out: δ=1/π²; triggers T1–T5</span><q class="one">Double rectification survives at 1/π² under the max-entropy measure.</q><span class="cards">VP-C-006</span></aside>
 <em> Concept links: the reading convention (π/2 decoder) is <a href="#hub:decoder" class="xref" data-ref="hub:decoder">§5.0</a>.</em>
 <h3>5.2.1 Role of the rectification coefficient δ (survival coefficient for sign-constrained events)</h3>
 <p>δ is fixed as the coefficient that, when a sign-bearing directional component is aggregated as an event, rectifies the portion cancelled by the <em>sign constraint</em> into the “mean surviving fraction.”
@@ -317,7 +318,7 @@ In this case, handle as</p>
 <li> <strong>Cross-consistency (RCROSS) and Gate</strong>: δ is not used to justify numerical agreement, but only as a rectification coefficient that is locked inside the regime, serving as an input to cross-consistency and reproduction Gates.
 </ol>
 <h2>5.3 Where δ enters</h2>
-<aside class="claim-strip vps" data-vps="5.3" data-cards="VP-C-005, VP-C-006"><span class="g">[F] insertion map</span><span class="io">in: $α,δ$ / out: the only slots where rectification may act</span><q class="one">Where the two constants enter — and nowhere else.</q><span class="cards">VP-C-005, VP-C-006</span></aside>
+<aside class="claim-strip vps" data-vps="5.3" data-cards="VP-C-005, VP-C-006"><span class="g">[F] insertion map</span><span class="io">in: α,δ / out: the only slots where rectification may act</span><q class="one">Where the two constants enter — and nowhere else.</q><span class="cards">VP-C-005, VP-C-006</span></aside>
 <h3>5.3.1 Definition of δ and prerequisites for use (a complete definition, not a summary)</h3>
 <p>δ is defined as the rectification coefficient that represents the mean surviving fraction in “two-constraint events.”
 In this section, δ is used only on top of the following definitions and prerequisites.</p>

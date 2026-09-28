@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "analysis_lock",
+  "type": "object",
+  "required": [
+    "version",
+    "event_type_for_nu",
+    "event_time_kind",
+    "windowing",
+    "thresholds",
+    "phi_definition",
+    "chi_definition",
+    "filters",
+    "peak_detection",
+    "convergence_tests",
+    "passfail"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "event_type_for_nu": {
+      "type": "object",
+      "required": [
+        "electron",
+        "proton"
+      ],
+      "properties": {
+        "electron": {
+          "type": "string",
+          "enum": [
+            "TURNOVER",
+            "ANN",
+            "NET_IN"
+          ]
+        },
+        "proton": {
+          "type": "string",
+          "enum": [
+            "ANN",
+            "NET_IN"
+          ]
+        }
+      }
+    },
+    "event_time_kind": {
+      "type": "string",
+      "enum": [
+        "raw",
+        "det",
+        "both"
+      ]
+    },
+    "windowing": {
+      "type": "object",
+      "required": [
+        "window_length_ticks",
+        "overlap_ratio",
+        "warmup_drop_ticks"
+      ],
+      "properties": {
+        "window_length_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "overlap_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.99
+        },
+        "warmup_drop_ticks": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "k_phi",
+        "k_chi",
+        "chi_int_crit",
+        "u_min"
+      ],
+      "properties": {
+        "k_phi": {
+          "type": "number"
+        },
+        "k_chi": {
+          "type": "number"
+        },
+        "chi_int_crit": {
+          "type": "number"
+        },
+        "u_min": {
+          "type": "number"
+        }
+      }
+    },
+    "phi_definition": {
+      "type": "string"
+    },
+    "chi_definition": {
+      "type": "object",
+      "required": [
+        "dir",
+        "int"
+      ],
+      "properties": {
+        "dir": {
+          "type": "string"
+        },
+        "int": {
+          "type": "string"
+        }
+      }
+    },
+    "filters": {
+      "type": "object"
+    },
+    "peak_detection": {
+      "type": "object"
+    },
+    "estimators": {
+      "type": "object"
+    },
+    "passfail": {
+      "type": "object"
+    },
+    "convergence_tests": {
+      "type": "object",
+      "required": [
+        "eps_time",
+        "eps_space",
+        "eps_seed",
+        "eps_mode"
+      ],
+      "properties": {
+        "eps_time": {
+          "type": "number"
+        },
+        "eps_space": {
+          "type": "number"
+        },
+        "eps_seed": {
+          "type": "number"
+        },
+        "eps_mode": {
+          "type": "number"
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

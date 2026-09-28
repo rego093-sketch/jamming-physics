@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "signal_log_line",
+  "type": "object",
+  "required": [
+    "run_id",
+    "tick",
+    "object",
+    "phi_core",
+    "chi_dir_core",
+    "chi_int_core"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "tick": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "object": {
+      "type": "string",
+      "enum": [
+        "electron",
+        "proton"
+      ]
+    },
+    "phi_core": {
+      "type": "number"
+    },
+    "chi_dir_core": {
+      "type": "number"
+    },
+    "chi_int_core": {
+      "type": "number"
+    },
+    "phi_cell": {
+      "type": "number"
+    },
+    "A_core": {
+      "type": "number"
+    },
+    "S_shell": {
+      "type": "number"
+    },
+    "C_core": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": true
+}

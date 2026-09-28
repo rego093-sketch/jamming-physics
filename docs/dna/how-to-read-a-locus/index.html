@@ -25,7 +25,7 @@
 
 <aside class="claim-strip">
   <span class="gate">LOCK → Derive → Gate</span>
-  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/13-unified-deterministic-interpreter" rel="noopener">reproduce (GitHub)</a>
+  <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/repro/dna/13-unified-deterministic-interpreter/" rel="noopener">reproduce (GitHub)</a>
   <a href="https://doi.org/10.5281/zenodo.20471407" rel="noopener">DOI snapshot</a>
 </aside>
 
@@ -38,7 +38,7 @@
 <p>The same read places the element in a four-part coordinate, so a locus is read structurally rather than as a flat string. The four components are: the <strong>shell</strong> (soft / mid / stiff composition band) the element falls in; the <strong>nearest anchor</strong> and its <strong>strength</strong>; the <strong>loops</strong> co-anchored with it, built from real motors parsed from the region's feature table; and the <strong>anchor-relative helical phase</strong>.</p>
 <p>The phase is the physically meaningful part. Using the locked B-DNA geometry — rise 3.4 Å and twist 34.29° per base pair — the engine asks whether the element and its nearest anchor fall on the <strong>same rotational face</strong> of the helix (and could contact) or on opposite faces (and cannot). On the worked lactase promoter the read is <strong>γ 1.315 · mid-shell · anchor 1065 bp · 1 loop / 5 motors · face 0.44 → contact False</strong>. The same grammar reads human_SOX2; where a window is gene-poor the loop read is flagged open and names the dataset that would close it.</p>
 <aside class="vp-card" data-stress="helical-contact">
-  <b>The helical face is read as geometry, not function.</b> Across twelve cross-kingdom regions a real TSS sits on the same helical face as its nearest anchor at a rate of 0.337, against an analytic chance of 0.340 (246 motor–anchor pairs, permutation z = −0.09) — indistinguishable from chance. So <code>contact_competent</code> is a deterministic Layer-1 <b>geometry</b> read, never a functional-contact claim; realized looping depends on runtime factors (bound factors, cohesin) that are Layer-2. <span class="grade g-open">geometry / chance-level</span> <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/13-unified-deterministic-interpreter/stress_helical/" rel="noopener">stress test → repro</a></aside>
+  <b>The helical face is read as geometry, not function.</b> Across twelve cross-kingdom regions a real TSS sits on the same helical face as its nearest anchor at a rate of 0.337, against an analytic chance of 0.340 (246 motor–anchor pairs, permutation z = −0.09) — indistinguishable from chance. So <code>contact_competent</code> is a deterministic Layer-1 <b>geometry</b> read, never a functional-contact claim; realized looping depends on runtime factors (bound factors, cohesin) that are Layer-2. <span class="grade g-open">geometry / chance-level</span> <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/dna/repro/dna/13-unified-deterministic-interpreter/stress_helical/" rel="noopener">stress test → repro</a></aside>
 <aside class="vp-card" data-locked="relationship">
   <h4 class="vp-q">γ and A4 are level vs shape of one field</h4>
   <p class="vp-value">γ is the <strong>average</strong> of the stiffness signal (one scalar). A4 is the <strong>shape</strong> of that same signal once the average is subtracted out (shells, anchors, loops). The engine builds A4 by removing the per-locus mean (<code>robust_z</code>), which is exactly γ — so A4 is “the signal minus γ”, and “γ ⊂ A4” is impossible. Same field (ρ≈0.94), orthogonal projections; neither contains the other.</p>
@@ -51,7 +51,7 @@
 <h3>Step 4 — What does one read return? The five channels</h3>
 <p>One read returns five channels at once, not five analyses. <strong>MATERIAL</strong> is γ and its threshold scale. <strong>SET</strong> is the presence/copy-count of switches a genome carries. <strong>STATE</strong> is on/off (runtime-flagged). <strong>DWELL</strong> is how long a switch stays on (∝ γ^1.5 × dosage; direction admissible, absolute open). <strong>ENVIRONMENT</strong> is the tilt h the environment writes via methylation (the CpG handles) and temperature, within a fixed SET. Parts III–V take each channel in turn; here they are simply the output of the single read above.</p>
 <p class="note"><strong>In one line:</strong> read γ → threshold scale, place it in the A4 coordinate, ask R19 can-fire, and report the five channels — every value mechanical and reproducible, the on/off sign and amount left explicitly to runtime.</p>
-<nav class="pn"><a rel="prev" href="/dna/00-the-reading-stated-plainly/">← §0</a><a href="/dna/">contents</a><a rel="next" href="/dna/the-dna-dictionary/">§II →</a></nav>
+<nav class="pn"><a rel="prev" href="/dna/rb-reading-complete-building-open/">← §RB</a><a href="/dna/">contents</a><a rel="next" href="/dna/the-dna-dictionary/">§II →</a></nav>
 </main>
 <footer>Young Jae Lee · ORCID 0009-0002-7535-8245 · DOI 10.5281/zenodo.20471407 · CC BY 4.0 · multi-page canonical (v1.13)</footer>
 </body>
