@@ -11,3 +11,38 @@ Route 2 -- cluster dynamics, R_g = sqrt(G M / a0), a0 = cH0/2pi = 1.082e-10 m/s^
   so the absolute length inherits the (measured) supercluster mass -> amplitude-dependent.
 
 Route 3 -- selection law lambda(k) = mu + eps k^2 - sigma k^4 (companion fluid volume):
+  source: companion length_selection.py
+  mu = -0.5: argmax k = 1.41422  analytic k* = 1.41421  (mu-independent)
+  mu = +0.0: argmax k = 1.41422  analytic k* = 1.41421  (mu-independent)
+  mu = +0.5: argmax k = 1.41422  analytic k* = 1.41421  (mu-independent)
+  nonlinear Swift-Hohenberg exponent d log L*/d log(sigma/eps) = 0.4643 (theory 0.5; page 0.501)
+  attractor dx/dt = a x^-5 - x^-4, a = 2/pi: all x0 -> 0.636620 (2/pi = 0.636620); F'(x*) = -9.5631 vs -(pi/2)^5 = -9.5631
+  L* = 8.886 sqrt(sigma/eps): the prefactor is forced, but sigma/eps is NOT supplied by the
+  fixed constants -> the absolute L* is a normalisation.
+
+Route 4 -- inflow rate with the c-ceiling, crossover L = v/H0:
+  v = c -> L = c/H0 = 4283 Mpc (Hubble scale). 150 Mpc needs v/c = 0.0350.
+  PAGE says 0.075c; the plain L = v/H0 reading gives 0.035c (factor 2.14 apart; the page's
+  crossover definition is not recorded). Either way the fraction is unforced.
+
+Route 5 -- 2D-rotational -> 3D-isotropic crossover (toy: sigma(L_x) = delta_x, n_eff = -1.5):
+  sigma8 = 0.6, delta_x = 1.0: L_x =     5.8 Mpc
+  sigma8 = 0.6, delta_x = 0.5: L_x =    14.6 Mpc
+  sigma8 = 0.6, delta_x = 0.2: L_x =    49.4 Mpc
+  sigma8 = 0.8, delta_x = 1.0: L_x =     8.5 Mpc
+  sigma8 = 0.8, delta_x = 0.5: L_x =    21.4 Mpc
+  sigma8 = 0.8, delta_x = 0.2: L_x =    72.6 Mpc
+  sigma8 = 1.0, delta_x = 1.0: L_x =    11.4 Mpc
+  sigma8 = 1.0, delta_x = 0.5: L_x =    28.8 Mpc
+  sigma8 = 1.0, delta_x = 0.2: L_x =    97.7 Mpc
+  L_x scales as sigma8^(2/(n+3)) and with the unforced threshold -> set by the matter amplitude.
+
+Look-elsewhere: simple forms p*pi^q, p*(pi/2)^q within 1% of F:
+  3*(pi/2)^5     =   28.689  (+0.48%)
+  9*pi^1         =   28.274  (-0.97%)
+  page form 3(pi/2)^5  = 28.689  deviation from F = +0.48%  (from 28.6: +0.31%)
+  page form 9 pi       = 28.274  deviation from F = -0.97%  (from 28.6: -1.14%)
+  page form 3 pi^2     = 29.609  deviation from F = +3.70%  (from 28.6: +3.53%)
+
+VERDICT (HYP): mechanism type and the prefactor 2 pi sqrt2 close; all five routes leave the
+absolute 150 Mpc to the matter distribution's amplitude -> empirical normalisation [O]. No constant moved.
