@@ -51,7 +51,7 @@ These conventions are a <strong>prerequisite</strong> for all subsequent derivat
 </ol>
 <p>Items in L0–L3 are not mixed, and L0 definitions are never modified retroactively by L2 or L3 outputs.</p>
 <h2>4.4 Standard template for 1:1 semantic mapping</h2>
-<aside class="claim-strip vps" data-vps="4.4" data-cards="VP-C-046, VP-C-057"><span class="g">mandatory template</span><span class="io">in: — / out: 1:1 semantic-map registry template (map_id, from/to layer, items) required in analysis_lock; missing template $⇒$ unusable map</span><q class="one">No template, no map — meaning transfers only on the registered form.</q><span class="cards">VP-C-046, VP-C-057</span></aside>
+<aside class="claim-strip vps" data-vps="4.4" data-cards="VP-C-046, VP-C-057"><span class="g">mandatory template</span><span class="io">in: — / out: 1:1 semantic-map registry template (map_id, from/to layer, items) required in analysis_lock; missing template ⇒ unusable map</span><q class="one">No template, no map — meaning transfers only on the registered form.</q><span class="cards">VP-C-046, VP-C-057</span></aside>
 <p>A semantic layer map is a registry entry that must follow the template below. This template must be included in <code>analysis_lock</code>; if it is missing, the corresponding map cannot be used.</p>
 <pre class="vb">
 semantic_maps:
@@ -105,7 +105,7 @@ semantic_maps:
 </ol>
 <p>The purpose of the closure DAG is to prevent “necessary choices” from being hidden, and to make the impact of each choice traceable to conclusions.</p>
 <h2>4.7 Standard taxonomy of failure modes</h2>
-<aside class="claim-strip vps" data-vps="4.7" data-cards="VP-C-049, VP-C-058"><span class="g">failure-mode taxonomy (pre-registered)</span><span class="io">in: — / out: standard labels FM-SYM/FM-SCOPE/FM-NONUNIQUE/FM-NODEF/FM-NUMERIC$…$ attached at design time</span><q class="one">Every device ships with the list of ways it dies.</q><span class="cards">VP-C-049, VP-C-058</span></aside>
+<aside class="claim-strip vps" data-vps="4.7" data-cards="VP-C-049, VP-C-058"><span class="g">failure-mode taxonomy (pre-registered)</span><span class="io">in: — / out: standard labels FM-SYM/FM-SCOPE/FM-NONUNIQUE/FM-NODEF/FM-NUMERIC… attached at design time</span><q class="one">Every device ships with the list of ways it dies.</q><span class="cards">VP-C-049, VP-C-058</span></aside>
 <p>Failure modes are standard labels that record “when this closure/map collapses”. Failure modes are not post-hoc remarks; they are pre-registered items, fixed by the following classification.</p>
 <ol>
 <li> <strong>FM-SYM</strong>: symbol/meaning/unit conflict or overloading.
@@ -119,7 +119,7 @@ semantic_maps:
 </ol>
 <p>A failure mode does not mean “the result is unpleasant”; it means “the definition/procedure/judgement does not hold”. When a failure mode occurs, the corresponding conclusion is judged <code>FAIL</code> or <code>INCONCLUSIVE</code> and loses the status of a valid conclusion.</p>
 <h2>4.8 Why verification is required (closure/map conclusion criteria)</h2>
-<aside class="claim-strip vps" data-vps="4.8" data-cards="VP-C-049"><span class="g">global rules (why Gates)</span><span class="io">in: — / out: closures/maps gain legitimacy only by passing pre-registered Gates; no Gates / no failure modes / no DAG version $⇒$ no conclusion</span><q class="one">No authority blesses a closure — only a Gate it named in advance.</q><span class="cards">VP-C-049</span></aside>
+<aside class="claim-strip vps" data-vps="4.8" data-cards="VP-C-049"><span class="g">global rules (why Gates)</span><span class="io">in: — / out: closures/maps gain legitimacy only by passing pre-registered Gates; no Gates / no failure modes / no DAG version ⇒ no conclusion</span><q class="one">No authority blesses a closure — only a Gate it named in advance.</q><span class="cards">VP-C-049</span></aside>
 <p>Since semantic maps and closures contain <em>choices</em>, their legitimacy is not granted by external authority but only by <strong>passing pre-registered Gates</strong>. Therefore, the following become global rules.</p>
 <ol>
 <li> A closure/map without Gates cannot generate a valid conclusion.
@@ -437,7 +437,7 @@ closures:
 <li> Mixing closure stacks from different <code>analysis_lock_id</code> to form one conclusion is prohibited.
 </ol>
 <h2>4.3 Regime map (scope of applicability)</h2>
-<aside class="claim-strip vps" data-vps="4.3" data-cards="VP-C-057"><span class="g">regime definition</span><span class="io">in: — / out: regime as a coordinate tuple $R$ (axes, not slogans); validity declared per tuple</span><q class="one">``Rigid regime&#x27;&#x27; is not a phrase here — it is a tuple with axes.</q><span class="cards">VP-C-057</span></aside>
+<aside class="claim-strip vps" data-vps="4.3" data-cards="VP-C-057"><span class="g">regime definition</span><span class="io">in: — / out: regime as a coordinate tuple R (axes, not slogans); validity declared per tuple</span><q class="one">``Rigid regime&#x27;&#x27; is not a phrase here — it is a tuple with axes.</q><span class="cards">VP-C-057</span></aside>
 <h3>4.3.1 Definition of a regime</h3>
 <p>A regime is a coordinate description of “under which conditions which definitions/closures/judgements are valid”. A regime is not expressed as a single sentence (e.g., “rigid regime”); it must be defined as a tuple composed of the values of regime coordinate axes. Fix the regime in the form</p>
 <figure class="eq" id="eq:regime_tuple"><img src="/physics/eq/physics/phy-04-029.svg" data-eq="phy-04-029" width="457" height="22" loading="lazy" alt="\begin{equation} \mathcal{R} := \bigl( R_{\mathrm{dim}}, R_{\mathrm{cell}}, R_{\mathrm{drive}}, R_{\mathrm{span}}, R_{\kappa}, R_{\mathrm{scale}}, R_{\mathrm{bc}}, R_{\mathrm{init}}, R_{\mathrm{obs}} \bigr). \end{equation}"></figure>

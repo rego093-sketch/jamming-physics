@@ -132,7 +132,7 @@ Each trigger T_ℓ takes as input summary metrics and integrity metadata, and re
 <figure class="eq" id="eq:S16_01_fail_classes"><img src="/physics/eq/physics/phy-16-014.svg" data-eq="phy-16-014" width="525" height="19" loading="lazy" alt="\begin{equation} \mathcal{C}_{\mathrm{fail}}=\{\mathrm{LOCK},\mathrm{INTEGRITY},\mathrm{SCHEMA},\mathrm{GATE},\mathrm{PROCEDURE}\} \end{equation}"></figure>
 <p>Each FAIL run must have at least one cause class.</p>
 <h4>(Definition) Failure codes</h4>
-<p>Failure codes are fixed to the form <code>F-<CLASS>-<NNN></code>. Examples:</p>
+<p>Failure codes are fixed to the form <code>F-&lt;CLASS>-&lt;NNN></code>. Examples:</p>
 <ul>
 <li> <code>F-LOCK-001</code>: LOCK digest mismatch.
 <li> <code>F-INTEGRITY-002</code>: artifact checksum mismatch.
@@ -251,14 +251,14 @@ Per-phase seeds must be recorded in the log and snapshot; missing records are tr
 <figure class="eq" id="eq:S16_02_repro_min"><img src="/physics/eq/physics/phy-16-022.svg" data-eq="phy-16-022" width="559" height="22" loading="lazy" alt="\begin{equation} \mathrm{REPRODUCIBLE}=1 \Longleftrightarrow \big(T_{\mathrm{LOCK}}=0\big)\wedge\big(T_{\mathrm{MAN}}=0\big)\wedge\big(T_{\mathrm{SCH}}=0\big) \end{equation}"></figure>
 <p>That is, if any of LOCK mismatch, integrity failure, or schema failure occurs, reproducibility does not hold.</p>
 <h2>16.3 Reference implementation execution recipe, artifact checklist, and release rules</h2>
-<aside class="claim-strip vps" data-vps="16.3" data-cards="VP-C-051"><span class="g">reference implementation</span><span class="io">in: protocol.*, locks/*, plan.* only / out: $I_ref$ conditions, execution recipe, artifact checklist, release rules</span><q class="one">The paper&#x27;s claims compile: one implementation, one recipe, one checklist.</q><span class="cards">VP-C-051</span></aside>
+<aside class="claim-strip vps" data-vps="16.3" data-cards="VP-C-051"><span class="g">reference implementation</span><span class="io">in: protocol.*, locks/*, plan.* only / out: I_ref conditions, execution recipe, artifact checklist, release rules</span><q class="one">The paper&#x27;s claims compile: one implementation, one recipe, one checklist.</q><span class="cards">VP-C-051</span></aside>
 <h3>16.3.1 Definition of the reference implementation (definition)</h3>
 <h4>(Definition) Reference implementation</h4>
 <p>Define the reference implementation I_ref as the execution code set that satisfies the following conditions.</p>
 <ul>
 <li> (RI-1) Inputs are read only from <code>protocol.*</code>, <code>locks/*</code>, and the run plan (<code>plan.*</code>).
 <li> (RI-2) Gate/PASS.rules and the artifact list are used exactly as declared in <code>protocol.*</code>.
-<li> (RI-3) All run outputs are written only under <code>runs/<run_id>/</code>.
+<li> (RI-3) All run outputs are written only under <code>runs/&lt;run_id>/</code>.
 <li> (RI-4) On run completion, <code>run_log.jsonl</code>, <code>metrics.json</code>, <code>manifest.json</code>, and <code>registry_snapshot.json</code> must be generated.
 <li> (RI-5) Under the same snapshot (LOCK/environment/seeds), artifact checksums must be identical.
 </ul>

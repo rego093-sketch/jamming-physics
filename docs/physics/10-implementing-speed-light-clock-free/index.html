@@ -24,14 +24,14 @@
 <body>
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §10</nav></header>
 <main>
-<h1>Implementing the speed of light (clock-free $c$) and lattice propagation</h1>
+<h1>Implementing the speed of light (clock-free c) and lattice propagation</h1>
 <p class="answer">Implementing the speed of light: Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map. Spanning failure: for no g does χ_perc(g)=1. Grade [F] forced.</p>
 <p class="abstract" data-phase2="abstract">Where A lives and how speed is realized without a clock. Speed is realized, not timed: an internal indicator times a unit map. Spanning failure: for no g does χ_perc(g)=1.</p>
 <aside class="claim-strip page"><span class="g g-forced" data-phase2="grade">[F] forced</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/light_mapping_massfree/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
 <aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Update (2026-09-28).</strong> The angle table of §10.9.1 stands as a forward map. Corrections: the D-sensitivity is up to ≈0.17° per 0.03% (not “&gt;1°”), and the two-line ratio is arithmetic, so it is not evidence. The polarization count (two states) is open and registered as gate G-POL. Full chain, doubts and resolutions: <a href="/physics/lt-light-chain-doubts-and-resolutions/">§LT The Light Chain, Link by Link</a>.</aside>
 <aside class="vp-card" data-locked="nu-p" data-concept="nu_p"><b>ν_p = 3π⁴</b> — Canonical proton event-rate from the n-fold law ν_n = nπ^(2(n−1)). <b>[F]</b> forced. <a href="/physics/08-discrete-proton-structure-82-7/">canonical derivation §8</a> · <a href="/concepts/#nu_p">용어</a></aside>
 <aside class="vp-card" data-locked="d-anch"><b>D = 4.8526 pm</b> — Quantum (anchor) diameter that fixes the lattice length scale. <b>[F]</b> forced. <a href="/physics/03-axioms-primitives-volume-particle-lattice/">canonical derivation §3</a></aside>
-<aside class="vp-card" data-locked="anchor" data-concept="lambda_anchor"><b>λ_anchor = 632.99 nm</b> — Single empirical anchor (DOF = 1); the only measured length input to the framework. <b>[F]</b> forced. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a> · <a href="/concepts/#lambda_anchor">용어</a></aside>
+<aside class="vp-card" data-locked="anchor" data-concept="lambda_anchor"><b>λ_anchor = 632.99 nm</b> — Measured length anchor (I₂-stabilised He–Ne line). It is one of two measured anchors: the other is the electron mass, which fixes D = 2λ_C,e. The container size N = 10¹² and the tick Δt are declared, not measured. No coefficient is fitted. <b>[L]</b> anchor. <a href="/physics/11-realization-units-t-rcross/">canonical derivation §11</a> · <a href="/concepts/#lambda_anchor">용어</a></aside>
 <aside class="vp-card" data-locked="spine"><b>c² = B/ρ</b> — Speed of light as the lattice elastic-wave speed (bulk modulus over density); simulation-validated. <b>[V]</b> verified. <a href="/physics/sp-jamming-spine-verified-physical-backbone/">canonical derivation §SP</a></aside>
 <h2>Purpose of this chapter (declared linkage)</h2>
 <p>This chapter defines a “propagating / non-propagating” switch using the jamming lattice (Point-J) and a percolation (critical-throat) structure, and then fixes the linkage so that this switch becomes an <strong>input</strong> to a <strong>clock-free realization of the speed of light c</strong>. It also defines the <strong>amplification coefficient A</strong> that emerges when global propagation exists, and binds both c and A to a <em>verifiable numerical package</em> (reproducible code/logs/Gates).</p>
@@ -56,7 +56,7 @@
 <p>Each item must be locked as a closure, and closure dependencies are fixed as a DAG (no cycles; see §4.2).</p>
 <h2>10.5 Declaration of amplification coefficient A (definition slot)</h2>
 <span id="hub:Adef"></span>
-<aside class="claim-strip vps" data-vps="10.5" data-cards="VP-C-010, VP-C-004"><span class="g">definition slot</span><span class="io">in: throat/percolation / out: amplification $A$; clock-free $c:=(a/Δ t)tilde c$</span><q class="one">Where $A$ lives and how speed is realized without a clock.</q><span class="cards">VP-C-010, VP-C-004</span></aside>
+<aside class="claim-strip vps" data-vps="10.5" data-cards="VP-C-010, VP-C-004"><span class="g">definition slot</span><span class="io">in: throat/percolation / out: amplification A; clock-free c:=(a/Δ t)tilde c</span><q class="one">Where A lives and how speed is realized without a clock.</q><span class="cards">VP-C-010, VP-C-004</span></aside>
 <p>In the global-propagation regime, “amplification” is defined as an indicator of how strongly propagation paths concentrate on the critical-throat network. We declare that the amplification coefficient A is defined in the following slot.</p>
 <figure class="eq" id="eq:S10_A_slot"><img src="/physics/eq/physics/phy-10-002.svg" data-eq="phy-10-002" width="207" height="22" loading="lazy" alt="\begin{equation} A := \mathrm{Amp}\bigl(\mathcal{G}_{\mathrm{throat}},\ \mathcal{B},\ \mathcal{F}\bigr), \end{equation}"></figure>
 <p>where</p>
@@ -67,7 +67,7 @@
 </ul>
 <p>The concrete definition of Amp(·) (e.g., concentration, entropy-type measures, max/mean ratio, etc.) must be locked in <code>analysis_lock</code>. Replacing Amp or moving thresholds after seeing results is forbidden.</p>
 <h2>10.6 Declaration of clock-free c realization (internal propagation indicator → realization)</h2>
-<aside class="claim-strip vps" data-vps="10.6" data-cards="VP-C-045, VP-C-010, VP-C-004"><span class="g">declaration (clock-free realization)</span><span class="io">in: internal indicator $c$ (throat/backbone) + realization map / out: $c:=(a/Δ t)c$ — no external clock assumed</span><q class="one">Speed is realized, not timed: an internal indicator times a unit map.</q><span class="cards">VP-C-045, VP-C-010, VP-C-004</span></aside>
+<aside class="claim-strip vps" data-vps="10.6" data-cards="VP-C-045, VP-C-010, VP-C-004"><span class="g">declaration (clock-free realization)</span><span class="io">in: internal indicator c (throat/backbone) + realization map / out: c:=(a/Δ t)c — no external clock assumed</span><q class="one">Speed is realized, not timed: an internal indicator times a unit map.</q><span class="cards">VP-C-045, VP-C-010, VP-C-004</span></aside>
 <p>In this chapter, c denotes a procedure that makes internal propagation <em>comparable</em> without assuming an external clock. “Clock-free” is declared as the combination of the following two components.</p>
 <ol>
 <li> <strong>Internal propagation indicator c</strong>: a propagation-speed indicator defined through critical throats/backbone (tick-based or event-based).
@@ -78,7 +78,7 @@
 <p>where the lock of a,Δ t belongs to <code>realization_lock</code> in §2.3.</p>
 <p>The definition of c is provided by the percolation/backbone/amplification definitions of this chapter. If the definition of c fails, then c is also not definable.</p>
 <h2>10.7 Numerical package (reproducibility) and Gate stack declaration</h2>
-<aside class="claim-strip vps" data-vps="10.7" data-cards="VP-C-049, VP-C-051"><span class="g">sealing requirements (gate stack)</span><span class="io">in: all Ch.~10 outputs ($χ_c$, $δ_eff$, backbone, $A$, $c$, $c$) / out: mandatory numerical package — registry snapshot, seeds, code+logs, gate report, manifest+checksums</span><q class="one">No seal, no conclusion — the chapter&#x27;s own results are hostage to their package.</q><span class="cards">VP-C-049, VP-C-051</span></aside>
+<aside class="claim-strip vps" data-vps="10.7" data-cards="VP-C-049, VP-C-051"><span class="g">sealing requirements (gate stack)</span><span class="io">in: all Ch.~10 outputs (χ_c, δ_eff, backbone, A, c, c) / out: mandatory numerical package — registry snapshot, seeds, code+logs, gate report, manifest+checksums</span><q class="one">No seal, no conclusion — the chapter&#x27;s own results are hostage to their package.</q><span class="cards">VP-C-049, VP-C-051</span></aside>
 <p>All conclusions in this chapter (χ_c, δ_eff, backbone, A, c, c) must be sealed as a numerical package. The package must include:</p>
 <ol>
 <li> registry snapshot (<code>registry_snapshot</code>) and the lock_id combination,
@@ -102,7 +102,7 @@
 </ol>
 <p>Any result that does not achieve <code>PASS</code> has no status as a conclusion and cannot be used as support in later sections.</p>
 <h2>10.1 Operational definition of c (Bₑff/ρₑff) + switch</h2>
-<aside class="claim-strip vps" data-vps="10.1" data-cards="VP-C-045, VP-C-033"><span class="g">operational definition + switch</span><span class="io">in: locked domain/graph / out: spanning indicator $χ_span$ and the propagation switch; $c$ as $B_eff/ρ_eff$ defined only when the switch is on</span><q class="one">Before speed exists, the lattice must first vote that it spans.</q><span class="cards">VP-C-045, VP-C-033</span></aside>
+<aside class="claim-strip vps" data-vps="10.1" data-cards="VP-C-045, VP-C-033"><span class="g">operational definition + switch</span><span class="io">in: locked domain/graph / out: spanning indicator χ_span and the propagation switch; c as B_eff/ρ_eff defined only when the switch is on</span><q class="one">Before speed exists, the lattice must first vote that it spans.</q><span class="cards">VP-C-045, VP-C-033</span></aside>
 <h3>10.1.1 Premise: define a propagation switch (regime switch)</h3>
 <p>Let the canonical domain (a cell or a union of cells) be D, with locked boundary sets ∂D⁻,∂D⁺. Given a locked contact (or adjacency) graph G_c=(V,E_c), define the global-spanning indicator as</p>
 <figure class="eq" id="eq:S10_01_chi_span"><img src="/physics/eq/physics/phy-10-004.svg" data-eq="phy-10-004" width="386" height="45" loading="lazy" alt="\begin{equation} \chi_{\mathrm{span}} := \begin{cases} 1, &amp; \exists\, i\in\mathcal{V}^{-},\exists\, j\in\mathcal{V}^{+}\ \text{s.t.}\ i\leadsto j\ \text{in }\mathcal{G}_c,\\ 0, &amp; \text{otherwise}, \end{cases} \end{equation}"></figure>
@@ -205,7 +205,7 @@
 <li> Post hoc changes of probe samples/estimators/thresholds/relaxation rules: <code>FAIL-C-NT</code>.
 </ol>
 <h2>10.2 δₑff and percolation closure</h2>
-<aside class="claim-strip vps" data-vps="10.2" data-cards="VP-C-010, VP-C-002"><span class="g">closure (premise-locked)</span><span class="io">in: $χ_c=χ_ST=1$, locked boundaries/coordinates / out: critical-throat $δ_eff$ percolation estimator</span><q class="one">The effective gap is measured at the critical throat, under premises that are themselves locked.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
+<aside class="claim-strip vps" data-vps="10.2" data-cards="VP-C-010, VP-C-002"><span class="g">closure (premise-locked)</span><span class="io">in: χ_c=χ_ST=1, locked boundaries/coordinates / out: critical-throat δ_eff percolation estimator</span><q class="one">The effective gap is measured at the critical throat, under premises that are themselves locked.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
 <h3>10.2.1 Premises (regime and input locks)</h3>
 <p>The definitions and procedures of this section apply <em>only</em> when all of the following premises are simultaneously satisfied.</p>
 <ol>
@@ -352,7 +352,7 @@ ALG-BACKBONE-TT (inputs: G_span(g_c), boundary sets V-, V+)
 <li> <strong>Post hoc tuning</strong>: result-dependent changes to the candidate edge set, changes to d₀ or the definition of g_(ij), changes to threshold-selection rules, or changes to backbone-selection rules.
 </ol>
 <h2>10.3 SOC percolation and backbone concentration κ_bb</h2>
-<aside class="claim-strip vps" data-vps="10.3" data-cards="VP-C-010, VP-C-002"><span class="g">operational definition + gates</span><span class="io">in: critical-throat graph, backbone, event logs / out: amplification $A$ = SOC-transmission concentration on the backbone ($κ_bb$), estimators + steady/pinning/robustness gates</span><q class="one">$A$ is not assumed — it is the lattice caught concentrating its own traffic.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
+<aside class="claim-strip vps" data-vps="10.3" data-cards="VP-C-010, VP-C-002"><span class="g">operational definition + gates</span><span class="io">in: critical-throat graph, backbone, event logs / out: amplification A = SOC-transmission concentration on the backbone (κ_bb), estimators + steady/pinning/robustness gates</span><q class="one">A is not assumed — it is the lattice caught concentrating its own traffic.</q><span class="cards">VP-C-010, VP-C-002</span></aside>
 <h3>10.3.1 Purpose</h3>
 <p>This section (i) fixes SOC (self-organized criticality) events as an operational definition on top of a percolation (critical-throat) structure, (ii) defines the <strong>amplification coefficient A</strong> as the degree to which global transmission of SOC events concentrates on a path, (iii) fixes estimators for A, and (iv) fixes the Gates (steady state / pinning / robustness) required for A to have conclusion status.</p>
 <p>The A of this section is a measurable quantity computed from the critical-throat graph/backbone/event logs, without external justification.</p>
@@ -621,7 +621,7 @@ exp10/
 <ol>
 <li> <strong>path</strong>: relative path.
 <li> <strong>role</strong>: one of <code>registry</code>, <code>config</code>, <code>input</code>, <code>script</code>, <code>output</code>, <code>gate_report</code>, <code>figure</code>, <code>table</code>.
-<li> <strong>producer</strong>: <code>manual</code> or <code>script:<name></code>.
+<li> <strong>producer</strong>: <code>manual</code> or <code>script:&lt;name></code>.
 <li> <strong>lock_refs</strong>: referenced lock_id combination.
 <li> <strong>regime_id</strong>: regime to which the file belongs.
 <li> <strong>depends_on</strong>: list of input file paths.
@@ -634,7 +634,7 @@ exp10/
 <ol>
 <li> Default algorithm: <code>sha256</code> (mandatory).
 <li> Target: all files under <code>exp10/</code> (if any exclusion exists, lock it separately in a <code>checksum_exclusions</code> file, and include that file itself in the hash list).
-<li> Representation: either “hash-value<space>file-path” per line or JSON key-values (format locked in <code>protocol_lock</code>).
+<li> Representation: either “hash-value&lt;space>file-path” per line or JSON key-values (format locked in <code>protocol_lock</code>).
 <li> Cross-reference: the manifest's <code>hash_ref</code> must correspond 1:1 with a checksums entry.
 </ol>
 <p>If checksums are missing or inconsistent, the reproducibility Gate is <code>FAIL</code>/<code>INCONCLUSIVE</code>.</p>
@@ -661,7 +661,7 @@ unmet) was relocated in v0.5.0 out of the Forced part to §17.5, under the <em>M
 10.8 is retained here as a pointer only; the mechanism stub, the κ-lock protocol, and all Gate registrations live in §17.5, while the physical development and the data confrontation are owned by the companion Earth–Cosmos volume (Ch. 7; v0.6.0 handover).</p>
 <h2>10.9 Light propagation angle: the geometric basis of the wavelength mapping</h2>
 <span id="hub:lightangle"></span>
-<aside class="claim-strip vps" data-vps="10.9" data-cards="VP-C-032, VP-C-020"><span class="g">[F]+[V] light angle</span><span class="io">in: $λ/D$ / out: $sinχ=λ/(mD)$, $m=⌈λ/D⌉$; committed $χ(633)/χ(532)$; v0.8 input-convention note</span><q class="one">Light rides an integer dent chain; the committed angles are the armed falsifier.</q><span class="cards">VP-C-032, VP-C-020</span></aside>
+<aside class="claim-strip vps" data-vps="10.9" data-cards="VP-C-032, VP-C-020"><span class="g">[F]+[V] light angle</span><span class="io">in: λ/D / out: sinχ=λ/(mD), m=⌈λ/D⌉; committed χ(633)/χ(532); v0.8 input-convention note</span><q class="one">Light rides an integer dent chain; the committed angles are the armed falsifier.</q><span class="cards">VP-C-032, VP-C-020</span></aside>
 <em> Concept links: uses the quantum diameter D of <a href="/physics/09-event-quantum-definition-canonical-event/#hub:nucompute" class="xref" data-ref="hub:nucompute">§9.4</a> (dynamical origin <a href="/physics/11-realization-units-t-rcross/#hub:stiffness" class="xref" data-ref="hub:stiffness">§11.6</a>); the π/2 reading convention is <a href="/physics/05-geometric-rectification-constants-single-source/#hub:decoder" class="xref" data-ref="hub:decoder">§5.0</a>; the non-circularity argument is <a href="/physics/w5-anti-circular-logic-chain-light/#hub:chain" class="xref" data-ref="hub:chain">§W.5</a>; registered as a falsifiable prediction in <a href="/physics/01-governance-no-tuning-lock-gate/#hub:falsify" class="xref" data-ref="hub:falsify">§1.10</a>.</em>
 <p>This section supplies the geometric reason the wavelength-to-scale mapping of §11 works, and with it a first-principles account of what a light wavelength <em>is</em> on the jammed lattice.</p>
 <h4>Light as a transverse oscillation of rotating quanta.</h4>

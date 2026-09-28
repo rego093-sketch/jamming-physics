@@ -151,6 +151,7 @@ def phase4(p,rep):
         q=ssot.compute()
         from decimal import Decimal as _D
         r3=(q["nu_len"]/q["nu_geo"]-1)*_D(10)**6
+        # regression guard only (value = rounding of the 4-digit r_p lock + 6pi^5 residual); not evidence, see docs §8.0.5
         if abs(r3-_D("61.2"))>_D("0.5"): viol.append({"ssot_residual_drift":str(r3)})
     except Exception as e:
         viol.append({"ssot_compute_error":str(e)})

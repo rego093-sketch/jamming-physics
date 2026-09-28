@@ -20,7 +20,7 @@ If you remember only this, you can read any volume correctly:
 
 | Question | Answer |
 |---|---|
-| What is the substrate? | Vacuum = jammed elastic solid at random close packing (φ ≈ 0.7405). Light is its elastic wave: `c² = B/ρ`. |
+| What is the substrate? | Vacuum = jammed elastic solid at the isostatic jamming point (φ_jam ≈ 0.63, random close packing; note 0.7405 is the FCC crystal value, not RCP). Light is identified with its single surviving elastic wave: `c² = B/ρ`. |
 | What is the universal object? | The **R19 switch**: `ṡ = g·s − s³ + h` — a double well. Bistable for detection; at criticality (`g→0`) it gives cube-root compression. |
 | What makes it biology? | `γ` = promoter stiffness, **measured** (SantaLucia NN stacking). It sets the switch: threshold `spinodal ∝ γ^1.5`, barrier `γ²/4`. |
 | How does anything "emerge"? | The **emergence engine**: `STATE`(γ→can-fire) = presence · `spinodal(γ)` order = developmental sequence · `dwell ∝ γ^1.5` = relative size. All from measured γ. |
@@ -34,7 +34,7 @@ If you remember only this, you can read any volume correctly:
 
 Three equations carry the whole framework.
 
-1. **Substrate** — `c² = B/ρ` (speed of light = elastic-wave speed of the jammed lattice; simulation-validated to ~0.06%). Mass ratio `mₚ/mₑ = 6π⁵` (−19 ppm). This is `physics`.
+1. **Substrate** — `c² = B/ρ` (speed of light = the one elastic speed that survives at the isostatic point, verified on five observables in 3-D; the lattice amplification A links a measured light wavelength to the electron scale at ±10%, test E2. The older "~0.06%" figure is a 1-D wave-packet check, not the evidence). Mass ratio `mₚ/mₑ = 6π⁵` (−18.8 ppm; [F | LOCK-NU-N], residual open). This is `physics`.
 2. **Switch** — `ṡ = g·s − s³ + h`, the **R19** cubic normal form. Two stable roots + a barrier. The cooperativity *is* the `−s³` term (order n = 3).
 3. **Stiffness** — `γ = −mean nearest-neighbour stacking ΔG37`, read from human proximal promoters. `corr(γ, GC) = 0.998`. **Never fitted.** `γ` sets the switch threshold scale (`spinodal ∝ γ^1.5`, barrier `γ²/4`). This is `dna`.
 
@@ -57,7 +57,7 @@ The framework is not 30 parallel papers; it is a **single derivation tree**. Und
 ### 3.1 The dependency DAG
 
 ```
-physics  ── the root: jammed-solid substrate, c²=B/ρ, R19 normal form, constants
+physics  ── the root: jammed-solid substrate, c²=B/ρ, constants (R19 is first stated in dna)
   ├── fluid-dynamics ── geodynamics ── geochronology
   ├── cosmology
   ├── chemistry          (EM on the same substrate)
@@ -93,7 +93,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 
 | Volume | Inherits | Adds (its one new module) |
 |---|---|---|
-| physics | — (root) | jammed substrate, `c²=B/ρ`, R19 normal form, constants |
+| physics | — (root) | jammed substrate, `c²=B/ρ`, constants (the R19 normal form is not in physics; first stated in dna) |
 | fluid-dynamics | physics | continuum flow on the jammed medium |
 | cosmology | physics | vacuum-inflow, `a₀ = cH₀/2π` |
 | chemistry | physics | EM + bonding on the same substrate, `φ_RCP` |
@@ -169,7 +169,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 1 | physics | 1 | VP Theory | `c²=B/ρ ; mₚ/mₑ=6π⁵` | 10.5281/zenodo.17932566 |
 | 2 | fluid-dynamics | 1 | Configured Continuum | `∂ρ/∂t + ∇·(ρu)=0` on jammed medium | 10.5281/zenodo.17972568 |
 | 3 | cosmology | 1 | Vacuum-Inflow Cosmology | `a₀ = cH₀/2π` | 10.5281/zenodo.20568874 |
-| 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` | 10.5281/zenodo.20680540 |
+| 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` (flag: 0.7405 is FCC, RCP ≈ 0.64) | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
 | 7 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
