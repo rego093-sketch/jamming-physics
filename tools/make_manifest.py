@@ -25,7 +25,7 @@ REL = {
  'physics':([],["jammed-substrate","c2=B/rho","R19-normal-form","constants:mp/me=6pi^5"]),
  'fluid-dynamics':(["physics"],["continuum-flow-on-jammed-medium"]),
  'cosmology':(["physics"],["vacuum-inflow","a0=cH0/2pi"]),
- 'chemistry':(["physics"],["EM-on-same-substrate","phi_RCP=0.7405","bonding"]),
+ 'chemistry':(["physics"],["EM-on-same-substrate","phi_FCC=0.7405","bonding"]),
  'geodynamics':(["physics","fluid-dynamics"],["jamming-unjamming-yield","plate-breakup"]),
  'geochronology':(["physics","geodynamics"],["incorporation-dating-limit"]),
  'wave-computer':(["physics","neuro"],["clock-free-phase-computation"]),

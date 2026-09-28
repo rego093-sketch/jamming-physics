@@ -1,0 +1,18 @@
+=== PART A: light-bathed space vs vacuum deficit (identical dynamics, identical hot start) ===
+  light-bathed space  : <T_kin>(t>200) = 1.0001   T_kin(t=1000) = 1.039e+00
+  vacuum deficit      : <T_kin>(t>200) = 0.0000   T_kin(t=1000) = 3.920e-09
+  RESULT: bathed floor 1.000 (> 0, held);  deficit 3.9e-09 (-> absolute zero)
+  HONEST: the floor equals T_bath = 1 by fluctuation-dissipation construction; the run
+  shows the CONTRAST (contact vs no contact), it does not produce a temperature value.
+
+=== PART B: Stefan-Boltzmann energy balance ===
+  a = 4 sigma/c = 7.5657e-16 J m^-3 K^-4
+  u_CMB = a (2.725 K)^4 = 4.1717e-14 J m^-3
+  u_* = u_CMB / 80 = 5.215e-16 J m^-3   (80 = stated ratio, input)
+  COB Lauer+2022  : u = 6.86e-16 [6.25e-16, 7.48e-16] J m^-3 -> u_* inside 1-sigma: False;  forward 80*u_COB -> T = 2.92 K [2.85, 2.98]
+  COB Postman+2024: u = 4.68e-16 [3.99e-16, 5.37e-16] J m^-3 -> u_* inside 1-sigma: True;  forward 80*u_COB -> T = 2.65 K [2.55, 2.75]
+  grain: hbar c / a = 311.7 GeV,  hbar c/(a k_B) = 3.62e+15 K;  log10(T_grain/2.725 K) = 15.1 orders
+  HONEST: u_* is BACK-COMPUTED from the observed 2.725 K and the assumed factor 80, so the
+  'balance closes' statement is a consistency check, not a derivation; the factor 80 (the
+  lattice's absolute emission rate) is not derived. Absolute 2.725 K remains [O]/anchored.
+  [figure written: /home/user/jamming-physics/repro/cosmology/scripts/figs/ch9_cmb_floor.png]

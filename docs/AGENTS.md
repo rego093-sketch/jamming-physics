@@ -97,7 +97,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | physics | — (root) | jammed substrate, `c²=B/ρ`, constants (the R19 normal form is not in physics; first stated in dna) |
 | fluid-dynamics | physics | continuum flow on the jammed medium |
 | cosmology | physics | vacuum-inflow, `a₀ = cH₀/2π` |
-| chemistry | physics | EM + bonding on the same substrate, `φ_RCP` |
+| chemistry | physics | EM + bonding on the same substrate (E = transverse swing, B = lattice rotation, [H]) |
 | geodynamics | physics, fluid | jamming↔unjamming yield, plate break-up |
 | geochronology | physics, geodynamics | incorporation/dating limit |
 | wave-computer | physics (P2 clock-free; literature principles) | clock-free phase computation; carrier invariance ⇒ low-frequency thought possible (no numbers taken from neuro or mind) |
@@ -172,7 +172,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 1 | physics | 1 | VP Theory | `c²=B/ρ ; mₚ/mₑ=6π⁵` | 10.5281/zenodo.17932566 |
 | 2 | fluid-dynamics | 1 | Configured Continuum | `∂ρ/∂t + ∇·(ρu)=0` on jammed medium | 10.5281/zenodo.17972568 |
 | 3 | cosmology | 1 | Vacuum-Inflow Cosmology | `a₀ = cH₀/2π` | 10.5281/zenodo.20568874 |
-| 4 | chemistry | 1 | VP Chemistry & EM | `c²=B/ρ` (0.06% sim); `φ_RCP=0.7405` (flag: 0.7405 is FCC, RCP ≈ 0.64) | 10.5281/zenodo.20680540 |
+| 4 | chemistry | 1 | VP Chemistry & EM | EM on the jammed substrate; chemistry from one electron picture (0.7405 is the FCC crystal value, used as such) | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
 | 7 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |

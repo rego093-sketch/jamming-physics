@@ -17,7 +17,7 @@ TAGS = {
  'physics':['jammed lattice','c²=B/ρ','6π⁵'],
  'fluid-dynamics':['jammed continuum','Navier–Stokes'],
  'cosmology':['vacuum inflow','a₀=cH₀/2π'],
- 'chemistry':['single anchor','φ_RCP=0.7405'],
+ 'chemistry':['single anchor','φ_FCC=0.7405 (crystal packing)'],
  'geodynamics':['jamming↔unjamming','cusp'],
  'geochronology':['incorporation limit'],
  'continental-genesis':['buoyancy gate','percolation-bounded ~0.4–0.5','freeboard +840 m'],

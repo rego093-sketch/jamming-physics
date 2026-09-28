@@ -19,6 +19,7 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §6</nav></header>
 <main><!--vp-v1.8-->
 <h1>Galactic Rotation and the a₀ Scale</h1>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-28). <strong>Where the 2π comes from.</strong> The 2π in a₀ = cH₀/2π is not chosen here. It is inherited from the physics volume, where it is the full-cycle constant α/δ = (2/π)/(1/π²) = 2π, the same 2π that appears in mₚ/mₑ = 2π·3π⁴ = 6π⁵. The code shows this identity (<code>ch6_galaxy_rar.py</code> (E)). What the data say is separate. The galaxy data fix the coefficient k in a₀ = cH₀/k only to about 5–7, and 2π lies inside that band, so the inherited value is consistent with data but not singled out by them (<code>ch6_galaxy_rar.py</code> (D)). H₀ is a measured input, so the result is a relation between a₀ and H₀: a₀ = 1.04–1.13×10⁻¹⁰ m/s² for H₀ = 67.4–73, that is 0.87–0.94 of the empirical 1.2×10⁻¹⁰, within its ≈20% systematic spread. <strong>Disclosures.</strong> The NGC 2403 fit below (Υ = 0.567, χ²/dof = 1.99) was run at the empirical a₀ = 1.2×10⁻¹⁰. At the derived 1.08×10⁻¹⁰ it gives Υ = 0.606 and χ²/dof = 2.57. The interpolation between the Newtonian and flat-curve limits is taken in the standard RAR form, not derived. Code: <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/legacy_v2_3/" rel="noopener">repro/cosmology/legacy_v2_3</a>.</aside>
 <p class="answer">This is the first chapter whose central result is distinguishing rather than degenerate. Once the cosmic background inflow is included, the same inflow law departs from Newton in the weak field of galaxies, producing flat rotation curves and the acceleration scale a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m/s². Why this is distinguishing is examined separately.</p>
 <p class="abstract">With the cosmic background inflow included, the inflow law that gives Newtonian gravity in the solar system departs from Newton in the weak field of galaxies. The departure produces flat rotation curves and a characteristic acceleration scale a₀ = cH₀/2π ≈ 1.08×10⁻¹⁰ m/s², set by the cosmic inflow rate rather than fitted, the volume's first non-degenerate result.</p>
 <aside class="claim-strip page"><span class="g g-distinguishing" data-phase2="grade">Distinguishing</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
@@ -48,7 +49,7 @@ explain <em>why</em> the scale in (ii) takes the value it does.</p>
 <ol>
 <li> <strong>The local inflow.</strong> A galaxy's baryons are sinks of the medium (Chapter 3), so
 they set up a local inflow whose Newtonian acceleration at radius r is
-g_N=GM_(bar)(<r)/r², with GM_(bar)=κQ_(bar) as in
+g_N=GM_(bar)(&lt;r)/r², with GM_(bar)=κQ_(bar) as in
 Chapter 3. This term alone gives Kepler and is what dark-matter advocates compute as
 “baryons only.”
 <li> <strong>The background inflow.</strong> The medium is not static. The cosmological redshift
@@ -69,7 +70,7 @@ compared with a body's own inflow.</p>
 the factor 2π of one full wave cycle:
 <figure class="eq" id="eq:a0"><img src="/cosmology/eq/cosmology/cos-06-002.svg" data-eq="cos-06-002" width="212" height="52" loading="lazy" alt="\begin{equation} \boxed{\;a_{0} \;=\; \frac{c^{2}\kappa_{\mathrm{opt}}}{2\pi}\;=\;\frac{c\,H_{0}}{2\pi}.\;} \end{equation}"></figure>
 <p>This 2π is the <em>wave-cycle</em> factor, and in this framework it is <em>derived</em>, not
-inserted. The redshift rate κₒₚₜ=H₀/c (Eq. <a class="xref" data-ref="eq:kopt">(kopt)</a>) is the background lattice wave's
+inserted. The redshift rate κₒₚₜ=H₀/c (Eq. <a class="xref" data-ref="eq:kopt" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#eq:kopt">(kopt)</a>) is the background lattice wave's
 spatial frequency—a wavenumber. One full cycle of that wave (the cosine completing its 2π
 period) spans the wavelength λ_(bg)=2π/κₒₚₜ=2π c/H₀=2π R_H;
 equivalently the angular processing rate ω_(bg)=cκₒₚₜ=H₀ corresponds to the
@@ -79,14 +80,14 @@ a_(bg)=c²κₒₚₜ=cH₀ is the per-radian value; one full cycle is 2π radia
 the division.) The factor is therefore the framework's <em>canonical full-cycle constant</em>,</p>
 <figure class="eq" id="eq:2pi-alphadelta"><img src="/cosmology/eq/cosmology/cos-06-003.svg" data-eq="cos-06-003" width="770" height="47" loading="lazy" alt="\begin{equation} 2\pi \;=\; \frac{\alpha}{\delta}\;=\;\frac{2/\pi}{1/\pi^{2}},\qquad \alpha=\langle|\cos\theta|\rangle=\tfrac{1}{2\pi}\!\int_{0}^{2\pi}\!|\cos\theta|\,d\theta=\tfrac{2}{\pi}, \quad \delta=\Big(\tfrac{1}{2\pi}\!\int_{0}^{2\pi}\![\cos\theta]_{+}\,d\theta\Big)^{2}=\tfrac{1}{\pi^{2}}, \end{equation}"></figure>
 <p>the derived ratio of the two cosine-integral rectification constants (physics volume,
-DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}, §5.1–5.2 and §13.5.5)—the <em>same</em> 2π that gives
+DOI <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener"><code>10.5281/zenodo.17932566</code></a>, §5.1–5.2 and §13.5.5)—the <em>same</em> 2π that gives
 mₚ/mₑ=2π·3π⁴=6π⁵. The horizon route is a consistency cross-check, not the
 source: the de Sitter horizon at R_H=c/H₀ returns the same a≃ cH₀/2π through the
 Unruh relation (Verlinde), and its 2π—the periodicity of the Euclidean thermal cycle—is this
 same full-cycle constant. What remains a <em>modelling</em> choice, honestly flagged (Status, §5), is
 the identification of the relevant length as the full wavelength λ_(bg) rather than
 the reduced barλ=1/κₒₚₜ=R_H (which would give the bare cH₀); the wave picture and
-the  90% empirical match (Table <a class="xref" data-ref="tab:a0">(a0)</a>) support the full-cycle reading.</p>
+the  90% empirical match (Table <a class="xref" data-ref="tab:a0" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#tab:a0">(a0)</a>) support the full-cycle reading.</p>
 <li> <strong>The combined law and its two limits.</strong> With a₀ fixed, the effective
 acceleration is the one-parameter interpolation
 <figure class="eq" id="eq:law"><img src="/cosmology/eq/cosmology/cos-06-004.svg" data-eq="cos-06-004" width="481" height="46" loading="lazy" alt="\begin{equation} a \;=\; g_{N}\,\nu\!\left(\frac{g_{N}}{a_{0}}\right), \qquad \nu(x)=\frac{1}{1-e^{-\sqrt{x}}}\;\xrightarrow{x\gg1}1,\;\xrightarrow{x\ll1}\frac{1}{\sqrt{x}} . \end{equation}"></figure>
@@ -98,7 +99,7 @@ acceleration is the one-parameter interpolation
 a=√a₀g_N=√a₀GM/r, giving v²=ar=√a₀GM=const —
 a <strong>flat rotation curve</strong>, and v⁴=a₀GM_(bar) — the <strong>BTFR</strong>.
 </ul>
-<li> <strong>The number.</strong> Equation <a class="xref" data-ref="eq:a0">(a0)</a> evaluates (Table <a class="xref" data-ref="tab:a0">(a0)</a>) to
+<li> <strong>The number.</strong> Equation <a class="xref" data-ref="eq:a0" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#eq:a0">(a0)</a> evaluates (Table <a class="xref" data-ref="tab:a0" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#tab:a0">(a0)</a>) to
 a₀≈1.08×10⁻¹⁰ms⁻² for H₀=70, i.e. 90% of the
 empirical RAR scale 1.2×10⁻¹⁰, with the value rising from 0.87× to 0.94×
 across the measured range of H₀.
@@ -114,7 +115,7 @@ compared with the empirical RAR value 1.2×10⁻¹⁰ms⁻².</figcaption>
 <p>Two checks, both reproducible (<code>ch6_galaxy_rar.py</code>).</p>
 <h4>The RAR over  10 decades.</h4>
  Figure <a class="xref" data-ref="fig:gal">(gal)</a> (left) plots the single
-law <a class="xref" data-ref="eq:law">(law)</a>. The Solar-System points (Mercury through Neptune, g_N 10⁰ to
+law <a class="xref" data-ref="eq:law" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#eq:law">(law)</a>. The Solar-System points (Mercury through Neptune, g_N 10⁰ to
 10⁻⁵ms⁻²) lie on the Newtonian diagonal a=g_N; the data of NGC 2403
 (g_N 10⁻¹¹ms⁻²) lie on the deep branch a=√a₀ g_N; one curve
 connects them across about ten decades in acceleration, with the bend at a₀. The framework
@@ -122,7 +123,7 @@ thus places the Solar System and galaxies on the <em>same</em> acceleration rela
 and outer limits of one inflow law.
 <h4>NGC 2403.</h4>
  Figure <a class="xref" data-ref="fig:gal">(gal)</a> (right) fits the measured rotation curve of NGC 2403
-(73 points, SPARC) with the law <a class="xref" data-ref="eq:law">(law)</a> at the derived a₀, the only adjustable
+(73 points, SPARC) with the law <a class="xref" data-ref="eq:law" href="/cosmology/06-galactic-rotation-derivation-a0-ch0/#eq:law">(law)</a> at the derived a₀, the only adjustable
 quantity being the stellar disk mass-to-light ratio Υ. The fit gives
 Υ=0.567 (a normal stellar value) and χ²/dof=1.99; the outer speed is
 reproduced (v_(obs)≃134kms⁻¹ against a baryons-only Newtonian

@@ -18,6 +18,7 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/chemistry/">VP Chemistry &amp; EM</a> › §2</nav></header>
 <main>
 <h1>Chemistry from a single anchor</h1>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-28). “Single anchor” means one physical picture, the electron as a rotating quantum on the lattice. The measured inputs are the electron mass mₑ and αₑₘ (form derived, value measured), plus the calibration inputs marked [CAL]. Results such as the Bohr radius and the Aufbau order are standard quantum mechanics evaluated from those inputs. VP’s claim is the lattice picture behind them. <strong>The 0.06% figure.</strong> It comes from a one-dimensional chain. In 1-D there is no shear mode, so c² = B/ρ holds by construction, and the figure also depends on the packet width. It is a consistency check, not evidence. The evidence for c² = B/ρ is the three-dimensional isostatic test on five observables and test E2 in the physics volume (a measured wavelength linked to the electron scale at ±10%). Light: E is the transverse swing and B the lattice’s rotational response ([H]); see <a href="/physics/lt-light-chain-doubts-and-resolutions/">physics §LT Link 6a</a>.</aside>
 
 <p class="answer">Chemistry follows from sphere geometry on the jamming substrate with zero free parameters: maximally separated points on a sphere give the tetrahedral bond angle arccos(−1/3) = 109.47°, temperature is rotational excitation, equilibrium is ΔG = ΔH − TΔS, and the Daniell cell sits at 1.10 V. Every forced result is parameter-free.</p>
 
@@ -29,7 +30,7 @@
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/chemistry/" rel="noopener">Reproduction code (GitHub)</a>
   <a href="https://doi.org/10.5281/zenodo.20680540" rel="noopener">DOI snapshot</a>
 </aside>
-<aside class="vp-card" data-locked="c2_brho" data-concept="c2_brho"><b>c² = B/ρ</b> — light is the single longitudinal wave that survives at the jammed lattice's isostatic point (shear modulus → 0); reproduced to 0.06%. <b>[V]</b> verified. <a href="/chemistry/01-electromagnetism-jammed-lattice-light/#em.2-light-emergence-the-keystone-fv" rel="noopener">Canonical derivation §1 (EM.2)</a> · <a href="/concepts/#c2_brho">용어</a></aside>
+<aside class="vp-card" data-locked="c2_brho" data-concept="c2_brho"><b>c² = B/ρ</b> — the one elastic branch that survives at the jammed lattice's isostatic point (shear modulus → 0) is the longitudinal carrier that sets c; light's E and B are the transverse swing it carries ([H]). 3-D evidence: physics five-observable test and E2 (the 1-D 0.06% check is not evidence). <b>[V]</b> verified. <a href="/chemistry/01-electromagnetism-jammed-lattice-light/#em.2-light-emergence-the-keystone-fv" rel="noopener">Canonical derivation §1 (EM.2)</a> · <a href="/concepts/#c2_brho">용어</a></aside>
 
 <p>Status grades: <strong>[F]</strong> forced (zero free parameters) ·
 <strong>[F?]</strong> forced-candidate (model-dependent or &lt;1.5%) ·
@@ -67,7 +68,7 @@ shell-filling integers [2,8,8,18,18,32] — these are pure
 geometry/integers with no knob.</p>
 <p><strong>Prong B — calibration inputs are used as forward
 predictions.</strong> Measured constants (spectroscopic B,ν; bond
-enthalpy Δ H; mathrm pKₐ; standard potential E^∘) are each fixed
+enthalpy Δ H; mathrm pKₐ; standard potential E°) are each fixed
 <em>once</em> and used consistently. Quantities <em>derived</em> from
 them — standard entropy, equilibrium constants, cell potentials — then
 match measurement; that is prediction, not fitting.</p>
@@ -110,8 +111,8 @@ a sphere (the Thomson problem). Module
 <figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-002.svg" width="659" height="32" alt="\text{linear } 180^\circ,\quad \text{trigonal } 120^\circ,\quad
    \boxed{\text{tetrahedral } \arccos(-\tfrac13) = 109.47^\circ},\quad \text{octahedral } 90^\circ." loading="lazy"></figure>
 <p>All have zero free parameters <strong>[F]</strong>; the simulation
-reproduces the closed form arccos(-1/3)=109.47^∘. Lone-pair compression
-(CH₄ → NH₃ → H₂O: 109.5^∘ → 107^∘ → 104.5^∘) has the correct direction
+reproduces the closed form arccos(-1/3)=109.47°. Lone-pair compression
+(CH₄ → NH₃ → H₂O: 109.5° → 107° → 104.5°) has the correct direction
 <strong>[F?]</strong>; the precise magnitude is <strong>[O]</strong>.
 Bond rupture follows a scale-invariant √2 diagonal-stretch geometry
 shared with nuclear fission (Chapter EM links the same 1/r²); absolute
@@ -132,7 +133,7 @@ ratio</p>
 <h2 id="ch.6-light-optics-color-see-chapter-em-fcal">CH.6 Light, optics,
 color — see Chapter EM <strong>[F]/[CAL]</strong></h2>
 <p>The optical consequences (propagation angle sinχ = λ/(mD), Snell,
-rainbow 42.1^∘, total-internal-reflection critical angle, blackbody, d–d
+rainbow 42.1°, total-internal-reflection critical angle, blackbody, d–d
 color) are developed in <strong>Chapter EM</strong>. Chemistry
 <em>consumes</em> the electromagnetic mechanism from physics §10/§14; it
 does not re-derive it. The boundary is explicit: fundamental EM (light
@@ -142,10 +143,10 @@ physics; the chemical/optical consequences are here.</p>
 Thermodynamics: rotational energy → temperature
 <strong>[F]/[F?]</strong></h2>
 <p>Temperature is a rotational-energy scale; rotational levels E_J = B
-hc J(J+1). Heat-capacity degrees-of-freedom: monatomic tfrac32 R,
+hc J(J+1). Heat-capacity degrees-of-freedom: monatomic 3⁄2 R,
 diatomic tfrac52 R, solid Dulong–Petit 3R (&lt;3%). Module
 <code>vp_statistical_thermo.py</code> reproduces the H₂ heat-capacity
-<strong>staircase</strong> (tfrac32 R at 20 K → tfrac52 R at 298 K →
+<strong>staircase</strong> (3⁄2 R at 20 K → tfrac52 R at 298 K →
 tfrac72 R above ~6332 K) with activation temperatures Tᵣₒₜ = 88 K,
 T₍vib) = 6332 K from B,ν; Cᵥ(H₂) 20.81 vs 20.4 (+2.0%)
 <strong>[F]</strong>. Standard molar entropy (Sackur–Tetrode + rotation
@@ -193,7 +194,7 @@ symmetric with proton transfer (CH.10). The cell potential is</p>
 <figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-005.svg" width="551" height="37" alt="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}, \qquad
    \Delta G^\circ = -nFE^\circ,\qquad E = E^\circ - \frac{RT}{nF}\ln Q." loading="lazy"></figure>
 <p>Module <code>vp_electrochemistry.py</code> gives the Daniell cell
-E^∘₍cell) = 1.10 V (matches measured) and Δ G^∘ = -212 kJ/mol
+E°₍cell) = 1.10 V (matches measured) and Δ G° = -212 kJ/mol
 <strong>[F]</strong>. The standard-potential series (Li −3.04 → F₂
 +2.87) links to IE and electronegativity; individual values are
 <strong>[CAL]</strong>.</p>
@@ -202,8 +203,8 @@ Organic chemistry: carbon skeleton on EM geometry
 <strong>[F]</strong></h2>
 <p>Carbon’s tetravalence plus EM repulsion gives hybridization geometry
 (the same VSEPR engine as CH.4): module
-<code>vp_organic_chemistry.py</code> gives sp³ tetrahedral 109.5^∘, sp²
-planar 120^∘, sp linear 180^∘. Bond order–length–strength:</p>
+<code>vp_organic_chemistry.py</code> gives sp³ tetrahedral 109.5°, sp²
+planar 120°, sp linear 180°. Bond order–length–strength:</p>
 <figure class="eq"><img src="/chemistry/eq/chemistry/chm-02-006.svg" width="381" height="94" alt="\begin{array}{lccc}
  &amp; \text{order} &amp; \text{length} &amp; \text{strength (kJ/mol)}\\
 \text{C–C} &amp; 1\ (1\sigma) &amp; 154\ \text{pm} &amp; 348\\
@@ -231,19 +232,19 @@ ledger — forced / measured input / open</h2>
 <p><strong>[F] forced (zero free parameters — cannot be tuned):</strong>
 shell filling and period lengths; valence, oxidation, ionic formulas;
 all VSEPR angles (arccos(-1/3) etc.); Δₜₑₜ/ Δ₍oct)=4/9; packing
-fractions; propagation angle sinχ=λ/(mD); rainbow 42^∘; Snell, critical
+fractions; propagation angle sinχ=λ/(mD); rainbow 42°; Snell, critical
 angle; Cᵥ(T) staircase and activation temperatures; dissociation-
 temperature order and Le Chatelier; Arrhenius, 10 K doubling, k_BT/h;
-pH, buffers, titration; E^∘₍cell), Δ G=-nFE^∘, Nernst; hybridization,
+pH, buffers, titration; E°₍cell), Δ G=-nFE°, Nernst; hybridization,
 bond order, unsaturation; Gauss magic-number skeleton.</p>
 <p><strong>[CAL] calibration input (measured constants, used
 consistently — never tuned per case):</strong> spectroscopic B,ν; bond
-enthalpy Δ H; mathrm pKₐ; standard potential E^∘; spectrochemical
+enthalpy Δ H; mathrm pKₐ; standard potential E°; spectrochemical
 series; absolute refractive index n; spin–orbit strength (magic 50,
 126); the fine-structure coupling αₑₘ.</p>
 <p><strong>[O] open (honest — not disguised as solved):</strong>
 absolute multi-electron IE (screening); electron affinity (Slater sign
-failure); absolute mathrm pKₐ, E^∘ (solvation); multi-band precise
+failure); absolute mathrm pKₐ, E° (solvation); multi-band precise
 color; absolute bond energy (anharmonicity); d-block absolute IE;
 absolute rates and stereoselectivity; nuclear shell-correction masses;
 pure-π geometry of 50, 126.</p>
@@ -265,18 +266,18 @@ electrochemistry all ride on rotational energy. The single anchor
 <p>Forced results cannot be re-fitted, so they are refuted on
 disagreement:</p>
 <ul>
-<li>If the tetrahedral angle is not arccos(-1/3)=109.47^∘, the VSEPR-EM
+<li>If the tetrahedral angle is not arccos(-1/3)=109.47°, the VSEPR-EM
 derivation is discarded.</li>
 <li>If Δₜₑₜ/Δ₍oct) ≠ 4/9, the crystal-field geometry is discarded.</li>
-<li>If the rainbow angle is not ≈ 42^∘, the light-angle/refraction
+<li>If the rainbow angle is not ≈ 42°, the light-angle/refraction
 derivation is discarded.</li>
-<li>If H₂ heat capacity shows no tfrac32→tfrac52→tfrac72 R staircase, or
+<li>If H₂ heat capacity shows no 3⁄2→tfrac52→tfrac72 R staircase, or
 the activation temperatures disagree with B,ν, the partition-function
 account is discarded.</li>
 <li>If dissociation temperatures do not follow the bond-strength order,
 the equilibrium derivation is discarded.</li>
-<li>The committed light-angle predictions χ(632.8 nm)=89.892^∘, χ(532
-nm)=89.825^∘ are falsifiable forward predictions (Chapter EM).</li>
+<li>The committed light-angle predictions χ(632.8 nm)=89.892°, χ(532
+nm)=89.825° are falsifiable forward predictions (Chapter EM).</li>
 </ul>
 <h2 id="ch.17-reproducibility">CH.17 Reproducibility</h2>
 <p>Thirty deterministic, standard-library modules and a 114-row case

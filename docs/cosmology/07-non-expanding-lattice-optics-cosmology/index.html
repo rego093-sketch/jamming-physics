@@ -19,6 +19,7 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §7</nav></header>
 <main><!--vp-v1.8-->
 <h1>A Non-Expanding, Lattice-Optics Cosmology</h1>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-28). <strong>Supernovae: data decide.</strong> The numbers on this page reproduce: χ²/dof = 0.499 for the lattice-optics model and 0.444 for ΛCDM, on the same 1580 Pantheon+ SNe with one marginalised offset each (<a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/scripts/ch7_sne.py" rel="noopener">ch7_sne.py</a>). That gap is Δχ² = +86.6 in favour of ΛCDM, computed with diagonal errors. It is <strong>not</strong> degenerate, and the sentence "both fit comparably" is withdrawn. The model is disfavoured by this data set. The angular-size minimum (z ≈ 1.72 against 1.61) remains the proposed distance-ladder-free test.</aside>
 <p class="answer">This chapter shows that the supernova Hubble diagram — usually read as evidence for cosmic acceleration and dark energy — is reproduced without expansion, by treating redshift as light losing energy to the lattice over distance rather than space stretching. No cosmic acceleration and no dark energy are invoked. The Hubble tension is treated separately.</p>
 <p class="abstract">The supernova Hubble diagram is usually read as evidence that cosmic expansion is accelerating, requiring dark energy. Here it is reproduced with no expansion at all: redshift is light losing energy to the lattice (photon energy ∝ 1/(1+z)) over distance, and the apparent dimming of distant supernovae follows without acceleration. No dark energy enters; the fit is a present-optics account.</p>
 <aside class="claim-strip page"><span class="g g-degenerate" data-phase2="grade">Degenerate</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
@@ -58,7 +59,7 @@ v0.6.0 handover):</em> with a per-step loss ε at the step length ℓ_(rot),
 εll1 — the lattice reading of the same exponential law. The operational registry (the
 equation skeleton, the κ-LOCK protocol, the hard-gate registrations, and the <code>E-COSMO</code>
 embargo) remains in the physics volume, §17.5; this chapter owns the development.</p>
-<li> <strong>Proper distance.</strong> Inverting <a class="xref" data-ref="eq:redshift">(redshift)</a>, the distance light has travelled is
+<li> <strong>Proper distance.</strong> Inverting <a class="xref" data-ref="eq:redshift" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:redshift">(redshift)</a>, the distance light has travelled is
 <figure class="eq" id="eq:Dc"><img src="/cosmology/eq/cosmology/cos-07-001.svg" data-eq="cos-07-001" width="184" height="37" loading="lazy" alt="\begin{equation} D=s=\frac{c}{H_{0}}\,\ln(1+z). \end{equation}"></figure>
 <li> <strong>Luminosity distance.</strong> The flux received from a source of luminosity L is reduced
 by three factors: geometric spreading over 4π D²; the energy lost per photon, a factor
@@ -72,11 +73,11 @@ in time as the lattice is processed, so an interval emitted long ago is observed
 observed. This is the decisive break from classical static “tired light,” which predicts
 <em>no</em> time dilation (a stretching exponent b=0) and is excluded by the data; here the
 (1+z) stretch is built in, and it is the second of the two (1+z) factors in
-Eq. <a class="xref" data-ref="eq:dL">(dL)</a>.</p>
+Eq. <a class="xref" data-ref="eq:dL" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dL">(dL)</a>.</p>
 <p><strong>Grounding (v2.1; physics volume §18).</strong> The two (1+z) factors are not independent assumptions. In the physics volume's time sector (§18, the processing-rate clock), a clock's rate is the local medium signal speed √(K/ρ_eff), and the refractive index n=c_ref/c_med is that <em>same</em> signal speed. A cosmic evolution of ρ_eff therefore moves the index and the clock rate by the <em>same</em> factor, so the energy-loss (1+z) of Step 1 and the arrival-rate (1+z) of Step 4 are one and the same medium quantity,</p>
 <figure class="eq" id="eq:timedil-grounding"><img src="/cosmology/eq/cosmology/cos-07-007.svg" data-eq="cos-07-007" width="298" height="45" loading="lazy" alt="\begin{equation} 1+z=\frac{n(t_{\mathrm{obs}})}{n(t_{\mathrm{em}})} =\frac{c_{\mathrm{med}}(t_{\mathrm{em}})}{c_{\mathrm{med}}(t_{\mathrm{obs}})} =e^{\kappa_{\mathrm{opt}} s}. \end{equation}"></figure>
 <p>with stretch exponent b=1 (not the tired-light b=0). This <em>grounds</em> the time dilation in the imported c²=K/ρ (P1, P4) rather than positing it. What stays <code>[INPUT]</code> is the rate κ_opt=H₀/c; <em>why</em> ρ_eff evolves over cosmic time is the <code>E-COSMO</code> question (physics §17.5) and remains open.</p>
-<li> <strong>No dark energy is needed.</strong> The form <a class="xref" data-ref="eq:dL">(dL)</a> fits the supernova Hubble diagram
+<li> <strong>No dark energy is needed.</strong> The form <a class="xref" data-ref="eq:dL" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dL">(dL)</a> fits the supernova Hubble diagram
 with no accelerating term (§3). What ΛCDM attributes to dark energy is here the gentle
 curvature of (1+z)ln(1+z).
 <li> <strong>Angular size and its minimum.</strong> The angular-diameter distance follows from the
@@ -97,14 +98,14 @@ compilation (1580 supernovae with z>0.01, calibrators removed).</p>
 <h4>The supernova Hubble diagram.</h4>
  Fitting the distance modulus μ=5log₁₀d_L+25
 with a single marginalised offset (absorbing H₀ and the absolute magnitude), the
-lattice-optics distance <a class="xref" data-ref="eq:dL">(dL)</a> gives χ²/dof=0.50, against
+lattice-optics distance <a class="xref" data-ref="eq:dL" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dL">(dL)</a> gives χ²/dof=0.50, against
 χ²/dof=0.44 for ΛCDM (Ω_(Λ)=0.7); the two distance laws
-differ by at most |Δμ|=0.145mag over 0<z<2.3, comparable to the per-supernova
+differ by at most |Δμ|=0.145mag over 0&lt;z&lt;2.3, comparable to the per-supernova
 scatter ( 0.15mag). The data therefore do not distinguish them
 (Fig. <a class="xref" data-ref="fig:cosmo">(cosmo)</a>, left): <em>a static medium with no dark energy fits the Hubble diagram
 as well as accelerating ΛCDM.</em>
 <h4>The angular-size minimum.</h4>
- Evaluating Eq. <a class="xref" data-ref="eq:dA">(dA)</a> numerically locates the
+ Evaluating Eq. <a class="xref" data-ref="eq:dA" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dA">(dA)</a> numerically locates the
 minimum of the angular size at z_(min)=1.718, matching the analytic e-1, versus 1.605 for
 ΛCDM (Fig. <a class="xref" data-ref="fig:cosmo">(cosmo)</a>, right). Unlike the Hubble diagram, this is a qualitative
 difference in <em>where</em> standard rulers stop shrinking, and it needs no distance calibration.
@@ -112,7 +113,7 @@ difference in <em>where</em> standard rulers stop shrinking, and it needs no dis
 
 <h2>Status of this chapter</h2>
 <ul>
-<li> <strong>Degenerate (the supernova fit).</strong> The lattice-optics distance <a class="xref" data-ref="eq:dL">(dL)</a> and
+<li> <strong>Degenerate (the supernova fit).</strong> The lattice-optics distance <a class="xref" data-ref="eq:dL" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dL">(dL)</a> and
 ΛCDM fit the Pantheon+ Hubble diagram equally well; the supernovae do <em>not</em> prefer
 this picture. The honest, limited conclusion is that <strong>“dark energy” is
 interpretation-contingent</strong>—it is required by the expanding reading, not by the raw flux–redshift
@@ -120,22 +121,22 @@ data. We claim no observational advantage here. <em>(Cross-volume, v2.1: the phy
 <li> <strong>Distinguishing in principle, but presently undecidable.</strong> The angular-size minimum at
 z=e-1≈1.72 (vs ≈1.61) is a falsifiable, distance-ladder-free prediction (conditional
 on the focusing assumption, item (ii) below); however the θ(z) curves differ by under
-0.3% near the flat minimum, far below the gtrsim20% intrinsic scatter of the standard rulers
+0.3% near the flat minimum, far below the ≳20% intrinsic scatter of the standard rulers
 that reach these redshifts, so it cannot at present separate this picture from ΛCDM (the
 distance relation is observationally near-degenerate—see “The distinguishing prediction”
 below). The framework also passes the test that most cleanly excludes static tired light—the
-(1+z) light-curve stretch (Eq. <a class="xref" data-ref="eq:timedil">(timedil)</a>), built in through the time-varying index; the
+(1+z) light-curve stretch (Eq. <a class="xref" data-ref="eq:timedil" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:timedil">(timedil)</a>), built in through the time-varying index; the
 (1+z)⁻⁴ surface-brightness dimming follows only under that same focusing assumption.
 <li> <strong>Candidate mechanism (Hubble tension).</strong> Because H_(inf) is a line-of-sight
 average of κₒₚₜ, an environment-dependent coupling reproduces the local-vs-global H₀
-discrepancy at the right order (Eq. <a class="xref" data-ref="eq:hubble-tension">(hubble-tension)</a>); this is a \textsf{HYP}/\textsf{SPEC}
+discrepancy at the right order (Eq. <a class="xref" data-ref="eq:hubble-tension" href="/cosmology/07-hubble-tension-line-of-sight-averaging/#eq:hubble-tension">(hubble-tension)</a>); this is a [HYP]/[SPEC]
 mechanism, not a parameter-free fit, and its honest test is the predicted correlation of H₀
 with local density and with direction.
 <li> <strong>Open / flagged.</strong> (i) The supernova fit uses <em>diagonal</em> errors; the full
 Pantheon+ covariance would tighten the comparison, though the degeneracy holds at present
 precision. (ii) The reciprocity d_A=d_L/(1+z)² in an <em>absorbing</em> medium, on which
-both Eq. <a class="xref" data-ref="eq:zmin">(zmin)</a> and the (1+z)⁻⁴ dimming rest, is justified at the level of the
-lattice optics in the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}, but is treated as a <em>hard gate</em> in the
+both Eq. <a class="xref" data-ref="eq:zmin" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:zmin">(zmin)</a> and the (1+z)⁻⁴ dimming rest, is justified at the level of the
+lattice optics in the physics volume, DOI <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener"><code>10.5281/zenodo.17932566</code></a>, but is treated as a <em>hard gate</em> in the
 cosmos-volume optics module: the static-Euclidean alternative (no focusing, d_A≈D)
 would instead give surface brightness (1+z)⁻² and a monotonic θ(z) with <em>no</em>
 minimum—distinguishable from ΛCDM, but differently. Demonstrating the focusing is the
@@ -149,7 +150,7 @@ hard-gate registrations and the <code>E-COSMO</code> embargo live in the physics
 
 <h2>Anticipated objections</h2>
 <h4>“The supernovae proved cosmic acceleration and dark energy.”</h4>
-<p>The raw flux–redshift relation is fit equally well by the static law <a class="xref" data-ref="eq:dL">(dL)</a> with no
+<p>The raw flux–redshift relation is fit equally well by the static law <a class="xref" data-ref="eq:dL" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:dL">(dL)</a> with no
 acceleration (§3). “Acceleration” and “dark energy” are inferences <em>within</em> the
 expanding-metric interpretation; the same data admit a static lattice-optics reading. We do not
 claim the static reading is correct—only that the supernovae do not establish dark energy
@@ -157,7 +158,7 @@ independently of the interpretation.</p>
 <h4>“This is just tired light, which is ruled out.”</h4>
 <p>Classical static tired light fails on two counts: it predicts no time dilation (light curves not
 stretched, b=0) and the wrong surface-brightness scaling. The decisive break here is the first:
-time dilation is built in through the time-varying index (Eq. <a class="xref" data-ref="eq:timedil">(timedil)</a>), giving the
+time dilation is built in through the time-varying index (Eq. <a class="xref" data-ref="eq:timedil" href="/cosmology/07-non-expanding-lattice-optics-cosmology/#eq:timedil">(timedil)</a>), giving the
 observed (1+z) light-curve stretch—which static tired light cannot produce. The
 (1+z)⁻⁴ surface brightness follows additionally <em>if</em> the lattice realizes the reciprocity
 focusing (Status, item (ii)); absent that it would be (1+z)⁻². Either way the time-dilation
@@ -175,7 +176,7 @@ minimum: <strong>standard rulers should appear smallest at z≈1.72</strong>, no
 reach, however, must be stated honestly. The shift in z_(min) (0.13) is real, but the
 θ(z) curves themselves differ by under 0.3% near the (flat) minimum and only  2% by
 z=2.5. Meanwhile the only standard rulers reaching these redshifts—compact radio
-sources—carry intrinsic size-evolution scatter of gtrsim20%, and recent analyses estimate
+sources—carry intrinsic size-evolution scatter of ≳20%, and recent analyses estimate
 that  10⁵ such sources (with a standardisation) would be needed merely to constrain
 cosmology at the ΛCDM-versus-alternatives level—far short of resolving a 0.13 shift in
 z_(min). So while distance-ladder-free <em>in principle</em>, this minimum cannot at present
@@ -199,7 +200,7 @@ Expected output is exactly these numbers. Data: Pantheon+
 (Scolnic et al. 2022; Brout et al. 2022), shipped with the package.
 <em>Next stage: Chapter 8 (“dark matter” as a vacuum deficit that gravitates,
 lenses, and goes dark), which supplies the microphysics behind the galactic law of Chapter 6.
-Foundations continue to be imported from the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}.</em>
+Foundations continue to be imported from the physics volume, DOI <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener"><code>10.5281/zenodo.17932566</code></a>.</em>
 <nav class="pn"><a rel="prev" href="/cosmology/06-why-galactic-rotation-distinguishing/">← §6.1</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/07-hubble-tension-line-of-sight-averaging/">§7.1 →</a></nav>
 </main>
 <footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
