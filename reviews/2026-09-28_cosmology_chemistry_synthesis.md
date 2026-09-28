@@ -67,3 +67,18 @@
 - 9쪽 가운데 7쪽에서 LaTeX가 노출된다.
 - `*CO`의 `*`가 사라진다.
 - §3–§7 첫 줄이 잘린 문장 조각으로 시작한다.
+
+## 저자 제공 옛 자료 반영 (2026-09-28)
+
+**cosmology** (`VP_reproducibility_v2_3.zip`, 옛 버전)
+- `repro/cosmology/legacy_v2_3/`에 넣었다. 스크립트 27개 모두 실행됐고(0 실패) NGC 2403·Pantheon+ 데이터도 포함한다.
+- 사이트 페이지가 인용한 스크립트 59개 중 27개를 복원했다. 과학 스크립트 약 24개(Ch10–15, 음향 봉우리, 중력파, BBN 등)는 아직 없다.
+- 확정된 사실 세 가지:
+  1. NGC 2403 적합은 경험값 a₀=1.2e-10으로 돌렸다. 코드 주석에 그렇게 적혀 있다.
+  2. 2π에 대해 코드 스스로 "SELECTED by motivation + match, NOT derived; data fix k only to 5–7"이라고 쓴다. 페이지의 [F] 등급은 코드와 맞지 않는다.
+  3. 초신성 χ²/dof는 0.499 대 0.444로 재현된다. 이는 Δχ²≈87(ΛCDM 우세)에 해당한다. 코드의 "comparable"이라는 판정은 데이터와 맞지 않는다.
+
+**chemistry** (`handoff_chemistry-v1_8-upgrade_1.zip`)
+- §7 코드는 저장소와 동일하다.
+- IRREPRODUCIBILITY_LEDGER도 이미 있다.
+- §1–§6 모듈(`vp_bond_energy.py`, `vp_dblock_chemistry.py`, `vp_desalination.py`, `verify_chemistry.py` 등)은 이번 자료에도 없다.
