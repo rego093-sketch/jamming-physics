@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mass-Ratio Chain, Step by Step — VP Theory §MR | Jamming Physics</title>
+<meta name="description" content="How m_p/m_e = 6π⁵ follows from rotation, the cube and one declared mapping, written out with no step skipped, with every doubt a careful reader raises and its resolution.">
+<link rel="canonical" href="https://jamming-physics.org/physics/mr-mass-ratio-chain-6pi5-step-by-step/">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"The Mass-Ratio Chain, Step by Step: m_p/m_e = 6π⁵",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"MR",
+"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§MR The Mass-Ratio Chain, Step by Step"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §MR</nav></header>
+<main>
+<h1>MR. The Mass-Ratio Chain, Step by Step: m<sub>p</sub>/m<sub>e</sub> = 6π⁵</h1>
+<p class="answer">The Mass-Ratio Chain: the proton-to-electron mass ratio 6π⁵ = 1836.118 (measured 1836.153, −18.8 ppm) comes from four ingredients: a rotation averaged over its phase, the three-fold symmetry of the cube about the rotation axis, one counting rule, and one declared mapping from survival to rate. This page writes every step out, including the steps the main chapters leave implicit, and answers each doubt a careful reader raises.</p>
+<p class="abstract">The Mass-Ratio Chain: how 6π⁵ follows from rotation, the cube and one declared mapping, with no step skipped.</p>
+<aside class="claim-strip page"><span class="g">[F] under LOCK-NU-N · residual −18.8 ppm [O]</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/experiments/LEE/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>Why this page exists</h2>
+<p>The canonical derivation lives in <a href="/physics/05-geometric-rectification-constants-single-source/">§5</a>, <a href="/physics/07-3-sector-integerization-120-build/">§7</a>, <a href="/physics/08-discrete-proton-structure-82-7/">§8.0.5–8.0.6</a>, <a href="/physics/09-event-quantum-definition-canonical-event/">§9.4</a> and <a href="/physics/13-mass-u-lat-m-h/">§13.5</a>. Those chapters are written for a reader who already holds the whole picture, so several connecting steps are stated once, or not at all. Careful reviewers have repeatedly stopped at the same four places:</p>
+<ol>
+<li>Why is the average taken over a circle and not over a sphere?</li>
+<li>Why three sectors and not four?</li>
+<li>The exponent n − 1 seems to be explained in two different ways. Which one is it?</li>
+<li>Is using 1/δ as a rate a forbidden new role for δ?</li>
+</ol>
+<p>Each of these turns out to be a missing sentence, not a missing piece of physics. This page supplies those sentences. It changes no locked value. Grades: <strong>[F]</strong> forced, <strong>[F | lock]</strong> forced once a named definition is accepted, <strong>[O]</strong> open.</p>
+
+<h2>Step 1. The object: a quantum is a rotation about one axis</h2>
+<p>A rotational quantum rotates about <em>one</em> axis. Everything that rotates about a fixed axis has a state described by a single angle, its phase θ, which runs around a circle from 0 to 2π. The mathematical name for that circle is SO(2), or S¹. This is not a modelling choice. It is what "rotation about an axis" means.</p>
+<p>In the cubic cell of the jammed lattice, that axis is not arbitrary. It is the body diagonal that carries the net inflow, the single nozzle of <a href="/physics/08-discrete-proton-structure-82-7/">§8.0.4</a>. Why there is exactly one such axis is shown there. The eight corners (±1, ±1, ±1) split into one axis pair plus three antipodal pairs, and the three pairs sum to zero, so only the axis can carry a net flow.</p>
+
+<h2>Step 2. The two rectification constants are averages over the phase circle</h2>
+<p>A rotating quantum pushes on its neighbours only during the half of each turn when its push points outward. Mathematically, the effective push is the positive part of a cosine, [cos θ]₊, which equals cos θ when it is positive and 0 otherwise. Averaging over one full turn:</p>
+<p style="text-align:center">(1/2π) ∫₀^{2π} [cos θ]₊ dθ = 1/π.</p>
+<p>From this one integral come the two constants of <a href="/physics/05-geometric-rectification-constants-single-source/">§5</a>:</p>
+<ul>
+<li><strong>α = 2/π</strong>: the average of |cos θ| over the circle, which is both half-waves, 2 × (1/π). It is the fraction of a directional push that survives as a push along one line.</li>
+<li><strong>δ = 1/π²</strong>: the product of two independent half-wave survivals, (1/π) × (1/π). One is for the direction of the push and one for its internal sign. It is the chance that an event needing both to be "on" survives.</li>
+</ul>
+<p><strong>Doubt 1: "Why a circle? In three dimensions you should average over a sphere, which gives ⟨|cos|⟩ = 1/2 and a quite different number."</strong></p>
+<p><strong>Resolution.</strong> Averaging over the sphere S² would be correct if the quantity being averaged were the <em>direction of the axis</em>, that is, if the axis pointed anywhere at random. It does not. The axis is pinned to the nozzle diagonal (Step 1). What varies is the <em>phase</em> of the rotation about that fixed axis, and a phase lives on a circle. So the average is over S¹, and the sphere average answers a different question, one this chain never asks. The main text uses the phrase "every π is an averaged rotation" (§5.0) for exactly this point; the missing sentence is that the rotation axis is fixed, so the averaging space is the phase circle.</p>
+
+<h2>Step 3. Three sectors: the cube's symmetry about the rotation axis</h2>
+<p>Seen along a body diagonal, a cube has three-fold rotational symmetry, called C₃: turning it by 120° about that diagonal maps the cube onto itself (x → y → z → x). A rotating quantum lives on a continuous circle (Step 1), but the lattice around it only respects rotations by multiples of 120°. So the rotation plane is divided into <strong>n = 3</strong> equivalent sectors (<a href="/physics/08-discrete-proton-structure-82-7/">§8.0.1–8.0.3</a>, <a href="/physics/07-3-sector-integerization-120-build/">§7</a>).</p>
+<p><strong>Doubt 2: "In three dimensions the smallest set of directions that can push in every direction has four members, not three. Isn't n = 3 only true in a plane?"</strong></p>
+<p><strong>Resolution.</strong> Yes, and the plane is the right place. The three sectors are sectors of the <em>rotation plane</em>, the plane perpendicular to the fixed axis. The third direction, the axis itself, is not a sector. It is the nozzle, which carries the net inflow and is treated separately (Step 1). Within the rotation plane the smallest set of directions that can balance a push is three, and the cube supplies exactly three through C₃. The four-direction count belongs to a free object in open 3D space. It would apply only if the axis were not fixed. The missing sentence is that the count is taken in the rotation plane because the out-of-plane direction is already used by the nozzle.</p>
+
+<h2>Step 4. Joint survival of n sectors: δⁿ</h2>
+<p>A coherent event of an n-sector object needs <em>every</em> sector to survive its own rectification at the same time. Each sector survives with probability δ (Step 2). The sectors' phases are independent (the product measure of §5.2). The chance that all n survive is therefore the product</p>
+<p style="text-align:center">⟨W<sub>n</sub>⟩ = δ × δ × … × δ (n times) = δⁿ = π<sup>−2n</sup>.</p>
+<p>For the electron (n = 1) this is δ = π⁻². For the proton (n = 3) it is δ³ = π⁻⁶. This step is a plain integral. It has no free number in it (<a href="/physics/08-discrete-proton-structure-82-7/">§8.0.6(A)</a>).</p>
+
+<h2>Step 5. From survival to event rate: the one declared mapping</h2>
+<p>An integral gives a probability. It cannot, by itself, say what a probability <em>means</em> physically. The framework therefore declares, once and in one place, how survival turns into rate. This is the lock <strong>LOCK-NU-N</strong>, which has two parts (<a href="/physics/08-discrete-proton-structure-82-7/">§8.0.6(C)</a>):</p>
+<ul>
+<li><strong>[MAP-1]</strong> Each sector's participation is one double-rectification event of §5.2. This simply applies §5.2's own definition of an event to each sector.</li>
+<li><strong>[MAP-2]</strong> The attempt rate of the whole object is the inverse of its joint survival, and the n sectors attempt side by side: s<sub>n</sub> = n / ⟨W<sub>n</sub>⟩ = n δ⁻ⁿ. The event rate is then the attempt rate times the survival of the one passage through the nozzle: ν<sub>n</sub> = s<sub>n</sub> × δ.</li>
+</ul>
+<p>Multiplying out:</p>
+<p style="text-align:center">ν<sub>n</sub> = n δ⁻ⁿ × δ = n δ<sup>−(n−1)</sup> = n π<sup>2(n−1)</sup>.</p>
+<table>
+<tr><th>n</th><th>attempt rate n δ⁻ⁿ</th><th>× nozzle δ</th><th>event rate ν<sub>n</sub></th></tr>
+<tr><td>1 (electron)</td><td>π²</td><td>× π⁻²</td><td>1</td></tr>
+<tr><td>2</td><td>2π⁴</td><td>× π⁻²</td><td>2π² = 19.74</td></tr>
+<tr><td>3 (proton)</td><td>3π⁶</td><td>× π⁻²</td><td>3π⁴ = 292.23</td></tr>
+</table>
+<p><strong>Doubt 4: "Using 1/δ as an attempt rate gives δ a new role. §5.4 forbids reinterpreting δ."</strong></p>
+<p><strong>Resolution.</strong> 1/δ is not a new constant. It is the ordinary meaning of the reciprocal of a survival probability. If each try succeeds with probability δ, the average number of tries per success is 1/δ, the mean of a geometric distribution. Reading 1/δ as "tries per surviving event" keeps δ in its only allowed role, a survival fraction. The rule of §5.4 forbids using δ as some unrelated coefficient, and that does not happen here. The missing sentence is "1/δ is the mean number of attempts per survivor".</p>
+
+<h2>Step 6. The exponent n − 1: one fact seen from two sides</h2>
+<p><strong>Doubt 3: "In §8.0.5(II) the exponent n − 1 comes from a gauge lemma (n phases, minus one global phase). In §8.0.6(B) it comes from the single nozzle factor δ. If both mechanisms acted, the exponent would be n − 2 and the ratio 6π³. If neither acted, it would be n and the ratio 6π⁷. Which is it?"</strong></p>
+<p><strong>Resolution.</strong> They are the same subtraction, described once from the counting side and once from the dynamical side, so it must not be counted twice.</p>
+<ul>
+<li><em>Counting side.</em> An n-sector ring has n phases, but a common shift of all of them changes nothing physical. That common shift is the global phase. So only n − 1 relative phases are independent. This is the lemma dim(ℝⁿ / span{1}) = n − 1.</li>
+<li><em>Dynamical side.</em> The common, global mode of the ring is exactly the mode that is aligned with the axis and exchanges material through the single nozzle. Its one survival factor is the δ that the rate law ν = s δ pays at the nozzle. Multiplying by that δ cancels one of the n inverse-survival factors, and it is the one belonging to the common mode.</li>
+</ul>
+<p>Both descriptions remove the same single mode, the global one, so there is exactly one "−1". The sentence in §8.0.6(A), "ring-closure fixes the global phase as a gauge choice and removes no rectification", says that gauge-fixing does not change the survival <em>integral</em> (all n sectors must still survive, δⁿ). The removal happens one step later, at the rate law, and it is the removal the gauge lemma counts. The table in Step 5 shows the single subtraction at work for n = 1, 2, 3. The electron row (ν₁ = 1) is a consistency check of this bookkeeping against the electron clock of §9.3. It is not an independent test, because ν<sub>e</sub> = 1 also fixes the unit.</p>
+
+<h2>Step 7. From event rate to mass: where 2π comes from</h2>
+<p>A mass is read through its Compton length, m = h/(λ<sub>C</sub> c). So a mass ratio is an inverse ratio of Compton lengths:</p>
+<p style="text-align:center">m<sub>p</sub>/m<sub>e</sub> = λ<sub>C,e</sub> / λ<sub>C,p</sub>.</p>
+<p>Two locked relations connect these lengths to the rate:</p>
+<ol>
+<li>The proton's boundary radius is a fraction α of its Compton length, r<sub>p</sub> = α λ<sub>C,p</sub> with α = 2/π. This is the forced-radius balance of <a href="/physics/06-continuum-core-model-deriving-rp/">§6</a> and <a href="/physics/sp-jamming-spine-verified-physical-backbone/">Spine S4</a>.</li>
+<li>The proton's event rate is its size ratio to the quantum times one survival, ν<sub>p</sub> = (D/2r<sub>p</sub>) δ with D = 2λ<sub>C,e</sub> (<a href="/physics/09-event-quantum-definition-canonical-event/">§9.4</a>).</li>
+</ol>
+<p>Put them together, one line at a time:</p>
+<p style="text-align:center">m<sub>p</sub>/m<sub>e</sub> = λ<sub>C,e</sub>/λ<sub>C,p</sub> = (D/2) · α / r<sub>p</sub> = α · (D/2r<sub>p</sub>) = α · ν<sub>p</sub>/δ = (α/δ) · ν<sub>p</sub>.</p>
+<p>And α/δ = (2/π)/(1/π²) = <strong>2π</strong>. So the factor 2π is not a convention. It is the ratio of the two rectification constants, and it enters because a mass is read through a Compton length (via α) while a rate counts survivals (via δ). With ν<sub>p</sub> = 3π⁴ from Step 5:</p>
+<p style="text-align:center"><strong>m<sub>p</sub>/m<sub>e</sub> = 2π × 3π⁴ = 6π⁵ = 1836.1181</strong></p>
+<p>The same two relations then give the proton radius as an output, r<sub>p</sub> = D δ/(2ν<sub>p</sub>) = D/(6π⁶) = 0.84125 fm, against 0.84075(64) fm measured (CODATA 2022, +0.8σ).</p>
+<p><strong>Units.</strong> ν<sub>p</sub> = 3π⁴ is a pure number, the proton's rate in units of the electron's rate. Writing it as "292.227 s⁻¹" adds the separate identification of the electron clock with one SI second (<a href="/physics/12-electron-1-second-cross-check/">§12</a>). The mass ratio does not need that identification: both masses are read in the same units, so the unit cancels.</p>
+
+<h2>Step 8. How the result should be graded, and what the residual means</h2>
+<table>
+<tr><th>Statement</th><th>Grade</th></tr>
+<tr><td>α = 2/π, δ = 1/π² as phase-circle averages</td><td>[F]</td></tr>
+<tr><td>n = 3 from C₃ about the nozzle axis; one nozzle</td><td>[F] (geometry of §8.0)</td></tr>
+<tr><td>Joint survival δⁿ; exponent n − 1 (one subtraction)</td><td>[F]</td></tr>
+<tr><td>Survival → rate (MAP-1, MAP-2)</td><td>declared definitional lock, stated once, with no free number</td></tr>
+<tr><td>m<sub>p</sub>/m<sub>e</sub> = 6π⁵</td><td><strong>[F | LOCK-NU-N]</strong>: forced once the declared mapping is accepted</td></tr>
+<tr><td>Residual −18.8 ppm</td><td><strong>[O]</strong>: the size of the next-order correction, not yet derived</td></tr>
+</table>
+<p><strong>Why "[F | LOCK-NU-N]" and not a bare [F].</strong> The Prologue reserves a bare [F] for things that need no declared identification. The volume's own position (§8.0.6(C)) is that LOCK-NU-N has the same status as the definitions of α and δ. Writing the lock next to the grade states that position openly instead of leaving the reader to find it. Nothing numerical changes.</p>
+<p><strong>The residual.</strong> 6π⁵ differs from the measurement by −18.8 ppm. Measurement error is far smaller than that, so the closed form cannot be an exact identity. It is read as the leading term: rectification averages taken as exact, and sectors taken as perfectly independent. The −18.8 ppm is the target for the first correction. It is recorded as open, not excused. When a next-order correction is derived, its sign and size must be stated before it is compared with the data. A correction of the wrong sign, or one that overshoots by more than the residual itself, would count against the chain.</p>
+<p><strong>Is the agreement luck?</strong> The chance that a number of this size is matched to 18.8 ppm by some expression of the form n·πᵏ (n = 1…12, k = −6…8) is about <strong>4 × 10⁻⁴</strong>. Only 6π⁵ hits (<code>repro/physics/experiments/LEE/lee_6pi5.py</code>). The agreement is rare, but the grammar is simple. That is why the chain above matters more than the number: every factor in 6π⁵ has a named geometric source, fixed before the comparison. The earliest known appearance of 6π⁵ as a numerical coincidence is F. Lenz (1951), who gave no mechanism. The contribution here is the mechanism, Steps 1–7.</p>
+
+<h2>What would break this chain</h2>
+<ul>
+<li>A derived next-order correction with the wrong sign, or overshooting the −18.8 ppm residual.</li>
+<li>A lattice where the rotation axis is not pinned, so that the phase-circle average would be replaced by a sphere average (Doubt 1).</li>
+<li>A proton radius measured away from D/(6π⁶) = 0.84125 fm by more than three standard deviations of a future, more precise measurement.</li>
+</ul>
+<nav class="pn"><a rel="prev" href="/physics/lt-light-chain-doubts-and-resolutions/">← §LT</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/w6-provenance-ledger-which-numbers-come/">§W6 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>
