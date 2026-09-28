@@ -36,7 +36,7 @@ Three equations carry the whole framework.
 
 1. **Substrate** — `c² = B/ρ` (speed of light = the one elastic speed that survives at the isostatic point, verified on five observables in 3-D; the lattice amplification A links a measured light wavelength to the electron scale at ±10%, test E2. The older "~0.06%" figure is a 1-D wave-packet check, not the evidence). Mass ratio `mₚ/mₑ = 6π⁵` (−18.8 ppm; [F | LOCK-NU-N], residual open). This is `physics`.
 2. **Switch** — `ṡ = g·s − s³ + h`, the **R19** cubic normal form. Two stable roots + a barrier. The cooperativity *is* the `−s³` term (order n = 3).
-3. **Stiffness** — `γ = −mean nearest-neighbour stacking ΔG37`, read from human proximal promoters. `corr(γ, GC) = 0.998`. **Never fitted.** `γ` sets the switch threshold scale (`spinodal ∝ γ^1.5`, barrier `γ²/4`). This is `dna`.
+3. **Stiffness** — `γ = −mean nearest-neighbour stacking ΔG37`, read from human proximal promoters. **Never fitted.** (`corr(γ, GC) = 0.998` is a consistency check of the SantaLucia table — random sequence gives 0.9996 — so γ's level channel is GC composition in free-energy units; sequence-specific information sits in the A4 shape and CpG channels.) `γ` sets the switch threshold scale (`spinodal ∝ γ^1.5`, barrier `γ²/4`). This is `dna`.
 
 **The one cubic, specialized five ways** (this is the framework's whole thesis):
 
@@ -157,6 +157,8 @@ Two more rules that govern every number:
 
 - **No-tuning.** `γ` and all inputs are measured/derived, never fitted to reproduce an outcome. If you see a number with no reproduction path, it is marked — do not assume it.
 - **Magnitude firewall.** For disease/therapy the framework gives **direction only**. Clinical magnitudes are deliberately withheld `[O]`. An AI must **never** synthesize a dose, concentration, or clinical magnitude from this corpus — output the corrective *direction* and stop.
+
+**Data decides the theory.** A claim counts only when data support it and code reproduces it; theory is written as code. Items without data or code are listed as data-pending, not argued.
 
 Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining, `LOCK → Derive → Gate` (inputs locked → code derives → outputs gated against the canonical HTML).
 
