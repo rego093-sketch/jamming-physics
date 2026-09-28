@@ -24,7 +24,7 @@
 <aside class="claim-strip page"><span class="g g-degenerate" data-phase2="grade">Degenerate</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
 <aside class="vp-card" data-locked="nu_p" data-concept="nu_p"><b>νₚ = 3π⁴ ≈ 292.227 s⁻¹</b> — per-nucleon vacuum-annihilation rate, fixed geometrically by the n-fold rectification law (imported from the physics volume, P2). <b class="grade g-imported">[imported]</b> <a href="/cosmology/axd-index-imports-physics-volume/">import index (physics vol. P2)</a> · <a href="/concepts/#nu_p">용어</a></aside>
 <em>Chapter 3 derived the gravitational acceleration produced by a sink of inflow
-rate Q, namely a=kappaQ_(odot)/r²=GM_(odot)/r². This chapter asks whether that
+rate Q, namely a=κQ_☉/r²=GM_☉/r². This chapter asks whether that
 law, fed by the inflow rates of Chapter 1, reproduces the measured Solar System. It does, to
 sub-percent accuracy. We state at the outset (and again at the close) that this is a
 <strong>consistency test, degenerate with Newtonian gravity</strong>: it demonstrates economy and
@@ -39,33 +39,33 @@ without reference to any theory of gravity; a theory's task is to predict them.<
 <h2>The logical chain (no step omitted)</h2>
 <ol>
 <li> <strong>The force law.</strong> From Chapter 3, a body in the Sun's inflow feels
-a=GM_(odot)/r² directed at the Sun, with GM_(odot)=κQ_(odot) fixed by the
-calibration (Ch. 3, Eq. 9): GM_(odot)=1.327×10²⁰m³s⁻². The test
+a=GM_☉/r² directed at the Sun, with GM_☉=κQ_☉ fixed by the
+calibration (Ch. 3, Eq. 9): GM_☉=1.327×10²⁰m³s⁻². The test
 body's own Q has already cancelled (equivalence principle), so the orbit is independent of
 which planet it is.
 <li> <strong>Conserved quantities.</strong> A central 1/r² force conserves energy
-E=tfrac12 v²-GM_(odot)/r and specific angular momentum L=r v_(⊥). With both
-conserved, the bound orbit is a closed ellipse of semi-major axis a=-GM_(odot)/(2E).
+E=½ v²-GM_☉/r and specific angular momentum L=r v_(⊥). With both
+conserved, the bound orbit is a closed ellipse of semi-major axis a=-GM_☉/(2E).
 <li> <strong>Speed at any point (vis-viva).</strong> Eliminating L from the conserved energy gives
 the speed at radius r,
 <figure class="eq" id="eq:visviva"><img src="/cosmology/eq/cosmology/cos-04-000.svg" data-eq="cos-04-000" width="177" height="45" loading="lazy" alt="\begin{equation} v^{2}=GM_{\odot}\!\left(\frac{2}{r}-\frac{1}{a}\right), \end{equation}"></figure>
-<p>so the mean orbital speed is fixed by a alone (through GM_(odot)).</p>
+<p>so the mean orbital speed is fixed by a alone (through GM_☉).</p>
 <li> <strong>Period (Kepler).</strong> Integrating the areal rate over one orbit gives
 <figure class="eq" id="eq:kepler"><img src="/cosmology/eq/cosmology/cos-04-001.svg" data-eq="cos-04-001" width="586" height="57" loading="lazy" alt="\begin{equation} T=2\pi\sqrt{\frac{a^{3}}{GM_{\odot}}} \quad\Longrightarrow\quad \frac{T^{2}}{a^{3}}=\frac{4\pi^{2}}{GM_{\odot}}=\text{const, the same for every body.} \end{equation}"></figure>
 </ol>
-<p>Every observable in §2 is thus determined by the single source strength GM_(odot)=kappaQ_(odot)
+<p>Every observable in §2 is thus determined by the single source strength GM_☉=κQ_☉
 and the geometric data (a,e); no per-planet parameter enters.</p>
 <h2>Simulation and verification</h2>
-<p>We do not rely on the analytic relations <a class="xref" data-ref="eq:visviva">(visviva)</a>–<a class="xref" data-ref="eq:kepler">(kepler)</a> alone. For each
-planet we numerically integrate the orbit under a=GM_(odot)/r² (symplectic
+<p>We do not rely on the analytic relations <a class="xref" data-ref="eq:visviva" href="/cosmology/04-solar-system-consistency-test/#eq:visviva">(visviva)</a>–<a class="xref" data-ref="eq:kepler" href="/cosmology/04-solar-system-consistency-test/#eq:kepler">(kepler)</a> alone. For each
+planet we numerically integrate the orbit under a=GM_☉/r² (symplectic
 kick–drift–kick), starting from perihelion with the vis-viva speed, for one full revolution,
 and we measure the period, the mean speed, and T²/a³. Working units are AU and years,
-in which GM_(odot)=4π². Table <a class="xref" data-ref="tab:ss">(ss)</a> compares the simulated values with
+in which GM_☉=4π². Table <a class="xref" data-ref="tab:ss" href="/cosmology/04-solar-system-consistency-test/#tab:ss">(ss)</a> compares the simulated values with
 measurement.</p>
 <div class="tblwrap">
-<figcaption>Solar System under the inflow force a=GM_(odot)/r². Each planet integrated one
+<figcaption>Solar System under the inflow force a=GM_☉/r². Each planet integrated one
 full period from perihelion. T in years, v in kms⁻¹. The last column is Kepler's
-constant in units of yr²AU⁻³ (theory: 4π²/GM_(odot)=1).</figcaption>
+constant in units of yr²AU⁻³ (theory: 4π²/GM_☉=1).</figcaption>
 <span id="tab:ss"></span>
 <table><tr><td>Planet</td><td>T_(sim)</td><td>T_(obs)</td><td>Δ T</td><td>v_(sim)</td><td>v_(obs)</td><td>T²/a³</td></tr><tr><td>Mercury</td><td>0.2408</td><td>0.2408</td><td>-0.00%</td><td>47.36</td><td>47.36</td><td>1.00000</td></tr><tr><td>Venus</td><td>0.6152</td><td>0.6152</td><td>-0.00%</td><td>35.02</td><td>35.02</td><td>1.00001</td></tr><tr><td>Earth</td><td>1.0000</td><td>1.0000</td><td>-0.00%</td><td>29.78</td><td>29.78</td><td>1.00001</td></tr><tr><td>Mars</td><td>1.8808</td><td>1.8808</td><td>-0.00%</td><td>24.08</td><td>24.07</td><td>1.00000</td></tr><tr><td>Jupiter</td><td>11.8725</td><td>11.8626</td><td>+0.08%</td><td>13.05</td><td>13.06</td><td>1.00000</td></tr><tr><td>Saturn</td><td>29.661</td><td>29.448</td><td>+0.73%</td><td>9.61</td><td>9.68</td><td>1.00001</td></tr><tr><td>Uranus</td><td>84.324</td><td>84.017</td><td>+0.37%</td><td>6.79</td><td>6.80</td><td>1.00000</td></tr><tr><td>Neptune</td><td>165.17</td><td>164.79</td><td>+0.23%</td><td>5.43</td><td>5.43</td><td>1.00000</td></tr></table>
 </div>
@@ -74,12 +74,12 @@ small differences between the adopted semi-major axes and the IAU period values,
 dynamics), the mean speeds to better than 0.7%, and Kepler's constant is reproduced as
 T²/a³=1.00001 with a scatter of 9.6×10⁻¹² across the eight planets—i.e.\
 Kepler's third law emerges from the inflow force as an identity, not as a fit
-(Fig. <a class="xref" data-ref="fig:kepler">(kepler)</a>).</p>
+(Fig. <a class="xref" data-ref="fig:kepler" href="/cosmology/04-solar-system-consistency-test/#eq:kepler">(kepler)</a>).</p>
 <figure class="fig"><img src="/cosmology/assets/img/ch4_kepler.png" loading="lazy" alt=""><figcaption></figcaption></figure>
 <h2>Status of this chapter</h2>
 <h4>Status: degenerate with Newtonian gravity.</h4>
  The only place the inflow framework
-enters Table <a class="xref" data-ref="tab:ss">(ss)</a> is the identification GM_(odot)=kappaQ_(odot) (mass is the
+enters Table <a class="xref" data-ref="tab:ss" href="/cosmology/04-solar-system-consistency-test/#tab:ss">(ss)</a> is the identification GM_☉=κQ_☉ (mass is the
 inflow rate). Numerically, the dynamics are Newton's, and the agreement with measurement is
 exactly the agreement Newton already provides. We therefore claim no observational advantage
 over standard gravity at Solar-System scale; this chapter is a <em>consistency check</em>.
@@ -104,14 +104,14 @@ from the Solar System to galaxies on one curve—a claim made quantitative, and 
 <h2>Reproducibility</h2>
 <p>The full computation is the script <code>ch4_solar_system.py</code> in the reproducibility
 package (see the package's <code>README_REPRODUCIBILITY_MAP</code>). Its logic is: (1) set
-GM_(odot)=4π² (AU/yr); (2) for each planet, initialise at perihelion
-r=a(1-e), v=√GM_(odot)(1+e)/[a(1-e)]; (3) integrate a=-GM_(odot) r/r³
+GM_☉=4π² (AU/yr); (2) for each planet, initialise at perihelion
+r=a(1-e), v=√GM_☉(1+e)/[a(1-e)]; (3) integrate a=-GM_☉ r/r³
 by kick–drift–kick until the orbit returns to perihelion (one period); (4) record T, mean
-| v|, and T²/a³. Expected output is Table <a class="xref" data-ref="tab:ss">(ss)</a>; the script prints it
+| v|, and T²/a³. Expected output is Table <a class="xref" data-ref="tab:ss" href="/cosmology/04-solar-system-consistency-test/#tab:ss">(ss)</a>; the script prints it
 and the Kepler scatter 9.6×10⁻¹². No fitting, no free parameters.</p>
 <em>Next stage: Chapter 5 (axial spin and tidal locking from the inflow gradient),
 treated as a first-class phenomenon with no step assumed obvious. Foundations continue to be
-imported from the physics volume, DOI \href{https://doi.org/10.5281/zenodo.17932566}{<code>10.5281/zenodo.17932566</code>}.</em>
+imported from the physics volume, DOI <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener"><code>10.5281/zenodo.17932566</code></a>.</em>
 <nav class="pn"><a rel="prev" href="/cosmology/03-gate-physics-saturation-critical-radius/">← §3.1</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/05-axial-spin-tidal-locking-inflow/">§5 →</a></nav>
 </main>
 <footer><a href="https://doi.org/10.5281/zenodo.20568874">DOI 10.5281/zenodo.20568874</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>

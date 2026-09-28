@@ -19,8 +19,9 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/cosmology/">Vacuum-Inflow Cosmology</a> › §3</nav></header>
 <main><!--vp-v1.8-->
 <h1>Gravity as Absorbed-Inflow Momentum</h1>
-<p class="answer">The central chapter takes the inflow rate Q from Chapter 1 as its only input and derives gravity. The inflow velocity field gives the force as absorbed momentum, fixing the 1/r² law; mass is the inflow rate, G a property of the medium, and the equivalence principle follows. Gate physics is treated in the following page.</p>
-<p class="abstract">From the single input of Chapter 1 — the inflow rate Q — this chapter derives gravity. The inflow velocity field yields the gravitational force as absorbed momentum, fixing the inverse-square 1/r² law; mass is identified with the inflow rate and G with a property of the medium, and the equivalence principle follows as a theorem. It is the load-bearing derivation the rest of the volume rests on.</p>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-28). <strong>Equivalence principle.</strong> This volume does not re-derive the equivalence principle. The physics volume claims it only at the velocity-saturation (cap) level, where every body in the inflow reaches the same capped speed. Beyond that level it is open [O], because the absolute g (9.8 m/s²) is not yet implemented in code. The sentence "the equivalence principle follows as a theorem" below is withdrawn and replaced by that reference. The inverse-square law and Kepler's laws from the inflow are this volume's core results, and they do not depend on it. See <a href="/physics/">physics</a>.</aside>
+<p class="answer">The central chapter takes the inflow rate Q from Chapter 1 as its only input and derives gravity. The inflow velocity field gives the force as absorbed momentum, fixing the 1/r² law; mass is the inflow rate, G a property of the medium, and the equivalence principle is referred to physics (cap level only). Gate physics is treated in the following page.</p>
+<p class="abstract">From the single input of Chapter 1 — the inflow rate Q — this chapter derives gravity. The inflow velocity field yields the gravitational force as absorbed momentum, fixing the inverse-square 1/r² law; mass is identified with the inflow rate and G with a property of the medium, and the equivalence principle is referred to physics (cap level only). It is the load-bearing derivation the rest of the volume rests on.</p>
 <aside class="claim-strip page"><span class="g g-degenerate" data-phase2="grade">Degenerate</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/cosmology/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20568874" rel="noopener">DOI 스냅샷</a></aside>
 
 <em>This is Chapter 3, the central chapter of the volume. It takes as its only
@@ -35,7 +36,7 @@ imported by citation rather than re-derived.</em>
 <p>The model-independent facts of gravitation are few and familiar: unsupported bodies near the
 Earth accelerate downward at g≃9.81ms⁻² regardless of their composition;
 the planets trace closed, stable orbits about the Sun characterised by the heliocentric
-strength GM_(odot)=1.327×10²⁰m³s⁻²; and the orbital data obey an
+strength GM_☉=1.327×10²⁰m³s⁻²; and the orbital data obey an
 inverse-square force law. We will show that all three—the inverse-square law, the
 composition independence, and the identification of the source strength with GM—follow
 from a body being a <em>sink</em> of the vacuum medium, draining it at the rate Q of
@@ -64,7 +65,7 @@ will be built; note that nothing here yet refers to a second body.</p>
 <li> <strong>A second sink in the flow.</strong> Place a second body, of inflow rate Q₂, at
 distance r from the first. About <em>itself</em> the second body draws an isotropic inflow,
 which by symmetry exerts no net force on it. The only asymmetry it experiences is the inflow
-<a class="xref" data-ref="eq:vfield">(vfield)</a> set up by the first body, which at the second body's location carries the
+<a class="xref" data-ref="eq:vfield" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:vfield">(vfield)</a> set up by the first body, which at the second body's location carries the
 medium past it with velocity v(r) directed toward body 1.
 <li> <strong>Momentum delivered by absorption.</strong> The second body is a sink: it annihilates
 quanta at rate Q₂. Each quantum (mass m_q) that it absorbs from its surroundings is,
@@ -73,7 +74,7 @@ m_qv(r) toward body 1. By momentum conservation the absorbing body acquires this
 momentum. The momentum delivered per unit time—i.e. the force—is therefore
 <figure class="eq" id="eq:force"><img src="/cosmology/eq/cosmology/cos-03-002.svg" data-eq="cos-03-002" width="446" height="42" loading="lazy" alt="\begin{equation} F \;=\; Q_{2}\,\big(m_{q}\,v(r)\big) \;=\; Q_{2}\,m_{q}\,\frac{Q_{1}}{4\pi n_{0}r^{2}} \;=\; \frac{m_{q}}{4\pi n_{0}}\,\frac{Q_{1}Q_{2}}{r^{2}}, \end{equation}"></figure>
 <p>directed toward body 1 (attractive).</p>
-<li> <strong>The inverse-square law.</strong> Equation <a class="xref" data-ref="eq:force">(force)</a> is an attractive force
+<li> <strong>The inverse-square law.</strong> Equation <a class="xref" data-ref="eq:force" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:force">(force)</a> is an attractive force
 proportional to the product of the two inflow rates and falling as 1/r². Writing
 κ' ≡ m_q/(4π n₀), a universal constant of the medium,
 <figure class="eq" id="eq:Fnewton"><img src="/cosmology/eq/cosmology/cos-03-003.svg" data-eq="cos-03-003" width="127" height="39" loading="lazy" alt="\begin{equation} F \;=\; \kappa&#x27;\,\frac{Q_{1}Q_{2}}{r^{2}} . \end{equation}"></figure>
@@ -86,21 +87,21 @@ rate Q.
 <p>This step is the one most easily skipped and therefore, by the rule of Chapter 0, the one we
 make most explicit. A natural-seeming alternative would treat the gravitating body not as a
 sink that <em>absorbs</em> momentum, but as a parcel <em>carried along</em> by the inflow, feeling
-the flow's own (convective) acceleration. For the steady radial field <a class="xref" data-ref="eq:vfield">(vfield)</a> that
+the flow's own (convective) acceleration. For the steady radial field <a class="xref" data-ref="eq:vfield" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:vfield">(vfield)</a> that
 acceleration is</p>
 <figure class="eq" id="eq:rfive"><img src="/cosmology/eq/cosmology/cos-03-004.svg" data-eq="cos-03-004" width="646" height="48" loading="lazy" alt="\begin{equation} a_{\text{flow}} \;=\; (\mathbf{v}\!\cdot\!\nabla)\mathbf{v} \;=\; v\,\frac{dv}{dr} \;=\; \frac{Q_{1}}{4\pi n_{0}r^{2}}\cdot\!\left(-\frac{2\,Q_{1}}{4\pi n_{0}r^{3}}\right) \;=\; -\,2\!\left(\frac{Q_{1}}{4\pi n_{0}}\right)^{\!2}\frac{1}{r^{5}}\;\propto\;\frac{1}{r^{5}} . \end{equation}"></figure>
 <p>The two candidate laws differ sharply: absorption of momentum gives 1/r²
-(Eq. <a class="xref" data-ref="eq:force">(force)</a>), whereas convective carry-along gives 1/r⁵ (Eq. <a class="xref" data-ref="eq:rfive">(rfive)</a>).
+(Eq. <a class="xref" data-ref="eq:force" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:force">(force)</a>), whereas convective carry-along gives 1/r⁵ (Eq. <a class="xref" data-ref="eq:rfive" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:rfive">(rfive)</a>).
 <em>Which is physically correct is decided by what the body actually is.</em> A gravitating body
 annihilates the medium; it is a sink, not a passive tracer. A sink does not move with the
 local flow—it removes the flow—so the force it feels is the momentum it absorbs,
-Eq. <a class="xref" data-ref="eq:force">(force)</a>, the 1/r² law. The convective expression <a class="xref" data-ref="eq:rfive">(rfive)</a> would apply
+Eq. <a class="xref" data-ref="eq:force" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:force">(force)</a>, the 1/r² law. The convective expression <a class="xref" data-ref="eq:rfive" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:rfive">(rfive)</a> would apply
 to a neutrally buoyant tracer that neither emits nor absorbs the medium, which a massive body
 is not.</p>
 <h4>Stability confirms the selection.</h4>
  The two laws are also distinguished
 observationally, because orbits under a central force F∝ r⁻ⁿ are stable only for
-n<3 (a circular orbit's small radial perturbations oscillate for n<3 and grow without
+n&lt;3 (a circular orbit's small radial perturbations oscillate for n&lt;3 and grow without
 bound for n≥3). Thus n=2 (absorption) permits the stable, long-lived planetary orbits we
 observe, while n=5 (carry-along) does not. Simulation A integrates a circular orbit given a
 1% tangential-speed perturbation under each law:
@@ -122,7 +123,7 @@ mechanism <em>must</em> be momentum absorption (1/r²), not convective carry-alo
 
 <h2>Mass is the inflow rate; G is a property of the medium (step 8)</h2>
 <ol>
-<li> <strong>Identifying GM.</strong> Comparing the force <a class="xref" data-ref="eq:Fnewton">(Fnewton)</a> with Newton's
+<li> <strong>Identifying GM.</strong> Comparing the force <a class="xref" data-ref="eq:Fnewton" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:Fnewton">(Fnewton)</a> with Newton's
 F=GM₁M₂/r² shows that the gravitational mass of a body is proportional to its inflow
 rate, MproptoQ. Equivalently, the source strength is
 <figure class="eq" id="eq:GMkappa"><img src="/cosmology/eq/cosmology/cos-03-005.svg" data-eq="cos-03-005" width="222" height="43" loading="lazy" alt="\begin{equation} GM_{1}\;=\;\kappa\,Q_{1},\qquad \kappa\equiv\frac{\kappa&#x27;}{\beta}, \end{equation}"></figure>
@@ -135,9 +136,9 @@ Table 1) with <em>no further input</em>. As a consistency check, κQ_(⊕)
 =GM_(⊕), recovering the measured terrestrial value.
 </ol></p>
 <h4>The mass/G split is conventional.</h4>
- Only the <em>product</em> kappaQ(=GM)
-enters any orbit (Eq. <a class="xref" data-ref="eq:GMkappa">(GMkappa)</a> feeds the acceleration a=kappaQ₁/r² of the next
-section). Rescaling Q→ cQ and κ→κ/c leaves kappaQ unchanged and the
+ Only the <em>product</em> κQ(=GM)
+enters any orbit (Eq. <a class="xref" data-ref="eq:GMkappa" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:GMkappa">(GMkappa)</a> feeds the acceleration a=κQ₁/r² of the next
+section). Rescaling Q→ cQ and κ→κ/c leaves κQ unchanged and the
 orbit identical. Simulation C verifies this to machine precision:
 <pre class="vb">
 (kappa, Q)  vs  (kappa/1e6, Q*1e6)   [same product kappa*Q = GM]
@@ -166,7 +167,7 @@ whose inflow rates differ by a factor 10⁴ in the same source field:</p>
 Q_a   vs   Q_b = 1e4 * Q_a   in the same field  a = kappa*Q_source / r^2
    max |trajectory_a - trajectory_b| over an orbit = 1.9e-14  -&gt;  identical
 </pre>
-<p>The trajectories coincide to machine precision, as the cancellation <a class="xref" data-ref="eq:EP">(EP)</a> requires.</p>
+<p>The trajectories coincide to machine precision, as the cancellation <a class="xref" data-ref="eq:EP" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:EP">(EP)</a> requires.</p>
 
 <h2>What is deferred to the physics volume</h2>
 <p>The derivation above is the leading-order, weak- and far-field result, and it is exactly
@@ -186,7 +187,7 @@ structure must be flagged here: because the restoring channel saturates, the abs
 G (equivalently, of g=9.81ms⁻²) is tied to a yield cap, and a
 first-principles micro-derivation of that absolute value is <em>not</em> yet complete—the
 “four-wall” no-go discussed in the physics volume. In the present volume G therefore enters
-only through the empirically fixed product κ of Eq. <a class="xref" data-ref="eq:kappaval">(kappaval)</a>; we never claim
+only through the empirically fixed product κ of Eq. <a class="xref" data-ref="eq:kappaval" href="/cosmology/03-gravity-momentum-absorbed-inflow/#eq:kappaval">(kappaval)</a>; we never claim
 to derive its absolute value here, and we mark this as open in the ledger (Chapter 16).</p>
 
 <nav class="pn"><a rel="prev" href="/cosmology/02-goldstone-continuum-mode-dispersionless/">← §2.4</a> <a href="/cosmology/">백서 목차</a> <a rel="next" href="/cosmology/03-gate-physics-saturation-critical-radius/">§3.1 →</a></nav>
