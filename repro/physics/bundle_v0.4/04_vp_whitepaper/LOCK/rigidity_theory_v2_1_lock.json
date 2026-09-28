@@ -1,0 +1,40 @@
+{
+  "version": "vp_whitepaper_rigidity_theory_v2_1_lock_v1",
+  "module": "04_vp_whitepaper",
+  "scope": {
+    "paper_section": "Appendix H (Geometric Rigidity)",
+    "purpose": "Lock a minimal reproducible computation for Psi(N) and N_eff from modulus ratios"
+  },
+  "inputs": {
+    "case_studies_csv": "04_vp_whitepaper/data/rigidity/rigidity_case_studies_v1.csv",
+    "theory_markdown": "04_vp_whitepaper/docs/rigidity/THEORY_GEOMETRIC_RIGIDITY_v2_1.md"
+  },
+  "constants": {
+    "kappa": 1.0,
+    "definitions": {
+      "gap": "delta = 4 - N",
+      "psi": "Psi(N) = Psi_base * exp[ kappa * ( 1/(4-N) - 1 ) ]",
+      "ratio_to_N_eff": "N_eff = 4 - 1/( 1 + (1/kappa)*ln(ratio) )"
+    },
+    "tolerances": {
+      "N_eff_abs": 0.02
+    },
+    "expected": {
+      "H2O": {
+        "ratio": 4.05,
+        "N_eff": 3.5831104504781193
+      },
+      "SiO2": {
+        "ratio": 1.03,
+        "N_eff": 3.028710164176334
+      }
+    }
+  },
+  "notes": {
+    "status": "model-extension",
+    "interpretation": "Psi_base(vac) ~ c^2 and related scaling statements are treated as hypotheses; this lock gates only the math mapping ratio -> N_eff under kappa.",
+    "see": [
+      "04_vp_whitepaper/docs/rigidity/THEORY_GEOMETRIC_RIGIDITY_v2_1.md"
+    ]
+  }
+}

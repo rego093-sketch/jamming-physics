@@ -1,0 +1,145 @@
+VP 잼밍 척추 — 재현성 패키지 MANIFEST
+======================================================================
+총 파일 111개 (아래 그룹 요약 포함). 생성 2026-06-05.
+[번들 원본] 표시는 사용자 AQD 번들 v0.3.0 원본(의존성). 그 외는 본 세션 생성.
+
+01_stiffness_to_c2/README.md
+    - 모듈01 설명(물리/파일/결과/실행)
+01_stiffness_to_c2/bulk.py
+    - 부피탄성률 B(affine·relaxed) → c²=B/ρ; Born=FD 게이트
+01_stiffness_to_c2/bulk_modulus_c2.pdf
+    - 그림(PDF)
+01_stiffness_to_c2/bulk_modulus_c2.png
+    - 그림(PNG)
+01_stiffness_to_c2/bulk_run.py
+    - 생산 러너(B·G 같은 패킹). 사용 python3 bulk_run.py N start count
+01_stiffness_to_c2/fig_bulk.py
+    - B·G vs z, c²/a² vs z 그림
+01_stiffness_to_c2/relaxed_shear.py
+    - 공유 인프라: 패킹/FIRE/접촉/backbone/Hessian/Born/relaxed G (bulk가 import)
+01_stiffness_to_c2/results_bulk/bulkG.csv
+    - 결과 데이터(N256 58 + N512 18 cfgs)
+02_shear_relaxedG/FINDINGS_relaxedG.md
+    - 모듈02 상세 발견 기록
+02_shear_relaxedG/README.md
+    - 모듈02 설명
+02_shear_relaxedG/analyze.py
+    - 분석(z₀ bootstrap 등)
+02_shear_relaxedG/aqs.py
+    - 준정적(AQS) 전단
+02_shear_relaxedG/aqs_run.py
+    - AQS 항복 런
+02_shear_relaxedG/collect_spectra.py
+    - DOS·ω* 수집
+02_shear_relaxedG/fig_finite_size.py
+    - 유한크기 그림
+02_shear_relaxedG/flow_run.py
+    - 흐름곡선(η)
+02_shear_relaxedG/focused_aqs.py
+    - 항복 집중 런
+02_shear_relaxedG/le_shear.py
+    - Lees-Edwards 유한변형 전단(검증)
+02_shear_relaxedG/make_aqs_figure.py
+    - 항복 그림
+02_shear_relaxedG/make_dos_figure.py
+    - DOS/ω* 그림
+02_shear_relaxedG/make_figure.py
+    - relaxedG_vs_z 그림
+02_shear_relaxedG/make_flow_figure.py
+    - 흐름곡선 그림
+02_shear_relaxedG/production_run.py
+    - relaxedG vs z 생산
+02_shear_relaxedG/relaxed_shear.py
+    - 공유 인프라(전단 relaxed G)
+02_shear_relaxedG/results/aqs_sigmay.csv
+    - 데이터(CSV)
+02_shear_relaxedG/results/aqs_yield.pdf
+    - 그림(PDF)
+02_shear_relaxedG/results/aqs_yield.png
+    - 그림(PNG)
+02_shear_relaxedG/results/dos_omega_star.pdf
+    - 그림(PDF)
+02_shear_relaxedG/results/dos_omega_star.png
+    - 그림(PNG)
+02_shear_relaxedG/results/flow_curves.pdf
+    - 그림(PDF)
+02_shear_relaxedG/results/flow_curves.png
+    - 그림(PNG)
+02_shear_relaxedG/results/flowcurve.csv
+    - 데이터(CSV)
+02_shear_relaxedG/results/relaxedG.csv
+    - 데이터(CSV)
+02_shear_relaxedG/results/relaxedG_finite_size.pdf
+    - 그림(PDF)
+02_shear_relaxedG/results/relaxedG_finite_size.png
+    - 그림(PNG)
+02_shear_relaxedG/results/relaxedG_vs_z.pdf
+    - 그림(PDF)
+02_shear_relaxedG/results/relaxedG_vs_z.png
+    - 그림(PNG)
+02_shear_relaxedG/validate_aqs.py
+    - AQS 검증
+02_shear_relaxedG/validate_le.py
+    - LE 검증
+03_forced_circle_proton_radius/README.md
+    - 모듈03 설명
+03_forced_circle_proton_radius/RESULTS_forced_circle.txt
+    - 03 콘솔 출력
+03_forced_circle_proton_radius/forced_circle_attractor.pdf
+    - 그림(PDF)
+03_forced_circle_proton_radius/forced_circle_attractor.png
+    - 그림(PNG)
+03_forced_circle_proton_radius/forced_circle_attractor.py
+    - 강제 반경 끌개 해석+그림(docstring 설명)
+04_rotating_grinder/README.md
+    - 모듈04 설명
+04_rotating_grinder/fig_rot.py
+    - 입자수/코어/ z_core 그림
+04_rotating_grinder/grind_sweep.py
+    - Ω 스윕: R_rms vs Ω (∼1/Ω)
+04_rotating_grinder/rotating_quantum.pdf
+    - 그림(PDF)
+04_rotating_grinder/rotating_quantum.png
+    - 그림(PNG)
+04_rotating_grinder/vp_grinder_3d.py
+    - 3D 회전 그라인더(코어 형성)
+05_light_emergence_quantum_D/README.md
+    - 모듈05 설명
+05_light_emergence_quantum_D/RESULTS_ellrot_verify.txt
+    - 05 콘솔 출력
+05_light_emergence_quantum_D/deps/jamming_rotation_485pm_study.py
+    - [번들 원본] D=2πλ/A 연구
+05_light_emergence_quantum_D/deps/soc_percolation_pinning.py
+    - [번들 원본] A=a_med/g* 생성(침투+SOC)
+05_light_emergence_quantum_D/deps/soc_run3_avalanches.csv
+    - [번들 원본] A 분포 원천(A_median~8e5)
+05_light_emergence_quantum_D/ellrot_485pm.pdf
+    - 그림(PDF)
+05_light_emergence_quantum_D/ellrot_485pm.png
+    - 그림(PNG)
+05_light_emergence_quantum_D/ellrot_verify.py
+    - ℓ_rot=2πλ/A 데이터 검증(docstring 설명)
+05_light_emergence_quantum_D/make_ellrot_fig.py
+    - ℓ_rot 분포 vs 4.85pm 그림
+05_light_emergence_quantum_D/soc_indep_avalanches.csv
+    - 본 세션 독립 SOC A 분포(N=200,seed11)
+05_light_emergence_quantum_D/soc_indep_summary.json
+    - 독립 SOC 요약(파라미터·A 통계)
+06_constants_scales_geometry/README.md
+    - 모듈06 설명
+06_constants_scales_geometry/RESULTS_constants_and_scales.txt
+    - 06 콘솔 출력
+06_constants_scales_geometry/verify_constants_and_scales.py
+    - 상수·스케일·기하 검증(docstring 설명)
+README.md
+    - 패키지 개관·줄기·양성자/양자 구분·실행·결과·상태
+docs/HANDOVER_2026-06-05_jamming_spine_merge.md
+    - 백서 .tex 병합용 상세 인수인계서
+docs/VP_jamming_spine_DRAFT.md
+    - 척추 정본 초안(5부+상태원장) — 양성자/양자 구분 정본
+docs/VP_theory_chain_stiffness_to_D.md
+    - 초기 사슬 문서(일부 양성자=양자 표현 오류; 척추가 정본)
+
+02_shear_relaxedG/results/spectra/   [그룹] DOS/ω* 스펙트럼 35개 npz (N512, φ 0.640–0.760, seeds 0–5)
+02_shear_relaxedG/results/aqs_curves/ [그룹] AQS 응력-변형 곡선 8개 npz (N128, φ·seed 다양)
+02_shear_relaxedG/results/   relaxedG.csv, flowcurve.csv, aqs_sigmay.csv + 그림(png/pdf)

@@ -1,0 +1,31 @@
+module: rot_aniso
+module_version: v0.2.6
+created: "2025-12-14"
+kind: "deterministic_reference_stub"
+description: >-
+  Minimal, deterministic reference implementation for §17.1 (rotation–anisotropy coupling).
+  This module exists to satisfy the DOI-level reproducibility contract (file tree + schemas + runnable code).
+locks_required:
+  - canon_lock
+  - realization_lock
+  - analysis_lock
+  - gate_lock
+  - protocol_lock
+seed_policy:
+  rng: "xorshift128+"
+  seed0: 123456789
+parameters:
+  omega_rot: 0.1
+  chi_star: 1.0
+  axis_u: [1.0, 0.0, 0.0]
+  n_steps: 256
+outputs:
+  run_log: "run_log.jsonl"
+  metrics: "metrics.json"
+  manifest: "manifest.json"
+  artifacts_dir: "outputs/"
+gates:
+  - gate_id: "G-ANISO"
+    description: "anisotropy stability gate (toy)"
+  - gate_id: "G-REP"
+    description: "deterministic replay gate (toy)"

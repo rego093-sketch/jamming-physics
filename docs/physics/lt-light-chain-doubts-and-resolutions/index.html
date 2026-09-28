@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Light Chain, Link by Link — VP Theory §LT | Jamming Physics</title>
+<meta name="description" content="How a dimensionless jamming simulation becomes a statement about light: every link of the chain, every doubt a careful reader raises, how each doubt is resolved, what was retired as evidence, and what remains open.">
+<link rel="canonical" href="https://jamming-physics.org/physics/lt-light-chain-doubts-and-resolutions/">
+<link rel="stylesheet" href="/physics/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"The Light Chain, Link by Link: Doubts and Resolutions",
+"isPartOf":{"@type":"CreativeWork","name":"The Vacuum as a Jammed Elastic Solid, and the Speed of Light as Its Elastic-Wave Speed","sameAs":"https://doi.org/10.5281/zenodo.17932566"},
+"position":"LT",
+"author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://jamming-physics.org/"},
+{"@type":"ListItem","position":2,"name":"VP Theory","item":"https://jamming-physics.org/physics/"},
+{"@type":"ListItem","position":3,"name":"§LT The Light Chain, Link by Link"}]}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/physics/">VP Theory</a> › §LT</nav></header>
+<main>
+<h1>LT. The Light Chain, Link by Link: Every Doubt and How It Is Resolved</h1>
+<p class="answer">The Light Chain: a simulation that knows no units cannot, by itself, say that its wave is light. This page shows how the framework still reaches that statement: a wavelength-free lattice number A must connect two lengths measured independently in nature (a light wavelength and the electron's scale), and it does so to within the ±10% resolving power of the existing data (test E2). Every doubt a careful reader raises is listed next to its resolution, and every piece of evidence that turned out unable to fail has been retired.</p>
+<p class="abstract">The Light Chain: a simulation that knows no units cannot, by itself, say that its wave is light. This page shows how the framework still reaches that statement, one link at a time, with the doubts and their resolutions.</p>
+<aside class="claim-strip page"><span class="g">[V] E2 PASS (±10%) · [O] polarization count</span><span class="gate">LOCK → Derive → Gate</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/physics/experiments/E2/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">DOI 스냅샷</a></aside>
+
+<h2>Why this page exists</h2>
+<p>The central claim of this volume is that light is the elastic wave of a jammed vacuum: <strong>c² = B/ρ</strong>. The argument for it uses a kind of reasoning that has no standard name, and readers (including careful reviewers) repeatedly lose the thread at the same few places. The difficulty is this: every number the simulation produces is a pure number, with no units, yet the conclusion is about a physical speed, a physical wavelength and a physical grain size. Somewhere a dimensionless result has to turn into a dimensional one, and it has to do so without anyone slipping the answer in.</p>
+<p>This page walks the chain from the substrate to light one link at a time. At each link it says, in order:</p>
+<ol>
+<li>what is claimed,</li>
+<li>the doubt a careful reader raises at that point,</li>
+<li>how the doubt is resolved, with the evidence and the file that reproduces it,</li>
+<li>what is still open, stated as an open item rather than hidden.</li>
+</ol>
+<p>Nothing on this page changes a locked value. Where an earlier piece of evidence turned out to be unable to fail, this page says so plainly and names the test that replaces it. Grades follow the volume's legend: <strong>[F]</strong> forced by geometry, <strong>[V]</strong> verified by a test that could have failed, <strong>[H]</strong> holds under a stated closure or identification, <strong>[O]</strong> open with the obstacle named.</p>
+
+<h2>Link 1. The substrate: infinitely rigid grains with no voids</h2>
+<p><strong>Claim.</strong> Space is filled by volume particles (VPs) that are infinitely rigid and fully packed, so there are no voids. The vacuum is therefore a jammed granular solid (axioms, <a href="/physics/03-axioms-primitives-volume-particle-lattice/">§3</a>). This is the starting assumption of the whole programme and is graded as an axiom, not as a result.</p>
+<p><strong>Doubt.</strong> The simulations use soft harmonic spheres that are allowed to overlap slightly, while the axiom says the grains are infinitely rigid. Is the evidence about a different material?</p>
+<p><strong>Resolution.</strong> A finite contact stiffness is the standard numerical stand-in for a rigid contact. It is what makes a jammed packing computable at all. The property this chain uses is not the value of the contact stiffness but the way the moduli behave as the packing reaches the isostatic point (Link 2). That behaviour, where the shear modulus vanishes while the bulk modulus stays finite, is the same for the whole family of repulsive contact laws studied in the jamming literature (O'Hern–Silbert–Liu–Nagel; Wyart; Olsson–Teitel). Only the exponents with which G approaches zero differ. So the harmonic contact is declared here as a <em>closure</em>, U = (k/2)δ² with moduli reported in units of k. It is a computational device, not a second physical assumption.</p>
+<p><strong>Still open.</strong> None for this link. The closure is stated.</p>
+
+<h2>Link 2. One surviving speed: c² = B/ρ</h2>
+<p><strong>Claim.</strong> At the isostatic point z = 2d = 6 the relaxed (non-affine) shear modulus G is driven to zero while the bulk modulus B stays finite. A medium with no shear stiffness and finite compressional stiffness supports exactly one propagating elastic speed, c² = B/ρ. It is a longitudinal speed, and it is the same in every direction.</p>
+<p><strong>Evidence [V].</strong> Five independent observables locate the margin at z = 6 (<a href="/physics/sp-jamming-spine-verified-physical-backbone/">Jamming Spine S2.4</a>):</p>
+<table>
+<tr><th>Observable</th><th>What it measures</th><th>Result</th></tr>
+<tr><td>G_relaxed ∝ Δz → 0</td><td>static linear response</td><td>z₀ = 5.90 (N = 512), 5.95 (N = 1024)</td></tr>
+<tr><td>ω* ∝ Δz → 0</td><td>vibrational spectrum (τ → ∞)</td><td>z₀ = 6.015, R² = 0.997</td></tr>
+<tr><td>η = σ/γ̇ → ∞</td><td>finite-rate rheology</td><td>viscosity diverges</td></tr>
+<tr><td>relaxed slope = G_relaxed</td><td>athermal quasistatic shear</td><td>matches the static modulus</td></tr>
+<tr><td>σ_y → 0</td><td>AQS yield stress</td><td>z₀ = 5.98</td></tr>
+</table>
+<p>Code: <code>repro/physics/bundle_v0.4/02_lattice_percolation_soc/jamming_spine_verification_v0.4_2026-06-05/01_stiffness_to_c2/</code> and <code>02_shear_relaxedG/</code>.</p>
+<p><strong>Doubt 2a.</strong> The Born (affine) bulk modulus is 0.90, 1.13 and 1.40 at N = 256, 512 and 1024. It is not converged. Is B then really finite?</p>
+<p><strong>Resolution.</strong> The claim needs only that B stays of order one while G goes to zero. That is what the numbers show: B_Born stays O(1) while G_relaxed vanishes. The link does not use the value of B. The absolute stiffness, and with it the absolute speed, is not taken from B_Born at all. It enters later through one measured length (Links 4 and 5). A converged value of B_Born would be a refinement, not a missing premise. It is listed as a finite-size item, not as support for the chain.</p>
+<p><strong>What this link does not yet say.</strong> In lattice units the surviving wave has some speed, call it c_lat. Nothing in Link 2 says that c_lat is the speed of light. That identification is the problem of the next link, and it is the heart of the whole chain.</p>
+
+<h2>Link 3. The identification problem: a pure number cannot name itself</h2>
+<p>Every quantity in the simulation is measured in lattice units. The density is 1, the contact stiffness is 1, and the box has size 1. A wave that travels at speed 1 in those units could be sound in a sand pile, a seismic wave, or light. The number itself carries no label. Units cannot settle the question either: choosing units in which the lattice speed equals 3×10⁸ m/s would be putting the answer in by hand.</p>
+<p>So the only honest way to identify the lattice wave with light is <strong>by behaviour against lengths that were measured in nature independently of the simulation</strong>. The simulation must produce some dimensionless number that, if and only if the lattice wave is light, is forced to connect two such lengths. If the number comes out wrong, the identification fails. The next two links build exactly that test.</p>
+
+<h2>Link 4. How a dimensionless number leaves dimensionlessness: the amplification A</h2>
+<p><strong>Claim.</strong> The jammed lattice produces a number A = a_med/g*. It is the ratio of the median neighbour distance to the critical percolation throat of the self-organised critical (SOC) contact network. A is computed with <em>no wavelength and no physical constant</em>. Only the packing geometry and one microscopic threshold g₀ enter (<code>soc_percolation_pinning.py</code>; the docstrings of <code>wavelength_jamming.py</code> and <code>ellrot_verify.py</code> state this explicitly).</p>
+<p><strong>Why A is special.</strong> Most dimensionless outputs of a jammed packing are <em>scale-free</em>: the packing fraction φ_jam ≈ 0.63, the isostatic coordination z = 6, the pinning ratio g*/g₀ ≈ 1. They stay the same whatever the size of the system. A is different. It is still a pure number, but it counts something: <em>how many microscopic propagation steps make up one macroscopic wave period</em>. A number that counts steps between two levels of a hierarchy carries the ratio of the two levels. If one period of a carrier wave of wavelength λ is resolved by A microscopic steps, the step length is λ/A. One full 2π phase winding of a rotating grain then spans</p>
+<p style="text-align:center"><strong>D = 2π λ / A</strong>, equivalently <strong>λ / D = A / 2π ≈ 1.3 × 10⁵</strong>.</p>
+<p>This is the precise sense in which "a dimensionless number leaves dimensionlessness". A itself has no units, but it carries the optical-to-quantum hierarchy ratio. Divide one measured length by it and a second, dimensional length comes out. There is no other place in the chain where a unit is created.</p>
+<p><strong>Doubt 4a.</strong> A changes with the number of particles simulated: A_med = 8.02×10⁵ at N = 200 and 4.76×10⁵ at N = 750. Does the result depend on an arbitrary choice?</p>
+<p><strong>Resolution.</strong> This change is not a defect. It is geometrically necessary. In a box of fixed size, adding particles shrinks the neighbour distance as N^(−1/3), so a number built on that distance must move in the same way: (750/200)^(−1/3) = 0.643, and 8.02×10⁵ × 0.643 = 5.16×10⁵, within 8% of the measured 4.76×10⁵. Meanwhile the scale-free part, g*/g₀, stays put (1.14 and 1.24). The same fact explains why the <em>absolute</em> size of A is the hardest problem in the programme. The physical A belongs to the physical resolution of the vacuum, and no simulation can reach that. The absolute value therefore cannot be computed directly. It can only be <em>tested</em>, and Link 5 does exactly that.</p>
+<p><strong>Doubt 4b.</strong> The realisation length a = λ_ref/N uses N = 10¹². Where does 10¹² come from?</p>
+<p><strong>Resolution.</strong> Nowhere in particular, and nothing on this chain needs it. N is only the size of the container used to split the reference length into lattice units. The light chain (A, λ, D, the angle χ) does not contain N. The honest consequence has to be stated too. Quantities that use the lattice length a directly, U_lat = hc/a and therefore m_H = U_lat/(5π) = hcN/(5πλ), inherit the choice of N. The Higgs agreement (124.7 GeV) is therefore conditional on N = 10¹², and it is presented that way in <a href="/physics/13-mass-u-lat-m-h/">§13</a>. It is not part of the light chain.</p>
+<p><strong>Doubt 4c.</strong> The size of A also scales as 1/g₀ (<a href="/physics/w6-provenance-ledger-which-numbers-come/">W.6</a> honest-reading note). Isn't g₀ a free knob?</p>
+<p><strong>Resolution.</strong> g₀ is the microscopic threshold of the SOC run. It was fixed at 2×10⁻⁷ in the original runs, long before the test below was registered, and it is not adjusted afterwards. The test in Link 5 is therefore <em>conditional on that fixed setting</em>, and says so.</p>
+<p><strong>Still open [O].</strong> A first-principles reason for the value of g₀, or equivalently the absolute A at the physical resolution. Obstacle: the physical particle count is far beyond any simulation.</p>
+
+<h2>Link 5. The test that can fail: A must connect light to the electron (E2)</h2>
+<p><strong>The logic.</strong> Take two lengths that nature fixes independently of this framework and of each other:</p>
+<ul>
+<li>a light wavelength, λ = 632.991 nm (iodine-stabilised He–Ne line, CIPM value);</li>
+<li>the electron's length scale, D = 2λ_C,e = 4.8526 pm (twice the electron Compton wavelength, CODATA 2022).</li>
+</ul>
+<p>If the lattice wave is light and the rotating grain is the electron-scale quantum, the wavelength-free lattice number must satisfy A = 2πλ/D. Nothing forces this. The lattice never sees λ, never sees the electron, never sees c, h or Δt. It could have produced 10³ or 10⁸. If it had, the chain would be broken.</p>
+<p><strong>Registration.</strong> The inputs, the statistic and the pass/fail rule were written down and committed before the analysis was run (<code>repro/physics/experiments/E2/PREREG.json</code>, commit 235a911). The statistic is the pooled median of A over all avalanches, with a 95% bootstrap interval (10 000 resamples, seed 19). There is no selection of a best-matching avalanche. The data are the published SOC outputs (N = 200, g₀ = 2×10⁻⁷, 96 avalanches, two seeds), pinned by SHA-256.</p>
+<table>
+<tr><th>Quantity</th><th>Value</th></tr>
+<tr><td>Required A = 2πλ/D (from the two measured lengths)</td><td>8.196 × 10⁵</td></tr>
+<tr><td>Lattice A, pooled median [95% interval]</td><td>7.79 × 10⁵ [6.95, 8.53] × 10⁵</td></tr>
+<tr><td>Required / median</td><td>1.052 (0.51 of the interval half-width)</td></tr>
+<tr><td>D predicted from λ</td><td>5.11 pm [4.66, 5.72] vs 4.853 pm measured</td></tr>
+<tr><td>λ predicted from D</td><td>602 nm [537, 659] vs 633 nm measured</td></tr>
+<tr><td><strong>Verdict</strong></td><td><strong>PASS</strong> (required value inside the interval)</td></tr>
+</table>
+<p><strong>What the result means.</strong> A number produced by a unit-free jammed packing, from geometry alone, lands on the ratio between a visible-light wavelength and the electron's scale. That is the statement that turns "the lattice has a speed" into "the lattice wave is light". It is graded [V] because it could have failed and did not.</p>
+<p><strong>How strong it is, stated plainly.</strong></p>
+<ul>
+<li>The resolving power of the existing data is about ±10%. The interval is 20% of the median wide. This is a consistency at the 10% level, not a precision confirmation.</li>
+<li>Only two seeds exist, and their medians differ (8.01 and 6.90 × 10⁵). Seed-to-seed spread is part of the uncertainty.</li>
+<li>The registration was made after the run summaries had been seen. The statistic and the criterion were fixed without re-reading the per-avalanche data.</li>
+<li>The test is conditional on the original N = 200 and g₀ = 2×10⁻⁷ (Doubts 4a and 4c).</li>
+</ul>
+<p><strong>Doubt 5a.</strong> "The two-line ratio (λ/D)₆₃₃/(λ/D)₅₃₂ = 633/532 already proves the mapping."</p>
+<p><strong>Resolution: retired as evidence.</strong> With D held fixed, that ratio equals 632.99/532 for any value of D and for any medium, so it cannot fail. The code confirms this. <code>jamming_rotation_485pm_study.py</code> divides the same A by both wavelengths, which gives D = 4.97 pm at 633 nm and 4.18 pm at 532 nm. The ratio is kept only as a display of internal consistency. The test that can fail is E2.</p>
+<p><strong>Doubt 5b.</strong> "The RCROSS two-wavelength gate passes (dev = 0)."</p>
+<p><strong>Resolution: retired as evidence.</strong> In the bundle, <code>outputs/derived/dt_633.txt</code> and <code>dt_532.txt</code> both copy the same locked tick, Δt = 1.86×10⁻²¹ s, so the deviation is zero by construction. RCROSS remains a reporting format (<a href="/physics/11-realization-units-t-rcross/">§11.4</a>). It becomes evidence only when each channel computes its own Δt independently.</p>
+<p><strong>Doubt 5c.</strong> "A is anchored to A_geo = cΔt/a, so the chain is circular."</p>
+<p><strong>Resolution.</strong> E2 does not use c, Δt or a at all. Its only inputs are λ, D and the lattice's own A. The circularity question about Δt (whether Δt is independent of c, <a href="/physics/sp-jamming-spine-verified-physical-backbone/">SP S3(iii)</a>) belongs to the time-unit bookkeeping of §11 and does not touch the light identification. The "0.16% agreement with A_geo" is unit bookkeeping and is not counted as evidence.</p>
+<p><strong>Doubt 5d.</strong> "The 4.854 pm match to 0.04% was the best of many avalanches."</p>
+<p><strong>Resolution: retired as evidence.</strong> Selecting the best avalanche is not a test. E2 uses the pooled median. The honest figure is D = 5.11 pm predicted against 4.853 pm measured (+5%, inside the ±10% resolving power).</p>
+
+<h2>Link 6. What a wavelength is on the lattice, and the polarization question</h2>
+<p><strong>Claim.</strong> The speed of light is the longitudinal speed of Link 2. The transverse character of light is carried by the <em>rotating quanta</em>, not by a shear wave of the packing. A carrier of wavelength λ is realised as a chain of m = ⌈λ/D⌉ rotating quanta in series. The transverse swing accumulated along the chain is one wavelength, and the chain makes an angle χ with the local lattice axis given by sin χ = λ/(mD) (<a href="/physics/10-implementing-speed-light-clock-free/">§10.9</a>). Long wavelengths (radio) are almost purely transverse. Very short ones (gamma) run nearly along the axis.</p>
+<table>
+<tr><th>λ</th><th>λ/D</th><th>m</th><th>χ</th><th>longitudinal scaffold m cos χ</th></tr>
+<tr><td>632.99 nm</td><td>130442.9232</td><td>130443</td><td>89.9378°</td><td>141.59 D</td></tr>
+<tr><td>532.0 nm</td><td>109631.4873</td><td>109632</td><td>89.8248°</td><td>335.30 D</td></tr>
+</table>
+<p>Reproduced by <code>repro/physics/light_mapping_massfree/light_emergence_massfree.py</code>. The original module is not in the v0.4 bundle, so this file is a reconstruction from the §10.9.1 specification and says so. It regenerates the table exactly.</p>
+<p><strong>Doubt 6a (the strongest objection).</strong> Light is transverse and has exactly two polarization states (helicity ±1), with no longitudinal photon. A medium whose shear modulus has gone to zero carries no transverse elastic wave at all. How can its one surviving longitudinal wave be light?</p>
+<p><strong>Resolution: what is defended.</strong> The objection is correct about the packing: there is no transverse <em>shear</em> wave, and the framework does not claim one. The claim separates two things that ordinary elasticity merges:</p>
+<ul>
+<li><em>Speed.</em> The speed is set by the one surviving elastic branch, c² = B/ρ (Link 2).</li>
+<li><em>Transverse swing.</em> The transverse oscillation is a <em>rotational</em> degree of freedom of the quanta carried along that branch, not a shear displacement of the packing.</li>
+</ul>
+<p>Media in which propagation and polarization come from different degrees of freedom are known in continuum mechanics. In rotational-elastic (Cosserat, MacCullagh) media the propagating disturbance is a rotation of the medium's elements and is purely transverse. MacCullagh's rotational ether reproduced Fresnel's optics for exactly this reason. The framework's picture belongs to that family. The rotation of the quanta is not an extra assumption either: the same rotating quanta set the diameter D (Link 4) and appear throughout the proton and electron chapters.</p>
+<p><strong>What is not yet derived [O].</strong> That the rotational branch has exactly two transverse polarization states and no longitudinal state has not been shown from the lattice. Obstacle: it needs a packing whose grains carry rotational inertia and contact torques, with the dispersion of every branch measured at small wavevector. This is registered as gate <strong>G-POL</strong>: count the branches and each branch's transverse fraction in a rotating-grain packing. The expectation written in advance is two transverse rotational branches travelling at the longitudinal speed. A different count is recorded as a finding, not hidden.</p>
+<p><strong>Doubt 6b.</strong> "A 0.03% change in D shifts the visible-light angle by more than a degree."</p>
+<p><strong>Resolution: corrected.</strong> Scanning D over ±0.03% moves χ by at most 0.16° at 633 nm and 0.17° at 532 nm. The jumps come from the integer m changing. The earlier ">1°" was an overstatement and has been corrected in §3, §10.9 and §10.9.1. The angle remains sensitive to D, which is why a measured transverse-angle distribution would constrain D. It is simply less sensitive than first written.</p>
+<p><strong>Doubt 6c.</strong> "The angle table is fitted."</p>
+<p><strong>Resolution.</strong> It is a forward map: a length goes in and an angle comes out. D is fixed first, from the electron, and m and χ follow with no free choice. A negative control shows the relation is not generic. A standard scalar continuum wave on the same medium, launched at the same angle, gives transverse wavelengths of 6.750D and 14.250D, where the relation requires 4.5D and 9.5D (§10.9.1).</p>
+
+<h2>Link 7. What "c² = B/ρ is the speed of light" therefore means, graded</h2>
+<table>
+<tr><th>Statement</th><th>Grade</th><th>Evidence</th></tr>
+<tr><td>At the isostatic point one longitudinal elastic speed survives, c² = B/ρ</td><td>[V]</td><td>Link 2, five observables</td></tr>
+<tr><td>The wavelength-free lattice number A connects a measured light wavelength and the measured electron scale</td><td>[V] at ±10%, conditional on N = 200, g₀ = 2×10⁻⁷</td><td>Link 5, E2 PASS</td></tr>
+<tr><td>Therefore the lattice's surviving wave is identified with light</td><td>[H] identification supported by E2; to be sharpened by more seeds and G-POL</td><td>Links 3–5</td></tr>
+<tr><td>The transverse character is carried by rotating quanta; exactly two polarizations</td><td>[H] mechanism · [O] count</td><td>Link 6, gate G-POL</td></tr>
+<tr><td>Absolute A (equivalently g₀) from first principles</td><td>[O]</td><td>Link 4</td></tr>
+<tr><td>Two-line ratio 633/532; RCROSS dev = 0; best-avalanche 4.854 pm</td><td>retired as evidence (cannot fail)</td><td>Doubts 5a, 5b, 5d</td></tr>
+</table>
+
+<h2>Link 8. What would break the chain</h2>
+<p>Each of the following, if it happened, would be recorded as a refutation ("falsification is discovery"), not explained away:</p>
+<ul>
+<li><strong>E2 with more independent seeds</strong> gives a median A whose 95% interval excludes 8.196×10⁵ at the same fixed N and g₀.</li>
+<li><strong>G-POL</strong> finds no transverse rotational branch, or finds a propagating longitudinal branch besides it at small wavevector.</li>
+<li><strong>Dispersion.</strong> Light of different frequencies arriving at measurably different speeds beyond the bounds already treated in the companion cosmology volume (the Fermi GRB 090510 bound is handled there as an open item).</li>
+</ul>
+
+<h2>How to reproduce every number on this page</h2>
+<pre>python3 repro/physics/experiments/E2/e2_link_test.py            # Link 5 (E2)
+python3 repro/physics/light_mapping_massfree/light_emergence_massfree.py   # Link 6 table and sensitivity
+cd repro/physics/bundle_v0.4/02_lattice_percolation_soc/jamming_spine_verification_v0.4_2026-06-05
+#  01_stiffness_to_c2/, 02_shear_relaxedG/  -> Link 2 (single speed, G -> 0)
+#  05_light_emergence_quantum_D/ellrot_verify.py -> D = 2 pi lambda / A distribution</pre>
+<p>Related pages: <a href="/physics/sp-jamming-spine-verified-physical-backbone/">Jamming Spine</a> · <a href="/physics/w5-anti-circular-logic-chain-light/">W.5 Anti-circular chain</a> · <a href="/physics/10-implementing-speed-light-clock-free/">§10 Speed of light</a> · <a href="/physics/11-realization-units-t-rcross/">§11 Realization of units</a> · <a href="/physics/w6-provenance-ledger-which-numbers-come/">W.6 Provenance</a>.</p>
+<nav class="pn"><a rel="prev" href="/physics/w5-anti-circular-logic-chain-light/">← §W5</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/w6-provenance-ledger-which-numbers-come/">§W6 →</a></nav>
+</main>
+<footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>
+</body>
+</html>

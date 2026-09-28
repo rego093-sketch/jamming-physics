@@ -1,0 +1,14 @@
+# FAIL.rules (v0.2.6)
+
+Status codes used in gate/reports/*.json:
+
+- PASS: gate conditions satisfied.
+- FAIL: gate conditions violated; the dependent claim is invalid in this version.
+- INCONCLUSIVE: inputs or evidence files are missing/insufficient for judgement.
+- UNLOGGED: special case used in the whitepaper when this PDF is distributed alone
+  without the DOI bundle; equivalently "evidence not attached".
+
+Propagation rule (conservative):
+- If any required gate is FAIL → claim FAIL.
+- Else if any required gate is INCONCLUSIVE/UNLOGGED → claim INCONCLUSIVE.
+- Else PASS.

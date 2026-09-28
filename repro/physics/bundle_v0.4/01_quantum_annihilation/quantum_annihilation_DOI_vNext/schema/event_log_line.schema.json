@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "event_log_line",
+  "type": "object",
+  "required": [
+    "run_id",
+    "tick",
+    "object",
+    "event_type",
+    "time_kind",
+    "q_count"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "tick": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "object": {
+      "type": "string",
+      "enum": [
+        "electron",
+        "proton",
+        "neutron",
+        "cell"
+      ]
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "SHELL_IN",
+        "NET_IN",
+        "ANN",
+        "TURNOVER"
+      ]
+    },
+    "time_kind": {
+      "type": "string",
+      "enum": [
+        "raw",
+        "det"
+      ]
+    },
+    "q_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sector": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "meta": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

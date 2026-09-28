@@ -1,0 +1,61 @@
+specified_at: 2025-10-30 00:00:00+00:00
+profile: nominal  # one of {guard, nominal, relaxed}
+coverage: 0.95
+decision_rule: ci_intersection
+
+ci_intersection:
+  distribution: t
+  # CI uses Student-t (Welch-Satterthwaite). MODE Eq.(4) is a Z-bound (1.96) for feasibility only.
+  tolerance_mode: relative
+  epsilon_rel: { nominal: 1.10e-3 }
+  multiplicity_control: Bonferroni
+  report_diameter: true
+
+gates:
+  PHASE_GAUGE: { rel_resid_l2: { nominal: 0.02 } }
+  DRIFT: { max_abs_rate: { nominal: 1.0e-06 } }
+  PHASE_SMOOTH: { tv_max: { nominal: 1500.0 } }
+  FLUX: { snr_min: { nominal: 20.0 } }
+  CENTER: { centroid_max: { nominal: 0.005 } }
+  CONSIST: { chi2_over_nu_max: { nominal: 1.5 } }
+
+MODE_ALIGN:
+  min_peak_sep: { nominal: 0.004 }
+  half_wave_guard: { nominal: 0.15 }
+
+MODE:
+  tau_mode: { nominal: 0.001 }
+  report_pass_rate: true
+
+R_CROSS:
+  lambda_ref_nm: [633, 532]
+  # tiers (guard strict, relaxed loose)
+  dev_max_tiers: { guard: 1.0e-11, nominal: 1.0e-10, relaxed: 1.0e-08 }
+  dev_max: 1.0e-10
+  # upper bound guard term applies to |f_obs/f_ref - 1|
+  upper_bound_rule: "2*sqrt(u_obs_rel**2 + u_ref_rel**2)"
+  cross_invariants:
+    J1: { formula: "(D_A/D_B)", report_ci: true }
+    J2: { formula: "(D_A_633/D_B_633)/(D_A_532/D_B_532)", report_ci: true }
+
+uncertainty:
+  method: delta
+  include_correlations: true
+
+diagnostics:
+  ellipsoid_df: 3
+  ellipsoid_cutoff: 7.815
+  simultaneous_3var: true
+  report_d2_profile: true
+
+metrics:
+  report_rho_profile: true
+  report_bias_bound: true
+
+manifest:
+  flags: { record_diagnostic_mismatch: true }
+
+# Option–B path selection (registered)
+combine_path:
+  rho_BC_switch: 0.98
+  gls_condition_max: 1.0e6

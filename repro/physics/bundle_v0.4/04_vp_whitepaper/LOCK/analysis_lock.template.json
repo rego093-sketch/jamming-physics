@@ -1,0 +1,62 @@
+{
+  "version": "vp_whitepaper_analysis_lock_template_v1",
+  "protocol_ref": "TODO: driving/observation protocol identifier (document section / lab notebook / dataset DOI)",
+  "unjamming_model": {
+    "psi_req": {
+      "symbol": "Psi_req",
+      "definition": "TODO: choose exactly one: stress | energy_density | curvature_demand | event_rate | other (specify)",
+      "dimension": "TODO: e.g., Pa, J/m^3, 1/m, 1/s",
+      "unit": "TODO",
+      "estimator": "TODO: how Psi_req is computed from logs/measurements",
+      "time_window": "TODO: (t0,t1) or window length/overlap",
+      "geometry": "TODO: sample geometry / boundary conditions"
+    },
+    "psi_yield": {
+      "symbol": "Psi_yield",
+      "definition": "TODO: yield/threshold for the chosen Psi_req (same type & unit)",
+      "value": null,
+      "uncertainty": "TODO: if known",
+      "estimator": "TODO: how Psi_yield is measured/fit BEFORE testing",
+      "notes": "Must be locked together with Psi_req. Post-hoc tuning is forbidden."
+    },
+    "xi_state": {
+      "symbol": "xi(t)",
+      "meaning": "Jamming network health: xi=1 jammed, xi=0 fully unjammed",
+      "xi_threshold_for_chi_ST": {
+        "symbol": "xi_th",
+        "value": null,
+        "definition": "chi_ST = 1[xi >= xi_th]",
+        "notes": "xi_th is protocol-dependent; lock it."
+      }
+    },
+    "time_scales": {
+      "tau_break": {
+        "symbol": "tau_break",
+        "unit": "s",
+        "value": null,
+        "estimator": "TODO: how tau_break is inferred",
+        "notes": "Decay time when Psi_req > Psi_yield"
+      },
+      "tau_heal": {
+        "symbol": "tau_heal",
+        "unit": "s",
+        "value": null,
+        "estimator": "TODO: how tau_heal is inferred",
+        "notes": "Recovery time when Psi_req <= Psi_yield"
+      }
+    },
+    "channel_open_indicator": {
+      "symbol": "chi_open(t)",
+      "definition": "chi_open = 1[Psi_req > Psi_yield]",
+      "notes": "Use the same time windowing as Psi_req"
+    },
+    "flux_cap": {
+      "quantity": "J",
+      "definition_ref": "Eq. (flux_def) in the VP whitepaper",
+      "cap_rule": "|J| <= c_ref * chi_open",
+      "cap_speed": "c_ref",
+      "notes": "Interpret 'flux injection at speed c' as an upper bound (<=), not an equality (=)."
+    }
+  },
+  "notes": "Template only. Fill fields, then lock. Do not change after seeing outcomes."
+}

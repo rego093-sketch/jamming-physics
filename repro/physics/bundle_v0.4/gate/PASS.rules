@@ -1,0 +1,40 @@
+pass_rules:
+  - rule_id: PR-CT-DER-NUM-001
+    claim_type: CT-DER-NUM
+    claim_id: CL-ROOT-DERIVED-SCALES
+    scope: global
+    requires:
+      gates_pass:
+        - G-SYM
+        - G-LOCK
+        - G-RECT
+        - G-REP
+        - G-RCROSS-APP-M
+      locks_present:
+        - canon_lock
+        - realization_lock
+        - gate_lock
+        - protocol_lock
+      snapshot_required: true
+      manifest_required: true
+      checksums_required: true
+    allows_sentences:
+      - template_id: ST-CT-DER-NUM-01
+        pattern: "[LOCK:{canon_id,real_id}][DER:{der_id}][GATE:{gate_stack_id}] {Q} = {value} {unit}."
+        requires_fields:
+          - Q
+          - value
+          - unit
+          - canon_id
+          - real_id
+          - der_id
+          - gate_stack_id
+    forbids_sentences:
+      - "Gate 표기 없이 수치 결론을 단정하는 문장"
+      - "레짐 조건 없이 보편 범위를 선언하는 문장"
+      - "사후 정당화 또는 FAIL 무력화 문장"
+      - "lock_id 없는 값/문턱/절차 재서술"
+    on_fail:
+      verdict: "결론 자격 박탈"
+      label_prefix: "FAIL-PASSRULE"
+      propagation: "dependency_dag로 연쇄 전파"

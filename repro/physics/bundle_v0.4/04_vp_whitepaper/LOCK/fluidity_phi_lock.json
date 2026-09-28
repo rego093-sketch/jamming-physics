@@ -1,0 +1,44 @@
+{
+  "version": "vp_whitepaper_fluidity_phi_lock_v1",
+  "module": "04_vp_whitepaper",
+  "scope": {
+    "paper_section": "3.2.1 (Fluidity as failure rate)",
+    "purpose": "Lock the definition of fluidity φ as a protocol+window+decision-function dependent failure rate; prevent ambiguous use as a free material constant."
+  },
+  "symbols": {
+    "phi": "Fluidity index (failure rate)",
+    "P": "Driving/observation protocol (construction rules for J_n and sampling)",
+    "W": "Observation window [t0, t0+Δt] or equivalently N_total steps",
+    "J_n": "Jamming lattice at step n",
+    "chi_ST": "Structural rigidity decision function (Section 3.2.3.3)",
+    "N_total": "Number of observations/updates in the window W",
+    "N_unjam": "Count of steps classified as unjammed (chi_ST=0)"
+  },
+  "definitions": {
+    "N_unjam": "Σ_{n=1..N_total(W)} 1[ chi_ST(J_n)=0 ]",
+    "phi(P;W)": "N_unjam(W) / N_total(W)",
+    "range": "φ ∈ [0,1]",
+    "solid_like": "φ ≈ 0 under a fixed (P;W)",
+    "fluid_like": "φ large under a fixed (P;W)"
+  },
+  "protocol_lock": {
+    "required_reporting_fields": [
+      "protocol_id",
+      "t0",
+      "delta_t_or_N_total",
+      "sampling_rate_or_step_definition",
+      "lattice_construction_rule_ref (Section 3.2.2)",
+      "chi_ST_rule_ref (Section 3.2.3.3)",
+      "thresholds_used (if any)",
+      "software_or_manual_procedure_id"
+    ],
+    "comparability_note": "φ values are only comparable when these fields match (same P and same W)."
+  },
+  "cross_references": {
+    "paper": {
+      "phi_definition": "04_vp_whitepaper/vp_whitepaper_v0_1_2_rigor_v2.tex : Section 3.2.1",
+      "jamming_lattice": "04_vp_whitepaper/vp_whitepaper_v0_1_2_rigor_v2.tex : Section 3.2.2",
+      "chi_ST": "04_vp_whitepaper/vp_whitepaper_v0_1_2_rigor_v2.tex : Section 3.2.3.3"
+    }
+  }
+}

@@ -1,0 +1,890 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+%  AQD / No-Tuning Consolidated Notes (Option 1)
+%  "C is a Level-0 fundamental constant; derive why it is constant
+%   (scale invariance + Point-J structure) and validate key lattice
+%   claims with simulations."
+%
+%  This TeX is a FULL consolidation of everything discussed so far:
+%   - Original lattice axioms (hard spheres + voids; FCC vs RCP)
+%   - Static speed definition c^2 = B_eff / rho_eff (no clock)
+%   - Where the old alpha/sqrt(phi) logic came from, and why it was a hole
+%   - Correct (definition-level) stiffness / modulus derivations
+%   - Scale-law closure using m(a) ~ rho0 a^3, F(a) ~ S0 a^2, k(a) ~ S0 a
+%   - Point-J (jamming) as a structural "switch": c = 0 below, c > 0 above
+%   - FCC dispersion experiment (half-angle stabilization) + full analytic O(q^2)
+%   - RCP/Point-J numerical experiment (soft spheres + FIRE) + tables
+%   - Finite-difference bulk modulus measurement and c = sqrt(B/rho) demo
+%   - No calibration/tuning rules explicitly written
+%
+%  IMPORTANT: This is "Option 1":
+%   - We do NOT attempt to output SI numeric 299,792,458 m/s from geometry alone.
+%   - Instead: at Level-0, C is a fundamental material constant of the substrate,
+%     and we derive it is scale-invariant and (at Point-J) free of ad-hoc factors.
+% ============================================================
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% ------------------------------------------------------------
+% Listings (Python code blocks)
+% ------------------------------------------------------------
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!60!black},
+  commentstyle=\color{green!40!black},
+  stringstyle=\color{red!55!black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!20},
+  tabsize=2
+}
+
+% ------------------------------------------------------------
+% Macros / notation
+% ------------------------------------------------------------
+\newcommand{\aL}{a}                 % lattice length scale (variable)
+\newcommand{\C}{C}                  % universal signal speed
+\newcommand{\rhozero}{\rho_{0}}     % base density coefficient (Level-0 material)
+\newcommand{\Szero}{S_{0}}          % base stress/tension coefficient (Level-0 material)
+\newcommand{\phiP}{\phi}            % packing fraction
+\newcommand{\Z}{Z}                  % coordination number
+\newcommand{\GammaS}{\Gamma}        % dimensionless structure factor
+
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\Kvec}{\mathbf{K}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\I}{\mathbf{I}}
+
+\title{AQD Lattice Notes (No-Tuning, Option 1):\\
+Scale-Invariant Origin of a Universal Signal Speed from Geometry + Point-J}
+\author{(consolidated from conversation)}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ============================================================
+\section{Executive Summary (Option 1)}
+% ============================================================
+
+\paragraph{The stance (Option 1).}
+At the most fundamental ``Level-0'' (the discrete substrate itself), the universal signal speed $\C$ is treated as a \emph{fundamental material constant} of the substrate. We do \emph{not} attempt to compute the SI number \SI{299792458}{m/s} from geometry alone; we instead show (without calibration/tuning) that:
+\begin{enumerate}[label=(\alph*)]
+\item $\C$ is \emph{scale-invariant}: the lattice size $\aL$ cancels out \emph{exactly} under physically motivated scaling laws,
+\item $\C$ is \emph{structure-fixed} at Point-J (jamming threshold): the dimensionless geometric factor becomes \emph{unity} without artificial parameter-fitting,
+\item lattice dispersion becomes \emph{asymptotically perfectly linear} at long wavelength, with corrections $\mathcal{O}((\aL/\lambda)^2)$ and an \emph{analytic} prefactor (verified numerically).
+\end{enumerate}
+
+\paragraph{What is ``no-tuning'' here?}
+No step is allowed to multiply a theory curve by an arbitrary scaling factor to match data; no ratio (e.g.\ $k_2/k_1$) is chosen \emph{after} seeing the desired answer. The only tolerances appearing below are numerical convergence thresholds (floating-point noise), and unit normalizations ($\aL=1,\,m=1,\,k=1$) used to run toy simulations.
+
+\paragraph{Core final formula.}
+With the scaling rules
+\[
+m(\aL)=\rhozero\,\aL^3,\qquad F(\aL)=\Szero\,\aL^2,\qquad k(\aL)=\frac{F(\aL)}{\aL}=\Szero\,\aL,
+\]
+and with Point-J structural factor $\GammaS_J=1$, we obtain
+\begin{equation}
+\boxed{\;\C^2=\frac{\Szero}{\rhozero}\;}\qquad\text{(scale-invariant, no-tuning, no Planck numerics).}
+\end{equation}
+The job of geometry/jamming is to enforce $\GammaS_J=1$ (rather than forcing any ad-hoc $\phi$-tuning).
+
+% ============================================================
+\section{Axioms and Definitions (Level-0 Substrate)}
+% ============================================================
+
+\subsection{Discrete substrate, not a continuous fluid}
+\begin{itemize}
+\item \textbf{Space} is modeled as a \textbf{dense discrete packing} of identical ``space grains'' of characteristic size $\aL$ (a variable; no specific numeric value is assumed).
+\item \textbf{Grains} are modeled as \textbf{hard spheres} (infinite stiffness at the grain level: particles do not deform).
+\item \textbf{Geometry class}: either
+  \begin{itemize}
+  \item crystalline close packing (FCC/HCP; packing fraction $\phiP\approx 0.74$),
+  \item or random close packing / jammed packing (RCP, ``Point-J'' regime; $\phiP\approx 0.64$),
+  \end{itemize}
+  with explicit recognition that \textbf{voids exist}: $\phiP<1$.
+\end{itemize}
+
+\subsection{Packing fraction, coordination number, and Point-J}
+\begin{itemize}
+\item Packing fraction $\phiP$ is the volume fraction occupied by grains.
+\item Coordination number $\Z$ is the average number of contacts (neighbors) per grain in the contact network.
+\item \textbf{Point-J} is the jamming threshold: below it the system is unjammed (no rigid contact network), above it the system is jammed (finite stiffness).
+\end{itemize}
+
+\paragraph{Key observation about voids.}
+Voids are geometrically unavoidable in 3D sphere packings unless one is in an ideal dense crystalline packing ($\phiP\simeq 0.74$). In jammed random packings, voids persist with $\phiP\simeq 0.64$.
+
+% ============================================================
+\section{No-Tuning Rulebook (Hard Constraint)}
+% ============================================================
+
+We explicitly forbid:
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Amplitude scaling}: do not choose an arbitrary multiplicative factor to make a theoretical line overlap a numerical curve.
+\item \textbf{Post-hoc parameter choices}: do not pick $k_2/k_1$, a cutoff, etc.\ \emph{after} inspecting the result, solely to make an answer equal to 1.
+\item \textbf{Circular definitions}: do not define a ``maximum force'' or ``Planck force'' using $\C$ and then claim to derive $\C$ from it.
+\end{enumerate}
+Allowed:
+\begin{itemize}
+\item Unit choices for toy simulations ($\aL=1$, $m=1$, $k=1$) are \emph{unit conventions}, not calibrations.
+\item Numerical tolerances (e.g.\ FIRE force tolerance) are \emph{convergence settings}, not physical fits.
+\end{itemize}
+
+% ============================================================
+\section{Static Speed Definition (No Clock)}
+% ============================================================
+
+\subsection{The static formula}
+We fix the fundamental measurement definition:
+\begin{equation}
+\boxed{\;\C^2=\frac{B_{\mathrm{eff}}}{\rho_{\mathrm{eff}}}\;}
+\end{equation}
+where $B_{\mathrm{eff}}$ is an effective stiffness modulus (in the \emph{relevant} continuum description) and $\rho_{\mathrm{eff}}$ is an effective inertial density.
+
+\subsection{Important correction: $B_{\mathrm{eff}}$ is a \emph{derivative} stiffness (not max force/area)}
+The earlier heuristic step
+\[
+B_{\mathrm{eff}} \stackrel{?}{\sim} \frac{F_{\max}}{\aL^2}
+\]
+has a conceptual hole: \textbf{bulk modulus (or stiffness modulus)} is defined by a small-strain derivative:
+\[
+B \equiv -V\frac{dP}{dV} \quad\text{(equivalently from the quadratic energy density in a small volumetric strain).}
+\]
+So voids/packing fraction generally affect both (i) mass density and (ii) stiffness, and must \emph{not} be inserted only into $\rho_{\mathrm{eff}}$.
+
+% ============================================================
+\section{Where the Old $\alpha/\sqrt{\phi}$ Logic Came From (and Why It Was a Hole)}
+% ============================================================
+
+\subsection{Old heuristic (historical record)}
+The earlier attempt (kept here for completeness) was:
+\[
+\C = \sqrt{\frac{B_{\mathrm{eff}}}{\rho_{\mathrm{eff}}}},\qquad
+B_{\mathrm{eff}} \approx \alpha_{\mathrm{geom}}^2\frac{F}{\aL^2},\qquad
+\rho_{\mathrm{eff}}\approx \phiP\frac{m}{\aL^3}.
+\]
+Then
+\[
+\C \sim \sqrt{\frac{\alpha_{\mathrm{geom}}^2(F/\aL^2)}{\phiP(m/\aL^3)}}
+= \alpha_{\mathrm{geom}}\frac{1}{\sqrt{\phiP}}\sqrt{\frac{F\aL}{m}}.
+\]
+If $\sqrt{F\aL/m}$ is identified with a target speed, the remaining factor is
+\[
+\C_{\mathrm{result}} = \C \left(\frac{\alpha_{\mathrm{geom}}}{\sqrt{\phiP}}\right).
+\]
+One then noted numerically:
+\[
+\alpha_{\mathrm{geom}}\approx 0.816,\quad
+\frac{1}{\sqrt{\phiP}}\approx
+\begin{cases}
+1.25 & (\phiP\approx 0.64\ \mathrm{RCP})\\
+1.16 & (\phiP\approx 0.74\ \mathrm{FCC})
+\end{cases}
+\Rightarrow
+\alpha_{\mathrm{geom}}/\sqrt{\phiP}\approx 1.
+\]
+
+\subsection{Why that ``boost'' was artificial}
+The hole is that $B_{\mathrm{eff}}$ was \emph{not} computed as a derivative stiffness. Once $B$ is computed correctly from a micro-model (Section~\ref{sec:microB}), the dependence on number density (hence $\phiP$) typically appears in $B$ as well, and \textbf{cancels} in $B/\rho$. Therefore the claimed $1/\sqrt{\phiP}$ speed-up is an artifact of an incorrect modulus definition.
+
+% ============================================================
+\section{Correct Micro--Macro Stiffness: Contact Network Derivations}
+\label{sec:microB}
+% ============================================================
+
+We present two related micro-model routes, because we used \emph{two} kinds of lattice physics in the discussion:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Elastic/bulk route} (vector-like strain energy): corrects the $\phi$-hole and shows how $\phi$ cancels from $B/\rho$ when $Z,k,L$ are held fixed.
+\item \textbf{Scalar graph-Laplacian route} (signal field on lattice): matches the FCC dispersion code exactly and gives a clean $\GammaS=\Z/6$ structure factor, becoming $\GammaS_J=1$ at Point-J where $\Z\simeq 6$.
+\end{enumerate}
+
+\subsection{(A) Elastic/bulk route (definition-level bulk modulus)}
+Assume a contact network where each contact acts like a spring with stiffness $k$ and rest length $L$.
+
+\paragraph{Number density.}
+If grains of diameter $\aL$ occupy packing fraction $\phiP$, the number density scales as
+\[
+n \propto \frac{\phiP}{\aL^3}.
+\]
+(Exact prefactors depend on the grain volume model; they cancel below.)
+
+\paragraph{Bond energy under isotropic strain.}
+For a small isotropic strain $\varepsilon$, bond length changes $L\to L(1+\varepsilon)$, thus $\Delta L=L\varepsilon$.
+A bond stores
+\[
+E_{\mathrm{bond}}=\frac12 k(\Delta L)^2=\frac12 k L^2\varepsilon^2.
+\]
+Bonds per volume: $(n\Z/2)$. Hence energy density:
+\[
+u=\frac{n\Z}{2}\cdot \frac12 kL^2\varepsilon^2=\frac{n\Z}{4}kL^2\varepsilon^2.
+\]
+By continuum definition, volumetric strain is $\Delta V/V=3\varepsilon$, and
+\[
+u=\frac12 B(3\varepsilon)^2=\frac{9}{2}B\varepsilon^2.
+\]
+Equating yields
+\begin{equation}
+\boxed{\;B=\frac{n\Z}{18}kL^2\;}
+\end{equation}
+
+\paragraph{Density and speed.}
+Mass density is $\rho=nm$. Therefore
+\begin{equation}
+\boxed{\;\C^2=\frac{B}{\rho}=\frac{\Z}{18}\frac{kL^2}{m}\;}
+\end{equation}
+
+\paragraph{Key consequence.}
+Since both $B$ and $\rho$ are proportional to $n$, the packing fraction dependence cancels in $B/\rho$ \emph{provided} $Z,k,L$ are held fixed:
+\[
+n\propto \phiP \quad\Rightarrow\quad \frac{B}{\rho}\propto \frac{n}{n}=\text{(independent of }\phiP\text{)}.
+\]
+Thus the earlier $1/\sqrt{\phiP}$ ``speed-up'' was not a valid inference from the definition of $B$.
+
+\subsection{(B) Scalar graph-Laplacian route (matches FCC dispersion code)}
+Now consider a scalar lattice field $u(\mathbf{x})$ that propagates on the neighbor graph.
+
+\paragraph{Discrete dynamics.}
+On each site $i$,
+\begin{equation}
+m\,\ddot u_i \;=\; k \sum_{j\in N(i)}(u_j-u_i).
+\label{eq:scalar-dyn}
+\end{equation}
+This is the simplest local propagation law: ``each node is pulled toward neighbors''.
+
+\paragraph{Plane-wave dispersion.}
+For $u_i\propto e^{i(\Kvec\cdot \mathbf{x}_i-\omega t)}$,
+\[
+\omega^2(\Kvec)=\frac{k}{m}\sum_{\evec\in\mathcal{N}} 2\sin^2\!\Big(\frac{\Kvec\cdot\evec}{2}\Big).
+\]
+For small $|\Kvec|$:
+\[
+2\sin^2(\theta/2)=\frac{\theta^2}{2}+O(\theta^4),
+\]
+so
+\[
+\omega^2(\Kvec)\approx \frac{k}{m}\cdot \frac12\sum_{\evec}(\Kvec\cdot\evec)^2.
+\]
+
+\paragraph{Isotropic neighbor statistics.}
+If neighbor directions are isotropic and $|\evec|=\aL$ for each neighbor, then
+\[
+\sum_{n=1}^{\Z}\hat u_n\hat u_n^{\mathsf T}\approx \frac{\Z}{3}\I,\qquad \evec_n=\aL\hat u_n
+\]
+hence
+\[
+\frac12\sum_{\evec}\evec\evec^{\mathsf T}\approx \frac12\cdot \aL^2\cdot \frac{\Z}{3}\I=\frac{\Z\aL^2}{6}\I.
+\]
+Therefore the long-wavelength speed is
+\begin{equation}
+\boxed{\;\C^2 = \GammaS \,\frac{k}{m}\,\aL^2,\qquad \GammaS \equiv \frac{\Z}{6}\;}
+\label{eq:GammaZ6}
+\end{equation}
+This $\GammaS$ is a \textbf{pure geometry/connectivity} factor.
+
+\paragraph{Point-J closure (no tuning).}
+At jamming (frictionless, 3D), the isostatic constraint count gives
+\[
+\Z_J\simeq 2d = 6,
+\]
+hence
+\begin{equation}
+\boxed{\;\GammaS_J = \frac{\Z_J}{6}=1\;}
+\label{eq:Gamma1}
+\end{equation}
+Thus at Point-J the structure factor becomes \emph{exactly unity} by geometry/constraint counting, not by tuning.
+
+\paragraph{Interpretation relative to the $B/\rho$ frame.}
+For the scalar field, an effective continuum energy has the form
+\[
+U \sim \frac{B_{\mathrm{eff}}}{2}\int |\nabla u|^2\,dV,\qquad
+T \sim \frac{\rho_{\mathrm{eff}}}{2}\int \dot u^2\,dV,
+\]
+whose Euler--Lagrange equation yields $\rho_{\mathrm{eff}}\ddot u = B_{\mathrm{eff}}\nabla^2 u$ and $\C^2=B_{\mathrm{eff}}/\rho_{\mathrm{eff}}$.
+In this mapping, $B_{\mathrm{eff}}$ is a \emph{stiffness modulus for the field} (dimension of stress), not necessarily the mechanical bulk modulus of a granular solid. The FCC dispersion experiment below pertains to this scalar Laplacian model.
+
+% ============================================================
+\section{Scale-Invariant Closure: All Depends on Length \texorpdfstring{$\aL$}{a}, Yet \texorpdfstring{$\aL$}{a} Cancels}
+% ============================================================
+
+We adopt the scale laws (the user's ``new closure''):
+
+\subsection{Scaling postulates}
+\begin{align}
+m(\aL) &= \rhozero\,\aL^3 \qquad & \text{(mass scales with volume)}\\
+F(\aL) &= \Szero\,\aL^2 \qquad & \text{(force scales with area under a base stress)}\\
+k(\aL) &= \frac{F(\aL)}{\aL}=\Szero\,\aL \qquad & \text{(stiffness as force/length)}
+\end{align}
+
+\subsection{Universal cancellation of \texorpdfstring{$\aL$}{a}}
+Using the scalar propagation speed form
+\[
+\C^2 = \GammaS\,\frac{k(\aL)}{m(\aL)}\,\aL^2
+\]
+and substituting $k(\aL)=\Szero\,\aL$ and $m(\aL)=\rhozero\,\aL^3$ gives
+\begin{equation}
+\C^2
+=\GammaS\,\frac{\Szero\,\aL}{\rhozero\,\aL^3}\,\aL^2
+=\GammaS\,\frac{\Szero}{\rhozero}.
+\end{equation}
+Thus $\aL$ cancels \emph{exactly}.
+
+\paragraph{Point-J specialization.}
+At Point-J, $\GammaS_J=1$ (Section~\ref{eq:Gamma1}), hence
+\begin{equation}
+\boxed{\;\C^2=\frac{\Szero}{\rhozero}\;}
+\end{equation}
+independent of the lattice spacing $\aL$, without any Planck numerics or fitted coefficients.
+
+% ============================================================
+\section{Point-J as a Structural Switch: \texorpdfstring{$\C=0$}{C=0} Below, \texorpdfstring{$\C>0$}{C>0} Above}
+% ============================================================
+
+\subsection{Qualitative}
+\begin{itemize}
+\item If $\phiP<\phi_J$: no spanning contact network, effectively $\Z\approx 0$, the stiffness vanishes $\Rightarrow \C=0$.
+\item If $\phiP>\phi_J$: a contact network exists, $\Z>0$, stiffness finite $\Rightarrow \C>0$.
+\item At $\phiP\simeq \phi_J$ (Point-J): the network is marginally stable and $\Z\to 6$ (frictionless 3D), fixing $\GammaS\to 1$.
+\end{itemize}
+
+\subsection{The role of voids}
+Voids do \emph{not} directly ``speed up light'' via $1/\sqrt{\phiP}$; rather, void fraction controls whether the contact network exists and what $\Z$ is. In the no-tuning closure, the universal constant emerges from the \emph{material ratio} $\Szero/\rhozero$ and the \emph{structure-fixed} $\GammaS=1$ at jamming.
+
+% ============================================================
+\section{FCC Dispersion: Perfect Linearity Emerges at Long Wavelength}
+% ============================================================
+
+This section documents the FCC dispersion simulation with a numerically stable ``half-angle'' evaluation and its analytic interpretation.
+
+\subsection{FCC neighbor set}
+Use the 12 nearest neighbors of FCC (normalized to length $\aL$). In the simulation we set $\aL=1$:
+\[
+\evec\in \frac{1}{\sqrt{2}}\{(\pm1,\pm1,0),(\pm1,0,\pm1),(0,\pm1,\pm1)\}.
+\]
+
+\subsection{Exact small-$k$ isotropy (2nd moment)}
+For this neighbor set (with $|\evec|=1$), one can show
+\[
+\sum_{\evec}\evec\evec^{\mathsf T}=4\I.
+\]
+Hence for small $K=|\Kvec|$,
+\[
+\omega^2(\Kvec)=\frac{k}{m}\cdot \frac12\Kvec^{\mathsf T}(4\I)\Kvec + O(K^4)
+= \frac{k}{m}\cdot 2K^2 + O(K^4).
+\]
+Therefore the long-wavelength speed is
+\begin{equation}
+\boxed{\;c_0=\sqrt{2}\sqrt{\frac{k}{m}}\qquad (\text{FCC, } \aL=1).\;}
+\end{equation}
+In the code we set $k/m=1$ (unit convention), so $c_0=\sqrt{2}$.
+
+\subsection{Leading dispersion error: \texorpdfstring{$\mathcal{O}(K^2)$}{O(K^2)} and analytic prefactor}
+Using the identity
+\[
+2\sin^2(\theta/2)=\frac{\theta^2}{2}-\frac{\theta^4}{24}+O(\theta^6),
+\]
+we obtain
+\begin{align}
+\omega^2(\Kvec)
+&= \frac{k}{m}\sum_{\evec}\left[\frac{(\Kvec\cdot\evec)^2}{2}-\frac{(\Kvec\cdot\evec)^4}{24}+O(K^6)\right]\\
+&= \frac{k}{m}\left[2K^2 - \frac{1}{24}\sum_{\evec}(\Kvec\cdot\evec)^4 + O(K^6)\right].
+\end{align}
+Hence the \emph{normalized} speed $v=\omega/K$ obeys
+\begin{equation}
+\frac{v(\hat{\Kvec})}{c_0}
+=
+1-\frac{K^2}{96}\sum_{\evec}(\hat{\Kvec}\cdot\evec)^4 + O(K^4).
+\label{eq:dv_over_c}
+\end{equation}
+Therefore the speed deviation scales as
+\[
+\left|\frac{\Delta c}{c}\right| \sim \beta(\hat{\Kvec}) K^2 \sim \mathcal{O}\!\left(\frac{1}{\tilde\lambda^2}\right),
+\qquad \tilde\lambda\equiv \frac{\lambda}{\aL}\gg1.
+\]
+
+\paragraph{Max direction and closed-form coefficient.}
+The worst direction is $\langle 111\rangle$. One finds
+\[
+\sum_{\evec} (\hat{\Kvec}\cdot\evec)^4\Big|_{111}=\frac{8}{3}.
+\]
+Thus from \eqref{eq:dv_over_c},
+\[
+\left|\frac{\Delta c}{c}\right|_{111}\approx \frac{K^2}{96}\cdot\frac{8}{3}=\frac{K^2}{36}.
+\]
+Since $K=2\pi/\lambda = 2\pi/(\tilde\lambda\,\aL)$ and we measure $\lambda$ in units of $\aL$,
+\begin{equation}
+\boxed{\;
+\left|\frac{\Delta c}{c}\right|_{\max}
+\approx \frac{\pi^2}{9}\frac{1}{\tilde\lambda^2}
+\qquad (\tilde\lambda\gg 1,\ \text{FCC, nearest neighbors}).\;}
+\end{equation}
+
+\subsection{Numerical stabilization: half-angle identity}
+For very small angles $\theta$, floating-point evaluation of $\cos\theta -1$ suffers catastrophic cancellation.
+Use the identity
+\[
+\cos\theta-1 = -2\sin^2(\theta/2),
+\]
+which preserves precision for $\theta\to 0$. This was implemented in the ``Ultra-Precision'' code below.
+
+% ============================================================
+\section{RCP / Point-J Numerical Experiment (No-Tuning Protocol)}
+% ============================================================
+
+To validate Point-J claims (\emph{without fitting}), we used a standard T=0 jamming protocol:
+\begin{itemize}
+\item 3D periodic box, minimum-image distances,
+\item soft \textbf{harmonic repulsion} (only when particles overlap),
+\item FIRE minimization to mechanical equilibrium,
+\item a \textbf{bisection} in packing fraction $\phi$ to bracket $\phi_J$.
+\end{itemize}
+
+\subsection{Model}
+Particles have diameter $\aL$; in code we set $\aL=1$ (unit).
+For a pair distance $r_{ij}$,
+\[
+\delta_{ij}=\max(0,\aL-r_{ij}),\qquad
+U_{ij}=\frac12\,\delta_{ij}^2.
+\]
+Total energy $U=\sum_{i<j}U_{ij}$.
+
+\subsection{Jamming criterion (numerical, not fitted)}
+A state is called ``jammed'' if after minimization it retains nonzero overlap/energy (above tiny numerical noise tolerance).
+This defines $\phi_J$ by bisection. No parameter is adjusted to force $\phi_J\approx 0.64$.
+
+\subsection{Measured quantities}
+\begin{itemize}
+\item $Z_{\mathrm{all}}$: coordination counting all contacts (dist $<\aL$).
+\item $Z_{\mathrm{bb}}$: backbone coordination (rattlers removed by iteratively discarding nodes with degree $\le 3$ in 3D).
+\item $Q=\langle \hat u\hat u^{\mathsf T}\rangle$: contact orientation tensor; isotropy check $Q\approx I/3$.
+\item $\phi_J$: midpoint of final bisection bracket.
+\end{itemize}
+
+\subsection{Representative results (small-$N$ demonstration)}
+Using $N=64$ (small for speed), bisection steps $=6$ (bracket width $0.00375$), and two seeds, we obtained:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+seed & $\phi_J^{\text{(est)}}$ & bracket width & $Z_{\mathrm{all}}$ & $Z_{\mathrm{bb}}$ & $\GammaS_{\mathrm{bb}}=Z_{\mathrm{bb}}/6$\\
+\midrule
+0 & 0.621875 & 0.00375 & 5.93750 & 6.196721 & 1.032787\\
+1 & 0.636875 & 0.00375 & 5.96875 & 6.063492 & 1.010582\\
+\bottomrule
+\end{tabular}
+\caption{No-tuning jamming (toy resolution): Point-J estimates and coordination. Small $N$ causes seed spread; backbone $Z$ is close to 6.}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+seed & eigenvalues of $Q$ & $\|Q-I/3\|_F$\\
+\midrule
+0 & $(0.3151,\ 0.3341,\ 0.3508)$ & 0.0252\\
+1 & $(0.2950,\ 0.3389,\ 0.3660)$ & 0.0507\\
+\bottomrule
+\end{tabular}
+\caption{Contact-direction isotropy: $Q$ eigenvalues cluster near $1/3$.}
+\end{table}
+
+\paragraph{Interpretation.}
+Even at small $N$, the backbone coordination tends toward $Z\simeq 6$, hence $\GammaS\simeq 1$ (no tuning), consistent with the Point-J closure used in Section~\ref{eq:Gamma1}.
+
+% ============================================================
+\section{Static \texorpdfstring{$B$}{B} and \texorpdfstring{$c=\sqrt{B/\rho}$}{c=sqrt(B/rho)} Measurement (Demonstration)}
+% ============================================================
+
+To connect directly to $\C^2=B/\rho$, we measured an effective bulk modulus $B$ in the soft-sphere jammed state by finite differences in minimized energy density $u(\varepsilon)=U/V$ under isotropic volume changes:
+\[
+B \approx \frac{u(+\varepsilon)+u(-\varepsilon)-2u(0)}{9\varepsilon^2}.
+\]
+Then $c=\sqrt{B/\rho}$.
+
+\paragraph{One representative point (same toy model).}
+For seed=1 at the jammed bracket edge $\phi_{\mathrm{hi}}=0.63875$ (with $N=64$):
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+quantity & value & quantity & value\\
+\midrule
+$Z_{\mathrm{bb}}$ & 6.063492 & $\rho$ & 1.219923\\
+$B$ (FD, $\varepsilon=10^{-4}$) & 0.255456 & $c=\sqrt{B/\rho}$ & 0.457606\\
+$\sqrt{Z_{\mathrm{bb}}/18}$ (elastic-network scale) & 0.580397 & ratio $c/\sqrt{Z_{\mathrm{bb}}/18}$ & 0.788437\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Note.}
+This is a \emph{demonstration} only: small $N$, coarse bisection, and a scalar soft-sphere toy model. The purpose is to show how to compute $B$ \emph{definitionally} (no post-hoc scaling factors). Convergence to asymptotic jamming scalings requires larger $N$ and more careful finite-size analysis.
+
+% ============================================================
+\section{Final No-Tuning Closure (Option 1)}
+% ============================================================
+
+\subsection{Unified statement}
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Scale invariance}: with $m(\aL)=\rhozero\aL^3$ and $k(\aL)=\Szero\aL$, any signal speed derived from $\C^2\propto (k/m)\aL^2$ becomes independent of $\aL$:
+\[
+\frac{k(\aL)}{m(\aL)}\aL^2 = \frac{\Szero\aL}{\rhozero\aL^3}\aL^2=\frac{\Szero}{\rhozero}.
+\]
+\item \textbf{Void/jamming switch}: $\phi$ does not tune $\C$ continuously by $1/\sqrt{\phi}$; rather, $\phi$ decides whether a spanning contact network exists (hence whether $B_{\mathrm{eff}}$ is zero or not).
+\item \textbf{Point-J factor unity}: at jamming, $Z\to 6$ (backbone, frictionless 3D), giving $\GammaS_J=1$ in the scalar propagation model.
+\end{enumerate}
+
+\subsection{The final formula}
+Thus, at the Level-0 critical state (Point-J),
+\begin{equation}
+\boxed{\;\C^2=\frac{\Szero}{\rhozero}\;}
+\end{equation}
+with $\C$ a Level-0 fundamental constant (Option 1). Geometry/jamming provides a no-tuning explanation for why extraneous factors (lattice size $\aL$, packing fraction $\phi$) drop out or become structurally fixed.
+
+% ============================================================
+\appendix
+\section{Appendix A: Legacy Heuristic RCP Density Code (User's Growth Algorithm)}
+% ============================================================
+
+\paragraph{Purpose.}
+This is the earlier heuristic ``random growth'' algorithm for estimating RCP density. It is not a full MD/DEM solver, but it was part of the development record.
+
+\begin{lstlisting}[language=Python,caption={Legacy heuristic RCP density estimator (random growth + overlap relax)}]
+import numpy as np
+from scipy.spatial.distance import pdist, squareform
+
+def simulate_rcp_density(n_particles=500, n_steps=2000, growth_rate=0.001):
+    """
+    Heuristic RCP density estimate via random particle growth + overlap relaxation.
+    NOTE: not a production-grade DEM/MD solver; intended for qualitative behavior.
+    """
+    L = 1.0
+    positions = np.random.rand(n_particles, 3) * L
+    radius = 0.01
+
+    print(f"--- Simulation start (N={n_particles}) ---")
+
+    for step in range(n_steps):
+        radius *= (1 + growth_rate)
+
+        dx = np.abs(positions[:, np.newaxis, :] - positions[np.newaxis, :, :])
+        dx = np.where(dx > 0.5 * L, L - dx, dx)  # periodic BC
+        dists = np.sqrt(np.sum(dx**2, axis=2))
+
+        np.fill_diagonal(dists, np.inf)
+        overlaps = dists < (2 * radius)
+
+        if np.any(overlaps):
+            move_idx = np.any(overlaps, axis=1)
+            positions[move_idx] += (np.random.rand(np.sum(move_idx), 3) - 0.5) * radius * 0.1
+            positions = positions % L
+            radius /= (1 + growth_rate * 0.5)
+
+        vol_particles = n_particles * (4/3) * np.pi * (radius**3)
+        density = vol_particles / (L**3)
+
+        if step % 200 == 0:
+            print(f"Step {step}: phi = {density:.4f}")
+
+        if step > 500 and density > 0.55 and growth_rate > 1e-5:
+            growth_rate *= 0.99
+
+    return density
+
+final_phi = simulate_rcp_density(n_particles=300, n_steps=3000)
+print(f"[Final] phi={final_phi:.4f}, void fraction={1-final_phi:.4f}")
+\end{lstlisting}
+
+% ============================================================
+\section{Appendix B: FCC Dispersion (Ultra-Precision, No Scaling-Factor Fit)}
+% ============================================================
+
+\paragraph{Key point.}
+We \emph{do not} scale the theoretical $\lambda^{-2}$ line to match data. We instead plot the analytic prefactor for FCC:
+\[
+\left|\frac{\Delta c}{c}\right|\approx \frac{\pi^2}{9}\frac{1}{(\lambda/\aL)^2}.
+\]
+
+\begin{lstlisting}[language=Python,caption={FCC dispersion: ultra-precision evaluation + analytic prefactor (no fit)}]
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+def fcc_dispersion_ultra_precision_no_fit():
+    # FCC 12 nearest-neighbor vectors, length 1 (set a=1 for the code)
+    vectors = np.array([
+        [1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0],
+        [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1],
+        [0, 1, 1], [0, -1, 1], [0, 1, -1], [0, -1, -1]
+    ], dtype=float) / np.sqrt(2)
+
+    # wavelengths in units of a (here a=1)
+    wavelengths = np.logspace(1, 6, 60)
+    k_magnitudes = 2*np.pi / wavelengths
+
+    # stable Laplacian: cos(theta)-1 = -2 sin^2(theta/2)
+    def laplacian_ultra(k_vec):
+        theta = vectors @ k_vec
+        return np.sum(-2.0 * (np.sin(theta/2.0)**2))
+
+    # long-wavelength speed c0 from analytic fact sum e e^T = 4I gives c0 = sqrt(2) in these units.
+    c0 = math.sqrt(2.0)
+
+    max_errors = []
+
+    for k_mag in k_magnitudes:
+        current_max = 0.0
+        for _ in range(80):
+            th = np.random.uniform(0, np.pi)
+            ph = np.random.uniform(0, 2*np.pi)
+            k_vec = k_mag * np.array([np.sin(th)*np.cos(ph), np.sin(th)*np.sin(ph), np.cos(th)])
+            omega2 = -laplacian_ultra(k_vec)
+            if omega2 <= 0: 
+                continue
+            v = math.sqrt(omega2) / k_mag
+            v_norm = v / c0
+            err = abs(1.0 - v_norm)
+            current_max = max(current_max, err)
+        max_errors.append(current_max)
+
+    max_errors = np.array(max_errors)
+
+    # analytic max deviation line (FCC, max at <111>): (pi^2/9) * 1/lambda^2 for lambda in units of a
+    theory = (np.pi**2 / 9.0) / (wavelengths**2)
+
+    plt.figure(figsize=(10,6))
+    plt.loglog(wavelengths, max_errors, 'b.-', label='FCC lattice max |Δc/c| (random directions)')
+    plt.loglog(wavelengths, theory, 'r--', label=r'Analytic max: $(\pi^2/9)\,\lambda^{-2}$')
+    plt.xlabel(r'Wavelength $\lambda/a$')
+    plt.ylabel(r'Speed deviation $|\Delta c/c|$')
+    plt.title('FCC dispersion: Emergent linearity with analytic $O((a/\lambda)^2)$ corrections')
+    plt.grid(True, which="both", alpha=0.35)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    fcc_dispersion_ultra_precision_no_fit()
+\end{lstlisting}
+
+% ============================================================
+\section{Appendix C: RCP / Point-J (Soft Spheres + FIRE + Bisection, No Tuning)}
+% ============================================================
+
+\begin{lstlisting}[language=Python,caption={RCP/Point-J: FIRE minimization + bisection for phi_J + Z and isotropy Q (no fit)}]
+import numpy as np
+import math
+
+def compute_energy_forces(pos, L, diameter=1.0, k_spring=1.0):
+    # periodic minimum image
+    dr = pos[:, None, :] - pos[None, :, :]
+    dr -= L * np.round(dr / L)
+    dist = np.linalg.norm(dr, axis=2)
+    np.fill_diagonal(dist, np.inf)
+
+    mask = dist < diameter
+    overlap = np.where(mask, diameter - dist, 0.0)
+
+    # total energy U = sum_{i<j} 0.5 k overlap^2
+    E = 0.25 * k_spring * np.sum(overlap**2)
+
+    invdist = np.where(mask, 1.0 / dist, 0.0)
+    forces = np.sum((k_spring * overlap * invdist)[:, :, None] * dr, axis=1)
+
+    max_f = float(np.max(np.linalg.norm(forces, axis=1)))
+    max_ov = float(np.max(overlap)) if overlap.size else 0.0
+    return float(E), forces, max_f, max_ov
+
+def fire_minimize(pos, L, max_iter=9000, f_tol=1e-11, dt0=0.01, dt_max=0.1, alpha0=0.1):
+    pos = pos.copy()
+    v = np.zeros_like(pos)
+    dt, alpha = dt0, alpha0
+    n_pos = 0
+
+    for it in range(max_iter):
+        E, f, fmax, ovmax = compute_energy_forces(pos, L)
+        if fmax < f_tol:
+            return pos, E, fmax, ovmax, it
+
+        v += dt * f
+        P = float(np.sum(v * f))
+        f_norm = float(np.linalg.norm(f))
+        v_norm = float(np.linalg.norm(v))
+        if f_norm == 0.0:
+            return pos, E, fmax, ovmax, it
+
+        if P > 0:
+            n_pos += 1
+            if n_pos > 5:
+                dt = min(dt * 1.1, dt_max)
+                alpha *= 0.99
+        else:
+            n_pos = 0
+            dt *= 0.5
+            v[:] = 0.0
+            alpha = alpha0
+
+        v = (1 - alpha) * v + alpha * (v_norm / f_norm) * f
+        pos = (pos + dt * v) % L
+
+    E, f, fmax, ovmax = compute_energy_forces(pos, L)
+    return pos, E, fmax, ovmax, max_iter
+
+def box_length_from_phi(N, phi, diameter=1.0):
+    V_sphere = math.pi / 6.0 * diameter**3
+    V = N * V_sphere / phi
+    return V**(1/3)
+
+def is_jammed(E, max_overlap):
+    # numerical (not fitted): unjammed minima have overlap->0, energy->0
+    return (max_overlap > 1e-8) or (E > 1e-14)
+
+def contact_stats(pos, L, diameter=1.0):
+    dr = pos[:, None, :] - pos[None, :, :]
+    dr -= L * np.round(dr / L)
+    dist = np.linalg.norm(dr, axis=2)
+    np.fill_diagonal(dist, np.inf)
+
+    contact = dist < diameter
+    iu = np.triu_indices(len(pos), k=1)
+    cont_u = contact[iu]
+    M = int(np.sum(cont_u))
+    Z = 2.0 * M / len(pos)
+
+    Q = np.zeros((3,3))
+    if M > 0:
+        dr_u = dr[iu][cont_u]
+        dist_u = dist[iu][cont_u]
+        u = dr_u / dist_u[:, None]
+        Q = (u[:, :, None] * u[:, None, :]).mean(axis=0)
+    return Z, M, Q
+
+def contact_graph(pos, L, diameter=1.0):
+    dr = pos[:, None, :] - pos[None, :, :]
+    dr -= L * np.round(dr / L)
+    dist = np.linalg.norm(dr, axis=2)
+    np.fill_diagonal(dist, np.inf)
+    return dist < diameter
+
+def Z_backbone(contact_mat):
+    # remove rattlers with degree <=3 iteratively (3D)
+    N = contact_mat.shape[0]
+    active = np.ones(N, dtype=bool)
+    changed = True
+    while changed:
+        changed = False
+        deg = contact_mat[active][:, active].sum(axis=1)
+        to_remove = deg <= 3
+        if np.any(to_remove):
+            idx = np.where(active)[0]
+            active[idx[to_remove]] = False
+            changed = True
+
+    if active.sum() == 0:
+        return 0.0, 0
+
+    sub = contact_mat[active][:, active]
+    iu = np.triu_indices(sub.shape[0], k=1)
+    M = int(np.sum(sub[iu]))
+    Z = 2.0 * M / sub.shape[0]
+    return float(Z), int(active.sum())
+
+def find_phiJ_bisect(N=64, seed=0, phi_lo=0.50, phi_hi=0.74, n_bisect=6):
+    rng = np.random.default_rng(seed)
+
+    # Unjam start
+    L_lo = box_length_from_phi(N, phi_lo)
+    for _ in range(10):
+        pos_lo = rng.random((N,3)) * L_lo
+        pos_lo, E, fmax, ovmax, _ = fire_minimize(pos_lo, L_lo)
+        if not is_jammed(E, ovmax):
+            break
+    assert not is_jammed(E, ovmax)
+
+    # Jam high
+    L_hi = box_length_from_phi(N, phi_hi)
+    pos_hi = (pos_lo * (L_hi / L_lo)) % L_hi
+    pos_hi, E, fmax, ovmax, _ = fire_minimize(pos_hi, L_hi)
+    assert is_jammed(E, ovmax)
+
+    # Bisection
+    for _ in range(n_bisect):
+        phi_mid = 0.5*(phi_lo + phi_hi)
+        Lm = box_length_from_phi(N, phi_mid)
+        posm = (pos_lo * (Lm / L_lo)) % Lm
+        posm, E, fmax, ovmax, _ = fire_minimize(posm, Lm)
+        if is_jammed(E, ovmax):
+            phi_hi, pos_hi, L_hi = phi_mid, posm, Lm
+        else:
+            phi_lo, pos_lo, L_lo = phi_mid, posm, Lm
+
+    return 0.5*(phi_lo+phi_hi), (phi_hi-phi_lo), pos_hi, L_hi
+
+if __name__ == "__main__":
+    N = 64
+    for seed in [0,1]:
+        phiJ, width, posJ, LJ = find_phiJ_bisect(N=N, seed=seed, n_bisect=6)
+        Z_all, M, Q = contact_stats(posJ, LJ)
+        Zbb, Nbb = Z_backbone(contact_graph(posJ, LJ))
+        eig = np.linalg.eigvalsh(Q)
+        dev = np.linalg.norm(Q - np.eye(3)/3.0, ord='fro')
+        print("seed", seed, "phiJ", phiJ, "width", width,
+              "Z_all", Z_all, "Z_bb", Zbb, "Gamma", Zbb/6.0,
+              "Q_eigs", eig, "Q_dev", dev)
+\end{lstlisting}
+
+% ============================================================
+\section{Appendix D: Finite-Difference Bulk Modulus and \texorpdfstring{$c=\sqrt{B/\rho}$}{c=sqrt(B/rho)}}
+% ============================================================
+
+\begin{lstlisting}[language=Python,caption={Static bulk modulus B from energy FD + c=sqrt(B/rho) (no scaling-factor fit)}]
+import math
+import numpy as np
+
+# Requires the functions from Appendix C: compute_energy_forces, fire_minimize, etc.
+
+def bulk_modulus_energy_fd(pos0, L0, eps=1e-4):
+    # assumes pos0 is minimized at L0
+    E0, _, _, _ = compute_energy_forces(pos0, L0)
+    u0 = E0 / (L0**3)
+
+    # +eps
+    Lp = L0 * (1 + eps)
+    posp = (pos0 * (Lp / L0)) % Lp
+    posp, Ep, *_ = fire_minimize(posp, Lp)
+    up = Ep / (Lp**3)
+
+    # -eps
+    Lm = L0 * (1 - eps)
+    posm = (pos0 * (Lm / L0)) % Lm
+    posm, Em, *_ = fire_minimize(posm, Lm)
+    um = Em / (Lm**3)
+
+    B = (up + um - 2*u0) / (9 * eps**2)
+    return float(B)
+
+if __name__ == "__main__":
+    N = 64
+    seed = 1
+    phiJ, width, posJ, LJ = find_phiJ_bisect(N=N, seed=seed, n_bisect=6)
+
+    B = bulk_modulus_energy_fd(posJ, LJ, eps=1e-4)
+    rho = N / (LJ**3)  # mass=1 per particle (unit choice)
+
+    c = math.sqrt(max(B,0.0) / rho)
+    print("phiJ(est):", phiJ, "B:", B, "rho:", rho, "c:", c)
+\end{lstlisting}
+
+% ============================================================
+\end{document}

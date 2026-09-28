@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "jet_regime protocol",
+  "type": "object",
+  "required": ["module", "module_version", "created", "locks_required", "seed_policy", "parameters", "outputs"],
+  "properties": {
+    "module": {"type": "string", "const": "jet_regime"},
+    "module_version": {"type": "string"},
+    "created": {"type": "string"},
+    "kind": {"type": "string"},
+    "description": {"type": "string"},
+    "locks_required": {"type": "array", "items": {"type": "string"}},
+    "seed_policy": {
+      "type": "object",
+      "required": ["rng", "seed0"],
+      "properties": {
+        "rng": {"type": "string"},
+        "seed0": {"type": "integer"}
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "required": ["n_steps", "J_star", "q_star", "P_star", "theta_star", "M_star"],
+      "properties": {
+        "n_steps": {"type": "integer", "minimum": 1},
+        "J_star": {"type": "number"},
+        "q_star": {"type": "number"},
+        "P_star": {"type": "number"},
+        "theta_star": {"type": "number"},
+        "M_star": {"type": "number"}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "run_log": {"type": "string"},
+        "metrics": {"type": "string"},
+        "manifest": {"type": "string"},
+        "artifacts_dir": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "created": "2025-12-14",
+  "details": {
+    "manifests_checked": [
+      {
+        "entries_checked": 434,
+        "entries_skipped": 24,
+        "entries_total": 458,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "missing": [],
+        "missing_count": 0,
+        "name": "root",
+        "path": "00_metadata/MANIFEST.sha256"
+      },
+      {
+        "entries_checked": 73,
+        "entries_skipped": 0,
+        "entries_total": 73,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "missing": [],
+        "missing_count": 0,
+        "name": "quantum_annihilation",
+        "path": "01_quantum_annihilation/quantum_annihilation_DOI_vNext/MANIFEST.sha256"
+      },
+      {
+        "entries_checked": 39,
+        "entries_skipped": 0,
+        "entries_total": 39,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "missing": [],
+        "missing_count": 0,
+        "name": "lattice_percolation_soc",
+        "path": "02_lattice_percolation_soc/lattice_percolation_soc_bundle/manifest_sha256.txt"
+      },
+      {
+        "entries_checked": 29,
+        "entries_skipped": 0,
+        "entries_total": 29,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "missing": [],
+        "missing_count": 0,
+        "name": "qm_proton_whitepaper",
+        "path": "03_qm_proton_whitepaper/MANIFEST.sha256"
+      }
+    ],
+    "skip_policy": {
+      "root_manifest": {
+        "note": "snapshot/ entries are skipped to avoid a self-referential fixed point (snapshot is regenerable).",
+        "skip_exact": [
+          "gate/reports/gate_report_MANIFEST_HASH.json",
+          "gate/reports/gate_report_MANIFEST_HASH.tex"
+        ],
+        "skip_prefixes": [
+          "snapshot/",
+          "exp10/snapshot/"
+        ]
+      }
+    },
+    "status": "PASS"
+  },
+  "evidence": {
+    "generated_by": "scripts/gate_manifest_hashes.py",
+    "manifest_sha256": {
+      "01_quantum_annihilation/quantum_annihilation_DOI_vNext/MANIFEST.sha256": "b2a7ec6ff84d9198d6731b58ab0e6b0e38f40e8530cbfeb32eaf679588bc8a87",
+      "02_lattice_percolation_soc/lattice_percolation_soc_bundle/manifest_sha256.txt": "a57960777ab40bf891d291d13db6b5fdc37f4a4d147b02da2fd3d9fbd9f27076",
+      "03_qm_proton_whitepaper/MANIFEST.sha256": "4fb85ad2b6998e652fa87a4463d59d59b0bc59c7760561b43a916611bba20127"
+    },
+    "root_manifest_note": "root MANIFEST.sha256 hash intentionally omitted to avoid a self-referential hash cycle"
+  },
+  "gate_id": "G-MANIFEST-HASH",
+  "status": "PASS"
+}

@@ -241,8 +241,8 @@
     "hypothesis": 2
    },
    "pages": 48,
-   "content_sha256": "6ec421fc342a0050d6b77ad693f1166b3ba490922ac234e06f36506d2dba95cf",
-   "repro_sha256": "a4d2a0c79dd5e9cb854395bc1cc192d9a161c331e66902d9674922de611ce0ae"
+   "content_sha256": "e32fb25802a81e34ec3fb5b63caa167acb5dd32d41d489992e36a8d493534a3b",
+   "repro_sha256": "4fc853b13869ac02c0b6e8e897a5165437e8373816ebd2517de13d8904cd120f"
   },
   {
    "id": "fluid-dynamics",
@@ -1208,16 +1208,17 @@
   }
  ],
  "lineage": {
-  "built_at": "2026-06-25T15:52:25Z",
-  "built_by": "session/2026-06-25-dna-v1_18_1-merge-closeout",
-  "parent_sha256": "18efa642bbf498bd7f60669c2817678a57162ed87ee15fbe18c7f19b49e485bc",
-  "this_sha256": "ba4894b846e607da03f209c763d183bc2445a35575bc04602af980f64876ac77",
+  "built_at": "2026-09-28T05:42:48Z",
+  "built_by": "session/2026-09-28-physics-light-chain",
+  "parent_sha256": "ba4894b846e607da03f209c763d183bc2445a35575bc04602af980f64876ac77",
+  "this_sha256": "1921034b8106a8f0792834e15e4251ae46553af4977dc6646f7bf45d92b6265e",
   "changes": [
-   "DNA volume upgraded v1.13->v1.18.1 (AX-G recovered): docs/dna replaced, 18->29 pages (+11 appendices ax-b..ax-l)",
-   "repro/dna kit updated to v1.18.1; words index regenerated uniformly under VP-SPEC §8 body rule",
-   "C5 restored on DNA via tools/retrofit_cards.py + build_strips.py (data-concept links + hub inherits-strip); gate_shared_infra dna PASS",
-   "SURGICAL manifest patch: ONLY dna row (pages + content_sha256 + repro_sha256 via tool's dir_content_hash). NOT a full regen.",
-   "BLOCKER: tools/make_manifest.py ORDER/REL is stale — missing continental-genesis + recent-sequence-cascade; running it regresses 32->30 volumes. Full regen deferred until that tool is fixed (VP-SPEC §1 tool-approval)."
+   "physics: new chapter §LT 'The Light Chain, Link by Link' (doubts, resolutions, retired evidence, open items); hub, nav, _meta, sitemap updated",
+   "physics: correction notes on 9 pages (SP, 01, 03, 10, 11, 13, W0, W5, W6); chi D-sensitivity corrected from '>1 deg' to ~0.17 deg (§3, §10.9, §10.9.1)",
+   "physics: 47 repro links repointed to existing paths; AQD bundle v0.4 code vendored under repro/physics/bundle_v0.4 (PDF/TeX/DOCX excluded per offload policy)",
+   "physics: pre-registered experiment E2 (lambda-D link, PASS at ±10%) under repro/physics/experiments/E2; reconstructed light_emergence_massfree.py",
+   "physics: verify_appendix_M.py electron channel fixed (retracted pi^2 form removed); gate.py made layout-aware; repro/physics/manifest/physics.csv generated; phase1 PASS",
+   "manifest: physics content_sha256 and repro_sha256 updated in place (make_manifest.py not run: TOOLBUG stale ORDER would drop 2 volumes)"
   ]
  },
  "concepts": {

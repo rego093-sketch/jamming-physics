@@ -1,0 +1,60 @@
+{
+  "version": "vp_whitepaper_chem_geometry_phi_lock_v1",
+  "module": "04_vp_whitepaper",
+  "scope": {
+    "paper_section": "18.2.6 (chemistry: geometry dilution bounds)",
+    "purpose": "Remove selection arbitrariness by locking a geometry classifier and upper-bound constants for phi_eff"
+  },
+  "inputs": {
+    "external_inspection_csv": "04_vp_whitepaper/data/chem/external_inspection/VP_STEP7_EXT_INSPECTION_FULL_V1.csv"
+  },
+  "constants": {
+    "target_species": [
+      "CH4",
+      "H2O",
+      "NH3"
+    ],
+    "tolerances": {
+      "phi_eff_abs": 0.01
+    },
+    "geometry_phi_eff_upper": {
+      "tetrahedral": {
+        "value": 0.7404804896930609,
+        "formula": "pi/(3*sqrt(2))",
+        "note": "3D hard-sphere close-packing density (Kepler limit); used as conservative upper bound for tetrahedral dilution factor."
+      },
+      "bent": {
+        "value": 0.75,
+        "formula": "3/4",
+        "note": "Conservative bound used for compact bent triad/void sharing in the Step7 dilution regime."
+      },
+      "trigonal_pyramidal": {
+        "value": 0.7853981633974483,
+        "formula": "pi/4",
+        "note": "Conservative bound used for trigonal pyramidal dilution regime (between 3D and planar limits)."
+      },
+      "linear": {
+        "value": 1.0,
+        "formula": "1",
+        "note": "No volumetric dilution assumed for strictly linear diatomics in this bound table."
+      }
+    },
+    "classifier": {
+      "CH4": "tetrahedral",
+      "H2O": "bent",
+      "NH3": "trigonal_pyramidal"
+    },
+    "definitions": {
+      "P_avg_atom": "Stoichiometry-weighted average of atomic P_idx values for the elements in the molecular formula",
+      "phi_eff": "phi_eff = P_idx(molecule) / P_avg_atom",
+      "gate_rule": "phi_eff <= phi_eff_upper(geometry) + tol"
+    }
+  },
+  "notes": {
+    "status": "defense-layer",
+    "gate_policy": "This gate checks only the locked target molecules (CH4/H2O/NH3) and treats phi_eff constants as conservative upper bounds, not fitted per-molecule parameters.",
+    "see": [
+      "04_vp_whitepaper/docs/chem/GEOMETRY_PHI_LOCK.md"
+    ]
+  }
+}

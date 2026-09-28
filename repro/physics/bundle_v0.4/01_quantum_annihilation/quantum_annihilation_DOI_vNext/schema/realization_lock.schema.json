@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "realization_lock",
+  "type": "object",
+  "required": [
+    "version",
+    "c_m_per_s",
+    "a_m",
+    "a_meaning",
+    "delta_t_s",
+    "delta_t_method",
+    "cell_geometry"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "c_m_per_s": {
+      "type": "number"
+    },
+    "a_m": {
+      "type": "number"
+    },
+    "a_meaning": {
+      "type": "string",
+      "enum": [
+        "diameter",
+        "radius"
+      ]
+    },
+    "delta_t_s": {
+      "type": "number"
+    },
+    "delta_t_method": {
+      "type": "string"
+    },
+    "cell_geometry": {
+      "type": "string",
+      "enum": [
+        "cube"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

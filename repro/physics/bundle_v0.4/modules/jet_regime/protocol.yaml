@@ -1,0 +1,37 @@
+module: jet_regime
+module_version: v0.2.6
+created: "2025-12-14"
+kind: "deterministic_reference_stub"
+description: >-
+  Minimal, deterministic reference implementation for §17.2 (jet / jet-stream regime diagnostics).
+  This module exists to satisfy the DOI-level reproducibility contract (file tree + schemas + runnable code).
+locks_required:
+  - realization_lock
+  - analysis_lock
+  - gate_lock
+  - protocol_lock
+seed_policy:
+  rng: "xorshift128+"
+  seed0: 42424242
+parameters:
+  n_steps: 512
+  # Threshold-like placeholders mentioned in §17.2.7 (locked in analysis_lock in the full framework)
+  J_star: 0.65
+  q_star: 0.7
+  P_star: 0.6
+  theta_star: 0.35
+  M_star: 0.55
+outputs:
+  run_log: "run_log.jsonl"
+  metrics: "metrics.json"
+  manifest: "manifest.json"
+  artifacts_dir: "outputs/"
+gates:
+  - gate_id: "G-JET1"
+    description: "collimation gate (toy)"
+  - gate_id: "G-JET2"
+    description: "jet-stream gate (toy)"
+  - gate_id: "G-LOG"
+    description: "log schema presence (toy)"
+  - gate_id: "G-REP"
+    description: "deterministic replay gate (toy)"

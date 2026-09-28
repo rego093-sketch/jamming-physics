@@ -1,0 +1,22 @@
+# VP Unified Reference Protocol (minimal)
+protocol_version: v0.2.6
+protocol_id: VP-UNIFIED-REF-PROTOCOL
+created: 2025-12-14
+
+# This protocol is intentionally minimal:
+# - It exists to make the whitepaper's release checklist executable.
+# - It does not claim physical correctness; it only locks procedures and artifacts.
+
+jobs:
+  - job_id: core_derived_gate_snapshot
+    description: Build derived artifacts, run Gate checks, and seal snapshot.
+    entrypoints:
+      - scripts/build_derived.py
+      - scripts/run_gates.py
+      - scripts/seal_snapshot.py
+    outputs:
+      - derived/claims.json
+      - derived/tables/length_scales.csv
+      - gate/reports/gate_report_*.json
+      - snapshot/manifest.json
+      - snapshot/checksums.txt

@@ -1,0 +1,64 @@
+{
+  "version": "vp_whitepaper_chem_lock_v1",
+  "module": "04_vp_whitepaper",
+  "scope": {
+    "paper_section": "18 (chemistry & process extension)",
+    "purpose": "Provide DOI-embedded, deterministic support files for key chemistry tables/ratios"
+  },
+  "inputs": {
+    "species_radius_csv": "04_vp_whitepaper/data/chem/species_radius_pm.csv",
+    "molecule_composition_csv": "04_vp_whitepaper/data/chem/molecule_composition.csv",
+    "observed_amplitudes_csv": "04_vp_whitepaper/data/chem/observed_amplitudes.csv",
+    "thermo_phase_points_csv": "04_vp_whitepaper/data/chem/thermo_phase_points.csv"
+  },
+  "constants": {
+    "r_vac_fm": 245.9,
+    "reference_species": {
+      "species": "H",
+      "Z": 1,
+      "radius_pm": 31
+    },
+    "sqrt2": 1.4142135623730951,
+    "sqrt2p5": 1.5811388300841898
+  },
+  "definitions": {
+    "P_raw": "Z / (radius_pm^2)",
+    "P_idx": "P_raw(X) / P_raw(H)",
+    "r_eff_fm": "r_vac_fm / sqrt(P_idx)",
+    "molecule_P_idx": "stoichiometric_average(P_idx(atom_i))",
+    "molecule_r_eff_fm": "r_vac_fm / sqrt(molecule_P_idx)",
+    "note_on_ions": "For ionic species (e.g., Na+), radius_kind may differ from covalent_single; the same geometric P_idx definition is applied to the provided effective radius."
+  },
+  "display": {
+    "table_pressure_amplitude": {
+      "P_idx_round_decimals": 2,
+      "r_eff_round_decimals": 1
+    },
+    "table_sqrt2_validation": {
+      "r0_round_decimals": 0,
+      "r_observed_round_decimals": 0,
+      "ratio_round_decimals": 2
+    },
+    "tb_tm_ratio": {
+      "ratio_round_decimals": 2
+    }
+  },
+  "targets_from_whitepaper": {
+    "table_pressure_amplitude_expected_display": {
+      "H": {"P_idx": 1.00, "r_eff_fm": 245.9},
+      "C": {"P_idx": 1.00, "r_eff_fm": 246.0},
+      "H2O": {"P_idx": 1.25, "r_eff_fm": 220.0},
+      "O": {"P_idx": 1.76, "r_eff_fm": 185.1},
+      "Pt": {"P_idx": 4.05, "r_eff_fm": 122.1}
+    },
+    "table_sqrt2_validation_expected_display": {
+      "N2": {"r0_fm": 213, "r_observed_fm": 290, "ratio": 1.36, "sqrt2": 1.41},
+      "CO2": {"r0_fm": 205, "r_observed_fm": 300, "ratio": 1.46, "sqrt2": 1.41},
+      "H2O": {"r0_fm": 226, "r_observed_fm": 265, "ratio": 1.17, "sqrt2": 1.41},
+      "Na+": {"r0_fm": 244, "r_observed_fm": 320, "ratio": 1.31, "sqrt2": 1.41}
+    },
+    "tb_tm_ratio_expected_display": {
+      "W": {"Tm_K": 3695, "Tb_K": 5828, "ratio": 1.58, "theory": 1.58}
+    }
+  }
+}

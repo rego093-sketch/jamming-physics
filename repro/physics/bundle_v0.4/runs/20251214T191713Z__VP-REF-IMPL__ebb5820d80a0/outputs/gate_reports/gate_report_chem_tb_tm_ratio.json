@@ -1,0 +1,33 @@
+{
+  "gate_id": "G-CHEM-TB-TM-RATIO",
+  "result": "PASS",
+  "fail_labels": [],
+  "checks": [
+    {
+      "name": "W.ratio_display",
+      "got": 1.58,
+      "expected": 1.58,
+      "abs_err": 0.0,
+      "tol": 0.01,
+      "pass": true
+    },
+    {
+      "name": "W.theory_display",
+      "got": 1.58,
+      "expected": 1.58,
+      "abs_err": 0.0,
+      "tol": 0.01,
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "chem_lock": "04_vp_whitepaper/LOCK/chem_lock.json",
+    "thermo_phase_points_csv": "04_vp_whitepaper/data/chem/thermo_phase_points.csv"
+  },
+  "outputs": {
+    "tb_tm_ratio.json": "04_vp_whitepaper/outputs/chem/tb_tm_ratio.json"
+  },
+  "generated_by": "04_vp_whitepaper/scripts/run_chem_minimal.py",
+  "notes": "Tb/Tm ratio computed from locked thermodynamic points; compared to sqrt(2.5) display rounding.",
+  "timestamp_utc": "2025-12-14T02:27:25.445485+00:00"
+}

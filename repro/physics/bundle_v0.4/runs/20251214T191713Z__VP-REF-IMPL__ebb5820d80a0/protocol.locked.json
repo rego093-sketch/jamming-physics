@@ -1,0 +1,28 @@
+{
+  "protocol_canonical_json": {
+    "created": "2025-12-14",
+    "jobs": [
+      {
+        "description": "Build derived artifacts, run Gate checks, and seal snapshot.",
+        "entrypoints": [
+          "scripts/build_derived.py",
+          "scripts/run_gates.py",
+          "scripts/seal_snapshot.py"
+        ],
+        "job_id": "core_derived_gate_snapshot",
+        "outputs": [
+          "derived/claims.json",
+          "derived/tables/length_scales.csv",
+          "gate/reports/gate_report_*.json",
+          "snapshot/manifest.json",
+          "snapshot/checksums.txt"
+        ]
+      }
+    ],
+    "protocol_id": "VP-UNIFIED-REF-PROTOCOL",
+    "protocol_version": "v0.2.6"
+  },
+  "protocol_canonical_json_sha256": "ebb5820d80a07ae31d138c5b5e948ae8914a0af23d31cb1535d0f7936adebdea",
+  "protocol_path": "protocol/protocol.yaml",
+  "protocol_raw_sha256": "cd061b362adcac47ca31e9cd8ec59d0622829b3d6ff0a09c04cf99f4ee6ec72d"
+}

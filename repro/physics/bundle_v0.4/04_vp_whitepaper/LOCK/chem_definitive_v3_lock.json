@@ -1,0 +1,47 @@
+{
+  "constants": {
+    "Beta_bond": 1.0,
+    "Beta_vac": 1.088,
+    "DELTA_OV_sp3": 0.0132,
+    "K_coupling": 7.297352573756914,
+    "PHI_GEO": 0.7404804896930609,
+    "Scale_Ratio_pm_to_fm": 1000,
+    "alpha_em": 0.007297352573756914,
+    "alpha_em_string": "1/137.035999",
+    "r_cov_C_pm": 77,
+    "r_cov_H_pm": 31,
+    "r_vac_lock_fm": 245.9,
+    "tolerances": {
+      "P_idx_abs": 0.01,
+      "r_vac_abs_fm": 1.0
+    }
+  },
+  "definitions": {
+    "CH4_full_rule": "P_idx(CH4) = P_avg * PHI_GEO * (1 - DELTA_OV_sp3)",
+    "CH4_leading_rule": "P_idx(CH4) = PHI_GEO * (1 - DELTA_OV_sp3)",
+    "K": "1000 * alpha_em",
+    "PHI_GEO": "pi/(3*sqrt(2))",
+    "r_raw_atom_pm": "r_cov_pm / sqrt(Z)",
+    "r_vac_pred_fm": "r_cov_H_pm * K * Beta_vac",
+    "r_vp": "(r_raw_pm) * K * Beta_shielding"
+  },
+  "inputs": {
+    "external_inspection_csv": "04_vp_whitepaper/data/chem/external_inspection/VP_STEP7_EXT_INSPECTION_FULL_V1.csv",
+    "sources_registry_v3": "04_vp_whitepaper/data/chem/traceability/sources_v3.json",
+    "traceability_spec_v3": "04_vp_whitepaper/data/chem/traceability_spec_v3.txt",
+    "traceability_table_v3_seed": "04_vp_whitepaper/data/chem/traceability/traceability_table_v3_seed.csv"
+  },
+  "module": "04_vp_whitepaper",
+  "notes": {
+    "gate_policy": "This lock gates only internal mathematical consistency for the V3 constants and the CH4 leading-order Rule-B check. It does not attempt to gate the full external dataset.",
+    "see": [
+      "04_vp_whitepaper/docs/chem/TRACEABILITY_SPEC.md",
+      "04_vp_whitepaper/docs/chem/DEFINITIVE_V3_CONSISTENCY.md"
+    ]
+  },
+  "scope": {
+    "paper_section": "18.2 (chemistry)",
+    "purpose": "Lock the non-arbitrary meaning of K (pm->fm scaling with alpha) and a CH4 Rule-B derivation that defends against black-box criticism"
+  },
+  "version": "vp_whitepaper_chem_definitive_v3_lock_v1"
+}

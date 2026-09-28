@@ -1,0 +1,82 @@
+{
+  "gate_id": "G-CHEM-SQRT2-VALIDATION",
+  "result": "PASS",
+  "fail_labels": [],
+  "checks": [
+    {
+      "name": "N2.r0_fm",
+      "got": 213.0,
+      "expected": 213.0,
+      "abs_err": 0.0,
+      "tol": 2.0,
+      "pass": true
+    },
+    {
+      "name": "N2.ratio",
+      "got": 1.36,
+      "expected": 1.36,
+      "abs_err": 0.0,
+      "tol": 0.03,
+      "pass": true
+    },
+    {
+      "name": "CO2.r0_fm",
+      "got": 205.0,
+      "expected": 205.0,
+      "abs_err": 0.0,
+      "tol": 2.0,
+      "pass": true
+    },
+    {
+      "name": "CO2.ratio",
+      "got": 1.46,
+      "expected": 1.46,
+      "abs_err": 0.0,
+      "tol": 0.03,
+      "pass": true
+    },
+    {
+      "name": "H2O.r0_fm",
+      "got": 226.0,
+      "expected": 226.0,
+      "abs_err": 0.0,
+      "tol": 2.0,
+      "pass": true
+    },
+    {
+      "name": "H2O.ratio",
+      "got": 1.17,
+      "expected": 1.17,
+      "abs_err": 0.0,
+      "tol": 0.03,
+      "pass": true
+    },
+    {
+      "name": "Na+.r0_fm",
+      "got": 244.0,
+      "expected": 244.0,
+      "abs_err": 0.0,
+      "tol": 2.0,
+      "pass": true
+    },
+    {
+      "name": "Na+.ratio",
+      "got": 1.31,
+      "expected": 1.31,
+      "abs_err": 0.0,
+      "tol": 0.03,
+      "pass": true
+    }
+  ],
+  "inputs": {
+    "chem_lock": "04_vp_whitepaper/LOCK/chem_lock.json",
+    "observed_amplitudes_csv": "04_vp_whitepaper/data/chem/observed_amplitudes.csv"
+  },
+  "outputs": {
+    "sqrt2_validation.json": "04_vp_whitepaper/outputs/chem/sqrt2_validation.json",
+    "table_sqrt2_validation.tex": "04_vp_whitepaper/outputs/chem/table_sqrt2_validation.tex"
+  },
+  "generated_by": "04_vp_whitepaper/scripts/run_chem_minimal.py",
+  "notes": "This gate validates the internal LOCK→derived connection for r0 and ratios. Primary-source PDFs are not bundled in this minimal run; see docs/chem/EXTRACTION_PROTOCOL.md.",
+  "timestamp_utc": "2025-12-14T02:27:25.445140+00:00"
+}

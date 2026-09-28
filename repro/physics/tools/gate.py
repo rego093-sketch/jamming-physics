@@ -33,7 +33,7 @@ def words_of(html):
 
 def phase1(p,rep):
     rows=read_manifest(p); ok=True
-    dirs=[d for d in sorted(os.listdir(f"docs/{p}")) if os.path.isdir(f"docs/{p}/{d}")]
+    dirs=[d for d in sorted(os.listdir(f"docs/{p}")) if os.path.isdir(f"docs/{p}/{d}") and d not in ("assets","eq")]  # deployed layout keeps assets/ and eq/ inside the volume
     c={"sections_manifest":len(rows),"sections_dirs":len(dirs)}
     ok &= len(rows)==len(dirs)
     per=[]; tot_disp=0; viol=[]
@@ -54,7 +54,7 @@ def phase1(p,rep):
         if dw>0.005: bad.append(f"words {w} vs {wm}")
         tot_disp+=int(r["eq_display"])
         if bad: viol.append({"slug":r["slug"],"bad":bad}); ok=False
-    nsvg=len(glob.glob(f"docs/eq/{p}/*.svg"))
+    nsvg=len(glob.glob(f"docs/eq/{p}/*.svg")) or len(glob.glob(f"docs/{p}/eq/{p}/*.svg"))  # build layout, else deployed layout
     pend = (nsvg==0 and tot_disp>0)
     if not pend and nsvg!=tot_disp: ok=False; viol.append({"svg":f"{nsvg}!={tot_disp}"})
     c.update(display_total=tot_disp,svg_files=nsvg,violations=viol,
