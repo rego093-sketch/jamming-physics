@@ -23,7 +23,7 @@ If you remember only this, you can read any volume correctly:
 | What is the substrate? | Vacuum = jammed elastic solid at the isostatic jamming point (φ_jam ≈ 0.63, random close packing; note 0.7405 is the FCC crystal value, not RCP). Light is identified with its single surviving elastic wave: `c² = B/ρ`. |
 | What is the universal object? | The **R19 switch**: `ṡ = g·s − s³ + h` — a double well. Bistable for detection; at criticality (`g→0`) it gives cube-root compression. |
 | What makes it biology? | `γ` = promoter stiffness, **measured** (SantaLucia NN stacking). It sets the switch: threshold `spinodal ∝ γ^1.5`, barrier `γ²/4`. |
-| How does anything "emerge"? | The **emergence engine**: `STATE`(γ→can-fire) = presence · `spinodal(γ)` order = developmental sequence · `dwell ∝ γ^1.5` = relative size. All from measured γ. |
+| How does anything "emerge"? | **Reading vs building.** DNA is *read* 100% (declared channels, deterministic): γ level, A4 shape, CpG marks, can-fire (γ sets each locus's switch threshold). An organism is *built* by the independent growth of every object — developmental order (from regulatory-cascade depth, not γ), size and timing are decided there. Building is not claimed: it is full-physics, open [O], possible in principle with organism-level computation of every object's volume and stiffness (dna §RB). |
 | Where do I start reading? | `physics` → `dna` → then the tier you care about. Never start mid-biology; it will reference inherited results. |
 | How do I read a number? | By its **grade**: `[F]` forced, `[V]` verified-against-data, `[L]` rests on a declared anchor, `[O]` open (obstacle stated). Treat `[O]` as a known gap, not a weakness to paper over. |
 | What must I never do? | Re-derive a node the DNA atlas owns · re-fit an inherited number · emit a clinical magnitude · ignore a declared seam. (See §8.) |
@@ -134,7 +134,7 @@ How many of the 30 volumes carry each shared primitive (full-text measured). Thi
 |---|---|---:|---|
 | R19 bistable switch | `ṡ = g·s − s³ + h` | 23 / 30 | the universal kernel |
 | γ — measured stiffness | `γ = −mean NN stacking ΔG` | 23 / 30 | the biology instantiation |
-| Emergence from measured γ | `STATE · spinodal · dwell ∝ γ^1.5` | 27 / 30 | the creation recipe |
+| Emergence from measured γ | read: `can-fire · spinodal threshold`; build: order/size/timing by growth [O] | 27 / 30 | the reading recipe (building is open, dna §RB) |
 | Kramers / Arrhenius barrier | escape over `g²/4` | 15 / 30 | switching kinetics |
 | Jammed lattice / `c²=B/ρ` | the bare substrate | 13 / 30 | reaches into dna, eye, neuro |
 | FitzHugh–Nagumo oscillator | relaxation rhythm | 12 / 30 | hearts, clocks, neurons |
@@ -211,7 +211,7 @@ The corpus is managed as one repository. Its machine-readable spine is a single 
     "kernel": { "switch": "ds/dt = g*s - s^3 + h",
                 "substrate": "c^2 = B/rho",
                 "stiffness": "gamma = -mean NN stacking dG (measured, never fitted)",
-                "emergence": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size" },
+                "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order, size, timing) = independent growth, full physics, open [O]" },
     "governance": ["no-tuning","LOCK->Derive->Gate","honest-grading[F/V/L/O]",
                    "magnitude-firewall","seed=19","2x-SHA256"],
     "contract": ["dna-atlas=single-source-of-truth","add-only","selective-inheritance",
