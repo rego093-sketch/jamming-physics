@@ -170,6 +170,17 @@ if __name__ == "__main__":
     for j, nm in enumerate(NAMES):
         print(f"  {nm:8s} |dT| test-mass {100*abs(T0[j]-T_OBS[j])/T_OBS[j]:.5f} %  ->  "
               f"with Q_p {100*abs(T1[j]-T_OBS[j])/T_OBS[j]:.5f} %")
+    # Part C (diagnostic, uniform rule, no fit): an outer orbit also feels the inflow of every
+    # interior planet as an (approximately) central source. Rule applied to ALL planets alike:
+    # add Q of every planet with smaller a. Exact rescaling T ∝ (sum Q)^(-1/2) of the part-B orbit.
+    print("\n--- Part C: interior planets' inflow as a central mean field (same rule for every planet) ---")
+    for j, nm in enumerate(NAMES):
+        Qin = Q_P[A_AU < A_AU[j]].sum()
+        Tc = T1[j]*np.sqrt((Q_SUN + Q_P[j])/(Q_SUN + Q_P[j] + Qin))
+        print(f"  {nm:8s} Q_interior/Q_sun = {Qin/Q_SUN:.3e}  ->  dT = {100*(Tc-T_OBS[j])/T_OBS[j]:+.4f} %")
+    print("  (valid for hierarchical orbits: Uranus/Neptune improve to <0.02 %; for Saturn, with Jupiter")
+    print("   at a_S/a_J = 1.8, the mean-field approximation is poor and the residual grows -- reported as is.)")
+
     print("\nREADING: the orbits are Newton's (only kappa*Q = GM enters). With JPL mean elements the")
     print("periods agree far better than the page's <=0.73 % (whose Saturn row used a = 9.582 AU).")
     print("Residuals at the 1e-4 level are planetary perturbations (e.g. the Jupiter-Saturn")
