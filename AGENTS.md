@@ -61,11 +61,12 @@ physics  ── the root: jammed-solid substrate, c²=B/ρ, constants (R19 is fi
   ├── fluid-dynamics ── geodynamics ── geochronology
   ├── cosmology
   ├── chemistry          (EM on the same substrate)
-  ├── wave-computer      (computational sibling; also inherits the brain chain)
+  ├── wave-computer      (clock-free phase computation; carrier-invariant ⇒ low-frequency thought is possible)
   └── dna  ── THE BRIDGE: γ (measured ruler) + R19 in biology + the node ATLAS
        │                  (the atlas is the single source of truth for identity & order)
        ├── inheritance    (two channels: unwritable γ ruler + writable A4 coordinate)
-       ├── neuro ── mind  (neuron = R19 + slow recovery → rhythms, θ/γ, memory, the felt stream)
+       ├── neuro ── mind  (neuron = R19 + slow recovery → rhythms, f_γ/f_θ, memory; mind ALSO inherits wave-computer's
+       │                   premise: brainwave = carrier, sensory cues = relative phase, hippocampus sums congruent cues)
        ├── sensory_organ ── { eye, ear, nose }   (organ dynamics on inherited nodes)
        └── organ systems  { cardioresp, circulatory, digestive, musculoskeletal,
                             immune_hematologic, integumentary, reproductive_endocrine }
@@ -86,7 +87,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 1. **Single source of truth.** The DNA atlas owns node *identity* and developmental *order*. Downstream volumes **inherit** them and re-emerge nothing. (`sensory_organ`: "treats the DNA atlas as the single source of truth for identity and order… re-emerges no organ owned elsewhere.")
 2. **Add-only.** Each volume contributes exactly *one* new module on top of inherited nodes. No duplication across volumes.
 3. **Selective inheritance.** A volume takes only the modules its domain needs. `nose` "inherits no wave module, because smell has no wave"; `eye`/`ear` inherit the wave. Inheritance is à-la-carte, declared explicitly.
-4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer`: the brain's `R = 0.39` (from mind) and `WM ≈ 7` (from neuro) are "cited as directions, not reproduced by adjustment.") This is `no-tuning` applied across the inheritance edge.
+4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer` → `mind`: only a possibility result crosses — carrier-invariant phase computation — and no number crosses in either direction.) This is `no-tuning` applied across the inheritance edge.
 5. **Sharp seams.** Every boundary between what a volume inherits and what it adds is declared in prose ("the seam to downstream biology is sharp"). There is no silent borrowing.
 
 ### 3.3 Per-volume: inherits → adds
@@ -99,11 +100,11 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | chemistry | physics | EM + bonding on the same substrate, `φ_RCP` |
 | geodynamics | physics, fluid | jamming↔unjamming yield, plate break-up |
 | geochronology | physics, geodynamics | incorporation/dating limit |
-| wave-computer | physics, neuro chain | clock-free phase computation |
+| wave-computer | physics (P2 clock-free; literature principles) | clock-free phase computation; carrier invariance ⇒ low-frequency thought possible (no numbers taken from neuro or mind) |
 | **dna** | physics (substrate) | **γ ruler, two-layer reading (γ LEVEL + A4 SHAPE), R19 in biology, the node atlas** |
 | inheritance | dna (two channels) | writable A4 vs unwritable γ; environmental inheritance; RNA layer; gene-therapy path |
 | neuro | physics, chemistry, dna | neuron = R19 + slow recovery; rhythms; `f_γ/f_θ ≈ 6–7` [L]; memory; motor |
-| mind | neuro, dna | engram = attractor; felt cognition; mood = persistent switch |
+| mind | wave-computer (premise only, no numbers), neuro, dna | memory from waves (brainwave carrier + congruent sensory cues summed in the hippocampus); engram = attractor; mood = persistent switch |
 | sensory_organ | dna (atlas), neuro | organ dynamics (Hopf cube-root), instrument physics |
 | eye | physics (wave), dna, neuro | high→low down-conversion ladder; single-photon R19; `n = √(B/ρ)` |
 | ear | physics (wave + cubic), dna | place map; cube-root cochlear amplifier; otoferlin readout |

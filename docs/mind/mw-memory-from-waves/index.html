@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory From Waves — Felt Cognition §MW | Jamming Physics</title>
+<meta name="description" content="The premise of Felt Cognition, written out. Low-frequency thought is possible because phase computation does not depend on the carrier frequency (wave-computer). The brainwave is the common carrier; sensory low-frequency signals ride it as relative phase into the hippocampus; congruent cues add constructively and cross the memory threshold, while incongruent cues cancel.">
+<link rel="canonical" href="https://jamming-physics.org/mind/mw-memory-from-waves/">
+<link rel="stylesheet" href="/mind/assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Memory From Waves: the premise of Felt Cognition",
+"isPartOf":{"@type":"CreativeWork","name":"Felt Cognition","sameAs":"https://doi.org/10.5281/zenodo.20694404"},
+"position":"MW","author":{"@type":"Person","name":"Young Jae Lee","sameAs":"https://orcid.org/0009-0002-7535-8245"},
+"license":"https://creativecommons.org/licenses/by/4.0/"}
+</script>
+</head>
+<body>
+<header><nav class="crumb"><a href="/">Home</a> › <a href="/mind/">Felt Cognition</a> › §MW</nav></header>
+<main>
+<h1>MW. Memory From Waves: the premise of this volume</h1>
+<p class="answer">Thought can run on slow brain rhythms because computing by phase does not depend on how fast the carrier oscillates. The brainwave is the common carrier. Each sense sends low-frequency signals that ride that carrier as a relative phase. In the hippocampus, cues that belong to the same experience add constructively and cross the memory threshold. Cues from different experiences cancel. One cue alone rarely recalls a memory; several congruent cues together do.</p>
+<aside class="claim-strip page"><span class="g">[F in-model] carrier invariance · [V mech] MM1 amplification &amp; interference · [H] brain mapping · [L] theta phase coding</span><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/wave-computer/experiments/MM1_multimodal_amplification/" rel="noopener">재현 코드 (GitHub)</a><a href="https://doi.org/10.5281/zenodo.20694404" rel="noopener">DOI</a></aside>
+
+<h2>1. Why this page exists</h2>
+<p>Every later chapter of this volume assumes that thought can be carried by slow brain rhythms (δ, θ, γ, from a few hertz to about a hundred). That assumption comes from the Wave Computer volume, but until now it was never written down, and the two volumes even cited each other in a loop. This page states the premise, shows the code result that supports it, and describes the mechanism by which waves become memory. Grades: <strong>[F in-model]</strong> holds in the model by its equations; <strong>[V mech]</strong> is reproduced in the model under a test that could have failed; <strong>[L]</strong> rests on cited literature; <strong>[H]</strong> is an identification with the brain; <strong>[O]</strong> is open.</p>
+
+<h2>2. Low-frequency thought is possible: carrier invariance [F in-model]</h2>
+<p>The Wave Computer core is a network of coupled phases. Each unit i has a phase θ<sub>i</sub>, and the dynamics depend only on phase <em>differences</em>, θ<sub>i</sub> − θ<sub>j</sub>. Add the same carrier frequency ω to every unit and the differences do not change, so ω drops out of the computation exactly. A code check confirms it: with ω = 0, 1, 10 and 100, recall is bit-identical.</p>
+<p>So the same computation runs at 6 Hz or at gigahertz. What sets its speed is the coupling rate K (one settle takes about 4–6/K), not the carrier. This is the possibility result this volume inherits from Wave Computer. It inherits only this result, and no numbers.</p>
+
+<h2>3. The brainwave is the carrier; the senses supply the content</h2>
+<table>
+<tr><th>In the brain</th><th>Role</th></tr>
+<tr><td>The brainwave (a large, slow rhythm such as hippocampal theta)</td><td><strong>Common carrier.</strong> It gives every input the same phase reference. Because it is common, it cancels from the computation and carries no content itself.</td></tr>
+<tr><td>Low-frequency signals from each sense organ (colour, smell, the person you ate with, the place)</td><td><strong>Content.</strong> Each rides the carrier as a phase relative to it.</td></tr>
+<tr><td>Hippocampus</td><td><strong>Where memory is induced.</strong> It corresponds to the associative core of Wave Computer, the attractor that completes a stored pattern.</td></tr>
+<tr><td>Thresholds</td><td>The R19 switches inside the hippocampal circuit. A memory is induced only when the combined drive crosses them.</td></tr>
+</table>
+<p>This reconciles two sentences that look opposed. This volume says "the oscillation does not carry the message; ionic spikes do". Wave Computer says "information is the phase". Both are right. The common rhythm carries nothing, because it cancels. The content is the phase of each input's spikes relative to that rhythm. The same picture is established in hippocampal physiology: place-cell phase precession against theta (O'Keefe &amp; Recce 1993) and the theta–gamma code (Lisman &amp; Jensen 2013) both put information in phase relative to theta [L].</p>
+
+<h2>4. Why one cue is not enough, and several are: the wave property [V mech]</h2>
+<p>People rarely reason from a single memory trace. The colour of a dish alone brings little back. Add its smell, and the face of the person you ate with, and the memory returns strongly. In this framework that is superposition. Cues from the <em>same</em> experience carry the same stored phase relationship, so they add constructively. Cues from <em>different</em> experiences carry unrelated phases, so they cancel.</p>
+<p>Experiment MM1 tested this on the unmodified Wave Computer core. It was pre-registered before it was run. The network has four 64-unit sensory blocks, 15 stored episodes, noisy cues (0.8 rad jitter) and 40 fresh seeds:</p>
+<table>
+<tr><th>Cued senses</th><th>Same experience (congruent)</th><th>Different experiences (incongruent)</th></tr>
+<tr><td>1</td><td>35%</td><td>—</td></tr>
+<tr><td>2</td><td>78%</td><td>3%</td></tr>
+<tr><td>3</td><td>88%</td><td>3%</td></tr>
+<tr><td>4</td><td><strong>90%</strong></td><td><strong>5%</strong></td></tr>
+</table>
+<p>Both pre-registered predictions passed: recall rises with congruent cues (amplification), and incongruent cues suppress it (interference). Each single cue contributes less than the threshold needs. Only when several congruent cues add in phase does the drive cross it.</p>
+<p><strong>Limit.</strong> The effect depends on how much is stored. Above a load of about 0.10, even four cues fail. At low load with clean cues, one cue can suffice. "One cue is not enough" holds in the realistic middle range of load and noise.</p>
+
+<h2>5. What R ≈ 0.39 means, and what it does not</h2>
+<p>This volume's engine reports a global coherence R ≈ 0.39 between cortical regions. A reviewer pointed out that when oscillators with different natural frequencies are coupled directly, associative recall collapses at exactly this level of partial coherence (recall about 0.2 at σ<sub>ω</sub>/K ≈ 0.59). The mechanism above resolves this. Recall does not happen between dispersed cortical oscillators. It happens inside the hippocampus, where every input is locked to the same theta carrier, so the effective frequency spread is small and the core works in its good regime. R ≈ 0.39 describes <em>global inter-regional</em> coherence, not the locking inside the memory circuit.</p>
+<p>Data-pending: (i) a Wave Computer run with a theta-locked hippocampal module that shows recall holding while cortical inputs are dispersed; (ii) measured theta phase-locking in the hippocampus (effective σ<sub>ω</sub>/K) against recall accuracy; (iii) human recall as a function of the number of congruent and incongruent cue modalities.</p>
+
+<h2>6. How the inheritance runs</h2>
+<ul>
+<li><strong>physics → wave-computer:</strong> clock-free computation (P2). The analogies "coupling gain ≈ B" and "1/r²" are [H] and are not used.</li>
+<li><strong>wave-computer → mind:</strong> the possibility result only. Carrier invariance and constructive / destructive superposition cross this seam. No number crosses it.</li>
+<li><strong>neuro → mind:</strong> the biological carrier (ionic spikes, synapses) and the working-memory ratio f<sub>γ</sub>/f<sub>θ</sub> ≈ 6–7 [L].</li>
+<li><strong>dna → mind:</strong> γ<sub>DNA</sub>, the per-locus switch thresholds (reading only; building is open, dna §RB).</li>
+</ul>
+<p>Wave Computer takes no number from this volume or from neuro. Its earlier citations of R = 0.39 and 6.125 were metadata only, never used in its computation, and are re-sourced to the literature.</p>
+
+<h2>7. Grades on this page</h2>
+<ul>
+<li><strong>[F in-model]</strong> carrier invariance: dynamics depend only on phase differences.</li>
+<li><strong>[V mech]</strong> MM1 amplification and interference, reproduced in the model and pre-registered.</li>
+<li><strong>[L]</strong> theta phase coding in the hippocampus (O'Keefe &amp; Recce 1993; Lisman &amp; Jensen 2013).</li>
+<li><strong>[H]</strong> the identification: brainwave = carrier, sensory low-frequency signals = content, hippocampus = associative core with R19 thresholds.</li>
+<li><strong>[O]</strong> the three data-pending items of Section 5.</li>
+</ul>
+<nav class="pn">
+  <a rel="prev" href="/mind/01-constitution-scope/">← §1</a>
+  <a href="/mind/">paper contents</a>
+  <a rel="next" href="/mind/02-not-a-field/">§2 →</a>
+</nav>
+</main>
+<footer>DOI <a href="https://doi.org/10.5281/zenodo.20694404">10.5281/zenodo.20694404</a> · ORCID <a href="https://orcid.org/0009-0002-7535-8245">0009-0002-7535-8245</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "experiment": "MM1 — multimodal cue amplification on the frozen wave-computer core",
+  "registered": "2026-09-28",
+  "status": "pre-registered before running mm1_run.py (an exploratory run on seeds 1000-3019 motivated it; those seeds are excluded)",
+  "question": "In the phase-coded associative core, does recall rise when several sensory cues from the SAME episode are combined (constructive superposition), and fall when cues come from DIFFERENT episodes (destructive superposition)?",
+  "model": "repro/wave-computer/repro/wave_compute_core.py, unmodified: hebbian_field, pattern_to_phase, relax(steps=600, dt=0.05), overlap",
+  "setup": {"N": 256, "modality_blocks": 4, "block_size": 64, "stored_episodes_P": 15, "cue_phase_jitter_rad": 0.8,
+            "uncued_blocks": "uniform random phase", "target": "episode 0",
+            "incoherent_condition": "block m cued from episode m (m = 0..k-1)",
+            "seeds": "numpy default_rng(5000 + s), s = 0..39 (40 fresh seeds)", "recall_success": "|overlap| >= 0.9"},
+  "predictions": {
+    "P1_amplification": "coherent recall rate is non-decreasing in k = 1..4, and rate(k=4) - rate(k=1) >= 0.40",
+    "P2_interference": "rate_coherent(k=4) - rate_incoherent(k=4) >= 0.50"
+  },
+  "record_either_way": true
+}
