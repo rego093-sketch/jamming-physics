@@ -1,0 +1,41 @@
+{
+  "experiment": "E2 — does the lattice amplification A link two independently measured lengths?",
+  "registered": "2026-09-28",
+  "status": "pre-registered before running e2_link_test.py",
+  "question": "The dimensionless, wavelength-free lattice output A = a_med/g* must satisfy A = 2*pi*lambda/D if the lattice wave is light and the grain diameter is D. Both lambda and D are measured independently; A comes only from the simulation. Does A_req = 2*pi*lambda/D fall inside the uncertainty of the simulated A?",
+  "inputs_measured": {
+    "lambda_m": 6.3299121257859865746e-7,
+    "lambda_source": "I2-stabilised HeNe 633 nm line (CIPM recommended value), = realization_lock lambda_ref",
+    "D_m": "2*lambda_C_e, lambda_C_e = 2.42631023538e-12 m (CODATA 2022)",
+    "A_req": "2*pi*lambda_m / D_m"
+  },
+  "data": {
+    "note": "No new simulation is run. E2 re-analyses the existing, previously published SOC outputs (N=200, g0=2e-7, k_nn=12, original defaults, unchanged). Not blind: the run summaries (A_median) were seen before this registration; the statistic and criterion below were fixed without re-reading the per-avalanche data.",
+    "files": {
+      "data/soc_run3_avalanches.csv": "851443d129dacceaf7de13281fac6bea649e9558f6c586b97754ca546fb638f5",
+      "data/soc_indep_avalanches.csv": "4c80edaff428d1152370e3a73ca0b177a73085b4b5cc0b407098b3330e4dd7db"
+    },
+    "column": "A_post",
+    "inclusion": "all rows with finite A_post > 0; no burn-in cut, no best-avalanche selection"
+  },
+  "statistic": {
+    "primary": "median of pooled A_post (run3 seed 2 + indep seed 11)",
+    "uncertainty": "95% percentile interval of the median from event-level bootstrap, 10000 resamples, numpy default_rng(19)",
+    "why_event_level": "only two seeds exist, so a seed-cluster bootstrap is not meaningful; this is stated as a limitation"
+  },
+  "criterion": {
+    "PASS": "A_req lies inside the 95% bootstrap interval of the pooled median",
+    "FAIL": "A_req lies outside that interval",
+    "record_either_way": true
+  },
+  "also_reported": [
+    "pull of A_req relative to the pooled median in units of the bootstrap half-width",
+    "D_pred = 2*pi*lambda/A_med and lambda_pred = A_med*D/(2*pi)",
+    "per-seed medians (seed 2, seed 11) for consistency",
+    "relative width of the interval (the resolving power of this test)"
+  ],
+  "known_limits": [
+    "A scales as N^(-1/3)/g0; the test is conditional on the original N=200, g0=2e-7 settings, which are fixed here and not tuned",
+    "two seeds only, 98 avalanches total"
+  ]
+}
