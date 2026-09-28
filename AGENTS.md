@@ -44,7 +44,7 @@ Three equations carry the whole framework.
 |---|---|---|
 | Set the threshold from measured `γ` | DNA | `spinodal ∝ γ^1.5`, barrier `γ²/4` |
 | Hold at criticality, `g → 0` | Eye & ear | cube-root compression `R = (F/β)^⅓`, exponent 0.333 |
-| Add a slow recovery variable | Neuro | relaxation oscillator; working memory `= θ/γ ≈ 7±2` |
+| Add a slow recovery variable | Neuro | relaxation oscillator; working memory `= f_γ/f_θ ≈ 6–7` ([L]: literature bands, tACS-consistent) |
 | Read both stable states | Mind | engram = bistable attractor; mood = a switch that persists |
 | Push the barrier `g²/4` | Disease & therapy | the three correction levers L1 / L2 / L3 |
 
@@ -86,7 +86,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 1. **Single source of truth.** The DNA atlas owns node *identity* and developmental *order*. Downstream volumes **inherit** them and re-emerge nothing. (`sensory_organ`: "treats the DNA atlas as the single source of truth for identity and order… re-emerges no organ owned elsewhere.")
 2. **Add-only.** Each volume contributes exactly *one* new module on top of inherited nodes. No duplication across volumes.
 3. **Selective inheritance.** A volume takes only the modules its domain needs. `nose` "inherits no wave module, because smell has no wave"; `eye`/`ear` inherit the wave. Inheritance is à-la-carte, declared explicitly.
-4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer`: the brain's `R = 0.39` and `WM ≈ 7` are "cited as directions, not reproduced by adjustment.") This is `no-tuning` applied across the inheritance edge.
+4. **Provenance, not targets.** An inherited number is cited as a *direction and provenance*, never re-fitted. (`wave-computer`: the brain's `R = 0.39` (from mind) and `WM ≈ 7` (from neuro) are "cited as directions, not reproduced by adjustment.") This is `no-tuning` applied across the inheritance edge.
 5. **Sharp seams.** Every boundary between what a volume inherits and what it adds is declared in prose ("the seam to downstream biology is sharp"). There is no silent borrowing.
 
 ### 3.3 Per-volume: inherits → adds
@@ -102,7 +102,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | wave-computer | physics, neuro chain | clock-free phase computation |
 | **dna** | physics (substrate) | **γ ruler, two-layer reading (γ LEVEL + A4 SHAPE), R19 in biology, the node atlas** |
 | inheritance | dna (two channels) | writable A4 vs unwritable γ; environmental inheritance; RNA layer; gene-therapy path |
-| neuro | physics, chemistry, dna | neuron = R19 + slow recovery; rhythms; `θ/γ ≈ 7±2`; memory; motor |
+| neuro | physics, chemistry, dna | neuron = R19 + slow recovery; rhythms; `f_γ/f_θ ≈ 6–7` [L]; memory; motor |
 | mind | neuro, dna | engram = attractor; felt cognition; mood = persistent switch |
 | sensory_organ | dna (atlas), neuro | organ dynamics (Hopf cube-root), instrument physics |
 | eye | physics (wave), dna, neuro | high→low down-conversion ladder; single-photon R19; `n = √(B/ρ)` |
@@ -179,7 +179,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 9 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
 | 10 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998` | 10.5281/zenodo.20471407 |
 | 11 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
-| 12 | neuro | 4 | Neural Emergence Chain | working memory `= θ/γ ≈ 7±2` (tACS-causal) | 10.5281/zenodo.17979015 |
+| 12 | neuro | 4 | Neural Emergence Chain | working memory `= f_γ/f_θ ≈ 6–7` ([L], literature bands; tACS-consistent) | 10.5281/zenodo.17979015 |
 | 13 | mind | 4 | Felt Cognition | stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
 | 14 | sensory_organ | 5 | Sensory Organs | cochlear Hopf `R=(F/β)^⅓`, exp 0.333 | 10.5281/zenodo.20755154 |
 | 15 | eye | 5 | The Eye | single-photon R19 flip; `n=√(B/ρ ratio)` | 10.5281/zenodo.20790134 |
