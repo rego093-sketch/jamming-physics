@@ -1,0 +1,21 @@
+=== Part 1: is the harmonic series in the dispersion law, or in phase coherence? ===
+  synchronized phases: peaks at k/pi = [0.998, 2.0, 3.002]  ratios [1.0, 2.004, 3.008]
+  random phases: mean = 0.5002, max|dev from 0.5| = 0.0191, prominent peaks = 0
+  RESULT: 1:2:3 needs a synchronized start; random phases -> flat 0.5.
+
+=== Part 2: one fixed inflow-shell length R_s = 150 Mpc (INSERTED) ===
+  centre-shell correlation bump at r = 154.7 Mpc  (cell 9.4 Mpc; target 150)
+  shell P(k) minima at k R_s/pi = [1.032, 2.021, 3.02, 4.015, 5.008, 6.011]  (sinc^2 zeros: 1,2,3,...)
+  shell side-lobe heights, measured (norm. to 1st side lobe): [1.0, 0.34, 0.16, 0.09]
+  shell side-lobe heights, analytic |sin x/x|^2:              [1.0, 0.35, 0.18, 0.11]  -> monotone fall, NO odd/even alternation
+  RESULT: one fixed length gives the bump at R_s and the wiggle spacing pi/R_s; it does
+  not give the 1:2:3 height pattern, and R_s itself is inserted (not derived).
+
+=== Part 3: continuous random driving vs a resonant cavity ===
+  white-noise-driven modes: corr(<x^2>, 1/omega^2) = 0.9993 (linear), 0.9985 (log-log)
+  maxima by the naive 20%-prominence rule: 1 at omega = [11.58]; but <x^2> omega^2/T scatters 0.10 rms (finite sampling) and 0 modes exceed 1+3 sigma -> no significant peak
+  driven chain, FIXED ends (cavity L=201): 11 resonances, first at omega*L/(pi c) = [0.98, 1.96, 3.07, 4.05, 5.03, 6.13, 6.99, 7.97]
+  driven chain, ABSORBING ends (no cavity): 3 resonances
+  RESULT: noise gives a smooth ~1/omega^2 spectrum; discrete peaks need a fixed cavity length.
+  HONEST: nothing here derives 150 Mpc; that is derive_acoustic_length.py's criterion (i).
+  [figure written: /home/user/jamming-physics/repro/cosmology/scripts/figs/sim_acoustic_peaks.png]
