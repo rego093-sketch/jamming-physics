@@ -446,14 +446,13 @@ If |V|&lt;V_(min), the definition of “survival sign/charge/emission direction�
 <p>If any of the conditions [C-82/7-01]~[C-82/7-08] is violated, the continuum→discrete link loses conclusion status. In that case, only “limit statements (CT-LIM)” are permitted, and one must record the FAIL label together with the causal condition ID.
 Patching violations by “interpretation,” or changing condition definitions (aggregation operator, thresholds, boundary-candidate set, etc.) after seeing results, violates No-Tuning and is forbidden. If changes are necessary, the only allowed path is a version bump followed by full re-validation.</p>
 <h2>LOCK/Gate connections for this section (none if empty)</h2>
-<pre class="vb">
-  \item LOCK: Fix the continuum outputs ($R_p/L_q=2/\pi$, $L_q=\lambda_C$, $\sigma_{\mathrm{geom}}/L_q^2=4/\pi$) as upstream inputs.
-  \item LOCK: Lock the definitions of the discrete stability-condition list [C-82/7-01]\textasciitilde[C-82/7-08] (aggregation operators, projection axis, thresholds, normalization conventions) in \texttt{analysis\_lock}/\texttt{gate\_lock}.
-  \item Gate: On any condition violation, immediately assign \texttt{FAIL-CORE82-*}/\texttt{FAIL-SHELL7-*}/\texttt{FAIL-REG-*} labels and revoke conclusion status.
-  \item Gate: If condition definitions are not locked (aggregation/threshold/boundary-candidate missing), judge \texttt{INCONCLUSIVE}; if conditions are modified post hoc based on outcomes, judge \texttt{FAIL} in G-NT.
-  \item Gate: Mixing different \texttt{lock\_id} combinations or confusing cell geometry is immediate \texttt{FAIL} (G-LOCK/G-SYM).
-
-</pre>
+<ul>
+<li> LOCK: Fix the continuum outputs (Rₚ/L_q=2/π, L_q=λ_C, σ_geom/L_q²=4/π) as upstream inputs.
+<li> LOCK: Lock the definitions of the discrete stability-condition list [C-82/7-01]~[C-82/7-08] (aggregation operators, projection axis, thresholds, normalization conventions) in <code>analysis_lock</code>/<code>gate_lock</code>.
+<li> Gate: On any condition violation, immediately assign <code>FAIL-CORE82-*</code>/<code>FAIL-SHELL7-*</code>/<code>FAIL-REG-*</code> labels and revoke conclusion status.
+<li> Gate: If condition definitions are not locked (aggregation/threshold/boundary-candidate missing), judge <code>INCONCLUSIVE</code>; if conditions are modified post hoc based on outcomes, judge <code>FAIL</code> in G-NT.
+<li> Gate: Mixing different <code>lock_id</code> combinations or confusing cell geometry is immediate <code>FAIL</code> (G-LOCK/G-SYM).
+</ul>
 <nav class="pn"><a rel="prev" href="/physics/05-geometric-rectification-constants-single-source/">← §5</a> <a href="/physics/">백서 목차</a> <a rel="next" href="/physics/07-3-sector-integerization-120-build/">§7 →</a></nav>
 </main>
 <footer><a href="https://doi.org/10.5281/zenodo.17932566">DOI 10.5281/zenodo.17932566</a> · <a href="https://orcid.org/0009-0002-7535-8245">ORCID 0009-0002-7535-8245</a> · CC BY 4.0</footer>

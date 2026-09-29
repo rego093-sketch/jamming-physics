@@ -125,6 +125,18 @@ ok("primitive counts","manifest==homepage==AGENTS "+str(mc)) if mc==pc==ac else 
 if os.path.exists("docs/AGENTS.md"):
     ok("AGENTS.md deployed copy","docs/AGENTS.md == AGENTS.md") if open("docs/AGENTS.md",encoding="utf-8").read()==agents else bad("AGENTS.md deployed copy","docs/AGENTS.md differs from AGENTS.md (copy the root file)")
 
+# visible-artifact guards: escaped comments, raw LaTeX in visible text, citation meta in sync
+_vis_bad=[]
+for _p in glob.glob(f"{DOCS}/**/*.html",recursive=True):
+    _s=open(_p,encoding="utf-8",errors="ignore").read()
+    if "&lt;!--" in _s: _vis_bad.append((_p,"escaped comment"))
+    _b=re.sub(r"<script.*?</script>|<style.*?</style>|<!--.*?-->|<[^>]+>"," ",_s,flags=re.S)
+    if re.search(r"\$\$|\\item\b|\\frac\{",_b): _vis_bad.append((_p,"raw LaTeX in visible text"))
+ok("visible artifacts","none") if not _vis_bad else bad("visible artifacts",f"{len(_vis_bad)}: {_vis_bad[:3]}")
+import subprocess as _sp
+_c=_sp.run([sys.executable,"tools/build_citation_meta.py","--check"],capture_output=True,text=True)
+ok("citation meta","all hubs in sync with manifest") if _c.returncode==0 else bad("citation meta",_c.stdout.strip().splitlines()[0] if _c.stdout else "check failed")
+
 # ---- H. magnitude firewall scan (disease/therapy bodies) ----
 DOSE=re.compile(r'\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|μg|ug|mL|mg/kg|mg/day|IU|g/day|mM|µM|μM|nM|mmol/L|µmol/L|nmol/L|ng/mL|mg/dL|mg/L)\b|\b(?:once|twice|three times)\s+(?:daily|a day|weekly)\b|\b(?:b\.i\.d|t\.i\.d|q\d+h)\b|\b(?:titrate|dose)\w*\s+(?:\w+\s+){0,4}(?:to|below|above|by)\s+\d')  # doses, concentrations, regimens, titration targets
 hits=[]
