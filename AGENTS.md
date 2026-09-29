@@ -123,7 +123,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | aging_senescence | dna, organs | setpoint drift over time; "aging genes not special" |
 | analgesic_threshold | neuro, systems | the three-lever L1/L2/L3 therapeutic logic |
 | disease_wp | dna, systems | per-disease gene-key mechanism cases |
-| disease_kit | disease_wp | reproducible per-disease corrective **direction** `[F]`, magnitude `[O]` |
+| disease_kit | disease_wp | reproducible per-disease corrective **direction** (interpretation of the lesion role), magnitude `[O]` |
 
 ---
 
@@ -202,7 +202,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 29 | aging_senescence | 7 | Aging & Senescence | human aging genes not special (`|z|<1`) | 10.5281/zenodo.20756155 |
 | 30 | analgesic_threshold | 8 | Analgesic Threshold Logic | three levers L1/L2/L3; `corr(γ,GC)=0.99898` | 10.5281/zenodo.20733420 |
 | 31 | disease_wp | 8 | Rare Disease Mechanisms | `burden = raw_burden · (1 − e)` | 10.5281/zenodo.20763842 |
-| 32 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction `[F]`, magnitude `[O]` | 10.5281/zenodo.20755262 |
+| 32 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction (interpretation), magnitude `[O]` | 10.5281/zenodo.20755262 |
 
 ---
 

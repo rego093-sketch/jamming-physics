@@ -116,7 +116,7 @@
 <p class="eyebrow">Hemodynamic Homeostasis &middot; &sect;13 &middot; reject(operating point) &rarr; side-effect class; reset(reference) &rarr; durable</p>
 <h1>The comfort principle: counter-regulation is the structural origin of the side-effect class</h1>
 
-<p class="answer">The comfort principle is structural: an operating-point antihypertensive is rejected back to the defended reference by the kidney integral controller (durable drop 0 mmHg), and that rejection is the structural origin of the antihypertensive side-effect class. A reference-reset direction is not rejected (durable drop 17 mmHg) [V].</p>
+<p class="answer">The comfort principle is structural: an operating-point antihypertensive is rejected back to the defended reference by the kidney integral controller (durable drop 0 mmHg), and that rejection is the structural origin of the antihypertensive side-effect class. A reference-reset direction is not rejected (durable; size = chosen model input, not a clinical effect) [V].</p>
 
 <p class="abstract">This volume imports the three-lever intervention technique from the non-opioid analgesic whitepaper (concept DOI 10.5281/zenodo.20733420) and applies it to the defended arterial-pressure setpoint. The package already proved that the pressure loop is an integral controller that rejects operating-point pushes back to its reference (RP4) while a reference reset is durable (T1); that asymmetry, not any safety assertion, is the structural reading of why one class of intervention is comfortable and another is not.</p>
 
@@ -126,10 +126,10 @@
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/homeostasis_hemodynamic/" rel="noopener">Reproduction (GitHub)</a>
   <a href="https://doi.org/10.5281/zenodo.20756801" rel="noopener">Concept DOI: 10.5281/zenodo.20756801</a>
 </aside>
-<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Reading note (2026-09-29).</strong> <em>Input dependence (magnitude firewall).</em> In <code>repro/homeostasis_hemodynamic/repro/_therapy/fundamental_targets.py</code> and <code>_pathology/setpoint_failure.py</code> the reset (+20 mmHg), the operating-point drug (15 mmHg) and the reference reset (17 mmHg) are <em>chosen inputs</em> (<code>reset_up=20</code>, <code>op_drug=15</code>, <code>ref_reset=17</code>). An integral controller returns exactly its reference, so the shift of +20, the transient 15 and the durable 17 equal those inputs by construction (<em>consistency</em>; ref_reset = 10 or 25 gives 10 or 25). They are not predicted or clinical effect sizes. The code output is only the direction: an operating-point push is opposed back, a reference reset holds. Observation (cited): renal denervation lowers office SBP by ~20 mmHg at 3 years in registry data (Global SYMPLICITY Registry, GSR-DEFINE, 3-year data, as cited on this volume&rsquo;s pages); reading hypertension as a reference reset is <em>interpretation</em> (Guyton 1991, <em>Science</em> 252:1813).</aside>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Reading note (2026-09-29).</strong> <em>Input dependence (magnitude firewall).</em> In <code>repro/homeostasis_hemodynamic/repro/_therapy/fundamental_targets.py</code> and <code>_pathology/setpoint_failure.py</code> the setpoint reset, the operating-point drug and the reference reset sizes are <em>chosen inputs</em> (<code>reset_up</code>, <code>op_drug</code>, <code>ref_reset</code>; values withheld under the magnitude firewall). An integral controller returns exactly its reference, so the shift of +20, the transient 15 and the durable 17 equal those inputs by construction (<em>consistency</em>; ref_reset = 10 or 25 gives 10 or 25). They are not predicted or clinical effect sizes. The code output is only the direction: an operating-point push is opposed back, a reference reset holds. Observation (cited): renal denervation lowers office SBP by ~20 mmHg at 3 years in registry data (Global SYMPLICITY Registry, GSR-DEFINE, 3-year data, as cited on this volume&rsquo;s pages); reading hypertension as a reference reset is <em>interpretation</em> (Guyton 1991, <em>Science</em> 252:1813).</aside>
 
 <aside class="vp-card" data-locked="rp4-reject"><b>operating-point drug opposed back (durable &asymp; 0 mmHg)</b> &mdash; RP4: the integral controller rejects an operating-point antagonist back to the reset reference &mdash; the structural side-effect class. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-hypertension-reset/">Setpoint reset &sect;6</a></aside>
-<aside class="vp-card" data-locked="t1-durable"><b>reference reset durable (&asymp; 17 mmHg lasting)</b> &mdash; T1: a reference-reset direction is not rejected, so it is durable &mdash; the structural basis of the comfort reading. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-fundamental-therapy/">Fundamental therapy &sect;9</a></aside>
+<aside class="vp-card" data-locked="t1-durable"><b>reference reset durable (lasting; size = chosen input)</b> &mdash; T1: a reference-reset direction is not rejected, so it is durable &mdash; the structural basis of the comfort reading. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-fundamental-therapy/">Fundamental therapy &sect;9</a></aside>
 
 
 <section data-claim="comfort">
@@ -137,9 +137,9 @@
 <p>The hemodynamic package established two locked results about the defended mean arterial pressure. First,
 essential hypertension is an integral-controller <em>setpoint reset</em>: the defended pressure moves up by
 20 mmHg and an intervention applied at the <em>operating point</em> is opposed back to that reset
-reference, so its durable effect collapses to 0 mmHg even though its transient effect was 15 mmHg
+reference, so its durable effect collapses to 0 mmHg even though its transient effect was nonzero
 (research target RP4). Second, an intervention applied at the <em>reference</em> itself &mdash; lowering the
-renal pressure-natriuresis / RAAS setpoint &mdash; is durable, with a 17 mmHg lasting drop (target
+renal pressure-natriuresis / RAAS setpoint &mdash; is durable, with a lasting drop (size = chosen model input) (target
 T1). The kidney is a Guyton infinite-gain integrator, so it rejects sustained operating-point error exactly
 the way an integral controller must.</p>
 
