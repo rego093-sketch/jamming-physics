@@ -1,0 +1,23 @@
+{
+  "experiment": "ESS1 — black-copper absorber with and without the hot-surround (ESS) boundary condition",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running ess1_run.py; no exploratory run",
+  "author_hypothesis": "The earlier black-copper test failed because heat that entered the absorber escaped too easily. Inside a hot-sand ESS the surroundings are hot, so heat cannot leave easily and the absorber keeps absorbing; that condition was left out.",
+  "model": {
+    "absorber": "1 m^2 black-copper plate, solar absorptance alpha = 0.96 (chemistry CA.6)",
+    "sun": "clear-day irradiance G(t) = 800 W/m^2 x sin over an 8 h day (peak 800), zero at night",
+    "front_loss": "radiation eps*sigma*(T^4 - T_sky^4) + convection h*(T - T_amb); T_amb = 293 K, T_sky = 283 K; unglazed h = 10, glazed h = 3 W/m^2K",
+    "front_emissivity_bracket": "eps = 0.90 (ordinary black CuO) and eps = 0.15 (selective black-copper coating); both reported, neither tuned",
+    "case_A_failed_setup": "free-standing plate: the rear face loses heat like the front (same eps, same h); no store",
+    "case_B_ESS": "plate is the top face of a 1 m^3 hot-sand store; rear face in contact with the store (no rear loss); store heat capacity C = 46 kWh/118 K = 1.40 MJ/K and insulation U*A = C/tau with tau = 5.4 days (both from chemistry CA.5)",
+    "integration": "explicit, dt = 60 s, 30 days from 293 K"
+  },
+  "predictions": {
+    "P1_escape": "case A: daily absorbed-and-kept fraction is ~0 (all absorbed heat leaves the same day) and the plate's peak temperature stays below 200 C for eps = 0.90",
+    "P2_keeps_absorbing": "case B: the store keeps accumulating heat over days (store temperature at day 30 exceeds day 5 by > 50 K) for at least one emissivity",
+    "P3_hot_surround_gain": "case B's 30-day net stored energy exceeds case A's by at least 10x for the same emissivity",
+    "P4_front_limit": "case B with eps = 0.90 saturates (front radiation balances input) at a lower temperature than with eps = 0.15; the front face, not the rear, sets the limit"
+  },
+  "note": "This tests heat collection and storage only. It does not test electricity generation; black copper has no heat-to-electricity mechanism (CA.9c), and any electricity needs a separate converter whose Carnot limit is reported for the reached store temperature.",
+  "record_either_way": true
+}
