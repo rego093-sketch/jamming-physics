@@ -1,0 +1,21 @@
+{
+  "experiment": "BC5 — the black-copper boundary as an infrared rectenna: transverse IR (chi~90 deg) -> longitudinal DC current (chi->0) without high photon energy",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running bc5_run.py",
+  "idea": "Author: the conversion needs an angle change, not energy (as in electricity, radio antennas, gravitational-wave detection). Engineering form: nanostructure = antenna array (coherent pickup), Cu/CuO junction = diode (direction), store->cold side = temperature difference (net flow).",
+  "model": {
+    "per_antenna_input": "single-mode (one polarization) net thermal power from store T_h to rectenna at T_c: integral of h nu/(exp(h nu/kT)-1) over nu, (T_h spectrum minus T_c spectrum), weighted by absorptance 0.96 and RC roll-off 1/(1+(nu/f_c)^2)",
+    "array": "antennas tile the surface; covered net flux per m^2 = 0.96 sigma (T_h^4 - T_c^4) x (power fraction passed by the roll-off)",
+    "rectifier": "small-signal square-law diode at zero bias: I_dc = beta P_in; matched load; eta_rect = beta^2 P_in R_d / 4 (capped at the Carnot factor)",
+    "diode_inputs_declared": {"beta_A_per_W": [0.5, 5.0], "R_d_ohm": [100, 1000], "f_c_THz": [1, 10, 30, 100]},
+    "temperatures": {"T_c": 293, "T_h": [340, 423, 573, 773]}
+  },
+  "predictions": {
+    "P1_isothermal_zero": "T_h = T_c gives zero DC output (a diode cannot rectify its own thermal noise; second law)",
+    "P2_cutoff": "at T_h = 340 K a diode with f_c = 1 THz passes < 5% of the net spectral power, f_c = 30 THz passes > 50%",
+    "P3_small_signal": "per-antenna input at 340 K is < 1e-7 W, so eta_rect < 1e-3 for every declared diode: the small-signal diode, not the photon energy, is the bottleneck",
+    "P4_beats_photoemission": "best declared rectenna at 340 K (beta 5, R 1000, f_c 100 THz) outputs >= 100x the BC2 ideal internal-photoemission bound (6.4e-6 W/m^2)",
+    "P5_hot_store": "at T_h = 773 K the best declared rectenna exceeds 1 W/m^2"
+  },
+  "record_either_way": true
+}
