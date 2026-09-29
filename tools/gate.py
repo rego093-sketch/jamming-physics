@@ -147,6 +147,11 @@ ok("robots.txt 7 bots") if not miss_bots else warn("robots.txt",f"missing {miss_
 pyc=glob.glob("**/__pycache__",recursive=True)
 ok("no __pycache__") if not pyc else warn("__pycache__",str(pyc[:3]))
 
+# ---- J. recurrence guards (tools/check_integrity.py: links incl. absolute + GitHub repro, cited scripts vs baseline, aggregate drift) ----
+import subprocess as _sp, sys as _sys
+_r=_sp.run([_sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_integrity.py")], capture_output=True, text=True)
+ok("integrity guards", " | ".join(l.strip() for l in _r.stdout.splitlines() if l.startswith("[")) ) if _r.returncode==0 else bad("integrity guards", _r.stdout.strip()[-400:])
+
 # ---- report ----
 nf=sum(1 for s,_,_ in R if s=="FAIL"); nw=sum(1 for s,_,_ in R if s=="WARN"); np=sum(1 for s,_,_ in R if s=="PASS")
 print(f"\n{'='*64}\nVP REPO FINAL AUDIT  —  {np} PASS · {nw} WARN · {nf} FAIL\n{'='*64}")
