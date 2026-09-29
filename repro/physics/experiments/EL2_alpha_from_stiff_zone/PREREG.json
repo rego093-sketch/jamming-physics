@@ -1,0 +1,18 @@
+{
+  "experiment": "EL2 — attempt to derive 1/alpha ~ 137 from the author's stiff-zone principle, using observations only plus internal whitepaper definitions",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running el2_run.py; routes, formulas and tolerance fixed here; expected outcome unknown",
+  "method_rule": "Inputs are OBSERVED numbers only (no standard-theory interpretations) plus internal whitepaper quantities. Allowed observations: annihilation-line energy E_ann = 510.99895 keV; hydrogen ionization energy E_ion = 13.598434 eV; m_p/m_e = 1836.15267; hydrogen ground-state size a0 = 52.918 pm (measured 1s density/momentum distribution, (e,2e) spectroscopy); Compton wavelength lambda_C = 2.42631 pm (Compton scattering).",
+  "target": "1/alpha_obs = sqrt( E_ann / (2 E_ion) / (1 + m_e/m_p) ) (hydrogen binding with the observed mass ratio); must equal 137.036 within 1e-4 relative",
+  "whitepaper_inputs": {"D": "4.852620477 pm (D = 2 lambda_C, s13)", "nu_p": "3 pi^4 (s9.4)", "nu_e": "1 (s9.3)", "phi_jam": "0.63 (measured RCP, jamming spine)", "r_rot": "D/(4 pi): the c-rotator radius implied by D = 2 lambda_C"},
+  "bridge": "One declared bridge: 1/alpha = a0 / r_rot (stand-off over rotator radius). Checked first against observation (must hold within 1e-3) before any route is scored.",
+  "principle": "Author: the proton annihilates ~3 pi^4 quanta per electron-second; the quanta around it are compressed and stiff; the electron cannot host in / absorb them, so it stands off at the edge of the stiff zone. A zone of radius R holds N = phi_jam (2R/D)^3 quanta.",
+  "routes": {
+    "R1_reservoir": "stiff zone = the proton's consumption in one electron-second: N = nu_p",
+    "R2_competition": "a host is safe for the electron when the chance the proton takes it within one electron-second, nu_p/N, falls to 1/nu_p: N = nu_p^2",
+    "R3_mass_count": "stiff zone holds the proton's mass count in electron units: N = m_p/m_e = 2 pi nu_p (whitepaper value 6 pi^5)",
+    "R4_inflow_vs_hop": "stand-off where the proton's inflow speed nu_p*(pi/6)D^3/(4 pi R^2) per electron-second falls to the electron's hop floor D per electron-second"
+  },
+  "scoring": "HIT if |route/target - 1| < 1e-3. Four routes are tried, so a single hit is a candidate [H], not a derivation, until a fifth independent consequence is checked. All misses are recorded, and the N (or R) that WOULD hit is reported as the VP-native target for the author's full 3-D simulation.",
+  "record_either_way": true
+}
