@@ -19,18 +19,18 @@
 <main>
 <h1>The GnRH pulse generator is the shared FHN relaxation oscillator (T1)</h1>
 
-<p class="answer">The hypothalamic GnRH pulse generator is the shared FitzHugh-Nagumo relaxation oscillator: a fast switch with slow recovery emits a relaxation pulse train (62 pulses at &tau;<sub>s</sub>=60). Pulse <em>frequency</em> decodes to gonadotropin identity &mdash; fast pulses favour LH, slow favour FSH &mdash; reproduced as a monotone function of the recovery timescale &tau;<sub>s</sub>. The mechanism is sim-verified; the absolute pulse rate is a measured anchor.</p>
+<p class="answer">The hypothalamic GnRH pulse generator is the shared FitzHugh-Nagumo relaxation oscillator: a fast switch with slow recovery emits a relaxation pulse train (62 pulses at &tau;<sub>s</sub>=60). Pulse <em>frequency</em> decodes to gonadotropin identity &mdash; fast pulses favour LH, slow favour FSH &mdash; reproduced as a monotone function of the recovery timescale &tau;<sub>s</sub>. The mechanism is simulated; the absolute pulse rate is a measured anchor.</p>
 
 <p class="abstract">Run as the vendored FHN at &tau;<sub>s</sub>=60 the generator emits 62 pulses with mean interval 130.6 (arb). Sweeping &tau;<sub>s</sub> from 20 to 400 drops the pulse rate monotonically from 0.019375 to 0.001375, so frequency maps onto the LH/FSH balance &mdash; the substrate basis of GnRH frequency coding.</p>
 
 <aside class="claim-strip">
-  <span class="grade g-verified">[V] sim-verified</span>
+  <span class="grade g-hypothesis">code output · interpretation</span>
   <span class="gate">LOCK &rarr; Derive &rarr; Gate</span>
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/reproductive_endocrine/" rel="noopener">reproduction code (GitHub)</a>
   <a class="doi" href="https://doi.org/10.5281/zenodo.20754657" rel="noopener">DOI 10.5281/zenodo.20754657</a>
 </aside>
 
-<aside class="vp-card" data-locked="spinodal" data-concept="spinodal"><b>h<sub>sp</sub> = 2(&gamma;/3)<sup>3/2</sup></b> &mdash; the R19 spinodal: the drive past which the opposite basin disappears, so the flip is <b>discontinuous</b> (= 0.3849 at &gamma;=1). <b>[F]</b> forced (geometric). <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a> · <a href="/concepts/#spinodal">용어</a></aside>
+<aside class="vp-card" data-locked="spinodal" data-concept="spinodal"><b>h<sub>sp</sub> = 2(&gamma;/3)<sup>3/2</sup></b> &mdash; the R19 spinodal: the drive past which the opposite basin disappears, so the flip is <b>discontinuous</b> (= 0.3849 at &gamma;=1). <b>consistency</b> (geometric). <a href="https://doi.org/10.5281/zenodo.17932566" rel="noopener">canonical derivation &mdash; VP Theory</a> · <a href="/concepts/#spinodal">용어</a></aside>
 
 <h2>The generator is a relaxation pulse train, not a sinusoid</h2>
 <p>The arcuate KNDy network that paces GnRH release is, on this substrate, the same fast-slow FHN system used everywhere in the package. A fast R19 switch with slow recovery fires a sharp pulse, recovers, and fires again &mdash; a relaxation pulse train rather than a smooth wave.</p>
@@ -41,7 +41,7 @@
 <thead><tr><th>recovery &tau;<sub>s</sub></th><th>pulses</th><th>mean interval (arb)</th><th>pulse rate (arb)</th><th>gonadotropin bias</th></tr></thead>
 <tbody><tr><td>20</td><td>155</td><td>51.7</td><td>0.019375</td><td>LH (fast)</td></tr><tr><td>60</td><td>62</td><td>130.6</td><td>0.007750</td><td>LH (fast)</td></tr><tr><td>150</td><td>27</td><td>299.4</td><td>0.003375</td><td>FSH (slow)</td></tr><tr><td>400</td><td>11</td><td>756.2</td><td>0.001375</td><td>FSH (slow)</td></tr></tbody>
 </table>
-<p class="note">The pulse RATE is calibrated to the measured follicular figure of roughly one GnRH/LH pulse per 60&ndash;90 min [L]; the package does not claim to derive that clinical number. Only the monotone frequency-decoding <em>mechanism</em> is the sim-verified [V] claim.</p>
+<p class="note">The pulse RATE is calibrated to the measured follicular figure of roughly one GnRH/LH pulse per 60&ndash;90 min [L]; the package does not claim to derive that clinical number. Only the monotone frequency-decoding <em>mechanism</em> is the simulated (code output) claim.</p>
 
 <nav class="pn">
   <a rel="prev" href="../02-organ-emergence-measured-gamma/">&larr; &sect;2</a>

@@ -113,7 +113,7 @@
 <p class="eyebrow">Hemodynamic Homeostasis &middot; &sect;6 &middot; P* = P&#8320; + &Delta;P_set</p>
 <h1>Essential hypertension as a setpoint reset</h1>
 
-<p class="answer">Essential hypertension is not a stuck operating point but a reset of the defended reference. The integral controller obeys P* = P&#8320; + &Delta;P_set, so the attractor moves up by &Delta;P_set (+20 mmHg, 93 &rarr; 113); an operating-point drug (transient &minus;15 mmHg) is opposed back (durable drop 0). Reset shape [V], risk anchor [L], incidence open [O].</p>
+<p class="answer">Essential hypertension is not a stuck operating point but a reset of the defended reference. The integral controller obeys P* = P&#8320; + &Delta;P_set, so the attractor moves up by &Delta;P_set (+20 mmHg, 93 &rarr; 113); an operating-point drug (transient drop; size = chosen input) is opposed back (durable drop 0). Reset shape [V], risk anchor [L], incidence open [O].</p>
 
 <p class="abstract">Because the renal controller is an infinite-gain integrator, durable hypertension requires resetting its reference, not perturbing the operating point. The defended pressure follows P* = P&#8320; + &Delta;P_set and moves up by exactly &Delta;P_set (+20 mmHg, 93&rarr;113); an operating-point push is rejected back. This mirrors the obesity lipostat reset [V]/[L]; absolute incidence is open [O].</p>
 
@@ -123,9 +123,10 @@
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/homeostasis_hemodynamic/" rel="noopener">Reproduction (GitHub)</a>
   <a href="https://doi.org/10.5281/zenodo.20756801" rel="noopener">Concept DOI: 10.5281/zenodo.20756801</a>
 </aside>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)"><strong>Reading note (2026-09-29).</strong> <em>Input dependence (magnitude firewall).</em> In <code>repro/homeostasis_hemodynamic/repro/_therapy/fundamental_targets.py</code> and <code>_pathology/setpoint_failure.py</code> the setpoint reset, the operating-point drug and the reference reset sizes are <em>chosen inputs</em> (<code>reset_up</code>, <code>op_drug</code>, <code>ref_reset</code>; values withheld under the magnitude firewall). An integral controller returns exactly its reference, so the shift of +20, the transient 15 and the durable 17 equal those inputs by construction (<em>consistency</em>; ref_reset = 10 or 25 gives 10 or 25). They are not predicted or clinical effect sizes. The code output is only the direction: an operating-point push is opposed back, a reference reset holds. Observation (cited): renal denervation lowers office SBP by ~20 mmHg at 3 years in registry data (Global SYMPLICITY Registry, GSR-DEFINE, 3-year data, as cited on this volume&rsquo;s pages); reading hypertension as a reference reset is <em>interpretation</em> (Guyton 1991, <em>Science</em> 252:1813).</aside>
 
 <aside class="vp-card" data-locked="integrator"><b>renal integral controller</b> &mdash; dV/dt = intake &minus; k(P&minus;P_set); infinite gain means only a reference shift is durable. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-slow-loop/">slow loop &sect;5</a></aside>
-<aside class="vp-card" data-locked="therapy"><b>durable &minus;17 mmHg via reference reset</b> &mdash; renal-reference reset lowers the defended pressure and holds; operating-point pushes are rejected. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-fundamental-therapy/">fundamental therapy &sect;9</a></aside>
+<aside class="vp-card" data-locked="therapy"><b>durable drop via reference reset (size = chosen input)</b> &mdash; renal-reference reset lowers the defended pressure and holds; operating-point pushes are rejected. <span class="grade g-verified">[V] sim-reproduced</span> <a href="/homeostasis_hemodynamic/hmd-fundamental-therapy/">fundamental therapy &sect;9</a></aside>
 
 
 <h2>The defended attractor moves, and moves by exactly the reference shift</h2>
@@ -139,7 +140,7 @@ and why it returns after perturbation.</p>
 
 <h2>Operating-point drugs are rejected back</h2>
 <p>An operating-point push does not move the reference, so the integrator opposes it back. A drug that lowers
-pressure acutely produces a transient drop of 15 mmHg but is rejected toward the reset reference, giving a
+pressure acutely produces a transient drop (size = chosen input) but is rejected toward the reset reference, giving a
 durable drop of only 0 mmHg &mdash; symptomatic relief, not a cure. This is the loop-level explanation for a
 familiar clinical fact: monotherapy that only dilates or only slows the heart tends to be escaped, while
 durable control engages the renal/volume arm.</p>

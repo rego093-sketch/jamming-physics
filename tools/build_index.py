@@ -45,7 +45,7 @@ TAGS = {
  'aging_senescence':['risk multiplier','|z|<1'],
  'analgesic_threshold':['L1/L2/L3','R19 barrier'],
  'disease_wp':['gene-key cases'],
- 'disease_kit':['corrective direction [F]','magnitude [O]'],
+ 'disease_kit':['corrective direction (interpretation)','magnitude [O]'],
 }
 
 # Tier registry: (id, eyebrow, title, intro)

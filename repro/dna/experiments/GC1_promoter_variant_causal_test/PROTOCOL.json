@@ -1,0 +1,14 @@
+{
+  "experiment": "GC1 — is the promoter stiffness γ a CAUSE at the level of single variants? (intervention test on observed promoter variants)",
+  "registered": "2026-09-29",
+  "status": "PROTOCOL ONLY — not run. The build environment cannot reach ClinVar, UCSC, Ensembl or NCBI, and the repository holds no human promoter sequence for HBB, TERT or F9. Sequences must not be reconstructed from memory.",
+  "question": "When one promoter base changes, does the direction of the change in γ (Δγ) predict the direction of the measured change in expression?",
+  "model_rule_under_test": "spinodal threshold ∝ γ^1.5 (dna): Δγ > 0 → higher switch threshold → expression DOWN; Δγ < 0 → expression UP",
+  "inputs_needed": [
+    "reference promoter sequences (hg38, the same window as the dna γ reader) for each gene",
+    "variants with a MEASURED expression direction in the same cell context: β-thalassaemia HBB promoter variants (TATA and CACCC box), TERT promoter C228T / C250T, F9 haemophilia B Leyden variants, and an unbiased set such as an MPRA / saturation-mutagenesis promoter dataset"
+  ],
+  "procedure": "compute Δγ = γ(alt) − γ(ref) with the unchanged dna reader; score direction agreement with the measured expression change; report agreement with a binomial CI; repeat for the A4-shape and CpG channels of the same reader",
+  "pre_registered_expectation": "The γ LEVEL channel is essentially GC content (corr 0.998, table-intrinsic), while measured single-variant effects are dominated by motif loss or creation (TATA/CACCC loss in β-thalassaemia; new ETS sites at TERT). Expected: the γ-level direction agrees at about chance (≈ 50 %) on the unbiased set, i.e. γ level is NOT causal at single-variant level, and any causal signal sits in the sequence-specific channels (A4 shape, CpG). A result above chance with a CI excluding 50 % would upgrade γ level to a causal reading.",
+  "record_either_way": true
+}

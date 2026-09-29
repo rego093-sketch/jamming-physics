@@ -137,6 +137,10 @@ import subprocess as _sp
 _c=_sp.run([sys.executable,"tools/build_citation_meta.py","--check"],capture_output=True,text=True)
 ok("citation meta","all hubs in sync with manifest") if _c.returncode==0 else bad("citation meta",_c.stdout.strip().splitlines()[0] if _c.stdout else "check failed")
 
+# correction notes must survive regeneration (docs/ is the source of truth; old volume builders must not overwrite it)
+_n=_sp.run([sys.executable,"tools/record_page_notes.py","--check"],capture_output=True,text=True)
+ok("correction notes preserved",_n.stdout.strip().splitlines()[0] if _n.stdout else "") if _n.returncode==0 else bad("correction notes preserved",_n.stdout.strip().replace("\n"," | ")[:300])
+
 # ---- H. magnitude firewall scan (disease/therapy bodies) ----
 DOSE=re.compile(r'\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|μg|ug|mL|mg/kg|mg/day|IU|g/day|mM|µM|μM|nM|mmol/L|µmol/L|nmol/L|ng/mL|mg/dL|mg/L)\b|\b(?:once|twice|three times)\s+(?:daily|a day|weekly)\b|\b(?:b\.i\.d|t\.i\.d|q\d+h)\b|\b(?:titrate|dose)\w*\s+(?:\w+\s+){0,4}(?:to|below|above|by)\s+\d')  # doses, concentrations, regimens, titration targets
 hits=[]

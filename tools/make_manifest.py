@@ -49,7 +49,7 @@ REL = {
  "aging_senescence":(["dna"],["setpoint-drift-over-time", "aging-genes-not-special(|z|<1)"]),
  "analgesic_threshold":(["neuro"],["three-lever-L1/L2/L3-therapeutic-logic"]),
  "disease_wp":(["dna"],["per-disease-gene-key-mechanism-cases"]),
- "disease_kit":(["disease_wp"],["reproducible-corrective-direction[F]", "magnitude[O]"]),
+ "disease_kit":(["disease_wp"],["corrective-direction(interpretation)", "magnitude[O]"]),
 }
 SELECTIVE = {'nose':"inherits no wave module (smell has no wave)"}
 

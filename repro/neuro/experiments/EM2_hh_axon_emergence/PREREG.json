@@ -1,0 +1,19 @@
+{
+  "experiment": "EM2 — emergence at the simple-tissue level: a squid giant axon built from its measured membrane elements",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running em2_run.py",
+  "principle": "Elements and constants are observations (Hodgkin & Huxley 1952, J. Physiol. 117:500): Na, K and leak conductances with their measured voltage- and time-dependence, membrane capacitance, axoplasm resistivity, axon radius. The action potential and its conduction velocity are NOT set; they must emerge. No constant is tuned to the outputs.",
+  "constants_observed": {"C_m_uF_cm2": 1.0, "gNa_mS_cm2": 120, "gK_mS_cm2": 36, "gL_mS_cm2": 0.3, "E_Na_mV_rel_rest": 115, "E_K_mV_rel_rest": -12, "E_L_mV_rel_rest": 10.613, "rate_functions": "HH 1952 alpha/beta at 6.3 C with temperature factor phi = 3^((T-6.3)/10)", "axon_radius_um": 238, "R_i_ohm_cm": 35.4, "temperature_C": 18.5},
+  "observations_to_compare": {
+    "O1": "measured conduction velocity 21.2 m/s at 18.5 C on this axon (HH 1952); HH's own hand computation gave 18.8 m/s",
+    "O2": "action potential amplitude ~100-110 mV from rest (overshoot of ~+40 mV above zero on a -65 mV rest), duration ~1-2 ms at 18.5 C",
+    "O3": "a refractory period follows each spike: a second equal stimulus a few ms later fails"
+  },
+  "predictions": {
+    "P1_velocity": "emergent conduction velocity within 15% of the measured 21.2 m/s",
+    "P2_amplitude": "emergent spike amplitude 90-120 mV from rest",
+    "P3_all_or_none": "the space-clamped membrane shows a threshold: stimuli below it give < 10 mV, above it a full spike (> 80 mV)",
+    "P4_refractory": "a second threshold-plus stimulus 2 ms after the first (at 18.5 C) fails to give a full spike, and one 15 ms later succeeds"
+  },
+  "record_either_way": true
+}

@@ -1,0 +1,6 @@
+{
+  "amended": "2026-09-29, after run 1, before run 2",
+  "reason": "Run 1 injected 100 uA/cm2 for 0.5 ms into the first 0.1 cm of the cable. The axon's length constant is ~1 cm, so that current leaks along the axon and never reaches threshold at the stimulated end. No spike was launched and no velocity could be measured (velocity reported as 0). This is a stimulation setting, which PREREG.json did not fix, not a model property.",
+  "change": "stimulus 2000 uA/cm2 for 0.3 ms over the first 0.2 cm (a suprathreshold launch). Velocity is still measured between 2 cm and 4 cm, well away from the stimulus site.",
+  "unchanged": "all membrane and cable constants, all predictions and thresholds; the space-clamp results (P2-P4) are recomputed with identical code."
+}

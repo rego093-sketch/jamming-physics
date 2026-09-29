@@ -123,7 +123,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | aging_senescence | dna, organs | setpoint drift over time; "aging genes not special" |
 | analgesic_threshold | neuro, systems | the three-lever L1/L2/L3 therapeutic logic |
 | disease_wp | dna, systems | per-disease gene-key mechanism cases |
-| disease_kit | disease_wp | reproducible per-disease corrective **direction** `[F]`, magnitude `[O]` |
+| disease_kit | disease_wp | reproducible per-disease corrective **direction** (interpretation of the lesion role), magnitude `[O]` |
 
 ---
 
@@ -158,6 +158,8 @@ Two more rules that govern every number:
 
 - **No-tuning.** `γ` and all inputs are measured/derived, never fitted to reproduce an outcome. If you see a number with no reproduction path, it is marked — do not assume it.
 - **Magnitude firewall.** For disease/therapy the framework gives **direction only**. Clinical magnitudes are deliberately withheld `[O]`. An AI must **never** synthesize a dose, concentration, or clinical magnitude from this corpus — output the corrective *direction* and stop.
+
+**Biology reading rule (2026-09-29).** The biology volumes accept established observations and use them. They show how the DNA reading (γ) and the VP mapping apply to an organ; they do not decide theory. Every statement there is an observation (cited), a code output (reproducible, with its input dependence stated), a consistency check, or an interpretation. Emergence is attempted only for simple tissue units (one cell or organelle), where observed constants make it reliable. Complex structures stay [O].
 
 **Data decides the theory.** A claim counts only when data support it and code reproduces it; theory is written as code. Items without data or code are listed as data-pending, not argued.
 
@@ -200,7 +202,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 29 | aging_senescence | 7 | Aging & Senescence | human aging genes not special (`|z|<1`) | 10.5281/zenodo.20756155 |
 | 30 | analgesic_threshold | 8 | Analgesic Threshold Logic | three levers L1/L2/L3; `corr(γ,GC)=0.99898` | 10.5281/zenodo.20733420 |
 | 31 | disease_wp | 8 | Rare Disease Mechanisms | `burden = raw_burden · (1 − e)` | 10.5281/zenodo.20763842 |
-| 32 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction `[F]`, magnitude `[O]` | 10.5281/zenodo.20755262 |
+| 32 | disease_kit | 8 | Rare Disease Reproduction KIT | per-disease direction (interpretation), magnitude `[O]` | 10.5281/zenodo.20755262 |
 
 ---
 
@@ -272,6 +274,7 @@ When adding or revising a volume:
 3. **Measure, never fit.** Any γ comes from promoters; cite inherited numbers as provenance.
 4. **Regenerate, don't hand-edit aggregates.** Update `registry/vp.manifest.json`, then regenerate the homepage, `sitemap.xml`, `llms.txt`, and JSON-LD from it. Never maintain those by hand.
 5. **Record the inheritance.** Append one line to `registry/lineage.jsonl` (`parent_sha256 → this_sha256` + changes). Cut a dated snapshot zip so the build is rollback-safe.
+6. **`docs/` is the source of truth for volume pages.** Pages carry later corrections (lt-note asides, relabelled grades) that the per-volume builders under `repro/<volume>/` do not know. Never run an old volume builder into `docs/`. Build into a scratch directory and compare instead. The gate fails if any page loses a correction note (`registry/page_notes.json`; after adding notes, run `python3 tools/record_page_notes.py`).
 
 ---
 

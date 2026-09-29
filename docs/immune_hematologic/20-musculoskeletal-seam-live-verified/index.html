@@ -19,19 +19,19 @@
 <main>
 <h1>Musculoskeletal Seam: Live-Verified, Identity Retired</h1>
 
-<p class="answer">The musculoskeletal volume arrived, so the niche pointer was tested live. Substrate drift is 0 — the hematopoietic root and the MSK bone niche share one R19 substrate, so the pointer is live-verified. But the identity candidate is retired: the niche is built by RUNX2 (spinodal 0.532), not the hematopoietic RUNX1 (0.585) — housing, not identity. An honest negative. Grade [V].</p>
+<p class="answer">The musculoskeletal volume arrived, so the niche pointer was tested live. Substrate drift is 0 — the hematopoietic root and the MSK bone niche share one R19 substrate, so the pointer is live-verified. But the identity candidate is retired: the niche is built by RUNX2 (spinodal 0.532), not the hematopoietic RUNX1 (0.585) — housing, not identity. An honest negative. Grade (code output).</p>
 
 <p class="abstract">The first live cross-package verification against a real sibling engine. With musculoskeletal_vp_site v0.7.0 on disk, the §18 harness loads its engine and measures cross-volume substrate drift = 0.0 over γ∈{1.0, 1.3225, 1.4892} — the immune hematopoietic root (RUNX1) and the MSK bone-marrow niche sit on one byte-identical R19 substrate, so the one-way niche-housing pointer is LIVE-VERIFIED. The named shared-substrate-identity upgrade is RETIRED on live evidence: the MSK niche is built by osteoblasts (RUNX2, γ=1.2414, spinodal 0.53237264), a different master gene and spinodal from the hematopoietic RUNX1 (0.58538506); the niche houses hematopoiesis but is not the same switch (gap 0.05301242). The falsifier fired; nothing was tuned to rescue the identity; the pointer survives. Engine hash byte-identical.</p>
 
 <aside class="claim-strip">
-  <span class="grade g-verified">[V] grade</span>
+  <span class="grade g-hypothesis">code output · interpretation</span>
   <span class="gate">LOCK → Derive → Gate</span>
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/" rel="noopener">reproduction code (GitHub)</a>
   <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
 </aside>
 
-<aside class="vp-card" data-locked="msk-live-verified"><b>marrow-niche pointer — LIVE-VERIFIED</b> — the §18 harness loaded musculoskeletal_vp_site v0.7.0 and measured cross-volume substrate drift = 0.0 over γ∈{1.0, 1.3225, 1.4892}: the immune hematopoietic root (RUNX1, spinodal 0.58538506) and the MSK bone-marrow niche share one byte-identical R19 substrate, so the one-way niche-housing pointer is LIVE-VERIFIED (pointer-live-verified true). <b>[V]</b> musculoskeletal volume (sibling, v0.7.0)</aside>
-<aside class="vp-card" data-locked="msk-identity-retired"><b>identity candidate — RETIRED (honest negative)</b> — the MSK niche is built by osteoblasts (RUNX2, γ=1.2414, spinodal 0.53237264), a DIFFERENT switch from the hematopoietic RUNX1 (γ=1.3225, spinodal 0.58538506) — 0.53237264 ≠ 0.58538506, gap 0.05301242. The niche HOUSES hematopoiesis but is not the same R19 switch, so the threshold-equality identity does not reduce: falsifier fired, identity RETIRED (retired-on-live-evidence true), pointer survives. <b>[V]</b> <a href="https://doi.org/10.5281/zenodo.20755280">immune volume (owner)</a></aside>
+<aside class="vp-card" data-locked="msk-live-verified"><b>marrow-niche pointer — LIVE-VERIFIED</b> — the §18 harness loaded musculoskeletal_vp_site v0.7.0 and measured cross-volume substrate drift = 0.0 over γ∈{1.0, 1.3225, 1.4892}: the immune hematopoietic root (RUNX1, spinodal 0.58538506) and the MSK bone-marrow niche share one byte-identical R19 substrate, so the one-way niche-housing pointer is LIVE-VERIFIED (pointer-live-verified true). <b>code output</b> musculoskeletal volume (sibling, v0.7.0)</aside>
+<aside class="vp-card" data-locked="msk-identity-retired"><b>identity candidate — RETIRED (honest negative)</b> — the MSK niche is built by osteoblasts (RUNX2, γ=1.2414, spinodal 0.53237264), a DIFFERENT switch from the hematopoietic RUNX1 (γ=1.3225, spinodal 0.58538506) — 0.53237264 ≠ 0.58538506, gap 0.05301242. The niche HOUSES hematopoiesis but is not the same R19 switch, so the threshold-equality identity does not reduce: falsifier fired, identity RETIRED (retired-on-live-evidence true), pointer survives. <b>code output</b> <a href="https://doi.org/10.5281/zenodo.20755280">immune volume (owner)</a></aside>
 
 <h2>The first live test against a real sibling</h2>
 <p>Until now every sibling volume was absent and the live harness (chapter 17) SKIPped its cross-package checks;
