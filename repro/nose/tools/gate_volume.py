@@ -34,6 +34,9 @@ import os, sys, re, json, html, glob, subprocess, hashlib
 _HERE = os.path.dirname(os.path.abspath(__file__))
 PKG   = os.path.dirname(_HERE)
 DOCS  = os.path.join(PKG, "docs")
+# monorepo layout: the published pages live at <repo>/docs/nose/, not repro/nose/docs/ — fall back
+if not os.path.isdir(os.path.join(DOCS, "nose")):
+    DOCS = os.path.join(os.path.dirname(os.path.dirname(PKG)), "docs")
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
 

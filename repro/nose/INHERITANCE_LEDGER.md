@@ -35,13 +35,16 @@ the honest structural statement of olfaction (see `BLUEPRINT.md`).
 - **dna** (DOI 10.5281/zenodo.20471407, **v1.13** "A Deterministic Two-Layer Interpretation of DNA")
   — the readable layer = **γ (level) + A4 coordinate (shape) + R19 switch-state + CpG handles**; the
   SantaLucia-1998 NN ΔG37 γ measure, the A4 grammar (`dna_interpreter.py` / `key_pipeline_full.py`,
-  vendored byte-identical), and emergence order = argsort(spinodal(γ)). γ and A4 are the level and
+  vendored byte-identical). The γ-sort argsort(spinodal(γ)) used in E3 is a code output read as
+  interpretation, not a forced developmental order: in dna, order comes from regulatory-cascade depth
+  and building (order, size, timing) is open [O] (dna §RB). γ and A4 are the level and
   shape of one stiffness field — orthogonal, neither contains the other.
 - **neuro / sensory_organ** (DOI 10.5281/zenodo.17979015 / 20755154) — the R19 substrate primitive
   and the transduction-switch reading this seed extends to olfaction.
 - **eye sibling** (`vp_eye_emergence_seed`) — the cross-sense reference for **CNGB1** (the CNG β
-  subunit shared by rod vision and olfaction); its independently-measured rod-vision CNGB1 γ=1.4357
-  is cited in E2 and matches this seed's olfactory measurement byte-for-byte.
+  subunit shared by rod vision and olfaction); its rod-vision CNGB1 γ=1.4357
+  is cited (hard-coded) in E2 and equals this seed's olfactory value — a consistency check (same
+  promoter window, same pipeline), not an independent verification.
 - **immune / hematologic** (DOI 10.5281/zenodo.20755280, **§11** "Allergy: sensitization, the latch,
   and controlled desensitization") — the **allergy mechanism** E5 **consumes, never re-derives**:
   sensitization at the R19 spinodal, the dose×repetition threshold, the latch, and controlled

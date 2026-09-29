@@ -30,6 +30,9 @@ from vp_nose_ssot import ssot
 
 R = ssot()
 DOCS = os.path.join(PKG, "docs")
+# monorepo layout: the published pages live at <repo>/docs/nose/, not repro/nose/docs/ — fall back
+if not os.path.isdir(os.path.join(DOCS, "nose")):
+    DOCS = os.path.join(os.path.dirname(os.path.dirname(PKG)), "docs")
 
 # ---- volume identity (self-consistent; the intended jamming-physics.org/nose deployment) ----------
 PAPER_ID = "nose"

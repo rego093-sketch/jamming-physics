@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The olfactory transduction switch — Olfactory Emergence §2 | Jamming Physics</title>
-<meta name="description" content="The olfactory cascade ends in the same all-or-none R19 flip as vision: discontinuous past the spinodal, made a step by the cubic −s³ (≈229× steeper than a graded control). CNGB1 is byte-identical to rod vision.">
+<meta name="description" content="The olfactory cascade ends in the same all-or-none R19 flip as vision: discontinuous past the spinodal, made a step by the cubic −s³ in the model (steepness ratio step-dependent). CNGB1 γ equals the rod-vision value (consistency check).">
 <link rel="canonical" href="https://jamming-physics.org/nose/02-transduction-switch/">
 <link rel="stylesheet" href="/nose/assets/css/site.css">
 <script type="application/ld+json">
@@ -18,10 +18,10 @@
 <header><nav class="crumb"><a href="/">Home</a> › <a href="/nose/">Olfactory Emergence</a> › §2</nav></header>
 <main>
 <h1>The olfactory transduction switch</h1>
-<p class="answer">The olfactory cascade ends in the same all-or-none R19 flip as vision, discontinuous past the spinodal. The cubic −s³ (cooperativity order 3) makes it a step, ≈229× steeper than a graded control. CNGB1 γ = 1.4357 is byte-identical to rod vision — the switch is shared.</p>
-<p class="abstract">Each transduction gene's R19 field flips discontinuously past its spinodal; the cubic −s³ (order <span class="vp-num" data-key="e2.hill_order">3</span>) is necessary, ≈<span class="vp-num" data-key="e2.ratio">229</span>× steeper than a graded control. CNGB1 γ = <span class="vp-num" data-key="e2.cngb1.gamma_olf">1.4357</span> matches rod vision byte-for-byte — a shared, not analogous, switch.</p>
-<aside class="claim-strip page"><span class="grade g-verified">[V] verified</span><span class="gate">LOCK → Derive → Gate</span><a href="https://doi.org/10.5281/zenodo.20790182" rel="noopener">DOI 10.5281/zenodo.20790182</a><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/nose/research/" rel="noopener">Reproduce (GitHub)</a><a href="https://jamming-physics.org/nose/" rel="noopener">VP framework</a></aside>
-<aside class="vp-card" data-locked="cngb1"><b>CNGB1 γ = 1.4357</b> — the CNG channel β subunit is the same gene in olfaction and rod vision; its measured γ is byte-identical across the two senses, so the transduction switch is shared, not analogous <b>[V]</b> verified. <a href="https://doi.org/10.5281/zenodo.17979015" rel="noopener">sensory transduction (neuro)</a></aside>
+<p class="answer">Read as an R19 switch, the olfactory cascade ends in an all-or-none flip past the spinodal. In the model the cubic −s³ makes it a step; its steepness ratio to a graded control depends on the step size (229×, 48× or 24×). CNGB1 γ = 1.4357 equals the rod-vision value — a consistency check.</p>
+<p class="abstract">Each transduction gene's R19 field flips discontinuously past its spinodal; the cubic −s³ (order <span class="vp-num" data-key="e2.hill_order">3</span>) is necessary in the model; its steepness ratio to a graded control is ≈<span class="vp-num" data-key="e2.ratio">229</span>× at a ±1 % cubic vs ±10 % linear step and depends on those steps (code output). CNGB1 γ = <span class="vp-num" data-key="e2.cngb1.gamma_olf">1.4357</span> equals the rod-vision value — a consistency check (same gene, same promoter window, same pipeline), not an independent verification.</p>
+<aside class="claim-strip page"><span class="grade g-hypothesis">code output · interpretation</span><span class="gate">LOCK → Derive → Gate</span><a href="https://doi.org/10.5281/zenodo.20790182" rel="noopener">DOI 10.5281/zenodo.20790182</a><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/nose/research/" rel="noopener">Reproduce (GitHub)</a><a href="https://jamming-physics.org/nose/" rel="noopener">VP framework</a></aside>
+<aside class="vp-card" data-locked="cngb1"><b>CNGB1 γ = 1.4357</b> — the CNG channel β subunit is the same gene in olfaction and rod vision; its γ equals the rod-vision value because both volumes read the same promoter window (TSS−2000..+500) with the same pipeline, and <code>E2/run.py</code> hard-codes the rod value — <b>consistency</b>, not verification; reading it as one shared switch is interpretation. <a href="https://doi.org/10.5281/zenodo.17979015" rel="noopener">sensory transduction (neuro)</a></aside>
 
 <h2>All-or-none: the flip is discontinuous past the spinodal</h2>
 <p>The olfactory cascade (odorant → OR → Golf/GNAL → ADCY3/cAMP → CNG channel → ANO2) ends in the same
@@ -38,16 +38,17 @@ from rest stays negative below h* and flips positive above, a finite jump.</capt
 
 <h2>The cooperativity is the cubic −s³, and it is necessary</h2>
 <p>The restoring term is third-order, so the cooperativity order is n = <span class="vp-num" data-key="e2.hill_order">3</span> — this is
-where olfaction's "Hill ≈ 2–3" comes from, the cubic, not a fit. A structural control with the cubic
+the model's cooperativity. Reported olfactory Hill coefficients (≈ 2–3) are observations (citation to be attached); linking them to the cubic is <b>interpretation</b> — the order of the normal form is not itself a Hill coefficient, and no mapping between the two is derived here. A structural control with the cubic
 struck out (ds/dt = −γ·s + h) loses the threshold, the basin, and the jump.</p>
 <p>Across the fold the cubic switch slope is ≈ <span class="vp-num" data-key="e2.cubic_slope">177.2</span> while the graded control is
 ≈ <span class="vp-num" data-key="e2.graded_slope">0.773</span> — a ratio of ≈ <span class="vp-num" data-key="e2.ratio">229</span>×. Removing the cubic makes the response a
 smooth proportional curve; the cubic makes it a step.</p>
+<p>Code output, step-dependent: 177.2 is a finite difference over ±1 % of h* and 0.773 over ±10 %. With a ±5 % or ±10 % cubic step the same code gives ≈ 48× or ≈ 24×; at the fold the cubic slope formally diverges, so the ratio has no fixed value. The script's own grade line asserts only ≥ 20×.</p>
 
-<h2>The switch is genuinely shared across senses</h2>
+<h2>CNGB1 — the same gene in both senses (a consistency check)</h2>
 <p>CNGB1, the CNG channel β subunit, is literally the same gene in rod vision and olfaction. Its
-olfactory γ = <span class="vp-num" data-key="e2.cngb1.gamma_olf">1.4357</span> is byte-identical to the independently measured rod-vision
-value <span class="vp-num" data-key="e2.cngb1.gamma_rod">1.4357</span> — the transduction switch is reused, not paralleled.</p>
+olfactory γ = <span class="vp-num" data-key="e2.cngb1.gamma_olf">1.4357</span> equals the rod-vision
+value <span class="vp-num" data-key="e2.cngb1.gamma_rod">1.4357</span>. This is consistency, not independent verification: the nose and eye volumes read the same promoter window (NC_000016.10, TSS−2000..+500, same strand) with the same pipeline, and the rod value is hard-coded in <code>E2/run.py</code>. That one gene serves both senses is an observation; reading it as one reused R19 switch is interpretation. Whether one promoter window covers both the rod (CNGB1a) and olfactory (CNGB1b) isoforms is [O].</p>
 <p>Ordered by threshold the cascade reads <span class="vp-num" data-key="e2.cascade_order">CNGA2 → ANO2 → CNGA4 → GNAL → CNGB1 → ADCY3</span>. Whether this spinodal order matches
 the real biochemical sequence (Golf → ADCY3 → cAMP → CNG → ANO2) is an open empirical question — it
 needs the measured cascade kinetics and is not assumed. The absolute odorant→drive→firing (Hz) scale is
