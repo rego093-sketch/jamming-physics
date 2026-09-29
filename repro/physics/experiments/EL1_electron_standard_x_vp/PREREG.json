@@ -1,0 +1,23 @@
+{
+  "experiment": "EL1 — combine the measured properties of the electron (standard science) with the whitepaper's electron definition, infer, and test",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running el1_run.py",
+  "whitepaper_definition": [
+    "electron = one universal-c rotation unit whose rotation crosses its host quantum's boundary as charge -1 (physics s14)",
+    "one annihilation event per electron-second, nu_e = 1, T_e ~ 1 s (s9.3, s12)",
+    "event-rate radius r_e = D/(2 pi^2) (s9.3); Compton length lambda_C,e = D/2 (s13, D = D_anch = 4.852620477 pm)",
+    "m_p/m_e = 2 pi nu_p = 6 pi^5 (s14, s13)",
+    "stand-off outside the proton's compressed host quantum = atomic radius (s14, qualitative); compressed quanta cannot host/feed the electron (author, full-simulation observation)",
+    "author's reverse reading: the electron is a c-rotator parasitic on host quanta, hopping to a fresh host as it consumes the old one"
+  ],
+  "standard_inputs": "CODATA 2018 (m_e, e, hbar, c, mu_e, a_e, alpha, a_0, lambda_C); electron point-like to < 1e-18 m (collider bound, conservative); elemental-metal Seebeck coefficients near 300 K (Kasap 2001 compilation; Ni, Fe, Co standard values)",
+  "inferences_and_tests": {
+    "P1_moment_radius": "A charge circulating at c with the measured moment needs radius r_mu = 2|mu_e|/(e c). Inference: r_mu = D/(4 pi) * (1 + a_e), i.e. the VP host scale D fixes the rotation radius. PASS if relative difference < 1e-6 (consistency through the D anchor, grade [L], not independent evidence).",
+    "P2_rotation_energy": "One quantum of rotation at c on r_mu, hbar*c/r_mu, equals the rest energy m_e c^2 to within 1% (the rest energy IS the c-rotation). PASS if |ratio - 1| < 0.01.",
+    "P3_stand_off": "Atomic stand-off in rotator radii: a_0 / r_mu. Inference: equals 1/alpha (times 1+a_e). PASS if within 0.3%. Consequence registered in advance: the whitepaper stand-off claim is then equivalent to deriving alpha_em, which the corpus takes as a measured input (s14.5), so the stand-off stays [O].",
+    "P4_pointlike": "Two readings of 'rotation crossing the host boundary'. R_ext: the charge is spread over a host quantum of size D. R_pt: a point charge circulates at c. Prediction: R_ext is excluded by the point-like bound by more than a factor 1e6 (FAIL for R_ext); R_pt survives.",
+    "P5_seebeck_direction_rule": "Reverse (parasite) reading with a single host-temperature preference as the direction rule predicts ONE sign of the Seebeck coefficient for all metals (cold-preference -> negative, hot-preference -> positive). PASS for the rule only if the better universal sign fits >= 90% of the listed elemental metals.",
+    "P6_hop_floor": "Parasite minimum motion D per electron-second; recorded against the slowest measured electron motions (non-discriminating if far below)."
+  },
+  "record_either_way": true
+}
