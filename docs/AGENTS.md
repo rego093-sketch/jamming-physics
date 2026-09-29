@@ -115,7 +115,7 @@ These rules are stated in the volumes themselves and are non-negotiable. An AI e
 | musculoskeletal | dna, time | structure + mechanical load from measured γ |
 | immune_hematologic | dna, time | population thresholds on the R19 switch |
 | integumentary | dna, time | barrier + external stimulus; UV → melanoma key |
-| reproductive_endocrine | dna, time | four organs in measured-γ order |
+| reproductive_endocrine | dna, time | four organs read from measured γ (thresholds; building order open [O]) |
 | homeostasis_thermometabolic | organ, aging, circadian | OU setpoint loop, three levers; endo vs ecto sensitivity |
 | homeostasis_hemodynamic | cardioresp, circulatory, time | `MAP = CVP + CO×SVR` defended |
 | homeostasis_ionic | musculoskeletal, time | mineral / acid-base / electrolyte setpoints |
@@ -190,7 +190,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 19 | musculoskeletal | 6 | Musculoskeletal Load | structure + load from measured γ | 10.5281/zenodo.20755760 |
 | 20 | immune_hematologic | 6 | Immune & Hematologic | population thresholds on the R19 switch | 10.5281/zenodo.20755280 |
 | 21 | integumentary | 6 | Integumentary Barrier | barrier + stimulus; UV → melanoma key | 10.5281/zenodo.20754541 |
-| 22 | reproductive_endocrine | 6 | Reproductive & Endocrine | four organs in measured-γ order | 10.5281/zenodo.20754657 |
+| 22 | reproductive_endocrine | 6 | Reproductive & Endocrine | four organs read from measured γ (thresholds; building order open [O]) | 10.5281/zenodo.20754657 |
 | 23 | homeostasis_thermometabolic | 7 | Thermometabolic Homeostasis | endo 0.054 vs ecto 1.394 sensitivity | 10.5281/zenodo.20756934 |
 | 24 | homeostasis_hemodynamic | 7 | Hemodynamic Homeostasis | `MAP = CVP + CO×SVR = 93 mmHg` | 10.5281/zenodo.20756801 |
 | 25 | homeostasis_ionic | 7 | Ionic Homeostasis | mineral / acid-base / electrolyte setpoints | 10.5281/zenodo.20755910 |
