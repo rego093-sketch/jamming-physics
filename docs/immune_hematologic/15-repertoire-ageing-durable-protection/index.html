@@ -19,7 +19,7 @@
 <main>
 <h1>Repertoire Ageing and Durable Protection: Thymic Involution and the Optimal Re-Boost Interval</h1>
 
-<p class="answer">Immune time enters twice, each measured. Thymic involution shrinks the education window, so positive and negative selection truncate oppositely: autoreactive escape RISES while naive export FALLS. Under a fixed booster budget, protection peaks when the re-boost interval equals the measured memory half-life; too frequent or too sparse loses ground. DIRECTION/CLASS only, not a real-time schedule or medical advice. Grade (code output).</p>
+<p class="answer">Immune time enters twice, each measured. Thymic involution shrinks the education window, so positive and negative selection truncate oppositely: autoreactive escape RISES while naive export FALLS. Under a fixed booster budget, protection peaks when the re-boost interval equals the modelled memory half-life (consistency: the horizon is set to 8 boosts × that half-life); too frequent or too sparse loses ground. DIRECTION/CLASS only, not a real-time schedule or medical advice. Grade (code output).</p>
 
 <p class="abstract">Two ageing phenomena are read off the same kernel. Thymic involution is the same central-tolerance education run with a slowly shrinking window: as the window shrinks (model-time 24 → 8, absolute scale [O]) the measured escaped-autoreactive fraction RISES (0.29% → 3.71% of the cohort) while the healthy naive-export rate FALLS (32.9% → 15.9%), the escapees concentrated just above threshold (mean self-affinity 1.075× the spinodal). For protective memory that wanes by the measured barrier-crossing decay, a fixed budget of 8 boosters over a finite horizon gives an interior-peaked protected fraction: the optimum sits at the measured half-life (peak coverage 100% of the horizon), boosting too frequently falls to 38% and too sparsely to 49%, and the optimal interval tracks durability across compartments (ascending-durability optimal intervals 29.5, 35.5, 35.9, 47.6, model-time, [O]).</p>
 
@@ -88,6 +88,7 @@ carries the LONGER optimal re-boost interval (measured optimal intervals in mode
 29.5, 35.5, 35.9, 47.6; absolute scale [O]). The honest control switches the decay OFF: with memory that never wanes the
 protected fraction is FLAT across every interval, so the interior optimum is created by the MEASURED waning, not
 by the bookkeeping of the schedule.</p>
+<p>Label and input dependence. The location of the optimum is a <b>consistency</b> result: <code>emergent_durable_boost.py</code> sets the horizon to T<sub>H</sub> = 8 boosts &times; t<sub>&theta;</sub>, so re-boosting every t<sub>&theta;</sub> covers the horizon exactly (100%) by construction, and r&nbsp;=&nbsp;1 is read on a 7-point grid (0.25&ndash;3). The 38% and 49% values are code outputs at r&nbsp;=&nbsp;0.25 and 3 for that horizon. The waning curve itself is a code output of the model (noise D&nbsp;=&nbsp;0.28, threshold &theta;&nbsp;=&nbsp;0.5), not a measured immunological half-life.</p>
 <p>This durability optimum is mechanistically DISTINCT from the affinity-maturation prime&ndash;boost optimum
 established earlier in this volume. That inverted-U arises from germinal-centre maturation kinetics under a
 persisting antigen depot; this one arises from the half-life of protective memory. Two different optima from two
