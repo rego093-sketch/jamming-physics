@@ -1,0 +1,40 @@
+{
+  "experiment": "NC1 — Newtonian-closure gate (G-Newton) on a sheared particle arrangement",
+  "registered": "2026-09-29",
+  "status": "pre-registered before any physics run of nc1_run.py (no exploratory runs; a pure timing benchmark may precede the run and is not an outcome)",
+  "gate_under_test": "docs/fluid-dynamics §6 [GATE] G-Newton: interaction stress of the arrangement reduces to sigma = -p I + 2 eta D with eta obtained FROM the arrangement; and §3 vs §6 placement of the Newtonian regime relative to the isostatic margin (z = 2d, phi_J)",
+  "question": "Does a particle arrangement, with only pair contacts + a declared dissipation mechanism, produce a Newtonian shear stress with a finite viscosity; where (relative to phi_J) does that regime live; and is eta a material property (same value by two independent routes)?",
+  "reduction": "2-D is the allowed reduction of 3-D (d = 2, isostatic z_iso = 2d = 4, phi_J ~ 0.84 for 2-D bidisperse disks)",
+  "model_A_athermal_overdamped": {
+    "particles": "N = 512 bidisperse soft disks, 50:50, radii 0.5 and 0.7 (diameter ratio 1.4), harmonic contact U = (k/2) delta^2, k = 1",
+    "dynamics": "overdamped mean-field drag (Durian RD0 / Olsson-Teitel): dr_i/dt = gdot*y_i xhat + F_i/zeta, zeta = 1, Euler dt = 0.1",
+    "boundaries": "Lees-Edwards, strain accumulated as gdot*t",
+    "stress": "contact virial sigma_xy = -(1/L^2) sum_{i<j} r_ij,x f_ij,y (positive for resistance to positive shear); eta = sigma_xy/gdot",
+    "phi": [0.70, 0.75, 0.78, 0.80, 0.82, 0.83, 0.84, 0.85, 0.86],
+    "gdot": [1e-2, 3e-3, 1e-3, 3e-4, 1e-4, 3e-5],
+    "strain": "transient 1.0 discarded, then 2.0 measured (3.0 total); 10 blocks for error bars",
+    "seeds": "numpy default_rng(19*1000 + task_index)"
+  },
+  "model_B_thermal_inertial": {
+    "purpose": "P4 needs fluctuations/momentum; model A has no momentum conservation or temperature, so the two-route test is done in a thermal inertial liquid of the same disks",
+    "particles": "same disks, m = 1, k = 1, phi = 0.70, T = 0.01, N = 512, velocity-Verlet dt = 0.05",
+    "route_1_NEMD": "SLLOD + Lees-Edwards, isokinetic rescaling of peculiar momenta; P_xy incl. kinetic term; eta1 = -P_xy/gdot at gdot in [0.002, 0.005, 0.01, 0.02]; eta_NEMD = mean of the two lowest rates",
+    "route_2_periodic_perturbation": "NO Lees-Edwards, NO stress measured: body acceleration A cos(k y) xhat, k = 2 pi/L, profile-unbiased isokinetic thermostat; eta2 = rho A /(V k^2) from the steady velocity-profile amplitude V (momentum-diffusion route). A in [0.002, 0.004]; eta_PP = mean",
+    "runs": "equilibrate 500 time units, measure 5000 time units (NEMD) and transient 500 + 5000 (PP)"
+  },
+  "model_C_control_inertial_athermal": {
+    "purpose": "control on WHICH dissipation gives Newtonian: athermal inertial disks with pair normal damping b = 1 (no drag, no temperature), SLLOD = Newton in lab frame + Lees-Edwards",
+    "phi": 0.75, "gdot": [1e-2, 3e-3, 1e-3, 3e-4], "dt": 0.05
+  },
+  "predictions": {
+    "P1_newtonian_below_phiJ": "model A, phi in {0.70, 0.75, 0.80}: power-law fit sigma ~ gdot^n over the three lowest rates gives |n - 1| <= 0.10, and eta at the two lowest rates agree within 20% (finite plateau eta)",
+    "P2_eta_diverges_toward_phiJ": "model A, eta(phi) := sigma/gdot at the lowest rate, phi in {0.70, 0.75, 0.78, 0.80, 0.82}: (a) strictly increasing, (b) eta(0.82)/eta(0.70) >= 10, (c) fit eta = A (phi_c - phi)^(-beta) gives phi_c in [0.82, 0.88] and beta > 0",
+    "P3_yield_above_phiJ": "model A, phi in {0.85, 0.86}: local exponent d ln sigma / d ln gdot between the two lowest rates <= 0.5, and Herschel-Bulkley fit sigma = sigma_y + K gdot^n gives sigma_y > 0 by > 3 standard errors (not Newtonian)",
+    "P4_two_routes_agree": "model B: |eta_NEMD / eta_PP - 1| <= 0.20",
+    "P5_control_bagnold": "model C (exploratory, does not gate NC1): flow index n over all four rates in [1.7, 2.3] (Bagnold sigma ~ gdot^2), i.e. Newtonian is NOT generic to arrangements — it needs a viscous or thermal dissipation channel"
+  },
+  "also_reported_not_gated": "mean contact number z per phi (compare with z_iso = 4), pressure p, eta_NEMD rate dependence, finite-k caveat of route 2",
+  "grading": "all results are [V mech]: in-model mechanism checks, not a derivation of Navier-Stokes for any real fluid or for the VP vacuum",
+  "record_either_way": true,
+  "runtime_budget": "<= 15 min on 4 cores; if the budget is exceeded, N or measured strain may be reduced and the deviation is logged in RESULT.json (predictions and thresholds are frozen)"
+}

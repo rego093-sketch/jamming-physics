@@ -1,0 +1,55 @@
+{
+  "id": "ONS1_adg_vortex_gas",
+  "written": "2026-09-29",
+  "status": "PREREGISTERED - written and saved before any simulation code was written or run",
+  "subject": "Independent re-implementation of the forward-merger point-vortex gas (ADG integrator) behind Pillar IV of the fluid-dynamics volume; manuscript 'Vortex-Merger Thermodynamics in 2D Turbulence: A Metriplectic Scenario for the Onsager Anomaly', SM S1, S3, S5",
+  "shipped_data_under_test": "repro/fluid-dynamics/repro/fluid-dynamics/09-pillar-iv-dissipative-arrangement-sets/metriplectic-onsager/data/raw/epsilon_events_ensemble.csv (no generating code shipped)",
+
+  "claim_under_test": {
+    "text": "As r_c decreases 0.010 -> 0.005 -> 0.002 (Re_eff up), the time-averaged event dissipation eps_bind and total dissipation eps_tot, in units E0/T0, saturate to an O(1) plateau eps_sat ~= 0.2 with only a few-percent spread across N, r_c and seeds.",
+    "paper_numbers": {"eps_bind_mean_range_CSV": [0.183, 0.196], "eps_tot_mean_range_CSV": [0.204, 0.216], "seed_std_CSV": "0.003-0.007", "N_values_paper": [500, 1000, 2000], "seeds_paper": [0, 1, 2, 3, 4]}
+  },
+
+  "model_as_specified_in_SM": {
+    "vortices": "N identical like-signed point vortices, Gamma_i = 1 initially (units cancel in eps normalised by E0/T0)",
+    "domain": "doubly periodic square, L = 2*pi",
+    "H_flow": "(1/2) sum_{i!=j} Gamma_i Gamma_j G(x_i - x_j), G = zero-mean doubly periodic Green's function of -Laplacian (neutralising background, needed because net circulation is non-zero); G ~ -(1/2pi) ln r at short range, i.e. the SM Kirchhoff form Eq.(4) with the periodic image sum instead of bare minimum-image log",
+    "merger": "whenever |x_i - x_j|_P < r_c: replace by one vortex of circulation Gamma_i+Gamma_j at the circulation-weighted centre (periodic-aware); Delta H_int = -Delta H_flow (SM Eq. 5/22)",
+    "integrator": "Average (mean-value) Discrete Gradient step z* - z_n = dt J grad_bar H(z_n, z*), grad_bar H evaluated by Gauss-Legendre quadrature of Eq.(18), solved by fixed-point iteration; adaptive dt limited by the closest pair; merger check after every step. Energy drift of the conservative step is recorded.",
+    "IC": "K = 5 Gaussian clumps (centres uniform on the torus, std sigma = 0.3), N/K vortices each; purely Hamiltonian pre-run of 0.05 T0 with mergers off; then mergers on.",
+    "units": "E0 = H_flow at switch-on (t=0); U0 = sqrt(2 E0 / L^2) (rms velocity of a flow with energy E0 in area L^2); T0 = L / U0. eps in units E0/T0.",
+    "eps_bind": "[H_int(t_max) - H_int(t_trans)] / (t_max - t_trans), in E0/T0",
+    "eps_tot": "-[H_flow(t_max) - H_flow(t_trans)] / (t_max - t_trans), in E0/T0 (equals eps_bind up to integrator drift; the SM gives no other definition)",
+    "Re_eff": "the SM gives no formula for nu_eff(r_c); we report Re_eff = L / r_c (i.e. nu_eff = U0 r_c) and note the CSV uses ~10/r_c",
+    "window": "t_trans = 0.2 T0, t_max = 1.0 T0"
+  },
+
+  "compute_reduction_declared_in_advance": "O(N^2) numpy cost with ~10 min total budget: primary ensemble N = 200 (not 500/1000/2000), secondary N = 100; 5 seeds each. If wall-time forces a shorter t_max, the reduction is decided from wall-clock timing only (no eps values inspected) and is reported.",
+  "seeds": [101, 102, 103, 104, 105],
+  "rc_values": [0.010, 0.005, 0.002],
+  "no_tuning": "No parameter above is changed after results are seen. Nothing is tuned toward 0.2.",
+
+  "pass_criteria_for_paper_claim": {
+    "P1_plateau": "ensemble-mean eps_bind at r_c=0.002 divided by that at r_c=0.010 lies in [0.90, 1.10] (CSV: 1.057) for the primary N",
+    "P2_level": "every (N, r_c) ensemble-mean eps_bind and eps_tot lies in [0.15, 0.25] (0.2 +/- 25%)",
+    "P3_spread": "seed-to-seed coefficient of variation of eps_bind <= 5% at each (N, r_c) (CSV: ~2%)",
+    "verdict_rule": "claim REPRODUCED only if P1, P2 and P3 all pass; otherwise NOT REPRODUCED, recorded as such"
+  },
+
+  "internal_consistency_checks_on_shipped_CSV": [
+    "C1: each merger removes exactly one vortex, so n_mergers + N_final must equal N in every row",
+    "C2: direction of n_mergers vs r_c (a smaller merger cross-section should not produce more mergers in the same time window unless the window is rescaled)",
+    "C3: whether seed-to-seed deviations and eps_tot - eps_bind are identical across r_c (would indicate a generated rather than simulated table)"
+  ],
+
+  "by_construction_tests": {
+    "T1_rc_dependence": "fit eps_bind ~ r_c^alpha across the three r_c; a plateau means alpha ~ 0",
+    "T2_binding_fraction": "per-merger released energy compared with the analytic pair self-term Gamma_i Gamma_j G(r_ij at merger); report the fraction of Delta H_flow carried by that term (expected ~1, i.e. release ~ (Gamma_i Gamma_j / 2pi) ln(1/r_c): the 'binding energy' is the r_c-regularised self-energy)",
+    "T3_neutral_accounting": [
+      "A: shift the additive constant of G (gauge; leaves the dynamics identical) from zero-mean to G = -(1/2pi) ln(r/L)-normalised form: recompute eps_bind from the same trajectories",
+      "B: finite-core accounting: give each vortex a core radius a = r_c/2 with area-conserving merger (a' = sqrt(a1^2 + a2^2)) and include Rankine self-energies (Gamma^2/4pi)(ln(1/a) + 1/4) in H_flow: recompute released energy from the same trajectories",
+      "C: merger triggered at r_c but energy release evaluated with the pair term only (no periodic images) vs full periodic G"
+    ],
+    "interpretation_rule": "if the plateau (P1) holds only under the SM accounting and moves or changes sign under A/B, the saturation is an accounting artefact rather than a dynamical result"
+  }
+}
