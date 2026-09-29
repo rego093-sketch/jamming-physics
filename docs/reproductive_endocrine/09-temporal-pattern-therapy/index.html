@@ -19,7 +19,7 @@
 <main>
 <h1>Temporal pattern is a control axis separate from hormone level</h1>
 
-<p class="answer">The temporal pattern of a hormone drive is a control axis separate from its level. The same GnRH molecule activates when pulsatile (41 output pulses) but suppresses when continuous (0 pulses, depolarisation block). Cycling the drive (BAT) delivers a resistant clone 13.6&times; its own continuous-high stress, selectively stressing the adapted clone. Principle sim-verified; clinical schedule open.</p>
+<p class="answer">The temporal pattern of a hormone drive is a control axis separate from its level. The same GnRH molecule activates when pulsatile (41 output pulses) but suppresses when continuous (0 pulses, depolarisation block). Cycling the drive (BAT) delivers a resistant clone 13.6&times; its own continuous-high stress, selectively stressing the adapted clone. Principle simulated; clinical schedule open.</p>
 
 <p class="abstract">Because the substrate is an oscillator on a bistable switch, the <em>pattern</em> of the drive is a separate lever from its level. Pulsatile GnRH keeps the gonadotrope firing (41 pulses) while the same agent held continuously blocks it (0); and cycling whipsaws a resistant clone 13.6&times; harder than any constant drive.</p>
 
@@ -38,11 +38,12 @@
 <h2>Cycling defeats adaptation</h2>
 <p>Endocrine-therapy resistance is modelled as amplified drive-coupling &kappa; (receptor over-expression), not a deeper well. A resistant clone tolerates any <em>constant</em> drive by re-settling, but cycling the drive across the fold faster than it can settle inflicts a large transition stress it cannot escape.</p>
 <p>Selectivity is measured as the integrated transition stress (mean |ds/dt|) over each schedule, with no arbitrary kill threshold. Cycling delivers the resistant clone 0.412 versus 0.0304 under continuous high &mdash; a 13.6&times; amplification, and it stresses the resistant clone more than the sensitive one.</p>
+<p><b>Input dependence.</b> 13.6&times; is a code output for the chosen cycle period (8 steps), amplitude (0.9 &times; spinodal) and resistant coupling &kappa; = 3 in <code>temporal_pattern.py</code>. The same code gives about 27&times; at period 4 and 6.7&times; at period 16 (13.2&times;&ndash;13.8&times; for &kappa; = 2&ndash;4 at period 8). The direction (cycling &gt; continuous) holds across these runs; the fold does not.</p>
 <table>
 <thead><tr><th>schedule</th><th>sensitive stress</th><th>resistant stress</th><th>resistant / sensitive</th></tr></thead>
 <tbody><tr><td>continuous high (T)</td><td>0.0036</td><td>0.0304</td><td>8.35</td></tr><tr><td>continuous low (ADT)</td><td>0.0018</td><td>0.0043</td><td>2.36</td></tr><tr><td>cycling (BAT)</td><td>0.0633</td><td>0.4125</td><td>6.52</td></tr></tbody>
 </table>
-<p class="disclaimer">This retrodicts Bipolar Androgen Therapy in castration-resistant prostate cancer and oestrogen-induced apoptosis in long-term-oestrogen-deprived breast cancer. The qualitative principle is sim-verified (code output); the clinical translation (periods, doses, schedules) is open [O] and needs trials. Not clinical advice.</p>
+<p class="disclaimer">This retrodicts Bipolar Androgen Therapy in castration-resistant prostate cancer and oestrogen-induced apoptosis in long-term-oestrogen-deprived breast cancer. The qualitative principle is simulated (code output); the clinical translation (periods, doses, schedules) is open [O] and needs trials. Not clinical advice.</p>
 
 <nav class="pn">
   <a rel="prev" href="../08-hormone-cancer-dose-response/">&larr; &sect;8</a>
