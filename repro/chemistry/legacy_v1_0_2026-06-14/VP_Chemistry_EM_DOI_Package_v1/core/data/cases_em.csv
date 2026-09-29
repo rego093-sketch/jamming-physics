@@ -1,0 +1,63 @@
+domain,system,vp_principle,quantity,predicted,measured,residual,grade,script,note
+light,lattice wave speed,isostatic z=2d single longitudinal,c=a√(k/m),0.99940,1.00000,-0.06%,V,vp_light_emergence.py,에너지중심 군속도 시뮬측정 (격자→빛 창발)
+light,linear dispersion,ω=cq long-wavelength,vph/c (q→0),0.99999,1.0,within,F,vp_light_emergence.py,장파장서 선형분산 (빛이 됨)
+light,speed from moduli,c²=B/ρ identity,c=√(B/ρ),exact,a√(k/m),exact,F,vp_light_emergence.py,격자강성/밀도비
+light,single speed,isostatic shear collapse,c_T→0 c_L survive,c_T=0,longitudinal only,exact,F,vp_light_emergence.py,2D 삼각격자 등방극한
+light,quantum diameter,D=2λ_C e=6π⁶r_p,D [pm],4.8525,4.8526,+18.8ppm,F,vp_light_emergence.py,−19ppm 헤드라인 잔차 재현
+em,Coulomb 1/r²,4πr² flux dilution Gauss,E(r) exponent d=3,-2.0000,-2,exact,F,vp_electromagnetism.py,3차원 선속보존 기하
+em,field dimension scaling,F∝r^−(d−1),exponent d=1..4,"0,-1,-2,-3","0,-1,-2,-3",exact,F,vp_electromagnetism.py,차원별 지수 검증
+em,Coulomb constant,K_C=α_em ħc,k_e [N m²/C²],8.987552e9,8.987552e9,3e-10%,F+CAL,vp_electromagnetism.py,α_em은 [CAL] 측정입력
+em,magnetic ratio,moving charge axis tilt,|B|/|E|,v/c,v/c,exact,F,vp_electromagnetism.py,운동/상대론 관계
+em,circular polarization,helicity rotation,|S3|/S0,1.000,1,exact,F,vp_electromagnetism.py,원편광=순수회전 Stokes
+em,no magnetic monopole,B=rotation axis,div B,0,0,exact,F,vp_electromagnetism.py,회전축 양끝 분리불가
+em,visible propagation angle,sinχ=λ/mD,χ(550nm) [deg],89.899,~89.9,within,F,vp_electromagnetism.py,근횡파 (정확90° 아님)
+em,committed angle 633,sinχ=λ/mD forward,χ(632.8nm) [deg],89.892,prediction,falsifier,F?,vp_electromagnetism.py,전방예측 falsifier
+em,committed angle 532,sinχ=λ/mD forward,χ(532nm) [deg],89.825,prediction,falsifier,F?,vp_electromagnetism.py,전방예측 falsifier
+em,blackbody Wien,mode density × rigid cutoff,λ_peak·T [mm·K],2.89777,2.89777,6e-9%,F,vp_electromagnetism.py,초월방정식 x=5(1−e⁻ˣ)
+em,UV catastrophe removal,rigid shell Bose cutoff,P/RJ high-ν,→0,→0,exact,F,vp_electromagnetism.py,강체껍질 고주파차단
+copper,free electron sea,Cu 3d10 4s1 delocalized,n [/m³],8.49e28,8.49e28,exact,F+CAL,vp_copper_conduction.py,4s¹ 자유전자 (원자당 1개)
+copper,plasma frequency,free electron oscillation,f_p [Hz],2.616e15,~2.6e15,within,F+CAL,vp_copper_conduction.py,자외선 — 아래 가시광 반사(반짝임)
+copper,light reflected,transverse EM below ω_p,visible behavior,reflected,reflected,exact,F,vp_copper_conduction.py,금속 불투명·반짝임
+copper,electricity transmitted,longitudinal EM χ→0,conduction,through sea,through sea,exact,F,vp_copper_conduction.py,종파가 전자바다 관통
+copper,skin depth 60Hz,transverse penetration,δ [mm],8.42,~8.5,within,F+CAL,vp_copper_conduction.py,횡파 표면 갇힘
+copper,Fermi energy,E_F=ħ²(3π²n)^⅔/2m_e,E_F [eV],7.04,7.0,+0.6%,F,vp_copper_conduction.py,자유전자 기체
+copper,drift velocity,v_d=J/ne slow,v_d [mm/s],0.0735,~0.07,within,F+CAL,vp_copper_conduction.py,신호~c와 구별
+copper,current B field,Ampère μ₀I/2πr,B [µT] 1A 1mm,200,200,exact,F,vp_copper_conduction.py,횡비틀림=B (반환=B·미반환=손실)
+iron,unpaired d Fe,Hund 3d6,unpaired,4,4,exact,F,vp_iron_magnetism.py,5↑+1↓=4 (조건1 통과)
+iron,unpaired d Cu,Hund 3d10 filled,unpaired,0,0,exact,F,vp_iron_magnetism.py,모멘트 0 → 조건1 실패 (비자성)
+iron,unpaired d Mn,Hund 3d5,unpaired,5,5,exact,F,vp_iron_magnetism.py,Fe보다 많으나 J<0
+iron,Bethe-Slater Mn,D/d<1.5 → J<0,exchange sign,antiferro,antiferro,exact,F+CAL,vp_iron_magnetism.py,조건2 실패 (반강자성)
+iron,Bethe-Slater Fe,D/d>1.5 → J>0,exchange sign,ferro,ferro,exact,F+CAL,vp_iron_magnetism.py,두 조건 충족 (강자성)
+iron,magnetic classification,two-condition derivation,3d series,7/7,7/7,exact,F,vp_iron_magnetism.py,Cu·Mn·Fe·Co·Ni·Cr·Zn 도출
+iron,Curie temperature,kT_C~exchange,T_C Fe [K],1043,1043,exact,CAL,vp_iron_magnetism.py,Co 1388 최고 (교환 최강)
+iron,no monopole,B=rotation axis,div B,0,0,exact,F,vp_iron_magnetism.py,자구·영구자석·이력
+color,photon energy-wavelength,E=hc/λ,visible range [eV],1.77-3.10,1.77-3.10,exact,F,vp_molecular_color.py,가시광 400-700nm
+color,d-d transition Ti,crystal field Δ→λ,λ_abs [nm] Ti³⁺,493,~493,within,F+CAL,vp_molecular_color.py,단일전이 d¹ 정확
+color,conjugation redshift,gap∝(N+1)/L²,trend UV→vis,redshift,redshift,exact,F,vp_molecular_color.py,길수록 적색이동(스케일)
+color,polyene crossover,extended π→visible,β-carotene,visible,450nm,within,F?,vp_molecular_color.py,당근 주황 (FEM 추세)
+color,band gap TiO2 white,λ_edge=hc/Eg>visible,Eg [eV] TiO₂,3.05,3.05,exact,F+CAL,vp_molecular_color.py,흰색(가시 전부 반사)
+color,band gap CdS yellow,edge 512nm,Eg [eV] CdS,2.42,2.42,exact,F+CAL,vp_molecular_color.py,카드뮴옐로 (물감)
+color,band gap CdSe red,edge 717nm,Eg [eV] CdSe,1.73,1.73,exact,F+CAL,vp_molecular_color.py,카드뮴레드 (물감)
+color,band gap series,white→yellow→red→black,Eg sweep,monotonic,monotonic,exact,F,vp_molecular_color.py,E_g 줄면 색 연속이동
+color,vermilion HgS,edge 620nm red,Eg [eV] HgS,2.00,2.00,exact,F+CAL,vp_molecular_color.py,역사적 안료 버밀리언
+color,white limit,Eg>3.1eV no absorption,white rule,Eg>3.1,Eg>3.1,exact,F,vp_molecular_color.py,간극>가시→흰색
+color,black limit,Eg<1.8eV all absorbed,black rule,Eg<1.8,Eg<1.8,exact,F,vp_molecular_color.py,간극<가시→검정
+color,charge transfer MnO4,allowed intense,permanganate,deep purple,deep purple,exact,F+CAL,vp_molecular_color.py,O→Mn CT 525nm 진보라
+catalysis,Pt d-hole,5d9 Fermi states,active states,present,present,exact,F?,vp_platinum_catalysis.py,5d 1 hole → 페르미준위 d-상태
+catalysis,Sabatier volcano HER,ΔG_H≈0 optimal,Pt peak,peak,peak,exact,CAL,vp_platinum_catalysis.py,Pt ΔG_H=−0.09eV 정점
+catalysis,d-band center Pt,ε_d optimal window,ε_d [eV] Pt,-2.25,-2.25,exact,CAL,vp_platinum_catalysis.py,최적권(Au 너무낮음)
+catalysis,electron amplitude wavelength,λ_e=h/√(2m_eφ),λ_e [Å] Pt,5.16,5.16,exact,H,vp_platinum_catalysis.py,일함수 전자 de Broglie
+catalysis,resonance match,λ_e/2 vs Pt-Pt,ratio,0.93,0.93,exact,H,vp_platinum_catalysis.py,반파장 2.58Å≈Pt-Pt 2.77Å
+catalysis,potential tuning,V shifts λ_e,lever,actionable,actionable,exact,H,vp_platinum_catalysis.py,인가전위로 공명 튜닝
+catalysis,HER overpotential Pt,near zero,η [mV] Pt,30,~30,within,CAL,vp_platinum_catalysis.py,Ni 300mV 대비 효율
+catalysis,Faraday H2 production,n=2 electrolysis,mmol/(A·h),18.66,18.66,exact,F,vp_platinum_catalysis.py,1A·1h → H₂ 18.66mmol
+pt_sim,Bragg band edge,transfer matrix λ=2d,band structure,band edge,band edge,exact,V,vp_pt_resonance_sim.py,λ=2d는 제1전도띠 경계(틈)
+pt_sim,LDOS not peak at 2d,Green function adsorbate,LDOS λ=2d / max,2%,2%,exact,V,vp_pt_resonance_sim.py,가설 반증 — 기하 공명 아님
+pt_sim,backdonation governed by,Fermi DOS + ads resonance,descriptor,d-band,d-band,exact,V,vp_pt_resonance_sim.py,Newns-Anderson 확립 기술자
+pt_sim,quantum confinement,slab thickness M sweep,LDOS oscillation CV,0.84,0.84,exact,V,vp_pt_resonance_sim.py,양자우물 — 파장효과 정당한 자리
+pt_sim,confinement length,wavelength matches thickness,not Pt-Pt,thickness,thickness,exact,V,vp_pt_resonance_sim.py,면내 간격 아닌 막 두께
+pt_repro,energy resonance broadening,Newns-Anderson adsorbate DOS,mechanism,resonance,resonance,exact,V,vp_pt_reproduction.py,날카로운 ε_a가 d-밴드 공명 broadening
+pt_repro,d-band predicts binding,ε_d↔ΔG_H correlation,Pearson r,-0.92,-0.92,exact,V+CAL,vp_pt_reproduction.py,비순환 Hammer-Nørskov
+pt_repro,volcano apex Pt,activity vs ΔG_H,peak metal,Pt,Pt,exact,V,vp_pt_reproduction.py,에너지 공명이 Pt 재현
+pt_repro,reproduction possible,energy not geometry,verdict,possible,possible,exact,V,vp_pt_reproduction.py,불가능 아님 — 틀린 변수였을뿐
+pt_repro,reinterpret amplitude,wavelength→d-electron energy,correction,energy,energy,exact,V,vp_pt_reproduction.py,파장↔격자 아닌 에너지↔궤도

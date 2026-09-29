@@ -1,0 +1,115 @@
+domain,system,vp_principle,quantity,predicted,measured,residual,grade,script,note
+nuclear,Coulomb coefficient,EM 1/r² + r0[CAL],a_C [MeV],0.720,0.711,+1.3%,F?,vp_fission.py,EM 1/r²에서 직접 — 분열 임계가 VP에 묶임
+nuclear,fission threshold,quadrupole stability,Z²/A_crit,49.45,48-51,within,F,vp_fission.py,2a_S/a_C 순수기하 + EM 1/r²
+nuclear,U-235 binding,SEMF surf=jamming coul=EM,B [MeV],1784.3,1783.9,+0.02%,F?,vp_fission.py,표면-쿨롱 골격 건전
+nuclear,Pu-239 binding,SEMF,B [MeV],1806.6,1806.9,-0.02%,F?,vp_fission.py,
+nuclear,Fe-56 binding,SEMF,B [MeV],494.0,492.3,+0.34%,F?,vp_fission.py,철 봉우리
+nuclear,Pb-208 binding,SEMF,B [MeV],1624.3,1636.4,-0.74%,F?,vp_fission.py,이중마법수(껍질 [O])
+nuclear,fissility trend,disruption/cohesion ratio,x ordering,Th<U<Pu<Cf<Fm<Rf,SF반감기추세,monotone,F,vp_fission.py,x↑→장벽↓ SF↑
+nuclear,U-235 fission Q,Q=B(frag)-B(parent),Q_LDM [MeV],163.6,~200,-18%(shell),F+O,vp_fission.py,차이=파편 껍질효과[O]
+crossscale,√2 rupture scale-invariance,§4 diagonal,rupture ratio,1.4142,√2,0.0%,F,vp_unified_rupture.py,s 무관 — 분자·핵·재료 공통
+molecular,bond angles,lobe jamming arccos(-1/3),12 angles,12/12 ±4°,exp,mean0.4°,F+CAL,vp_chem_validate.py,기저[F]+보정[CAL]
+molecular,polarity,P_idx + geometry,12 molecules,12/12,exp,exact,F,vp_chem_validate.py,
+molecular,surface tension Ar,free-surface jamming,γσ²/ε,0.921,0.92,-0.4%,F,vp_surface_tension.py,삼중점
+molecular,surface tension Kr,free-surface jamming,γσ²/ε,0.895,0.92,-2.7%,F,vp_surface_tension.py,삼중점
+molecular,bond operating ratio,§4 √2 ceiling,op/√2,H2O0.83 N2 0.96 CO2 1.03,Vol I §18,inherited,V,vp_unified_rupture.py,물리 시뮬 상속값
+neutron,g_p-g_n,3 sectors × π,g diff,9.4248,9.4118,+0.14%,F,vp_neutron_verify.py,NMR 통로
+neutron,neutron lifetime,N_p/δ weak build,τ_n [s],878.4,~878.4,~0%,F,vp_neutron_verify.py,bottle값
+nuclear,iron peak location,surface(jamming) vs Coulomb(EM),B/A peak A,58,Fe56-Ni62,iron region,F?,vp_fusion.py,표면/핵자↓ vs 쿨롱/핵자↑ 균형
+nuclear,fusion Q below peak,SEMF same competition,Q sign,C/O/Si burning +,방출,positive,F,vp_fusion.py,봉우리 아래 융합 발열
+nuclear,fusion-fission boundary,B/A curve peak,boundary A,58,~56-62,iron,F,vp_fusion.py,별이 철까지 융합하는 이유
+materials,theoretical strength,√2 diagonal rupture,σ_th/E,0.132,graphene 0.123,+7%,F?,vp_strength.py,(√2-1)/π 천장
+materials,graphene intrinsic strength,√2 rupture + E,σ_int [GPa],133.8,125,+7%,F?,vp_strength.py,무결함 2D 천장도달
+materials,defect knockdown,dislocation [O],bulk/ideal,1/50-1/250,steel/Al,gap,O,vp_strength.py,전위론 — 설계여지
+materials,bond energy from √2,√2 rupture geometry,rupture displacement,(√2-1)r_e,geometry,confirmed,F,vp_bond_energy.py,파열 기하만 [F]
+materials,BDE absolute (√2-Morse),anharmonicity not from √2,D_e error,-26%~+658%,measured,FAIL,O,vp_bond_energy.py,음성결과 — BDE 전면 [O] 유지
+materials,metal surface energy,jamming lost-coordination,reduced γ_s·A/E_coh,0.178,upper 0.25,~29% relax,F+O,vp_surface_solid.py,8금속 조밀 클러스터
+materials,noble gas surface z=6,jamming 3φz/4π,γσ²/ε,0.917,Ar/Kr 0.91,within,F,vp_surface_solid.py,§9 z=6 닻
+meta,residual immunity,dimensionless = anchor-free,VP-sector residual effect,0 ppm,6/6 outputs,immune,F,vp_residual_audit.py,m_p/m_e·r_p·m_H 미진입
+foundation,proton mass,6π⁵ from electron anchor,m_p/m_e,1836.118,1836.153,-18.8ppm,F,vp_particles.py,= 2π·3π⁴
+foundation,proton radius,D/6π⁶,r_p [fm],0.84125,0.8414,-0.018%,F,vp_particles.py,vs locked +61ppm
+foundation,proton moment,(3π+7/4)/4,μ_p [μN],2.7937,2.7928,+0.030%,F,vp_particles.py,
+foundation,neutron moment,(7/4-3π)/4,μ_n [μN],-1.9187,-1.9130,+0.295%,F?,vp_particles.py,
+foundation,neutron lifetime,89π²=N_p/δ,τ_n [s],878.39,878.4,-6ppm,F,vp_particles.py,bottle법
+foundation,n-p mass diff,E_config-E_EM,m_n-m_p [MeV],1.2904,1.2933,-0.225%,F?,vp_particles.py,경쟁
+foundation,electron core radius,λ_C/2 min-localization,Re [fm],193.08,193.08,exact,F,vp_particles.py,v=c 포화증명
+periodic,atomic mass mid-heavy,p/n/e + VP SEMF,M [u] A≥20,61ppm avg,measured,0.006%,F,vp_periodic_table.py,32원소 평균
+periodic,hydrogen mass,m_p+m_e (no binding),M(H) [u],1.00781,1.00783,-19ppm,F,vp_periodic_table.py,6π⁵ 잔차 직접노출
+periodic,beta-stability Z,SEMF valley,stable Z,28/42 hit,measured,±1-2,F?,vp_periodic_table.py,짝짓기/껍질 [O]
+periodic,residual non-amplification,per-nucleon rel error,Δ vs A,~const,A=1-238,no amplify,F,vp_periodic_table.py,사용자 우려 해소
+foundation,Bohr radius,e-p Coulomb min (EM 1/r²),a0 [Å],0.529177,0.529177,exact,F,vp_atomic.py,= λ_C/α 앵커+EM
+foundation,Rydberg energy,e-p Coulomb min,Ry [eV],13.6057,13.6057,-0.0001%,F,vp_atomic.py,= α²m_ec²/2
+foundation,hydrogen-like ions,EM 1/r² Z² law,IE [eV],Ry·Z²,measured,<0.06%,F,vp_atomic.py,H/He+/Li2+/...
+foundation,noble gas numbers,angular momentum shells,Z noble,2-10-18-36-54-86-118,measured,exact,F?,vp_atomic.py,Aufbau 2(2l+1)
+foundation,period lengths,subshell filling,period len,2-8-8-18-18-32,measured,exact,F?,vp_atomic.py,주기율표 뼈대
+foundation,shell correlation,magic number extra-binding,ΔB doubly-magic,+3.89 MeV,vs nonmagic -1.71,positive,F?,vp_shell_correction.py,Sn-132/Pb-208 강함
+foundation,naive shell correction,magic proximity bonus,binding err,3.66→6.61 MeV,worse,FAIL,O,vp_shell_correction.py,음성-과보정; 껍질모형 필요
+foundation,proton core 82,Gauss lattice + Legendre,N(R²≤6)+1,82,82=3⁴+1,exact,F,vp_gauss_shells.py,R²=7 르장드르 빈껍질
+foundation,nuclear magic numbers,Gauss lattice N(R²)+1,magic 2/8/20/28/82,5 of 7,measured,5/7,F?,vp_gauss_shells.py,50·126 스핀궤도 [O]
+foundation,82 coincidence resolved,same Gauss lattice,core 82 = magic 82,identical,not coincidence,explained,F?,vp_gauss_shells.py,양성자코어=핵마법 동일기하
+foundation,magic 50 and 126,nozzle spin-orbit intruders,1g9/2 1i13/2,recovered,measured,7/7 structural,F?,vp_magic_spinorbit.py,세기 [CAL]; 격자5+노즐2
+foundation,nozzle = spin-orbit axis,C3-breaking body diagonal,L·S quantization axis,structural,shell model,grounded,F?,vp_magic_spinorbit.py,50·126 순수기하는 [O]
+foundation,valence electrons,outermost shell (Aufbau),valence,1-8 main group,measured,exact,F,vp_valence.py,껍질에서 직접
+foundation,ionic compound formulas,valence + octet,stoichiometry,9 of 9,measured,9/9,F,vp_valence.py,NaCl MgCl2 Al2O3...
+foundation,periodic trends,effective nuclear charge,radius/EN direction,correct,measured,direction,F?,vp_valence.py,절대값 [O] 경향만
+molecular,VSEPR geometries,sphere-point EM repulsion (jamming),bond angles 2-6,all 5 geometries,measured,exact,F,vp_molecular_geometry.py,선형~팔면체
+molecular,tetrahedral angle sim,EM 1/r² on sphere,angle,109.47,109.47,exact,F,vp_molecular_geometry.py,§5 독립확인
+molecular,lone pair compression,lone pair repulsion,angle direction,CH4>NH3>H2O,measured,direction,F?,vp_molecular_geometry.py,정밀값 [O]
+materials,packing fractions,sphere packing geometry,φ FCC/BCC/SC,0.7405/0.6802/0.5236,exact,exact,F,vp_crystal_packing.py,케플러 최밀
+materials,metal density FCC,packing + VP mass + radius,ρ [g/cm³],<2% FCC,measured,~2%,F?,vp_crystal_packing.py,BCC ~5% 반지름산포
+crossscale,sphere-lattice geometry,one geometric program,molecular/nuclear/solid,unified,—,structural,F,vp_crystal_packing.py,구위·구안·구충전
+foundation,H+ = bare proton,VP proton nozzle,charge,+1 (no electron),proton model,structural,F,vp_acid_base.py,산-염기 주인공=노즐
+foundation,acidity period trend,electronegativity (polarity),CH4<NH3<H2O<HF,order match,measured,order,F?,vp_acid_base.py,전기음성도 지배
+foundation,acidity group trend,bond strength (√2 rupture),HF<HCl<HBr<HI,order match,measured,order,F?,vp_acid_base.py,결합강도 지배 (반대)
+foundation,acidity oxyacid trend,O electron-withdrawal,HClO<HClO2<HClO3<HClO4,order match,measured,order,F?,vp_acid_base.py,산소수 지배
+foundation,Lewis acid-base,electron domains (VSEPR),empty orbital vs lone pair,BF3/NH3/H2O,classified,structural,F,vp_acid_base.py,옥텟/전자영역
+foundation,hydronium geometry,VSEPR 4 domains,H3O+ pyramidal,~107°,measured,structural,F,vp_acid_base.py,NH3 닮음
+foundation,heat capacity DOF,equipartition rotational DOF,Cv monatomic/diatomic,3/2R 5/2R,measured,<1%,F,vp_thermal.py,자유도 계수
+foundation,Dulong-Petit solid,3 vibrational modes,C solid,3R=24.9,measured,<3%,F,vp_thermal.py,재밍격자 진동
+foundation,rotational constants,B=ℏ²/2I from VP geometry,B [cm⁻¹],<2%,measured,0.2%,F,vp_thermal.py,VP 결합길이+질량
+foundation,thermal = rotation,thermal as rotational excitation,interpretation,structural,—,concept,F?,vp_thermal.py,온도=자유도당회전E
+foundation,melting Lindemann,vibration vs jamming critical,δ_L = u/a,0.10 cluster,measured,8 metals,F?,vp_phase.py,재밍 풀림 임계
+foundation,boiling Trouton,thermal vs cohesion,ΔS_vap,~83-88 J/molK,measured,비회합액,F?,vp_phase.py,물·알코올 H결합 [O]
+foundation,crystal field splitting,d-orbital geometry + ligand EM,oct eg/t2g tet inverted,pattern,measured,exact,F,vp_crystal_field.py,축향 vs 사이
+foundation,tetrahedral 4/9 ratio,d-orbital geometry,Δ_tet/Δ_oct,0.4444,4/9,exact,F,vp_crystal_field.py,자유계수0
+foundation,complex color,d-d transition Δ→λ,color mechanism,Δ→보색,measured,mechanism,F,vp_crystal_field.py,다중띠 정밀 [O]
+foundation,complex magnetism,high/low spin unpaired,μ [BM],Fe³⁺ 5/1 unpaired,measured,exact,F,vp_crystal_field.py,Δ vs 짝짓기
+foundation,light propagation angle,rotating-quanta chain geometry,sinχ=λ/(mD),forced,§10.9,structural,F,vp_light_angle.py,빛=회전양자 횡파
+foundation,EM spectrum by angle,wavelength sets propagation angle,γ longitudinal→radio transverse,χ 12°→90°,consistent,structural,F,vp_light_angle.py,감마 관통 가시횡파
+foundation,committed light angles,sinχ=λ/(mD) D independent,χ(633)/χ(532),89.89°/89.82°,prediction,falsifier,F?,vp_light_angle.py,전방예측
+foundation,lattice rotation diameter,electron Compton,"D=2λ_C,e",4852.6 fm,=6π⁶r_p,exact,F,vp_light_angle.py,독립 삼각측량
+foundation,Snell law,transverse oscillation matching,n1sinθ1=n2sinθ2,geometry,measured,exact,F,vp_refraction.py,계면 각도 정합
+foundation,rainbow angle,Snell + sphere geometry,primary rainbow,42.1°,~42°,0.1°,F,vp_refraction.py,데카르트 계산
+foundation,critical angle,total internal reflection,sinθc=1/n,water 48.6° diamond 24.4°,measured,exact,F,vp_refraction.py,광섬유·광채
+foundation,dispersion rainbow colors,n(λ) wavelength dependence,red outside violet inside,42.4°/41.0°,measured,order,F?,vp_refraction.py,파랑 더 굴절
+foundation,per-element chemistry,Aufbau shell + screening,element profiles 1-20,config/valence/oxidation,measured,exact,F,vp_atom_chemistry.py,하나하나 카드
+foundation,ionization energy abs,total-energy difference sim,IE [eV],mean 22%,measured,22%,F?,vp_atom_chemistry.py,차폐변화 반영; B·O딥 [O]
+foundation,metal classification,electronegativity index,metal/metalloid/nonmetal,11 of 12,measured,11/12,F?,vp_atom_chemistry.py,EN지수 Z_eff/r²
+foundation,d-block configs,Aufbau + half/full-shell stability,Sc-Kr 21-36,configs + Cr/Cu exceptions,measured,exact,F,vp_dblock_chemistry.py,전이금속 하나하나
+foundation,variable oxidation states,partial d-shell (4s/3d close),Mn +2~+7 Fe +2/+3,oxidation states,measured,exact,F,vp_dblock_chemistry.py,색·촉매·착물 기원
+foundation,electron affinity attempt,Slater total-energy difference,EA sign,8 of 18 sign,measured,FAIL,O,vp_dblock_chemistry.py,음성결과; 상관효과 필요
+foundation,heat capacity T-dependence,rotational partition function,Cv(T) staircase,H2 3/2→5/2→7/2 R,measured,exact,F,vp_statistical_thermo.py,모드 활성화
+foundation,mode activation temperature,T_rot=Bhc/k T_vib=νhc/k,H2 88K/6332K,from VP B·ν,measured,exact,F,vp_statistical_thermo.py,회전·진동 깨어남
+foundation,standard molar entropy,partition functions,S [J/molK],H2/N2/CO/O2,measured,<0.3%,F?,vp_statistical_thermo.py,O2 삼중항 Rln3
+foundation,diatomic Cv 298K,equipartition + quantum freeze,Cv [J/molK],5/2R ~20.8,measured,<2%,F,vp_statistical_thermo.py,진동 동결
+foundation,reaction entropy,partition functions,ΔS° dissociation,trans+rot+vib+elec,measured,<0.4%,F,vp_equilibrium.py,회전엔트로피
+foundation,dissociation temperature,ΔG=ΔH-TΔS balance,T*=ΔH/ΔS,N2 8214K H2 4400K,bond-order,exact,F,vp_equilibrium.py,결합세기 순서
+foundation,equilibrium constant,statistical mechanics,K(T) vant Hoff,H2⇌2H,measured,F?,F?,vp_equilibrium.py,온도의존
+foundation,Le Chatelier direction,entropy sign,temperature shift,dissoc vs Haber,measured,exact,F,vp_equilibrium.py,ΔS 부호
+foundation,Boltzmann fraction,thermal energy over barrier,exp(-Ea/RT),temperature sensitivity,exact,exact,F,vp_kinetics.py,볼츠만 꼬리
+foundation,rate doubling per 10K,Arrhenius temperature dependence,Q10 factor,Ea=50kJ ×1.9,~2 empirical,exact,F,vp_kinetics.py,경험칙 재현
+foundation,Arrhenius plot,ln k vs 1/T,slope=-Ea/R,Ea recovered,exact,exact,F,vp_kinetics.py,활성화에너지
+foundation,mean molecular speed,kinetic theory,√(8kT/πm),N2 475 m/s,measured,exact,F,vp_kinetics.py,충돌=열운동
+foundation,Eyring prefactor,transition state theory,kT/h,6.2e12 /s,universal,exact,F,vp_kinetics.py,분배함수 연결
+foundation,pH scale,water autoionization,Kw=1e-14 pH+pOH=14,pure water pH 7,measured,exact,F,vp_solution_chemistry.py,H+ 맨 양성자
+foundation,weak acid pH,proton transfer equilibrium,Ka=x²/(C-x),acetic 0.1M pH 2.88,2.87,exact,F,vp_solution_chemistry.py,부분해리
+foundation,Henderson-Hasselbalch,buffer equilibrium,pH=pKa+log ratio,pH=pKa at half,measured,exact,F,vp_solution_chemistry.py,완충
+foundation,titration curve,acid-base neutralization,equivalence jump,HCl+NaOH pH7,measured,exact,F,vp_solution_chemistry.py,당량점 도약
+foundation,cell potential,electron transfer E° difference,E°cell=E°cat-E°an,Daniell 1.10V,1.10,exact,F,vp_electrochemistry.py,전자=회전 덴트
+foundation,free energy from EMF,ΔG=-nFE°,Daniell -212kJ,thermodynamic,measured,exact,F,vp_electrochemistry.py,평형 틀 연결
+foundation,Nernst equation,RT/nF concentration dependence,E=E°-(RT/nF)lnQ,concentration,measured,exact,F,vp_electrochemistry.py,온도=회전에너지
+foundation,activity series,reduction potential = IE/EN,Li -3.04 to F2 +2.87,order match,measured,order,F?,vp_electrochemistry.py,산화환원 경향
+foundation,hybridization geometry,VSEPR electron-domain EM repulsion,sp3/sp2/sp,109.5°/120°/180°,measured,exact,F,vp_organic_chemistry.py,vp_molecular_geometry 연결
+foundation,bond order length strength,σ/π count,single/double/triple,154/134/120pm,measured,exact,F,vp_organic_chemistry.py,π 추가 당김
+foundation,degree of unsaturation,(2C+2+N-H-X)/2,rings+pi,benzene 4,exact,exact,F,vp_organic_chemistry.py,분자식→구조
+foundation,functional groups,reactive centers,classification,reactivity trends,qualitative,trends,F?,vp_organic_chemistry.py,산염기·산화환원 적용

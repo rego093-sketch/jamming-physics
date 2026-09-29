@@ -1,0 +1,13 @@
+domain,system,vp_principle,quantity,predicted,measured,residual,grade,script,note
+electrolysis,water splitting reversible,E=OER-HER thermodynamics,E_cell [V],1.229,1.229,exact,F,vp_water_electrolysis.py,minimum decomposition voltage (n=2)
+electrolysis,thermoneutral voltage,dH/(nF),V_tn [V],1.481,1.48,match,F,vp_water_electrolysis.py,electrical+heat split; TdS=48.6 kJ/mol
+electrolysis,cell voltage breakdown,1.23+eta_HER+eta_OER+iR,V_cell [V],1.829,1.8-2.0 typical,within,F?,vp_water_electrolysis.py,OER is single largest loss
+electrolysis,OER scaling limit,universal dG(OOH)-dG(OH)=3.2eV,eta_min [V],0.371,~0.37 Man/Norskov,match,F?,vp_water_electrolysis.py,fundamental single-site OER overpotential
+electrolysis,OER catalyst apex,scaling-relation volcano,apex oxide,RuO2/IrO2,RuO2/IrO2 industrial,match,F?,vp_water_electrolysis.py,descriptor dG_O-dG_OH near 1.6 eV
+electrolysis,HER catalyst apex,d-band Sabatier dG_H~0,apex metal,Pt,Pt (exp),match,F?,vp_water_electrolysis.py,cathode near-solved; loss is anode OER
+electrolysis,Faraday H2 yield,n=It/(zF) z=2,H2 per A·h [mmol],18.66,18.66,exact,F,vp_water_electrolysis.py,193 kC per mol H2
+electrolysis,voltage efficiency,V_tn/V_cell,efficiency [%],81,~75-82 typical,within,F?,vp_water_electrolysis.py,thermoneutral basis
+water_purification,magnet desalination feasibility,U_mag vs kT diamagnetic,U_mag/kT,5.3e-9,<<1 thermal dominates,refuted,O,vp_magnet_desalination.py,0.45T magnetic energy ~1e9x below thermal so no separation
+water_purification,field needed for separation,U_mag=kT condition,B_needed [T],6173,infeasible >1000T,refuted,F,vp_magnet_desalination.py,permanent purifier physically impossible
+water_purification,seawater osmotic pressure,pi=i*c*R*T,pi [bar],29.7,~27,within,F,vp_magnet_desalination.py,RO driving pressure (working alternative)
+water_purification,desalination min energy,pi*V low-recovery,W_min [kWh/m3],0.83,~1 seawater,within,F,vp_magnet_desalination.py,real RO plants ~3-4 kWh/m3
