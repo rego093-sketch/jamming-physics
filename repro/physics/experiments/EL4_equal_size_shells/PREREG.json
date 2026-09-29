@@ -1,0 +1,15 @@
+{
+  "experiment": "EL4 — reduced physics for the stiff zone: 'same distance, same size' shells, gapless, beads shrinking by the same rule",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running el4_run.py",
+  "author_rules": ["R1 same distance -> same size: every bead in one spherical shell has the same size s(r) (radial reduction of the full 3-D physics)",
+                   "R2 gapless (no voids) inside the stiff zone",
+                   "R3 beads shrink by the same rule toward the proton: self-similar, s proportional to r (equivalently, every shell holds the same number n of beads, which is also what steady inflow through every shell requires)",
+                   "R4 at the outer edge beads have the normal size D"],
+  "corpus_rule": "isostatic coordination z = 6 (jamming spine [V]): 4 in-shell neighbours + 1 inward + 1 outward -> square tiling of each shell, n = 4 pi / eps^2 with eps = s/r",
+  "derived_before_run": "outer radius R = D/eps; 1/alpha = R/(D/4pi) = 4 pi/eps = sqrt(4 pi n). The rules leave ONE number free: beads per shell n.",
+  "routes_for_n": {"N1_consumption": "n = nu_p = 3 pi^4 (proton consumption per electron-second)", "N2_mass": "n = m_p/m_e = 6 pi^5", "N3_structure": "n = 82 + 7 = 89"},
+  "also_report": ["n required for 1/alpha_obs = 137.036", "eps required", "number of shells between the proton radius (0.8414 fm) and the stand-off"],
+  "scoring": "HIT if within 1e-3 of 137.036; three routes tried, so one hit is a candidate [H] only",
+  "record_either_way": true
+}
