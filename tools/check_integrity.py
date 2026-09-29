@@ -107,7 +107,7 @@ def main():
     base = json.load(open(BASELINE))
     new = {v: sorted(set(m) - set(base.get(v, []))) for v, m in miss.items()}
     new = {v: m for v, m in new.items() if m}
-    print(f"[S] scripts: {'PASS' if not new else 'FAIL'} (known gaps {sum(len(v) for k, v in base.items() if k != "_notes")}; new {sum(map(len, new.values()))})")
+    print(f"[S] scripts: {'PASS' if not new else 'FAIL'} (known gaps {sum(len(v) for k, v in base.items() if k != '_notes')}; new {sum(map(len, new.values()))})")
     for v, m in new.items():
         print('      NEW missing in', v, m[:8])
     fail |= bool(new)
