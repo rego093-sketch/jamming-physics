@@ -122,7 +122,7 @@ ac=sorted((int(x) for x in re.findall(rf'\| (\d+) / {len(ORDER)} \|',agents)),re
 ok("primitive counts","manifest==homepage==AGENTS "+str(mc)) if mc==pc==ac else bad("primitive counts",f"man={mc} page={pc} ag={ac}")
 
 # ---- H. magnitude firewall scan (disease/therapy bodies) ----
-DOSE=re.compile(r'\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|ug|mL|mg/kg|mg/day|IU|g/day)\b')
+DOSE=re.compile(r'\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|μg|ug|mL|mg/kg|mg/day|IU|g/day|mM|µM|μM|nM|mmol/L|µmol/L|nmol/L|ng/mL|mg/dL|mg/L)\b|\b(?:once|twice|three times)\s+(?:daily|a day|weekly)\b|\b(?:b\.i\.d|t\.i\.d|q\d+h)\b|\b(?:titrate|dose)\w*\s+(?:\w+\s+){0,4}(?:to|below|above|by)\s+\d')  # doses, concentrations, regimens, titration targets
 hits=[]
 for vid in ['disease_wp','disease_kit','analgesic_threshold']:
     for f in glob.glob(f"{DOCS}/{vid}/**/*.html",recursive=True):
