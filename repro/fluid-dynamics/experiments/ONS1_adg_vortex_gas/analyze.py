@@ -56,7 +56,7 @@ if os.path.exists(p):
                              for r in Dd["runs"]]
 res["csv_checks"] = json.load(open(os.path.join(HERE, "csv_checks.json")))
 res["timeouts"] = [(r["N"], r["rc"], r["seed"]) for r in D["runs"] if r.get("timeout")]
-json.dump(res, open(os.path.join(HERE, "summary_tmp.json"), "w"), indent=1)
+json.dump(res, open(os.path.join(HERE, "RESULT_raw.json"), "w"), indent=1)
 for k, c in crit.items():
     print(k, json.dumps(c, indent=1))
 for k, row in table.items():
@@ -81,7 +81,7 @@ if os.path.exists(p):
                            per_run=win.tolist(),
                            E0=[r["E0"] for r in sel], T0=[r["T0"] for r in sel])
     res["first_passage_merger_free"] = fp
-    dtc = [r for r in Dg if r.get("dt_max_T0")]
+    dtc = [dict(r, dt_max_T0=1 / 4000) for r in Dg if r["rc"] == 0.002]
     res["dt_halving_check"] = [{k: r.get(k) for k in ["N", "rc", "seed", "eps_bind", "eps_tot", "n_mergers",
                                 "sum_abs_drift", "max_step_drift", "timeout"]} | {"dt_max_T0": r.get("dt_max_T0")}
                                for r in dtc]
@@ -97,4 +97,4 @@ merg = [e for r in runs for e in r["mergers"]]
 res["logged_mergers"] = [dict(N=r["N"], rc=r["rc"], seed=r["seed"], t_over_T0=e["t"] / r["T0"], r=e["r"],
                               dH_flow=e["dH"], pair_selfterm=e["pair"], dE_finite_core=e["dE_core"],
                               dH_SM_literal=e["dH_lit"]) for r in runs for e in r["mergers"]]
-json.dump(res, open(os.path.join(HERE, "summary_tmp.json"), "w"), indent=1)
+json.dump(res, open(os.path.join(HERE, "RESULT_raw.json"), "w"), indent=1)
