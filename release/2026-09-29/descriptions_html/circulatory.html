@@ -1,0 +1,93 @@
+<h3>Summary</h3>
+<p>This volume reads blood flow and clearance (vasculature, kidney and liver) as a transport-and-clearance network driven by the cardiac pump, on the R19 switch with measured promoter γ. It inherits the γ ruler and node atlas from <strong>dna</strong>, the time layer from <strong>circadian</strong> and setpoint drift from <strong>aging_senescence</strong>. It adds one module: <code>MAP = CO × SVR</code> pressure–flow transport with hepatic and renal clearance. The headline <code>MAP = CO × SVR</code> (MAP 95.7 mmHg) is recorded in the claims ledger as an <strong>identity</strong> (Ohm's law). The value is an output of the input CO and SVR and lies within the normal range. Most former [F]/[V] results in the volume are identities of the model (τ = RC, F = 1 − E, a PI loop reaching its setpoint, a round trip through the barrier law, a product of two exponentials), not tests against data. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its input dependence stated), a consistency check or an interpretation. [F]/[V] are no longer used for biological claims, and emergence is attempted only for simple tissue units.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+Hub, §1, about: organ order (liver → kidney) and relative size (DWELL ∝ γ^1.5) were "forced [F]". They are now interpretation, superseded and open [O] (dna §RB; γ-order schedule null, §AX-A; order from cascade depth, §AX-I). The liver-before-kidney order matches embryology, but one agreeing pair is not evidence.
+</li><li>
+§9: "matching the observed 73 to within 0.000%" was wrong. The 0.000% is the deviation of the combined RR from the product of the single RRs, an algebraic identity. The model gives 72.0, which is −1.4% from the cited 73. The text is corrected and no number was changed.
+</li><li>
+§8: RR(50 pack-years) = 2.00 for renal cell carcinoma is now stated as the calibration point (<code>D_RCC</code> is chosen so that RR(50) = 2.0), not an output. Hunt 2005 is cited.
+</li><li>
+§6, §19: the flow elasticities 0.90 / 0.10 and the CLint elasticities 0.91 / 0.11 restate the chosen extraction ratios (well-stirred model: E and 1 − E exactly). Propranolol F ≈ 25% (Routledge &amp; Shand 1979) is cited, with "no dose derived".
+</li><li>
+§15: the KDIGO landing is by construction (N = threshold / 125).
+</li><li>
+§2–§5: MAP = CO × SVR "holds &lt; 1%", τ = RC (1.54 s), GFR 125, osmolality 287 and the PI setpoint return are relabelled consistency checks / code outputs of the chosen inputs. Observations are added (MAP range, Guyton &amp; Hall; Westerhof 2009; Carlström 2015; Verbalis 2003).
+</li><li>
+§22, §23: "round-trips exactly [V]" is relabelled consistency (inverting the barrier law, then applying it). The VHL / HFE blocks are relabelled observation.
+</li><li>
+§16, §17, §21: the breakthrough at 195 mmHg, the 3.1× and 1.09× folds, and the ~7× and ~148× suppressions are labelled outputs of chosen settings. §17's clinical-sounding wording was neutralised: the folds are illustrative code outputs and no dose is given.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+None.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+A reading-rule lt-note was added to the hub. All chapters were relabelled [F] → consistency and [V] → code output, consistency (§9, 15, 18, 19, 21–23) or interpretation (§1). γ cards became code output and mapping cards became interpretation. Manifest grade counts forced 14 / verified 24 → 0 / 0; hypothesis 8 is unchanged.
+</li><li>
+Reading-versus-building notes were added to §1, about and the hub.
+</li><li>
+The review finding on §9 (identity, not a 0.000% match) is recorded in the lineage for the author.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+None. Code and data under <code>repro/circulatory/</code> are unchanged since the previous version.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Biology reading-rule registry integration: <code>_decl.json</code>, page notes, hashes, lineage, homepage and sitemap were refreshed. The companion work-in-progress commit for the other organ volumes was included.
+</li><li>
+Recurrence guards: integrity checks in the gate, the manifest generator fixed, and <code>_decl</code> inheritance aligned.
+</li><li>
+Highwire citation meta is regenerated from the manifest, with gate guards against escaped comments and raw LaTeX.
+</li><li>
+Link audit (2026-09-28): stale repro and site links repointed, leaving 0 broken links. The earlier untitled repository snapshot commits ("VP Theory site", "Final", "1111111") imported the volume.
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: identity 4 · anchor-restatement 1 · open 1 (6 rows).</p>
+<ul><li>
+MAP = CO × SVR; MAP 95.7 mmHg — identity — within the normal range; an output of the input CO and SVR.
+</li><li>
+§9 combined RR "matches observed 73 within 0.000%" — identity — the model gives 72.0 vs 73 (−1.4%). The 0.000% is a product-of-singles identity.
+</li><li>
+RR(50 pack-years) = 2.00 for RCC — anchor-restatement — residual 0 (calibration point).
+</li><li>
+Diastolic τ = RC 1.54 s; GFR 125; osmolality 287; PI setpoint return — identity — outputs of the chosen R, C and integral-controller design.
+</li><li>
+Clearance elasticities 0.90 / 0.10 and 0.91 / 0.11; KDIGO landing; barrier round trips — identity — equal to E and 1 − E; N = threshold / 125; a law followed by its inverse.
+</li><li>
+Organ order liver → kidney and size DWELL ∝ γ^1.5 — open — agrees with embryology for one pair, which is not evidence. Building [O].
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Developmental order, size and timing of vasculature, kidney and liver: building is [O] (dna §RB).
+</li><li>
+Absolute clinical magnitudes (risk, clearance-based dosing): withheld under the magnitude firewall. The volume gives direction only.
+</li><li>
+The eight hypothesis-labelled items carried by the volume remain hypotheses.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/circulatory/</code> (the published HTML pages), <code>repro/circulatory/</code> (engine, oncology kernel, inherited substrate, doc builder, reports), <code>LEDGER.json</code> (this volume's claims-ledger rows) and <code>MANIFEST.sha256</code> (file hashes).</p>
+<ul><li>
+Main harness: <code>cd repro/circulatory &amp;&amp; python3 repro/run_all.py</code>. All 23 targets pass with drift 0, and the engine reprints MAP 95.7, τ 1.54 s, GFR 125, osmolality 287, E 0.75, the RCC RR, the aflatoxin × HBV product and the KDIGO steps.
+</li><li>
+Gates: <code>repro/circulatory/repro/_verify/gates.py</code>. Oncology constants: <code>repro/circulatory/repro/_oncology/carcinogen_dose_response.py</code>. The §9 identity is in <code>repro/circulatory/tools/build_docs.py</code>.
+</li><li>
+SEED = 19. Python 3 with numpy only. No network is needed (<code>repro/circulatory/README_REPRODUCIBILITY.md</code>).
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/circulatory/">https://jamming-physics.org/circulatory/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20754354
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

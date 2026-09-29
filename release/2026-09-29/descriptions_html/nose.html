@@ -1,0 +1,99 @@
+<h3>Summary</h3>
+<p>This volume reads the sense of smell as an R19 transduction switch (<code>ds/dt = g·s − s³ + h</code>) whose thresholds are set by promoter stiffness γ measured from public NCBI sequence. It inherits the γ ruler and the R19 switch from <strong>dna</strong>, hands the transduced signal off to <strong>neuro</strong>, cites allergic smell loss from <strong>immune_hematologic</strong> §11, and shares the CNGB1 γ with <strong>eye</strong> as a consistency check. It inherits no wave module, because smell has no wave. It adds one module: a combinatorial receptor code, a CNG transduction switch and anosmia as switch failures. The headline, "smell from R19 switch + measured DNA γ", is recorded in the claims ledger as an <strong>interpretation</strong>: the γ values are deterministic code outputs, but the mapping of the cubic onto olfactory transduction is not derived. The odorant→receptor key sits in the binding pocket, not in γ, and stays open [O]. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its input dependence stated), a consistency check or an interpretation. [F]/[V] theory grades are not used for biological claims, and emergence is attempted only for simple tissue units.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+§3 bulb map: the developmental order EBF1 → EMX2 → LHX2 was graded [F]/[V] as "forced by measured γ", with "dwell ∝ γ^1.5" as relative size. It is now a code output (a γ sort) read as interpretation. In the corpus, order comes from DNA-atlas cascade depth, and building (order, size, timing) is open [O] (dna §RB).
+</li><li>
+§3: "one OR → one glomerulus bijection" replaced by the observed anatomy (about 2 glomeruli per OR per bulb in mouse, about 16 in human; Maresh et al. 2008). The capacity conclusion is unchanged.
+</li><li>
+§1/§3 combinatorial code: "4 of 128 patterns" is now labelled a code output from 8 hand-picked sweep points. A dense sweep of the same code gives N+1 = 8 nested patterns.
+</li><li>
+§2/§4 transduction switch: "≈229× steeper than a graded control" is now stated as step-dependent (±1 / 5 / 10 % steps → 229× / 48× / 24×).
+</li><li>
+§2: CNGB1 γ = 1.4357 equal to the rod-vision value was graded [V]. It is now a consistency check: same promoter, same window, same pipeline.
+</li><li>
+§2: the uncited "Hill ≈ 2–3 from the cubic" was replaced by the measured olfactory CNG Hill coefficient 1.4–1.8 (Frings, Lynch &amp; Lindemann 1992), cited as an observation. The page now states that the normal-form order is not a Hill coefficient and that no mapping is derived.
+</li><li>
+§4/§5: congenital anosmia 7/7 and allergic sensorineural 0/7 are now stated as true by construction of the inputs (h₀ = 1.15·max h*, damaged = 0.90·min h*). They are demonstrations, not tests against smell-loss data.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+Simple-tissue emergence of the olfactory neuron chain (cAMP → CNG → Ca → Ca-activated Cl⁻) was attempted and <strong>not run</strong>. The inter-stage coupling scales (ciliary cAMP and Ca per unit current) were not found in sourced form, and choosing them would make the output a choice. Recorded as [O] on the hub, with the missing constants named.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+The author reading rule (observation / code output with input dependence / consistency / interpretation) was applied to the hub and all chapters. Manifest grade counts forced 2 / verified 4 → 0 / 0; open 1 is unchanged.
+</li><li>
+Declared inheritance was updated: the manifest now lists dna, neuro, immune_hematologic §11 and eye (CNGB1). A <code>seams.json</code> declares each seam and its grade.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+<code>repro/nose/tools/build_volume.py</code> now writes to <code>repro/nose/_build/docs</code> (git-ignored), never into <code>docs/</code>.
+</li><li>
+<code>repro/nose/tools/gate_volume.py</code> and the verify tooling fall back to the monorepo <code>docs/nose/</code> when <code>repro/nose/docs/</code> is absent. In the monorepo layout, the review had found the gate failing on this path.
+</li><li>
+The research scripts E1–E5, the SSOT and the builder entered the monorepo with the volume, in the integration of +5 volumes (eye, ear, nose, wave-computer, inheritance). This includes the work-in-progress snapshot "nose: fact/code reading rule".
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+docs/ was declared the source of truth. A correction-note preservation check (<code>registry/page_notes.json</code>) fails the gate if a page loses a note.
+</li><li>
+Highwire citation meta is regenerated from the manifest. Visible escaped comments and raw LaTeX are now guarded by the gate.
+</li><li>
+Link audit (2026-09-28): stale GitHub repro paths and site slugs were repointed corpus-wide, leaving 0 broken links.
+</li><li>
+Manifest, <code>_decl.json</code>, hashes and lineage were refreshed. The earlier untitled repository snapshot commits ("11111", "Final", "1111111") imported the nose pages and assets.
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 1 · anchor-restatement 2 · identity 2 · open 1 (6 rows).</p>
+<ul><li>
+Smell from R19 switch + measured DNA γ (transduction switch) — interpretation — n/a. The "Hill 2–3 from the cubic" statement was uncited and no mapping is derived. Observed OSN responses are graded dose–responses.
+</li><li>
+Combinatorial code: nested thermometer reaches 4 of 128 patterns — anchor-restatement — a dense sweep gives 8 = N+1 (sampling artefact).
+</li><li>
+Transduction switch ≈229× steeper than graded control — anchor-restatement — ±1 / 5 / 10 % step → 229 / 48 / 24.
+</li><li>
+CNGB1 γ = 1.4357 byte-identical to the rod-vision value — identity — residual 0 (same promoter, window, pipeline).
+</li><li>
+Congenital anosmia 7/7; allergic sensorineural 0/7 (h₀ = 0.65881) — identity — outcomes set by input definitions.
+</li><li>
+Bulb map order EBF1 → EMX2 → LHX2 by γ; one OR → one glomerulus — open — conflicts with anatomy (about 2 glomeruli per OR per bulb in mouse, about 16 in human; Lhx2 needed early). Building order [O].
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Odorant→receptor key (binding-pocket recognition), which is not encoded in promoter γ: the central [O].
+</li><li>
+Developmental order, size and timing of the bulb map: building is [O] per dna §RB. Order is inherited from dna cascade depth, not recomputed.
+</li><li>
+Simple-tissue emergence of the olfactory neuron chain: [O]. The ciliary cAMP and Ca coupling scales per unit current are missing in sourced form.
+</li><li>
+Author decisions (review): state once the γ (kcal/mol) → dimensionless g unit convention; check whether one CNGB1 promoter window covers both the rod CNGB1a and olfactory CNGB1b isoforms.
+</li><li>
+Felt percept of smell belongs to the mind volume and is not claimed here.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/nose/</code> (the published HTML pages), <code>repro/nose/</code> (code, inherited promoter data and cache, research scripts), <code>LEDGER.json</code> (this volume's claims-ledger rows) and <code>MANIFEST.sha256</code> (file hashes).</p>
+<ul><li>
+Full verification: <code>python3 repro/nose/tools/verify_seed.py</code>. It checks no-regression, deterministic foundation modules (2×SHA-256), offline recompute of γ and A4 against the atlas, no-omission, and HTML↔code drift 0.
+</li><li>
+Volume gate: <code>python3 repro/nose/tools/gate_volume.py</code>.
+</li><li>
+Per-result scripts: <code>repro/nose/research/E1-combinatorial-code/run.py</code>, <code>E2-transduction-switch/run.py</code>, <code>E3-bulb-map/run.py</code>, <code>E4-congenital-anosmia/run.py</code>, <code>E5-allergic-smell-loss/run.py</code>. Each has a <code>gate_E*.py</code>, and each runs in under 120 s.
+</li><li>
+SEED = 19. No network is needed: γ is recomputed from the shipped promoter cache. Only the optional <code>repro/nose/tools/fetch_promoter_gamma.py</code> re-fetches sequence from NCBI.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/nose/">https://jamming-physics.org/nose/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20790182
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

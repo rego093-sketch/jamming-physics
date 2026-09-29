@@ -1,0 +1,85 @@
+<h3>Summary</h3>
+<p>This volume (Ionic Homeostasis, tier 7 of the VP corpus) models calcium-phosphate, acid-base and electrolyte balance as defended setpoints: Ornstein–Uhlenbeck setpoint loops, a calcium loop and a two-timescale acid-base buffer, built on the R19 switch. It inherits from musculoskeletal and circadian, and adds one module: the mineral / acid-base / electrolyte setpoint loops. The headline statement (these setpoints, with node identity and order from measured master-gene γ) is classed in the claims ledger as <strong>interpretation</strong>: the "identity and order from γ" part conflicts with the corpus rule (identity from the DNA atlas, order from regulatory-cascade depth, building [O]) and is now bracketed [O] on the hub. The OU setpoint laws are identities of the process, the Winters compensation slope 1.105 is a code output of a chosen controller exponent that falls below the cited range, and one measured-sequence test (ATP1A1 promoter γ does not order six species by loop gain) is a recorded negative. Biology reading rule: the volume accepts established observations and uses them; it shows how the DNA reading (γ) and the VP mapping apply to ionic homeostasis and does not decide theory. Every statement is an observation (cited), a code output (reproducible, input dependence stated), a consistency check (holds by construction), or an interpretation.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+Hub: "Node identity and order come from measured master-gene γ" bracketed as interpretation / [O], with a link to /dna/ (order is from regulatory-cascade depth; building is open, dna §RB).
+</li><li>
+§3 acid-base: the Winters slope 1.105 was presented as "matching ~1.2–1.5"; it is now stated as a code output of the chosen controller pCO₂* = 40·(HCO₃/24)^0.6 that lies below the range the page quotes (Albert, Dell &amp; Winters 1967; the code gate accepts 1.0–1.6). The pH return to 7.401 is marked as holding by construction.
+</li><li>
+§1: the OU laws (Var·2k/σ² = 1, error·k = 1, zero integral error) relabelled from [V] to consistency (identities of the OU process); "γ supplies k" relabelled as interpretation.
+</li><li>
+§2 calcium: values marked as dependent on the chosen load and deficit; the negative deficit nadir (−0.0435) is flagged as non-physical; only return to setpoint is a loop property.
+</li><li>
+Measured γ values labelled "[V] measured input" read as code outputs on measured sequence. No numbers or author text removed.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+None. A light review (<code>reviews/biology/2026-09-29_homeostasis_ionic_review.md</code>) re-ran <code>ri1_calcium()</code> and <code>ri2_acidbase()</code>; printed numbers match the pages (pH 7.167 / 7.307 / 7.401, slope 1.105; peak 2.1283, nadir −0.0435, final 1.0003). Network fetchers were not run. Firewall clean: dosing is [O] throughout.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+Biology reading rule note added to the hub; claim strip on §1 changed from "[V] mechanism" to "code output + consistency; γ→k interpretation"; brackets added on §1–§3. One correction note (lt-note) on the hub.
+</li><li>
+Manifest grade counts set to forced 0 / verified 0 (previously 18 / 31); open 17 unchanged. <code>_decl.json</code> regenerated.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+<code>repro/homeostasis_ionic/</code> is unchanged since the 2026-06-24 state. The release ZIP is now built deterministically by <code>tools/build_release.py</code> and adds LEDGER.json and MANIFEST.sha256.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Registry integration of the reading rule for this volume (manifest, page_notes, hashes, lineage, homepage, sitemap; gate clean).
+</li><li>
+Link audit (2026-09-28): stale repro paths and stale site slugs (e.g. <code>/homeostasis-ionic/</code>) repointed to existing paths (corpus-wide repair of 6,642 links).
+</li><li>
+Highwire citation meta generated for the hub from the manifest; gate guards against escaped comments, raw LaTeX and citation-meta drift.
+</li><li>
+Gate fails if a page loses a correction note (<code>registry/page_notes.json</code>); claims ledger entries published (/claims-ledger/).
+</li><li>
+Initial repository import and consolidation commits (2026-06-20 "VP Theory site", 2026-06-22 "Final", 2026-06-24).
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 2 · identity 1 · anchor-restatement 1 · independent-prediction 1 · open 0.</p>
+<ul><li>
+Headline: mineral / acid-base / electrolyte setpoints; identity and order from measured master-gene γ — interpretation — conflicts with AGENTS.md / dna §RB; bracketed [O].
+</li><li>
+OU setpoint laws (Var·2k/σ² = 1, error·k = 1, zero integral error) — identity — 1, 1, 0 by the OU process; "γ supplies k" is interpretation.
+</li><li>
+Winters compensation slope — anchor-restatement — 1.105 below the cited ~1.2–1.5; set by chosen controller exponent (not fitted; it misses); pH 7.401 return by construction.
+</li><li>
+Calcium setpoint loop return — interpretation — values depend on chosen load/deficit; negative nadir non-physical.
+</li><li>
+ATP1A1 promoter γ does not order species by loop gain — independent-prediction — null (honest negative on measured sequence across six species).
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+17 [O] items stated on the pages (manifest open = 17): absolute magnitudes and clinical efficacy (magnitude firewall; dosing [O] throughout), the γ → absolute value mapping, incidence, and node developmental order / building (dna §RB).
+</li><li>
+Controller exponent for acid-base compensation is chosen, not sourced; the slope does not reach the cited range.
+</li><li>
+Author decision: remaining per-page grade labels are left as authored and covered by the hub reading rule.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/homeostasis_ionic/</code> (the published HTML pages), <code>repro/homeostasis_ionic/</code> (code and data), <code>DESCRIPTION.md</code>, <code>LEDGER.json</code>, <code>CORPUS_GUIDE.md</code> (AGENTS.md) and <code>MANIFEST.sha256</code>.</p>
+<ul><li>
+Main checks: <code>python3 repro/homeostasis_ionic/repro/run_all.py</code> and <code>repro/homeostasis_ionic/repro/_verify/gates.py</code>.
+</li><li>
+Loops: <code>repro/homeostasis_ionic/repro/_engine/vp_loops.py</code> (<code>ri1_calcium</code>, <code>ri2_acidbase</code>).
+</li><li>
+SEED = 19 (<code>vp_loops.py</code>, <code>inherited/vp_substrate.py</code>). No network needed for the checks; <code>repro/homeostasis_ionic/repro/_engine/fetch_gamma.py</code> and <code>comparative_gamma.py</code> re-fetch promoter sequence and need network.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/homeostasis_ionic/">https://jamming-physics.org/homeostasis_ionic/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20755910
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

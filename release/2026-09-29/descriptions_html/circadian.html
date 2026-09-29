@@ -1,0 +1,93 @@
+<h3>Summary</h3>
+<p>This volume (Circadian Oscillator, tier 7 of the VP corpus) is the time layer of the biology tiers: a relaxation (FitzHugh–Nagumo-type) oscillator network built on the R19 switch, with entrainment, a phase-response curve, master-vs-network coupling, setpoint gating, misalignment disease and a chronotherapy direction. It inherits from dna, and adds one module: the time layer, with the measured BMAL1/ARNTL promoter γ = 1.33348 (2501 bp, GC 0.443) as its DNA reading. The headline is classed in the claims ledger as <strong>interpretation</strong>: γ recomputes bit-for-bit from the cached promoter, but every oscillator in the engine runs at γ = 1.0, so "the clock is seeded by the measured γ" holds only for the node table, not for the dynamics. Clock emergence from a single cell was not attempted and is [O], because published clock rate constants are fitted to a ~24 h period and letting 24 h "emerge" from them would be circular. Biology reading rule: the volume accepts established observations of the clock (a free-running period near 24 h, light entrainment, the phase-response curve, shift-work findings) and uses them; it shows how the DNA reading (γ) and the VP mapping apply and does not decide theory. Every statement is an observation (cited), a code output (reproducible, input dependence stated), a consistency check (holds by construction), or an interpretation.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+Hub, §0, §1: "a measured input graded [V]" relabelled "DNA reading"; §0 notes that the oscillators run at γ = 1.0 (<code>vp_clk_engine.py</code> l.116–295), so the measured γ does not enter the dynamics.
+</li><li>
+§6: the "PRC-bounded" jet-lag re-entrainment rate is stated as a code input (<code>max_shift_per_cycle</code>), not a derived result; the observation it restates (Aschoff 1975; Waterhouse 2007) is cited.
+</li><li>
+§8 chronotherapy: marked as arithmetic on entered values; the light/melatonin antiphase follows from two hard-coded phases, not from a reproduced effect; direction/class only (no dose, lux or timing window).
+</li><li>
+§5–§7: results that hold by construction relabelled from [V] to consistency (ablated constant drive gives amplitude 0; alignment and flattening indices are cosine projections; <code>sign_consistent_with_mind</code> is set True in code).
+</li><li>
+§3: Arnold-tongue counts noted to saturate at the sweep size (15 of 15).
+</li><li>
+Missing observations cited: human period ~24.2 h (Czeisler 1999), human light PRC (Khalsa 2003), peripheral self-sustained clocks (Yoo 2004), IARC Monograph 124. No numbers changed, nothing deleted.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+Simple-tissue (single-cell) clock emergence assessed alongside the neuro EM2 squid-axon experiment and left [O] with the reason stated on the hub (clock constants are period-fitted; no sourced constants). No new experiment was run on this volume.
+</li><li>
+Light review (<code>reviews/biology/2026-09-29_circadian_review.md</code>) re-ran the RC1–RC6 and TX1 probes; every printed number matches the pages (free run 76 beats, cv 0.003691; PRC +0.185 / −0.129; tongue [5, 11, 15, 15, 15]; coherence 0.596 → 0.99993). <code>run_all.py</code> did not finish within 120 s. Firewall clean.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+Biology reading rule note added to the hub; one lt-note with input dependence or consistency status on each of §0 and §2–§8 (nine correction notes on nine pages, including the emergence [O] update).
+</li><li>
+Manifest grade counts set to verified 0 (previously 7). <code>_decl.json</code> regenerated.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+<code>repro/circadian/</code> is unchanged since the 2026-06-24 state. The release ZIP is now built deterministically by <code>tools/build_release.py</code> and adds LEDGER.json and MANIFEST.sha256.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Registry integration of the reading rule (manifest, page_notes, hashes, lineage, homepage, sitemap; gate clean); work-in-progress snapshot and review commits for this volume.
+</li><li>
+Link audit (2026-09-28): stale repro paths and stale site slugs repointed to existing paths (corpus-wide repair of 6,642 links).
+</li><li>
+Highwire citation meta generated for the hub from the manifest; gate guards against escaped comments, raw LaTeX and citation-meta drift.
+</li><li>
+Gate fails if a page loses a correction note (<code>registry/page_notes.json</code>); claims ledger entries published (/claims-ledger/).
+</li><li>
+Initial repository import and consolidation commits (2026-06-20 "VP Theory site", 2026-06-22 "Final", 2026-06-24).
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 3 · anchor-restatement 2 · identity 1 · independent-prediction 0 · open 0.</p>
+<ul><li>
+Headline: measured BMAL1/ARNTL γ = 1.33348 seeds the clock — interpretation — γ recomputes bit-for-bit, but all oscillators run at γ = 1.0.
+</li><li>
+Free-running oscillation precision (76 beats, cv 0.003691) — interpretation — model output of chosen parameters; human period ~24.2 h not compared numerically.
+</li><li>
+Entrainment PRC and Arnold tongue — interpretation — tongue saturates at sweep size; human light PRC not compared.
+</li><li>
+Jet-lag re-entrainment, PRC-bounded — anchor-restatement — rate is a code input.
+</li><li>
+Chronotherapy: light and melatonin act in antiphase — anchor-restatement — direction/class only; arithmetic on entered phases.
+</li><li>
+Gating ablation, misalignment and flattening indices — identity — hold by construction.
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Single-cell clock emergence [O]: no sourced, non-period-fitted rate constants.
+</li><li>
+Making the measured γ enter the oscillator dynamics (currently γ = 1.0 throughout) is not done.
+</li><li>
+Quantitative comparison with the human period and human light/melatonin PRCs is not done.
+</li><li>
+Chronotherapy timing and any dose are withheld (magnitude firewall); direction only.
+</li><li>
+<code>run_all.py</code> exceeds 120 s in review; full-battery timing is not recorded.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/circadian/</code> (the published HTML pages), <code>repro/circadian/</code> (code and data), <code>DESCRIPTION.md</code>, <code>LEDGER.json</code>, <code>CORPUS_GUIDE.md</code> (AGENTS.md) and <code>MANIFEST.sha256</code>.</p>
+<ul><li>
+Main checks: <code>python3 repro/circadian/repro/run_all.py</code> (long-running) and <code>repro/circadian/repro/_verify/gates.py</code>; individual probes RC1–RC6 and TX1 in <code>repro/circadian/repro/_engine/vp_clk_engine.py</code>.
+</li><li>
+SEED = 19 (<code>vp_clk_engine.py</code>, <code>inherited/vp_substrate.py</code>). No network needed (the ARNTL promoter is cached).
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/circadian/">https://jamming-physics.org/circadian/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20755413
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

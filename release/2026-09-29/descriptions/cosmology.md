@@ -1,0 +1,68 @@
+## Summary
+Vacuum-Inflow Cosmology inherits the jammed substrate (c² = B/ρ) and the full-cycle constant 2π = α/δ from the physics volume and adds one module: gravity, orbits, galaxies and cosmology read as the inflow of quanta toward absorbing bodies. The headline relation a₀ = cH₀/2π gives 1.04–1.13×10⁻¹⁰ m/s² for H₀ = 67.4–73, about 0.9× the empirical MOND/RAR scale (within its systematic spread); the claims ledger classes it as anchor restatement, because H₀ is an input, galaxy data fix the coefficient k in cH₀/k only to about 5–7, and the recovered code itself describes the 2π as selected, while the page states it is inherited from physics. Kepler orbits from the inflow are also anchor restatement (GM_sun is calibrated on the Sun). The one parameter-free test in the volume, the supernova Hubble diagram, is an independent prediction whose outcome is against the model (Δχ² = +86.6 in favour of ΛCDM). A pre-registered Gaia wide-binary test (WB1) of a₀ is specified but not yet run.
+
+## What changed in this version (2026-09-29)
+**Corrections**
+- §06 (a₀): the 2π is stated as inherited from physics (α/δ, the same 2π as in mₚ/mₑ = 2π·3π⁴); data fix k only to about 5–7; H₀ is a measured input; disclosed that the NGC 2403 fit (Υ = 0.567, χ²/dof = 1.99) was run at the empirical a₀ = 1.2×10⁻¹⁰, and at the derived 1.08×10⁻¹⁰ gives Υ = 0.606, χ²/dof = 2.57; RAR interpolation is taken in the standard form, not derived.
+- §07 (supernovae): χ²/dof 0.499 (lattice optics) vs 0.444 (ΛCDM) on 1580 Pantheon+ SNe reproduces; Δχ² = +86.6 in favour of ΛCDM; the sentence "both fit comparably" withdrawn — the model is disfavoured by this data set.
+- §08.1 (Bullet cluster): the 0.41 Mpc offset does not reproduce (0.275 Mpc uniform path, 0.497 Mpc β-model); inputs chosen by hand; the ram-pressure mechanism is degenerate with particle dark matter; "Bullet reproduced" summaries corrected.
+- §03: "the equivalence principle follows as a theorem" withdrawn; the principle is referred to physics (claimed only at the velocity-saturation cap level, [O] beyond).
+- §08 (dark matter): quanta can be absent, VP cannot — c² = B/ρ is held inside a deficit core, the core is transparent (emits nothing, deflects light only through inflow); sentences saying the core has "no medium to carry light" or that c² drops are superseded.
+- §09 (black holes): v = c√(R_s/r) is the free-fall speed under Chapter 3's 1/r² force (checked by direct integration, 0.4% at 1.3 R_s), not the quanta inflow speed v_q ∝ 1/r²; the two profiles do not conflict; horizon identification [H]; 1.752″ bending degenerate with GR.
+- §11 (gravitational waves): observed tensor polarization recorded (GW170814, Bayes factor > 1000; speed c to ~10⁻¹⁵); a plane displacement wave of the lattice cannot carry + and ×, so "a propagating shear with two TT polarisations" withdrawn; quadrupolar transverse state on the scaffold graded [H], polarization content [O]; chirp and Hulse–Taylor decay use the GR quadrupole formula as input (degenerate with GR).
+- Executive summary (axF): SNe not degenerate; Bullet not reproduced; 2.725 K back-computed, not derived; post-Newtonian tests degenerate with GR; free or empirical inputs include κ (≈ G), κ_opt (≈ H₀) and the Bullet gas parameters, not "Υ only".
+- 882 GeV formula corrected to use h (not ħ); R19 removed from the hub inherits strips and from the _decl kernel claims.
+- Correction notes (lt-note) on 10 pages: 03, 06, 07, 08 (Bullet), 08 (dark matter), 09, 11, axB, axF, axH.
+
+**New experiments and results**
+- GW2 rotating quanta on the VP scaffold (pre-registered, reduced ray model): P1 c maintained with or without quanta PASS (0.993–0.996 c across a 600-site quanta-empty gap); P2 rotation pattern carried at c and reappearing after the gap PASS; P3 heavy quanta lag FAIL (also carried at c: carrying is site-driven); P4 quadrupolar quanta give exactly + and × (45° apart, no breathing) PASS. Grades: (i)–(ii) [V mech], (iii) [F] geometric, coupling form [H].
+- WB1 Gaia wide-binary test of a₀ = cH₀/2π: pre-registered with two variants declared before data (H_int: boost 1.29 at 10 kAU, 1.64 at 20 kAU; H_ext bound about 1.10–1.14) because the volume states no external-field term; predictions computed, not run (no data access from the build environment).
+- Finding: ch6_galaxy_rar.py fits NGC 2403 with the empirical a₀ = 1.2×10⁻¹⁰, not the derived value.
+
+**Relabelled grades / reading rule**
+- Equivalence principle: theorem → referred to physics (cap level; [O] beyond). Black-hole horizon identification [H]; gravitational-wave polarization content [O], quadrupolar transverse state [H]; 2.725 K relabelled as back-computed.
+
+**Reproduction package changes**
+- Recovered reproduction package v2.3 vendored under repro/cosmology/legacy_v2_3 (27 scripts plus SPARC NGC 2403 and Pantheon+ extract; all 27 run, 0 failures).
+- 23 lost scripts re-implemented without tuning under repro/cosmology/scripts (orbits, Mercury capture, spin locking, post-Newtonian; CMB/acoustic (7); GW/gamma (4); SNe/lensing; miscellaneous), each group with a REIMPL report listing which page numbers reproduce. Main mismatches: SNe Δχ², Bullet offset, gamma-collective ratios and the E_QG bound, several acoustic-length figures, GW polarization content.
+- Reconstructed repro/cosmology/tools/split.py (tex → per-section bodies; deterministic; the source VP_EarthCosmos_v2.tex is not in the repository, so pages cannot be regenerated from it).
+- New experiment folders repro/cosmology/experiments/{GW2_rotating_quanta_on_scaffold, WB1_wide_binary_a0_test}; three reviews under reviews/cosmology/ and a cosmology–chemistry synthesis review.
+
+**Site/metadata**
+- 20 stray '<' escaped, leaked LaTeX converted (\href, \textsf, sloppypar), 169 macro remnants repaired, 163 cross-references linked.
+- Corpus link audit repaired stale repro and site URLs; manifest headline and homepage card synced; Highwire citation meta regenerated; registry hashes and lineage updated.
+
+## Claim status (claims ledger)
+7 rows: anchor-restatement 4 · independent-prediction 1 · interpretation 1 · open 1.
+- a₀ = cH₀/2π (headline) — anchor-restatement — about −10% (0.90×) vs empirical 1.2×10⁻¹⁰, within 0.5 σ_sys; discriminating test WB1 registered, not run.
+- Kepler / Solar-system orbits from vacuum inflow — anchor-restatement — periods within ≤ 0.73% (Saturn +0.73% is a Jupiter–Saturn perturbation effect); the summary page quotes 0.06%; GM_sun calibrated on the Sun.
+- NGC 2403 rotation curve "at the derived a₀" — anchor-restatement — published numbers reproduce only at the empirical a₀; at the derived a₀ χ²/dof = 2.57; joint fit prefers a₀ ≈ 1.7×10⁻¹⁰.
+- Supernova Hubble diagram d_L = (c/H₀)(1+z) ln(1+z) — independent-prediction — Δχ² ≈ +87 against the model (diagonal errors); about +0.2 mag departure at z > 1; stated max |Δμ| 0.145 not reproduced (0.23–0.33).
+- Gravitational waves: two tensor polarizations, no breathing, speed c — interpretation — GW2 P1, P2, P4 PASS, P3 FAIL; model built after the observations.
+- Equivalence principle as a theorem (Ch3) — open — reviewer estimate from the volume's own ratios: 0.2–0.8% composition dependence, far above MICROSCOPE / Eöt-Wash bounds; no code reproduces the claim.
+- Light deflection 1.752″ at the solar limb — anchor-restatement — matches GR by construction (γ = 1 imported as "GR-matched"); script not in repo.
+
+## Open items
+- WB1 Gaia DR3 wide-binary analysis: pre-registered, to be run by anyone with archive access; the external (Galactic) field term is a stated theory gap (Galactic field at the Sun 2.06 a₀).
+- Gravitational-wave polarization content [O]: a rotating-grain 3-D lattice run showing a quadrupolar transverse state at the scaffold speed is data-pending (GW2 is a reduced ray model).
+- Equivalence principle beyond the cap level [O] (inherited from physics; absolute g not implemented in code).
+- Angular-size minimum (z ≈ 1.72 vs 1.61) remains the proposed distance-ladder-free test.
+- About 13 cited scripts across the corpus remain missing (cosmology's lost scripts listed as data-pending in repro/cosmology/IRREPRODUCIBILITY_LEDGER.md); the cosmology source tex is not in the repository.
+- SPARC-175 median RMS pipeline not in the repo (mass-to-light ratios chosen by five-fold cross-validation).
+
+## Reproduction
+The ZIP contains docs/cosmology/ (the published HTML pages), repro/cosmology/ (code and data), LEDGER.json (this volume's claims-ledger rows), CORPUS_GUIDE.md and MANIFEST.sha256 (SHA-256 of every file).
+Main checks (Python 3, no network needed):
+- `bash repro/cosmology/legacy_v2_3/run_all.sh` — the recovered 27-script package (log of the 2026-09-28 run in RUN_2026-09-28.log); key scripts ch6_galaxy_rar.py (a₀, NGC 2403) and ch7_lattice_optics.py (Pantheon+ SNe).
+- Re-implemented scripts in repro/cosmology/scripts/ (e.g. ch7_sne.py, ch8_bullet_offset.py, ch11_grav_waves.py, ch4_orbits.py); see the README and REIMPL_*.md reports there.
+- `python3 repro/cosmology/experiments/GW2_rotating_quanta_on_scaffold/gw2_run.py` (deterministic, about 11 s).
+- `python3 repro/cosmology/experiments/WB1_wide_binary_a0_test/wb1_predict.py` (writes PREDICTIONS.json; the data analysis itself needs Gaia DR3 access).
+Deterministic scripts use SEED = 19 where randomness is involved.
+
+## Citation and links
+- Site: https://jamming-physics.org/cosmology/
+- Concept DOI: 10.5281/zenodo.20568874
+- Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+- Licence: CC BY 4.0
+- Corpus guide: https://jamming-physics.org/AGENTS.md
+- Claims ledger: https://jamming-physics.org/claims-ledger/
