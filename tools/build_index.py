@@ -15,7 +15,7 @@ SITE = "https://jamming-physics.org/"
 # Curated display tags (<=3 most characteristic shared primitives per volume)
 TAGS = {
  'physics':['jammed lattice','c²=B/ρ','6π⁵','E/B [H]'],
- 'fluid-dynamics':['jammed continuum','Navier–Stokes'],
+ 'fluid-dynamics':['balance laws','C₃ → one-axis flow','Newtonian below margin','81+1'],
  'cosmology':['vacuum inflow','Kepler','a₀=cH₀/2π','GW: +/× from quanta'],
  'chemistry':['single anchor','φ_FCC=0.7405 (crystal packing)'],
  'geodynamics':['jamming↔unjamming','cusp'],

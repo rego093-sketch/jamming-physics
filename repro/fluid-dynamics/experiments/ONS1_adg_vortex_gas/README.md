@@ -1,3 +1,7 @@
+**Status (2026-09-29, author review): independent re-implementation from the PRL's prose — NOT the volume's Pillar IV model.** Pillar IV uses metriplectic_vortex.py, which runs and passes (validate_all [4], [5]). This dilute forward-merger point-vortex gas is a different model and its result does not bear on Pillar IV's statements. What stands independently of the model is the data observation on the shipped PRL ensemble CSV (n_mergers + N_final ≠ N in all 45 rows; eps_tot − eps_bind identical across r_c per seed; Re_eff follows a closed formula), which awaits the author's clarification of the column meanings or the original ADG code.
+
+---
+
 # ONS1 — independent ADG re-implementation of the metriplectic vortex gas
 
 **Target:** Pillar IV of the fluid-dynamics volume, which rests on the manuscript

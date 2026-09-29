@@ -1,3 +1,7 @@
+**Status (2026-09-29, author review): independent-model test — NOT a test of the volume's mechanism.** This run used frictional spinning spheres WITHOUT the volume's three-body kernel U₃ (S_ijk = Σ L_i·(r_ij × r_ik), fluid §4, axioms.py). U₃ is exactly the term that gives the pair a transverse (one-directional) force and whose sign is set by the rotation axis relative to the triangle normal, so its absence explains why no single lobe appeared. The volume's own reduced 3-D test is in 11-cross-scale-extensibility-one-arrangement/(lattice_inflow.py: 2-D through-flux sustained Q_z = 0.462, closed 3-D sphere Q = 0; corotation.py: forced co-rotation → merger → Ekman inflow → axial outflow). A full 3-D implementation (U₃ coupled to 3-D NS with vortex stretching at high Re) is a computational limit, like the full-physics g in the physics volume. The numbers below are kept as a record of this independent model only.
+
+---
+
 # C3E1: directed ejection from a three-sphere (C3) cluster, as a dynamical 3-D test
 
 **Claim tested (author):** "In a 3-D structure, when energy concentrates, the three spheres (the C3 triangle) push the energy out to ONE side. In physics there is no outlet, so it is annihilated. The 82 (= 81 + 1) structure carries over into fluids."
