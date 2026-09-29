@@ -1,0 +1,22 @@
+{
+  "experiment": "ESS2 — black copper inside a hot-sand cavity (front also surrounded by hot store; light enters through a small aperture)",
+  "registered": "2026-09-29",
+  "status": "pre-registered after ESS1 (whose P2 failed: the front face radiated the store's heat to the sky at night) and before running ess2_run.py",
+  "logic": "For the author's condition 'the interior is all hot, so heat does not leave easily' to hold, the absorber's front must also face hot surroundings. That is a cavity receiver: black copper lines a cavity inside the hot sand; sunlight concentrated by ratio CR enters through an aperture of area A_coll/CR; re-radiation and convection leave only through the aperture; the aperture is closed at night (shutter).",
+  "model": {
+    "collector_area_m2": 1.0, "irradiance": "same as ESS1 (800 W/m^2 peak, 8 h sine day)",
+    "optics_efficiency": 0.85,
+    "cavity_effective_absorptance": "alpha_eff = alpha / (alpha + (1 - alpha) * A_ap / A_cav) with alpha = 0.96, A_cav / A_ap = 20 (standard cavity-receiver relation)",
+    "aperture_loss": "eps_ap = 1 (an open aperture radiates as a black body) x sigma x (T^4 - T_sky^4) x A_ap + h = 10 x A_ap x (T - T_amb), daytime only; aperture shuttered at night",
+    "store": "same as ESS1: C = 1.40 MJ/K, insulation UA = C / 5.4 days",
+    "CR_values": [1, 10, 50, 200]
+  },
+  "predictions": {
+    "P1_accumulates": "for CR >= 50 the store keeps accumulating over 30 days (store T at day 30 exceeds day 5 by > 50 K)",
+    "P2_beats_ESS1": "for every CR >= 10, 30-day stored energy exceeds ESS1's best case (8.6 kWh)",
+    "P3_limit_is_insulation": "for CR >= 50 the insulation (side) loss exceeds the aperture loss over 30 days, i.e. the hot surround has moved the bottleneck off the absorber",
+    "P4_CR1_no_rescue": "at CR = 1 (no concentration, aperture = collector) the cavity does not rescue accumulation (day-30 minus day-5 < 50 K)"
+  },
+  "note": "Heat collection and storage only. Black copper still has no heat-to-electricity mechanism; the Carnot limit at the reached store temperature is reported for a separate converter.",
+  "record_either_way": true
+}
