@@ -24,7 +24,7 @@ The Configured Continuum is the fluid-dynamics volume of the VP corpus. It inher
 - Corpus grade mapping above; ε_sat ≈ 0.2 → [O]; Newtonian closure → [V mech, 2-D]; three-sphere frustration and 3-D closure [F], merger–Ekman–outflow chain [V mech].
 
 **Reproduction package changes**
-- transition_dp*.py no longer write to a hard-coded /home/claude/v3work path; validate_all.py imports resolve (5/5 PASS); verify_rotcore.py default path fixed (PASS, 2.8×10⁻¹²).
+- transition_dp*.py no longer write to a hard-coded absolute working path; validate_all.py imports resolve (5/5 PASS); verify_rotcore.py default path fixed (PASS, 2.8×10⁻¹²).
 - Author's unpublished JFM length-selection package vendored for reference under repro/fluid-dynamics/jfm_length_selection_v4 (with a note: β ≈ 0.5 is on synthetic data).
 - New experiment folders repro/fluid-dynamics/experiments/{NC1_newtonian_closure, C3E1_three_sphere_directed_ejection, ONS1_adg_vortex_gas}.
 - Three independent reviews added under reviews/fluid-dynamics/ (Navier–Stokes logic; code and data; reader).
