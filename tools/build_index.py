@@ -428,7 +428,7 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
       <div class="fact"><b>{_C.get("emergence",0)}/{NV}</b><span>emerge from measured <i class="lc">γ</i></span></div>
       <div class="fact"><b>0</b><span>fitted coefficients (inputs are measured anchors or declared sizes)</span></div>
     </div>
-    <p class="meta">Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> · independent researcher · every volume an independent Zenodo DOI · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap</a></p>
+    <p class="meta">Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID 0009-0002-7535-8245</a> · independent researcher · every volume an independent Zenodo DOI · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap</a> · <a href="/claims-ledger/">claims ledger</a></p>
   </div>
 </section>
 
@@ -527,7 +527,7 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
       <h4>Jamming Physics</h4>
       <p>The vacuum as a jammed elastic solid: one measured substrate and one bistable switch, projected across {NV} open-access volumes from physics to disease.</p>
       <p>Young Jae Lee · <a href="https://orcid.org/0009-0002-7535-8245" rel="noopener">ORCID</a> · CC BY 4.0</p>
-      <p><a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a></p>
+      <p><a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a> · <a href="/claims-ledger/">claims ledger</a></p>
     </div>
     <div class="foot-dois">
       <h4>All {NV} volumes · permanent DOIs</h4>

@@ -1,0 +1,21 @@
+{
+ "experiment": "WB1 - Gaia wide-binary test of the cosmology volume's low-acceleration law a = gN*nu(gN/a0) with a0 = c*H0/(2*pi)",
+ "registered": "2026-09-29",
+ "status": "pre-registered; predictions computed (wb1_predict.py -> PREDICTIONS.json); NOT run on data: no data access from this environment (Gaia archive, CDS, Zenodo, arXiv unreachable)",
+ "why_discriminating": "Newtonian gravity predicts no velocity boost at any separation; the volume's law predicts a boost that grows once gN < a0 (s > ~7 kAU for 1.5 Msun). The two differ in an outcome that can be measured.",
+ "declared_gap_in_the_theory": "The volume states the law with the internal field only; it states nothing about an external (Galactic) field. Two variants are therefore registered and neither is chosen after seeing data: H_int (internal field only) and H_ext (Galactic field 2.06 a0 added inside nu; a crude bound, not a full external-field calculation).",
+ "hypotheses": {
+  "H_N": "Newton: sky-projected velocity / Newtonian circular velocity distribution independent of separation.",
+  "H_int": "velocity boost sqrt(nu(gN/a0)): 1.09 at 5 kAU, 1.29 at 10 kAU, 1.64 at 20 kAU (H0 = 67.4)",
+  "H_ext": "velocity boost bounded by ~1.05 at 5 kAU and ~1.10-1.14 beyond 10 kAU"
+ },
+ "data": "Gaia DR3 wide-binary sample (El-Badry, Rix & Heintz 2021 catalogue, R_chance_align < 0.01), distance < 200 pc, relative parallax and proper-motion errors as in Chae 2023 / Banik et al. 2024; masses from the absolute G magnitude via a declared main-sequence relation.",
+ "observable": "v_tilde = v_proj / sqrt(G M / s_proj), binned in s_proj: [1-2], [2-5], [5-10], [10-20], [20-30] kAU; Newtonian reference taken from the 1-2 kAU bin (gN >> a0), eccentricity distribution declared a priori (thermal-to-superthermal family, alpha in [1.0, 1.4], marginalised).",
+ "decision_rule": {
+  "H_int_rejected": "median v_tilde ratio (10-30 kAU vs 1-2 kAU) < 1.15 at >5 sigma",
+  "H_N_rejected": "same ratio > 1.05 at >5 sigma after contamination (triples, chance alignment) modelling",
+  "inconclusive": "otherwise; recorded as such"
+ },
+ "known_literature_state": "Chae 2023 (ApJ 952, 128) reports a boost consistent with MOND-with-EFE; Banik et al. 2024 (MNRAS 527, 4573) report Newton preferred at high significance. The disagreement is in sample cuts and contamination modelling, so an independent pre-registered analysis has value either way.",
+ "record_either_way": true
+}
