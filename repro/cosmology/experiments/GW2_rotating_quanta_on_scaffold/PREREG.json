@@ -1,0 +1,23 @@
+{
+  "experiment": "GW2 — rotating quanta carried on the VP scaffold: speed, transparency of quanta-empty regions, polarization content",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running gw2_run.py; no exploratory run was made",
+  "principle": "Everything comes from the lattice. VP (the medium) is never empty and carries c^2 = B/rho; quanta (rotating units) ride on it and may be absent. Observation first: gravitational waves travel at c and are tensor-polarized (+, x); light is transverse with two polarizations.",
+  "model": {
+    "reduction": "3-D reduced to the ray (x) plus a transverse observer ring; allowed by the corpus rule that excessive computation may be reduced",
+    "scaffold": "1-D chain along the ray, mass m, spring k, spacing a (m=k=a=1, so c_L=1). Always full (VP).",
+    "quanta": "rigid rotors spinning about the ray axis at occupied sites, inertia I, coupled to the local scaffold strain eps_n by V = 1/2 kappa (theta_n - g eps_n)^2. Occupancy mask: a gap of empty sites in mid-chain.",
+    "lagrangian": "T = sum 1/2 m udot^2 + sum_occ 1/2 I thetadot^2 ; V = sum 1/2 k eps^2 + sum_occ 1/2 kappa (theta - g eps)^2 ; full two-way coupling (the rotors load the scaffold)",
+    "multipoles": "each quantum carries a body-fixed transverse dipole (helicity-1 test) or a traceless quadrupole (helicity-2 test); a ring of M test points around the ray reads their field change"
+  },
+  "setup": {"N": 6000, "pulse": "Gaussian displacement, width w=20 a, launched right-moving from rest (d'Alembert)", "gap": "sites 3000-3599 empty of quanta", "g": 1.0, "I": 1.0,
+            "regimes": {"slaved": "rotor frequency sqrt(kappa/I) = 10 x pulse frequency c_L/w", "heavy": "sqrt(kappa/I) = 1 x pulse frequency"},
+            "probes": "sites 1500, 2500 (before gap), 3300 (in gap: scaffold only), 4200, 5200 (after gap)"},
+  "predictions": {
+    "P1_c_maintained": "scaffold strain-peak speed is c_L within 1% before, inside and after the quanta-empty gap (slaved regime)",
+    "P2_carried": "slaved regime: the rotation pattern theta travels at c_L within 1% before the gap and reappears after the gap on schedule (arrival-time speed within 1% of c_L)",
+    "P3_condition": "heavy regime: the rotation pattern lags or disperses, speed deviating from c_L by more than 1% (carrying requires fast internal rotation)",
+    "P4_polarization": "ring readout: quadrupole quanta give monopole (breathing) fraction < 1e-10 and quadrupole fraction > 0.99, with two independent states 45 degrees apart (+, x); dipole quanta give a helicity-1 pattern with two states 90 degrees apart"
+  },
+  "record_either_way": true
+}
