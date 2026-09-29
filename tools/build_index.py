@@ -215,6 +215,26 @@ def doi_index():
 tiers_html='\n'.join(tier_block(t) for t in [1,2,3,4,5,6,7,8])
 
 # ----------------------------- PAGE -----------------------------
+
+# ---- Recent updates (generated from registry/lineage.jsonl; newest first) ----
+import html as _h
+_VOL_IDS=[v['id'] for v in json.load(open(_find('registry/vp.manifest.json','vp.manifest.json')))['volumes']]
+def _updates(n=14):
+    rows=[]
+    for line in open(_find('registry/lineage.jsonl','lineage.jsonl'),encoding='utf-8'):
+        e=json.loads(line); ch=(e.get('changes') or [''])[0]
+        if not ch or ch.startswith(('registry:','genesis','link audit','homepage regenerated')): continue
+        vid=next((v for v in sorted(_VOL_IDS,key=len,reverse=True) if ch.lower().startswith(v.replace('_',' ')) or ch.lower().startswith(v)),None)
+        txt=ch if len(ch)<=240 else ch[:237].rsplit(' ',1)[0]+' …'
+        rows.append((e['built_at'][:10],vid,txt))
+    rows=rows[::-1][:n]
+    li=[]
+    for d,vid,t in rows:
+        tag=f'<a href="/{vid}/">{vid}</a>' if vid else 'corpus'
+        li.append(f'      <li><span class="upd-date">{d}</span> <span class="upd-vol">{tag}</span> — {_h.escape(t)}</li>')
+    return "\n".join(li)
+UPDATES=_updates()
+
 PAGE = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -362,7 +382,7 @@ section.band h2{{font-family:var(--serif);font-weight:600;font-size:clamp(1.45re
 .honesty .inner{{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}}
 @media(max-width:760px){{.honesty .inner{{grid-template-columns:1fr;gap:22px}}}}
 
-/* footer */
+/* updates */\n.upd-list{{list-style:none;padding:0;margin:14px 0 0}}.upd-list li{{padding:7px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:14.5px;line-height:1.45}}.upd-date{{font-family:var(--mono,monospace);color:#6b7480;margin-right:6px}}.upd-vol a{{font-weight:600}}\n/* footer */
 footer.site-foot{{background:#101418;color:#c5cbd1;padding:48px 0 40px;font-size:14px}}
 footer.site-foot a{{color:#9cc6e6}}
 footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#7f8893;margin:0 0 14px;font-weight:600}}
@@ -476,6 +496,16 @@ footer.site-foot h4{{font-family:var(--sans);font-size:12.5px;letter-spacing:.1e
       <div class="col"><h3>Honest grading</h3><p>Each claim is graded in the open: <span class="mono" style="color:var(--g-f)">[F]</span> forced, <span class="mono" style="color:var(--g-v)">[V]</span> verified, <span class="mono">[L]</span> anchored, <span class="mono" style="color:var(--g-o)">[O]</span> open — every <span class="mono">[O]</span> states its specific obstacle.</p></div>
       <div class="col"><h3>Magnitude firewall</h3><p>For disease and therapy the framework gives <strong>direction only</strong>. Clinical magnitudes are deliberately withheld <span class="mono">[O]</span> — a corrective lever, never a dose.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="band updates" id="updates">
+  <div class="wrap inner">
+    <h2>Recent updates</h2>
+    <p class="prose">Generated from the corpus lineage (<code>registry/lineage.jsonl</code>). Each change is pre-registered or recorded with its verdict, and failures are kept. Full chain: <a href="https://github.com/rego093-sketch/jamming-physics/blob/main/registry/lineage.jsonl">lineage.jsonl</a>.</p>
+    <ul class="upd-list">
+{UPDATES}
+    </ul>
   </div>
 </section>
 
