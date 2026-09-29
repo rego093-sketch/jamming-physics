@@ -1,0 +1,16 @@
+{
+  "experiment": "EL3 — why did a0/(D/4pi) come out at 137 to 1e-5 in EL2? Audit of the experimental conditions",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running el3_run.py",
+  "suspected_conditions": {
+    "C1_anchor": "D_anch is locked to 2 lambda_C (s13); then D/4pi = reduced Compton length exactly.",
+    "C2_a0_input": "the a0 used in EL2 (52.918 pm) is the CODATA Bohr radius, which is computed from alpha (a0 = reduced lambda_C / alpha), not an independent size measurement.",
+    "C3": "if C1 and C2 hold, a0/(D/4pi) = 1/alpha identically and the 1e-5 agreement is guaranteed (circular), not evidence."
+  },
+  "predictions": {
+    "P1_circular": "with the exact CODATA a0 and D_anch, a0/(D/4pi) reproduces CODATA 1/alpha to < 1e-8; the EL2 residual 1.1e-5 is fully explained by input rounding plus the reduced-mass term (< 2e-5 combined)",
+    "P2_independent_D": "replacing D_anch by the lattice route D = 2 pi lambda_ref / A (A from the jamming run, 7.79e5 [6.95, 8.53]e5; circulation-length median 4.96 pm) gives 1/alpha only to about +-10%: the interval contains 137 but its centre is not 137 within 1%",
+    "P3_information": "the non-circular content equals test E2 (A links the light wavelength to 2 lambda_C); the value 137 itself is carried by the observed hydrogen size, so VP has not produced 137. The VP-new quantity is the hydrogen radius in quanta, a0/D = 1/(4 pi alpha) = 10.905, which only a dynamical (full-simulation) count can predict"
+  },
+  "record_either_way": true
+}
