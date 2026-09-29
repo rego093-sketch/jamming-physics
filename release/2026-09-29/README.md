@@ -8,7 +8,7 @@ All 32 volumes changed since their published versions: every content hash differ
 | `descriptions/<id>.md` | The new description (English). |
 | `descriptions_html/<id>.html` | The same text as HTML, to paste into Zenodo's description box. |
 | `TITLES.md` | Titles stay unchanged on Zenodo. The hub titles listed there are for reference only. |
-| `zips/<id>_2026-09-29.zip` | The file to upload. Not committed; rebuild with `python3 tools/build_release.py 2026-09-29`. |
+| `zips/<id>_2026-09-29.zip` | The file to upload. disease_wp has three files: the main ZIP plus `_rawdata1.zip` and `_rawdata2.zip` (its raw source data). Upload all three to the same record; the main ZIP's MANIFEST.sha256 lists every file of all three. Not committed; rebuild with `python3 tools/build_release.py 2026-09-29`. |
 | `CHECKSUMS.txt` | SHA-256 of each ZIP, to check the upload. The build is deterministic. |
 | `priority/<id>.json` | Severity record behind PRIORITY.md. |
 

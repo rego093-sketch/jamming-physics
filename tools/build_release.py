@@ -9,11 +9,13 @@ description box, also written to release/<tag>/descriptions_html/), LEDGER.json 
 CORPUS_GUIDE.md (AGENTS.md) and MANIFEST.sha256. ZIPs are deterministic (sorted entries,
 fixed timestamp) and go to release/<tag>/zips/ (not committed); CHECKSUMS.txt is committed.
 """
-import hashlib, json, os, sys, zipfile
+import hashlib, json, os, sys, zipfile, zlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {"__pycache__", "_build", ".pytest_cache"}
 STAMP = (2026, 1, 1, 0, 0, 0)
+SPLIT_BYTES = 60 * 1024 * 1024   # uncompressed size above which raw data goes in its own ZIPs
+CHUNK_BYTES = 25 * 1024 * 1024   # compressed size per raw-data ZIP (delivery limit 30 MiB)
 
 
 def files_under(base):
@@ -99,14 +101,29 @@ def main():
         entries["CORPUS_GUIDE.md"] = open(os.path.join(ROOT, "AGENTS.md"), "rb").read()
         mf = "".join(f"{hashlib.sha256(b).hexdigest()}  {p}\n" for p, b in sorted(entries.items()))
         entries["MANIFEST.sha256"] = mf.encode()
-        name = f"{vid}_{tag}.zip"
-        path = os.path.join(rel, "zips", name)
-        with zipfile.ZipFile(path, "w") as z:
-            for p in sorted(entries):
-                add(z, f"{vid}_{tag}/{p}", entries[p])
-        h = hashlib.sha256(open(path, "rb").read()).hexdigest()
-        sums.append(f"{h}  {name}  {os.path.getsize(path)} bytes  {len(entries)} files")
-        print(sums[-1])
+        # A package over SPLIT_BYTES puts repro/<id>/data/raw/ in a second ZIP; MANIFEST.sha256
+        # in the main ZIP still lists every file of both, so completeness stays checkable.
+        raw = f"repro/{vid}/data/raw/"
+        parts = {f"{vid}_{tag}.zip": sorted(entries)}
+        if sum(len(b) for b in entries.values()) > SPLIT_BYTES and any(p.startswith(raw) for p in entries):
+            parts = {f"{vid}_{tag}.zip": sorted(p for p in entries if not p.startswith(raw))}
+            chunks, cur, size = [], [], 0
+            for p in sorted(p for p in entries if p.startswith(raw)):
+                c = len(zlib.compress(entries[p]))
+                if cur and size + c > CHUNK_BYTES:
+                    chunks.append(cur); cur, size = [], 0
+                cur.append(p); size += c
+            chunks.append(cur)
+            for i, ch in enumerate(chunks, 1):
+                parts[f"{vid}_{tag}_rawdata{i}.zip"] = ch
+        for name, members in parts.items():
+            path = os.path.join(rel, "zips", name)
+            with zipfile.ZipFile(path, "w") as z:
+                for p in members:
+                    add(z, f"{vid}_{tag}/{p}", entries[p])
+            h = hashlib.sha256(open(path, "rb").read()).hexdigest()
+            sums.append(f"{h}  {name}  {os.path.getsize(path)} bytes  {len(members)} files")
+            print(sums[-1])
     if len(want) == len(man["volumes"]):
         open(os.path.join(rel, "CHECKSUMS.txt"), "w").write("\n".join(sums) + "\n")
 
