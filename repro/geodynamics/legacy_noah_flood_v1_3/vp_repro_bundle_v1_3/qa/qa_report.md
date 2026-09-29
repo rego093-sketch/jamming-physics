@@ -1,0 +1,54 @@
+# QA Report (Auto)
+
+- generated_utc: 2025-12-30T01:51:48.712401Z
+- files_checked: 45
+- PASS: 45
+- FAIL: 0
+
+## File-level results
+
+- PASS - `data/full/datasets_v1_2/A_coastline/coast_line.csv`
+- PASS - `data/full/datasets_v1_2/B_isotopes/leafwax_dD_master.csv`
+- PASS - `data/full/datasets_v1_2/C_coal_geochem/raw_data.csv`
+- PASS - `data/full/datasets_v1_2/DINO_THERM/bone_histology.csv`
+- PASS - `data/full/datasets_v1_2/DINO_THERM/cranial_CT_metrics.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/aDNA_QC_summary.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/contamination_checks.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/coverage_match_report.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/human_MC1R_directionality_summary.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/human_pigment_freq_by_region_time.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/human_pigment_variants.tsv`
+- PASS - `data/full/datasets_v1_2/PF_pack/mammoth_LOF_burden_tests.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/mammoth_elephant_diff_coding.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/mammoth_gene_variants.tsv`
+- PASS - `data/full/datasets_v1_2/PF_pack/sedadna_angiosperm_fraction.csv`
+- PASS - `data/full/datasets_v1_2/PF_pack/sedadna_metadata_min.csv`
+- PASS - `data/full/datasets_v1_2/PLANT_E1E2/leaf_cuticle_SI.csv`
+- PASS - `data/full/datasets_v1_2/PLANT_E1E2/tree_rings.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/Nile_early_strata.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/bulk_density_summary.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/compaction_curve.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/global_delta_CI_100yr.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/nile_core_map.csv`
+- PASS - `data/full/datasets_v1_2/R10_Nile/seismic_profile_summary.csv`
+- PASS - `data/full/datasets_v1_2/R6_IntCal_Marine/IntCal20_Marine20_full_raw.csv`
+- PASS - `data/full/datasets_v1_2/R6_IntCal_Marine/IntCal20_NH_raw.csv`
+- PASS - `data/full/datasets_v1_2/R6_IntCal_Marine/Marine20_raw.csv`
+- PASS - `data/full/datasets_v1_2/R7_DeltaR_Med/DeltaR_intake.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/RSL_intake.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Australia1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Crete1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Cyprus1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Greece1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Israel1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Japan1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/NewZealand1.csv`
+- PASS - `data/full/datasets_v1_2/R8_RSL/sites_plus/Turkey1.csv`
+- PASS - `data/full/datasets_v1_2/R9_SPD/C14_intake.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R10_bulk_density_summary.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R10_compaction_curve.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R10_seismic_summary.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R6_IntCal_Marine_combined.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R7_DeltaR_Med_repro.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R8_RSL_repro.csv`
+- PASS - `data/mini/pf_whitepaper_v1_3_minidata_data/R9_SPD_repro.csv`

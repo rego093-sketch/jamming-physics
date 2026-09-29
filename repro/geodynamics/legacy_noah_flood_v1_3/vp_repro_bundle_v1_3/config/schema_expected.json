@@ -1,0 +1,913 @@
+{
+  "generated_utc": "2025-12-30T01:34:06.990419Z",
+  "mini": {
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R6_IntCal_Marine_combined.csv": {
+      "rows": 4,
+      "cols": 4,
+      "columns": [
+        "calBP",
+        "C14_age",
+        "C14_sigma",
+        "curve_id"
+      ],
+      "types": {
+        "calBP": "int",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "curve_id": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R7_DeltaR_Med_repro.csv": {
+      "rows": 3,
+      "cols": 9,
+      "columns": [
+        "region",
+        "site",
+        "layer",
+        "marine_id",
+        "terr_id",
+        "deltaR",
+        "deltaR_sigma",
+        "window_ka",
+        "QC_flag"
+      ],
+      "types": {
+        "region": "str",
+        "site": "str",
+        "layer": "str",
+        "marine_id": "str",
+        "terr_id": "str",
+        "deltaR": "int",
+        "deltaR_sigma": "int",
+        "window_ka": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R8_RSL_repro.csv": {
+      "rows": 2,
+      "cols": 11,
+      "columns": [
+        "basin",
+        "site",
+        "datum",
+        "proxy",
+        "age_model",
+        "Age_BP",
+        "RSL_m",
+        "RSL_sigma",
+        "tectonic_corr",
+        "GIA_model",
+        "QC_flag"
+      ],
+      "types": {
+        "basin": "str",
+        "site": "str",
+        "datum": "str",
+        "proxy": "str",
+        "age_model": "str",
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "RSL_sigma": "float",
+        "tectonic_corr": "float",
+        "GIA_model": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R9_SPD_repro.csv": {
+      "rows": 2,
+      "cols": 10,
+      "columns": [
+        "lab_id",
+        "material",
+        "context",
+        "lat",
+        "lon",
+        "C14_age",
+        "C14_sigma",
+        "delta13C",
+        "curve",
+        "provenance"
+      ],
+      "types": {
+        "lab_id": "str",
+        "material": "str",
+        "context": "str",
+        "lat": "float",
+        "lon": "float",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "delta13C": "float",
+        "curve": "str",
+        "provenance": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R10_seismic_summary.csv": {
+      "rows": 1,
+      "cols": 8,
+      "columns": [
+        "line_id",
+        "lat",
+        "lon",
+        "thickness_m",
+        "thickness_sigma_m",
+        "facies",
+        "method",
+        "QC_flag"
+      ],
+      "types": {
+        "line_id": "str",
+        "lat": "float",
+        "lon": "float",
+        "thickness_m": "float",
+        "thickness_sigma_m": "float",
+        "facies": "str",
+        "method": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R10_compaction_curve.csv": {
+      "rows": 1,
+      "cols": 6,
+      "columns": [
+        "phi0",
+        "c",
+        "z_min_m",
+        "z_max_m",
+        "reference",
+        "QC_flag"
+      ],
+      "types": {
+        "phi0": "float",
+        "c": "float",
+        "z_min_m": "int",
+        "z_max_m": "int",
+        "reference": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/mini/pf_whitepaper_v1_3_minidata_data/R10_bulk_density_summary.csv": {
+      "rows": 1,
+      "cols": 6,
+      "columns": [
+        "Q1",
+        "Median",
+        "Q3",
+        "method",
+        "n",
+        "QC_flag"
+      ],
+      "types": {
+        "Q1": "float",
+        "Median": "float",
+        "Q3": "float",
+        "method": "str",
+        "n": "int",
+        "QC_flag": "str"
+      }
+    }
+  },
+  "full": {
+    "data/full/datasets_v1_2/manifest.csv": {
+      "rows": 38,
+      "cols": 3,
+      "columns": [
+        "path",
+        "sha256",
+        "bytes"
+      ],
+      "types": {
+        "path": "str",
+        "sha256": "str",
+        "bytes": "int"
+      }
+    },
+    "data/full/datasets_v1_2/A_coastline/coast_line.csv": {
+      "rows": 4,
+      "cols": 5,
+      "columns": [
+        "id",
+        "age_Ma",
+        "shoreline_type",
+        "quality_flag",
+        "coastline_buffer_km"
+      ],
+      "types": {
+        "id": "str",
+        "age_Ma": "int",
+        "shoreline_type": "str",
+        "quality_flag": "int",
+        "coastline_buffer_km": "float"
+      }
+    },
+    "data/full/datasets_v1_2/B_isotopes/leafwax_dD_master.csv": {
+      "rows": 4,
+      "cols": 11,
+      "columns": [
+        "site",
+        "formation",
+        "member",
+        "lat_dd",
+        "paleolat_dd",
+        "age_model",
+        "sample_type",
+        "dD_C29_permil_VSMOW",
+        "dD_sigma",
+        "d18O_carb_permil_VPDB",
+        "qc_flag"
+      ],
+      "types": {
+        "site": "str",
+        "formation": "str",
+        "member": "str",
+        "lat_dd": "float",
+        "paleolat_dd": "float",
+        "age_model": "str",
+        "sample_type": "str",
+        "dD_C29_permil_VSMOW": "float",
+        "dD_sigma": "float",
+        "d18O_carb_permil_VPDB": "float",
+        "qc_flag": "int"
+      }
+    },
+    "data/full/datasets_v1_2/C_coal_geochem/raw_data.csv": {
+      "rows": 4,
+      "cols": 10,
+      "columns": [
+        "basin",
+        "site",
+        "core_id",
+        "depth_m",
+        "seam_id",
+        "TOC_wt_pct",
+        "Tmax_C",
+        "HI_mgHCgTOC",
+        "VCr_ratio",
+        "qc_flag"
+      ],
+      "types": {
+        "basin": "str",
+        "site": "str",
+        "core_id": "str",
+        "depth_m": "float",
+        "seam_id": "str",
+        "TOC_wt_pct": "float",
+        "Tmax_C": "int",
+        "HI_mgHCgTOC": "int",
+        "VCr_ratio": "float",
+        "qc_flag": "int"
+      }
+    },
+    "data/full/datasets_v1_2/R6_IntCal_Marine/IntCal20_Marine20_full_raw.csv": {
+      "rows": 8,
+      "cols": 4,
+      "columns": [
+        "calBP",
+        "C14_age",
+        "C14_sigma",
+        "curve_id"
+      ],
+      "types": {
+        "calBP": "int",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "curve_id": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R6_IntCal_Marine/IntCal20_NH_raw.csv": {
+      "rows": 4,
+      "cols": 4,
+      "columns": [
+        "calBP",
+        "C14_age",
+        "C14_sigma",
+        "curve_id"
+      ],
+      "types": {
+        "calBP": "int",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "curve_id": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R6_IntCal_Marine/Marine20_raw.csv": {
+      "rows": 4,
+      "cols": 4,
+      "columns": [
+        "calBP",
+        "C14_age",
+        "C14_sigma",
+        "curve_id"
+      ],
+      "types": {
+        "calBP": "int",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "curve_id": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R7_DeltaR_Med/DeltaR_intake.csv": {
+      "rows": 3,
+      "cols": 7,
+      "columns": [
+        "region",
+        "site",
+        "layer",
+        "deltaR",
+        "deltaR_sigma",
+        "window_ka",
+        "QC_flag"
+      ],
+      "types": {
+        "region": "str",
+        "site": "str",
+        "layer": "str",
+        "deltaR": "int",
+        "deltaR_sigma": "int",
+        "window_ka": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/RSL_intake.csv": {
+      "rows": 4,
+      "cols": 8,
+      "columns": [
+        "basin",
+        "site",
+        "datum",
+        "Age_BP",
+        "RSL_m",
+        "tectonic_corr",
+        "GIA_model",
+        "QC_flag"
+      ],
+      "types": {
+        "basin": "str",
+        "site": "str",
+        "datum": "str",
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "tectonic_corr": "float",
+        "GIA_model": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Japan1.csv": {
+      "rows": 9,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Israel1.csv": {
+      "rows": 8,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/NewZealand1.csv": {
+      "rows": 10,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Crete1.csv": {
+      "rows": 9,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Turkey1.csv": {
+      "rows": 7,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Australia1.csv": {
+      "rows": 9,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Greece1.csv": {
+      "rows": 9,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R8_RSL/sites_plus/Cyprus1.csv": {
+      "rows": 8,
+      "cols": 4,
+      "columns": [
+        "Age_BP",
+        "RSL_m",
+        "Uncertainty_m",
+        "Note"
+      ],
+      "types": {
+        "Age_BP": "int",
+        "RSL_m": "float",
+        "Uncertainty_m": "float",
+        "Note": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R9_SPD/C14_intake.csv": {
+      "rows": 2,
+      "cols": 8,
+      "columns": [
+        "lab_id",
+        "material",
+        "context",
+        "lat",
+        "lon",
+        "C14_age",
+        "C14_sigma",
+        "QC_flag"
+      ],
+      "types": {
+        "lab_id": "str",
+        "material": "str",
+        "context": "str",
+        "lat": "float",
+        "lon": "float",
+        "C14_age": "int",
+        "C14_sigma": "int",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/seismic_profile_summary.csv": {
+      "rows": 2,
+      "cols": 8,
+      "columns": [
+        "line_id",
+        "lat",
+        "lon",
+        "thickness_m",
+        "thickness_sigma_m",
+        "facies",
+        "method",
+        "QC_flag"
+      ],
+      "types": {
+        "line_id": "str",
+        "lat": "float",
+        "lon": "float",
+        "thickness_m": "float",
+        "thickness_sigma_m": "float",
+        "facies": "str",
+        "method": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/compaction_curve.csv": {
+      "rows": 1,
+      "cols": 6,
+      "columns": [
+        "phi0",
+        "c",
+        "z_min_m",
+        "z_max_m",
+        "reference",
+        "QC_flag"
+      ],
+      "types": {
+        "phi0": "float",
+        "c": "float",
+        "z_min_m": "int",
+        "z_max_m": "int",
+        "reference": "str",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/bulk_density_summary.csv": {
+      "rows": 1,
+      "cols": 6,
+      "columns": [
+        "Q1",
+        "Median",
+        "Q3",
+        "method",
+        "n",
+        "QC_flag"
+      ],
+      "types": {
+        "Q1": "float",
+        "Median": "float",
+        "Q3": "float",
+        "method": "str",
+        "n": "int",
+        "QC_flag": "str"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/global_delta_CI_100yr.csv": {
+      "rows": 8,
+      "cols": 3,
+      "columns": [
+        "Years_After_Event_t0",
+        "Global_Discharge_Gt_per_yr_Lower_CI",
+        "Global_Discharge_Gt_per_yr_Upper_CI"
+      ],
+      "types": {
+        "Years_After_Event_t0": "int",
+        "Global_Discharge_Gt_per_yr_Lower_CI": "int",
+        "Global_Discharge_Gt_per_yr_Upper_CI": "int"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/nile_core_map.csv": {
+      "rows": 3,
+      "cols": 5,
+      "columns": [
+        "Years_After_Event_t0",
+        "Core_ID",
+        "Deposited_Thickness_m",
+        "Thickness_Uncertainty_m",
+        "Estimated_Areal_Extent_km2"
+      ],
+      "types": {
+        "Years_After_Event_t0": "int",
+        "Core_ID": "str",
+        "Deposited_Thickness_m": "float",
+        "Thickness_Uncertainty_m": "float",
+        "Estimated_Areal_Extent_km2": "int"
+      }
+    },
+    "data/full/datasets_v1_2/R10_Nile/Nile_early_strata.csv": {
+      "rows": 6,
+      "cols": 2,
+      "columns": [
+        "Years_After_Event_t0",
+        "Deposited_Thickness_m"
+      ],
+      "types": {
+        "Years_After_Event_t0": "int",
+        "Deposited_Thickness_m": "float"
+      }
+    },
+    "data/full/datasets_v1_2/DINO_THERM/bone_histology.csv": {
+      "rows": 8,
+      "cols": 6,
+      "columns": [
+        "Specimen_ID",
+        "Genus",
+        "Location",
+        "Bone_Element",
+        "Primary_Tissue_Type",
+        "LAGs_Present"
+      ],
+      "types": {
+        "Specimen_ID": "str",
+        "Genus": "str",
+        "Location": "str",
+        "Bone_Element": "str",
+        "Primary_Tissue_Type": "str",
+        "LAGs_Present": "int"
+      }
+    },
+    "data/full/datasets_v1_2/DINO_THERM/cranial_CT_metrics.csv": {
+      "rows": 4,
+      "cols": 5,
+      "columns": [
+        "Specimen_ID",
+        "Genus",
+        "Cranial_Feature",
+        "Internal_Surface_Area_m2",
+        "Functional_Interpretation"
+      ],
+      "types": {
+        "Specimen_ID": "str",
+        "Genus": "str",
+        "Cranial_Feature": "str",
+        "Internal_Surface_Area_m2": "float",
+        "Functional_Interpretation": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PLANT_E1E2/leaf_cuticle_SI.csv": {
+      "rows": 5,
+      "cols": 6,
+      "columns": [
+        "\ud45c\ubcf8_ID",
+        "\uc18d (\uc720\uc0ac\uc885)",
+        "\uc704\uce58",
+        "\uae30\uacf5_\uc9c0\uc218_%",
+        "\uc78e_\uac00\uc7a5\uc790\ub9ac_\uc720\ud615",
+        "\ubb3c\ubc29\uc6b8_\ub05d_\uc874\uc7ac"
+      ],
+      "types": {
+        "\ud45c\ubcf8_ID": "str",
+        "\uc18d (\uc720\uc0ac\uc885)": "str",
+        "\uc704\uce58": "str",
+        "\uae30\uacf5_\uc9c0\uc218_%": "float",
+        "\uc78e_\uac00\uc7a5\uc790\ub9ac_\uc720\ud615": "str",
+        "\ubb3c\ubc29\uc6b8_\ub05d_\uc874\uc7ac": "int"
+      }
+    },
+    "data/full/datasets_v1_2/PLANT_E1E2/tree_rings.csv": {
+      "rows": 4,
+      "cols": 5,
+      "columns": [
+        "\ud45c\ubcf8_ID",
+        "\uc18d (\uc720\uc0ac\uc885)",
+        "\uc704\uce58",
+        "\ud3c9\uade0_\ub098\uc774\ud14c_\ud3ed_mm",
+        "\ub098\uc774\ud14c_\uacbd\uacc4_\uc815\uc758"
+      ],
+      "types": {
+        "\ud45c\ubcf8_ID": "str",
+        "\uc18d (\uc720\uc0ac\uc885)": "str",
+        "\uc704\uce58": "str",
+        "\ud3c9\uade0_\ub098\uc774\ud14c_\ud3ed_mm": "float",
+        "\ub098\uc774\ud14c_\uacbd\uacc4_\uc815\uc758": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/human_pigment_variants.tsv": {
+      "rows": 9,
+      "cols": 9,
+      "columns": [
+        "Sample_ID",
+        "Accession",
+        "Species",
+        "Site",
+        "Age_BP",
+        "rsID",
+        "Allele_1",
+        "Allele_2",
+        "DP"
+      ],
+      "types": {
+        "Sample_ID": "str",
+        "Accession": "str",
+        "Species": "str",
+        "Site": "str",
+        "Age_BP": "int",
+        "rsID": "str",
+        "Allele_1": "str",
+        "Allele_2": "str",
+        "DP": "int"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/human_pigment_freq_by_region_time.csv": {
+      "rows": 6,
+      "cols": 5,
+      "columns": [
+        "Time_Bin",
+        "Region",
+        "Allele",
+        "Frequency",
+        "Std_Error"
+      ],
+      "types": {
+        "Time_Bin": "str",
+        "Region": "str",
+        "Allele": "str",
+        "Frequency": "float",
+        "Std_Error": "float"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/human_MC1R_directionality_summary.csv": {
+      "rows": 1,
+      "cols": 5,
+      "columns": [
+        "Analysis",
+        "Metric",
+        "Coefficient",
+        "P_Value",
+        "Notes"
+      ],
+      "types": {
+        "Analysis": "str",
+        "Metric": "str",
+        "Coefficient": "float",
+        "P_Value": "float",
+        "Notes": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/mammoth_gene_variants.tsv": {
+      "rows": 6,
+      "cols": 1,
+      "columns": [
+        "Sample_ID,Species,Gene,Position,Ref_Allele,Alt_Allele,Effect,PROVEAN_Score"
+      ],
+      "types": {
+        "Sample_ID,Species,Gene,Position,Ref_Allele,Alt_Allele,Effect,PROVEAN_Score": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/mammoth_LOF_burden_tests.csv": {
+      "rows": 4,
+      "cols": 7,
+      "columns": [
+        "Gene",
+        "Group",
+        "LOF_Variant_Count",
+        "Total_Samples",
+        "P_Value",
+        "Odds_Ratio",
+        "Normalization_Rule"
+      ],
+      "types": {
+        "Gene": "str",
+        "Group": "str",
+        "LOF_Variant_Count": "int",
+        "Total_Samples": "int",
+        "P_Value": "float",
+        "Odds_Ratio": "float",
+        "Normalization_Rule": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/mammoth_elephant_diff_coding.csv": {
+      "rows": 3,
+      "cols": 6,
+      "columns": [
+        "Gene",
+        "Protein_Change",
+        "Functional_Domain",
+        "Predicted_Effect",
+        "Tool",
+        "Tool_Version"
+      ],
+      "types": {
+        "Gene": "str",
+        "Protein_Change": "str",
+        "Functional_Domain": "str",
+        "Predicted_Effect": "str",
+        "Tool": "str",
+        "Tool_Version": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/aDNA_QC_summary.csv": {
+      "rows": 5,
+      "cols": 5,
+      "columns": [
+        "Sample_ID",
+        "Species",
+        "Coverage",
+        "Damage_Rate_5prime",
+        "Fragment_Length_Mean"
+      ],
+      "types": {
+        "Sample_ID": "str",
+        "Species": "str",
+        "Coverage": "float",
+        "Damage_Rate_5prime": "float",
+        "Fragment_Length_Mean": "float"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/sedadna_angiosperm_fraction.csv": {
+      "rows": 11,
+      "cols": 9,
+      "columns": [
+        "Core_ID",
+        "Layer_ID",
+        "Age_BP",
+        "CI_Lower_BP",
+        "CI_Upper_BP",
+        "Read_Count",
+        "Angiosperm_Fraction",
+        "Bootstrap_CI_Lower",
+        "Bootstrap_CI_Upper"
+      ],
+      "types": {
+        "Core_ID": "str",
+        "Layer_ID": "str",
+        "Age_BP": "int",
+        "CI_Lower_BP": "int",
+        "CI_Upper_BP": "int",
+        "Read_Count": "int",
+        "Angiosperm_Fraction": "float",
+        "Bootstrap_CI_Lower": "float",
+        "Bootstrap_CI_Upper": "float"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/sedadna_metadata_min.csv": {
+      "rows": 3,
+      "cols": 8,
+      "columns": [
+        "Core_ID",
+        "Site",
+        "Country",
+        "Lat",
+        "Lon",
+        "Primer_Set",
+        "Reference_DB",
+        "Reference_DB_Version"
+      ],
+      "types": {
+        "Core_ID": "str",
+        "Site": "str",
+        "Country": "str",
+        "Lat": "float",
+        "Lon": "float",
+        "Primer_Set": "str",
+        "Reference_DB": "str",
+        "Reference_DB_Version": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/contamination_checks.csv": {
+      "rows": 4,
+      "cols": 6,
+      "columns": [
+        "Sample_ID",
+        "mtDNA_Contamination_Rate",
+        "mtDNA_CI",
+        "X_Chromosome_Reads",
+        "Y_Chromosome_Reads",
+        "Sex_Check_Result"
+      ],
+      "types": {
+        "Sample_ID": "str",
+        "mtDNA_Contamination_Rate": "float",
+        "mtDNA_CI": "str",
+        "X_Chromosome_Reads": "int",
+        "Y_Chromosome_Reads": "int",
+        "Sex_Check_Result": "str"
+      }
+    },
+    "data/full/datasets_v1_2/PF_pack/coverage_match_report.csv": {
+      "rows": 2,
+      "cols": 6,
+      "columns": [
+        "Comparison_Group",
+        "Subsampling_Strategy",
+        "Target_Coverage",
+        "Final_Mean_Coverage_Group1",
+        "Final_Mean_Coverage_Group2",
+        "Notes"
+      ],
+      "types": {
+        "Comparison_Group": "str",
+        "Subsampling_Strategy": "str",
+        "Target_Coverage": "int",
+        "Final_Mean_Coverage_Group1": "float",
+        "Final_Mean_Coverage_Group2": "float",
+        "Notes": "str"
+      }
+    }
+  }
+}

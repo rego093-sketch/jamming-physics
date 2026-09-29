@@ -1,0 +1,21 @@
+hypotheses:
+  - id: H1_Chasm
+    metric: "C_A cluster separation (p-value)"
+    threshold: 0.001
+    pass: "p < 0.001"
+    fail: "p >= 0.001"
+  - id: H2_NoGo
+    metric: "Trans-chasm simulation success rate"
+    threshold: 1e-6
+    pass: "rate < 1e-6"
+    fail: "rate >= 1e-6"
+  - id: H3_Classifier
+    metric: "J-event vs Micro-drift F1-score"
+    threshold: 0.90
+    pass: "F1 > 0.90"
+    fail: "F1 <= 0.90"
+  - id: H4_Superiority
+    metric: "Bayes Factor (U-J vs Standard)"
+    threshold: 100
+    pass: "BF > 100"
+    fail: "BF <= 100"

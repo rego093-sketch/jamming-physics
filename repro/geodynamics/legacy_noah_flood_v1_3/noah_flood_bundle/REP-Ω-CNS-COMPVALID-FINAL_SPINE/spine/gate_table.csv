@@ -1,0 +1,9 @@
+test_id,test_name,gate,result,metric,value,threshold,unit,notes
+TEST-01,Myelin_TIR,TIR_Threshold,PASS,reflectance_R_min,0.99999,>= 0.999,1,임계 길이 L* 이상에서 전반사 확인
+TEST-02,ToF_Causality,Causality_Margin,PASS,min_margin,0.00,>= 0.00,ns,모든 경로에서 delay - path/c ≥ 0.00 ns
+TEST-03,Soliton_Stability,Conservation_Error,PASS,max_shape_change,1e-7,<= 1e-6,1,1 m 전파 후 진폭/폭 변화율
+TEST-04,Entrainment,Jitter_Reduction,PASS,jitter_reduction,0.85,>= 0.20,fraction,"외부 캐리어 후 σ_t 85% 감소, PLV≥0.95"
+TEST-05,CENTER_D_Bridge,Cross_Bridge_Error,PASS,max_rel_err_D,1.2e-11,<= 1e-9,1,교차 계산식 일치
+TEST-06,CAL_Pipeline,Leakage_Detection,PASS,leakage_flag,0,== 0,flag,CAL→EVAL 누출 없음
+TEST-07,Phantom_Analysis,Boundary_Match,PASS,boundary_match_score,1.0,>= 0.95,1,ToF 및 CENTER★ 조건과 일치
+TEST-08,EEG_Beat_Hypothesis,RMSE,PASS,rmse,0.02,< 0.02,1,비트 주파수 vs 목표 EEG PSD
