@@ -38,7 +38,7 @@ Counts: interpretation 2 · identity 2 · independent-prediction 1 (5 rows).
 ## Open items
 - Developmental order, size and timing of the skin and its appendages: building is [O] (dna §RB).
 - The melanoma magnitude is not claimed. Only the direction is robust; absolute risk and every clinical magnitude are [O] under the magnitude firewall.
-- The volume carries the 91 open [O] items recorded in the manifest, each with its obstacle stated on the pages.
+- The manifest counts 91 [O] markers across the volume's pages (open items as stated there).
 
 ## Reproduction
 The ZIP contains `docs/integumentary/` (the published HTML pages), `repro/integumentary/` (engine, oncology kernel, inherited substrate, reports, whitepaper), `LEDGER.json` (this volume's claims-ledger rows) and `MANIFEST.sha256` (file hashes).
