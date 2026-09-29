@@ -32,6 +32,15 @@ import os, sys, json, hashlib, subprocess, math
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG  = json.load(open(os.path.join(ROOT, "seed.json"), encoding="utf-8"))
 sys.path.insert(0, os.path.join(ROOT, "inherited"))   # import the inherited canonical grammar + reading
+# monorepo layout: published pages live at <repo>/docs/, not repro/nose/docs/ — resolve "docs/…" there
+REPO = os.path.dirname(os.path.dirname(ROOT))
+
+
+def _resolve(rel):
+    p = os.path.join(ROOT, rel)
+    if not os.path.exists(p) and rel.startswith("docs/") and not os.path.isdir(os.path.join(ROOT, "docs")):
+        p = os.path.join(REPO, rel)
+    return p
 
 
 def sha(path):
@@ -102,7 +111,7 @@ def main():
 
     # [4] NO-OMISSION ------------------------------------------------------------------
     print("\n[4] no-omission (누락금지) — every promised artifact present:")
-    miss = [f for f in CFG["completeness"] if not os.path.exists(os.path.join(ROOT, f))]
+    miss = [f for f in CFG["completeness"] if not os.path.exists(_resolve(f))]
     ok = (not miss); ok_all &= ok
     if miss:
         for f in miss: print(f"    [FAIL] MISSING: {f}")
