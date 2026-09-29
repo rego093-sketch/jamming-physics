@@ -19,19 +19,19 @@
 <main>
 <h1>Carcinogen Dose–Response (Kramers)</h1>
 
-<p class="answer">A carcinogen lowers the R19 barrier, raising the malignant crossing rate. This volume does not assume the Kramers law — it simulates the stochastic R19 field and counts crossings, and both a convex super-linear dose–response and the Kramers exponential emerge from the dynamics. Benzene→AML (IARC Group 1) anchors it. Grade [V] shape+law / [L] anchor / [O] steepness.</p>
+<p class="answer">A carcinogen lowers the R19 barrier, raising the malignant crossing rate. This volume does not assume the Kramers law — it simulates the stochastic R19 field and counts crossings, and both a convex super-linear dose–response and the Kramers exponential emerge from the dynamics. Benzene→AML (IARC Group 1) anchors it. Grade (code output) shape+law / [L] anchor / [O] steepness.</p>
 
 <p class="abstract">The dose–response is measured by direct stochastic barrier-crossing simulation: it is convex/super-linear (convex=True) and the Kramers law emerges (log-rate linear in barrier, R²=0.973). Sites: AML←benzene/radiation/alkylators; lymphoma←radiation/immunosuppression/EBV. Absolute steepness (noise scale D) is uncalibrated and graded [O].</p>
 
 <aside class="claim-strip">
-  <span class="grade g-verified">[V] grade</span>
+  <span class="grade g-hypothesis">code output · interpretation</span>
   <span class="gate">LOCK → Derive → Gate</span>
   <a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/immune_hematologic/" rel="noopener">reproduction code (GitHub)</a>
   <span class="doi"><a href="https://doi.org/10.5281/zenodo.20755280" rel="noopener">DOI: 10.5281/zenodo.20755280</a></span>
 </aside>
 
-<aside class="vp-card" data-locked="barrier" data-concept="barrier"><b>barrier = γ²/4</b> — the energy barrier between the two basins; it ranks state stability and sets the Kramers crossing rate, so larger-γ organs hold memory and resist transformation more strongly. <b>[F]</b> canonical derivation: substrate R19 · <a href="/concepts/#barrier">용어</a></aside>
-<aside class="vp-card" data-locked="spinodal" data-concept="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>[F]</b> canonical derivation: substrate R19 · <a href="/concepts/#spinodal">용어</a></aside>
+<aside class="vp-card" data-locked="barrier" data-concept="barrier"><b>barrier = γ²/4</b> — the energy barrier between the two basins; it ranks state stability and sets the Kramers crossing rate, so larger-γ organs hold memory and resist transformation more strongly. <b>consistency</b> (algebra of the cubic) · canonical derivation: substrate R19 · <a href="/concepts/#barrier">용어</a></aside>
+<aside class="vp-card" data-locked="spinodal" data-concept="spinodal"><b>spinodal |h|=2(γ/3)^1.5</b> — the drive magnitude past which the opposite basin disappears, making the R19 flip discontinuous; it sets every activation / erase / re-flip threshold in this volume. <b>consistency</b> (algebra of the cubic) · canonical derivation: substrate R19 · <a href="/concepts/#spinodal">용어</a></aside>
 
 <h2>Why the curve bends up</h2>
 <p>The kernel is one line: a carcinogen erodes the barrier, and the Kramers rate depends exponentially on the
@@ -51,7 +51,7 @@ the simulated substrate, not an assumed kernel.</p>
 <h2>Anchors, honestly graded</h2>
 <p>Benzene→acute myeloid leukaemia is the cleanest occupational anchor (IARC Group 1, ppm-years exposure
 metric); lymphoma is anchored to ionizing radiation, chronic immunosuppression, and EBV drive. The shape and
-the Kramers law are [V] (simulation-measured) and the anchors are [L], but the absolute incidence and the
+the Kramers law are (code output) (simulation-measured) and the anchors are [L], but the absolute incidence and the
 steepness depend on the cellular-noise scale D, which the volume does not calibrate — stated [O], no fabricated
 relative-risk numbers.</p>
 
