@@ -1,0 +1,7 @@
+{
+  "amended": "2026-09-29, after run 1, before run 2",
+  "reason": "Run 1 (RESULT_run1_gamma_in_motor_term.json) multiplied the motor force by the geometric factor gamma = 0.14. With the published constants this puts the resting operating point at channel open probability Po = 0.000 for every F_max up to 200 pN, i.e. all channels shut at rest, which is physically wrong for a hair bundle (channels are partly open at rest). This is a transcription error in my implementation, not a model result.",
+  "change": "motor term uses F_max directly: lambda_a dXa/dt = K_gs (X - Xa - D Po) - F_max (1 - S Po). With the published constants the operating point then sits at Po ~ 0.85 at 50.3 pN, with a complex eigenvalue pair -26.5 +/- 85.9i s^-1 (a lightly damped 13.7 Hz mode). The change is justified by the operating point, not by any compared output.",
+  "unchanged": "all constants, all predictions P1-P4 and their thresholds, and the scan range. The F_max scan is refined to 0.5 pN steps (40-60 pN) because the dynamics change within a few pN.",
+  "record": "run 1 is kept and reported as a FAIL of my implementation."
+}
