@@ -1,0 +1,29 @@
+{
+  "experiment": "BC1 — why black copper is black, and where its electrons go",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running bc1_run.py; no exploratory run",
+  "author_hypothesis": "Black copper was expected to make light/electricity because the black colour guides electrons in one direction; with rising temperature that effect should appear.",
+  "finding_before_run": "The black layer of black copper is CuO, a p-type semiconductor (band gap ~1.2-1.5 eV), not copper metal. The earlier refutation module used the Seebeck coefficient of copper METAL (1.8 uV/K) for 'black copper'. Literature reports CuO Seebeck coefficients of order hundreds of uV/K (value range quoted from memory; to be checked against sources).",
+  "model": {
+    "A_colour": {
+      "Cu_metal": "Drude free electrons (hbar*omega_p = 8.8 eV, hbar*gamma = 0.09 eV) plus an interband d->s absorption onset at 2.1 eV; normal-incidence Fresnel reflectance",
+      "CuO": "semiconductor absorption alpha(E) = A*sqrt(E-Eg) above Eg = 1.35 eV (A set so alpha(2.5 eV) = 1e5 /cm); background index n = 2.6; nanostructured surface modelled as a graded-index layer (Fresnel reflectance reduced by a factor 20); film 1 um thick",
+      "visible_band_eV": [1.65, 3.1]
+    },
+    "B_electron_tracking": {
+      "slab": "CuO, 1 um thick, 1-D Monte Carlo, 20000 photo-excited carriers per case (SEED = 19)",
+      "generation": "depth from Beer-Lambert at 2.5 eV; initial direction isotropic (cos-theta uniform), excess energy E - Eg",
+      "transport": "random walk with mean free path 5 nm, energy relaxation to the band edge in 0.3 ps (excess energy -> heat), recombination lifetime 1 ns",
+      "cases": {"C1_no_field": "no field, uniform T", "C2_junction": "built-in field 1e5 V/m over the slab (a junction, e.g. CuO/ZnO)", "C3_gradient": "no field; temperature gradient 400 K -> 300 K across the slab, diffusion D proportional to local T"},
+      "collection": "a carrier reaching the front (z=0) or back (z=d) face is collected there; net current = (back - front)/generated"
+    }
+  },
+  "predictions": {
+    "P1_colour": "Cu metal: mean visible reflectance > 0.5 with red (1.8 eV) reflectance > blue (2.8 eV) reflectance; CuO film: mean visible absorptance > 0.9 (black)",
+    "P2_black_alone_no_direction": "C1: |net current| / generated < 0.02 — absorbing light (being black) does not by itself send electrons one way",
+    "P3_heat": "C1: more than 90% of the absorbed photon energy ends as heat (excess-energy relaxation plus recombination)",
+    "P4_junction_directs": "C2: net current / generated > 0.3 toward the field direction",
+    "P5_gradient_directs": "C3: net carrier flux is nonzero and flows from hot to cold, and reverses sign when the gradient is reversed"
+  },
+  "record_either_way": true
+}
