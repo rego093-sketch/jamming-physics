@@ -1,3 +1,5 @@
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
 # -*- coding: utf-8 -*-
 """transition_dp_final.py -- three corrections, then the consolidated table.
 (A) spreading at lambda_c=1.2544, T=6000, windowed theta_s with drift report;
@@ -105,4 +107,4 @@ log(f"  tau_av (SOC, expl.) = {tau:.3f}")
 log(f"  class verdict: exponents are DP-consistent and exclude mean-field "
     f"(delta=1) and compact-DP (delta=0.5); the G-SOC rules land in DP.")
 log(f"runtime {time.time()-t0:.0f}s")
-open('/home/claude/v3work/transition_dp_final.out.txt','w').write("\n".join(L_)+"\n")
+open(os.path.join(_HERE, 'transition_dp_final.out.txt'),'w').write("\n".join(L_)+"\n")
