@@ -1,0 +1,21 @@
+domain,system,vp_principle,quantity,predicted,measured,residual,grade,script,note
+ess,solar absorption,black copper broadband absorptance,P_abs [W],784,alpha=0.98,match,F?,vp_ess_thermal.py,nanostructure optics not amplitude
+ess,thermal storage capacity,Dulong-Petit 3R heat capacity,Q [kWh per m3],46.2,cp 880 measured,within,F?,vp_ess_thermal.py,1m3 alumina/sand; CH.7 link
+ess,thermal time constant,tau=mc/(UA),tau [days],5.4,overnight ok,within,F?,vp_ess_thermal.py,vacuum insulation overnight storage
+ess,generation Carnot limit,1-Tc/Th,eta_carnot [%],28.2,Carnot bound,exact,F,vp_ess_thermal.py,amplitude-electricity is [H]; use heat engine
+ess,generation thermoelectric,Seebeck ZT=1,eta_TE [%],5.5,~5-8 typical,within,F,vp_ess_thermal.py,working alternative to refuted amplitude generator
+materials,black copper absorptance,nanostructure impedance matching 1-R,alpha,0.96,~0.95 selective absorber,within,F?,vp_new_materials.py,optics (Cu plasma/skin) not amplitude fm
+materials,selective absorber balance,Stefan-Boltzmann re-radiation,net flux selective [W],704,positive,match,F,vp_new_materials.py,low IR emittance essential for storage
+materials,selective absorber blackbody fail,Stefan-Boltzmann re-radiation,net flux blackbody [W],-377,negative cannot heat,match,F,vp_new_materials.py,why selectivity is required
+materials,FCC packing fraction,pi/(3*sqrt2) pure geometry,packing fraction,0.7405,0.7405,exact,F,vp_new_materials.py,materials density geometric basis CH.13
+ess,thermoelectric mechanism,Seebeck linear charge transport,V=S*dT [mV] at 60K,12.0,S~200uV/K,match,F?,vp_ess_thermoelectric.py,replaces refuted rotation; longitudinal electricity like copper
+ess,Carnot ceiling 60C source,1-Tc/Th,eta_carnot [%],10.5,Carnot bound,exact,F,vp_ess_thermoelectric.py,conversion bound; rest rejected as heat
+ess,thermoelectric efficiency datacenter,Seebeck ZT=1 60C,eta_TE [%],1.9,~2 commercial,within,F?,vp_ess_thermoelectric.py,low-grade heat low yield
+ess,semiconductor waste heat,Seebeck ZT=1 85C,eta_TE [%],3.1,~3,within,F?,vp_ess_thermoelectric.py,higher Th higher yield
+ess,heat pump COP heating,Th/(Th-Tc),COP_ideal,9.5,ideal,exact,F,vp_ess_thermoelectric.py,moves heat not net power; cannot create energy
+ess,datacenter recovery scale,eta_TE x waste heat,recovery [GWh per yr per 30MW],5.0,order estimate,within,F?,vp_ess_thermoelectric.py,real value at scale not energy escape
+ess,rotation amplitude generator,refuted device mechanism,claimed efficiency [%],81.7,Carnot-forbidden,refuted,O,vp_ess_thermoelectric.py,old proposal violates 2nd law; replaced by Seebeck
+ess,AC condenser heat balance,Q_h=Q_c+W,Q_h [kW],4.5,Q_c+W,exact,F,vp_ess_ac_condenser.py,condenser dumps cooling heat plus compressor work
+ess,AC waste heat thermoelectric,Seebeck ZT=1 50C/20C sink,eta_TE [%],1.7,~1-2 low grade,within,F?,vp_ess_ac_condenser.py,summer small dT low yield
+ess,under-100 percent accounting,recovered vs AC input W,recovery/input [%],7.5,<<100 no over-unity,within,F,vp_ess_ac_condenser.py,recovers fraction of dumped heat not the input electricity
+ess,AC heat direct use,heat-to-heat vs heat-to-electricity,direct use efficiency [%],90,>> TE 1-2%,within,F?,vp_ess_ac_condenser.py,heat island mitigation plus direct thermal use is larger value

@@ -1,0 +1,2766 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setmonofont[Scale=0.85]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% --- polished typesetting ---
+\usepackage{microtype}                 % protrusion/expansion: better justification, fewer overfulls
+\usepackage{fvextra}                   % line-breaking in code blocks
+\fvset{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{newunicodechar}
+\renewcommand{\arraystretch}{1.18}     % a little row breathing room in tables
+\setlength{\emergencystretch}{3em}     % last-resort to avoid overfull boxes
+% explicit math font = Latin Modern Math (matches Latin Modern Roman body)
+\ifdefined\setmathfont\setmathfont{Latin Modern Math}\fi
+% text-mode Unicode the chapters use (so Latin Modern Roman renders them)
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{✗}{\ensuremath{\times}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{↑}{\ensuremath{\uparrow}}
+\newunicodechar{↓}{\ensuremath{\downarrow}}
+\newunicodechar{⇌}{\ensuremath{\rightleftharpoons}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{⁺}{\textsuperscript{+}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={VP Chemistry \& Electromagnetism},
+  pdfauthor={Young jae Lee (ORCID 0009-0002-7535-8245), Independent researcher, Daegu, Korea},
+  colorlinks=true,
+  linkcolor={RoyalBlue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={RoyalBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{VP Chemistry \& Electromagnetism}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Derived from a Single Anchor on the Jamming-Lattice Substrate
+--- Foundations, Optics, and Applications}
+\author{Young jae Lee (ORCID 0009-0002-7535-8245), Independent
+researcher, Daegu, Korea}
+\date{2026-06-14 · DOI (reserved) 10.5281/zenodo.20680541}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\setstretch{1.05}
+\hypertarget{abstract}{%
+\section{Abstract}\label{abstract}}
+
+This volume consolidates the Volume-Particle (VP) account of
+\textbf{electromagnetism, chemistry, and their engineering applications}
+into a single reproducible whitepaper. Everything is derived from one
+observational anchor --- the electron, treated as a rotational dent in
+an infinitely rigid, fully packing ``jamming'' lattice --- using only
+\(\pi\)-geometry and the electromagnetic inverse-square law. It is a
+companion to the VP Theory (physics) whitepaper, from which it takes the
+fundamental electromagnetic mechanism (§10, §14) as input.
+
+Three results anchor the account. First, \textbf{light is not assumed
+but emerges}: at the isostatic point of the jammed lattice the relaxed
+shear modulus vanishes while the bulk modulus stays finite, so a single
+longitudinal wave survives at \(c^2 = B/\rho\); a deterministic lattice
+simulation reproduces this to 0.06\%. Second, on that substrate charge
+is synchronized rotation, the Coulomb \(1/r^2\) follows from
+three-dimensional flux conservation, the \(E/B\) geometry and
+polarization are rotation, and the same wave spans conduction and
+radiation by a single angle \(\sin\chi=\lambda/(mD)\); \textbf{and the
+dynamic field equations, the Poynting energy flow, and a strict
+light-cone causality are supplied in longitudinal form} (Chapter EM,
+§EM.12, from the AQD axiomatic field dynamics). Third, chemistry follows
+by sphere geometry and rotation --- bonding angles \(\arccos(-1/3)\),
+the crystal-field ratio \(4/9\), the close-packing fraction \(0.7405\),
+the nuclear magic skeleton, thermodynamics, equilibrium, kinetics,
+solution and electrochemistry --- and the engineering applications
+(catalysis, fertilizer, water, energy storage, new materials, and
+\textbf{CO\(_2\) reduction}) are re-grounded on the \textbf{verified
+\(d\)-band energy descriptor}, not on the refuted electron-amplitude
+variable.
+
+Every forced result has zero free parameters and is therefore
+falsifiable; measured constants are labelled as calibration inputs and
+never tuned per result; open problems --- most fundamentally the
+electromagnetic coupling \(\alpha_{\mathrm{em}}\) itself --- are
+admitted rather than disguised. All numbers are reproduced by
+deterministic, standard-library Python modules (a 38-module chemistry/EM
+core with a 176-row case ledger, plus a 9-module / 46-row applications
+package) with verification harnesses (core 38/38 pass; applications 9/9
+pass) and numeric-drift gates that check every displayed number against
+canonical recomputation and module output (both pass, zero drift).
+
+\textbf{Keywords:} Volume-Particle theory, jamming lattice, light
+emergence, \(c^2=B/\rho\), electromagnetism, Poynting, causality,
+Coulomb \(1/r^2\), propagation angle, VSEPR, crystal-field \(4/9\),
+\(d\)-band catalysis, CO\(_2\) reduction, reproducibility,
+falsifiability.
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\hypertarget{the-program-and-this-consolidation}{%
+\subsection{The program and this
+consolidation}\label{the-program-and-this-consolidation}}
+
+The VP framework posits a vacuum built from infinitely rigid, fully
+packing particles --- a jammed lattice. From this single substrate the
+physics whitepaper derives the speed of light, the proton radius, and a
+ladder of dimensionless constants. This whitepaper extends the program
+into \textbf{electromagnetism, chemistry, and applications}, asking how
+much of each follows with \emph{no adjustable parameters} once light has
+emerged. This consolidated edition gathers what were previously separate
+chapter files (EM, CH, CM, CC, CT) and the applications package (CA)
+into one volume, and incorporates two completions made after the first
+release: the \textbf{dynamic-field / Poynting / causality} addendum
+(§EM.12) and the \textbf{CO\(_2\) electrocatalytic reduction} module
+(§CA, re-grounded on the \(d\)-band descriptor).
+
+\hypertarget{why-light-first}{%
+\subsection{Why light first}\label{why-light-first}}
+
+The organizing principle is sequencing: \textbf{light must emerge before
+anything else follows.} Once the lattice supports a single longitudinal
+wave at \(c^2 = B/\rho\) with linear dispersion \(\omega = cq\), a
+wavelength exists; once a wavelength exists, the propagation angle, the
+quantum diameter, refraction, and color follow; and once charge is
+identified as synchronized rotation, the Coulomb law and the entire
+chemical edifice follow. Chapter EM begins with the emergence of light
+and develops electromagnetism (now including its dynamic and causal
+structure); the chemistry chapters build on that foundation; the
+applications chapters close the arc on verified physics.
+
+\hypertarget{how-claims-are-graded-the-no-tuning-discipline}{%
+\subsection{How claims are graded (the No-Tuning
+discipline)}\label{how-claims-are-graded-the-no-tuning-discipline}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{{[}F{]} forced} results are dimensionless geometry or integers
+  with nothing to adjust (the tetrahedral angle \(\arccos(-1/3)\), the
+  ratio \(4/9\), the packing fraction \(\pi/(3\sqrt2)\)). They cannot be
+  tuned, so they are \emph{refuted} if measurement disagrees.
+\item
+  \textbf{{[}CAL{]} calibration inputs} are measured constants (the
+  fine-structure coupling, spectroscopic constants, standard potentials,
+  \(d\)-band centers) fixed once and used consistently; quantities
+  \emph{derived} from them and then matching measurement are
+  predictions, not fits.
+\item
+  \textbf{{[}V{]} simulation-measured}, \textbf{{[}H{]} hypothesis}, and
+  \textbf{{[}O{]} open} label what a deterministic simulation shows,
+  what remains a working hypothesis, and what is honestly unsolved.
+\end{itemize}
+
+A central methodological result of this program is \textbf{negative}:
+the early ``electron amplitude (fm)'' mechanism for catalysis,
+bond-angle deviations, magnetic desalination, and black-copper power
+generation was tested and \textbf{refuted}, and is replaced --- where a
+working mechanism exists --- by the correct variable (the \(d\)-band
+\emph{energy}, equilibrium thermodynamics, real magnetostatics,
+Carnot-bounded storage). Chapter CT records this refutation in full; the
+applications chapter is built on the replacement. Letting the refuted
+mechanism go is what makes the surviving results trustworthy to build
+on.
+
+\hypertarget{reproducibility-as-a-first-class-requirement}{%
+\subsection{Reproducibility as a first-class
+requirement}\label{reproducibility-as-a-first-class-requirement}}
+
+Every numeric claim is produced by a deterministic module using only the
+Python standard library; determinism is verified by re-running and
+comparing output hashes. Verification harnesses check execution,
+determinism, dependency, and case-ledger integrity (chemistry/EM core:
+38/38; applications: 9/9), and numeric-drift gates check that every
+displayed number matches both the canonical closed-form recomputation
+and the module output (both pass, zero drift). Nothing here is asserted
+that the reader cannot re-run.
+
+\hypertarget{boundary-with-the-physics-whitepaper}{%
+\subsection{Boundary with the physics
+whitepaper}\label{boundary-with-the-physics-whitepaper}}
+
+The \emph{fundamental} electromagnetic mechanism --- light as a
+rotational transverse wave, the single surviving longitudinal speed, and
+the \(1/r^2\) Green function --- is established in the physics
+whitepaper (§10, §14). This document consumes those results and develops
+the chemical, optical, and dynamical consequences. The electromagnetic
+coupling strength \(\alpha_{\mathrm{em}}\) is \textbf{not derived} in
+this framework (physics §14.5); it is an honest open item, carried as
+{[}CAL{]}.
+
+\newpage
+
+\hypertarget{electromagnetism-in-the-jamming-vacuum-from-the-quantum-lattice-to-light}{%
+\section{Electromagnetism in the Jamming Vacuum: From the Quantum
+Lattice to
+Light}\label{electromagnetism-in-the-jamming-vacuum-from-the-quantum-lattice-to-light}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter EM} DOI
+(reserved): 10.5281/zenodo.20680541 · Companion to VP Theory (physics)
+§10, §14, §15 Status: each result is graded \textbf{{[}F{]}} forced
+(zero free parameters) · \textbf{{[}CAL{]}} calibration input (measured
+constant, used consistently) · \textbf{{[}V{]}} simulation-measured ·
+\textbf{{[}H{]}} hypothesis · \textbf{{[}O{]}} open. Every numeric claim
+is reproduced by a deterministic, standard-library module (2× sha256
+identical); module names are given inline.
+
+\begin{quote}
+One medium, one motion seen two ways. Charge is the bookkeeping of a
+synchronized rotation; light is the transverse swing of that rotation
+propagating on the single surviving longitudinal wave. Electricity, a
+radio wave, and a γ-ray differ only by an angle.
+\end{quote}
+
+\hypertarget{em.0-governance-inherited-from-vp-theory-1}{%
+\subsection{EM.0 Governance (inherited from VP Theory
+§1)}\label{em.0-governance-inherited-from-vp-theory-1}}
+
+This chapter inherits the No-Tuning / LOCK / Gate discipline of the
+physics whitepaper. \textbf{The fundamental electromagnetic mechanism is
+supplied by physics §10 (light, clock-free \(c\)) and §14 (force, the
+\(1/r^2\) Green function). This chapter does not re-derive it; it takes
+those results as input and develops the chemical and optical
+consequences.} Where a quantity is a measured constant (notably the
+fine-structure coupling \(\alpha_{\mathrm{em}}\)), it is marked
+\textbf{{[}CAL{]}} and is never tuned to fit a downstream result.
+
+\hypertarget{em.1-genesis-charge-as-synchronized-rotation-hv}{%
+\subsection{\texorpdfstring{EM.1 Genesis: charge as synchronized
+rotation
+\textbf{{[}H{]}→{[}V{]}}}{EM.1 Genesis: charge as synchronized rotation {[}H{]}→{[}V{]}}}\label{em.1-genesis-charge-as-synchronized-rotation-hv}}
+
+A quantum that receives energy can only store it as rotation, so energy
+input forces rotation. This is grounded in established physics:
+photon--photon collisions create matter (\(\gamma\gamma \to e^+e^-\);
+\(E=mc^2\)), and photons carry helicity \(\pm 1\) --- circular
+polarization is a \emph{rotating field}. \textbf{Electric charge is the
+bookkeeping of one synchronized rotation} of the quanta; the sign
+\(\pm\) is the handedness (CW/CCW) of the twist of a charge's rotation
+relative to the surrounding common axis. The elementary charge is one
+boundary-crossing rotation unit (universal), so the EM coupling carries
+no nucleon-structure factor (contrast the mass/gravity sector, where
+\(m_p/m_e = 6\pi^5\) and the \(82{+}7\) core appear).
+
+\hypertarget{em.2-light-emergence-the-keystone-fv}{%
+\subsection{\texorpdfstring{EM.2 Light emergence --- the keystone
+\textbf{{[}F{]}/{[}V{]}}}{EM.2 Light emergence --- the keystone {[}F{]}/{[}V{]}}}\label{em.2-light-emergence-the-keystone-fv}}
+
+Light is not assumed; it \emph{emerges} from the jammed lattice. The
+chain (physics §SP):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{{[}F, axiom{]}} Infinitely rigid, fully packing quanta ⇒ the
+  vacuum is a jammed lattice.
+\item
+  \textbf{{[}H{]}→{[}V{]}} Rotation (temperature) drives the contact
+  number \(z\) to the isostatic threshold \(z = 2d = 6\) (self-organized
+  criticality).
+\item
+  \textbf{{[}V{]}} At the isostatic point the shear reserve is zero, so
+  the relaxed shear modulus vanishes while the bulk modulus stays
+  finite:
+  \[ G_{\text{relaxed}} \to 0,\qquad B = \text{finite}\;\Rightarrow\; c^2 = \frac{B}{\rho}=K. \]
+  The transverse acoustic wave dies; \textbf{one longitudinal speed
+  survives.}
+\item
+  \textbf{{[}F{]}} A single speed gives linear dispersion and hence a
+  wavelength: \[ \omega = c\,q \;\Rightarrow\; \lambda = c/\nu. \]
+\end{enumerate}
+
+\textbf{Direct demonstration (module \texttt{vp\_light\_emergence.py}).}
+A 1-D chain of quanta, \(m\,\ddot u_n = k(u_{n+1}-2u_n+u_{n-1})\), is
+given a right-moving Gaussian packet and integrated by leapfrog (no
+randomness). The energy centroid propagates at
+\(c_{\text{measured}} = 0.99940\) versus the closed form
+\(c_{\text{theory}} = a\sqrt{k/m} = 1\) --- a \textbf{0.06 \%}
+agreement. The exact dispersion \(\omega(q)=2\sqrt{k/m}\,|\sin(qa/2)|\)
+tends to \(\omega = cq\) as \(q\to 0\) (\(v_{ph}/c \to 0.99999\)), and
+the identity \(c^2=B/\rho\) is verified to machine precision. A 2-D
+triangular lattice confirms that as the shear reserve \(\to 0\) the
+transverse speed \(c_T \to 0\) while the longitudinal \(c_L\) survives
+--- \textbf{light is the unique surviving longitudinal wave of the
+jammed lattice.}
+
+\textbf{Quantum diameter {[}F{]}.} One \(2\pi\) phase winding of the
+carrier sets the rotational circulation length
+\[ D = 2\pi\,a_{\text{phys}} = \frac{2\pi\lambda}{A} = 2\lambda_{C,e} = 6\pi^6 r_p, \qquad
+   r_p = \tfrac{2}{\pi}\lambda_{C,p}, \] where \(r_p\) is the globally
+stable fixed point of the stiffness-shell balance
+\(\alpha x^{-5}=x^{-4}\Rightarrow x^*=2/\pi\) (physics §SP S4).
+Numerically \(D = 4.8526\) pm. The module verifies \(D=6\pi^6 r_p\) to
+within \textbf{+18.8 ppm}, which is exactly the headline residual
+\(m_p/m_e = 6\pi^5\;(-19\text{ ppm})\): the small mismatch is the
+\emph{known residual of the theory}, not an error.
+
+\hypertarget{em.3-the-coulomb-sector-why-1r2-why-long-range-how-strong}{%
+\subsection{\texorpdfstring{EM.3 The Coulomb sector: why \(1/r^2\), why
+long-range, how
+strong}{EM.3 The Coulomb sector: why 1/r\^{}2, why long-range, how strong}}\label{em.3-the-coulomb-sector-why-1r2-why-long-range-how-strong}}
+
+\textbf{Why a force exists {[}F{]}.} Two sources' fields superpose; the
+stored strain energy depends on separation and the medium relaxes it,
+giving \(E_{\text{int}} = k\,q_1 q_2 / r\). Like sources repel, opposite
+attract (a positive-definite strain structure).
+
+\textbf{Why \(1/r^2\) {[}F{]}.} A fixed source flux is diluted over the
+\(4\pi r^2\) shell (Gauss = Poisson Green's function). In \(d\)
+dimensions the field falls as \(r^{-(d-1)}\), so \(d=3\) gives
+\(1/r^2\). Module \texttt{vp\_electromagnetism.py} measures the exponent
+directly: \(d=1,2,3,4 \to 0,-1,-2,-3\), confirming \(E\propto 1/r^2\) in
+three dimensions as the geometric consequence of flux conservation.
+
+\textbf{Why long-range / unscreened {[}H{]}.} Synchronization
+spontaneously breaks a \emph{global} \(U(1)\) (the common phase), giving
+a massless Goldstone mode and hence infinite range. (Were the \(U(1)\)
+gauged, its breaking would make the mediator massive and short-ranged;
+long-range EM requires the broken symmetry to be global --- a stated
+departure.)
+
+\textbf{Coupling magnitude {[}CAL{]}.} The elementary charge is one
+universal rotation unit, so
+\[ K_C = k_e e^2 = \alpha_{\mathrm{em}}\,\hbar c, \qquad
+   k_e = \frac{\alpha_{\mathrm{em}}\hbar c}{e^2}. \] The module
+reproduces the Coulomb constant \(k_e = 8.987552\times 10^9\) to
+\(3\times 10^{-10}\)\%. \textbf{\(\alpha_{\mathrm{em}}\) is taken from
+measurement; it is not derived here} --- an honest {[}CAL{]} item.
+
+\hypertarget{em.4-the-eb-geometry-longitudinal-e-transverse-b-f}{%
+\subsection{\texorpdfstring{EM.4 The E/B geometry: longitudinal \(E\),
+transverse \(B\)
+\textbf{{[}F{]}}}{EM.4 The E/B geometry: longitudinal E, transverse B {[}F{]}}}\label{em.4-the-eb-geometry-longitudinal-e-transverse-b-f}}
+
+The same rotating medium supplies the vector sector. The organizing
+statement: \textbf{the electric field is the force directed along the
+light (propagation) direction; the magnetic field is the force directed
+at \(90^\circ\) to it.} Both originate from one fact --- a charge's
+rotational output is \emph{twisted} relative to the surrounding
+synchronized quanta because its axis differs. A charge with axis aligned
+to the common axis emits a pure radial (Coulomb) field and no magnetic
+field. A moving charge tilts its axis by an amount \(\propto v/c\); the
+propagation of that twisted region, transverse to the light direction,
+is the magnetic field: \[ |\mathbf B| = \frac{v}{c}\,|\mathbf E|. \]
+Module \texttt{vp\_electromagnetism.py} confirms
+\(|\mathbf B|/|\mathbf E| = v/c\) exactly. Because \(\mathbf B\)
+\emph{is} a rotation (a pseudovector), it is automatically
+divergence-free, \(\nabla\!\cdot\mathbf B = 0\): the poles are the two
+ends of one rotation axis and cannot be separated --- there are
+\textbf{no magnetic monopoles}, and cutting a magnet yields two fresh
+N/S pairs. The right-hand rule is the handedness of the rotation.
+
+\hypertarget{em.5-polarization-as-rotation-helicity-f}{%
+\subsection{\texorpdfstring{EM.5 Polarization as rotation (helicity)
+\textbf{{[}F{]}}}{EM.5 Polarization as rotation (helicity) {[}F{]}}}\label{em.5-polarization-as-rotation-helicity-f}}
+
+Circular polarization \emph{is} the rotating field; the two senses
+(CW/CCW) are helicity \(\pm 1\). In Jones form the circular states are
+\((1,\pm i)/\sqrt 2\). The module computes their Stokes vectors and
+finds \(|S_3| = S_0\) with \(S_1 = S_2 = 0\) --- i.e.~pure rotation, no
+linear component. Linear polarization is the equal superposition of the
+two rotation senses. (The sign convention of \(S_3\) depends on the time
+convention \(e^{\mp i\omega t}\); the invariant content is
+\(|S_3| = S_0\) for circular light.)
+
+\hypertarget{em.6-the-propagation-angle-conduction-radiation-fvp-prediction}{%
+\subsection{\texorpdfstring{EM.6 The propagation angle: conduction ↔
+radiation
+\textbf{{[}F{]}/{[}VP-prediction{]}}}{EM.6 The propagation angle: conduction ↔ radiation {[}F{]}/{[}VP-prediction{]}}}\label{em.6-the-propagation-angle-conduction-radiation-fvp-prediction}}
+
+Light is unambiguously an electromagnetic wave --- \emph{one} object.
+Its longitudinal part (\(\nabla\!\cdot\mathbf u\), compression =
+deficit) is the static Coulomb field; its transverse, propagating part
+is light. What distinguishes electricity, a radio wave, and a γ-ray is
+only the propagation angle \(\chi\), set by the wavelength through
+physics §10.9:
+\[ \sin\chi = \frac{\lambda}{mD},\qquad m = \lceil \lambda/D\rceil. \]
+Short-\(\lambda\) γ-rays are near-longitudinal (\(\chi\to 0\),
+penetrating); visible and radio waves are near-transverse
+(\(\chi\to 90^\circ\)). Crucially the visible band is \textbf{near ---
+not exactly --- transverse}: \(\chi \approx 89.9^\circ\), a small
+\emph{falsifiable} departure from the textbook exactly-transverse wave.
+Electric conduction is the extreme-longitudinal limit (\(\chi\to 0\)):
+charges drift through a wire's internal quanta, each producing a
+transverse twist that wraps the wire azimuthally as the magnetic field.
+\textbf{Conduction and radiation are the same electromagnetic
+phenomenon, differing only in angle (longitudinal vs transverse) and
+medium (atomic-internal quanta vs free space)} --- ``electricity travels
+like a γ-ray.''
+
+Forward predictions (falsifiers, no fitting): for HeNe lines,
+\(\chi(632.8\,\text{nm}) = 89.892^\circ\) and
+\(\chi(532\,\text{nm}) = 89.825^\circ\) (modules
+\texttt{vp\_light\_angle.py}, \texttt{vp\_electromagnetism.py}).
+
+The earlier Word-document formulation \(\lambda = d/\cos\theta\) with
+\(d = 5000\) fm is \textbf{superseded}: it has no \(m\)-chain and is
+undefined for \(\lambda < d\) (γ-rays, X-rays). The refined law fixes
+\(d\) to the \emph{derived} value \(D = 4852.6\) fm and covers the whole
+spectrum via the \(m\)-chain.
+
+\hypertarget{em.7-blackbody-radiation-f}{%
+\subsection{\texorpdfstring{EM.7 Blackbody radiation
+\textbf{{[}F{]}}}{EM.7 Blackbody radiation {[}F{]}}}\label{em.7-blackbody-radiation-f}}
+
+The Planck spectrum is the product of two lattice facts:
+\[ u(\nu,T) \;\propto\; \underbrace{\nu^2}_{\text{geometric mode density}}\;\times\;
+   \underbrace{\frac{h\nu}{e^{h\nu/k_BT}-1}}_{\text{rigid-shell high-}\nu\text{ cutoff}}. \]
+The first factor alone is Rayleigh--Jeans and diverges (the UV
+catastrophe); the rigid shell blocks high-frequency deformation when the
+shell energy exceeds the thermal excitation, supplying the Bose cutoff.
+Module \texttt{vp\_electromagnetism.py} tabulates \(u_{\mathrm{RJ}}\)
+versus \(u_{\mathrm{Planck}}\) (agreement at low \(\nu\), strong
+suppression at high \(\nu\)) and solves the Wien transcendental
+\(x = 5(1-e^{-x})\) to recover
+\(\lambda_{\text{peak}}T = 2.89777\times 10^{-3}\) m·K to
+\(6\times 10^{-9}\)\%. A 300 K body peaks at \(\sim 9.7\,\mu\)m
+(infrared) with \(\chi \approx 89.95^\circ\) --- transverse light,
+consistent with EM.6.
+
+\hypertarget{em.8-refraction-and-dispersion-the-bridge-to-chemistry-fcal}{%
+\subsection{\texorpdfstring{EM.8 Refraction and dispersion --- the
+bridge to chemistry
+\textbf{{[}F{]}/{[}CAL{]}}}{EM.8 Refraction and dispersion --- the bridge to chemistry {[}F{]}/{[}CAL{]}}}\label{em.8-refraction-and-dispersion-the-bridge-to-chemistry-fcal}}
+
+Once light exists, its interaction with matter is geometric. Interfacial
+transverse-oscillation matching gives Snell's law
+\(n_1\sin\theta_1 = n_2\sin\theta_2\) \textbf{{[}F{]}}; the primary
+rainbow angle is \(42.1^\circ\) from Snell + droplet sphere geometry
+(Descartes) \textbf{{[}F{]}}; total internal reflection has
+\(\sin\theta_c = 1/n\) \textbf{{[}F{]}} (water \(48.6^\circ\), diamond
+\(24.4^\circ\)). The absolute refractive index \(n\) is a material
+constant \textbf{{[}CAL{]}}. Wavelength-dependent \(n(\lambda)\) orders
+the rainbow colors (blue refracts more). These feed directly into the
+chemistry chapter's color of coordination compounds (\(d\)--\(d\)
+transitions, \(\Delta_{\text{tet}}/\Delta_{\text{oct}} = 4/9\)) and
+spectroscopy (modules \texttt{vp\_refraction.py},
+\texttt{vp\_light\_angle.py}, \texttt{vp\_crystal\_field.py}).
+
+\hypertarget{em.9-master-ledger-forced-measured-open}{%
+\subsection{EM.9 Master ledger --- forced / measured /
+open}\label{em.9-master-ledger-forced-measured-open}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Basis / module
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(c^2 = B/\rho\) (single surviving longitudinal speed) & {[}F{]}/{[}V{]}
+& isostatic \(z{=}2d\); \texttt{vp\_light\_emergence.py} \\
+Linear dispersion \(\omega = cq\) & {[}F{]}/{[}V{]} & long-\(\lambda\)
+limit; \texttt{vp\_light\_emergence.py} \\
+Quantum diameter \(D = 2\lambda_{C,e} = 6\pi^6 r_p\) & {[}F{]} &
+wavelength relation; (−19 ppm residual) \\
+\(1/r^2\) from \(4\pi r^2\) flux dilution & {[}F{]} & Gauss/Poisson;
+\texttt{vp\_electromagnetism.py} \\
+Coulomb constant \(k_e = \alpha_{\mathrm{em}}\hbar c/e^2\) &
+{[}F{]}+{[}CAL{]} & reproduces \(k_e\) to \(3\times10^{-10}\)\% \\
+\(|\mathbf B| = (v/c)|\mathbf E|\), \(\nabla\!\cdot\mathbf B = 0\) &
+{[}F{]} & twist geometry; \texttt{vp\_electromagnetism.py} \\
+Circular polarization \(=\) rotation (\(|S_3|=S_0\)) & {[}F{]} & Stokes;
+\texttt{vp\_electromagnetism.py} \\
+Propagation angle \(\sin\chi = \lambda/(mD)\) & {[}F{]}/{[}VP-pred{]} &
+\texttt{vp\_light\_angle.py} \\
+Blackbody \(=\) mode density \(\times\) rigid cutoff; Wien & {[}F{]} &
+\texttt{vp\_electromagnetism.py} \\
+Snell, rainbow \(42.1^\circ\), critical angle & {[}F{]} &
+\texttt{vp\_refraction.py} \\
+Fine-structure coupling \(\alpha_{\mathrm{em}}\) & {[}CAL{]} & measured
+input, \textbf{not derived} \\
+Long-range / unscreened (global \(U(1)\) Goldstone) & {[}H{]} & symmetry
+argument \\
+Magnetic / radiative \emph{absolute} vector sector; γγ genesis dynamics
+& {[}O{]} & open (physics §14.0.6) \\
+\end{longtable}
+
+\hypertarget{em.10-falsification-criteria-f}{%
+\subsection{\texorpdfstring{EM.10 Falsification criteria
+\textbf{{[}F{]}}}{EM.10 Falsification criteria {[}F{]}}}\label{em.10-falsification-criteria-f}}
+
+Because the forced results have no free parameters, they are refuted if
+measurement disagrees:
+
+\begin{itemize}
+\tightlist
+\item
+  If the visible-band propagation angle is \emph{exactly} \(90^\circ\)
+  (not \(\approx 89.9^\circ\)), the rotating-quantum / \(m\)-chain
+  picture is wrong.
+\item
+  If \(\chi(632.8\,\text{nm}) \neq 89.892^\circ\) or
+  \(\chi(532\,\text{nm}) \neq 89.825^\circ\), the angle law is refuted
+  (forward prediction, length → angle, no fitting).
+\item
+  If the Coulomb field deviates from \(1/r^2\) in three dimensions, the
+  flux-dilution origin fails.
+\item
+  If circular light is not pure rotation (\(|S_3| \neq S_0\)),
+  helicity-as-rotation is wrong.
+\item
+  If the blackbody peak does not satisfy the Wien transcendental, the
+  mode-density × rigid-cutoff factorization fails.
+\end{itemize}
+
+\hypertarget{em.11-reproducibility}{%
+\subsection{EM.11 Reproducibility}\label{em.11-reproducibility}}
+
+All numbers above are produced by deterministic, standard-library Python
+modules with self-checks (\texttt{assert}). Determinism is verified by
+running each module twice and comparing the stdout sha256.
+
+\begin{verbatim}
+python3 vp_light_emergence.py      # light emergence: c²=B/ρ, dispersion, single speed, angle
+python3 vp_electromagnetism.py     # charge, 1/r², E/B, polarization, conduction/radiation, blackbody
+python3 verify_chemistry.py --root <package root>   # runs all modules + ledger integrity gate
+\end{verbatim}
+
+The harness reports execution, determinism, standard-library-only
+dependency, and case-ledger integrity across all modules (currently
+32/32 PASS with the two EM/light modules added).
+
+\emph{This chapter completes the electromagnetic foundation on which the
+chemistry chapter rests: light emerges from the jammed lattice (EM.2),
+charge and the Coulomb \(1/r^2\) follow (EM.3), the E/B geometry and
+polarization are rotation (EM.4--5), the same wave spans conduction and
+radiation by angle (EM.6), and the optical consequences (blackbody,
+refraction, color) bridge into chemistry (EM.7--8). It is deliberately
+more detailed and fully reproducible relative to the original Korean
+working document, and every forced claim is falsifiable.}
+
+\hypertarget{em.12-dynamic-field-equations-poynting-and-causality-addendum-fv}{%
+\section{\texorpdfstring{EM.12 Dynamic field equations, Poynting, and
+causality (addendum)
+\textbf{{[}F{]}/{[}V{]}}}{EM.12 Dynamic field equations, Poynting, and causality (addendum) {[}F{]}/{[}V{]}}}\label{em.12-dynamic-field-equations-poynting-and-causality-addendum-fv}}
+
+\emph{Added 2026-06-14. Closes the dynamic-Maxwell gap flagged in the EM
+completeness review (Faraday/Ampère/Poynting were absent from
+EM.0--EM.11). Source: \textbf{AQD --- Axiomatic Quantized Dynamics,
+NOCAL v1.1, DOI 10.5281/zenodo.17423870}. Reproduced by
+\texttt{vp\_em\_field\_dynamics.py}.}
+
+\begin{quote}
+The original EM chapter derived the \textbf{static} Coulomb sector
+(\(1/r^2\), EM.3), the algebraic ratio \(|\mathbf B|=(v/c)|\mathbf E|\)
+and \(\nabla\!\cdot\mathbf B=0\) (EM.4) --- i.e.~\textbf{two of the four
+Maxwell statements} (the two divergence facts). It did \textbf{not}
+state the \textbf{dynamic} field equations, the Poynting energy flow, or
+a causality theorem. This addendum supplies them in the
+\textbf{longitudinal (E-sector, pressure \(P\)) form} from the AQD
+axioms, and marks the remaining vector-curl sector honestly as open.
+\end{quote}
+
+\hypertarget{em.12.1-the-first-order-dynamic-system-f}{%
+\subsection{\texorpdfstring{EM.12.1 The first-order dynamic system
+\textbf{{[}F{]}}}{EM.12.1 The first-order dynamic system {[}F{]}}}\label{em.12.1-the-first-order-dynamic-system-f}}
+
+The jammed-lattice field obeys a coupled first-order system (AQD axiom
+A1) --- pressure \(P\) (the compression = deficit = longitudinal/Coulomb
+sector) and velocity \(\mathbf v\): \[
+\partial_t P + K\,\nabla\!\cdot\mathbf v = 0,
+\qquad
+\rho\,\partial_t \mathbf v + \nabla P = 0.
+\] Eliminating \(\mathbf v\) gives the wave equation and the speed
+already used in EM.2: \[
+\Box_c P = 0,\qquad c^2 = \frac{K}{\rho}\;(=B/\rho).
+\] \textbf{These two coupled first-order equations are the longitudinal
+analogue of Maxwell's curl pair}
+(\(\nabla\times\mathbf E=-\partial_t\mathbf B\),
+\(\nabla\times\mathbf B=\mu_0\varepsilon_0\partial_t\mathbf E\)): the
+time-derivative of each field is sourced by a spatial derivative of the
+other, and their combination is the wave. Module
+\texttt{vp\_em\_field\_dynamics.py} integrates this system (staggered
+leapfrog, deterministic) and recovers the pulse speed
+\(c_{\text{measured}}=1.0001\) vs \(c=1\) (\textbf{0.01 \%}).
+
+\hypertarget{em.12.2-poyntings-theorem-and-energy-conservation-fv}{%
+\subsection{\texorpdfstring{EM.12.2 Poynting's theorem and energy
+conservation
+\textbf{{[}F{]}/{[}V{]}}}{EM.12.2 Poynting's theorem and energy conservation {[}F{]}/{[}V{]}}}\label{em.12.2-poyntings-theorem-and-energy-conservation-fv}}
+
+Define the energy density and flux (AQD; equivalent to the second-order
+form \(e=\tfrac12[(\partial_tP)^2/c^2+|\nabla P|^2]\),
+\(\mathbf S=-(\partial_tP)\nabla P\)): \[
+e = \tfrac12\!\left[\frac{P^2}{K} + \rho\,|\mathbf v|^2\right],
+\qquad
+\mathbf S = P\,\mathbf v,
+\qquad
+\boxed{\;\partial_t e + \nabla\!\cdot\mathbf S = 0\;}
+\] --- the \textbf{local energy-conservation (Poynting) law}, the
+longitudinal counterpart of EM's
+\(\partial_t u + \nabla\!\cdot(\mathbf E\times\mathbf H)=0\).
+Integrating over a lossless domain (periodic, Neumann, time-invariant
+Dirichlet, or radiationless infinity) gives
+\(\oint\mathbf S\!\cdot\!\mathbf n=0\) and hence \[
+\frac{dE}{dt}=0\qquad(\text{AQD QP-0002-001, fully proven}).
+\] The module confirms \(\partial_t e+\partial_x S=0\) pointwise (RMS
+residual \(\sim 3\times10^{-2}\), discretization scale) and energy
+conservation to \(3\times10^{-4}\) over the run. A companion uniqueness
+theorem (energy method, QP-0002-002) shows identical initial data give a
+unique solution.
+
+\hypertarget{em.12.3-causality-finite-propagation-and-the-light-cone-f}{%
+\subsection{\texorpdfstring{EM.12.3 Causality: finite propagation and
+the light cone
+\textbf{{[}F{]}}}{EM.12.3 Causality: finite propagation and the light cone {[}F{]}}}\label{em.12.3-causality-finite-propagation-and-the-light-cone-f}}
+
+The same energy structure forces a \textbf{hard light cone} (AQD
+theorems F-A/B/C): \[
+u_{\max}=c,\qquad \operatorname{supp} e(\tau,\cdot)\ \subseteq\ \operatorname{supp} e(0,\cdot)\,\oplus\,B_{c\tau}.
+\] Energy and information cannot reach beyond \(c\tau\) of the initial
+support. The module verifies this directly: the pulse support stays
+inside the cone (expansion \(0.00 \le c\tau\)). At the quantum level the
+AQD upgrades this to \textbf{microcausality} --- with
+\(\Phi:=P/\sqrt K\), \([\Phi(x),\Phi(y)]=0\) for spacelike \((x-y)\) via
+the Pauli--Jordan function \(D(x)\) whose support lies on the light cone
+(the cone speed is fixed at \(c\) by \(c^2=K/\rho\)), and the
+arrival-time bound \(t_{\text{arr}}\ge \text{dist}/c\) follows from
+commutator support. No calibration enters.
+
+\hypertarget{em.12.4-what-this-closes-and-what-remains-open-o}{%
+\subsection{\texorpdfstring{EM.12.4 What this closes, and what remains
+open
+\textbf{{[}O{]}}}{EM.12.4 What this closes, and what remains open {[}O{]}}}\label{em.12.4-what-this-closes-and-what-remains-open-o}}
+
+\textbf{Closed (this addendum):} the \emph{dynamic} field equations, the
+Poynting energy flow and its exact conservation, uniqueness, and
+causality (classical light cone + quantum microcausality). Together with
+EM.2 (wave/\(c^2=B/\rho\)) and EM.3 (static \(1/r^2\)), the
+\textbf{longitudinal (E-sector)} electrodynamics is now complete and
+reproducible.
+
+\textbf{Still open --- honestly marked {[}O{]} (unchanged from EM.9):}
+the \textbf{full vector \(\mathbf E/\mathbf B\) curl structure} ---
+Faraday's \(\nabla\times\mathbf E=-\partial_t\mathbf B\) and
+Ampère--Maxwell's \(\nabla\times\mathbf B\) in \emph{vector} form, with
+the \textbf{magnetic field as an independent transverse pseudovector}
+and its \emph{absolute} magnitude. The AQD treatment is
+scalar/longitudinal (\(P\), \(\mathbf v\) with \(\mathbf v\)
+irrotational); it yields the compression (Coulomb/\(E\)) sector
+rigorously but not the independent transverse-vector
+(magnetic/radiative) sector. This is exactly the EM.9 line
+\emph{``magnetic/radiative absolute vector sector --- {[}O{]} (physics
+§14.0.6)''}. It is \textbf{not} resolved here; it remains the principal
+open structural item of the EM chapter.
+
+\hypertarget{em.12.5-updated-master-ledger-rows}{%
+\subsection{EM.12.5 Updated master-ledger
+rows}\label{em.12.5-updated-master-ledger-rows}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Basis / module
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+First-order system \(\partial_tP+K\nabla\!\cdot\mathbf v=0\),
+\(\rho\partial_t\mathbf v+\nabla P=0\) & {[}F{]} & AQD A1;
+\texttt{vp\_em\_field\_dynamics.py} \\
+Poynting law \(\partial_t e+\nabla\!\cdot\mathbf S=0\),
+\(\mathbf S=P\mathbf v\) & {[}F{]}/{[}V{]} & AQD QP-0002-001; residual
+\$\sim\$3e-2 \\
+Energy conservation \(dE/dt=0\) (lossless) + uniqueness & {[}F{]} & AQD
+QP-0002-001/002; dev 3e-4 \\
+Causality: light cone, \(u_{\max}=c\); microcausality & {[}F{]} & AQD
+F-A/B/C, QP-0002-U121 \\
+Full vector \(\mathbf E/\mathbf B\) curl (Faraday/Ampère, magnetic
+absolute) & \textbf{{[}O{]}} & open --- scalar/longitudinal AQD does not
+supply it \\
+\end{longtable}
+
+\emph{This addendum upgrades the EM chapter from ``static sector +
+algebraic \(B/E\) ratio'' to ``\textbf{complete longitudinal
+electrodynamics with Poynting flow and causality},'' using the AQD
+axiomatic field dynamics. The dynamic-Maxwell gap is closed in the
+E-sector; the independent vector (magnetic/radiative) sector remains the
+chapter's honestly-declared open item.}
+
+\hypertarget{chemistry-from-a-single-anchor-the-jamming-account}{%
+\section{Chemistry from a Single Anchor: The Jamming
+Account}\label{chemistry-from-a-single-anchor-the-jamming-account}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter CH} DOI
+(reserved): 10.5281/zenodo.20680541 · Companion to VP Theory (physics)
+and to Chapter EM Status grades: \textbf{{[}F{]}} forced (zero free
+parameters) · \textbf{{[}F?{]}} forced-candidate (model-dependent or
+\textless1.5\%) · \textbf{{[}CAL{]}} calibration input (measured
+constant, used consistently) · \textbf{{[}V{]}} simulation-measured ·
+\textbf{{[}O{]}} open (honestly unsolved). Every numeric claim is
+reproduced by a deterministic, standard-library module (2× sha256
+identical); module and case-ledger anchors are given inline. Verified
+numbers quoted below are the actual module outputs.
+
+\begin{quote}
+Everything starts locked, is derived, and is settled by a verdict. One
+table separates what is \emph{forced} from what is \emph{measured input}
+from what is \emph{open}. Chemistry unfolds from the electron (a
+rotational dent) using only \(\pi\)-geometry and the electromagnetic
+\(1/r^2\) --- the same substrate from which light emerges (Chapter EM).
+\end{quote}
+
+\hypertarget{ch.0-governance-and-grading-inherited-from-vp-theory-1}{%
+\subsection{CH.0 Governance and grading (inherited from VP Theory
+§1)}\label{ch.0-governance-and-grading-inherited-from-vp-theory-1}}
+
+This chapter inherits No-Tuning / LOCK / Gate. \textbf{No-Tuning:}
+changing an input after seeing a result to hit a target is forbidden.
+The clean final logic is presented here; the trial-and-error of
+development lives, reproducibly, in the modules and the case ledger.
+Forced results \textbf{{[}F{]}} have no adjustable parameter --- they
+cannot be tuned, so they are \emph{refuted} if they disagree with
+measurement.
+
+\hypertarget{ch.1-the-anti-tuning-chain-the-central-defense}{%
+\subsection{CH.1 The anti-tuning chain --- the central
+defense}\label{ch.1-the-anti-tuning-chain-the-central-defense}}
+
+A trained reviewer immediately suspects parameter-fitting. The rebuttal
+has three prongs.
+
+\textbf{Prong A --- forced results are dimensionless geometry with
+nothing to adjust.} The tetrahedral angle \(\arccos(-1/3)\), the ratio
+\(\Delta_{\text{tet}}/\Delta_{\text{oct}} = 4/9\), the FCC packing
+fraction \(\pi/(3\sqrt2)\), the shell-filling integers
+\([2,8,8,18,18,32]\) --- these are pure geometry/integers with no knob.
+
+\textbf{Prong B --- calibration inputs are used as forward predictions.}
+Measured constants (spectroscopic \(B,\nu\); bond enthalpy \(\Delta H\);
+\(\mathrm pK_a\); standard potential \(E^\circ\)) are each fixed
+\emph{once} and used consistently. Quantities \emph{derived} from them
+--- standard entropy, equilibrium constants, cell potentials --- then
+match measurement; that is prediction, not fitting.
+
+\textbf{Prong C --- honest open items prove no tuning.} A tuner would
+have ``solved'' absolute multi-electron ionization energies; instead the
+failure is recorded (mean \textasciitilde22\% for main group, electron
+affinity wrong in sign 8/18 by the Slater method) and marked
+\textbf{{[}O{]}}.
+
+\hypertarget{ch.2-foundation-anchor-atomic-scale-f}{%
+\subsection{\texorpdfstring{CH.2 Foundation: anchor → atomic scale
+\textbf{{[}F{]}}}{CH.2 Foundation: anchor → atomic scale {[}F{]}}}\label{ch.2-foundation-anchor-atomic-scale-f}}
+
+The only observational input is the electron mass \(m_e\) (the anchor).
+With the EM coupling \(\alpha_{\mathrm{em}}\) \textbf{{[}CAL{]}} and
+\(\pi\) (using the \emph{reduced} Compton wavelength
+\(\bar\lambda_{C,e} = \hbar/(m_e c) = \lambda_{C,e}/2\pi\)):
+\[ a_0 = \frac{\bar\lambda_{C,e}}{\alpha_{\mathrm{em}}} = \frac{\hbar}{m_e c\,\alpha_{\mathrm{em}}},
+   \qquad \mathrm{Ry} = \frac{\alpha_{\mathrm{em}}^2 m_e c^2}{2}. \]
+Module \texttt{vp\_atomic.py} gives \(a_0 = 0.529177\) Å (Δ +0.0000\%)
+and \(\mathrm{Ry} = 13.6057\) eV (Δ −0.0001\%); hydrogenic
+\(\mathrm{IE} = \mathrm{Ry}\,Z^2\) to \textless0.06\%. Shell structure
+follows from the Aufbau degeneracy \(2(2l+1)\), giving noble-gas
+closures \([2,10,18,36,54,86]\) and period lengths \([2,8,8,18,18,32]\)
+exactly \textbf{{[}F{]}}. Absolute many-electron IE is only approximate
+(screening) and is \textbf{{[}O{]}}.
+
+\hypertarget{ch.3-periodic-structure-valence-and-oxidation-ff}{%
+\subsection{\texorpdfstring{CH.3 Periodic structure: valence and
+oxidation
+\textbf{{[}F{]}/{[}F?{]}}}{CH.3 Periodic structure: valence and oxidation {[}F{]}/{[}F?{]}}}\label{ch.3-periodic-structure-valence-and-oxidation-ff}}
+
+Valence equals the number of outer-shell electrons (1--8, main group)
+\textbf{{[}F{]}}. The octet rule fixes ionic-compound stoichiometry:
+module \texttt{vp\_valence.py} predicts 9/9 formulas (NaCl, MgCl₂,
+Al₂O₃, CaO, \ldots). Periodic trends (radius ↓, electronegativity ↑
+across a period; radius ↑ down a group) are \textbf{{[}F?{]}}.
+Transition metals have valence \(4s+3d\) with variable oxidation states
+(Mn +2\ldots+7) from the partially filled \(d\)-shell; the
+half/fully-filled exceptions Cr (\(3d^54s^1\)), Cu (\(3d^{10}4s^1\))
+follow from sub-shell stability \textbf{{[}F{]}}.
+
+\hypertarget{ch.4-chemical-bonding-and-vsepr-geometry-f}{%
+\subsection{\texorpdfstring{CH.4 Chemical bonding and VSEPR geometry
+\textbf{{[}F{]}}}{CH.4 Chemical bonding and VSEPR geometry {[}F{]}}}\label{ch.4-chemical-bonding-and-vsepr-geometry-f}}
+
+Geometry is the electromagnetic \(1/r^2\) repulsion of electron domains
+on a sphere (the Thomson problem). Module
+\texttt{vp\_molecular\_geometry.py} \emph{computes} (seed-independent)
+the angles:
+\[ \text{linear } 180^\circ,\quad \text{trigonal } 120^\circ,\quad
+   \boxed{\text{tetrahedral } \arccos(-\tfrac13) = 109.47^\circ},\quad \text{octahedral } 90^\circ. \]
+All have zero free parameters \textbf{{[}F{]}}; the simulation
+reproduces the closed form \(\arccos(-1/3)=109.47^\circ\). Lone-pair
+compression (CH₄ → NH₃ → H₂O:
+\(109.5^\circ \to 107^\circ \to 104.5^\circ\)) has the correct direction
+\textbf{{[}F?{]}}; the precise magnitude is \textbf{{[}O{]}}. Bond
+rupture follows a scale-invariant \(\sqrt2\) diagonal-stretch geometry
+shared with nuclear fission (Chapter EM links the same \(1/r^2\));
+absolute bond energy needs per-bond anharmonicity and is
+\textbf{{[}O{]}}.
+
+\hypertarget{ch.5-coordination-chemistry-color-and-magnetism-f}{%
+\subsection{\texorpdfstring{CH.5 Coordination chemistry: color and
+magnetism
+\textbf{{[}F{]}}}{CH.5 Coordination chemistry: color and magnetism {[}F{]}}}\label{ch.5-coordination-chemistry-color-and-magnetism-f}}
+
+Ligand point charges (EM \(1/r^2\)) split the geometric \(d\)-orbitals
+(spherical harmonics). Module \texttt{vp\_crystal\_field.py} gives the
+octahedral \(e_g\)↑ / \(t_{2g}\)↓ pattern (tetrahedral inverted) and the
+analytic ratio
+\[ \frac{\Delta_{\text{tet}}}{\Delta_{\text{oct}}} = \frac{4}{9} = 0.4444 \quad\text{(exact)}. \]
+High/low-spin unpaired-electron counts give magnetic moments (Fe³⁺ 5/1
+unpaired) \textbf{{[}F{]}}. Color is the \(d\)--\(d\) transition
+\(\Delta \to \lambda\) (interpreted optically via Chapter EM);
+multi-band precise color is \textbf{{[}O{]}}, the spectrochemical series
+is \textbf{{[}CAL{]}}.
+
+\hypertarget{ch.6-light-optics-color-see-chapter-em-fcal}{%
+\subsection{\texorpdfstring{CH.6 Light, optics, color --- see Chapter EM
+\textbf{{[}F{]}/{[}CAL{]}}}{CH.6 Light, optics, color --- see Chapter EM {[}F{]}/{[}CAL{]}}}\label{ch.6-light-optics-color-see-chapter-em-fcal}}
+
+The optical consequences (propagation angle \(\sin\chi = \lambda/(mD)\),
+Snell, rainbow \(42.1^\circ\), total-internal-reflection critical angle,
+blackbody, \(d\)--\(d\) color) are developed in \textbf{Chapter EM}.
+Chemistry \emph{consumes} the electromagnetic mechanism from physics
+§10/§14; it does not re-derive it. The boundary is explicit: fundamental
+EM (light as rotational transverse wave, \(c^2=B/\rho\), the \(1/r^2\)
+Green function) is physics; the chemical/optical consequences are here.
+
+\hypertarget{ch.7-thermodynamics-rotational-energy-temperature-ff}{%
+\subsection{\texorpdfstring{CH.7 Thermodynamics: rotational energy →
+temperature
+\textbf{{[}F{]}/{[}F?{]}}}{CH.7 Thermodynamics: rotational energy → temperature {[}F{]}/{[}F?{]}}}\label{ch.7-thermodynamics-rotational-energy-temperature-ff}}
+
+Temperature is a rotational-energy scale; rotational levels
+\(E_J = B\,hc\,J(J{+}1)\). Heat-capacity degrees-of-freedom: monatomic
+\(\tfrac32 R\), diatomic \(\tfrac52 R\), solid Dulong--Petit \(3R\)
+(\textless3\%). Module \texttt{vp\_statistical\_thermo.py} reproduces
+the H₂ heat-capacity \textbf{staircase} (\(\tfrac32 R\) at 20 K →
+\(\tfrac52 R\) at 298 K → \(\tfrac72 R\) above \textasciitilde6332 K)
+with activation temperatures \(T_{\text{rot}} = 88\) K,
+\(T_{\text{vib}} = 6332\) K from \(B,\nu\); \(C_v\)(H₂) 20.81 vs 20.4
+(+2.0\%) \textbf{{[}F{]}}. Standard molar entropy (Sackur--Tetrode +
+rotation + vibration + electronic) is \textless0.3\% for H₂·N₂·CO·O₂; O₂
+includes the known triplet (paramagnetic) \(R\ln 3\) \textbf{{[}F?{]}}.
+The spectroscopic constants \(B,\nu\) are per-molecule
+\textbf{{[}CAL{]}}.
+
+\hypertarget{ch.8-chemical-equilibrium-f}{%
+\subsection{\texorpdfstring{CH.8 Chemical equilibrium
+\textbf{{[}F{]}}}{CH.8 Chemical equilibrium {[}F{]}}}\label{ch.8-chemical-equilibrium-f}}
+
+Direction is set by \(\Delta G = \Delta H - T\Delta S\); dissociation
+occurs when \(T\Delta S > \Delta H\). The dissociation temperature is
+\[ T^* = \frac{\Delta H}{\Delta S}. \] Module
+\texttt{vp\_equilibrium.py} gives \(T^*\): N₂ 8214 K \textgreater{} H₂
+4400 K \textgreater{} O₂ 4210 K \textgreater{} Cl₂ 2272 K --- the
+\textbf{bond-strength order} \textbf{{[}F{]}}. Reaction entropies from
+partition functions are \textless0.4\%. The van 't Hoff \(K(T)\) (H₂ ⇌
+2H, with \(K=1\) at \(T^*\)) is \textbf{{[}F?{]}} (\(\Delta H\) is
+\textbf{{[}CAL{]}}). Le Chatelier directions (dissociation
+\(\Delta S>0\) high-T driven; Haber \(\Delta S<0\) high-T reversed)
+\textbf{{[}F{]}}.
+
+\hypertarget{ch.9-reaction-kinetics-f}{%
+\subsection{\texorpdfstring{CH.9 Reaction kinetics
+\textbf{{[}F{]}}}{CH.9 Reaction kinetics {[}F{]}}}\label{ch.9-reaction-kinetics-f}}
+
+The activation energy is the threshold to reach the transition state (a
+\(\sqrt2\) bond-stretch); the fraction crossing is the Boltzmann tail
+\(\exp(-E_a/RT)\). Module \texttt{vp\_kinetics.py} reproduces the
+Arrhenius temperature dependence, the room-temperature \textbf{10 K
+doubling rule} (\(E_a\approx 50\) kJ/mol gives ×1.9 per 10 K), and
+recovery of \(E_a\) from the Arrhenius slope \(-E_a/R\). Mean molecular
+speed \(\sqrt{8k_BT/\pi m}\) (N₂ 298 K → 475 m/s) and the Eyring
+universal factor \(k_BT/h = 6.2\times10^{12}\) s⁻¹ follow
+\textbf{{[}F{]}}. Absolute \(E_a\) (transition-state structure) and
+tunneling are \textbf{{[}O{]}}.
+
+\hypertarget{ch.10-solution-chemistry-proton-transfer-equilibrium-f}{%
+\subsection{\texorpdfstring{CH.10 Solution chemistry: proton-transfer
+equilibrium
+\textbf{{[}F{]}}}{CH.10 Solution chemistry: proton-transfer equilibrium {[}F{]}}}\label{ch.10-solution-chemistry-proton-transfer-equilibrium-f}}
+
+With \(K_w = 10^{-14}\), pure water has pH 7. The weak-acid pH solves
+\(K_a = x^2/(C-x)\); module \texttt{vp\_solution\_chemistry.py} gives
+acetic acid 0.1 M → pH 2.88 (measured 2.87). Henderson--Hasselbalch
+buffering pH \(= \mathrm pK_a + \log([A^-]/[HA])\) and titration
+equivalence-point jumps follow \textbf{{[}F{]}}. Individual
+\(\mathrm pK_a\) are \textbf{{[}CAL{]}}; absolute \(\mathrm pK_a\)
+prediction (solvation) is \textbf{{[}O{]}}.
+
+\hypertarget{ch.11-electrochemistry-electron-rotational-dent-transfer-f}{%
+\subsection{\texorpdfstring{CH.11 Electrochemistry: electron (rotational
+dent) transfer
+\textbf{{[}F{]}}}{CH.11 Electrochemistry: electron (rotational dent) transfer {[}F{]}}}\label{ch.11-electrochemistry-electron-rotational-dent-transfer-f}}
+
+Charge is rotation (Chapter EM); redox is rotational-dent transfer,
+symmetric with proton transfer (CH.10). The cell potential is
+\[ E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}, \qquad
+   \Delta G^\circ = -nFE^\circ,\qquad E = E^\circ - \frac{RT}{nF}\ln Q. \]
+Module \texttt{vp\_electrochemistry.py} gives the Daniell cell
+\(E^\circ_{\text{cell}} = 1.10\) V (matches measured) and
+\(\Delta G^\circ = -212\) kJ/mol \textbf{{[}F{]}}. The
+standard-potential series (Li −3.04 → F₂ +2.87) links to IE and
+electronegativity; individual values are \textbf{{[}CAL{]}}.
+
+\hypertarget{ch.12-organic-chemistry-carbon-skeleton-on-em-geometry-f}{%
+\subsection{\texorpdfstring{CH.12 Organic chemistry: carbon skeleton on
+EM geometry
+\textbf{{[}F{]}}}{CH.12 Organic chemistry: carbon skeleton on EM geometry {[}F{]}}}\label{ch.12-organic-chemistry-carbon-skeleton-on-em-geometry-f}}
+
+Carbon's tetravalence plus EM repulsion gives hybridization geometry
+(the same VSEPR engine as CH.4): module
+\texttt{vp\_organic\_chemistry.py} gives sp³ tetrahedral
+\(109.5^\circ\), sp² planar \(120^\circ\), sp linear \(180^\circ\). Bond
+order--length--strength: \[
+\begin{array}{lccc}
+ & \text{order} & \text{length} & \text{strength (kJ/mol)}\\
+\text{C–C} & 1\ (1\sigma) & 154\ \text{pm} & 348\\
+\text{C=C} & 2\ (1\sigma+1\pi) & 134\ \text{pm} & 614\\
+\text{C≡C} & 3\ (1\sigma+2\pi) & 120\ \text{pm} & 839
+\end{array}
+\] The degree of unsaturation \((2C+2+N-H-X)/2\) gives benzene 4
+\textbf{{[}F{]}}. Functional-group reactivity (acid--base, redox
+applied) is \textbf{{[}F?{]}}; absolute rates and stereoselectivity are
+\textbf{{[}O{]}}.
+
+\hypertarget{ch.13-materials-and-nuclear-summary-ff}{%
+\subsection{\texorpdfstring{CH.13 Materials and nuclear (summary)
+\textbf{{[}F{]}/{[}F?{]}}}{CH.13 Materials and nuclear (summary) {[}F{]}/{[}F?{]}}}\label{ch.13-materials-and-nuclear-summary-ff}}
+
+Crystal packing fractions are pure geometry: FCC/HCP
+\(\pi/(3\sqrt2) = 0.7405\), BCC 0.6802, SC 0.5236 (module
+\texttt{vp\_crystal\_packing.py}); FCC metal densities \textless2\%
+\textbf{{[}F{]}/{[}F?{]}}. Nuclear magic-number skeleton from
+Gauss-lattice point counts \(N(R^2)+1\): module
+\texttt{vp\_gauss\_shells.py} gives \textbf{2, 8, 20, 28, 82} (5/7
+parameter-free); 50, 126 require spin--orbit \textbf{{[}CAL{]}}. SEMF
+fission/fusion gives the iron peak \(A=58\) and the critical \(Z^2/A\)
+\textbf{{[}F?{]}}. Theoretical bounds (\(\sigma_{th}\), \(\gamma_s\))
+are bounds, not predictions --- honestly \textbf{{[}F{]}+{[}O{]}}.
+
+\hypertarget{ch.14-master-ledger-forced-measured-input-open}{%
+\subsection{CH.14 Master ledger --- forced / measured input /
+open}\label{ch.14-master-ledger-forced-measured-input-open}}
+
+\textbf{{[}F{]} forced (zero free parameters --- cannot be tuned):}
+shell filling and period lengths; valence, oxidation, ionic formulas;
+all VSEPR angles (\(\arccos(-1/3)\) etc.);
+\(\Delta_{\text{tet}}/ \Delta_{\text{oct}}=4/9\); packing fractions;
+propagation angle \(\sin\chi=\lambda/(mD)\); rainbow \(42^\circ\);
+Snell, critical angle; \(C_v(T)\) staircase and activation temperatures;
+dissociation- temperature order and Le Chatelier; Arrhenius, 10 K
+doubling, \(k_BT/h\); pH, buffers, titration; \(E^\circ_{\text{cell}}\),
+\(\Delta G=-nFE^\circ\), Nernst; hybridization, bond order,
+unsaturation; Gauss magic-number skeleton.
+
+\textbf{{[}CAL{]} calibration input (measured constants, used
+consistently --- never tuned per case):} spectroscopic \(B,\nu\); bond
+enthalpy \(\Delta H\); \(\mathrm pK_a\); standard potential \(E^\circ\);
+spectrochemical series; absolute refractive index \(n\); spin--orbit
+strength (magic 50, 126); the fine-structure coupling
+\(\alpha_{\mathrm{em}}\).
+
+\textbf{{[}O{]} open (honest --- not disguised as solved):} absolute
+multi-electron IE (screening); electron affinity (Slater sign failure);
+absolute \(\mathrm pK_a\), \(E^\circ\) (solvation); multi-band precise
+color; absolute bond energy (anharmonicity); \(d\)-block absolute IE;
+absolute rates and stereoselectivity; nuclear shell-correction masses;
+pure-\(\pi\) geometry of 50, 126.
+
+\hypertarget{ch.15-two-unifications-sphere-geometry-and-rotation}{%
+\subsection{CH.15 Two unifications --- sphere geometry and
+rotation}\label{ch.15-two-unifications-sphere-geometry-and-rotation}}
+
+\textbf{Sphere geometry:} molecular shape = points \emph{on} a sphere
+(Thomson/VSEPR) → \(\arccos(-1/3)\); nuclear shells = lattice points
+\emph{inside} a sphere (Gauss) → magic-number skeleton; crystal density
+= sphere \emph{packing} (Kepler) → 0.7405; \(d\)-orbital splitting =
+spherical harmonics × ligand EM → 4/9.
+
+\textbf{Rotation:} the electron is a rotational dent; charge is rotation
+handedness; light is the rotational transverse wave (Chapter EM);
+temperature is rotational excitation; equilibrium, rate, and
+electrochemistry all ride on rotational energy. The single anchor
+(electron = rotational dent) opens, and the last sector
+(electrochemistry = rotational-dent transfer) closes the circle.
+
+\hypertarget{ch.16-falsification-criteria-f}{%
+\subsection{\texorpdfstring{CH.16 Falsification criteria
+\textbf{{[}F{]}}}{CH.16 Falsification criteria {[}F{]}}}\label{ch.16-falsification-criteria-f}}
+
+Forced results cannot be re-fitted, so they are refuted on disagreement:
+
+\begin{itemize}
+\tightlist
+\item
+  If the tetrahedral angle is not \(\arccos(-1/3)=109.47^\circ\), the
+  VSEPR-EM derivation is discarded.
+\item
+  If \(\Delta_{\text{tet}}/\Delta_{\text{oct}} \neq 4/9\), the
+  crystal-field geometry is discarded.
+\item
+  If the rainbow angle is not \(\approx 42^\circ\), the
+  light-angle/refraction derivation is discarded.
+\item
+  If H₂ heat capacity shows no \(\tfrac32\to\tfrac52\to\tfrac72 R\)
+  staircase, or the activation temperatures disagree with \(B,\nu\), the
+  partition-function account is discarded.
+\item
+  If dissociation temperatures do not follow the bond-strength order,
+  the equilibrium derivation is discarded.
+\item
+  The committed light-angle predictions
+  \(\chi(632.8\,\text{nm})=89.892^\circ\),
+  \(\chi(532\,\text{nm})=89.825^\circ\) are falsifiable forward
+  predictions (Chapter EM).
+\end{itemize}
+
+\hypertarget{ch.17-reproducibility}{%
+\subsection{CH.17 Reproducibility}\label{ch.17-reproducibility}}
+
+Thirty deterministic, standard-library modules and a 114-row case ledger
+(\texttt{cases\_fixed.csv}) reproduce this logic; the light/EM additions
+add a 16-row ledger (\texttt{cases\_em.csv}). Determinism is verified by
+running each module twice and comparing the stdout sha256.
+
+\begin{verbatim}
+python3 research/foundation/vp_molecular_geometry.py   # tetrahedral 109.47°
+python3 research/foundation/vp_crystal_field.py        # 4/9
+python3 verify_chemistry.py --root <package root>      # all modules + ledger integrity gate
+\end{verbatim}
+
+The harness reports execution, determinism, standard-library-only
+dependency, and case-ledger integrity. With the light and
+electromagnetism modules included, \textbf{32/32 PASS}.
+
+\emph{Together with Chapter EM, this completes the program: light
+emerges from the jammed lattice and the electromagnetic \(1/r^2\)
+follows (Chapter EM); on that substrate, atoms, bonds, geometry, color,
+heat, equilibrium, rate, solution, electrochemistry, and organic
+structure are forced by sphere geometry and rotation (this chapter).
+What is forced is falsifiable; what is measured is labelled; what is
+open is admitted --- and all of it is reproducible.}
+
+\hypertarget{conduction-in-copper-and-magnetism-in-iron-two-fates-of-the-d-shell}{%
+\section{\texorpdfstring{Conduction in Copper and Magnetism in Iron: Two
+Fates of the
+\emph{d}-Shell}{Conduction in Copper and Magnetism in Iron: Two Fates of the d-Shell}}\label{conduction-in-copper-and-magnetism-in-iron-two-fates-of-the-d-shell}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter CM} DOI
+(reserved): 10.5281/zenodo.20680541 · Builds on Chapter EM
+(electromagnetism) and Chapter CH (chemistry). Status grades as in
+Chapter EM. Numbers reproduced by \texttt{vp\_copper\_conduction.py} and
+\texttt{vp\_iron\_magnetism.py} (deterministic, standard-library,
+self-checking).
+
+\begin{quote}
+Copper conducts and iron magnetizes for the same root reason, read two
+ways. Copper's inner \emph{d}-shell is \textbf{full}, freeing its outer
+electron into a conducting sea; iron's \emph{d}-shell is \textbf{partly
+empty}, leaving unpaired rotations that align into a magnet. A filled
+shell makes a conductor; an unfilled shell makes a magnet.
+\end{quote}
+
+\hypertarget{cm.0-the-two-questions}{%
+\subsection{CM.0 The two questions}\label{cm.0-the-two-questions}}
+
+This chapter answers two concrete questions about metals using the
+electromagnetism of Chapter EM:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Electricity is an electromagnetic wave --- how does it pass
+  \emph{through the inside} of copper,} when copper (a metal)
+  \emph{reflects} ordinary light?
+\item
+  \textbf{What is the principle of iron's magnetism} --- and in
+  particular, why iron (and cobalt, nickel) but not copper, and not even
+  manganese, which has \emph{more} unpaired electrons than iron? (The
+  physics whitepaper took the ``why Fe and not Cu'' criterion as an
+  empirical input, §14; here it is derived.)
+\end{enumerate}
+
+\hypertarget{cm.1-the-paradox}{%
+\subsection{CM.1 The paradox}\label{cm.1-the-paradox}}
+
+Light is a transverse electromagnetic wave, and metals reflect it ---
+that is why copper is shiny and opaque. Yet electricity is \emph{also}
+electromagnetic, and it travels straight through the body of a copper
+wire. How can the same medium reflect one electromagnetic disturbance
+and transmit another?
+
+The resolution is the propagation angle of Chapter EM (§EM.6).
+Electricity is the \textbf{extreme longitudinal limit} (\(\chi \to 0\))
+of the electromagnetic wave, while visible light is the
+\textbf{transverse limit} (\(\chi \to 90^\circ\)). The same
+free-electron sea reflects the transverse wave and transmits the
+longitudinal one. Same medium, opposite fates, set by angle.
+
+\hypertarget{cm.2-coppers-free-electron-sea-fcal}{%
+\subsection{\texorpdfstring{CM.2 Copper's free-electron sea
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.2 Copper's free-electron sea {[}F{]}/{[}CAL{]}}}\label{cm.2-coppers-free-electron-sea-fcal}}
+
+Copper is \([\mathrm{Ar}]\,3d^{10}4s^1\): the inner \(3d\) shell is
+\textbf{full}, and the single \(4s\) electron is delocalized into a
+conducting sea. The free-electron density is
+\[ n = \frac{\rho\,N_A\,Z_{\text{free}}}{M} = 8.49\times 10^{28}\ \mathrm{m^{-3}} \]
+(one free electron per atom; \(\rho, M\) measured \textbf{{[}CAL{]}}).
+This sea is the ``internal quanta'' through which conduction propagates.
+
+\hypertarget{cm.3-why-transverse-light-is-reflected-the-plasma-frequency-fcal}{%
+\subsection{\texorpdfstring{CM.3 Why transverse light is reflected ---
+the plasma frequency
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.3 Why transverse light is reflected --- the plasma frequency {[}F{]}/{[}CAL{]}}}\label{cm.3-why-transverse-light-is-reflected-the-plasma-frequency-fcal}}
+
+The free-electron sea has a natural oscillation frequency, the plasma
+frequency
+\[ \omega_p = \sqrt{\frac{n e^2}{\varepsilon_0 m_e}} = 1.64\times 10^{16}\ \mathrm{rad/s}
+   \;\;(f_p = 2.6\times 10^{15}\ \mathrm{Hz},\ \lambda_p = 115\ \mathrm{nm},\ \text{ultraviolet}). \]
+Below \(\omega_p\) --- radio, infrared, \textbf{all of visible light}
+--- an incident transverse wave drives the free electrons, which
+re-radiate and \textbf{reflect} it: this is exactly why metals are shiny
+and opaque (\texttt{vp\_copper\_conduction.py}, §1). Above \(\omega_p\)
+(X-rays) the electrons cannot follow and the metal becomes transparent.
+The transverse electromagnetic wave is turned back by the very sea that
+carries the current.
+
+\hypertarget{cm.4-why-longitudinal-electricity-is-transmitted-conduction-as-chi-to-0-f}{%
+\subsection{\texorpdfstring{CM.4 Why longitudinal electricity is
+transmitted --- conduction as \(\chi \to 0\)
+\textbf{{[}F{]}}}{CM.4 Why longitudinal electricity is transmitted --- conduction as \textbackslash chi \textbackslash to 0 {[}F{]}}}\label{cm.4-why-longitudinal-electricity-is-transmitted-conduction-as-chi-to-0-f}}
+
+The longitudinal mode is different. A longitudinal (\(\chi \to 0\))
+electromagnetic disturbance is a \textbf{density/pressure wave of the
+electron sea} that threads straight along the wire --- straighter even
+than a \(\gamma\)-ray. It is not reflected because it is not a
+transverse oscillation of the surface electrons; it propagates
+\emph{through} the internal quanta of the copper atoms, not through
+vacuum or air (physics §14). This longitudinal disturbance is the
+current. The angle that makes light reflect (transverse) is the angle
+that makes electricity transmit (longitudinal). Two physical facts fix
+conduction at \(\chi \to 0\): small amplitude (a low-amplitude
+disturbance threads straight; if the amplitude grows the path tilts
+transverse and the signal \emph{leaves} the copper as radiative loss)
+and medium (it runs through the atomic-internal quanta).
+
+\hypertarget{cm.5-the-skin-effect-fcal}{%
+\subsection{\texorpdfstring{CM.5 The skin effect
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.5 The skin effect {[}F{]}/{[}CAL{]}}}\label{cm.5-the-skin-effect-fcal}}
+
+The transverse and longitudinal pictures are quantitatively distinct. A
+transverse wave that does enter the metal decays within the skin depth
+\[ \delta = \sqrt{\frac{2}{\mu_0\,\sigma\,\omega}}: \quad
+   8.4\ \mathrm{mm}\ (60\ \mathrm{Hz}) \to 2.1\ \mu\mathrm{m}\ (1\ \mathrm{GHz}). \]
+High-frequency transverse fields are confined to a micron-thin surface
+layer, while the direct/low-frequency longitudinal current fills the
+whole cross-section (\texttt{vp\_copper\_conduction.py}, §3).
+
+\hypertarget{cm.6-three-velocities-drift-signal-fermi-fcal}{%
+\subsection{\texorpdfstring{CM.6 Three velocities --- drift, signal,
+Fermi
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.6 Three velocities --- drift, signal, Fermi {[}F{]}/{[}CAL{]}}}\label{cm.6-three-velocities-drift-signal-fermi-fcal}}
+
+A common confusion is dissolved by separating three speeds
+(\texttt{vp\_copper\_conduction.py}, §4):
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Drift velocity} \(v_d = J/(ne)\): for
+  \(J = 10^6\ \mathrm{A/m^2}\), only \(0.074\ \mathrm{mm/s}\) --- the
+  electrons themselves crawl.
+\item
+  \textbf{Signal velocity} \(\sim c\): the longitudinal field
+  disturbance travels near light speed, so a lamp lights essentially
+  instantly even though the electrons barely move.
+\item
+  \textbf{Fermi velocity} \(v_F = 1.57\times 10^6\ \mathrm{m/s}\): the
+  electrons at the Fermi surface move fast, but their \emph{net} drift
+  is the slow \(v_d\).
+\end{itemize}
+
+The predicted Fermi energy
+\(E_F = \hbar^2(3\pi^2 n)^{2/3}/(2m_e) = 7.04\ \mathrm{eV}\) matches the
+measured \(\approx 7.0\ \mathrm{eV}\).
+
+\hypertarget{cm.7-why-copper-conducts-so-well-fcal}{%
+\subsection{\texorpdfstring{CM.7 Why copper conducts so well
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.7 Why copper conducts so well {[}F{]}/{[}CAL{]}}}\label{cm.7-why-copper-conducts-so-well-fcal}}
+
+The Drude relation \(\sigma = ne^2\tau/m_e\) with
+\(\sigma_{\mathrm{Cu}} = 5.96\times 10^7\ \mathrm{S/m}\) gives a
+relaxation time \(\tau = 2.5\times 10^{-14}\ \mathrm{s}\) and a mean
+free path \(\ell = v_F\tau = 39\ \mathrm{nm}\). Copper's \textbf{filled}
+\(3d^{10}\) shell hands its \(4s^1\) electron to a low-scattering sea
+--- exactly the property that, in iron, is \emph{absent}. This is the
+hinge of the whole chapter: \textbf{a filled inner shell yields
+conduction; an unfilled one yields magnetism.}
+
+\hypertarget{cm.8-the-magnetic-field-of-a-current-and-joule-loss-f}{%
+\subsection{\texorpdfstring{CM.8 The magnetic field of a current --- and
+Joule loss
+\textbf{{[}F{]}}}{CM.8 The magnetic field of a current --- and Joule loss {[}F{]}}}\label{cm.8-the-magnetic-field-of-a-current-and-joule-loss-f}}
+
+A drifting charge tilts its rotation axis by \(\sim v/c\) (§EM.4),
+shedding a small transverse twist perpendicular to the drift;
+propagating sideways it wraps the wire azimuthally as the magnetic field
+\(B = \mu_0 I/(2\pi r)\), with circulation sense set by the rotation
+handedness (the right-hand rule). The transverse twist has two fates:
+the \textbf{returned} part is the reactive \(B\) field itself (present
+even at zero loss, as in a superconductor), and the \textbf{un-returned}
+fraction is dissipation (Joule loss). Thus \(B\) and resistive loss
+share one origin --- the transverse twist of moving charge --- as its
+returned versus un-returned parts; \(B\) itself is not the loss.
+
+\hypertarget{cm.9-irons-magnetism-the-principle-fcalo}{%
+\subsection{\texorpdfstring{CM.9 Iron's magnetism --- the principle
+\textbf{{[}F{]}/{[}CAL{]}/{[}O{]}}}{CM.9 Iron's magnetism --- the principle {[}F{]}/{[}CAL{]}/{[}O{]}}}\label{cm.9-irons-magnetism-the-principle-fcalo}}
+
+Magnetism is aligned rotation. A magnetic moment is the rotation of an
+unpaired electron --- the same rotation that \emph{is} electric charge
+(§EM.1) and helicity (§EM.5). For a material to be a permanent
+(ferro)magnet, \textbf{two conditions must both hold}, and the pair
+derives exactly which elements magnetize.
+
+\hypertarget{cm.10-criterion-1-unpaired-d-electrons-this-is-why-not-copper-f}{%
+\subsection{\texorpdfstring{CM.10 Criterion 1 --- unpaired
+\emph{d}-electrons (this is why \textbf{not copper})
+\textbf{{[}F{]}}}{CM.10 Criterion 1 --- unpaired d-electrons (this is why not copper) {[}F{]}}}\label{cm.10-criterion-1-unpaired-d-electrons-this-is-why-not-copper-f}}
+
+A localized moment requires an \textbf{unfilled} \(d\)-shell with
+unpaired electrons (Hund's rule). For \(3d^{n_d}\) the unpaired count is
+\(n_d\) if \(n_d\le 5\) else \(10-n_d\), and the spin-only moment is
+\(\mu = \sqrt{n(n+2)}\,\mu_B\) (\texttt{vp\_iron\_magnetism.py},
+condition 1):
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+element
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+config
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+unpaired \(d\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\mu_{\text{so}}\,[\mu_B]\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+moment?
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Mn & \(3d^54s^2\) & 5 & 5.92 & yes \\
+Fe & \(3d^64s^2\) & 4 & 4.90 & yes \\
+Co & \(3d^74s^2\) & 3 & 3.87 & yes \\
+Ni & \(3d^84s^2\) & 2 & 2.83 & yes \\
+\textbf{Cu} & \(3d^{10}4s^1\) & \textbf{0} & \textbf{0.00} &
+\textbf{no} \\
+\end{longtable}
+
+Copper's \(3d^{10}\) shell is full: zero unpaired \(d\)-electrons, no
+localized moment. Its \(4s^1\) is a free conduction electron, not a
+localized moment. \textbf{Copper fails condition 1 and cannot be
+magnetic --- the same filled shell that makes it a superb conductor.}
+
+\hypertarget{cm.11-criterion-2-positive-exchange-this-is-why-not-manganese-fcal}{%
+\subsection{\texorpdfstring{CM.11 Criterion 2 --- positive exchange
+(this is why \textbf{not manganese})
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.11 Criterion 2 --- positive exchange (this is why not manganese) {[}F{]}/{[}CAL{]}}}\label{cm.11-criterion-2-positive-exchange-this-is-why-not-manganese-fcal}}
+
+Having moments is not enough; neighbouring \(d\)-rotations must align
+\textbf{parallel} (ferromagnetic), not antiparallel (antiferromagnetic).
+The Bethe--Slater criterion uses the ratio \(D/d\) = interatomic
+distance / \(3d\)-orbital diameter: above a critical value
+(\(\approx 1.5\)) the exchange integral is positive (parallel,
+ferromagnetic); below it the exchange is negative (antiparallel,
+antiferromagnetic) (\texttt{vp\_iron\_magnetism.py}, condition 2):
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+element & \(D/d\) & exchange & alignment \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cr & 1.18 & \(J<0\) & antiparallel (antiferro) \\
+Mn & 1.47 & \(J<0\) & antiparallel (antiferro) \\
+Fe & 1.63 & \(J>0\) & parallel (ferro) \\
+Co & 1.82 & \(J>0\) & parallel (ferro) \\
+Ni & 1.98 & \(J>0\) & parallel (ferro) \\
+\end{longtable}
+
+Manganese has \textbf{five} unpaired electrons --- more than iron ---
+yet \(D/d = 1.47 < 1.5\) gives \(J<0\), so its moments align
+antiparallel and cancel: \textbf{manganese fails condition 2 and is
+antiferromagnetic.} Cobalt (\(D/d = 1.82\)) sits near the exchange
+maximum.
+
+\hypertarget{cm.12-the-derivation-77-classification-f}{%
+\subsection{\texorpdfstring{CM.12 The derivation --- 7/7 classification
+\textbf{{[}F{]}}}{CM.12 The derivation --- 7/7 classification {[}F{]}}}\label{cm.12-the-derivation-77-classification-f}}
+
+Applying both conditions reproduces the observed magnetic class of the
+late \(3d\) series with no fitted magnetic parameter
+(\texttt{vp\_iron\_magnetism.py}, summary):
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+element & unpaired \(d\) & \(D/d\) & derived & observed & ✓ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cr & 5 & 1.18 & antiferro & antiferro & ✓ \\
+Mn & 5 & 1.47 & antiferro & antiferro & ✓ \\
+Fe & 4 & 1.63 & ferro & ferro & ✓ \\
+Co & 3 & 1.82 & ferro & ferro & ✓ \\
+Ni & 2 & 1.98 & ferro & ferro & ✓ \\
+Cu & 0 & --- & non-magnetic & non-magnetic & ✓ \\
+Zn & 0 & --- & non-magnetic & non-magnetic & ✓ \\
+\end{longtable}
+
+\textbf{7/7.} Copper is non-magnetic by condition 1, manganese is
+antiferromagnetic by condition 2, and only iron, cobalt, and nickel
+satisfy both --- the ``why Fe and not Cu'' the physics whitepaper left
+as input is here derived.
+
+\hypertarget{cm.13-curie-temperature-domains-and-nablacdotmathbf-b-0-fcal}{%
+\subsection{\texorpdfstring{CM.13 Curie temperature, domains, and
+\(\nabla\!\cdot\mathbf B = 0\)
+\textbf{{[}F{]}/{[}CAL{]}}}{CM.13 Curie temperature, domains, and \textbackslash nabla\textbackslash!\textbackslash cdot\textbackslash mathbf B = 0 {[}F{]}/{[}CAL{]}}}\label{cm.13-curie-temperature-domains-and-nablacdotmathbf-b-0-fcal}}
+
+Thermal rotation destroys alignment above the Curie temperature, where
+\(k_BT_C\) is of order the exchange energy: Fe 1043 K, Co 1388 K
+(highest, matching the strongest exchange), Ni 627 K
+(\texttt{vp\_iron\_magnetism.py}). Below \(T_C\), exchange aligns
+moments into \textbf{domains}; an external field moves the domain walls.
+Because \(\mathbf B\) \emph{is} a rotation axis (§EM.4), it is
+divergence-free, \(\nabla\!\cdot\mathbf B = 0\): the poles are the two
+ends of one axis and cannot be separated --- no monopoles, and cutting a
+magnet yields two fresh N/S pairs. Hysteresis is the part of the
+alignment that does not return --- the permanent magnet --- and heating
+above \(T_C\) erases it. The \(\nabla\!\cdot\mathbf B = 0\) seen
+abstractly in Chapter EM becomes, in iron, the macroscopic fact of
+domains and permanent magnets. (The metallic moments are non-integer ---
+Fe 2.22, Co 1.72, Ni 0.62 \(\mu_B\) --- an itinerant/band effect marked
+\textbf{{[}O{]}}; the localized Hund count gives the correct
+\emph{ordering} and the magnetic \emph{class}.)
+
+\hypertarget{cm.14-the-unifying-picture}{%
+\subsection{CM.14 The unifying
+picture}\label{cm.14-the-unifying-picture}}
+
+Copper and iron are the two fates of the \(d\)-shell:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Copper --- filled \(3d^{10}\) → free \(4s\) electron →
+  conduction.} Electricity passes through copper as the longitudinal
+  (\(\chi\to 0\)) electromagnetic mode of that free sea, while light
+  (transverse) is reflected by it.
+\item
+  \textbf{Iron --- unfilled \(3d^6\) → unpaired moments → magnetism.}
+  With positive exchange (\(D/d>1.5\)) the moments align into a
+  ferromagnet; the aligned rotation is the magnetic field.
+\end{itemize}
+
+A filled inner shell makes a conductor; an unfilled one makes a magnet.
+Both are the same rotation --- the rotation that is charge, light, and
+helicity --- expressed as a delocalized current in copper and as an
+aligned moment in iron.
+
+\hypertarget{cm.15-falsification-and-reproducibility-f}{%
+\subsection{\texorpdfstring{CM.15 Falsification and reproducibility
+\textbf{{[}F{]}}}{CM.15 Falsification and reproducibility {[}F{]}}}\label{cm.15-falsification-and-reproducibility-f}}
+
+\begin{itemize}
+\tightlist
+\item
+  If a metal's plasma frequency did not predict its reflectivity edge
+  (shiny below \(\omega_p\), transparent above), the plasma-reflection
+  account of conduction-vs-light fails.
+\item
+  If manganese (more unpaired electrons than iron) were ferromagnetic,
+  or copper (\(3d^{10}\)) were ferromagnetic, the two-condition
+  criterion fails.
+\item
+  If the derived magnetic class disagreed with any late-\(3d\) metal,
+  the derivation fails (it is 7/7).
+\end{itemize}
+
+\begin{verbatim}
+python3 code/foundation/vp_copper_conduction.py   # plasma freq, skin depth, drift/signal/Fermi
+python3 code/foundation/vp_iron_magnetism.py      # two-condition ferromagnetic criterion (7/7)
+\end{verbatim}
+
+Both modules are deterministic (stdout sha256 identical on re-run) and
+standard-library only.
+
+\emph{Copper and iron close the loop opened in Chapter EM: charge is
+rotation, and that one rotation appears as a longitudinal current
+threading copper's filled-shell electron sea, and as an aligned moment
+in iron's unfilled \(d\)-shell. The conductor and the magnet are the
+same physics, divided by whether the inner shell is full.}
+
+\hypertarget{the-color-of-molecules-from-d-orbitals-to-paint-pigments}{%
+\section{\texorpdfstring{The Color of Molecules: From \emph{d}-Orbitals
+to Paint
+Pigments}{The Color of Molecules: From d-Orbitals to Paint Pigments}}\label{the-color-of-molecules-from-d-orbitals-to-paint-pigments}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter CC} DOI
+(reserved): 10.5281/zenodo.20680541 · Builds on Chapter EM (light),
+Chapter CH §CH.5 (crystal field), and Chapter CM. Numbers reproduced by
+\texttt{vp\_molecular\_color.py} (and \texttt{vp\_crystal\_field.py});
+deterministic, standard-library, self-checking.
+
+\begin{quote}
+Color is a subtraction. White light arrives; the molecule removes the
+photons whose energy matches an electronic gap, and what is left ---
+transmitted or reflected --- is the color we see. Four different gaps
+give the four families of molecular color, but the rule is one: a gap
+the size of a visible photon makes a colored substance.
+\end{quote}
+
+\hypertarget{cc.0-the-question}{%
+\subsection{CC.0 The question}\label{cc.0-the-question}}
+
+Why is copper sulfate blue, a carrot orange, cadmium-yellow paint
+yellow, and titanium-white paint white? This chapter derives the color
+of molecules and pigments from the electromagnetism of Chapter EM:
+visible light is the transverse electromagnetic wave (§EM.6), and
+\textbf{color is which visible photons a substance absorbs}, set by the
+size of an electronic energy gap.
+
+\hypertarget{cc.1-the-principle-color-is-selective-absorption-f}{%
+\subsection{\texorpdfstring{CC.1 The principle --- color is selective
+absorption
+\textbf{{[}F{]}}}{CC.1 The principle --- color is selective absorption {[}F{]}}}\label{cc.1-the-principle-color-is-selective-absorption-f}}
+
+A substance has color when its electronic structure absorbs \emph{part}
+of the visible spectrum (400--700 nm). An absorbed photon (a transverse
+light quantum) lifts an electron across an electronic \textbf{gap}; the
+gap size fixes which wavelength is absorbed, and the remaining light is
+the perceived color. For dissolved molecules the eye sees the
+\textbf{complementary} of the absorbed band; for opaque pigments it sees
+the \textbf{reflected} band. Two limits frame the rest: a gap
+\emph{larger} than any visible photon absorbs nothing (white or
+colorless), and a gap \emph{smaller} than every visible photon absorbs
+everything (black).
+
+\hypertarget{cc.2-energy-and-wavelength-f}{%
+\subsection{\texorpdfstring{CC.2 Energy and wavelength
+\textbf{{[}F{]}}}{CC.2 Energy and wavelength {[}F{]}}}\label{cc.2-energy-and-wavelength-f}}
+
+The bridge is the photon relation of Chapter EM,
+\[ E = \frac{hc}{\lambda}, \qquad \lambda[\mathrm{nm}] = \frac{1240}{E[\mathrm{eV}]}. \]
+Visible light spans \(E = 1.77\ \mathrm{eV}\) (red, 700 nm) to
+\(3.10\ \mathrm{eV}\) (violet, 400 nm). A gap in this energy window
+produces color; outside it, the substance is white/colorless (gap too
+large) or black (gap too small).
+
+\hypertarget{cc.3-mechanism-1-dd-transitions-transition-metal-complexes-fcalo}{%
+\subsection{\texorpdfstring{CC.3 Mechanism 1 --- \emph{d}--\emph{d}
+transitions (transition-metal complexes)
+\textbf{{[}F{]}/{[}CAL{]}/{[}O{]}}}{CC.3 Mechanism 1 --- d--d transitions (transition-metal complexes) {[}F{]}/{[}CAL{]}/{[}O{]}}}\label{cc.3-mechanism-1-dd-transitions-transition-metal-complexes-fcalo}}
+
+In a transition-metal complex the ligands' electromagnetic \(1/r^2\)
+field splits the geometric \(d\)-orbitals by the crystal-field gap
+\(\Delta\) (Chapter CH §CH.5). An electron absorbs a photon to cross
+\(\Delta\):
+\[ \lambda_{\text{abs}}[\mathrm{nm}] = \frac{10^7}{\Delta[\mathrm{cm}^{-1}]}. \]
+For \([\mathrm{Ti}(\mathrm H_2\mathrm O)_6]^{3+}\) (\(d^1\), single
+transition), \(\Delta = 20300\
+\mathrm{cm^{-1}}\) gives \(\lambda_{\text{abs}} = 493\ \mathrm{nm}\)
+(blue-green absorbed) → reddish violet, matching observation
+(\texttt{vp\_molecular\_color.py}, §1). The mechanism --- color
+\emph{is} the \(d\)--\(d\) gap --- is forced by VP geometry
+\textbf{{[}F{]}}; the spectrochemical ordering of \(\Delta\) is
+calibration \textbf{{[}CAL{]}}; and for multi-electron ions (\(d^9\)
+Cu²⁺, \(d^8\) Ni²⁺) the single-\(\Delta\) point model is insufficient
+(broad multi-band absorption tails into the red, giving the real
+blue/green), an honestly \textbf{{[}O{]}} limitation. Weak-field ligands
+give a small \(\Delta\) (red absorption); strong-field ligands a large
+\(\Delta\) (blue absorption).
+
+\hypertarget{cc.4-mechanism-2-conjugated-pi-systems-organic-dyes-ff}{%
+\subsection{\texorpdfstring{CC.4 Mechanism 2 --- conjugated \(\pi\)
+systems (organic dyes)
+\textbf{{[}F{]}/{[}F?{]}}}{CC.4 Mechanism 2 --- conjugated \textbackslash pi systems (organic dyes) {[}F{]}/{[}F?{]}}}\label{cc.4-mechanism-2-conjugated-pi-systems-organic-dyes-ff}}
+
+In a conjugated polyene the \(\pi\)-electrons behave as a free electron
+gas in a one-dimensional box of length \(L\) (the conjugation length).
+The levels are \(E_n = n^2 h^2/(8 m_e L^2)\); with \(N = 2k\) electrons
+(\(k\) double bonds) filling levels up to \(k\), the HOMO→LUMO gap is
+\[ \Delta E = \frac{h^2}{8 m_e L^2}\,(N+1). \] Because \(L\) grows with
+conjugation, \textbf{the gap shrinks and the absorption red-shifts} ---
+the derived trend (\texttt{vp\_molecular\_color.py}, §2): short polyenes
+(ethene, butadiene, hexatriene) absorb in the ultraviolet and are
+colorless, while extended conjugation (β-carotene, 11 double bonds)
+absorbs in the visible and is colored (orange; lycopene, red). The
+scaling \(\Delta E \propto (N+1)/L^2\) and the UV→visible crossover are
+forced \textbf{{[}F{]}}; the absolute wavelengths from the free-electron
+model overestimate for long chains (bond alternation caps the gap), so
+the model's numbers are trend-only \textbf{{[}F?{]}}. This is why
+carrots and tomatoes are colored: long \(\pi\)-conjugation pulls the gap
+down into the visible.
+
+\hypertarget{cc.5-mechanism-3-the-band-gap-inorganic-pigments-and-paint-fcal}{%
+\subsection{\texorpdfstring{CC.5 Mechanism 3 --- the band gap (inorganic
+pigments and paint)
+\textbf{{[}F{]}/{[}CAL{]}}}{CC.5 Mechanism 3 --- the band gap (inorganic pigments and paint) {[}F{]}/{[}CAL{]}}}\label{cc.5-mechanism-3-the-band-gap-inorganic-pigments-and-paint-fcal}}
+
+A solid pigment is a semiconductor with a band gap \(E_g\). Photons with
+\(E > E_g\) (wavelength below the absorption edge
+\(\lambda_{\text{edge}} = hc/E_g\)) are absorbed; photons with
+\(E < E_g\) (longer wavelength) are reflected, and \textbf{the reflected
+band is the color}. As \(E_g\) decreases, the edge sweeps across the
+visible and the pigment runs \textbf{white → yellow → orange → red →
+black} (\texttt{vp\_molecular\_color.py}, §3):
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+pigment & \(E_g\) (eV) & edge (nm) & reflected color \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+TiO₂ titanium white & 3.05 & 407 & white (all visible reflected) \\
+ZnO zinc white & 3.20 & 387 & white \\
+As₂S₃ orpiment & 2.70 & 459 & yellow (violet/blue absorbed) \\
+CdS cadmium yellow & 2.42 & 512 & yellow \\
+CdS·Se cadmium orange & 2.10 & 590 & orange/red \\
+HgS vermilion (cinnabar) & 2.00 & 620 & red \\
+Fe₂O₃ red ochre (hematite) & 2.10 & 590 & red \\
+CdSe cadmium red & 1.73 & 717 & red (only deep red reflected) \\
+carbon black & \textasciitilde0.5 & --- & black (all visible
+absorbed) \\
+\end{longtable}
+
+The same single rule \(\lambda_{\text{edge}} = hc/E_g\) orders the
+entire cadmium pigment series and the historical mineral pigments
+(vermilion, orpiment, hematite) \textbf{{[}F{]}}, with \(E_g\) a
+measured material constant \textbf{{[}CAL{]}}. This is the physics of
+paint: \textbf{the band gap is the color knob.} Titanium white reflects
+everything because its gap (3.05 eV) sits just past the violet edge;
+cadmium red absorbs nearly all visible because its gap (1.73 eV) sits at
+the red edge.
+
+\hypertarget{cc.6-mechanism-4-charge-transfer-intense-colors-fcal}{%
+\subsection{\texorpdfstring{CC.6 Mechanism 4 --- charge transfer
+(intense colors)
+\textbf{{[}F{]}/{[}CAL{]}}}{CC.6 Mechanism 4 --- charge transfer (intense colors) {[}F{]}/{[}CAL{]}}}\label{cc.6-mechanism-4-charge-transfer-intense-colors-fcal}}
+
+When a photon moves an electron between a metal and a ligand
+(ligand-to-metal or metal-to-ligand charge transfer), the transition is
+fully allowed and therefore \textbf{intense} --- 100--1000× stronger
+than a \(d\)--\(d\) transition, so a trace gives a deep color.
+Permanganate \(\mathrm{MnO_4^-}\) absorbs \(\sim 525\ \mathrm{nm}\)
+(O→Mn charge transfer) and is deep purple; dichromate
+\(\mathrm{Cr_2O_7^{2-}}\) is orange; Prussian blue is an Fe²⁺↔Fe³⁺
+charge transfer (\texttt{vp\_molecular\_color.py}, §4). The mechanism is
+the same electron-across-a-gap; only the gap's origin (metal↔ligand) and
+its allowedness differ.
+
+\hypertarget{cc.7-white-black-and-everything-between-f}{%
+\subsection{\texorpdfstring{CC.7 White, black, and everything between
+\textbf{{[}F{]}}}{CC.7 White, black, and everything between {[}F{]}}}\label{cc.7-white-black-and-everything-between-f}}
+
+The two achromatic limits follow from the same rule and require no extra
+assumption:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{White}: gap larger than any visible photon
+  (\(E_g > 3.1\ \mathrm{eV}\), edge in the ultraviolet). No visible
+  light is absorbed; all is reflected. Titanium white, zinc white, table
+  salt, snow.
+\item
+  \textbf{Black}: gap smaller than every visible photon
+  (\(E_g < 1.8\ \mathrm{eV}\), edge in the infrared). All visible light
+  is absorbed. Carbon black, graphite.
+\item
+  \textbf{Color}: gap inside the visible window. The substance absorbs
+  the short-wavelength side of the edge and shows the long-wavelength
+  side.
+\end{itemize}
+
+So white and black are not ``colors added'' but the two ends of where
+the gap sits relative to the visible band.
+
+\hypertarget{cc.8-the-unifying-picture}{%
+\subsection{CC.8 The unifying picture}\label{cc.8-the-unifying-picture}}
+
+All four families are one mechanism --- \textbf{a transverse visible
+photon absorbed by lifting an electron across an electronic gap} ---
+differing only in what sets the gap:
+
+\begin{itemize}
+\tightlist
+\item
+  \(d\)--\(d\): the crystal-field splitting \(\Delta\) (ligand
+  electromagnetic \(1/r^2\) field).
+\item
+  conjugated \(\pi\): the HOMO--LUMO gap \(\propto (N+1)/L^2\)
+  (conjugation length).
+\item
+  band gap: the semiconductor \(E_g\) (the pigment's electronic
+  structure).
+\item
+  charge transfer: the metal↔ligand donor--acceptor gap.
+\end{itemize}
+
+The absorbing light is the transverse electromagnetic wave of Chapter EM
+(\(\chi\to 90^\circ\)); only a photon whose energy matches the gap is
+absorbed (resonance), and the gap size determines the wavelength and
+hence the color. One principle --- gap-sized absorption --- and four
+ways nature builds the gap.
+
+\hypertarget{cc.9-falsification-and-reproducibility-f}{%
+\subsection{\texorpdfstring{CC.9 Falsification and reproducibility
+\textbf{{[}F{]}}}{CC.9 Falsification and reproducibility {[}F{]}}}\label{cc.9-falsification-and-reproducibility-f}}
+
+\begin{itemize}
+\tightlist
+\item
+  If a transition-metal complex's color did not track its crystal-field
+  \(\Delta\) (weak-field red, strong-field blue absorption), the
+  \(d\)--\(d\) account fails.
+\item
+  If extending \(\pi\)-conjugation did not red-shift absorption (UV for
+  short, visible for long), the particle-in-a-box account fails.
+\item
+  If a semiconductor pigment's color did not follow its band-gap edge
+  \(\lambda_{\text{edge}} = hc/E_g\) (large gap white, small gap black,
+  intermediate colored), the band-gap account fails --- this is tested
+  across the cadmium series and historical pigments.
+\end{itemize}
+
+\begin{verbatim}
+python3 code/foundation/vp_molecular_color.py    # complementary color, d-d, FEM, band-gap pigments
+python3 code/foundation/vp_crystal_field.py      # crystal-field Δ and 4/9
+\end{verbatim}
+
+Both modules are deterministic (stdout sha256 identical on re-run) and
+standard-library only.
+
+\emph{Color completes the optical arc of Chapter EM: light emerges from
+the lattice, refraction and the rainbow split it by wavelength, and here
+matter }subtracts* selected wavelengths by lifting electrons across gaps
+--- crystal-field, conjugation, band-gap, and charge-transfer gaps ---
+so that a carrot is orange and titanium-white is white for the same
+reason, read through the size of a gap.*
+
+\hypertarget{platinum-catalysis-and-the-electron-amplitude-wavelength-toward-water-purification}{%
+\section{Platinum Catalysis and the Electron Amplitude Wavelength:
+Toward Water
+Purification}\label{platinum-catalysis-and-the-electron-amplitude-wavelength-toward-water-purification}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter CT} DOI
+(reserved): 10.5281/zenodo.20680541 · Builds on Chapter EM, Chapter CH
+(§CH.5, §CH.11), and Chapter CM. Related to the VP Application
+whitepaper (10.5281/zenodo.18043066: Pt catalyst / electrolysis /
+desalination). Numbers reproduced by \texttt{vp\_platinum\_catalysis.py}
+(deterministic, standard-library). Grades distinguish
+\textbf{established} surface science ({[}CAL{]}/{[}F?{]}) from the
+\textbf{VP-framework hypothesis} ({[}H{]}).
+
+\begin{quote}
+A catalyst is a matchmaker: it must hold a reagent firmly enough to
+activate it, yet loosely enough to release the product. Platinum sits at
+that balance for hydrogen. This chapter asks whether the balance can be
+read as a \emph{resonance} of the electron's amplitude wavelength with
+the metal surface --- and whether that picture helps purify water.
+\end{quote}
+
+\hypertarget{ct.0-the-question}{%
+\subsection{CT.0 The question}\label{ct.0-the-question}}
+
+Why is platinum such a good catalyst, and can the ``electron amplitude
+wavelength'' of the VP framework illuminate the mechanism? The
+motivation is practical: platinum catalyses the hydrogen-evolution
+reaction in water electrolysis, which is central to producing clean
+hydrogen and to purifying water --- the application this chapter
+targets.
+
+\hypertarget{ct.1-why-platinum-states-at-the-fermi-level-f}{%
+\subsection{\texorpdfstring{CT.1 Why platinum --- states at the Fermi
+level
+\textbf{{[}F?{]}}}{CT.1 Why platinum --- states at the Fermi level {[}F?{]}}}\label{ct.1-why-platinum-states-at-the-fermi-level-f}}
+
+Platinum is \([\mathrm{Xe}]4f^{14}5d^9 6s^1\): its \(5d\) shell has a
+single hole, so there are \(d\)-states right at the Fermi level.
+Electrons are therefore always available both to donate to an adsorbate
+and to accept back-donation from it. This is the prerequisite for
+surface catalysis, and it is exactly what gold (\(5d^{10}\), filled)
+lacks --- a filled \(d\)-shell makes gold comparatively inert, the same
+``filled versus unfilled \(d\)-shell'' hinge that separated conductor
+from magnet in Chapter CM.
+
+\hypertarget{ct.2-the-sabatier-principle-and-the-volcano-calf}{%
+\subsection{\texorpdfstring{CT.2 The Sabatier principle and the volcano
+\textbf{{[}CAL{]}/{[}F?{]}}}{CT.2 The Sabatier principle and the volcano {[}CAL{]}/{[}F?{]}}}\label{ct.2-the-sabatier-principle-and-the-volcano-calf}}
+
+The Sabatier principle states that the best catalyst binds the key
+intermediate at \emph{intermediate} strength: too weak and it cannot
+activate the reagent, too strong and it cannot release the product (it
+is poisoned). Plotting the hydrogen-evolution exchange current against
+the hydrogen adsorption free energy \(\Delta G_{\mathrm H^*}\) gives a
+\textbf{volcano} peaking at \(\Delta G_{\mathrm H^*}\approx 0\)
+(\texttt{vp\_platinum\_catalysis.py}, §1):
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+metal
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Delta G_{\mathrm H^*}\) (eV)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\log_{10} j_0\) (A/cm²)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+regime
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Pt} & \textbf{−0.09} & \textbf{−3.1} & \textbf{peak
+(optimal)} \\
+Ir & −0.10 & −3.7 & good \\
+Pd & −0.20 & −3.5 & good \\
+Ni & −0.28 & −5.2 & good \\
+Au & +0.30 & −5.4 & too weak \\
+W & −0.55 & −5.9 & too strong \\
+Hg & +0.50 & −12.6 & too weak \\
+\end{longtable}
+
+Platinum has \(\Delta G_{\mathrm H^*}\) closest to zero and the highest
+exchange current --- it sits at the apex of the volcano. Tungsten and
+molybdenum bind hydrogen too strongly (cannot release it); gold and
+mercury too weakly (cannot activate it). The volcano data are
+calibration \textbf{{[}CAL{]}}; the Sabatier balance is the established
+organizing principle \textbf{{[}F?{]}}.
+
+\hypertarget{ct.3-the-d-band-center-calf}{%
+\subsection{\texorpdfstring{CT.3 The d-band center
+\textbf{{[}CAL{]}/{[}F?{]}}}{CT.3 The d-band center {[}CAL{]}/{[}F?{]}}}\label{ct.3-the-d-band-center-calf}}
+
+The Hammer--Nørskov d-band-center model refines the picture: adsorption
+strength correlates with the mean energy \(\varepsilon_d\) of the
+\(d\)-band relative to the Fermi level. A higher \(\varepsilon_d\)
+(closer to the Fermi level) binds adsorbates more strongly. Platinum's
+\(\varepsilon_d \approx -2.25\ \mathrm{eV}\) lands in the optimal
+window, between the over-reactive early transition metals (high
+\(\varepsilon_d\)) and the noble metals such as gold
+(\(\varepsilon_d \approx -3.56\ \mathrm{eV}\), too low, weak binding)
+(\texttt{vp\_platinum\_catalysis.py}, §2).
+
+\hypertarget{ct.4-the-electron-amplitude-wavelength-a-vp-resonance-picture-h}{%
+\subsection{\texorpdfstring{CT.4 The electron amplitude wavelength --- a
+VP resonance picture
+\textbf{{[}H{]}}}{CT.4 The electron amplitude wavelength --- a VP resonance picture {[}H{]}}}\label{ct.4-the-electron-amplitude-wavelength-a-vp-resonance-picture-h}}
+
+The VP framework adds a complementary, geometric reading. The
+catalytically active electron has a de Broglie \emph{amplitude
+wavelength} \[ \lambda_e = \frac{h}{\sqrt{2 m_e E}}, \] where \(E\) is
+the energy scale at which the electron engages the adsorbate ---
+naturally the work function \(\varphi = 5.65\ \mathrm{eV}\) for
+platinum. This gives \(\lambda_e = 5.16\ \mathrm{\AA}\), so the
+\textbf{half-wavelength is \(\lambda_e/2 = 2.58\ \mathrm{\AA}\)},
+commensurate with the platinum nearest-neighbour spacing
+\(d_{\mathrm{Pt-Pt}} = 2.77\ \mathrm{\AA}\) --- a matching ratio of
+\textbf{0.93} (\texttt{vp\_platinum\_catalysis.py}, §3).
+
+The hypothesis: when the electron's half-wavelength fits the surface
+geometry (one half-wave per surface bond), the active electron couples
+\emph{resonantly} into the adsorbate's antibonding orbital, so
+back-donation is enhanced and the adsorbate bond is weakened --- the
+activation step of catalysis. Platinum's particular combination of work
+function and lattice spacing places it inside this resonance window.
+This is a VP-framework picture, graded \textbf{{[}H{]}}: it reproduces
+the qualitative fact (platinum is exceptional) and supplies a geometric
+\emph{why}, but it is a scale-matching argument, not a quantitative
+activity prediction. \textbf{§CT.7 puts it to a direct quantum
+simulation --- which does not support the simple geometric form, and
+revises the picture accordingly.}
+
+\hypertarget{ct.5-tuning-the-resonance-with-potential-the-electrolysis-lever-h}{%
+\subsection{\texorpdfstring{CT.5 Tuning the resonance with potential ---
+the electrolysis lever
+\textbf{{[}H{]}}}{CT.5 Tuning the resonance with potential --- the electrolysis lever {[}H{]}}}\label{ct.5-tuning-the-resonance-with-potential-the-electrolysis-lever-h}}
+
+The amplitude-wavelength picture suggests a control knob. An applied
+electrode potential \(V\) shifts the effective energy of the active
+electron by \(eV\), and therefore shifts \(\lambda_e\)
+(\texttt{vp\_platinum\_catalysis.py}, §4): a cathodic bias raises the
+electron energy and shortens the half-wavelength, an anodic bias
+lengthens it. Because catalysis happens \emph{at} an electrode under
+applied potential, the electrode potential is precisely the lever that
+tunes the proposed resonance. At the thermodynamic water-splitting
+potential of 1.23 V the half-wavelength moves to \(2.92\
+\mathrm{\AA}\) --- a few percent off the lattice match --- which the
+picture would read as a small detuning to be compensated by catalyst
+geometry. This makes the hypothesis \emph{actionable} for electrode
+design rather than merely descriptive.
+
+\hypertarget{ct.6-application-water-splitting-and-purification-fcal}{%
+\subsection{\texorpdfstring{CT.6 Application --- water splitting and
+purification
+\textbf{{[}F{]}/{[}CAL{]}}}{CT.6 Application --- water splitting and purification {[}F{]}/{[}CAL{]}}}\label{ct.6-application-water-splitting-and-purification-fcal}}
+
+The target application is water. In electrolysis the platinum cathode
+runs the hydrogen-evolution reaction
+\(2\mathrm H_2\mathrm O + 2e^- \to \mathrm H_2 + 2\mathrm{OH}^-\) with
+an overpotential of only \(\sim 30\ \mathrm{mV}\) --- essentially zero
+--- versus \(\sim 300\ \mathrm{mV}\) for nickel
+(\texttt{vp\_platinum\_catalysis.py}, §5), so the cathodic energy loss
+is minimised. By Faraday's law a current of 1 A for one hour produces
+\(18.66\ \mathrm{mmol}\) (\(\sim 418\ \mathrm{mL}\) at STP) of hydrogen
+(\(n = 2\)).
+
+For purification, electrolysis contributes three ways: (i) anodic
+oxidation breaks down microbes and organic contaminants (disinfection);
+(ii) the evolved hydrogen and reactive species reduce pollutants; and
+(iii) combined with the application whitepaper's
+electromagnetic/electric-field desalination, it forms an integrated
+purification train. The thread back to this chapter: platinum's
+catalytic efficiency --- read in the VP picture as
+electron-amplitude-wavelength resonance --- is what makes the
+low-voltage electrolysis (and hence the energy-efficient purification)
+feasible.
+
+\hypertarget{ct.7-simulation-test-of-the-resonance-hypothesis-vrefuted}{%
+\subsection{\texorpdfstring{CT.7 Simulation test of the resonance
+hypothesis
+\textbf{{[}V{]}/refuted}}{CT.7 Simulation test of the resonance hypothesis {[}V{]}/refuted}}\label{ct.7-simulation-test-of-the-resonance-hypothesis-vrefuted}}
+
+Rather than rest on the scale coincidence, the hypothesis is put to a
+direct quantum simulation (\texttt{vp\_pt\_resonance\_sim.py}): a 1D
+finite-difference Schrödinger model of a periodic platinum surface
+(wells spaced \(d = 2.77\ \mathrm{\AA}\)) with an adsorbate site,
+computing the adsorbate's local density of states --- the back-donation
+capacity --- as a function of electron energy, hence wavelength, via the
+retarded Green's function \(G = [(E+i\eta) - H]^{-1}\).
+
+The result \textbf{does not support the simple geometric resonance}, and
+the simulation says why:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{\(\lambda_e = 2d\) is a Bragg \emph{band edge}, not a
+  resonance.} A transfer-matrix band-structure calculation places the
+  bottom of the first conduction band at \(\approx 4.5\ \mathrm{eV}\);
+  the Bragg wavelength \(\lambda_e = 2d\) (\(E = 4.90\ \mathrm{eV}\))
+  sits at that edge, with a gap below. The Bragg condition is where
+  electrons are \emph{reflected}, not resonantly transmitted.
+\item
+  \textbf{The adsorbate LDOS does not peak at \(\lambda_e = 2d\)} ---
+  there it is only \(\sim 2\%\) of its maximum. The simple
+  ``half-wavelength fits the lattice spacing → enhanced back-donation''
+  picture is therefore not borne out: geometric commensurability is not
+  a dynamical resonance.
+\item
+  \textbf{What governs back-donation} is the metal density of states at
+  the adsorbate energy together with the adsorbate's own resonance ---
+  i.e.~the established Newns--Anderson / d-band-center picture, not a
+  geometric wavelength match. Platinum is exceptional because its partly
+  filled \(5d\) band puts states at the Fermi level \emph{and} its
+  hydrogen binding sits at the Sabatier optimum, exactly the §CT.2--CT.3
+  account.
+\item
+  \textbf{Where a wavelength effect legitimately enters is quantum
+  confinement.} Sweeping the slab thickness \(M\) (the confinement
+  length \(L = Md\)) at a fixed Fermi energy, the adsorbate LDOS
+  \emph{oscillates} strongly (coefficient of variation \(\approx 0.84\),
+  several reversals) --- the real quantum-well-state effect known to
+  modulate the reactivity of thin metal films. The wavelength that
+  matters is matched to the film \emph{thickness}, not to the in-plane
+  Pt--Pt spacing.
+\end{enumerate}
+
+So the simulation refines the chapter rather than confirming it: the
+\(\lambda_e/2 \approx d_{\mathrm{Pt-Pt}}\) coincidence of §CT.4 is a
+coincidence, not a back-donation resonance.
+
+\hypertarget{ct.8-is-reproduction-impossible-energy-resonance-reproduces-platinum-v}{%
+\subsection{\texorpdfstring{CT.8 Is reproduction impossible? --- energy
+resonance reproduces platinum
+\textbf{{[}V{]}}}{CT.8 Is reproduction impossible? --- energy resonance reproduces platinum {[}V{]}}}\label{ct.8-is-reproduction-impossible-energy-resonance-reproduces-platinum-v}}
+
+The right question, having refuted the geometric form, is \emph{whether
+platinum's catalysis can be reproduced at all, or whether the failure is
+fundamental.} It is not fundamental: the failure was a \textbf{wrong
+choice of resonance variable}, and the correct one reproduces platinum
+(\texttt{vp\_pt\_reproduction.py}).
+
+The catalytic resonance is in \textbf{energy}, not geometry: the
+adsorbate orbital \(\varepsilon_a\) resonates with the metal's
+\textbf{d-band centre} \(\varepsilon_d\) (the Newns--Anderson picture).
+A Newns--Anderson simulation with a semi-elliptical d-band self-energy
+\(\Sigma = V^2 g_d\) shows the sharp adsorbate level broadening into a
+resonance on the d-band --- the energy-resonance mechanism. Crucially,
+the \textbf{d-band centre predicts the hydrogen binding}: across Ni, Rh,
+Pd, Ir, Pt, Cu, Au, the (independently determined) \(\varepsilon_d\)
+correlates with the measured \(\Delta G_{\mathrm H^*}\) at \(r = -0.91\)
+(a non-circular test, since \(\varepsilon_d\) comes from band structure,
+not from the binding). Reconstructing the Sabatier volcano (activity
+\(\propto \exp(-|\Delta G_{\mathrm H^*}|/kT)\)) then places
+\textbf{platinum (with iridium) at the apex} --- the experimental
+result, reproduced from the electronic structure.
+
+So the answer to ``why couldn't we reproduce it, and is it impossible?''
+is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The geometric resonance failed because it is genuinely wrong}
+  --- \(\lambda_e = 2d\) is a Bragg band edge in any dimension and any
+  model (robust solid-state physics), not a limitation of the 1D
+  simulation.
+\item
+  \textbf{Platinum's catalysis is fully reproducible} --- but through
+  the \emph{energy} resonance
+  (\(\varepsilon_a \leftrightarrow \varepsilon_d\)), which reproduces
+  the binding (\(r=-0.91\)) and the volcano apex (Pt).
+\item
+  \textbf{The ``electron amplitude wavelength'' must be reinterpreted}:
+  not the de Broglie wavelength matched to the lattice constant, but the
+  \textbf{d-electron energy} matched to the adsorbate orbital. Read that
+  way, the resonance intuition is correct and platinum is reproduced.
+\end{itemize}
+
+The catalytic essence of platinum is therefore the \textbf{energy} of
+the d-states that its one-hole-short \(5d\) shell places at the Fermi
+level --- exactly the §CT.1--CT.3 account, now shown to be a resonance,
+just an energetic one.
+
+\hypertarget{ct.9-assessment-of-the-possibility-hreframed}{%
+\subsection{\texorpdfstring{CT.9 Assessment of the possibility
+\textbf{{[}H{]}→reframed}}{CT.9 Assessment of the possibility {[}H{]}→reframed}}\label{ct.9-assessment-of-the-possibility-hreframed}}
+
+Honestly weighed across both simulations:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The resonance intuition was right; the variable was wrong.}
+  Catalysis \emph{is} a resonance --- of the adsorbate orbital with the
+  d-band (energy), not of the electron wavelength with the lattice
+  (geometry). The energy version reproduces platinum at the volcano apex
+  (\(r=-0.91\)); the geometric version is a band edge.
+\item
+  \textbf{What survives of the amplitude-wavelength idea.} Two things:
+  (i) the correct reading of ``amplitude wavelength'' as d-electron
+  \emph{energy}, which is the established and predictive d-band-centre
+  descriptor; and (ii) a genuine, simulable \emph{quantum-confinement}
+  effect (thin-film quantum-well states, §CT.7) by which electron
+  wavelength modulates reactivity through film thickness --- an
+  actionable lever for the water-splitting electrodes of §CT.6.
+\item
+  \textbf{Verdict.} Reproduction is not impossible; it is achieved here
+  through the energy resonance. The honest, predictive descriptor is the
+  d-band centre, and the constructive engineering levers are the d-band
+  position (alloying, strain) and quantum confinement (film thickness,
+  potential) --- both tied directly to designing efficient catalyst
+  layers for water electrolysis and purification.
+\end{itemize}
+
+This is the value of pressing past ``refuted'' to ``why, and is it
+possible'': the geometric coincidence is discarded, the energy resonance
+is shown to reproduce platinum, and the amplitude-wavelength idea is
+corrected into its working form rather than abandoned.
+
+\hypertarget{ct.10-falsification-and-reproducibility-fv}{%
+\subsection{\texorpdfstring{CT.10 Falsification and reproducibility
+\textbf{{[}F{]}/{[}V{]}}}{CT.10 Falsification and reproducibility {[}F{]}/{[}V{]}}}\label{ct.10-falsification-and-reproducibility-fv}}
+
+\begin{itemize}
+\tightlist
+\item
+  Established: if the hydrogen-evolution volcano did not peak near
+  \(\Delta G_{\mathrm H^*} = 0\), or if platinum were not near that
+  peak, the Sabatier account fails.
+\item
+  Hypothesis (now tested): the §CT.4 amplitude-wavelength resonance
+  predicted that the adsorbate back-donation capacity would peak when
+  \(\lambda_e/2\) matches the Pt--Pt spacing. The simulation of §CT.7
+  finds the opposite --- \(\lambda_e = 2d\) is a band edge and the
+  adsorbate LDOS does not peak there --- so this specific form is
+  \textbf{refuted}, and the surviving, testable claim is the quantum-
+  confinement one: thin-film reactivity should oscillate with layer
+  thickness (and with \(E_F\) under applied potential).
+\end{itemize}
+
+\begin{verbatim}
+python3 code/foundation/vp_platinum_catalysis.py   # volcano, d-band, λ_e scale-matching, electrolysis
+python3 code/foundation/vp_pt_resonance_sim.py     # geometric resonance test: band edge (refuted)
+python3 code/foundation/vp_pt_reproduction.py      # energy resonance: reproduces Pt at volcano apex
+\end{verbatim}
+
+All three modules are deterministic (stdout sha256 identical on re-run)
+and standard-library only.
+
+\emph{Platinum extends the metals thread of Chapter CM --- filled \(d\)
+gives conduction (copper), unfilled \(d\) gives magnetism (iron), and a
+\(d\)-shell one hole short of full gives catalysis (platinum). The VP
+reading proposed a resonance of the electron's amplitude wavelength with
+the surface. Put to a quantum simulation, the }geometric* form fails
+(the Bragg match is a band edge), but pressing on to ask whether
+reproduction is possible shows that it is: the \emph{energy} resonance
+--- the adsorbate orbital with the d-band centre --- reproduces platinum
+at the volcano apex (\(r=-0.91\)). The resonance intuition was right;
+the variable was energy, not geometry. What this buys for water
+electrolysis and purification is concrete: the levers are the d-band
+position and quantum confinement of thin catalyst layers, both tuning
+the Fermi-level d-states whose energy is the true seat of platinum's
+catalysis.*
+
+\hypertarget{applications-catalysis-fertilizer-water-energy-and-materials}{%
+\section{Applications: Catalysis, Fertilizer, Water, Energy, and
+Materials}\label{applications-catalysis-fertilizer-water-energy-and-materials}}
+
+\textbf{VP Chemistry \& Electromagnetism Whitepaper --- Chapter CA} DOI
+(reserved): 10.5281/zenodo.20680541 · Companion to Chapters CH
+(chemistry), CM (metals), CT (catalysis), EM (electromagnetism). Status
+grades: \textbf{{[}F{]}} forced (zero free parameters) ·
+\textbf{{[}F?{]}} forced-candidate · \textbf{{[}CAL{]}} calibration
+input (measured constant) · \textbf{{[}V{]}} simulation-measured ·
+\textbf{{[}H{]}} hypothesis · \textbf{{[}O{]}} open / refuted. Every
+numeric claim is reproduced by a deterministic, standard-library module
+(2× sha256 identical); module and case-ledger anchors are given inline.
+
+\begin{quote}
+This chapter carries the metals account (CM/CT) into five practical
+domains: \textbf{catalysts, fertilizer, water purification, energy
+storage, and new materials}. Its method is the one that already
+succeeded for platinum (Chapter CT): where a speculative
+\emph{amplitude/geometry} mechanism was proposed, it is tested; what
+does not survive is reported as refuted and \textbf{re-grounded on
+validated physics}; what does survive is kept and labelled. The result
+is a single thread --- the \textbf{d-band energy resonance} --- running
+through catalysis, fertilizer, and water electrolysis, with honest
+negative verdicts for two device claims that do not hold.
+\end{quote}
+
+\hypertarget{ca.0-the-central-method-re-grounding-not-decoration}{%
+\subsection{CA.0 The central method: re-grounding, not
+decoration}\label{ca.0-the-central-method-re-grounding-not-decoration}}
+
+The prior application materials built catalysis, desalination, and an
+energy device on an \emph{electron amplitude} variable (fm-scale).
+Chapter CT showed by direct simulation that this variable is the wrong
+one: the geometric/amplitude resonance is a Bragg band edge (refuted),
+and platinum is reproduced only by the \textbf{energy} resonance --- the
+d-band center (\(\varepsilon_d\)) coupling to the adsorbate level
+(Newns--Anderson / Hammer--Nørskov). This chapter applies that verdict
+everywhere: each application is rebuilt on the validated mechanism, and
+any device claim whose mechanism fails testing is reported as
+\textbf{refuted} or \textbf{{[}H{]}} with a working alternative
+supplied. Honesty about the two negative results (magnetic desalination;
+the ESS ``amplitude → electricity'' generator) is not a footnote --- it
+is the chapter's spine.
+
+\hypertarget{ca.1-the-d-band-engine-one-variable-for-three-reactions-vf}{%
+\subsection{\texorpdfstring{CA.1 The d-band engine --- one variable for
+three reactions
+\textbf{{[}V{]}/{[}F?{]}}}{CA.1 The d-band engine --- one variable for three reactions {[}V{]}/{[}F?{]}}}\label{ca.1-the-d-band-engine-one-variable-for-three-reactions-vf}}
+
+Module \texttt{vp\_dband\_catalysis.py} generalises the platinum result
+into a reusable engine. A sharp adsorbate level broadens on coupling to
+the metal d-band (Newns--Anderson) \textbf{{[}V{]}}; the d-band center
+\(\varepsilon_d\) then \emph{predicts} binding. For hydrogen the
+correlation with measured adsorption is
+\[ r(\varepsilon_d,\ \Delta G_H) = -0.915 \quad\text{(strong, non-circular)} \;[\mathbf{F?}], \]
+and the Sabatier volcano (activity peaked at \(\Delta G_H\approx 0\))
+reproduces the \textbf{Pt apex}. The \emph{same engine} applied to
+nitrogen adsorption gives a different optimum and the \textbf{Fe/Ru
+apex} of the ammonia volcano. Crucially, the real tuning lever is the
+\textbf{energy}, not the lattice spacing: shifting \(\varepsilon_d\) by
+alloying or strain moves a metal along the volcano
+(\texttt{vp\_dband\_catalysis.py} §4). This \emph{replaces} the refuted
+geometric resonance with a design rule that is actually used for
+electrodes. \textbf{Falsifiable:} HER apex at \(\Delta G_H\approx0\)
+(Pt), ammonia apex at \(E_N\approx-0.5\) eV (Fe/Ru); break either
+ordering and the d-band picture is discarded.
+
+\hypertarget{ca.2-fertilizer-ammonia-synthesis-ff}{%
+\subsection{\texorpdfstring{CA.2 Fertilizer --- ammonia synthesis
+\textbf{{[}F{]}/{[}F?{]}}}{CA.2 Fertilizer --- ammonia synthesis {[}F{]}/{[}F?{]}}}\label{ca.2-fertilizer-ammonia-synthesis-ff}}
+
+Nitrogen fixation \(\mathrm{N_2 + 3H_2 \rightleftharpoons 2NH_3}\)
+underpins half the human food supply. Module
+\texttt{vp\_ammonia\_synthesis.py} closes it with the two VP pillars ---
+equilibrium (CH.8) and the d-band catalyst engine (CA.1).
+
+\textbf{Equilibrium forces the conditions {[}F{]}.} With
+\(\Delta H^\circ=-91.8\) kJ/mol (exothermic) and
+\(\Delta S^\circ=-198.1\) J/mol·K (gas moles \(4\to2\)),
+\(\Delta G^\circ=\Delta H-T\Delta S\) gives the crossover
+\(T^{*} = \Delta H/\Delta S = 463\) K, where \(K=1.000\). Below it the
+reaction is favoured but \(\mathrm{N_2}\) is kinetically inert; above it
+the equilibrium yield collapses. The module solves the stoichiometric
+equilibrium and reproduces the \textbf{Le Chatelier compromise}
+quantitatively --- e.g. equilibrium \(\mathrm{NH_3}\) rises with
+pressure (\(\Delta n=-2\)) and falls with temperature:
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+condition & 1 atm & 100 atm & 200 atm & 400 atm \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+500 K & 10.8\% & 76.3\% & 82.6\% & 87.3\% \\
+700 K & 0.6\% & 29.1\% & 40.7\% & 52.4\% \\
+\end{longtable}
+
+This is exactly why industry runs ≈450 °C / 150--300 atm / Fe catalyst
+--- a forced three-way compromise, not a tuned choice.
+
+\textbf{Catalysis selects the metal {[}F?{]}.} The rate-limiting step is
+dissociation of \(\mathrm{N\equiv N}\) (945 kJ/mol, among the strongest
+bonds; the bond-energy sum reproduces \(\Delta H\approx-93\) kJ/mol,
+sign and magnitude correct). The catalyst volcano in the
+nitrogen-binding descriptor peaks at \textbf{Fe/Ru/Os} --- the
+industrial Haber--Bosch catalysts --- with Mo/W too strong (N trapped)
+and Ni/Pt too weak (no dissociation). The volcano comes from the d-band
+energy of CA.1, one thread with catalysis and water-splitting. Absolute
+rates, promoter (\(\mathrm{K_2O}\)/\(\mathrm{Al_2O_3}\)) effects, and
+surface microkinetics remain \textbf{{[}O{]}}.
+
+\hypertarget{ca.3-water-purification-i-electrolysis-electrodes-ff}{%
+\subsection{\texorpdfstring{CA.3 Water purification I --- electrolysis
+electrodes
+\textbf{{[}F{]}/{[}F?{]}}}{CA.3 Water purification I --- electrolysis electrodes {[}F{]}/{[}F?{]}}}\label{ca.3-water-purification-i-electrolysis-electrodes-ff}}
+
+Module \texttt{vp\_water\_electrolysis.py} carries the d-band engine to
+clean hydrogen and electrochemical water treatment. Water splitting
+\(\mathrm{2H_2O\to2H_2+O_2}\) has a reversible minimum
+\(E^\circ_{\text{cell}}=1.229\) V (\(\Delta G=237\) kJ/mol H\(_2\)) and
+a thermoneutral voltage \(V_{tn}=\Delta H/(nF)=1.481\) V; the difference
+\(T\Delta S=48.6\) kJ/mol is supplied as heat \textbf{{[}F{]}}. The real
+cell voltage decomposes as
+\(V_{\text{cell}}=1.23+\eta_{\text{HER}}+\eta_{\text{OER}}+iR\), and the
+single largest loss is the \textbf{anode (OER)}. The HER volcano (CA.1)
+places the cathode near solved (Pt apex). The OER is bounded by a
+\emph{fundamental} limit: the universal scaling relation
+\(\Delta G_{*\mathrm{OOH}}-\Delta G_{*\mathrm{OH}}\approx 3.2\) eV ties
+the intermediates, so the two middle steps cannot both be 1.23 eV and
+the best achievable overpotential is
+\[ \eta_{\text{OER}}^{\min} = 1.6 - 1.23 = 0.37\ \text{V} \quad[\mathbf{F?}], \]
+with the apex at \textbf{RuO₂/IrO₂} (the industrial OER catalysts). This
+0.37 V is \emph{why water-splitting is permanently expensive} on
+single-site catalysts --- beating it requires breaking the scaling
+relation (bifunctional / 3D sites), an honest \textbf{{[}O{]}}.
+Faraday's law gives 18.66 mmol H\(_2\) per A·h \textbf{{[}F{]}} and a
+thermoneutral voltage efficiency \(V_{tn}/V_{\text{cell}}\approx 81\%\).
+Electrocoagulation, electrodialysis, and capacitive deionization (CDI)
+extend the same electrode science to treatment and desalination --- all
+charge/membrane/potential based, \textbf{{[}F?{]}/{[}CAL{]}}.
+
+\hypertarget{ca.4-water-purification-ii-magnetic-desalination-an-honest-verdict-f-orefuted}{%
+\subsection{\texorpdfstring{CA.4 Water purification II --- magnetic
+desalination: an honest verdict \textbf{{[}F{]} ·
+{[}O{]}/refuted}}{CA.4 Water purification II --- magnetic desalination: an honest verdict {[}F{]} · {[}O{]}/refuted}}\label{ca.4-water-purification-ii-magnetic-desalination-an-honest-verdict-f-orefuted}}
+
+The prior materials proposed separating \(\mathrm{H_2O}\) from
+\(\mathrm{Na^+/Cl^-}\) at 0.45 T by an \emph{amplitude} difference.
+Module \texttt{vp\_magnet\_desalination.py} replaces the prose with the
+actual magnetic force. Water is weakly diamagnetic
+(\(\chi_v\approx-9.05\times10^{-6}\)); its magnetic energy in a 0.45 T
+field is
+\[ \frac{U_{\text{mag}}}{k_BT} \approx 5.3\times10^{-9} \quad[\mathbf{F}], \]
+nine orders of magnitude below thermal energy --- thermal motion
+overwhelms any magnetic ordering, so \textbf{no separation occurs}. To
+reach \(U_{\text{mag}}\approx k_BT\) would need \(B\approx 6173\) T,
+physically impossible for a purifier (cf.~\textasciitilde45 T
+continuous, \textasciitilde1200 T pulsed-destructive). The Lorentz force
+on flowing ions is real but \(\sim10^{-2}\,k_BT\) across a channel: a
+field can stir (MHD) but cannot \emph{desalinate by amplitude}.
+\textbf{Verdict: the amplitude-separation device is refuted {[}O{]}.}
+The working alternatives are supplied with real numbers: reverse osmosis
+(seawater osmotic pressure \(\pi=i\,cRT\approx 30\) bar, matching the
+measured \textasciitilde27 bar; thermodynamic minimum \(\approx0.83\)
+kWh/m³), electrodialysis, and CDI. This is the platinum pattern again
+--- refute the wrong mechanism, keep the validated one.
+
+\hypertarget{ca.5-energy-storage-black-copper-solar-ess-split-honestly-ff-halt}{%
+\subsection{\texorpdfstring{CA.5 Energy storage --- black-copper solar
+ESS, split honestly \textbf{{[}F{]}/{[}F?{]} ·
+{[}H{]}→alt}}{CA.5 Energy storage --- black-copper solar ESS, split honestly {[}F{]}/{[}F?{]} · {[}H{]}→alt}}\label{ca.5-energy-storage-black-copper-solar-ess-split-honestly-ff-halt}}
+
+Module \texttt{vp\_ess\_thermal.py} separates the device into a
+\textbf{real storage part} and a \textbf{hypothetical generation part}.
+
+\textbf{Storage is real and quantified.} A black-copper absorber
+(\(\alpha\ge0.98\)) at 800 W/m² collects \textasciitilde4.7 kWh/day per
+m². High-heat-capacity media (alumina/sand) store it; the heat capacity
+is the Dulong--Petit \(3R\) per atom of Chapter CH.7 (\(c_p\approx1223\)
+J/kg·K at the high-T limit; measured 880 J/kg·K at room temperature), so
+a 1 m³ store holds \textbf{\textasciitilde46 kWh} of heat over a 118 K
+rise \textbf{{[}F?{]}}. Vacuum insulation gives a thermal time constant
+\(\tau=mc/(UA)\approx 5.4\) days \textbf{{[}F?{]}} --- ample for
+overnight delivery.
+
+\textbf{Generation is hypothesis, with a working alternative.} The
+claimed ``rotation-amplitude → electric field'' generator has no
+validated mechanism and is marked \textbf{{[}H{]}}. Heat-to-electricity
+is bounded by Carnot, \(\eta=1-T_c/T_h=28.2\%\) at the storage
+temperature; realistic conversion uses a thermoelectric (Seebeck,
+\(ZT=1\) → \textasciitilde5.5\%, \textasciitilde2.5 kWh) or a Stirling
+engine (\textasciitilde½ Carnot → \textasciitilde14\%,
+\textasciitilde6.5 kWh) \textbf{{[}F{]}}. The honest split --- real
+thermodynamic storage, unproven generator replaced by a heat engine ---
+is the same discipline as CA.4.
+
+\hypertarget{ca.6-new-materials-black-copper-and-d-band-design-ff}{%
+\subsection{\texorpdfstring{CA.6 New materials --- black copper and
+d-band design
+\textbf{{[}F{]}/{[}F?{]}}}{CA.6 New materials --- black copper and d-band design {[}F{]}/{[}F?{]}}}\label{ca.6-new-materials-black-copper-and-d-band-design-ff}}
+
+Module \texttt{vp\_new\_materials.py} explains the black-copper absorber
+by \emph{optics}, not amplitude, and ties materials design to the
+d-band. Polished copper reflects (\(R\approx0.97\), absorptance
+\(\alpha=0.03\)) because of its free-electron plasma (Chapter CM);
+nanostructured/oxidised copper raises \(\alpha\) to \textasciitilde0.96
+(a \textasciitilde32× gain) by graded-index impedance matching,
+light-trapping, and intrinsic CuO absorption \textbf{{[}F?{]}} --- the
+same electromagnetic physics as the copper plasma/skin effect, not an
+fm-scale amplitude. A \textbf{selective absorber} then needs \emph{low}
+infrared emittance: the Stefan--Boltzmann re-radiation
+\(P=\varepsilon\sigma A(T^4-T_{\text{amb}}^4)\) at the storage
+temperature is +704 W net for \(\varepsilon=0.05\) but \textbf{−377 W
+for a blackbody surface} (\(\varepsilon=0.90\)) --- the latter
+\emph{cannot even heat up} \textbf{{[}F{]}}. Thus low IR emittance is
+essential, a concrete falsifiable design rule. Beyond coatings, the
+d-band of CA.1 is the materials lever (alloying/strain tunes catalytic,
+electronic, and magnetic properties --- the CM/CT trilogy), and crystal
+packing fractions remain pure geometry (FCC/HCP
+\(\pi/(3\sqrt2)=0.7405\), \textbf{{[}F{]}}, CH.13).
+
+\hypertarget{ca.7-master-ledger-applications}{%
+\subsection{CA.7 Master ledger ---
+applications}\label{ca.7-master-ledger-applications}}
+
+\textbf{{[}F{]} forced (zero free parameters):} ammonia
+\(T^{*}=\Delta H/\Delta S\), Le Chatelier directions, bond-energy
+\(\Delta H\) sign; water-splitting \(1.23\)/\(1.48\) V and Faraday
+\(18.66\) mmol/A·h; magnetic energy \(\ll k_BT\) and the infeasible
+\(B\); seawater osmotic pressure and desalination minimum energy;
+Dulong--Petit storage, thermal time constant, Carnot/Seebeck/Stirling
+efficiencies; Stefan--Boltzmann selective-absorber balance; crystal
+packing fractions.
+
+\textbf{{[}F?{]} forced-candidate:} \(\varepsilon_d\leftrightarrow\)
+binding correlations and volcano apexes (HER→Pt, NH₃→Fe/Ru,
+OER→RuO₂/IrO₂); d-band strain/alloy tuning; OER scaling-relation limit
+0.37 V; absorber enhancement and selectivity.
+
+\textbf{{[}V{]} simulation-measured:} Newns--Anderson adsorbate-DOS
+broadening; volcano reconstructions.
+
+\textbf{{[}CAL{]} calibration inputs:} \(\varepsilon_d\),
+\(\Delta G_H\), \(E_N\), OER descriptors, \(\Delta H/\Delta S\), bond
+energies, \(E^\circ\), susceptibility, emittance, insolation.
+
+\textbf{{[}H{]} hypothesis → alternative:} the ESS ``amplitude →
+electricity'' generator (replaced by a heat engine).
+
+\textbf{{[}O{]} open / refuted:} magnetic amplitude-desalination
+(refuted); absolute reaction rates and microkinetics; promoter effects;
+scaling-relation circumvention.
+
+\hypertarget{ca.8-falsification-criteria-f}{%
+\subsection{\texorpdfstring{CA.8 Falsification criteria
+\textbf{{[}F{]}}}{CA.8 Falsification criteria {[}F{]}}}\label{ca.8-falsification-criteria-f}}
+
+\begin{itemize}
+\tightlist
+\item
+  If the HER apex is not Pt (\(\Delta G_H\approx0\)) or the ammonia apex
+  is not Fe/Ru (\(E_N\approx-0.5\) eV), the d-band volcano account is
+  discarded.
+\item
+  If exothermic ammonia equilibrium does not fall with temperature and
+  rise with pressure, the equilibrium account is discarded.
+\item
+  If a single-site OER catalyst stably shows \(\eta<0.3\) V, the
+  scaling-relation limit needs revision.
+\item
+  If a 0.45 T field measurably desalinates seawater, the magnetic-energy
+  analysis is wrong (it is not: \(U_{\text{mag}}/k_BT\sim10^{-9}\)).
+\item
+  If a non-selective (high-\(\varepsilon\)) black absorber maintains the
+  storage temperature under the stated flux, the radiative-balance rule
+  is wrong.
+\end{itemize}
+
+\hypertarget{ca.9-reproducibility}{%
+\subsection{CA.9 Reproducibility}\label{ca.9-reproducibility}}
+
+Six deterministic, standard-library modules and three case ledgers (29
+rows) reproduce this chapter; \texttt{verify\_applications.py} checks
+execution, determinism (2× sha256), standard-library-only dependency,
+and ledger integrity in one pass (\textbf{6/6 PASS, 29 rows}).
+
+\begin{verbatim}
+python3 verify_applications.py        # all modules + ledgers
+python3 vp_dband_catalysis.py         # HER→Pt, NH3→Fe/Ru, d-band tuning lever
+python3 vp_ammonia_synthesis.py       # Haber compromise, T*, catalyst volcano
+python3 vp_water_electrolysis.py      # 1.23/1.48 V, OER 0.37 V limit, Faraday
+python3 vp_magnet_desalination.py     # magnetic separation refuted; RO/ED/CDI
+python3 vp_ess_thermal.py             # thermal storage (CH.7); generation [H] + heat engine
+python3 vp_new_materials.py           # black-copper optics; selective absorber; packing
+\end{verbatim}
+
+\emph{The five applications close on one idea carried from the metals
+trilogy: the \textbf{d-electron energy} (not a lattice geometry, not an
+amplitude) governs catalysis, and the same energy thread reaches
+fertilizer and water-splitting; thermodynamics governs equilibrium and
+storage; optics governs the absorber. Where a device mechanism could not
+be validated it is refuted or marked hypothesis and a working
+alternative is supplied. What is forced is falsifiable, what is measured
+is labelled, what is open is admitted --- and all of it is
+reproducible.}
+
+\newpage
+
+\hypertarget{application-co_2-electrocatalytic-reduction-the-d-band-co-binding-descriptor-ff}{%
+\section{\texorpdfstring{Application: CO\(_2\) Electrocatalytic
+Reduction --- the \(d\)-band CO-binding descriptor
+\textbf{{[}F{]}/{[}F?{]}}}{Application: CO\_2 Electrocatalytic Reduction --- the d-band CO-binding descriptor {[}F{]}/{[}F?{]}}}\label{application-co_2-electrocatalytic-reduction-the-d-band-co-binding-descriptor-ff}}
+
+\emph{Numbers reproduced by \texttt{vp\_co2\_reduction.py}
+(deterministic, standard-library, 2× sha256). This section re-grounds
+the carbon-dioxide problem on the verified \(d\)-band energy descriptor,
+replacing the refuted electron-amplitude account (in which CO\(_2\)
+``dissociated'' when an amplitude exceeded \(\sim 300\) fm \(>\sqrt2\)).
+The amplitude figure had no measured basis; the controlling variable is
+the \(^*\)CO adsorption energy, exactly as for the hydrogen and nitrogen
+volcanoes (Chapter CT, §CA).}
+
+\hypertarget{the-mechanism-selectivity-is-set-by-co-binding-f}{%
+\subsection{\texorpdfstring{The mechanism --- selectivity is set by
+\(^*\)CO binding
+\textbf{{[}F?{]}}}{The mechanism --- selectivity is set by \^{}*CO binding {[}F?{]}}}\label{the-mechanism-selectivity-is-set-by-co-binding-f}}
+
+Electrochemical CO\(_2\) reduction (CO\(_2\)RR) proceeds through
+adsorbed intermediates, and its \emph{product selectivity} is governed
+by a single descriptor: the binding energy of adsorbed CO,
+\(\Delta E_{\mathrm{CO}}\) --- the same \(d\)-band quantity that orders
+hydrogen (\(\Delta G_H\), apex Pt) and nitrogen (\(E_N\), apex Fe/Ru).
+The rate-limiting first electron transfer to \(^*\)CO\(_2^{-}\) /
+\(^*\)COOH / \(^*\)OCHO is what a catalyst must stabilize; how well it
+does so tracks \(\Delta E_{\mathrm{CO}}\). The module finds
+\(\Delta E_{\mathrm{CO}}\) correlated with the Hammer-- Nørskov
+\(d\)-band centre \(\varepsilon_d\) at \(r = -0.97\) --- confirming the
+descriptor and reusing the same engine, not a new one.
+
+\hypertarget{thermodynamics-equilibria-near-0-v-onset-far-below-f}{%
+\subsection{\texorpdfstring{Thermodynamics --- equilibria near 0 V,
+onset far below
+\textbf{{[}F{]}}}{Thermodynamics --- equilibria near 0 V, onset far below {[}F{]}}}\label{thermodynamics-equilibria-near-0-v-onset-far-below-f}}
+
+The multi-electron product potentials (vs RHE) cluster near zero, yet
+the observed onset is much more negative (\(-0.8\) to \(-1.1\) V)
+because the CO\(_2^{\bullet-}\) radical anion lies near \(-1.9\) V:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Product & \(n\,(e^-)\) & \(E^\circ\) (V vs RHE) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+CO & 2 & \(-0.10\) \\
+HCOOH (formate) & 2 & \(-0.12\) \\
+CH\(_3\)OH & 6 & \(+0.03\) \\
+C\(_2\)H\(_4\) & 12 & \(+0.08\) \\
+CH\(_4\) & 8 & \(+0.17\) \\
+(competing) H\(_2\) & 2 & \(0.00\) \\
+\end{longtable}
+
+These equilibria are forced from formation free energies by
+\(E^\circ = -\Delta G^\circ/(nF)\); the numeric gate independently
+reproduces \(E^\circ(\mathrm{CO}_2\!\to\!\mathrm{CO}) = -0.104\) V and
+\(E^\circ(\mathrm{CO}_2\!\to\!\mathrm{CH}_4) = +0.169\) V from
+\(\Delta G_f\) data.
+
+\hypertarget{coppers-uniqueness-the-falsifiable-headline-f}{%
+\subsection{\texorpdfstring{Copper's uniqueness --- the falsifiable
+headline
+\textbf{{[}F?{]}}}{Copper's uniqueness --- the falsifiable headline {[}F?{]}}}\label{coppers-uniqueness-the-falsifiable-headline-f}}
+
+Sorting metals by \(\Delta E_{\mathrm{CO}}\) reproduces Hori's
+four-group classification:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Strong binding} (Pt, Pd, Ni, Rh, Co, Ru): the surface is
+  CO-poisoned and evolves H\(_2\).
+\item
+  \textbf{Intermediate binding} (\(\Delta E_{\mathrm{CO}} \approx -0.5\)
+  eV): CO stays long enough to be reduced further to
+  \textbf{hydrocarbons and alcohols} --- this is \textbf{copper, and
+  copper alone} among pure metals.
+\item
+  \textbf{Weak binding} (Au, Ag, Zn): CO desorbs and is the product
+  (CO-selective).
+\item
+  \textbf{\(sp\)-metals} (Sn, Pb, Bi, In, Cd): bind \(^*\)OCHO through
+  oxygen and give \textbf{formate}.
+\end{itemize}
+
+That copper is the only pure metal producing significant C\(_2\)+
+hydrocarbons is the central, established experimental fact (Hori),
+reproduced here as a consequence of intermediate \(^*\)CO binding ---
+the CO\(_2\)RR analogue of ``Pt is the HER apex.''
+
+\hypertarget{the-scaling-relation-ceiling-f}{%
+\subsection{\texorpdfstring{The scaling-relation ceiling
+\textbf{{[}F?{]}}}{The scaling-relation ceiling {[}F?{]}}}\label{the-scaling-relation-ceiling-f}}
+
+Because \(^*\)COOH, \(^*\)CO, and \(^*\)CHO all bind through carbon,
+their energies scale together with a nearly constant offset
+\(\Delta E_{\mathrm{CHO}} \approx \Delta E_{\mathrm{CO}} + 0.74\) eV.
+The \(^*\)CO \(\to\) \(^*\)CHO step is therefore potential-limiting,
+giving a methane limiting potential on copper of \(U_L \approx -0.74\) V
+(Peterson--Nørskov). This \(0.74\) eV floor cannot be removed by tuning
+\(\varepsilon_d\) alone --- a linear-scaling constraint that is the
+direct cousin of the OER \(0.37\) V overpotential floor in the water
+chapter. It is the reason CO\(_2\)RR is intrinsically difficult, stated
+as forced geometry of the scaling lines, not as a fitted loss.
+
+\hypertarget{grade-and-falsification}{%
+\subsection{Grade and falsification}\label{grade-and-falsification}}
+
+\textbf{Forced {[}F{]}:} the equilibrium potentials and electron counts.
+\textbf{Candidate-forced {[}F?{]}:} the
+\(\varepsilon_d \leftrightarrow \Delta E_{\mathrm{CO}}\) descriptor,
+copper's uniqueness, the volcano, and the scaling ceiling.
+\textbf{Calibration {[}CAL{]}:} \(\Delta E_{\mathrm{CO}}\),
+\(\varepsilon_d\), the equilibrium potentials, and the scaling offset.
+\textbf{Open {[}O{]}:} absolute current densities and the full C--C
+coupling microkinetics. \textbf{Falsifier:} copper is the apex for
+hydrocarbons and CO\(_2\)RR selectivity follows the \(^*\)CO-binding
+order; if a pure non-copper metal produces more hydrocarbons at the same
+overpotential, or the binding order is broken, the \(d\)-band CO
+descriptor is refuted.
+
+\newpage
+
+\hypertarget{appendix-o-open-items-register-what-is-honestly-unsolved}{%
+\section{Appendix O: Open-Items Register (what is honestly
+unsolved)}\label{appendix-o-open-items-register-what-is-honestly-unsolved}}
+
+This appendix consolidates every {[}O{]} / {[}H{]} item carried in this
+volume, with the specific physics that would be required to close it.
+None is a defect to be fixed; each is open research. Closing any of them
+would be \emph{new physics}, not a correction --- and forcing a closure
+would reintroduce exactly the kind of overfitting (the retracted
+\(\sqrt{2.5}\) rule, the refuted electron amplitude) that this program
+has been careful to discard.
+
+\hypertarget{o.1-chemistry-peripheral-quantitative-opens-independently-re-examined}{%
+\subsection{O.1 Chemistry --- peripheral quantitative opens
+(independently
+re-examined)}\label{o.1-chemistry-peripheral-quantitative-opens-independently-re-examined}}
+
+Each was re-examined by \texttt{vp\_open\_items\_reexam.py}; all four
+correctly remain open because the closing variable lies \emph{outside}
+VP \(\pi\)-geometry.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Open item
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Module
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Closing physics (outside VP geometry)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Absolute bond-dissociation energy & \texttt{vp\_bond\_energy.py} & the
+Morse range \(\beta = a\,r_e\) (anharmonicity; lone-pair / polarity). A
+direct test found \(\beta\) uncorrelated with bond order
+(\(r = +0.18\)), so \(\sqrt2\) geometry alone cannot close it. \\
+Defect knockdown (real vs ideal strength) & \texttt{vp\_strength.py} &
+dislocation density \(\rho_{\mathrm{disl}}\) (processing-dependent;
+Taylor \(\tau=\alpha G b\sqrt{\rho}\)) --- intrinsically a calibration
+input. \\
+Naïve shell correction & \texttt{vp\_shell\_correction.py} & the nuclear
+spin--orbit shell model (Mayer--Jensen); a uniform proximity bonus
+over-corrects because \(\Delta B\) changes sign across magic numbers. \\
+Electron affinity / absolute IE & \texttt{vp\_dblock\_chemistry.py} &
+electron screening constants (Clementi--Raimondi); Slater rules give
+only the correlation (sign correct \(8/18\)). \\
+\end{longtable}
+
+\hypertarget{o.2-electromagnetism-foundational-opens-deeper-than-the-chemistry-set}{%
+\subsection{O.2 Electromagnetism --- foundational opens (deeper than the
+chemistry
+set)}\label{o.2-electromagnetism-foundational-opens-deeper-than-the-chemistry-set}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Open item
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Electromagnetic coupling \(\alpha_{\mathrm{em}}\) (the
+``\(1/137\)'')} & {[}CAL{]} & The \emph{strength} of electromagnetism is
+a measured input; the framework derives the \emph{form} (\(1/r^2\),
+\(c\), \(E/B\), polarization, the angle law) but not the magnitude.
+Physics §14.5 states it is not derived. A topological / phase-winding
+route has been scaffolded but is computationally heavy and is \textbf{on
+hold}; there is no known low-cost shortcut. Closing it is new
+physics. \\
+\textbf{Long-range / unscreened EM (global \(U(1)\))} & {[}H{]} &
+Masslessness and infinite range rest on the breaking of a \emph{global}
+(not gauged) \(U(1)\), giving a Goldstone mode --- a stated departure
+from gauge theory. The AQD dynamics supply causality (§EM.12) but not
+the gauge structure; this remains a hypothesis. \\
+\textbf{Absolute vector (magnetic / radiative) sector} & {[}O{]} & The
+longitudinal (Coulomb / \(E\)) sector --- including the dynamic
+equations, Poynting flow, and causality --- is closed in §EM.12. The
+full vector \(\mathbf E/\mathbf B\) curl structure (Faraday's
+\(\nabla\times\mathbf E\) and Ampère--Maxwell's
+\(\nabla\times\mathbf B\) in vector form, with the magnetic field as an
+independent transverse pseudovector and its absolute magnitude) is
+\textbf{not} supplied by the scalar/longitudinal treatment. This is the
+principal open structural item of the EM chapter. \\
+\textbf{\(\gamma\gamma\) genesis dynamics} & {[}O{]} & How charge is
+created from photon collisions (\(\gamma\gamma\to e^+e^-\)) at the level
+of lattice dynamics is open. \\
+\end{longtable}
+
+\hypertarget{o.3-what-is-closed-for-contrast}{%
+\subsection{\texorpdfstring{O.3 What is \emph{closed} (for
+contrast)}{O.3 What is closed (for contrast)}}\label{o.3-what-is-closed-for-contrast}}
+
+The longitudinal electrodynamics is complete and reproducible: light
+emergence (\(c^2=B/\rho\)), the static Coulomb \(1/r^2\), the
+\(|\mathbf B|=(v/c)|\mathbf E|\) ratio and \(\nabla\!\cdot\mathbf B=0\),
+polarization as helicity, the conduction--radiation angle, blackbody
+radiation, refraction, and --- as of this edition --- the
+\textbf{dynamic field equations, Poynting's theorem, energy
+conservation, uniqueness, and light-cone causality} (§EM.12). On the
+chemistry side the forced body is complete: bonding geometry,
+coordination color, the metal \(d\)-shell fates, thermodynamics,
+equilibrium, kinetics, solution and electrochemistry, materials
+geometry, and the nuclear skeleton; and the applications are re-grounded
+on the verified \(d\)-band descriptor (catalysis, ammonia, water
+electrolysis, energy storage, new materials, CO\(_2\) reduction), with
+the non-working mechanisms (magnetic desalination,
+amplitude-to-electricity ESS) honestly refuted and replaced by working
+alternatives.
+
+\newpage
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+This volume completes a single arc from one anchor. \textbf{Light
+emerges} from the jammed lattice as the unique surviving longitudinal
+wave at \(c^2 = B/\rho\), shown in closed form and by a deterministic
+simulation (0.06\%), which also recovers linear dispersion, the collapse
+of the transverse branch, and the framework's \(-19\) ppm mass-ratio
+residual (§EM.2). On that foundation \textbf{charge is rotation}, the
+Coulomb \(1/r^2\) is three-dimensional flux conservation, \(E\) and
+\(B\) are the longitudinal and transverse parts of one twist,
+polarization is helicity, and one wave spans conduction and radiation by
+a single angle (§EM.3--EM.8). This edition closes the \textbf{dynamic
+and causal structure} of that wave in longitudinal form --- the
+first-order field equations, the Poynting energy flow with exact
+conservation, uniqueness, and a strict light cone with quantum
+microcausality (§EM.12, from the AQD axiomatic dynamics).
+
+\textbf{Chemistry follows by sphere geometry and rotation.} Points
+\emph{on} a sphere give molecular shape (\(\arccos(-1/3)\)); spherical
+harmonics under a ligand field give the crystal-field ratio \(4/9\);
+sphere \emph{packing} gives \(0.7405\); lattice points \emph{inside} a
+sphere give the nuclear magic skeleton. Rotation threads the rest ---
+the heat-capacity staircase, \(\Delta G = \Delta H - T\Delta S\), the
+Boltzmann tail, and rotational-dent transfer (the Daniell cell at 1.10
+V). The metal chapters split the \(d\)-shell into conduction (copper)
+and magnetism (iron) and into color (\(d\)--\(d\) transitions); the
+catalysis chapter records, in full, how the early electron-amplitude
+resonance picture was \textbf{refuted} (a Bragg band edge, not a
+resonance) and \textbf{reproduced correctly} by the \(d\)-band energy
+descriptor.
+
+\textbf{The applications close the arc on verified physics.} A single
+\(d\)-band engine explains hydrogen (apex Pt), nitrogen for ammonia
+(apex Fe/Ru), and \textbf{CO\(_2\) reduction (the uniqueness of copper
+for hydrocarbons)}; water electrolysis is bounded by the OER scaling
+floor; energy storage is real in its Dulong--Petit heat capacity and
+Carnot-bounded in its conversion; and the mechanisms that do \emph{not}
+work --- magnetic desalination, amplitude-to-electricity generation ---
+are refuted honestly and replaced by working alternatives. The same
+discipline that discards a beloved but unworkable idea is what lets the
+rest be built upon.
+
+What is \textbf{forced} is falsifiable and stated with its criterion;
+what is \textbf{measured} is labelled and never tuned per result; what
+is \textbf{open} --- most fundamentally the electromagnetic coupling
+\(\alpha_{\mathrm{em}}\), and the absolute vector sector of
+electromagnetism --- is admitted in the Open-Items Register (Appendix O)
+rather than disguised. The result is intended to be both substantially
+more detailed than the original working notes and fully reproducible: a
+38-module chemistry/EM core with a 176-entry case ledger and a 9-module
+/ 46-entry applications package, verification harnesses (38/38 and 9/9),
+and numeric-drift gates (both pass, zero drift) accompany this text, and
+every number above can be regenerated by the reader.
+
+\hypertarget{reproduction-summary}{%
+\subsection{Reproduction (summary)}\label{reproduction-summary}}
+
+\begin{verbatim}
+# chemistry + EM core
+python3 code/verify_chemistry.py --root .     # 38/38 modules pass; ledgers 114 + 62 pass
+python3 code/gate_numeric_chem.py             # numeric drift gate: PASS (zero drift)
+python3 code/foundation/vp_light_emergence.py # light emerges at c^2 = B/rho
+python3 code/foundation/vp_em_field_dynamics.py  # dynamic field, Poynting, causality (EM.12)
+
+# applications
+python3 apps/verify_applications.py           # 9/9 modules pass; ledger 46 rows
+python3 apps/vp_chem_numeric_ssot.py          # applications drift gate: PASS (17 anchors)
+python3 apps/vp_co2_reduction.py              # CO2 reduction: copper uniqueness
+
+sha256sum -c SHA256SUMS.txt                   # file integrity
+\end{verbatim}
+
+\hypertarget{data-and-code-availability}{%
+\subsection{Data and code
+availability}\label{data-and-code-availability}}
+
+All code, data, and documents are released under open licenses
+(documentation and data CC BY 4.0; code MIT) in the DOI package reserved
+as 10.5281/zenodo.20680541, with checksums and a deterministic RunID.
+The package is a supplement to the VP Theory whitepaper
+(10.5281/zenodo.17932567), takes its field-dynamics addendum from the
+AQD record (10.5281/zenodo.17423870), and supersedes the earlier
+qualitative application notes (related: 10.5281/zenodo.18043066).
+
+\end{document}
