@@ -41,7 +41,7 @@ VP-SPEC v1.7 헌법 C3 산출물. 백서 전체의 `[O]` 등급 항목을 한 �
 | 13 | §6 CA.5/CA.7 (06-applications) | 절대 전류밀도·완전 미시반응 | open | 보정 서술자 너머. ΔE_CO·ε_d·평형전위·스케일링 오프셋은 [CAL]. | 미유도 |
 | 14 | §7 CA.9a (07-low-grade-waste-heat-electricity) | 정적 자석이 구리 전도전자를 한 방향 전류로 정렬 | **refuted** | Lorentz 힘 F=qv×B ⊥ v → 일을 하지 않음. Boris 적분에서 사이클로트론 표류 ⟨v⟩≈0·운동에너지 불변. 전류는 E-장이 구동(구리는 3d¹⁰ 비자성·Seebeck 1.8 µV/K 무시가능). | `vp_magnet_lorentz.py` sha256 7c8246ab (반증 재현, 2× 동일) |
 | 15 | §7 CA.9b (07-low-grade-waste-heat-electricity) | 히트펌프로 폐열을 승온 후 엔진 발전 | **refuted** | 히트펌프와 엔진은 역과정(COP·η_Carnot=1). 연결 시 최선의 경우 엑서지(40°C 기준 4.8%)만 회수, 실물 부품으로는 순 −65%. | `vp_heatpump_exergy.py` sha256 64e26ee6 (반증 재현, 2× 동일) |
-| 16 | §7 CA.9c (07-low-grade-waste-heat-electricity) | 검은 구리가 모은 열로 전기를 "생성" | **refuted** | 검은 구리는 흡수체(α≈0.96, 광학)이지 변환기가 아님 — 열전·광전·엔진 기구 없음, Seebeck 무시가능, 1085°C에서 융해라 고온 방출체도 불가. | `vp_blackcu_absorber_not_generator.py` sha256 0067cbe1 (반증 재현, 2× 동일) |
+| 16 | §7 CA.9c (07-low-grade-waste-heat-electricity) | 검은 구리가 모은 열로 전기를 "생성" | **refuted for the ~100 nm coating; reason corrected 2026-09-29** | 검은 층은 금속 구리가 아니라 p형 CuO다(원 모듈은 구리 금속 Seebeck 1.8 µV/K를 잘못 사용). CuO(204 µV/K)로 다시 계산해도 100 nm 코팅의 온도차는 3×10⁻⁵ K라 전압 ~7 nV로 변환기가 아님. 벌크 CuO의 ZT는 최대 ~0.05(비저항 0.01 Ω·cm 기준), Cu/CuO 접합은 ~202 µV/K 열전쌍. VP 복사→전도 제안은 [O], BC4로 판정. | `vp_blackcu_cuo_correction.py` sha256 bcf181a4 (2× 동일); 원 모듈 0067cbe1은 기록용 보존 |
 
 부록(`ax-o-open-items-register-...`)은 §1의 EM `[O]` 항목(#1 완전 벡터 섹터, #2 γγ 생성)과 §2·§3의 open 항목을
 백서 내부 등록표로 재집계하며, 본 원장과 일치한다. §1에는 `[H]`(전역 U(1) Goldstone 장거리 EM)와

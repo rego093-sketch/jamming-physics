@@ -117,18 +117,7 @@ anything generated. Module sha256 64e26ee6… (2× identical)
 <h3 id="ca.9c-black-copper-generates-electricity-from-the-collected-heat">CA.9c
 Black copper "generates" electricity from the collected heat
 <strong>[O]</strong></h3>
-<p>This is the CA.5/CA.6 verdict carried one step further. Black copper
-is an <strong>absorber</strong> — α ≈ 0.96 by graded-index impedance
-matching and intrinsic CuO absorption (CA.6), pure optics — and converts
-radiation into heat. It is not a <strong>converter</strong> of heat into
-electricity: it has no thermoelectric, photovoltaic, or engine mechanism,
-its Seebeck is negligible, and it melts at 1085 °C, so it cannot even
-serve as the high-temperature emitter of a thermophotovoltaic cell (whose
-converter is the semiconductor cell, not the copper). The "rotation-
-amplitude → electric field" generator of CA.5 remains <strong>[H]</strong>;
-the absorber-as-generator reading is refuted outright. Module
-<em>vp_blackcu_absorber_not_generator.py</em>, sha256 0067cbe1…
-(2× identical) <strong>[V]</strong>.</p>
+<p>This is the CA.5/CA.6 verdict carried one step further. Black copper is an <strong>absorber</strong>, with α ≈ 0.96 from graded-index impedance matching and intrinsic CuO absorption (CA.6), which is pure optics. It converts radiation into heat. <strong>Corrected 2026-09-29:</strong> the black layer is <strong>CuO</strong>, a p-type semiconductor, not copper metal. The original module judged it with copper's Seebeck coefficient of 1.8 µV/K, which is the wrong input. Recomputed with CuO (<em>vp_blackcu_cuo_correction.py</em>, sha256 bcf181a4…, identical output on two runs): (i) <strong>The ~100 nm coating is still not a converter.</strong> At 1 kW/m² the coating holds a temperature drop of only 3×10⁻⁵ K, which gives about 7 nV even at S<sub>CuO</sub> = 204 µV/K. The conclusion stands, for a different reason: the coating is too thin to carry a temperature difference. (ii) <strong>Bulk CuO is a weak thermoelectric.</strong> Over the reported film resistivity range of 0.01–570 Ω·cm, ZT ranges from 0.05 at best down to about 10⁻⁶. At best that is ~290× copper metal, and still ~20× below ZT = 1. (iii) <strong>A Cu/CuO interface is a genuine thermocouple</strong>, at about 202 µV/K, which is roughly 20 mV per 100 K of temperature difference across the junction. Copper also melts at 1085 °C, so it cannot serve as the emitter of a high-temperature thermophotovoltaic cell. The "rotation-amplitude → electric field" generator of CA.5 remains <strong>[H]</strong>. The VP proposal that the black boundary turns infrared directly into directed conduction is kept <strong>[O]</strong>, and bench test BC4 is pre-registered to decide it. The original module <em>vp_blackcu_absorber_not_generator.py</em> (sha256 0067cbe1…) is kept unchanged for the record.</p>
 
 <h2 id="ca.10-the-thermomagnetic-engine-kept-and-quantified">CA.10 The
 thermomagnetic engine, kept and quantified <strong>[V]</strong></h2>
@@ -218,7 +207,7 @@ black-copper absorber/non-converter (0067cbe1…); self-sustained
 thermomagnetic oscillation (d6d8a9ab…); bare η ≈ 0.4%
 (0a3af6ec…); regenerative η 2.7–4.0% (aa45e145…); microchannel
 window η 2.6–4.4% at 1.5–4 Hz (aa296c82…). <strong>[CAL]</strong>
-calibration inputs: Gd Tc = 293 K; copper Seebeck 1.8 µV/K; NdFeB N42
+calibration inputs: Gd Tc = 293 K; copper Seebeck 1.8 µV/K (copper wire only); CuO Seebeck 204 µV/K and resistivity 0.01–570 Ω·cm (black layer); NdFeB N42
 ΔB ≈ 0.35 T; water properties; India fleet ~110 M units. <strong>[H]</strong>
 hypothesis: device-level performance and economics projections
 (per-unit ~290 W; data-centre ~23 kW, payback ~4–6 yr). <strong>[O]</strong>
