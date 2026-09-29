@@ -24,6 +24,9 @@ from html.parser import HTMLParser
 HERE = os.path.dirname(os.path.abspath(__file__))
 PKG  = os.path.dirname(os.path.dirname(HERE))
 DOCS = os.path.join(PKG, "docs")
+# The pages moved to <repo>/docs/ear/; fall back to them when repro/ear/docs is absent.
+if not os.path.isdir(DOCS):
+    DOCS = os.path.join(os.path.dirname(os.path.dirname(PKG)), "docs", "ear")
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(PKG, "volume", "content"))
 

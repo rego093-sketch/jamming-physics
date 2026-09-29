@@ -102,7 +102,12 @@ def main():
 
     # [4] NO-OMISSION ------------------------------------------------------------------
     print("\n[4] no-omission (누락금지) — every promised artifact present:")
-    miss = [f for f in CFG["completeness"] if not os.path.exists(os.path.join(ROOT, f))]
+    # Pages moved to <repo>/docs/ear/; resolve docs/* there when repro/ear/docs is absent.
+    def _art(f):
+        if f.startswith("docs/") and not os.path.isdir(os.path.join(ROOT, "docs")):
+            return os.path.join(os.path.dirname(os.path.dirname(ROOT)), "docs", "ear", f[len("docs/"):])
+        return os.path.join(ROOT, f)
+    miss = [f for f in CFG["completeness"] if not os.path.exists(_art(f))]
     ok = (not miss); ok_all &= ok
     if miss:
         for f in miss: print(f"    [FAIL] MISSING: {f}")
