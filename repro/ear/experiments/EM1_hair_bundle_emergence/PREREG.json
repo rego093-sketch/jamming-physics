@@ -1,0 +1,21 @@
+{
+  "experiment": "EM1 — emergence at the level of one simple tissue unit: a single hair bundle built from its molecular elements",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running em1_run.py",
+  "principle": "Author: complex structures cannot be emerged realistically (environment cannot be matched), but simple tissues emerge accurately. Elements and constants are observations; the bundle's behaviour is NOT set, it must emerge. No constant is tuned to the outputs.",
+  "model": "Nadrowski, Martin & Juelicher 2004 (PNAS 101:12195) two-variable bundle: gating springs + transduction channels (open probability from gating), adaptation motors (myosin) with Ca feedback on motor force. Deterministic (no noise term).",
+  "constants_observed": {"lambda_uNs_per_m": 2.8, "lambda_a_uNs_per_m": 10, "K_gs_uN_per_m": 750, "K_sp_uN_per_m": 600, "D_nm": 61, "N_channels": 50, "S_Ca_feedback": 0.65, "gamma_geom": 0.14, "kT_zJ": 4.0, "dG_kT": 10, "F_max_pN_reported": 50.3},
+  "control_parameter": "F_max (motor force) scanned 20-90 pN; the reported 50.3 pN is evaluated as is",
+  "observations_to_compare": {
+    "O1": "bullfrog saccular bundles oscillate spontaneously at ~5-50 Hz with ~20-80 nm amplitude (Martin & Hudspeth 2001; Martin, Bozovic et al. 2003)",
+    "O2": "near their characteristic frequency, bundle displacement grows as the 1/3 power of the stimulus force over a range of forces (Martin & Hudspeth 2001, PNAS 98:14386)",
+    "O3": "cochlear basilar-membrane compression is ~0.2 dB/dB (Ruggero 1997) — a whole-organ (complex-structure) observation"
+  },
+  "predictions": {
+    "P1_hopf_emerges": "a finite F_max window produces self-sustained oscillation (not put in by hand); the reported 50.3 pN lies inside it",
+    "P2_frequency_amplitude": "at 50.3 pN the emergent oscillation has frequency 5-50 Hz and peak-to-peak amplitude 20-150 nm",
+    "P3_compression": "just on the quiescent side of the emergent bifurcation, the response at the characteristic frequency grows with force with a local exponent between 0.25 and 0.45 over some force decade",
+    "P4_organ_gap": "the single-bundle exponent does not go below 0.25 in the compressive range, i.e. the organ-level 0.2 is NOT produced by one bundle (a complex-structure effect, left [O])"
+  },
+  "record_either_way": true
+}
