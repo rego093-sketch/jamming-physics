@@ -133,11 +133,11 @@ How many of the 32 volumes carry each shared primitive (full-text measured). Thi
 
 | Primitive | Form | Volumes | Coverage |
 |---|---|---:|---|
-| R19 bistable switch | `ṡ = g·s − s³ + h` | 25 / 32 | the universal kernel |
+| R19 bistable switch | `ṡ = g·s − s³ + h` | 26 / 32 | the universal kernel |
 | γ — measured stiffness | `γ = −mean NN stacking ΔG` | 24 / 32 | the biology instantiation |
 | Emergence from measured γ | read: `can-fire · spinodal threshold`; build: order/size/timing by growth [O] | 29 / 32 | the reading recipe (building is open, dna §RB) |
 | Kramers / Arrhenius barrier | escape over `g²/4` | 15 / 32 | switching kinetics |
-| Jammed lattice / `c²=B/ρ` | the bare substrate | 15 / 32 | reaches into dna, eye, neuro |
+| Jammed lattice / `c²=B/ρ` | the bare substrate | 17 / 32 | reaches into dna, eye, neuro |
 | FitzHugh–Nagumo oscillator | relaxation rhythm | 12 / 32 | hearts, clocks, neurons |
 | Cube-root transduction | `R = (F/β)^⅓` | 3 / 32 | eye, ear, sensory (criticality) |
 

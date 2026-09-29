@@ -37,6 +37,9 @@ def main():
         if not os.path.isfile(hub):
             continue
         html = open(hub, encoding="utf-8").read()
+        # hubs that carry a hand-authored strip with inherited-volume links are left alone
+        if '<span class="lbl" style="margin-left:.6rem">Volumes</span>' in html or 'volumes: ' in html.split('inherits-strip',1)[-1][:600]:
+            print(f"skip {pid}: custom strip with volume links"); continue
         # remove any existing strip so content always reflects the current _decl
         html = re.sub(r'<aside class="inherits-strip".*?</aside>\n?', "", html, flags=re.S)
         d = json.load(open(decl_path, encoding="utf-8"))

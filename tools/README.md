@@ -18,3 +18,19 @@ Files:
 - `map.svg`          — the architecture diagram injected into the homepage.
 
 See `../AGENTS.md` for the full reading guide and the inheritance contract.
+
+## Recurrence guards (added 2026-09-29)
+
+`tools/check_integrity.py` is run by `tools/gate.py` (section J). It performs three checks:
+
+- **Links resolve.** Every link on every page must point to something that exists: site-relative, absolute `jamming-physics.org`, relative, and GitHub repro links.
+- **Cited scripts exist.** Every `*.py` a page cites must exist under `repro/<volume>/`. Known gaps live in `registry/missing_scripts_baseline.json`, and only a **new** gap fails the check. Refresh the file with `--update-baseline` after restoring code.
+- **Aggregates are generated, not hand-edited.** `docs/index.html` and `docs/concepts/index.html` must equal a fresh regeneration.
+
+`make_manifest.py` now:
+
+- covers all 32 volumes;
+- keeps the top-level sections owned by other tools;
+- leaves editorial `lt-note` asides out of primitive matching.
+
+`build_strips.py` leaves hubs with hand-authored volume-link strips alone.

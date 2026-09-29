@@ -9,7 +9,7 @@
   },
   "license": "CC-BY-4.0",
   "kernel": {
-   "substrate": "c^2 = B/rho (vacuum = jammed elastic solid, phi~0.7405)",
+   "substrate": "c^2 = B/rho (vacuum = jammed elastic solid at the isostatic point, phi_iso~0.633; 0.7405 is the FCC crystal value)",
    "switch": "ds/dt = g*s - s^3 + h  (R19 bistable)",
    "stiffness": "gamma = -mean NN stacking dG  (measured, never fitted)",
    "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order from cascade depth, size, timing) = independent growth of objects, full physics, open [O] (dna §RB)"
@@ -45,7 +45,7 @@
   "R19": {
    "form": "ds/dt = g*s - s^3 + h",
    "pattern": "R19|bistable",
-   "count": 25,
+   "count": 26,
    "volumes": [
     "geodynamics",
     "continental-genesis",
@@ -71,6 +71,7 @@
     "circadian",
     "aging_senescence",
     "analgesic_threshold",
+    "disease_wp",
     "disease_kit"
    ]
   },
@@ -144,7 +145,7 @@
   "jammed_c2": {
    "form": "c^2 = B/rho (random close packing)",
    "pattern": "jammed|random close pack|B/ρ|0\\.7405",
-   "count": 15,
+   "count": 17,
    "volumes": [
     "physics",
     "fluid-dynamics",
@@ -154,7 +155,9 @@
     "continental-genesis",
     "recent-sequence-cascade",
     "wave-computer",
+    "dna",
     "neuro",
+    "mind",
     "eye",
     "circulatory",
     "digestive",
@@ -222,7 +225,7 @@
    "short": "VP Theory",
    "doi": "10.5281/zenodo.17932566",
    "hub": "/physics/",
-   "headline": "c² = B/ρ ; mₚ/mₑ = 6π⁵ (−18.8 ppm)",
+   "headline": "c² = B/ρ (3-D isostatic test + E2 at ±10%) ; mₚ/mₑ = 6π⁵ (−19 ppm)",
    "inherits": [],
    "adds": [
     "jammed-substrate",
@@ -240,8 +243,8 @@
     "hypothesis": 2
    },
    "pages": 48,
-   "content_sha256": "7b7f46270ce0ff452098a1977a99f695973bf8fa2fa133199cb78aa5bc593c51",
-   "repro_sha256": "89fef57f231cc8e43d49db2d035f45111d7a2644073eb2b5783a573952448c2d"
+   "content_sha256": "93f577e64318cd2b3b8278dda3a8b4693e9a8b76092de81cc678c2bc6a01305c",
+   "repro_sha256": "74a3464aea0b6181a289a62c512ff0d09bd737e78c1833612b0a66c1e1324afa"
   },
   {
    "id": "fluid-dynamics",
@@ -267,7 +270,7 @@
     "hypothesis": 0
    },
    "pages": 39,
-   "content_sha256": "b5fe9e75d07b745a412a02edb3f502f863ebe65cc95cfb51f9f93e7446b895d4",
+   "content_sha256": "870d3eb1e7ca1f93f74a3a46668dfecf78b89618c80cda1f8a827259ccc6af54",
    "repro_sha256": "557cd2b4c0d0dabff8aa8872ded55dac31e8077d0bc792c38bab44eb04826c64"
   },
   {
@@ -295,7 +298,7 @@
     "hypothesis": 0
    },
    "pages": 43,
-   "content_sha256": "e3f02aac1e4bf5ee97809254d43aeff6dc4d659107032eb9e7c85072668e8dfc",
+   "content_sha256": "e11d7ec6119ecb96a41a4b1011b50c1febea68dbc9a3b6173bc33905f8604788",
    "repro_sha256": "2120ce7d453d229dfcdc81b148766f3a321cd1f920dd0c3dffe1d4f5281a3843"
   },
   {
@@ -304,7 +307,7 @@
    "short": "VP Chemistry & EM",
    "doi": "10.5281/zenodo.20680540",
    "hub": "/chemistry/",
-   "headline": "EM on the jammed substrate: E = transverse swing, B = lattice rotation [H]; chemistry from one electron picture",
+   "headline": "EM on the jammed substrate: E = transverse swing, B = lattice rotation [H]",
    "inherits": [
     "physics"
    ],
@@ -326,7 +329,7 @@
     "hypothesis": 1
    },
    "pages": 9,
-   "content_sha256": "151779e03bd8f0d4657e3130f42fc8afa1c2d28683e8f8dac1da4654648f2376",
+   "content_sha256": "e080cd893927d9d1c56b289335006f9aa9775cf0eff4317892789a0c267a0ed7",
    "repro_sha256": "a1f92939c0583f1aadb0ef50c216174c5c3ffc2ffb122d1fbd7252c6a68fe387"
   },
   {
@@ -383,7 +386,7 @@
     "hypothesis": 0
    },
    "pages": 15,
-   "content_sha256": "d8334134a7e57814581fb9f250168f15c63d47452773236626c196e9814bd67d",
+   "content_sha256": "3e044a2f30c687befc3e2627b57fdde5f42cddb3ca5a505b594e0c4f1f4dbe38",
    "repro_sha256": "02871074a816f865e7c1eca2b24b3444ea3f10b30015295f3e9d50273b75325b"
   },
   {
@@ -472,8 +475,8 @@
     "hypothesis": 1
    },
    "pages": 15,
-   "content_sha256": "b9e32fdf1fd65d8f454ee7ec9de89117377ac224ceb2945c620baf0984afc625",
-   "repro_sha256": "83ef87fc89c522c3bfedaae6e7c92414763061f59e9c4670a769354a945c0343"
+   "content_sha256": "253be1b8c502efc4eabf98fae60a85cf19d44b5a3be1ed71e43ab4357d184229",
+   "repro_sha256": "5878068cdf2f4ac622d816933b27893cb95a397496245eee605cb4ccc45e7310"
   },
   {
    "id": "dna",
@@ -494,7 +497,8 @@
    "primitives": [
     "R19",
     "gamma",
-    "emergence"
+    "emergence",
+    "jammed_c2"
    ],
    "grades": {
     "forced": 7,
@@ -503,7 +507,7 @@
     "hypothesis": 0
    },
    "pages": 29,
-   "content_sha256": "8d88c154583223ebad5e36eae2f1bd9622117baa9f9318d84c89da55e9b36532",
+   "content_sha256": "df2c277ed7af4af72e9d87418fd1c6df5604afa1d79759ea2e89b7d8c671e18e",
    "repro_sha256": "7dd0aa2f12a198e4bc5f6b6a01405ad4ea1a4bb5eacdb52071e68fe4d77d67f8"
   },
   {
@@ -544,7 +548,7 @@
    "short": "Neural Emergence Chain",
    "doi": "10.5281/zenodo.17979015",
    "hub": "/neuro/",
-   "headline": "working memory = f_γ/f_θ ≈ 6–7 ([L], literature bands; tACS-consistent)",
+   "headline": "working memory = f_γ/f_θ ≈ 6–7 [L] (literature bands, tACS-consistent)",
    "inherits": [
     "physics",
     "chemistry",
@@ -571,7 +575,7 @@
     "hypothesis": 0
    },
    "pages": 27,
-   "content_sha256": "63f3b67792d58c9b7623e758ec519a96fdede6a1dc2f2efea59bd22787eb79ed",
+   "content_sha256": "7738734cfcb2612d765946f92e0004ad57b55e8de7b08a09232a1ff8e0161d51",
    "repro_sha256": "adf081b607880ee121ffcf74aaf03cfb2e27245fe87e27708c1123813fb414d5"
   },
   {
@@ -596,6 +600,7 @@
     "R19",
     "gamma",
     "emergence",
+    "jammed_c2",
     "fhn"
    ],
    "grades": {
@@ -605,7 +610,7 @@
     "hypothesis": 0
    },
    "pages": 61,
-   "content_sha256": "53043ac2e9e08e6057a0f462e22e5e83c466c93b6069ce34c50ce74d5da3210b",
+   "content_sha256": "8341fd66a5f264cf46045dd4d8edf8912b6bd3a2421064e9e24ee6e70457853d",
    "repro_sha256": "3336beaa35b6004cb2e6b3ecbb9b4fa140b81f9b6a4138bb03984ae142496772"
   },
   {
@@ -638,7 +643,7 @@
     "hypothesis": 1
    },
    "pages": 13,
-   "content_sha256": "b52d469f34ec4aee69b71155c9813f837cc888cfd43f5eb0bd5f7073dcc3cf1e",
+   "content_sha256": "b6b97e77dbe349a6eb473432dbdb17a1ada06a073746bb88561b3ad4199fca2c",
    "repro_sha256": "efdd9e58437ed301993bae572a26247aa908de8633f8a152ba072714b3f98743"
   },
   {
@@ -674,7 +679,7 @@
    },
    "pages": 14,
    "content_sha256": "a10cd7b9fe9d3150ecd641f9674672f3b15aeae8ce17cbc0a3f4101e762ce239",
-   "repro_sha256": "9236c732cf2255a59cf5950304f10b4060d55949e592b336cba328d74b46d1a3"
+   "repro_sha256": "36cce609a91b33544ebe161c0d3f997d0c229756aeba056167dd3f37b5b7a95f"
   },
   {
    "id": "ear",
@@ -769,7 +774,7 @@
     "hypothesis": 0
    },
    "pages": 13,
-   "content_sha256": "41cc8ebb5719855ac181f19501cf57b91145502962b6f98b2d737c4616225ec3",
+   "content_sha256": "bbdd0b2de7a4f5b89f9d41b8c1560462d811363258326beedf9e779355be1b02",
    "repro_sha256": "58150ed2b0bbdae2463b42db4f40fe7157bf32f9887c0f59520182e48dc38f66"
   },
   {
@@ -802,7 +807,7 @@
     "hypothesis": 8
    },
    "pages": 25,
-   "content_sha256": "051c586c9c04cab7e65aea2462ef122dcc1be83f3e96001412f468dfb6b3a40d",
+   "content_sha256": "73a11217bc5b4e8379236a9f3ee5412267a9629d2f31c69314b30b16ca4eb3d0",
    "repro_sha256": "c2ff38a195cfd9a48655ee2982100cbfaf20cbdc85fdcbf693690ae237afc5e8"
   },
   {
@@ -835,7 +840,7 @@
     "hypothesis": 0
    },
    "pages": 34,
-   "content_sha256": "bee9223f61e27e61ac7aaf4bf74de2c295a64074e8bdc692aa659ffd2c766165",
+   "content_sha256": "f4118bafc41f94ebc231f0a7d28c305a744cc083f67203efed6dd89183759873",
    "repro_sha256": "18a98ddf54abd23edfd6d2bdbdab1f2a576e72e5b91d20588fc9c052c134b09d"
   },
   {
@@ -868,7 +873,7 @@
     "hypothesis": 0
    },
    "pages": 29,
-   "content_sha256": "07248b41eb2731334d9386bb190bbce7a6a22bea47c6ff80c9b95c4226f7ab35",
+   "content_sha256": "0205f6364d81991b75b4ff8d2a58bfde9082df742407b798824ce41900c2b869",
    "repro_sha256": "b683668bd585d368261ed703ba2135c88fae54c54f7724af371fff16c447e8a9"
   },
   {
@@ -899,7 +904,7 @@
     "hypothesis": 0
    },
    "pages": 22,
-   "content_sha256": "88d2efdbe6dda301a4fb5366706fd5adb26920bda8d879ac52d86946a0670ed4",
+   "content_sha256": "2d5cf12649b40a8d06f539a8e5e0fa2c4eee2557bfff93ebffec67bc14c39967",
    "repro_sha256": "837519acbe653df770c502e4975c1a82d9e7caeb5fd1f5bc538f3db470cb9ca2"
   },
   {
@@ -933,7 +938,7 @@
     "hypothesis": 0
    },
    "pages": 15,
-   "content_sha256": "9ac3a3b5438a2ded7c4dca8bda65706cb2375f6bdef045e22e8afd0b85b21789",
+   "content_sha256": "6c2e3614e1fadd75b92985d6dd3d0165e76e4a7e6d963c3e96d51e8fe9f26a93",
    "repro_sha256": "3f7f0cf2b45377d95b8349d25461d14b1a6e3542015b85c73afb440dd0e4d40f"
   },
   {
@@ -966,7 +971,7 @@
     "hypothesis": 0
    },
    "pages": 15,
-   "content_sha256": "75f938a063d1eec94a0e3c4bae461d5d87b72b6acb5c55adbf0e4d18e57da45c",
+   "content_sha256": "b62e95a2ed8366386196098700fd5fd7c2b41883459a30bb04cc4e4d7e7e30e6",
    "repro_sha256": "bd22a793392f353ed9773fadbf0d5088473769fc0a5f5350176b96579fe35faf"
   },
   {
@@ -1163,6 +1168,7 @@
     "per-disease-gene-key-mechanism-cases"
    ],
    "primitives": [
+    "R19",
     "gamma",
     "emergence"
    ],
@@ -1173,7 +1179,7 @@
     "hypothesis": 24
    },
    "pages": 39,
-   "content_sha256": "2bcf4a6efcf052ff4222f057d4cf2782174fcb4cea1db5df7d617f92a6efd8e8",
+   "content_sha256": "79c0e0513c866010d89922913d075fa1f87493d1ae756412c1cf97c4e8f20cce",
    "repro_sha256": "fd9bf5d3ef79dd59041f89c66e3c002dae10113b4e546411970c309e9e989162"
   },
   {
@@ -1207,13 +1213,19 @@
   }
  ],
  "lineage": {
-  "built_at": "2026-09-29T02:28:22Z",
-  "built_by": "session/2026-09-29-fluid",
-  "parent_sha256": "3af95a6a10c70ebf74387c2f479d1a33f232d8828b5ef09f5585211a6fa6d400",
-  "this_sha256": "d93987e6d58e6235481d39004fd591c359dcdc71b8d3c912aff16a4e22dbb35e",
+  "built_at": "2026-09-29T03:19:34Z",
+  "built_by": "session/2026-06-22-vp-homepage-rebuild",
+  "parent_sha256": "d93987e6d58e6235481d39004fd591c359dcdc71b8d3c912aff16a4e22dbb35e",
+  "this_sha256": "c61d5cdaeadc697881024a09e3491f6c11899f4412d4b2f31de1bd6ebc9168ef",
   "changes": [
-   "fluid-dynamics: review (3) + scope/key-result notes; three-sphere C3 -> one-axis through-flow foregrounded (reduced test; full 3-D = computational limit)",
-   "NC1 Newtonian closure on a particle arrangement (P1-P3,P5 pass); C3E1/ONS1 relabelled as independent-model tests; JFM package vendored; rendering + code-path repairs; homepage card updated"
+   "genesis: consolidated 30 volumes into a single repo",
+   "rebuilt docs/index.html (homepage) from the manifest",
+   "integrated +5 volumes: eye, ear, nose, wave-computer, inheritance (docs + repro)",
+   "added repro/ entries for the 5 new volumes (30/30 complete)",
+   "manifest now tracks content_sha256 AND repro_sha256 per volume",
+   "primitive counts corrected to volumes-only: R19 22, gamma 22, emergence 27",
+   "sitemap 609->676",
+   "added AGENTS.md AI reading guide"
   ]
  },
  "concepts": {

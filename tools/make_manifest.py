@@ -14,44 +14,42 @@ MASTER = os.path.join("tools", "master.json")
 MANIFEST = os.path.join("registry", "vp.manifest.json")
 LINEAGE = os.path.join("registry", "lineage.jsonl")
 
-ORDER = ['physics','fluid-dynamics','cosmology','chemistry','geodynamics','geochronology',
- 'wave-computer','dna','inheritance','neuro','mind','sensory_organ','eye','ear','nose',
- 'cardioresp','circulatory','digestive','musculoskeletal','immune_hematologic','integumentary',
- 'reproductive_endocrine','homeostasis_thermometabolic','homeostasis_hemodynamic',
- 'homeostasis_ionic','circadian','aging_senescence','analgesic_threshold','disease_wp','disease_kit']
+ORDER = ["physics", "fluid-dynamics", "cosmology", "chemistry", "geodynamics", "geochronology", "continental-genesis", "recent-sequence-cascade", "wave-computer", "dna", "inheritance", "neuro", "mind", "sensory_organ", "eye", "ear", "nose", "cardioresp", "circulatory", "digestive", "musculoskeletal", "immune_hematologic", "integumentary", "reproductive_endocrine", "homeostasis_thermometabolic", "homeostasis_hemodynamic", "homeostasis_ionic", "circadian", "aging_senescence", "analgesic_threshold", "disease_wp", "disease_kit"]
 
 # inherits -> adds (from the declared inheritance contract; see AGENTS.md §3.3)
 REL = {
- 'physics':([],["jammed-substrate","c2=B/rho","R19-normal-form","constants:mp/me=6pi^5"]),
- 'fluid-dynamics':(["physics"],["continuum-flow-on-jammed-medium"]),
- 'cosmology':(["physics"],["vacuum-inflow","a0=cH0/2pi"]),
- 'chemistry':(["physics"],["EM-on-same-substrate","phi_FCC=0.7405","bonding"]),
- 'geodynamics':(["physics","fluid-dynamics"],["jamming-unjamming-yield","plate-breakup"]),
- 'geochronology':(["physics","geodynamics"],["incorporation-dating-limit"]),
- 'wave-computer':(["physics","neuro"],["clock-free-phase-computation"]),
- 'dna':(["physics"],["gamma-ruler","two-layer-reading:gamma-LEVEL+A4-SHAPE","R19-in-biology","node-atlas(single-source-of-truth)"]),
- 'inheritance':(["dna"],["writable-A4-vs-unwritable-gamma","environmental-inheritance","RNA-layer","gene-therapy-path"]),
- 'neuro':(["physics","chemistry","dna"],["neuron=R19+slow-recovery","brain-rhythms","working-memory=theta/gamma~7pm2","memory","motor"]),
- 'mind':(["neuro","dna"],["engram=bistable-attractor","felt-cognition","mood=persistent-switch","stream-of-thought"]),
- 'sensory_organ':(["dna","neuro"],["organ-dynamics:Hopf-cube-root","instrument-physics"]),
- 'eye':(["physics:wave","dna","neuro"],["high-low-down-conversion-ladder","single-photon-R19","Snell:n=sqrt(B/rho)","cube-root"]),
- 'ear':(["physics:wave+cubic","dna"],["place-map","cube-root-cochlear-amplifier","otoferlin-readout"]),
- 'nose':(["dna"],["combinatorial-code","transduction-switch","anosmia"]),   # selective: no wave module
- 'cardioresp':(["dna","circadian","aging_senescence","homeostasis_hemodynamic"],["heart+lung=one-FitzHugh-Nagumo-oscillator"]),
- 'circulatory':(["dna","circadian","aging_senescence"],["MAP=CO*SVR","clearance"]),
- 'digestive':(["dna","circadian","aging_senescence"],["one-clock:gastric->duodenum"]),
- 'musculoskeletal':(["dna","circadian","aging_senescence"],["structure+mechanical-load-from-gamma"]),
- 'immune_hematologic':(["dna","circadian","aging_senescence"],["population-thresholds-on-R19"]),
- 'integumentary':(["dna","circadian","aging_senescence"],["barrier+external-stimulus","UV->melanoma-key"]),
- 'reproductive_endocrine':(["dna","circadian","aging_senescence"],["four-organs-in-measured-gamma-order"]),
- 'homeostasis_thermometabolic':(["digestive","aging_senescence","circadian"],["OU-setpoint-three-levers","endo-vs-ecto-sensitivity"]),
- 'homeostasis_hemodynamic':(["cardioresp","circulatory","circadian"],["MAP=CVP+CO*SVR-defended"]),
- 'homeostasis_ionic':(["musculoskeletal","circadian"],["mineral/acid-base/electrolyte-setpoints"]),
- 'circadian':(["dna"],["time-layer:measured-BMAL1-gamma=1.33348"]),
- 'aging_senescence':(["dna"],["setpoint-drift-over-time","aging-genes-not-special(|z|<1)"]),
- 'analgesic_threshold':(["neuro"],["three-lever-L1/L2/L3-therapeutic-logic"]),
- 'disease_wp':(["dna"],["per-disease-gene-key-mechanism-cases"]),
- 'disease_kit':(["disease_wp"],["reproducible-corrective-direction[F]","magnitude[O]"]),
+ "physics":([],["jammed-substrate", "c2=B/rho", "constants:mp/me=6pi^5"]),
+ "fluid-dynamics":(["physics"],["continuum-flow-on-jammed-medium"]),
+ "cosmology":(["physics"],["vacuum-inflow", "a0=cH0/2pi"]),
+ "chemistry":(["physics"],["EM-on-same-substrate", "phi_FCC=0.7405 (crystal close packing, not RCP)", "bonding"]),
+ "geodynamics":(["physics", "fluid-dynamics"],["jamming-unjamming-yield", "plate-breakup"]),
+ "geochronology":(["physics", "geodynamics"],["incorporation-dating-limit"]),
+ "continental-genesis":(["physics", "geodynamics", "fluid-dynamics"],["continental-genesis = two-face rupture distillation of felsic crust (opening floors a basin; the antipodal downwelling/compression face flux-melts hydrated skin to granite)"]),
+ "recent-sequence-cascade":(["continental-genesis", "physics", "geodynamics", "dna"],["recent_sequence_relaxation=coupled Flood→Glaciation→Atlantic-opening relaxation on a jammed-water S0 release"]),
+ "wave-computer":(["physics"],["clock-free-phase-computation"]),
+ "dna":(["physics"],["gamma-ruler", "two-layer-reading:gamma-LEVEL+A4-SHAPE", "R19-in-biology", "node-atlas(single-source-of-truth)"]),
+ "inheritance":(["dna"],["writable-A4-vs-unwritable-gamma", "environmental-inheritance", "RNA-layer", "gene-therapy-path"]),
+ "neuro":(["physics", "chemistry", "dna"],["neuron=R19+slow-recovery", "brain-rhythms", "working-memory=theta/gamma~7pm2", "memory", "motor"]),
+ "mind":(["wave-computer", "neuro", "dna"],["engram=bistable-attractor", "felt-cognition", "mood=persistent-switch", "stream-of-thought"]),
+ "sensory_organ":(["dna", "neuro"],["organ-dynamics:Hopf-cube-root", "instrument-physics"]),
+ "eye":(["physics:wave", "dna", "neuro"],["high-low-down-conversion-ladder", "single-photon-R19", "Snell:n=sqrt(B/rho)", "cube-root"]),
+ "ear":(["physics:wave+cubic", "dna"],["place-map", "cube-root-cochlear-amplifier", "otoferlin-readout"]),
+ "nose":(["dna"],["combinatorial-code", "transduction-switch", "anosmia"]),
+ "cardioresp":(["dna", "circadian", "aging_senescence", "homeostasis_hemodynamic"],["heart+lung=one-FitzHugh-Nagumo-oscillator"]),
+ "circulatory":(["dna", "circadian", "aging_senescence"],["MAP=CO*SVR", "clearance"]),
+ "digestive":(["dna", "circadian", "aging_senescence"],["one-clock:gastric->duodenum"]),
+ "musculoskeletal":(["dna", "circadian", "aging_senescence"],["structure+mechanical-load-from-gamma"]),
+ "immune_hematologic":(["dna", "circadian", "aging_senescence"],["population-thresholds-on-R19"]),
+ "integumentary":(["dna", "circadian", "aging_senescence"],["barrier+external-stimulus", "UV->melanoma-key"]),
+ "reproductive_endocrine":(["dna", "circadian", "aging_senescence"],["four-organs-in-measured-gamma-order"]),
+ "homeostasis_thermometabolic":(["digestive", "aging_senescence", "circadian"],["OU-setpoint-three-levers", "endo-vs-ecto-sensitivity"]),
+ "homeostasis_hemodynamic":(["cardioresp", "circulatory", "circadian"],["MAP=CVP+CO*SVR-defended"]),
+ "homeostasis_ionic":(["musculoskeletal", "circadian"],["mineral/acid-base/electrolyte-setpoints"]),
+ "circadian":(["dna"],["time-layer:measured-BMAL1-gamma=1.33348"]),
+ "aging_senescence":(["dna"],["setpoint-drift-over-time", "aging-genes-not-special(|z|<1)"]),
+ "analgesic_threshold":(["neuro"],["three-lever-L1/L2/L3-therapeutic-logic"]),
+ "disease_wp":(["dna"],["per-disease-gene-key-mechanism-cases"]),
+ "disease_kit":(["disease_wp"],["reproducible-corrective-direction[F]", "magnitude[O]"]),
 }
 SELECTIVE = {'nose':"inherits no wave module (smell has no wave)"}
 
@@ -66,7 +64,7 @@ PRIM_PATTERNS = {
 }
 PRIM_FORM = {
  "R19":"ds/dt = g*s - s^3 + h","gamma":"gamma = -mean NN stacking dG",
- "emergence":"STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size",
+ "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order from cascade depth, size, timing) = independent growth of objects, full physics, open [O] (dna §RB)",
  "jammed_c2":"c^2 = B/rho (random close packing)","kramers":"escape over g^2/4",
  "fhn":"relaxation oscillator","cube_root":"R = (F/beta)^(1/3)",
 }
@@ -84,16 +82,20 @@ def dir_content_hash(base):
             parts.append(rel + ":" + sha256_bytes(open(f, "rb").read()))
     return sha256_bytes("\n".join(parts).encode())
 
+# declared exclusions: a pattern hit that is a mention, not a use (reason recorded)
+PRIM_EXCLUDE = {('physics', 'R19'): 'physics mentions R19 only to say it is first stated in dna'}
+
 def prim_membership():
     blobs = {v: "" for v in ORDER}
     for v in ORDER:
         s = []
         for f in glob.glob(os.path.join(DOCS, v, "**", "*.html"), recursive=True):
             s.append(open(f, encoding="utf-8", errors="replace").read())
-        blobs[v] = "".join(s)
+        # editorial correction notes (lt-note asides) are meta-commentary, not volume content
+        blobs[v] = re.sub(r'<aside class="lt-note".*?</aside>', "", "".join(s), flags=re.S)
     out = {}
     for name, pat in PRIM_PATTERNS.items():
-        vols = [v for v in ORDER if re.search(pat, blobs[v])]
+        vols = [v for v in ORDER if re.search(pat, blobs[v]) and (v, name) not in PRIM_EXCLUDE]
         out[name] = {"form": PRIM_FORM[name], "pattern": pat,
                      "count": len(vols), "volumes": vols}
     return out
@@ -126,10 +128,10 @@ def main():
             "author": {"name": "Young Jae Lee", "orcid": "0009-0002-7535-8245"},
             "license": "CC-BY-4.0",
             "kernel": {
-                "substrate": "c^2 = B/rho (vacuum = jammed elastic solid, phi~0.7405)",
+                "substrate": "c^2 = B/rho (vacuum = jammed elastic solid at the isostatic point, phi_iso~0.633; 0.7405 is the FCC crystal value)",
                 "switch": "ds/dt = g*s - s^3 + h  (R19 bistable)",
                 "stiffness": "gamma = -mean NN stacking dG  (measured, never fitted)",
-                "emergence": "STATE=presence; spinodal(gamma)=order; dwell~gamma^1.5=size",
+                "emergence": "READ 100%: gamma level + A4 shape + CpG + can-fire (gamma = per-locus threshold); BUILD (order from cascade depth, size, timing) = independent growth of objects, full physics, open [O] (dna §RB)",
             },
             "governance": ["no-tuning", "LOCK->Derive->Gate", "honest-grading[F/V/L/O]",
                            "magnitude-firewall", "seed=19", "2x-SHA256"],
@@ -143,6 +145,12 @@ def main():
         "volumes": volumes,
         "lineage": {},  # filled below
     }
+    # carry over top-level sections owned by other tools (spec, modules, concepts, ...)
+    if os.path.exists(MANIFEST):
+        _prev = json.load(open(MANIFEST))
+        for _k, _v in _prev.items():
+            if _k not in manifest and _k != 'lineage':
+                manifest[_k] = _v
 
     # --- lineage hash-chain ---
     prev = None
