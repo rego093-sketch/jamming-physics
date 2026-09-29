@@ -1,0 +1,21 @@
+{
+  "experiment": "BC4 — bench test of the VP proposal that a black-coated copper boundary turns incoming infrared (transverse, chi~90 deg) directly into directed conduction (chi->0) in copper, beyond what temperature alone gives",
+  "registered": "2026-09-29",
+  "status": "pre-registered PHYSICAL experiment (not yet run; needs a bench). The companion script bc4_predict.py computes the standard-physics null, the systematic budget and the decision thresholds before any data exist.",
+  "proposal_under_test": "VP chi-conversion [O]: light is made by quanta (physics s14; chemistry EM.6), conduction runs through copper's internal quanta (EM.6); a black nanostructure may tilt incoming transverse IR into longitudinal conduction. The author keeps this as a proposal unless an experiment proves it.",
+  "sample": "Cu plate 50 x 50 x 3 mm (same lot as the leads); one face nano-black CuO (alkaline oxidation). Control: identical plate, uncoated.",
+  "leads": "Cu wire from the same spool, soldered-free (clamped) to bare Cu: F = front edge under the coating (coating scraped 2 mm), B = back centre. Type-T thermocouples at F and B. Nanovoltmeter, 10 nV resolution, reversing-current offset cancellation off (open circuit).",
+  "configurations": {
+    "C0_isothermal": "plate inside the hot-sand ESS (or oven), whole plate at T in {67, 150} C, no net flux",
+    "C1_radiative": "black face 10 mm from a blackbody emitter at T_s in {150, 300} C (sand surface or painted hot plate), back face on a water-cooled block",
+    "C2_conductive": "same plate, emitter removed, front heated by a thin-film contact heater set so that T_F and T_B match C1 within 0.1 K",
+    "C3_control": "uncoated plate in C1 geometry, front temperature matched",
+    "C4_flip": "C1 with the plate reversed (emitter faces the back, black face cooled)"
+  },
+  "discriminator": "Delta V = V(C1) - V(C2) at matched T_F and T_B. Standard physics: Delta V = 0 (thermoelectric voltage depends only on the temperatures; law of the homogeneous circuit). VP chi-conversion: Delta V != 0, sign fixed by the radiation direction (reverses in C4), absent in C3.",
+  "decision": {
+    "PROPOSAL_SUPPORTED": "|Delta V| > max(5 sigma, 3 x systematic bound from bc4_predict.py) in 3 independent runs, sign reverses in C4, |V(C3)-V(C2')| below bound, and C0 below bound",
+    "PROPOSAL_REMAINS_OPEN": "any other outcome; recorded as a null with its upper bound on the chi-conversion voltage"
+  },
+  "record_either_way": true
+}
