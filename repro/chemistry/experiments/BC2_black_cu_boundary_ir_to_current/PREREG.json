@@ -1,0 +1,29 @@
+{
+  "experiment": "BC2 — can a nano-black-coated copper boundary inside the ESS turn the store's infrared into electron motion strong enough for electricity?",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running bc2_run.py; thresholds set from order-of-magnitude estimates, no exploratory run",
+  "author_setup": "Bulk copper with only its surface nano-coated black (CuO). The black boundary sits inside the hot-sand ESS and collects as much of the store's emitted infrared as possible. Energy is conserved: radiation (wavelength) <-> temperature (rotation). Key question: does the boundary get enough directed electron motion for electricity?",
+  "physics_fixed_before_run": [
+    "Store IR at 340-773 K has photon energies ~0.08-0.19 eV (peak 2.82 kT), far below the CuO gap (1.35 eV): IR cannot make electron-hole pairs in the CuO coating; it is absorbed by the copper/nanostructure as heat.",
+    "The one sub-gap route in a metal/semiconductor boundary is internal photoemission: a photon absorbed in Cu gives a hot electron that crosses the Cu/CuO Schottky barrier phi_B (Fowler).",
+    "The same barrier leaks a thermionic dark current J0 = A* T^2 exp(-phi_B/kT) at the boundary temperature (A* = 1.2e6 A m^-2 K^-2)."
+  ],
+  "model": {
+    "emitter": "store = blackbody at T_s in {340 (ESS2, 67 C), 423, 573, 773} K; boundary absorptance 0.96 at all IR energies (optimistic)",
+    "barrier_scan_eV": [0.1, 0.2, 0.3, 0.5, 0.7, 1.0],
+    "yield": {"ideal": "every absorbed photon with E > phi_B gives one electron over the barrier", "fowler": "eta = (E - phi_B)^2 / (8 E_F E), E_F(Cu) = 7.0 eV"},
+    "diode": "J(V) = J_ph - J0 (exp(qV/kT_b) - 1); maximum power over V",
+    "cases": {"S1_isothermal": "boundary at the store temperature (inside the ESS, no cold side): photon flux absorbed equals photon flux emitted by the boundary itself, and J_ph is balanced by the reverse photoemission; net computed by detailed balance", "S2_cold_side": "boundary junction held at 293 K facing the store at T_s"},
+    "thermoelectric_check": "temperature drop across a 100 nm CuO coating carrying 1 kW/m^2 (k_CuO = 3 W/m/K), voltage with a generous Seebeck 1 mV/K",
+    "electron_motion": "net drift velocity v_d = J / (n q) in Cu (n = 8.5e28 m^-3) compared with the Fermi speed 1.57e6 m/s"
+  },
+  "predictions": {
+    "P1_isothermal_zero": "S1: net electrical power = 0 (|P| < 1e-9 of absorbed flux) for every T_s and phi_B",
+    "P2_ESS2_store_tiny": "S2 at T_s = 340 K: best power over phi_B (ideal yield) < 1 W/m^2",
+    "P3_fowler_penalty": "Fowler best power <= 1% of ideal best power at every T_s",
+    "P4_hot_store_nonzero": "S2 at T_s = 773 K: ideal best power > 10 W/m^2 (the route is temperature-limited, not forbidden)",
+    "P5_motion_not_direction": "best-case v_d / v_F < 1e-6 at every T_s (electrons move fast but the net directed part is tiny)",
+    "P6_coating_thermoelectric_negligible": "coating Delta T < 1e-3 K and voltage < 1e-6 V"
+  },
+  "record_either_way": true
+}
