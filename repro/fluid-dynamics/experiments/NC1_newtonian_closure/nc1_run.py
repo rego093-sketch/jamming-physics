@@ -219,6 +219,8 @@ def run_thermal(args):
     relax(pos, rad, L, nl, N)
     c = rng.normal(0, np.sqrt(T), (N, 2))
     t_eq, t_tr, t_ms = (50, 50, 300) if QUICK else (500, 500, 5000)
+    if kind == "pp_posthoc":   # post-hoc diagnostic (see README): longer transient, same code
+        t_tr = 1000; kind = "pp"
     _, _, c = sllod(pos, c, rad, L, nl, N, 0.0, dt, int(t_eq / dt), int(t_eq / dt), T=T)
     rho = N / (L * L); kw = 2 * np.pi / L
     if kind == "nemd":
@@ -369,5 +371,30 @@ def main():
     print("runtime", result["runtime_s"])
 
 
+def posthoc():
+    """NOT pre-registered. Route 2 re-run at amplitudes chosen for the linear regime
+    (V ~ 0.03 given eta_NEMD ~ 0.1), after the pre-registered A = 0.002/0.004 went
+    nonlinear and diverged. Does not change the P4 verdict. Merged into RESULT.json."""
+    t0 = time.time()
+    with Pool(2) as pool:
+        res = pool.map(run_thermal, [("pp_posthoc", 2e-4, 20), ("pp_posthoc", 4e-4, 21)])
+    out = os.path.join(HERE, "RESULT.json")
+    R = json.load(open(out))
+    eta_pp = float(np.mean([r["eta"] for r in res]))
+    R["posthoc_P4_linear_amplitude"] = dict(
+        preregistered=False, gates_nothing=True,
+        reason="pre-registered A=0.002/0.004 drove V>0.5 (max shear rate >0.1, far outside NEMD range) and the run diverged; A re-chosen from eta_NEMD to target V~0.03",
+        changes=["A in [2e-4, 4e-4]", "transient 1000 (was 500) since tau_v = rho/(eta k^2) ~ 130"],
+        runs=res, eta_PP=eta_pp, eta_NEMD=R["verdicts"]["P4"]["eta_NEMD"],
+        ratio=R["verdicts"]["P4"]["eta_NEMD"] / eta_pp,
+        within_prereg_tolerance=bool(abs(R["verdicts"]["P4"]["eta_NEMD"] / eta_pp - 1) <= 0.20),
+        runtime_s=round(time.time() - t0, 1))
+    json.dump(R, open(out, "w"), indent=1, default=float)
+    print(json.dumps(R["posthoc_P4_linear_amplitude"], indent=1, default=float))
+
+
 if __name__ == "__main__":
-    main()
+    if "--posthoc-p4" in sys.argv:
+        posthoc()
+    else:
+        main()
