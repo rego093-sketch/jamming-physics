@@ -1,5 +1,3 @@
-# Continental Genesis: why dry land exists
-
 ## Summary
 Continental Genesis inherits the jammed substrate from the physics volume, the jamming ↔ unjamming engine from the geodynamics volume and the continuum engine from the fluid-dynamics volume, and adds one module: continental genesis as a two-face rupture distillation of felsic crust (the opening face floors a basin; the antipodal downwelling/compression face flux-melts hydrated skin to granite). It re-poses "why dry land exists" as a question of composition and buoyancy (a two-tier crust), not of age; the claims ledger classes this headline as interpretation, since standard geology gives the same buoyancy explanation. Its budget result R1 (isostasy plus the measured ocean volume gives freeboard +840 m with no fitted parameter) is classed as anchor restatement: the exact hit comes from choosing one crustal density/thickness pair, while the sign and ~1 km order are a genuine Airy-isostasy output. A bidirectional chronology firewall keeps the occurrence and timing of continent formation [O].
 

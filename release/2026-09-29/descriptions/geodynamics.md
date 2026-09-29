@@ -1,5 +1,3 @@
-# Jamming Geodynamics
-
 ## Summary
 Jamming Geodynamics inherits the jammed substrate from the physics volume and continuum flow from the fluid-dynamics volume, and adds one module: jamming ↔ unjamming yield of the lithosphere applied to continental break-up and Atlantic opening. The headline criterion — break-up when the effective driving stress exceeds the yield stress (Ψ_eff > Ψ_y) — is classed as identity in the claims ledger: a yield criterion holds by definition, and the continent-scale magnitudes that would make it bite on Earth are HOLD. The shipped engine (atl_bundle) reproduces the standard 2-D jamming fraction φ_jam ≈ 0.840 from a packing simulation (independent prediction of standard jamming physics, residual −0.002 vs the classic 0.842), and runs 39/39 PASS. The pre-registered predictions P1–P35 are specifications awaiting data (HOLD), and the volume is chronology-agnostic.
 

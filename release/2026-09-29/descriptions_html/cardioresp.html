@@ -1,0 +1,99 @@
+<h3>Summary</h3>
+<p>This volume reads the heart and the lung as one FitzHugh–Nagumo relaxation oscillator, built on the R19 cubic switch, at two settings. It inherits the measured γ ruler and the node atlas from <strong>dna</strong>, the time layer from <strong>circadian</strong>, setpoint drift from <strong>aging_senescence</strong>, and the defended pressure loop from its sibling <strong>homeostasis_hemodynamic</strong>. It adds one module: heart + lung = one FitzHugh–Nagumo oscillator. The claims ledger records the headline as an <strong>interpretation</strong>. The oscillator in the code runs at γ = 1.0 for both organs, so the measured γ (NKX2-5 1.513, NKX2-1 1.509) feeds only the spinodal and size readout, and the heart–lung difference comes from the chosen recovery times τ_s = 18 / 95. The breathing rate 16.86 /min is an <strong>anchor restatement</strong> of the chosen lung τ_s, not a structural prediction. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its input dependence stated), a consistency check or an interpretation. [F]/[V] are no longer used for biological claims, and emergence is attempted only for simple tissue units.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+§1, §2, §10, hub: "γ sets each organ's oscillator" is corrected. The engine (<code>_fhn_rate_arb</code>) builds <code>Neuron(gamma=1.0)</code> for both organs, and heart vs lung is set by τ_s 18 / 95 in <code>ORGAN_ROWS</code>. A code note is added.
+</li><li>
+§3: the breathing rate 16.86 /min and the breath-to-beat ratio 0.240 were "structural, not fitted" [V]. They are now input-dependent code outputs: τ_s 60 / 80 / 110 / 130 → 25.47 / 19.70 / 14.76 / 12.65 /min. The observed RR and HR ranges and the pulse–respiration quotient are added.
+</li><li>
+§1, §10: the developmental order lung → heart was a [V] "pure γ readout" (γ difference 0.004). It is now interpretation / open [O]. Embryology runs the other way: the heart beats from about day 22 (CS10), and the lung bud appears at about day 28 (CS12). The order is superseded per dna §RB / §AX-A.
+</li><li>
+§4: periodic-breathing onset at LG/LGc = 1 is relabelled consistency, because it is normalised to its own critical gain. Khoo 1982 and Younes 2001 are cited.
+</li><li>
+§5: the RSA "lock" at 0.2784 Hz is relabelled consistency: a drive at f_resp gives a line at f_resp. The decoupled peak (0.303 Hz) also lies in the vagal band. Hirsch &amp; Bishop 1981 is cited.
+</li><li>
+§6: Cheyne–Stokes T ≈ 2τ (slope 1.992) is now a property of delayed negative feedback. Model periods of 17.7–41.7 s are shorter than the roughly one-minute cycles observed (Hall et al. 1996).
+</li><li>
+§7: baroreflex sign, linearity and slope (−1.0 bpm/mmHg) restate the input gain and latency. The observed BRS range is added (La Rovere 2008).
+</li><li>
+§8: the smoking RR of 18.3× at 100 pack-years is set by the declared <code>scale = barrier/3</code> (ceiling e³ ≈ 20) and by the pack-year mapping. RR(0) = 1 is an identity. Observed lung-cancer RRs are cited next to it.
+</li><li>
+§11: the page showed [V] where <code>run_all.py</code> prints "[V?]" (D2, D3, D5, D6). Fever co-scaling is by construction (one κ). A fever observation is added.
+</li><li>
+§12: the page claimed "OVERALL: PASS (11/11)". A note now records that the current run ends FAIL (9/11): R6 has 0 pinned files, R10 fails the DOI check, and R7 scans 0 pages after the move to <code>docs/</code>.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+Simple-tissue emergence of a sinoatrial pacemaker cell from measured ionic currents was identified as the right test of the FHN reading and <strong>not run</strong>, because no sourced parameter set could be loaded (model repositories unreachable). Recorded as [O] on the hub. The neighbouring neuro EM2 squid-axon run is a neuro result and is not claimed here.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+A reading-rule lt-note was added to the hub. All chapters were relabelled [F] → consistency and [V] → code output / consistency / interpretation per page. γ cards became code output (a measured input from the dna reading) and FHN cards became interpretation. Manifest grade counts forced 2 / verified 18 → 0 / 0.
+</li><li>
+A reading-versus-building note was added to §1 and the hub. The γ thresholds (can-fire, spinodal ∝ γ^1.5, barrier γ²/4) remain valid as reading. Order and size from γ are superseded (dna §AX-A measured null; order from cascade depth, §AX-I; building [O], §RB).
+</li><li>
+The review findings (γ = 1.0 in the oscillator; lung τ_s sets breathing rate) are recorded in the lineage for the author.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+None to the code or data under <code>repro/cardioresp/</code> since the previous version. The previous deposit's whitepaper (<code>repro/cardioresp/zenodo/cardioresp_vp_site_v0_5_0.pdf</code> / <code>.tex</code>) and <code>ZENODO_METADATA.md</code> are carried in the package, but their abstract predates these corrections. In particular, its "no constant is chosen to hit a target" and "OVERALL: PASS (11/11)" no longer hold as written.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+The corpus-wide biology reading-rule registry integration regenerated <code>_decl.json</code>, page notes, hashes, lineage, the homepage and the sitemap. Light reviews of circadian, aging_senescence and inheritance were committed alongside (sibling volumes).
+</li><li>
+Recurrence guards: <code>tools/check_integrity.py</code> wired into the gate, the manifest generator fixed, and <code>_decl</code> inheritance aligned.
+</li><li>
+Highwire citation meta is regenerated from the manifest, with gate guards against escaped comments and raw LaTeX.
+</li><li>
+Link audit (2026-09-28): stale repro and site links repointed, leaving 0 broken links. The earlier untitled repository snapshot commits ("VP Theory site", "Final", "1111111") imported the volume and its whitepaper.
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 1 · anchor-restatement 2 · identity 1 · open 1 (5 rows).</p>
+<ul><li>
+Heart + lung = one FitzHugh–Nagumo oscillator set by measured γ — interpretation — n/a. The oscillator uses γ = 1.0, and τ_s 18 / 95 sets heart vs lung.
+</li><li>
+Breathing rate 16.86 /min, heart:lung ratio 0.240 — anchor-restatement — in the normal 12–20 /min range, but τ_s 60 / 80 / 110 / 130 → 25.47 / 19.70 / 14.76 / 12.65.
+</li><li>
+Developmental order lung → heart from γ — open — contradicted by embryology (heart ~day 22, lung bud ~day 28).
+</li><li>
+Loop-gain onset at LG = 1; RSA lock at 0.2784 Hz; Cheyne–Stokes T ≈ 2τ (slope 1.992) — identity — model periods of 17.7–41.7 s are shorter than the observed ~1 min cycles.
+</li><li>
+Smoking RR 18.3× at 100 pack-years — anchor-restatement — set by the declared scale (ceiling e³ ≈ 20) and the pack-year mapping.
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Developmental order, size and timing of heart and lung: building is [O] (dna §RB).
+</li><li>
+Simple-tissue emergence of a sinoatrial pacemaker cell from sourced ionic-current constants: [O]. The FHN reading stays an interpretation until it is run.
+</li><li>
+Absolute cancer relative-risk magnitude: [O] (magnitude firewall).
+</li><li>
+Author decisions (review): whether the measured γ should enter the oscillator dynamics; repairing the harness checks R6, R7 and R10 that fail after the move to <code>docs/</code> (current run 9/11).
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/cardioresp/</code> (the published HTML pages), <code>repro/cardioresp/</code> (engine, inherited substrate, reports, previous whitepaper), <code>LEDGER.json</code> (this volume's claims-ledger rows) and <code>MANIFEST.sha256</code> (file hashes).</p>
+<ul><li>
+Main harness: <code>cd repro/cardioresp &amp;&amp; python3 repro/run_all.py</code>. The run reprints every page number with drift 0 (16.86 /min, 0.2784 Hz, slope 1.992, RR table 1.00 → 18.32). The overall verdict currently reads FAIL (9/11), because checks R6, R7 and R10 fail on the monorepo layout, not on numbers. A full run takes more than two minutes.
+</li><li>
+Gates: <code>repro/cardioresp/repro/_verify/gates.py</code>.
+</li><li>
+Engine: <code>repro/cardioresp/repro/_engine/vp_car_engine.py</code>. Oncology kernel: <code>repro/cardioresp/repro/_oncology/carcinogen_dose_response.py</code>.
+</li><li>
+SEED = 19 (<code>repro/cardioresp/inherited/vp_substrate.py</code>). No network is needed.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/cardioresp/">https://jamming-physics.org/cardioresp/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20755371
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

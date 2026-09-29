@@ -1,5 +1,3 @@
-# Vacuum-Inflow Cosmology — Gravity, Galaxies, and Cosmology as Vacuum Inflow
-
 ## Summary
 Vacuum-Inflow Cosmology inherits the jammed substrate (c² = B/ρ) and the full-cycle constant 2π = α/δ from the physics volume and adds one module: gravity, orbits, galaxies and cosmology read as the inflow of quanta toward absorbing bodies. The headline relation a₀ = cH₀/2π gives 1.04–1.13×10⁻¹⁰ m/s² for H₀ = 67.4–73, about 0.9× the empirical MOND/RAR scale (within its systematic spread); the claims ledger classes it as anchor restatement, because H₀ is an input, galaxy data fix the coefficient k in cH₀/k only to about 5–7, and the recovered code itself describes the 2π as selected, while the page states it is inherited from physics. Kepler orbits from the inflow are also anchor restatement (GM_sun is calibrated on the Sun). The one parameter-free test in the volume, the supernova Hubble diagram, is an independent prediction whose outcome is against the model (Δχ² = +86.6 in favour of ΛCDM). A pre-registered Gaia wide-binary test (WB1) of a₀ is specified but not yet run.
 

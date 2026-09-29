@@ -1,5 +1,3 @@
-# The Configured Continuum
-
 ## Summary
 The Configured Continuum is the fluid-dynamics volume of the VP corpus. It inherits the jammed substrate from the physics volume and adds one module: continuum flow on the jammed medium, with the balance laws obtained from the particle arrangement. Mass and momentum balance follow exactly (Irving–Kirkwood identity applied to the jammed medium, [F]); the step to Navier–Stokes needs a Newtonian closure, which the pre-registered test NC1 finds on the unjammed side of the margin in a 2-D soft-disk model (flow index 0.96–1.07, viscosity rising 21.8× toward φ_c ≈ 0.846, yield stress above; [V mech]). The claims ledger classes this headline as interpretation: it is a standard soft-disk rheology result, and no external fluid data are used anywhere in the volume. The volume's stated key result — the three-sphere (C₃) structure forcing co-rotation and a one-axis through-flow that closes in 3-D (82 = 81 + 1, carried from the physics volume) — is a reduced test ([F] geometry, [V mech] in-model chain) and is classed open in the ledger. Global regularity of Navier–Stokes and the 3-D Onsager anomaly are not claimed.
 

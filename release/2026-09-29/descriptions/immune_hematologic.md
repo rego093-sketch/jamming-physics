@@ -1,5 +1,3 @@
-# Immune & Hematologic Emergence (VP / Jamming Physics)
-
 ## Summary
 This volume reads the immune and blood-forming organs as populations of R19 switches. Their thresholds are read from measured master-gene promoter γ: RUNX1 1.3225, TLX1 1.4228, FOXN1 1.4533 and PAX5 1.4892. It inherits the γ ruler and node atlas from **dna**, the time layer from **circadian** and setpoint drift from **aging_senescence**. It adds one module: population thresholds on the R19 switch. The claims ledger records the headline as an **interpretation**. The γ values are code outputs on sequence whose four promoter windows were checked byte-exact against NCBI GRCh38.p14, a genuine observation-level provenance check. Reading them as population thresholds is interpretation. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its dependence on inputs, grid or step stated), a consistency check or an interpretation. The former [F]/[V] grades are relabelled in place, and emergence is attempted only for simple tissue units.
 

@@ -1,5 +1,3 @@
-# VP Chemistry & Electromagnetism
-
 ## Summary
 VP Chemistry & Electromagnetism inherits the jammed substrate and the light chain from the physics volume and adds one module: electromagnetism and bonding read on the same substrate, with chemistry built from one electron picture (the electron as a rotating quantum on the lattice). The headline, following the physics volume's §LT Link 6a, is that the electric field E is the transverse swing of the rotating quanta and the magnetic field B is the lattice's rotational response; this is graded [H] and classed as interpretation in the claims ledger (no numeric test; the lattice run that would test it is data-pending). The earlier "c² = B/ρ reproduced to 0.06%" is now stated as a 1-D consistency check (identity), not evidence, and φ = 0.7405 is labelled as the FCC crystal value, not random close packing. The chemistry results (Bohr radius, Aufbau order, conduction, band-edge colours, d-band catalysis) are standard physics evaluated from measured and calibration inputs; the application chapters are engineering estimates.
 

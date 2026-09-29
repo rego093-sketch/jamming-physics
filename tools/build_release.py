@@ -4,7 +4,8 @@
   python3 tools/build_release.py 2026-09-29 [volume ...]
 
 Each ZIP holds docs/<id>/ (published pages), repro/<id>/ (code and data), DESCRIPTION.md
-(release/<tag>/descriptions/<id>.md), LEDGER.json (this volume's claims-ledger rows),
+(release/<tag>/descriptions/<id>.md) and DESCRIPTION.html (the same text for the Zenodo
+description box, also written to release/<tag>/descriptions_html/), LEDGER.json (this volume's claims-ledger rows),
 CORPUS_GUIDE.md (AGENTS.md) and MANIFEST.sha256. ZIPs are deterministic (sorted entries,
 fixed timestamp) and go to release/<tag>/zips/ (not committed); CHECKSUMS.txt is committed.
 """
@@ -33,6 +34,44 @@ def add(z, arc, data):
     z.writestr(zi, data)
 
 
+def md_to_html(md):
+    """Minimal Markdown -> HTML for the Zenodo description box (headings, nested bullets, paragraphs, bold, code)."""
+    import html as H, re
+    def inline(t):
+        t = H.escape(t, quote=False)
+        t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
+        t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
+        return re.sub(r"(https?://[^\s<)]+)", r'<a href="\1">\1</a>', t)
+    out, stack, para = [], [], []
+    def flush():
+        if para:
+            out.append("<p>" + inline(" ".join(para)) + "</p>"); para.clear()
+    def close_to(depth):
+        while len(stack) > depth:
+            out.append("</li></ul>"); stack.pop()
+    for line in md.split("\n"):
+        m = re.match(r"^(\s*)[-*] (.*)$", line)
+        if line.startswith("## ") or line.startswith("### "):
+            flush(); close_to(0); lv = 3 if line.startswith("## ") else 4
+            out.append(f"<h{lv}>{inline(line.split(' ', 1)[1])}</h{lv}>")
+        elif m:
+            flush(); depth = len(m.group(1)) // 2 + 1
+            if depth > len(stack):
+                while depth > len(stack):
+                    out.append("<ul><li>"); stack.append(1)
+            else:
+                close_to(depth); out.append("</li><li>")
+            out.append(inline(m.group(2)))
+        elif not line.strip():
+            flush()
+        elif stack and line.startswith(" "):
+            out.append(" " + inline(line.strip()))
+        else:
+            close_to(0); para.append(line.strip())
+    flush(); close_to(0)
+    return "\n".join(out) + "\n"
+
+
 def main():
     tag = sys.argv[1]
     man = json.load(open(os.path.join(ROOT, "registry", "vp.manifest.json"), encoding="utf-8"))
@@ -52,6 +91,10 @@ def main():
         for p in files_under(f"docs/{vid}") + files_under(f"repro/{vid}"):
             entries[p] = open(os.path.join(ROOT, p), "rb").read()
         entries["DESCRIPTION.md"] = open(desc, "rb").read()
+        html_desc = md_to_html(open(desc, encoding="utf-8").read())
+        os.makedirs(os.path.join(rel, "descriptions_html"), exist_ok=True)
+        open(os.path.join(rel, "descriptions_html", f"{vid}.html"), "w", encoding="utf-8").write(html_desc)
+        entries["DESCRIPTION.html"] = html_desc.encode()
         entries["LEDGER.json"] = json.dumps([r for r in rows if r["volume"] == vid], indent=1, ensure_ascii=False).encode()
         entries["CORPUS_GUIDE.md"] = open(os.path.join(ROOT, "AGENTS.md"), "rb").read()
         mf = "".join(f"{hashlib.sha256(b).hexdigest()}  {p}\n" for p, b in sorted(entries.items()))

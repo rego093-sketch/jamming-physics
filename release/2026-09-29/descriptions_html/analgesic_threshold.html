@@ -1,0 +1,89 @@
+<h3>Summary</h3>
+<p>This volume (Analgesic Threshold Logic, tier 8 of the VP corpus) maps 27 nociception genes to a promoter γ read and the R19 switch threshold |h_sp| = (2/(3√3))·γ^1.5 (barrier γ²/4), sorts them into three correction levers L1/L2/L3, and states proposals P1–P6 as corrective directions only. It inherits from neuro (and, through it, the dna γ ruler), and adds one module: the three-lever L1/L2/L3 therapeutic logic. The headline, three levers from 27 gene γ/|h_sp| reads, is classed in the claims ledger as <strong>interpretation</strong>: γ places each gene on the |h_sp| scale, but lever placement and direction come from cited channel physiology, not from γ. The companion headline number corr(γ, GC) = 0.99898 is an <strong>identity</strong> of the SantaLucia table (random sequence gives about 0.9996), a consistency check rather than a finding. Biology reading rule: the volume accepts established observations and uses them; it shows how the DNA reading (γ) and the VP mapping apply to pain thresholds and does not decide theory. Every statement is an observation (cited), a code output (reproducible, input dependence stated), a consistency check (holds by construction), or an interpretation. The magnitude firewall is absolute: no dose, concentration, regimen or effect size is given.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+"read [V]" replaced by "read: code output" on the hub (27 occurrences) and on target-scn9a, target-scn10a and target-ngf: the γ read is a deterministic code output from the promoter window and the SantaLucia table, not a test against external data.
+</li><li>
+corr(γ, GC) = 0.99898 annotated as table-intrinsic (a consistency check, not verification).
+</li><li>
+"[F] forced by the reads" split by kind: order by |h_sp| → code output (consistency); lever placement and direction → interpretation anchored to cited physiology; mechanism (e.g. Binshtok 2007 differential block) → observation + interpretation.
+</li><li>
+Lever pages' "the promoter reads place each gene in lever L1" identified as an overstatement (γ places the gene on the |h_sp| scale only).
+</li><li>
+Prioritisation: [F] → code output that depends on the declared editorial weights (0.40 / 0.35 / 0.25) on cited 1–5 tiers.
+</li><li>
+Proposals P1–P6 and the falsification page: [F] → interpretation (untested hypotheses); the framework falsifier "does γ track expression-switch behaviour?" stays [O].
+</li><li>
+precision-local-anaesthesia: [F] → observation (Binshtok 2007) + interpretation. No numeric change.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+None. Light two-reviewer review (<code>reviews/biology/2026-09-29_analgesic_threshold_review.md</code>): <code>repro/run_all.py</code> gives 10/10 module gates PASS but overall FAIL, because the forbidden-claim scanner (<code>05-intervention-logic/expected/claim_scan.json</code>) no longer finds the moved <code>docs/</code> sources, so the published pages are not scanned by the volume's own scanner. <code>03-threshold-map/expected/threshold_map.json</code> matches all 27 γ and |h_sp| values on the hub (0 mismatches); <code>02 nav_gate.json</code> corr 0.998978, drift 0.
+</li><li>
+Magnitude-firewall audit (corpus lineage, 2026-09-29): 0 hits for doses, concentrations, regimens or targets in this volume. Named agents appear as cited observations only.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+Biology reading rule note added to the hub (one correction note); grade legend relabelled on grading-and-honesty and how-to-read-this-map (code output / consistency / observation / interpretation / [O]).
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+<code>repro/analgesic_threshold/</code> is unchanged since the 2026-06-24 state. The release ZIP is now built deterministically by <code>tools/build_release.py</code> and adds LEDGER.json and MANIFEST.sha256.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Link audit (2026-09-28): stale repro paths and stale site slugs (e.g. <code>/analgesic/</code>) repointed to existing paths (corpus-wide repair of 6,642 links).
+</li><li>
+Highwire citation meta generated for the hub from the manifest; gate guards against escaped comments, raw LaTeX and citation-meta drift.
+</li><li>
+Gate fails if a page loses a correction note (<code>registry/page_notes.json</code>); claims ledger entries published (/claims-ledger/).
+</li><li>
+Initial repository import and consolidation commits (2026-06-20 "VP Theory site", 2026-06-22 "Final", 2026-06-24).
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 2 · identity 2 · anchor-restatement 1 · open 1 · independent-prediction 0.</p>
+<ul><li>
+Headline: three levers L1/L2/L3 from 27 nociception gene γ/|h_sp| — interpretation — 0 mismatches page vs code; lever placement from cited physiology, not γ.
+</li><li>
+corr(γ, GC) = 0.99898 (0.998978) — identity — property of the SantaLucia table (random sequence ~0.9996).
+</li><li>
+|h_sp| and barrier per gene (e.g. SCN9A 0.638545 / 0.49098) — identity — algebra on measured γ.
+</li><li>
+Target prioritisation — anchor-restatement — depends on declared editorial weights 0.40 / 0.35 / 0.25.
+</li><li>
+Proposals P1–P6 (e.g. differential block) — interpretation — direction/class only; untested hypotheses.
+</li><li>
+Volume gate — open — 10/10 module PASS, overall FAIL (claim_scan hash drift: scanner misses moved docs/).
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Framework falsifier [O]: does γ track expression-switch behaviour?
+</li><li>
+All magnitudes (dose, concentration, effect size) [O] by design (magnitude firewall).
+</li><li>
+Author decisions (review): apply the same relabel to the remaining 24 target pages and the 5 lever pages (same template); repoint the claim scanner to <code>docs/analgesic_threshold/</code> so the overall gate passes; run <code>tools/record_page_notes.py</code>.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/analgesic_threshold/</code> (the published HTML pages), <code>repro/analgesic_threshold/</code> (code and data), <code>DESCRIPTION.md</code>, <code>LEDGER.json</code>, <code>CORPUS_GUIDE.md</code> (AGENTS.md) and <code>MANIFEST.sha256</code>.</p>
+<ul><li>
+Main check: <code>python3 repro/analgesic_threshold/repro/run_all.py</code> (10 module gates; overall FAIL expected until the scanner is repointed); hashes in <code>repro/analgesic_threshold/repro/expected_sha256.json</code>.
+</li><li>
+γ reads and gate: <code>repro/analgesic_threshold/repro/02-read-nav-channels/gate_nav_channels.py</code>; threshold map: <code>repro/analgesic_threshold/repro/03-threshold-map/</code>.
+</li><li>
+SEED = 19 (<code>repro/analgesic_threshold/repro/_engine/vp_neuro_engine.py</code>). No network needed: <code>02-read-nav-channels/fetch_nav_channels.py</code> (run by <code>run_all.py</code>) reads offline from the bundled promoter cache when present.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/analgesic_threshold/">https://jamming-physics.org/analgesic_threshold/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20733420
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

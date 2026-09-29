@@ -1,5 +1,3 @@
-# VP — The Eye Volume: the high→low down-conversion ladder (E0→E8) + mechanism extensions (E9–E12)
-
 ## Summary
 The Eye volume reads vision as a high→low down-conversion ladder (E0→E8) with mechanism extensions (E9–E12). It inherits the wave substrate from `physics` (c² = B/ρ), node identity and the γ reader from `dna`, and the graded-to-spike layer from `neuro`. The one added module is the ladder itself. It includes a single-photon R19 switch, a refraction reading n = √(B/ρ ratio), and cube-root gain control. The headline "single-photon R19 flip; n = √(B/ρ ratio)" is unchanged in wording, but both parts are now graded down.
 - The single-photon flip is an **interpretation**. It is a property of the model switch, and it conflicts with the measured graded, reversible rod single-photon responses (~1 pA, n ≈ 1; Baylor, Lamb & Yau 1979; Rieke & Baylor 1998). The measured Hill ≈ 3 belongs to CNG-channel cGMP gating. The photon→drive link is [O].

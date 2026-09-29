@@ -1,5 +1,3 @@
-# Cross-Chronometer Limit
-
 ## Summary
 Cross-Chronometer Limit (Foreign-Material Incorporation as a Cross-Chronometer Accuracy Limit) is a methods volume of the VP corpus. It is listed as inheriting from the physics and geodynamics volumes and adds one module: an incorporation / dating-accuracy limit shared by radiocarbon and zircon U-Pb. The headline — incorporating older foreign material biases a sample's age old — is classed as identity in the claims ledger: it is mass balance and textbook geochronology, not a VP-physics claim. Its one genuine held-out test, a leave-one-out reservoir-offset correction, reduces radiocarbon error out of sample (independent prediction; residual RMSE 141 yr and 453 yr, n = 3 pairs per site, standard method). The zircon demonstrations recompute published results with standard methods.
 

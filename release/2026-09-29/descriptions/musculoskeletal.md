@@ -1,5 +1,3 @@
-# Musculoskeletal Emergence
-
 ## Summary
 This volume reads muscle, cartilage and bone, together with the mechanical loads they carry, from the R19 switch. The switch thresholds are read from measured master-gene promoter γ: RUNX2 1.2414, TBX5 1.4392, SOX9 1.4598 and MYOD1 1.4933. It inherits the γ ruler and node atlas from **dna**, the time layer from **circadian** and setpoint drift from **aging_senescence**. It adds one module: structure and mechanical load read from measured γ. The claims ledger records the headline as an **interpretation**. The γ values are deterministic code outputs on measured sequence. Mapping them to tissue structure and load is interpretation, and building the tissue (order, size, timing) is open [O] per dna §RB. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its dependence on inputs, grid or step stated), a consistency check or an interpretation. The former [F]/[V] grades are relabelled in place, and emergence is attempted only for simple tissue units.
 

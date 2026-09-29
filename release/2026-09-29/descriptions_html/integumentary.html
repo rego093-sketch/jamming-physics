@@ -1,0 +1,85 @@
+<h3>Summary</h3>
+<p>This volume reads the skin as the body's barrier and its responses to external stimuli on the R19 switch. The switch thresholds are read from measured master-gene promoter γ: TP63 1.3643, KRT14 1.4894, MITF 1.3945 and EDAR 1.3696. It inherits the γ ruler and node atlas from <strong>dna</strong>, the time layer from <strong>circadian</strong> and setpoint drift from <strong>aging_senescence</strong>. It adds one module: barrier + external stimulus, with UV as the melanoma key. The claims ledger records the headline as an <strong>interpretation</strong>, and its one quantitative prediction (intermittent-burst UV raises melanoma RR) as an <strong>independent prediction</strong> whose direction matches observation. The magnitude of that prediction overshoots the observed summary RR by about 3.5× and depends on the chosen dose grid, so only the direction is claimed. Biology reading rule (2026-09-29): the volume accepts established observations and uses them. Each statement is an observation (cited), a code output (reproducible, with its dependence on inputs, grid or step stated), a consistency check or an interpretation. The former [F]/[V] grades are relabelled in place, and emergence is attempted only for simple tissue units.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+§1 and hub: the developmental order epidermis → appendage → melanocyte → keratinocyte, read off γ as a "falsifiable consequence", is now interpretation, with building [O] per dna §RB. The ranking puts keratinocyte (KRT14) last. Observation: K14 is expressed in the surface ectoderm from about E9.5 (Byrne, Tainsky &amp; Fuchs 1994), well before EDAR-dependent hair placodes at about E14.5 (Headon &amp; Overbeek 1999).
+</li><li>
+§5: epidermal turnover "~28 d lands in the cited 28–40 d window" [V] is true by construction. In <code>skn_dynamics.py</code> the ratio d_phase/d_phase ≡ 1, so the total is 2 × the 14 d input. It is relabelled consistency, and the answer and abstract now read "(2 × 14 by construction)".
+</li><li>
+§7: the melanoma "burst RR up to ~5.7×" is now "modelled" and input-dependent (2.2 / 5.7 / 7.0 at cumulative dose 4 / 6 / 8, in model units). The observed summary RR 1.61 (CI 1.31–1.99; Gandini 2005) is placed next to the model number. The direction matches; the magnitude does not.
+</li><li>
+§11–§13: the "[F] forced (substrate)" occlusion and adhesion set-points are dimensionless regime scales of the cubic. They are relabelled consistency (substrate).
+</li><li>
+§1: a double-escaped arrow (<code>&amp;amp;rarr;</code>) that rendered literally in the abstract was fixed.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+None.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+A reading-rule note was added to the hub. The grade legends on the hub and all 14 chapter footers now read "Labels (reading rule 2026-09-29): consistency · code output · [L] · [O]". On all pages outside the existing lt-note asides: [V] → code output, [F] → consistency, "simulation-verified" → "simulated". Manifest grade counts forced 15 / verified 40 → 0 / 0; open 91 is unchanged.
+</li><li>
+Reading-versus-building notes were added to §1 and the hub.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+No code or data change under <code>repro/integumentary/</code>. The whitepaper <code>repro/integumentary/paper/integumentary_vp_site_v1.0.0_whitepaper.pdf</code> and its <code>.tex</code> were added to the package in the June snapshot ("Final"). They predate the corrections above.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Biology reading-rule registry integration: <code>_decl.json</code>, page notes, hashes, lineage, homepage and sitemap were refreshed. The work-in-progress snapshot commits for the organ volumes were included.
+</li><li>
+Recurrence guards: integrity checks in the gate, the manifest generator fixed, and <code>_decl</code> inheritance aligned.
+</li><li>
+Highwire citation meta is regenerated from the manifest, with gate guards against escaped comments and raw LaTeX.
+</li><li>
+Link audit (2026-09-28): stale repro and site links repointed, leaving 0 broken links. The earlier untitled repository snapshot commits ("VP Theory site", "Final", "1111111") imported the volume and added its <code>_decl.json</code>.
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: interpretation 2 · identity 2 · independent-prediction 1 (5 rows).</p>
+<ul><li>
+Barrier + external stimulus; UV → melanoma key (TP63 1.3643, KRT14 1.4894, MITF 1.3945, EDAR 1.3696) — interpretation — the γ are code outputs; the mapping is interpretation.
+</li><li>
+Developmental order epidermis → appendage → melanocyte → keratinocyte from γ — interpretation — conflicts with observation (keratinocyte ranked last; K14 ~E9.5 before placodes ~E14.5).
+</li><li>
+Epidermal turnover ~28 d in the cited 28–40 d window — identity — total = 2 × the 14 d input.
+</li><li>
+Intermittent-burst UV raises melanoma RR (5.674, model units) — independent prediction — the direction matches Gandini 2005 (1.61); the magnitude overshoots by ~3.5× and is input-dependent (2.2 / 5.7 / 7.0).
+</li><li>
+Occlusion / adhesion set-points "[F] forced (substrate)" — identity — dimensionless regime scales of the cubic.
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Developmental order, size and timing of the skin and its appendages: building is [O] (dna §RB).
+</li><li>
+The melanoma magnitude is not claimed. Only the direction is robust; absolute risk and every clinical magnitude are [O] under the magnitude firewall.
+</li><li>
+The manifest counts 91 [O] markers across the volume's pages (open items as stated there).
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/integumentary/</code> (the published HTML pages), <code>repro/integumentary/</code> (engine, oncology kernel, inherited substrate, reports, whitepaper), <code>LEDGER.json</code> (this volume's claims-ledger rows) and <code>MANIFEST.sha256</code> (file hashes).</p>
+<ul><li>
+Main harness: <code>cd repro/integumentary &amp;&amp; python3 repro/run_all.py</code>. It finishes with all PASS, and determinism is 2×SHA-256 identical.
+</li><li>
+Turnover dynamics: <code>repro/integumentary/repro/_engine/skn_dynamics.py</code>. UV / melanoma kernel: <code>repro/integumentary/repro/_oncology/carcinogen_dose_response.py</code>.
+</li><li>
+Gates: <code>repro/integumentary/repro/_verify/gates.py</code>.
+</li><li>
+SEED = 19 (<code>repro/integumentary/inherited/vp_substrate.py</code>). No network is needed.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/integumentary/">https://jamming-physics.org/integumentary/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20754541
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>

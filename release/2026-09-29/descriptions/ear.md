@@ -1,5 +1,3 @@
-# Hearing from First Principles — A falsifiable emergence of the ear — wave → place → R19 switch → congenital deafness
-
 ## Summary
 This volume reads hearing as a chain: wave → cochlear place map → R19 switch → congenital deafness. It inherits the following:
 - the wave substrate from `physics`;

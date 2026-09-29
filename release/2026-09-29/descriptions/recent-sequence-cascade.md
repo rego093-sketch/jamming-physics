@@ -1,5 +1,3 @@
-# The VP Recent-Sequence Cascade
-
 ## Summary
 The VP Recent-Sequence Cascade inherits from the continental-genesis, physics, geodynamics and dna volumes and adds one module: a coupled Flood → Glaciation → Atlantic-opening relaxation driven by the release of a jammed deep-water reservoir (S0). The volume states its own level of claim: it is a construction, not a claim about history — whether the cascade occurred is [O] in both directions, and absolute dates are kept as record only. Its headline, one relaxation read as flood, ice and Atlantic, is physically permitted, with an 8:1 compression in the number of mechanisms and fitted parameters relative to the mainstream graded [L]; the claims ledger classes it as interpretation, because 8:1 is a parsimony count, not a likelihood, and it rests on the S0 release (SH-5), which is [O]. The volume's own stress test (M52) finds no present-tense observable that discriminates it from the mainstream (all six discriminators degenerate).
 

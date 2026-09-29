@@ -1,0 +1,87 @@
+<h3>Summary</h3>
+<p>This volume (Thermometabolic Homeostasis, tier 7 of the VP corpus) models body temperature and metabolic rate as a defended setpoint: an Ornstein–Uhlenbeck setpoint loop with three correction levers, built on the R19 switch <code>ṡ = g·s − s³ + h</code>. It inherits from digestive, aging_senescence and circadian (per the manifest), and its one added module is the OU-setpoint/three-lever loop with an endotherm-vs-ectotherm sensitivity comparison. The headline, setpoint sensitivity 0.054 (endotherm) vs 1.394 (ectotherm), is classed in the claims ledger as an <strong>anchor restatement</strong>: it is set by the chosen loop gains (g_endo = 1.40, g_ecto = 0.18), and moves when those gains move (for example g_endo 1.0 gives 0.107); 1.394 is a collapse fraction above 1, i.e. overshoot into the other well, not one-to-one tracking. A separate finding survives as a code output on measured sequence: promoter γ does not separate endotherms from ectotherms nor mark hibernation (four nulls; the UCP1 gap is GC-confounded). Biology reading rule: the volume accepts established observations and uses them; it shows how the DNA reading (γ) and the VP mapping apply to thermoregulation and does not decide theory. Every statement is an observation (cited), a code output (reproducible, input dependence stated), a consistency check (holds by construction), or an interpretation.</p>
+<h3>What changed in this version (2026-09-29)</h3>
+<p><strong>Corrections</strong></p>
+<ul><li>
+Headline 0.054 vs 1.394 relabelled from "[V] simulation-verified" to code output of chosen loop gains; the input dependence is stated on the hub and on <code>endotherm-vs-ectotherm/</code>, and the "~26×" ratio is no longer presented as a measurement.
+</li><li>
+The meaning of 1.394 corrected: it is a collapse fraction |s−s0|/2s0, and a value above 1 means overshoot past the other well, not "almost one-to-one" tracking.
+</li><li>
+Torpor hysteresis width 1.3000 relabelled from [V] to consistency: any bistable cubic has width 2·h_sp (1.275 at g = 1.40); the printed value is a sweep-grid artefact (1.32 / 1.30 / 1.29 / 1.28 at 121–961 points). The text/card mismatch in jump positions (±0.6500 vs ±0.6376) is noted.
+</li><li>
+"16/16 stress targets" relabelled from [V] to self-consistency checks of the model, not data tests.
+</li><li>
+The four γ nulls (endo/ecto, hibernation) relabelled from [V] to code output on measured promoters; the code's own [O] on the conclusion (small n) is kept.
+</li><li>
+Cited observations added next to the claims (Bennett &amp; Ruben 1979; Geiser 2004; Heldmaier et al. 2004). No numeric result was changed and no author text was deleted.
+</li></ul>
+<p><strong>New experiments and results</strong></p>
+<ul><li>
+None. A light two-reviewer review (<code>reviews/biology/2026-09-29_homeostasis_thermometabolic_review.md</code>) re-ran the engine functions: printed numbers match the pages exactly (0.053581 / 1.394014; width 1.3, h_sp 0.637588). Magnitude firewall clean: every restoration chapter withholds dose, efficacy and clinical magnitude.
+</li></ul>
+<p><strong>Relabelled grades / reading rule</strong></p>
+<ul><li>
+Biology reading rule note added after the h1 of the hub; claim strips on the hub, <code>endotherm-vs-ectotherm/</code> and <code>torpor-switch/</code> relabelled (code output / consistency / interpretation). Three correction notes (lt-note) in total.
+</li></ul>
+<p><strong>Reproduction package changes</strong></p>
+<ul><li>
+<code>repro/homeostasis_thermometabolic/</code> is unchanged since the 2026-06-24 state. The release ZIP is now built deterministically by <code>tools/build_release.py</code> and adds LEDGER.json and MANIFEST.sha256.
+</li></ul>
+<p><strong>Site/metadata</strong></p>
+<ul><li>
+Link audit (2026-09-28): stale GitHub repro paths and stale site slugs (e.g. <code>/thermometabolic/</code>) on this volume's pages repointed to existing <code>docs/homeostasis_thermometabolic/</code> and <code>repro/</code> paths (part of a corpus-wide repair of 6,642 links).
+</li><li>
+Highwire citation meta generated for the hub from the manifest; gate guards against escaped comments, raw LaTeX and citation-meta drift.
+</li><li>
+Correction notes are now protected: the gate fails if a page loses one (<code>registry/page_notes.json</code>).
+</li><li>
+Claims ledger entries for this volume published (<code>registry/claims_ledger.json</code>, /claims-ledger/).
+</li><li>
+Initial repository import and consolidation commits (2026-06-20 "VP Theory site", 2026-06-22 "Final", 2026-06-24) that placed the pages and reproduction package in the single corpus repository.
+</li></ul>
+<h3>Claim status (claims ledger)</h3>
+<p>Counts: anchor-restatement 1 · identity 2 · independent-prediction 1 · interpretation 0 · open 0.</p>
+<ul><li>
+Headline: endotherm 0.054 vs ectotherm 1.394 setpoint sensitivity — anchor-restatement — set by chosen loop gains; g_endo 1.0 → 0.107, g_ecto 0.30 → 1.246, drive 0.20 → 0.033 / 1.309.
+</li><li>
+Torpor hysteresis loop width 1.3000 (h_sp 0.637588) — identity — exact 2·h_sp = 1.275; grid gives 1.32/1.30/1.29/1.28.
+</li><li>
+16/16 stress targets pass — identity — self-consistency checks, not data tests.
+</li><li>
+γ does not separate endo/ecto, nor mark hibernation (four nulls) — independent-prediction — null result (group gaps = GC gaps); n small, conclusion [O].
+</li></ul>
+<h3>Open items</h3>
+<ul><li>
+Absolute loop gains are [O] (code docstring); the endo/ecto sensitivities cannot be read as measurements until gains are sourced.
+</li><li>
+The γ nulls rest on a small panel; the conclusion is graded [O] by the code.
+</li><li>
+No torpor observation is compared numerically with the hysteresis width.
+</li><li>
+Therapy/restoration magnitudes are withheld (magnitude firewall); direction only.
+</li><li>
+Author decision: the per-page grade labels beyond the three edited pages remain as authored and are covered by the hub reading rule.
+</li></ul>
+<h3>Reproduction</h3>
+<p>The ZIP contains <code>docs/homeostasis_thermometabolic/</code> (the published HTML pages), <code>repro/homeostasis_thermometabolic/</code> (code and data), <code>DESCRIPTION.md</code>, <code>LEDGER.json</code> (this volume's claims-ledger rows), <code>CORPUS_GUIDE.md</code> (AGENTS.md) and <code>MANIFEST.sha256</code>.</p>
+<ul><li>
+Main checks: <code>python3 repro/homeostasis_thermometabolic/repro/run_all.py</code> (writes <code>reports/</code>) and <code>repro/homeostasis_thermometabolic/repro/_verify/gates.py</code>.
+</li><li>
+Headline and torpor sweeps: <code>repro/homeostasis_thermometabolic/repro/_engine/endotherm_ectotherm.py</code> (<code>setpoint_defense_sweep</code>) and <code>repro/homeostasis_thermometabolic/repro/_engine/vp_trm_engine.py</code> (<code>torpor_hysteresis_sweep</code>).
+</li><li>
+SEED = 19 (<code>repro/homeostasis_thermometabolic/inherited/vp_substrate.py</code>). No network needed, except <code>repro/homeostasis_thermometabolic/tools/fetch_thermo_panel.py</code>, which re-fetches the promoter panel.
+</li></ul>
+<h3>Citation and links</h3>
+<ul><li>
+Site: <a href="https://jamming-physics.org/homeostasis_thermometabolic/">https://jamming-physics.org/homeostasis_thermometabolic/</a>
+</li><li>
+Concept DOI: 10.5281/zenodo.20756934
+</li><li>
+Author: Young Jae Lee, ORCID 0009-0002-7535-8245
+</li><li>
+Licence: CC BY 4.0
+</li><li>
+Corpus guide: <a href="https://jamming-physics.org/AGENTS.md">https://jamming-physics.org/AGENTS.md</a>
+</li><li>
+Claims ledger: <a href="https://jamming-physics.org/claims-ledger/">https://jamming-physics.org/claims-ledger/</a>
+</li></ul>
