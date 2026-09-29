@@ -1,0 +1,326 @@
+{
+  "id": "ONS1_adg_vortex_gas",
+  "date": "2026-09-29",
+  "prereg": "PREREG.json (saved before any code)",
+  "verdict": "NOT REPRODUCED",
+  "verdict_detail": "Independent ADG re-implementation of the SM forward-merger point-vortex gas gives eps_bind ~ 0 (not ~0.2) at r_c = 0.01, 0.005, 0.002: like-signed point vortices essentially never come within r_c << inter-vortex spacing. P1 undefined (0/0), P2 fail, P3 fail. The shipped CSV fails internal-consistency checks and shows the signature of a generated table.",
+  "deviations_from_prereg": [
+    "N reduced to 64 (primary) and 32 (secondary) instead of 200/100, plus merger-free N=128 diagnostics (2 seeds): the stiff O(N^2) implicit step with ~3 other jobs sharing 4 cores was too slow; decided from timing runs on seed 999 only, before any eps was seen.",
+    "Integrator: the pure AVF step is ill-posed for tight co-rotating pairs (omega*dt >> 1; Newton fails). Used Strang splitting: exact rotation of disjoint stiff pairs under -(GiGj/2pi)ln|d| (dt/2) | AVF discrete-gradient step on the remaining non-stiff Hamiltonian (dt) | rotation (dt/2); dt = min(T0/2000, 0.5/omega of unpaired pairs). Total H_flow is therefore conserved to splitting error, not machine precision (net drift over the window <= 3e-3 E0; summed per-step |dH| 1e-5..0.4 E0, oscillatory).",
+    "Main-ensemble runs were made before the (additive, default-off) first-passage tracker was added to the code."
+  ],
+  "ensemble": {
+    "N64_rc0.01": {
+      "eps_bind_mean": 0.0,
+      "eps_bind_std": 0.0,
+      "eps_tot_mean": 0.00035993393404301676,
+      "n_mergers_mean": 0.2,
+      "N_final_mean": 63.8,
+      "H_int_final_over_E0": 0.0018786222554731742,
+      "per_seed_n_mergers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "N64_rc0.005": {
+      "eps_bind_mean": 0.0,
+      "eps_bind_std": 0.0,
+      "eps_tot_mean": 0.00039684105515569695,
+      "n_mergers_mean": 0.2,
+      "N_final_mean": 63.8,
+      "H_int_final_over_E0": 0.0019335307706818915,
+      "per_seed_n_mergers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "N64_rc0.002": {
+      "eps_bind_mean": 0.0027936203175294915,
+      "eps_bind_std": 0.006246724933320491,
+      "eps_tot_mean": 0.002900444103310932,
+      "n_mergers_mean": 0.2,
+      "N_final_mean": 63.8,
+      "H_int_final_over_E0": 0.002234896254023593,
+      "per_seed_n_mergers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "N32_rc0.01": {
+      "eps_bind_mean": 0.0,
+      "eps_bind_std": 0.0,
+      "eps_tot_mean": 0.0002093148145503038,
+      "n_mergers_mean": 0.0,
+      "N_final_mean": 32.0,
+      "H_int_final_over_E0": 0.0,
+      "per_seed_n_mergers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "N32_rc0.005": {
+      "eps_bind_mean": 0.0,
+      "eps_bind_std": 0.0,
+      "eps_tot_mean": 0.0002093148145503038,
+      "n_mergers_mean": 0.0,
+      "N_final_mean": 32.0,
+      "H_int_final_over_E0": 0.0,
+      "per_seed_n_mergers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "N32_rc0.002": {
+      "eps_bind_mean": 0.0,
+      "eps_bind_std": 0.0,
+      "eps_tot_mean": 0.0002093148145503038,
+      "n_mergers_mean": 0.0,
+      "N_final_mean": 32.0,
+      "H_int_final_over_E0": 0.0,
+      "per_seed_n_mergers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "criteria": {
+    "N64": {
+      "P1_ratio": null,
+      "P1_pass": false,
+      "P2_pass": false,
+      "P3_pass": false
+    },
+    "N32": {
+      "P1_ratio": null,
+      "P1_pass": false,
+      "P2_pass": false,
+      "P3_pass": false
+    }
+  },
+  "merger_free_first_passage": {
+    "N32": {
+      "thresholds": [
+        0.1,
+        0.05,
+        0.02,
+        0.01,
+        0.005,
+        0.002,
+        0.001
+      ],
+      "mean_new_pairs_below_threshold_in_window": [
+        4.2,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "N64": {
+      "thresholds": [
+        0.1,
+        0.05,
+        0.02,
+        0.01,
+        0.005,
+        0.002,
+        0.001
+      ],
+      "mean_new_pairs_below_threshold_in_window": [
+        64.2,
+        6.4,
+        0.0,
+        0.0,
+        0.0,
+        0.2,
+        0.0
+      ]
+    },
+    "N128": {
+      "thresholds": [
+        0.1,
+        0.05,
+        0.02,
+        0.01,
+        0.005,
+        0.002,
+        0.001
+      ],
+      "mean_new_pairs_below_threshold_in_window": [
+        263.0,
+        60.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    }
+  },
+  "first_passage_note": "New pairs entering d<0.02 inside the window [0.2,1] T0: 0 in all 12 merger-free runs (N=32,64,128). The only sub-0.01 events come from pairs already bound below 0.01 at switch-on slowly contracting; the single in-window merger of the main ensemble (N=64, r_c=0.002, seed 101) disappears when dt is halved (dt_halving_check), i.e. it was a resolution artefact.",
+  "dt_halving_check": [
+    {
+      "N": 64,
+      "rc": 0.002,
+      "seed": 101,
+      "eps_bind": 0.0,
+      "eps_tot": -1.6628028212769273e-05,
+      "n_mergers": 0,
+      "sum_abs_drift": 0.06428707000839311,
+      "max_step_drift": 4.158625989202797e-05,
+      "timeout": null,
+      "dt_max_T0": 0.00025
+    }
+  ],
+  "csv_checks": {
+    "C1_n_mergers_plus_N_final_equals_N": {
+      "rows_violating": 45,
+      "rows": 45,
+      "excess_range": [
+        28.0,
+        642.0
+      ]
+    },
+    "C2_n_mergers_ratio_rc0.002_over_rc0.01": {
+      "500": 5.020477815699659,
+      "1000": 5.025252525252525,
+      "2000": 5.006779661016949
+    },
+    "C3_generated_table_signature": {
+      "500": {
+        "max_diff_seed_deviation_across_rc": 5.551115123125783e-17,
+        "max_diff_eps_tot_minus_eps_bind_across_rc": 0.0,
+        "eps_std_by_rc": [
+          0.00465142304747114,
+          0.00465142304747114,
+          0.00465142304747114
+        ]
+      },
+      "1000": {
+        "max_diff_seed_deviation_across_rc": 2.7755575615628914e-17,
+        "max_diff_eps_tot_minus_eps_bind_across_rc": 0.0,
+        "eps_std_by_rc": [
+          0.003447828120023464,
+          0.003447828120023464,
+          0.003447828120023464
+        ]
+      },
+      "2000": {
+        "max_diff_seed_deviation_across_rc": 2.7755575615628914e-17,
+        "max_diff_eps_tot_minus_eps_bind_across_rc": 0.0,
+        "eps_std_by_rc": [
+          0.004587170281127312,
+          0.004587170281127312,
+          0.004587170281127312
+        ]
+      }
+    },
+    "C3_Re_eff_times_rc": [
+      10.0,
+      10.176091,
+      10.39794
+    ],
+    "C4_eps_bind_per_merger_ratio_rc0.002_over_rc0.01": {
+      "csv": {
+        "500": 0.21049288846748532,
+        "1000": 0.2102521873902742,
+        "2000": 0.21138770004599874
+      },
+      "point_vortex_expectation": 1.3135768911741503
+    }
+  },
+  "by_construction_tests": {
+    "T1_rc_dependence": "No plateau exists to test in the re-implementation: eps_bind = 0 at r_c = 0.01 and 0.005 for all 10 (N,seed) runs; the only non-zero value (0.0028, one run at r_c=0.002) is a resolution artefact. In the shipped CSV, eps_bind depends on r_c only through a common base shift while n_mergers scales exactly as 1/r_c.",
+    "T2_binding_fraction": "All logged mergers: released energy / pair self-term -GiGj G(r_ij) = 1.000 (to 1e-4). The 'binding energy' released is the r_c-regularised pair self-energy, (GiGj/2pi) ln(1/r_c) + g0 per merger (g0 = 0.0839 for the zero-mean L=2pi Green's function) -- it grows as ln(1/r_c), it is not an r_c-independent quantity.",
+    "T3_neutral_accounting_per_unit_merger": {
+      "0.01": {
+        "SM_periodic": 0.8168650387605597,
+        "SM_literal_minimage_log": 0.7329355988794278,
+        "gauge_lnL": 1.0254428187937068,
+        "finite_core_a_rc_over_2": 0.04414070410815805
+      },
+      "0.005": {
+        "SM_periodic": 0.9271828388368853,
+        "SM_literal_minimage_log": 0.8432533989557535,
+        "gauge_lnL": 1.1357606188700327,
+        "finite_core_a_rc_over_2": 0.04414070410815805
+      },
+      "0.002": {
+        "SM_periodic": 1.0730150381239478,
+        "SM_literal_minimage_log": 0.9890855982428158,
+        "gauge_lnL": 1.2815928181570948,
+        "finite_core_a_rc_over_2": 0.04414070410815805
+      }
+    },
+    "T3_logged_events": [
+      {
+        "N": 64,
+        "rc": 0.01,
+        "seed": 101,
+        "t_over_T0": 0.0005,
+        "r": 0.00584383597594811,
+        "dH_flow": -0.9024507464412732,
+        "pair_selfterm": -0.9023629190117374,
+        "dE_finite_core": -0.12972641178887145,
+        "dH_SM_literal": -0.8185153163742296
+      },
+      {
+        "N": 64,
+        "rc": 0.005,
+        "seed": 101,
+        "t_over_T0": 0.04699999999999997,
+        "r": 0.004953480842371965,
+        "dH_flow": -0.9288276459971705,
+        "pair_selfterm": -0.9286706762862651,
+        "dE_finite_core": -0.0457855112684431,
+        "dH_SM_literal": -0.8448930173483948
+      },
+      {
+        "N": 64,
+        "rc": 0.002,
+        "seed": 101,
+        "t_over_T0": 0.8009999999999827,
+        "r": 0.001992583835369182,
+        "dH_flow": -1.073597306103668,
+        "pair_selfterm": -1.0736063197259682,
+        "dE_finite_core": -0.04472297208787879,
+        "dH_SM_literal": -0.9896669841100117
+      }
+    ],
+    "T3_reading": "Changing the additive constant of G (dynamics unchanged) shifts every merger's release by 0.209 (+25% at r_c=0.01); SM-literal minimum-image log gives 0.73..0.99; a finite-core (Rankine, a=r_c/2, area-conserving) accounting leaves 0.044 per merger, r_c-independent -- 95% of the SM 'binding energy' is renormalised self-energy. The absolute eps level is therefore fixed by bookkeeping conventions, not by the dynamics; an eps_sat ~ 0.2 in E0/T0 cannot be a convention-independent result.",
+    "CSV_generated_signature": "Per-seed deviations of eps_bind are identical across r_c to 1e-16, eps_tot - eps_bind is identical across r_c per seed, the seed std is bitwise equal for all three r_c, Re_eff*r_c = 10 + log10(1 + (N-500)/1000) exactly (10, 10.176091, 10.39794 for N = 500, 1000, 2000), and n_mergers + N_final != N in 45/45 rows (excess 28..642). The r_c-independence of the spread is thus a property of how the table was built."
+  },
+  "files": [
+    "PREREG.json",
+    "adg_vortex_gas.py",
+    "run_diag.py",
+    "analyze.py",
+    "csv_checks.py",
+    "runs_main.json",
+    "runs_diag.json",
+    "RESULT_raw.json",
+    "csv_checks.json"
+  ],
+  "grade": "[O] for the Pillar IV eps_sat ~ 0.2 claim: not supported by an independent run of the SM model; shipped data not reproducible and internally inconsistent.",
+  "status_note": "**Status (2026-09-29, author review): independent re-implementation from the PRL's prose — NOT the volume's Pillar IV model.** Pillar IV uses metriplectic_vortex.py, which runs and passes (validate_all [4], [5]). This dilute forward-merger point-vortex gas is a different model and its result does not bear on Pillar IV's statements. What stands independently of the model is the data observation on the shipped PRL ensemble CSV (n_mergers + N_final ≠ N in all 45 rows; eps_tot − eps_bind identical across r_c per seed; Re_eff follows a closed formula), which awaits the author's clarification of the column meanings or the original ADG code."
+}

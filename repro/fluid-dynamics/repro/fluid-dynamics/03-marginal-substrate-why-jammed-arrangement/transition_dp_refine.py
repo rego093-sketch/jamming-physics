@@ -1,3 +1,5 @@
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
 # -*- coding: utf-8 -*-
 """transition_dp_refine.py -- refine lambda_c inside [1.2508, 1.2558] and
 remeasure (delta, theta_s, delta_surv, hyperscaling sum, SOC avalanches, M2).
@@ -126,4 +128,4 @@ log(f"lambda_c={lam_c:.4f}: delta_ext={delta_ext:.4f}(.1595) theta_s={theta_s:.4
 log(f"hard gates: decay {'P' if g2 else 'F'} / spreading {'P' if g3 else 'F'} / "
     f"hyperscaling {'P' if g3b else 'F'} / lifetime P (prev)")
 log(f"runtime {time.time()-t0:.0f}s")
-open('/home/claude/v3work/transition_dp_refine.out.txt','w').write("\n".join(L_)+"\n")
+open(os.path.join(_HERE, 'transition_dp_refine.out.txt'),'w').write("\n".join(L_)+"\n")

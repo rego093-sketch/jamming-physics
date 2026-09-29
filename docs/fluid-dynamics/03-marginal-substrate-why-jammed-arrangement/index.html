@@ -21,6 +21,7 @@
 <header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §3</nav></header>
 <main>
 <h1>The marginal substrate: why a jammed arrangement flows</h1>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-29). <strong>Which side of the margin is Newtonian.</strong> A shear test on a particle arrangement (<a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/experiments/NC1_newtonian_closure/" rel="noopener">NC1</a>) finds Newtonian flow <em>below</em> the isostatic margin, on the unjammed side (contact number z = 2.1–3.5). The viscosity is set by the distance to the margin. At the margin itself (z ≈ 3.98) the viscosity diverges and the flow shear-thins (n = 0.46). Above it there is a yield stress. Read "the marginal state is a fluid" as "the fluid regime is reached from below the margin". [V mech], 2-D.</aside>
 <p class="answer">A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays finite—so it shears freely, resists compression, and carries one elastic speed c_s²=B/ρ: it is a fluid. <span class="grade g-gate">[GATE]</span></p>
 <p class="abstract">A jammed packing at the isostatic margin z=2d has zero shear reserve—the relaxed shear modulus vanishes, G_relaxed∝(z-2d)→0, while the bulk modulus stays finite—so it shears freely, resists compression, and carries one elastic speed c_s²=B/ρ: it is a fluid. We reproduce this locally (bootstrap z₀=5.99, CI [5.49,6.29]ni 6) and inherit the companion's five-observable verification; rotation, costing a rigid packing nothing yet shearing a differential one, is the unjamming switch. The same two rules fix the laminar–turbulent transition's universality class as directed percolation—confirmed by experiment (2016–2024) and by five exponents measured in this bundle.</p>
 <aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/repro/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
@@ -65,11 +66,11 @@ the bulk modulus stays finite:
 A medium with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i8c8fd948e7d4.svg" loading="lazy" alt="G=0"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4ae5f09af3e8.svg" loading="lazy" alt="B&gt;0"> deforms under arbitrarily small shear yet resists
 compression and transmits longitudinal sound: that is a fluid, by mechanical
 definition. <em>Fluidity is therefore not an assumption of A0; it is a
-property the marginal arrangement earns.</em>\\
+property the marginal arrangement earns.</em>
 <strong>Provenance.</strong> Verified in the companion bundle (jamming-spine
 verification v0.4, concept DOI 10.5281/zenodo.17932566) on five independent
 observables (table below), and reproduced locally at reduced <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> by
-<code>marginal_fluidity.py</code> (box below).\\
+<code>marginal_fluidity.py</code> (box below).
 <strong>Failure mode.</strong> A correctly prepared, accepted ensemble whose bootstrap
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i1a953b0aad72.svg" loading="lazy" alt="z_0"> excludes <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9617db6c6626.svg" loading="lazy" alt="2d"> as <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ifeaebfbd746c.svg" loading="lazy" alt="N"> grows, or whose <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i588df68acdbe.svg" loading="lazy" alt="B"> collapses together with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iba1dd0c78acf.svg" loading="lazy" alt="G">,
 falsifies the statement (Section <a href="/fluid-dynamics/14-claims-non-claims-falsification/">§14</a>, row 0).</p></div>
@@ -155,14 +156,14 @@ pillar: <em>why should a flowing medium be at the margin at all times?</em></p>
 <em>pins</em> at marginal coordination—self-organized criticality with <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d">
 as the critical manifold. If true, the substrate of any flowing medium is
 permanently marginal, and the event channel of Pillar IV is permanently
-available.\\
+available.
 <strong>Status.</strong> The companion verification observes the pinning: under slow
 shear with re-jamming, the steady contact pressure parks at
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia68bda7e762a.svg" loading="lazy" alt="g^\star/g_0\approx1.1">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if6309d92bb2e.svg" loading="lazy" alt="1.3"> regardless of the starting point (concept DOI
 10.5281/zenodo.17932566). What is demonstrated is pinning <em>near</em> the
 margin; what is <em>not</em> demonstrated—there or here—is arrival
 <em>exactly at</em> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i296184e6fed9.svg" loading="lazy" alt="z=2d"> under drive. The companion flags this as its own open
-loop; we inherit the flag, not the conclusion.\\
+loop; we inherit the flag, not the conclusion.
 <strong>Falsification route.</strong> Drive a marginal packing at a fixed slow rate
 with re-jamming and track the steady <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i4fe8542a81eb.svg" loading="lazy" alt="g^\star"> (equivalently <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/iec72def51b4c.svg" loading="lazy" alt="z">) across drive
 amplitudes and seeds. <em>Systematic drift</em> of the steady value with drive or
@@ -180,18 +181,18 @@ turbulent patches, <em>is</em> this structure: an absorbing (laminar) state,
 local contagion, local recovery.</p>
 <div class="box claim"><p class="box-title"><span class="grade g-derive">[DERIVE]</span> — the substrate rules fix the universality class of the transition</p><p>A locally interacting system with a unique absorbing state and no additional
 symmetry has, generically, one continuous-transition universality class:
-directed percolation (DP). The G-SOC dynamics of \S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a> is such a
+directed percolation (DP). The G-SOC dynamics of <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a> is such a
 system, so the framework fixes the class <em>in advance</em>, with no fluid
 input. This is the class the experiments found: quasi-1D Couette (2016,
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i857deb3d8cb8.svg" loading="lazy" alt="\beta=0.276">), channel flow (2016, four exponents and a scaling relation),
 and—closing the question—pipe flow itself (2024), whose authors name the
 phase above threshold a <em>jammed phase of puffs</em>. A hard problem, solved by
-others, lands exactly where the substrate says it must.\\
+others, lands exactly where the substrate says it must.
 <strong>Local verification.</strong> The rules were transcribed literally to a lattice
 (pseudogap reserves <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i0a534e7542ca.svg" loading="lazy" alt="P(x)\propto x^{\theta}">, demand-exceeds-reserve unjamming,
 probabilistic re-jam) and five independent exponents were measured with no
 tuning (<code>transition_dp.py</code>, three stages; box below). All five land on
-DP; mean-field and compact-DP are excluded.\\
+DP; mean-field and compact-DP are excluded.
 <strong>Falsification route.</strong> A subcritical shear-flow transition conclusively
 shown to lie outside DP breaks the category claim; within the lattice, any of
 the five gates failing on rerun breaks the transcription.</p></div>
@@ -238,9 +239,9 @@ belong to the event RG and stand as that program's open problem.</p>
 and locally reproduced</em>: the fluidity theorem and the acoustic ratio
 (Table <a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a> and the box above). <em>Inherited as derived
 geometry</em>: rotational unjamming and the directed inflow
-(\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>); the forced-radius attractor structure
+(<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>); the forced-radius attractor structure
 (Section <a href="/fluid-dynamics/08-pillar-iii-dynamical-arrangement-selects/">§8</a>). <em>Inherited as a graded gate</em>: G-SOC
-(\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>). <em>Deliberately not imported</em>: the companion's mass
+(<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>). <em>Deliberately not imported</em>: the companion's mass
 ladder, its <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5966c15de367.svg" loading="lazy" alt="\alpha"> and <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6762b6578071.svg" loading="lazy" alt="\delta"> derivations, its absolute (dimensional)
 anchors, and its speed-of-light identification. Citations use the concept DOI
 only; the companion's grades translate by the rule stated in "How to read

@@ -21,6 +21,7 @@
 <header><nav class="crumb"><a href="/">Home</a> &rsaquo; <a href="/fluid-dynamics/">Configured Continuum</a> &rsaquo; §9</nav></header>
 <main>
 <h1>Pillar IV — Dissipative: arrangement sets dissipation</h1>
+<aside class="lt-note" style="border-left:3px solid #b07a00;padding:.5em .8em;margin:.8em 0;background:rgba(176,122,0,.07)">Update (2026-09-29). <strong>What the code shows, and what it does not.</strong> In 1-D Burgers the dissipation equals the shock (event) flux (Δu)³/12 and does not depend on ν (event_flux.py). In 2-D Navier–Stokes, 20% of the area carries 63% of the forward flux (multid_flux.py). Both are [V mech]. The metriplectic budget model reaches saturation by its construction [F in-model]. The PRL ensemble CSV (metriplectic-onsager/data/raw) is under clarification: its columns do not satisfy n_mergers + N_final = N. <strong>Corrections.</strong> The 3-D solver conserves energy to about 10⁻⁸ in inviscid runs (a time-step error), not 10⁻¹⁶, and its divergence is about 4×10⁻¹². The stochastic budget check leaves a 33% residual, not 2%. The avalanche exponent change from 1.60 to 1.46 comes from grid size at fixed ν and is not a Reynolds-number trend; its estimator was changed after an N = 64 run. The 3-D Onsager anomaly is not claimed.</aside>
 <p class="answer">Events carry a nonnegative dissipation measure with the exact budget ⟨ε_inj⟩=⟨ε_ν⟩+⟨ε_events⟩; as ν→0 dissipation migrates to the event channel and saturates at the injection rate. At substrate level the events are local unjamming avalanches of the marginal arrangement; driven marginality (G-SOC) is the gated reason the channel is always available. <span class="grade g-gate">[GATE]</span></p>
 <p class="abstract">Events carry a nonnegative dissipation measure with the exact budget ⟨ε_inj⟩=⟨ε_ν⟩+⟨ε_events⟩; as ν→0 dissipation migrates to the event channel and saturates at the injection rate. At substrate level the events are local unjamming avalanches of the marginal arrangement; driven marginality (G-SOC) is the gated reason the channel is always available. Their sizes obey a scale-free law with the marginal-stability exponent (τ→1.46), measured directly in developed turbulence. On release into decay the dissipation coefficient C_ε follows the Vassilicos non-equilibrium law ∝Rey_λ⁻¹ and relaxes onto the fixed-point plateau (the zeroth law).</p>
 <aside class="claim-strip"><a href="https://github.com/rego093-sketch/jamming-physics/tree/main/repro/fluid-dynamics/repro/fluid-dynamics/09-pillar-iv-dissipative-arrangement-sets/" rel="noopener">Reproduction code (GitHub)</a><a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI snapshot</a></aside>
@@ -61,7 +62,7 @@ sense: localized in space–time, dissipative, with <img class="eqi" src="/fluid
 guaranteed because contact energy is nonnegative and breaking only releases
 it. The identification is geometric bookkeeping, not a new postulate.</p></div>
 <p>Why the event channel is <em>always available</em> in a driven medium
-is the substrate gate G-SOC (\S<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>): drive unjams, rest re-jams,
+is the substrate gate G-SOC (<a href="/fluid-dynamics/03-marginal-substrate-why-jammed-arrangement/">§3</a>): drive unjams, rest re-jams,
 and the companion observes the resulting pinning at marginal coordination
 (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia68bda7e762a.svg" loading="lazy" alt="g^\star/g_0\approx1.1">–<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if6309d92bb2e.svg" loading="lazy" alt="1.3">). If G-SOC fails—a steady state drifting with
 drive instead of pinning—this identification loses its "permanently
@@ -75,7 +76,7 @@ channel can absorb the flux, then
 so the total dissipation does <em>not</em> vanish with viscosity but saturates at
 the injection rate <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id5e4eba54ffe.svg" loading="lazy" alt="I">. <span class="grade g-gate">[GATE]</span> (mechanism). The premise that the event channel
 <em>physically carries the inertial flux down to</em> <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ieefbec3666ec.svg" loading="lazy" alt="r_c">—that event activity
-concentrates where velocity increments violate the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i00421e213d38.svg" loading="lazy" alt="1/3"> H\"older threshold, and
+concentrates where velocity increments violate the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i00421e213d38.svg" loading="lazy" alt="1/3"> Hölder threshold, and
 that this concentration persists under resolution—is exact in 1D Burgers,
 resolution-stably demonstrated in 2D, and resolution-converged in developed 3D
 turbulence (Section below and <code>ns3d.py</code>); only its infinite-Reynolds
@@ -135,7 +136,7 @@ a smooth viscous sink and a binding-event sink,
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/if6be91780026.svg" loading="lazy" alt="\langle\eps_{\rm inj}\rangle=\langle\eps_\nu\rangle+\langle\eps_{\rm bind}\rangle=I=0.21">
 for every <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu">. <span class="pass">PASS</span></li><li><strong>Saturation.</strong> As <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu"> falls from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ic77ee19a0d4d.svg" loading="lazy" alt="0.05"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/icb91c493cd6e.svg" loading="lazy" alt="5\times10^{-4}">,
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ia58dd88ec616.svg" loading="lazy" alt="\langle\eps_\nu\rangle\to0"> (from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ie7fe38092772.svg" loading="lazy" alt="0.032"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6911aec7c305.svg" loading="lazy" alt="4\times10^{-4}">) and
-<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i695c5e020a73.svg" loading="lazy" alt="\langle\eps_{\rm bind}\rangle\to I"> (from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i098fe3b7abda.svg" loading="lazy" alt="0.178"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5bb234072387.svg" loading="lazy" alt="0.2096">). <span class="pass">PASS</span>\\
+<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i695c5e020a73.svg" loading="lazy" alt="\langle\eps_{\rm bind}\rangle\to I"> (from <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i098fe3b7abda.svg" loading="lazy" alt="0.178"> to <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i5bb234072387.svg" loading="lazy" alt="0.2096">). <span class="pass">PASS</span>
 The plateau equals the injection rate <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id5e4eba54ffe.svg" loading="lazy" alt="I"> by construction: the dissipation is set
 by the large-scale arrangement, not by <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/ibb016535953a.svg" loading="lazy" alt="\nu">.</li><li><strong>Reference viscous branch.</strong> The viscous curve
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i6f8323c52e12.svg" loading="lazy" alt="(\Rey_{\rm eff},\max_t\eps_\nu)"> that the event branch overlays is the validated
@@ -243,7 +244,7 @@ turbulence was measured. The residual is the one carried throughout—the precis
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i9e0c42317540.svg" loading="lazy" alt="\mathrm{Re}\to\infty"> exponent, beyond any finite resolution, remains a <span class="grade g-gate">[GATE]</span>.</p></div>
 <p>A third developed-turbulence test closes the dissipation story by its
 <em>magnitude</em>. The budget box showed the dissipation saturates at the
-injection rate (the anomaly); the event-RG (\S<a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a>) reads that saturated,
+injection rate (the anomaly); the event-RG (<a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a>) reads that saturated,
 scale-independent state as the <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i13d05ae9c2d3.svg" loading="lazy" alt="\Pi_L"> fixed point. The sharp consequence concerns
 <em>leaving</em> that state: out of equilibrium the dissipation coefficient
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i23505cb75828.svg" loading="lazy" alt="C_\eps=\eps L/u'^3"> must not stay constant but flow as the non-plateau RG
@@ -267,7 +268,7 @@ a plateau (<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id65571f130
 fixed point, i.e. the zeroth law itself. <span class="pass">PASS</span></li></ul>
 <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i51466c2e1206.svg" loading="lazy" alt="\Rightarrow"> the framework's reading of anomalous dissipation is borne out
 dynamically: the constant-<img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/i60ad0e740c6a.svg" loading="lazy" alt="C_\eps"> state <em>is</em> the event-RG fixed point
-(\S<a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a>), and <em>departure</em> from it follows the predicted non-plateau
+(<a href="/fluid-dynamics/05-dimensionless-diagnosis-pi-invariants-event/">§5</a>), and <em>departure</em> from it follows the predicted non-plateau
 flow with the Vassilicos exponent. The residual is the universality of the precise
 exponent and plateau value at higher <img class="eqi" src="/fluid-dynamics/eq/fluid-dynamics/i/id2655be78200.svg" loading="lazy" alt="\Rey">, beyond these resolutions — the same
 infinite-Reynolds <span class="grade g-gate">[GATE]</span>.</p></div>

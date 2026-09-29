@@ -1,6 +1,10 @@
 """validate_all.py — one-shot reproducibility validation for the VP fluid whitepaper.
 Run: python validate_all.py   (needs numpy, scipy, pandas; rotcore CSV path optional)
 Prints PASS/FAIL for each verified claim."""
+import os, sys
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+for _d in ('06-pillar-i-structural-arrangement-forces', '09-pillar-iv-dissipative-arrangement-sets'):
+    sys.path.insert(0, os.path.join(_ROOT, _d))
 import numpy as np, ns2d, metriplectic_vortex as mv
 ok = lambda b: "PASS" if b else "FAIL"
 print("VP FLUID WHITEPAPER — REPRODUCIBILITY VALIDATION")

@@ -1,3 +1,5 @@
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
 # -*- coding: utf-8 -*-
 """transition_dp.py -- The framework's G-SOC rules as a lattice model.
 
@@ -233,8 +235,8 @@ log(f"GATES: {npass}/3 hard gates PASS "
     f"({'DP class CONFIRMED for the G-SOC rules' if npass==3 else 'see numbers above'})")
 log(f"total runtime {time.time()-t0:.0f}s")
 
-with open('/home/claude/v3work/transition_dp.out.txt', 'w') as f:
+with open(os.path.join(_HERE, 'transition_dp.out.txt'), 'w') as f:
     f.write("\n".join(log_lines) + "\n")
-np.savetxt('/home/claude/v3work/transition_dp_decay.csv',
+np.savetxt(os.path.join(_HERE, 'transition_dp_decay.csv'),
            np.column_stack([RS_best[0][0], RS_best[0][1]]),
            header='t,rho (seed1, lambda_c)', delimiter=',', comments='')

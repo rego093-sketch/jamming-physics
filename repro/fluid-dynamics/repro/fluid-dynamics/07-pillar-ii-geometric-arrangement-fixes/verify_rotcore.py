@@ -2,7 +2,7 @@
 compare to the published DOI tables. Point CSV_DIR at the rotcore-doi archive's data/."""
 import sys, numpy as np, pandas as pd
 from scipy.stats import spearmanr
-CSV_DIR = sys.argv[1] if len(sys.argv)>1 else "../rotcore/data"
+CSV_DIR = sys.argv[1] if len(sys.argv)>1 else __import__("os").path.join(__import__("os").path.dirname(__import__("os").path.abspath(__file__)), "rotcore")
 df = pd.read_csv(f"{CSV_DIR}/metrics_long_v1.3.9.csv")
 pub = pd.read_csv(f"{CSV_DIR}/metrics_robust_v139.csv").set_index(["case","method"])
 worst=0.0

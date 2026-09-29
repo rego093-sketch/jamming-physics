@@ -170,7 +170,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | # | id | tier | title | headline result | DOI |
 |--:|---|--:|---|---|---|
 | 1 | physics | 1 | VP Theory | `c²=B/ρ ; mₚ/mₑ=6π⁵` | 10.5281/zenodo.17932566 |
-| 2 | fluid-dynamics | 1 | Configured Continuum | `∂ρ/∂t + ∇·(ρu)=0` on jammed medium | 10.5281/zenodo.17972568 |
+| 2 | fluid-dynamics | 1 | Configured Continuum | balance laws from the arrangement; three-sphere C₃ → one-axis through-flow (closed in 3-D, 82 = 81 + 1); Newtonian below the jamming margin | 10.5281/zenodo.17972568 |
 | 3 | cosmology | 1 | Vacuum-Inflow Cosmology | Kepler from vacuum inflow; `a₀ = cH₀/2π` (2π from physics, H₀ input) | 10.5281/zenodo.20568874 |
 | 4 | chemistry | 1 | VP Chemistry & EM | EM on the jammed substrate; chemistry from one electron picture (0.7405 is the FCC crystal value, used as such) | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |

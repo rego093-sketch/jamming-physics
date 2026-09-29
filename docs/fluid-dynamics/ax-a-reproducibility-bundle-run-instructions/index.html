@@ -27,10 +27,10 @@
 <p>The scripts below form a single self-contained bundle. With a standard
 scientific Python stack (<code>numpy</code>, <code>scipy</code>, <code>pandas</code>,
 <code>matplotlib</code>):
-\begin{verbatim}
+<pre>
 python axioms.py                  # Axiomatic core: No-Go + U3 reduction
 python validate_all.py            # Pillars I & IV: 5/5 PASS
-python verify_rotcore.py <data>   # Pillar II: RCCI audit (<=3e-12)
+python verify_rotcore.py &lt;data>   # Pillar II: RCCI audit (&lt;=3e-12)
 python length_selection.py        # Pillar III: one-half law
 python universality.py            # Reach U1-U3 (Burgers, d-capacity, Turing)
 python extensibility.py           # Cross-scale E1-E3 (DNA, droplet, 2D/3D)
@@ -46,15 +46,15 @@ python unjam_inflow.py            # Step 0: rotation unjams; forced-radius attra
 python transition_dp.py           # Transition test stage 1: G-SOC rules -> DP class
 python transition_dp_refine.py    # stage 2: lambda_c refine (curvature criterion)
 python transition_dp_final.py     # stage 3: spreading, correlation, consolidated table
-\end{verbatim}
+</pre>
 <code>validate_all.py</code> output, verbatim from a clean run:
-\begin{verbatim}
+<pre>
 [1] 2D Euler energy+enstrophy conserved (nu=0):    PASS  (dE=2.9e-08, dZ=5.4e-06)
 [2] Energy budget dE/dt = -eps_nu (NS identity):   PASS  (max rel=4.4e-06)
 [3] Enstrophy monotone => max_eps proportional nu:  PASS
 [4] Metriplectic budget closes (eps_tot=I):        PASS
 [5] Onsager saturation eps_bind->I as nu->0:       PASS
-\end{verbatim}</p>
+</pre></p>
 <nav class="pn"><a rel="prev" href="/fluid-dynamics/14-claims-non-claims-falsification/">&larr; §14</a><a href="/fluid-dynamics/">Contents</a><a rel="next" href="/fluid-dynamics/ax-b-algorithm-boxes-complete-forms/">Appendix B &rarr;</a></nav>
 </main>
 <footer>The Configured Continuum · <a href="https://doi.org/10.5281/zenodo.17972568" rel="noopener">DOI 10.5281/zenodo.17972568</a> ·
