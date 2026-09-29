@@ -121,6 +121,10 @@ pc=sorted((int(x) for x in re.findall(rf'class="scount">(\d+)<span>/{len(ORDER)}
 ac=sorted((int(x) for x in re.findall(rf'\| (\d+) / {len(ORDER)} \|',agents)),reverse=True)
 ok("primitive counts","manifest==homepage==AGENTS "+str(mc)) if mc==pc==ac else bad("primitive counts",f"man={mc} page={pc} ag={ac}")
 
+# deployed copy of the reading guide must equal the root copy
+if os.path.exists("docs/AGENTS.md"):
+    ok("AGENTS.md deployed copy","docs/AGENTS.md == AGENTS.md") if open("docs/AGENTS.md",encoding="utf-8").read()==agents else bad("AGENTS.md deployed copy","docs/AGENTS.md differs from AGENTS.md (copy the root file)")
+
 # ---- H. magnitude firewall scan (disease/therapy bodies) ----
 DOSE=re.compile(r'\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|μg|ug|mL|mg/kg|mg/day|IU|g/day|mM|µM|μM|nM|mmol/L|µmol/L|nmol/L|ng/mL|mg/dL|mg/L)\b|\b(?:once|twice|three times)\s+(?:daily|a day|weekly)\b|\b(?:b\.i\.d|t\.i\.d|q\d+h)\b|\b(?:titrate|dose)\w*\s+(?:\w+\s+){0,4}(?:to|below|above|by)\s+\d')  # doses, concentrations, regimens, titration targets
 hits=[]
