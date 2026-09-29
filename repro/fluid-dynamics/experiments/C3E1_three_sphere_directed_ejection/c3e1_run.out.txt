@@ -1,0 +1,41 @@
+C3E1 three-sphere directed ejection -- DEM, 3-D, spin injection, closed periodic box
+constants: k_n=1.0 g_n=0.05 g_t=0.5 mu=0.5 dt=0.02 |omega|R=0.2 R_s=3.0 (alt 4.5) T_w=10.0
+
+[A] FCC N=6912 L=16.631; (111) triangle (3768, 3194, 3195); normal [-0.577 -0.577 -0.577]; tetrahedral CAP sphere on side [-1.0] of the normal, octahedral HOLE on the other
+
+[B] RCP packing 0: N=4000 L=14.695 FIRE its=10766 residual |F|max=9.7e-11 z=7.19 mean overlap=0.0062 (143s)
+
+[B] RCP packing 1: N=4000 L=14.695 FIRE its=19728 residual |F|max=5.0e-11 z=7.12 mean overlap=0.0058 (232s)
+  T+++  D=0.0058 q=0.121 f_lobe=0.351 bip=0.836 dip(frame x',y',normal)=[-0.      0.      0.0058] out/E0=0.001 diss/E0=0.999 bal=1.4e-03 || post-hoc gross/E0=0.0086 D_gross=0.0006 vec_gross(frame)=[-0.      0.      0.0006]
+  T+-+  D=2.2834 q=0.984 f_lobe=0.458 bip=0.432 dip(frame x',y',normal)=[-0.1392 -2.2789  0.0365] out/E0=0.000 diss/E0=0.999 bal=1.3e-03 || post-hoc gross/E0=0.0038 D_gross=0.2461 vec_gross(frame)=[-0.015  -0.2456  0.0039]
+  P++   D=0.0000 q=1.118 f_lobe=0.337 bip=0.929 dip(frame x',y',normal)=[-0.  0.  0.] out/E0=0.001 diss/E0=0.999 bal=1.4e-03 || post-hoc gross/E0=0.0089 D_gross=0.0000 vec_gross(frame)=[-0.  0.  0.]
+  P+-   D=4.8715 q=0.156 f_lobe=0.541 bip=0.227 dip(frame x',y',normal)=[ 0.     -4.8621  0.3019] out/E0=0.000 diss/E0=0.999 bal=1.4e-03 || post-hoc gross/E0=0.0029 D_gross=0.4035 vec_gross(frame)=[ 0.     -0.4027  0.025 ]
+  S     D=0.0000 q=1.083 f_lobe=0.336 bip=0.900 dip(frame x',y',normal)=[ 0.  0. -0.] out/E0=0.000 diss/E0=0.998 bal=1.5e-03 || post-hoc gross/E0=0.0100 D_gross=0.0000 vec_gross(frame)=[ 0.  0. -0.]
+  [P5] T+++ FCC to t=200: max|P|/p0=3.75e-15 balance err=1.37e-03 dissipated=0.999 cluster KE left=0.000 late KE dipole=0.0078 (499s)
+
+[B] summary over 12 sites (cluster-frame averaged)   R_s=3  |  R_s=4.5
+  T+++  D_sys=0.118 (1-sigma floor 0.133) D_run=0.475+-0.078 f_lobe=0.437 bip=0.721 q=1.461 out/E0=0.005 | D_sys=0.077 D_run=nan  vec(x',y',z')=[ 0.11  -0.005 -0.042]
+  T+-+  D_sys=0.195 (1-sigma floor 0.128) D_run=0.502+-0.070 f_lobe=0.451 bip=0.660 q=1.141 out/E0=0.007 | D_sys=0.210 D_run=0.618  vec(x',y',z')=[ 0.054  0.149 -0.113]
+  P++   D_sys=0.301 (1-sigma floor 0.210) D_run=nan+-nan f_lobe=0.461 bip=0.666 q=nan out/E0=0.004 | D_sys=0.191 D_run=nan  vec(x',y',z')=[-0.195 -0.188 -0.132]
+  P+-   D_sys=0.204 (1-sigma floor 0.202) D_run=0.824+-0.173 f_lobe=0.456 bip=0.652 q=2.064 out/E0=0.006 | D_sys=0.216 D_run=nan  vec(x',y',z')=[ 0.003  0.116 -0.167]
+  S     D_sys=0.547 (1-sigma floor 0.265) D_run=nan+-nan f_lobe=0.461 bip=0.663 q=nan out/E0=0.004 | D_sys=0.446 D_run=nan  vec(x',y',z')=[-0.425  0.278  0.203]
+  POST-HOC (not preregistered): normalise by GROSS |flux| (net/gross ~ 0 makes the PREREG D ill-conditioned)
+  T+++  gross/E0=0.0261 net/gross=+0.200 D_gross(run mean)=0.088 D_sys_gross=0.023 diss/E0(t=10)=0.9903
+  T+-+  gross/E0=0.0306 net/gross=+0.238 D_gross(run mean)=0.111 D_sys_gross=0.047 diss/E0(t=10)=0.9850
+  P++   gross/E0=0.0358 net/gross=+0.113 D_gross(run mean)=0.080 D_sys_gross=0.034 diss/E0(t=10)=0.9689
+  P+-   gross/E0=0.0386 net/gross=+0.160 D_gross(run mean)=0.105 D_sys_gross=0.033 diss/E0(t=10)=0.9657
+  S     gross/E0=0.0458 net/gross=+0.075 D_gross(run mean)=0.079 D_sys_gross=0.045 diss/E0(t=10)=0.9974
+
+[C] SC N=4096; 81-core size=81 (R^2=7 shell count=0)
+  eps=0e+00 C81co  D=8.52e-14 q=0.169 f_lobe=0.373 bip=0.885 | R_s=4.5 D=4.73e-13  out/E0=0.072 diss/E0=0.996 || post-hoc D_gross=7.78e-14 gross/E0=0.079
+  eps=0e+00 C81chk D=1.01e-14 q=0.163 f_lobe=0.375 bip=0.926 | R_s=4.5 D=3.74e-14  out/E0=0.372 diss/E0=0.911 || post-hoc D_gross=1.01e-14 gross/E0=0.372
+  eps=0e+00 noinj  out flux (no injection; medium self-motion)=1.64e-15
+  eps=1e-06 C81co  D=5.62e-06 q=0.169 f_lobe=0.373 bip=0.885 | R_s=4.5 D=8.86e-05  out/E0=0.072 diss/E0=0.996 || post-hoc D_gross=5.13e-06 gross/E0=0.079
+  eps=1e-06 C81chk D=1.95e-06 q=0.163 f_lobe=0.375 bip=0.926 | R_s=4.5 D=9.81e-06  out/E0=0.372 diss/E0=0.911 || post-hoc D_gross=1.95e-06 gross/E0=0.372
+  eps=1e-06 noinj  out flux (no injection; medium self-motion)=2.28e-07
+  eps=1e-04 C81co  D=5.64e-04 q=0.169 f_lobe=0.373 bip=0.885 | R_s=4.5 D=9.00e-03  out/E0=0.072 diss/E0=0.997 || post-hoc D_gross=5.15e-04 gross/E0=0.079
+  eps=1e-04 C81chk D=1.95e-04 q=0.163 f_lobe=0.375 bip=0.926 | R_s=4.5 D=9.80e-04  out/E0=0.372 diss/E0=0.912 || post-hoc D_gross=1.95e-04 gross/E0=0.372
+  eps=1e-04 noinj  out flux (no injection; medium self-motion)=2.26e-05
+
+VERDICTS: {"P1_triangle_one_lobe_RCP": false, "P2_controls_not_directed_RCP": false, "P3_triangle_one_lobe_FCC": false, "P4_nozzle_contact": true, "P5_closed_box_annihilation": false, "P5_parts": {"momentum": true, "balance": false, "late_dipole": true, "dissipated_ge_half": true}, "P6_81core_spontaneous_lobe": false}
+total wall time 691s

@@ -1,0 +1,54 @@
+{
+  "experiment": "C3E1 - directed (one-sided) energy ejection from a C3 three-sphere cluster in a 3-D jammed frictional sphere medium",
+  "registered": "2026-09-29",
+  "status": "pre-registered before any physics run of c3e1_run.py (no exploratory runs; thresholds below are fixed and will not be moved)",
+  "claim_under_test": "Author: 'in a 3-D structure, when energy concentrates, the three spheres (the C3 triangle) cause the energy to be expelled to ONE side; in physics there is no outlet, so it is annihilated. The 82 (=81+1) structure continues into fluids.' Existing support (fluid s4, s11 corotation.py / rigid_shell.py, physics s8.0) is graph-2-coloring and Gauss-theorem arguments, i.e. true by construction; no dynamical 3-D run exists.",
+  "model": {
+    "type": "3-D discrete-element (DEM) soft frictional spheres: translational + rotational DOF (the lattice itself, no continuum closure)",
+    "spheres": "monodisperse diameter d = 1, mass m = 1, moment of inertia I = (2/5) m (d/2)^2",
+    "normal_contact": "harmonic k_n = 1 on overlap delta, normal dashpot gamma_n = 0.05 on normal relative velocity, force clamped >= 0",
+    "tangential_contact": "viscous-Coulomb: F_t = -gamma_t v_slip, gamma_t = 0.5, capped at mu F_n, mu = 0.5 (no tangential spring / no contact history)",
+    "integrator": "velocity Verlet, dt = 0.02 (units d, m, sqrt(m/k_n)); contact candidates from periodic cKDTree, cutoff 1.2 d, rebuilt every 25 steps",
+    "boundary": "fully periodic box = a CLOSED domain (no outlet anywhere)",
+    "SEED": 19
+  },
+  "media": {
+    "A_FCC": "perfect FCC crystal, 4*12^3 = 6912 spheres, nearest-neighbour distance 0.98 d (uniform prestress overlap 0.02). Deterministic, exact lattice symmetry. The (111) contact triangle has site symmetry C3v: one tetrahedral CAP sphere on one side of the triangle, one octahedral HOLE on the other (the only lattice-given 'nozzle' candidate).",
+    "B_RCP": "random jammed packing (the framework's vacuum): N = 4000 frictionless spheres random-placed at phi = 0.66 (> phi_J ~ 0.64) and FIRE-minimised; 2 packings x 6 cluster sites = 12 realizations per configuration. Disorder breaks all symmetry, so the cluster-intrinsic part is isolated by averaging the dipole vector in the CLUSTER frame (disorder part averages out ~1/sqrt(12)).",
+    "C_SC81": "simple-cubic crystal, 16^3 spheres, spacing 0.98 d; the 81-core = sites with x^2+y^2+z^2 <= 6 (81 = 3^4; R^2 = 7 empty)."
+  },
+  "injection_put_in_by_hand": "at t = 0 the chosen cluster spheres are given spin only (no translation), total injected energy E0 = sum (1/2) I omega^2 with |omega| (d/2) = 0.2 per sphere; medium at rest. Spin axis = cluster normal (triangle normal; for pair/single a random axis perpendicular to the bond / random).",
+  "configurations": {
+    "T+++": "contact triangle, all three co-rotating about the triangle normal (C3; the author's co-rotating core; 3 frustrated contacts)",
+    "T+-+": "contact triangle, spins +,-,+ (minimal frustration: exactly ONE frustrated contact = the '+1 nozzle' of corotation.py)",
+    "P++": "contact pair co-rotating (1 frustrated contact, no three-body frustration)",
+    "P+-": "contact pair counter-rotating (bipartite, 0 frustrated contacts; gear-meshed)",
+    "S": "single sphere spinning (no contact frustration)",
+    "C81co": "SC 81-core all co-rotating about z (medium C only)",
+    "C81chk": "SC 81-core checkerboard counter-rotating (bipartite control, medium C only)"
+  },
+  "observable": {
+    "flux": "energy flux across the sphere of radius R_s = 3 d around the cluster centroid: for each contact (i inside, j outside) flux_ij = (1/2)(P_on_j - P_on_i), P = F.v + tau.omega (translational + rotational work); time-integrated over t in [0, T_w], T_w = 10 (before periodic wrap-around returns to the shell)",
+    "angular_weights": "flux assigned to the unit direction of the contact point from the centroid; accumulated on 400 Fibonacci direction bins",
+    "D": "dipole = |sum w n| / sum w (w = net outgoing flux). 0 isotropic or two opposite equal lobes; 0.5 uniform hemisphere; 1 single delta lobe",
+    "q": "quadrupole = 1.5 * largest eigenvalue of sum w (n n^T - I/3) / sum w (0 isotropic, 1 single axis, either one or two lobes)",
+    "lobe": "f_lobe = max over directions of fraction of positive flux within a 60 deg cone (isotropic 0.25); bipolarity b = cone(-n_max)/cone(n_max) (~1 two opposite lobes, ~0.33 or less one lobe)",
+    "D_sys_B": "medium B: |mean over realizations of dipole VECTOR in the cluster frame| / mean total flux (cluster-intrinsic directedness); D_run_B = mean per-run D (includes disorder-induced anisotropy)"
+  },
+  "symmetry_facts_F": [
+    "S in FCC (O_h site) and P++ / P+- bond midpoint in FCC: dipole components forbidden along the axes fixed by the site symmetry; S: D = 0 exactly",
+    "T+++ in FCC: C3 about [111] forbids any in-plane dipole; a dipole ALONG [111] is allowed only because the cap/hole asymmetry breaks the mirror (lattice-given, not three-body-given)",
+    "T+++ with an isolated mirror-symmetric environment: D = 0 exactly (C3 + sigma_h); therefore any one-sided ejection must come from the environment or from spontaneous symmetry breaking",
+    "C81co in SC: C4h symmetry -> D = 0 exactly; one lobe requires spontaneous symmetry breaking (tested by epsilon position noise)",
+    "closed periodic box: total linear momentum is conserved (Newton III) -> no net momentum can be ejected; net flux through the box boundary is 0 by construction"
+  ],
+  "predictions": {
+    "P1_triangle_one_lobe_RCP": "T+++ in medium B: D_sys_B >= 0.25 AND mean f_lobe >= 0.45 AND mean b <= 0.5",
+    "P2_controls_not_directed_RCP": "P++, P+-, S in medium B: D_sys_B <= 0.10 each, AND D_sys_B(T+++) >= 2 x max(D_sys_B of P++, P+-, S)",
+    "P3_triangle_one_lobe_FCC": "T+++ in medium A: D >= 0.25 with direction within 20 deg of the [111] axis (cap or hole side, sign reported); S and P++ in A: D <= 0.02 (code-symmetry sanity)",
+    "P4_nozzle_contact": "T+-+ (one frustrated contact) is MORE directed than T+++: D_sys_B(T+-+) > D_sys_B(T+++)  (author's '+1 nozzle' reading)",
+    "P5_closed_box_annihilation": "T+++ in medium A run to T = 200: |P_total| / (m*omega*d/2) < 1e-8 at all times; energy balance E_mech + E_diss = E0 closes to 1e-3 relative; late-time (t in [150,200]) dipole of the medium kinetic-energy distribution around the centroid <= 0.10 (direction lost); fraction of E0 dissipated by t = 200 reported (prediction: >= 0.5)",
+    "P6_81core_spontaneous_lobe": "C81co in medium C with random position noise epsilon = 1e-4 d: D >= 0.25 (spontaneous single lobe). Control C81chk same noise: D <= 0.10. Also D(eps=1e-6) reported to test amplification (D proportional to eps = no spontaneous selection)"
+  },
+  "decision_rule": "each prediction PASS/FAIL as written; failures are recorded, not re-tuned. Parameters above are fixed; if a run is numerically unstable (energy error > 1e-2 without dissipation accounted) it is reported as INVALID, and dt halved once, stated."
+}
