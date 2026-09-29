@@ -1,0 +1,21 @@
+{
+  "experiment": "BC6 — optimize the black-copper IR rectenna at realistic ESS temperatures (300-600 C) and compare with a thermoelectric on the same absorbed flux",
+  "registered": "2026-09-29",
+  "status": "pre-registered before running bc6_run.py",
+  "author_note": "67 C is unrealistic; the ESS interior runs at several hundred C.",
+  "model": {
+    "T_h_C": [300, 400, 500, 600], "T_c_K": 293,
+    "diode_physics_limit": "beta = q / (2 n k T_c), ideality n in {1.0, 1.5} (exponential-diode curvature limit)",
+    "junction_capacitance_F": [1e-18, 1e-17],
+    "optimized_variable": "diode resistance R on a log grid 10 ohm - 1 Mohm; RC cutoff f_c = 1/(2 pi R C) with roll-off 1/(1+(nu/f_c)^2)",
+    "validity": "square-law regime: V_ac = sqrt(P_in R) <= n k T_c / q; eta_rect = beta^2 P_in R / 4 (so eta_rect <= 1/16 at the validity edge for n = 1)",
+    "comparison": "thermoelectric module on the same net radiative flux: eta_TE = (1 - Tc/Th)(sqrt(1+ZT)-1)/(sqrt(1+ZT)+Tc/Th), ZT = 1 (commercial) and ZT = 0.05 (bulk CuO, from the section 7 correction)"
+  },
+  "predictions": {
+    "P1_square_law_ceiling": "optimized rectenna efficiency on the net flux stays below 6.25% at every T_h",
+    "P2_500C_output": "at 500 C (n = 1, C = 1e-18 F) optimized output >= 100 W/m^2",
+    "P3_TE_wins": "a ZT = 1 thermoelectric beats the optimized square-law rectenna at every T_h in 300-600 C",
+    "P4_capacitance": "C = 1e-17 F lowers the optimized output by more than 2x relative to 1e-18 F at 500 C"
+  },
+  "record_either_way": true
+}
