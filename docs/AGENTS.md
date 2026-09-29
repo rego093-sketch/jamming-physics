@@ -171,15 +171,15 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 |--:|---|--:|---|---|---|
 | 1 | physics | 1 | VP Theory | `c²=B/ρ ; mₚ/mₑ=6π⁵` | 10.5281/zenodo.17932566 |
 | 2 | fluid-dynamics | 1 | Configured Continuum | `∂ρ/∂t + ∇·(ρu)=0` on jammed medium | 10.5281/zenodo.17972568 |
-| 3 | cosmology | 1 | Vacuum-Inflow Cosmology | `a₀ = cH₀/2π` | 10.5281/zenodo.20568874 |
+| 3 | cosmology | 1 | Vacuum-Inflow Cosmology | Kepler from vacuum inflow; `a₀ = cH₀/2π` (2π from physics, H₀ input) | 10.5281/zenodo.20568874 |
 | 4 | chemistry | 1 | VP Chemistry & EM | EM on the jammed substrate; chemistry from one electron picture (0.7405 is the FCC crystal value, used as such) | 10.5281/zenodo.20680540 |
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
-| 7 | wave-computer | 1 | Wave Computer | compute by phase, clock-free | 10.5281/zenodo.20783570 |
-| 8 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG ; corr(γ,GC)=0.998` | 10.5281/zenodo.20471407 |
+| 7 | wave-computer | 1 | Wave Computer | compute by phase, clock-free; carrier-invariant ⇒ low-frequency thought possible | 10.5281/zenodo.20783570 |
+| 8 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG`; DNA read 100%, building open [O] (corr(γ,GC)=0.998 is table-intrinsic) | 10.5281/zenodo.20471407 |
 | 9 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
 | 10 | neuro | 4 | Neural Emergence Chain | working memory `= f_γ/f_θ ≈ 6–7` ([L], literature bands; tACS-consistent) | 10.5281/zenodo.17979015 |
-| 11 | mind | 4 | Felt Cognition | stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
+| 11 | mind | 4 | Felt Cognition | memory from waves (brainwave carrier + congruent cues summed in the hippocampus); stream of thought = serial select among γ-eddies | 10.5281/zenodo.20694404 |
 | 12 | sensory_organ | 5 | Sensory Organs | cochlear Hopf `R=(F/β)^⅓`, exp 0.333 | 10.5281/zenodo.20755154 |
 | 13 | eye | 5 | The Eye | single-photon R19 flip; `n=√(B/ρ ratio)` | 10.5281/zenodo.20790134 |
 | 14 | ear | 5 | Hearing & the Ear | `ṡ=g·s−s³+h` → cube-root amplification | 10.5281/zenodo.20790201 |
