@@ -176,7 +176,7 @@ Reproducibility: deterministic builds, `SEED = 19`, double SHA-256 hash-chaining
 | 5 | geodynamics | 1 | Jamming Geodynamics | break-up when `Ψ_eff > Ψ_y` | 10.5281/zenodo.17978934 |
 | 6 | geochronology | 1 | Cross-Chronometer Limit | older material in ⇒ age biased old | 10.5281/zenodo.20568673 |
 | 7 | continental-genesis | 1 | Continental Genesis | why dry land exists — composition + buoyancy, not age | 10.5281/zenodo.20827711 |
-| 8 | recent-sequence-cascade | 1 | Recent-Sequence Cascade | one relaxation read as flood, ice, Atlantic (8:1 vs mainstream) | 10.5281/zenodo.20827806 |
+| 8 | recent-sequence-cascade | 1 | Recent-Sequence Cascade | one relaxation read as flood, ice, Atlantic — physically permitted, occurrence open [O]; mechanism compression 8:1 [L], no present-tense discriminator | 10.5281/zenodo.20827806 |
 | 9 | wave-computer | 1 | Wave Computer | compute by phase, clock-free; carrier-invariant ⇒ low-frequency thought possible | 10.5281/zenodo.20783570 |
 | 10 | **dna** | 2 | **4D DNA Blueprint** | `γ = −mean NN stacking ΔG`; DNA read 100%, building open [O] (corr(γ,GC)=0.998 is table-intrinsic) | 10.5281/zenodo.20471407 |
 | 11 | inheritance | 3 | Inheritance · RNA & Gene Therapy | one switch, two channels: γ (SET) + writable A4 | 10.5281/zenodo.20783547 |
